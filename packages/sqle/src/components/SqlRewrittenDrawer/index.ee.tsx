@@ -2,7 +2,7 @@ import { BasicButton, BasicDrawer, EmptyBox } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { CollapseProps, Modal } from 'antd';
-import { useCallback, useMemo, useEffect, useState, useRef } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import BusinessRewrittenSuggestion from './components/BusinessRewrittenSuggestion';
@@ -11,23 +11,15 @@ import DependDatabaseStructure from './components/DependDatabaseStructure';
 import OverallRewrittenSuggestion from './components/OverallRewrittenSuggestion';
 import RewrittenSuggestionDetails from './components/RewrittenSuggestionDetails';
 import RewriteProgressDisplay from './components/RewriteProgressDisplay';
-import {
-  useAsyncRewriteProgress,
-  IRewriteTaskResult
-} from './components/RewriteProgressDisplay/hooks';
+import { useAsyncRewriteProgress } from './components/RewriteProgressDisplay/hooks';
 import { SqlRewrittenDrawerWithBaseProps } from './index.type';
 import {
   ModuleHeaderTitleStyleWrapper,
   RewrittenSqlCollapseStyleWrapper
 } from './style';
-import { AsyncRewriteTaskStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
-enum CollapseItemKeyEnum {
-  rewritten_sql_details,
-  business_rewritten_suggestions,
-  overall_rewritten_suggestion,
-  depend_database_structure_optimization
-}
+import { CollapseItemKeyEnum } from './index.enum';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
+import { hasSqlBeenRewritten } from './utils/sqlRewriteCache';
 
 const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   open,
@@ -36,12 +28,8 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   ...props
 }) => {
   const { t } = useTranslation();
-  const [rewriteResult, setRewriteResult] = useState<IRewriteTaskResult>();
   const [modal, modalContextHolder] = Modal.useModal();
-
-  // 添加延迟完成状态管理
-  const [isDelayingComplete, setIsDelayingComplete] = useState(false);
-  const delayCompleteTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const { currentTheme } = useChangeTheme();
 
   const originSqlNumber = originSqlInfo?.number ?? 0;
   const originalSql = originSqlInfo?.sql ?? '';
@@ -49,41 +37,21 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   // 使用异步重写进度 hook
   const {
     isRewriting,
+    asyncStartLoading,
     showProgress,
     overallStatus,
     ruleProgressList,
     enableStructureOptimize,
+    rewriteResult,
+    isDelayingComplete,
     startRewrite,
     toggleStructureOptimize,
-    reset,
-    hasSqlBeenRewritten,
+    resetAllState,
+    loadCachedRewriteResult,
     errorMessage,
     updateEnableStructureOptimize
-  } = useAsyncRewriteProgress({
-    onSuccess: (result) => {
-      // 当重写完成获得结果时，先不立即设置结果
-      // 等待进度条展示完成效果后再设置
-      if (!isDelayingComplete) {
-        setIsDelayingComplete(true);
-        // 保存结果，等待延迟完成后使用
-        delayCompleteTimerRef.current = setTimeout(() => {
-          setRewriteResult(result);
-          setIsDelayingComplete(false);
-        }, 1500); // 延迟1.5秒
-      }
-    },
-    onError: () => {
-      // 清理延迟定时器
-      if (delayCompleteTimerRef.current) {
-        clearTimeout(delayCompleteTimerRef.current);
-        delayCompleteTimerRef.current = null;
-      }
-      setIsDelayingComplete(false);
-      setRewriteResult(undefined);
-    }
-  });
+  } = useAsyncRewriteProgress({});
 
-  // 处理启用结构优化
   const toggleEnableStructureOptimizeAction = useCallback(() => {
     toggleStructureOptimize(taskID, originSqlNumber);
   }, [toggleStructureOptimize, taskID, originSqlNumber]);
@@ -111,23 +79,17 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         title: t('sqlRewrite.closeDrawerConfirm'),
         onOk: () => {
           props.onClose?.();
-          reset();
+          resetAllState();
         }
       });
     } else {
       props.onClose?.();
-      reset();
+      resetAllState();
     }
-  }, [isRewriteTaskRunning, t, props, reset, modal]);
+  }, [isRewriteTaskRunning, t, props, resetAllState, modal]);
 
   // 页面离开确认
   usePrompt(t('sqlRewrite.leavePageConfirm'), isRewriteTaskRunning);
-
-  // 处理进度完成的回调
-  const handleProgressComplete = useCallback(() => {
-    // 这个回调由RewriteProgressDisplay在完成动画后调用
-    // 此时才真正隐藏进度条并显示结果
-  }, []);
 
   const collapseItems = useMemo<CollapseProps['items']>(() => {
     // 如果没有重写结果，返回空数组
@@ -179,6 +141,7 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
             businessDesc={rewriteResult.businessDesc ?? ''}
             sqlLogicDesc={rewriteResult.logicDesc ?? ''}
             rewrittenSqlLogicDesc={rewriteResult.rewrittenSqlLogicDesc ?? ''}
+            isRewriting={isRewriteTaskRunning}
           />
         )
       },
@@ -256,82 +219,87 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       return true;
     });
   }, [
-    rewriteResult,
+    rewriteResult?.suggestions,
+    rewriteResult?.businessNonEquivalentDesc,
+    rewriteResult?.rewrittenSql,
+    rewriteResult?.businessDesc,
+    rewriteResult?.logicDesc,
+    rewriteResult?.rewrittenSqlLogicDesc,
     enableStructureOptimize,
     t,
     originalSql,
+    isRewriteTaskRunning,
     taskID,
     originSqlNumber,
     toggleEnableStructureOptimizeAction
   ]);
 
   useEffect(() => {
-    if (open && !hasSqlBeenRewritten(originSqlNumber)) {
-      // 初次加载时启动异步重写
-      startRewrite(taskID, originSqlNumber, false);
-    }
-  }, [open, originSqlNumber, hasSqlBeenRewritten, startRewrite, taskID]);
-
-  // 组件卸载时清理延迟定时器
-  useEffect(() => {
-    return () => {
-      if (delayCompleteTimerRef.current) {
-        clearTimeout(delayCompleteTimerRef.current);
-        delayCompleteTimerRef.current = null;
+    if (open) {
+      if (!hasSqlBeenRewritten(taskID, originSqlNumber)) {
+        // 初次加载时启动异步重写
+        startRewrite(taskID, originSqlNumber, false);
+      } else {
+        // 加载缓存的重写结果
+        loadCachedRewriteResult(taskID, originSqlNumber);
       }
-    };
-  }, []);
+    }
+  }, [
+    open,
+    originSqlNumber,
+    startRewrite,
+    taskID,
+    resetAllState,
+    loadCachedRewriteResult
+  ]);
 
   return (
-    <>
-      {modalContextHolder}
-      <BasicDrawer
-        {...props}
-        onClose={handleDrawerClose}
-        open={open}
-        extra={
-          <EmptyBox if={hasSqlBeenRewritten(originSqlNumber)}>
-            <BasicButton
-              loading={isRewriting}
-              type="primary"
-              onClick={handleUpdateRewriteResult}
-              disabled={isRewriting}
-            >
-              {isRewriting
-                ? t('sqlRewrite.rewriteInProgress')
-                : t('sqlRewrite.updateRewrittenResult')}
-            </BasicButton>
-          </EmptyBox>
-        }
-      >
-        <RewriteProgressDisplay
-          visible={showProgress || isDelayingComplete}
-          overallStatus={overallStatus}
-          ruleProgressList={ruleProgressList}
-          errorMessage={errorMessage}
-          onComplete={handleProgressComplete}
-          onRetry={handleRetryRewrite}
-          isRetryLoading={isRewriting}
-        />
+    <BasicDrawer
+      {...props}
+      onClose={handleDrawerClose}
+      open={open}
+      extra={
+        <EmptyBox if={hasSqlBeenRewritten(taskID, originSqlNumber)}>
+          <BasicButton
+            loading={isRewriting}
+            type="primary"
+            onClick={handleUpdateRewriteResult}
+            disabled={isRewriting}
+          >
+            {isRewriting
+              ? t('sqlRewrite.rewriteInProgress')
+              : t('sqlRewrite.updateRewrittenResult')}
+          </BasicButton>
+        </EmptyBox>
+      }
+    >
+      {/* https://github.com/uiwjs/react-md-editor/tree/master?tab=readme-ov-file#support-dark-modenight-mode */}
+      {/* TODO 后续需要统一处理下 MDEditor 的主题 */}
+      <section data-color-mode={currentTheme}>
+        {modalContextHolder}
 
         <EmptyBox
-          if={
-            !showProgress &&
-            !isDelayingComplete &&
-            overallStatus !== AsyncRewriteTaskStatusEnum.failed
-          }
+          if={!asyncStartLoading}
+          defaultNode={<CustomLoadingIndicator />}
         >
-          <EmptyBox if={!isRewriting} defaultNode={<CustomLoadingIndicator />}>
-            <RewrittenSqlCollapseStyleWrapper
-              defaultActiveKey={[
-                CollapseItemKeyEnum.overall_rewritten_suggestion
-              ]}
-              items={collapseItems}
-            />
-          </EmptyBox>
+          <RewriteProgressDisplay
+            isProgressActive={showProgress || isDelayingComplete}
+            overallStatus={overallStatus}
+            ruleProgressList={ruleProgressList}
+            errorMessage={errorMessage}
+            onRetry={handleRetryRewrite}
+            isRetryLoading={isRewriting}
+          />
+
+          <RewrittenSqlCollapseStyleWrapper
+            defaultActiveKey={[
+              CollapseItemKeyEnum.overall_rewritten_suggestion
+            ]}
+            items={collapseItems}
+          />
         </EmptyBox>
-      </BasicDrawer>
-    </>
+      </section>
+    </BasicDrawer>
   );
 };
 

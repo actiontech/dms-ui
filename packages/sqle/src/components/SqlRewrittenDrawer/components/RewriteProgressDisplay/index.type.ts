@@ -7,11 +7,19 @@ import {
 // 假进度状态枚举
 export enum MockProgressStatusEnum {
   waiting = 'waiting', // 等待中
-  preparing = 'preparing', // 准备处理
-  analyzing = 'analyzing', // 正在分析
-  applying = 'applying', // 正在应用
-  completed = 'completed', // 已完成
+  applyingRule = 'applyingRule', // 应用规则
+  modelEvaluating = 'modelEvaluating', // 模型评估
+  analyzing = 'analyzing', // 分析与其他规则关系
+  applyRewrite = 'applyRewrite', // 应用重写
+  verifying = 'verifying', // 验证结果
   failed = 'failed' // 失败
+}
+
+// 处理阶段定义
+export interface IProcessingStage {
+  status: MockProgressStatusEnum;
+  label: string;
+  duration: [number, number]; // [最小时长, 最大时长] 毫秒
 }
 
 // 单个规则的进度信息
@@ -26,9 +34,16 @@ export interface IRuleProgressInfo {
   rewrittenSql?: string; // 重写后的SQL
 }
 
+// 内容预告项
+export interface IContentPreviewItem {
+  key: string;
+  title: string;
+  description?: string;
+}
+
 // 进度展示组件的 Props
 export interface IRewriteProgressDisplayProps {
-  visible: boolean; // 是否显示进度展示
+  isProgressActive: boolean; // 进度是否处于活跃状态（正在进行或刚完成）
   overallStatus: AsyncRewriteTaskStatusEnum; // 总任务状态
   ruleProgressList: IRuleProgressInfo[]; // 规则列表
   errorMessage?: string; // 错误信息
