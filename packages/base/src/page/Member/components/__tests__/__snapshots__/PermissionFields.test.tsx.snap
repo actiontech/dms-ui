@@ -90,7 +90,7 @@ exports[`base/Member/components/PermissionFields render init snapshot 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-checkbox-group css-1byqctq"
+                      class="ant-checkbox-group css-svmyig"
                       id="projectManagementPermission"
                     >
                       <label

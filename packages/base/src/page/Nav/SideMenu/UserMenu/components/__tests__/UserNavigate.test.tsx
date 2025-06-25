@@ -125,6 +125,10 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(mockClearUserInfo).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
     expect(mockClearRecentlySelectedZone).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
+      type: 'permission/updateUserOperationPermissions'
+    });
   });
 
   it('render logout btn when delete session return a location', async () => {

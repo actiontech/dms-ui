@@ -1,4 +1,4 @@
-import { useNavigate, useRoutes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { baseSuperRender } from './testUtils/superRender';
 import App, { Wrapper } from './App';
@@ -83,6 +83,7 @@ describe('App', () => {
     dmsSystem.getLoginTips();
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {

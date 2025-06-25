@@ -216,7 +216,7 @@ exports[`base/Member/Drawer/MemberForm should match snapshot when isUpdate is fa
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-checkbox-group css-1byqctq"
+                      class="ant-checkbox-group css-svmyig"
                       id="projectManagementPermission"
                     />
                   </div>
@@ -496,7 +496,7 @@ exports[`base/Member/Drawer/MemberForm should match snapshot when isUpdate is tr
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-checkbox-group css-1byqctq"
+                      class="ant-checkbox-group css-svmyig"
                       id="projectManagementPermission"
                     />
                   </div>

@@ -385,7 +385,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should render update member group 
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label
@@ -1329,7 +1329,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should send update member group re
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label

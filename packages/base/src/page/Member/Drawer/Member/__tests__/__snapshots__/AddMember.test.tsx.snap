@@ -282,7 +282,7 @@ exports[`base/Member/Drawer/AddMember should render add member form with all fie
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label
