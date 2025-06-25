@@ -10,9 +10,7 @@ import {
   calculateCompletedRulesCount,
   isTaskCompleted,
   isTaskFailed,
-  calculateDuration,
   shouldStopPolling,
-  createDefaultRuleProgress,
   buildRewriteTaskResult
 } from '../../components/RewriteProgressDisplay/hooks/useAsyncRewriteProgress.utils';
 import { IRuleProgressInfo } from '../../components/RewriteProgressDisplay/index.type';
@@ -317,41 +315,6 @@ describe('useAsyncRewriteProgress.utils', () => {
     });
   });
 
-  describe('calculateDuration', () => {
-    it('should correctly calculate duration', () => {
-      const startTime = '2023-01-01T10:00:00.000Z';
-      const endTime = '2023-01-01T10:05:30.000Z';
-
-      const result = calculateDuration(startTime, endTime);
-      expect(result).toBe(330000); // 5分30秒 = 330000毫秒
-    });
-
-    it('should use current time when no end time provided', () => {
-      const startTime = '2023-01-01T10:00:00.000Z';
-      const now = Date.now();
-
-      // Mock Date.now
-      const originalDateNow = Date.now;
-      Date.now = jest.fn(() => now);
-
-      const result = calculateDuration(startTime);
-      expect(result).toBe(now - new Date(startTime).getTime());
-
-      // Restore Date.now
-      Date.now = originalDateNow;
-    });
-
-    it('should return undefined when no start time provided', () => {
-      const result = calculateDuration();
-      expect(result).toBeUndefined();
-    });
-
-    it('should handle empty string start time', () => {
-      const result = calculateDuration('');
-      expect(result).toBeUndefined();
-    });
-  });
-
   describe('shouldStopPolling', () => {
     const mockRules: IRuleProgressInfo[] = [
       {
@@ -399,49 +362,6 @@ describe('useAsyncRewriteProgress.utils', () => {
         rulesWithIncomplete
       );
       expect(result).toBe(false);
-    });
-  });
-
-  describe('createDefaultRuleProgress', () => {
-    it('should create specified number of default rule progress', () => {
-      const result = createDefaultRuleProgress(3);
-
-      expect(result).toHaveLength(3);
-      expect(result[0]).toEqual({
-        ruleId: 'default_rule_0',
-        ruleName: 'default_rule_1',
-        ruleDescription: 'loading...',
-        status: RewriteSuggestionStatusEnum.initial
-      });
-      expect(result[1]).toEqual({
-        ruleId: 'default_rule_1',
-        ruleName: 'default_rule_2',
-        ruleDescription: 'loading...',
-        status: RewriteSuggestionStatusEnum.initial
-      });
-      expect(result[2]).toEqual({
-        ruleId: 'default_rule_2',
-        ruleName: 'default_rule_3',
-        ruleDescription: 'loading...',
-        status: RewriteSuggestionStatusEnum.initial
-      });
-    });
-
-    it('should create 1 default rule when no parameter provided', () => {
-      const result = createDefaultRuleProgress();
-
-      expect(result).toHaveLength(1);
-      expect(result[0]).toEqual({
-        ruleId: 'default_rule_0',
-        ruleName: 'default_rule_1',
-        ruleDescription: 'loading...',
-        status: RewriteSuggestionStatusEnum.initial
-      });
-    });
-
-    it('should handle zero rules case', () => {
-      const result = createDefaultRuleProgress(0);
-      expect(result).toEqual([]);
     });
   });
 
