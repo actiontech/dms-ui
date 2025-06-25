@@ -24,8 +24,6 @@ export const mapSuggestionsToRuleProgress = (
     ruleDescription: suggestion.desc || '',
     status: suggestion.status || RewriteSuggestionStatusEnum.initial,
     errorMessage: undefined, // 可以在后续处理错误时设置
-    startTime: undefined, // 后端接口暂时没有提供
-    endTime: undefined, // 后端接口暂时没有提供
     rewrittenSql: suggestion.rewritten_sql // 添加重写后的SQL
   }));
 };
@@ -93,23 +91,6 @@ export const isTaskFailed = (
 };
 
 /**
- * 计算任务持续时间
- */
-export const calculateDuration = (
-  startTime?: string,
-  endTime?: string
-): number | undefined => {
-  if (!startTime) {
-    return undefined;
-  }
-
-  const start = new Date(startTime).getTime();
-  const end = endTime ? new Date(endTime).getTime() : Date.now();
-
-  return end - start;
-};
-
-/**
  * 检查是否需要停止轮询
  */
 export const shouldStopPolling = (
@@ -133,20 +114,6 @@ export const shouldStopPolling = (
 };
 
 /**
- * 创建默认的规则进度信息（当没有从后端获取到数据时）
- */
-export const createDefaultRuleProgress = (
-  count: number = 1
-): IRuleProgressInfo[] => {
-  return Array.from({ length: count }, (_, index) => ({
-    ruleId: `default_rule_${index}`,
-    ruleName: `default_rule_${index + 1}`,
-    ruleDescription: 'loading...',
-    status: RewriteSuggestionStatusEnum.initial
-  }));
-};
-
-/**
  * 构建重写任务结果
  */
 export const buildRewriteTaskResult = (
@@ -164,4 +131,28 @@ export const buildRewriteTaskResult = (
     businessNonEquivalentDesc: rewriteData.business_non_equivalent_desc,
     suggestions: rewriteData.suggestions
   };
+};
+
+export const shouldUpdateRewriteResult = (
+  oldResult: IRewriteTaskResult | undefined,
+  newResult: IRewriteTaskResult | undefined
+): boolean => {
+  if (!oldResult || !newResult) {
+    return true;
+  }
+
+  const oldSuggestionsProcessCount =
+    oldResult.suggestions?.filter(
+      (s) => s.status === RewriteSuggestionStatusEnum.processed
+    ).length ?? 0;
+  const newSuggestionsProcessCount =
+    newResult.suggestions?.filter(
+      (s) => s.status === RewriteSuggestionStatusEnum.processed
+    ).length ?? 0;
+
+  if (oldSuggestionsProcessCount !== newSuggestionsProcessCount) {
+    return true;
+  }
+
+  return false;
 };

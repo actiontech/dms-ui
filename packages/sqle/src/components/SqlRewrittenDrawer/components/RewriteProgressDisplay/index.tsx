@@ -1,17 +1,5 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  useRef
-} from 'react';
+import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  CheckCircleFilled,
-  CloseCircleFilled,
-  ClockCircleOutlined,
-  RefreshOutlined
-} from '@actiontech/icons';
 import {
   AsyncRewriteTaskStatusEnum,
   RewriteSuggestionStatusEnum
@@ -29,11 +17,13 @@ import {
   RuleItemStyleWrapper,
   RuleHeaderStyleWrapper,
   RuleDescriptionStyleWrapper,
-  CircularProgressStyleWrapper,
   StatusTextStyleWrapper,
   ErrorMessageStyleWrapper,
   RewriteFailedStyleWrapper,
-  RewrittenSqlDisplayStyleWrapper
+  RewrittenSqlDisplayStyleWrapper,
+  CompactProgressStyleWrapper,
+  RuleItemAnimationStyleWrapper,
+  WaveProgressStyleWrapper
 } from './style';
 import {
   BasicButton,
@@ -42,16 +32,12 @@ import {
   SQLRenderer
 } from '@actiontech/shared';
 import classNames from 'classnames';
-
-// 假进度步骤配置
-const MOCK_PROGRESS_STEPS = [
-  { status: MockProgressStatusEnum.preparing, duration: 8000 },
-  { status: MockProgressStatusEnum.analyzing, duration: 10000 },
-  { status: MockProgressStatusEnum.applying, duration: 12000 }
-];
+import { MOCK_PROCESSING_STAGES } from './index.data';
+import { Button } from 'antd';
+import { DownOutlined, UpOutlined } from '@actiontech/icons';
 
 const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
-  visible,
+  isProgressActive,
   overallStatus,
   ruleProgressList,
   errorMessage,
@@ -62,20 +48,78 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  // 用户手动控制的展开/折叠状态
+  const [isUserExpanded, setIsUserExpanded] = useState<boolean | null>(null);
+
+  // 计算最终的展开状态：优先使用用户设置，否则根据进度活跃状态决定
+  const isExpanded = useMemo(() => {
+    if (isUserExpanded !== null) {
+      return isUserExpanded;
+    }
+    return isProgressActive;
+  }, [isUserExpanded, isProgressActive]);
+
+  // 用户点击展开/折叠按钮
+  const handleToggleExpanded = useCallback(() => {
+    setIsUserExpanded((prev) => (prev === null ? !isProgressActive : !prev));
+  }, [isProgressActive]);
+
   // 使用 useRef 来避免依赖循环
   const activeProgressTimers = useRef<Map<string, NodeJS.Timeout>>(new Map());
 
-  // 管理每个规则的假进度状态
-  const [ruleMockProgress, setRuleMockProgress] = useState<
+  // 管理每个规则的当前阶段状态
+  const [ruleProcessingStages, setRuleProcessingStages] = useState<
     Map<
       string,
       {
-        currentStepIndex: number;
+        currentStageIndex: number;
         mockStatus: MockProgressStatusEnum;
-        progress: number;
       }
     >
   >(new Map());
+
+  // 完成的规则动画状态
+  const [completedRuleAnimations, setCompletedRuleAnimations] = useState<
+    Set<string>
+  >(new Set());
+
+  // 排序后的规则列表：已完成的在前，未完成的在后
+  const sortedRuleList = useMemo(() => {
+    const completed = ruleProgressList.filter(
+      (rule) => rule.status === RewriteSuggestionStatusEnum.processed
+    );
+    const processing = ruleProgressList.filter(
+      (rule) => rule.status !== RewriteSuggestionStatusEnum.processed
+    );
+    return [...completed, ...processing];
+  }, [ruleProgressList]);
+
+  // 监听规则完成状态变化，触发动画
+  useEffect(() => {
+    const newCompletedRules = new Set<string>();
+    sortedRuleList.forEach((rule) => {
+      if (
+        rule.status === RewriteSuggestionStatusEnum.processed &&
+        !completedRuleAnimations.has(rule.ruleId)
+      ) {
+        newCompletedRules.add(rule.ruleId);
+      }
+    });
+
+    if (newCompletedRules.size > 0) {
+      setCompletedRuleAnimations(
+        (prev) => new Set([...prev, ...newCompletedRules])
+      );
+      // 动画结束后移除动画状态
+      setTimeout(() => {
+        setCompletedRuleAnimations((prev) => {
+          const newSet = new Set(prev);
+          newCompletedRules.forEach((ruleId) => newSet.delete(ruleId));
+          return newSet;
+        });
+      }, 600);
+    }
+  }, [sortedRuleList, completedRuleAnimations]);
 
   // 渲染重写后的SQL
   const renderRewrittenSql = useCallback(
@@ -95,7 +139,11 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
               <CopyIcon text={rule.rewrittenSql} />
             </div>
           </div>
-          <SQLRenderer.Snippet sql={rule.rewrittenSql} />
+          <SQLRenderer.Snippet
+            sql={rule.rewrittenSql}
+            rows={10}
+            tooltip={false}
+          />
         </RewrittenSqlDisplayStyleWrapper>
       );
     },
@@ -120,7 +168,7 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       case AsyncRewriteTaskStatusEnum.running:
         return t('sqlRewrite.generatingResultsWithLLM');
       case AsyncRewriteTaskStatusEnum.completed:
-        return t('sqlRewrite.updateRewrittenResult');
+        return t('sqlRewrite.rewriteCompleted');
       case AsyncRewriteTaskStatusEnum.failed:
         return t('sqlRewrite.rewriteFailed');
       default:
@@ -128,114 +176,36 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     }
   }, [overallStatus, t]);
 
-  // 获取规则状态的显示文本 - 使用 useMemo 优化
+  // 获取规则状态的显示文本
   const getRuleStatusText = useCallback(
     (rule: IRuleProgressInfo) => {
-      const mockProgressData = ruleMockProgress.get(rule.ruleId);
+      const stageData = ruleProcessingStages.get(rule.ruleId);
 
       if (rule.status === RewriteSuggestionStatusEnum.processed) {
         return t('sqlRewrite.ruleStatusCompleted');
       }
 
-      if (!mockProgressData) {
+      if (!stageData) {
         return t('sqlRewrite.ruleStatusWaiting');
       }
 
-      switch (mockProgressData.mockStatus) {
-        case MockProgressStatusEnum.preparing:
-          return t('sqlRewrite.ruleProcessingPreparing', {
-            ruleName: rule.ruleName
-          });
-        case MockProgressStatusEnum.analyzing:
-          return t('sqlRewrite.ruleProcessingAnalyzing', {
-            ruleName: rule.ruleName
-          });
-        case MockProgressStatusEnum.applying:
-          return t('sqlRewrite.ruleProcessingApplying', {
-            ruleName: rule.ruleName
-          });
-        default:
-          return t('sqlRewrite.ruleStatusWaiting');
-      }
+      const currentStage = MOCK_PROCESSING_STAGES[stageData.currentStageIndex];
+      return currentStage.label;
     },
-    [ruleMockProgress, t]
+    [ruleProcessingStages, t]
   );
 
-  // 获取规则的图标 - 优化图标大小和旋转动画
-  const getRuleIcon = useCallback(
+  // 获取规则的当前阶段
+  const getRuleCurrentStage = useCallback(
     (rule: IRuleProgressInfo) => {
-      const mockProgressData = ruleMockProgress.get(rule.ruleId);
+      const stageData = ruleProcessingStages.get(rule.ruleId);
+      if (!stageData) return null;
 
-      if (rule.status === RewriteSuggestionStatusEnum.processed) {
-        return (
-          <CheckCircleFilled style={{ color: '#52c41a', fontSize: '14px' }} />
-        );
-      }
-
-      if (rule.errorMessage) {
-        return (
-          <CloseCircleFilled style={{ color: '#ff4d4f', fontSize: '14px' }} />
-        );
-      }
-
-      if (
-        mockProgressData &&
-        mockProgressData.mockStatus !== MockProgressStatusEnum.waiting
-      ) {
-        return (
-          <RefreshOutlined
-            style={{
-              color: '#1890ff',
-              fontSize: '14px'
-            }}
-          />
-        );
-      }
-
-      return (
-        <ClockCircleOutlined style={{ color: '#d9d9d9', fontSize: '14px' }} />
-      );
+      return {
+        stage: MOCK_PROCESSING_STAGES[stageData.currentStageIndex]
+      };
     },
-    [ruleMockProgress]
-  );
-
-  // 检查规则是否正在处理中（需要旋转动画）
-  const isRuleProcessing = useCallback(
-    (rule: IRuleProgressInfo) => {
-      // 如果规则已经处理完成或有错误，不显示旋转动画
-      if (
-        rule.status === RewriteSuggestionStatusEnum.processed ||
-        rule.errorMessage
-      ) {
-        return false;
-      }
-
-      const mockProgressData = ruleMockProgress.get(rule.ruleId);
-      return (
-        mockProgressData &&
-        mockProgressData.mockStatus !== MockProgressStatusEnum.waiting
-      );
-    },
-    [ruleMockProgress]
-  );
-
-  // 获取规则的进度百分比 - 使用 useMemo 优化
-  const getRuleProgress = useCallback(
-    (rule: IRuleProgressInfo) => {
-      if (rule.status === RewriteSuggestionStatusEnum.processed) {
-        return 100;
-      }
-
-      const mockProgressData = ruleMockProgress.get(rule.ruleId);
-      if (!mockProgressData) {
-        return 0;
-      }
-
-      const baseProgress = mockProgressData.currentStepIndex * 25;
-      const stepProgress = mockProgressData.progress * 25;
-      return Math.min(baseProgress + stepProgress, 95); // 最多到95%，避免在真实完成前显示100%
-    },
-    [ruleMockProgress]
+    [ruleProcessingStages]
   );
 
   // 获取规则项的状态类名
@@ -249,16 +219,12 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       if (rule.errorMessage) {
         return 'error';
       }
-      const mockProgressData = ruleMockProgress.get(rule.ruleId);
-      if (
-        mockProgressData &&
-        mockProgressData.mockStatus !== MockProgressStatusEnum.waiting
-      ) {
+      if (ruleProcessingStages.has(rule.ruleId)) {
         return 'processing';
       }
       return 'waiting';
     },
-    [ruleMockProgress]
+    [ruleProcessingStages]
   );
 
   // 清理特定规则的定时器
@@ -270,70 +236,66 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     }
   }, []);
 
-  // 管理单个规则的假进度 - 优化更新频率
-  const startRuleMockProgress = useCallback(
+  // 生成随机阶段持续时间
+  const getRandomDuration = useCallback(
+    (duration: [number, number]): number => {
+      const [min, max] = duration;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    []
+  );
+
+  // 管理单个规则的阶段循环
+  const startRuleStageProgress = useCallback(
     (ruleId: string) => {
-      // 清理可能存在的旧定时器
       clearRuleTimer(ruleId);
 
-      let currentStepIndex = 0;
-      let currentProgress = 0;
+      let currentStageIndex = 0;
 
-      const progressStep = () => {
-        if (currentStepIndex >= MOCK_PROGRESS_STEPS.length) {
-          return;
-        }
+      const stageStep = () => {
+        const currentStage = MOCK_PROCESSING_STAGES[currentStageIndex];
 
-        const currentStep = MOCK_PROGRESS_STEPS[currentStepIndex];
-
-        setRuleMockProgress((prev) => {
+        setRuleProcessingStages((prev) => {
           const newMap = new Map(prev);
           newMap.set(ruleId, {
-            currentStepIndex,
-            mockStatus: currentStep.status,
-            progress: currentProgress / 100
+            currentStageIndex,
+            mockStatus: currentStage.status
           });
           return newMap;
         });
 
-        currentProgress += 4; // 减少更新频率，从2%改为4%
-
-        if (currentProgress >= 100) {
-          currentProgress = 0;
-          currentStepIndex++;
-
-          if (currentStepIndex < MOCK_PROGRESS_STEPS.length) {
-            const timer = setTimeout(progressStep, 200); // 增加间隔时间
-            activeProgressTimers.current.set(ruleId, timer);
-          }
-        } else {
-          const timer = setTimeout(progressStep, currentStep.duration / 25); // 减少更新频率
+        // 如果不是最后一个阶段，在延迟后移动到下一个阶段
+        if (currentStageIndex < MOCK_PROCESSING_STAGES.length - 1) {
+          const randomDuration = getRandomDuration(currentStage.duration);
+          const timer = setTimeout(() => {
+            currentStageIndex++;
+            stageStep();
+          }, randomDuration);
           activeProgressTimers.current.set(ruleId, timer);
         }
+        // 如果是最后一个阶段，保持在当前阶段不再变化
       };
 
-      progressStep();
+      stageStep();
     },
-    [clearRuleTimer]
+    [clearRuleTimer, getRandomDuration]
   );
 
-  // 监听规则状态变化，启动或停止假进度 - 移除 ruleMockProgress 依赖
+  // 监听规则状态变化，启动或停止阶段进度
   useEffect(() => {
     ruleProgressList.forEach((rule) => {
       const isProcessing = rule.status === RewriteSuggestionStatusEnum.initial;
       const hasExistingTimer = activeProgressTimers.current.has(rule.ruleId);
 
       if (isProcessing && !hasExistingTimer) {
-        // 延迟启动假进度，模拟初始等待时间
         const initialDelay = setTimeout(() => {
-          startRuleMockProgress(rule.ruleId);
-        }, Math.random() * 1000 + 500); // 减少随机延迟范围：0.5-1.5秒
+          startRuleStageProgress(rule.ruleId);
+        }, Math.random() * 1000 + 500);
 
         activeProgressTimers.current.set(rule.ruleId, initialDelay);
       } else if (!isProcessing && hasExistingTimer) {
-        // 规则完成时清除假进度和定时器
         clearRuleTimer(rule.ruleId);
-        setRuleMockProgress((prev) => {
+        setRuleProcessingStages((prev) => {
           const newMap = new Map(prev);
           newMap.delete(rule.ruleId);
           return newMap;
@@ -341,20 +303,19 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       }
     });
 
-    // 清理已经不存在的规则的定时器
     const currentRuleIds = new Set(ruleProgressList.map((rule) => rule.ruleId));
     const timers = activeProgressTimers.current;
     for (const [ruleId] of timers) {
       if (!currentRuleIds.has(ruleId)) {
         clearRuleTimer(ruleId);
-        setRuleMockProgress((prev) => {
+        setRuleProcessingStages((prev) => {
           const newMap = new Map(prev);
           newMap.delete(ruleId);
           return newMap;
         });
       }
     }
-  }, [ruleProgressList, startRuleMockProgress, clearRuleTimer]);
+  }, [ruleProgressList, startRuleStageProgress, clearRuleTimer]);
 
   // 监听总体完成状态
   useEffect(() => {
@@ -365,18 +326,56 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       }
       timers.clear();
     };
-    if (overallStatus === AsyncRewriteTaskStatusEnum.completed && onComplete) {
+    if (overallStatus === AsyncRewriteTaskStatusEnum.completed) {
       clearAllTimers();
-      onComplete();
-    } else if (overallStatus === AsyncRewriteTaskStatusEnum.failed && onError) {
+      setIsUserExpanded(false);
+      onComplete?.();
+    } else if (overallStatus === AsyncRewriteTaskStatusEnum.failed) {
       clearAllTimers();
-      onError(t('sqlRewrite.ruleStatusError'));
+      onError?.(t('sqlRewrite.ruleStatusError'));
     }
 
     return () => {
       clearAllTimers();
     };
   }, [overallStatus, onComplete, onError, t]);
+
+  // 渲染折叠状态的简洁进度条
+  const renderCompactProgress = useCallback(() => {
+    return (
+      <CompactProgressStyleWrapper>
+        <div className="compact-left">
+          <span className="compact-title">
+            {t('sqlRewrite.rewriteProgressTitle')}
+          </span>
+          <div className="compact-progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${overallProgress}%` }}
+            />
+          </div>
+        </div>
+        <div className="compact-right">
+          <span>
+            {t('sqlRewrite.rulesProcessedProgress', {
+              completed: ruleProgressList.filter(
+                (r) => r.status === RewriteSuggestionStatusEnum.processed
+              ).length,
+              total: ruleProgressList.length
+            })}
+          </span>
+          <Button
+            className="progress-toggle-button"
+            type="text"
+            icon={<DownOutlined width={22} height={22} />}
+            onClick={handleToggleExpanded}
+            size="small"
+            title={t('sqlRewrite.expandProgress')}
+          />
+        </div>
+      </CompactProgressStyleWrapper>
+    );
+  }, [overallProgress, ruleProgressList, t, handleToggleExpanded]);
 
   if (overallStatus === AsyncRewriteTaskStatusEnum.failed && errorMessage) {
     return (
@@ -393,110 +392,155 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     );
   }
 
-  if (!visible) {
-    return null;
-  }
-
   return (
-    <RewriteProgressContainerStyleWrapper>
-      <ProgressHeaderStyleWrapper>
-        <div className="progress-title">
-          {t('sqlRewrite.rewriteProgressTitle')}
-        </div>
-        <div className="progress-status">
-          {overallStatus === AsyncRewriteTaskStatusEnum.running && (
-            <div className="spinner" />
-          )}
-          <span
-            className={classNames('status-text', {
-              completed: overallStatus === AsyncRewriteTaskStatusEnum.completed,
-              error: overallStatus === AsyncRewriteTaskStatusEnum.failed
-            })}
-          >
-            {getOverallStatusText()}
-          </span>
-        </div>
-      </ProgressHeaderStyleWrapper>
+    <RewriteProgressContainerStyleWrapper
+      className={classNames({ completed: !isExpanded })}
+    >
+      {!isExpanded ? (
+        renderCompactProgress()
+      ) : (
+        <>
+          <ProgressHeaderStyleWrapper>
+            <div className="progress-title">
+              {t('sqlRewrite.rewriteProgressTitle')}
+            </div>
+            <div className="progress-status">
+              {overallStatus === AsyncRewriteTaskStatusEnum.running && (
+                <div className="spinner" />
+              )}
+              <span
+                className={classNames('status-text', {
+                  completed:
+                    overallStatus === AsyncRewriteTaskStatusEnum.completed,
+                  error: overallStatus === AsyncRewriteTaskStatusEnum.failed
+                })}
+              >
+                {getOverallStatusText()}
+              </span>
+            </div>
+            <Button
+              className="progress-toggle-button"
+              type="text"
+              icon={<UpOutlined width={22} height={22} />}
+              onClick={handleToggleExpanded}
+              size="small"
+              title={t('sqlRewrite.expandProgress')}
+            />
+          </ProgressHeaderStyleWrapper>
 
-      <OverallProgressStyleWrapper>
-        <div className="overall-progress-bar">
-          <div
-            className="progress-fill"
-            style={{ width: `${overallProgress}%` }}
-          />
-        </div>
-        <div className="progress-text">
-          {t('sqlRewrite.progressPercentage', {
-            percentage: overallProgress
-          })}{' '}
-          -{' '}
-          {t('sqlRewrite.rulesProcessedProgress', {
-            completed: ruleProgressList.filter(
-              (r) => r.status === RewriteSuggestionStatusEnum.processed
-            ).length,
-            total: ruleProgressList.length
-          })}
-        </div>
-      </OverallProgressStyleWrapper>
+          <OverallProgressStyleWrapper>
+            <div className="overall-progress-bar">
+              <div
+                className="progress-fill"
+                style={{ width: `${overallProgress}%` }}
+              />
+            </div>
+            <div className="progress-text">
+              {t('sqlRewrite.progressPercentage', {
+                percentage: overallProgress
+              })}{' '}
+              -{' '}
+              {t('sqlRewrite.rulesProcessedProgress', {
+                completed: ruleProgressList.filter(
+                  (r) => r.status === RewriteSuggestionStatusEnum.processed
+                ).length,
+                total: ruleProgressList.length
+              })}
+            </div>
+          </OverallProgressStyleWrapper>
 
-      <RulesListStyleWrapper>
-        {ruleProgressList.map((rule) => (
-          <RuleItemStyleWrapper
-            key={rule.ruleId}
-            className={classNames('rule-item', {
-              'rule-item-processing': getRuleItemStatus(rule) === 'processing',
-              'rule-item-completed': getRuleItemStatus(rule) === 'completed',
-              'rule-item-error': getRuleItemStatus(rule) === 'error'
-            })}
-          >
-            <RuleHeaderStyleWrapper>
-              <div className="rule-name">{rule.ruleName}</div>
-              <div className="rule-status">
-                <CircularProgressStyleWrapper>
-                  <div
-                    className={`circular-progress ${getRuleItemStatus(rule)}`}
-                    style={
-                      {
-                        '--progress': `${
-                          (getRuleProgress(rule) / 100) * 360
-                        }deg`
-                      } as React.CSSProperties
-                    }
-                  />
-                  <div
-                    className={classNames('progress-icon', {
-                      spinning: isRuleProcessing(rule)
+          <RuleItemAnimationStyleWrapper>
+            <RulesListStyleWrapper>
+              {sortedRuleList.map((rule) => {
+                return (
+                  <RuleItemStyleWrapper
+                    key={rule.ruleId}
+                    className={classNames('rule-item', 'rule-item-move', {
+                      'rule-item-processing':
+                        getRuleItemStatus(rule) === 'processing',
+                      'rule-item-completed':
+                        getRuleItemStatus(rule) === 'completed',
+                      'rule-item-error': getRuleItemStatus(rule) === 'error',
+                      'rule-completed': completedRuleAnimations.has(rule.ruleId)
                     })}
                   >
-                    {getRuleIcon(rule)}
-                  </div>
-                </CircularProgressStyleWrapper>
-                <StatusTextStyleWrapper
-                  className={classNames('rule-item-status-text', {
-                    completed: getRuleItemStatus(rule) === 'completed',
-                    error: getRuleItemStatus(rule) === 'error',
-                    processing: getRuleItemStatus(rule) === 'processing'
-                  })}
-                >
-                  {getRuleStatusText(rule)}
-                </StatusTextStyleWrapper>
-              </div>
-            </RuleHeaderStyleWrapper>
+                    <RuleHeaderStyleWrapper>
+                      <div className="rule-name">{rule.ruleName}</div>
+                      <div className="rule-status">
+                        <WaveProgressStyleWrapper
+                          hidden={
+                            rule.status ===
+                            RewriteSuggestionStatusEnum.processed
+                          }
+                          className={`wave-progress ${getRuleItemStatus(rule)}`}
+                        >
+                          {/* 波浪动画容器 */}
+                          <div className="wave-container">
+                            <div className="wave-background" />
+                            <div className="wave wave1" />
+                            <div className="wave wave2" />
+                            <div className="wave wave3" />
+                          </div>
 
-            <RuleDescriptionStyleWrapper>
-              {rule.ruleDescription}
-            </RuleDescriptionStyleWrapper>
+                          {/* 状态指示器 */}
+                          <div className="stage-indicator">
+                            {getRuleCurrentStage(rule) && (
+                              <div className="stage-dots">
+                                {MOCK_PROCESSING_STAGES.map((item, index) => {
+                                  const currentStage =
+                                    getRuleCurrentStage(rule);
+                                  const currentStageIndex = currentStage
+                                    ? MOCK_PROCESSING_STAGES.findIndex(
+                                        (s) =>
+                                          s.status === currentStage.stage.status
+                                      )
+                                    : -1;
 
-            {rule.errorMessage && (
-              <ErrorMessageStyleWrapper>
-                {t('sqlRewrite.ruleStatusError')}: {rule.errorMessage}
-              </ErrorMessageStyleWrapper>
-            )}
+                                  return (
+                                    <div
+                                      key={item.status}
+                                      className={classNames('stage-dot', {
+                                        active: index === currentStageIndex,
+                                        completed: index < currentStageIndex
+                                      })}
+                                    />
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        </WaveProgressStyleWrapper>
 
-            {renderRewrittenSql(rule)}
-          </RuleItemStyleWrapper>
-        ))}
-      </RulesListStyleWrapper>
+                        <StatusTextStyleWrapper
+                          className={classNames('rule-item-status-text', {
+                            completed: getRuleItemStatus(rule) === 'completed',
+                            error: getRuleItemStatus(rule) === 'error',
+                            processing: getRuleItemStatus(rule) === 'processing'
+                          })}
+                        >
+                          {getRuleStatusText(rule)}
+                        </StatusTextStyleWrapper>
+                      </div>
+                    </RuleHeaderStyleWrapper>
+
+                    <RuleDescriptionStyleWrapper>
+                      {rule.ruleDescription}
+                    </RuleDescriptionStyleWrapper>
+
+                    {rule.errorMessage && (
+                      <ErrorMessageStyleWrapper>
+                        {t('sqlRewrite.ruleStatusError')}: {rule.errorMessage}
+                      </ErrorMessageStyleWrapper>
+                    )}
+
+                    {renderRewrittenSql(rule)}
+                  </RuleItemStyleWrapper>
+                );
+              })}
+            </RulesListStyleWrapper>
+          </RuleItemAnimationStyleWrapper>
+        </>
+      )}
     </RewriteProgressContainerStyleWrapper>
   );
 };

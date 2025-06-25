@@ -5,8 +5,7 @@ export { useAsyncRewriteProgress } from './useAsyncRewriteProgress';
 export type {
   IAsyncRewriteTaskParams,
   IRewriteTaskResult,
-  IUseAsyncRewriteProgressOptions,
-  IUseAsyncRewriteProgressReturn
+  IUseAsyncRewriteProgressOptions
 } from './useAsyncRewriteProgress.type';
 
 // 工具函数导出
@@ -16,8 +15,6 @@ export {
   calculateCompletedRulesCount,
   isTaskCompleted,
   isTaskFailed,
-  calculateDuration,
   shouldStopPolling,
-  createDefaultRuleProgress,
   buildRewriteTaskResult
 } from './useAsyncRewriteProgress.utils';
