@@ -5,6 +5,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
   <div>
     <div
       class="css-bwb9yf"
+      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -198,6 +199,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
   <div>
     <div
       class="css-bwb9yf"
+      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -372,6 +374,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
   <div>
     <div
       class="css-bwb9yf"
+      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -546,6 +549,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
   <div>
     <div
       class="css-bwb9yf"
+      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"

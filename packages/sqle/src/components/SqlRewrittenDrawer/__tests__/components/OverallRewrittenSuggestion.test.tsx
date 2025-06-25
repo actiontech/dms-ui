@@ -27,7 +27,8 @@ describe('OverallRewrittenSuggestion', () => {
     businessDesc: SqlRewrittenMockDataNoDDL.business_desc!,
     sqlLogicDesc: SqlRewrittenMockDataWithLogic.logic_desc!,
     rewrittenSqlLogicDesc:
-      SqlRewrittenMockDataWithLogic.rewritten_sql_logic_desc!
+      SqlRewrittenMockDataWithLogic.rewritten_sql_logic_desc!,
+    isRewriting: false
   };
 
   ignoreConsoleErrors([
@@ -54,6 +55,25 @@ describe('OverallRewrittenSuggestion', () => {
       )
     ).toBeInTheDocument();
     expect(screen.getByText(mockProps.businessDesc)).toBeInTheDocument();
+  });
+
+  it('should render rewriting in progress message when isRewriting is true', () => {
+    sqleSuperRender(
+      <OverallRewrittenSuggestion {...mockProps} isRewriting={true} />
+    );
+
+    expect(screen.getByText('总结')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'SQL重写过程进行中，系统将逐步应用优化规则并展示每个步骤的详细信息...'
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(
+        `本次 SQL 重写基于 ${mockProps.optimizedCount} 条规则进行了优化，目前还有 ${mockProps.remainingCount} 条规则有待进一步优化。此外，有 ${mockProps.businessCount} 条规则需要人工处理。`
+      )
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText(mockProps.businessDesc)).not.toBeInTheDocument();
   });
 
   it('should render database structure change statement section when overallDDL exists', () => {
@@ -165,7 +185,8 @@ describe('OverallRewrittenSuggestion', () => {
       ...mockProps,
       suggestions: [],
       rewrittenSql: undefined,
-      businessNonEquivalentDesc: ''
+      businessNonEquivalentDesc: '',
+      isRewriting: false
     };
 
     sqleSuperRender(<OverallRewrittenSuggestion {...mockEmptyProps} />);
