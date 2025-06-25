@@ -253,6 +253,11 @@ export const PERMISSIONS = {
       },
       SQL_AUDIT: {
         CREATE: 'action:create_sql_audit'
+      },
+      PIPELINE_CONFIGURATION: {
+        CREATE: 'action:create_pipeline_configuration',
+        EDIT: 'action:edit_pipeline_configuration',
+        DELETE: 'action:delete_pipeline_configuration'
       }
     }
   }
