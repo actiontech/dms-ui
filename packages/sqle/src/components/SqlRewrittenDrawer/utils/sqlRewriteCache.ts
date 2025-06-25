@@ -32,13 +32,9 @@ const getCacheKey = (taskId: string, sqlNumber: number): string => {
 /**
  * 估算对象大小（KB）
  */
-const estimateObjectSize = (obj: any): number => {
-  try {
-    const jsonString = JSON.stringify(obj);
-    return new Blob([jsonString]).size / 1024; // 转换为KB
-  } catch {
-    return 0;
-  }
+const estimateObjectSize = (obj: ISqlRewriteCache): number => {
+  const jsonString = JSON.stringify(obj);
+  return new Blob([jsonString]).size / 1024; // 转换为KB
 };
 
 /**
@@ -62,7 +58,6 @@ const cleanupLRU = (targetSize: number = CACHE_CONFIG.maxSize): void => {
     const oldestKey = accessOrder.shift();
     if (oldestKey && cacheMap.has(oldestKey)) {
       cacheMap.delete(oldestKey);
-      console.log(`Removed LRU cache item: ${oldestKey}`);
     }
   }
 };
@@ -112,10 +107,6 @@ export const saveSqlRewriteCache = (
 
     cacheMap.set(key, cacheData);
     updateAccessOrder(key);
-
-    console.log(
-      `Cached SQL rewrite result for ${key}, current cache size: ${cacheMap.size}`
-    );
   } catch (error) {
     console.warn('Failed to save SQL rewrite cache:', error);
   }
@@ -189,13 +180,6 @@ export const removeSqlRewriteCache = (
 };
 
 /**
- * 清理所有缓存（保留此方法以保持API兼容性，但内存缓存不需要主动清理过期项）
- */
-export const cleanExpiredCaches = (): void => {
-  // 内存缓存会在页面刷新后自动清除，此方法保留为空以保持API兼容性
-};
-
-/**
  * 清理指定taskId的所有缓存
  */
 export const cleanTaskCaches = (taskId: string): void => {
@@ -217,10 +201,6 @@ export const cleanTaskCaches = (taskId: string): void => {
         accessOrder.splice(index, 1);
       }
     });
-
-    console.log(
-      `Cleaned ${keysToRemove.length} cache items for task ${taskId}`
-    );
   } catch (error) {
     console.warn('Failed to clean task caches:', error);
   }
@@ -232,8 +212,7 @@ export const cleanTaskCaches = (taskId: string): void => {
 export const clearAllCaches = (): void => {
   try {
     cacheMap.clear();
-    accessOrder.length = 0; // 清空访问顺序数组
-    console.log('All caches cleared');
+    accessOrder.length = 0;
   } catch (error) {
     console.warn('Failed to clear all caches:', error);
   }
@@ -243,16 +222,27 @@ export const clearAllCaches = (): void => {
  * 获取缓存统计信息
  */
 export const getCacheStats = () => {
-  const totalSize = Array.from(cacheMap.values()).reduce((acc, item) => {
-    return acc + estimateObjectSize(item);
-  }, 0);
+  try {
+    const totalSize = Array.from(cacheMap.values()).reduce((acc, item) => {
+      return acc + estimateObjectSize(item);
+    }, 0);
 
-  return {
-    itemCount: cacheMap.size,
-    maxSize: CACHE_CONFIG.maxSize,
-    totalSizeKB: totalSize.toFixed(2),
-    utilizationPercent: ((cacheMap.size / CACHE_CONFIG.maxSize) * 100).toFixed(
-      1
-    )
-  };
+    return {
+      itemCount: cacheMap.size,
+      maxSize: CACHE_CONFIG.maxSize,
+      totalSizeKB: totalSize.toFixed(2),
+      utilizationPercent: (
+        (cacheMap.size / CACHE_CONFIG.maxSize) *
+        100
+      ).toFixed(1)
+    };
+  } catch (error) {
+    console.warn('Failed to get cache stats:', error);
+    return {
+      itemCount: 0,
+      maxSize: CACHE_CONFIG.maxSize,
+      totalSizeKB: '0.00',
+      utilizationPercent: '0.0'
+    };
+  }
 };

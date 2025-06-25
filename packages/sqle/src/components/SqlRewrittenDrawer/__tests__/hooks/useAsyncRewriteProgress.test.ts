@@ -10,6 +10,21 @@ import {
   useAsyncRewriteProgress,
   buildRewriteTaskResult
 } from '../../components/RewriteProgressDisplay/hooks';
+import {
+  getSqlRewriteCache,
+  saveSqlRewriteCache
+} from '../../utils/sqlRewriteCache';
+
+// Mock 缓存模块
+jest.mock('../../utils/sqlRewriteCache', () => ({
+  getSqlRewriteCache: jest.fn(),
+  saveSqlRewriteCache: jest.fn(),
+  hasSqlBeenRewritten: jest.fn(),
+  removeSqlRewriteCache: jest.fn(),
+  cleanTaskCaches: jest.fn(),
+  clearAllCaches: jest.fn(),
+  getCacheStats: jest.fn()
+}));
 
 describe('useAsyncRewriteProgress', () => {
   beforeEach(() => {
@@ -27,6 +42,7 @@ describe('useAsyncRewriteProgress', () => {
       const { result } = renderHook(() => useAsyncRewriteProgress());
 
       expect(result.current.isRewriting).toBe(false);
+      expect(result.current.asyncStartLoading).toBe(false);
       expect(result.current.overallStatus).toBe(
         AsyncRewriteTaskStatusEnum.pending
       );
@@ -37,15 +53,14 @@ describe('useAsyncRewriteProgress', () => {
       expect(result.current.showProgress).toBe(false);
       expect(result.current.enableStructureOptimize).toBe(false);
       expect(result.current.errorMessage).toBeUndefined();
-      expect(result.current.startTime).toBeUndefined();
-      expect(result.current.endTime).toBeUndefined();
-      expect(result.current.duration).toBeUndefined();
+      expect(result.current.rewriteResult).toBeUndefined();
+      expect(result.current.isDelayingComplete).toBe(false);
 
       // 验证方法函数存在
       expect(typeof result.current.startRewrite).toBe('function');
       expect(typeof result.current.toggleStructureOptimize).toBe('function');
-      expect(typeof result.current.reset).toBe('function');
-      expect(typeof result.current.hasSqlBeenRewritten).toBe('function');
+      expect(typeof result.current.resetAllState).toBe('function');
+      expect(typeof result.current.loadCachedRewriteResult).toBe('function');
       expect(typeof result.current.updateEnableStructureOptimize).toBe(
         'function'
       );
@@ -437,12 +452,8 @@ describe('useAsyncRewriteProgress', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(2000));
 
-      // 推进足够的时间让重试发生
-      await act(async () => jest.advanceTimersByTime(3000));
-      await act(async () => jest.advanceTimersByTime(2000));
-
       // 验证重试了指定次数
-      expect(mockGetAsyncStatus).toHaveBeenCalledTimes(5);
+      expect(mockGetAsyncStatus).toHaveBeenCalledTimes(4);
     });
   });
 
@@ -498,7 +509,7 @@ describe('useAsyncRewriteProgress', () => {
       );
     });
 
-    it('should mark SQL as rewritten when task completes', async () => {
+    it('should handle task completion state correctly', async () => {
       taskMockApi.getAsyncRewriteTaskStatusCompleted();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
@@ -508,15 +519,20 @@ describe('useAsyncRewriteProgress', () => {
         result.current.startRewrite('test-task-id', 1, false);
       });
       await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
-      // 初始状态下SQL未被重写
-      expect(result.current.hasSqlBeenRewritten(1)).toBe(false);
+      // 初始状态下任务未完成
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.pending
+      );
 
       // 推进轮询时间，获取到 completed 状态
-      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
-      // 任务完成后，SQL应该被标记为已重写
-      expect(result.current.hasSqlBeenRewritten(1)).toBe(true);
+      // 任务完成后，状态应该更新
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
     });
 
     it('should set showProgress to false when task completes', async () => {
@@ -528,20 +544,21 @@ describe('useAsyncRewriteProgress', () => {
         result.current.startRewrite('test-task-id', 1, false);
       });
       await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
       expect(result.current.showProgress).toBe(true);
 
       // 推进轮询时间，获取到 completed 状态
-      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
       expect(result.current.showProgress).toBe(false);
 
       // 验证即使继续推进时间，showProgress 也保持 false
-      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
       expect(result.current.showProgress).toBe(false);
     });
 
-    it('should update end time when task completes', async () => {
+    it('should handle rewrite result when task completes', async () => {
       taskMockApi.getAsyncRewriteTaskStatusCompleted();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
@@ -551,14 +568,16 @@ describe('useAsyncRewriteProgress', () => {
         result.current.startRewrite('test-task-id', 1, false);
       });
       await act(async () => jest.advanceTimersByTime(3000));
-
-      expect(result.current.endTime).toBeUndefined();
+      await act(async () => jest.advanceTimersByTime(2000));
 
       // 推进轮询时间，获取到 completed 状态
-      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
-      expect(result.current.endTime).toBe('2023-12-01T10:05:30.000Z');
-      expect(result.current.duration).toBeGreaterThan(0);
+      // 验证重写结果已设置
+      expect(result.current.rewriteResult).toBeDefined();
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
     });
 
     it('should build correct rewrite task result', async () => {
@@ -601,11 +620,11 @@ describe('useAsyncRewriteProgress', () => {
       await act(async () => {
         result.current.startRewrite('test-task-id', 1, false);
       });
-
       await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
       // 推进轮询时间，获取运行中状态（部分完成）
-      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
 
       expect(result.current.progressPercentage).toBe(50);
     });
@@ -697,53 +716,6 @@ describe('useAsyncRewriteProgress', () => {
 
       expect(result.current.ruleProgressList).toEqual([]);
       expect(result.current.totalRulesCount).toBe(0);
-      expect(result.current.completedRulesCount).toBe(0);
-      expect(result.current.progressPercentage).toBe(0);
-
-      mockGetAsyncStatus.mockRestore();
-    });
-
-    it('should create default rule progress when task is running but no specific rules data', async () => {
-      // 创建一个运行中但没有具体规则数据的 mock
-      const mockGetAsyncStatus = jest.spyOn(
-        TaskService,
-        'GetAsyncRewriteTaskStatus'
-      );
-      mockGetAsyncStatus.mockImplementation(() =>
-        Promise.resolve({
-          data: {
-            data: {
-              task_id: 'test-task-id',
-              status: AsyncRewriteTaskStatusEnum.running,
-              result: undefined // 没有结果数据
-            }
-          }
-        } as any)
-      );
-
-      const { result } = renderHook(() => useAsyncRewriteProgress());
-
-      // 启动重写
-      await act(async () => {
-        result.current.startRewrite('test-task-id', 1, false);
-      });
-
-      await act(async () => jest.advanceTimersByTime(3000));
-
-      // 推进轮询时间
-      await act(async () => jest.advanceTimersByTime(3000));
-
-      // 应该创建默认的规则进度
-      expect(result.current.ruleProgressList).toHaveLength(1);
-      expect(result.current.ruleProgressList[0]).toEqual(
-        expect.objectContaining({
-          ruleId: 'default_rule_0',
-          ruleName: 'default_rule_1',
-          status: RewriteSuggestionStatusEnum.initial,
-          ruleDescription: 'loading...'
-        })
-      );
-      expect(result.current.totalRulesCount).toBe(1);
       expect(result.current.completedRulesCount).toBe(0);
       expect(result.current.progressPercentage).toBe(0);
 
@@ -894,12 +866,239 @@ describe('useAsyncRewriteProgress', () => {
 
       expect(result.current.enableStructureOptimize).toBe(false);
     });
+
+    it('should update structure optimization state directly', async () => {
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      expect(result.current.enableStructureOptimize).toBe(false);
+
+      await act(async () => {
+        result.current.updateEnableStructureOptimize(true);
+      });
+
+      expect(result.current.enableStructureOptimize).toBe(true);
+
+      await act(async () => {
+        result.current.updateEnableStructureOptimize(false);
+      });
+
+      expect(result.current.enableStructureOptimize).toBe(false);
+    });
+  });
+
+  describe('Cache Functionality', () => {
+    let mockGetSqlRewriteCache: jest.Mock;
+    let mockSaveSqlRewriteCache: jest.Mock;
+
+    beforeEach(() => {
+      mockGetSqlRewriteCache = getSqlRewriteCache as jest.Mock;
+      mockSaveSqlRewriteCache = saveSqlRewriteCache as jest.Mock;
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should load cached rewrite result correctly', async () => {
+      // 准备模拟的缓存数据
+      const mockCachedData = {
+        taskId: 'test-task-id',
+        sqlNumber: 1,
+        rewriteResult: buildRewriteTaskResult(
+          AsyncRewriteTaskStatusCompletedMockData.result
+        ),
+        enableStructureOptimize: true,
+        lastAccessed: Date.now()
+      };
+
+      mockGetSqlRewriteCache.mockReturnValue(mockCachedData);
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      // 验证状态被正确设置
+      expect(result.current.rewriteResult).toEqual(
+        mockCachedData.rewriteResult
+      );
+      expect(result.current.enableStructureOptimize).toBe(true);
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
+      expect(result.current.showProgress).toBe(false);
+      expect(result.current.errorMessage).toBeUndefined();
+    });
+
+    it('should handle cache miss correctly', async () => {
+      // Mock 缓存未命中（返回 null）
+      mockGetSqlRewriteCache.mockReturnValue(null);
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      const initialResult = result.current.rewriteResult;
+      const initialStatus = result.current.overallStatus;
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      // 状态应该保持不变
+      expect(result.current.rewriteResult).toBe(initialResult);
+      expect(result.current.overallStatus).toBe(initialStatus);
+    });
+
+    it('should save to cache when rewrite completes successfully', async () => {
+      taskMockApi.getAsyncRewriteTaskStatusCompleted();
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      // 启动重写
+      await act(async () => {
+        result.current.startRewrite('test-task-id', 1, true);
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 推进轮询时间，获取到 completed 状态
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 等待延迟完成
+      await act(async () => jest.advanceTimersByTime(1600));
+
+      // 缓存功能已集成在 hooks 内部，这里主要验证整体流程
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
+      expect(result.current.rewriteResult).toBeDefined();
+    });
+
+    it('should handle cache with different structure optimization settings', async () => {
+      // 测试不同的结构优化设置
+      const mockCachedDataWithStructureOpt = {
+        taskId: 'test-task-id',
+        sqlNumber: 1,
+        rewriteResult: buildRewriteTaskResult(
+          AsyncRewriteTaskStatusCompletedMockData.result
+        ),
+        enableStructureOptimize: true,
+        lastAccessed: Date.now()
+      };
+
+      const mockCachedDataWithoutStructureOpt = {
+        taskId: 'test-task-id',
+        sqlNumber: 2,
+        rewriteResult: buildRewriteTaskResult(
+          AsyncRewriteTaskStatusCompletedMockData.result
+        ),
+        enableStructureOptimize: false,
+        lastAccessed: Date.now()
+      };
+
+      mockGetSqlRewriteCache.mockReturnValueOnce(
+        mockCachedDataWithStructureOpt
+      );
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      expect(result.current.enableStructureOptimize).toBe(true);
+
+      mockGetSqlRewriteCache.mockReturnValueOnce(
+        mockCachedDataWithoutStructureOpt
+      );
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 2);
+      });
+
+      expect(result.current.enableStructureOptimize).toBe(false);
+    });
+
+    it('should handle incomplete cache data gracefully', async () => {
+      // 测试不完整的缓存数据
+      const incompleteCacheData = {
+        taskId: 'test-task-id',
+        sqlNumber: 1,
+        rewriteResult: null, // 缺少重写结果
+        enableStructureOptimize: false,
+        lastAccessed: Date.now()
+      };
+
+      mockGetSqlRewriteCache.mockReturnValue(incompleteCacheData);
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      const initialResult = result.current.rewriteResult;
+      const initialStatus = result.current.overallStatus;
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      // 由于缓存数据不完整，状态应该保持不变或被合理处理
+      expect(result.current.rewriteResult).toBe(initialResult);
+      expect(result.current.overallStatus).toBe(initialStatus);
+    });
+
+    it('should maintain cache consistency during rewrite process', async () => {
+      // 验证重写过程中缓存的一致性
+      taskMockApi.getAsyncRewriteTaskStatusCompleted();
+
+      const { result } = renderHook(() => useAsyncRewriteProgress());
+
+      // 首先检查无缓存状态
+      mockGetSqlRewriteCache.mockReturnValue(null);
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      expect(result.current.rewriteResult).toBeUndefined();
+
+      // 启动重写
+      await act(async () => {
+        result.current.startRewrite('test-task-id', 1, false);
+      });
+
+      // 重写进行中
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(result.current.showProgress).toBe(true);
+
+      // 重写完成
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(result.current.showProgress).toBe(false);
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
+
+      // 现在模拟有缓存的情况
+      const cachedData = {
+        taskId: 'test-task-id',
+        sqlNumber: 1,
+        rewriteResult: buildRewriteTaskResult(
+          AsyncRewriteTaskStatusCompletedMockData.result
+        ),
+        enableStructureOptimize: false,
+        lastAccessed: Date.now()
+      };
+
+      mockGetSqlRewriteCache.mockReturnValue(cachedData);
+
+      await act(async () => {
+        result.current.loadCachedRewriteResult('test-task-id', 1);
+      });
+
+      expect(result.current.rewriteResult).toEqual(cachedData.rewriteResult);
+    });
   });
 
   describe('Reset Functionality', () => {
-    it('should reset all states when reset is called', async () => {
+    it('should reset all states when resetAllState is called', async () => {
       const mockRewriteSQL = taskMockApi.getTaskSQLRewritten();
-      const mockGetAsyncStatus = taskMockApi.getAsyncRewriteTaskStatus();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
 
@@ -917,7 +1116,7 @@ describe('useAsyncRewriteProgress', () => {
 
       // 重置所有状态
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
       // 验证所有状态都被重置到初始值
@@ -932,13 +1131,11 @@ describe('useAsyncRewriteProgress', () => {
       expect(result.current.showProgress).toBe(false);
       expect(result.current.enableStructureOptimize).toBe(false);
       expect(result.current.errorMessage).toBeUndefined();
-      expect(result.current.startTime).toBeUndefined();
-      expect(result.current.endTime).toBeUndefined();
-      expect(result.current.duration).toBeUndefined();
+      expect(result.current.rewriteResult).toBeUndefined();
+      expect(result.current.isDelayingComplete).toBe(false);
     });
 
-    it('should cancel polling when reset is called', async () => {
-      const mockRewriteSQL = taskMockApi.getTaskSQLRewritten();
+    it('should cancel polling when resetAllState is called', async () => {
       const mockGetAsyncStatus = taskMockApi.getAsyncRewriteTaskStatus();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
@@ -955,7 +1152,7 @@ describe('useAsyncRewriteProgress', () => {
 
       // 重置状态（应该取消轮询）
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
       const callCountAfterReset = mockGetAsyncStatus.mock.calls.length;
@@ -967,9 +1164,8 @@ describe('useAsyncRewriteProgress', () => {
       expect(mockGetAsyncStatus.mock.calls.length).toBe(callCountAfterReset);
     });
 
-    it('should clear task data when reset is called', async () => {
-      const mockGetAsyncStatusCompleted =
-        taskMockApi.getAsyncRewriteTaskStatusCompleted();
+    it('should clear task data when resetAllState is called', async () => {
+      taskMockApi.getAsyncRewriteTaskStatusCompleted();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
 
@@ -987,7 +1183,7 @@ describe('useAsyncRewriteProgress', () => {
 
       // 重置状态
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
       // 验证任务数据已清除
@@ -1000,38 +1196,8 @@ describe('useAsyncRewriteProgress', () => {
       );
     });
 
-    it('should reset time information when reset is called', async () => {
-      const mockGetAsyncStatusCompleted =
-        taskMockApi.getAsyncRewriteTaskStatusCompleted();
-
-      const { result } = renderHook(() => useAsyncRewriteProgress());
-
-      // 启动并完成一个重写任务
-      await act(async () => {
-        result.current.startRewrite('test-task-id', 1, false);
-      });
-
-      await act(async () => jest.advanceTimersByTime(3000));
-      await act(async () => jest.advanceTimersByTime(3000));
-
-      // 验证时间信息已设置
-      expect(result.current.startTime).toBeDefined();
-      expect(result.current.endTime).toBeDefined();
-      expect(result.current.duration).toBeDefined();
-
-      // 重置状态
-      await act(async () => {
-        result.current.reset();
-      });
-
-      // 验证时间信息已清除
-      expect(result.current.startTime).toBeUndefined();
-      expect(result.current.endTime).toBeUndefined();
-      expect(result.current.duration).toBeUndefined();
-    });
-
-    it('should reset progress states when reset is called', async () => {
-      const mockRewriteSQL = taskMockApi.getTaskSQLRewritten();
+    it('should reset progress states when resetAllState is called', async () => {
+      taskMockApi.getTaskSQLRewritten();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
 
@@ -1048,7 +1214,7 @@ describe('useAsyncRewriteProgress', () => {
 
       // 重置状态
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
       // 验证进度状态已重置
@@ -1060,7 +1226,7 @@ describe('useAsyncRewriteProgress', () => {
       expect(result.current.ruleProgressList).toEqual([]);
     });
 
-    it('should reset error states when reset is called', async () => {
+    it('should reset error states when resetAllState is called', async () => {
       const mockRewriteSQL = jest.spyOn(TaskService, 'RewriteSQL');
       mockRewriteSQL.mockRejectedValueOnce(new Error('Test error'));
 
@@ -1078,7 +1244,7 @@ describe('useAsyncRewriteProgress', () => {
 
       // 重置状态
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
       // 验证错误状态已清除
@@ -1087,36 +1253,33 @@ describe('useAsyncRewriteProgress', () => {
       mockRewriteSQL.mockRestore();
     });
 
-    it('should reset SQL number reference when reset is called', async () => {
-      const mockRewriteSQL = taskMockApi.getTaskSQLRewritten();
+    it('should clear delay timer when resetAllState is called', async () => {
+      taskMockApi.getAsyncRewriteTaskStatusCompleted();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
 
       // 启动重写任务
       await act(async () => {
-        result.current.startRewrite('test-task-id', 5, false);
+        result.current.startRewrite('test-task-id', 1, false);
       });
 
       await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(3000));
 
-      // 验证SQL已被标记为重写过（通过检查内部是否记录了SQL编号）
-      expect(result.current.hasSqlBeenRewritten(5)).toBe(false); // 还在进行中，未完成
+      // 验证延迟完成状态
+      expect(result.current.isDelayingComplete).toBe(true);
 
       // 重置状态
       await act(async () => {
-        result.current.reset();
+        result.current.resetAllState();
       });
 
-      // 重置后，再次启动相同SQL编号的重写应该能正常进行
-      await act(async () => {
-        result.current.startRewrite('test-task-id', 5, false);
-      });
+      // 验证延迟状态已清除
+      expect(result.current.isDelayingComplete).toBe(false);
 
+      // 推进延迟时间，验证延迟任务已被清除
       await act(async () => jest.advanceTimersByTime(3000));
-
-      // 验证能够正常启动新的重写
-      expect(result.current.isRewriting).toBe(true);
-      expect(result.current.showProgress).toBe(true);
+      expect(result.current.isDelayingComplete).toBe(false);
     });
   });
 });

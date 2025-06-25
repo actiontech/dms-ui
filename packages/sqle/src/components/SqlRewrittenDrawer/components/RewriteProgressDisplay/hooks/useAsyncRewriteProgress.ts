@@ -32,7 +32,7 @@ export const useAsyncRewriteProgress = (
   options: IUseAsyncRewriteProgressOptions = {}
 ) => {
   const { t } = useTranslation();
-  const { pollingInterval = 2000 } = options;
+  const { pollingInterval = 2000, onSuccess, onError } = options;
 
   const rewriteSqlNumber = useRef<number>();
   const currentTaskId = useRef<string>();
@@ -125,6 +125,7 @@ export const useAsyncRewriteProgress = (
             currentTaskId.current !== undefined &&
             currentRewriteResult
           ) {
+            onSuccess?.(currentRewriteResult);
             // 保存到localStorage缓存
             saveSqlRewriteCache(
               currentTaskId.current,
@@ -149,6 +150,7 @@ export const useAsyncRewriteProgress = (
           if (currentStatus === AsyncRewriteTaskStatusEnum.failed) {
             const errorText =
               response.error_message || t('common.unknownError');
+            onError?.(new Error(errorText));
             setErrorMessage(errorText);
             // 清理延迟定时器
             if (delayCompleteTimerRef.current) {
@@ -223,7 +225,7 @@ export const useAsyncRewriteProgress = (
   const loadCachedRewriteResult = useCallback(
     (taskId: string, sqlNumber: number) => {
       const cachedData = getSqlRewriteCache(taskId, sqlNumber);
-      if (cachedData) {
+      if (cachedData && cachedData.rewriteResult) {
         setRewriteResult(cachedData.rewriteResult);
         setEnableStructureOptimize(cachedData.enableStructureOptimize);
         setOverallStatus(AsyncRewriteTaskStatusEnum.completed);

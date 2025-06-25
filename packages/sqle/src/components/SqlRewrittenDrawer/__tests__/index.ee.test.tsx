@@ -6,7 +6,7 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { act, render } from '@testing-library/react';
+import { act, cleanup } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -16,23 +16,13 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import {
   AsyncRewriteTaskStatusCompletedMockData,
-  SqlRewrittenMockDataNoDDL,
-  SqlRewrittenMockDataUseDDL
+  SqlRewrittenMockDataNoDDL
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import {
   RewriteSuggestionTypeEnum,
   AsyncRewriteTaskStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import sharedTheme from '@actiontech/shared/lib/theme/light';
-import lightTheme from '../../../theme/light';
-
-// Mock usePrompt hook
-const mockUsePrompt = jest.fn();
-jest.mock('@actiontech/shared/lib/hooks', () => ({
-  ...jest.requireActual('@actiontech/shared/lib/hooks'),
-  usePrompt: () => mockUsePrompt()
-}));
+import { removeSqlRewriteCache } from '../utils/sqlRewriteCache';
 
 // Mock Modal.useModal
 const mockModalConfirm = jest.fn();
@@ -81,8 +71,8 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
-    mockUsePrompt.mockClear();
-    mockModalConfirm.mockClear();
+    cleanup();
+    removeSqlRewriteCache(mockProps.taskID, mockProps.originSqlInfo.number);
   });
 
   describe('when loading data', () => {
@@ -191,7 +181,6 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(3000));
-      await act(async () => jest.advanceTimersByTime(3000));
       expect(screen.getByText('待人工介入的规则')).toBeInTheDocument();
       expect(queryBySelector('.business-count')?.textContent).toBe(
         SqlRewrittenMockDataNoDDL.suggestions
@@ -206,20 +195,11 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
           data: AsyncRewriteTaskStatusCompletedMockData
         })
       );
-      const themeData = {
-        ...sharedTheme,
-        ...lightTheme
-      };
 
-      const { rerender } = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
+      const { rerender } = sqleSuperRender(
+        <SqlRewrittenDrawerEE {...mockProps} />
       );
 
-      await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(3000));
       expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(1);
@@ -234,21 +214,9 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
         enable_structure_type: true
       });
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} open={false} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...mockProps} open={false} />);
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...mockProps} />);
 
       expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(2);
 
@@ -257,13 +225,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
         ...mockProps,
         originSqlInfo: { ...mockProps.originSqlInfo, number: 2 }
       };
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...newMockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...newMockProps} />);
       expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(3);
       expect(mockSqlRewrittenSpy).toHaveBeenNthCalledWith(3, {
         task_id: mockProps.taskID,
@@ -278,21 +240,9 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       expect(screen.queryByText('待应用的规则')).toBeInTheDocument();
       expect(screen.queryByText('启动数据库结构优化')).toBeInTheDocument();
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...newMockProps} open={false} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...newMockProps} open={false} />);
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...newMockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...newMockProps} />);
 
       await act(async () => jest.advanceTimersByTime(3000));
 
@@ -305,17 +255,9 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
           data: AsyncRewriteTaskStatusCompletedMockData
         })
       );
-      const themeData = {
-        ...sharedTheme,
-        ...lightTheme
-      };
 
-      const { rerender } = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
+      const { rerender } = sqleSuperRender(
+        <SqlRewrittenDrawerEE {...mockProps} />
       );
 
       expect(screen.queryByText('更新重写结果')).not.toBeInTheDocument();
@@ -348,21 +290,9 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(3000));
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} open={false} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...mockProps} open={false} />);
 
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...mockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
+      rerender(<SqlRewrittenDrawerEE {...mockProps} />);
 
       expect(screen.queryByText('更新重写结果')).toBeInTheDocument();
       fireEvent.click(screen.getByText('更新重写结果'));
@@ -378,14 +308,8 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
         ...mockProps,
         originSqlInfo: { ...mockProps.originSqlInfo, number: 2 }
       };
-      rerender(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={themeData}>
-            <SqlRewrittenDrawerEE {...newMockProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      );
-      expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(5);
+      rerender(<SqlRewrittenDrawerEE {...newMockProps} />);
+      expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(4);
 
       expect(screen.queryByText('更新重写结果')).not.toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
@@ -393,8 +317,8 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       expect(screen.queryByText('更新重写结果')).toBeInTheDocument();
       fireEvent.click(screen.getByText('更新重写结果'));
-      expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(6);
-      expect(mockSqlRewrittenSpy).toHaveBeenNthCalledWith(6, {
+      expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(5);
+      expect(mockSqlRewrittenSpy).toHaveBeenNthCalledWith(5, {
         task_id: mockProps.taskID,
         number: 2,
         enable_structure_type: false
@@ -404,7 +328,6 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
 
   describe('Drawer close confirmation', () => {
     it('should show confirmation modal when closing drawer during rewrite', async () => {
-      // Mock进行中的异步任务
       mockAsyncRewriteTaskSpy.mockImplementation(() =>
         createSpySuccessResponse({
           data: {
@@ -420,7 +343,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       await act(async () => jest.advanceTimersByTime(3000));
 
       fireEvent.click(getBySelector('.closed-icon-custom'));
-      // await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(300));
 
       expect(mockModalConfirm).toHaveBeenCalledWith({
         title: '重写任务正在进行中，关闭后任务将被终止。确认关闭吗？',
