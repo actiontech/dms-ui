@@ -1,45 +1,15 @@
-import { Typography, Space } from 'antd';
+import { Typography, Space, Popover } from 'antd';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
   IListMember,
-  IListMemberRoleWithOpRange,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
-import renderRolesInfo from '../Common/renderRolesInfo';
-import IsProjectAdmin from '../components/IsProjectAdmin';
+import ProjectManagePermissions from '../components/ProjectManagePermissions';
 import { BasicToolTip } from '@actiontech/shared';
-import { MemberPermissionStyleWrapper } from '../style';
 import ProjectTagList from '../../../components/ProjectTagList';
 import SystemRoleTagList from '../../../components/SystemRoleTagList';
-
-const commonRoleOperateRangesRender = (
-  roles: IListMemberRoleWithOpRange[],
-  record: IListMember | IListMemberGroup
-) => {
-  if (
-    (!Array.isArray(roles) || roles.length === 0) &&
-    !record.is_project_admin
-  ) {
-    return '-';
-  }
-
-  if (
-    (!Array.isArray(roles) || roles.length === 0) &&
-    record.is_project_admin
-  ) {
-    return 'ALL';
-  }
-
-  return (
-    <MemberPermissionStyleWrapper
-      titleWidth={500}
-      title={renderRolesInfo(roles, false)}
-    >
-      {renderRolesInfo(roles, true)}
-    </MemberPermissionStyleWrapper>
-  );
-};
+import ProjectOpPermissions from '../components/ProjectOpPermissions';
 
 export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
@@ -61,13 +31,13 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'projects',
     title: () => t('dmsMember.memberList.columns.projects'),
-    width: '35%',
+    width: '20%',
     render: (list) => {
-      return <ProjectTagList projectList={list} />;
+      return <ProjectTagList projectList={list} highlightCurrentProject />;
     }
   },
   {
-    dataIndex: 'role_with_op_ranges',
+    dataIndex: 'current_project_op_permissions',
     className: 'ellipsis-column-width',
     width: '30%',
     title: () => {
@@ -86,19 +56,51 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
         </BasicToolTip>
       );
     },
-    render: (roles = [], record: IListMember) => {
-      return commonRoleOperateRangesRender(roles, record);
+    render: (permissions = [], record: IListMember) => {
+      if (
+        (!Array.isArray(permissions) || permissions.length === 0) &&
+        !record.is_project_admin &&
+        !record.current_project_admin?.is_admin
+      ) {
+        return '-';
+      }
+
+      if (record.is_project_admin || !!record.current_project_admin?.is_admin) {
+        return (
+          <Popover
+            content={
+              !!record.current_project_admin?.is_admin &&
+              !!record.current_project_admin?.member_groups?.length
+                ? t('dmsMember.memberList.columns.sourceFromMemberGroup', {
+                    groupName:
+                      record.current_project_admin?.member_groups?.join(',')
+                  })
+                : t('dmsMember.memberList.columns.sourceFromDorectPermission')
+            }
+            title={null}
+            placement="top"
+            overlayStyle={{ maxWidth: 450 }}
+          >
+            ALL
+          </Popover>
+        );
+      }
+
+      return <ProjectOpPermissions permissions={permissions} />;
     }
   },
   {
     dataIndex: 'is_project_admin',
-    title: t('dmsMember.memberList.columns.isProjectAdmin'),
+    title: t('dmsMember.memberList.columns.projectManagePermissions'),
     width: '20%',
-    render: (isAdmin) => {
-      if (typeof isAdmin !== 'boolean') {
-        return t('common.unknownStatus');
-      }
-      return <IsProjectAdmin value={isAdmin} />;
+    render: (isAdmin, record) => {
+      return (
+        <ProjectManagePermissions
+          isProjectAdmin={!!isAdmin}
+          currentProjectAdmin={record.current_project_admin}
+          managePermissions={record.current_project_manage_permissions}
+        />
+      );
     }
   }
 ];
@@ -123,8 +125,9 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
     }
   },
   {
-    dataIndex: 'role_with_op_ranges',
+    dataIndex: 'current_project_op_permissions',
     className: 'ellipsis-column-width',
+    width: '30%',
     title: () => {
       return (
         <BasicToolTip
@@ -141,18 +144,33 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         </BasicToolTip>
       );
     },
-    render: (roles = [], record: IListMemberGroup) => {
-      return commonRoleOperateRangesRender(roles, record);
+    render: (permissions = [], record: IListMemberGroup) => {
+      if (
+        (!Array.isArray(permissions) || permissions.length === 0) &&
+        !record.is_project_admin
+      ) {
+        return '-';
+      }
+
+      if (record.is_project_admin) {
+        return 'ALL';
+      }
+
+      return <ProjectOpPermissions permissions={permissions} />;
     }
   },
   {
     dataIndex: 'is_project_admin',
-    title: t('dmsMember.memberList.columns.isProjectAdmin'),
-    render: (isAdmin) => {
-      if (typeof isAdmin !== 'boolean') {
-        return t('common.unknownStatus');
-      }
-      return <IsProjectAdmin value={isAdmin} />;
+    title: t('dmsMember.memberList.columns.projectManagePermissions'),
+    width: '30%',
+    render: (isAdmin, record) => {
+      return (
+        <ProjectManagePermissions
+          isProjectAdmin={!!isAdmin}
+          managePermissions={record.current_project_manage_permissions}
+          isGroup
+        />
+      );
     }
   }
 ];
