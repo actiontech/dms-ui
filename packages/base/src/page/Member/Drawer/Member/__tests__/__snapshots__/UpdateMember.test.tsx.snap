@@ -284,7 +284,7 @@ exports[`base/Member/Drawer/UpdateMember should render update member form with p
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label

@@ -305,7 +305,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label
@@ -832,7 +832,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label
@@ -1436,7 +1436,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-checkbox-group css-1byqctq"
+                                class="ant-checkbox-group css-svmyig"
                                 id="projectManagementPermission"
                               >
                                 <label
