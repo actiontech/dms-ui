@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import { Row } from 'antd';
-import { BasicDrawer, BasicToolTip } from '@actiontech/shared';
+import { Row, Checkbox } from 'antd';
+import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
   .ant-tabs-nav {
@@ -32,6 +32,10 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
       theme.sharedTheme.basic.colorPrimaryBgHover} !important;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
   }
+
+  .ant-typography.member-form-sub-title {
+    font-size: 14px !important;
+  }
 `;
 
 export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
@@ -40,11 +44,13 @@ export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
   }
 `;
 
-export const MemberPermissionStyleWrapper = styled(BasicToolTip)`
-  max-width: 100%;
-
-  .ant-space,
-  .ant-space-item {
+export const MemberPermissionCheckboxGroupStyleWrapper = styled(Checkbox.Group)`
+  &.ant-checkbox-group {
     width: 100%;
+    padding-left: 8px;
+
+    .ant-checkbox-wrapper {
+      width: 32%;
+    }
   }
 `;

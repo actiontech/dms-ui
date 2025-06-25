@@ -101,11 +101,29 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     [messageApi, refresh, t, projectID]
   );
 
+  const onManageMemberGroup = useCallback(
+    (record?: IListMember) => {
+      dispatch(updateSelectMember({ member: record ?? null }));
+      dispatch(
+        updateMemberModalStatus({
+          modalName: ModalName.DMS_Manage_Member_Group,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      MemberListActions(onEditMember, onDeleteMember)
+      MemberListActions(onEditMember, onDeleteMember, onManageMemberGroup)
     );
-  }, [onEditMember, onDeleteMember, parse2TableActionPermissions]);
+  }, [
+    onEditMember,
+    onDeleteMember,
+    parse2TableActionPermissions,
+    onManageMemberGroup
+  ]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
