@@ -128,16 +128,12 @@ function App() {
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
-  useRequest(
-    () =>
-      BasicInfo.GetBasicInfo().then((res) => {
-        if (res.data.data) {
-          syncWebTitleAndLogo(res.data.data);
-        }
-      }),
-    {
-      ready: !!token
-    }
+  useRequest(() =>
+    BasicInfo.GetBasicInfo().then((res) => {
+      if (res.data.data) {
+        syncWebTitleAndLogo(res.data.data);
+      }
+    })
   );
   // #endif
 
