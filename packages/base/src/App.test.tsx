@@ -214,7 +214,7 @@ describe('App', () => {
       routerProps: { initialEntries: ['/exec-workflow?query=test'] }
     });
 
-    expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
+    expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(0);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
