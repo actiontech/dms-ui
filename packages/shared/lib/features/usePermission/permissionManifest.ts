@@ -1118,28 +1118,40 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.version_manage
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.version_manage
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.version_manage
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.version_manage
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY,
@@ -1258,5 +1270,37 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE,
     type: 'action',
     projectArchived: false
+  },
+
+  // 流水线配置
+  [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.CREATE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.EDIT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.DELETE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
+    }
   }
 } as const;
