@@ -7,16 +7,16 @@ export const RoleFormAlertStyleWrapper = styled(Alert)`
   }
 `;
 
-export const OpPermissionCheckboxGroupStyleWrapper = styled(Space)<{
-  isLast: boolean;
-}>`
+export const OpPermissionCheckboxGroupStyleWrapper = styled(Space)`
   &.ant-space {
     width: 100%;
-    border-bottom: ${({ theme, isLast }) =>
-      isLast
-        ? 'none'
-        : theme.sharedTheme.components.basicSelect.default.border};
+    border-bottom: ${({ theme }) =>
+      theme.sharedTheme.components.basicSelect.default.border};
     padding: 12px 0;
+
+    &.last-group {
+      border-bottom: none;
+    }
 
     .ant-checkbox-group {
       width: 100%;

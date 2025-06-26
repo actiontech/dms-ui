@@ -241,11 +241,11 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_optimization_record' = 'view_optimization_record',
 
+  'view_version_manage' = 'view_version_manage',
+
   'version_manage' = 'version_manage',
 
   'view_pipeline' = 'view_pipeline',
-
-  'view_pending_sql_manage' = 'view_pending_sql_manage',
 
   'manage_project_data_source' = 'manage_project_data_source',
 

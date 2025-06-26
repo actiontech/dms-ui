@@ -909,6 +909,8 @@ export interface IGetMemberGroupReply {
 export interface IGetOauth2ConfigurationResData {
   access_token_tag?: string;
 
+  auto_bind_same_name_user?: boolean;
+
   auto_create_user?: boolean;
 
   back_channel_logout_uri?: string;
@@ -916,6 +918,8 @@ export interface IGetOauth2ConfigurationResData {
   client_host?: string;
 
   client_id?: string;
+
+  enable_manually_bind?: boolean;
 
   enable_oauth2?: boolean;
 
@@ -1740,6 +1744,14 @@ export interface IListMemberGroup {
   users?: IUidWithName[];
 }
 
+export interface IListMemberGroupTipsReply {
+  code?: number;
+
+  data?: IUidWithName[];
+
+  message?: string;
+}
+
 export interface IListMemberGroupsReply {
   code?: number;
 
@@ -1885,9 +1897,17 @@ export interface IListRole {
 
   name?: string;
 
-  op_permissions?: IUidWithName[];
+  op_permissions?: IListRoleOpPermission[];
 
   stat?: ListRoleStatEnum;
+
+  uid?: string;
+}
+
+export interface IListRoleOpPermission {
+  module?: string;
+
+  name?: string;
 
   uid?: string;
 }
@@ -2029,6 +2049,8 @@ export interface INotificationReply {
 export interface IOauth2Configuration {
   access_token_tag?: string;
 
+  auto_bind_same_name_user?: boolean;
+
   auto_create_user?: boolean;
 
   auto_create_user_pwd?: string;
@@ -2038,6 +2060,8 @@ export interface IOauth2Configuration {
   client_id?: string;
 
   client_key?: string;
+
+  enable_manually_bind?: boolean;
 
   enable_oauth2?: boolean;
 

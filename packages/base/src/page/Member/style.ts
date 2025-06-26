@@ -51,6 +51,7 @@ export const MemberPermissionCheckboxGroupStyleWrapper = styled(Checkbox.Group)`
 
     .ant-checkbox-wrapper {
       width: 32%;
+      margin-bottom: 12px;
     }
   }
 `;

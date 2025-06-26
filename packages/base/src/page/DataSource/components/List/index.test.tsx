@@ -55,7 +55,7 @@ describe('page/DataSource/DataSourceList', () => {
         },
         permission: {
           moduleFeatureSupport: { sqlOptimization: false },
-          userOperationPermissions: { is_admin: true, op_permission_list: [] }
+          userOperationPermissions: { is_admin: false, op_permission_list: [] }
         }
       },
       routerProps: {

@@ -20,6 +20,7 @@ import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 
 jest.mock('react-redux', () => {
   return {
@@ -40,7 +41,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   let subscribeSpy: jest.SpyInstance;
   let getSystemModuleRedDotsSpy: jest.SpyInstance;
   let getGatewayTipsSpy: jest.SpyInstance;
-
+  let getUserOpPermissionSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
   const unsubscribeSpy = jest.fn();
@@ -74,7 +75,7 @@ describe('test Base/Nav/SideMenu/index', () => {
 
     mockUseRecentlySelectedZone();
     getGatewayTipsSpy = gateway.getGatewayTips();
-
+    getUserOpPermissionSpy = userCenter.getUserOpPermission();
     getProjectsSpy = project.getProjectList();
     getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -153,5 +154,16 @@ describe('test Base/Nav/SideMenu/index', () => {
       }
     });
     expect(verifyRecentlySelectedZoneRecordSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should fetch user permissions when userOperationPermissions is null and recentlyProjects is exist', async () => {
+    mockUseRecentlyOpenedProjects({
+      getRecentlyProjectId: jest
+        .fn()
+        .mockReturnValue(mockBindProjects[0].project_id)
+    });
+    baseSuperRender(<SideMenu />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getUserOpPermissionSpy).toHaveBeenCalled();
   });
 });

@@ -44,6 +44,13 @@ describe('sqle/PipelineConfiguration/List', () => {
       return selector({
         pipeline: {
           modalStatus: {}
+        },
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false,
+            knowledge: false
+          },
+          userOperationPermissions: null
         }
       });
     });

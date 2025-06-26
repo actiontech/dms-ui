@@ -1,7 +1,6 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableActionMeta
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/pipeline/index.d';
 import { t } from '../../../locale';
@@ -45,32 +44,4 @@ export const PipelineConfigurationListColumns: () => ActiontechTableColumn<
       title: () => t('pipelineConfiguration.table.nodeCount')
     }
   ];
-};
-
-export const PipelineConfigurationListActions: (
-  onEdit: (id?: number) => void,
-  onDelete: (id?: number) => void
-) => {
-  buttons: ActiontechTableActionMeta<IPipelineDetail>[];
-} = (onEdit, onDelete) => {
-  return {
-    buttons: [
-      {
-        key: 'edit-button',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: () => onEdit(record?.id)
-        })
-      },
-      {
-        key: 'delete-button',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('pipelineConfiguration.table.confirmDelete'),
-          onConfirm: () => onDelete(record?.id)
-        })
-      }
-    ]
-  };
 };

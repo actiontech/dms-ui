@@ -24,6 +24,7 @@ describe('base/Member', () => {
     userCenter.getUserList();
     dbServices.ListDBServicesTips();
     userCenter.getRoleList();
+    userCenter.getOpPermissionsList();
   });
 
   afterEach(() => {
