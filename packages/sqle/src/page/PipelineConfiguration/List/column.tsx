@@ -4,23 +4,28 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/pipeline/index.d';
 import { t } from '../../../locale';
-import { BasicTypographyEllipsis } from '@actiontech/shared';
+import { BasicTypographyEllipsis, BasicTag } from '@actiontech/shared';
 import { IPipelineDetail } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Typography } from 'antd';
+import { Typography, Space, Popover } from 'antd';
 
 export type PipelineConfigurationTableFilterParamType =
   PageInfoWithoutIndexAndSize<IGetPipelinesV1Params, 'project_name'>;
 
-export const PipelineConfigurationListColumns: () => ActiontechTableColumn<
-  IPipelineDetail,
-  IGetPipelinesV1Params
-> = () => {
+export const pipelineConfigurationListColumns: (
+  onViewPipelineDetail: (id?: number) => void
+) => ActiontechTableColumn<IPipelineDetail, IGetPipelinesV1Params> = (
+  onViewPipelineDetail
+) => {
   return [
     {
       dataIndex: 'name',
       title: () => t('pipelineConfiguration.table.name'),
-      render: (name) => {
-        return <Typography.Link>{name}</Typography.Link>;
+      render: (name, record) => {
+        return (
+          <Typography.Link onClick={() => onViewPipelineDetail(record.id)}>
+            {name}
+          </Typography.Link>
+        );
       }
     },
     {
@@ -42,6 +47,40 @@ export const PipelineConfigurationListColumns: () => ActiontechTableColumn<
     {
       dataIndex: 'node_count',
       title: () => t('pipelineConfiguration.table.nodeCount')
+    },
+    {
+      dataIndex: 'data_sources',
+      title: () => t('pipelineConfiguration.table.dataSources'),
+      width: '30%',
+      render: (dataSources) => {
+        if (!dataSources || dataSources.length === 0) {
+          return '-';
+        }
+        const displayList = dataSources?.slice(0, 3);
+        return (
+          <Space wrap size={4}>
+            {displayList?.map((item) => (
+              <BasicTag key={item}>{item}</BasicTag>
+            ))}
+            <Popover
+              content={
+                <Space direction="vertical">
+                  {dataSources?.map((item) => (
+                    <BasicTag key={item}>{item}</BasicTag>
+                  ))}
+                </Space>
+              }
+              placement="top"
+              overlayStyle={{ maxWidth: 450 }}
+              trigger="click"
+            >
+              <Typography.Link>
+                {t('pipelineConfiguration.table.viewAll')}
+              </Typography.Link>
+            </Popover>
+          </Space>
+        );
+      }
     }
   ];
 };

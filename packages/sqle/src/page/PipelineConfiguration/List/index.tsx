@@ -17,7 +17,7 @@ import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/p
 import { IPipelineDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useRequest } from 'ahooks';
 import {
-  PipelineConfigurationListColumns,
+  pipelineConfigurationListColumns,
   PipelineConfigurationTableFilterParamType
 } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -157,18 +157,13 @@ const PipelineConfigurationList = () => {
           pagination={{
             total: pipelineList?.total ?? 0
           }}
-          columns={PipelineConfigurationListColumns()}
+          columns={pipelineConfigurationListColumns(onViewPipelineDetail)}
           loading={loading}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
           actions={parse2TableActionPermissions(
             PipelineConfigurationListActions(onEdit, onDelete)
           )}
-          onRow={(record: IPipelineDetail) => {
-            return {
-              onClick: () => onViewPipelineDetail(record.id)
-            };
-          }}
         />
       </EmptyBox>
       <PipelineDetailDrawer />
