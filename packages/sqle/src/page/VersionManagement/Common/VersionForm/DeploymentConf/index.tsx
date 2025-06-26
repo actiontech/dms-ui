@@ -71,8 +71,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
   useEffect(() => {
     updateInstanceList({
       project_name: projectName,
-      functional_module:
-        getInstanceTipListV2FunctionalModuleEnum.create_workflow
+      functional_module: getInstanceTipListV2FunctionalModuleEnum.create_version
     });
   }, [projectName, updateInstanceList]);
 

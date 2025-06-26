@@ -35,11 +35,8 @@ const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
     refresh
   } = useRequest(
     () => {
-      let service: ListOpPermissionsServiceEnum;
-      // #if [dms]
-      service = ListOpPermissionsServiceEnum.dms;
-      // #endif
-      // #if [sqle]
+      let service: ListOpPermissionsServiceEnum | undefined = undefined;
+      // #if [sqle && !dms]
       service = ListOpPermissionsServiceEnum.sqle;
       // #endif
       const params: IListOpPermissionsParams = {

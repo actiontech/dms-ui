@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Member/Modal/ManageMemberGroup should render manage member group modal with member groups 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                管理成员组
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="css-kfujm6"
+                  >
+                    <div
+                      class="css-ivgi19"
+                    >
+                      <div
+                        class="member-group-header"
+                      >
+                        <div
+                          class="member-group-content"
+                        >
+                          <h4
+                            class="member-group-title"
+                          >
+                            member-group3
+                          </h4>
+                          <div
+                            class="permissions-container"
+                          >
+                            <span
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              style="background-color: gray;"
+                            >
+                              test role 1
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center action-buttons"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                编辑权限
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                退出组
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  关 闭
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

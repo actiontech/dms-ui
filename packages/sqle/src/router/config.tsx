@@ -342,6 +342,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.index.path,
     key: 'ruleTemplate',
     element: <RuleTemplate />,
+    permission: PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE,
     children: [
       {
         index: true,
@@ -378,6 +379,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.PROGRESS.index.path,
     key: 'progress',
+    permission: PERMISSIONS.PAGES.SQLE.WORKFLOW_TEMPLATE,
     children: [
       {
         index: true,
@@ -396,12 +398,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.WHITELIST.index.path,
     key: 'Whitelist',
-    element: <Whitelist />
+    element: <Whitelist />,
+    permission: PERMISSIONS.PAGES.SQLE.WHITE_LIST
   },
   {
     path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_EXCEPTION.index.path,
     key: 'sqlManagementException',
-    element: <SqlManagementException />
+    element: <SqlManagementException />,
+    permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_EXCEPTION
   },
   {
     path: ROUTE_PATHS.SQLE.OPERATION_LOG.index.path,
@@ -453,7 +457,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.PUSH_RULE.index.path,
     key: 'pushRuleConfiguration',
-    element: <PushRuleConfiguration />
+    element: <PushRuleConfiguration />,
+    permission: PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION
   },
   {
     path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index.path,

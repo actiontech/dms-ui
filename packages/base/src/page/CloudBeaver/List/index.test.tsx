@@ -58,7 +58,7 @@ describe('test base/CloudBeaver/List', () => {
         permission: {
           moduleFeatureSupport: false,
           userOperationPermissions: {
-            is_admin: true,
+            is_admin: false,
             op_permission_list: []
           }
         }

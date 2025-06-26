@@ -3,6 +3,7 @@ import { mockCurrentUserReturn, mockProjectInfo } from './data';
 import { mockUseCurrentUser } from './mockUseCurrentUser';
 import { mockUseCurrentProject } from './mockUseCurrentProject';
 import * as usePermissionModule from '../../features/usePermission/usePermission';
+import { IOpPermissionItem } from '../../api/base/service/common';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -19,11 +20,12 @@ const mockUsePermissionData = {
   checkPagePermission: jest.fn(),
   checkActionPermission: jest.fn(),
   parse2TableActionPermissions: jest.fn(),
-  parse2TableToolbarActionPermissions: jest.fn()
+  parse2TableToolbarActionPermissions: jest.fn(),
+  checkProjectPermission: jest.fn()
 };
 
 export const mockUsePermission = (
-  mockData?: Partial<typeof mockUsePermissionData>,
+  mockData?: Partial<ReturnType<typeof usePermissionModule.default>>,
   options?: {
     mockUseCurrentUserData?: Partial<typeof mockCurrentUserReturn>;
     mockUseCurrentProjectData?: Partial<typeof mockProjectInfo>;

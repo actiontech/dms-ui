@@ -6,14 +6,21 @@ export const PERMISSIONS = {
       GLOBAL_DATA_SOURCE: 'page:global_data_source',
       SYNC_DATA_SOURCE: 'page:sync_data_source',
       SYSTEM_SETTING: 'page:system_setting',
-      RESOURCE_OVERVIEW: 'page:resource_overview'
+      RESOURCE_OVERVIEW: 'page:resource_overview',
+      MEMBER: 'page:member',
+      DB_SERVICE: 'page:db_service'
     },
     SQLE: {
       OPERATION_RECORD: 'page:operation_record',
       SQL_OPTIMIZATION: 'page:sql_optimization',
       REPORT_STATISTICS: 'page:report_statistics',
       RULE_MANAGEMENT: 'page:rule_management',
-      KNOWLEDGE: 'page:knowledge'
+      KNOWLEDGE: 'page:knowledge',
+      PROJECT_RULE_TEMPLATE: 'page:project_rule_template',
+      WORKFLOW_TEMPLATE: 'page: workflow_template',
+      PUSH_RULE_CONFIGURATION: 'page:push_rule_configuration',
+      WHITE_LIST: 'page:white_list',
+      SQL_MANAGEMENT_EXCEPTION: 'page:sql_management_exception'
     }
   },
   ACTIONS: {
@@ -246,6 +253,11 @@ export const PERMISSIONS = {
       },
       SQL_AUDIT: {
         CREATE: 'action:create_sql_audit'
+      },
+      PIPELINE_CONFIGURATION: {
+        CREATE: 'action:create_pipeline_configuration',
+        EDIT: 'action:edit_pipeline_configuration',
+        DELETE: 'action:delete_pipeline_configuration'
       }
     }
   }

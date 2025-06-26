@@ -25,7 +25,7 @@ type Props = {
 
 const MenuList: React.FC<Props> = ({ projectID }) => {
   const location = useLocation();
-  const { checkPagePermission } = usePermission();
+  const { checkPagePermission, userOperationPermissions } = usePermission();
   const { t } = useTranslation();
 
   const menuItems = useMemo(() => {
@@ -72,7 +72,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       requiredMenus: CustomMenuItemType[]
     ): CustomMenuItemType[] => {
       return requiredMenus.filter((menu) => {
-        if (menu?.permission) {
+        if (menu?.permission && userOperationPermissions) {
           return checkPagePermission(menu.permission);
         }
 
@@ -86,13 +86,41 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       });
     };
 
-    return filterMenusByPermissions(menus).filter((menu) => {
+    const removeContinuousDividers = (
+      menuList: CustomMenuItemType[]
+    ): CustomMenuItemType[] => {
+      const result: CustomMenuItemType[] = [];
+      let previousWasDivider = false;
+
+      for (const menu of menuList) {
+        if (
+          menu &&
+          typeof menu === 'object' &&
+          'type' in menu &&
+          menu.type === 'divider'
+        ) {
+          if (!previousWasDivider) {
+            result.push(menu);
+            previousWasDivider = true;
+          }
+        } else {
+          result.push(menu);
+          previousWasDivider = false;
+        }
+      }
+
+      return result;
+    };
+
+    const filteredMenus = filterMenusByPermissions(menus).filter((menu) => {
       if (menu && 'children' in menu) {
         return (menu as SubMenuType).children.length > 0;
       }
       return true;
     });
-  }, [projectID, t, checkPagePermission]);
+
+    return removeContinuousDividers(filteredMenus);
+  }, [projectID, t, checkPagePermission, userOperationPermissions]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {

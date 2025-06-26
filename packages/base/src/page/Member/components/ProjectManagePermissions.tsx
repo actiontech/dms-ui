@@ -46,7 +46,7 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
   if (managePermissions.length > 0) {
     return (
       <Space wrap>
-        {managePermissions.map((permission) => (
+        {managePermissions.map((permission, index) => (
           <EmptyBox
             if={!isGroup}
             defaultNode={
@@ -58,6 +58,7 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
                 {permission.name}
               </BasicTag>
             }
+            key={index}
           >
             <Popover
               content={
