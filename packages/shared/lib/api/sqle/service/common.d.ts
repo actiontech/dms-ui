@@ -3869,6 +3869,8 @@ export interface ICreatePipelineResData {
 export interface IPipelineDetail {
   address?: string;
 
+  data_sources?: string[];
+
   description?: string;
 
   id?: number;
@@ -3880,6 +3882,8 @@ export interface IPipelineDetail {
 
 export interface IPipelineDetailData {
   address?: string;
+
+  data_sources?: string[];
 
   description?: string;
 
