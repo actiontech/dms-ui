@@ -4,7 +4,8 @@ import {
 } from '../../../../api/sqle/service/common';
 import {
   AuditTaskSQLResV2BackupStrategyEnum,
-  AuditTaskSQLResV2BackupStatusEnum
+  AuditTaskSQLResV2BackupStatusEnum,
+  RewriteSuggestionStatusEnum
 } from '../../../../api/sqle/service/common.enum';
 
 export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
@@ -745,3 +746,58 @@ export const SqlRewrittenMockDataWithNotRewriter = {
   business_non_equivalent_desc:
     '- **记录数的不确定性**: 原始 SQL 使用 `ORDER BY RAND()` 可能会导致记录数的不确定性，因为随机排序可能导致不同的记录被选中。而优化后的 SQL 使用 `u.id IN (SELECT id FROM random_ids)`，虽然也实现了随机选择，但具体的记录选择可能会不同，导致记录数的不确定性。\n- **数据内容的差异**: 由于记录的选择可能不同，因此数据内容也可能不同。\n- **数据顺序的差异**: 虽然两种方法都实现了随机选择，但具体的选择顺序可能会不同，导致数据顺序的差异。'
 } as IRewriteSQLData;
+
+export const AsyncRewriteTaskStatusMockData = {
+  task_id: 'mock_task_123',
+  sql_number: '1',
+  status: 'running',
+  start_time: '2023-12-01T10:00:00.000Z',
+  end_time: undefined,
+  error_message: undefined,
+  result: {
+    ...SqlRewrittenMockDataNoDDL,
+    suggestions: SqlRewrittenMockDataNoDDL.suggestions!.map((item, index) => ({
+      ...item,
+      status:
+        index % 2 === 0
+          ? RewriteSuggestionStatusEnum.processed
+          : RewriteSuggestionStatusEnum.initial
+    }))
+  }
+};
+
+export const AsyncRewriteTaskStatusCompletedMockData = {
+  task_id: 'mock_task_123',
+  sql_number: '1',
+  status: 'completed',
+  start_time: '2023-12-01T10:00:00.000Z',
+  end_time: '2023-12-01T10:05:30.000Z',
+  error_message: undefined,
+  result: {
+    ...SqlRewrittenMockDataNoDDL,
+    suggestions: SqlRewrittenMockDataNoDDL.suggestions!.map((item) => ({
+      ...item,
+      status: RewriteSuggestionStatusEnum.processed
+    }))
+  }
+};
+
+export const AsyncRewriteTaskStatusFailedMockData = {
+  task_id: 'mock_task_123',
+  sql_number: '1',
+  status: 'failed',
+  start_time: '2023-12-01T10:00:00.000Z',
+  end_time: '2023-12-01T10:02:15.000Z',
+  error_message: 'SQL rewrite failed due to syntax error',
+  result: undefined
+};
+
+export const AsyncRewriteTaskStatusPendingMockData = {
+  task_id: 'mock_task_123',
+  sql_number: '1',
+  status: 'pending',
+  start_time: undefined,
+  end_time: undefined,
+  error_message: undefined,
+  result: undefined
+};

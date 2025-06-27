@@ -37,6 +37,7 @@ type Props = {
   businessDesc: string;
   sqlLogicDesc: string;
   rewrittenSqlLogicDesc: string;
+  isRewriting: boolean;
 };
 
 const OverallRewrittenSuggestion: React.FC<Props> = ({
@@ -49,7 +50,8 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
   businessCount,
   businessDesc,
   sqlLogicDesc,
-  rewrittenSqlLogicDesc
+  rewrittenSqlLogicDesc,
+  isRewriting
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
@@ -83,6 +85,29 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
     return overallDDL.split('\n').length * 40;
   }, [overallDDL]);
 
+  const renderSummaryText = () => {
+    if (isRewriting) {
+      return <li>{t('sqlRewrite.rewriteInProgressTip')}</li>;
+    }
+    return (
+      <>
+        <li>
+          {t('sqlRewrite.sqlRewriteConclusion', {
+            optimizedCount,
+            remainingCount,
+            businessCount
+          })}
+        </li>
+        <li hidden={!businessDesc}>
+          <MarkdownPreviewModeStyleWrapper
+            source={businessDesc}
+            rehypePlugins={[rehypeSanitize]}
+          />
+        </li>
+      </>
+    );
+  };
+
   return (
     <section>
       <OverallRewrittenItem
@@ -91,19 +116,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
       >
         <OptimizationDescriptionStyleWrapper>
           <OptimizationSummaryStyleWrapper>
-            <li>
-              {t('sqlRewrite.sqlRewriteConclusion', {
-                optimizedCount,
-                remainingCount,
-                businessCount
-              })}
-            </li>
-            <li hidden={!businessDesc}>
-              <MarkdownPreviewModeStyleWrapper
-                source={businessDesc}
-                rehypePlugins={[rehypeSanitize]}
-              />
-            </li>
+            {renderSummaryText()}
           </OptimizationSummaryStyleWrapper>
         </OptimizationDescriptionStyleWrapper>
       </OverallRewrittenItem>

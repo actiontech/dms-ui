@@ -1,6 +1,7 @@
 import {
   RuleCategoryStatisticCategoryEnum,
   AssociateWorkflowsStatusEnum,
+  AsyncRewriteTaskStatusEnum,
   AuditPlanParamResV1TypeEnum,
   AuditPlanReportResV1AuditLevelEnum,
   AuditPlanSQLHeadV1TypeEnum,
@@ -44,6 +45,7 @@ import {
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
   RewriteSuggestionAuditLevelEnum,
+  RewriteSuggestionStatusEnum,
   RewriteSuggestionTypeEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
@@ -152,6 +154,30 @@ export interface IAssociateWorkflows {
   workflow_id?: string;
 
   workflow_name?: string;
+}
+
+export interface IAsyncRewriteTask {
+  end_time?: string;
+
+  error_message?: string;
+
+  result?: IRewriteSQLData;
+
+  sql_number?: string;
+
+  start_time?: string;
+
+  status?: AsyncRewriteTaskStatusEnum;
+
+  task_id?: string;
+}
+
+export interface IAsyncRewriteTaskStatusRes {
+  code?: number;
+
+  data?: IAsyncRewriteTask;
+
+  message?: string;
 }
 
 export interface IAuditFileResp {
@@ -2710,14 +2736,6 @@ export interface IRewriteSQLReq {
   enable_structure_type?: boolean;
 }
 
-export interface IRewriteSQLRes {
-  code?: number;
-
-  data?: IRewriteSQLData;
-
-  message?: string;
-}
-
 export interface IRewriteSuggestion {
   audit_level?: RewriteSuggestionAuditLevelEnum;
 
@@ -2730,6 +2748,8 @@ export interface IRewriteSuggestion {
   rewritten_sql?: string;
 
   rule_name?: string;
+
+  status?: RewriteSuggestionStatusEnum;
 
   type?: RewriteSuggestionTypeEnum;
 }

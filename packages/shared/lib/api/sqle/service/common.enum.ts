@@ -24,6 +24,16 @@ export enum AssociateWorkflowsStatusEnum {
   'finished' = 'finished'
 }
 
+export enum AsyncRewriteTaskStatusEnum {
+  'pending' = 'pending',
+
+  'running' = 'running',
+
+  'completed' = 'completed',
+
+  'failed' = 'failed'
+}
+
 export enum AuditPlanParamResV1TypeEnum {
   'string' = 'string',
 
@@ -410,6 +420,12 @@ export enum RewriteSuggestionAuditLevelEnum {
   'warn' = 'warn',
 
   'error' = 'error'
+}
+
+export enum RewriteSuggestionStatusEnum {
+  'initial' = 'initial',
+
+  'processed' = 'processed'
 }
 
 export enum RewriteSuggestionTypeEnum {
