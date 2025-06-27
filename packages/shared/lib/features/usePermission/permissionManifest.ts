@@ -65,8 +65,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
@@ -76,8 +75,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
@@ -144,8 +142,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
@@ -156,8 +153,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_approval_template
@@ -168,8 +164,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_push_rule
   },
@@ -179,8 +174,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
@@ -191,8 +185,7 @@ export const PERMISSION_MANIFEST: Record<
     role: [
       SystemRole.admin,
       SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator,
-      SystemRole.projectDirector
+      SystemRole.auditAdministrator
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
