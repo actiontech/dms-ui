@@ -32,7 +32,8 @@
     "icon:build": "pnpm --filter @actiontech/icons build",
     "dms:g": "pnpm --filter @actiontech/cli-create-dms-page build && create-dms-page",
     "api_client:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-client -y",
-    "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y"
+    "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y",
+    "ai-doc": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli ai-doc"
   },
   "keywords": [],
   "author": "",
