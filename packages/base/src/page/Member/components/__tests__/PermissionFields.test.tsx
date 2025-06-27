@@ -1,21 +1,23 @@
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import { cleanup, act, fireEvent, screen } from '@testing-library/react';
+import { cleanup, act, screen } from '@testing-library/react';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import RoleSelector from '../RoleSelector';
+import PermissionFields from '../PermissionFields';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Form } from 'antd';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-describe('base/Member/Modal/AddMemberGroup', () => {
+describe('base/Member/components/PermissionFields', () => {
   let litDBServices: jest.SpyInstance;
   let listRoleSpy: jest.SpyInstance;
+  let opPermissionListSpy: jest.SpyInstance;
+
   beforeEach(() => {
     mockUseDbServiceDriver();
     jest.useFakeTimers();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
+    opPermissionListSpy = userCenter.getOpPermissionsList();
   });
 
   afterEach(() => {
@@ -23,34 +25,36 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     cleanup();
   });
 
-  it('should match snap shot', async () => {
+  it('render init snapshot', async () => {
     const { baseElement } = superRender(
       <Form>
-        <RoleSelector projectID={mockProjectInfo.projectID} />
+        <PermissionFields projectID={mockProjectInfo.projectID} />
       </Form>
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(litDBServices).toHaveBeenCalledTimes(1);
     expect(listRoleSpy).toHaveBeenCalledTimes(1);
+    expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('管理员设置')).toBeInTheDocument();
+    expect(screen.getByText('是否为项目管理员')).toBeInTheDocument();
+    expect(screen.getByText('项目管理权限')).toBeInTheDocument();
+    expect(screen.getByText('项目操作权限')).toBeInTheDocument();
   });
 
-  it('should add fields when click add button', async () => {
+  it('render with isProjectAdmin is false', async () => {
+    jest.spyOn(Form, 'useWatch').mockReturnValue(true);
     const { baseElement } = superRender(
       <Form>
-        <RoleSelector projectID={mockProjectInfo.projectID} />
+        <PermissionFields projectID={mockProjectInfo.projectID} />
       </Form>
     );
-    fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('平台角色')).toBeInTheDocument();
-    expect(screen.getByText('操作范围')).toBeInTheDocument();
-    fireEvent.click(
-      queryBySelector('.ant-btn-icon-only.basic-button-wrapper', baseElement)!
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('平台角色')).not.toBeInTheDocument();
-    expect(screen.queryByText('操作范围')).not.toBeInTheDocument();
+    expect(screen.queryByText('项目管理权限')).not.toBeInTheDocument();
+    expect(screen.queryByText('项目操作权限')).not.toBeInTheDocument();
+    expect(
+      screen.getByText('项目管理员默认拥有项目下所有管理权限')
+    ).toBeInTheDocument();
   });
 });

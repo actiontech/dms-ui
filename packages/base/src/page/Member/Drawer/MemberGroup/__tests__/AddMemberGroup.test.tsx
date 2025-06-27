@@ -19,6 +19,8 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { dbServices as dbServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { memberProjectPermissions } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -32,6 +34,7 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
   let listUsersSpy: jest.SpyInstance;
   let litDBServices: jest.SpyInstance;
   let listRoleSpy: jest.SpyInstance;
+  let getOpPermissionsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -46,11 +49,33 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
     listUsersSpy = userCenter.getUserList();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
+
+    getOpPermissionsSpy = userCenter.getOpPermissionsList();
+    getOpPermissionsSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: memberProjectPermissions })
+    );
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+  });
+
+  it('should render add member group form with all fields', async () => {
+    const { baseElement } = superRender(<AddMemberGroup />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    expect(litDBServices).toHaveBeenCalledTimes(1);
+    expect(listRoleSpy).toHaveBeenCalledTimes(1);
+    expect(getOpPermissionsSpy).toHaveBeenCalledTimes(1);
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('添加成员组')).toBeInTheDocument();
+    expect(screen.getByText('成员组名')).toBeInTheDocument();
+    expect(screen.getByText('用户名')).toBeInTheDocument();
+    expect(screen.getByText('是否为项目管理员')).toBeInTheDocument();
+    expect(screen.getByText('项目管理权限')).toBeInTheDocument();
+    expect(screen.getByText('添加项目操作权限')).toBeInTheDocument();
   });
 
   it('should send add member group request when click submit button', async () => {
@@ -62,18 +87,16 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
     expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('添加成员组')).toBeInTheDocument();
-    expect(screen.getByText('添加平台角色与操作范围')).toBeInTheDocument();
+    expect(screen.getByText('添加项目操作权限')).toBeInTheDocument();
     fireEvent.input(screen.getByLabelText('成员组名'), {
       target: { value: 'testGroup' }
     });
     selectOptionByIndex('用户名', userList[0].name ?? '', 0);
     selectOptionByIndex('用户名', userList[1].name ?? '', 0);
-    fireEvent.click(screen.getByLabelText('项目管理员'));
+    fireEvent.click(screen.getByLabelText('是否为项目管理员'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(
-      screen.queryByText('添加平台角色与操作范围')
-    ).not.toBeInTheDocument();
-    expect(screen.getByLabelText('项目管理员')).toBeChecked();
+    expect(screen.queryByText('添加项目操作权限')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('是否为项目管理员')).toBeChecked();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
@@ -109,7 +132,7 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
     );
   });
 
-  it('should send add member group request when click submit button with role', async () => {
+  it('should send add member group request when click submit button with  both management permissions and roles ', async () => {
     const { baseElement } = superRender(<AddMemberGroup />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.input(screen.getByLabelText('成员组名'), {
@@ -117,14 +140,23 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
     });
     selectOptionByIndex('用户名', userList[0].name ?? '', 0);
     selectOptionByIndex('用户名', userList[1].name ?? '', 0);
+
+    fireEvent.click(screen.getByDisplayValue('700003'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700003')).toBeChecked();
+
+    fireEvent.click(screen.getByDisplayValue('700010'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700010')).toBeChecked();
+
     fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('平台角色')).toBeInTheDocument();
+    expect(screen.getByText('项目角色')).toBeInTheDocument();
     expect(screen.getByText('操作范围')).toBeInTheDocument();
-    expect(screen.queryAllByText('平台角色')).toHaveLength(1);
+    expect(screen.queryAllByText('项目角色')).toHaveLength(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(screen.getByLabelText('平台角色'));
+    fireEvent.mouseDown(screen.getByLabelText('项目角色'));
     const option = screen.getAllByText(roleList[0].name ?? '')[0];
     expect(option).toHaveClass('full-width-element');
     fireEvent.click(option);
@@ -153,7 +185,8 @@ describe('base/Member/Drawer/AddMemberGroup', () => {
             range_uids: [firstDb.uid],
             role_uid: roleList[0].uid
           }
-        ]
+        ],
+        project_manage_permissions: ['700003', '700010']
       },
       project_uid: mockProjectInfo.projectID
     });

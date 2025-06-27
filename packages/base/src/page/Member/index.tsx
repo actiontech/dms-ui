@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import MemberDrawer from './Drawer';
+import MemberModals from './Modals';
 import { Space } from 'antd';
 import {
   PageHeader,
@@ -82,7 +82,7 @@ const Member: React.FC = () => {
         activeKey={activePage}
         onChange={setActivePage}
       />
-      <MemberDrawer />
+      <MemberModals />
     </ProjectMemberStyleWrapper>
   );
 };

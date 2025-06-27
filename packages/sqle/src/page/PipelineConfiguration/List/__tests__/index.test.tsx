@@ -12,6 +12,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { ModalName } from '../../../../data/ModalName';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -44,6 +45,13 @@ describe('sqle/PipelineConfiguration/List', () => {
       return selector({
         pipeline: {
           modalStatus: {}
+        },
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false,
+            knowledge: false
+          },
+          userOperationPermissions: null
         }
       });
     });
@@ -148,5 +156,24 @@ describe('sqle/PipelineConfiguration/List', () => {
       EventEmitter.emit(EmitterKey.Refresh_Pipeline_Configuration_list)
     );
     expect(getPipelinesSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render view pipeline detail', async () => {
+    superRender(<PipelineConfigurationList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('pipeline1'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'pipeline/updateSelectPipelineId',
+      payload: { id: 1 }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'pipeline/updateModalStatus',
+      payload: {
+        modalName: ModalName.Pipeline_Configuration_Detail_Modal,
+        status: true
+      }
+    });
   });
 });

@@ -29,6 +29,7 @@ import { updateLanguage as updateReduxLanguage } from '../../../../../../../base
 import { Radio } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useRecentlySelectedZone from '../../../../../hooks/useRecentlySelectedZone';
+import { updateUserOperationPermissions } from '../../../../../store/permission';
 
 type Props = {
   username: string;
@@ -59,6 +60,7 @@ const UserNavigate: React.FC<Props> = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           clearUserInfo();
+          dispatch(updateUserOperationPermissions());
           //# if [ee]
           clearRecentlySelectedZone();
           //# endif

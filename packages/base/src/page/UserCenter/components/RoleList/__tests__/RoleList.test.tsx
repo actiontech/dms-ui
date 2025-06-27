@@ -49,6 +49,7 @@ describe('base/UserCenter/RoleList', () => {
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getAllByText('编 辑')).toHaveLength(3);
     expect(screen.getAllByText('删 除')).toHaveLength(3);
+    expect(screen.getAllByText('克 隆')).toHaveLength(3);
   });
 
   it('should render empty tips when request not success', async () => {
@@ -153,6 +154,34 @@ describe('base/UserCenter/RoleList', () => {
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_Role,
+        status: true
+      }
+    });
+  });
+
+  it('should dispatch action when clone role info', async () => {
+    roleListSpy.mockClear();
+    roleListSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [roleList[0]]
+      })
+    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByText('克 隆'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'userCenter/updateSelectRole',
+      payload: {
+        role: roleList[0]
+      }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'userCenter/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Clone_Role,
         status: true
       }
     });

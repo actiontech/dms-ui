@@ -52,7 +52,7 @@ const usePermission = () => {
     ) => {
       if (userOperationPermissions) {
         const { is_admin, op_permission_list } = userOperationPermissions;
-        const haveProjectPermission = op_permission_list?.some((permission) => {
+        const isProjctAdmin = op_permission_list?.some((permission) => {
           if (
             permission.range_type === OpPermissionItemRangeTypeEnum.project &&
             permission.range_uids?.includes(projectID) &&
@@ -64,7 +64,7 @@ const usePermission = () => {
           return false;
         });
 
-        const haveServicePermission = op_permission_list?.some((permission) => {
+        const hasServicePermission = op_permission_list?.some((permission) => {
           if (
             permission.range_type ===
               OpPermissionItemRangeTypeEnum.db_service &&
@@ -77,7 +77,7 @@ const usePermission = () => {
           }
           return false;
         });
-        if (is_admin || haveProjectPermission || haveServicePermission) {
+        if (is_admin || isProjctAdmin || hasServicePermission) {
           return true;
         }
 
@@ -86,6 +86,34 @@ const usePermission = () => {
       return false;
     },
     [userOperationPermissions, projectID]
+  );
+
+  const checkProjectPermission = useCallback(
+    (opPermissionType?: OpPermissionItemOpPermissionTypeEnum) => {
+      if (userOperationPermissions) {
+        if (!opPermissionType) {
+          return false;
+        }
+        const { is_admin, op_permission_list } = userOperationPermissions;
+        const hasProjectPermission = op_permission_list?.some((permission) => {
+          if (
+            permission.range_type === OpPermissionItemRangeTypeEnum.project &&
+            permission.op_permission_type === opPermissionType
+          ) {
+            return true;
+          }
+          return false;
+        });
+
+        if (is_admin || hasProjectPermission) {
+          return true;
+        }
+
+        return false;
+      }
+      return false;
+    },
+    [userOperationPermissions]
   );
 
   const checkRoles = useCallback(
@@ -113,11 +141,16 @@ const usePermission = () => {
   const checkPagePermission = useCallback(
     (requiredPermission: PermissionsConstantType): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
+
+      const hasProjectPermission = checkProjectPermission(
+        permissionDetails.projectPermission
+      );
       return (
-        checkRoles(permissionDetails) && checkModuleSupport(permissionDetails)
+        (checkRoles(permissionDetails) || hasProjectPermission) &&
+        checkModuleSupport(permissionDetails)
       );
     },
-    [checkModuleSupport, checkRoles]
+    [checkModuleSupport, checkRoles, checkProjectPermission]
   );
 
   const checkActionPermission = useCallback(
@@ -139,11 +172,17 @@ const usePermission = () => {
         return false;
       }
 
+      // 是否有对应的项目管理权限
+      const hasProjectPermission = checkProjectPermission(
+        permissionDetails.projectPermission
+      );
+
       // 检查角色或项目管理员权限
       const hasRoleOrManagerPermission =
         checkRoles(permissionDetails) ||
         (permissionDetails.projectManager === true &&
-          projectAttributesStatus.isManager);
+          projectAttributesStatus.isManager) ||
+        hasProjectPermission;
 
       if (permissionDetails.dbServicePermission) {
         const { fieldName, opType } = permissionDetails.dbServicePermission;
@@ -160,7 +199,12 @@ const usePermission = () => {
 
       return hasRoleOrManagerPermission;
     },
-    [getProjectAttributesStatus, checkRoles, checkDbServicePermission]
+    [
+      getProjectAttributesStatus,
+      checkRoles,
+      checkDbServicePermission,
+      checkProjectPermission
+    ]
   );
 
   const parse2TableActionPermissions = useCallback(
@@ -237,7 +281,8 @@ const usePermission = () => {
     checkPagePermission,
     checkActionPermission,
     parse2TableActionPermissions,
-    parse2TableToolbarActionPermissions
+    parse2TableToolbarActionPermissions,
+    checkProjectPermission
   };
 };
 

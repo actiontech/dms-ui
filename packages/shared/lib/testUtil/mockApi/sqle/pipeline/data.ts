@@ -14,11 +14,24 @@ export const mockPipelineListData: IPipelineDetail[] = [
     name: 'pipeline1',
     address: '127.0.0.1',
     description: 'desc',
-    node_count: 2
+    node_count: 2,
+    data_sources: ['mysql', 'postgresql', 'mysql-1', 'mysql-2']
   },
   {
     id: 2,
-    name: 'pipeline1',
+    name: 'pipeline2',
+    node_count: 2,
+    data_sources: ['mysql']
+  },
+  {
+    id: 3,
+    name: 'pipeline3',
+    node_count: 2,
+    data_sources: []
+  },
+  {
+    id: 4,
+    name: 'pipeline4',
     node_count: 2
   }
 ];
@@ -29,6 +42,7 @@ export const mockPipelineDetailData: IPipelineDetailData = {
   address: '127.0.0.1',
   description: 'desc',
   node_count: 2,
+  data_sources: ['mysql', 'postgresql', 'mysql-1', 'mysql-2'],
   nodes: [
     {
       audit_method: pipelineNodeDetailAuditMethodEnum.offline,
