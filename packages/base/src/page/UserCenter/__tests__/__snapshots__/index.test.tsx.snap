@@ -3065,19 +3065,19 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              操作权限名称
+                              权限作用范围
                             </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
                             >
-                              操作范围粒度
+                              功能模块
                             </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
                             >
-                              描述
+                              权限点
                             </th>
                           </tr>
                         </thead>
@@ -3124,16 +3124,18 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
                               unknown
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              test module
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              创建项目
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -3142,16 +3144,18 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
                               数据源
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              test module
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              创建项目
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -3160,16 +3164,18 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              修改项目
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
                               数据源
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              test module
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              修改项目
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -4415,6 +4421,75 @@ exports[`base/UserCenter switch to role list 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                  >
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
+                    >
+                      <span
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
+                      </span>
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              />
+            </div>
+          </div>
+          <div
             class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
@@ -4440,11 +4515,9 @@ exports[`base/UserCenter switch to role list 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
-                            style="width: 500px;"
-                          />
-                          <col
-                            style="width: 164px;"
+                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -4458,8 +4531,9 @@ exports[`base/UserCenter switch to role list 1`] = `
                               角色名
                             </th>
                             <th
-                              class="ant-table-cell ellipsis-column-width"
+                              class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                               scope="col"
+                              title="描述"
                             >
                               描述
                             </th>
@@ -4548,7 +4622,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               test role 1
                             </td>
                             <td
-                              class="ant-table-cell ellipsis-column-width"
+                              class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                             >
                               <div
                                 aria-label="Test role 1"
@@ -4666,13 +4740,23 @@ exports[`base/UserCenter switch to role list 1`] = `
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     test1
                                   </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <a
+                                    class="ant-typography"
+                                  >
+                                    查看全部
+                                  </a>
                                 </div>
                               </div>
                             </td>
@@ -4696,6 +4780,19 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     >
                                       <span>
                                         编 辑
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        克 隆
                                       </span>
                                     </button>
                                   </div>
@@ -4725,7 +4822,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               test role 2
                             </td>
                             <td
-                              class="ant-table-cell ellipsis-column-width"
+                              class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                             >
                               <div
                                 aria-label="Test role 2"
@@ -4836,7 +4933,23 @@ exports[`base/UserCenter switch to role list 1`] = `
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <a
+                                    class="ant-typography"
+                                  >
+                                    查看全部
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
@@ -4857,6 +4970,19 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     >
                                       <span>
                                         编 辑
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        克 隆
                                       </span>
                                     </button>
                                   </div>
@@ -4886,7 +5012,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               default role
                             </td>
                             <td
-                              class="ant-table-cell ellipsis-column-width"
+                              class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                             >
                               <div
                                 aria-label="Test default role"
@@ -5020,6 +5146,19 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     >
                                       <span>
                                         编 辑
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        克 隆
                                       </span>
                                     </button>
                                   </div>

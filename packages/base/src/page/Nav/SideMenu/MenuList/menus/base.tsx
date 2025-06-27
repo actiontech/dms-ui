@@ -10,6 +10,7 @@ import { GenerateMenuItemI18nConfig } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 
 const dbServiceMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   to: parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_SOURCE.index, {
@@ -18,7 +19,8 @@ const dbServiceMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   label: 'dmsMenu.instance',
   icon: <DatabaseFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/db-services`,
-  structKey: 'instance'
+  structKey: 'instance',
+  permission: PERMISSIONS.PAGES.BASE.DB_SERVICE
 });
 
 const memberManagementMenItem: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -28,7 +30,8 @@ const memberManagementMenItem: GenerateMenuItemI18nConfig = (projectID) => ({
   label: 'dmsMenu.memberAndPermissions',
   icon: <MemberFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
-  structKey: 'member'
+  structKey: 'member',
+  permission: PERMISSIONS.PAGES.BASE.MEMBER
 });
 
 const cloudBeaverMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({

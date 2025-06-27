@@ -12,7 +12,11 @@ import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import {
+  memberGroupList,
+  memberProjectPermissions
+} from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,6 +30,7 @@ describe('base/Member/Drawer/UpdateMemberGroup', () => {
   let listUsersSpy: jest.SpyInstance;
   let litDBServices: jest.SpyInstance;
   let listRoleSpy: jest.SpyInstance;
+  let getOpPermissionsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -43,11 +48,74 @@ describe('base/Member/Drawer/UpdateMemberGroup', () => {
     listUsersSpy = userCenter.getUserList();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
+
+    getOpPermissionsSpy = userCenter.getOpPermissionsList();
+    getOpPermissionsSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: memberProjectPermissions })
+    );
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+  });
+
+  it('should render update member group form with pre-filled data', async () => {
+    const { baseElement } = superRender(<UpdateMemberGroup />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    expect(litDBServices).toHaveBeenCalledTimes(1);
+    expect(listRoleSpy).toHaveBeenCalledTimes(1);
+    expect(getOpPermissionsSpy).toHaveBeenCalledTimes(1);
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('更新成员组')).toBeInTheDocument();
+    expect(screen.getByText('添加项目操作权限')).toBeInTheDocument();
+    expect(screen.getByText('test role 1')).toBeInTheDocument();
+    expect(screen.getByText('test (127.0.0.1:3306)')).toBeInTheDocument();
+
+    expect(screen.getByDisplayValue('700003')).toBeChecked();
+    expect(screen.getByDisplayValue('700010')).toBeChecked();
+  });
+
+  it('should send update member group request with modified project management permissions', async () => {
+    const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
+    superRender(<UpdateMemberGroup />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByDisplayValue('700003'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700003')).not.toBeChecked();
+
+    fireEvent.click(screen.getByDisplayValue('700001'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(updateMemberGroup).toHaveBeenCalledWith({
+      member_group: {
+        is_project_admin: false,
+        role_with_op_ranges: [
+          {
+            op_range_type: 'db_service',
+            range_uids: ['123123'],
+            role_uid: '1001'
+          }
+        ],
+        user_uids: ['11132422', '1647895752866795520'],
+        project_manage_permissions: ['700001', '700010']
+      },
+      member_group_uid: memberGroupList[2].uid,
+      project_uid: mockProjectInfo.projectID
+    });
+
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Member_List
+    );
   });
 
   it('should send update member group request when click submit button', async () => {
@@ -59,15 +127,13 @@ describe('base/Member/Drawer/UpdateMemberGroup', () => {
     expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('更新成员组')).toBeInTheDocument();
-    expect(screen.getByText('添加平台角色与操作范围')).toBeInTheDocument();
+    expect(screen.getByText('添加项目操作权限')).toBeInTheDocument();
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getByText('test (127.0.0.1:3306)')).toBeInTheDocument();
-    fireEvent.click(screen.getByLabelText('项目管理员'));
+    fireEvent.click(screen.getByLabelText('是否为项目管理员'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(
-      screen.queryByText('添加平台角色与操作范围')
-    ).not.toBeInTheDocument();
-    expect(screen.getByLabelText('项目管理员')).toBeChecked();
+    expect(screen.queryByText('添加项目操作权限')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('是否为项目管理员')).toBeChecked();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');

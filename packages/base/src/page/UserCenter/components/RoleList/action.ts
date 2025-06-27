@@ -7,7 +7,8 @@ import { t } from '../../../../locale';
 
 export const RoleListActions = (
   onEditRole: (record?: IListRole) => void,
-  onDeleteRole: (record?: IListRole) => void
+  onDeleteRole: (record?: IListRole) => void,
+  onCloneRole: (record?: IListRole) => void
 ): ActiontechTableActionsWithPermissions<IListRole> => {
   return [
     {
@@ -21,6 +22,18 @@ export const RoleListActions = (
         };
       },
       permissions: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT
+    },
+    {
+      text: '克隆',
+      key: 'roleClone',
+      buttonProps: (record) => {
+        return {
+          onClick: () => {
+            onCloneRole(record);
+          }
+        };
+      },
+      permissions: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.CLONE
     },
     {
       text: t('common.delete'),

@@ -44,7 +44,8 @@ const UpdateMemberGroup: React.FC = () => {
       member_group: {
         user_uids: values.userUids,
         role_with_op_ranges: values.roles,
-        is_project_admin: values.isProjectAdmin
+        is_project_admin: values.isProjectAdmin,
+        project_manage_permissions: values.projectManagementPermission
       },
       project_uid: projectID
     };
@@ -84,7 +85,11 @@ const UpdateMemberGroup: React.FC = () => {
           (user) => user.uid
         ) as string[],
         isProjectAdmin: selectMemberGroup?.is_project_admin,
-        roles: formatMemberRole(selectMemberGroup?.role_with_op_ranges ?? [])
+        roles: formatMemberRole(selectMemberGroup?.role_with_op_ranges ?? []),
+        projectManagementPermission:
+          selectMemberGroup?.current_project_manage_permissions?.map(
+            (i) => i.uid ?? ''
+          )
       });
     }
   }, [form, visible, selectMemberGroup]);

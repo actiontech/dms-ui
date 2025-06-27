@@ -97,16 +97,19 @@ export const opPermissionList: IListOpPermission[] = [
   {
     op_permission: { name: '创建项目', uid: '700001' },
     description: '',
-    range_type: ListOpPermissionRangeTypeEnum.db_service
+    range_type: ListOpPermissionRangeTypeEnum.db_service,
+    module: 'test module'
   },
   {
     op_permission: { name: '创建项目', uid: '20100' },
-    description: ''
+    description: '',
+    module: 'test module'
   },
   {
     op_permission: { name: '修改项目', uid: '20150' },
     description: '',
-    range_type: ListOpPermissionRangeTypeEnum.db_service
+    range_type: ListOpPermissionRangeTypeEnum.db_service,
+    module: 'test module'
   }
 ];
 
@@ -119,7 +122,8 @@ export const roleList: IListRole[] = [
     op_permissions: [
       {
         name: 'test1',
-        uid: '1234'
+        uid: '1234',
+        module: 'test module'
       }
     ]
   },
