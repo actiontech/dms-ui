@@ -4440,7 +4440,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                     <input
                       class="ant-input ant-input-sm"
                       id="actiontech-table-search-input"
-                      placeholder="输入关键字搜索"
+                      placeholder="输入操作权限关键词搜索"
                       type="text"
                       value=""
                     />
