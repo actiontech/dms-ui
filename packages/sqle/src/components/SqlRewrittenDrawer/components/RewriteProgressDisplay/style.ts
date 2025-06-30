@@ -230,6 +230,7 @@ export const RewriteFailedStyleWrapper = styled('div')`
   }
 
   .rewrite-failed-message {
+    text-align: center;
     margin: 8px 0;
   }
 `;

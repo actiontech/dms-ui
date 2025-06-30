@@ -14,6 +14,7 @@ import {
   getSqlRewriteCache,
   saveSqlRewriteCache
 } from '../../utils/sqlRewriteCache';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil';
 
 // Mock 缓存模块
 jest.mock('../../utils/sqlRewriteCache', () => ({
@@ -167,7 +168,7 @@ describe('useAsyncRewriteProgress', () => {
       await act(async () => jest.advanceTimersByTime(3000));
 
       expect(result.current.showProgress).toBe(false);
-      expect(result.current.errorMessage).toBe('重写失败');
+      expect(result.current.errorMessage).toBe('Network error');
     });
 
     it('should set error message when rewrite start fails', async () => {
@@ -181,7 +182,7 @@ describe('useAsyncRewriteProgress', () => {
       });
       await act(async () => jest.advanceTimersByTime(3000));
 
-      expect(result.current.errorMessage).toBe('重写失败');
+      expect(result.current.errorMessage).toBe('API Error');
     });
 
     it('should not start polling when rewrite initiation fails', async () => {
@@ -214,7 +215,7 @@ describe('useAsyncRewriteProgress', () => {
       });
       await act(async () => jest.advanceTimersByTime(3000));
 
-      expect(result.current.errorMessage).toBe('重写失败');
+      expect(result.current.errorMessage).toBe('First error');
 
       // 重新设置成功的 mock
       taskMockApi.getTaskSQLRewritten();
@@ -1093,6 +1094,251 @@ describe('useAsyncRewriteProgress', () => {
       });
 
       expect(result.current.rewriteResult).toEqual(cachedData.rewriteResult);
+    });
+  });
+
+  describe('Status Update Edge Cases', () => {
+    it('should update status immediately even when shouldUpdateRewriteResult returns false', async () => {
+      // 这个测试用例覆盖这样的场景：
+      // 当 shouldUpdateRewriteResult 返回 false 时（即结果没有变化），
+      // 但状态变为 failed，此时状态应该能够立即更新，失败处理逻辑应该正常执行
+
+      // 设置初始的运行中状态
+      const mockGetAsyncStatusRunning = taskMockApi.getAsyncRewriteTaskStatus();
+
+      const runningResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.running,
+        result: {
+          suggestions: [
+            {
+              rule_name: 'test_rule',
+              desc: 'test description',
+              status: RewriteSuggestionStatusEnum.initial,
+              rewritten_sql: 'SELECT * FROM test;'
+            }
+          ]
+        }
+      };
+
+      const failedResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.failed,
+        error_message: 'Rewrite failed due to syntax error',
+        result: {
+          // 注意：这里的 suggestions 和之前一样，shouldUpdateRewriteResult 会返回 false
+          suggestions: [
+            {
+              rule_name: 'test_rule',
+              desc: 'test description',
+              status: RewriteSuggestionStatusEnum.initial, // 状态没有变化
+              rewritten_sql: 'SELECT * FROM test;'
+            }
+          ]
+        }
+      };
+
+      // 第一次调用返回运行中状态，第二次返回失败状态
+      mockGetAsyncStatusRunning.mockImplementationOnce(() =>
+        createSpySuccessResponse({ data: runningResponse })
+      );
+      mockGetAsyncStatusRunning.mockImplementationOnce(() =>
+        createSpySuccessResponse({ data: failedResponse })
+      );
+
+      const onErrorCallback = jest.fn();
+
+      const { result } = renderHook(() =>
+        useAsyncRewriteProgress({
+          onError: onErrorCallback
+        })
+      );
+
+      // 启动重写
+      await act(async () => {
+        result.current.startRewrite('test-task-id', 1, false);
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 第一次轮询 - 获取运行中状态
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.running
+      );
+      expect(result.current.showProgress).toBe(true);
+      expect(result.current.errorMessage).toBeUndefined();
+
+      // 第二次轮询 - 获取失败状态
+      // 虽然 suggestions 没有变化（shouldUpdateRewriteResult 会返回 false），
+      // 但状态变为 failed，应该能够正确处理
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
+
+      // 验证状态被正确更新为失败状态
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.failed
+      );
+      // 验证显示进度被停止
+      expect(result.current.showProgress).toBe(false);
+      // 验证错误消息被设置
+      expect(result.current.errorMessage).toBe(
+        'Rewrite failed due to syntax error'
+      );
+      // 验证错误回调被调用
+      expect(onErrorCallback).toHaveBeenCalledTimes(1);
+      expect(onErrorCallback).toHaveBeenCalledWith(
+        new Error('Rewrite failed due to syntax error')
+      );
+
+      mockGetAsyncStatusRunning.mockRestore();
+    });
+
+    it('should handle status change from pending to failed when result unchanged', async () => {
+      // 另一个类似的场景：从 pending 到 failed 状态的变化
+      const mockGetAsyncStatus = taskMockApi.getAsyncRewriteTaskStatus();
+
+      const pendingResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.pending,
+        result: {
+          suggestions: []
+        }
+      };
+
+      const failedResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.failed,
+        error_message: 'Task failed to start',
+        result: {
+          suggestions: [] // 结果相同，shouldUpdateRewriteResult 返回 false
+        }
+      };
+
+      mockGetAsyncStatus
+        .mockImplementationOnce(() =>
+          createSpySuccessResponse({ data: pendingResponse })
+        )
+        .mockImplementationOnce(() =>
+          createSpySuccessResponse({ data: failedResponse })
+        );
+
+      const onErrorCallback = jest.fn();
+
+      const { result } = renderHook(() =>
+        useAsyncRewriteProgress({
+          onError: onErrorCallback
+        })
+      );
+
+      // 启动重写
+      await act(async () => {
+        result.current.startRewrite('test-task-id', 1, false);
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 第一次轮询 - pending 状态
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.pending
+      );
+
+      // 第二次轮询 - failed 状态
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
+
+      // 验证状态正确更新并处理失败
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.failed
+      );
+      expect(result.current.showProgress).toBe(false);
+      expect(result.current.errorMessage).toBe('Task failed to start');
+      expect(onErrorCallback).toHaveBeenCalledWith(
+        new Error('Task failed to start')
+      );
+
+      mockGetAsyncStatus.mockRestore();
+    });
+
+    it('should update status when transitioning from running to completed even if suggestions unchanged', async () => {
+      // 验证从 running 到 completed 的状态变化也能正确处理
+      const mockGetAsyncStatusRunning = taskMockApi.getAsyncRewriteTaskStatus();
+
+      const runningResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.running,
+        result: {
+          suggestions: [
+            {
+              rule_name: 'test_rule',
+              desc: 'test description',
+              status: RewriteSuggestionStatusEnum.initial,
+              rewritten_sql: 'SELECT * FROM test;'
+            }
+          ]
+        }
+      };
+
+      const completedResponse = {
+        task_id: 'test-task-id',
+        status: AsyncRewriteTaskStatusEnum.completed,
+        result: {
+          suggestions: [
+            {
+              rule_name: 'test_rule',
+              desc: 'test description',
+              status: RewriteSuggestionStatusEnum.processed, // 状态相同
+              rewritten_sql: 'SELECT * FROM test;'
+            }
+          ]
+        }
+      };
+
+      mockGetAsyncStatusRunning
+        .mockImplementationOnce(() =>
+          createSpySuccessResponse({ data: runningResponse })
+        )
+        .mockImplementationOnce(() =>
+          createSpySuccessResponse({ data: completedResponse })
+        );
+
+      const onSuccessCallback = jest.fn();
+
+      const { result } = renderHook(() =>
+        useAsyncRewriteProgress({
+          onSuccess: onSuccessCallback
+        })
+      );
+
+      // 启动重写
+      await act(async () => {
+        result.current.startRewrite('test-task-id', 1, false);
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 第一次轮询 - running 状态
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(2000));
+
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.running
+      );
+
+      // 第二次轮询 - completed 状态
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 验证状态正确更新为完成
+      expect(result.current.overallStatus).toBe(
+        AsyncRewriteTaskStatusEnum.completed
+      );
+      expect(result.current.showProgress).toBe(false);
+
+      mockGetAsyncStatusRunning.mockRestore();
     });
   });
 
