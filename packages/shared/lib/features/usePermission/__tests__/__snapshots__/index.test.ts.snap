@@ -558,8 +558,16 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_data_export": {
+    "dbServicePermission": {
+      "opType": "create_export_task",
+    },
     "id": "action:create_data_export",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:create_modified_sql_workflow": {
@@ -599,8 +607,16 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_sql_audit": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
     "id": "action:create_sql_audit",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:create_sql_management_exception": {
@@ -615,8 +631,16 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_workflow": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
     "id": "action:create_workflow",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:data_export_batch_close": {
@@ -647,7 +671,6 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:db_service_create_audit_plan",
     "projectArchived": false,
     "projectManager": true,
-    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
       "systemAdministrator",
@@ -1303,8 +1326,16 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_create_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
     "id": "action:sql_management_conf_create_operator",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:sql_management_conf_delete_operator": {

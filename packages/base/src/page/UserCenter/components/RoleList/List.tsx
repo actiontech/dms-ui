@@ -131,7 +131,8 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
           onChange: setSearchKeyword,
           onSearch: () => {
             refreshBySearchKeyword();
-          }
+          },
+          placeholder: t('dmsUserCenter.role.roleList.searchPlaceholder')
         }}
       />
       <ActiontechTable
