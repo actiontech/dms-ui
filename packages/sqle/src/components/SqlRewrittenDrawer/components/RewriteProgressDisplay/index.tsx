@@ -377,7 +377,7 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     );
   }, [overallProgress, ruleProgressList, t, handleToggleExpanded]);
 
-  if (overallStatus === AsyncRewriteTaskStatusEnum.failed && errorMessage) {
+  if (errorMessage) {
     return (
       <RewriteFailedStyleWrapper>
         <div className="rewrite-failed-title">
