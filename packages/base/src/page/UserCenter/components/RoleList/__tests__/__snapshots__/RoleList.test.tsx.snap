@@ -23,7 +23,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入操作权限关键词搜索"
                 type="text"
                 value=""
               />
@@ -946,7 +946,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入操作权限关键词搜索"
                 type="text"
                 value=""
               />
@@ -3314,7 +3314,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入操作权限关键词搜索"
                 type="text"
                 value=""
               />
@@ -5682,7 +5682,7 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入操作权限关键词搜索"
                 type="text"
                 value=""
               />
