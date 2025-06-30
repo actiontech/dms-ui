@@ -311,7 +311,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
 exports[`RewriteProgressDisplay Component Rendering should render rewrite failed UI when overallStatus is failed and errorMessage exists 1`] = `
 <div>
   <div
-    class="css-190orqn"
+    class="css-1gzyrnr"
   >
     <div
       class="rewrite-failed-title"
