@@ -338,12 +338,20 @@ describe('useAsyncRewriteProgress.utils', () => {
       expect(result).toBe(true);
     });
 
-    it('should stop polling when all rules are processed', () => {
+    it('should stop polling when all rules are processed and task is completed', () => {
+      const result = shouldStopPolling(
+        AsyncRewriteTaskStatusEnum.completed,
+        mockRules
+      );
+      expect(result).toBe(true);
+    });
+
+    it('should not stop polling when all rules are processed but task is running', () => {
       const result = shouldStopPolling(
         AsyncRewriteTaskStatusEnum.running,
         mockRules
       );
-      expect(result).toBe(true);
+      expect(result).toBe(false);
     });
 
     it('should continue polling when task is running and has incomplete rules', () => {

@@ -21,6 +21,7 @@ import {
   saveSqlRewriteCache,
   getSqlRewriteCache
 } from '../../../utils/sqlRewriteCache';
+import { getErrorMessage } from '@actiontech/shared';
 
 /**
  * 异步重写进度轮询 Hook
@@ -72,9 +73,9 @@ export const useAsyncRewriteProgress = (
           setOverallStatus(AsyncRewriteTaskStatusEnum.pending);
         }
       },
-      onError: () => {
+      onError: (error) => {
         setShowProgress(false);
-        setErrorMessage(t('sqlRewrite.rewriteFailed'));
+        setErrorMessage(getErrorMessage(error));
       }
     }
   );
@@ -99,7 +100,6 @@ export const useAsyncRewriteProgress = (
       pollingErrorRetryCount: 3,
       onSuccess: (response) => {
         if (!response) return;
-
         const currentRewriteResult = buildRewriteTaskResult(response.result);
 
         // 检查是否需要停止轮询
@@ -108,9 +108,11 @@ export const useAsyncRewriteProgress = (
         const currentRules = currentRewriteResult?.suggestions
           ? mapSuggestionsToRuleProgress(currentRewriteResult.suggestions)
           : [];
+        setOverallStatus(currentStatus);
+
+        // 结果更新使用更严格的条件
         if (shouldUpdateRewriteResult(rewriteResult, currentRewriteResult)) {
           setRewriteResult(currentRewriteResult);
-          setOverallStatus(currentStatus);
         }
 
         if (shouldStopPolling(currentStatus, currentRules)) {

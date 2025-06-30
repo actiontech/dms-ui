@@ -97,16 +97,16 @@ export const shouldStopPolling = (
   overallStatus: AsyncRewriteTaskStatusEnum,
   rules: IRuleProgressInfo[]
 ): boolean => {
-  // 任务已完成或失败
-  if (
-    overallStatus === AsyncRewriteTaskStatusEnum.completed ||
-    overallStatus === AsyncRewriteTaskStatusEnum.failed
-  ) {
+  // 任务失败
+  if (overallStatus === AsyncRewriteTaskStatusEnum.failed) {
     return true;
   }
 
   // 所有规则都已处理完毕
-  if (isTaskCompleted(overallStatus, rules)) {
+  if (
+    overallStatus === AsyncRewriteTaskStatusEnum.completed &&
+    isTaskCompleted(overallStatus, rules)
+  ) {
     return true;
   }
 
