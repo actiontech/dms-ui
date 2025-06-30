@@ -235,9 +235,7 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'uid',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    },
-    projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
+    }
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT,
@@ -618,7 +616,12 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_export_task
+    }
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE,
@@ -645,7 +648,12 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT,
@@ -1161,7 +1169,12 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.CREATE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT,
@@ -1262,7 +1275,12 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
+    }
   },
 
   // 流水线配置

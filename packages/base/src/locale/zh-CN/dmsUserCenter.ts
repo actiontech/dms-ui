@@ -74,7 +74,8 @@ export default {
       title: '角色列表',
       columns: {
         opPermissions: '平台操作权限'
-      }
+      },
+      searchPlaceholder: '输入操作权限关键词搜索'
     },
     roleForm: {
       name: '角色名',
