@@ -20,6 +20,8 @@ export default {
   tableStructure: '表结构',
   aiIsThinking: 'AI 正在思考中...',
   generatingResultsWithLLM: '正在使用大模型生成结果，请稍候...',
+  rewriteInProgressTip:
+    'SQL重写过程进行中，系统将逐步应用优化规则并展示每个步骤的详细信息...',
   noBusinessLogicOptimizationNeeded: '当前SQL重写无需人工介入',
   pendingRewriteRules: '待应用的规则',
   enableDatabaseStructureOptimization: '启动数据库结构优化',
@@ -37,5 +39,29 @@ export default {
   viewExecuteOrderExplanation: '查看SQL执行解释',
   originalSql: '原始SQL',
   rewrittenSql: '重写后SQL',
-  updateRewrittenResult: '更新重写结果'
+
+  rewriteProgressTitle: 'SQL重写进度',
+  rewriteCompleted: '重写完成',
+  contentPreview: '即将展示的内容',
+  progressPercentage: '{{percentage}}%',
+  rulesProcessedProgress: '{{completed}} / {{total}} 条规则',
+  expandProgress: '展开进度详情',
+  collapseProgress: '折叠进度详情',
+
+  ruleStatusCompleted: '已完成',
+  ruleStatusWaiting: '等待中...',
+  ruleStatusError: '处理失败',
+  ruleProcessingWaiting: '等待中...',
+  ruleProcessingApplyingRule: '应用规则...',
+  ruleProcessingModelEvaluating: '模型评估中...',
+  ruleProcessingAnalyzing: '分析与其他规则关系...',
+  ruleProcessingApplyRewrite: '应用重写...',
+  ruleProcessingVerifying: '验证结果...',
+
+  rewriteFailed: '重写失败',
+  retryRewrite: '重试',
+  rewriteInProgress: '重写进行中',
+  updateRewrittenResult: '更新重写结果',
+  closeDrawerConfirm: '重写任务正在进行中，关闭后任务将被终止。确认关闭吗？',
+  leavePageConfirm: '重写任务正在进行中，离开页面将中断任务。确认离开吗？'
 };
