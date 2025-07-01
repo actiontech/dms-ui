@@ -15,9 +15,11 @@ import { RuleKnowledgeEditActions } from './actions';
 import { useBoolean } from 'ahooks';
 import KnowledgeBaseInfo from './components/KnowledgeBaseInfo';
 import PageHeaderExtraAction from './components/PageHeaderExtraAction';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const RuleKnowledge: React.FC = () => {
   const { t } = useTranslation();
+  const { currentTheme } = useChangeTheme();
 
   const [isModifying, { setTrue: startModify, setFalse: modifyFinish }] =
     useBoolean();
@@ -122,7 +124,7 @@ const RuleKnowledge: React.FC = () => {
   const actions = RuleKnowledgeEditActions(startModify, loading);
 
   return (
-    <RuleKnowledgeStyleWrapper>
+    <RuleKnowledgeStyleWrapper data-color-mode={currentTheme}>
       {contextHolder}
       <PageHeader
         title={t('ruleKnowledge.pageTitle')}
