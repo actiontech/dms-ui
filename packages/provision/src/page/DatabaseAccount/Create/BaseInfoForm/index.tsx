@@ -175,7 +175,9 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         <BasicInput disabled={isUpdate} />
       </FormItemLabel>
 
-      <PasswordField disabled={isUpdate} />
+      <EmptyBox if={!isUpdate}>
+        <PasswordField />
+      </EmptyBox>
 
       <EmptyBox if={!!selectedDBServiceID}>
         <AutoCreatedFormItemByApi

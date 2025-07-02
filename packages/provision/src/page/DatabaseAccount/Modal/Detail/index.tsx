@@ -17,7 +17,10 @@ import { ModalName } from '../../../../data/enum';
 import { useRecoilState } from 'recoil';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/features';
 import { Space, Spin, message } from 'antd';
 import { AccountDetailDrawerStyleWrapper } from '../../style';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -26,11 +29,14 @@ import json2md, { DataObject } from 'json2md';
 import { accountDetailCustomConfig } from './accountDetailCustomConfig';
 import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
 import AuthDisplay, { AuthType } from '../../components/AuthDisplay';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const DatabaseAccountDetailModal = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
+
+  const { userRoles, isAdmin } = useCurrentUser();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -149,11 +155,15 @@ const DatabaseAccountDetailModal = () => {
               );
             })}
 
-            <AccountInfoItem label={t('databaseAccount.create.form.password')}>
-              <EmptyBox if={!!data?.account_info?.password} defaultNode="-">
-                <SensitiveDisplay text={data?.account_info?.password ?? ''} />
-              </EmptyBox>
-            </AccountInfoItem>
+            <EmptyBox if={isAdmin || userRoles[SystemRole.systemAdministrator]}>
+              <AccountInfoItem
+                label={t('databaseAccount.create.form.password')}
+              >
+                <EmptyBox if={!!data?.account_info?.password} defaultNode="-">
+                  <SensitiveDisplay text={data?.account_info?.password ?? ''} />
+                </EmptyBox>
+              </AccountInfoItem>
+            </EmptyBox>
             <AccountInfoItem
               label={t('databaseAccount.detail.createTime')}
               value={
