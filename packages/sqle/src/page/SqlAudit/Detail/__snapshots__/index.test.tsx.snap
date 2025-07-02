@@ -102,7 +102,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               审核状态
               ：
               <span
-                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
               >
                 审核成功
               </span>
@@ -113,7 +113,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               业务标签
               ：
               <span
-                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7"
+                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
               >
                 test
               </span>

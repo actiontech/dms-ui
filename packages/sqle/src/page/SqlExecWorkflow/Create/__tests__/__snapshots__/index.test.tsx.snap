@@ -9512,7 +9512,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                     >
                                       基于反向SQL回滚
                                     </span>
@@ -11624,7 +11624,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                     >
                                       基于反向SQL回滚
                                     </span>
@@ -14107,7 +14107,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                     >
                                       基于反向SQL回滚
                                     </span>
@@ -14916,7 +14916,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="12"
@@ -14939,7 +14939,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             color="#6094FC"
@@ -14979,7 +14979,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="12"
@@ -17826,7 +17826,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                     >
                                       基于反向SQL回滚
                                     </span>
@@ -19103,7 +19103,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="12"
@@ -19126,7 +19126,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             color="#6094FC"
@@ -19166,7 +19166,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="12"

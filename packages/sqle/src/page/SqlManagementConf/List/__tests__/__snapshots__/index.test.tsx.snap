@@ -633,7 +633,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     SQL文件
                                   </span>
@@ -756,7 +756,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     SQL文件
                                   </span>
@@ -765,7 +765,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     MySQL库表元数据
                                   </span>
@@ -3071,7 +3071,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     SQL文件
                                   </span>
@@ -3194,7 +3194,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     SQL文件
                                   </span>
@@ -3203,7 +3203,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     MySQL库表元数据
                                   </span>
@@ -4253,7 +4253,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     SQL文件
                                   </span>

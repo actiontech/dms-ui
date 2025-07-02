@@ -776,7 +776,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     v1-test
                                   </span>

@@ -352,7 +352,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                                     style="margin-right: 4px; padding-bottom: 4px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                                       style="height: 28px;"
                                     >
                                       开发工程师
@@ -363,7 +363,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                                     style="padding-bottom: 4px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                                       style="height: 28px;"
                                     >
                                       运维工程师
@@ -402,7 +402,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                                     style="padding-bottom: 4px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                                       style="height: 28px;"
                                     >
                                       开发工程师
@@ -426,7 +426,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                               style="height: 28px;"
                             >
                               数据源管理
@@ -437,7 +437,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                               style="height: 28px;"
                             >
                               成员管理

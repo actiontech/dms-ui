@@ -1599,7 +1599,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     href="/sqle/project/700300/version-management/detail/1"
                   >
                     <span
-                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
                     >
                       版本
                       ：
@@ -2476,7 +2476,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     href="/sqle/project/700300/version-management/detail/1"
                   >
                     <span
-                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
                     >
                       版本
                       ：

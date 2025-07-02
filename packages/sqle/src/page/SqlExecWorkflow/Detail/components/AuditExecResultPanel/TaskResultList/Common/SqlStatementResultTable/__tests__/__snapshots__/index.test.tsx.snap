@@ -263,7 +263,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 1`] =
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
                           >
                             准备执行
                           </span>
@@ -545,7 +545,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
                           >
                             准备执行
                           </span>
@@ -838,7 +838,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                 >
                                   <svg
                                     color="#4583FF"
@@ -871,7 +871,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="18"
