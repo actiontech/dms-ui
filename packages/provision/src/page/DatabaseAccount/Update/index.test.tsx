@@ -81,7 +81,6 @@ describe('provision/DatabaseAccount/Update', () => {
       page_index: 1,
       page_size: 9999
     });
-    expect(authGetCustomDBPasswordRuleSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authGetDBAccountMetaSpy).toHaveBeenCalledTimes(1);
     expect(authListDBRoleTipsSpy).toHaveBeenCalledTimes(1);

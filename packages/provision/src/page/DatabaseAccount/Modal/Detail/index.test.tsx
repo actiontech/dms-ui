@@ -14,6 +14,9 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { databaseAccountDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
   let authGetDBAccountSpy: jest.SpyInstance;
@@ -22,6 +25,7 @@ describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
     authGetDBAccountSpy = dbAccountService.authGetDBAccount();
     auth.mockAllApi();
     mockUseCurrentProject();
+    mockUseCurrentUser();
 
     jest.useFakeTimers();
   });
@@ -112,5 +116,19 @@ describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
     fireEvent.click(screen.getByText('全文复制'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.queryByText('复制成功')).toBeInTheDocument();
+  });
+
+  it('render password when user is not admin or system administrator', async () => {
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      isAdmin: false,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.systemAdministrator]: false
+      }
+    });
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(screen.queryByText('链接密码')).not.toBeInTheDocument();
   });
 });
