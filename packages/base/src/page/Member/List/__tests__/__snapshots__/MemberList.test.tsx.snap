@@ -417,7 +417,7 @@ exports[`base/MemberList should render member table 1`] = `
                             style="padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                               style="height: 28px;"
                             >
                               普通用户
@@ -437,7 +437,7 @@ exports[`base/MemberList should render member table 1`] = `
                             style="padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                               style="height: 28px;"
                             >
                               <svg
@@ -543,7 +543,7 @@ exports[`base/MemberList should render member table 1`] = `
                             style="padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                               style="height: 28px;"
                             >
                               普通用户
@@ -563,7 +563,7 @@ exports[`base/MemberList should render member table 1`] = `
                             style="padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                               style="height: 28px;"
                             >
                               <svg
@@ -617,7 +617,7 @@ exports[`base/MemberList should render member table 1`] = `
                                     style="padding-bottom: 4px;"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
                                       style="height: 28px;"
                                     >
                                       开发工程师

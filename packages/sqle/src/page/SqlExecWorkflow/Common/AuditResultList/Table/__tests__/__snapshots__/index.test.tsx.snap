@@ -288,7 +288,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                             style="margin-right: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               基于反向SQL回滚
                             </span>
@@ -841,7 +841,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                             style="margin-right: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               基于反向SQL回滚
                             </span>
@@ -4456,7 +4456,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                 >
                                   <svg
                                     color="#4583FF"
@@ -4489,7 +4489,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           <svg
                             height="18"

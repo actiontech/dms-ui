@@ -475,7 +475,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -489,7 +489,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>
@@ -576,7 +576,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -590,7 +590,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>
@@ -1549,7 +1549,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -1563,7 +1563,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>
@@ -1651,7 +1651,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -1665,7 +1665,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>
@@ -2199,7 +2199,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -2213,7 +2213,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>
@@ -2312,7 +2312,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -2326,7 +2326,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                   >
                                     执行成功
                                   </span>

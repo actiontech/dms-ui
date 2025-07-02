@@ -2238,7 +2238,7 @@ LIMIT
                           data-testid="trigger-open-report-drawer"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-4vdrre"
                           >
                             审核中
                           </span>
@@ -4503,7 +4503,7 @@ LIMIT
                             data-testid="trigger-open-report-drawer"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-4vdrre"
                             >
                               审核中
                             </span>

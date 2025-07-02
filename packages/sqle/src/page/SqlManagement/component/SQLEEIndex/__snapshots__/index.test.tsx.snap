@@ -1260,7 +1260,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -1277,7 +1277,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -3559,7 +3559,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -3576,7 +3576,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -4276,7 +4276,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -4612,7 +4612,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               style="margin-right: 0px;"
                             >
                               34
@@ -4622,7 +4622,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -4934,7 +4934,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -5158,7 +5158,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-4vdrre"
                               >
                                 审核中
                               </span>
@@ -5232,7 +5232,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -6379,7 +6379,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -6396,7 +6396,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -7096,7 +7096,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -7432,7 +7432,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               style="margin-right: 0px;"
                             >
                               34
@@ -7442,7 +7442,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -7754,7 +7754,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -7978,7 +7978,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-4vdrre"
                               >
                                 审核中
                               </span>
@@ -8052,7 +8052,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -9199,7 +9199,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -9216,7 +9216,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -9916,7 +9916,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -10252,7 +10252,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               style="margin-right: 0px;"
                             >
                               34
@@ -10262,7 +10262,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -10574,7 +10574,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -10798,7 +10798,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-4vdrre"
                               >
                                 审核中
                               </span>
@@ -10872,7 +10872,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -12035,7 +12035,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -12052,7 +12052,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -13201,7 +13201,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -13218,7 +13218,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>
@@ -14337,7 +14337,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -14354,7 +14354,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                             >
                               未处理
                             </span>

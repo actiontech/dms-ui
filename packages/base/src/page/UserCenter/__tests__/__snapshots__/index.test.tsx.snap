@@ -269,7 +269,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                                     style="height: 28px;"
                                   >
                                     创建项目
@@ -289,7 +289,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -461,7 +461,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -483,7 +483,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -505,7 +505,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -599,7 +599,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1dyku9p"
                                     style="height: 28px;"
                                   >
                                     全局浏览
@@ -687,7 +687,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-14wtqlt"
                                     style="height: 28px;"
                                   >
                                     全局管理
@@ -1199,7 +1199,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                                     style="height: 28px;"
                                   >
                                     创建项目
@@ -1219,7 +1219,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -1451,7 +1451,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -1473,7 +1473,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -1495,7 +1495,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -1620,7 +1620,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1dyku9p"
                                     style="height: 28px;"
                                   >
                                     全局浏览
@@ -1738,7 +1738,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-14wtqlt"
                                     style="height: 28px;"
                                   >
                                     全局管理
@@ -2281,7 +2281,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                                     style="height: 28px;"
                                   >
                                     创建项目
@@ -2301,7 +2301,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -2533,7 +2533,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -2555,7 +2555,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -2577,7 +2577,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -2702,7 +2702,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1dyku9p"
                                     style="height: 28px;"
                                   >
                                     全局浏览
@@ -2820,7 +2820,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-14wtqlt"
                                     style="height: 28px;"
                                   >
                                     全局管理
@@ -3667,7 +3667,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-91vcnh"
                                     style="height: 28px;"
                                   >
                                     创建项目
@@ -3687,7 +3687,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -3919,7 +3919,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -3941,7 +3941,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="margin-right: 0px; padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -3963,7 +3963,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                                     style="background-color: gray; height: 28px;"
                                   >
                                     <svg
@@ -4088,7 +4088,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1dyku9p"
                                     style="height: 28px;"
                                   >
                                     全局浏览
@@ -4206,7 +4206,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-14wtqlt"
                                     style="height: 28px;"
                                   >
                                     全局管理
@@ -4743,7 +4743,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     test1
                                   </span>

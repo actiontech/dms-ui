@@ -90,7 +90,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             class="permissions-container"
                           >
                             <span
-                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
                               style="background-color: gray;"
                             >
                               test role 1

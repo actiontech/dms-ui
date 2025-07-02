@@ -1716,7 +1716,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -1761,7 +1761,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -1772,7 +1772,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -1876,7 +1876,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -1920,7 +1920,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test2
                         </span>
@@ -2932,7 +2932,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -2977,7 +2977,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -2988,7 +2988,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -3092,7 +3092,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -3136,7 +3136,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test2
                         </span>
@@ -3798,7 +3798,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -3843,7 +3843,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -3854,7 +3854,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -3916,7 +3916,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -3960,7 +3960,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test2
                         </span>
@@ -4634,7 +4634,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -4679,7 +4679,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -4690,7 +4690,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -5548,7 +5548,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -5593,7 +5593,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -5604,7 +5604,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -6462,7 +6462,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -6507,7 +6507,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -6518,7 +6518,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -6622,7 +6622,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -6666,7 +6666,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test2
                         </span>
@@ -7407,7 +7407,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -7452,7 +7452,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               慢日志
                             </span>
@@ -7463,7 +7463,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test
                         </span>
@@ -7567,7 +7567,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -7611,7 +7611,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                         >
                           test2
                         </span>

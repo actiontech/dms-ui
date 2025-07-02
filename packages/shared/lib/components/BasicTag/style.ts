@@ -2,7 +2,6 @@ import { styled } from '@mui/material/styles';
 import { Tag } from 'antd';
 import { BasicTagColor } from '../../theme/theme.type';
 
-//todo small and large
 export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
   &.basic-tag-wrapper.ant-tag {
     display: flex;
@@ -10,6 +9,7 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     padding: 0 8px 0 6px;
     align-items: center;
     border-radius: 4px;
+    width: max-content;
 
     svg:first-of-type {
       margin-right: 6px;

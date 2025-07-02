@@ -1044,7 +1044,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
                           >
                             准备执行
                           </span>
@@ -1059,7 +1059,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
                                 style="background-color: gray;"
                               >
                                 <svg
@@ -1218,7 +1218,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                       >
                                         <svg
                                           color="#4583FF"
@@ -1250,7 +1250,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               >
                                 <svg
                                   height="18"
@@ -2841,7 +2841,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
                               >
                                 准备执行
                               </span>
@@ -2856,7 +2856,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh"
+                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
                                     style="background-color: gray;"
                                   >
                                     <svg
@@ -3015,7 +3015,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                           class="ant-space-item"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                           >
                                             <svg
                                               color="#4583FF"
@@ -3047,7 +3047,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                                   >
                                     <svg
                                       height="18"
