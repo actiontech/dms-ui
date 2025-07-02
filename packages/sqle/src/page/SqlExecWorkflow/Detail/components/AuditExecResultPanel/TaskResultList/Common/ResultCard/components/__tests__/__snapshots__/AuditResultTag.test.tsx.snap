@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is audit succes
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
     >
       <svg
         height="16"
@@ -35,7 +35,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is error 1`] = 
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
         >
           <svg
             height="16"
@@ -69,7 +69,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
         >
           <svg
             height="19"
@@ -92,7 +92,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
         >
           <svg
             fill="none"
@@ -115,7 +115,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
         >
           <svg
             height="16"
@@ -148,7 +148,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice 1`] =
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
         >
           <svg
             height="19"
@@ -181,7 +181,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is warn 1`] = `
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
         >
           <svg
             fill="none"

@@ -326,7 +326,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               test1
                             </span>

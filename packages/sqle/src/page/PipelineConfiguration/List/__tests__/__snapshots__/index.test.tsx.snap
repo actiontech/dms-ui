@@ -473,7 +473,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                             style="margin-right: 4px; padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               mysql
                             </span>
@@ -483,7 +483,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                             style="margin-right: 4px; padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               postgresql
                             </span>
@@ -493,7 +493,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                             style="margin-right: 4px; padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               mysql-1
                             </span>
@@ -589,7 +589,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                             style="margin-right: 4px; padding-bottom: 4px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                             >
                               mysql
                             </span>

@@ -209,7 +209,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                     >
                                       社区版
                                     </span>
@@ -499,7 +499,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
                                     >
                                       专业版
                                     </span>
@@ -789,7 +789,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
                                     >
                                       企业版
                                     </span>
@@ -1649,7 +1649,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
                                     >
                                       社区版
                                     </span>
@@ -1939,7 +1939,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
                                     >
                                       专业版
                                     </span>
@@ -2229,7 +2229,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
                                     >
                                       企业版
                                     </span>

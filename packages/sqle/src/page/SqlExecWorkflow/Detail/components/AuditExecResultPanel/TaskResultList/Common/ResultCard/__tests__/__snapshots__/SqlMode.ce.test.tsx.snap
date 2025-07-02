@@ -30,14 +30,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
               />
               <div
                 class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
               >
                 <svg
                   height="16"
@@ -170,7 +170,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                           >
                             <svg
                               color="#4583FF"
@@ -202,7 +202,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                   >
                     <svg
                       height="18"
