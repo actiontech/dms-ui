@@ -6,7 +6,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -27,7 +27,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   </body>,
   "container": <div>
     <span
-      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
     >
       <svg
         height="16"
@@ -105,7 +105,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -131,7 +131,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -160,7 +160,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
         >
           <svg
             height="16"
@@ -240,7 +240,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -266,7 +266,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -357,7 +357,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -383,7 +383,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -416,7 +416,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
           >
             <svg
               height="16"
@@ -445,7 +445,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
         >
           <svg
             height="16"
@@ -525,7 +525,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -551,7 +551,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -584,7 +584,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
           >
             <svg
               height="16"
@@ -612,7 +612,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
           >
             <svg
               fill="none"
@@ -642,7 +642,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
         >
           <svg
             fill="none"
@@ -723,7 +723,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   "baseElement": <body>
     <div>
       <span
-        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
       >
         <svg
           height="16"
@@ -749,7 +749,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -782,7 +782,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
           >
             <svg
               height="16"
@@ -810,7 +810,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
           >
             <svg
               fill="none"
@@ -840,7 +840,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           style="margin-right: 8px;"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
           >
             <svg
               height="16"
@@ -863,7 +863,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           style="margin-right: 8px;"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
           >
             <svg
               fill="none"
@@ -886,7 +886,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
           class="ant-space-item"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
           >
             <svg
               height="16"
@@ -916,7 +916,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
         >
           <svg
             height="16"
@@ -939,7 +939,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
         >
           <svg
             fill="none"
@@ -962,7 +962,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
         >
           <svg
             height="16"
