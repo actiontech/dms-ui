@@ -51,6 +51,7 @@ exports[`usePermission should match snapshot 1`] = `
         "EDIT_MEMBER": "action:edit_member",
         "EDIT_MEMBER_GROUP": "action:edit_member_group",
         "MANAGE_MEMBER_GROUP": "action:manage_member_group",
+        "SWITCH_PROJECT_MANAGER": "action:switch_project_manager",
       },
       "NAV": {
         "EDIT_SYSTEM_NOTICE": "action: edit_system_notice",
@@ -1474,6 +1475,15 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:sql_management_issue_push_switch",
     "projectManager": true,
     "projectPermission": "manage_push_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:switch_project_manager": {
+    "id": "action:switch_project_manager",
+    "projectManager": true,
     "role": [
       "admin",
       "systemAdministrator",
