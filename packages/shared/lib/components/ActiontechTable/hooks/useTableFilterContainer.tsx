@@ -94,7 +94,8 @@ const useTableFilterContainer = <
           filterCustomType:
             column?.filterCustomType ?? extraMeta?.filterCustomType,
           filterKey: column?.filterKey ?? extraMeta?.filterKey,
-          filterLabel: value.filterLabel
+          filterLabel: value.filterLabel,
+          filterOrder: column?.filterOrder ?? extraMeta?.filterOrder
         });
       }
     });
@@ -104,7 +105,7 @@ const useTableFilterContainer = <
       throw new Error('Filter key cannot be empty');
     }
     // #endif
-    return meta;
+    return meta.sort((a, b) => (a.filterOrder ?? 0) - (b.filterOrder ?? 0));
   }, [columns, extraFilterMeta, filterButtonMeta]);
 
   const updateAllSelectedFilterItem = useCallback(
