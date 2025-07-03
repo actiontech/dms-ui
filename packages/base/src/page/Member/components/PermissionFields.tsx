@@ -23,6 +23,7 @@ import {
 import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../hooks/useOpPermission';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 
 type PermissionFieldsProps = {
   projectID: string;
@@ -32,6 +33,8 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
   const { t } = useTranslation();
 
   const isProjectAdmin = Form.useWatch('isProjectAdmin');
+
+  const { checkActionPermission } = usePermission();
 
   const {
     loading: getRoleListLoading,
@@ -68,7 +71,13 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
         valuePropName="checked"
         initialValue={false}
       >
-        <BasicSwitch />
+        <BasicSwitch
+          disabled={
+            !checkActionPermission(
+              PERMISSIONS.ACTIONS.BASE.MEMBER.SWITCH_PROJECT_MANAGER
+            )
+          }
+        />
       </Form.Item>
       <EmptyBox if={isProjectAdmin}>
         <Alert

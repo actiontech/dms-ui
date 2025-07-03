@@ -6,11 +6,13 @@ import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices'
 import PermissionFields from '../PermissionFields';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Form } from 'antd';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('base/Member/components/PermissionFields', () => {
   let litDBServices: jest.SpyInstance;
   let listRoleSpy: jest.SpyInstance;
   let opPermissionListSpy: jest.SpyInstance;
+  const checkActionPermissionSpy = jest.fn();
 
   beforeEach(() => {
     mockUseDbServiceDriver();
@@ -18,6 +20,15 @@ describe('base/Member/components/PermissionFields', () => {
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
     opPermissionListSpy = userCenter.getOpPermissionsList();
+    mockUsePermission(
+      {
+        checkActionPermission: checkActionPermissionSpy
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
+    checkActionPermissionSpy.mockReturnValue(true);
   });
 
   afterEach(() => {
@@ -56,5 +67,19 @@ describe('base/Member/components/PermissionFields', () => {
     expect(
       screen.getByText('项目管理员默认拥有项目下所有管理权限')
     ).toBeInTheDocument();
+  });
+
+  it('should disable project admin switch when checkActionPermission return false', async () => {
+    checkActionPermissionSpy.mockReturnValue(false);
+
+    const { container } = superRender(
+      <Form>
+        <PermissionFields projectID={mockProjectInfo.projectID} />
+      </Form>
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const switchElement = container.querySelector('.ant-switch');
+    expect(switchElement).toHaveClass('ant-switch-disabled');
   });
 });
