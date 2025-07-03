@@ -17,6 +17,7 @@ import {
   memberProjectPermissions
 } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -43,6 +44,7 @@ describe('base/Member/Drawer/UpdateMemberGroup', () => {
     );
     mockUseDbServiceDriver();
     mockUseCurrentProject();
+    mockUseCurrentUser();
     jest.useFakeTimers();
     updateMemberGroup = member.updateMemberGroup();
     listUsersSpy = userCenter.getUserList();
