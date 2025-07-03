@@ -6,7 +6,7 @@ import {
   BasicSwitch,
   EmptyBox
 } from '@actiontech/shared';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import useRole from '../../../hooks/useRole';
 import useDbService from '../../../hooks/useDbService';
@@ -23,6 +23,11 @@ import {
 import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../hooks/useOpPermission';
+import {
+  useCurrentUser,
+  useCurrentProject
+} from '@actiontech/shared/lib/features';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 type PermissionFieldsProps = {
   projectID: string;
@@ -32,6 +37,18 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
   const { t } = useTranslation();
 
   const isProjectAdmin = Form.useWatch('isProjectAdmin');
+
+  const { projectName } = useCurrentProject();
+
+  const { isAdmin, isProjectManager, userRoles } = useCurrentUser();
+
+  const allowSwitchProjectAdmin = useMemo(() => {
+    return (
+      isAdmin ||
+      isProjectManager(projectName) ||
+      userRoles[SystemRole.systemAdministrator]
+    );
+  }, [isAdmin, isProjectManager, projectName, userRoles]);
 
   const {
     loading: getRoleListLoading,
@@ -68,7 +85,7 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
         valuePropName="checked"
         initialValue={false}
       >
-        <BasicSwitch />
+        <BasicSwitch disabled={!allowSwitchProjectAdmin} />
       </Form.Item>
       <EmptyBox if={isProjectAdmin}>
         <Alert

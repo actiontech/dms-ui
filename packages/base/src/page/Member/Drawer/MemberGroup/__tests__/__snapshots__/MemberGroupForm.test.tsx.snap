@@ -188,7 +188,8 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
+                  disabled=""
                   id="isProjectAdmin"
                   role="switch"
                   type="button"
@@ -491,7 +492,8 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
+                  disabled=""
                   id="isProjectAdmin"
                   role="switch"
                   type="button"
