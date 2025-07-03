@@ -20,6 +20,7 @@ import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { dbServices as dbServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -47,6 +48,14 @@ describe('base/Member/Drawer/UpdateMember', () => {
     );
     mockUseDbServiceDriver();
     mockUseCurrentProject();
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     jest.useFakeTimers();
     updateMemberSpy = member.updateMember();
     listUsersSpy = userCenter.getUserList();

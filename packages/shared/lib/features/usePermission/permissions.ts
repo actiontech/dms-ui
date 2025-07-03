@@ -106,7 +106,8 @@ export const PERMISSIONS = {
         MANAGE_MEMBER_GROUP: 'action:manage_member_group',
         ADD_MEMBER_GROUP: 'action:add_member_group',
         EDIT_MEMBER_GROUP: 'action:edit_member_group',
-        DELETE_MEMBER_GROUP: 'action:delete_member_group'
+        DELETE_MEMBER_GROUP: 'action:delete_member_group',
+        SWITCH_PROJECT_MANAGER: 'action:switch_project_manager'
       },
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',

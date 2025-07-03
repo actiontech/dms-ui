@@ -596,6 +596,12 @@ export const PERMISSION_MANIFEST: Record<
     projectArchived: false,
     projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.SWITCH_PROJECT_MANAGER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.SWITCH_PROJECT_MANAGER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true
+  },
 
   // 数据导出
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE]: {
