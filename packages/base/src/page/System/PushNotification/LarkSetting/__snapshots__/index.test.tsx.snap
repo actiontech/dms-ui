@@ -130,7 +130,7 @@ exports[`base/System/PushNotification/LarkSetting render snap 1`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -487,7 +487,7 @@ exports[`base/System/PushNotification/LarkSetting render snap 2`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -883,7 +883,7 @@ exports[`base/System/PushNotification/LarkSetting render snap when user is not a
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1279,7 +1279,7 @@ exports[`base/System/PushNotification/LarkSetting render submit lark setting ren
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1786,7 +1786,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2266,7 +2266,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2770,7 +2770,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"

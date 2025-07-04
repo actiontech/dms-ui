@@ -275,7 +275,7 @@ exports[`base/System-ee render snap 1`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -859,7 +859,7 @@ exports[`base/System-ee render snap 1`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -1362,7 +1362,7 @@ exports[`base/System-ee render snap 1`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -1753,7 +1753,7 @@ exports[`base/System-ee render snap 1`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -2443,7 +2443,7 @@ exports[`base/System-ee render snap 2`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -3132,7 +3132,7 @@ exports[`base/System-ee render snap 2`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -3611,7 +3611,7 @@ exports[`base/System-ee render snap 2`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -4017,7 +4017,7 @@ exports[`base/System-ee render snap 2`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -4742,7 +4742,7 @@ exports[`base/System-ee render snap 3`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -5127,7 +5127,7 @@ exports[`base/System-ee render snap 3`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -5512,7 +5512,7 @@ exports[`base/System-ee render snap 3`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -5897,7 +5897,7 @@ exports[`base/System-ee render snap 3`] = `
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -6437,7 +6437,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -6822,7 +6822,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -7207,7 +7207,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -7592,7 +7592,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"

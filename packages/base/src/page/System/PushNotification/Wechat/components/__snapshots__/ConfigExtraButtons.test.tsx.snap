@@ -56,7 +56,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -133,7 +133,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -219,7 +219,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -475,7 +475,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -720,7 +720,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -796,7 +796,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -1002,7 +1002,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -1208,7 +1208,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -1307,7 +1307,7 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"

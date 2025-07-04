@@ -157,7 +157,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -542,7 +542,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -927,7 +927,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -1312,7 +1312,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -1697,7 +1697,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -2058,7 +2058,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -2419,7 +2419,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
@@ -2780,7 +2780,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                             class="ant-btn-icon"
                                           >
                                             <svg
-                                              color="#292c33"
+                                              color="currentColor"
                                               height="16"
                                               viewBox="0 0 16 16"
                                               width="16"
