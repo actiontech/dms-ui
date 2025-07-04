@@ -1,14 +1,10 @@
 import { styled } from '@mui/material/styles';
 import { Avatar } from 'antd';
 
-/**
-  todo: 字体头像的颜色
- */
 export const CustomAvatarStyleWrapper = styled(Avatar)`
   &.ant-avatar.action-avatar {
-    /* background-color: ${({ theme }) =>
-      theme.sharedTheme.basic.colorPrimaryHover}; */
-    background-color: #fde3cf;
-    color: #f56a00;
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.customAvatar.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.customAvatar.color};
   }
 `;
