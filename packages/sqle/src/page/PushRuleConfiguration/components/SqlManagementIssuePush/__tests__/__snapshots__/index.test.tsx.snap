@@ -948,7 +948,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"
@@ -970,7 +970,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"

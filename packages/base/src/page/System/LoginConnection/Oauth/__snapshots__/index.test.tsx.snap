@@ -98,7 +98,7 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1260,7 +1260,7 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2422,7 +2422,7 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -3584,7 +3584,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -4746,7 +4746,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -5950,7 +5950,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -7111,7 +7111,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -8297,7 +8297,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
