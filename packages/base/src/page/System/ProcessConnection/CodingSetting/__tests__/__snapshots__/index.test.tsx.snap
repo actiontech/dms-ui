@@ -117,7 +117,7 @@ exports[`base/System/ProcessConnection/CodingSetting render close coding configu
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -607,7 +607,7 @@ exports[`base/System/ProcessConnection/CodingSetting render edit coding configur
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -998,7 +998,7 @@ exports[`base/System/ProcessConnection/CodingSetting render init snap 1`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1366,7 +1366,7 @@ exports[`base/System/ProcessConnection/CodingSetting render init snap 2`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1773,7 +1773,7 @@ exports[`base/System/ProcessConnection/CodingSetting render open coding configur
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2433,7 +2433,7 @@ exports[`base/System/ProcessConnection/CodingSetting render test coding connecti
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2958,7 +2958,7 @@ exports[`base/System/ProcessConnection/CodingSetting render test coding connecti
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
