@@ -98,7 +98,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 1`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -765,7 +765,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 2`] = `
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1432,7 +1432,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap when user is not ad
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2099,7 +2099,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2791,7 +2791,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -3485,7 +3485,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -4151,7 +4151,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -4818,7 +4818,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -5592,7 +5592,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
