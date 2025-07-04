@@ -467,3 +467,8 @@ export type NavTheme = {
     };
   };
 };
+
+export type CustomAvatarTheme = {
+  backgroundColor: string;
+  color: string;
+};
