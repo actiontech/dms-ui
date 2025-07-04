@@ -5,10 +5,6 @@ import classNames from 'classnames';
 import { CustomAvatarProps } from './CustomAvatar.types';
 import { BasicToolTip } from '../BasicToolTip';
 
-/**
-  todo:
-    Avatar 的 背景颜色，暂时使用背景颜色
- */
 const CustomAvatar: React.FC<CustomAvatarProps> = (props) => {
   const {
     src,
