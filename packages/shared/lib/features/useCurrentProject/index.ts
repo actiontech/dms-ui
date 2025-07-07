@@ -12,13 +12,7 @@ const useCurrentProject = () => {
     );
   }, [bindProjects, projectID]);
 
-  // todo: 后续删除 useCurrentProject 中导出的 projectArchive
-  const projectArchive = useMemo(() => {
-    return (
-      bindProjects.find((v) => v.project_id === projectID)?.archived ?? false
-    );
-  }, [bindProjects, projectID]);
-  return { projectName, projectID, projectArchive };
+  return { projectName, projectID };
 };
 
 export default useCurrentProject;
