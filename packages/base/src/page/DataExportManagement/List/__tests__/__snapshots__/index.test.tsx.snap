@@ -798,7 +798,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -2543,7 +2543,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -3902,7 +3902,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
