@@ -4,19 +4,23 @@ const mockEditor = (props) => {
   const { onChange, value, commands, onMount, ...otherProps } = props;
 
   if (onMount) {
+    const editor = {
+      getContentHeight: () => 1000,
+      getContentWidth: () => 800,
+      getLayoutInfo: () => ({ height: 500, width: 600 }),
+      getScrollTop: () => 0,
+      getScrollLeft: () => 0,
+      setScrollTop: () => undefined,
+      setScrollLeft: () => undefined,
+      onDidChangeModelContent: () => undefined,
+      onDidLayoutChange: () => undefined,
+      onDidFocusEditorText: () => undefined,
+      onDidBlurEditorText: () => undefined
+    };
     onMount(
       {
-        getContentHeight: () => 1000,
-        getContentWidth: () => 800,
-        getLayoutInfo: () => ({ height: 500, width: 600 }),
-        getScrollTop: () => 0,
-        getScrollLeft: () => 0,
-        setScrollTop: () => undefined,
-        setScrollLeft: () => undefined,
-        onDidChangeModelContent: () => undefined,
-        onDidLayoutChange: () => undefined,
-        onDidFocusEditorText: () => undefined,
-        onDidBlurEditorText: () => undefined
+        ...editor,
+        getModifiedEditor: () => editor
       },
       {
         editor: {
@@ -24,7 +28,9 @@ const mockEditor = (props) => {
           setTheme: () => undefined
         },
         languages: {
-          registerCompletionItemProvider: () => undefined
+          registerCompletionItemProvider: () => undefined,
+          register: () => undefined,
+          setMonarchTokensProvider: () => undefined
         }
       }
     );
