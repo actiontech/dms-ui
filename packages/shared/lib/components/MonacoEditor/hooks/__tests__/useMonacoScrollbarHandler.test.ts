@@ -1,48 +1,34 @@
 import { renderHook, act } from '@testing-library/react';
 import useMonacoScrollbarHandler from '../useMonacoScrollbarHandler';
+import { editor } from 'monaco-editor';
+import { Monaco } from '@monaco-editor/react';
 
-const createMockEditorAdapter = (overrides = {}) => ({
-  getContentHeight: jest.fn(() => 1000),
-  getContentWidth: jest.fn(() => 800),
-  getLayoutInfo: jest.fn(() => ({ height: 500, width: 600 })),
-  getScrollTop: jest.fn(() => 0),
-  getScrollLeft: jest.fn(() => 0),
-  setScrollTop: jest.fn(),
-  setScrollLeft: jest.fn(),
-  onDidChangeModelContent: jest.fn(),
-  onDidLayoutChange: jest.fn(),
-  ...overrides
-});
+const createMockEditor = (overrides = {}) =>
+  ({
+    getContentHeight: jest.fn(() => 1000),
+    getContentWidth: jest.fn(() => 800),
+    getLayoutInfo: jest.fn(() => ({ height: 500, width: 600 })),
+    getScrollTop: jest.fn(() => 0),
+    getScrollLeft: jest.fn(() => 0),
+    setScrollTop: jest.fn(),
+    setScrollLeft: jest.fn(),
+    onDidChangeModelContent: jest.fn(),
+    onDidLayoutChange: jest.fn(),
+    ...overrides
+  } as unknown as editor.IStandaloneCodeEditor);
 
-const createMockEditor = () => ({
-  id: 'test-editor'
-});
-
-const createMockMonaco = () => ({
-  editor: {
-    defineTheme: jest.fn(),
-    setTheme: jest.fn()
-  }
-});
+const createMockMonaco = () =>
+  ({
+    editor: {
+      defineTheme: jest.fn(),
+      setTheme: jest.fn()
+    }
+  } as unknown as Monaco);
 
 describe('useMonacoScrollbarHandler', () => {
-  let mockConsoleError: jest.SpyInstance;
-
-  beforeEach(() => {
-    mockConsoleError = jest
-      .spyOn(console, 'error')
-      .mockImplementation(() => {});
-  });
-
-  afterEach(() => {
-    jest.clearAllMocks();
-    jest.restoreAllMocks();
-  });
-
   it('should return required refs and setupScrollbarHandler function', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
 
-    expect(result.current.editorRef).toBeDefined();
     expect(result.current.monacoRef).toBeDefined();
     expect(result.current.containerRef).toBeDefined();
     expect(result.current.hasScrollbarRef).toBeDefined();
@@ -52,20 +38,15 @@ describe('useMonacoScrollbarHandler', () => {
 
   it('should detect scrollbar when content is larger than viewport', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
-    const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
 
-    const mockAdapter = createMockEditorAdapter({
+    const mockEditor = createMockEditor({
       getContentHeight: jest.fn(() => 1000),
       getContentWidth: jest.fn(() => 800)
     });
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
     expect(result.current.hasScrollbarRef.current).toBe(true);
@@ -73,20 +54,15 @@ describe('useMonacoScrollbarHandler', () => {
 
   it('should not detect scrollbar when content fits in viewport', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
-    const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
 
-    const mockAdapter = createMockEditorAdapter({
+    const mockEditor = createMockEditor({
       getContentHeight: jest.fn(() => 400),
       getContentWidth: jest.fn(() => 500)
     });
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
     expect(result.current.hasScrollbarRef.current).toBe(false);
@@ -96,47 +72,37 @@ describe('useMonacoScrollbarHandler', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
     const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
-    const mockAdapter = createMockEditorAdapter();
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
-    expect(mockAdapter.onDidChangeModelContent).toHaveBeenCalledWith(
+    expect(mockEditor.onDidChangeModelContent).toHaveBeenCalledWith(
       expect.any(Function)
     );
-    expect(mockAdapter.onDidLayoutChange).toHaveBeenCalledWith(
+    expect(mockEditor.onDidLayoutChange).toHaveBeenCalledWith(
       expect.any(Function)
     );
   });
 
   it('should update scrollbar detection when content changes', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
-    const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
 
     let contentHeight = 400;
-    const mockAdapter = createMockEditorAdapter({
+    const mockEditor = createMockEditor({
       getContentHeight: jest.fn(() => contentHeight),
       getContentWidth: jest.fn(() => 500)
     });
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
     expect(result.current.hasScrollbarRef.current).toBe(false);
 
     const contentChangeListener = (
-      mockAdapter.onDidChangeModelContent as jest.Mock
+      mockEditor.onDidChangeModelContent as jest.Mock
     ).mock.calls[0][0];
 
     contentHeight = 1000;
@@ -149,27 +115,22 @@ describe('useMonacoScrollbarHandler', () => {
 
   it('should update scrollbar detection when layout changes', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
-    const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
 
     let layoutHeight = 500;
-    const mockAdapter = createMockEditorAdapter({
+    const mockEditor = createMockEditor({
       getContentHeight: jest.fn(() => 500),
       getContentWidth: jest.fn(() => 500),
       getLayoutInfo: jest.fn(() => ({ height: layoutHeight, width: 600 }))
     });
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
     expect(result.current.hasScrollbarRef.current).toBe(false);
 
-    const layoutChangeListener = (mockAdapter.onDidLayoutChange as jest.Mock)
+    const layoutChangeListener = (mockEditor.onDidLayoutChange as jest.Mock)
       .mock.calls[0][0];
 
     layoutHeight = 300;
@@ -182,21 +143,16 @@ describe('useMonacoScrollbarHandler', () => {
 
   it('should verify scrollbar adapter interface', () => {
     const { result } = renderHook(() => useMonacoScrollbarHandler());
-    const mockEditor = createMockEditor();
     const mockMonaco = createMockMonaco();
 
-    const mockAdapter = createMockEditorAdapter();
+    const mockEditor = createMockEditor();
 
     act(() => {
-      result.current.setupScrollbarHandler(
-        mockEditor,
-        mockMonaco,
-        () => mockAdapter
-      );
+      result.current.setupScrollbarHandler(mockEditor, mockMonaco);
     });
 
-    expect(mockAdapter.getContentHeight).toHaveBeenCalled();
-    expect(mockAdapter.getContentWidth).toHaveBeenCalled();
-    expect(mockAdapter.getLayoutInfo).toHaveBeenCalled();
+    expect(mockEditor.getContentHeight).toHaveBeenCalled();
+    expect(mockEditor.getContentWidth).toHaveBeenCalled();
+    expect(mockEditor.getLayoutInfo).toHaveBeenCalled();
   });
 });

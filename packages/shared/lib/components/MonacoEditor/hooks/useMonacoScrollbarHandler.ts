@@ -1,4 +1,6 @@
 import { useCallback, useRef, useEffect } from 'react';
+import { editor as MonacoEditor } from 'monaco-editor';
+import { Monaco } from '@monaco-editor/react';
 
 interface EditorAdapter {
   getContentHeight(): number;
@@ -12,24 +14,8 @@ interface EditorAdapter {
   onDidLayoutChange(listener: () => void): void;
 }
 
-interface UseMonacoScrollbarHandlerReturn<TEditor, TMonaco> {
-  editorRef: React.RefObject<TEditor>;
-  monacoRef: React.RefObject<TMonaco>;
-  containerRef: React.RefObject<HTMLDivElement>;
-  hasScrollbarRef: React.RefObject<boolean>;
-  setupScrollbarHandler: (
-    editor: TEditor,
-    monaco: TMonaco,
-    getAdapter: (editor: TEditor) => EditorAdapter
-  ) => void;
-}
-
-const useMonacoScrollbarHandler = <
-  TEditor,
-  TMonaco
->(): UseMonacoScrollbarHandlerReturn<TEditor, TMonaco> => {
-  const editorRef = useRef<TEditor | null>(null);
-  const monacoRef = useRef<TMonaco | null>(null);
+const useMonacoScrollbarHandler = () => {
+  const monacoRef = useRef<Monaco | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const hasScrollbarRef = useRef<boolean>(false);
   const adapterRef = useRef<EditorAdapter | null>(null);
@@ -79,14 +65,21 @@ const useMonacoScrollbarHandler = <
   }, [handleWheelEvent]);
 
   const setupScrollbarHandler = useCallback(
-    (
-      editor: TEditor,
-      monaco: TMonaco,
-      getAdapter: (editor: TEditor) => EditorAdapter
-    ) => {
-      editorRef.current = editor;
+    (editor: MonacoEditor.IStandaloneCodeEditor, monaco: Monaco) => {
       monacoRef.current = monaco;
-      adapterRef.current = getAdapter(editor);
+      adapterRef.current = {
+        getContentHeight: () => editor.getContentHeight(),
+        getContentWidth: () => editor.getContentWidth(),
+        getLayoutInfo: () => editor.getLayoutInfo(),
+        getScrollTop: () => editor.getScrollTop(),
+        getScrollLeft: () => editor.getScrollLeft(),
+        setScrollTop: (scrollTop: number) => editor.setScrollTop(scrollTop),
+        setScrollLeft: (scrollLeft: number) => editor.setScrollLeft(scrollLeft),
+        onDidChangeModelContent: (listener: () => void) =>
+          editor.onDidChangeModelContent(listener),
+        onDidLayoutChange: (listener: () => void) =>
+          editor.onDidLayoutChange(listener)
+      };
 
       // 初始检查滚动条
       checkScrollbarExistence();
@@ -105,7 +98,6 @@ const useMonacoScrollbarHandler = <
   );
 
   return {
-    editorRef,
     monacoRef,
     containerRef,
     hasScrollbarRef,
