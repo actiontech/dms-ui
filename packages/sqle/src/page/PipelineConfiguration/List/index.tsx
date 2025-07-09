@@ -146,7 +146,6 @@ const PipelineConfigurationList = () => {
               refreshBySearchKeyword();
             }
           }}
-          loading={loading}
         />
         <ActiontechTable
           className="table-row-cursor"
