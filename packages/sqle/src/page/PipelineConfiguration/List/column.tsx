@@ -19,6 +19,8 @@ export const pipelineConfigurationListColumns: (
   return [
     {
       dataIndex: 'name',
+      className: 'ellipsis-column-width',
+      width: '18%',
       title: () => t('pipelineConfiguration.table.name'),
       render: (name, record) => {
         return (
@@ -39,9 +41,11 @@ export const pipelineConfigurationListColumns: (
     },
     {
       dataIndex: 'address',
+      className: 'ellipsis-column-width',
       title: () => t('pipelineConfiguration.table.address'),
       render: (address) => {
-        return address || '-';
+        if (!address) return '-';
+        return <BasicTypographyEllipsis textCont={address} />;
       }
     },
     {
@@ -51,7 +55,7 @@ export const pipelineConfigurationListColumns: (
     {
       dataIndex: 'data_sources',
       title: () => t('pipelineConfiguration.table.dataSources'),
-      width: '30%',
+      width: '25%',
       render: (dataSources) => {
         if (!dataSources || dataSources.length === 0) {
           return '-';
