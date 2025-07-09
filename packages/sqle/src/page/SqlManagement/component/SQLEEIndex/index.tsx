@@ -63,6 +63,7 @@ import dayjs from 'dayjs';
 import AbnormalInstance from './AbnormalInstance';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AbnormalInstanceStatusCodeEnum } from './index.data';
+import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -70,11 +71,7 @@ const SQLEEIndex = () => {
   const extractQueries = useTypedQuery();
 
   const [messageApi, messageContextHolder] = message.useMessage();
-  const {
-    parse2TableActionPermissions,
-    parse2TableToolbarActionPermissions,
-    checkActionPermission
-  } = usePermission();
+  const { checkActionPermission } = usePermission();
   // api
   const { projectID, projectName } = useCurrentProject();
   const { username, userId, language } = useCurrentUser();
@@ -290,16 +287,15 @@ const SQLEEIndex = () => {
   );
 
   const actions = useMemo(() => {
-    return parse2TableActionPermissions(
-      SqlManagementRowAction(
-        openModal,
-        jumpToAnalyze,
-        onCreateSqlManagementException,
-        onCreateWhitelist,
-        language,
-        checkActionPermission,
-        onPushToCoding
-      )
+    return SqlManagementRowAction(
+      openModal,
+      jumpToAnalyze,
+      onCreateSqlManagementException,
+      onCreateWhitelist,
+      language,
+      checkActionPermission,
+      onPushToCoding,
+      username
     );
   }, [
     jumpToAnalyze,
@@ -307,9 +303,9 @@ const SQLEEIndex = () => {
     onCreateSqlManagementException,
     onCreateWhitelist,
     language,
-    parse2TableActionPermissions,
     checkActionPermission,
-    onPushToCoding
+    onPushToCoding,
+    username
   ]);
 
   const updateRemarkProtect = useRef(false);
@@ -440,32 +436,48 @@ const SQLEEIndex = () => {
   }, [selectedRowData, updateModalStatus, setBatchSelectData]);
 
   const getTableToolbarActions = useMemo(() => {
-    return parse2TableToolbarActionPermissions(
-      SqlManagementTableToolbarActions(
-        selectedRowKeys?.length === 0,
-        batchSolveLoading,
-        batchIgnoreLoading,
-        onBatchAssignment,
-        onBatchSolve,
-        onBatchIgnore,
-        isAssigneeSelf,
-        isHighPriority,
-        setAssigneeSelf,
-        setIsHighPriority,
-        onPushToCoding
-      )
+    // 当前用户不是admin 系统管理员 项目管理员 则根据用户是否是sql负责判断是否有操作权限
+    // 因为批量操作的权限一致 所以这里取其中一个判断
+    const hasPermission = checkActionPermission(
+      PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT
+    );
+    const isAssignees = selectedRowData.every((item) =>
+      item?.assignees?.includes(username)
+    );
+    const isDisabled =
+      selectedRowData?.length === 0 || (!hasPermission && !isAssignees);
+    // 用户为某条sql的负责人才会显示批量操作按钮
+    const isCertainAssignees =
+      sqlList?.list?.some((item) => item?.assignees?.includes(username)) ??
+      false;
+    return SqlManagementTableToolbarActions(
+      isDisabled,
+      batchSolveLoading,
+      batchIgnoreLoading,
+      onBatchAssignment,
+      onBatchSolve,
+      onBatchIgnore,
+      isAssigneeSelf,
+      isHighPriority,
+      setAssigneeSelf,
+      setIsHighPriority,
+      onPushToCoding,
+      isCertainAssignees,
+      checkActionPermission
     );
   }, [
     batchIgnoreLoading,
     batchSolveLoading,
-    selectedRowKeys?.length,
+    selectedRowData,
     isAssigneeSelf,
     isHighPriority,
     onBatchAssignment,
     onBatchIgnore,
     onBatchSolve,
     onPushToCoding,
-    parse2TableToolbarActionPermissions
+    username,
+    checkActionPermission,
+    sqlList
   ]);
 
   const loading = useMemo(
