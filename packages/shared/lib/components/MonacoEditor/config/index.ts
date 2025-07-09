@@ -21,7 +21,8 @@ export const editorDefaultOptions: EditorProps['options'] = {
     horizontal: 'visible',
     useShadows: false,
     verticalScrollbarSize: 12,
-    horizontalScrollbarSize: 12
+    horizontalScrollbarSize: 12,
+    alwaysConsumeMouseWheel: false
   },
 
   folding: false,
