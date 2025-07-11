@@ -21,6 +21,14 @@ jest.mock('react-redux', () => {
   };
 });
 
+const originLocation = window.location;
+Object.defineProperty(window, 'location', {
+  value: {
+    ...originLocation
+  },
+  writable: true
+});
+
 describe('test base/page/CloudBeaver', () => {
   let getSqlQueryUrlSpy: jest.SpyInstance;
   const mockDispatch = jest.fn();
@@ -82,15 +90,17 @@ describe('test base/page/CloudBeaver', () => {
     expect(screen.getByText('打开SQL工作台')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('打开SQL工作台'));
+    expect(global.open).toHaveBeenCalledTimes(0);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
       enableSqlQueryUrlData.sql_query_root_uri
     );
   });
 
-  it('should auto jump to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
-    global.open = jest.fn();
-
+  it('should auto replace to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
     superRender(<CloudBeaver />, undefined, {
       routerProps: {
         initialEntries: [
@@ -100,8 +110,6 @@ describe('test base/page/CloudBeaver', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(global.open).not.toHaveBeenCalled();
 
     cleanup();
 
@@ -119,9 +127,6 @@ describe('test base/page/CloudBeaver', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(global.open).toHaveBeenCalledTimes(1);
-    expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
-    );
+    expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
   });
 });
