@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography, Spin } from 'antd';
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
 import {
@@ -20,28 +20,39 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
-  const cloudBeaverUrl = useRef('');
   const extractQueries = useTypedQuery();
 
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
-  const { data, loading } = useRequest(() => {
-    return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
-      if (res?.data.data?.enable_sql_query) {
-        cloudBeaverUrl.current = res?.data.data.sql_query_root_uri as string;
+  const { data, loading, runAsync } = useRequest(
+    () => {
+      return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
+        return res.data.data;
+      });
+    },
+    {
+      manual: true
+    }
+  );
 
+  useEffect(() => {
+    runAsync().then((res) => {
+      if (res?.enable_sql_query && res.sql_query_root_uri) {
         const params = extractQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index);
 
         if (params?.open_cloud_beaver === 'true') {
-          window.open(cloudBeaverUrl.current);
+          window.location.href = res.sql_query_root_uri;
         }
       }
-      return res.data.data;
     });
-  });
+  }, [extractQueries, runAsync]);
 
   const openCloudBeaver = () => {
-    window.open(cloudBeaverUrl.current);
+    runAsync().then((res) => {
+      if (res?.enable_sql_query && res.sql_query_root_uri) {
+        window.open(res.sql_query_root_uri);
+      }
+    });
   };
 
   return (
@@ -50,7 +61,11 @@ const CloudBeaver = () => {
         title={t('dmsCloudBeaver.pageTitle')}
         extra={
           <EmptyBox if={!!data?.enable_sql_query}>
-            <BasicButton type="primary" onClick={openCloudBeaver}>
+            <BasicButton
+              loading={loading}
+              type="primary"
+              onClick={openCloudBeaver}
+            >
               {t('dmsCloudBeaver.jumpToCloudBeaver')}
             </BasicButton>
           </EmptyBox>
