@@ -1,7 +1,7 @@
-import system from '../../../../../testUtils/mockApi/system';
-import { mockSMSConfigurationData } from '../../../../../testUtils/mockApi/system/data';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import { mockSMSConfigurationData } from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import SMSSetting from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -45,10 +45,10 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
+        [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.createProject]: true
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.projectDirector]: true
       }
     });
     customRender();

@@ -1,11 +1,11 @@
 import useRuleTips from '../useRuleTips';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ruleTipsData } from '../../../../../../testUtils/mockApi/sqlManage/data';
+import { ruleTipsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useSelector } from 'react-redux';
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -34,7 +34,7 @@ describe('SqlManagement/useRuleTips', () => {
 
   it('get rule tips', async () => {
     const request = sqlManage.getSqlManageRuleTips();
-    const { result } = renderHooksWithRedux(() => useRuleTips());
+    const { result } = sqleSuperRenderHook(() => useRuleTips());
     await act(async () => {
       result.current.updateRuleTips(mockProjectInfo.projectName);
     });
@@ -62,7 +62,7 @@ describe('SqlManagement/useRuleTips', () => {
         message: 'error'
       })
     );
-    const { result } = renderHooksWithRedux(() => useRuleTips());
+    const { result } = sqleSuperRenderHook(() => useRuleTips());
     await act(async () => {
       result.current.updateRuleTips(mockProjectInfo.projectName);
     });
@@ -77,7 +77,7 @@ describe('SqlManagement/useRuleTips', () => {
   it('request rule tips failed', async () => {
     const request = sqlManage.getSqlManageRuleTips();
     request.mockImplementation(() => Promise.reject('error'));
-    const { result } = renderHooksWithRedux(() => useRuleTips());
+    const { result } = sqleSuperRenderHook(() => useRuleTips());
     await act(async () => {
       result.current.updateRuleTips(mockProjectInfo.projectName);
     });

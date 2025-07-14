@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { TableToolbarProps } from '../../index.type';
 import ToolBar from '../Toolbar';
 import { ActiontechTableContextProvide } from '../../context';

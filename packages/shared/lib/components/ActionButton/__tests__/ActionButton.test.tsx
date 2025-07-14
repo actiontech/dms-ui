@@ -1,6 +1,6 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import ActionButton from '../ActionButton';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 
 describe('ActionButton', () => {
   beforeEach(() => {

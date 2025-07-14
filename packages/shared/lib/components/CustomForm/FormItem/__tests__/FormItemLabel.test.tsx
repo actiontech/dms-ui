@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { FormItemLabelProps } from '../FormItem.types';
 import FormItemLabel from '../FormItemLabel';
 

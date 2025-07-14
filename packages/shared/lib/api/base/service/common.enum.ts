@@ -106,6 +106,12 @@ export enum ListOpPermissionRangeTypeEnum {
   'db_service' = 'db_service'
 }
 
+export enum ListOpPermissionServiceEnum {
+  'dms' = 'dms',
+
+  'sqle' = 'sqle'
+}
+
 export enum ListProjectV1ProjectPriorityEnum {
   'high' = 'high',
 
@@ -223,7 +229,43 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_others_optimization' = 'view_others_optimization',
 
-  'create_pipeline' = 'create_pipeline'
+  'create_pipeline' = 'create_pipeline',
+
+  'view_operation_record' = 'view_operation_record',
+
+  'view_export_task' = 'view_export_task',
+
+  'view_quick_audit_record' = 'view_quick_audit_record',
+
+  'view_ide_audit_record' = 'view_ide_audit_record',
+
+  'view_optimization_record' = 'view_optimization_record',
+
+  'view_version_manage' = 'view_version_manage',
+
+  'version_manage' = 'version_manage',
+
+  'view_pipeline' = 'view_pipeline',
+
+  'manage_project_data_source' = 'manage_project_data_source',
+
+  'manage_audit_rule_template' = 'manage_audit_rule_template',
+
+  'manage_approval_template' = 'manage_approval_template',
+
+  'manage_member' = 'manage_member',
+
+  'manage_push_rule' = 'manage_push_rule',
+
+  'manage_audit_sql_white_list' = 'manage_audit_sql_white_list',
+
+  'manage_sql_mange_white_list' = 'manage_sql_mange_white_list',
+
+  'manage_role_mange' = 'manage_role_mange',
+
+  'desensitization' = 'desensitization',
+
+  'none' = 'none'
 }
 
 export enum OpPermissionItemRangeTypeEnum {

@@ -1,8 +1,8 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useRules from '../useRules';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { ruleListData } from '../../../testUtils/mockApi/rule_template/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { ruleListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { Form } from 'antd';
 import { RuleFilterFieldsType } from '../../../components/RuleList';
 import { NamePath } from 'antd/es/form/interface';
@@ -20,7 +20,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
   });
 
   it('should not get rule list when database type is empty string', async () => {
-    const { result } = renderHooksWithRedux(() => useRules(''), {});
+    const { result } = superRenderHook(() => useRules(''), {});
     expect(result.current.getAllRulesLoading).toEqual(false);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.allRules).toEqual(undefined);
@@ -31,7 +31,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
   });
 
   it('should get rule list when database type is not empty string', async () => {
-    const { result } = renderHooksWithRedux(() => useRules('MySQL'), {});
+    const { result } = superRenderHook(() => useRules('MySQL'), {});
     expect(result.current.getAllRulesLoading).toEqual(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.allRules).toEqual(ruleListData);
@@ -59,7 +59,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       return mockFormValue[key as keyof RuleFilterFieldsType];
     });
 
-    const { result } = renderHooksWithRedux(() => useRules('MySQL', 2), {});
+    const { result } = superRenderHook(() => useRules('MySQL', 2), {});
     expect(result.current.getAllRulesLoading).toEqual(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.allRules).toEqual(ruleListData);

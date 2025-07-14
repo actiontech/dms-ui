@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react';
-import execWorkflow from '../../../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import useOverviewActions from '../useOverviewActions';
 import useMessage from 'antd/es/message/useMessage';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { WorkflowTasksItemData } from '../../../../../../../testUtils/mockApi/execWorkflow/data';
+import { WorkflowTasksItemData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 jest.mock('antd/es/message/useMessage', () => jest.fn());
 

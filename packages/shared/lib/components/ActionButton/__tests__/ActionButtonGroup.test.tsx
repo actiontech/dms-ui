@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import ActionButtonGroup from '../ActionButtonGroup';
 
 jest.mock('../ActionButton', () => {

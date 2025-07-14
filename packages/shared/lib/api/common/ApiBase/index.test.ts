@@ -1,7 +1,7 @@
 import ApiBase from '.';
 import Download from '../../../utils/Download';
 import axios from 'axios';
-import TestMockApi from '../../../testUtil/mockApi';
+import { TestMockApi } from '../../../testUtil/mockApi';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import 'blob-polyfill';
@@ -110,6 +110,33 @@ describe('Api', () => {
           message: '请求错误',
           description: 'error message'
         }
+      );
+    }
+  });
+
+  test('should emit DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA when response code is 502', async () => {
+    let result: any;
+    try {
+      result = await apiInstance.post('/test/7007');
+    } finally {
+      expect(result?.data).toEqual({
+        code: 7007,
+        msg: 'Bad Gateway'
+      });
+      expect(result?.status).toBe(200);
+      expect(emitSpy).toHaveBeenCalledTimes(2);
+      expect(emitSpy).toHaveBeenNthCalledWith(
+        1,
+        EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+        'error',
+        {
+          message: '请求错误',
+          description: 'Bad Gateway'
+        }
+      );
+      expect(emitSpy).toHaveBeenNthCalledWith(
+        2,
+        EmitterKey.DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA
       );
     }
   });

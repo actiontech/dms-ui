@@ -1,13 +1,13 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import system from '../../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -49,7 +49,7 @@ describe('base/Nav/QuickActions', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <QuickActions
         setSystemModuleRedDotsLoading={mockSetSystemModuleRedDotsLoading}
       />
@@ -102,8 +102,8 @@ describe('base/Nav/QuickActions', () => {
           userRoles: {
             ...mockCurrentUserReturn.userRoles,
             [SystemRole.admin]: false,
-            [SystemRole.globalViewing]: true,
-            [SystemRole.globalManager]: false
+            [SystemRole.auditAdministrator]: true,
+            [SystemRole.systemAdministrator]: false
           }
         },
         mockSelector: true
@@ -128,8 +128,8 @@ describe('base/Nav/QuickActions', () => {
           userRoles: {
             ...mockCurrentUserReturn.userRoles,
             [SystemRole.admin]: false,
-            [SystemRole.globalViewing]: false,
-            [SystemRole.globalManager]: false
+            [SystemRole.auditAdministrator]: false,
+            [SystemRole.systemAdministrator]: false
           }
         },
         mockSelector: true

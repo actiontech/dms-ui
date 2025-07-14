@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormInstance, Popconfirm, Space, Form } from 'antd';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
@@ -14,7 +14,10 @@ import {
   BasicSelect,
   BasicSwitch,
   EmptyBox,
-  TypedLink
+  TypedLink,
+  BasicModal,
+  BasicButton,
+  ReminderInformation
 } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
@@ -42,7 +45,7 @@ import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
 import classNames from 'classnames';
-import { DatabaseFilled } from '@actiontech/icons';
+import { DatabaseFilled, FaLessThanEqualOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
 import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/shared/lib/data/common';
@@ -53,6 +56,9 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EnvironmentField from './EnvironmentField';
+import { DataSourceFormContext } from '../../context';
+import { useBoolean } from 'ahooks';
+import { FormCheckConnectableInfoModalWrapper } from './style';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -63,10 +69,15 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
 
+  const formContext = useContext(DataSourceFormContext);
+
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
   const [currentDBTypeSupportBackup, setCurrentDBTypeSupportBackup] =
     useState<boolean>(false);
+
+  const [modalOpen, { setTrue: openModal, setFalse: closeModal }] =
+    useBoolean(false);
 
   const {
     driverMeta,
@@ -261,7 +272,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [props.form]);
 
   const submit = useCallback(async () => {
-    const values = await props.form.validateFields();
+    const values = props.form.getFieldsValue();
     delete values.needSqlAuditService;
     if (values.params) {
       values.asyncParams = mergeFromValueIntoParams(values.params, params).map(
@@ -269,8 +280,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       );
       delete values.params;
     }
-    props.submit(values);
-  }, [mergeFromValueIntoParams, params, props]);
+    props.submit(values).then(() => {
+      closeModal();
+    });
+  }, [mergeFromValueIntoParams, params, props, closeModal]);
 
   useEffect(() => {
     const { unsubscribe: unsubscribeReset } = EventEmitter.subscribe(
@@ -280,13 +293,28 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return unsubscribeReset;
   }, [reset]);
 
+  const onCheckConnectableBeforeSubmit = useCallback(async () => {
+    const values = await props.form.validateFields();
+    if (props.isUpdate && !values.needUpdatePassword) {
+      submit();
+      return;
+    }
+    formContext?.onCheckConnectable(params).then((isConnectable) => {
+      if (isConnectable) {
+        submit();
+      } else {
+        openModal();
+      }
+    });
+  }, [formContext, submit, openModal, props, params]);
+
   useEffect(() => {
     const { unsubscribe: unsubscribeSubmit } = EventEmitter.subscribe(
       EmitterKey.DMS_Submit_DataSource_Form,
-      submit
+      onCheckConnectableBeforeSubmit
     );
     return unsubscribeSubmit;
-  }, [submit]);
+  }, [onCheckConnectableBeforeSubmit]);
 
   useEffect(() => {
     updateDriverList();
@@ -479,7 +507,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             )}
             name="allowQueryWhenLessThanAuditLevel"
           >
-            <BasicSelect>
+            <BasicSelect prefix={<FaLessThanEqualOutlined />}>
               {Object.values(
                 SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
               ).map((v) => {
@@ -591,6 +619,33 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
       {/* #endif */}
+      <BasicModal
+        open={modalOpen}
+        title={t('dmsDataSource.dataSourceForm.dataSourceConnectError')}
+        footer={
+          <Space>
+            <BasicButton onClick={closeModal}>
+              {t('dmsDataSource.dataSourceForm.returnModify')}
+            </BasicButton>
+            <BasicButton
+              onClick={submit}
+              loading={formContext?.submitLoading}
+              type="primary"
+              className="connectable-modal-btn"
+            >
+              {t('dmsDataSource.dataSourceForm.continueSubmit')}
+            </BasicButton>
+          </Space>
+        }
+        closable={false}
+      >
+        <FormCheckConnectableInfoModalWrapper>
+          <ReminderInformation
+            status="error"
+            message={formContext?.connectErrorMessage ?? ''}
+          />
+        </FormCheckConnectableInfoModalWrapper>
+      </BasicModal>
     </FormStyleWrapper>
   );
 };

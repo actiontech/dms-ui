@@ -1,6 +1,6 @@
 import { RenderResult } from '@testing-library/react';
 import { useLocation } from 'react-router-dom';
-import { renderWithRouter } from './customRender';
+import { superRender } from './superRender';
 
 export const renderLocationDisplay = (): [
   () => RenderResult,
@@ -12,5 +12,5 @@ export const renderLocationDisplay = (): [
     return <div data-testid="location-display">{location.pathname}</div>;
   };
 
-  return [() => renderWithRouter(<LocationComponent />), LocationComponent];
+  return [() => superRender(<LocationComponent />), LocationComponent];
 };

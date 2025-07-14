@@ -1,9 +1,9 @@
 import { fireEvent } from '@testing-library/dom';
 import { getBySelector, queryBySelector } from '../../../testUtil/customQuery';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import SQLRenderer from '../SQLRenderer';
 import { SQLRendererProps } from '../SQLRenderer.types';
-import { act } from '@testing-library/react';
+import { act, cleanup } from '@testing-library/react';
 
 describe('test SQLRenderer', () => {
   const customRender = (params?: Partial<SQLRendererProps>) => {
@@ -93,6 +93,23 @@ describe('test SQLRenderer', () => {
       highlightSyntax: false,
       showLineNumbers: true
     });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should apply word-wrap class when wordWrap is true', () => {
+    customRender();
+
+    expect(queryBySelector('.word-wrap')).not.toBeInTheDocument();
+
+    cleanup();
+
+    const { container } = customRender({
+      sql: `CREATE TABLE IF NOT EXISTS task (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,title VARCHAR(255) NOT NULL DEFAULT '', description TEXT, status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);`,
+      wordWrap: true
+    });
+
+    expect(getBySelector('.word-wrap')).toBeInTheDocument();
+
     expect(container).toMatchSnapshot();
   });
 });

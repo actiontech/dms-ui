@@ -1,36 +1,36 @@
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../../testUtils/superRender';
 import AuditResultTag from '../AuditResultTag';
 
 describe('test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag', () => {
   it('should match snapshot', () => {
-    expect(superRender(<AuditResultTag />)).toMatchSnapshot();
+    expect(baseSuperRender(<AuditResultTag />)).toMatchSnapshot();
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTag auditResult={[{ level: RuleResV1LevelEnum.error }]} />
       )
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTag auditResult={[{ level: RuleResV1LevelEnum.normal }]} />
       )
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTag auditResult={[{ level: RuleResV1LevelEnum.notice }]} />
       )
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTag auditResult={[{ level: RuleResV1LevelEnum.warn }]} />
       )
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTag
           auditResult={[
             { level: RuleResV1LevelEnum.warn },

@@ -117,7 +117,7 @@ export const CustomActionNodeStyleWrapper = styled('section')`
   justify-content: flex-end;
 `;
 
-export const ReleaseModalFormStyleWrapper = styled(FormStyleWrapper)`
+export const ReleaseDrawerFormStyleWrapper = styled(FormStyleWrapper)`
   .data-source-item-wrapper {
     margin-bottom: 0 !important;
     padding-left: 20px !important;

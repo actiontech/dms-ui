@@ -3,7 +3,7 @@ import {
   mockActionButtonStateData,
   mockUseActionButtonState
 } from '../../../testUtils/mockUseActionButtonState';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import ExportDetailPageHeaderAction from '..';
 import {
   mockDataExportDetailRedux,
@@ -23,12 +23,12 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   });
 
   it('should match snapshot', () => {
-    const { container } = superRender(<ExportDetailPageHeaderAction />);
+    const { container } = baseSuperRender(<ExportDetailPageHeaderAction />);
     expect(container).toMatchSnapshot();
   });
 
   it('clicked workflow detail button', () => {
-    const { container } = superRender(<ExportDetailPageHeaderAction />);
+    const { container } = baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('工单详情'));
     expect(
       mockDataExportDetailRedux.updateWorkflowStepOpen
@@ -40,7 +40,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   });
 
   it('clicked close workflow button', () => {
-    superRender(<ExportDetailPageHeaderAction />);
+    baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('关闭工单'));
     expect(
       mockActionButtonStateData.closeWorkflowButtonMeta.action
@@ -48,7 +48,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   });
 
   it('clicked approve workflow button', () => {
-    superRender(<ExportDetailPageHeaderAction />);
+    baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('审核通过'));
     expect(
       mockActionButtonStateData.approveWorkflowButtonMeta.action
@@ -56,7 +56,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   });
 
   it('clicked rejected workflow button', () => {
-    superRender(<ExportDetailPageHeaderAction />);
+    baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('审核驳回'));
     expect(
       mockActionButtonStateData.rejectWorkflowButtonMeta.action
@@ -64,7 +64,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   });
 
   it('clicked execute export workflow button', () => {
-    superRender(<ExportDetailPageHeaderAction />);
+    baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('执行导出'));
     expect(
       screen.queryByText(

@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicRangePicker from './BasicRangePicker';
 import { BasicRangePickerProps } from './BasicRangePicker.types';
 

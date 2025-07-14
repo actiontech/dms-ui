@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ScanTask from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -8,7 +8,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -43,7 +43,7 @@ describe('page/ProjectOverview/ScanTask', () => {
   });
 
   const customRender = () => {
-    return superRender(<ScanTask />);
+    return sqleSuperRender(<ScanTask />);
   };
 
   it('render scan task and create order', async () => {

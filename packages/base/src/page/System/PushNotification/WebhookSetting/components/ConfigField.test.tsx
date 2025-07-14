@@ -1,4 +1,4 @@
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -7,7 +7,7 @@ import ConfigField from './ConfigField';
 
 describe('base/System/PushNotification/WebhookSetting/ConfigField', () => {
   const customRender = () => {
-    return renderWithTheme(
+    return superRender(
       <Form>
         <ConfigField />
       </Form>

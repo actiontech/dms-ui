@@ -1,12 +1,12 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
 import AuditExceptionTree from '../AuditExceptionTree';
 import {
   getAllBySelector,
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { AuditTaskSQLsMockDataWithExceptionRule } from '../../../../../../../../../../testUtils/mockApi/task/data';
+import { AuditTaskSQLsMockDataWithExceptionRule } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 
 describe('AuditExceptionTree', () => {
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('AuditExceptionTree', () => {
   });
 
   it('should render tree with audit exception results', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <AuditExceptionTree
         auditExceptionResults={
           AuditTaskSQLsMockDataWithExceptionRule[0].audit_result!
@@ -32,7 +32,7 @@ describe('AuditExceptionTree', () => {
   });
 
   it('should render empty tree when no audit results provided', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <AuditExceptionTree auditExceptionResults={[]} />
     );
 

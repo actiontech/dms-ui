@@ -1,9 +1,9 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import Member from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import member from '../../../testUtils/mockApi/member';
-import { memberList } from '../../../testUtils/mockApi/member/data';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
+import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -12,8 +12,8 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import userCenter from '../../../testUtils/mockApi/userCenter';
-import dbServices from '../../../testUtils/mockApi/dbServices';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 describe('base/Member', () => {
@@ -24,6 +24,7 @@ describe('base/Member', () => {
     userCenter.getUserList();
     dbServices.ListDBServicesTips();
     userCenter.getRoleList();
+    userCenter.getOpPermissionsList();
   });
 
   afterEach(() => {
@@ -35,7 +36,7 @@ describe('base/Member', () => {
 
   it('should render member list when it first entered the member page', async () => {
     const memberListSpy = member.getMemberList();
-    const { baseElement } = renderWithReduxAndTheme(<Member />);
+    const { baseElement } = superRender(<Member />);
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
@@ -55,7 +56,7 @@ describe('base/Member', () => {
   it('should receive "DMS_Refresh_Member_List" event when click refresh icon', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const memberListSpy = member.getMemberList();
-    const { baseElement } = renderWithReduxAndTheme(<Member />);
+    const { baseElement } = superRender(<Member />);
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(2);
@@ -67,7 +68,7 @@ describe('base/Member', () => {
 
   it('should update content when change segmented value', async () => {
     const memberGroupListSpy = member.getMemberGroupList();
-    const { baseElement } = renderWithReduxAndTheme(<Member />);
+    const { baseElement } = superRender(<Member />);
     fireEvent.click(screen.getByText('成员组列表'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -76,7 +77,7 @@ describe('base/Member', () => {
 
   it('should render add button when current user is admin or project manager', async () => {
     const mockUseCurrentUserSpy = mockUseCurrentUser();
-    const { baseElement } = renderWithReduxAndTheme(<Member />);
+    const { baseElement } = superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加成员')).toHaveLength(1);
     fireEvent.click(screen.getByText('添加成员'));
@@ -92,7 +93,7 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {
@@ -104,7 +105,7 @@ describe('base/Member', () => {
         ]
       };
     });
-    renderWithReduxAndTheme(<Member />);
+    superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加成员')).toHaveLength(1);
     cleanup();
@@ -115,11 +116,11 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         }
       };
     });
-    renderWithReduxAndTheme(<Member />);
+    superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('添加成员')).not.toBeInTheDocument();
 
@@ -131,7 +132,7 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {
@@ -143,7 +144,7 @@ describe('base/Member', () => {
         ]
       };
     });
-    renderWithReduxAndTheme(<Member />);
+    superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('添加成员')).not.toBeInTheDocument();
   });

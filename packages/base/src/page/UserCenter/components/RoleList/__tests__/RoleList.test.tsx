@@ -1,6 +1,6 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { roleList } from '../../../../../testUtils/mockApi/userCenter/data';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { roleList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import RoleList from '../List';
@@ -39,7 +39,7 @@ describe('base/UserCenter/RoleList', () => {
   });
 
   it('render role table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
 
@@ -49,12 +49,13 @@ describe('base/UserCenter/RoleList', () => {
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getAllByText('编 辑')).toHaveLength(3);
     expect(screen.getAllByText('删 除')).toHaveLength(3);
+    expect(screen.getAllByText('克 隆')).toHaveLength(3);
   });
 
   it('should render empty tips when request not success', async () => {
     roleListSpy.mockClear();
     roleListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
     await act(async () => jest.advanceTimersByTime(3300));
@@ -78,7 +79,7 @@ describe('base/UserCenter/RoleList', () => {
         data: mockData
       })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
     await act(async () => jest.advanceTimersByTime(3300));
@@ -95,9 +96,7 @@ describe('base/UserCenter/RoleList', () => {
   });
 
   it('should refresh role table when emit "DMS_Refresh_User_Center_List" event', async () => {
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
@@ -113,9 +112,7 @@ describe('base/UserCenter/RoleList', () => {
     );
     const deleteRoleSpy = userCenter.deleteRole();
     const roleName = roleList[0].name;
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -141,9 +138,7 @@ describe('base/UserCenter/RoleList', () => {
         data: [roleList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));
@@ -159,6 +154,34 @@ describe('base/UserCenter/RoleList', () => {
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_Role,
+        status: true
+      }
+    });
+  });
+
+  it('should dispatch action when clone role info', async () => {
+    roleListSpy.mockClear();
+    roleListSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [roleList[0]]
+      })
+    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByText('克 隆'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'userCenter/updateSelectRole',
+      payload: {
+        role: roleList[0]
+      }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'userCenter/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Clone_Role,
         status: true
       }
     });

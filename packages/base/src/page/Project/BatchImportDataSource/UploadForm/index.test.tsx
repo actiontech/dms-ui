@@ -1,12 +1,12 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { superRender } from '../../../../testUtils/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import BatchImportDataSourceForm from '.';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { BatchImportDataSourceFormValueType } from '../index.type';
 import { Form } from 'antd';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { mockBatchImportDBCheckData } from '../../../../testUtils/mockApi/project/data';
+import { mockBatchImportDBCheckData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { FileUploadCheckStatusType } from '../index.type';
 
 describe('base/Project/BatchImportDataSourceForm', () => {
@@ -27,10 +27,10 @@ describe('base/Project/BatchImportDataSourceForm', () => {
     uploadCheckStatus: FileUploadCheckStatusType = { success: true }
   ) => {
     const mockCustomRequest = jest.fn();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<BatchImportDataSourceFormValueType>()
     );
-    return superRender(
+    return baseSuperRender(
       <BatchImportDataSourceForm
         customRequest={mockCustomRequest}
         form={result.current[0]}

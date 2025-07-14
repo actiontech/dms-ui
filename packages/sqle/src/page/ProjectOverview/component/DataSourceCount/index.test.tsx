@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import DataSourceCount from '.';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -18,6 +18,9 @@ import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
 import { DBHealthEnum } from './index.enum';
 import { SqleTheme } from '../../../../types/theme.type';
 import ToolTipCustomContent from './ToolTipCustomContent';
+import { SupportTheme, ThemeData } from '../../../../theme';
+
+const themeData = ThemeData[SupportTheme.LIGHT];
 
 jest.mock('react-router-dom', () => {
   return {
@@ -48,7 +51,7 @@ describe('page/ProjectOverview/DataSourceCount', () => {
   });
 
   const customRender = () => {
-    return superRender(<DataSourceCount />);
+    return sqleSuperRender(<DataSourceCount />);
   };
 
   it('render data source count and check more data', async () => {
@@ -120,11 +123,17 @@ describe('page/ProjectOverview/DataSourceCount', () => {
 
   it('test ToolTipCustomContent', () => {
     expect(
-      superRender(<ToolTipCustomContent dataSource={[]} />).container
+      sqleSuperRender(
+        <ToolTipCustomContent
+          dataSource={[]}
+          sharedTheme={themeData.sharedTheme}
+          sqleTheme={themeData.sqleTheme}
+        />
+      ).container
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      sqleSuperRender(
         <ToolTipCustomContent
           dataSource={[
             { data: { value: '33', category: DBHealthEnum.health } },
@@ -141,6 +150,8 @@ describe('page/ProjectOverview/DataSourceCount', () => {
               value: 'pg'
             }
           ]}
+          sharedTheme={themeData.sharedTheme}
+          sqleTheme={themeData.sqleTheme}
         />
       ).container
     ).toMatchSnapshot();

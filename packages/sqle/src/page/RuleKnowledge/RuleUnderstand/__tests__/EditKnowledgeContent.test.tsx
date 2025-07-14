@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import EditKnowledgeContent from '../EditKnowledgeContent';
 import { EditKnowledgeContentProps } from '../index.type';
 import {
@@ -39,7 +39,7 @@ describe('page/RuleKnowledge/EditKnowledgeContent', () => {
   };
 
   const customRender = (data: EditKnowledgeContentProps) => {
-    return superRender(<EditKnowledgeContent {...data} />);
+    return sqleSuperRender(<EditKnowledgeContent {...data} />);
   };
 
   it('render empty content', () => {

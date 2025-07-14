@@ -1,14 +1,14 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CloudBeaver from '.';
-import cloudBeaver from '../../testUtils/mockApi/cloudBeaver';
+import cloudBeaver from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { enableSqlQueryUrlData } from '../../testUtils/mockApi/cloudBeaver/data';
+import { enableSqlQueryUrlData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import dbServices from '../../testUtils/mockApi/dbServices';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
@@ -19,6 +19,14 @@ jest.mock('react-redux', () => {
     useSelector: jest.fn(),
     useDispatch: jest.fn()
   };
+});
+
+const originLocation = window.location;
+Object.defineProperty(window, 'location', {
+  value: {
+    ...originLocation
+  },
+  writable: true
 });
 
 describe('test base/page/CloudBeaver', () => {
@@ -82,15 +90,17 @@ describe('test base/page/CloudBeaver', () => {
     expect(screen.getByText('打开SQL工作台')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('打开SQL工作台'));
+    expect(global.open).toHaveBeenCalledTimes(0);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
       enableSqlQueryUrlData.sql_query_root_uri
     );
   });
 
-  it('should auto jump to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
-    global.open = jest.fn();
-
+  it('should auto replace to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
     superRender(<CloudBeaver />, undefined, {
       routerProps: {
         initialEntries: [
@@ -100,8 +110,6 @@ describe('test base/page/CloudBeaver', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(global.open).not.toHaveBeenCalled();
 
     cleanup();
 
@@ -119,9 +127,6 @@ describe('test base/page/CloudBeaver', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(global.open).toHaveBeenCalledTimes(1);
-    expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
-    );
+    expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
   });
 });

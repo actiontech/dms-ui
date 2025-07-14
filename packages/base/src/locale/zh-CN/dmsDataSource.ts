@@ -72,7 +72,7 @@ export default {
     closeAuditSqlServiceTips:
       '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？',
     needAuditForSqlQuery: 'SQL工作台查询是否需要审核',
-    allowQueryWhenLessThanAuditLevel: '运行查询的最高审核等级',
+    allowQueryWhenLessThanAuditLevel: '自动放行的最高审核等级',
     passwordTips:
       '这里不会显示您已经配置的当前数据源密码，提交时如果您没有填写密码，那么将不会对数据源密码进行变更。',
     needUpdatePassword: '是否更新密码',
@@ -85,7 +85,10 @@ export default {
     enableDataSourceBackup: '是否开启数据源上的SQL备份能力',
     enableDataSourceBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
     lineNumberLimit: '回滚行数限制',
-    lineNumberLimitTips: '当预计影响行数超过指定值则不回滚'
+    lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
+    dataSourceConnectError: '数据源连通性测试失败',
+    returnModify: '返回修改',
+    continueSubmit: '继续提交'
   },
 
   testConnectModal: {

@@ -52,7 +52,10 @@ import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/
 import { ComponentControlHeight } from '@actiontech/shared/lib/data/common';
 import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
+import { debounce } from 'lodash';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -121,20 +124,16 @@ function App() {
 
   const { isDriverInfoFetched, updateDriverList } = useDbServiceDriver();
 
-  const { checkPagePermission } = usePermission();
+  const { checkPagePermission, userOperationPermissions } = usePermission();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
-  useRequest(
-    () =>
-      BasicInfo.GetBasicInfo().then((res) => {
-        if (res.data.data) {
-          syncWebTitleAndLogo(res.data.data);
-        }
-      }),
-    {
-      ready: !!token
-    }
+  useRequest(() =>
+    BasicInfo.GetBasicInfo().then((res) => {
+      if (res.data.data) {
+        syncWebTitleAndLogo(res.data.data);
+      }
+    })
   );
   // #endif
 
@@ -159,11 +158,20 @@ function App() {
       }, verifiedRoutes);
     };
 
-    if (isUserInfoFetched && isFeatureSupportFetched) {
+    if (
+      isUserInfoFetched &&
+      isFeatureSupportFetched &&
+      userOperationPermissions
+    ) {
       return filterRoutesByPermission(AuthRouterConfig);
     }
     return AuthRouterConfig;
-  }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
+  }, [
+    checkPagePermission,
+    isFeatureSupportFetched,
+    isUserInfoFetched,
+    userOperationPermissions
+  ]);
 
   const elements = useRoutes(
     token ? (AuthRouterConfigData as RouteObject[]) : unAuthRouterConfig
@@ -224,6 +232,9 @@ function App() {
   }, [currentLanguage]);
 
   // #if [ee]
+  const { initializeAvailabilityZone, clearRecentlySelectedZone } =
+    useRecentlySelectedZone();
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Reload_Initial_Data,
@@ -233,7 +244,17 @@ function App() {
     return unsubscribe;
   }, [getInitialData]);
 
-  const { initializeAvailabilityZone } = useRecentlySelectedZone();
+  useEffect(() => {
+    const { unsubscribe } = sharedEventEmitter.subscribe(
+      sharedEmitterKey.DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA,
+      debounce(() => {
+        clearRecentlySelectedZone();
+        getInitialData();
+      }, 1000)
+    );
+
+    return unsubscribe;
+  }, [getInitialData, clearRecentlySelectedZone]);
 
   useEffect(() => {
     initializeAvailabilityZone();

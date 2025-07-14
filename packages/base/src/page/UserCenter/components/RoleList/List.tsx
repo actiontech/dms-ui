@@ -5,13 +5,14 @@ import { useTranslation } from 'react-i18next';
 import {
   ActiontechTable,
   useTableRequestError,
-  useTableRequestParams
+  useTableRequestParams,
+  TableToolbar
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ModalName } from '../../../../data/ModalName';
-import { RoleListColumns } from './column';
+import { roleListColumns } from './column';
 import {
   updateUserManageModalStatus,
   updateSelectRole
@@ -37,10 +38,13 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { pagination, tableChange } = useTableRequestParams<
-    IListRole,
-    IListRolesParams
-  >();
+  const {
+    pagination,
+    tableChange,
+    refreshBySearchKeyword,
+    setSearchKeyword,
+    searchKeyword
+  } = useTableRequestParams<IListRole, IListRolesParams>();
 
   const {
     data: roleList,
@@ -49,7 +53,8 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   } = useRequest(
     () => {
       const params: IListRolesParams = {
-        ...pagination
+        ...pagination,
+        fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(Role.ListRoles(params));
     },
@@ -90,11 +95,24 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
     [refresh, t, messageApi]
   );
 
+  const onCloneRole = useCallback(
+    (role?: IListRole) => {
+      dispatch(updateSelectRole({ role: role ?? null }));
+      dispatch(
+        updateUserManageModalStatus({
+          modalName: ModalName.DMS_Clone_Role,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      RoleListActions(onEditRole, onDeleteRole)
+      RoleListActions(onEditRole, onDeleteRole, onCloneRole)
     );
-  }, [parse2TableActionPermissions, onEditRole, onDeleteRole]);
+  }, [parse2TableActionPermissions, onEditRole, onDeleteRole, onCloneRole]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -108,6 +126,15 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   return (
     <>
       {contextHolder}
+      <TableToolbar
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          },
+          placeholder: t('dmsUserCenter.role.roleList.searchPlaceholder')
+        }}
+      />
       <ActiontechTable
         rowKey="uid"
         dataSource={roleList?.list}
@@ -115,7 +142,7 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
           total: roleList?.total ?? 0
         }}
         loading={loading}
-        columns={RoleListColumns()}
+        columns={roleListColumns()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

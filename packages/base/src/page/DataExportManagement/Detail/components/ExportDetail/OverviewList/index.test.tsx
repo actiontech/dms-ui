@@ -4,11 +4,11 @@ import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import OverviewList from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import MockDate from 'mockdate';
 
@@ -32,7 +32,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
   });
 
   it('should match snapshot', () => {
-    const { container } = superRender(<OverviewList />);
+    const { container } = baseSuperRender(<OverviewList />);
 
     expect(container).toMatchSnapshot();
 
@@ -48,14 +48,14 @@ describe('test base/DataExport/Detail/OverviewList', () => {
       userId: mockDataExportDetailRedux.workflowInfo.create_user?.uid + '1'
     });
 
-    superRender(<OverviewList />);
+    baseSuperRender(<OverviewList />);
     expect(screen.queryByText('操作')).not.toBeInTheDocument();
     expect(screen.queryByText('下载数据')).not.toBeInTheDocument();
   });
 
   it('should send download request when click download button', async () => {
     const downloadSpy = dataExport.DownloadDataExportTask();
-    superRender(<OverviewList />);
+    baseSuperRender(<OverviewList />);
     expect(screen.queryByText('操作')).toBeInTheDocument();
 
     fireEvent.click(screen.getAllByText('下载数据')[0]);
@@ -82,7 +82,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
   it('should disabled when workflow status is not finish or export time has expired', () => {
     const downloadSpy = dataExport.DownloadDataExportTask();
     MockDate.set('2024-01-31 15:00:00');
-    superRender(<OverviewList />);
+    baseSuperRender(<OverviewList />);
 
     expect(screen.getAllByText('下载数据')[0].closest('button')).toBeDisabled();
 

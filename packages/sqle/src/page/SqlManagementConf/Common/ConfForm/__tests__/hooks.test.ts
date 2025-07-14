@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import { useSqlManagementConfFormSharedStates } from '../hooks';
-import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
-import { mockAuditPlanMetaData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
+import { mockAuditPlanMetaData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { act, renderHook } from '@testing-library/react';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 

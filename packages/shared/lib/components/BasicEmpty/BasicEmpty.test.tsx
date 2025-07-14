@@ -1,5 +1,5 @@
 import { getBySelector } from '../../testUtil/customQuery';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import BasicEmpty from './BasicEmpty';
 import { BasicEmptyProps } from './BasicEmpty.types';

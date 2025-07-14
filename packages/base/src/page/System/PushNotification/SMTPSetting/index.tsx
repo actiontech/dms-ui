@@ -2,20 +2,21 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useMemo } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, Spin } from 'antd';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import { SMTPSettingFormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicToolTip } from '@actiontech/shared';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigField from './components/ConfigField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import {
@@ -159,33 +160,39 @@ const SMTPSetting = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshSMTPInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
       Configuration.UpdateSMTPConfiguration({
         smtp_configuration: {
           ...smtpInfo,
           enable_smtp_notify: false
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshSMTPInfo,
-    handleToggleSwitch
-  });
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshSMTPInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   return (
     <div className="config-form-wrapper">
@@ -214,13 +221,15 @@ const SMTPSetting = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -232,7 +241,7 @@ const SMTPSetting = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit
+          onSubmit: submit
         })}
       </Spin>
     </div>

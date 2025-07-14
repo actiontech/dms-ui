@@ -7,14 +7,15 @@ import {
   EmptyBox,
   EnterpriseFeatureDisplay
 } from '@actiontech/shared';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigModifyBtn,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+import ConfigField from './components/ConfigField';
 import { switchFieldName } from './index.data';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -85,10 +86,6 @@ const Oauth = () => {
     startModify();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const handleSubmit = async (value: OauthFormField) => {
@@ -110,7 +107,9 @@ const Oauth = () => {
       auto_create_user: value.autoCreateUser,
       auto_create_user_pwd: value.userPassword,
       skip_check_state: value.skipCheckState,
-      login_perm_expr: value.loginPermissionQueryGJsonExpression
+      login_perm_expr: value.loginPermissionQueryGJsonExpression,
+      auto_bind_same_name_user: value.autoBindSameNameUser,
+      enable_manually_bind: value.enableManuallyBind
     };
 
     if (!!value.scopes) {
@@ -151,35 +150,46 @@ const Oauth = () => {
       autoCreateUser: oauthConfig?.auto_create_user,
       // userPassword: oauthConfig?.auto_create_user_pwd,
       skipCheckState: oauthConfig?.skip_check_state,
-      loginPermissionQueryGJsonExpression: oauthConfig?.login_perm_expr
+      loginPermissionQueryGJsonExpression: oauthConfig?.login_perm_expr,
+      autoBindSameNameUser: oauthConfig?.auto_bind_same_name_user,
+      enableManuallyBind: oauthConfig?.enable_manually_bind
     });
   }, [form, oauthConfig]);
 
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
-      Configuration.UpdateOauth2Configuration({
-        oauth2: {
-          ...oauthConfig,
-          enable_oauth2: false
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = async () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshOauthConfig();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      try {
+        const res = await Configuration.UpdateOauth2Configuration({
+          oauth2: {
+            ...oauthConfig,
+            enable_oauth2: false
+          }
+        });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          handleClickCancel();
+          refreshOauthConfig();
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshOauthConfig,
-    handleToggleSwitch
-  });
+      } finally {
+        submitFinish();
+        hiddenConfigSwitchPopover();
+      }
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IGetOauth2ConfigurationResData> =
     useMemo(() => {
@@ -372,6 +382,51 @@ const Oauth = () => {
           dataIndex: 'login_perm_expr',
           hidden: !oauthConfig?.enable_oauth2
         },
+
+        {
+          label: (
+            <BasicToolTip
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+              title={t('dmsSystem.oauth.skipStateCheckTips')}
+            >
+              {t('dmsSystem.oauth.skipCheckState')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'skip_check_state',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (skipCheck) => (
+            <>{skipCheck ? t('common.open') : t('common.close')}</>
+          )
+        },
+        {
+          label: (
+            <BasicToolTip
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+              title={t('dmsSystem.oauth.autoBindSameNameUserTips')}
+            >
+              {t('dmsSystem.oauth.autoBindSameNameUser')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'auto_bind_same_name_user',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (skipCheck) => (
+            <>{skipCheck ? t('common.open') : t('common.close')}</>
+          )
+        },
         {
           label: (
             <BasicToolTip
@@ -404,13 +459,13 @@ const Oauth = () => {
                   color={baseTheme.icon.system.basicTitleTips}
                 />
               }
-              title={t('dmsSystem.oauth.skipStateCheckTips')}
+              title={t('dmsSystem.oauth.enableManuallyBindTips')}
             >
-              {t('dmsSystem.oauth.skipCheckState')}
+              {t('dmsSystem.oauth.enableManuallyBind')}
             </BasicToolTip>
           ),
           span: 3,
-          dataIndex: 'skip_check_state',
+          dataIndex: 'enable_manually_bind',
           hidden: !oauthConfig?.enable_oauth2,
           render: (skipCheck) => (
             <>{skipCheck ? t('common.open') : t('common.close')}</>
@@ -455,13 +510,15 @@ const Oauth = () => {
                   }
                 >
                   <ConfigSwitch
+                    title={generateConfigSwitchPopoverTitle(modifyFlag)}
                     switchFieldName={switchFieldName}
-                    switchOpen={switchOpen}
-                    modifyFlag={modifyFlag}
+                    checked={switchOpen}
                     submitLoading={submitLoading}
-                    popoverVisible={configSwitchPopoverVisible}
+                    popoverVisible={configSwitchPopoverOpenState}
                     onConfirm={onConfigSwitchPopoverConfirm}
-                    onSwitchChange={onConfigSwitchChange}
+                    onSwitchChange={(open) =>
+                      handleConfigSwitchChange(open, handleClickModify)
+                    }
                     onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
                   />
                 </PermissionControl>
@@ -473,7 +530,7 @@ const Oauth = () => {
                   handleClickCancel={handleClickCancel}
                 />
               ),
-              submit: handleSubmit
+              onSubmit: handleSubmit
             })}
           </>
         </EnterpriseFeatureDisplay>

@@ -1,14 +1,8 @@
-import {
-  PageHeader,
-  EmptyBox,
-  useTypedNavigate,
-  ActionButton
-} from '@actiontech/shared';
+import { PageHeader, EmptyBox, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { PlusOutlined } from '@actiontech/icons';
 import DefaultPrompts from '../Common/DefaultPrompts';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -23,12 +17,11 @@ import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/p
 import { IPipelineDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useRequest } from 'ahooks';
 import {
-  PipelineConfigurationListColumns,
-  PipelineConfigurationListActions,
+  pipelineConfigurationListColumns,
   PipelineConfigurationTableFilterParamType
 } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import PipelineDetailModal from '../Modal/PipelineDetailModal';
+import PipelineDetailDrawer from '../Drawer/PipelineDetailDrawer';
 import { useDispatch } from 'react-redux';
 import {
   updateSelectPipelineId,
@@ -36,6 +29,11 @@ import {
 } from '../../../store/pipeline';
 import { ModalName } from '../../../data/ModalName';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { usePermission } from '@actiontech/shared/lib/features';
+import {
+  PipelineConfigurationListActions,
+  PipelineConfigurationListPageHeaderActions
+} from './actions';
 
 const PipelineConfigurationList = () => {
   const { t } = useTranslation();
@@ -47,6 +45,8 @@ const PipelineConfigurationList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
 
   const { projectID, projectName } = useCurrentProject();
+
+  const { parse2TableActionPermissions } = usePermission();
 
   const {
     tableChange,
@@ -124,23 +124,15 @@ const PipelineConfigurationList = () => {
     return unsubscribe;
   }, [refresh]);
 
+  const pageHeaderActions =
+    PipelineConfigurationListPageHeaderActions(projectID);
+
   return (
     <>
       {messageContextHolder}
       <PageHeader
         title={t('pipelineConfiguration.pageTitle')}
-        extra={
-          <ActionButton
-            type="primary"
-            icon={<PlusOutlined width={10} height={10} color="currentColor" />}
-            actionType="navigate-link"
-            link={{
-              to: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create,
-              params: { projectID }
-            }}
-            text={t('pipelineConfiguration.createPipeline')}
-          />
-        }
+        extra={pageHeaderActions['create-pipeline']}
       />
       <EmptyBox
         if={!!pipelineList?.total || loading}
@@ -154,7 +146,6 @@ const PipelineConfigurationList = () => {
               refreshBySearchKeyword();
             }
           }}
-          loading={loading}
         />
         <ActiontechTable
           className="table-row-cursor"
@@ -165,19 +156,16 @@ const PipelineConfigurationList = () => {
           pagination={{
             total: pipelineList?.total ?? 0
           }}
-          columns={PipelineConfigurationListColumns()}
+          columns={pipelineConfigurationListColumns(onViewPipelineDetail)}
           loading={loading}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          actions={PipelineConfigurationListActions(onEdit, onDelete)}
-          onRow={(record: IPipelineDetail) => {
-            return {
-              onClick: () => onViewPipelineDetail(record.id)
-            };
-          }}
+          actions={parse2TableActionPermissions(
+            PipelineConfigurationListActions(onEdit, onDelete)
+          )}
         />
       </EmptyBox>
-      <PipelineDetailModal />
+      <PipelineDetailDrawer />
     </>
   );
 };

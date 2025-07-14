@@ -5,21 +5,26 @@ import {
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../../locale';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { Typography } from 'antd';
 
 export const SqlManagementConfDetailOverviewTableActions = ({
   enabledAction,
   disabledAction,
   deleteAction,
+  resetTokenAction,
   disabledActionPending,
   enabledActionPending,
-  deleteActionPending
+  deleteActionPending,
+  resetTokenActionPending
 }: {
   enabledAction: (auditPlanId: string) => void;
   disabledAction: (auditPlanId: string) => void;
   deleteAction: (auditPlanId: string) => void;
+  resetTokenAction: () => void;
   disabledActionPending: boolean;
   enabledActionPending: boolean;
   deleteActionPending: boolean;
+  resetTokenActionPending: boolean;
 }): ActiontechTableActionsWithPermissions<IInstanceAuditPlanInfo> => {
   return {
     buttons: [
@@ -69,18 +74,23 @@ export const SqlManagementConfDetailOverviewTableActions = ({
             }
           };
         }
-      },
-      {
+      }
+    ],
+    moreButtons: (record) => {
+      const deleteButton = {
         key: 'delete',
-        text: t('managementConf.detail.overview.actions.delete'),
+        text: (
+          <Typography.Text type="danger">
+            {t('managementConf.detail.overview.actions.delete')}
+          </Typography.Text>
+        ),
         buttonProps: () => {
           return {
-            disabled: deleteActionPending,
-            danger: true
+            disabled: deleteActionPending
           };
         },
         permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_DELETE,
-        confirm: (record) => {
+        confirm: () => {
           return {
             disabled: deleteActionPending,
             title: t(
@@ -93,7 +103,29 @@ export const SqlManagementConfDetailOverviewTableActions = ({
             }
           };
         }
+      };
+
+      if (!!record.exec_cmd) {
+        return [
+          {
+            key: 'reset-token',
+            text: t('managementConf.detail.overview.actions.resetToken'),
+            permissions:
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.RESET_TOKEN,
+            confirm: () => {
+              return {
+                disabled: resetTokenActionPending,
+                title: t(
+                  'managementConf.detail.overview.actions.resetTokenConfirmTitle'
+                ),
+                onConfirm: resetTokenAction
+              };
+            }
+          },
+          deleteButton
+        ];
       }
-    ]
+      return [deleteButton];
+    }
   };
 };

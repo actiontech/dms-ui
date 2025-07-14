@@ -1,18 +1,18 @@
-import project from '../../../testUtils/mockApi/project';
-import { mockBusinessTagsData } from '../../../testUtils/mockApi/project/data';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import {
+  baseMockApi,
+  createSpyErrorResponse,
+  createSpyFailResponse,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil';
+import { mockBusinessTagsData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import useBusinessTag from '..';
 import { act, cleanup } from '@testing-library/react';
-import {
-  createSpyErrorResponse,
-  createSpyFailResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/hooks/useBusinessTag', () => {
   let listBusinessTagsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
-    listBusinessTagsSpy = project.listBusinessTags();
+    listBusinessTagsSpy = baseMockApi.project.listBusinessTags();
   });
 
   afterEach(() => {
@@ -21,7 +21,7 @@ describe('base/hooks/useBusinessTag', () => {
   });
 
   it('should get business tag data from request', async () => {
-    const { result } = renderHooksWithRedux(useBusinessTag, {});
+    const { result } = superRenderHook(useBusinessTag, {});
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.businessTagList).toEqual([]);
@@ -55,7 +55,7 @@ describe('base/hooks/useBusinessTag', () => {
       createSpyFailResponse({ data: { business_tags: [] } })
     );
 
-    const { result } = renderHooksWithRedux(useBusinessTag, {});
+    const { result } = superRenderHook(useBusinessTag, {});
     act(() => result.current.updateBusinessTagList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.businessTagList).toEqual([]);
@@ -66,7 +66,7 @@ describe('base/hooks/useBusinessTag', () => {
     listBusinessTagsSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(useBusinessTag, {});
+    const { result } = superRenderHook(useBusinessTag, {});
     act(() => result.current.updateBusinessTagList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.businessTagList).toEqual([]);
@@ -77,7 +77,7 @@ describe('base/hooks/useBusinessTag', () => {
     listBusinessTagsSpy.mockImplementation(() =>
       createSpyFailResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(useBusinessTag, {});
+    const { result } = superRenderHook(useBusinessTag, {});
     act(() => result.current.updateBusinessTagList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.businessTagList).toEqual([]);

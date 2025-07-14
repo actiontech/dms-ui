@@ -1,15 +1,15 @@
 import useGetTableFilterInfo from '../useGetTableFilterInfo';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
 import { useSearchParams } from 'react-router-dom';
-import project from '../../../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -58,7 +58,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
   it('send request and render select options', async () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
-    const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
+    const { result } = sqleSuperRenderHook(() => useGetTableFilterInfo());
     expect(ruleTipsRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });

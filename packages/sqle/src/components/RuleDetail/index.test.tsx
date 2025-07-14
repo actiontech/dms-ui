@@ -1,8 +1,8 @@
 import RuleDetail from '.';
 import { useNavigate, useParams } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import rule_template from '../../testUtils/mockApi/rule_template';
-import { renderWithTheme } from '../../testUtils/customRender';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   createSpyFailResponse,
@@ -11,7 +11,7 @@ import {
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { projectRulesMockData } from '../../testUtils/mockApi/rule_template/data';
+import { projectRulesMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -31,7 +31,7 @@ describe('sqle/components/RuleDetail', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   const customRender = () => {
-    return renderWithTheme(<RuleDetail />);
+    return sqleSuperRender(<RuleDetail />);
   };
 
   const mockRouteParams = {
