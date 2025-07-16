@@ -157,7 +157,15 @@ describe('usePermission', () => {
         [SystemRole.systemAdministrator]: false,
         [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
-      }
+      },
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: 'test',
+          is_manager: true,
+          archived: false
+        }
+      ]
     });
     const { result } = renderHook(() => usePermission());
 
@@ -184,6 +192,9 @@ describe('usePermission', () => {
         PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION
       )
     ).toBeFalsy();
+    expect(
+      result.current.checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT)
+    ).toBeTruthy();
   });
 
   it('should check action permission correctly', () => {

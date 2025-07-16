@@ -46,3 +46,7 @@ export type CheckActionPermissionOtherValues<T> = {
   authDataSourceId?: string;
   targetProjectID?: string;
 };
+
+export type CheckPagePermissionOtherValues = {
+  targetProjectID?: string;
+};
