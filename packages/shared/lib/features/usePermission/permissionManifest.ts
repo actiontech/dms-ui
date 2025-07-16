@@ -114,7 +114,34 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.certainProjectManager
     ]
   },
+  [PERMISSIONS.PAGES.SQLE.PIPELINE_CONFIGURATION]: {
+    id: PERMISSIONS.PAGES.SQLE.PIPELINE_CONFIGURATION,
+    type: 'page',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true
+  },
+  [PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT]: {
+    id: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT,
+    type: 'page',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true
+  },
+  [PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_CONF]: {
+    id: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_CONF,
+    type: 'page',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true
+  },
   // action
+  // global dashboard
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DASHBOARD
+    .PENDING_SQL_NAVIGATE_TO_SQL_MANAGEMENT]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DASHBOARD
+      .PENDING_SQL_NAVIGATE_TO_SQL_MANAGEMENT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true
+  },
 
   //cloud beaver
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT]: {

@@ -3,10 +3,12 @@ import useCurrentUser from '../useCurrentUser';
 import { PERMISSION_MANIFEST, PermissionDetail } from './permissionManifest';
 import { PermissionsConstantType } from './permissions';
 import useCurrentProject from '../useCurrentProject';
+
 import {
   ActiontechTableActionsWithPermissions,
   ActiontechTableToolbarActionWithPermissions,
-  CheckActionPermissionOtherValues
+  CheckActionPermissionOtherValues,
+  CheckPagePermissionOtherValues
 } from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
 import {
@@ -44,7 +46,6 @@ const usePermission = () => {
     },
     [bindProjects, projectID]
   );
-
   const checkDbServicePermission = useCallback(
     (
       opPermissionType: OpPermissionItemOpPermissionTypeEnum,
@@ -111,13 +112,23 @@ const usePermission = () => {
   );
 
   const checkPagePermission = useCallback(
-    (requiredPermission: PermissionsConstantType): boolean => {
+    (
+      requiredPermission: PermissionsConstantType,
+      otherValues?: CheckPagePermissionOtherValues
+    ): boolean => {
+      const { targetProjectID } = otherValues ?? {};
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
+      const projectAttributesStatus =
+        getProjectAttributesStatus(targetProjectID);
+
       return (
-        checkRoles(permissionDetails) && checkModuleSupport(permissionDetails)
+        ((projectAttributesStatus.isManager &&
+          permissionDetails.projectManager === true) ||
+          checkRoles(permissionDetails)) &&
+        checkModuleSupport(permissionDetails)
       );
     },
-    [checkModuleSupport, checkRoles]
+    [checkModuleSupport, checkRoles, getProjectAttributesStatus]
   );
 
   const checkActionPermission = useCallback(

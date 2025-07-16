@@ -73,7 +73,9 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
     ): CustomMenuItemType[] => {
       return requiredMenus.filter((menu) => {
         if (menu?.permission) {
-          return checkPagePermission(menu.permission);
+          return checkPagePermission(menu.permission, {
+            targetProjectID: projectID
+          });
         }
 
         if ((menu as SubMenuType)?.children) {
