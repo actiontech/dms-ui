@@ -79,5 +79,5 @@ export default {
     switchAvailabilityZone: '切换可用区将重新加载数据，是否确认？',
     pleaseSelect: '请选择'
   },
-  sqlPerformanceInsights: 'SQL洞察'
+  sqlPerformanceInsights: '性能洞察'
 };

@@ -52,7 +52,7 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
       line.points?.forEach((point) => {
         if (point.x && point.y !== undefined) {
           result.push({
-            date: point.x,
+            date: dayjs(point.x).format('MM-DD HH:mm:ss'),
             value: point.y,
             type: line.line_name || ''
           });
@@ -66,19 +66,41 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
   const chartRef = useRef<LineChart | null>(null);
   const isMaskCreatedChartRef = useRef(false);
 
+  // 选择区域的状态
+  const [selectedTimeRange, setSelectedTimeRange] = useState<{
+    startTime: string;
+    endTime: string;
+  } | null>(null);
+
+  // 临时选择区域的状态，用于拖拽过程中的实时显示
+  const [tempSelectedTimeRange, setTempSelectedTimeRange] = useState<{
+    startTime: string;
+    endTime: string;
+  } | null>(null);
+
   const config: LineConfig = useMemo(() => {
+    // 动态生成annotations，优先显示临时选择区域，否则显示最终选择区域
+    const currentRange = tempSelectedTimeRange || selectedTimeRange;
+    const annotations = currentRange
+      ? [
+          {
+            type: 'region' as const,
+            start: [currentRange.startTime, 'min'],
+            end: [currentRange.endTime, 'max'],
+            style: {
+              fill: 'rgba(197, 212, 235, 0.6)',
+              fillOpacity: 0.6
+            }
+          }
+        ]
+      : [];
+
     return {
       data: transformedData,
       xField: 'date',
       yField: 'value',
       seriesField: 'type',
       xAxis: {
-        type: 'time',
-        label: {
-          formatter: (value: string) => {
-            return dayjs(value).format('MM-DD HH:mm:ss');
-          }
-        },
         title: {
           text: t('sqlInsights.chart.xAxisTitle')
         }
@@ -109,62 +131,46 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
           type: 'brush-x',
           enable: false
         }
-      ]
+      ],
+      annotations
     };
-  }, [transformedData, t]);
-
-  const [maskXPosition, setMaskXPosition] = useState<number>(0);
-  const [maskYPosition, setMaskYPosition] = useState<number>(0);
-  const [maskWidth, setMaskWidth] = useState<number>(0);
-  const [maskHeight, setMaskHeight] = useState<number>(0);
+  }, [transformedData, t, selectedTimeRange, tempSelectedTimeRange]);
 
   const handleChartReady = useCallback<LineOnReady>((chart) => {
     chartRef.current = chart;
-    const { y, height } = chart.chart.coordinateBBox;
-    setMaskYPosition(y);
-    setMaskHeight(height);
   }, []);
 
   const maskStartXPosition = useRef(0);
   const maskEndXPosition = useRef(0);
 
   useEffect(() => {
-    // 当数据或加载状态变化时，清除 mask
-    setMaskWidth(0);
+    // 当数据或加载状态变化时，清除选择区域
+    // setSelectedTimeRange(null);
+    setSelectedTimeRange(null);
+    setTempSelectedTimeRange(null);
     maskStartXPosition.current = 0;
     maskEndXPosition.current = 0;
     isMaskCreatedChartRef.current = false;
   }, [transformedData, loading]);
 
-  // fixme: 当前 antd-design/plots 的版本为1.x，底层g2的版本为4.x,这个版本的g2无法通过 emit 的方式提交 brush-x 事件。只能绕过处理。等升级后，需要使用原生 brushXHighlight 等事件重写这个功能。
-  const handleChartEvent = useMemoizedFn<LineOnEvent>((chart, event) => {
-    if (!maskInteractionEventName) {
-      return;
-    }
-    const type = event.type;
-    if (type === 'plot:mousedown' && !isMaskCreatedChartRef.current) {
-      isMaskCreatedChartRef.current = true;
-      maskStartXPosition.current = event.x;
-      maskEndXPosition.current = event.x;
-      eventEmitter.emit(maskInteractionEventName, {
-        maskStartXPosition: event.x,
-        maskEndXPosition: event.x
-      });
-    }
-    if (type === 'plot:mouseup') {
-      isMaskCreatedChartRef.current = false;
+  // 辅助函数：根据鼠标位置计算对应的时间范围
+  const calculateTimeRangeFromMousePosition = useCallback(
+    (chart: LineChart, startX: number, endX: number) => {
+      let left = startX;
+      let right = endX;
+      if (left > right) {
+        [left, right] = [right, left];
+      }
+
       let minDate = dayjs().add(10, 'day');
       let maxDate = dayjs().add(-10000, 'day');
       let validPoints = 0;
+
       for (let i = 0; i < transformedData.length; i++) {
         const current = transformedData[i];
         const point = chart.chart.getXY(current);
         const { x } = point;
-        let left = maskStartXPosition.current;
-        let right = maskEndXPosition.current;
-        if (left > right) {
-          [left, right] = [right, left];
-        }
+
         if (x >= left && x <= right) {
           validPoints++;
           const currentDate = dayjs(current.date);
@@ -176,18 +182,92 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
           }
         }
       }
+
+      return {
+        minDate,
+        maxDate,
+        validPoints
+      };
+    },
+    [transformedData]
+  );
+
+  // fixme: 当前 antd-design/plots 的版本为1.x，底层g2的版本为4.x,这个版本的g2无法通过 emit 的方式提交 brush-x 事件。只能绕过处理。等升级后，需要使用原生 brushXHighlight 等事件重写这个功能。
+  const handleChartEvent = useMemoizedFn<LineOnEvent>((chart, event) => {
+    if (!maskInteractionEventName) {
+      return;
+    }
+    const type = event.type;
+    if (type === 'plot:mousedown' && !isMaskCreatedChartRef.current) {
+      isMaskCreatedChartRef.current = true;
+      maskStartXPosition.current = event.x;
+      maskEndXPosition.current = event.x;
+
+      // 开始拖拽时清除临时选择区域
+      setTempSelectedTimeRange(null);
+
+      eventEmitter.emit(maskInteractionEventName, {
+        maskStartXPosition: event.x,
+        maskEndXPosition: event.x
+      });
+    }
+    if (type === 'plot:mouseup') {
+      isMaskCreatedChartRef.current = false;
+
+      const { minDate, maxDate, validPoints } =
+        calculateTimeRangeFromMousePosition(
+          chart,
+          maskStartXPosition.current,
+          maskEndXPosition.current
+        );
+
       if (validPoints === 0) {
         onSelectDate?.(null);
+        setSelectedTimeRange(null);
+        setTempSelectedTimeRange(null);
         messageApi.info(t('sqlInsights.chart.noValidData'));
       } else {
         onSelectDate?.([minDate, maxDate]);
+        // 设置最终选择区域的时间范围
+        setSelectedTimeRange({
+          startTime: minDate.format('MM-DD HH:mm:ss'),
+          endTime: maxDate.format('MM-DD HH:mm:ss')
+        });
+        // 清除临时选择区域
+        setTempSelectedTimeRange(null);
       }
+
+      // 通知其他图表拖拽结束
+      eventEmitter.emit(maskInteractionEventName, {
+        maskStartXPosition: maskStartXPosition.current,
+        maskEndXPosition: maskEndXPosition.current,
+        isEnd: true
+      });
+
       maskStartXPosition.current = 0;
       maskEndXPosition.current = 0;
     }
     if (type === 'plot:mousemove' && isMaskCreatedChartRef.current) {
       const { x } = event;
       maskEndXPosition.current = x;
+
+      // 实时更新临时选择区域
+      const { minDate, maxDate, validPoints } =
+        calculateTimeRangeFromMousePosition(
+          chart,
+          maskStartXPosition.current,
+          x
+        );
+
+      if (validPoints > 0) {
+        setTempSelectedTimeRange({
+          startTime: minDate.format('MM-DD HH:mm:ss'),
+          endTime: maxDate.format('MM-DD HH:mm:ss')
+        });
+      } else {
+        setTempSelectedTimeRange(null);
+      }
+
       eventEmitter.emit(maskInteractionEventName, {
         maskStartXPosition: maskStartXPosition.current,
         maskEndXPosition: x
@@ -199,21 +279,57 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
     if (maskInteractionEventName) {
       const { unsubscribe } = eventEmitter.subscribe(
         maskInteractionEventName,
-        (data: { maskStartXPosition: number; maskEndXPosition: number }) => {
-          let left = data.maskStartXPosition;
-          let right = data.maskEndXPosition;
-          if (left > right) {
-            [left, right] = [right, left];
+        (data: {
+          maskStartXPosition: number;
+          maskEndXPosition: number;
+          isEnd?: boolean;
+        }) => {
+          // 当其他图表有选择操作时，同步更新当前图表的选择区域
+          if (chartRef.current && transformedData.length > 0) {
+            const { minDate, maxDate, validPoints } =
+              calculateTimeRangeFromMousePosition(
+                chartRef.current,
+                data.maskStartXPosition,
+                data.maskEndXPosition
+              );
+
+            if (data.isEnd) {
+              // 拖拽结束，设置最终选择区域并清除临时选择区域
+              if (validPoints > 0) {
+                setSelectedTimeRange({
+                  startTime: minDate.format('MM-DD HH:mm:ss'),
+                  endTime: maxDate.format('MM-DD HH:mm:ss')
+                });
+              } else {
+                setSelectedTimeRange(null);
+              }
+              setTempSelectedTimeRange(null);
+            } else {
+              // 拖拽过程中，更新临时选择区域
+              if (
+                validPoints > 0 &&
+                data.maskStartXPosition !== data.maskEndXPosition
+              ) {
+                setTempSelectedTimeRange({
+                  startTime: minDate.format('MM-DD HH:mm:ss'),
+                  endTime: maxDate.format('MM-DD HH:mm:ss')
+                });
+              } else {
+                setTempSelectedTimeRange(null);
+              }
+            }
           }
-          setMaskXPosition(left);
-          setMaskWidth(right - left);
         }
       );
       return () => {
         unsubscribe();
       };
     }
-  }, [maskInteractionEventName, maskXPosition]);
+  }, [
+    maskInteractionEventName,
+    transformedData,
+    calculateTimeRangeFromMousePosition
+  ]);
 
   return (
     <>
@@ -237,21 +353,6 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
               onEvent={handleChartEvent}
             />
           </ChartWrapper>
-          <div
-            style={{
-              display: maskWidth > 0 ? 'block' : 'none',
-              position: 'absolute',
-              top: maskYPosition,
-              left: maskXPosition,
-              width: maskWidth,
-              height: maskHeight,
-              backgroundColor: 'rgba(197, 212, 235, 0.6)',
-              pointerEvents: 'none'
-            }}
-            onMouseUp={() => {
-              isMaskCreatedChartRef.current = false;
-            }}
-          ></div>
         </div>
       </SqlInsightsLineChartWrapper>
     </>

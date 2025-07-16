@@ -1,8 +1,14 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'SQL洞察',
+  title: '性能洞察',
   dataSourceSelect: '数据源',
-  dateRange: '日期范围',
+  dateRange: {
+    twentyFourHours: '24小时',
+    sevenDays: '7天',
+    thirtyDays: '30天',
+    custom: '自定义'
+  },
+
   chart: {
     xAxisTitle: '日期',
     yAxisTitle: '数值',

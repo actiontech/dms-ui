@@ -6,6 +6,8 @@ import SqlInsightsLineChart from '../SqlInsightsLineChart';
 import useSqlInsightsMetric from '../../hooks/useSqlInsightsMetric';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRelatedSqlRedux from '../RelatedSqlList/useRelatedSqlRedux';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { useEffect } from 'react';
 
 export interface ActiveSessionTrendProps {
   instanceId?: string;
@@ -18,12 +20,20 @@ const ActiveSessionTrend: React.FC<ActiveSessionTrendProps> = ({
 }) => {
   const { t } = useTranslation();
   const { updateRelateSqlListDateRange } = useRelatedSqlRedux();
-  const { loading, chartData } = useSqlInsightsMetric({
+  const { loading, chartData, getChartData } = useSqlInsightsMetric({
     instanceId,
     dateRange,
     metricName:
       GetSqlManageSqlPerformanceInsightsMetricNameEnum.active_session_trend
   });
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.SQL_INSIGHTS_LINE_CHART_REFRESH,
+      getChartData
+    );
+    return unsubscribe;
+  }, [getChartData]);
 
   return (
     <ActiveSessionTrendStyleWrapper>

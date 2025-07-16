@@ -4,7 +4,6 @@ import { IGetSqlManageSqlPerformanceInsightsRelatedSQLParams } from '@actiontech
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { RelatedSQLInfoSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../locale';
-import { Popover, Tooltip } from 'antd';
 import SqlFingerprintColumn from './SqlFingerprintColumn';
 
 export type RelatedSqlListFilterParams = Pick<
@@ -12,7 +11,7 @@ export type RelatedSqlListFilterParams = Pick<
   'filter_source'
 >;
 
-export const RelatedSqlListColumn = (): ActiontechTableColumn<
+export const relatedSqlListColumn = (): ActiontechTableColumn<
   IRelatedSQLInfo,
   RelatedSqlListFilterParams
 > => {
@@ -20,6 +19,7 @@ export const RelatedSqlListColumn = (): ActiontechTableColumn<
     {
       dataIndex: 'sql_fingerprint',
       title: () => t('sqlInsights.relatedSqlList.column.sqlFingerprint'),
+      className: 'ellipsis-column-width',
       render: (value, record) => {
         return value ? (
           <SqlFingerprintColumn sqlFingerprint={value} record={record} />

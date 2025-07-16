@@ -12,7 +12,7 @@ import {
 import { useMemoizedFn, useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { RelatedSqlListColumn, RelatedSqlListFilterParams } from './column';
+import { relatedSqlListColumn, RelatedSqlListFilterParams } from './column';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { formatTime } from '@actiontech/shared';
@@ -74,7 +74,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   });
 
   const columns = useMemo(() => {
-    return RelatedSqlListColumn();
+    return relatedSqlListColumn();
   }, []);
 
   const tableActions = useMemo(() => {

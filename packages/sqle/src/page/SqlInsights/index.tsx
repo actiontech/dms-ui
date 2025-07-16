@@ -8,7 +8,8 @@ import useInstance from '../../hooks/useInstance';
 import {
   BasicSelect,
   BasicRangePicker,
-  BasicSegmented
+  BasicSegmented,
+  EmptyBox
 } from '@actiontech/shared';
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import dayjs, { Dayjs } from 'dayjs';
@@ -20,21 +21,21 @@ import TopSqlTrend from './components/TopSqlTrend';
 import ActiveSessionTrend from './components/ActiveSessionTrend';
 import RelatedSqlList from './components/RelatedSqlList';
 import DrawerManager from './components/DrawerManager';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { range } from 'lodash';
+
 const SqlInsights: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [selectedInstance, setSelectedInstance] = useState<string>();
   const [dateRange, setDateRange] = useState<[Dayjs, Dayjs]>([
-    dayjs().subtract(7, 'day'),
+    dayjs().subtract(24, 'hour'),
     dayjs()
   ]);
   const [timePeriod, setTimePeriod] = useState<DateRangeEnum>(
-    DateRangeEnum['7D']
+    DateRangeEnum['24H']
   );
-
-  const onRefresh = () => {
-    console.log('onRefresh');
-  };
 
   const {
     updateInstanceList,
@@ -44,7 +45,16 @@ const SqlInsights: React.FC = () => {
 
   useEffect(() => {
     if (projectName) {
-      updateInstanceList({ project_name: projectName });
+      updateInstanceList(
+        { project_name: projectName },
+        {
+          onSuccess: (data) => {
+            if (data.length > 0) {
+              setSelectedInstance(data[0].instance_name);
+            }
+          }
+        }
+      );
     }
   }, [projectName, updateInstanceList]);
 
@@ -60,8 +70,7 @@ const SqlInsights: React.FC = () => {
     }
   }, []);
 
-  const onSegmentedChange = useCallback((value: SegmentedValue) => {
-    setTimePeriod(value as DateRangeEnum);
+  const getDataRange = useCallback((value: DateRangeEnum) => {
     let startTime = dayjs();
     const endTime = dayjs();
 
@@ -73,8 +82,47 @@ const SqlInsights: React.FC = () => {
       startTime = endTime.subtract(30, 'day');
     }
 
-    setDateRange([startTime, endTime]);
+    return [startTime, endTime];
   }, []);
+
+  const onRefresh = () => {
+    const date =
+      timePeriod === DateRangeEnum['custom']
+        ? dateRange
+        : getDataRange(timePeriod);
+    eventEmitter.emit(EmitterKey.SQL_INSIGHTS_LINE_CHART_REFRESH, date);
+  };
+
+  const onSegmentedChange = useCallback(
+    (value: SegmentedValue) => {
+      setTimePeriod(value as DateRangeEnum);
+      const [startTime, endTime] = getDataRange(value as DateRangeEnum);
+      setDateRange([startTime, endTime]);
+    },
+    [getDataRange]
+  );
+
+  const disabledTime = (date: Dayjs | null) => {
+    const currentTime = dayjs();
+    if (date && date.isSame(currentTime, 'day')) {
+      const hours = currentTime?.hour() ?? 0;
+      const minutes = currentTime?.minute() ?? 0;
+      const seconds = currentTime?.second() ?? 0;
+
+      const disabledConfig = {
+        disabledHours: () => range(hours + 1, 24),
+        disabledMinutes: (selectedHour: number) =>
+          selectedHour === hours ? range(minutes + 1, 60) : [],
+        disabledSeconds: (selectedHour: number, selectedMinute: number) =>
+          selectedHour === hours && selectedMinute === minutes
+            ? range(seconds + 1, 60)
+            : []
+      };
+
+      return disabledConfig;
+    }
+    return {};
+  };
 
   return (
     <>
@@ -102,21 +150,28 @@ const SqlInsights: React.FC = () => {
       />
       <EmptyRowStyleWrapper>
         <Space size={12}>
-          <span>{t('sqlInsights.dateRange')}:</span>
-          <BasicRangePicker
-            value={dateRange}
-            onChange={handleDateRangeChange}
-            allowClear={false}
-            format="YYYY-MM-DD"
-            disabledDate={(current) =>
-              current && current > dayjs().endOf('day')
-            }
-          />
           <BasicSegmented
             value={timePeriod}
             options={DateRangeOptions}
             onChange={onSegmentedChange}
           />
+          <EmptyBox if={timePeriod === DateRangeEnum['custom']}>
+            <BasicRangePicker
+              value={dateRange}
+              onChange={handleDateRangeChange}
+              allowClear={false}
+              disabledDate={(current) =>
+                current && current > dayjs().endOf('day')
+              }
+              showTime={{
+                defaultValue: [
+                  dayjs('00:00:00', 'HH:mm:ss'),
+                  dayjs('00:00:00', 'HH:mm:ss')
+                ]
+              }}
+              disabledTime={disabledTime}
+            />
+          </EmptyBox>
         </Space>
       </EmptyRowStyleWrapper>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useRequest } from 'ahooks';
 import { Dayjs } from 'dayjs';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
@@ -14,6 +14,7 @@ interface UseSqlInsightsMetricProps {
 interface UseSqlInsightsMetricReturn {
   loading: boolean;
   chartData: ILine[];
+  getChartData: (date?: [Dayjs, Dayjs]) => void;
 }
 
 export const useSqlInsightsMetric = ({
@@ -22,10 +23,8 @@ export const useSqlInsightsMetric = ({
   metricName
 }: UseSqlInsightsMetricProps): UseSqlInsightsMetricReturn => {
   const { projectName } = useCurrentProject();
-  const [loading, setLoading] = useState(false);
-  const [chartData, setChartData] = useState<ILine[]>([]);
 
-  useEffect(() => {
+  const fetchData = async (date?: [Dayjs, Dayjs]) => {
     if (
       !projectName ||
       !instanceId ||
@@ -36,28 +35,30 @@ export const useSqlInsightsMetric = ({
       return;
     }
 
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await SqlManage.GetSqlManageSqlPerformanceInsights({
-          project_name: projectName,
-          instance_name: instanceId,
-          metric_name: metricName,
-          start_time: dateRange[0].format('YYYY-MM-DD HH:mm:ss'),
-          end_time: dateRange[1].format('YYYY-MM-DD HH:mm:ss')
-        });
-        if (res.data?.data?.lines) {
-          setChartData(res.data.data.lines);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
+    const [startTime, endTime] = date || dateRange;
 
-    fetchData();
-  }, [projectName, instanceId, dateRange, metricName]);
+    const res = await SqlManage.GetSqlManageSqlPerformanceInsights({
+      project_name: projectName,
+      instance_name: instanceId,
+      metric_name: metricName,
+      start_time: startTime.format('YYYY-MM-DD HH:mm:ss'),
+      end_time: endTime.format('YYYY-MM-DD HH:mm:ss')
+    });
 
-  return { loading, chartData };
+    return res.data?.data?.lines || [];
+  };
+
+  const {
+    data: chartData = [],
+    loading,
+    runAsync: getChartData
+  } = useRequest(fetchData, {
+    refreshDeps: [projectName, instanceId, dateRange, metricName],
+    // pollingInterval: 10000, // 每10秒自动请求一次
+    ready: !!(projectName && instanceId && dateRange) // 只有当所有必需参数都存在时才开始请求
+  });
+
+  return { loading, chartData, getChartData };
 };
 
 export default useSqlInsightsMetric;
