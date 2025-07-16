@@ -8,6 +8,7 @@ import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/bas
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 describe('sqle/GlobalDashboard/PendingSqlList', () => {
   let getGlobalSqlManageList: jest.SpyInstance;
@@ -23,6 +24,13 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true),
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
   });
 
   afterEach(() => {
@@ -45,6 +53,7 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
     expect(baseElement).toMatchSnapshot();
     expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
     expect(getGlobalSqlManageList).toHaveBeenCalledWith(commonParams);
+    expect(screen.queryAllByText('详 情')[0]).toBeInTheDocument();
   });
 
   it('render request data with filter value', async () => {
@@ -114,5 +123,20 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
       jest.advanceTimersByTime(0);
     });
     expect(getGlobalSqlManageList).toHaveBeenCalledTimes(2);
+  });
+
+  it('render not show detail button when not have permission', async () => {
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(false),
+        checkPagePermission: jest.fn().mockReturnValue(false)
+      },
+      { useSpyOnMockHooks: true }
+    );
+
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.queryByText('详 情')).not.toBeInTheDocument();
   });
 });

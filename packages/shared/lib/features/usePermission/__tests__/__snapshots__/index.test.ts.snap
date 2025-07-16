@@ -32,6 +32,9 @@ exports[`usePermission should match snapshot 1`] = `
         "TEST": "action:test_db_service",
         "TEST_IN_MORE_BUTTON": "action:test_db_service_in_more_button",
       },
+      "GLOBAL_DASHBOARD": {
+        "PENDING_SQL_NAVIGATE_TO_SQL_MANAGEMENT": "action:global_dashboard_pending_sql_navigate_to_sql_management",
+      },
       "GLOBAL_DATA_SOURCE": {
         "ADD": "action:add_global_db_service",
         "BATCH_IMPORT": "action:batch_import_global_db_service",
@@ -244,8 +247,11 @@ exports[`usePermission should match snapshot 1`] = `
     "SQLE": {
       "KNOWLEDGE": "page:knowledge",
       "OPERATION_RECORD": "page:operation_record",
+      "PIPELINE_CONFIGURATION": "page:pipeline_configuration",
       "REPORT_STATISTICS": "page:report_statistics",
       "RULE_MANAGEMENT": "page:rule_management",
+      "SQL_MANAGEMENT": "page:sql_management",
+      "SQL_MANAGEMENT_CONF": "page:sql_management_conf",
       "SQL_OPTIMIZATION": "page:sql_optimization",
     },
   },
@@ -969,6 +975,15 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:export_workflow",
     "type": "action",
   },
+  "action:global_dashboard_pending_sql_navigate_to_sql_management": {
+    "id": "action:global_dashboard_pending_sql_navigate_to_sql_management",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
   "action:global_rule_template_create_rule_template": {
     "id": "action:global_rule_template_create_rule_template",
     "role": [
@@ -1550,6 +1565,15 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "page",
   },
+  "page:pipeline_configuration": {
+    "id": "page:pipeline_configuration",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "page",
+  },
   "page:report_statistics": {
     "id": "page:report_statistics",
     "role": [
@@ -1575,6 +1599,24 @@ exports[`usePermission should match snapshot 2`] = `
       "admin",
       "systemAdministrator",
       "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:sql_management": {
+    "id": "page:sql_management",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:sql_management_conf": {
+    "id": "page:sql_management_conf",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "page",
   },

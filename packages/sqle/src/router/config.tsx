@@ -287,6 +287,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index.path,
     key: 'sqlManagementConf',
+    permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_CONF,
     children: [
       {
         index: true,
@@ -318,6 +319,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index.path,
     key: 'sqlManagement',
+    permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT,
     children: [
       {
         index: true,
@@ -458,6 +460,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index.path,
     key: 'pipelineConfiguration',
+    permission: PERMISSIONS.PAGES.SQLE.PIPELINE_CONFIGURATION,
     children: [
       {
         index: true,
