@@ -84,7 +84,8 @@ const sqlManagementMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <ManagementFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management`,
-  structKey: 'sql-management'
+  structKey: 'sql-management',
+  permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT
 });
 
 const projectRuleTemplateMenuItem: GenerateMenuItemI18nConfig = (
@@ -149,7 +150,8 @@ const sqlManagementConf: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <PlanFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
-  structKey: 'sql-management-conf'
+  structKey: 'sql-management-conf',
+  permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_CONF
 });
 
 const pushRuleConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -169,7 +171,8 @@ const pipelineConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <PipelineOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/pipeline-configuration`,
-  structKey: 'pipeline-configuration'
+  structKey: 'pipeline-configuration',
+  permission: PERMISSIONS.PAGES.SQLE.PIPELINE_CONFIGURATION
 });
 
 const versionManagement: GenerateMenuItemI18nConfig = (projectID) => ({

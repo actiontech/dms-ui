@@ -261,6 +261,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           流水线配置
         </ForwardRef(TypedLink)>,
+        "permission": "page:pipeline_configuration",
         "structKey": "pipeline-configuration",
         "to": "/sqle/project/600300/pipeline-configuration",
       },
@@ -282,6 +283,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           SQL管控
         </ForwardRef(TypedLink)>,
+        "permission": "page:sql_management",
         "structKey": "sql-management",
         "to": "/sqle/project/600300/sql-management",
       },
@@ -296,6 +298,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           SQL管控配置
         </ForwardRef(TypedLink)>,
+        "permission": "page:sql_management_conf",
         "structKey": "sql-management-conf",
         "to": "/sqle/project/600300/sql-management-conf",
       },

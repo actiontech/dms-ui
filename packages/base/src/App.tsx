@@ -15,11 +15,16 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import {
   EmptyBox,
   HeaderProgress,
+  LocalStorageWrapper,
   SpinIndicator,
   useTypedNavigate
 } from '@actiontech/shared';
 import { useNotificationContext } from '@actiontech/shared/lib/hooks';
-import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
+import {
+  StorageKey,
+  SupportLanguage,
+  SupportTheme
+} from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useChangeTheme,
@@ -58,6 +63,7 @@ import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
 import { debounce } from 'lodash';
 import './index.less';
+import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
 
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -114,7 +120,9 @@ function App() {
   const {
     isUserInfoFetched,
     theme,
-    language: currentLanguage
+    language: currentLanguage,
+    username,
+    bindProjects
   } = useCurrentUser();
 
   const { fetchModuleSupportStatus, isFeatureSupportFetched } =
@@ -142,13 +150,37 @@ function App() {
   );
   // #endif
 
+  const catchProjectID = useMemo<string>(() => {
+    const data = LocalStorageWrapper.get(StorageKey.DMS_Project_Catch);
+    try {
+      const recentlyProjectsRecord = JSON.parse(data || '{}');
+      const localData: Pick<IUserBindProject, 'project_id' | 'project_name'>[] =
+        recentlyProjectsRecord[username] ?? [];
+      const recentlyProjects =
+        localData.filter((v) =>
+          bindProjects.some((project) => project.project_id === v.project_id)
+        ) ?? [];
+
+      return recentlyProjects[0]?.project_id ?? '';
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      return '';
+    }
+  }, [bindProjects, username]);
+
   const AuthRouterConfigData = useMemo(() => {
     const filterRoutesByPermission: (
       routes: RouterConfigItem[]
     ) => RouterConfigItem[] = (routes) => {
       const verifiedRoutes: RouterConfigItem[] = [];
       return routes.reduce((acc, route) => {
-        if (route.permission && !checkPagePermission(route.permission)) {
+        if (
+          route.permission &&
+          !checkPagePermission(route.permission, {
+            targetProjectID: catchProjectID
+          })
+        ) {
           return acc;
         }
         if (route.children) {
@@ -167,7 +199,12 @@ function App() {
       return filterRoutesByPermission(AuthRouterConfig);
     }
     return AuthRouterConfig;
-  }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
+  }, [
+    checkPagePermission,
+    catchProjectID,
+    isFeatureSupportFetched,
+    isUserInfoFetched
+  ]);
 
   const elements = useRoutes(
     token ? (AuthRouterConfigData as RouteObject[]) : unAuthRouterConfig

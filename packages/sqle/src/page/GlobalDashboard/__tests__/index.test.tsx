@@ -9,6 +9,7 @@ import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sq
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import GlobalDashboard from '../index';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 describe('sqle/GlobalDashboard', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;
@@ -26,6 +27,13 @@ describe('sqle/GlobalDashboard', () => {
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
     getGlobalSqlManageStatisticsSpy = sqlManage.getGlobalSqlManageStatistics();
     getInstanceTipListSpy = instance.getInstanceTipList();
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true),
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
   });
 
   afterEach(() => {

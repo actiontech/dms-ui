@@ -13,7 +13,10 @@ export const PERMISSIONS = {
       SQL_OPTIMIZATION: 'page:sql_optimization',
       REPORT_STATISTICS: 'page:report_statistics',
       RULE_MANAGEMENT: 'page:rule_management',
-      KNOWLEDGE: 'page:knowledge'
+      KNOWLEDGE: 'page:knowledge',
+      PIPELINE_CONFIGURATION: 'page:pipeline_configuration',
+      SQL_MANAGEMENT: 'page:sql_management',
+      SQL_MANAGEMENT_CONF: 'page:sql_management_conf'
     }
   },
   ACTIONS: {
@@ -29,6 +32,10 @@ export const PERMISSIONS = {
           EDIT: 'action:edit_role',
           DELETE: 'action:delete_role'
         }
+      },
+      GLOBAL_DASHBOARD: {
+        PENDING_SQL_NAVIGATE_TO_SQL_MANAGEMENT:
+          'action:global_dashboard_pending_sql_navigate_to_sql_management'
       },
       GLOBAL_DATA_SOURCE: {
         EDIT: 'action:edit_global_db_service',
