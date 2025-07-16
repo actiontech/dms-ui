@@ -602,6 +602,8 @@ export interface IChartPoint {
     [key: string]: string;
   }>;
 
+  status?: number;
+
   x?: string;
 
   y?: number;
@@ -1927,7 +1929,7 @@ export interface IGetSqlManageSqlAnalysisResp {
   message?: string;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {
+export interface IGetSqlPerformanceInsightsRelatedSQLResp {
   code?: number;
 
   data?: IRelatedSQLInfo[];
@@ -1937,7 +1939,7 @@ export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {
   total_nums?: number;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {
+export interface IGetSqlPerformanceInsightsRelatedTransactionResp {
   code?: number;
 
   data?: IRelatedTransactionInfo;
@@ -1945,10 +1947,10 @@ export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {
   message?: string;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsResp {
+export interface IGetSqlPerformanceInsightsResp {
   code?: number;
 
-  data?: ISqlManageSqlPerformanceInsights;
+  data?: ISqlPerformanceInsights;
 
   message?: string;
 }
@@ -3251,10 +3253,12 @@ export interface ISqlManageCodingReq {
   type?: SqlManageCodingReqTypeEnum;
 }
 
-export interface ISqlManageSqlPerformanceInsights {
+export interface ISqlPerformanceInsights {
   lines?: ILine[];
 
   message?: string;
+
+  task_enable?: boolean;
 
   x_info?: string;
 

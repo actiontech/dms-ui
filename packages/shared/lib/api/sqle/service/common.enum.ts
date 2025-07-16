@@ -401,7 +401,7 @@ export enum RecordSourceNameEnum {
 }
 
 export enum RelatedSQLInfoSourceEnum {
-  'order' = 'order',
+  'workflow' = 'workflow',
 
   'sql_manage' = 'sql_manage'
 }
