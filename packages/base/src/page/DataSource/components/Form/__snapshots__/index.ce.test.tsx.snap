@@ -343,7 +343,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -370,11 +370,11 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="port"
                       placeholder="请输入数据源端口"
                       type="text"
-                      value="NaN"
+                      value="3306"
                     />
                   </div>
                 </div>
@@ -538,7 +538,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -672,13 +672,31 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
         <section
           class="css-bspaai"
         >
-          <h1
-            class="ant-typography css-1eepp70"
-          >
-            SQL审核配置
-          </h1>
           <div
-            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
+            class="ant-space ant-space-vertical css-p6lj5j"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 8px;"
+            >
+              <h1
+                class="ant-typography css-1eepp70"
+              >
+                SQL审核配置
+              </h1>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-typography ant-typography-secondary"
+              >
+                管理不同业务场景下SQL执行所需遵循的审核规则，实现精细化管控
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -689,9 +707,20 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-no-colon"
                   for="needSqlAuditService"
-                  title="是否开启SQL审核业务"
+                  title=""
                 >
-                  是否开启SQL审核业务
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否开启SQL审核业务
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      关闭后将禁用所用场景的SQL审核
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -704,8 +733,8 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
                       role="switch"
                       type="button"
                     >
@@ -756,7 +785,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-hidden"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -765,11 +794,22 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
-                  class="ant-form-item-no-colon"
+                  class="ant-form-item-required ant-form-item-no-colon"
                   for="ruleTemplateName"
-                  title="审核规则模板"
+                  title=""
                 >
-                  审核规则模板
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL上线审核规则模板
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      此功能强制开启审核，请为上线流程选择规则模板
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -782,6 +822,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
+                      aria-required="true"
                       class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
@@ -797,6 +838,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-owns="ruleTemplateName_list"
+                            aria-required="true"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
                             id="ruleTemplateName"
@@ -808,7 +850,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         <span
                           class="ant-select-selection-placeholder"
                         >
-                          请选择审核规则模板
+                          请选择SQL上线审核规则模板
                         </span>
                       </div>
                       <span
@@ -844,7 +886,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -855,9 +897,20 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-no-colon"
                   for="needAuditForSqlQuery"
-                  title="SQL工作台查询是否需要审核"
+                  title=""
                 >
-                  SQL工作台查询是否需要审核
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      工作台查询审核
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用于SQL工作台实时查询，可按需启用
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -895,117 +948,6 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
               </div>
             </div>
           </div>
-          <div
-            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
-          >
-            <div
-              class="ant-row ant-form-item-row"
-            >
-              <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-              >
-                <label
-                  class="ant-form-item-no-colon"
-                  for="allowQueryWhenLessThanAuditLevel"
-                  title="自动放行的最高审核等级"
-                >
-                  自动放行的最高审核等级
-                </label>
-              </div>
-              <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-              >
-                <div
-                  class="ant-form-item-control-input"
-                >
-                  <div
-                    class="ant-form-item-control-input-content"
-                  >
-                    <div
-                      class="basic-select-container has-prefix css-12vdeki"
-                    >
-                      <span
-                        class="basic-select-prefix"
-                      >
-                        <svg
-                          class="FaLessThanEqualOutlined_svg__icon"
-                          height="16"
-                          viewBox="0 0 1024 1024"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M902.3 609.9 303.2 391.8l599.1-218.1c29.3-10.7 44.4-43 33.7-72.3S893 57 863.7 67.7l-742 270.2c-23.2 8.5-37.5 30.6-37.1 54-.4 23.4 13.9 45.5 37.1 54L863.8 716c29.3 10.7 61.6-4.4 72.3-33.7 10.6-29.4-4.5-61.7-33.8-72.4m0 240.3L160.2 580.1c-29.3-10.7-61.6 4.4-72.3 33.7s4.4 61.6 33.7 72.3l742.1 270.1c29.3 10.7 61.6-4.4 72.3-33.7 10.7-29.2-4.4-61.6-33.7-72.3"
-                            fill="#D8D8D8"
-                          />
-                        </svg>
-                      </span>
-                      <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
-                      >
-                        <div
-                          class="ant-select-selector"
-                        >
-                          <span
-                            class="ant-select-selection-search"
-                          >
-                            <input
-                              aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                              aria-autocomplete="list"
-                              aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                              autocomplete="off"
-                              class="ant-select-selection-search-input"
-                              id="allowQueryWhenLessThanAuditLevel"
-                              readonly=""
-                              role="combobox"
-                              style="opacity: 0;"
-                              type="search"
-                              unselectable="on"
-                              value=""
-                            />
-                          </span>
-                          <span
-                            class="ant-select-selection-placeholder"
-                          >
-                            请选择{{name}}
-                          </span>
-                        </div>
-                        <span
-                          aria-hidden="true"
-                          class="ant-select-arrow"
-                          style="user-select: none;"
-                          unselectable="on"
-                        >
-                          <span
-                            aria-label="down"
-                            class="anticon anticon-down ant-select-suffix"
-                            role="img"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="down"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
       </section>
       <section
@@ -1020,7 +962,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row"
