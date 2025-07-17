@@ -740,13 +740,31 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
           <section
             class="css-bspaai"
           >
-            <h1
-              class="ant-typography css-1eepp70"
-            >
-              SQL审核配置
-            </h1>
             <div
-              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
+              class="ant-space ant-space-vertical css-p6lj5j"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 8px;"
+              >
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  SQL审核配置
+                </h1>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  class="ant-typography ant-typography-secondary"
+                >
+                  管理不同业务场景下SQL执行所需遵循的审核规则，实现精细化管控
+                </span>
+              </div>
+            </div>
+            <div
+              class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
                 class="ant-row ant-form-item-row"
@@ -757,9 +775,20 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                   <label
                     class="ant-form-item-no-colon"
                     for="needSqlAuditService"
-                    title="是否开启SQL审核业务"
+                    title=""
                   >
-                    是否开启SQL审核业务
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        是否开启SQL审核业务
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        关闭后将禁用所用场景的SQL审核
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div
@@ -773,7 +802,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
+                        class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
                         role="switch"
                         type="button"
                       >
@@ -824,7 +853,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy"
+              class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
             >
               <div
                 class="ant-row ant-form-item-row"
@@ -835,9 +864,20 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
                     for="ruleTemplateName"
-                    title="审核规则模板"
+                    title=""
                   >
-                    审核规则模板
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        SQL上线审核规则模板
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        此功能强制开启审核，请为上线流程选择规则模板
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div
@@ -878,7 +918,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           <span
                             class="ant-select-selection-placeholder"
                           >
-                            请选择审核规则模板
+                            请选择SQL上线审核规则模板
                           </span>
                         </div>
                         <span
@@ -914,7 +954,135 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy"
+              class="ant-form-item css-1jlm9cy ant-form-item-hidden"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <input
+                        class="ant-input basic-input-wrapper css-1pd1cd5"
+                        id="dataExportRuleTemplateId"
+                        placeholder="请输入{{name}}"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-required ant-form-item-no-colon"
+                    for="dataExportRuleTemplateName"
+                    title=""
+                  >
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        数据导出审核规则模板
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        此功能强制开启审核，请为数据导出选择规则模板
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-activedescendant="dataExportRuleTemplateName_list_0"
+                              aria-autocomplete="list"
+                              aria-controls="dataExportRuleTemplateName_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="dataExportRuleTemplateName_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="dataExportRuleTemplateName"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-placeholder"
+                          >
+                            请选择数据导出审核规则模板
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow ant-select-arrow-loading"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="loading"
+                            class="anticon anticon-loading anticon-spin"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="loading"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="0 0 1024 1024"
+                              width="1em"
+                            >
+                              <path
+                                d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item has-label-tip css-1jlm9cy"
             >
               <div
                 class="ant-row ant-form-item-row"
@@ -925,9 +1093,20 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                   <label
                     class="ant-form-item-no-colon"
                     for="needAuditForSqlQuery"
-                    title="SQL工作台查询是否需要审核"
+                    title=""
                   >
-                    SQL工作台查询是否需要审核
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        工作台查询审核
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        用于SQL工作台实时查询，可按需启用
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div
@@ -960,117 +1139,6 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           />
                         </span>
                       </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item css-1jlm9cy ant-form-item-hidden"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-                >
-                  <label
-                    class="ant-form-item-no-colon"
-                    for="allowQueryWhenLessThanAuditLevel"
-                    title="自动放行的最高审核等级"
-                  >
-                    自动放行的最高审核等级
-                  </label>
-                </div>
-                <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <div
-                        class="basic-select-container has-prefix css-12vdeki"
-                      >
-                        <span
-                          class="basic-select-prefix"
-                        >
-                          <svg
-                            class="FaLessThanEqualOutlined_svg__icon"
-                            height="16"
-                            viewBox="0 0 1024 1024"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M902.3 609.9 303.2 391.8l599.1-218.1c29.3-10.7 44.4-43 33.7-72.3S893 57 863.7 67.7l-742 270.2c-23.2 8.5-37.5 30.6-37.1 54-.4 23.4 13.9 45.5 37.1 54L863.8 716c29.3 10.7 61.6-4.4 72.3-33.7 10.6-29.4-4.5-61.7-33.8-72.4m0 240.3L160.2 580.1c-29.3-10.7-61.6 4.4-72.3 33.7s4.4 61.6 33.7 72.3l742.1 270.1c29.3 10.7 61.6-4.4 72.3-33.7 10.7-29.2-4.4-61.6-33.7-72.3"
-                              fill="#D8D8D8"
-                            />
-                          </svg>
-                        </span>
-                        <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
-                        >
-                          <div
-                            class="ant-select-selector"
-                          >
-                            <span
-                              class="ant-select-selection-search"
-                            >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
-                              />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
-                            >
-                              请选择{{name}}
-                            </span>
-                          </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1995,13 +2063,31 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
           <section
             class="css-bspaai"
           >
-            <h1
-              class="ant-typography css-1eepp70"
-            >
-              SQL审核配置
-            </h1>
             <div
-              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
+              class="ant-space ant-space-vertical css-p6lj5j"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 8px;"
+              >
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  SQL审核配置
+                </h1>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  class="ant-typography ant-typography-secondary"
+                >
+                  管理不同业务场景下SQL执行所需遵循的审核规则，实现精细化管控
+                </span>
+              </div>
+            </div>
+            <div
+              class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
                 class="ant-row ant-form-item-row"
@@ -2012,196 +2098,20 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                   <label
                     class="ant-form-item-no-colon"
                     for="needSqlAuditService"
-                    title="是否开启SQL审核业务"
-                  >
-                    是否开启SQL审核业务
-                  </label>
-                </div>
-                <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
+                    title=""
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="label-cont-custom"
                     >
-                      <button
-                        aria-checked="true"
-                        class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
-                        role="switch"
-                        type="button"
-                      >
-                        <div
-                          class="ant-switch-handle"
-                        />
-                        <span
-                          class="ant-switch-inner"
-                        >
-                          <span
-                            class="ant-switch-inner-checked"
-                          />
-                          <span
-                            class="ant-switch-inner-unchecked"
-                          />
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item css-1jlm9cy ant-form-item-has-success ant-form-item-hidden"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <input
-                        class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
-                        id="ruleTemplateId"
-                        placeholder="请输入{{name}}"
-                        type="text"
-                        value="2"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-                >
-                  <label
-                    class="ant-form-item-required ant-form-item-no-colon"
-                    for="ruleTemplateName"
-                    title="审核规则模板"
-                  >
-                    审核规则模板
-                  </label>
-                </div>
-                <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
+                      <div>
+                        是否开启SQL审核业务
+                      </div>
                       <div
-                        aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="tip-content-box"
                       >
-                        <div
-                          class="ant-select-selector"
-                        >
-                          <span
-                            class="ant-select-selection-search"
-                          >
-                            <input
-                              aria-activedescendant="ruleTemplateName_list_0"
-                              aria-autocomplete="list"
-                              aria-controls="ruleTemplateName_list"
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-owns="ruleTemplateName_list"
-                              aria-required="true"
-                              autocomplete="off"
-                              class="ant-select-selection-search-input"
-                              id="ruleTemplateName"
-                              role="combobox"
-                              type="search"
-                              value=""
-                            />
-                          </span>
-                          <span
-                            class="ant-select-selection-item"
-                            title="custom_template_b"
-                          >
-                            custom_template_b
-                          </span>
-                        </div>
-                        <span
-                          aria-hidden="true"
-                          class="ant-select-arrow"
-                          style="user-select: none;"
-                          unselectable="on"
-                        >
-                          <span
-                            aria-label="down"
-                            class="anticon anticon-down ant-select-suffix"
-                            role="img"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="down"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                        <span
-                          aria-hidden="true"
-                          class="ant-select-clear"
-                          style="user-select: none;"
-                          unselectable="on"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
-                            />
-                          </svg>
-                        </span>
+                        关闭后将禁用所用场景的SQL审核
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item css-1jlm9cy"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-                >
-                  <label
-                    class="ant-form-item-no-colon"
-                    for="needAuditForSqlQuery"
-                    title="SQL工作台查询是否需要审核"
-                  >
-                    SQL工作台查询是否需要审核
                   </label>
                 </div>
                 <div
@@ -2215,8 +2125,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                     >
                       <button
                         aria-checked="false"
-                        class="ant-switch basic-switch-wrapper css-g6dhbn"
-                        id="needAuditForSqlQuery"
+                        class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn"
                         role="switch"
                         type="button"
                       >
@@ -2234,117 +2143,6 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           />
                         </span>
                       </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item css-1jlm9cy ant-form-item-hidden"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-                >
-                  <label
-                    class="ant-form-item-no-colon"
-                    for="allowQueryWhenLessThanAuditLevel"
-                    title="自动放行的最高审核等级"
-                  >
-                    自动放行的最高审核等级
-                  </label>
-                </div>
-                <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <div
-                        class="basic-select-container has-prefix css-12vdeki"
-                      >
-                        <span
-                          class="basic-select-prefix"
-                        >
-                          <svg
-                            class="FaLessThanEqualOutlined_svg__icon"
-                            height="16"
-                            viewBox="0 0 1024 1024"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M902.3 609.9 303.2 391.8l599.1-218.1c29.3-10.7 44.4-43 33.7-72.3S893 57 863.7 67.7l-742 270.2c-23.2 8.5-37.5 30.6-37.1 54-.4 23.4 13.9 45.5 37.1 54L863.8 716c29.3 10.7 61.6-4.4 72.3-33.7 10.6-29.4-4.5-61.7-33.8-72.4m0 240.3L160.2 580.1c-29.3-10.7-61.6 4.4-72.3 33.7s4.4 61.6 33.7 72.3l742.1 270.1c29.3 10.7 61.6-4.4 72.3-33.7 10.7-29.2-4.4-61.6-33.7-72.3"
-                              fill="#D8D8D8"
-                            />
-                          </svg>
-                        </span>
-                        <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
-                        >
-                          <div
-                            class="ant-select-selector"
-                          >
-                            <span
-                              class="ant-select-selection-search"
-                            >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
-                              />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
-                            >
-                              请选择{{name}}
-                            </span>
-                          </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -2801,79 +2599,81 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-popover ant-popover-hidden ant-popconfirm popconfirm-small ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
-      <div>
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute; bottom: 0px; left: 0px;"
+      />
+      <div
+        class="ant-popover-content"
+      >
         <div
-          id="ruleTemplateName_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
+          class="ant-popover-inner"
+          role="tooltip"
         >
           <div
-            aria-label="default_MySQL1"
-            aria-selected="false"
-            id="ruleTemplateName_list_0"
-            role="option"
+            class="ant-popover-inner-content"
           >
-            default_MySQL1
-          </div>
-          <div
-            aria-label="custom_template_b"
-            aria-selected="true"
-            id="ruleTemplateName_list_1"
-            role="option"
-          >
-            custom_template_b
-          </div>
-        </div>
-        <div
-          class="rc-virtual-list"
-          style="position: relative;"
-        >
-          <div
-            class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
-          >
-            <div>
+            <div
+              class="ant-popconfirm-inner-content"
+            >
               <div
-                class="rc-virtual-list-holder-inner"
-                style="display: flex; flex-direction: column;"
+                class="ant-popconfirm-message"
               >
+                <span
+                  class="ant-popconfirm-message-icon"
+                >
+                  <span
+                    aria-label="exclamation-circle"
+                    class="anticon anticon-exclamation-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="exclamation-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                </span>
                 <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="default_MySQL1"
+                  class="ant-popconfirm-message-text"
                 >
                   <div
-                    class="ant-select-item-option-content"
+                    class="ant-popconfirm-title"
                   >
-                    default_MySQL1
+                    如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？
                   </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
                 </div>
-                <div
-                  aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
-                  title="custom_template_b"
+              </div>
+              <div
+                class="ant-popconfirm-buttons"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm"
+                  type="button"
                 >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    custom_template_b
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
+                  <span>
+                    取 消
+                  </span>
+                </button>
+                <button
+                  class="ant-btn ant-btn-primary ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    确 定
+                  </span>
+                </button>
               </div>
             </div>
           </div>

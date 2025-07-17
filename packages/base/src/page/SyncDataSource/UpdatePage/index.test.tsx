@@ -103,7 +103,16 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
     fireEvent.change(getBySelector('#params_key2', container), {
       target: { value: 432 }
     });
-    fireEvent.click(getBySelector('#needAuditForSqlQuery', container));
+    fireEvent.click(getBySelector('.audit-confirm-switch'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 定'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.audit-confirm-switch')).not.toBeChecked();
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -120,9 +129,16 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
         cron_express: syncTaskDetailMockData.cron_express,
         url: 'http://192.168.1.3:3333',
         sqle_config: {
-          ...syncTaskDetailMockData.sqle_config,
+          audit_enabled: false,
+          data_export_rule_template_id: undefined,
+          data_export_rule_template_name: undefined,
+          rule_template_id: undefined,
+          rule_template_name: undefined,
           sql_query_config: {
-            audit_enabled: false
+            audit_enabled: undefined,
+            rule_template_id: undefined,
+            rule_template_name: undefined,
+            allow_query_when_less_than_audit_level: undefined
           }
         },
         additional_params: [
