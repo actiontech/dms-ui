@@ -1742,6 +1742,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -2288,6 +2292,12 @@ export interface ISMTPConfigurationResData {
 }
 
 export interface ISQLEConfig {
+  audit_enabled?: boolean;
+
+  data_export_rule_template_id?: string;
+
+  data_export_rule_template_name?: string;
+
   rule_template_id?: string;
 
   rule_template_name?: string;
@@ -2303,6 +2313,10 @@ export interface ISQLQueryConfig {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+
+  rule_template_id?: string;
+
+  rule_template_name?: string;
 }
 
 export interface ISendSmsCodeReply {
