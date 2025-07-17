@@ -45,6 +45,8 @@ export default {
   dataSourceForm: {
     baseConfig: '基础配置',
     sqlConfig: 'SQL审核配置',
+    sqlConfigTips:
+      '管理不同业务场景下SQL执行所需遵循的审核规则，实现精细化管控',
     name: '数据源名称',
     describe: '数据源描述',
     type: '数据源类型',
@@ -62,17 +64,26 @@ export default {
     deleteEnvironmentAttributeSuccess: '环境属性删除成功',
     addEnvironmentAttributeSuccess: '环境属性添加成功',
     deleteEnvironmentAttributeError: '当前环境已绑定：{{name}}，暂无法删除',
-    ruleTemplate: '审核规则模板',
+    ruleTemplate: 'SQL上线审核规则模板',
+    ruleTemplateTips: '此功能强制开启审核，请为上线流程选择规则模板',
     workflow: '应用的工作流',
     maxPreQueryRows: 'SQL查询返回条数',
     queryTimeoutSecond: 'SQL超时限制(s)',
     maintenanceTime: '运维时间',
     maintenanceTimeTips: '设置运维时间后，仅能在此运维时间段内上线工单',
     needAuditSqlService: '是否开启SQL审核业务',
+    needAuditSqlServiceTips: '关闭后将禁用所用场景的SQL审核',
     closeAuditSqlServiceTips:
       '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？',
-    needAuditForSqlQuery: 'SQL工作台查询是否需要审核',
+    needAuditForSqlQuery: '工作台查询审核',
+    needAuditForSqlQueryTips: '用于SQL工作台实时查询，可按需启用',
+    workbenchAuditRuleTemplate: '工作台查询审核规则模板',
     allowQueryWhenLessThanAuditLevel: '自动放行的最高审核等级',
+    allowQueryWhenLessThanAuditLevelTips:
+      '低于或等于此等级的审核结果将自动放行',
+    dataExportAuditRuleTemplate: '数据导出审核规则模板',
+    dataExportAuditRuleTemplateTips:
+      '此功能强制开启审核，请为数据导出选择规则模板',
     passwordTips:
       '这里不会显示您已经配置的当前数据源密码，提交时如果您没有填写密码，那么将不会对数据源密码进行变更。',
     needUpdatePassword: '是否更新密码',

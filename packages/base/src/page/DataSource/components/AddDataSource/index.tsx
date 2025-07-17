@@ -55,24 +55,33 @@ const AddDataSource = () => {
         })) ?? [],
       // #if [sqle]
       sqle_config: {
+        audit_enabled: values.needSqlAuditService,
         rule_template_id: values.ruleTemplateId,
         rule_template_name: values.ruleTemplateName,
         sql_query_config: {
           allow_query_when_less_than_audit_level:
             values.allowQueryWhenLessThanAuditLevel,
-          audit_enabled: values.needAuditForSqlQuery
+          audit_enabled: values.needAuditForSqlQuery,
+          rule_template_id: values.workbenchTemplateId,
+          rule_template_name: values.workbenchTemplateName
         }
       },
       // #endif
       additional_params: values.asyncParams,
       // #if [dms]
-      is_enable_masking: values.is_enable_masking,
-      // #endif
-      // #if [sqle && ee]
-      enable_backup: values.enableBackup,
-      backup_max_rows: values.backupMaxRows
+      is_enable_masking: values.is_enable_masking
       // #endif
     };
+    // #if [sqle && ee]
+    if (dbService.sqle_config) {
+      dbService.sqle_config.data_export_rule_template_id =
+        values.dataExportRuleTemplateId;
+      dbService.sqle_config.data_export_rule_template_name =
+        values.dataExportRuleTemplateName;
+    }
+    dbService.enable_backup = values.enableBackup;
+    dbService.backup_max_rows = values.backupMaxRows;
+    // #endif
     return DmsApi.DBServiceService.AddDBServiceV2({
       db_service: dbService,
       project_uid: values.project

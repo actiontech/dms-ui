@@ -23,6 +23,10 @@ export type DataSourceFormField = {
   ruleTemplateName?: string;
   allowQueryWhenLessThanAuditLevel?: SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum;
   needAuditForSqlQuery?: boolean;
+  workbenchTemplateId?: string;
+  workbenchTemplateName?: string;
+  dataExportRuleTemplateId?: string;
+  dataExportRuleTemplateName?: string;
   params?: BackendFormValues;
   asyncParams?: BackendFormRequestParams[];
   needUpdatePassword?: boolean;
