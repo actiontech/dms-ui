@@ -230,7 +230,7 @@ exports[`page/BindUser-ee render bind user form item render form item error when
 </body>
 `;
 
-exports[`page/BindUser-ee render bind user form item render oauth2_token params submit 1`] = `
+exports[`page/BindUser-ee render bind user form item render oauth2_token params submit without target param 1`] = `
 <body>
   <div>
     <section
