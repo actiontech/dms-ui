@@ -113,6 +113,15 @@ const ExportSourceFormItem: React.FC<
           </div>
         }
         name="schema"
+        className="has-required-style"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.select', {
+              name: t('dmsDataExport.create.form.source.schema')
+            })
+          }
+        ]}
       >
         <BasicSelect
           placeholder={t('common.form.placeholder.select', {
