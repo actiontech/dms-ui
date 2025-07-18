@@ -11,15 +11,15 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useMemoizedFn, useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { SqleApi } from '@actiontech/shared/lib/api/';
 import { relatedSqlListColumn, RelatedSqlListFilterParams } from './column';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { formatTime } from '@actiontech/shared';
 import { Space, message } from 'antd';
 import { useMemo } from 'react';
-import { GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { IGetSqlManageSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import { GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
+import { IGetSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.d';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import { relatedSqlTableActions } from './actions';
@@ -96,12 +96,12 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
             {
               label: t('sqlInsights.relatedSqlList.source.order'),
               value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.order
+                GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
             },
             {
               label: t('sqlInsights.relatedSqlList.source.sqlManage'),
               value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.sql_manage
+                GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.sql_manage
             }
           ]
         }
@@ -124,7 +124,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
           total: 0
         });
       }
-      const params: IGetSqlManageSqlPerformanceInsightsRelatedSQLParams = {
+      const params: IGetSqlPerformanceInsightsRelatedSQLParams = {
         project_name: projectName,
         instance_name: instanceId ?? '',
         start_time: dateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
@@ -137,7 +137,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       createSortParams(params);
 
       return handleTableRequestError(
-        sqlManage.GetSqlManageSqlPerformanceInsightsRelatedSQL(params)
+        SqleApi.SqlInsightService.GetSqlPerformanceInsightsRelatedSQL(params)
       );
     },
     {

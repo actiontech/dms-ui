@@ -33,9 +33,10 @@ export default {
     column: {
       sqlFingerprint: 'SQL指纹',
       source: '来源',
-      executeStartTime: '执行开始时间',
-      executeEndTime: '执行结束时间',
-      executeTime: '执行时间',
+      executeStartAvg: '平均执行时间',
+      maxExecuteTime: '最大执行时间',
+      minExecuteTime: '最小执行时间',
+      sumExecuteTime: '总执行时间',
       lockWaitTime: '锁等待时间'
     },
     source: {

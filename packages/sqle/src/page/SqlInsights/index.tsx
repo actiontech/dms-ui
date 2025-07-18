@@ -14,7 +14,12 @@ import {
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import dayjs, { Dayjs } from 'dayjs';
 import DataSourcePerformanceTrend from './components/DataSourcePerformanceTrend';
-import { DateRangeEnum, DateRangeOptions } from './index.data';
+import {
+  DateRangeEnum,
+  DateRangeOptions,
+  AutoRefreshIntervalEnum,
+  AutoRefreshIntervalOptions
+} from './index.data';
 import { SegmentedValue } from 'antd/es/segmented';
 import SlowSqlTrend from './components/SlowSqlTrend';
 import TopSqlTrend from './components/TopSqlTrend';
@@ -24,6 +29,7 @@ import DrawerManager from './components/DrawerManager';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { range } from 'lodash';
+import { SegmentedStyleWrapper, SqlInsightsStyleWrapper } from './style';
 
 const SqlInsights: React.FC = () => {
   const { t } = useTranslation();
@@ -36,6 +42,8 @@ const SqlInsights: React.FC = () => {
   const [timePeriod, setTimePeriod] = useState<DateRangeEnum>(
     DateRangeEnum['24H']
   );
+  const [autoRefreshInterval, setAutoRefreshInterval] =
+    useState<AutoRefreshIntervalEnum>(AutoRefreshIntervalEnum['1m']);
 
   const {
     updateInstanceList,
@@ -102,6 +110,13 @@ const SqlInsights: React.FC = () => {
     [getDataRange]
   );
 
+  const handleAutoRefreshIntervalChange = useCallback(
+    (value: AutoRefreshIntervalEnum) => {
+      setAutoRefreshInterval(value);
+    },
+    []
+  );
+
   const disabledTime = (date: Dayjs | null) => {
     const currentTime = dayjs();
     if (date && date.isSame(currentTime, 'day')) {
@@ -127,10 +142,18 @@ const SqlInsights: React.FC = () => {
   return (
     <>
       <PageHeader
+        fixed
         title={
           <Space size={12}>
             {t('sqlInsights.title')}
             <TableRefreshButton refresh={onRefresh} />
+            <BasicSelect
+              placeholder="自动刷新"
+              value={autoRefreshInterval}
+              onChange={handleAutoRefreshIntervalChange}
+              options={AutoRefreshIntervalOptions}
+              style={{ width: 120 }}
+            />
           </Space>
         }
         extra={
@@ -148,41 +171,54 @@ const SqlInsights: React.FC = () => {
           </Space>
         }
       />
-      <EmptyRowStyleWrapper>
-        <Space size={12}>
-          <BasicSegmented
-            value={timePeriod}
-            options={DateRangeOptions}
-            onChange={onSegmentedChange}
+      <SegmentedStyleWrapper size={12}>
+        <BasicSegmented
+          value={timePeriod}
+          options={DateRangeOptions}
+          onChange={onSegmentedChange}
+        />
+        <EmptyBox if={timePeriod === DateRangeEnum['custom']}>
+          <BasicRangePicker
+            value={dateRange}
+            onChange={handleDateRangeChange}
+            allowClear={false}
+            disabledDate={(current) =>
+              current && current > dayjs().endOf('day')
+            }
+            showTime={{
+              defaultValue: [
+                dayjs('00:00:00', 'HH:mm:ss'),
+                dayjs('00:00:00', 'HH:mm:ss')
+              ]
+            }}
+            disabledTime={disabledTime}
           />
-          <EmptyBox if={timePeriod === DateRangeEnum['custom']}>
-            <BasicRangePicker
-              value={dateRange}
-              onChange={handleDateRangeChange}
-              allowClear={false}
-              disabledDate={(current) =>
-                current && current > dayjs().endOf('day')
-              }
-              showTime={{
-                defaultValue: [
-                  dayjs('00:00:00', 'HH:mm:ss'),
-                  dayjs('00:00:00', 'HH:mm:ss')
-                ]
-              }}
-              disabledTime={disabledTime}
-            />
-          </EmptyBox>
-        </Space>
-      </EmptyRowStyleWrapper>
+        </EmptyBox>
+      </SegmentedStyleWrapper>
 
-      <DataSourcePerformanceTrend
-        instanceId={selectedInstance}
-        dateRange={dateRange}
-      />
-      <SlowSqlTrend instanceId={selectedInstance} dateRange={dateRange} />
-      <TopSqlTrend instanceId={selectedInstance} dateRange={dateRange} />
-      <ActiveSessionTrend instanceId={selectedInstance} dateRange={dateRange} />
-      <RelatedSqlList instanceId={selectedInstance} />
+      <SqlInsightsStyleWrapper>
+        <DataSourcePerformanceTrend
+          instanceId={selectedInstance}
+          dateRange={dateRange}
+          pollingInterval={autoRefreshInterval}
+        />
+        <SlowSqlTrend
+          instanceId={selectedInstance}
+          dateRange={dateRange}
+          pollingInterval={autoRefreshInterval}
+        />
+        <TopSqlTrend
+          instanceId={selectedInstance}
+          dateRange={dateRange}
+          pollingInterval={autoRefreshInterval}
+        />
+        <ActiveSessionTrend
+          instanceId={selectedInstance}
+          dateRange={dateRange}
+          pollingInterval={autoRefreshInterval}
+        />
+        <RelatedSqlList instanceId={selectedInstance} />
+      </SqlInsightsStyleWrapper>
       <DrawerManager />
     </>
   );

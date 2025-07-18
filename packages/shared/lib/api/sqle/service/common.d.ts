@@ -2720,13 +2720,15 @@ export interface IRejectWorkflowReqV1 {
 }
 
 export interface IRelatedSQLInfo {
-  execute_end_time?: string;
+  execute_time_avg?: number;
 
-  execute_start_time?: string;
+  execute_time_max?: number;
 
-  execute_time?: number;
+  execute_time_min?: number;
 
-  execution_cost_trend?: ISqlAnalysisScatterChart;
+  execute_time_sum?: number;
+
+  execution_time_trend?: ISqlAnalysisScatterChart;
 
   lock_wait_time?: number;
 
@@ -3070,7 +3072,7 @@ export interface ISSHPublicKeyInfoV1Rsp {
 }
 
 export interface IScatterPoint {
-  cost?: number;
+  execute_time?: number;
 
   id?: number;
 

@@ -13,5 +13,7 @@ export enum GetSqlPerformanceInsightsMetricNameEnum {
 export enum GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum {
   'workflow' = 'workflow',
 
-  'sql_manage' = 'sql_manage'
+  'sql_manage' = 'sql_manage',
+
+  'workbench' = 'workbench'
 }

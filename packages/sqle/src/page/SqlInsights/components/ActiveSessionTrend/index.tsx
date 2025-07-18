@@ -1,30 +1,26 @@
 import { useTranslation } from 'react-i18next';
-import { Dayjs } from 'dayjs';
 import { ActiveSessionTrendStyleWrapper } from './style';
-import { GetSqlManageSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import SqlInsightsLineChart from '../SqlInsightsLineChart';
 import useSqlInsightsMetric from '../../hooks/useSqlInsightsMetric';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRelatedSqlRedux from '../RelatedSqlList/useRelatedSqlRedux';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import { useEffect } from 'react';
+import { SqlInsightsChartProps } from '../../index.type';
 
-export interface ActiveSessionTrendProps {
-  instanceId?: string;
-  dateRange?: [Dayjs, Dayjs];
-}
-
-const ActiveSessionTrend: React.FC<ActiveSessionTrendProps> = ({
+const ActiveSessionTrend: React.FC<SqlInsightsChartProps> = ({
   instanceId,
-  dateRange
+  dateRange,
+  pollingInterval
 }) => {
   const { t } = useTranslation();
   const { updateRelateSqlListDateRange } = useRelatedSqlRedux();
   const { loading, chartData, getChartData } = useSqlInsightsMetric({
     instanceId,
     dateRange,
-    metricName:
-      GetSqlManageSqlPerformanceInsightsMetricNameEnum.active_session_trend
+    metricName: GetSqlPerformanceInsightsMetricNameEnum.active_session_trend,
+    pollingInterval
   });
 
   useEffect(() => {

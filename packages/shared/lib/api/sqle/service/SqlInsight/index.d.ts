@@ -33,7 +33,7 @@ export interface IGetSqlPerformanceInsightsRelatedSQLParams {
 
   end_time: string;
 
-  filter_source?: GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum;
+  filter_source: GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum;
 
   order_by?: string;
 

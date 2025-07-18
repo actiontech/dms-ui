@@ -1,14 +1,15 @@
 import { useRequest } from 'ahooks';
 import { Dayjs } from 'dayjs';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { GetSqlManageSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { SqleApi } from '@actiontech/shared/lib/api/';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import { ILine } from '@actiontech/shared/lib/api/sqle/service/common';
 
 interface UseSqlInsightsMetricProps {
   instanceId?: string;
   dateRange?: [Dayjs, Dayjs];
-  metricName: GetSqlManageSqlPerformanceInsightsMetricNameEnum;
+  metricName: GetSqlPerformanceInsightsMetricNameEnum;
+  pollingInterval?: number; // 添加轮询间隔参数，单位毫秒
 }
 
 interface UseSqlInsightsMetricReturn {
@@ -20,7 +21,8 @@ interface UseSqlInsightsMetricReturn {
 export const useSqlInsightsMetric = ({
   instanceId,
   dateRange,
-  metricName
+  metricName,
+  pollingInterval
 }: UseSqlInsightsMetricProps): UseSqlInsightsMetricReturn => {
   const { projectName } = useCurrentProject();
 
@@ -37,7 +39,7 @@ export const useSqlInsightsMetric = ({
 
     const [startTime, endTime] = date || dateRange;
 
-    const res = await SqlManage.GetSqlManageSqlPerformanceInsights({
+    const res = await SqleApi.SqlInsightService.GetSqlPerformanceInsights({
       project_name: projectName,
       instance_name: instanceId,
       metric_name: metricName,
@@ -54,7 +56,8 @@ export const useSqlInsightsMetric = ({
     runAsync: getChartData
   } = useRequest(fetchData, {
     refreshDeps: [projectName, instanceId, dateRange, metricName],
-    // pollingInterval: 10000, // 每10秒自动请求一次
+    pollingInterval:
+      pollingInterval && pollingInterval > 0 ? pollingInterval : undefined, // 使用传入的轮询间隔
     ready: !!(projectName && instanceId && dateRange) // 只有当所有必需参数都存在时才开始请求
   });
 
