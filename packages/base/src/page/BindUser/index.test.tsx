@@ -102,7 +102,7 @@ describe('page/BindUser-ee', () => {
       );
     });
 
-    it('render oauth2_token params submit', async () => {
+    it('render oauth2_token params submit without target param', async () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val&id_token=id_token_val`;
       const requestFn = dms.bindUser();
@@ -150,6 +150,113 @@ describe('page/BindUser-ee', () => {
         StorageKey.SHOW_COMPANY_NOTICE,
         CompanyNoticeDisplayStatusEnum.NotDisplayed
       );
+    });
+
+    it('render oauth2_token params submit with target param', async () => {
+      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
+      const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
+        '/project/test'
+      )}`;
+      const requestFn = dms.bindUser();
+      const { baseElement } = customRender(`/user/bind?${search}`);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#username', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      await act(async () => {
+        fireEvent.click(getBySelector('.login-btn', baseElement));
+        await act(async () => jest.advanceTimersByTime(300));
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestFn).toHaveBeenCalled();
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/project/test');
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+    });
+
+    it('render oauth2_token params submit with target param containing query params', async () => {
+      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
+      const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
+        '/project/test?active=overview'
+      )}`;
+      const requestFn = dms.bindUser();
+      const { baseElement } = customRender(`/user/bind?${search}`);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#username', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      await act(async () => {
+        fireEvent.click(getBySelector('.login-btn', baseElement));
+        await act(async () => jest.advanceTimersByTime(300));
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestFn).toHaveBeenCalled();
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/project/test?active=overview');
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+    });
+
+    it('render oauth2_token params submit with cloud-beaver target param', async () => {
+      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
+      const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
+        '/cloud-beaver'
+      )}`;
+      const requestFn = dms.bindUser();
+      const { baseElement } = customRender(`/user/bind?${search}`);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#username', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      await act(async () => {
+        fireEvent.click(getBySelector('.login-btn', baseElement));
+        await act(async () => jest.advanceTimersByTime(300));
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestFn).toHaveBeenCalled();
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/cloud-beaver?open_cloud_beaver=true'
+      );
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
     });
   });
 
@@ -208,6 +315,16 @@ describe('page/BindUser-ee', () => {
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/');
     });
+  });
+
+  it('render oauth2_token params submit with target param', async () => {
+    const search = `dms_token=oauth2_token_val&user_exist=true&refresh_token=id_token_val&target=${encodeURIComponent(
+      '/project/test'
+    )}`;
+    customRender(`/user/bind?${search}`);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/project/test');
   });
 
   it('render login snap when current browser is not chrome', async () => {
