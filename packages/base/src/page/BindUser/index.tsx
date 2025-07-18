@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Typography, Form } from 'antd';
@@ -19,7 +19,10 @@ import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
+  ROUTE_PATHS
+} from '@actiontech/shared/lib/data/routePaths';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
@@ -51,6 +54,23 @@ const BindUser = () => {
     return `Bearer ${token}`;
   };
 
+  const navigateToTarget = useCallback(() => {
+    const encodedTarget = urlParams?.target;
+    if (encodedTarget) {
+      const decoded = decodeURIComponent(encodedTarget);
+      const [path, targetParams] = decoded.split('?');
+      if (targetParams) {
+        navigate(`${path}?${targetParams}`);
+      } else if (path.endsWith('cloud-beaver')) {
+        navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+      } else {
+        navigate(path);
+      }
+    } else {
+      navigate(ROUTE_PATHS.BASE.HOME);
+    }
+  }, [navigate, urlParams]);
+
   const login = (values: OauthLoginFormFields) => {
     const oauth2Token = urlParams?.oauth2_token;
     loginLock.current = true;
@@ -72,7 +92,7 @@ const BindUser = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
-          navigate(ROUTE_PATHS.BASE.HOME);
+          navigateToTarget();
           // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
@@ -108,10 +128,11 @@ const BindUser = () => {
       return;
     }
     dispatch(updateToken({ token: concatToken(token) }));
-    navigate(ROUTE_PATHS.BASE.HOME);
+    navigateToTarget();
   }, [
     dispatch,
     navigate,
+    navigateToTarget,
     t,
     urlParams?.dms_token,
     urlParams?.error,
