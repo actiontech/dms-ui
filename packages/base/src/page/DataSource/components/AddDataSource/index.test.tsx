@@ -8,7 +8,8 @@ import {
   mockUseCurrentProject,
   mockProjectInfo,
   getAllBySelector,
-  getBySelector
+  getBySelector,
+  selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -136,6 +137,30 @@ describe('page/DataSource/AddDataSource', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(300));
+    // dataExportRuleTemplateName
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+    // needAuditForSqlQuery
+    fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // workbenchTemplateName
+    fireEvent.mouseDown(getBySelector('#workbenchTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[2]);
+    await act(async () => jest.advanceTimersByTime(0));
+    // allowQueryWhenLessThanAuditLevel
+    fireEvent.mouseDown(
+      getBySelector('#allowQueryWhenLessThanAuditLevel', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="warn"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     // submit
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
@@ -178,11 +203,16 @@ describe('page/DataSource/AddDataSource', () => {
         password: 'root',
         port: '3306',
         sqle_config: {
+          audit_enabled: true,
           rule_template_id: '2',
           rule_template_name: 'custom_template_b',
+          data_export_rule_template_id: '3',
+          data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
-            allow_query_when_less_than_audit_level: undefined,
-            audit_enabled: undefined
+            allow_query_when_less_than_audit_level: 'warn',
+            audit_enabled: true,
+            rule_template_id: '3',
+            rule_template_name: 'default_MySQL1'
           }
         },
         user: 'root'
@@ -262,13 +292,16 @@ describe('page/DataSource/AddDataSource', () => {
     fireEvent.click(firstOption);
     await act(async () => jest.advanceTimersByTime(0));
 
-    // ruleTemplateName
-    fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(
-      getBySelector('div[title="custom_template_b"]', baseElement)
-    );
-    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('.audit-confirm-switch'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 定'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.audit-confirm-switch')).not.toBeChecked();
     // submit
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
@@ -348,6 +381,13 @@ describe('page/DataSource/AddDataSource', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(300));
+    // dataExportRuleTemplateName
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#enableBackup'));
     await act(async () => jest.advanceTimersByTime(300));
 
@@ -388,8 +428,11 @@ describe('page/DataSource/AddDataSource', () => {
         password: 'root',
         port: '3306',
         sqle_config: {
+          audit_enabled: true,
           rule_template_id: '2',
           rule_template_name: 'custom_template_b',
+          data_export_rule_template_id: '3',
+          data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
             allow_query_when_less_than_audit_level: undefined,
             audit_enabled: undefined

@@ -67,6 +67,7 @@ export const DBServicesList: IListDBServiceV2[] = [
     source: 'SQLE',
     project_uid: '700300',
     sqle_config: {
+      audit_enabled: true,
       rule_template_name: 'default_MySQL',
       rule_template_id: '1',
       sql_query_config: {
