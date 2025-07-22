@@ -37,12 +37,17 @@ export const syncTaskDetailMockData: IGetDBServiceSyncTask = {
   name: 'sync_task_name',
   source: 'source1',
   sqle_config: {
+    audit_enabled: true,
+    data_export_rule_template_id: '9',
+    data_export_rule_template_name: 'custom_template',
     rule_template_id: '9',
     rule_template_name: 'custom_template',
     sql_query_config: {
       allow_query_when_less_than_audit_level:
         SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum.notice,
-      audit_enabled: true
+      audit_enabled: true,
+      rule_template_id: '9',
+      rule_template_name: 'custom_template'
     }
   },
   url: 'http://192.168.1.1:3000',

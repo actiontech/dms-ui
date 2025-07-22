@@ -96,12 +96,18 @@ describe('page/DataSource/UpdateDataSource', () => {
         source: 'SQLE',
         project_uid: '700300',
         sqle_config: {
+          audit_enabled: true,
           rule_template_name: 'default_MySQL',
           rule_template_id: '1',
+          data_export_rule_template_id: '3',
+          data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
             max_pre_query_rows: 0,
             query_timeout_second: 0,
-            audit_enabled: false
+            audit_enabled: true,
+            rule_template_name: 'default_MySQL',
+            rule_template_id: '1',
+            allow_query_when_less_than_audit_level: 'warn'
           }
         },
         additional_params: [
@@ -177,6 +183,12 @@ describe('page/DataSource/UpdateDataSource', () => {
     const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
     fireEvent.click(firstOption);
     await act(async () => jest.advanceTimersByTime(0));
+
+    // close needAuditForSqlQuery
+    expect(getBySelector('#needAuditForSqlQuery')).toBeChecked();
+    fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('#needAuditForSqlQuery')).not.toBeChecked();
 
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
