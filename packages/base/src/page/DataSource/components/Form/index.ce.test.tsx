@@ -23,13 +23,12 @@ describe('page/DataSource/DataSourceForm CE', () => {
     const { result } = superRenderHook(() =>
       Form.useForm<DataSourceFormField>()
     );
-    const isUpdate = params?.isUpdate ?? false;
-    const defaultData = params?.defaultData ?? {};
+
     return baseSuperRender(
       <DataSourceForm
         form={result.current[0]}
-        defaultData={defaultData}
-        isUpdate={isUpdate}
+        defaultData={params?.defaultData}
+        isUpdate={params?.isUpdate}
         submit={submitFn}
       />
     );
