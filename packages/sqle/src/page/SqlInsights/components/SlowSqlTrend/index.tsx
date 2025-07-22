@@ -1,28 +1,36 @@
 import { useTranslation } from 'react-i18next';
-import { Dayjs } from 'dayjs';
 import { SlowSqlTrendStyleWrapper } from './style';
-import { GetSqlManageSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import SqlInsightsLineChart from '../SqlInsightsLineChart';
 import useSqlInsightsMetric from '../../hooks/useSqlInsightsMetric';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRelatedSqlRedux from '../RelatedSqlList/useRelatedSqlRedux';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { useEffect } from 'react';
+import { SqlInsightsChartProps } from '../../index.type';
 
-export interface SlowSqlTrendProps {
-  instanceId?: string;
-  dateRange?: [Dayjs, Dayjs];
-}
-
-const SlowSqlTrend: React.FC<SlowSqlTrendProps> = ({
+const SlowSqlTrend: React.FC<SqlInsightsChartProps> = ({
   instanceId,
-  dateRange
+  dateRange,
+  pollingInterval
 }) => {
   const { t } = useTranslation();
   const { updateRelateSqlListDateRange } = useRelatedSqlRedux();
-  const { loading, chartData } = useSqlInsightsMetric({
-    instanceId,
-    dateRange,
-    metricName: GetSqlManageSqlPerformanceInsightsMetricNameEnum.slow_sql_trend
-  });
+  const { loading, chartData, getChartData, errorMessage } =
+    useSqlInsightsMetric({
+      instanceId,
+      dateRange,
+      metricName: GetSqlPerformanceInsightsMetricNameEnum.slow_sql_trend,
+      pollingInterval
+    });
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.SQL_INSIGHTS_LINE_CHART_REFRESH,
+      getChartData
+    );
+    return unsubscribe;
+  }, [getChartData]);
 
   return (
     <SlowSqlTrendStyleWrapper>
@@ -37,6 +45,7 @@ const SlowSqlTrend: React.FC<SlowSqlTrendProps> = ({
         onSelectDate={(selectedDateRange) => {
           updateRelateSqlListDateRange(selectedDateRange);
         }}
+        errorInfo={errorMessage}
       />
     </SlowSqlTrendStyleWrapper>
   );

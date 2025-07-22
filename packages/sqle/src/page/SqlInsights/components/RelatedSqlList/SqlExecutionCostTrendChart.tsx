@@ -67,7 +67,7 @@ const renderTooltipCustomContent = (
           label: t(
             'sqlInsights.relatedSqlList.sqlFingerprintDetail.chart.yAxisTitle'
           ),
-          value: data.cost
+          value: data.execute_time
         },
         {
           label: (
@@ -96,15 +96,15 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
 
   const { data } = useMemo(() => {
     return {
-      data: record.execution_cost_trend?.points || []
+      data: record.execution_time_trend?.points || []
     };
-  }, [record.execution_cost_trend]);
+  }, [record.execution_time_trend]);
 
   const config: ScatterConfig = useMemo(() => {
     return {
       data,
       xField: 'time',
-      yField: 'cost',
+      yField: 'execute_time',
       width: 800,
       height: 400,
       colorField: 'sql',
@@ -116,12 +116,12 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
           }
         },
         title: {
-          text: record.execution_cost_trend?.x_info
+          text: record.execution_time_trend?.x_info
         }
       },
       yAxis: {
         title: {
-          text: record.execution_cost_trend?.y_info
+          text: record.execution_time_trend?.y_info
         }
       },
       appendPadding: 20,
@@ -137,7 +137,7 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
         }
       ]
     };
-  }, [data, sharedTheme, t, record.execution_cost_trend]);
+  }, [data, sharedTheme, t, record.execution_time_trend]);
 
   const onEvent = useMemoizedFn<ScatterOnEventType>((_, event) => {
     if (event.type === 'element:click') {

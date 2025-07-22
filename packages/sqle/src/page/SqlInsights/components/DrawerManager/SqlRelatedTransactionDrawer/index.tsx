@@ -14,7 +14,7 @@ import {
   IRelatedSQLInfo,
   IRelatedTransactionInfo
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { SqleApi } from '@actiontech/shared/lib/api/';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   TransactionInfoLockTypeEnumDict,
@@ -73,11 +73,13 @@ const SqlRelatedTransactionDrawer = () => {
     try {
       const res =
         // fixme: 这个接口的参数还为确定。需要跟具体实现的后端讨论。
-        await SqlManage.GetSqlManageSqlPerformanceInsightsRelatedTransaction({
-          project_name: projectName,
-          instance_name: '123',
-          sql_id: '123'
-        });
+        await SqleApi.SqlInsightService.GetSqlPerformanceInsightsRelatedTransaction(
+          {
+            project_name: projectName,
+            instance_id: '123',
+            sql_id: '123'
+          }
+        );
       setTransactionData(res.data.data);
     } finally {
       setLoading(false);

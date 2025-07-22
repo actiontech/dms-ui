@@ -1,27 +1,45 @@
 import { useTranslation } from 'react-i18next';
-import { Dayjs } from 'dayjs';
 import { TopSqlTrendStyleWrapper } from './style';
-import { GetSqlManageSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import SqlInsightsLineChart from '../SqlInsightsLineChart';
 import useSqlInsightsMetric from '../../hooks/useSqlInsightsMetric';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRelatedSqlRedux from '../RelatedSqlList/useRelatedSqlRedux';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { useEffect } from 'react';
+import { SqlInsightsChartProps } from '../../index.type';
 
-export interface TopSqlTrendProps {
-  instanceId?: string;
-  dateRange?: [Dayjs, Dayjs];
-}
-
-const TopSqlTrend: React.FC<TopSqlTrendProps> = ({ instanceId, dateRange }) => {
+const TopSqlTrend: React.FC<SqlInsightsChartProps> = ({
+  instanceId,
+  dateRange,
+  pollingInterval
+}) => {
   const { t } = useTranslation();
   const { updateRelateSqlListDateRange } = useRelatedSqlRedux();
-  const { loading, chartData } = useSqlInsightsMetric({
+  const {
+    loading,
+    chartData,
+    getChartData,
+    isTaskEnabled,
+    isTaskSupported,
+    errorMessage
+  } = useSqlInsightsMetric({
     instanceId,
     dateRange,
-    metricName: GetSqlManageSqlPerformanceInsightsMetricNameEnum.top_sql_trend
+    metricName: GetSqlPerformanceInsightsMetricNameEnum.top_sql_trend,
+    pollingInterval
   });
 
-  return (
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.SQL_INSIGHTS_LINE_CHART_REFRESH,
+      getChartData
+    );
+    return unsubscribe;
+  }, [getChartData]);
+
+  // 跳转创建管控任务需要 instance_id&environment_tag 参数
+  return isTaskSupported ? (
     <TopSqlTrendStyleWrapper>
       <SqlInsightsLineChart
         loading={loading}
@@ -34,9 +52,11 @@ const TopSqlTrend: React.FC<TopSqlTrendProps> = ({ instanceId, dateRange }) => {
         onSelectDate={(selectedDateRange) => {
           updateRelateSqlListDateRange(selectedDateRange);
         }}
+        // taskEnabledTips={}
+        errorInfo={errorMessage}
       />
     </TopSqlTrendStyleWrapper>
-  );
+  ) : null;
 };
 
 export default TopSqlTrend;

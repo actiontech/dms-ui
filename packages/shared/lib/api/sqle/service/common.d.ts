@@ -602,6 +602,8 @@ export interface IChartPoint {
     [key: string]: string;
   }>;
 
+  status?: number;
+
   x?: string;
 
   y?: number;
@@ -1927,7 +1929,7 @@ export interface IGetSqlManageSqlAnalysisResp {
   message?: string;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {
+export interface IGetSqlPerformanceInsightsRelatedSQLResp {
   code?: number;
 
   data?: IRelatedSQLInfo[];
@@ -1937,7 +1939,7 @@ export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {
   total_nums?: number;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {
+export interface IGetSqlPerformanceInsightsRelatedTransactionResp {
   code?: number;
 
   data?: IRelatedTransactionInfo;
@@ -1945,10 +1947,10 @@ export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {
   message?: string;
 }
 
-export interface IGetSqlManageSqlPerformanceInsightsResp {
+export interface IGetSqlPerformanceInsightsResp {
   code?: number;
 
-  data?: ISqlManageSqlPerformanceInsights;
+  data?: ISqlPerformanceInsights;
 
   message?: string;
 }
@@ -2718,13 +2720,15 @@ export interface IRejectWorkflowReqV1 {
 }
 
 export interface IRelatedSQLInfo {
-  execute_end_time?: string;
+  execute_time_avg?: number;
 
-  execute_start_time?: string;
+  execute_time_max?: number;
 
-  execute_time?: number;
+  execute_time_min?: number;
 
-  execution_cost_trend?: ISqlAnalysisScatterChart;
+  execute_time_sum?: number;
+
+  execution_time_trend?: ISqlAnalysisScatterChart;
 
   lock_wait_time?: number;
 
@@ -3068,7 +3072,7 @@ export interface ISSHPublicKeyInfoV1Rsp {
 }
 
 export interface IScatterPoint {
-  cost?: number;
+  execute_time?: number;
 
   id?: number;
 
@@ -3251,10 +3255,14 @@ export interface ISqlManageCodingReq {
   type?: SqlManageCodingReqTypeEnum;
 }
 
-export interface ISqlManageSqlPerformanceInsights {
+export interface ISqlPerformanceInsights {
   lines?: ILine[];
 
   message?: string;
+
+  task_enable?: boolean;
+
+  task_support?: boolean;
 
   x_info?: string;
 

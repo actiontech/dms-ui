@@ -1,8 +1,16 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'SQL洞察',
+  title: '性能洞察',
+  ceTips: '当你需要监控数据源性能表现、定位问题根因时，可以使用性能监控功能。',
   dataSourceSelect: '数据源',
-  dateRange: '日期范围',
+  autoRefreshTimeGap: '自动刷新时间间隔',
+  dateRange: {
+    twentyFourHours: '24小时',
+    sevenDays: '7天',
+    thirtyDays: '30天',
+    custom: '自定义'
+  },
+
   chart: {
     xAxisTitle: '日期',
     yAxisTitle: '数值',
@@ -27,14 +35,16 @@ export default {
     column: {
       sqlFingerprint: 'SQL指纹',
       source: '来源',
-      executeStartTime: '执行开始时间',
-      executeEndTime: '执行结束时间',
-      executeTime: '执行时间',
+      executeStartAvg: '平均执行时间',
+      maxExecuteTime: '最大执行时间',
+      minExecuteTime: '最小执行时间',
+      sumExecuteTime: '总执行时间',
       lockWaitTime: '锁等待时间'
     },
     source: {
       order: '工单',
-      sqlManage: 'SQL管控'
+      sqlManage: 'SQL管控',
+      workbench: 'SQL工作台'
     },
     actions: {
       analyzeSql: 'SQL分析',

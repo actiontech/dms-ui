@@ -4,22 +4,21 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams,
-  TableToolbar,
   TableFilterContainer,
   useTableFilterContainer,
   FilterCustomProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useMemoizedFn, useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { RelatedSqlListColumn, RelatedSqlListFilterParams } from './column';
+import { SqleApi } from '@actiontech/shared/lib/api/';
+import { relatedSqlListColumn, RelatedSqlListFilterParams } from './column';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { formatTime } from '@actiontech/shared';
 import { Space, message } from 'antd';
-import { useMemo } from 'react';
-import { GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { IGetSqlManageSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import { useEffect, useMemo } from 'react';
+import { GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
+import { IGetSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.d';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import { relatedSqlTableActions } from './actions';
@@ -28,6 +27,7 @@ import {
   updateSqlInsightsModalStatus,
   updateRelateSqlSelectedRecord
 } from '../../../../store/sqlInsights';
+import { RelatedSqlFilterSourceOptions } from './data';
 
 export interface RelatedSqlListProps {
   instanceId?: string;
@@ -48,6 +48,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
     sortInfo,
     createSortParams
   } = useTableRequestParams<IRelatedSQLInfo, RelatedSqlListFilterParams>();
+
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -74,14 +75,14 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   });
 
   const columns = useMemo(() => {
-    return RelatedSqlListColumn();
+    return relatedSqlListColumn();
   }, []);
 
   const tableActions = useMemo(() => {
     return relatedSqlTableActions(onAnalyzeSql, onViewRelatedTransactions);
   }, [onAnalyzeSql, onViewRelatedTransactions]);
 
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+  const { filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer<IRelatedSQLInfo, RelatedSqlListFilterParams>(
       columns,
       updateTableFilterInfo
@@ -92,28 +93,16 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       [
         'source',
         {
-          options: [
-            {
-              label: t('sqlInsights.relatedSqlList.source.order'),
-              value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.order
-            },
-            {
-              label: t('sqlInsights.relatedSqlList.source.sqlManage'),
-              value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.sql_manage
-            }
-          ]
+          options: RelatedSqlFilterSourceOptions,
+          allowClear: false,
+          defaultValue:
+            GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
         }
       ]
     ]);
-  }, [t]);
+  }, []);
 
-  const {
-    data: listData,
-    loading,
-    refresh: refreshData
-  } = useRequest(
+  const { data: listData, loading } = useRequest(
     () => {
       if (!dateRange) {
         return Promise.resolve<{
@@ -124,9 +113,9 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
           total: 0
         });
       }
-      const params: IGetSqlManageSqlPerformanceInsightsRelatedSQLParams = {
+      const params: IGetSqlPerformanceInsightsRelatedSQLParams = {
         project_name: projectName,
-        instance_name: instanceId ?? '',
+        instance_id: instanceId ?? '',
         start_time: dateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
         end_time: dateRange?.[1].format('YYYY-MM-DD HH:mm:ss') ?? '',
         page_index: pagination.page_index,
@@ -137,7 +126,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       createSortParams(params);
 
       return handleTableRequestError(
-        sqlManage.GetSqlManageSqlPerformanceInsightsRelatedSQL(params)
+        SqleApi.SqlInsightService.GetSqlPerformanceInsightsRelatedSQL(params)
       );
     },
     {
@@ -151,6 +140,15 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       ready: !!instanceId
     }
   );
+
+  useEffect(() => {
+    updateTableFilterInfo({
+      filter_source:
+        GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
+    });
+    updateAllSelectedFilterItem(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <RelatedSqlListStyleWrapper>
@@ -169,13 +167,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
           )}
         </Space>
       </EmptyRowStyleWrapper>
-      <TableToolbar
-        refreshButton={{ refresh: refreshData, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-      />
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
@@ -183,7 +174,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
-        rowKey="sql_fingerprint"
         dataSource={listData?.list}
         pagination={{
           total: listData?.total ?? 0

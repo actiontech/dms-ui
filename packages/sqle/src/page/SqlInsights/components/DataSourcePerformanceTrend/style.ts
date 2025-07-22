@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { SQL_INSIGHTS_CHART_HEIGHT } from '../../index.data';
 
 export const DataSourcePerformanceTrendStyleWrapper = styled('div')`
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 8px;
 
   .chart-title {
