@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react';
 import useTestDatabaseConnect from '../hooks/useTestDatabaseConnect';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import instance from '../../../../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 
 describe('test useTestDatabaseConnect', () => {
   beforeEach(() => {
@@ -65,7 +65,7 @@ describe('test useTestDatabaseConnect', () => {
       })
     );
 
-    const { container, getByText } = superRender(
+    const { container, getByText } = sqleSuperRender(
       result.current.renderTestDatabasesConnectInfo('mysql-1')
     );
     expect(getByText('数据源连通性测试成功')).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe('test useTestDatabaseConnect', () => {
       })
     );
 
-    const { container, queryByText } = superRender(
+    const { container, queryByText } = sqleSuperRender(
       result.current.renderTestDatabasesConnectInfo('mysql-1')
     );
     expect(queryByText('数据源连通性测试成功')).not.toBeInTheDocument();

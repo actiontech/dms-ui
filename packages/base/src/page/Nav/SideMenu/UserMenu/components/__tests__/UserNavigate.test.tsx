@@ -2,9 +2,9 @@ import UserNavigate from '../UserNavigate';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { ModalName } from '../../../../../../data/ModalName';
 import {
@@ -12,7 +12,7 @@ import {
   SupportLanguage
 } from '@actiontech/shared/lib/enum';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
-import account from '../../../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseRecentlySelectedZone } from '../../../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from '../../../../../../testUtils/mockHooks/data';
@@ -41,7 +41,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
 
   const mockClearUserInfo = jest.fn();
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <UserNavigate
         language={SupportLanguage.zhCN}
         username="Test name"
@@ -125,6 +125,10 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(mockClearUserInfo).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
     expect(mockClearRecentlySelectedZone).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
+      type: 'permission/updateUserOperationPermissions'
+    });
   });
 
   it('render logout btn when delete session return a location', async () => {

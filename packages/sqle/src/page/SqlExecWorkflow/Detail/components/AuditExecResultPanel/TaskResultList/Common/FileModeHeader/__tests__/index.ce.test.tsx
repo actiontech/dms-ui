@@ -3,7 +3,7 @@
  */
 
 import { useParams } from 'react-router-dom';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import FileModeHeader from '..';
 import { fireEvent, screen } from '@testing-library/dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -24,7 +24,7 @@ describe('test FileModeHeader', () => {
   });
 
   it('should not render the extra button when allowExec is true', () => {
-    superRender(
+    sqleSuperRender(
       <FileModeHeader taskId="1" refresh={jest.fn()} allowExec={true} />
     );
 

@@ -81,7 +81,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <span
                           class="empty-sql-placeholder"
@@ -363,7 +363,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <span
                           class="empty-sql-placeholder"
@@ -1195,7 +1195,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -3526,7 +3526,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -6642,7 +6642,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -7268,7 +7268,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <span
                           class="empty-sql-placeholder"
@@ -9336,7 +9336,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -12452,7 +12452,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -13078,7 +13078,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -15267,7 +15267,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -18383,7 +18383,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -19009,7 +19009,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -21899,7 +21899,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -25015,7 +25015,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                       class="basic-cont-wrapper sql-cont"
                     >
                       <div
-                        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                        class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                       >
                         <div
                           class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"

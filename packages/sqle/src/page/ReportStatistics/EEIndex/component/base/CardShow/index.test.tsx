@@ -1,11 +1,11 @@
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 
 import CardShow, { ICardShowProps } from '.';
 
 describe('ReportStatistics/CardShow', () => {
   const customRender = (params: ICardShowProps) => {
-    return renderWithThemeAndRedux(<CardShow {...params} />);
+    return sqleSuperRender(<CardShow {...params} />);
   };
 
   beforeEach(() => {

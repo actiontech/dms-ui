@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
-import { renderWithMemoryRouter } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { TypedLink } from '..';
 
 describe('TypedLink', () => {
   it('should render basic link with string path correctly', () => {
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink to="/test" target="_blank" data-testid="test-link">
         Test Link
       </TypedLink>
@@ -20,7 +20,7 @@ describe('TypedLink', () => {
       path: '/user/:id/profile/:tab'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink
         to={pathConfig}
         params={{ id: '123', tab: 'info' }}
@@ -40,7 +40,7 @@ describe('TypedLink', () => {
       query: 'q&page&sort'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink
         to={pathConfig}
         queries={{ q: 'test', page: '1', sort: 'desc' }}
@@ -61,7 +61,7 @@ describe('TypedLink', () => {
       query: 'query1&query2'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink to={pathConfig} data-testid="test-link">
         Test Link
       </TypedLink>
@@ -74,7 +74,7 @@ describe('TypedLink', () => {
   it('should forward ref correctly', () => {
     const ref = jest.fn();
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink to="/test" ref={ref} data-testid="test-link">
         Test Link
       </TypedLink>
@@ -84,7 +84,7 @@ describe('TypedLink', () => {
   });
 
   it('should pass through additional props correctly', () => {
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink
         to="/test"
         className="custom-class"
@@ -107,7 +107,7 @@ describe('TypedLink', () => {
       query: 'view&filter'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink
         to={pathConfig}
         params={{ id: '123', postId: '456' }}
@@ -130,7 +130,7 @@ describe('TypedLink Edge Cases', () => {
       query: 'q'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink to={pathConfig} queries={{}} data-testid="test-link">
         Test
       </TypedLink>
@@ -146,7 +146,7 @@ describe('TypedLink Edge Cases', () => {
       query: 'q&page'
     } as const;
 
-    renderWithMemoryRouter(
+    superRender(
       <TypedLink
         to={pathConfig}
         queries={{ q: 'test', page: undefined }}

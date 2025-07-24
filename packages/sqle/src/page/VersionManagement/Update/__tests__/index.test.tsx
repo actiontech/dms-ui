@@ -1,16 +1,16 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import UpdateVersion from '..';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { superRender } from '../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../../testUtils/mockApi/instance';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -88,7 +88,7 @@ describe('sqle/VersionManagement/Create', () => {
   };
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<UpdateVersion />);
+    const { baseElement } = sqleSuperRender(<UpdateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('更新版本')).toBeInTheDocument();
@@ -104,7 +104,7 @@ describe('sqle/VersionManagement/Create', () => {
   });
 
   it('update version when The current version has already bound a work order', async () => {
-    const { baseElement } = superRender(<UpdateVersion />);
+    const { baseElement } = sqleSuperRender(<UpdateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#stages_0_name')).toBeDisabled();
     expect(getBySelector('#stages_0_instances_0')).toBeDisabled();
@@ -137,7 +137,7 @@ describe('sqle/VersionManagement/Create', () => {
     getSqlVersionDetailV1.mockImplementation(() =>
       createSpySuccessResponse(mockNoWorkflowVersionDetail)
     );
-    superRender(<UpdateVersion />);
+    sqleSuperRender(<UpdateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#stages_0_name')).not.toBeDisabled();
     expect(getBySelector('#stages_0_instances_0')).not.toBeDisabled();
@@ -196,7 +196,7 @@ describe('sqle/VersionManagement/Create', () => {
     getSqlVersionDetailV1.mockImplementation(() =>
       createSpySuccessResponse(mockNoWorkflowVersionDetail)
     );
-    superRender(<UpdateVersion />);
+    sqleSuperRender(<UpdateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#stages_0_name')).not.toBeDisabled();
     expect(getBySelector('#stages_0_instances_0')).not.toBeDisabled();
@@ -223,7 +223,7 @@ describe('sqle/VersionManagement/Create', () => {
     getSqlVersionDetailV1.mockImplementation(() =>
       createSpySuccessResponse(mockNoWorkflowVersionDetail)
     );
-    superRender(<UpdateVersion />);
+    sqleSuperRender(<UpdateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#version')).toHaveValue('V3_2409_0');
     fireEvent.click(screen.getByText('重 置'));

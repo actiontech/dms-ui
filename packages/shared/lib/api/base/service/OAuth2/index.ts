@@ -13,7 +13,7 @@ import {
 } from './index.d';
 
 class OAuth2Service extends ServiceBase {
-  public Oauth2Link(options?: AxiosRequestConfig) {
+  public Oauth2LinkOrCallback(options?: AxiosRequestConfig) {
     return this.get('/v1/dms/oauth2/link', undefined, options);
   }
 

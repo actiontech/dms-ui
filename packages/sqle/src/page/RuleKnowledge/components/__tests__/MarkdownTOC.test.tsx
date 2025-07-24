@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MarkdownTOC from '../MarkdownTOC/index';
 
 describe('RuleKnowledge/MarkdownTOC', () => {

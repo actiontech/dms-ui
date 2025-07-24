@@ -1,12 +1,12 @@
 import ScanTypesSelection from '../ScanTypesSelection';
 import {
-  superRender,
-  renderHooksWithTheme
-} from '../../../../../testUtils/customRender';
+  sqleSuperRender,
+  sqleSuperRenderHook
+} from '../../../../../testUtils/superRender';
 import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
-import instance from '../../../../../testUtils/mockApi/instance';
-import { mockAuditPlanMetaData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { mockAuditPlanMetaData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
@@ -31,8 +31,8 @@ describe('test SqlManagementConf/ScanTypesSelection', () => {
   const customRender = (
     selectedScanTypeParams: SelectScanTypeParamsType = []
   ) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
-    const { baseElement } = superRender(
+    const { result } = sqleSuperRenderHook(() => Form.useForm());
+    const { baseElement } = sqleSuperRender(
       <ConfFormContextProvide
         value={{
           submitLoading: false,

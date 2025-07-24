@@ -1,7 +1,7 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ExecPlanCostChart from '../index';
 import { PieConfig } from '@ant-design/plots';
-import { mockSqlManageSqlAnalysisChartData } from '../../../../../testUtils/mockApi/sqlManage/data';
+import { mockSqlManageSqlAnalysisChartData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { fireEvent, act, screen, renderHook } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import MockDate from 'mockdate';

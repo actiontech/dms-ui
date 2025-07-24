@@ -11,7 +11,10 @@ export default {
       addUserButton: '添加用户',
       columns: {
         status: '状态',
-        authenticationType: '用户认证类型'
+        authenticationType: '用户认证类型',
+        platformRoles: '平台角色',
+        projects: '所属项目',
+        projectsCount: '+{{count}}个项目'
       }
     },
     userForm: {
@@ -23,7 +26,7 @@ export default {
       phone: '手机',
       wxid: '微信ID',
       userGroups: '所属用户组',
-      opPermissions: '平台管理权限',
+      opPermissions: '平台角色',
       isDisabled: '是否禁用',
       disabledTips: '当用户被禁用，该用户将无法登录'
     },
@@ -35,7 +38,8 @@ export default {
       updateSuccessTips: '编辑用户 "{{name}}" 成功'
     },
     deleteUser: {
-      confirmTitle: '确认要删除用户: "{{username}}"?',
+      confirmTitle:
+        '当前用户 "{{username}}" 存在于项目「{{projects}}」中，是否确认删除？',
       deleting: '正在删除用户: "{{username}}..."',
       deleteSuccess: '删除用户 "{{username}}" 成功'
     },
@@ -70,13 +74,16 @@ export default {
       title: '角色列表',
       columns: {
         opPermissions: '平台操作权限'
-      }
+      },
+      searchPlaceholder: '输入操作权限关键词搜索'
     },
     roleForm: {
       name: '角色名',
+      nameAlert: '当前基于"{{name}}"角色进行克隆，请修改角色名称',
       desc: '描述',
       opPermissions: '操作权限',
-      isDisabled: '是否禁用'
+      isDisabled: '是否禁用',
+      viewAll: '查看全部'
     },
     createRole: {
       button: '添加角色',
@@ -94,12 +101,18 @@ export default {
       deleting: '正在删除角色 "{{name}}"...',
       deleteSuccessTips: '删除角色 "{{name}}" 成功'
     },
+
+    cloneRole: {
+      modalTitle: '克隆角色',
+      createSuccessTips: '克隆角色 "{{name}}" 成功'
+    },
     opPermissionList: {
       title: '操作权限列表',
       columns: {
-        name: '操作权限名称',
-        range: '操作范围粒度',
-        desc: '描述'
+        name: '权限点',
+        range: '权限作用范围',
+        desc: '描述',
+        module: '功能模块'
       },
       rangeTypeDictionary: {
         global: '全局',

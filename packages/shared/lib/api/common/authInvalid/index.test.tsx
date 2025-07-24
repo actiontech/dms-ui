@@ -94,24 +94,6 @@ describe('authInvalid', () => {
       );
     });
 
-    it('should not redirect when already on login page', async () => {
-      Object.defineProperty(window, 'location', {
-        value: {
-          ...window.location,
-          pathname: '/login'
-        },
-        writable: true
-      });
-
-      act(() => {
-        redirectToLogin();
-      });
-
-      await act(async () => jest.advanceTimersByTime(1000));
-
-      expect(scopeDispatch).not.toHaveBeenCalled();
-    });
-
     it('should include search params in redirect url', async () => {
       Object.defineProperty(window, 'location', {
         value: {
@@ -386,6 +368,63 @@ describe('authInvalid', () => {
           description: expect.any(String)
         })
       );
+    });
+
+    it('should redirect to login and clear user state when refresh token returns empty token and current path is login', async () => {
+      Object.defineProperty(window, 'location', {
+        value: {
+          ...originLocation,
+          pathname: '/login',
+          search: '',
+          hash: {
+            endsWith: assignMock,
+            includes: assignMock
+          },
+          assign: assignMock,
+          reload: jest.fn()
+        },
+        writable: true
+      });
+      const mockResponse = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: ''
+          }
+        }
+      };
+
+      (axios.post as jest.Mock).mockResolvedValueOnce(mockResponse);
+
+      await act(async () => {
+        await redirectToLogin();
+        await jest.runAllTimers();
+      });
+
+      expect(window.location.pathname).toBe(`/login`);
+
+      // 验证 store 被清空
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { token: '' },
+        type: 'user/updateToken'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { username: '', role: '' },
+        type: 'user/updateUser'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { uid: '' },
+        type: 'user/updateUserUid'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { managementPermissions: [] },
+        type: 'user/updateManagementPermissions'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { bindProjects: [] },
+        type: 'user/updateBindProjects'
+      });
     });
 
     it('should redirect to login on 401 error response', async () => {

@@ -1,6 +1,6 @@
 import TestDatabaseConnectButton from './TestDatabaseConnectButton';
 import { fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { TestDatabaseConnectButtonProps } from './TestDatabaseConnectButton.types';
 
 describe('TestDatabaseConnectButton', () => {

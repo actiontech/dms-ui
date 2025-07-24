@@ -7,9 +7,9 @@ import {
   mockProjectInfo,
   mockUseUserOperationPermissionData
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
-import { mockInstanceAuditPlanListData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
-import { superRender } from '../../../../testUtils/customRender';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
+import { mockInstanceAuditPlanListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   getBySelector,
   getAllBySelector
@@ -20,14 +20,14 @@ import {
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   InstanceAuditPlanResV1ActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
   AuditPlanTypeResBaseActiveStatusEnum,
   AuditPlanTypeResBaseLastCollectionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -74,7 +74,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<SqlManagementConfList />);
+    const { baseElement } = sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('SQL管控配置')).toBeInTheDocument();
@@ -106,7 +106,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         ]
       })
     );
-    const { baseElement } = superRender(<SqlManagementConfList />);
+    const { baseElement } = sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
@@ -122,13 +122,13 @@ describe('test sqle/SqlManagementConf/List', () => {
         }
       ]
     });
-    const { baseElement } = superRender(<SqlManagementConfList />);
+    const { baseElement } = sqleSuperRender(<SqlManagementConfList />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('为数据源开启扫描任务')).not.toBeInTheDocument();
   });
 
   it('render close task type filter field', async () => {
-    const { baseElement } = superRender(<SqlManagementConfList />);
+    const { baseElement } = sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('全部数据源')).toBeVisible();
     expect(screen.getByText('全部任务类型')).toBeVisible();
@@ -140,7 +140,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   });
 
   it('render filter list data by database', async () => {
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     const dbBtn = screen.getByText('Oracle').closest('button')!;
     expect(dbBtn).not.toHaveClass('checked-item');
@@ -160,7 +160,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   });
 
   it('render filter list data by audit plan type', async () => {
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     const dbBtn = screen.getByText('自定义').closest('button')!;
     expect(dbBtn).not.toHaveClass('checked-item');
@@ -180,7 +180,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   });
 
   it('render filter list data by search', async () => {
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     const searchText = 'test search';
@@ -218,7 +218,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         data: []
       })
     );
-    const { baseElement } = superRender(<SqlManagementConfList />);
+    const { baseElement } = sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('筛选').closest('button')!);
     await act(async () => jest.advanceTimersByTime(100));
@@ -256,7 +256,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         data: [mockInstanceAuditPlanListData[0]]
       })
     );
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('编 辑').closest('button')!);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -274,7 +274,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         data: [mockInstanceAuditPlanListData[0]]
       })
     );
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -307,7 +307,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         ]
       })
     );
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -335,7 +335,7 @@ describe('test sqle/SqlManagementConf/List', () => {
         ]
       })
     );
-    superRender(<SqlManagementConfList />);
+    sqleSuperRender(<SqlManagementConfList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));

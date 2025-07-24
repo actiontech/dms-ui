@@ -1,10 +1,10 @@
 import PipelineConfigurationList from '..';
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
-import pipeline from '../../../../testUtils/mockApi/pipeline';
-import { mockPipelineListData } from '../../../../testUtils/mockApi/pipeline/data';
+import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
+import { mockPipelineListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline/data';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -12,6 +12,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { ModalName } from '../../../../data/ModalName';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -44,6 +45,13 @@ describe('sqle/PipelineConfiguration/List', () => {
       return selector({
         pipeline: {
           modalStatus: {}
+        },
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false,
+            knowledge: false
+          },
+          userOperationPermissions: null
         }
       });
     });
@@ -148,5 +156,24 @@ describe('sqle/PipelineConfiguration/List', () => {
       EventEmitter.emit(EmitterKey.Refresh_Pipeline_Configuration_list)
     );
     expect(getPipelinesSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render view pipeline detail', async () => {
+    superRender(<PipelineConfigurationList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('pipeline1'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'pipeline/updateSelectPipelineId',
+      payload: { id: 1 }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'pipeline/updateModalStatus',
+      payload: {
+        modalName: ModalName.Pipeline_Configuration_Detail_Modal,
+        status: true
+      }
+    });
   });
 });

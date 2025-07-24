@@ -1,11 +1,11 @@
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import LDAPSetting from '.';
 
 describe('base/System/LoginConnection/LDAPSetting', () => {
@@ -88,14 +88,14 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
         )
       ).toBeInTheDocument();
       expect(screen.getAllByText('取 消')[0]).toBeInTheDocument();
-      expect(screen.getByText('确 定')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
 
       fireEvent.click(screen.getAllByText('取 消')[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(switchEle[0]);
       await act(async () => jest.advanceTimersByTime(500));
-      fireEvent.click(screen.getByText('确 定'));
+      fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });

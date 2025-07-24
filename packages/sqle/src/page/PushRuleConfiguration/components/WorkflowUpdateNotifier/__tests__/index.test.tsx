@@ -1,12 +1,12 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import MockReportPushConfigService from '../../../../../testUtils/mockApi/reportPushConfigService';
+import MockReportPushConfigService from '@actiontech/shared/lib/testUtil/mockApi/sqle/reportPushConfigService';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import WorkflowUpdateNotifier from '..';
 import { fireEvent, screen } from '@testing-library/dom';
 import { act, cleanup } from '@testing-library/react';
@@ -128,7 +128,7 @@ describe('test WorkflowUpdateNotifier', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     const { container } = customRender({

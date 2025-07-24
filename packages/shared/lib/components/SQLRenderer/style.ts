@@ -60,4 +60,28 @@ export const SQLRendererStyleWrapper = styled('div')`
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     }
   }
+
+  &.word-wrap {
+    pre {
+      white-space: pre-wrap;
+      word-break: break-all;
+      overflow-wrap: break-word;
+    }
+
+    .wrapped-line {
+      height: auto !important;
+      min-height: 26px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .wrapped-line.with-line-number {
+      padding-left: 24px;
+      text-indent: -24px;
+    }
+
+    .wrapped-line.with-line-number .code-line-number {
+      text-indent: 0;
+    }
+  }
 `;

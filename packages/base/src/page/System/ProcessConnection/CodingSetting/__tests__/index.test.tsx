@@ -1,7 +1,7 @@
-import system from '../../../../../testUtils/mockApi/system';
-import { mockCodingConfigurationData } from '../../../../../testUtils/mockApi/system/data';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import { mockCodingConfigurationData } from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import CodingSetting from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -46,10 +46,10 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
+        [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.createProject]: true
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.projectDirector]: true
       }
     });
     const { baseElement } = customRender();
@@ -76,7 +76,8 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateCodingConfigurationSpy).toHaveBeenCalledTimes(1);
     expect(updateCodingConfigurationSpy).toHaveBeenCalledWith({
-      is_coding_enabled: false
+      is_coding_enabled: false,
+      coding_url: mockCodingConfigurationData.coding_url
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCodingConfigurationSpy).toHaveBeenCalledTimes(2);

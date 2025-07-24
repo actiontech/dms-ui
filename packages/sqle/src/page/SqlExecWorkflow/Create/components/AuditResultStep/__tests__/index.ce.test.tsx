@@ -2,9 +2,9 @@
  * @test_version ce
  */
 import AuditResultStep from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
-import { AuditTaskResData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { MockSharedStepDetail } from '../../../hooks/mockData';
 import { screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -24,7 +24,7 @@ jest.mock('react-redux', () => ({
 
 describe('test AuditResultStep ce', () => {
   const customRender = (createAction: () => Promise<void>) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultStep
         baseFormValues={{ desc: 'desc', workflow_subject: 'workflow_subject' }}
         tasks={AuditTaskResData}

@@ -1,6 +1,6 @@
 import { screen, fireEvent, act } from '@testing-library/react';
 import VerificationCodeInput from '../VerificationCodeInput';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 
 describe('VerificationCodeInput', () => {
   beforeEach(() => {

@@ -1,6 +1,6 @@
 import { cleanup, act } from '@testing-library/react';
 import MenuList from '.';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import {
@@ -23,7 +23,7 @@ jest.mock('react-router-dom', () => ({
 describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   const navigateSpy = jest.fn();
   const customRender = (role: SystemRole | '' = '') => {
-    return superRender(<MenuList projectID={projectID} />);
+    return baseSuperRender(<MenuList projectID={projectID} />);
   };
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
@@ -53,7 +53,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   });
 
   it('render is not admin snap when has location pathname', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <MenuList projectID={projectID} />,
       undefined,
       {
@@ -67,7 +67,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   });
 
   it('render is admin snap when has location pathname', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <MenuList projectID={projectID} />,
       undefined,
       {

@@ -28,7 +28,7 @@ export const mockCurrentUserReturn = {
   ],
   managementPermissions: [
     {
-      uid: OpPermissionTypeUid.create_project,
+      uid: OpPermissionTypeUid.project_director,
       name: '创建项目'
     }
   ],
@@ -45,9 +45,9 @@ export const mockCurrentUserReturn = {
   userRoles: {
     [SystemRole.admin]: true,
     [SystemRole.certainProjectManager]: true,
-    [SystemRole.globalManager]: true,
-    [SystemRole.globalViewing]: true,
-    [SystemRole.createProject]: true
+    [SystemRole.systemAdministrator]: true,
+    [SystemRole.auditAdministrator]: true,
+    [SystemRole.projectDirector]: true
   },
   hasGlobalViewingPermission: true
 };
@@ -122,23 +122,6 @@ export const mockFeaturePermissionData = {
 
 export const mockCurrentPermissionData = {
   sqlOptimizationIsSupported: true
-};
-
-export const mockUseProjectBusinessTipsData = {
-  projectBusiness: ['business1', 'business2'],
-  loading: false,
-  updateProjectBusinessTips: jest.fn(),
-  projectBusinessOption: () => [
-    {
-      label: 'business1',
-      value: 'business1'
-    },
-    {
-      label: 'business2',
-      value: 'business2'
-    }
-  ],
-  isFixedBusiness: true
 };
 
 export const mockUseUserOperationPermissionData = {

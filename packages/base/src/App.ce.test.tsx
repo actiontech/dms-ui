@@ -4,15 +4,15 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import mockDMSGlobalApi from './testUtils/mockApi/global';
+import mockDMSGlobalApi from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { LocalStorageWrapper } from '@actiontech/shared';
-import system from 'sqle/src/testUtils/mockApi/system';
-import baseSystem from './testUtils/mockApi/system';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
+import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { compressToBase64 } from 'lz-string';
 import App from './App';
 import { ModalName } from './data/ModalName';

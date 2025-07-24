@@ -14,7 +14,10 @@ export enum ResponseCode {
   NotSupportDML = 8001,
 
   // version management
-  BatchTaskNotFullyCompleted = 8005
+  BatchTaskNotFullyCompleted = 8005,
+
+  // availability zone
+  CurrentAvailabilityZoneError = 7007
 }
 
 export enum SupportTheme {
@@ -25,9 +28,9 @@ export enum SupportTheme {
 export enum SystemRole {
   admin = 'admin',
   certainProjectManager = 'certainProjectManager',
-  globalViewing = 'globalViewing',
-  globalManager = 'globalManager',
-  createProject = 'createProject'
+  auditAdministrator = 'auditAdministrator',
+  systemAdministrator = 'systemAdministrator',
+  projectDirector = 'projectDirector'
 }
 
 export type UserRolesType = {
@@ -70,7 +73,7 @@ export enum StorageKey {
  * 后端暂时无法在swagger中暴露OpPermissionType的映射，但权限对应的uid一般不会变化，因此前端先保存一份。
  */
 export enum OpPermissionTypeUid {
-  'create_project' = '700001', // 创建项目；创建项目的用户自动拥有该项目管理权限 700001
+  'project_director' = '700001', // 项目总监；创建项目的用户自动拥有该项目管理权限 700001
   'project_admin' = '700002', // 项目管理；拥有该权限的用户可以管理项目下的所有资源 700002
   'create_workflow' = '700003', // 创建/编辑工单；拥有该权限的用户可以创建/编辑工单 700003
   'audit_workflow' = '700004', // 审核/驳回工单；拥有该权限的用户可以审核/驳回工单 700004
@@ -80,8 +83,8 @@ export enum OpPermissionTypeUid {
   'view_other_audit_plan' = '700008', // 查看其他扫描任务权限 700008
   'save_audit_plan' = '700009', // 创建扫描任务权限；拥有该权限的用户可以创建/更新扫描任务 700009
   'sql_query' = '700010', //SQL查询；SQL查询权限 700010
-  'global_viewing' = '700016', // 全局浏览
-  'global_management' = '700017' // 全局管理
+  'audit_administrator' = '700016', // 审计管理员
+  'system_administrator' = '700017' // 系统管理员
 }
 
 export enum CompanyNoticeDisplayStatusEnum {

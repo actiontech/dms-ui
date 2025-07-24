@@ -1,9 +1,9 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MemberGroupList from '../MemberGroupList';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import member from '../../../../testUtils/mockApi/member';
-import { memberGroupList } from '../../../../testUtils/mockApi/member/data';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
+import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -47,7 +47,7 @@ describe('base/MemberGroupList', () => {
   });
 
   it('render member group table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -67,7 +67,7 @@ describe('base/MemberGroupList', () => {
     memberGroupListSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -82,10 +82,10 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     }));
-    renderWithReduxAndTheme(
+    superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -98,7 +98,7 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -109,7 +109,7 @@ describe('base/MemberGroupList', () => {
         }
       ]
     }));
-    renderWithReduxAndTheme(
+    superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -122,7 +122,7 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -139,7 +139,7 @@ describe('base/MemberGroupList', () => {
   });
 
   it('should refresh member group table when emit "DMS_Refresh_Member_List" event', async () => {
-    renderWithReduxAndTheme(
+    superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -160,7 +160,7 @@ describe('base/MemberGroupList', () => {
     );
     const memberGroupName = memberGroupList[1].name;
     const deleteUserSpy = member.deleteMemberGroup();
-    renderWithReduxAndTheme(
+    superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -190,7 +190,7 @@ describe('base/MemberGroupList', () => {
         data: [memberGroupList[0]]
       })
     );
-    renderWithReduxAndTheme(
+    superRender(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));

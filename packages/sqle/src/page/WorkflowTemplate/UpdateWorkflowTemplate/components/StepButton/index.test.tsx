@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import StepButton from '.';
 import { fireEvent, screen } from '@testing-library/react';
 
@@ -6,7 +6,7 @@ describe('page/WorkflowTemplate/StepButton', () => {
   const prevMock = jest.fn();
   const nextMock = jest.fn();
   const customRender = (data?: { [key: string]: number | (() => void) }) => {
-    return superRender(
+    return sqleSuperRender(
       <StepButton
         currentStep={0}
         totalStep={0}

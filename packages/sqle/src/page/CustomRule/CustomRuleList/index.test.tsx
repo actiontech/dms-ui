@@ -1,13 +1,13 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CustomRuleList from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { customRuleMockData } from '../../../testUtils/mockApi/rule_template/data';
-import configuration from '../../../testUtils/mockApi/configuration';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { customRuleMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
@@ -59,7 +59,7 @@ describe('sqle/CustomRuleList', () => {
     cleanup();
   });
 
-  const customRender = () => renderWithReduxAndTheme(<CustomRuleList />);
+  const customRender = () => superRender(<CustomRuleList />);
 
   it('should match snap shot', async () => {
     const { baseElement } = customRender();

@@ -2,11 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { Form, message, Space } from 'antd';
 import { BasicInput } from '@actiontech/shared';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import ConfigTestBtn from '../../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import { TestFormFields } from '../index.type';
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';

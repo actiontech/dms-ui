@@ -16,9 +16,15 @@ export default {
     desc: '流水线描述',
     address: '关联流水线地址',
     nodeCount: '节点个数',
+    dataSources: '数据源',
+    viewAll: '查看全部',
     confirmDelete: '确认删除该流水线吗？',
     deleting: '正在删除流水线...',
-    deleteSuccess: '删除流水线配置成功'
+    deleteSuccess: '删除流水线配置成功',
+    resetToken: '重置Token',
+    resetTokenSuccessTips: '重置Token成功！',
+    resetTokenConfirmTitle:
+      '重置后将生成新的Token，有效期365天。旧Token将立即失效，是否继续？'
   },
 
   create: {

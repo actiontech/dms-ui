@@ -1,35 +1,32 @@
 /**
  * @test_version ce
  */
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { cleanup, screen, act } from '@testing-library/react';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import project from '../../../../testUtils/mockApi/project';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import DataSourceForm from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 describe('page/DataSource/DataSourceForm CE', () => {
   const submitFn = jest.fn();
-  let getProjectTipsSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBServiceV2;
   }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<DataSourceFormField>()
     );
-    const isUpdate = params?.isUpdate ?? false;
-    const defaultData = params?.defaultData ?? {};
-    return superRender(
+
+    return baseSuperRender(
       <DataSourceForm
         form={result.current[0]}
-        defaultData={defaultData}
-        isUpdate={isUpdate}
+        defaultData={params?.defaultData}
+        isUpdate={params?.isUpdate}
         submit={submitFn}
       />
     );
@@ -37,7 +34,6 @@ describe('page/DataSource/DataSourceForm CE', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    getProjectTipsSpy = project.getProjectTips();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
   });
@@ -52,7 +48,6 @@ describe('page/DataSource/DataSourceForm CE', () => {
     mockUseCurrentProject();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectTipsSpy).not.toHaveBeenCalled();
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });

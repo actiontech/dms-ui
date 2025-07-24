@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/dom';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import LabelContent, {
   IConfigItemLabelContentProps
 } from '../components/LabelContent';

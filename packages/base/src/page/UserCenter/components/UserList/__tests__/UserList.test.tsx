@@ -1,6 +1,6 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { userList } from '../../../../../testUtils/mockApi/userCenter/data';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { userList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
@@ -41,7 +41,7 @@ describe('base/UserCenter/UserList', () => {
   });
 
   it('render user table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -52,13 +52,13 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getByText('test666')).toBeInTheDocument();
     expect(screen.getAllByText('dms')).toHaveLength(5);
     expect(screen.getAllByText('删 除')).toHaveLength(5);
-    expect(screen.getAllByText('管 理')).toHaveLength(5);
+    expect(screen.getAllByText('编 辑')).toHaveLength(5);
   });
 
   it('should render empty tips when request not success', async () => {
     userListSpy.mockClear();
     userListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -83,7 +83,7 @@ describe('base/UserCenter/UserList', () => {
         data: mockData
       })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -100,9 +100,7 @@ describe('base/UserCenter/UserList', () => {
   });
 
   it('should refresh user table when emit "DMS_Refresh_User_Center_List" event', async () => {
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
@@ -118,15 +116,15 @@ describe('base/UserCenter/UserList', () => {
     );
     const userName = userList[0].name;
     const deleteUserSpy = userCenter.deleteUser();
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(
-      screen.getByText(`确认要删除用户: "${userName}"?`)
+      screen.getByText(
+        `当前用户 "${userName}" 存在于项目「default」中，是否确认删除？`
+      )
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
@@ -146,12 +144,10 @@ describe('base/UserCenter/UserList', () => {
         data: [userList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByText('管 理'));
+    fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
@@ -173,18 +169,18 @@ describe('base/UserCenter/UserList', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.globalManager]: true,
-        [SystemRole.createProject]: true,
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.systemAdministrator]: true,
+        [SystemRole.projectDirector]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
 
-    const { container } = renderWithReduxAndTheme(
+    const { container } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('管 理')).toHaveLength(5);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(5);
 
     expect(container).toMatchSnapshot();
   });
@@ -193,18 +189,18 @@ describe('base/UserCenter/UserList', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: true
       }
     });
 
-    const { container } = renderWithReduxAndTheme(
+    const { container } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('管 理')).toHaveLength(0);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(0);
     expect(container).toMatchSnapshot();
   });
 });

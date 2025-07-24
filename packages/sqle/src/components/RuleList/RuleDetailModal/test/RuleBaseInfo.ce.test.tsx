@@ -5,7 +5,7 @@
 import { Form } from 'antd';
 import RuleBaseInfo, { typeRuleBaseInfo } from '../RuleBaseInfo';
 
-import { renderWithTheme } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { cleanup } from '@testing-library/react';
@@ -27,7 +27,7 @@ describe('sqle/components/RuleList/RuleBaseInfo', () => {
   });
 
   const customRender = (params: typeRuleBaseInfo) => {
-    return renderWithTheme(
+    return sqleSuperRender(
       <Form>
         <RuleBaseInfo {...params} />
       </Form>

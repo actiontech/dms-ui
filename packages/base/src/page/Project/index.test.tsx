@@ -1,10 +1,10 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import project from '../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from '../../utils/EventEmitter';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../data/ModalName';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import Project from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -58,14 +58,14 @@ describe('test base/page/project', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(<Project />);
+    const { baseElement } = baseSuperRender(<Project />);
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should be refresh table when clicking refresh button', async () => {
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).not.toHaveBeenCalled();
     fireEvent.click(getBySelector('.custom-icon-refresh'));
@@ -78,11 +78,11 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('创建项目'));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
@@ -102,11 +102,11 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: true
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: true
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('创建项目')).toBeInTheDocument();
     expect(screen.getByText('导 入')).toBeInTheDocument();
@@ -123,11 +123,11 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(screen.queryByText('创建项目')).not.toBeInTheDocument();
     expect(screen.queryByText('导 入')).not.toBeInTheDocument();
     expect(screen.queryByText('导 出')).not.toBeInTheDocument();
@@ -139,17 +139,17 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
+        [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.auditAdministrator]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(screen.queryByText('资源全景视图')).not.toBeInTheDocument();
   });
 
   it('should export project info', async () => {
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -167,11 +167,11 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
 
@@ -182,16 +182,16 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('批量导入数据源')).not.toBeInTheDocument();
   });
 
   it('should render configure availability zone button', () => {
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(screen.getByText('配置可用区')).toBeInTheDocument();
 
     cleanup();
@@ -200,11 +200,11 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
-    superRender(<Project />);
+    baseSuperRender(<Project />);
     expect(screen.queryByText('配置可用区')).not.toBeInTheDocument();
   });
 });

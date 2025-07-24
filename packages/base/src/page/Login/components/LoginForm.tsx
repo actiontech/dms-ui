@@ -1,13 +1,24 @@
 import { Form, Typography, Space, Checkbox } from 'antd';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import { BasicInput, BasicButton, BasicToolTip } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicButton,
+  BasicToolTip,
+  useTypedQuery
+} from '@actiontech/shared';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { LoginFormProps } from '../types';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import {
+  DMS_REDIRECT_KEY_PARAMS_NAME,
+  ROUTE_PATHS
+} from '@actiontech/shared/lib/data/routePaths';
+
+const OAUTH2_LOGIN_URL = '/v1/dms/oauth2/link';
 
 const LoginForm: React.FC<LoginFormProps> = ({
   onSubmit,
@@ -18,6 +29,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   const { t } = useTranslation();
 
   const username = Form.useWatch('username', form);
+  const extractQueries = useTypedQuery();
 
   const { baseTheme } = useThemeStyleData();
 
@@ -42,6 +54,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
       manual: true
     }
   );
+
+  const oauth2LoginUrl = useMemo(() => {
+    const target = extractQueries(ROUTE_PATHS.BASE.LOGIN.index)?.target;
+    if (target) {
+      return `${OAUTH2_LOGIN_URL}?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+        target
+      )}`;
+    }
+    return OAUTH2_LOGIN_URL;
+  }, [extractQueries]);
 
   const renderLoginButton = () => {
     const disabledLoginButton =
@@ -152,7 +174,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
       {/* #endif */}
       {renderLoginButton()}
       {oauthConfig?.enable_oauth2 ? (
-        <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
+        <BasicButton className="other-login-btn" href={oauth2LoginUrl}>
           {oauthConfig?.login_tip}
         </BasicButton>
       ) : null}

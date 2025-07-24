@@ -12,13 +12,17 @@ export const editorDefaultOptions: EditorProps['options'] = {
   lineHeight: 24,
   letterSpacing: 0.8,
   overviewRulerBorder: false,
+  wordWrap: 'on',
+  wrappingStrategy: 'advanced',
+  wrappingIndent: 'indent',
   // 滚动配置
   scrollbar: {
     vertical: 'visible',
     horizontal: 'visible',
     useShadows: false,
     verticalScrollbarSize: 12,
-    horizontalScrollbarSize: 12
+    horizontalScrollbarSize: 12,
+    alwaysConsumeMouseWheel: false
   },
 
   folding: false,

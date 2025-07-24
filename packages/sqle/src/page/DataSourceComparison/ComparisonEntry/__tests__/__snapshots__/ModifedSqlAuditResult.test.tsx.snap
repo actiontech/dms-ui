@@ -246,7 +246,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -371,7 +371,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -540,7 +540,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -804,7 +804,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -929,7 +929,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -1098,7 +1098,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -1222,7 +1222,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -1347,7 +1347,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>
@@ -1516,7 +1516,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </div>
                 </div>
                 <div
-                  class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  class="actiontech-sql-renderer-wrapper css-q962ee"
                 >
                   <pre>
                     <code>

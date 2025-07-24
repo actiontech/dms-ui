@@ -3,7 +3,7 @@ import {
   mockCreateDataExportRedux,
   mockUseCreateDataExportReduxManage
 } from '../../testUtils/mockUseCreateDataExportReduxManage';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ExportWorkflowSubmitResult from '.';
 
 describe('test base/DataExport/Create/SubmitResult', () => {
@@ -17,7 +17,7 @@ describe('test base/DataExport/Create/SubmitResult', () => {
       workflowID: '123'
     });
 
-    const { container } = superRender(<ExportWorkflowSubmitResult />);
+    const { container } = baseSuperRender(<ExportWorkflowSubmitResult />);
     expect(container).toMatchSnapshot();
   });
 });

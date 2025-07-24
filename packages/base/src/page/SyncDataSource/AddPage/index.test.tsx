@@ -1,11 +1,11 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -14,7 +14,7 @@ import AddSyncTask from '.';
 
 describe('page/SyncDataSource/AddPage', () => {
   const customRender = () => {
-    return superRender(<AddSyncTask />);
+    return baseSuperRender(<AddSyncTask />);
   };
 
   beforeEach(() => {
@@ -130,8 +130,22 @@ describe('page/SyncDataSource/AddPage', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
 
+    // dataExportRuleTemplateName
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="custom_template"]')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+
     // sql query config
     fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+
+    // workbenchTemplateName
+    fireEvent.mouseDown(getBySelector('#workbenchTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('div[title="custom_template"]')[2]);
+    await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.mouseDown(
       getBySelector('#allowQueryWhenLessThanAuditLevel', baseElement)
@@ -154,11 +168,16 @@ describe('page/SyncDataSource/AddPage', () => {
         db_type: 'mysql',
         source: 'source1',
         sqle_config: {
+          audit_enabled: true,
           rule_template_id: '2',
           rule_template_name: 'custom_template_b',
+          data_export_rule_template_id: '9',
+          data_export_rule_template_name: 'custom_template',
           sql_query_config: {
             audit_enabled: true,
-            allow_query_when_less_than_audit_level: 'notice'
+            allow_query_when_less_than_audit_level: 'notice',
+            rule_template_id: '9',
+            rule_template_name: 'custom_template'
           }
         },
         cron_express: '0 0 * * *',

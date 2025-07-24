@@ -1,15 +1,14 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SQLEEIndex from '.';
-import { superRender } from '../../../../testUtils/customRender';
-import sqlManage from '../../../../testUtils/mockApi/sqlManage';
-import { mockAbnormalInstanceAuditPlansData } from '../../../../testUtils/mockApi/sqlManage/data';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import { mockAbnormalInstanceAuditPlansData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../../hooks/useDatabaseType/index.test.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { sqlManageListData } from '../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import {
   getAllBySelector,
   getBySelector,
@@ -19,7 +18,7 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
 import {
@@ -29,7 +28,7 @@ import {
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { useSearchParams } from 'react-router-dom';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -72,7 +71,6 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseProjectBusinessTips();
     mockUseAuditPlanTypes();
     jest.useFakeTimers();
     instance.mockAllApi();
@@ -119,7 +117,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: sqlManageListData.data
       })
     );
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -134,7 +132,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: sqlManageListData.data
       })
     );
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -149,7 +147,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: sqlManageListData.data
       })
     );
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -165,7 +163,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         sql_manage_total_num: undefined
       })
     );
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('0').length).toBe(3);
@@ -175,7 +173,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('filter data with rule name', async () => {
     const request = sqlManage.getSqlManageList();
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     expect(ruleTipsRequest).toHaveBeenCalled();
     expect(screen.getByText('筛选')).toBeInTheDocument();
@@ -201,7 +199,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('filter data about myself', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     fireEvent.click(screen.getByText('与我相关'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -213,7 +211,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('filter data with priority', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     fireEvent.click(screen.getByText('查看高优先级SQL'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -225,7 +223,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('filter data with status', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     expect(screen.getByText('已解决')).toBeInTheDocument();
     fireEvent.click(screen.getByText('已解决'));
@@ -238,7 +236,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   // it('filter data with sort', async () => {
   //   const request = sqlManage.getSqlManageList();
-  //   const { baseElement } = superRender(<SQLEEIndex />);
+  //   const { baseElement } = sqleSuperRender(<SQLEEIndex />);
   //   expect(request).toHaveBeenCalled();
   //   expect(baseElement).toMatchSnapshot();
 
@@ -254,7 +252,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('filter data with search', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -280,7 +278,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('export data', async () => {
     const request = sqlManage.getSqlManageList();
     const exportRequest = sqlManage.exportSqlManage();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     fireEvent.click(screen.getByText('与我相关'));
     fireEvent.click(screen.getByText('查看高优先级SQL'));
@@ -303,7 +301,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('batch assignment operation for sql', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('批量指派').closest('button')).toBeDisabled();
@@ -329,7 +327,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('batch solve operation for sql', async () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('批量解决').closest('button')).toBeDisabled();
@@ -353,7 +351,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('batch ignore operation for sql', async () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('批量忽略').closest('button')).toBeDisabled();
@@ -381,7 +379,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('update remark', async () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('this is remark text')).toBeInTheDocument();
@@ -425,7 +423,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('jump to analyze and open modal when click row button', async () => {
     const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null);
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -454,7 +452,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('render create sql management exception', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -477,7 +475,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('render create whitelist', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -502,7 +500,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -514,7 +512,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       ]
     });
     const request = sqlManage.getSqlManageList();
-    const { baseElement } = superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -535,10 +533,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
-    const { baseElement: noPermissionBaseElement } = superRender(
+    const { baseElement: noPermissionBaseElement } = sqleSuperRender(
       <SQLEEIndex />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -560,7 +558,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -571,7 +569,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         }
       ]
     });
-    const { baseElement: projectArchivedBaseElement } = superRender(
+    const { baseElement: projectArchivedBaseElement } = sqleSuperRender(
       <SQLEEIndex />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -589,7 +587,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('change single status when click row button', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('变更状态').length).toBe(1);
@@ -610,7 +608,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('change single priority when click row button', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -644,7 +642,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: [selectRecord]
       })
     );
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
@@ -676,7 +674,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: [selectRecord]
       })
     );
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
@@ -697,7 +695,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('click audit result and open sql audit result', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.audit-result-wrapper').length).toBe(1);
@@ -733,7 +731,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
           data: [sqlManageListData.data[0]]
         })
       );
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -747,7 +745,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         data: [sqlManageListData.data[0]]
       })
     );
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledTimes(1);
   });
@@ -760,7 +758,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       })
     ]);
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledTimes(2);
     expect(request).toHaveBeenNthCalledWith(2, {
@@ -782,7 +780,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('batch Batch push to other platforms', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('推送到其他平台').closest('button')).toBeDisabled();
@@ -809,7 +807,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('change push to other platforms when click row button', async () => {
     const request = sqlManage.getSqlManageList();
-    superRender(<SQLEEIndex />);
+    sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -836,9 +834,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     request.mockImplementation(() =>
       createSpySuccessResponse({ data: mockAbnormalInstanceAuditPlansData })
     );
-    superRender(<SQLEEIndex />);
+    const { baseElement } = sqleSuperRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('.ant-alert-warning')).toBeInTheDocument();
+    expect(baseElement.querySelector('.ant-alert-warning')).toMatchSnapshot();
   });
 });

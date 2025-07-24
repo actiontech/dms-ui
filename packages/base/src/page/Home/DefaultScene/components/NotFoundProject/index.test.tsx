@@ -1,6 +1,6 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import NotFoundProject from '.';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
@@ -34,7 +34,7 @@ describe('test base/home/NotFoundProject', () => {
   });
 
   const customRender = (open = true) => {
-    return superRender(
+    return baseSuperRender(
       <NotFoundProject
         open={open}
         setOpen={setOpenSpy}

@@ -1,11 +1,11 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import {
-  renderHooksWithTheme,
-  renderWithThemeAndRedux
-} from '../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../testUtils/superRender';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -64,7 +64,7 @@ describe('ProjectOverview/OptimizationDistribution', () => {
   ]);
   let getOptimizationOverviewSpy: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<OptimizationDistribution />);
+    return sqleSuperRender(<OptimizationDistribution />);
   };
 
   beforeEach(() => {
@@ -134,40 +134,40 @@ describe('ProjectOverview/OptimizationDistribution', () => {
   });
 
   it('render area style', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderAreaStyle(themeData.sharedTheme)
     );
     expect(result.current.fill).toStrictEqual(`l(90) 0:#4583ff  1:#4583ff00`);
   });
 
   it('render annotations content', async () => {
-    const { result } = renderHooksWithTheme(() => renderAnnotationsContent(1));
+    const { result } = sqleSuperRenderHook(() => renderAnnotationsContent(1));
     expect(result.current).toStrictEqual(1);
   });
 
   it('render annotations position', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderAnnotationsPosition({ time: '12', record_number: 1 })
     );
     expect(result.current).toStrictEqual(['12', 1]);
   });
 
   it('render tooltip formatter', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipFormatter?.({ time: '', record_number: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });
 
   it('render empty tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent([], themeData.sharedTheme)
     );
     expect(result.current).toBe(null);
   });
 
   it('render tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent(
         [{ name: '1', value: 1 }],
         themeData.sharedTheme

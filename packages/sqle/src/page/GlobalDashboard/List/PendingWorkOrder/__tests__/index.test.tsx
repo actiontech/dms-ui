@@ -2,8 +2,8 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import workflow from '../../../../../testUtils/mockApi/execWorkflow';
-import { superRender } from '../../../../../testUtils/customRender';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import PendingWorkOrder from '../index';
 import { GlobalDashboardFilterType } from '../../../index.type';
 import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
@@ -41,7 +41,7 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
   });
 
   const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
-    return superRender(
+    return sqleSuperRender(
       <PendingWorkOrder
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}

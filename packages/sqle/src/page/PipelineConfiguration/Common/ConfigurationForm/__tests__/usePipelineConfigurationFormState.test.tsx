@@ -1,4 +1,4 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import usePipelineConfigurationFormState from '../hooks/usePipelineConfigurationFormState';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -38,7 +38,7 @@ describe('sqle//PipelineConfiguration/usePipelineConfigurationFormState', () => 
   });
 
   it('render update selected pipeline id', async () => {
-    const { result } = renderHooksWithTheme(usePipelineConfigurationFormState);
+    const { result } = superRenderHook(usePipelineConfigurationFormState);
     await act(async () => result.current.setSelectPipelineId(1));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
@@ -48,7 +48,7 @@ describe('sqle//PipelineConfiguration/usePipelineConfigurationFormState', () => 
   });
 
   it('render open pipeline detail modal', async () => {
-    const { result } = renderHooksWithTheme(usePipelineConfigurationFormState);
+    const { result } = superRenderHook(usePipelineConfigurationFormState);
     await act(async () => result.current.openPipelineDetailModal());
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {

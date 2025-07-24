@@ -5,7 +5,7 @@ import { useMemo, useEffect } from 'react';
 import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { ModalName } from '../../../data/ModalName';
-import SqlManagementExceptionModal from '../Modal';
+import SqlManagementExceptionDrawer from '../Drawer';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
@@ -197,7 +197,7 @@ const SqlManagementExceptionList = () => {
           actions={actions}
         />
       </ActiontechTableWrapper>
-      <SqlManagementExceptionModal />
+      <SqlManagementExceptionDrawer />
     </>
   );
 };

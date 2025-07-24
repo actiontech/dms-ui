@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import CustomInput from './CustomInput';
 import { CustomInputProps } from './CustomInput.types';

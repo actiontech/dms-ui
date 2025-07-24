@@ -96,7 +96,8 @@ const projectRuleTemplateMenuItem: GenerateMenuItemI18nConfig = (
   }),
   icon: <ProfileSquareFilled width={18} height={18} fill="none" />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/rule/template`,
-  structKey: 'rule-template'
+  structKey: 'rule-template',
+  permission: PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE
 });
 
 const whiteListMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -106,7 +107,8 @@ const whiteListMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <ResolveFileFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/whitelist`,
-  structKey: 'whitelist'
+  structKey: 'whitelist',
+  permission: PERMISSIONS.PAGES.SQLE.WHITE_LIST
 });
 
 const sqlManagementException: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -116,7 +118,8 @@ const sqlManagementException: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <ExceptionFileOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-exception`,
-  structKey: 'sql-management-exception'
+  structKey: 'sql-management-exception',
+  permission: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_EXCEPTION
 });
 
 const workflowTemplateMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -126,7 +129,8 @@ const workflowTemplateMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <WorkflowFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/progress`,
-  structKey: 'workflow-template'
+  structKey: 'workflow-template',
+  permission: PERMISSIONS.PAGES.SQLE.WORKFLOW_TEMPLATE
 });
 
 const sqleOperationRecordMenuItem: GenerateMenuItemI18nConfig = (
@@ -159,7 +163,8 @@ const pushRuleConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({
   }),
   icon: <GearFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/push-rule`,
-  structKey: 'push-rule-configuration'
+  structKey: 'push-rule-configuration',
+  permission: PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION
 });
 
 const pipelineConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({

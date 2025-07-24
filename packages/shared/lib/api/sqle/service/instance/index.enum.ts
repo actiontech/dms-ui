@@ -21,5 +21,7 @@ export enum getInstanceTipListV2FunctionalModuleEnum {
 
   'create_optimization' = 'create_optimization',
 
-  'create_pipeline' = 'create_pipeline'
+  'create_pipeline' = 'create_pipeline',
+
+  'create_version' = 'create_version'
 }

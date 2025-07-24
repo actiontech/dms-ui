@@ -4,6 +4,75 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入操作权限关键词搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -29,11 +98,9 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
-                      style="width: 500px;"
-                    />
-                    <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -47,8 +114,9 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         角色名
                       </th>
                       <th
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                         scope="col"
+                        title="描述"
                       >
                         描述
                       </th>
@@ -137,7 +205,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         test role 1
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                       >
                         <div
                           aria-label="Test role 1"
@@ -255,13 +323,23 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         >
                           <div
                             class="ant-space-item"
-                            style="padding-bottom: 8px;"
+                            style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
                               class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                             >
                               test1
                             </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <a
+                              class="ant-typography"
+                            >
+                              查看全部
+                            </a>
                           </div>
                         </div>
                       </td>
@@ -285,6 +363,19 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -314,7 +405,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         test role 2
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                       >
                         <div
                           aria-label="Test role 2"
@@ -425,7 +516,23 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <a
+                              class="ant-typography"
+                            >
+                              查看全部
+                            </a>
+                          </div>
+                        </div>
+                      </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
@@ -446,6 +553,19 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -475,7 +595,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         default role
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                       >
                         <div
                           aria-label="Test default role"
@@ -609,6 +729,19 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -794,6 +927,75 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入操作权限关键词搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -819,11 +1021,9 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
-                      style="width: 500px;"
-                    />
-                    <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -837,8 +1037,9 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         角色名
                       </th>
                       <th
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                         scope="col"
+                        title="描述"
                       >
                         描述
                       </th>
@@ -927,7 +1128,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test0
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -984,6 +1186,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1013,7 +1228,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test1
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1070,6 +1286,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1099,7 +1328,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test2
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1156,6 +1386,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1185,7 +1428,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test3
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1242,6 +1486,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1271,7 +1528,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test4
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1328,6 +1586,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1357,7 +1628,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test5
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1414,6 +1686,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1443,7 +1728,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test6
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1500,6 +1786,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1529,7 +1828,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test7
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1586,6 +1886,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1615,7 +1928,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test8
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1672,6 +1986,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1701,7 +2028,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test9
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1758,6 +2086,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1787,7 +2128,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test10
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1844,6 +2186,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1873,7 +2228,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test11
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -1930,6 +2286,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -1959,7 +2328,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test12
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2016,6 +2386,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2045,7 +2428,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test13
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2102,6 +2486,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2131,7 +2528,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test14
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2188,6 +2586,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2217,7 +2628,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test15
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2274,6 +2686,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2303,7 +2728,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test16
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2360,6 +2786,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2389,7 +2828,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test17
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2446,6 +2886,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2475,7 +2928,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test18
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2532,6 +2986,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2561,7 +3028,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test19
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -2618,6 +3086,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -2814,6 +3295,75 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入操作权限关键词搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -2839,11 +3389,9 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
-                      style="width: 500px;"
-                    />
-                    <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -2857,8 +3405,9 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         角色名
                       </th>
                       <th
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                         scope="col"
+                        title="描述"
                       >
                         描述
                       </th>
@@ -2947,7 +3496,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test20
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3004,6 +3554,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3033,7 +3596,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test21
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3090,6 +3654,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3119,7 +3696,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test22
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3176,6 +3754,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3205,7 +3796,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test23
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3262,6 +3854,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3291,7 +3896,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test24
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3348,6 +3954,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3377,7 +3996,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test25
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3434,6 +4054,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3463,7 +4096,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test26
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3520,6 +4154,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3549,7 +4196,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test27
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3606,6 +4254,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3635,7 +4296,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test28
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3692,6 +4354,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3721,7 +4396,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test29
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3778,6 +4454,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3807,7 +4496,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test30
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3864,6 +4554,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3893,7 +4596,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test31
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -3950,6 +4654,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -3979,7 +4696,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test32
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4036,6 +4754,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4065,7 +4796,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test33
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4122,6 +4854,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4151,7 +4896,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test34
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4208,6 +4954,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4237,7 +4996,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test35
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4294,6 +5054,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4323,7 +5096,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test36
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4380,6 +5154,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4409,7 +5196,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test37
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4466,6 +5254,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4495,7 +5296,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test38
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4552,6 +5354,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4581,7 +5396,8 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         test39
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
+                        title="-"
                       >
                         -
                       </td>
@@ -4638,6 +5454,19 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  克 隆
                                 </span>
                               </button>
                             </div>
@@ -4834,6 +5663,75 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入操作权限关键词搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -4859,11 +5757,9 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
-                      style="width: 500px;"
-                    />
-                    <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -4877,8 +5773,9 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
                         角色名
                       </th>
                       <th
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                         scope="col"
+                        title="描述"
                       >
                         描述
                       </th>

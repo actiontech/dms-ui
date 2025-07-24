@@ -121,16 +121,22 @@ exports[`base/Member should render member list when it first entered the member 
                       >
                         <colgroup>
                           <col
-                            style="width: 25%;"
+                            style="width: 10%;"
                           />
                           <col
-                            style="width: 45%;"
+                            style="width: 10%;"
                           />
                           <col
                             style="width: 20%;"
                           />
                           <col
-                            style="width: 164px;"
+                            style="width: 30%;"
+                          />
+                          <col
+                            style="width: 20%;"
+                          />
+                          <col
+                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -144,6 +150,18 @@ exports[`base/Member should render member list when it first entered the member 
                               用户名
                             </th>
                             <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
+                            </th>
+                            <th
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
@@ -154,7 +172,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目操作权限
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -188,7 +206,7 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell"
                               scope="col"
                             >
-                              项目管理员
+                              当前项目管理权限
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -212,140 +230,28 @@ exports[`base/Member should render member list when it first entered the member 
                               admin
                             </td>
                             <td
-                              class="ant-table-cell ellipsis-column-width"
-                            >
-                              ALL
-                            </td>
-                            <td
                               class="ant-table-cell"
-                            >
-                              <div
-                                class="css-10kos8e"
-                              >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                                    stroke="#41BF9A"
-                                    stroke-width="1.5"
-                                  />
-                                  <path
-                                    d="m5.083 8 2.084 2.083 4.166-4.166"
-                                    stroke="#41BF9A"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                  />
-                                </svg>
-                                <span>
-                                  是
-                                </span>
-                              </div>
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
-                            </td>
-                          </tr>
-                          <tr
-                            class="ant-table-row ant-table-row-level-0"
-                            data-row-key="10029384"
-                          >
-                            <td
-                              class="ant-table-cell"
-                            >
-                              test1
-                            </td>
-                            <td
-                              class="ant-table-cell ellipsis-column-width"
-                            >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-space ant-space-vertical"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                      >
-                                        Role1: [ Range1,Range2 ]
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
-                              <div
-                                class="css-10kos8e"
-                              >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                                    stroke="#7D8CA8"
-                                    stroke-width="1.5"
-                                  />
-                                  <path
-                                    d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
-                                    stroke="#7D8CA8"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                  />
-                                </svg>
-                                <span>
-                                  否
-                                </span>
-                              </div>
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
-                            </td>
-                          </tr>
-                          <tr
-                            class="ant-table-row ant-table-row-level-0"
-                            data-row-key="10129331"
-                          >
-                            <td
-                              class="ant-table-cell"
-                            >
-                              test2
-                            </td>
-                            <td
-                              class="ant-table-cell ellipsis-column-width"
                             >
                               -
                             </td>
                             <td
                               class="ant-table-cell"
                             >
-                              未知状态...
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <span>
+                                ALL
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span>
+                                ALL
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -358,7 +264,7 @@ exports[`base/Member should render member list when it first entered the member 
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
-                            data-row-key="10029389"
+                            data-row-key="700502"
                           >
                             <td
                               class="ant-table-cell"
@@ -366,10 +272,144 @@ exports[`base/Member should render member list when it first entered the member 
                               test
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    style="height: 28px;"
+                                  >
+                                    普通用户
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <span>
+                                ALL
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span>
+                                ALL
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="700503"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              test-2
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    style="height: 28px;"
+                                  >
+                                    普通用户
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-vertical"
                               >
                                 <div
                                   class="ant-space-item"
@@ -379,12 +419,34 @@ exports[`base/Member should render member list when it first entered the member 
                                   >
                                     <div
                                       class="ant-space-item"
+                                      style="margin-bottom: 8px;"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                                        class="ant-typography"
                                       >
-                                        test role 1: [ mysql-1 ]
+                                        mysql-test
+                                        :
                                       </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-horizontal ant-space-align-center"
+                                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="padding-bottom: 4px;"
+                                        >
+                                          <span
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            style="height: 28px;"
+                                          >
+                                            开发工程师
+                                          </span>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -393,32 +455,7 @@ exports[`base/Member should render member list when it first entered the member 
                             <td
                               class="ant-table-cell"
                             >
-                              <div
-                                class="css-10kos8e"
-                              >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                                    stroke="#7D8CA8"
-                                    stroke-width="1.5"
-                                  />
-                                  <path
-                                    d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
-                                    stroke="#7D8CA8"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                  />
-                                </svg>
-                                <span>
-                                  否
-                                </span>
-                              </div>
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -441,7 +478,7 @@ exports[`base/Member should render member list when it first entered the member 
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 4 条数据
+                      共 3 条数据
                     </span>
                   </li>
                   <li
@@ -739,16 +776,22 @@ exports[`base/Member should update content when change segmented value 1`] = `
                       >
                         <colgroup>
                           <col
-                            style="width: 25%;"
+                            style="width: 10%;"
                           />
                           <col
-                            style="width: 45%;"
+                            style="width: 10%;"
                           />
                           <col
                             style="width: 20%;"
                           />
                           <col
-                            style="width: 164px;"
+                            style="width: 30%;"
+                          />
+                          <col
+                            style="width: 20%;"
+                          />
+                          <col
+                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -762,6 +805,18 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               用户名
                             </th>
                             <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
+                            </th>
+                            <th
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
@@ -772,7 +827,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目操作权限
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -806,7 +861,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              项目管理员
+                              当前项目管理权限
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -825,7 +880,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="4"
+                              colspan="6"
                             >
                               <div
                                 class="ant-empty ant-empty-normal"
@@ -911,8 +966,12 @@ exports[`base/Member should update content when change segmented value 1`] = `
                         <colgroup>
                           <col />
                           <col />
-                          <col />
-                          <col />
+                          <col
+                            style="width: 30%;"
+                          />
+                          <col
+                            style="width: 30%;"
+                          />
                           <col
                             style="width: 164px;"
                           />
@@ -944,7 +1003,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目操作权限
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -978,7 +1037,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              项目管理员
+                              当前项目管理权限
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1064,57 +1123,12 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-space ant-space-vertical"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                      >
-                                        Role1: [ Range1,Range2 ]
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                              ALL
                             </td>
                             <td
                               class="ant-table-cell"
                             >
-                              <div
-                                class="css-10kos8e"
-                              >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                                    stroke="#41BF9A"
-                                    stroke-width="1.5"
-                                  />
-                                  <path
-                                    d="m5.083 8 2.084 2.083 4.166-4.166"
-                                    stroke="#41BF9A"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                  />
-                                </svg>
-                                <span>
-                                  是
-                                </span>
-                              </div>
+                              ALL
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1146,32 +1160,12 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-space ant-space-vertical"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                      >
-                                        Role2: [ Range1,Range2 ]
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                              -
                             </td>
                             <td
                               class="ant-table-cell"
                             >
-                              未知状态...
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1204,8 +1198,59 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-vertical"
                               >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space ant-space-vertical"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-bottom: 8px;"
+                                    >
+                                      <span
+                                        class="ant-typography"
+                                      >
+                                        oracle-test
+                                        :
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-horizontal ant-space-align-center"
+                                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-right: 4px; padding-bottom: 4px;"
+                                        >
+                                          <span
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            style="height: 28px;"
+                                          >
+                                            开发工程师
+                                          </span>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                          style="padding-bottom: 4px;"
+                                        >
+                                          <span
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            style="height: 28px;"
+                                          >
+                                            运维工程师
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                                 <div
                                   class="ant-space-item"
                                 >
@@ -1214,12 +1259,34 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   >
                                     <div
                                       class="ant-space-item"
+                                      style="margin-bottom: 8px;"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                                        class="ant-typography"
                                       >
-                                        test role 1: [ mysql-1 ]
+                                        mysql-test
+                                        :
                                       </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-horizontal ant-space-align-center"
+                                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="padding-bottom: 4px;"
+                                        >
+                                          <span
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            style="height: 28px;"
+                                          >
+                                            开发工程师
+                                          </span>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1229,30 +1296,31 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <div
-                                class="css-10kos8e"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 >
-                                  <path
-                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                                    stroke="#7D8CA8"
-                                    stroke-width="1.5"
-                                  />
-                                  <path
-                                    d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
-                                    stroke="#7D8CA8"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                  />
-                                </svg>
-                                <span>
-                                  否
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    style="height: 28px;"
+                                  >
+                                    数据源管理
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    style="height: 28px;"
+                                  >
+                                    成员管理
+                                  </span>
+                                </div>
                               </div>
                             </td>
                             <td
@@ -1279,32 +1347,12 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-space ant-space-vertical"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                      >
-                                        Role12: [ Range14,Range25 ]
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                              -
                             </td>
                             <td
                               class="ant-table-cell"
                             >
-                              未知状态...
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"

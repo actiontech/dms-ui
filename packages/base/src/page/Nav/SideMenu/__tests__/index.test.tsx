@@ -1,7 +1,7 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseRecentlyOpenedProjects } from '../testUtils/mockUseRecentlyOpenedProjects';
-import project from '../../../../testUtils/mockApi/project';
-import { superRender } from '../../../../testUtils/customRender';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import SideMenu from '..';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { act, fireEvent, screen } from '@testing-library/react';
@@ -13,13 +13,14 @@ import {
 import { useDispatch } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
-import gateway from '../../../../testUtils/mockApi/gateway';
-import { mockGatewayTipsData } from '../../../../testUtils/mockApi/gateway/data';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
+import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 
 jest.mock('react-redux', () => {
   return {
@@ -40,7 +41,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   let subscribeSpy: jest.SpyInstance;
   let getSystemModuleRedDotsSpy: jest.SpyInstance;
   let getGatewayTipsSpy: jest.SpyInstance;
-
+  let getUserOpPermissionSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
   const unsubscribeSpy = jest.fn();
@@ -74,7 +75,7 @@ describe('test Base/Nav/SideMenu/index', () => {
 
     mockUseRecentlySelectedZone();
     getGatewayTipsSpy = gateway.getGatewayTips();
-
+    getUserOpPermissionSpy = userCenter.getUserOpPermission();
     getProjectsSpy = project.getProjectList();
     getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -87,7 +88,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     jest.useRealTimers();
   });
   it('mount and unmount component', async () => {
-    const { baseElement, unmount } = superRender(<SideMenu />);
+    const { baseElement, unmount } = baseSuperRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
     expect(getProjectsSpy).toHaveBeenCalledTimes(1);
     expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
@@ -127,7 +128,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   });
 
   it('Click on the menu of the project selector', async () => {
-    const { baseElement } = superRender(<SideMenu />);
+    const { baseElement } = baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(300));
@@ -143,7 +144,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     mockUseRecentlySelectedZone({
       verifyRecentlySelectedZoneRecord: verifyRecentlySelectedZoneRecordSpy
     });
-    superRender(<SideMenu />);
+    baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGatewayTipsSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
@@ -153,5 +154,16 @@ describe('test Base/Nav/SideMenu/index', () => {
       }
     });
     expect(verifyRecentlySelectedZoneRecordSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should fetch user permissions when userOperationPermissions is null and recentlyProjects is exist', async () => {
+    mockUseRecentlyOpenedProjects({
+      getRecentlyProjectId: jest
+        .fn()
+        .mockReturnValue(mockBindProjects[0].project_id)
+    });
+    baseSuperRender(<SideMenu />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getUserOpPermissionSpy).toHaveBeenCalled();
   });
 });

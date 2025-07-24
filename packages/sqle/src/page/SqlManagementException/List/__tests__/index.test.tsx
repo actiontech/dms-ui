@@ -1,8 +1,8 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import SqlManagementExceptionList from '../';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import blacklist from '../../../../testUtils/mockApi/blacklist';
-import { mockBlacklistData } from '../../../../testUtils/mockApi/blacklist/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
+import blacklist from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist';
+import { mockBlacklistData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
@@ -36,7 +36,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
         sqlManagementException: { modalStatus: {} },
         permission: {
           moduleFeatureSupport: { sqlOptimization: false },
-          userOperationPermissions: { is_admin: true, op_permission_list: [] }
+          userOperationPermissions: { is_admin: false, op_permission_list: [] }
         }
       })
     );
@@ -112,7 +112,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     }));
     superRender(<SqlManagementExceptionList />);
@@ -127,7 +127,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

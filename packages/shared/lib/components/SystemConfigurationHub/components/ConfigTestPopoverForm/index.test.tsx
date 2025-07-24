@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, screen } from '@testing-library/react';
 import ConfigTestPopoverForm from '.';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 
 describe('base/System/components/ConfigTestPopoverForm', () => {
   const handleTestFn = jest.fn();

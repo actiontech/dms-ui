@@ -4,7 +4,7 @@
 
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import Home from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import { screen } from '@testing-library/react';
 
 describe('test base/page/Home', () => {
@@ -13,7 +13,7 @@ describe('test base/page/Home', () => {
   });
 
   test('should match snapshot', () => {
-    const { baseElement } = superRender(<Home />);
+    const { baseElement } = baseSuperRender(<Home />);
 
     expect(baseElement).toMatchSnapshot();
 

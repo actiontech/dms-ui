@@ -50,6 +50,8 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE_MEMBER_GROUP": "action:delete_member_group",
         "EDIT_MEMBER": "action:edit_member",
         "EDIT_MEMBER_GROUP": "action:edit_member_group",
+        "MANAGE_MEMBER_GROUP": "action:manage_member_group",
+        "SWITCH_PROJECT_MANAGER": "action:switch_project_manager",
       },
       "NAV": {
         "EDIT_SYSTEM_NOTICE": "action: edit_system_notice",
@@ -110,6 +112,7 @@ exports[`usePermission should match snapshot 1`] = `
       "USER_CENTER": {
         "ROLE": {
           "ADD": "action:add_role",
+          "CLONE": "action:clone_role",
           "DELETE": "action:delete_role",
           "EDIT": "action:edit_role",
         },
@@ -136,6 +139,11 @@ exports[`usePermission should match snapshot 1`] = `
         "EDIT": "action:edit_rule_template",
         "EXPORT": "action:export_rule_template",
         "IMPORT": "action:import_rule_template",
+      },
+      "PIPELINE_CONFIGURATION": {
+        "CREATE": "action:create_pipeline_configuration",
+        "DELETE": "action:delete_pipeline_configuration",
+        "EDIT": "action:edit_pipeline_configuration",
       },
       "PLUGIN_AUDIT": {
         "CREATE_WHITELIST": "action:plugin_audit_create_whitelist",
@@ -202,6 +210,7 @@ exports[`usePermission should match snapshot 1`] = `
         "DETAIL_STOP": "action:sql_management_conf_detail_stop_operator",
         "EDIT": "action:sql_management_conf_edit_operator",
         "ENABLE": "action:sql_management_conf_enable_operator",
+        "RESET_TOKEN": "action:sql_management_conf_reset_token",
         "STOP": "action:sql_management_conf_stop_operator",
       },
       "SQL_MANAGEMENT_EXCEPTION": {
@@ -229,7 +238,9 @@ exports[`usePermission should match snapshot 1`] = `
   "PAGES": {
     "BASE": {
       "DATA_SOURCE_MANAGEMENT": "page:data_source_management",
+      "DB_SERVICE": "page:db_service",
       "GLOBAL_DATA_SOURCE": "page:global_data_source",
+      "MEMBER": "page:member",
       "RESOURCE_OVERVIEW": "page:resource_overview",
       "SYNC_DATA_SOURCE": "page:sync_data_source",
       "SYSTEM_SETTING": "page:system_setting",
@@ -238,9 +249,14 @@ exports[`usePermission should match snapshot 1`] = `
     "SQLE": {
       "KNOWLEDGE": "page:knowledge",
       "OPERATION_RECORD": "page:operation_record",
+      "PROJECT_RULE_TEMPLATE": "page:project_rule_template",
+      "PUSH_RULE_CONFIGURATION": "page:push_rule_configuration",
       "REPORT_STATISTICS": "page:report_statistics",
       "RULE_MANAGEMENT": "page:rule_management",
+      "SQL_MANAGEMENT_EXCEPTION": "page:sql_management_exception",
       "SQL_OPTIMIZATION": "page:sql_optimization",
+      "WHITE_LIST": "page:white_list",
+      "WORKFLOW_TEMPLATE": "page: workflow_template",
     },
   },
 }
@@ -252,7 +268,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action: edit_system_notice",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -260,9 +276,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_db_service",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -270,7 +287,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_global_db_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -279,9 +296,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_member",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -289,9 +307,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_member_group",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -299,7 +318,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_role",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -307,7 +326,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_task",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -315,7 +334,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:add_user",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -333,7 +352,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:availability_zone_create",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -341,7 +360,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:availability_zone_delete",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -349,15 +368,15 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:availability_zone_edit",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:batch_close_workflow": {
-    "id": "action:workflow_sql_audit_result_create_white_list",
+    "id": "action:batch_close_workflow",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -372,7 +391,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -380,9 +399,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:batch_import_db_service",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -390,7 +410,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:batch_import_global_db_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -406,7 +426,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -416,7 +436,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -424,7 +444,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:batch_test_global_db_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -432,9 +452,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:batch_test_project_db_service",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -447,9 +468,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:cb_create_white_list",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -457,16 +479,25 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:cb_operation_log_expired_hours",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:clone_project_rule_template": {
     "id": "action:clone_project_rule_template",
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:clone_role": {
+    "id": "action:clone_role",
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -474,7 +505,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:clone_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -486,7 +517,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -504,7 +535,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:collect_license",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -512,9 +543,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:create_SQL_exception",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_sql_mange_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -522,13 +554,21 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:create_custom_rule",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:create_data_export": {
+    "dbServicePermission": {
+      "opType": "create_export_task",
+    },
     "id": "action:create_data_export",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:create_modified_sql_workflow": {
@@ -539,7 +579,20 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:create_pipeline_configuration": {
+    "dbServicePermission": {
+      "opType": "create_pipeline",
+    },
+    "id": "action:create_pipeline_configuration",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -547,30 +600,48 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:create_project_rule_template",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:create_sql_audit": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
     "id": "action:create_sql_audit",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:create_sql_management_exception": {
     "id": "action:create_sql_management_exception",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_sql_mange_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:create_workflow": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
     "id": "action:create_workflow",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:data_export_batch_close": {
@@ -578,7 +649,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -586,9 +657,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:data_export_create_whitelist",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -602,7 +674,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -610,7 +682,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_custom_rule",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -618,9 +690,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_db_service",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -628,7 +701,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_global_db_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -637,9 +710,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_member",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -647,9 +721,23 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_member_group",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:delete_pipeline_configuration": {
+    "dbServicePermission": {
+      "opType": "create_pipeline",
+    },
+    "id": "action:delete_pipeline_configuration",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -657,9 +745,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_project_rule_template",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -667,7 +756,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_role",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -675,7 +764,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -683,9 +772,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_sql_management_exception",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_sql_mange_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -693,7 +783,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_task",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -701,7 +791,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_user",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -709,9 +799,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:delete_white_list",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -719,7 +810,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_custom_rule",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -727,9 +818,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_db_service",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_project_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -737,7 +829,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_global_db_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -746,9 +838,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_member",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -756,9 +849,23 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_member_group",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_member",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:edit_pipeline_configuration": {
+    "dbServicePermission": {
+      "opType": "create_pipeline",
+    },
+    "id": "action:edit_pipeline_configuration",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -766,9 +873,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_project_rule_template",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -776,7 +884,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_role",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -784,7 +892,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_rule_knowledge",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -792,7 +900,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -800,9 +908,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_sql_management_exception",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_sql_mange_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -812,7 +921,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -820,7 +929,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_task",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -828,7 +937,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_user",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -836,9 +945,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:edit_white_list",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -846,7 +956,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_coding",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -854,7 +964,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_ding_talk",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -862,7 +972,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_lark",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -870,7 +980,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_lark_audit",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -878,7 +988,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_ldap",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -886,7 +996,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_oauth2",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -894,7 +1004,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_smtp",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -902,7 +1012,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_webhooks",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -910,7 +1020,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_wechat",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -918,7 +1028,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:enable_wechat_audit",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -939,9 +1049,10 @@ exports[`usePermission should match snapshot 2`] = `
   "action:export_project_rule_template": {
     "id": "action:export_project_rule_template",
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -957,7 +1068,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:global_rule_template_create_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -965,7 +1076,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:home_all_operations",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -973,7 +1084,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:import_license",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -981,9 +1092,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:import_project_rule_template",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -991,7 +1103,18 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:import_rule_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:manage_member_group": {
+    "id": "action:manage_member_group",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_member",
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1004,7 +1127,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:operation_log_expired_hours",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1012,7 +1135,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:personalize_logo",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1020,7 +1143,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:personalize_title",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1028,9 +1151,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:plugin_audit_create_whitelist",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1039,7 +1163,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1047,7 +1171,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_batch_import_data_source",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1055,8 +1179,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_configure_avalability_zone",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "action",
   },
@@ -1064,8 +1188,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_create",
     "role": [
       "admin",
-      "globalManager",
-      "createProject",
+      "systemAdministrator",
+      "projectDirector",
     ],
     "type": "action",
   },
@@ -1074,7 +1198,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1083,7 +1207,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1091,8 +1215,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_export",
     "role": [
       "admin",
-      "globalManager",
-      "createProject",
+      "systemAdministrator",
+      "projectDirector",
     ],
     "type": "action",
   },
@@ -1100,8 +1224,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_global_resource_overview",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -1110,8 +1234,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:project_manager_import",
     "role": [
       "admin",
-      "globalManager",
-      "createProject",
+      "systemAdministrator",
+      "projectDirector",
     ],
     "type": "action",
   },
@@ -1120,7 +1244,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1130,7 +1254,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1143,7 +1267,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:resource_overview_export",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
       "certainProjectManager",
     ],
     "type": "action",
@@ -1164,7 +1288,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1177,7 +1301,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:sms_service",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1187,7 +1311,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1195,15 +1319,24 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:sql_management_action_layout",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:sql_management_conf_create_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
     "id": "action:sql_management_conf_create_operator",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:sql_management_conf_delete_operator": {
@@ -1216,7 +1349,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1229,7 +1362,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1242,7 +1375,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1255,7 +1388,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1268,7 +1401,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1282,7 +1415,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1296,7 +1429,20 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_reset_token": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_reset_token",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1310,7 +1456,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1318,18 +1464,29 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:sql_management_create_white_list",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:sql_management_issue_push_switch": {
     "id": "action:sql_management_issue_push_switch",
     "projectManager": true,
+    "projectPermission": "manage_push_rule",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:switch_project_manager": {
+    "id": "action:switch_project_manager",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1337,7 +1494,7 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:sync_task",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1371,7 +1528,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1381,7 +1538,7 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1389,9 +1546,10 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:update_workflow_template",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_approval_template",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1399,27 +1557,33 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:url_address_prefix",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:version_management_add_operator": {
+    "dbServicePermission": {
+      "opType": "version_manage",
+    },
     "id": "action:version_management_add_operator",
     "projectArchived": false,
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:version_management_delete_operator": {
+    "dbServicePermission": {
+      "opType": "version_manage",
+    },
     "id": "action:version_management_delete_operator",
     "projectArchived": false,
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1432,27 +1596,33 @@ exports[`usePermission should match snapshot 2`] = `
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:version_management_edit_operator": {
+    "dbServicePermission": {
+      "opType": "version_manage",
+    },
     "id": "action:version_management_edit_operator",
     "projectArchived": false,
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:version_management_lock_operator": {
+    "dbServicePermission": {
+      "opType": "version_manage",
+    },
     "id": "action:version_management_lock_operator",
     "projectArchived": false,
     "projectManager": true,
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1460,18 +1630,20 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:white_list_creation",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
   "action:workflow_modification_notifier_switch": {
     "id": "action:workflow_modification_notifier_switch",
     "projectManager": true,
+    "projectPermission": "manage_push_rule",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
   },
@@ -1479,19 +1651,40 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:workflow_sql_audit_result_create_white_list",
     "projectArchived": false,
     "projectManager": true,
+    "projectPermission": "manage_audit_sql_white_list",
     "role": [
       "admin",
-      "globalManager",
+      "systemAdministrator",
     ],
     "type": "action",
+  },
+  "page: workflow_template": {
+    "id": "page: workflow_template",
+    "projectPermission": "manage_approval_template",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
   },
   "page:data_source_management": {
     "id": "page:data_source_management",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
       "certainProjectManager",
+    ],
+    "type": "page",
+  },
+  "page:db_service": {
+    "id": "page:db_service",
+    "projectPermission": "manage_project_data_source",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1499,8 +1692,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:global_data_source",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
       "certainProjectManager",
     ],
     "type": "page",
@@ -1512,12 +1705,42 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "page",
   },
+  "page:member": {
+    "id": "page:member",
+    "projectPermission": "manage_member",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
   "page:operation_record": {
     "id": "page:operation_record",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:project_rule_template": {
+    "id": "page:project_rule_template",
+    "projectPermission": "manage_audit_rule_template",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:push_rule_configuration": {
+    "id": "page:push_rule_configuration",
+    "projectPermission": "manage_push_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1525,8 +1748,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:report_statistics",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1534,8 +1757,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:resource_overview",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
       "certainProjectManager",
     ],
     "type": "page",
@@ -1544,8 +1767,18 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:rule_management",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:sql_management_exception": {
+    "id": "page:sql_management_exception",
+    "projectPermission": "manage_sql_mange_white_list",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1560,8 +1793,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:sync_data_source",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1569,8 +1802,8 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:system_setting",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },
@@ -1578,8 +1811,18 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "page:user_center",
     "role": [
       "admin",
-      "globalManager",
-      "globalViewing",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:white_list": {
+    "id": "page:white_list",
+    "projectPermission": "manage_audit_sql_white_list",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },

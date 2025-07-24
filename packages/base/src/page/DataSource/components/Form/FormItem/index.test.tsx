@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 
 import { Form, Select } from 'antd';
@@ -36,7 +36,7 @@ describe('page/DataSource/DatabaseFormItem', () => {
       setFieldsValue: mockSetFieldsForm
     };
     (Form.useForm as jest.Mock).mockReturnValue([mockedForm]);
-    return superRender(
+    return baseSuperRender(
       <Form>
         <DatabaseFormItem
           form={mockedForm as any}

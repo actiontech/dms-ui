@@ -1,5 +1,5 @@
 import ReportDrawer from '..';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { DetailReportDrawerProps } from '../index.type';
 import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -11,7 +11,7 @@ import {
 
 describe('sqle/components/ReportDrawer', () => {
   const customRender = (params: DetailReportDrawerProps) => {
-    return renderWithTheme(<ReportDrawer {...params} />);
+    return sqleSuperRender(<ReportDrawer {...params} />);
   };
 
   beforeEach(() => {

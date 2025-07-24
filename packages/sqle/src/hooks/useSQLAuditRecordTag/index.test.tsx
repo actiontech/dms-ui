@@ -1,11 +1,11 @@
 import { fireEvent, screen, act, cleanup } from '@testing-library/react';
-import sqlAuditRecord from '../../testUtils/mockApi/sqlAuditRecord';
-import { sqlAuditRecordTagTipsMockData } from '../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import { sqlAuditRecordTagTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import useSQLAuditRecordTag from '.';
 import {
-  renderHooksWithRedux,
-  renderWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRenderHook,
+  superRender
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Select } from 'antd';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
@@ -26,11 +26,11 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
   });
 
   test('should get tags data from request', async () => {
-    const { result } = renderHooksWithRedux(() => useSQLAuditRecordTag(), {});
+    const { result } = superRenderHook(() => useSQLAuditRecordTag(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <Select>{result.current.generateSQLAuditRecordSelectOptions()}</Select>
     );
     expect(baseElement).toMatchSnapshot();
@@ -59,7 +59,7 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     );
     cleanup();
 
-    const { baseElement: baseElementWithOptions } = renderWithTheme(
+    const { baseElement: baseElementWithOptions } = superRender(
       <Select data-testid="testId" value="test">
         {result.current.generateSQLAuditRecordSelectOptions()}
       </Select>
@@ -78,7 +78,7 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     getSQLAuditRecordTagTipsSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(() => useSQLAuditRecordTag(), {});
+    const { result } = superRenderHook(() => useSQLAuditRecordTag(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);
@@ -104,7 +104,7 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     getSQLAuditRecordTagTipsSpy.mockImplementation(() =>
       createSpyFailResponse({ data: sqlAuditRecordTagTipsMockData })
     );
-    const { result } = renderHooksWithRedux(() => useSQLAuditRecordTag(), {});
+    const { result } = superRenderHook(() => useSQLAuditRecordTag(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);

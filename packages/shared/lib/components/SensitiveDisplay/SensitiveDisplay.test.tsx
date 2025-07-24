@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import SensitiveDisplay from './SensitiveDisplay';
 import { fireEvent, screen, cleanup, act } from '@testing-library/react';

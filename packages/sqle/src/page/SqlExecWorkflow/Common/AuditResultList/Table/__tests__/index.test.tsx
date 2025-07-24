@@ -1,6 +1,6 @@
 import AuditResultTable from '..';
 import { AuditResultTableProps } from '../index.type';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
@@ -12,8 +12,8 @@ import {
   getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import rule_template from '../../../../../..//testUtils/mockApi/rule_template';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';
@@ -23,8 +23,8 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
-import task from '../../../../../../testUtils/mockApi/task';
-import { AuditTaskSQLsData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
+import { AuditTaskSQLsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
@@ -45,7 +45,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   const dispatchSpy = jest.fn();
 
   const customRender = (params: AuditResultTableProps) => {
-    return superRender(<AuditResultTable {...params} />);
+    return sqleSuperRender(<AuditResultTable {...params} />);
   };
 
   ignoreConsoleErrors([

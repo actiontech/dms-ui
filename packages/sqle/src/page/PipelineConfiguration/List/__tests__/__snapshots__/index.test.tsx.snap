@@ -48,103 +48,95 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading"
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
     >
       <div
-        class="ant-spin-container"
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
       >
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
-          style="flex-wrap: wrap; margin-bottom: -8px;"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
-            style="margin-right: 8px; padding-bottom: 8px;"
           >
-            <div
-              class="ant-space ant-space-horizontal ant-space-align-center"
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
             >
-              <div
-                class="ant-space-item"
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入关键字搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
                 >
-                  <input
-                    class="ant-input ant-input-sm"
-                    id="actiontech-table-search-input"
-                    placeholder="输入关键字搜索"
-                    type="text"
-                    value=""
-                  />
-                  <span
-                    class="ant-input-suffix"
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <span
-                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
-                        />
-                      </svg>
-                    </span>
-                    <svg
-                      class="custom-icon custom-icon-search"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
                 </span>
-              </div>
-            </div>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
           </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
           <div
             class="ant-space-item"
-            style="padding-bottom: 8px;"
           >
-            <div
-              class="ant-space ant-space-horizontal ant-space-align-center"
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+              type="button"
             >
-              <div
-                class="ant-space-item"
+              <span
+                class="ant-btn-icon"
               >
-                <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <svg
+                  class="custom-icon custom-icon-refresh"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <span
-                    class="ant-btn-icon"
-                  >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
+                  <path
+                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                  />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -172,10 +164,15 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                   style="min-width: 100%; table-layout: auto;"
                 >
                   <colgroup>
+                    <col
+                      style="width: 18%;"
+                    />
                     <col />
                     <col />
                     <col />
-                    <col />
+                    <col
+                      style="width: 25%;"
+                    />
                     <col
                       style="width: 164px;"
                     />
@@ -185,7 +182,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         流水线名称
@@ -197,7 +194,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                         流水线描述
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         关联流水线地址
@@ -207,6 +204,12 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                         scope="col"
                       >
                         节点个数
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        数据源
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -270,13 +273,22 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="1"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <a
                           class="ant-typography"
@@ -365,14 +377,138 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
-                        127.0.0.1
+                        <div
+                          aria-label="127.0.0.1"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                        >
+                          127.0.0.1
+                          <div
+                            aria-label="复制"
+                            class="ant-typography-copy"
+                            role="button"
+                            style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                            tabindex="0"
+                          >
+                            <span
+                              aria-label="copy"
+                              class="anticon anticon-copy"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="copy"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                          >
+                            lg
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                          >
+                            <span
+                              aria-hidden="true"
+                            >
+                              ...
+                            </span>
+                            <div
+                              aria-label="复制"
+                              class="ant-typography-copy"
+                              role="button"
+                              style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                              tabindex="0"
+                            >
+                              <span
+                                aria-label="copy"
+                                class="anticon anticon-copy"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="copy"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </span>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 4px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                            >
+                              mysql
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 4px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                            >
+                              postgresql
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 4px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                            >
+                              mysql-1
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <a
+                              class="ant-typography"
+                            >
+                              查看全部
+                            </a>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -418,13 +554,18 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                       data-row-key="2"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <a
                           class="ant-typography"
                         >
-                          pipeline1
+                          pipeline2
                         </a>
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell ellipsis-column-width"
@@ -434,12 +575,180 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 4px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                            >
+                              mysql
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <a
+                              class="ant-typography"
+                            >
+                              查看全部
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="3"
+                    >
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        <a
+                          class="ant-typography"
+                        >
+                          pipeline3
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
                         -
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="4"
+                    >
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        <a
+                          class="ant-typography"
+                        >
+                          pipeline4
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -492,7 +801,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
               class="ant-pagination-total-text"
             >
               <span>
-                共 2 条数据
+                共 4 条数据
               </span>
             </li>
             <li

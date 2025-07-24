@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Member/components/ProjectManagePermissions should handle empty name in permissions 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+          style="height: 28px;"
+        />
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+          style="height: 28px;"
+        >
+          项目管理
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render ALL when currentProjectAdmin.is_admin is true 1`] = `
+<body>
+  <div>
+    <span>
+      ALL
+    </span>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render ALL when user is project admin 1`] = `
+<body>
+  <div>
+    <span>
+      ALL
+    </span>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render ALL when user is project admin and currentProjectAdmin.is_admin is true 1`] = `
+<body>
+  <div>
+    <span>
+      ALL
+    </span>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render dash when managePermissions is undefined 1`] = `
+<body>
+  <div>
+    -
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render dash when no permissions and not admin 1`] = `
+<body>
+  <div>
+    -
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectManagePermissions should render manage permissions tags when user has partial permissions 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+          style="height: 28px;"
+        >
+          用户管理
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+          style="height: 28px;"
+        >
+          项目管理
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+          style="height: 28px;"
+        >
+          数据源管理
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

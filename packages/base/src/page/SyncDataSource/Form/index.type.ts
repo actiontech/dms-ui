@@ -17,6 +17,10 @@ export type SyncTaskFormFields = {
   params: BackendFormValues;
   allowQueryWhenLessThanAuditLevel?: SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum;
   needAuditForSqlQuery?: boolean;
+  workbenchTemplateId?: string;
+  workbenchTemplateName?: string;
+  dataExportRuleTemplateId?: string;
+  dataExportRuleTemplateName?: string;
 };
 
 export type SyncTaskFormProps = {

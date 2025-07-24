@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import ConfigTestBtn from '.';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
 describe('base/System/components/ConfigTestBtn', () => {

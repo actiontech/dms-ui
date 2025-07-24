@@ -11,6 +11,7 @@ import {
   ListGlobalDBServiceV2LastConnectionTestStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
+  ListOpPermissionServiceEnum,
   ListProjectV1ProjectPriorityEnum,
   ListProjectV2ProjectPriorityEnum,
   ListRoleStatEnum,
@@ -409,6 +410,22 @@ export interface ICheckDBServicesIsConnectableReq {
   db_services?: IDbServiceConnections[];
 }
 
+export interface ICheckDBServicesPrivilegesItem {
+  CheckDBServicesPrivileges?: ICheckDBServiceIsConnectableReplyItem[];
+}
+
+export interface ICheckDBServicesPrivilegesReply {
+  code?: number;
+
+  data?: ICheckDBServicesPrivilegesItem[];
+
+  message?: string;
+}
+
+export interface ICheckDBServicesPrivilegesReq {
+  db_services?: ICheckDbConnectable[];
+}
+
 export interface ICheckDbConnectable {
   additional_params?: IAdditionalParam[];
 
@@ -467,6 +484,12 @@ export interface ICreateBusinessTagReq {
 
 export interface ICreateEnvironmentTagReq {
   environment_name?: string;
+}
+
+export interface ICurrentProjectAdmin {
+  is_admin?: boolean;
+
+  member_groups?: string[];
 }
 
 export interface IDBService {
@@ -886,6 +909,8 @@ export interface IGetMemberGroupReply {
 export interface IGetOauth2ConfigurationResData {
   access_token_tag?: string;
 
+  auto_bind_same_name_user?: boolean;
+
   auto_create_user?: boolean;
 
   back_channel_logout_uri?: string;
@@ -893,6 +918,8 @@ export interface IGetOauth2ConfigurationResData {
   client_host?: string;
 
   client_id?: string;
+
+  enable_manually_bind?: boolean;
 
   enable_oauth2?: boolean;
 
@@ -1680,7 +1707,19 @@ export interface IListMaskingRulesReply {
 }
 
 export interface IListMember {
+  current_project_admin?: ICurrentProjectAdmin;
+
+  current_project_manage_permissions?: IProjectManagePermission[];
+
+  current_project_op_permissions?: IProjectOpPermission[];
+
+  is_group_member?: boolean;
+
   is_project_admin?: boolean;
+
+  platform_roles?: IUidWithName[];
+
+  projects?: string[];
 
   role_with_op_ranges?: IListMemberRoleWithOpRange[];
 
@@ -1690,6 +1729,10 @@ export interface IListMember {
 }
 
 export interface IListMemberGroup {
+  current_project_manage_permissions?: IUidWithName[];
+
+  current_project_op_permissions?: IProjectOpPermission[];
+
   is_project_admin?: boolean;
 
   name?: string;
@@ -1699,6 +1742,14 @@ export interface IListMemberGroup {
   uid?: string;
 
   users?: IUidWithName[];
+}
+
+export interface IListMemberGroupTipsReply {
+  code?: number;
+
+  data?: IUidWithName[];
+
+  message?: string;
 }
 
 export interface IListMemberGroupsReply {
@@ -1722,6 +1773,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -1764,9 +1819,13 @@ export interface IListMembersForInternalReply {
 export interface IListOpPermission {
   description?: string;
 
+  module?: string;
+
   op_permission?: IUidWithName;
 
   range_type?: ListOpPermissionRangeTypeEnum;
+
+  service?: ListOpPermissionServiceEnum;
 }
 
 export interface IListOpPermissionReply {
@@ -1842,9 +1901,17 @@ export interface IListRole {
 
   name?: string;
 
-  op_permissions?: IUidWithName[];
+  op_permissions?: IListRoleOpPermission[];
 
   stat?: ListRoleStatEnum;
+
+  uid?: string;
+}
+
+export interface IListRoleOpPermission {
+  module?: string;
+
+  name?: string;
 
   uid?: string;
 }
@@ -1871,6 +1938,8 @@ export interface IListUser {
   op_permissions?: IUidWithName[];
 
   phone?: string;
+
+  projects?: string[];
 
   stat?: ListUserStatEnum;
 
@@ -1940,6 +2009,8 @@ export interface IMaintenanceTime {
 export interface IMember {
   is_project_admin?: boolean;
 
+  project_manage_permissions?: string[];
+
   role_with_op_ranges?: IMemberRoleWithOpRange[];
 
   user_uid: string;
@@ -1949,6 +2020,8 @@ export interface IMemberGroup {
   is_project_admin?: boolean;
 
   name: string;
+
+  project_manage_permissions?: string[];
 
   role_with_op_ranges?: IMemberRoleWithOpRange[];
 
@@ -1980,6 +2053,8 @@ export interface INotificationReply {
 export interface IOauth2Configuration {
   access_token_tag?: string;
 
+  auto_bind_same_name_user?: boolean;
+
   auto_create_user?: boolean;
 
   auto_create_user_pwd?: string;
@@ -1989,6 +2064,8 @@ export interface IOauth2Configuration {
   client_id?: string;
 
   client_key?: string;
+
+  enable_manually_bind?: boolean;
 
   enable_oauth2?: boolean;
 
@@ -2097,6 +2174,40 @@ export interface IPreviewImportProjectsV2 {
   desc?: string;
 
   name?: string;
+}
+
+export interface IProjectManagePermission {
+  member_group?: string;
+
+  name?: string;
+
+  uid?: string;
+}
+
+export interface IProjectMemberGroup {
+  name?: string;
+
+  op_permissions?: IUidWithName[];
+
+  uid?: string;
+
+  users?: IUidWithName[];
+}
+
+export interface IProjectOpPermission {
+  data_source?: string;
+
+  roles?: IProjectRole[];
+}
+
+export interface IProjectRole {
+  member_group?: IProjectMemberGroup;
+
+  name?: string;
+
+  op_permissions?: IUidWithName[];
+
+  uid?: string;
 }
 
 export interface IProjectTips {
@@ -2266,6 +2377,12 @@ export interface ISMTPConfigurationResData {
 }
 
 export interface ISQLEConfig {
+  audit_enabled?: boolean;
+
+  data_export_rule_template_id?: string;
+
+  data_export_rule_template_name?: string;
+
   rule_template_id?: string;
 
   rule_template_name?: string;
@@ -2281,6 +2398,10 @@ export interface ISQLQueryConfig {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+
+  rule_template_id?: string;
+
+  rule_template_name?: string;
 }
 
 export interface ISendSmsCodeReply {
@@ -2299,6 +2420,10 @@ export interface ISendSmsCodeReplyData {
 
 export interface ISendSmsCodeReq {
   username?: string;
+}
+
+export interface ISyncGatewayReq {
+  gateways?: IGateway[];
 }
 
 export interface ITask {
@@ -2592,11 +2717,15 @@ export interface IUpdateLoginConfigurationReq {
 export interface IUpdateMember {
   is_project_admin?: boolean;
 
+  project_manage_permissions?: string[];
+
   role_with_op_ranges?: IMemberRoleWithOpRange[];
 }
 
 export interface IUpdateMemberGroup {
   is_project_admin?: boolean;
+
+  project_manage_permissions?: string[];
 
   role_with_op_ranges?: IMemberRoleWithOpRange[];
 
@@ -2696,6 +2825,12 @@ export interface IUpdateUser {
 
   phone?: string;
 
+  third_party_user_id?: string;
+
+  third_party_user_info?: string;
+
+  user_authentication_type?: string;
+
   user_group_uids?: string[];
 
   wxid?: string;
@@ -2714,10 +2849,6 @@ export interface IUpdateUserGroupReq {
 }
 
 export interface IUpdateUserReq {
-  user?: IUpdateUser;
-}
-
-export interface IUpdateUserReqV2 {
   user?: IUpdateUser;
 }
 
@@ -2756,7 +2887,13 @@ export interface IUser {
 
   phone?: string;
 
+  third_party_user_id?: string;
+
+  third_party_user_info?: string;
+
   uid?: string;
+
+  user_authentication_type?: string;
 
   user_group_uids?: string[];
 

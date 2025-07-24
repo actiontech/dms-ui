@@ -1,7 +1,7 @@
 import ResourceOverviewDistributionChart from '../DistributionChart';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { PieConfig } from '@ant-design/plots';
@@ -52,7 +52,9 @@ describe('base/page/ResourceOverview/Statictis/DistributionChart', () => {
   });
 
   it('render init snap', async () => {
-    const { container } = superRender(<ResourceOverviewDistributionChart />);
+    const { container } = baseSuperRender(
+      <ResourceOverviewDistributionChart />
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
     expect(
@@ -64,7 +66,7 @@ describe('base/page/ResourceOverview/Statictis/DistributionChart', () => {
     getResourceOverviewResourceTypeDistributionV1Spy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    superRender(<ResourceOverviewDistributionChart />);
+    baseSuperRender(<ResourceOverviewDistributionChart />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
       getResourceOverviewResourceTypeDistributionV1Spy
@@ -83,13 +85,13 @@ describe('base/page/ResourceOverview/Statictis/DistributionChart', () => {
         message: 'test error'
       })
     );
-    superRender(<ResourceOverviewDistributionChart />);
+    baseSuperRender(<ResourceOverviewDistributionChart />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('test error')).toBeInTheDocument();
   });
 
   it('should refresh distribution chart data when emit Refresh_Resource_Overview_Page event', async () => {
-    superRender(<ResourceOverviewDistributionChart />);
+    baseSuperRender(<ResourceOverviewDistributionChart />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
       getResourceOverviewResourceTypeDistributionV1Spy

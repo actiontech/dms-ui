@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`sqle/VersionManagement/Detail/Modal render init snap shot 1`] = `
-<body>
-  <div />
-</body>
-`;

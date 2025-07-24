@@ -34,19 +34,19 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作权限名称
+                        权限作用范围
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作范围粒度
+                        功能模块
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        描述
+                        权限点
                       </th>
                     </tr>
                   </thead>
@@ -93,16 +93,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -111,16 +113,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -129,16 +133,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -147,16 +153,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -165,16 +173,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -183,16 +193,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -201,16 +213,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -219,16 +233,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -237,16 +253,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -255,16 +273,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -273,16 +293,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -291,16 +313,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -309,16 +333,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -327,16 +353,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -345,16 +373,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -363,16 +393,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -381,16 +413,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -399,16 +433,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -417,16 +453,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -435,16 +473,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -664,19 +704,19 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作权限名称
+                        权限作用范围
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作范围粒度
+                        功能模块
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        描述
+                        权限点
                       </th>
                     </tr>
                   </thead>
@@ -723,16 +763,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -741,16 +783,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -759,16 +803,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -777,16 +823,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -795,16 +843,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -813,16 +863,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -831,16 +883,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -849,16 +903,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -867,16 +923,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -885,16 +943,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -903,16 +963,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -921,16 +983,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -939,16 +1003,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -957,16 +1023,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -975,16 +1043,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -993,16 +1063,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1011,16 +1083,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1029,16 +1103,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1047,16 +1123,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1065,16 +1143,18 @@ exports[`base/UserCenter/PermissionList should refresh permission table when cli
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -1294,19 +1374,19 @@ exports[`base/UserCenter/PermissionList should render empty tips when request er
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作权限名称
+                        权限作用范围
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作范围粒度
+                        功能模块
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        描述
+                        权限点
                       </th>
                     </tr>
                   </thead>
@@ -1405,19 +1485,19 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作权限名称
+                        权限作用范围
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        操作范围粒度
+                        功能模块
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        描述
+                        权限点
                       </th>
                     </tr>
                   </thead>
@@ -1464,16 +1544,18 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         unknown
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        test module
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1482,16 +1564,18 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        test module
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1500,16 +1584,18 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                       <td
                         class="ant-table-cell"
                       >
-                        修改项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
                         数据源
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        test module
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        修改项目
+                      </td>
                     </tr>
                   </tbody>
                 </table>

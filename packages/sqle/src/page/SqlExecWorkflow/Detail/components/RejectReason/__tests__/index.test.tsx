@@ -4,7 +4,7 @@ import {
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 const stepInfoData = {
   assignee_user_name_list: ['a', 'b', 'c'],
@@ -22,7 +22,7 @@ describe('sqle/ExecWorkflow/Detail/RejectReason', () => {
   const showModifySqlStatementStepSpy = jest.fn();
 
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <RejectReason
         stepInfo={stepInfoData}
         showModifySqlStatementStep={showModifySqlStatementStepSpy}

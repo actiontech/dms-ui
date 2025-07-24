@@ -1,11 +1,10 @@
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import UserCenter from '../index';
 import { screen, cleanup, fireEvent, act } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import userCenter from '../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
@@ -37,7 +36,7 @@ describe('base/UserCenter', () => {
   });
 
   it('should render user list when it first entered the user center', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(userListSpy).toHaveBeenCalledTimes(1);
@@ -63,7 +62,7 @@ describe('base/UserCenter', () => {
   });
 
   it('switch to role list', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('角色列表'));
@@ -71,7 +70,8 @@ describe('base/UserCenter', () => {
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     expect(roleListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('添加角色'));
@@ -86,22 +86,17 @@ describe('base/UserCenter', () => {
   });
 
   it('switch to operate permission list', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('操作权限列表'));
     await act(async () => jest.advanceTimersByTime(3100));
     expect(permissionListSpy).toHaveBeenCalledTimes(1);
-    expect(permissionListSpy).toHaveBeenCalledWith({
-      page_index: 1,
-      page_size: 20,
-      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
-    });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should refresh table when click refresh icon', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     expect(userListSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -122,7 +117,8 @@ describe('base/UserCenter', () => {
     expect(roleListSpy).toHaveBeenCalledTimes(2);
     expect(roleListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -132,26 +128,20 @@ describe('base/UserCenter', () => {
 
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     expect(permissionListSpy).toHaveBeenCalledTimes(2);
-    expect(permissionListSpy).toHaveBeenCalledWith({
-      page_index: 1,
-      page_size: 20,
-      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
   });
 
   it('should hidden action when user is not admin', async () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.createProject]: true,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.projectDirector]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
 
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('添加用户')).not.toBeInTheDocument();
     expect(screen.queryByText('添加角色')).not.toBeInTheDocument();

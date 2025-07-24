@@ -139,7 +139,11 @@ export default {
         delete: '删除',
         deleteSuccessTips: '删除成功！',
         deleteConfirmTips:
-          '删除后该类型智能扫描数据将不再被保留，是否确认删除？'
+          '删除后该类型智能扫描数据将不再被保留，是否确认删除？',
+        resetToken: '重置Token',
+        resetTokenSuccessTips: '重置Token成功！',
+        resetTokenConfirmTitle:
+          '重置后将生成新的Token，有效期365天。旧Token将立即失效，是否继续？'
       }
     },
     scanTypeSqlCollection: {

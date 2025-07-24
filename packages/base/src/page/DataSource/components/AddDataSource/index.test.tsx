@@ -1,21 +1,20 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
+  baseMockApi,
+  sqleMockApi,
+  createSpySuccessResponse,
+  mockUseCurrentProject,
+  mockProjectInfo,
   getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+  getBySelector,
+  selectOptionByIndex
+} from '@actiontech/shared/lib/testUtil';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import project from '../../../../testUtils/mockApi/project';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import AddDataSource from '.';
-import system from 'sqle/src/testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -30,21 +29,35 @@ describe('page/DataSource/AddDataSource', () => {
   let getProjectListSpy: jest.SpyInstance;
   let requestAddDBServiceSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
+  let checkDbServiceIsConnectableSpy: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(<AddDataSource />);
+    return baseSuperRender(<AddDataSource />);
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    dms.mockAllApi();
-    getProjectListSpy = project.getProjectList();
-    project.listEnvironmentTags();
+    baseMockApi.global.mockAllApi();
+    getProjectListSpy = baseMockApi.project.getProjectList();
+    baseMockApi.project.listEnvironmentTags();
 
-    requestAddDBServiceSpy = dms.AddDBService();
-    getSystemModuleStatusSpy = system.getSystemModuleStatus();
-    ruleTemplate.mockAllApi();
+    requestAddDBServiceSpy = baseMockApi.global.AddDBService();
+    getSystemModuleStatusSpy = sqleMockApi.system.getSystemModuleStatus();
+
+    checkDbServiceIsConnectableSpy =
+      baseMockApi.dbServices.checkDbServiceIsConnectable();
+    checkDbServiceIsConnectableSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            component: 'sqle',
+            is_connectable: true
+          }
+        ]
+      })
+    );
+    sqleMockApi.rule_template.mockAllApi();
     mockUseCurrentProject();
   });
 
@@ -124,15 +137,53 @@ describe('page/DataSource/AddDataSource', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(300));
+    // dataExportRuleTemplateName
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+    // needAuditForSqlQuery
+    fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // workbenchTemplateName
+    fireEvent.mouseDown(getBySelector('#workbenchTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[2]);
+    await act(async () => jest.advanceTimersByTime(0));
+    // allowQueryWhenLessThanAuditLevel
+    fireEvent.mouseDown(
+      getBySelector('#allowQueryWhenLessThanAuditLevel', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="warn"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     // submit
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
     });
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
 
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenNthCalledWith(1, {
+      db_service: {
+        db_type: 'mysql',
+        host: '1.1.1.1',
+        user: 'root',
+        password: 'root',
+        port: '3306',
+        additional_params: [
+          {
+            name: 'cc',
+            value: ''
+          }
+        ]
+      },
+      project_uid: projectID
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAddDBServiceSpy).toHaveBeenCalled();
     expect(requestAddDBServiceSpy).toHaveBeenCalledWith({
       db_service: {
@@ -152,26 +203,114 @@ describe('page/DataSource/AddDataSource', () => {
         password: 'root',
         port: '3306',
         sqle_config: {
+          audit_enabled: true,
           rule_template_id: '2',
           rule_template_name: 'custom_template_b',
+          data_export_rule_template_id: '3',
+          data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
-            allow_query_when_less_than_audit_level: undefined,
-            audit_enabled: undefined
+            allow_query_when_less_than_audit_level: 'warn',
+            audit_enabled: true,
+            rule_template_id: '3',
+            rule_template_name: 'default_MySQL1'
           }
         },
         user: 'root'
       },
       project_uid: projectID
     });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('添加数据源成功')).toBeInTheDocument();
     expect(screen.getByText('关闭并重置表单')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
     fireEvent.click(screen.getByText('关闭并重置表单'));
     await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+  });
+
+  it('render conenctable modal when current service can not connect', async () => {
+    checkDbServiceIsConnectableSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            component: 'sqle',
+            is_connectable: false,
+            connect_error_message: '链接错误'
+          }
+        ]
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(9300));
+    expect(getBySelector('#project')).toBeDisabled();
+
+    // name
+    fireEvent.change(getBySelector('#name', baseElement), {
+      target: {
+        value: 'name-database'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    // - type
+    fireEvent.mouseDown(getBySelector('#type', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(2700));
+    // - ip
+    await act(async () => {
+      fireEvent.change(getBySelector('#ip', baseElement), {
+        target: {
+          value: '1.1.1.1'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    // - user
+    await act(async () => {
+      fireEvent.change(getBySelector('#user', baseElement), {
+        target: {
+          value: 'root'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    // password
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: {
+        value: 'root'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(getBySelector('.audit-confirm-switch'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 定'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.audit-confirm-switch')).not.toBeChecked();
+    // submit
+    await act(async () => {
+      fireEvent.click(screen.getByText('提 交'));
+    });
+
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('sqle: 链接错误')).toBeInTheDocument();
   });
 
   it('render submit when projectID is undefined', async () => {
@@ -242,6 +381,13 @@ describe('page/DataSource/AddDataSource', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(300));
+    // dataExportRuleTemplateName
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#enableBackup'));
     await act(async () => jest.advanceTimersByTime(300));
 
@@ -257,10 +403,7 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
     });
-    await act(async () => {
-      await jest.advanceTimersByTime(300);
-    });
-    expect(baseElement).toMatchSnapshot();
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(eventEmitSpy).toHaveBeenCalled();
     expect(eventEmitSpy).toHaveBeenCalledWith(
@@ -285,8 +428,11 @@ describe('page/DataSource/AddDataSource', () => {
         password: 'root',
         port: '3306',
         sqle_config: {
+          audit_enabled: true,
           rule_template_id: '2',
           rule_template_name: 'custom_template_b',
+          data_export_rule_template_id: '3',
+          data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
             allow_query_when_less_than_audit_level: undefined,
             audit_enabled: undefined
@@ -298,6 +444,7 @@ describe('page/DataSource/AddDataSource', () => {
       },
       project_uid: mockProjectList[0].uid
     });
+    await act(async () => jest.advanceTimersByTime(3000));
 
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('添加数据源成功')).toBeInTheDocument();
@@ -309,10 +456,12 @@ describe('page/DataSource/AddDataSource', () => {
   });
 
   it('render prepare api req', async () => {
-    const requestRuleTemplateList = ruleTemplate.getRuleTemplateTips();
+    const requestRuleTemplateList =
+      sqleMockApi.rule_template.getRuleTemplateTips();
     const requestProjectRuleTemplateTips =
-      ruleTemplate.getProjectRuleTemplateTips();
-    const requestListDBServiceDriverOption = dms.getListDBServiceDriverOption();
+      sqleMockApi.rule_template.getProjectRuleTemplateTips();
+    const requestListDBServiceDriverOption =
+      baseMockApi.global.getListDBServiceDriverOption();
     customRender();
     await act(async () => jest.advanceTimersByTime(9300));
     expect(requestRuleTemplateList).toHaveBeenCalled();

@@ -2,7 +2,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '../../../../testUtil/customQuery';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { TypeFilterElement } from '../../index.type';
 import FilterContainer from '../FilterContainer';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';

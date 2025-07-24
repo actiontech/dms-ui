@@ -22,6 +22,8 @@ import { IUpdateDBServiceV2Params } from '@actiontech/shared/lib/api/base/servic
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import { DataSourceFormContextProvide } from '../../context';
+import useCheckConnectable from '../../hooks/useCheckConnectable';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
@@ -35,6 +37,9 @@ const UpdateDataSource = () => {
   const [form] = useForm<DataSourceFormField>();
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.BASE.DATA_SOURCE.update>();
+
+  const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
+    useCheckConnectable(form);
 
   const [retryLoading, setRetryLoading] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -60,27 +65,39 @@ const UpdateDataSource = () => {
         port: `${values.port}`,
         // #if [sqle]
         sqle_config: {
+          audit_enabled: values.needSqlAuditService,
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName,
           sql_query_config: {
             allow_query_when_less_than_audit_level:
               values.allowQueryWhenLessThanAuditLevel,
-            audit_enabled: values.needAuditForSqlQuery
+            audit_enabled: values.needAuditForSqlQuery,
+            rule_template_id: values.workbenchTemplateId,
+            rule_template_name: values.workbenchTemplateName
           }
         },
         // #endif
         additional_params: values.asyncParams,
         user: values.user,
         // #if [dms]
-        is_enable_masking: values.is_enable_masking,
-        // #endif
-        // #if [sqle && ee]
-        enable_backup: values.enableBackup,
-        backup_max_rows: values.backupMaxRows
+        is_enable_masking: values.is_enable_masking
         // #endif
       },
       project_uid: projectID
     };
+
+    // #if [sqle && ee]
+    if (params.db_service?.sqle_config) {
+      params.db_service.sqle_config.data_export_rule_template_id =
+        values.dataExportRuleTemplateId;
+      params.db_service.sqle_config.data_export_rule_template_name =
+        values.dataExportRuleTemplateName;
+    }
+    if (params.db_service) {
+      params.db_service.enable_backup = values.enableBackup;
+      params.db_service.backup_max_rows = values.backupMaxRows;
+    }
+    // #endif
 
     if (!!values.needUpdatePassword && !!values.password && params.db_service) {
       params.db_service.password = values.password;
@@ -140,57 +157,67 @@ const UpdateDataSource = () => {
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {messageContextHolder}
-      <PageHeader
-        fixed
-        title={
-          <BasicButton
-            onClick={() => navigate(-1)}
-            icon={<LeftArrowOutlined />}
-          >
-            {t('dmsDataSource.backDesc')}
-          </BasicButton>
-        }
-        extra={
-          <BasicButton
-            type="primary"
-            loading={submitLoading}
-            onClick={() => onSubmitForm()}
-          >
-            {t('common.submit')}
-          </BasicButton>
-        }
-      />
-      <EmptyBox
-        if={!initError}
-        defaultNode={
-          <Empty
-            image={Empty.PRESENTED_IMAGE_DEFAULT}
-            description={
-              <Typography.Text type="danger">
-                {t('dmsDataSource.updateDatabase.getDatabaseInfoError')}:{' '}
-                {initError}
-              </Typography.Text>
-            }
-          >
-            <Button
-              type="primary"
-              onClick={getInstanceInfo}
-              loading={retryLoading}
-            >
-              {t('common.retry')}
-            </Button>
-          </Empty>
-        }
+      <DataSourceFormContextProvide
+        value={{
+          onCheckConnectable,
+          loading,
+          connectAble,
+          connectErrorMessage,
+          submitLoading
+        }}
       >
-        <Spin spinning={retryLoading}>
-          <DataSourceForm
-            form={form}
-            isUpdate={true}
-            defaultData={instanceInfo}
-            submit={updateDatabase}
-          />
-        </Spin>
-      </EmptyBox>
+        <PageHeader
+          fixed
+          title={
+            <BasicButton
+              onClick={() => navigate(-1)}
+              icon={<LeftArrowOutlined />}
+            >
+              {t('dmsDataSource.backDesc')}
+            </BasicButton>
+          }
+          extra={
+            <BasicButton
+              type="primary"
+              loading={submitLoading || loading}
+              onClick={() => onSubmitForm()}
+            >
+              {t('common.submit')}
+            </BasicButton>
+          }
+        />
+        <EmptyBox
+          if={!initError}
+          defaultNode={
+            <Empty
+              image={Empty.PRESENTED_IMAGE_DEFAULT}
+              description={
+                <Typography.Text type="danger">
+                  {t('dmsDataSource.updateDatabase.getDatabaseInfoError')}:{' '}
+                  {initError}
+                </Typography.Text>
+              }
+            >
+              <Button
+                type="primary"
+                onClick={getInstanceInfo}
+                loading={retryLoading}
+              >
+                {t('common.retry')}
+              </Button>
+            </Empty>
+          }
+        >
+          <Spin spinning={retryLoading}>
+            <DataSourceForm
+              form={form}
+              isUpdate={true}
+              defaultData={instanceInfo}
+              submit={updateDatabase}
+            />
+          </Spin>
+        </EmptyBox>
+      </DataSourceFormContextProvide>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

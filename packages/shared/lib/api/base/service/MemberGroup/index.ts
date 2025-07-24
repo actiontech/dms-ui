@@ -11,6 +11,8 @@ import {
   IListMemberGroupsReturn,
   IAddMemberGroupParams,
   IAddMemberGroupReturn,
+  IListMemberGroupTipsParams,
+  IListMemberGroupTipsReturn,
   IGetMemberGroupParams,
   IGetMemberGroupReturn,
   IUpdateMemberGroupParams,
@@ -45,6 +47,21 @@ class MemberGroupService extends ServiceBase {
 
     return this.post<IAddMemberGroupReturn>(
       `/v1/dms/projects/${project_uid}/member_groups`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListMemberGroupTips(
+    params: IListMemberGroupTipsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListMemberGroupTipsReturn>(
+      `/v1/dms/projects/${project_uid}/member_groups/tips`,
       paramsData,
       options
     );

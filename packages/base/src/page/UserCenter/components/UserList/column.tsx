@@ -4,11 +4,12 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
+import SystemRoleTagList from '../../../../components/SystemRoleTagList';
+import ProjectTagList from '../../../../components/ProjectTagList';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
@@ -51,15 +52,14 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   },
   {
     dataIndex: 'op_permissions',
-    title: () => t('dmsUserCenter.user.userForm.opPermissions'),
-    render: (list) => {
-      if (!Array.isArray(list)) {
-        return '-';
-      }
-      return orderBy(list, ['uid'], ['asc'])
-        .map((e) => e.name)
-        .join(',');
-    }
+    title: () => t('dmsUserCenter.user.userList.columns.platformRoles'),
+    render: (list) => <SystemRoleTagList roles={list} />
+  },
+  {
+    dataIndex: 'projects',
+    title: () => t('dmsUserCenter.user.userList.columns.projects'),
+    width: '35%',
+    render: (list) => <ProjectTagList projectList={list} />
   }
 ];
 
@@ -71,7 +71,7 @@ export const UserListActions = (
   const calculateActionDisabled = (record?: IListUser) => {
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       ) ||
       record?.name === SystemRole.admin
     ) {

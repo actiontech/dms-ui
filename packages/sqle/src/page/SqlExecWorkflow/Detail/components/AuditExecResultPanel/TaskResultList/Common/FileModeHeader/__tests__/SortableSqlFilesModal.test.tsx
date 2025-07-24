@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import SortableSqlFilesModal from '../SortableSqlFilesModal';
 import { SortableSQLFilesModalProps } from '../SortableSqlFilesModal/index.type';
 import { act, fireEvent, screen } from '@testing-library/react';
@@ -29,7 +29,7 @@ describe('test SortableSqlFilesModal', () => {
   });
 
   const customRender = (params?: Partial<SortableSQLFilesModalProps>) => {
-    return superRender(
+    return sqleSuperRender(
       <SortableSqlFilesModal
         open
         onClose={onClose}

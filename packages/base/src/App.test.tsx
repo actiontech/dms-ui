@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { baseSuperRender } from './testUtils/superRender';
 import App, { Wrapper } from './App';
 import { act, cleanup, screen } from '@testing-library/react';
-import mockDMSGlobalApi from './testUtils/mockApi/global';
+import mockDMSGlobalApi from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -11,27 +11,29 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { ModalName } from './data/ModalName';
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
-import { BasicInfoMockData } from './testUtils/mockApi/global/data';
+import { BasicInfoMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import system from 'sqle/src/testUtils/mockApi/system';
-import baseSystem from './testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
+import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { compressToBase64 } from 'lz-string';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routePaths';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { AuthRouterConfig } from './router/router';
 import { cloneDeep } from 'lodash';
-import dmsSystem from './testUtils/mockApi/system';
+import dmsSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUseRecentlySelectedZone } from './testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from './testUtils/mockHooks/data';
-import gateway from './testUtils/mockApi/gateway';
-import project from './testUtils/mockApi/project';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -105,7 +107,7 @@ describe('App', () => {
 
   it('render Wrapper when token is existed', () => {
     const [, LocationComponent] = renderLocationDisplay();
-    superRender(
+    baseSuperRender(
       <Wrapper>
         <span>children</span>
         <LocationComponent />
@@ -132,7 +134,7 @@ describe('App', () => {
     });
 
     const [, LocationComponent] = renderLocationDisplay();
-    superRender(
+    baseSuperRender(
       <Wrapper>
         <span>children</span>
         <LocationComponent />
@@ -152,7 +154,7 @@ describe('App', () => {
   });
 
   it('render App when token is existed', async () => {
-    const { container } = superRender(<App />, undefined, {
+    const { container } = baseSuperRender(<App />, undefined, {
       routerProps: { initialEntries: ['/'] }
     });
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
@@ -170,26 +172,26 @@ describe('App', () => {
 
   it('render App when "isUserInfoFetched" is equal false', () => {
     mockUseCurrentUser({ isUserInfoFetched: false });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "isDriverInfoFetched" is equal false', () => {
     mockUseDbServiceDriver({ isDriverInfoFetched: false });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "isFeatureSupportFetched" is equal false', () => {
     mockUseCurrentUser({ isUserInfoFetched: true });
     mockUseDbServiceDriver({ isDriverInfoFetched: true });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "checkPageAction" is false', async () => {
     checkPageActionSpy.mockReturnValue(false);
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -208,11 +210,11 @@ describe('App', () => {
         }
       });
     });
-    const { container } = superRender(<App />, undefined, {
+    const { container } = baseSuperRender(<App />, undefined, {
       routerProps: { initialEntries: ['/exec-workflow?query=test'] }
     });
 
-    expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
+    expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(0);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
@@ -233,7 +235,7 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
@@ -248,7 +250,7 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('ce');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
@@ -263,14 +265,14 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('ee');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
   });
 
   it('verify route permission should not modify the route datasource', async () => {
     const routerConfigBackup = cloneDeep(AuthRouterConfig);
-    superRender(<App />);
+    baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
 
@@ -279,25 +281,25 @@ describe('App', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
-    superRender(<App />);
+    baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
   });
 
   it('should initialize the availability zone', () => {
-    superRender(<App />);
+    baseSuperRender(<App />);
     expect(
       mockUseRecentlySelectedZoneData.initializeAvailabilityZone
     ).toHaveBeenCalledTimes(1);
   });
 
   it('should reload the initial data when the event is triggered', async () => {
-    superRender(<App />);
+    baseSuperRender(<App />);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
@@ -305,6 +307,33 @@ describe('App', () => {
     act(() => {
       EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
     });
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
+  });
+
+  it('should clear availability zone and reload initial data when shared event is triggered', async () => {
+    baseSuperRender(<App />);
+
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
+    expect(
+      mockUseRecentlySelectedZoneData.clearRecentlySelectedZone
+    ).toHaveBeenCalledTimes(0);
+
+    act(() => {
+      sharedEventEmitter.emit(
+        sharedEmitterKey.DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA
+      );
+    });
+
+    await act(async () => jest.advanceTimersByTime(1000));
+
+    expect(
+      mockUseRecentlySelectedZoneData.clearRecentlySelectedZone
+    ).toHaveBeenCalledTimes(1);
+
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);

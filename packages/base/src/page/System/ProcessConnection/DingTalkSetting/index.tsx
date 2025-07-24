@@ -3,19 +3,20 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigExtraButtons from './components/ConfigExtraButtons';
-import ConfigField from './components/ConfigField';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+import ConfigField from './components/ConfigField';
+import ConfigExtraButtons from './components/ConfigExtraButtons';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { IDingTalkConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import {
   PERMISSIONS,
   PermissionControl
@@ -81,10 +82,6 @@ const DingTalkSetting: React.FC = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const submitDingTalkConfig = (values: FormFields) => {
@@ -110,26 +107,37 @@ const DingTalkSetting: React.FC = () => {
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
-      configuration.updateDingTalkConfigurationV1({
-        ...defaultFormData,
-        is_enable_ding_talk_notify: false
-      }),
-    handleClickCancel,
-    refreshConfig: refreshDingTalkInfo,
-    handleToggleSwitch
-  });
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshDingTalkInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      configuration
+        .updateDingTalkConfigurationV1({
+          ...defaultFormData,
+          is_enable_ding_talk_notify: false
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshDingTalkInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IDingTalkConfigurationV1> =
     useMemo(() => {
@@ -174,13 +182,15 @@ const DingTalkSetting: React.FC = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -192,7 +202,7 @@ const DingTalkSetting: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit: submitDingTalkConfig
+          onSubmit: submitDingTalkConfig
         })}
       </Spin>
     </div>
