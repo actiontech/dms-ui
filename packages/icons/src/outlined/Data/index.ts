@@ -1,3 +1,4 @@
+export { default as DashboardOutlined } from './DashboardOutlined';
 export { default as DoubleDatabaseOutlined } from './DoubleDatabaseOutlined';
 export { default as EmptyOutlined } from './EmptyOutlined';
 export { default as ExceptionFileOutlined } from './ExceptionFileOutlined';
