@@ -12,8 +12,6 @@ import {
   exportSqlManageV1FilterStatusEnum,
   exportSqlManageV1SortFieldEnum,
   exportSqlManageV1SortOrderEnum,
-  GetSqlManageSqlPerformanceInsightsMetricNameEnum,
-  GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
@@ -45,10 +43,7 @@ import {
   ISqlManageCodingReq,
   IPostSqlManageCodingResp,
   IGetSqlManageSqlAnalysisResp,
-  ISqlManageAnalysisChartResp,
-  IGetSqlManageSqlPerformanceInsightsResp,
-  IGetSqlManageSqlPerformanceInsightsRelatedSQLResp,
-  IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp
+  ISqlManageAnalysisChartResp
 } from '../common.d';
 
 export interface IGetGlobalSqlManageListParams {
@@ -202,55 +197,6 @@ export interface IGetSqlManageSqlAnalysisChartV1Params {
 
 export interface IGetSqlManageSqlAnalysisChartV1Return
   extends ISqlManageAnalysisChartResp {}
-
-export interface IGetSqlManageSqlPerformanceInsightsParams {
-  project_name: string;
-
-  metric_name: GetSqlManageSqlPerformanceInsightsMetricNameEnum;
-
-  start_time: string;
-
-  end_time: string;
-
-  instance_name: string;
-}
-
-export interface IGetSqlManageSqlPerformanceInsightsReturn
-  extends IGetSqlManageSqlPerformanceInsightsResp {}
-
-export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLParams {
-  project_name: string;
-
-  instance_name: string;
-
-  start_time: string;
-
-  end_time: string;
-
-  filter_source?: GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum;
-
-  order_by?: string;
-
-  is_asc?: boolean;
-
-  page_index: number;
-
-  page_size: number;
-}
-
-export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLReturn
-  extends IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {}
-
-export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionParams {
-  project_name: string;
-
-  instance_name: string;
-
-  sql_id: string;
-}
-
-export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionReturn
-  extends IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;

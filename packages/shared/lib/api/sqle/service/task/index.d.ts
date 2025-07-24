@@ -48,6 +48,8 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
 
   sql?: string;
 
+  rule_template_name?: string;
+
   input_sql_file?: any;
 
   input_mybatis_xml_file?: any;
