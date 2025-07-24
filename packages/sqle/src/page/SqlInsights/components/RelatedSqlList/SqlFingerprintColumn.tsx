@@ -2,7 +2,7 @@ import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common'
 import { Popover } from 'antd';
 import { useTranslation } from 'react-i18next';
 import SqlExecutionCostTrendChart from './SqlExecutionCostTrendChart';
-import HighlightCode from '@actiontech/shared/lib/utils/HighlightCode';
+import { SQLRenderer } from '@actiontech/shared/lib/';
 
 interface SqlFingerprintColumnProps {
   sqlFingerprint: string;
@@ -15,7 +15,7 @@ const SqlFingerprintColumn: React.FC<SqlFingerprintColumnProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const hasExecutionCostTrend = !!record.execution_cost_trend?.points?.length;
+  const hasExecutionCostTrend = !!record.execution_time_trend?.points?.length;
 
   return (
     <Popover
@@ -29,18 +29,15 @@ const SqlFingerprintColumn: React.FC<SqlFingerprintColumnProps> = ({
       title={t('sqlInsights.relatedSqlList.sqlFingerprintDetail.title')}
       placement="topLeft"
     >
-      <div
-        style={{
-          cursor: 'pointer',
-          width: '300px',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap'
-        }}
-        dangerouslySetInnerHTML={{
-          __html: HighlightCode.highlightSql(sqlFingerprint)
-        }}
-      ></div>
+      {/* todo 因为Snippet本身被tooltip包裹，所以这里需要使用div包裹，否则外层的Popover会失效 */}
+      <div>
+        <SQLRenderer.Snippet
+          sql={sqlFingerprint}
+          rows={1}
+          tooltip={false}
+          cuttingLength={200}
+        />
+      </div>
     </Popover>
   );
 };

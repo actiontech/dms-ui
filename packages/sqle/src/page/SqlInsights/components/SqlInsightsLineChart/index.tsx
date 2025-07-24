@@ -10,6 +10,8 @@ import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { message } from 'antd';
 import { useMemoizedFn } from 'ahooks';
+import TaskEnabledTips from '../TaskEnabledTips';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 export interface SqlInsightsLineChartProps {
   loading: boolean;
@@ -22,6 +24,9 @@ export interface SqlInsightsLineChartProps {
    */
   maskInteractionEventName?: EmitterKey;
   onSelectDate?: (dateRange: [dayjs.Dayjs, dayjs.Dayjs] | null) => void;
+  errorInfo?: string;
+  isTaskEnabled?: boolean;
+  onGoToEnable?: () => void;
 }
 
 type LineChart = Parameters<Required<LineConfig>['onReady']>[0];
@@ -34,27 +39,32 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
   title,
   className,
   maskInteractionEventName,
-  onSelectDate
+  onSelectDate,
+  errorInfo,
+  isTaskEnabled,
+  onGoToEnable
 }) => {
   const { t } = useTranslation();
-
+  const { sqleTheme } = useThemeStyleData();
   const [messageApi, messageContextHolder] = message.useMessage();
 
   // 将API返回的数据转换为图表需要的格式
   const transformedData = useMemo(() => {
     const result: Array<{
       date: string;
-      value: number;
+      value?: number;
       type: string;
+      status?: number;
     }> = [];
 
     chartData.forEach((line) => {
       line.points?.forEach((point) => {
-        if (point.x && point.y !== undefined) {
+        if (point.x) {
           result.push({
-            date: point.x,
+            date: dayjs(point.x).format('YYYY-MM-DD HH:mm:ss'),
             value: point.y,
-            type: line.line_name || ''
+            type: line.line_name || '',
+            status: point.status
           });
         }
       });
@@ -67,18 +77,29 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
   const isMaskCreatedChartRef = useRef(false);
 
   const config: LineConfig = useMemo(() => {
+    const redPointAnnotations = transformedData
+      .filter((item) => item.status === 1 && item.value !== undefined)
+      .map((item) => ({
+        type: 'dataMarker',
+        position: [item.date, item.value!],
+        text: {
+          content: ''
+        },
+        point: {
+          style: {
+            fill: sqleTheme.sqlInsight.dataMarkerColor,
+            stroke: sqleTheme.sqlInsight.dataMarkerColor,
+            r: 4,
+            lineWidth: 2
+          }
+        }
+      }));
     return {
       data: transformedData,
       xField: 'date',
       yField: 'value',
       seriesField: 'type',
       xAxis: {
-        type: 'time',
-        label: {
-          formatter: (value: string) => {
-            return dayjs(value).format('MM-DD HH:mm:ss');
-          }
-        },
         title: {
           text: t('sqlInsights.chart.xAxisTitle')
         }
@@ -109,9 +130,10 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
           type: 'brush-x',
           enable: false
         }
-      ]
+      ],
+      annotations: [...redPointAnnotations] as LineConfig['annotations']
     };
-  }, [transformedData, t]);
+  }, [transformedData, t, sqleTheme]);
 
   const [maskXPosition, setMaskXPosition] = useState<number>(0);
   const [maskYPosition, setMaskYPosition] = useState<number>(0);
@@ -229,7 +251,14 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
           <ChartWrapper
             loading={loading}
             dataLength={transformedData.length}
-            emptyCont={t('sqlInsights.chart.noData')}
+            emptyCont={
+              !isTaskEnabled ? (
+                <TaskEnabledTips onGoToEnable={onGoToEnable} />
+              ) : (
+                t('sqlInsights.chart.noData')
+              )
+            }
+            errorInfo={errorInfo}
           >
             <Line
               {...config}

@@ -8,6 +8,7 @@ import { execWorkflowTheme } from './execWorkflow';
 import { iconTheme } from './icon';
 import { dataSourceComparisonTheme } from './dataSourceComparison';
 import { knowledgeTheme } from './knowledge';
+import { sqlInsightTheme } from './sqlInsight';
 
 export const sqleDarkTheme: SqleTheme = {
   statistics: statisticsTheme,
@@ -17,7 +18,8 @@ export const sqleDarkTheme: SqleTheme = {
   execWorkflow: execWorkflowTheme,
   icon: iconTheme,
   dataSourceComparison: dataSourceComparisonTheme,
-  knowledgeTheme: knowledgeTheme
+  knowledgeTheme: knowledgeTheme,
+  sqlInsight: sqlInsightTheme
 };
 
 const darkTheme = createTheme({

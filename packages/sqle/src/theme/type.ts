@@ -410,3 +410,8 @@ export type KnowledgeTheme = {
     };
   };
 };
+
+export type SqlInsight = {
+  dataMarkerColor: string;
+  regionFillColor: string;
+};

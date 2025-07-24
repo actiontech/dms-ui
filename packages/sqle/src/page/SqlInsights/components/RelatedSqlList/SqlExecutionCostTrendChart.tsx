@@ -6,26 +6,14 @@ import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common'
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
-import { styled } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import { useMemoizedFn } from 'ahooks';
-
-const SqlExecutionCostTrendChartStyleWrapper = styled('section')`
-  .chart-wrapper {
-    width: 800px;
-    height: 400px;
-  }
-`;
-
-const TooltipAnalyzeButtonStyleWrapper = styled('span')`
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+import {
+  SqlExecutionCostTrendChartStyleWrapper
+  // TooltipAnalyzeButtonStyleWrapper
+} from './style';
 
 export interface SqlExecutionCostTrendChartProps {
   record: IRelatedSQLInfo;
@@ -58,7 +46,7 @@ const renderTooltipCustomContent = (
         {
           label: 'SQL',
           value: (
-            <Typography.Text ellipsis style={{ maxWidth: 150 }}>
+            <Typography.Text ellipsis style={{ maxWidth: 100 }}>
               {data.sql}
             </Typography.Text>
           )
@@ -67,19 +55,19 @@ const renderTooltipCustomContent = (
           label: t(
             'sqlInsights.relatedSqlList.sqlFingerprintDetail.chart.yAxisTitle'
           ),
-          value: data.cost
-        },
-        {
-          label: (
-            <TooltipAnalyzeButtonStyleWrapper
-              style={{ color: sharedTheme.uiToken.colorTextTertiary }}
-            >
-              {t(
-                'sqlInsights.relatedSqlList.sqlFingerprintDetail.chart.analyzeButtonText'
-              )}
-            </TooltipAnalyzeButtonStyleWrapper>
-          )
+          value: data.execute_time
         }
+        // {
+        //   label: (
+        //     <TooltipAnalyzeButtonStyleWrapper
+        //       style={{ color: sharedTheme.uiToken.colorTextTertiary }}
+        //     >
+        //       {t(
+        //         'sqlInsights.relatedSqlList.sqlFingerprintDetail.chart.analyzeButtonText'
+        //       )}
+        //     </TooltipAnalyzeButtonStyleWrapper>
+        //   )
+        // }
       ]}
       sharedTheme={sharedTheme}
     />
@@ -96,15 +84,15 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
 
   const { data } = useMemo(() => {
     return {
-      data: record.execution_cost_trend?.points || []
+      data: record.execution_time_trend?.points || []
     };
-  }, [record.execution_cost_trend]);
+  }, [record.execution_time_trend]);
 
   const config: ScatterConfig = useMemo(() => {
     return {
       data,
       xField: 'time',
-      yField: 'cost',
+      yField: 'execute_time',
       width: 800,
       height: 400,
       colorField: 'sql',
@@ -116,12 +104,12 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
           }
         },
         title: {
-          text: record.execution_cost_trend?.x_info
+          text: record.execution_time_trend?.x_info
         }
       },
       yAxis: {
         title: {
-          text: record.execution_cost_trend?.y_info
+          text: record.execution_time_trend?.y_info
         }
       },
       appendPadding: 20,
@@ -137,11 +125,11 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
         }
       ]
     };
-  }, [data, sharedTheme, t, record.execution_cost_trend]);
+  }, [data, sharedTheme, t, record.execution_time_trend]);
 
   const onEvent = useMemoizedFn<ScatterOnEventType>((_, event) => {
     if (event.type === 'element:click') {
-      console.log(event.data);
+      // console.log(event.data);
       // fixme: 添加跳转到SQL分析页面。但是参数是什么需要跟后端讨论。
     }
   });
