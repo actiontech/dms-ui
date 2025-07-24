@@ -18,7 +18,8 @@ import {
   GearFilled,
   PipelineOutlined,
   FileVersionOutlined,
-  ComparisonOutlined
+  ComparisonOutlined,
+  DashboardOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared';
@@ -202,7 +203,7 @@ const sqlPerformanceInsights: GenerateMenuItemI18nConfig = (projectID) => ({
   to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_INSIGHTS.index, {
     params: { projectID: projectID }
   }),
-  icon: <RiseSquareOutlined width={18} height={18} />,
+  icon: <DashboardOutlined width={20} height={20} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-insights`,
   structKey: 'sql-insights'
 });

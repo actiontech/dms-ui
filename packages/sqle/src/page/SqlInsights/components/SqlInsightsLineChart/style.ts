@@ -8,7 +8,6 @@ export const SqlInsightsLineChartWrapper = styled('div')`
   }
 
   .chart-container {
-    height: 100%;
     cursor: crosshair !important;
   }
 `;

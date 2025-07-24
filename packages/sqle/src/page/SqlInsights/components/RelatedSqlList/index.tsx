@@ -4,30 +4,30 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams,
-  TableToolbar,
   TableFilterContainer,
   useTableFilterContainer,
   FilterCustomProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useMemoizedFn, useRequest } from 'ahooks';
+import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { RelatedSqlListColumn, RelatedSqlListFilterParams } from './column';
+import { SqleApi } from '@actiontech/shared/lib/api/';
+import { relatedSqlListColumn, RelatedSqlListFilterParams } from './column';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { formatTime } from '@actiontech/shared';
-import { Space, message } from 'antd';
-import { useMemo } from 'react';
-import { GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { IGetSqlManageSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
-import { useSelector, useDispatch } from 'react-redux';
+import { Space } from 'antd';
+import { useEffect, useMemo } from 'react';
+import { GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
+import { IGetSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.d';
+import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
-import { relatedSqlTableActions } from './actions';
-import { ModalName } from '../../../../data/ModalName';
-import {
-  updateSqlInsightsModalStatus,
-  updateRelateSqlSelectedRecord
-} from '../../../../store/sqlInsights';
+// import { relatedSqlTableActions } from './actions';
+// import { ModalName } from '../../../../data/ModalName';
+// import {
+//   updateSqlInsightsModalStatus,
+//   updateRelateSqlSelectedRecord
+// } from '../../../../store/sqlInsights';
+import { RelatedSqlFilterSourceOptions } from './data';
 
 export interface RelatedSqlListProps {
   instanceId?: string;
@@ -36,10 +36,15 @@ export interface RelatedSqlListProps {
 const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const dispatch = useDispatch();
-  const dateRange = useSelector(
-    (state: IReduxState) => state.sqlInsights.relateSqlList.selectedDateRange
-  );
+  // const dispatch = useDispatch();
+  const { startTime, endTime } = useSelector((state: IReduxState) => {
+    const { selectedDateRange } = state.sqlInsights.relateSqlList;
+    return {
+      startTime: selectedDateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
+      endTime: selectedDateRange?.[1].format('YYYY-MM-DD HH:mm:ss') ?? ''
+    };
+  });
+
   const {
     tableChange,
     pagination,
@@ -48,40 +53,42 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
     sortInfo,
     createSortParams
   } = useTableRequestParams<IRelatedSQLInfo, RelatedSqlListFilterParams>();
+
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const onAnalyzeSql = useMemoizedFn((record: IRelatedSQLInfo) => {
-    message.info('SQL分析功能将在此实现');
-    // TODO: 跳转至SQL分析页面，但是现有的设计有两个问题。需要跟具体实现的后端/产品讨论。
-    // 1、现有的SQL分析页面需要一个  sqlManageId 参数。但是当前table没有这个感念。
-    // 2、现有的SQL分析针对的是具体的SQL，而当前的表针对的是sql指纹。
-  });
+  // const onAnalyzeSql = useMemoizedFn((record: IRelatedSQLInfo) => {
+  //   message.info('SQL分析功能将在此实现');
+  //   // TODO: 跳转至SQL分析页面，但是现有的设计有两个问题。需要跟具体实现的后端/产品讨论。
+  //   // 1、现有的SQL分析页面需要一个  sqlManageId 参数。但是当前table没有这个感念。
+  //   // 2、现有的SQL分析针对的是具体的SQL，而当前的表针对的是sql指纹。
+  // });
 
-  const onViewRelatedTransactions = useMemoizedFn((record: IRelatedSQLInfo) => {
-    dispatch(
-      updateSqlInsightsModalStatus({
-        modalName:
-          ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer,
-        status: true
-      })
-    );
-    dispatch(
-      updateRelateSqlSelectedRecord({
-        record
-      })
-    );
-  });
+  // const onViewRelatedTransactions = useMemoizedFn((record: IRelatedSQLInfo) => {
+  //   dispatch(
+  //     updateSqlInsightsModalStatus({
+  //       modalName:
+  //         ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer,
+  //       status: true
+  //     })
+  //   );
+  //   dispatch(
+  //     updateRelateSqlSelectedRecord({
+  //       record
+  //     })
+  //   );
+  // });
 
   const columns = useMemo(() => {
-    return RelatedSqlListColumn();
+    return relatedSqlListColumn();
   }, []);
 
-  const tableActions = useMemo(() => {
-    return relatedSqlTableActions(onAnalyzeSql, onViewRelatedTransactions);
-  }, [onAnalyzeSql, onViewRelatedTransactions]);
+  // todo 本期暂不处理此操作 暂时隐藏
+  // const tableActions = useMemo(() => {
+  //   return relatedSqlTableActions(onAnalyzeSql, onViewRelatedTransactions);
+  // }, [onAnalyzeSql, onViewRelatedTransactions]);
 
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+  const { filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer<IRelatedSQLInfo, RelatedSqlListFilterParams>(
       columns,
       updateTableFilterInfo
@@ -92,30 +99,18 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       [
         'source',
         {
-          options: [
-            {
-              label: t('sqlInsights.relatedSqlList.source.order'),
-              value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.order
-            },
-            {
-              label: t('sqlInsights.relatedSqlList.source.sqlManage'),
-              value:
-                GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum.sql_manage
-            }
-          ]
+          options: RelatedSqlFilterSourceOptions,
+          allowClear: false,
+          defaultValue:
+            GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
         }
       ]
     ]);
-  }, [t]);
+  }, []);
 
-  const {
-    data: listData,
-    loading,
-    refresh: refreshData
-  } = useRequest(
+  const { data: listData, loading } = useRequest(
     () => {
-      if (!dateRange) {
+      if (!startTime || !endTime) {
         return Promise.resolve<{
           list?: IRelatedSQLInfo[];
           total: number;
@@ -124,11 +119,11 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
           total: 0
         });
       }
-      const params: IGetSqlManageSqlPerformanceInsightsRelatedSQLParams = {
+      const params: IGetSqlPerformanceInsightsRelatedSQLParams = {
         project_name: projectName,
-        instance_name: instanceId ?? '',
-        start_time: dateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
-        end_time: dateRange?.[1].format('YYYY-MM-DD HH:mm:ss') ?? '',
+        instance_id: instanceId ?? '',
+        start_time: startTime,
+        end_time: endTime,
         page_index: pagination.page_index,
         page_size: pagination.page_size,
         ...tableFilterInfo
@@ -137,13 +132,14 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       createSortParams(params);
 
       return handleTableRequestError(
-        sqlManage.GetSqlManageSqlPerformanceInsightsRelatedSQL(params)
+        SqleApi.SqlInsightService.GetSqlPerformanceInsightsRelatedSQL(params)
       );
     },
     {
       refreshDeps: [
         instanceId,
-        dateRange,
+        startTime,
+        endTime,
         pagination,
         tableFilterInfo,
         sortInfo
@@ -152,15 +148,23 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
     }
   );
 
+  useEffect(() => {
+    updateTableFilterInfo({
+      filter_source:
+        GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
+    });
+    updateAllSelectedFilterItem(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <RelatedSqlListStyleWrapper>
       <EmptyRowStyleWrapper>
         <Space>
           <span>{t('sqlInsights.relatedSqlList.title')}</span>
-          {dateRange && dateRange[0] && dateRange[1] ? (
+          {startTime && endTime ? (
             <span>
-              ({formatTime(dateRange[0], '-')} ~ {formatTime(dateRange[1], '-')}
-              )
+              ({formatTime(startTime, '-')} ~ {formatTime(endTime, '-')})
             </span>
           ) : (
             <span>
@@ -169,13 +173,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
           )}
         </Space>
       </EmptyRowStyleWrapper>
-      <TableToolbar
-        refreshButton={{ refresh: refreshData, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-      />
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
@@ -183,7 +180,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
-        rowKey="sql_fingerprint"
         dataSource={listData?.list}
         pagination={{
           total: listData?.total ?? 0
@@ -194,7 +190,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         onChange={tableChange}
         scroll={{ x: 'max-content' }}
         isPaginationFixed={false}
-        actions={tableActions}
+        // actions={tableActions}
       />
     </RelatedSqlListStyleWrapper>
   );

@@ -1,18 +1,16 @@
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IGetSqlManageSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { IGetSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.d';
 import { RelatedSQLInfoSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../locale';
-import { Popover, Tooltip } from 'antd';
 import SqlFingerprintColumn from './SqlFingerprintColumn';
 
 export type RelatedSqlListFilterParams = Pick<
-  IGetSqlManageSqlPerformanceInsightsRelatedSQLParams,
+  IGetSqlPerformanceInsightsRelatedSQLParams,
   'filter_source'
 >;
 
-export const RelatedSqlListColumn = (): ActiontechTableColumn<
+export const relatedSqlListColumn = (): ActiontechTableColumn<
   IRelatedSQLInfo,
   RelatedSqlListFilterParams
 > => {
@@ -20,6 +18,7 @@ export const RelatedSqlListColumn = (): ActiontechTableColumn<
     {
       dataIndex: 'sql_fingerprint',
       title: () => t('sqlInsights.relatedSqlList.column.sqlFingerprint'),
+      className: 'ellipsis-column-width',
       render: (value, record) => {
         return value ? (
           <SqlFingerprintColumn sqlFingerprint={value} record={record} />
@@ -32,7 +31,7 @@ export const RelatedSqlListColumn = (): ActiontechTableColumn<
       dataIndex: 'source',
       title: () => t('sqlInsights.relatedSqlList.column.source'),
       render: (value?: RelatedSQLInfoSourceEnum) => {
-        if (value === RelatedSQLInfoSourceEnum.order) {
+        if (value === RelatedSQLInfoSourceEnum.workflow) {
           return t('sqlInsights.relatedSqlList.source.order');
         } else if (value === RelatedSQLInfoSourceEnum.sql_manage) {
           return t('sqlInsights.relatedSqlList.source.sqlManage');
@@ -44,32 +43,39 @@ export const RelatedSqlListColumn = (): ActiontechTableColumn<
       filterCustomType: 'select'
     },
     {
-      dataIndex: 'execute_start_time',
-      title: () => t('sqlInsights.relatedSqlList.column.executeStartTime'),
+      dataIndex: 'execute_time_avg',
+      title: () => t('sqlInsights.relatedSqlList.column.executeStartAvg'),
       render: (value) => {
-        return formatTime(value, '-');
+        return value ? `${value} s` : '-';
       },
       sorter: true
     },
     {
-      dataIndex: 'execute_end_time',
-      title: () => t('sqlInsights.relatedSqlList.column.executeEndTime'),
+      dataIndex: 'execute_time_max',
+      title: () => t('sqlInsights.relatedSqlList.column.maxExecuteTime'),
       render: (value) => {
-        return formatTime(value, '-');
+        return value ? `${value} s` : '-';
       }
     },
     {
-      dataIndex: 'execute_time',
-      title: () => t('sqlInsights.relatedSqlList.column.executeTime'),
+      dataIndex: 'execute_time_min',
+      title: () => t('sqlInsights.relatedSqlList.column.minExecuteTime'),
       render: (value) => {
-        return value ? `${value} ms` : '-';
+        return value ? `${value} s` : '-';
+      }
+    },
+    {
+      dataIndex: 'execute_time_sum',
+      title: () => t('sqlInsights.relatedSqlList.column.sumExecuteTime'),
+      render: (value) => {
+        return value ? `${value} s` : '-';
       }
     },
     {
       dataIndex: 'lock_wait_time',
       title: () => t('sqlInsights.relatedSqlList.column.lockWaitTime'),
       render: (value) => {
-        return value ? `${value} ms` : '-';
+        return value ? `${value} s` : '-';
       }
     }
   ];
