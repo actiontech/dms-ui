@@ -1,10 +1,13 @@
 import { useCallback, useState, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import {
+  ListOpPermissionsFilterByTargetEnum,
+  ListOpPermissionsServiceEnum
+} from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
-import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
-import { Select } from 'antd';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import { Select, Tooltip } from 'antd';
 
 const useOpPermission = () => {
   const [opPermissionList, setOpPermissionList] = useState<IListOpPermission[]>(
@@ -17,9 +20,14 @@ const useOpPermission = () => {
       filterBy: ListOpPermissionsFilterByTargetEnum = ListOpPermissionsFilterByTargetEnum.all
     ) => {
       setTrue();
-      OpPermission.ListOpPermissions({
+      let service: ListOpPermissionsServiceEnum | undefined = undefined;
+      // #if [sqle && !dms]
+      service = ListOpPermissionsServiceEnum.sqle;
+      // #endif
+      DmsApi.OpPermissionService.ListOpPermissions({
         page_size: 9999,
-        filter_by_target: filterBy
+        filter_by_target: filterBy,
+        service
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
@@ -41,7 +49,7 @@ const useOpPermission = () => {
   const opPermissionOptions = useMemo(() => {
     return opPermissionList.map((i) => {
       return {
-        label: i.op_permission?.name,
+        label: <Tooltip title={i.description}>{i.op_permission?.name}</Tooltip>,
         value: i.op_permission?.uid
       };
     });
@@ -51,7 +59,7 @@ const useOpPermission = () => {
     return opPermissionList.map((i) => {
       return (
         <Select.Option key={i.op_permission?.uid} value={i.op_permission?.uid}>
-          {i.op_permission?.name}
+          <Tooltip title={i.description}>{i.op_permission?.name}</Tooltip>
         </Select.Option>
       );
     });

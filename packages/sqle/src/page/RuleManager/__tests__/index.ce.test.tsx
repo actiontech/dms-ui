@@ -3,7 +3,7 @@
  */
 
 import { screen } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleManager from '..';
 import { useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
@@ -49,7 +49,7 @@ describe('sqle/RuleManager CE', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(<RuleManager />);
+    const { container } = superRender(<RuleManager />);
     expect(container).toMatchSnapshot();
     expect(screen.queryByText('新 建')).not.toBeInTheDocument();
   });

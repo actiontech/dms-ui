@@ -11,7 +11,8 @@ import { SystemRole } from '@actiontech/shared/lib/enum';
 
 export const MemberListActions = (
   onEditMember: (record: IListMember | undefined) => void,
-  onDeleteMember: (record: IListMember | undefined) => void
+  onDeleteMember: (record: IListMember | undefined) => void,
+  onManageMemberGroup: (record: IListMember | undefined) => void
 ): ActiontechTableActionsWithPermissions<IListMember> => [
   {
     text: t('common.edit'),
@@ -26,7 +27,18 @@ export const MemberListActions = (
     permissions: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER
   },
   {
-    text: t('common.delete'),
+    text: t('dmsMember.memberList.actions.manageMemberGroup'),
+    buttonProps: (record) => ({
+      hidden: !record?.is_group_member,
+      onClick: () => {
+        onManageMemberGroup(record);
+      }
+    }),
+    key: 'manageUserGroup',
+    permissions: PERMISSIONS.ACTIONS.BASE.MEMBER.MANAGE_MEMBER_GROUP
+  },
+  {
+    text: t('dmsMember.memberList.actions.removeMember'),
     buttonProps: (record) => ({
       danger: true,
       hidden: record?.user?.name === SystemRole.admin

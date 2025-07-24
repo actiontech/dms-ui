@@ -123,6 +123,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
+        scroll={{}}
       />
     </>
   );

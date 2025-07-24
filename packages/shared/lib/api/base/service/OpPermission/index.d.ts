@@ -1,6 +1,7 @@
 import {
   ListOpPermissionsOrderByEnum,
-  ListOpPermissionsFilterByTargetEnum
+  ListOpPermissionsFilterByTargetEnum,
+  ListOpPermissionsServiceEnum
 } from './index.enum';
 
 import { IListOpPermissionReply } from '../common.d';
@@ -13,6 +14,8 @@ export interface IListOpPermissionsParams {
   order_by?: ListOpPermissionsOrderByEnum;
 
   filter_by_target?: ListOpPermissionsFilterByTargetEnum;
+
+  service?: ListOpPermissionsServiceEnum;
 }
 
 export interface IListOpPermissionsReturn extends IListOpPermissionReply {}

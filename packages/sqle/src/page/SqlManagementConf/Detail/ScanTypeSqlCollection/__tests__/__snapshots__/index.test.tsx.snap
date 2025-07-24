@@ -1067,7 +1067,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1110,7 +1110,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1250,7 +1250,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1293,7 +1293,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1457,7 +1457,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1500,7 +1500,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1634,7 +1634,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1676,7 +1676,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1786,7 +1786,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1828,7 +1828,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1937,7 +1937,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1986,7 +1986,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -2119,7 +2119,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -2162,7 +2162,7 @@ LIMIT
                         class="ant-table-cell ellipsis-column-large-width"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3332,7 +3332,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3375,7 +3375,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3515,7 +3515,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3558,7 +3558,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3722,7 +3722,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3765,7 +3765,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3899,7 +3899,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3941,7 +3941,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4051,7 +4051,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4093,7 +4093,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4202,7 +4202,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4251,7 +4251,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4384,7 +4384,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4427,7 +4427,7 @@ LIMIT
                           class="ant-table-cell ellipsis-column-large-width"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper pointer css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper pointer css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -4821,7 +4821,7 @@ LIMIT
                         class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
                         height="100%"
                         language="sql"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
                         value="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,SLEEP(11)
 LIMIT 0, 200"
                         width="100%"

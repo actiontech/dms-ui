@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import useExportDetailAction from '../useExportDetailAction';
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import dataExport from '../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {

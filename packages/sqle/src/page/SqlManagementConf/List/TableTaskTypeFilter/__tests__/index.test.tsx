@@ -1,8 +1,8 @@
 import TableTaskTypeFilter from '../index';
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { TableTaskTypeFilterProps } from '../index.type';
-import { mockAuditPlanTypesData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import { mockAuditPlanTypesData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test sqle/SqlManagementConf/TableTaskTypeFilter', () => {
@@ -18,7 +18,7 @@ describe('test sqle/SqlManagementConf/TableTaskTypeFilter', () => {
   });
 
   const customRender = (props?: TableTaskTypeFilterProps) =>
-    superRender(
+    sqleSuperRender(
       <TableTaskTypeFilter
         auditPlanTypes={props?.auditPlanTypes ?? mockAuditPlanTypesData}
         updateParams={props?.updateParams ?? updateParamsSpy}

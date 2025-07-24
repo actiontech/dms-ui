@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonacoDiffEditor should handle editor options correctly 1`] = `
+<div>
+  <div
+    class="custom-diff-monaco-editor css-1esok7i"
+  >
+    <input
+      language="javascript"
+      options="{"automaticLayout":true,"minimap":{"enabled":true},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":3,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":true,"lineNumbers":"on","glyphMargin":true,"lineDecorationsWidth":10,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":false}"
+      theme="editorCustomTheme"
+      value="test code"
+    />
+  </div>
+</div>
+`;

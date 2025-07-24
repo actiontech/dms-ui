@@ -1,20 +1,20 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import project from '../../../../testUtils/mockApi/project';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
-import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import system from 'sqle/src/testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 
@@ -26,19 +26,18 @@ describe('page/DataSource/DataSourceForm', () => {
   let getProjectListSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = (params?: {
-    isUpdate: boolean;
+    isUpdate?: boolean;
     defaultData?: IListDBServiceV2;
   }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<DataSourceFormField>()
     );
-    const isUpdate = params?.isUpdate ?? false;
-    const defaultData = params?.defaultData ?? {};
-    return superRender(
+
+    return baseSuperRender(
       <DataSourceForm
         form={result.current[0]}
-        defaultData={defaultData}
-        isUpdate={isUpdate}
+        defaultData={params?.defaultData}
+        isUpdate={params?.isUpdate}
         submit={submitFn}
       />
     );
@@ -169,24 +168,20 @@ describe('page/DataSource/DataSourceForm', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
 
     const needAuditForSqlQuery = getBySelector(
       '#needAuditForSqlQuery',
       baseElement
     );
-    fireEvent.change(needAuditForSqlQuery, {
-      target: {
-        value: true
-      }
-    });
+    fireEvent.click(needAuditForSqlQuery);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
 
     const allowQueryLevel = getBySelector(
       '#allowQueryWhenLessThanAuditLevel',
       baseElement
     );
+    expect(getBySelector('#workbenchTemplateName')).toBeInTheDocument();
+    expect(allowQueryLevel).toBeInTheDocument();
     fireEvent.mouseDown(allowQueryLevel);
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();

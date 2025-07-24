@@ -1,9 +1,9 @@
 import DataSource from '.';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 
 describe('test base/DataSource', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(<DataSource />);
+    const { container } = baseSuperRender(<DataSource />);
     expect(container).toMatchSnapshot();
   });
 });

@@ -1,9 +1,9 @@
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import LoginLayout from './LoginLayout';
 
 describe('page/Login/LoginLayout', () => {
   const customRender = (params = {}) => {
-    return superRender(<LoginLayout />, undefined, {
+    return baseSuperRender(<LoginLayout />, undefined, {
       initStore: {
         system: params
       }

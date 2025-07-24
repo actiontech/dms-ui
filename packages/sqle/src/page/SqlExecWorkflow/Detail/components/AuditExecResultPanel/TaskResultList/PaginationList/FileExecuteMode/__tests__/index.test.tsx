@@ -3,8 +3,8 @@ import FileExecuteMode from '..';
 import { FileExecuteModeProps } from '../index.type';
 import { act, cleanup, screen } from '@testing-library/react';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -24,7 +24,7 @@ describe('test PaginationList/FileExecuteMode', () => {
       workflowStatus: WorkflowRecordResV2StatusEnum.wait_for_execution,
       ...params
     };
-    return superRender(<FileExecuteMode {..._params} />);
+    return sqleSuperRender(<FileExecuteMode {..._params} />);
   };
 
   beforeEach(() => {

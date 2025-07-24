@@ -12,7 +12,7 @@ const SqlRewrittenDrawer: React.FC<SqlRewrittenDrawerProps> = (props) => {
     ...props,
     width: 920,
     title: t('sqlRewrite.rewriteDetails'),
-    maskClosable: true
+    maskClosable: false
   };
   return (
     <>

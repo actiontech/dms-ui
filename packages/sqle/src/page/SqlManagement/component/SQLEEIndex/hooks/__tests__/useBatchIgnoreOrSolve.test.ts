@@ -1,8 +1,8 @@
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import useBatchIgnoreOrSolve from '../useBatchIgnoreOrSolve';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
@@ -23,7 +23,7 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
 
   it('send request with empty row key', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithRedux(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useBatchIgnoreOrSolve([], mockBatch)
     );
     expect(result.current.batchIgnoreLoading).toBe(false);
@@ -38,7 +38,7 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
 
   it('send batch solve request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithRedux(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useBatchIgnoreOrSolve(['249'], mockBatch)
     );
     expect(result.current.batchSolveLoading).toBe(false);
@@ -58,7 +58,7 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
 
   it('send batch ignore request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithRedux(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useBatchIgnoreOrSolve(['249'], mockBatch)
     );
     expect(result.current.batchIgnoreLoading).toBe(false);

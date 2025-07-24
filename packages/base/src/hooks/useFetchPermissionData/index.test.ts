@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import useFetchPermissionData from '.';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import system from 'sqle/src/testUtils/mockApi/system';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 
 describe('useFetchPermissionData', () => {

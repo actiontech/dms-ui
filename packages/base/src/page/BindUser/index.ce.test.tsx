@@ -4,12 +4,13 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../testUtils/customRender';
-import dms from '../../testUtils/mockApi/global';
+import { baseSuperRender } from '../../testUtils/superRender';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import BindUser from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -27,7 +28,7 @@ describe('page/BindUser-ce', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   const customRender = (path = '/user/bind') => {
-    return superRender(<BindUser />, undefined, {
+    return baseSuperRender(<BindUser />, undefined, {
       routerProps: { initialEntries: [path] }
     });
   };
@@ -92,10 +93,15 @@ describe('page/BindUser-ce', () => {
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
-          description: '没有找到oauth token，请返回登录页面重试',
+          description: '没有找到oauth token，请重试',
           duration: 0,
           message: 'oauth登录错误'
         }
+      );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
       );
     });
 
@@ -159,6 +165,11 @@ describe('page/BindUser-ce', () => {
           message: 'oauth登录错误'
         }
       );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
+      );
     });
 
     it('render search have user_exist is not true', async () => {
@@ -177,10 +188,15 @@ describe('page/BindUser-ce', () => {
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
-          description: '没有找到token，请返回登录页面重试',
+          description: '没有找到token，请重试',
           duration: 0,
           message: 'oauth登录错误'
         }
+      );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
       );
     });
 

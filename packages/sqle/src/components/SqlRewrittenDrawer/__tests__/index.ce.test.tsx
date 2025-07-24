@@ -2,12 +2,12 @@
  * @test_version ce
  */
 
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import SqlRewrittenDrawerCE from '../index.ce';
 
 describe('SqlRewrittenDrawerCE', () => {
   it('should match snapshot', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <SqlRewrittenDrawerCE
         onClose={jest.fn()}
         open

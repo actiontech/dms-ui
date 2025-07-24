@@ -1,6 +1,6 @@
 import RecommendIndex from '../RecommendIndex';
 import { cleanup } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 
 describe('sqle/SqlOptimization/RecommendIndex', () => {
   beforeEach(() => {
@@ -13,7 +13,9 @@ describe('sqle/SqlOptimization/RecommendIndex', () => {
   });
 
   const customRender = (recommendations?: string[]) => {
-    return superRender(<RecommendIndex recommendations={recommendations} />);
+    return sqleSuperRender(
+      <RecommendIndex recommendations={recommendations} />
+    );
   };
 
   it('render snap shot', () => {

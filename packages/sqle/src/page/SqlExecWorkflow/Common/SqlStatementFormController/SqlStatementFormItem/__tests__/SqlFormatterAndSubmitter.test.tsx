@@ -2,9 +2,9 @@ import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { Form, FormInstance, Input } from 'antd';
 import SqlFormatterAndSubmitter from '../components/SqlFormatterAndSubmitter';
 import { SqlFormatterAndSubmitterProps } from '../components/index.type';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
@@ -30,7 +30,7 @@ describe('test SqlFormatterAndSubmitter', () => {
   ) => {
     const { result } = renderHook(() => Form.useForm());
 
-    return superRender(
+    return sqleSuperRender(
       <Form form={form ?? result.current[0]}>
         <SqlFormatterAndSubmitter
           isAuditing={{ set: jest.fn(), value: false }}

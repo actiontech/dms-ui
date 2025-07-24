@@ -1,14 +1,13 @@
 import { cleanup, screen, act } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CommonTable from '.';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
-import { publicRuleTemplateListMockData } from '../../../../testUtils/mockApi/rule_template/data';
-import { BrowserRouter } from 'react-router-dom';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { publicRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -29,12 +28,7 @@ describe('sqle/RuleTemplate/List/CommonTable', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    renderWithReduxAndTheme(
-      <BrowserRouter>
-        <CommonTable />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<CommonTable />);
 
   it('render common rule template list', async () => {
     const { baseElement } = customRender();

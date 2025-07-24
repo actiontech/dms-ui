@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import EEIndexProjectDetail from '../index.ee';
 import {
   ignoreConsoleErrors,
@@ -19,7 +19,7 @@ describe('test base/page/project/detail/ee', () => {
     mockUseCurrentProject({ projectID: '' });
     mockUseRecentlyOpenedProjects({ currentProjectID: '' });
 
-    const { baseElement } = superRender(<EEIndexProjectDetail />);
+    const { baseElement } = baseSuperRender(<EEIndexProjectDetail />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('选择项目')).toBeInTheDocument();
   });
@@ -32,7 +32,7 @@ describe('test base/page/project/detail/ee', () => {
       updateRecentlyProject: mockUpdateRecentlyProject
     });
 
-    const { baseElement } = superRender(<EEIndexProjectDetail />);
+    const { baseElement } = baseSuperRender(<EEIndexProjectDetail />);
     expect(mockUpdateRecentlyProject).not.toHaveBeenCalled();
 
     expect(baseElement).toMatchSnapshot();
@@ -46,7 +46,7 @@ describe('test base/page/project/detail/ee', () => {
       updateRecentlyProject: mockUpdateRecentlyProject
     });
 
-    superRender(<EEIndexProjectDetail />);
+    baseSuperRender(<EEIndexProjectDetail />);
     expect(mockUpdateRecentlyProject).toHaveBeenCalledTimes(1);
     expect(mockUpdateRecentlyProject).toHaveBeenCalledWith('1', 'test');
   });

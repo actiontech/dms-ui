@@ -1279,12 +1279,12 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
                         >
                           <div
-                            class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                           >
                             <pre>
                               <code>
                                 <div
-                                  class="code-line"
+                                  class="code-line wrapped-line with-line-number"
                                 >
                                   <span
                                     class="code-line-number"
@@ -3076,12 +3076,12 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
                             >
                               <div
-                                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                               >
                                 <pre>
                                   <code>
                                     <div
-                                      class="code-line"
+                                      class="code-line wrapped-line with-line-number"
                                     >
                                       <span
                                         class="code-line-number"

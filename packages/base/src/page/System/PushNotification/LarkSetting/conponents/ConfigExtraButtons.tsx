@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-
 import { useRef, useState } from 'react';
 import { Form, message, Radio, RadioGroupProps, Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
@@ -9,11 +8,12 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
-
-import ConfigTestBtn from '../../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -187,7 +187,10 @@ const ConfigExtraButtons = ({
             </ConfigTestPopoverForm>
           }
         />
-        <ConfigModifyBtn onClick={handleClickModify} />
+        <ConfigModifyBtn
+          className="system-config-button"
+          onClick={handleClickModify}
+        />
       </Space>
     </>
   );

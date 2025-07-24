@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/MemberList render member table 1`] = `
+exports[`base/MemberList should render empty tips when request not success 1`] = `
 <body>
   <div>
     <div
@@ -13,7 +13,7 @@ exports[`base/MemberList render member table 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-has-fix-right"
+            class="ant-table ant-table-empty ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -26,16 +26,22 @@ exports[`base/MemberList render member table 1`] = `
                 >
                   <colgroup>
                     <col
-                      style="width: 25%;"
+                      style="width: 10%;"
                     />
                     <col
-                      style="width: 45%;"
+                      style="width: 10%;"
                     />
                     <col
                       style="width: 20%;"
                     />
                     <col
-                      style="width: 164px;"
+                      style="width: 30%;"
+                    />
+                    <col
+                      style="width: 20%;"
+                    />
+                    <col
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -49,6 +55,18 @@ exports[`base/MemberList render member table 1`] = `
                         用户名
                       </th>
                       <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
+                      </th>
+                      <th
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
@@ -59,7 +77,7 @@ exports[`base/MemberList render member table 1`] = `
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
-                            平台操作权限
+                            当前项目操作权限
                           </div>
                           <div
                             class="ant-space-item"
@@ -93,7 +111,191 @@ exports[`base/MemberList render member table 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        项目管理员
+                        当前项目管理权限
+                      </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                        colspan="6"
+                      >
+                        <div
+                          class="ant-result ant-result-error"
+                        >
+                          <div
+                            class="ant-result-icon"
+                          >
+                            <span
+                              aria-label="close-circle"
+                              class="anticon anticon-close-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="close-circle"
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-result-title"
+                          >
+                            请求错误
+                          </div>
+                          <div
+                            class="ant-result-subtitle"
+                          >
+                            error
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/MemberList should render member table 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+    >
+      <div
+        class="ant-spin-nested-loading"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-has-fix-right"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+              >
+                <table
+                  style="table-layout: auto;"
+                >
+                  <colgroup>
+                    <col
+                      style="width: 10%;"
+                    />
+                    <col
+                      style="width: 10%;"
+                    />
+                    <col
+                      style="width: 20%;"
+                    />
+                    <col
+                      style="width: 30%;"
+                    />
+                    <col
+                      style="width: 20%;"
+                    />
+                    <col
+                      style="width: 246px;"
+                    />
+                  </colgroup>
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        用户名
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
+                      </th>
+                      <th
+                        class="ant-table-cell ellipsis-column-width"
+                        scope="col"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            当前项目操作权限
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        当前项目管理权限
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -117,39 +319,28 @@ exports[`base/MemberList render member table 1`] = `
                         admin
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell"
                       >
-                        ALL
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-10kos8e"
-                        >
-                          <svg
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                              stroke="#41BF9A"
-                              stroke-width="1.5"
-                            />
-                            <path
-                              d="m5.083 8 2.084 2.083 4.166-4.166"
-                              stroke="#41BF9A"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                            />
-                          </svg>
-                          <span>
-                            是
-                          </span>
-                        </div>
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        <span>
+                          ALL
+                        </span>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <span>
+                          ALL
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -171,6 +362,20 @@ exports[`base/MemberList render member table 1`] = `
                               >
                                 <span>
                                   编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  管理成员组
                                 </span>
                               </button>
                             </div>
@@ -183,7 +388,7 @@ exports[`base/MemberList render member table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  删 除
+                                  移 除
                                 </span>
                               </button>
                             </div>
@@ -193,168 +398,7 @@ exports[`base/MemberList render member table 1`] = `
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="10029384"
-                    >
-                      <td
-                        class="ant-table-cell"
-                      >
-                        test1
-                      </td>
-                      <td
-                        class="ant-table-cell ellipsis-column-width"
-                      >
-                        <div
-                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
-                        >
-                          <div
-                            class="ant-space-item"
-                          >
-                            <div
-                              class="ant-space ant-space-vertical"
-                            >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <span
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                >
-                                  Role1: [ Range1,Range2 ]
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        <div
-                          class="css-10kos8e"
-                        >
-                          <svg
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                              stroke="#7D8CA8"
-                              stroke-width="1.5"
-                            />
-                            <path
-                              d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
-                              stroke="#7D8CA8"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                            />
-                          </svg>
-                          <span>
-                            否
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        style="position: sticky; right: 0px;"
-                      >
-                        <div
-                          class="css-new95e"
-                        >
-                          <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  删 除
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr
-                      class="ant-table-row ant-table-row-level-0"
-                      data-row-key="10129331"
-                    >
-                      <td
-                        class="ant-table-cell"
-                      >
-                        test2
-                      </td>
-                      <td
-                        class="ant-table-cell ellipsis-column-width"
-                      >
-                        -
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        未知状态...
-                      </td>
-                      <td
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        style="position: sticky; right: 0px;"
-                      >
-                        <div
-                          class="css-new95e"
-                        >
-                          <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  删 除
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr
-                      class="ant-table-row ant-table-row-level-0"
-                      data-row-key="10029389"
+                      data-row-key="700502"
                     >
                       <td
                         class="ant-table-cell"
@@ -362,27 +406,22 @@ exports[`base/MemberList render member table 1`] = `
                         test
                       </td>
                       <td
-                        class="ant-table-cell ellipsis-column-width"
+                        class="ant-table-cell"
                       >
                         <div
-                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
                         >
                           <div
                             class="ant-space-item"
+                            style="padding-bottom: 4px;"
                           >
-                            <div
-                              class="ant-space ant-space-vertical"
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              style="height: 28px;"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <span
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
-                                >
-                                  test role 1: [ mysql-1 ]
-                                </span>
-                              </div>
-                            </div>
+                              普通用户
+                            </span>
                           </div>
                         </div>
                       </td>
@@ -390,31 +429,46 @@ exports[`base/MemberList render member table 1`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="css-10kos8e"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
                         >
-                          <svg
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
                           >
-                            <path
-                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                              stroke="#7D8CA8"
-                              stroke-width="1.5"
-                            />
-                            <path
-                              d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
-                              stroke="#7D8CA8"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                            />
-                          </svg>
-                          <span>
-                            否
-                          </span>
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              default
+                            </span>
+                          </div>
                         </div>
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        <span>
+                          ALL
+                        </span>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <span>
+                          ALL
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -441,13 +495,191 @@ exports[`base/MemberList render member table 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  管理成员组
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
                             >
                               <button
                                 class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
-                                  删 除
+                                  移 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="700503"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                              style="height: 28px;"
+                            >
+                              普通用户
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              default
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell ellipsis-column-width"
+                      >
+                        <div
+                          class="ant-space ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-typography"
+                                >
+                                  mysql-test
+                                  :
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
+                                  style="flex-wrap: wrap; margin-bottom: -4px;"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="padding-bottom: 4px;"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                      style="height: 28px;"
+                                    >
+                                      开发工程师
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  管理成员组
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  移 除
                                 </span>
                               </button>
                             </div>
@@ -467,7 +699,7 @@ exports[`base/MemberList render member table 1`] = `
               class="ant-pagination-total-text"
             >
               <span>
-                共 4 条数据
+                共 3 条数据
               </span>
             </li>
             <li
@@ -610,172 +842,6 @@ exports[`base/MemberList render member table 1`] = `
               </div>
             </li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/MemberList should render empty tips when request not success 1`] = `
-<body>
-  <div>
-    <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
-    >
-      <div
-        class="ant-spin-nested-loading"
-      >
-        <div
-          class="ant-spin-container"
-        >
-          <div
-            class="ant-table ant-table-empty ant-table-has-fix-right"
-          >
-            <div
-              class="ant-table-container"
-            >
-              <div
-                class="ant-table-content"
-              >
-                <table
-                  style="table-layout: auto;"
-                >
-                  <colgroup>
-                    <col
-                      style="width: 25%;"
-                    />
-                    <col
-                      style="width: 45%;"
-                    />
-                    <col
-                      style="width: 20%;"
-                    />
-                    <col
-                      style="width: 164px;"
-                    />
-                  </colgroup>
-                  <thead
-                    class="ant-table-thead"
-                  >
-                    <tr>
-                      <th
-                        class="ant-table-cell"
-                        scope="col"
-                      >
-                        用户名
-                      </th>
-                      <th
-                        class="ant-table-cell ellipsis-column-width"
-                        scope="col"
-                      >
-                        <div
-                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
-                          >
-                            平台操作权限
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <span
-                              aria-label="info-circle"
-                              class="anticon anticon-info-circle tooltips-default-icon"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="info-circle"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
-                                />
-                                <path
-                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="ant-table-cell"
-                        scope="col"
-                      >
-                        项目管理员
-                      </th>
-                      <th
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        scope="col"
-                        style="position: sticky; right: 0px;"
-                      >
-                        操作
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    class="ant-table-tbody"
-                  >
-                    <tr
-                      class="ant-table-placeholder"
-                    >
-                      <td
-                        class="ant-table-cell"
-                        colspan="4"
-                      >
-                        <div
-                          class="ant-result ant-result-error"
-                        >
-                          <div
-                            class="ant-result-icon"
-                          >
-                            <span
-                              aria-label="close-circle"
-                              class="anticon anticon-close-circle"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="close-circle"
-                                fill="currentColor"
-                                fill-rule="evenodd"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                          <div
-                            class="ant-result-title"
-                          >
-                            请求错误
-                          </div>
-                          <div
-                            class="ant-result-subtitle"
-                          >
-                            error
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

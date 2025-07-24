@@ -1,10 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert, Form, Popconfirm, Select, Spin } from 'antd';
+import { Alert, Form, Spin } from 'antd';
 import {
   BasicInput,
   BasicSelect,
-  BasicSwitch,
   CronInput,
   EmptyBox,
   TypedLink
@@ -28,11 +27,10 @@ import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
-import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
 import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
-import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SyncTaskFormProps } from './index.type';
+import SqlAuditFields from '../../DataSource/components/Form/SqlAuditFields';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
@@ -44,7 +42,6 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   const { t } = useTranslation();
   const isUpdate = useMemo<boolean>(() => !!defaultValue, [defaultValue]);
   const source = Form.useWatch('source', form);
-  const auditEnabled = Form.useWatch('needAuditForSqlQuery', form);
 
   const { generateFormValueByParams } = useAsyncParams();
 
@@ -59,10 +56,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
 
   const handleChangeInstanceType = (type: string) => {
     // #if [sqle]
-    form.setFieldsValue({
-      ruleTemplateId: undefined,
-      ruleTemplateName: undefined
-    });
+    form.resetFields([
+      'ruleTemplateId',
+      'ruleTemplateName',
+      'dataExportRuleTemplateId',
+      'dataExportRuleTemplateName',
+      'workbenchTemplateId',
+      'workbenchTemplateName'
+    ]);
     updateGlobalRuleTemplateList(type);
     // #endif
   };
@@ -96,21 +97,13 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     globalRuleTemplateList
   } = useGlobalRuleTemplate();
 
-  const handleChangeRuleTemplate = (templateName: string) => {
-    form.setFieldsValue({
-      ruleTemplateId: globalRuleTemplateList.find(
-        (v) => v.rule_template_name === templateName
-      )?.rule_template_id
-    });
-  };
-
-  const {
-    auditRequired,
-    auditRequiredPopupVisible,
-    onAuditRequiredPopupOpenChange,
-    clearRuleTemplate,
-    changeAuditRequired
-  } = useSqlReviewTemplateToggle(form);
+  const templateOptions = useMemo(() => {
+    return globalRuleTemplateList.map((v) => ({
+      key: v.rule_template_id,
+      label: v.rule_template_name,
+      value: v.rule_template_name
+    }));
+  }, [globalRuleTemplateList]);
   // #endif
 
   useEffect(() => {
@@ -132,6 +125,11 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
           // #if [sqle]
           'ruleTemplateId',
           'ruleTemplateName',
+          'dataExportRuleTemplateId',
+          'dataExportRuleTemplateName',
+          'workbenchTemplateId',
+          'workbenchTemplateName',
+          'allowQueryWhenLessThanAuditLevel',
           // #endif
           'syncInterval'
         ]);
@@ -164,11 +162,19 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         url: defaultValue.url,
         instanceType: defaultValue.db_type,
         // #if [sqle]
-        needSqlAuditService: !!defaultValue.sqle_config?.rule_template_id,
+        needSqlAuditService: !!defaultValue.sqle_config?.audit_enabled,
         ruleTemplateId: defaultValue.sqle_config?.rule_template_id ?? '',
         ruleTemplateName: defaultValue.sqle_config?.rule_template_name ?? '',
+        dataExportRuleTemplateId:
+          defaultValue.sqle_config?.data_export_rule_template_id ?? '',
+        dataExportRuleTemplateName:
+          defaultValue.sqle_config?.data_export_rule_template_name ?? '',
         needAuditForSqlQuery:
           !!defaultValue.sqle_config?.sql_query_config?.audit_enabled,
+        workbenchTemplateId:
+          defaultValue.sqle_config?.sql_query_config?.rule_template_id ?? '',
+        workbenchTemplateName:
+          defaultValue.sqle_config?.sql_query_config?.rule_template_name ?? '',
         allowQueryWhenLessThanAuditLevel:
           defaultValue.sqle_config?.sql_query_config
             ?.allow_query_when_less_than_audit_level,
@@ -326,81 +332,11 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
 
         {/* #if [sqle] */}
         <FormAreaLineStyleWrapper className="has-border">
-          <FormAreaBlockStyleWrapper>
-            <FormItemSubTitle>
-              {t('dmsSyncDataSource.syncTaskForm.sqlConfig')}
-            </FormItemSubTitle>
-            <FormItemLabel
-              label={t('dmsDataSource.dataSourceForm.needAuditSqlService')}
-              name="needSqlAuditService"
-              valuePropName="checked"
-            >
-              <Popconfirm
-                title={t(
-                  'dmsDataSource.dataSourceForm.closeAuditSqlServiceTips'
-                )}
-                overlayClassName="popconfirm-small"
-                open={auditRequiredPopupVisible}
-                onOpenChange={onAuditRequiredPopupOpenChange}
-                onConfirm={clearRuleTemplate}
-              >
-                <BasicSwitch
-                  checked={auditRequired}
-                  onChange={changeAuditRequired}
-                />
-              </Popconfirm>
-            </FormItemLabel>
-            <FormItemLabel name="ruleTemplateId" hidden={true}>
-              <BasicInput />
-            </FormItemLabel>
-            <FormItemLabel
-              name="ruleTemplateName"
-              label={t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')}
-              className="has-required-style"
-              hidden={!auditRequired}
-              rules={[{ required: auditRequired }]}
-            >
-              <BasicSelect
-                allowClear
-                loading={getGlobalRuleTemplateListLoading}
-                placeholder={t('common.form.placeholder.select', {
-                  name: t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')
-                })}
-                onChange={handleChangeRuleTemplate}
-                options={globalRuleTemplateList.map((v) => ({
-                  key: v.rule_template_id,
-                  label: v.rule_template_name,
-                  value: v.rule_template_name
-                }))}
-              />
-            </FormItemLabel>
-            <FormItemLabel
-              label={t('dmsDataSource.dataSourceForm.needAuditForSqlQuery')}
-              name="needAuditForSqlQuery"
-              valuePropName="checked"
-            >
-              <BasicSwitch onChange={handleChangeAuditEnabled} />
-            </FormItemLabel>
-            <FormItemLabel
-              hidden={!auditEnabled}
-              label={t(
-                'dmsDataSource.dataSourceForm.allowQueryWhenLessThanAuditLevel'
-              )}
-              name="allowQueryWhenLessThanAuditLevel"
-            >
-              <BasicSelect>
-                {Object.values(
-                  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
-                ).map((v) => {
-                  return (
-                    <Select.Option key={v} value={v}>
-                      {v}
-                    </Select.Option>
-                  );
-                })}
-              </BasicSelect>
-            </FormItemLabel>
-          </FormAreaBlockStyleWrapper>
+          <SqlAuditFields
+            getTemplateOptionsLoading={getGlobalRuleTemplateListLoading}
+            ruleTemplateOptions={templateOptions}
+            onNeedAuditForSqlQueryChange={handleChangeAuditEnabled}
+          />
         </FormAreaLineStyleWrapper>
         {/* #endif */}
 

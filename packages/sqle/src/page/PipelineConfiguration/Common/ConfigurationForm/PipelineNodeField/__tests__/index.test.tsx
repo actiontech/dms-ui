@@ -3,16 +3,16 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import instance from '../../../../../../testUtils/mockApi/instance';
-import configuration from '../../../../../../testUtils/mockApi/configuration';
-import rule_template from '../../../../../../testUtils/mockApi/rule_template';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../../../../testUtils/mockApi/instance/data';
-import { projectRuleTemplateList } from '../../../../../../testUtils/mockApi/rule_template/data';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import { projectRuleTemplateList } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   pipelineNodeDetailObjectTypeEnum,
   pipelineNodeDetailAuditMethodEnum,

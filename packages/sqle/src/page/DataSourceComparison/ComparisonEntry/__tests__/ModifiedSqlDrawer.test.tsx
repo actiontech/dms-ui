@@ -1,5 +1,5 @@
 import { DatabaseObjectObjectTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ModifiedSqlDrawer from '../component/ModifiedSqlDrawer';
 import { fireEvent, screen } from '@testing-library/dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -50,7 +50,7 @@ describe('ModifiedSqlDrawer', () => {
   const dbExistingSchemas = ['schema'];
   const comparisonInstanceName = 'test-instance-name';
   const customRender = (open = true, generateModifySqlPending = false) => {
-    return superRender(
+    return sqleSuperRender(
       <ModifiedSqlDrawer
         open={open}
         onClose={onCloseSpy}

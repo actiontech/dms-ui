@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import CreateDataExport from '..';
 import { CreateDataExportPageEnum } from '../../../../store/dataExport';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { mockUseCreateDataExportReduxManage } from '../testUtils/mockUseCreateDataExportReduxManage';
 import { cleanup } from '@testing-library/react';
 import { ModalName } from 'sqle/src/data/ModalName';
@@ -47,7 +47,7 @@ describe('first', () => {
   it('should match snapshot when pageState is equal CREATE_TASK', () => {
     mockUseCreateDataExportReduxManage();
 
-    const { container } = superRender(<CreateDataExport />);
+    const { container } = baseSuperRender(<CreateDataExport />);
 
     expect(container).toMatchSnapshot();
   });
@@ -57,7 +57,7 @@ describe('first', () => {
       pageState: CreateDataExportPageEnum.SUBMIT_WORKFLOW
     });
 
-    const { container } = superRender(<CreateDataExport />);
+    const { container } = baseSuperRender(<CreateDataExport />);
 
     expect(container).toMatchSnapshot();
   });
@@ -67,7 +67,7 @@ describe('first', () => {
       pageState: CreateDataExportPageEnum.SUBMIT_RESULT
     });
 
-    const { container } = superRender(<CreateDataExport />);
+    const { container } = baseSuperRender(<CreateDataExport />);
 
     expect(container).toMatchSnapshot();
 
@@ -77,7 +77,7 @@ describe('first', () => {
       pageState: null as any
     });
 
-    expect(superRender(<CreateDataExport />).container).toMatchSnapshot();
+    expect(baseSuperRender(<CreateDataExport />).container).toMatchSnapshot();
   });
 
   it('component unmount', () => {
@@ -85,7 +85,7 @@ describe('first', () => {
     mockUseCreateDataExportReduxManage({
       clearAllState: clearAllStateSpy
     });
-    const { unmount } = superRender(<CreateDataExport />);
+    const { unmount } = baseSuperRender(<CreateDataExport />);
     unmount();
 
     expect(clearAllStateSpy).toHaveBeenCalledTimes(1);

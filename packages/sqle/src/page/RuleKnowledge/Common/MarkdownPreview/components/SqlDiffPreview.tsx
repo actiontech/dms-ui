@@ -24,11 +24,12 @@ const SqlDiffPreview: React.FC<SqlDiffPreviewProps> = ({
 
   const LINE_HEIGHT = 24;
   const MIN_HEIGHT = 100;
+  const MAX_HEIGHT = 600;
   const PADDING = 20;
 
   const calculatedHeight = Math.max(
     MIN_HEIGHT,
-    maxLines * LINE_HEIGHT + PADDING
+    Math.min(maxLines * LINE_HEIGHT + PADDING, MAX_HEIGHT)
   );
 
   return (
@@ -41,12 +42,6 @@ const SqlDiffPreview: React.FC<SqlDiffPreviewProps> = ({
         originalSql={beforeSql}
         modifiedSql={afterSql}
         height={calculatedHeight}
-        options={{
-          scrollBeyondLastLine: false,
-          scrollbar: {
-            alwaysConsumeMouseWheel: false // 处理光标放在monaco上时 外层滚动容器无法滚动问题
-          }
-        }}
       />
     </SqlDiffPreviewStyleWrapper>
   );

@@ -6,14 +6,21 @@ export const PERMISSIONS = {
       GLOBAL_DATA_SOURCE: 'page:global_data_source',
       SYNC_DATA_SOURCE: 'page:sync_data_source',
       SYSTEM_SETTING: 'page:system_setting',
-      RESOURCE_OVERVIEW: 'page:resource_overview'
+      RESOURCE_OVERVIEW: 'page:resource_overview',
+      MEMBER: 'page:member',
+      DB_SERVICE: 'page:db_service'
     },
     SQLE: {
       OPERATION_RECORD: 'page:operation_record',
       SQL_OPTIMIZATION: 'page:sql_optimization',
       REPORT_STATISTICS: 'page:report_statistics',
       RULE_MANAGEMENT: 'page:rule_management',
-      KNOWLEDGE: 'page:knowledge'
+      KNOWLEDGE: 'page:knowledge',
+      PROJECT_RULE_TEMPLATE: 'page:project_rule_template',
+      WORKFLOW_TEMPLATE: 'page: workflow_template',
+      PUSH_RULE_CONFIGURATION: 'page:push_rule_configuration',
+      WHITE_LIST: 'page:white_list',
+      SQL_MANAGEMENT_EXCEPTION: 'page:sql_management_exception'
     }
   },
   ACTIONS: {
@@ -27,7 +34,8 @@ export const PERMISSIONS = {
         ROLE: {
           ADD: 'action:add_role',
           EDIT: 'action:edit_role',
-          DELETE: 'action:delete_role'
+          DELETE: 'action:delete_role',
+          CLONE: 'action:clone_role'
         }
       },
       GLOBAL_DATA_SOURCE: {
@@ -95,9 +103,11 @@ export const PERMISSIONS = {
         ADD_MEMBER: 'action:add_member',
         EDIT_MEMBER: 'action:edit_member',
         DELETE_MEMBER: 'action:delete_member',
+        MANAGE_MEMBER_GROUP: 'action:manage_member_group',
         ADD_MEMBER_GROUP: 'action:add_member_group',
         EDIT_MEMBER_GROUP: 'action:edit_member_group',
-        DELETE_MEMBER_GROUP: 'action:delete_member_group'
+        DELETE_MEMBER_GROUP: 'action:delete_member_group',
+        SWITCH_PROJECT_MANAGER: 'action:switch_project_manager'
       },
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',
@@ -239,10 +249,16 @@ export const PERMISSIONS = {
         DETAIL_AUDIT: 'action:sql_management_conf_detail_audit_operator',
         DETAIL_STOP: 'action:sql_management_conf_detail_stop_operator',
         DETAIL_ENABLE: 'action:sql_management_conf_detail_enable_operator',
-        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator'
+        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator',
+        RESET_TOKEN: 'action:sql_management_conf_reset_token'
       },
       SQL_AUDIT: {
         CREATE: 'action:create_sql_audit'
+      },
+      PIPELINE_CONFIGURATION: {
+        CREATE: 'action:create_pipeline_configuration',
+        EDIT: 'action:edit_pipeline_configuration',
+        DELETE: 'action:delete_pipeline_configuration'
       }
     }
   }

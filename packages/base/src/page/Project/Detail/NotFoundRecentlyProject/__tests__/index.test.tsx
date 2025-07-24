@@ -1,6 +1,6 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import NotFoundRecentlyProject from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -20,7 +20,7 @@ jest.mock('react-router-dom', () => {
 describe('test base/page/project/detail/notFoundRecentlyProject', () => {
   const updateRecentlyProjectSpy = jest.fn();
   const customRender = (currentProjectID?: string) => {
-    return superRender(
+    return baseSuperRender(
       <NotFoundRecentlyProject
         updateRecentlyProject={updateRecentlyProjectSpy}
         currentProjectID={currentProjectID}

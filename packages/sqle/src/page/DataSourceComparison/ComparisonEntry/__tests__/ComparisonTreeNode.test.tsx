@@ -1,15 +1,15 @@
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ComparisonDetailDrawer from '../component/ComparisonTreeNode/ComparisonDetailDrawer';
 import useComparisonResultTree from '../hooks/useComparisonResultTree';
 import {
   executeDatabaseComparisonMockData,
   genDatabaseDiffModifySQLsMockData
-} from '../../../../testUtils/mockApi/database_comparison/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import { generateTreeNodeKey } from '../utils/TreeNode';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import DatabaseComparisonMockService from '../../../../testUtils/mockApi/database_comparison';
+import DatabaseComparisonMockService from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Copy, Download } from '@actiontech/shared';
@@ -46,7 +46,7 @@ describe('ComparisonTreeNode', () => {
         'baseline-name',
         'comparison-name'
       );
-      return superRender(
+      return sqleSuperRender(
         <ComparisonDetailDrawer
           open={open}
           onClose={onCloseSpy}
@@ -234,7 +234,7 @@ describe('ComparisonTreeNode', () => {
     const comparisonObjectTreeOnCheckSpy = jest.fn();
     const setTreeExpandedKeysSpy = jest.fn();
     const customRender = () => {
-      return superRender(
+      return sqleSuperRender(
         <ComparisonTreeNode
           comparisonResults={executeDatabaseComparisonMockData}
           selectedBaselineInstanceInfo={{

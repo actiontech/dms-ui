@@ -32,6 +32,8 @@ import {
   IGetTaskAnalysisDataReturn,
   IRewriteSQLParams,
   IRewriteSQLReturn,
+  IGetAsyncRewriteTaskStatusParams,
+  IGetAsyncRewriteTaskStatusReturn,
   IGetSqlFileOrderMethodV1Return,
   IGetAuditFileListParams,
   IGetAuditFileListReturn,
@@ -359,6 +361,24 @@ class TaskService extends ServiceBase {
 
     return this.post<IRewriteSQLReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/rewrite`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetAsyncRewriteTaskStatus(
+    params: IGetAsyncRewriteTaskStatusParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    const number = paramsData.number;
+    delete paramsData.number;
+
+    return this.get<IGetAsyncRewriteTaskStatusReturn>(
+      `/v1/tasks/audits/${task_id}/sqls/${number}/rewrite/status`,
       paramsData,
       options
     );

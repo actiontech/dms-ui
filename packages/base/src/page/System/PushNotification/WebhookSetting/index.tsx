@@ -3,14 +3,15 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin } from 'antd';
 import { DEFAULT_CONSTANT, switchFieldName } from './index.data';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import ConfigSwitch from '../../components/ConfigSwitch';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
 import { WebhookFormFields } from './index.type';
@@ -122,34 +123,42 @@ const WebHook: React.FC = () => {
     setFormDefaultValue();
     modifyFinish();
   };
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
 
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshWebhookConfig();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
       Configuration.UpdateWebHookConfiguration({
         webhook_config: {
+          ...DEFAULT_CONSTANT,
           enable: false
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshWebhookConfig,
-    handleToggleSwitch
-  });
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshWebhookConfig();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWebHookConfigurationData> =
     useMemo(() => {
@@ -193,13 +202,15 @@ const WebHook: React.FC = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -211,7 +222,7 @@ const WebHook: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit
+          onSubmit: submit
         })}
       </Spin>
     </div>

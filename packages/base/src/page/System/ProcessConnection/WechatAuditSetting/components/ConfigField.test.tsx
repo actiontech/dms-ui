@@ -1,11 +1,11 @@
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 import { Form } from 'antd';
 import ConfigField from './ConfigField';
 
 describe('base/System/ProcessConnection/WechatAuditSetting/ConfigField', () => {
   it('render snap', () => {
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <Form>
         <ConfigField />
       </Form>

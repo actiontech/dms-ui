@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleManager from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -7,8 +7,8 @@ import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { publicRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { publicRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { useNavigate, BrowserRouter } from 'react-router-dom';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
@@ -65,12 +65,7 @@ describe('sqle/RuleManager', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    renderWithReduxAndTheme(
-      <BrowserRouter>
-        <RuleManager />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<RuleManager />);
 
   it('should render global rule template list list when it first entered the page', async () => {
     const { baseElement } = customRender();
@@ -140,7 +135,7 @@ describe('sqle/RuleManager', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
 

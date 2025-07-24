@@ -16,14 +16,16 @@ const SQLRenderer: React.FC<SQLRendererProps> = ({
   highlightSyntax = true,
   sql,
   onCopyComplete,
-  copyIconClassName
+  copyIconClassName,
+  wordWrap = false
 }) => {
   const { renderSQLTemplateContent } = useRenderSQLTemplate({
     showLineNumbers,
     sql,
     emptySqlContent,
     highlightSyntax,
-    preserveOriginalFormat
+    preserveOriginalFormat,
+    wordWrap
   });
   const { renderCopyIcon } = useRenderCopyIcon({
     showCopyIcon,
@@ -36,7 +38,8 @@ const SQLRenderer: React.FC<SQLRendererProps> = ({
     const content = (
       <SQLRendererStyleWrapper
         className={classNames('actiontech-sql-renderer-wrapper', className, {
-          'copy-icon-hover': showCopyIcon === 'hover'
+          'copy-icon-hover': showCopyIcon === 'hover',
+          'word-wrap': wordWrap
         })}
         onClick={onClick}
       >

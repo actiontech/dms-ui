@@ -4,11 +4,11 @@
 
 import { screen } from '@testing-library/react';
 import OperationRecord from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 describe('slqe/OperationRecord CE', () => {
   test('should match snap shot', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<OperationRecord />);
+    const { baseElement } = superRender(<OperationRecord />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('导出')).not.toBeInTheDocument();
   });

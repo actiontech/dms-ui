@@ -1,7 +1,7 @@
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import LarkAuditSetting from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -88,14 +88,14 @@ describe('base/System/ProcessConnection/LarkAuditSetting', () => {
         )
       ).toBeInTheDocument();
       expect(screen.getAllByText('取 消')[0]).toBeInTheDocument();
-      expect(screen.getByText('确 定')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
 
       fireEvent.click(screen.getAllByText('取 消')[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
-      fireEvent.click(screen.getByText('确 定'));
+      fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });

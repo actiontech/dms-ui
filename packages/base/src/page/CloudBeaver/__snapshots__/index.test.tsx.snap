@@ -17,32 +17,8 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
   <div
     class="ant-spin-nested-loading"
   >
-    <div>
-      <div
-        aria-busy="true"
-        aria-live="polite"
-        class="ant-spin ant-spin-spinning"
-      >
-        <span
-          class="ant-spin-dot ant-spin-dot-spin"
-        >
-          <i
-            class="ant-spin-dot-item"
-          />
-          <i
-            class="ant-spin-dot-item"
-          />
-          <i
-            class="ant-spin-dot-item"
-          />
-          <i
-            class="ant-spin-dot-item"
-          />
-        </span>
-      </div>
-    </div>
     <div
-      class="ant-spin-container ant-spin-blur"
+      class="ant-spin-container"
     >
       <section
         class="css-l3x35e"
@@ -1333,7 +1309,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1564,7 +1540,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -2769,7 +2745,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3000,7 +2976,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"

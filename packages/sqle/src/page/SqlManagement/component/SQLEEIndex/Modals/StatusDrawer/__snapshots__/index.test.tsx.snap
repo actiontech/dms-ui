@@ -1,0 +1,593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper drawer-wrapper-no-padding css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  SQL审核结果
+                </div>
+              </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/249/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="audit-report-wrapper css-1lblrgt"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <section
+                      class="wrapper-item"
+                    >
+                      <h3
+                        class="ant-typography"
+                      >
+                        审核结果
+                      </h3>
+                      <div
+                        class="wrapper-cont"
+                      >
+                        <div
+                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                        >
+                          <span
+                            class="ant-tag ant-tag-volcano message-rule-disabled"
+                          >
+                            该规则已删除
+                          </span>
+                          <div
+                            class="css-1avyf41"
+                          >
+                            <span
+                              class="icon-wrapper"
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="text-wrapper"
+                            >
+                              新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                        >
+                          <span
+                            class="ant-tag ant-tag-volcano message-rule-disabled"
+                          >
+                            该规则已删除
+                          </span>
+                          <div
+                            class="css-1avyf41"
+                          >
+                            <span
+                              class="icon-wrapper"
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="text-wrapper"
+                            >
+                              主键建议使用自增
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <section
+                  class="wrapper-item"
+                >
+                  <div
+                    class="title-wrap"
+                  >
+                    <h3
+                      class="ant-typography"
+                    >
+                      SQL语句
+                    </h3>
+                  </div>
+                  <div
+                    class="wrapper-cont"
+                  >
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value=""
+                        width="100%"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper drawer-wrapper-no-padding css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  SQL审核结果
+                </div>
+              </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/248/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="audit-report-wrapper css-1lblrgt"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  />
+                </div>
+                <section
+                  class="wrapper-item"
+                >
+                  <div
+                    class="title-wrap"
+                  >
+                    <h3
+                      class="ant-typography"
+                    >
+                      SQL语句
+                    </h3>
+                  </div>
+                  <div
+                    class="wrapper-cont"
+                  >
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value=""
+                        width="100%"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/SqlManagement/StatusDrawer render modal when not open 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper drawer-wrapper-no-padding css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  SQL审核结果
+                </div>
+              </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/249/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="audit-report-wrapper css-1lblrgt"
+              >
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <section
+                      class="wrapper-item"
+                    >
+                      <h3
+                        class="ant-typography"
+                      >
+                        审核结果
+                      </h3>
+                      <div
+                        class="wrapper-cont"
+                      >
+                        <div
+                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                        >
+                          <span
+                            class="ant-tag ant-tag-volcano message-rule-disabled"
+                          >
+                            该规则已删除
+                          </span>
+                          <div
+                            class="css-1avyf41"
+                          >
+                            <span
+                              class="icon-wrapper"
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="text-wrapper"
+                            >
+                              新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                        >
+                          <span
+                            class="ant-tag ant-tag-volcano message-rule-disabled"
+                          >
+                            该规则已删除
+                          </span>
+                          <div
+                            class="css-1avyf41"
+                          >
+                            <span
+                              class="icon-wrapper"
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="text-wrapper"
+                            >
+                              主键建议使用自增
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <section
+                  class="wrapper-item"
+                >
+                  <div
+                    class="title-wrap"
+                  >
+                    <h3
+                      class="ant-typography"
+                    >
+                      SQL语句
+                    </h3>
+                  </div>
+                  <div
+                    class="wrapper-cont"
+                  >
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value=""
+                        width="100%"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

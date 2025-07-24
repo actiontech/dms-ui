@@ -1,9 +1,9 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import WorkflowTemplateStepInfo from '.';
-import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { screen } from '@testing-library/react';
 import { IWorkflowTemplateStepInfoProps } from './index.type';
-import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
@@ -28,7 +28,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
   };
 
   const customRender = (data: IWorkflowTemplateStepInfoProps) => {
-    return superRender(<WorkflowTemplateStepInfo {...data} />);
+    return sqleSuperRender(<WorkflowTemplateStepInfo {...data} />);
   };
 
   it('render step info detail', async () => {

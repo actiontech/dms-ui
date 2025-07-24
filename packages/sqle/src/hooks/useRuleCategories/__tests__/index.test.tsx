@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { render, screen } from '@testing-library/react';
 import { Select } from 'antd';
 import useRuleCategories from '../index';
-import ruleTemplate from '../../../testUtils/mockApi/rule_template';
-import { mockRuleCategoriesData } from '../../../testUtils/mockApi/rule_template/data';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { mockRuleCategoriesData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 
 describe('sqle/useRuleCategories', () => {
   let getCategoryStatisticsSpy: jest.SpyInstance;

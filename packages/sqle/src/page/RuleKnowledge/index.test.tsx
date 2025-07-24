@@ -1,15 +1,15 @@
 import RuleKnowledge from '.';
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import {
   ruleKnowledgeData,
   ruleType as dbType,
   ruleNameFirst,
   ruleNameSecond,
   mockMarkdownWithCustomCodeBlock
-} from '../../testUtils/mockApi/rule_template/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act, fireEvent, screen } from '@testing-library/react';
-import rule_template from '../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -17,7 +17,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import knowledgeBase from '../../testUtils/mockApi/knowledgeBase';
+import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -65,7 +65,7 @@ describe('page/RuleKnowledge', () => {
   });
 
   const customRender = () => {
-    return superRender(<RuleKnowledge />);
+    return sqleSuperRender(<RuleKnowledge />);
   };
 
   it('request rule info and not custom rule knowledge', async () => {
@@ -200,7 +200,7 @@ describe('page/RuleKnowledge', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         }
       }
     });

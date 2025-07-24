@@ -2,15 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
-import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-import ConfigExtraButtons from './components/ConfigExtraButtons';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+import ConfigExtraButtons from './components/ConfigExtraButtons';
+import ConfigField from './components/ConfigField';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
@@ -87,10 +88,6 @@ const LarkAuditSettingEEIndex = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const submitLarkAuditConfig = (values: FormFields) => {
     startSubmit();
     configuration
@@ -113,26 +110,37 @@ const LarkAuditSettingEEIndex = () => {
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
-      configuration.updateFeishuAuditConfigurationV1({
-        ...defaultFormData,
-        is_feishu_notification_enabled: false
-      }),
-    handleClickCancel,
-    refreshConfig: refreshLarkAuditInfo,
-    handleToggleSwitch
-  });
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshLarkAuditInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      configuration
+        .updateFeishuAuditConfigurationV1({
+          ...defaultFormData,
+          is_feishu_notification_enabled: false
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshLarkAuditInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IFeishuConfigurationV1> =
     useMemo(() => {
@@ -176,13 +184,15 @@ const LarkAuditSettingEEIndex = () => {
             }
           >
             <ConfigSwitch
+              title={generateConfigSwitchPopoverTitle(modifyFlag)}
               switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
+              checked={switchOpen}
               submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
+              popoverVisible={configSwitchPopoverOpenState}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
+              onSwitchChange={(open) =>
+                handleConfigSwitchChange(open, handleClickModify)
+              }
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           </PermissionControl>
@@ -194,7 +204,7 @@ const LarkAuditSettingEEIndex = () => {
             handleClickCancel={handleClickCancel}
           />
         ),
-        submit: submitLarkAuditConfig
+        onSubmit: submitLarkAuditConfig
       })}
     </Spin>
   );

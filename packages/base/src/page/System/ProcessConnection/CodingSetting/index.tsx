@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
-import { Spin, Typography } from 'antd';
+import { Form, Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
@@ -87,13 +87,13 @@ const CodingSetting: React.FC = () => {
     modifyFinish();
   };
 
-  const onSubmit = (isCodingEnabled: boolean, values?: FormFields) => {
+  const submitCodingConfig = (values: FormFields) => {
     startSubmit();
     configuration
       .UpdateCodingConfigurationV1({
-        is_coding_enabled: isCodingEnabled,
-        coding_url: values?.codingUrl,
-        token: values?.token
+        is_coding_enabled: values.enabled,
+        coding_url: values.codingUrl,
+        token: values.token
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -107,14 +107,7 @@ const CodingSetting: React.FC = () => {
       });
   };
 
-  const onConfigSwitchPopoverConfirm = () => {
-    if (!codingInfo?.is_coding_enabled && modifyFlag) {
-      handleClickCancel();
-      hiddenConfigSwitchPopover();
-    } else {
-      onSubmit(false);
-    }
-  };
+  const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
     configSwitchPopoverOpenState,
@@ -123,6 +116,31 @@ const CodingSetting: React.FC = () => {
     handleConfigSwitchChange,
     hiddenConfigSwitchPopover
   } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshCodingInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      configuration
+        .UpdateCodingConfigurationV1({
+          is_coding_enabled: false,
+          coding_url: codingInfo?.coding_url
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshCodingInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<ICodingConfigurationV1> =
     useMemo(() => {
@@ -168,6 +186,7 @@ const CodingSetting: React.FC = () => {
               <ConfigSwitch
                 title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
+                checked={switchOpen}
                 submitLoading={submitLoading}
                 popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
@@ -185,9 +204,7 @@ const CodingSetting: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          onSubmit: (values) => {
-            onSubmit(enabled, values);
-          }
+          onSubmit: submitCodingConfig
         })}
       </Spin>
     </div>

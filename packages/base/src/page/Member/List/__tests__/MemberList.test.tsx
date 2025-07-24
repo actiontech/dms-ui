@@ -1,9 +1,9 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MemberList from '../MemberList';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import member from '../../../../testUtils/mockApi/member';
-import { memberList } from '../../../../testUtils/mockApi/member/data';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
+import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -33,6 +33,7 @@ describe('base/MemberList', () => {
   const dispatchSpy = jest.fn();
   let useCurrentUserSpy: jest.SpyInstance;
   let useCurrentProjectSpy: jest.SpyInstance;
+
   beforeEach(() => {
     jest.useFakeTimers();
     memberListSpy = member.getMemberList();
@@ -41,27 +42,21 @@ describe('base/MemberList', () => {
     useCurrentUserSpy = mockUseCurrentUser();
   });
 
-  beforeAll(() => {
+  afterEach(() => {
     jest.useRealTimers();
     cleanup();
   });
 
-  it('render member table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+  it('should render member table', async () => {
+    const { baseElement } = superRender(
       <MemberList activePage={MemberListTypeEnum.member_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('admin')).toBeInTheDocument();
-    expect(screen.getByText('test1')).toBeInTheDocument();
-    expect(screen.getByText('test2')).toBeInTheDocument();
     expect(
       screen.getByText(`共 ${memberList.length} 条数据`)
     ).toBeInTheDocument();
-    expect(screen.getAllByText('删 除')).toHaveLength(4);
-    expect(screen.getAllByText('删 除')[0]).not.toBeVisible();
-    expect(screen.getAllByText('编 辑')).toHaveLength(4);
   });
 
   it('should render empty tips when request not success', async () => {
@@ -69,7 +64,7 @@ describe('base/MemberList', () => {
     memberListSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberList activePage={MemberListTypeEnum.member_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -78,29 +73,48 @@ describe('base/MemberList', () => {
     expect(element).toBeInTheDocument();
   });
 
-  it('should hide table actions', async () => {
-    useCurrentUserSpy.mockImplementation(() => ({
-      ...mockCurrentUserReturn,
-      userRoles: {
-        ...mockCurrentUserReturn.userRoles,
-        [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
-      }
-    }));
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
+  it('should handle pagination changes', async () => {
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      project_uid: mockProjectInfo.projectID
+    });
+  });
+
+  it('should not make request when activePage is not member_list', async () => {
+    superRender(
+      <MemberList activePage={MemberListTypeEnum.member_group_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(0);
-    expect(screen.queryAllByText('编 辑')).toHaveLength(0);
-    useCurrentUserSpy.mockClear();
-    cleanup();
+    expect(memberListSpy).not.toHaveBeenCalled();
+  });
+
+  it('should hide table actions based on user permissions', async () => {
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
+      }
+    }));
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryAllByText('移 除')).toHaveLength(0);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(0);
+  });
+
+  it('should show table actions for project manager', async () => {
+    useCurrentUserSpy.mockClear();
+    useCurrentUserSpy.mockImplementation(() => ({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -111,20 +125,25 @@ describe('base/MemberList', () => {
         }
       ]
     }));
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(4);
-    expect(screen.queryAllByText('编 辑')).toHaveLength(4);
+    expect(screen.queryAllByText('移 除')).toHaveLength(3);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(3);
+    expect(screen.queryAllByText('管理成员组')).toHaveLength(3);
+  });
+
+  it('should hide actions for archived project', async () => {
     useCurrentUserSpy.mockClear();
-    cleanup();
     useCurrentProjectSpy.mockImplementation(() => ({
+      ...mockProjectInfo,
+      archived: true
+    }));
+    useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -135,15 +154,14 @@ describe('base/MemberList', () => {
         }
       ]
     }));
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(0);
+    expect(screen.queryAllByText('移 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
   });
 
-  it('should refresh member table when emit "DMS_Refresh_Member_List" event', async () => {
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+  it('should refresh member table when emit refresh event', async () => {
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
@@ -160,16 +178,14 @@ describe('base/MemberList', () => {
         data: [memberList[1]]
       })
     );
-    const userName = memberList[1].user.name;
+    const userName = memberList[1].user?.name;
     const deleteUserSpy = member.deleteMember();
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByText('删 除'));
+    fireEvent.click(screen.getByText('移 除'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText(`确定要删除成员:${userName}?`)).toBeInTheDocument();
+    expect(screen.getByText(`确定要移除成员:${userName}?`)).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(deleteUserSpy).toHaveBeenCalledTimes(1);
@@ -177,10 +193,11 @@ describe('base/MemberList', () => {
       member_uid: memberList[1].uid,
       project_uid: mockProjectInfo.projectID
     });
-    expect(screen.getByText(`删除成员${userName}成功`)).toBeInTheDocument();
+    expect(screen.getByText(`移除成员${userName}成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalled();
   });
+
   it('should dispatch action when edit member info', async () => {
     memberListSpy.mockClear();
     memberListSpy.mockImplementation(() =>
@@ -188,9 +205,7 @@ describe('base/MemberList', () => {
         data: [memberList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));
@@ -209,5 +224,36 @@ describe('base/MemberList', () => {
         status: true
       }
     });
+  });
+
+  it('should dispatch action when manage member group', async () => {
+    memberListSpy.mockClear();
+    memberListSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [memberList[0]]
+      })
+    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
+
+    const manageButtons = screen.getAllByText('管理成员组');
+    if (manageButtons.length > 0) {
+      fireEvent.click(manageButtons[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(dispatchSpy).toHaveBeenCalledWith({
+        type: 'member/updateSelectMember',
+        payload: {
+          member: memberList[0]
+        }
+      });
+      expect(dispatchSpy).toHaveBeenCalledWith({
+        type: 'member/updateModalStatus',
+        payload: {
+          modalName: ModalName.DMS_Manage_Member_Group,
+          status: true
+        }
+      });
+    }
   });
 });

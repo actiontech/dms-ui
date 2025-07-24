@@ -10,6 +10,7 @@ const useRenderSQLTemplate = (
     | 'emptySqlContent'
     | 'highlightSyntax'
     | 'preserveOriginalFormat'
+    | 'wordWrap'
   >
 ) => {
   const {
@@ -17,7 +18,8 @@ const useRenderSQLTemplate = (
     sql,
     emptySqlContent,
     highlightSyntax,
-    preserveOriginalFormat
+    preserveOriginalFormat,
+    wordWrap
   } = params;
   const renderSQLTemplateContent = useCallback(() => {
     if (!sql) {
@@ -31,13 +33,20 @@ const useRenderSQLTemplate = (
 
       template = lines
         .map((w, i) => {
+          let wrapClass = '';
+          if (wordWrap) {
+            wrapClass = showLineNumbers
+              ? ' wrapped-line with-line-number'
+              : ' wrapped-line';
+          }
+
           if (showLineNumbers) {
-            return `<div class="code-line"><span class="code-line-number">${
+            return `<div class="code-line${wrapClass}"><span class="code-line-number">${
               i + 1
             }</span>${w}</div>`;
           }
 
-          return `<div class="code-line">${w}</div>`;
+          return `<div class="code-line${wrapClass}">${w}</div>`;
         })
         .join('');
     } else {
@@ -58,7 +67,8 @@ const useRenderSQLTemplate = (
     highlightSyntax,
     preserveOriginalFormat,
     showLineNumbers,
-    sql
+    sql,
+    wordWrap
   ]);
 
   return {
