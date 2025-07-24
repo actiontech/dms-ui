@@ -1,6 +1,7 @@
 export { default as OperationRecordService } from './service/OperationRecord';
 export { default as ReportPushConfigService } from './service/ReportPushConfig';
 export { default as SqlDEVRecordService } from './service/SqlDEVRecord';
+export { default as SqlInsightService } from './service/SqlInsight';
 export { default as SqlManageService } from './service/SqlManage';
 export { default as AuditPlanService } from './service/audit_plan';
 export { default as AuditWhitelistService } from './service/audit_whitelist';
