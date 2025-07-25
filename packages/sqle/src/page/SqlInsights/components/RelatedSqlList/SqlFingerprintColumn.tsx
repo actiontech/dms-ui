@@ -29,15 +29,12 @@ const SqlFingerprintColumn: React.FC<SqlFingerprintColumnProps> = ({
       title={t('sqlInsights.relatedSqlList.sqlFingerprintDetail.title')}
       placement="topLeft"
     >
-      {/* todo 因为Snippet本身被tooltip包裹，所以这里需要使用div包裹，否则外层的Popover会失效 */}
-      <div>
-        <SQLRenderer.Snippet
-          sql={sqlFingerprint}
-          rows={1}
-          tooltip={false}
-          cuttingLength={200}
-        />
-      </div>
+      <SQLRenderer.Snippet
+        sql={sqlFingerprint}
+        rows={1}
+        tooltip={false}
+        cuttingLength={200}
+      />
     </Popover>
   );
 };
