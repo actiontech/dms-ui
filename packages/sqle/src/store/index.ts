@@ -10,6 +10,7 @@ import sqlExecWorkflow from './sqlExecWorkflow';
 import sqlManagementException from './sqlManagementException';
 import pipeline from './pipeline';
 import versionManagement from './versionManagement';
+import sqlInsights from './sqlInsights';
 
 export const SQLEStoreData = {
   whitelist,
@@ -22,7 +23,8 @@ export const SQLEStoreData = {
   sqlExecWorkflow,
   sqlManagementException,
   pipeline,
-  versionManagement
+  versionManagement,
+  sqlInsights
 };
 
 const store = configureStore({

@@ -6,7 +6,8 @@ import {
   ExecWorkflowTheme,
   IconTheme,
   DataSourceComparisonTheme,
-  KnowledgeTheme
+  KnowledgeTheme,
+  SqlInsight
 } from '../theme/type';
 
 export interface SqleTheme {
@@ -18,6 +19,7 @@ export interface SqleTheme {
   icon: IconTheme;
   dataSourceComparison: DataSourceComparisonTheme;
   knowledgeTheme: KnowledgeTheme;
+  sqlInsight: SqlInsight;
 }
 
 interface ThemeCustom {
