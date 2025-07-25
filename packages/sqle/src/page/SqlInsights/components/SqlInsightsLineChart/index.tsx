@@ -164,6 +164,7 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
       return;
     }
     const type = event.type;
+
     if (type === 'plot:mousedown' && !isMaskCreatedChartRef.current) {
       isMaskCreatedChartRef.current = true;
       maskStartXPosition.current = event.x;
@@ -174,45 +175,56 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
       });
     }
     if (type === 'plot:mouseup') {
-      isMaskCreatedChartRef.current = false;
-      let minDate = dayjs().add(10, 'day');
-      let maxDate = dayjs().add(-10000, 'day');
-      let validPoints = 0;
-      for (let i = 0; i < transformedData.length; i++) {
-        const current = transformedData[i];
-        const point = chart.chart.getXY(current);
-        const { x } = point;
-        let left = maskStartXPosition.current;
-        let right = maskEndXPosition.current;
-        if (left > right) {
-          [left, right] = [right, left];
-        }
-        if (x >= left && x <= right) {
-          validPoints++;
-          const currentDate = dayjs(current.date);
-          if (currentDate.isBefore(minDate)) {
-            minDate = currentDate;
+      if (isMaskCreatedChartRef.current) {
+        isMaskCreatedChartRef.current = false;
+        let minDate = dayjs().add(10, 'day');
+        let maxDate = dayjs().add(-10000, 'day');
+        let validPoints = 0;
+        for (let i = 0; i < transformedData.length; i++) {
+          const current = transformedData[i];
+          const point = chart.chart.getXY(current);
+          const { x } = point;
+          let left = maskStartXPosition.current;
+          let right = maskEndXPosition.current;
+          if (left > right) {
+            [left, right] = [right, left];
           }
-          if (currentDate.isAfter(maxDate)) {
-            maxDate = currentDate;
+          if (x >= left && x <= right) {
+            validPoints++;
+            const currentDate = dayjs(current.date);
+            if (currentDate.isBefore(minDate)) {
+              minDate = currentDate;
+            }
+            if (currentDate.isAfter(maxDate)) {
+              maxDate = currentDate;
+            }
           }
         }
+        if (validPoints === 0) {
+          onSelectDate?.(null);
+          messageApi.info(t('sqlInsights.chart.noValidData'));
+        } else {
+          onSelectDate?.([minDate, maxDate]);
+        }
+        maskStartXPosition.current = 0;
+        maskEndXPosition.current = 0;
       }
-      if (validPoints === 0) {
-        onSelectDate?.(null);
-        messageApi.info(t('sqlInsights.chart.noValidData'));
-      } else {
-        onSelectDate?.([minDate, maxDate]);
-      }
-      maskStartXPosition.current = 0;
-      maskEndXPosition.current = 0;
     }
     if (type === 'plot:mousemove' && isMaskCreatedChartRef.current) {
-      const { x } = event;
-      maskEndXPosition.current = x;
+      maskEndXPosition.current = event.x;
       eventEmitter.emit(maskInteractionEventName, {
         maskStartXPosition: maskStartXPosition.current,
-        maskEndXPosition: x
+        maskEndXPosition: event.x
+      });
+    }
+    // 处理鼠标离开图表区域的情况
+    if (type === 'plot:mouseleave' && isMaskCreatedChartRef.current) {
+      isMaskCreatedChartRef.current = false;
+      maskStartXPosition.current = 0;
+      maskEndXPosition.current = 0;
+      eventEmitter.emit(maskInteractionEventName, {
+        maskStartXPosition: 0,
+        maskEndXPosition: 0
       });
     }
   });
