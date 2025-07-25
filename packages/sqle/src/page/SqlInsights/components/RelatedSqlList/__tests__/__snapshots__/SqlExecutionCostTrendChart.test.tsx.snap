@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlExecutionCostTrendChart should render chart with data correctly 1`] = `
+<body>
+  <div>
+    <section
+      class="css-2lgi1f"
+    >
+      <div
+        class="chart-wrapper"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="chart-wrapper css-1hgbe7b"
+            >
+              <div
+                class="chart-box"
+              >
+                <div
+                  data-custom-params="{"data":[{"time":"2025-01-22 10:00:00","execute_time":1.2,"sql":"SELECT * FROM users WHERE id = 1"},{"time":"2025-01-22 11:00:00","execute_time":1.8,"sql":"SELECT * FROM users WHERE id = 2"},{"time":"2025-01-22 12:00:00","execute_time":2.1,"sql":"SELECT * FROM users WHERE id = 3"}],"xField":"time","yField":"execute_time","width":800,"height":400,"colorField":"sql","xAxis":{"nice":true,"label":{},"title":{"text":"时间"}},"yAxis":{"title":{"text":"执行成本"}},"appendPadding":20,"tooltip":{"fields":["time","cost"]},"interactions":[{"type":"element-highlight-by-color"}],"theme":"light"}"
+                >
+                  <div
+                    class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+                  >
+                    <header
+                      class="tooltip-title"
+                      style="color: rgb(138, 143, 153);"
+                    >
+                      <span
+                        class="dot"
+                        style="background: rgb(69, 131, 255);"
+                      />
+                      01-22 10:00:00
+                    </header>
+                    <dl
+                      class="tooltip-list"
+                    >
+                      <dt
+                        class="tooltip-name"
+                      >
+                        <span
+                          class="dot"
+                          hidden=""
+                        />
+                        SQL
+                      </dt>
+                      <dd
+                        class="tooltip-value"
+                      >
+                        <span
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                          style="max-width: 100px;"
+                        >
+                          SELECT * FROM users WHERE id = 1
+                        </span>
+                      </dd>
+                    </dl>
+                    <dl
+                      class="tooltip-list"
+                    >
+                      <dt
+                        class="tooltip-name"
+                      >
+                        <span
+                          class="dot"
+                          hidden=""
+                        />
+                        执行成本
+                      </dt>
+                      <dd
+                        class="tooltip-value"
+                      >
+                        1.2
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

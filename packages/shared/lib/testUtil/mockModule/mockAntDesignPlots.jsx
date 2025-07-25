@@ -16,6 +16,7 @@ const Treemap = MockPlots;
 const Area = MockPlots;
 const Bar = MockPlots;
 const RingProgress = MockPlots;
+const Scatter = MockPlots;
 const mockRegisterShape = jest.fn();
 const G2 = {
   registerShape: jest.fn()
@@ -110,6 +111,21 @@ const LineWithCustomRenderCalled = (options) => (props) => {
   return <div data-custom-params={params}>{mockDataRender}</div>;
 };
 
+const ScatterWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
+    ...(options?.tooltip?.customContent?.(props) ?? [])
+  );
+
+  const params = JSON.stringify(clonePropsData);
+  if (tooltipCustomContent) {
+    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+  }
+  return <div data-custom-params={params} />;
+};
+
+
 export {
   Line,
   Pie,
@@ -122,11 +138,13 @@ export {
   Area,
   Bar,
   RingProgress,
+  Scatter,
   PieWithCustomRenderCalled,
   BarWithCustomRenderCalled,
   AreaWithCustomRenderCalled,
   RingProgressWithCustomRenderCalled,
-  LineWithCustomRenderCalled
+  LineWithCustomRenderCalled,
+  ScatterWithCustomRenderCalled
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
