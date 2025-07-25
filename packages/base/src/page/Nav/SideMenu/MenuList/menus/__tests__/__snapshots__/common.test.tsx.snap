@@ -301,6 +301,20 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "sql-management-conf",
         "to": "/sqle/project/600300/sql-management-conf",
       },
+      {
+        "icon": <DashboardOutlined
+          height={20}
+          width={20}
+        />,
+        "key": "sqle/project/projectID/sql-insights",
+        "label": <ForwardRef(TypedLink)
+          to="/sqle/project/600300/sql-insights"
+        >
+          性能洞察
+        </ForwardRef(TypedLink)>,
+        "structKey": "sql-insights",
+        "to": "/sqle/project/600300/sql-insights",
+      },
     ],
     "label": "SQL管控",
     "permission": undefined,
