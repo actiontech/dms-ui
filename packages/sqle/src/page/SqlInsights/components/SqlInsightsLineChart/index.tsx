@@ -12,6 +12,7 @@ import { message } from 'antd';
 import { useMemoizedFn } from 'ahooks';
 import TaskEnabledTips from '../TaskEnabledTips';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 export interface SqlInsightsLineChartProps {
   loading: boolean;
@@ -61,7 +62,7 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
       line.points?.forEach((point) => {
         if (point.x) {
           result.push({
-            date: dayjs(point.x).format('YYYY-MM-DD HH:mm:ss'),
+            date: formatTime(point.x),
             value: point.y,
             type: line.line_name || '',
             status: point.status

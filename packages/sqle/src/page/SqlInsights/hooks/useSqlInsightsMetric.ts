@@ -11,6 +11,7 @@ import { IReduxState } from '../../../store';
 import { useEffect } from 'react';
 import { DateRangeEnum } from '../index.data';
 import useDateRange from './useDateRange';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 interface UseSqlInsightsMetricProps {
   instanceId?: string;
@@ -33,10 +34,8 @@ export const useSqlInsightsMetric = ({
     (state: IReduxState) => {
       const { selectedDateRange } = state.sqlInsights.relateSqlList;
       return {
-        selectedChartStartTime:
-          selectedDateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
-        selectedChartEndTime:
-          selectedDateRange?.[1].format('YYYY-MM-DD HH:mm:ss') ?? ''
+        selectedChartStartTime: formatTime(selectedDateRange?.[0]),
+        selectedChartEndTime: formatTime(selectedDateRange?.[1])
       };
     }
   );
@@ -62,8 +61,8 @@ export const useSqlInsightsMetric = ({
         project_name: projectName,
         instance_id: instanceId ?? '',
         metric_name: metricName,
-        start_time: startTime?.format('YYYY-MM-DD HH:mm:ss') ?? '',
-        end_time: endTime?.format('YYYY-MM-DD HH:mm:ss') ?? ''
+        start_time: formatTime(startTime),
+        end_time: formatTime(endTime)
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setErrorMessage('');
@@ -71,8 +70,8 @@ export const useSqlInsightsMetric = ({
           // 处理返回的数据，添加边界数据点
           const processedData = { ...res.data.data };
           if (processedData?.lines && startTime && endTime) {
-            const startTimeStr = startTime.format('YYYY-MM-DD HH:mm:ss');
-            const endTimeStr = endTime.format('YYYY-MM-DD HH:mm:ss');
+            const startTimeStr = formatTime(startTime);
+            const endTimeStr = formatTime(endTime);
 
             processedData.lines = processedData.lines.map((line: any) => {
               if (

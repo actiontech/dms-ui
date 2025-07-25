@@ -40,8 +40,8 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   const { startTime, endTime } = useSelector((state: IReduxState) => {
     const { selectedDateRange } = state.sqlInsights.relateSqlList;
     return {
-      startTime: selectedDateRange?.[0].format('YYYY-MM-DD HH:mm:ss') ?? '',
-      endTime: selectedDateRange?.[1].format('YYYY-MM-DD HH:mm:ss') ?? ''
+      startTime: formatTime(selectedDateRange?.[0]),
+      endTime: formatTime(selectedDateRange?.[1])
     };
   });
 
