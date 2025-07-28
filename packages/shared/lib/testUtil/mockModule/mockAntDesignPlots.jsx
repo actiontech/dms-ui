@@ -125,7 +125,6 @@ const ScatterWithCustomRenderCalled = (options) => (props) => {
   return <div data-custom-params={params} />;
 };
 
-
 export {
   Line,
   Pie,
