@@ -1,0 +1,13 @@
+fragment ProductInfo on ServerConfig {
+  productInfo {
+    id
+    version
+    latestVersionInfo
+    name
+    description
+    buildTime
+    releaseTime
+    licenseInfo
+    productPurchaseURL
+  }
+}

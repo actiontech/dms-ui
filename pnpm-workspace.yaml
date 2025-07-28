@@ -1,3 +1,4 @@
 packages:
   - 'packages/**'
+  - 'cloud-beaver/**'
   - 'scripts/cli/create-dms-page'

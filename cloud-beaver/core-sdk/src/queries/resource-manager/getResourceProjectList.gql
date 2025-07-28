@@ -1,0 +1,13 @@
+query getResourceProjectList {
+  projects: rmListProjects {
+    id
+    name
+    shared
+    global
+    description
+    projectPermissions
+    resourceTypes {
+      ...ResourceType
+    }
+  }
+}

@@ -1,0 +1,19 @@
+fragment DatabaseConnection on ConnectionInfo {
+  id
+  projectId
+  name
+  description
+  driverId
+  connected
+  readOnly
+  folder
+  nodePath
+  features
+  supportedDataFormats
+  navigatorSettings {
+    ...AllNavigatorSettings
+  }
+  canViewSettings
+  canEdit
+  canDelete
+}

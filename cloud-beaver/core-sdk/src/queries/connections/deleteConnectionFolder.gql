@@ -1,0 +1,3 @@
+mutation deleteConnectionFolder($projectId: ID!, $folderPath: ID!) {
+  deleteConnectionFolder(projectId: $projectId, folderPath: $folderPath)
+}

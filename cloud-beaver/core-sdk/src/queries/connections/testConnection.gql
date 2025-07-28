@@ -1,0 +1,13 @@
+mutation testConnection($projectId: ID!, $config: ConnectionConfig!) {
+  connection: testConnection(projectId: $projectId, config: $config) {
+    id
+    connectTime
+    connectionError {
+      message
+      errorCode
+      stackTrace
+    }
+    serverVersion
+    clientVersion
+  }
+}

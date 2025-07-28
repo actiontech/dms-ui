@@ -1,0 +1,17 @@
+fragment AuthProviderConfigurationParameters on ObjectPropertyInfo {
+  id
+  displayName
+  description
+  category
+  dataType
+  value
+  validValues
+  defaultValue
+  length
+  features
+  order
+  required
+  conditions {
+    ...Condition
+  }
+}

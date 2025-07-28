@@ -1,0 +1,23 @@
+mutation asyncSqlExecuteQuery(
+  $projectId: ID!
+  $connectionId: ID!
+  $contextId: ID!
+  $query: String!
+  $resultId: ID
+  $filter: SQLDataFilter
+  $dataFormat: ResultDataFormat
+  $readLogs: Boolean
+) {
+  taskInfo: asyncSqlExecuteQuery(
+    projectId: $projectId
+    connectionId: $connectionId
+    contextId: $contextId
+    sql: $query
+    resultId: $resultId
+    filter: $filter
+    dataFormat: $dataFormat
+    readLogs: $readLogs
+  ) {
+    ...AsyncTaskInfo
+  }
+}

@@ -1,0 +1,6 @@
+query setConnections($userId: ID!, $connections: [ID!]!) {
+  grantedConnections: setSubjectConnectionAccess(
+    subjectId: $userId
+    connections: $connections
+  )
+}

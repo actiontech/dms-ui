@@ -1,0 +1,17 @@
+mutation updateUserPreferences($preferences: Object!) {
+  user: setUserPreferences(preferences: $preferences) {
+    userId
+    displayName
+    authRole
+    linkedAuthProviders
+    configurationParameters
+    teams {
+      teamId
+      teamName
+      teamRole
+    }
+    authTokens {
+      ...AuthToken
+    }
+  }
+}

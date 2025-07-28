@@ -1,0 +1,18 @@
+query getActiveUser {
+  user: activeUser {
+    userId
+    isAnonymous
+    displayName
+    authRole
+    linkedAuthProviders
+    configurationParameters
+    teams {
+      teamId
+      teamName
+      teamRole
+    }
+    authTokens {
+      ...AuthToken
+    }
+  }
+}

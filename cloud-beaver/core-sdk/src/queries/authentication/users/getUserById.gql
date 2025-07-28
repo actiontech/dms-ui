@@ -1,0 +1,5 @@
+query getAdminUserInfo($userId: ID!) {
+  user: adminUserInfo(userId: $userId) {
+    ...AdminUserInfo
+  }
+}

@@ -1,0 +1,7 @@
+mutation testNetworkHandler($config: NetworkHandlerConfigInput!) {
+  info: testNetworkHandler(config: $config) {
+    message
+    clientVersion
+    serverVersion
+  }
+}

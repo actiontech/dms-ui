@@ -1,0 +1,7 @@
+mutation navSetFolderFilter(
+  $nodePath: ID!
+  $include: [String!]
+  $exclude: [String!]
+) {
+  navSetFolderFilter(nodePath: $nodePath, include: $include, exclude: $exclude)
+}

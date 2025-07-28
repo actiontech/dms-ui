@@ -1,0 +1,3 @@
+query deleteTeam($teamId: ID!, $force: Boolean) {
+  deleteTeam(teamId: $teamId, force: $force)
+}

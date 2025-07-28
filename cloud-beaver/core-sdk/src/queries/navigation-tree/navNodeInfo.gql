@@ -1,0 +1,9 @@
+query navNodeInfo(
+  $nodePath: ID!
+  $withDetails: Boolean!
+  $withFilters: Boolean!
+) {
+  navNodeInfo(nodePath: $nodePath) {
+    ...NavNodeInfo
+  }
+}

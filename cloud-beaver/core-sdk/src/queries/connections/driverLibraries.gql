@@ -1,0 +1,14 @@
+query getDriverLibraries($id: ID!) {
+  driverList(id: $id) {
+    driverLibraries {
+      id
+      name
+      icon
+      libraryFiles {
+        id
+        fileName
+        icon
+      }
+    }
+  }
+}

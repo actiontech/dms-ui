@@ -1,0 +1,10 @@
+query getAuthStatus($authId: ID!, $linkUser: Boolean) {
+  authInfo: authUpdateStatus(authId: $authId, linkUser: $linkUser) {
+    redirectLink
+    authId
+    authStatus
+    userTokens {
+      ...AuthToken
+    }
+  }
+}

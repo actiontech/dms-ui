@@ -1,0 +1,9 @@
+query searchDatabases($hosts: [String!]!) {
+  databases: searchConnections(hostNames: $hosts) {
+    displayName
+    host
+    port
+    possibleDrivers
+    defaultDriver
+  }
+}

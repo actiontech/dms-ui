@@ -1,0 +1,9 @@
+fragment SessionState on SessionInfo {
+  createTime
+  lastAccessTime
+  cacheExpired
+  locale
+  actionParameters
+  valid
+  remainingTime
+}

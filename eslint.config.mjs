@@ -27,7 +27,7 @@ export default defineConfig([
     }
   },
   {
-    files: ['**/packages/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ['**/{packages,cloud-beaver}/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     ...pluginReact.configs.flat.recommended,
     plugins: {
       import: pluginImport,

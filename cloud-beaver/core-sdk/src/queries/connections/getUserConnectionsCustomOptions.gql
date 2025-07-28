@@ -1,0 +1,13 @@
+query getUserConnectionsCustomOptions(
+  $projectId: ID
+  $connectionId: ID
+  $projectIds: [ID!]
+) {
+  connections: userConnections(
+    projectId: $projectId
+    id: $connectionId
+    projectIds: $projectIds
+  ) {
+    ...DatabaseConnectionCustomOptions
+  }
+}

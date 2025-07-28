@@ -1,0 +1,21 @@
+mutation initConnection(
+  $projectId: ID!
+  $connectionId: ID!
+  $credentials: Object
+  $networkCredentials: [NetworkHandlerConfigInput!]
+  $saveCredentials: Boolean
+  $sharedCredentials: Boolean
+  $selectedSecretId: String
+) {
+  connection: initConnection(
+    projectId: $projectId
+    id: $connectionId
+    credentials: $credentials
+    networkCredentials: $networkCredentials
+    saveCredentials: $saveCredentials
+    sharedCredentials: $sharedCredentials
+    selectedSecretId: $selectedSecretId
+  ) {
+    ...DatabaseConnection
+  }
+}

@@ -1,0 +1,15 @@
+query setUserMetaParameter(
+  $id: ID!
+  $displayName: String!
+  $description: String
+  $required: Boolean!
+) {
+  parameter: saveUserMetaParameter(
+    id: $id
+    displayName: $displayName
+    description: $description
+    required: $required
+  ) {
+    ...UserConnectionAuthProperties
+  }
+}

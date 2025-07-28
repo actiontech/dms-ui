@@ -1,0 +1,14 @@
+fragment AdminUserInfo on AdminUserInfo {
+  userId
+  grantedTeams
+  linkedAuthProviders
+
+  origins {
+    ...ObjectOriginInfo
+  }
+  enabled
+  authRole
+  disabledBy
+  disableDate
+  disableReason
+}

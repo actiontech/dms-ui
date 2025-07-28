@@ -1,0 +1,57 @@
+fragment AuthProviderInfo on AuthProviderInfo {
+  id
+  label
+  icon
+  description
+  defaultProvider
+  trusted
+  private
+  supportProvisioning
+  required
+  authHidden
+  templateConfiguration {
+    id
+    signInLink
+    signOutLink
+    metadataLink
+    acsLink
+    entityIdLink
+    redirectLink
+  }
+
+  #configurationParameters {
+  #  id
+  #  displayName
+  #  description
+  #  category
+  #  dataType
+  #  value
+  #  validValues
+  #  defaultValue
+  #  features
+  #}
+
+  federated
+  configurable
+  configurations {
+    ...AuthProviderConfigurationInfo
+  }
+
+  credentialProfiles {
+    id
+    label
+    description
+
+    credentialParameters {
+      id
+      displayName
+      description
+      admin
+      user
+      identifying
+      possibleValues
+      encryption
+    }
+  }
+  requiredFeatures
+}

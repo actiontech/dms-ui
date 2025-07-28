@@ -1,0 +1,11 @@
+query getDataTransferDefaultParameters {
+  settings: dataTransferDefaultExportSettings {
+    outputSettings {
+      insertBom
+      encoding
+      timestampPattern
+      compress
+    }
+    supportedEncodings
+  }
+}

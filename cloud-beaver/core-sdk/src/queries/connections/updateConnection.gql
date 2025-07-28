@@ -1,0 +1,5 @@
+mutation updateConnection($projectId: ID!, $config: ConnectionConfig!) {
+  connection: updateConnection(projectId: $projectId, config: $config) {
+    ...DatabaseConnection
+  }
+}

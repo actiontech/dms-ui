@@ -1,0 +1,26 @@
+fragment NavNodeInfo on NavigatorNodeInfo {
+  id
+  name
+  plainName
+  description
+  hasChildren
+  nodeType
+  icon
+  folder
+  inline
+  navigable
+  filtered
+  features
+  projectId
+  object {
+    features
+  }
+  objectId
+  nodeDetails @include(if: $withDetails) {
+    ...NavNodeProperties
+  }
+  filter @include(if: $withFilters) {
+    include
+    exclude
+  }
+}

@@ -1,0 +1,11 @@
+mutation addProjectsPermissions(
+  $projectIds: [ID!]!
+  $subjectIds: [ID!]!
+  $permissions: [String!]!
+) {
+  rmAddProjectsPermissions(
+    projectIds: $projectIds
+    subjectIds: $subjectIds
+    permissions: $permissions
+  )
+}

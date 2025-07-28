@@ -1,0 +1,21 @@
+fragment DatabaseConnectionCustomOptions on ConnectionInfo {
+  id
+  projectId
+  configurationType
+  useUrl
+  host
+  port
+  serverName
+  databaseName
+  url
+  name
+  description
+  folder
+  driverId
+  keepAliveInterval
+  autocommit
+  defaultCatalogName
+  defaultSchemaName
+  readOnly
+  mainPropertyValues
+}

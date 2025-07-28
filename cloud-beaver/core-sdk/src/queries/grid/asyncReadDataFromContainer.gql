@@ -1,0 +1,21 @@
+mutation asyncReadDataFromContainer(
+  $projectId: ID!
+  $connectionId: ID!
+  $contextId: ID!
+  $containerNodePath: ID!
+  $resultId: ID
+  $filter: SQLDataFilter
+  $dataFormat: ResultDataFormat
+) {
+  taskInfo: asyncReadDataFromContainer(
+    projectId: $projectId
+    connectionId: $connectionId
+    contextId: $contextId
+    containerNodePath: $containerNodePath
+    resultId: $resultId
+    filter: $filter
+    dataFormat: $dataFormat
+  ) {
+    ...AsyncTaskInfo
+  }
+}

@@ -1,0 +1,5 @@
+query getNavNodeFullName($nodePath: ID!) {
+  navNodeInfo(nodePath: $nodePath) {
+    fullName
+  }
+}

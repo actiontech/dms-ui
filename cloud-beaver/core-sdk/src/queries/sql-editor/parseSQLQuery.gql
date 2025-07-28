@@ -1,0 +1,16 @@
+query parseSQLQuery(
+  $projectId: ID!
+  $connectionId: ID!
+  $script: String!
+  $position: Int!
+) {
+  queryInfo: sqlParseQuery(
+    projectId: $projectId
+    connectionId: $connectionId
+    script: $script
+    position: $position
+  ) {
+    start
+    end
+  }
+}
