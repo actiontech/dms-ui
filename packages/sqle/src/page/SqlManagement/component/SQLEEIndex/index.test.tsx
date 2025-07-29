@@ -840,4 +840,43 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(getBySelector('.ant-alert-warning')).toBeInTheDocument();
     expect(baseElement.querySelector('.ant-alert-warning')).toMatchSnapshot();
   });
+
+  it('render table actions when user not have permission but is assignee', async () => {
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.systemAdministrator]: false
+      },
+      bindProjects: [
+        {
+          is_manager: false,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
+    });
+    sqlManage.getSqlManageList().mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            ...sqlManageListData.data[0],
+            assignees: [mockCurrentUserReturn.username]
+          }
+        ]
+      })
+    );
+    sqleSuperRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('指派负责人')).toBeInTheDocument();
+    expect(screen.getByText('变更状态')).toBeInTheDocument();
+    expect(screen.getByText('批量指派')).toBeInTheDocument();
+    expect(screen.getByText('批量解决').closest('button')).toBeDisabled();
+    const batchCheckbox = getBySelector('.ant-table-thead .ant-checkbox-input');
+    fireEvent.click(batchCheckbox);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('批量解决').closest('button')).not.toBeDisabled();
+  });
 });
