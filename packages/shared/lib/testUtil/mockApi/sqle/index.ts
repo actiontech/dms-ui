@@ -22,3 +22,4 @@ export { default as system } from './system';
 export { default as task } from './task';
 export { default as user } from './user';
 export { default as workflowTemplate } from './workflowTemplate';
+export { default as sqlInsight } from './sqlInsight';

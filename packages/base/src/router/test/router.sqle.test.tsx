@@ -301,6 +301,16 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('dashboard')).toBeInTheDocument();
       });
 
+      it('render route sqlInsights', async () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/sql-insights`
+        ]);
+
+        await act(async () => jest.advanceTimersByTime(300));
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('sqlInsights')).toBeInTheDocument();
+      });
+
       describe('render route sqlManagementConf', () => {
         it('render route list', async () => {
           const { baseElement } = customRender([

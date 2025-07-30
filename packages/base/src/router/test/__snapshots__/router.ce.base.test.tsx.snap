@@ -341,6 +341,13 @@ exports[`base/router-base-ce render base route data snap 1`] = `
         "path": ":projectID/sql-management-conf",
       },
       {
+        "element": <div>
+          sqlInsights
+        </div>,
+        "key": "sqlInsights",
+        "path": ":projectID/sql-insights",
+      },
+      {
         "children": [
           {
             "element": <div>
