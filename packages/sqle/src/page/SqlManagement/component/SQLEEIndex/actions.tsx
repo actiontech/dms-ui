@@ -3,12 +3,14 @@ import { ModalName } from '../../../../data/ModalName';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import {
-  ActiontechTableActionsWithPermissions,
   PERMISSIONS,
-  PermissionsConstantType,
-  ActiontechTableToolbarActionWithPermissions
+  PermissionsConstantType
 } from '@actiontech/shared/lib/features';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import {
+  ActiontechTableActionsConfig,
+  ActiontechTableToolbarActionMeta
+} from '@actiontech/shared';
 
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
@@ -19,19 +21,13 @@ export const SqlManagementRowAction = (
   checkActionPermission: (
     requiredPermission: PermissionsConstantType
   ) => boolean,
-  onPushToCoding: (batch: boolean, record?: ISqlManage) => void
-): ActiontechTableActionsWithPermissions<ISqlManage> => {
+  onPushToCoding: (batch: boolean, record?: ISqlManage) => void,
+  username: string
+): ActiontechTableActionsConfig<ISqlManage> => {
   const getWidth = () => {
-    if (
-      checkActionPermission(
-        PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT
-      )
-    ) {
-      return language === SupportLanguage.enUS
-        ? 350
-        : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
-    }
-    return 110;
+    return language === SupportLanguage.enUS
+      ? 350
+      : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
   };
 
   return {
@@ -47,7 +43,15 @@ export const SqlManagementRowAction = (
             }
           };
         },
-        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT
+        permissions: (record) => {
+          return (
+            (checkActionPermission(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT
+            ) ||
+              record?.assignees?.includes(username)) ??
+            false
+          );
+        }
       },
       {
         text: t('sqlManagement.table.action.single.updateStatus.triggerText'),
@@ -59,7 +63,15 @@ export const SqlManagementRowAction = (
             }
           };
         },
-        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS
+        permissions: (record) => {
+          return (
+            (checkActionPermission(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS
+            ) ||
+              record?.assignees?.includes(username)) ??
+            false
+          );
+        }
       }
     ],
     moreButtons: [
@@ -69,7 +81,15 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           openModal(ModalName.Change_SQL_Priority, record);
         },
-        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY
+        permissions: (record) => {
+          return (
+            (checkActionPermission(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY
+            ) ||
+              record?.assignees?.includes(username)) ??
+            false
+          );
+        }
       },
       {
         text: t('sqlManagement.table.action.analyze'),
@@ -84,8 +104,10 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           openCreateSqlManagementExceptionModal(record);
         },
-        permissions:
-          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
+        permissions: () =>
+          checkActionPermission(
+            PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
+          )
       },
       {
         text: t('sqlManagement.table.action.createWhitelist'),
@@ -93,13 +115,24 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           onCreateWhitelist(record);
         },
-        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
+        permissions: () =>
+          checkActionPermission(
+            PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
+          )
       },
       {
         key: 'push-to-coding',
         text: t('sqlManagement.table.action.batch.pushToCoding'),
         onClick: (record) => onPushToCoding(false, record),
-        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+        permissions: (record) => {
+          return (
+            (checkActionPermission(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+            ) ||
+              record?.assignees?.includes(username)) ??
+            false
+          );
+        }
       }
     ]
   };
@@ -116,8 +149,12 @@ export const SqlManagementTableToolbarActions = (
   isHighPriority: boolean,
   setAssigneeSelf: (value: boolean) => void,
   setIsHighPriority: (value: boolean) => void,
-  onPushToCoding: (batch: boolean, record?: ISqlManage) => void
-): ActiontechTableToolbarActionWithPermissions => {
+  onPushToCoding: (batch: boolean, record?: ISqlManage) => void,
+  isCertainAssignees: boolean,
+  checkActionPermission: (
+    requiredPermission: PermissionsConstantType
+  ) => boolean
+): ActiontechTableToolbarActionMeta[] => {
   return [
     {
       key: 'is-high-priority',
@@ -148,7 +185,10 @@ export const SqlManagementTableToolbarActions = (
           onBatchAssignment();
         }
       },
-      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT
+      permissions:
+        checkActionPermission(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT
+        ) || isCertainAssignees
     },
     {
       key: 'batch-solve',
@@ -163,7 +203,10 @@ export const SqlManagementTableToolbarActions = (
           disabled: batchSolveLoading
         }
       },
-      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE
+      permissions:
+        checkActionPermission(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE
+        ) || isCertainAssignees
     },
     {
       key: 'batch-ignore',
@@ -178,7 +221,10 @@ export const SqlManagementTableToolbarActions = (
           disabled: batchIgnoreLoading
         }
       },
-      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE
+      permissions:
+        checkActionPermission(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE
+        ) || isCertainAssignees
     },
     {
       key: 'push-to-coding',
@@ -187,7 +233,10 @@ export const SqlManagementTableToolbarActions = (
         disabled,
         onClick: () => onPushToCoding(true)
       },
-      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+      permissions:
+        checkActionPermission(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+        ) || isCertainAssignees
     }
   ];
 };
