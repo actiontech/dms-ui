@@ -1,4 +1,4 @@
-import { useMemo, useRef, useEffect, useState, useCallback } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import dayjs from 'dayjs';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
@@ -6,13 +6,12 @@ import { LineConfig, Line } from '@ant-design/plots';
 import { ILine } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlInsightsLineChartWrapper } from './style';
 import classNames from 'classnames';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { message } from 'antd';
-import { useMemoizedFn } from 'ahooks';
 import TaskEnabledTips from '../TaskEnabledTips';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { useChartEvent } from './hooks/useChartEvent';
 
 export interface SqlInsightsLineChartProps {
   loading: boolean;
@@ -29,10 +28,6 @@ export interface SqlInsightsLineChartProps {
   isTaskEnabled?: boolean;
   onGoToEnable?: () => void;
 }
-
-type LineChart = Parameters<Required<LineConfig>['onReady']>[0];
-type LineOnReady = Required<LineConfig>['onReady'];
-type LineOnEvent = Required<LineConfig>['onEvent'];
 
 const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
   loading,
@@ -73,9 +68,6 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
 
     return result;
   }, [chartData]);
-
-  const chartRef = useRef<LineChart | null>(null);
-  const isMaskCreatedChartRef = useRef(false);
 
   const config: LineConfig = useMemo(() => {
     const redPointAnnotations = transformedData
@@ -136,119 +128,20 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
     };
   }, [transformedData, t, sqleTheme]);
 
-  const [maskXPosition, setMaskXPosition] = useState<number>(0);
-  const [maskYPosition, setMaskYPosition] = useState<number>(0);
-  const [maskWidth, setMaskWidth] = useState<number>(0);
-  const [maskHeight, setMaskHeight] = useState<number>(0);
-
-  const handleChartReady = useCallback<LineOnReady>((chart) => {
-    chartRef.current = chart;
-    const { y, height } = chart.chart.coordinateBBox;
-    setMaskYPosition(y);
-    setMaskHeight(height);
-  }, []);
-
-  const maskStartXPosition = useRef(0);
-  const maskEndXPosition = useRef(0);
-
-  useEffect(() => {
-    // 当数据或加载状态变化时，清除 mask
-    setMaskWidth(0);
-    maskStartXPosition.current = 0;
-    maskEndXPosition.current = 0;
-    isMaskCreatedChartRef.current = false;
-  }, [transformedData, loading]);
-
-  // fixme: 当前 antd-design/plots 的版本为1.x，底层g2的版本为4.x,这个版本的g2无法通过 emit 的方式提交 brush-x 事件。只能绕过处理。等升级后，需要使用原生 brushXHighlight 等事件重写这个功能。
-  const handleChartEvent = useMemoizedFn<LineOnEvent>((chart, event) => {
-    if (!maskInteractionEventName) {
-      return;
-    }
-    const type = event.type;
-
-    if (type === 'plot:mousedown' && !isMaskCreatedChartRef.current) {
-      isMaskCreatedChartRef.current = true;
-      maskStartXPosition.current = event.x;
-      maskEndXPosition.current = event.x;
-      eventEmitter.emit(maskInteractionEventName, {
-        maskStartXPosition: event.x,
-        maskEndXPosition: event.x
-      });
-    }
-    if (type === 'plot:mouseup') {
-      if (isMaskCreatedChartRef.current) {
-        isMaskCreatedChartRef.current = false;
-        let minDate = dayjs().add(10, 'day');
-        let maxDate = dayjs().add(-10000, 'day');
-        let validPoints = 0;
-        for (let i = 0; i < transformedData.length; i++) {
-          const current = transformedData[i];
-          const point = chart.chart.getXY(current);
-          const { x } = point;
-          let left = maskStartXPosition.current;
-          let right = maskEndXPosition.current;
-          if (left > right) {
-            [left, right] = [right, left];
-          }
-          if (x >= left && x <= right) {
-            validPoints++;
-            const currentDate = dayjs(current.date);
-            if (currentDate.isBefore(minDate)) {
-              minDate = currentDate;
-            }
-            if (currentDate.isAfter(maxDate)) {
-              maxDate = currentDate;
-            }
-          }
-        }
-        if (validPoints === 0) {
-          onSelectDate?.(null);
-          messageApi.info(t('sqlInsights.chart.noValidData'));
-        } else {
-          onSelectDate?.([minDate, maxDate]);
-        }
-        maskStartXPosition.current = 0;
-        maskEndXPosition.current = 0;
-      }
-    }
-    if (type === 'plot:mousemove' && isMaskCreatedChartRef.current) {
-      maskEndXPosition.current = event.x;
-      eventEmitter.emit(maskInteractionEventName, {
-        maskStartXPosition: maskStartXPosition.current,
-        maskEndXPosition: event.x
-      });
-    }
-    // 处理鼠标离开图表区域的情况
-    if (type === 'plot:mouseleave' && isMaskCreatedChartRef.current) {
-      isMaskCreatedChartRef.current = false;
-      maskStartXPosition.current = 0;
-      maskEndXPosition.current = 0;
-      eventEmitter.emit(maskInteractionEventName, {
-        maskStartXPosition: 0,
-        maskEndXPosition: 0
-      });
-    }
+  const {
+    handleChartEvent,
+    handleChartReady,
+    maskXPosition,
+    maskYPosition,
+    maskWidth,
+    maskHeight
+  } = useChartEvent({
+    maskInteractionEventName,
+    transformedData,
+    loading,
+    onSelectDate,
+    messageApi
   });
-
-  useEffect(() => {
-    if (maskInteractionEventName) {
-      const { unsubscribe } = eventEmitter.subscribe(
-        maskInteractionEventName,
-        (data: { maskStartXPosition: number; maskEndXPosition: number }) => {
-          let left = data.maskStartXPosition;
-          let right = data.maskEndXPosition;
-          if (left > right) {
-            [left, right] = [right, left];
-          }
-          setMaskXPosition(left);
-          setMaskWidth(right - left);
-        }
-      );
-      return () => {
-        unsubscribe();
-      };
-    }
-  }, [maskInteractionEventName, maskXPosition]);
 
   return (
     <>
@@ -289,9 +182,6 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
               height: maskHeight,
               backgroundColor: 'rgba(197, 212, 235, 0.6)',
               pointerEvents: 'none'
-            }}
-            onMouseUp={() => {
-              isMaskCreatedChartRef.current = false;
             }}
           ></div>
         </div>

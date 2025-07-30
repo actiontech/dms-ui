@@ -28,6 +28,7 @@ import { IReduxState } from '../../../../store';
 //   updateRelateSqlSelectedRecord
 // } from '../../../../store/sqlInsights';
 import { RelatedSqlFilterSourceOptions } from './data';
+import useRelatedSqlRedux from './useRelatedSqlRedux';
 
 export interface RelatedSqlListProps {
   instanceId?: string;
@@ -36,6 +37,7 @@ export interface RelatedSqlListProps {
 const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const { clearDateRange } = useRelatedSqlRedux();
   // const dispatch = useDispatch();
   const { startTime, endTime } = useSelector((state: IReduxState) => {
     const { selectedDateRange } = state.sqlInsights.relateSqlList;
@@ -154,6 +156,8 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
     });
     updateAllSelectedFilterItem(true);
+
+    return () => clearDateRange();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

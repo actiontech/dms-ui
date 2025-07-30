@@ -13,9 +13,14 @@ const useRelatedSqlRedux = () => {
     dispatch(updateRelateSqlListDateRange({ dateRange }));
   };
 
+  const clearDateRange = () => {
+    dispatch(updateRelateSqlListDateRange({ dateRange: null }));
+  };
+
   return {
     relateSqlListDateRange,
-    updateRelateSqlListDateRange: update
+    updateRelateSqlListDateRange: update,
+    clearDateRange
   };
 };
 
