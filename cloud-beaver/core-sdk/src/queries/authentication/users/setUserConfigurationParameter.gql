@@ -1,3 +1,0 @@
-mutation setUserConfigurationParameter($name: String!, $value: Object) {
-  setUserConfigurationParameter(name: $name, value: $value)
-}

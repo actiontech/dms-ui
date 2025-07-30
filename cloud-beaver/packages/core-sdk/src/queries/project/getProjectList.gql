@@ -1,0 +1,16 @@
+query getProjectList {
+  projects: listProjects {
+    id
+    shared
+    global
+    name
+    description
+    canEditDataSources
+    canViewDataSources
+    canEditResources
+    canViewResources
+    resourceTypes {
+      ...ResourceType
+    }
+  }
+}

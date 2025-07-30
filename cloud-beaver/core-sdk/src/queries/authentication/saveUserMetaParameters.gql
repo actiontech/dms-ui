@@ -1,3 +1,0 @@
-query saveUserMetaParameters($userId: ID!, $parameters: Object!) {
-  setUserMetaParameterValues(userId: $userId, parameters: $parameters)
-}

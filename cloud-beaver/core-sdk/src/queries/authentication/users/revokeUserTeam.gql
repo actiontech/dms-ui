@@ -1,3 +1,0 @@
-query revokeUserTeam($userId: ID!, $teamId: ID!) {
-  revokeUserTeam(userId: $userId, teamId: $teamId)
-}

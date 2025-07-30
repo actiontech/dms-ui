@@ -1,3 +1,0 @@
-query updateUserProfileProperties($userId: ID!, $parameters: Object!) {
-  state: setUserMetaParameterValues(userId: $userId, parameters: $parameters)
-}

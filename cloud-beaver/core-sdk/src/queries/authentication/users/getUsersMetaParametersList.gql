@@ -1,9 +1,0 @@
-query getUsersMetaParametersList(
-  $page: PageInput!
-  $filter: AdminUserFilterInput!
-) {
-  users: listUsers(page: $page, filter: $filter) {
-    userId
-    metaParameters
-  }
-}

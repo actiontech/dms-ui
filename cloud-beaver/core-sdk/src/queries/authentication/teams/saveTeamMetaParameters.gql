@@ -1,3 +1,0 @@
-query saveTeamMetaParameters($teamId: ID!, $parameters: Object!) {
-  setTeamMetaParameterValues(teamId: $teamId, parameters: $parameters)
-}

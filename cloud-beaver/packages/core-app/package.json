@@ -1,0 +1,16 @@
+{
+  "name": "@cloudbeaver/core-app",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@cloudbeaver/core-localization": "workspace:*",
+    "@cloudbeaver/core-sdk": "workspace:*",
+    "@cloudbeaver/core-di": "workspace:*"
+  },
+  "devDependencies": {}
+}

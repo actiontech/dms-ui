@@ -1,3 +1,0 @@
-mutation changeSessionLanguage($locale: String!) {
-  changeSessionLanguage(locale: $locale)
-}

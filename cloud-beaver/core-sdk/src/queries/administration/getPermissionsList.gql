@@ -1,5 +1,0 @@
-query getPermissionsList {
-  permissions: listPermissions {
-    ...AdminPermissionInfo
-  }
-}

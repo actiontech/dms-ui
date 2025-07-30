@@ -1,7 +1,0 @@
-fragment ResourceType on RMResourceType {
-  id
-  displayName
-  icon
-  fileExtensions
-  rootFolder
-}

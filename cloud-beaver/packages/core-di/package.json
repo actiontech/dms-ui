@@ -1,0 +1,15 @@
+{
+  "name": "@cloudbeaver/core-di",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@cloudbeaver/core-executor": "workspace:*",
+    "inversify": "^6"
+  },
+  "devDependencies": {}
+}

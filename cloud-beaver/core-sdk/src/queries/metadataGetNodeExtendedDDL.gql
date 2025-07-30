@@ -1,3 +1,0 @@
-query metadataGetNodeExtendedDDL($nodeId: ID!) {
-  metadataGetNodeExtendedDDL(nodeId: $nodeId)
-}

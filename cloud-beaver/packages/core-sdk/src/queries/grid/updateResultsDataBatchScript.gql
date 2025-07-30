@@ -1,0 +1,20 @@
+mutation updateResultsDataBatchScript(
+    $projectId: ID!
+    $connectionId: ID!
+    $contextId: ID!
+    $resultsId: ID!
+    $updatedRows: [ SQLResultRow! ]
+    $deletedRows: [ SQLResultRow! ]
+    $addedRows: [ SQLResultRow! ]
+) {
+    result: updateResultsDataBatchScript(
+        projectId: $projectId
+        connectionId: $connectionId
+        contextId: $contextId
+        resultsId: $resultsId
+
+        updatedRows: $updatedRows
+        deletedRows: $deletedRows
+        addedRows: $addedRows
+    )
+}

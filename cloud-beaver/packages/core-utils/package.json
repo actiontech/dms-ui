@@ -1,0 +1,29 @@
+{
+  "name": "@cloudbeaver/core-utils",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@timohausmann/quadtree-ts": "^2",
+    "fast-deep-equal": "^3",
+    "md5": "^2",
+    "mobx": "^6",
+    "tslib": "^2",
+    "underscore": "^1",
+    "uuid": "^11",
+    "whatwg-mimetype": "^4",
+    "zod": "3.25.17",
+    "zod-i18n-map": "2.27.0",
+    "zod-validation-error": "3.4.1"
+  },
+  "devDependencies": {
+    "@types/md5": "^2",
+    "@types/underscore": "^1",
+    "@types/uuid": "^10",
+    "@types/whatwg-mimetype": "^3"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@cloudbeaver/core-localization",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "description": "国际化功能包，提供与 react-i18next 兼容的 API，专门处理 [key, value] 数组格式的语言包",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}

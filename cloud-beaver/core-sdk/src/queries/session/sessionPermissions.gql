@@ -1,3 +1,0 @@
-query sessionPermissions {
-  permissions: sessionPermissions
-}

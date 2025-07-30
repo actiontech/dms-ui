@@ -45,3 +45,5 @@ es
 
 # cursor
 .cursor
+/cloud-beaver/node_modules
+/cloud-beaver/packages/*/node_modules

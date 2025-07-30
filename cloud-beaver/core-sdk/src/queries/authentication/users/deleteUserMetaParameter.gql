@@ -1,3 +1,0 @@
-query deleteUserMetaParameter($id: ID!) {
-  state: deleteUserMetaParameter(id: $id)
-}

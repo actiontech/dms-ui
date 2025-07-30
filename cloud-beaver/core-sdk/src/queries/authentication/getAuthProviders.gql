@@ -1,5 +1,0 @@
-query getAuthProviders {
-  providers: authProviders {
-    ...AuthProviderInfo
-  }
-}

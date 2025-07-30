@@ -1,3 +1,0 @@
-mutation asyncTaskCancel($taskId: String!) {
-  result: asyncTaskCancel(id: $taskId)
-}

@@ -1,5 +1,0 @@
-query getUserProfileProperties {
-  properties: listUserProfileProperties {
-    ...UserConnectionAuthProperties
-  }
-}

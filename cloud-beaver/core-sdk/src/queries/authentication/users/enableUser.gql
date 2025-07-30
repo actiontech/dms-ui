@@ -1,3 +1,0 @@
-query enableUser($userId: ID!, $enabled: Boolean!) {
-  enableUser(userId: $userId, enabled: $enabled)
-}

@@ -77,6 +77,8 @@ export default defineConfig([
   },
   globalIgnores([
     'jest.config.js',
+    '**/cloud-beaver/packages/*/src/locales/*.ts',
+    '**/packages/*/src/locale/**/*.ts',
     'eslint.config.mjs',
     '**/packages/**/*.test.ts',
     '**/packages/**/*.test.tsx',

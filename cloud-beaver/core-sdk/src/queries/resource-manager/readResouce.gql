@@ -1,6 +1,0 @@
-query readResource($projectId: String!, $resourcePath: String!) {
-  value: rmReadResourceAsString(
-    projectId: $projectId
-    resourcePath: $resourcePath
-  )
-}

@@ -1,5 +1,0 @@
-query getTeamMetaParameters {
-  parameters: listTeamMetaParameters {
-    ...ObjectPropertyInfo
-  }
-}

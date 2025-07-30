@@ -1,0 +1,16 @@
+query authLogin($provider: ID!, $configuration: ID, $credentials: Object, $linkUser: Boolean, $forceSessionsLogout: Boolean) {
+  authInfo: authLogin(
+    provider: $provider
+    configuration: $configuration
+    credentials: $credentials
+    linkUser: $linkUser
+    forceSessionsLogout: $forceSessionsLogout
+  ) {
+    redirectLink
+    authId
+    authStatus
+    userTokens {
+      ...AuthToken
+    }
+  }
+}
