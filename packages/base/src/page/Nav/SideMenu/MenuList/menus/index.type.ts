@@ -73,4 +73,5 @@ type SqleMenuStructTreeKey =
   | 'push-rule-configuration'
   | 'pipeline-configuration'
   | 'version-management'
-  | 'data-source-comparison';
+  | 'data-source-comparison'
+  | 'sql-insights';

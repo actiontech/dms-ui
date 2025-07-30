@@ -400,6 +400,12 @@ export enum RecordSourceNameEnum {
   'ide_plugin' = 'ide_plugin'
 }
 
+export enum RelatedSQLInfoSourceEnum {
+  'workflow' = 'workflow',
+
+  'sql_manage' = 'sql_manage'
+}
+
 export enum ReportPushConfigListPushUserTypeEnum {
   'fixed' = 'fixed',
 
@@ -534,6 +540,66 @@ export enum TestFeishuConfigurationReqV1AccountTypeEnum {
   'email' = 'email',
 
   'phone' = 'phone'
+}
+
+export enum TransactionInfoLockTypeEnum {
+  'SHARED' = 'SHARED',
+
+  'EXCLUSIVE' = 'EXCLUSIVE',
+
+  'INTENTION_SHARED' = 'INTENTION_SHARED',
+
+  'INTENTION_EXCLUSIVE' = 'INTENTION_EXCLUSIVE',
+
+  'SHARED_INTENTION_EXCLUSIVE' = 'SHARED_INTENTION_EXCLUSIVE',
+
+  'ROW_LOCK' = 'ROW_LOCK',
+
+  'TABLE_LOCK' = 'TABLE_LOCK',
+
+  'METADATA_LOCK' = 'METADATA_LOCK'
+}
+
+export enum TransactionInfoTransactionStateEnum {
+  'RUNNING' = 'RUNNING',
+
+  'COMPLETED' = 'COMPLETED'
+}
+
+export enum TransactionLockInfoLockTypeEnum {
+  'SHARED' = 'SHARED',
+
+  'EXCLUSIVE' = 'EXCLUSIVE',
+
+  'INTENTION_SHARED' = 'INTENTION_SHARED',
+
+  'INTENTION_EXCLUSIVE' = 'INTENTION_EXCLUSIVE',
+
+  'SHARED_INTENTION_EXCLUSIVE' = 'SHARED_INTENTION_EXCLUSIVE',
+
+  'ROW_LOCK' = 'ROW_LOCK',
+
+  'TABLE_LOCK' = 'TABLE_LOCK',
+
+  'METADATA_LOCK' = 'METADATA_LOCK'
+}
+
+export enum TransactionSQLLockTypeEnum {
+  'SHARED' = 'SHARED',
+
+  'EXCLUSIVE' = 'EXCLUSIVE',
+
+  'INTENTION_SHARED' = 'INTENTION_SHARED',
+
+  'INTENTION_EXCLUSIVE' = 'INTENTION_EXCLUSIVE',
+
+  'SHARED_INTENTION_EXCLUSIVE' = 'SHARED_INTENTION_EXCLUSIVE',
+
+  'ROW_LOCK' = 'ROW_LOCK',
+
+  'TABLE_LOCK' = 'TABLE_LOCK',
+
+  'METADATA_LOCK' = 'METADATA_LOCK'
 }
 
 export enum UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum {

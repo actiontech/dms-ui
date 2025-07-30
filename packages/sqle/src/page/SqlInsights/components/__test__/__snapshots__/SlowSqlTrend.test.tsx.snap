@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlowSqlTrend should render component correctly when task is supported 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1t4jh8"
+    >
+      <div
+        class="css-1wc0u0x"
+      >
+        <h3
+          class="chart-title"
+        >
+          慢SQL趋势
+        </h3>
+        <div
+          class="chart-container slow-sql-trend-chart"
+          style="position: relative;"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="chart-box"
+            >
+              <div
+                data-custom-params="{"data":[{"date":"2025-01-22 12:00:00","type":"活跃会话数"},{"date":"2025-07-22 15:57:56","value":0,"type":"活跃会话数"},{"date":"2025-07-22 18:21:56","value":0,"type":"活跃会话数"},{"date":"2025-07-22 20:45:56","value":1,"type":"活跃会话数"},{"date":"2025-07-22 23:09:56","value":0,"type":"活跃会话数"},{"date":"2025-07-23 01:33:56","value":0,"type":"活跃会话数","status":1},{"date":"2025-07-23 03:57:56","value":0,"type":"活跃会话数"},{"date":"2025-07-23 06:21:56","value":0,"type":"活跃会话数"},{"date":"2025-07-23 08:45:56","value":0,"type":"活跃会话数"},{"date":"2025-07-23 11:09:56","value":0,"type":"活跃会话数"},{"date":"2025-07-23 13:33:56","value":0,"type":"活跃会话数"}],"xField":"date","yField":"value","seriesField":"type","xAxis":{"title":{"text":"日期"}},"yAxis":{"title":{"text":"数值"}},"legend":{"position":"top"},"smooth":true,"animation":{"appear":{"animation":"path-in","duration":1000}},"interactions":[{"type":"brush","enable":false},{"type":"brush-x","enable":false}],"annotations":[{"type":"dataMarker","position":["2025-07-23 01:33:56",0],"text":{"content":""},"point":{"style":{"fill":"#ff4d4f","stroke":"#ff4d4f","r":4,"lineWidth":2}}}]}"
+                data-testid="mock-antd-plots"
+              />
+            </div>
+          </div>
+          <div
+            style="display: none; position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; background-color: rgba(197, 212, 235, 0.6); pointer-events: none;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
