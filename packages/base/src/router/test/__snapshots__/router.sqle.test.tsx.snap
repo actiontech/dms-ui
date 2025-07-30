@@ -546,6 +546,24 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlInsights 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          sqlInsights
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagement render sqlManagement 1`] = `
 <body>
   <div>

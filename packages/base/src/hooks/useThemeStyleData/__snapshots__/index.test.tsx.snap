@@ -923,6 +923,10 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
     },
     "loadingColor": "#4583ff",
   },
+  "sqlInsight": {
+    "dataMarkerColor": "#ff4d4f",
+    "regionFillColor": "rgba(197, 212, 235, 0.6)",
+  },
   "statistics": {
     "auditRateStatus": {
       "error": {

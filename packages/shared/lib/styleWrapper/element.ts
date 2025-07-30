@@ -90,6 +90,8 @@ export const SegmentedRowStyleWrapper = styled(Row)`
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
 `;
 
+export const EmptyRowStyleWrapper = SegmentedRowStyleWrapper;
+
 export const RuleStatusWrapperStyleWrapper = styled('div')`
   padding: 10px 40px;
   border-bottom: 1px solid

@@ -1,4 +1,4 @@
-// @warn/cli/create-dms-page
+import sqlInsights from './sqlInsights'; // @warn/cli/create-dms-page
 
 import audit from './audit';
 import dashboard from './dashboard';
@@ -67,6 +67,7 @@ export default {
     globalDashboard,
     dataSourceComparison,
     sqlRewrite,
-    knowledgeBase
+    knowledgeBase,
+    sqlInsights
   }
 };
