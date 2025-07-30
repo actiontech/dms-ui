@@ -12962,7 +12962,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 110px;"
+                          style="width: 246px;"
                         />
                       </colgroup>
                       <tbody
@@ -14098,7 +14098,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 110px;"
+                          style="width: 246px;"
                         />
                       </colgroup>
                       <tbody
