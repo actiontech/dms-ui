@@ -216,6 +216,8 @@ export interface IAuditPlanMetaV1 {
 
   audit_plan_type_desc?: string;
 
+  audit_plan_type_tips?: string;
+
   high_priority_conditions?: IHighPriorityConditionResV1[];
 
   instance_type?: string;

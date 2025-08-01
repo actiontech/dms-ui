@@ -58,9 +58,14 @@ const TopSqlTrend: React.FC<SqlInsightsChartProps> = ({
         onSelectDate={(selectedDateRange) => {
           updateRelateSqlListDateRange(selectedDateRange);
         }}
-        onGoToEnable={onCreateSqlManagementConf}
+        onGoToEnable={() => {
+          onCreateSqlManagementConf(
+            GetSqlPerformanceInsightsMetricNameEnum.top_sql_trend
+          );
+        }}
         isTaskEnabled={isTaskEnabled}
         errorInfo={errorMessage}
+        instanceId={instanceId}
       />
     </TopSqlTrendStyleWrapper>
   ) : null;

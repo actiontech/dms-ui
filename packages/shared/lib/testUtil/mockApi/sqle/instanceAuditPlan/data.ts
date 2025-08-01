@@ -55,6 +55,11 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
         audit_plan_id: 3,
         type: 'all_app_extract',
         desc: '应用程序SQL抓取'
+      },
+      {
+        audit_plan_id: 4,
+        type: 'performance_collect',
+        desc: '数据源性能指标'
       }
     ],
     active_status: InstanceAuditPlanResV1ActiveStatusEnum.disabled,

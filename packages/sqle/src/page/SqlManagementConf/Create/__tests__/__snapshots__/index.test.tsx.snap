@@ -9952,6 +9952,2758 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
 </body>
 `;
 
+exports[`test sqle/SqlManagementConf/Create render create audit plan with performance collect task 1`] = `
+<body>
+  <div>
+    <section
+      class="css-doq0dk"
+    >
+      <div
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="/sqle/project/700300/sql-management-conf"
+          >
+            <button
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回智能扫描配置
+              </span>
+            </button>
+          </a>
+        </div>
+        <div
+          class="extra"
+        >
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  重 置
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                type="submit"
+              >
+                <span>
+                  提 交
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+      >
+        <form
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
+        >
+          <section
+            class="css-1x6j49j"
+          >
+            <section
+              class="has-border css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h3
+                  class="ant-typography css-p50odb"
+                >
+                  <svg
+                    class="title-icon"
+                    height="40"
+                    viewBox="0 0 18 18"
+                    width="42"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M1.5 8.25h15v1.5h-15z"
+                      fill="#8A8F99"
+                    />
+                  </svg>
+                  <span>
+                    为数据源开启扫描任务
+                  </span>
+                </h3>
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  选择数据源
+                </h1>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="environmentTag"
+                        title="环境属性"
+                      >
+                        环境属性
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="environmentTag_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="environmentTag_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="environmentTag_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="environmentTag"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="environment-1"
+                              >
+                                environment-1
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="instanceType"
+                        title="数据源类型"
+                      >
+                        数据源类型
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceType_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceType_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceType_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceType"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="MySQL"
+                              >
+                                MySQL
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-clear"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceName_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceName_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceName_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceName"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="mysql-1(10.186.62.13:33061)"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="instanceId"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            数据源名称
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            请选择所属业务来获取对应的数据源
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceId_list_1"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceId_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceId_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceId"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="mysql-1(10.186.62.13:33061)"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <h1
+                      class="ant-typography css-1eepp70"
+                    >
+                      选择扫描类型
+                    </h1>
+                    <div
+                      class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                        >
+                          <label
+                            class="ant-form-item-no-colon"
+                            for="scanTypes"
+                            title=""
+                          >
+                            <div
+                              class="label-cont-custom"
+                            >
+                              <div>
+                                扫描类型
+                              </div>
+                              <div
+                                class="tip-content-box"
+                              >
+                                选择您需要扫描的SQL对象
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                                id="scanTypes"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px; margin-right: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label="全部"
+                                      class="toggle-token-item-label"
+                                      title="全部"
+                                    >
+                                      全部
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        自定义
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        Mybatis 扫描
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        MySQL库表元数据
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        阿里RDS MySQL慢日志
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        SQL文件
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        测试扫描类型
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                                  >
+                                    <div
+                                      class="toggle-token-item-with-checkbox-children"
+                                    >
+                                      <span
+                                        aria-label="check-circle"
+                                        class="anticon anticon-check-circle"
+                                        role="img"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="check-circle"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                          />
+                                        </svg>
+                                      </span>
+                                      <span
+                                        aria-label=""
+                                        class="toggle-token-item-label"
+                                        title=""
+                                      >
+                                        <div
+                                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                        >
+                                          数据源性能指标
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="has-border css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  编辑扫描详情·数据源性能指标
+                </h1>
+                <div
+                  class="ant-alert ant-alert-info css-wh7f8s"
+                  data-show="true"
+                  role="alert"
+                >
+                  <span
+                    aria-label="info-circle"
+                    class="anticon anticon-info-circle ant-alert-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="info-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="ant-alert-content"
+                  >
+                    <div
+                      class="ant-alert-message"
+                    >
+                      性能指标采集将产生较大性能开销,请谨慎开启
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="mysql_performance_collect_collect_interval_minute"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            采集周期
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            分钟
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
+                            id="mysql_performance_collect_collect_interval_minute"
+                            placeholder="请输入{{name}}"
+                            type="text"
+                            value="10"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </section>
+        </form>
+      </div>
+    </section>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="environmentTag_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="environment-1"
+            aria-selected="true"
+            id="environmentTag_list_0"
+            role="option"
+          >
+            1
+          </div>
+          <div
+            aria-label="environment-2"
+            aria-selected="false"
+            id="environmentTag_list_1"
+            role="option"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  title="environment-1"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="environment-2"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-2
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="instanceType_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="instanceType_list_0"
+            role="option"
+          >
+            mysql
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="css-1uw16ge"
+                    >
+                      <img
+                        alt=""
+                        src=""
+                      />
+                      <span
+                        title="mysql"
+                      >
+                        mysql
+                      </span>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="instanceId_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="instanceId_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="mysql-1(10.186.62.13:33061)"
+            aria-selected="true"
+            id="instanceId_list_1"
+            role="option"
+          >
+            1739531854064652288
+          </div>
+          <div
+            aria-label="mysql-2(10.186.62.14:33062)"
+            aria-selected="false"
+            id="instanceId_list_2"
+            role="option"
+          >
+            1739531942258282496
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="MySQL"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  title="mysql-1(10.186.62.13:33061)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-1(10.186.62.13:33061)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="mysql-2(10.186.62.14:33062)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-2(10.186.62.14:33062)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="xin-test-database(10.186.62.15:33063)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    xin-test-database(10.186.62.15:33063)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="mysql-5(139.196.241.182:33061)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-5(139.196.241.182:33061)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="PostgreSQL"
+                    >
+                      PostgreSQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="progres-1(10.186.62.16:5432)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    progres-1(10.186.62.16:5432)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`test sqle/SqlManagementConf/Create render create audit plan with performance collect task 2`] = `
+<body>
+  <div>
+    <section
+      class="css-doq0dk"
+    >
+      <div
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="/sqle/project/700300/sql-management-conf"
+          >
+            <button
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回智能扫描配置
+              </span>
+            </button>
+          </a>
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <div
+        class="lazy-load-wrapper lazy-load-wrapper-hidden css-952l0m"
+      >
+        <form
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
+        >
+          <section
+            class="css-1x6j49j"
+          >
+            <section
+              class="has-border css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h3
+                  class="ant-typography css-p50odb"
+                >
+                  <svg
+                    class="title-icon"
+                    height="40"
+                    viewBox="0 0 18 18"
+                    width="42"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M1.5 8.25h15v1.5h-15z"
+                      fill="#8A8F99"
+                    />
+                  </svg>
+                  <span>
+                    为数据源开启扫描任务
+                  </span>
+                </h3>
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  选择数据源
+                </h1>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="environmentTag"
+                        title="环境属性"
+                      >
+                        环境属性
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="environmentTag_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="environmentTag_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="environmentTag_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="environmentTag"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="environment-1"
+                              >
+                                environment-1
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="instanceType"
+                        title="数据源类型"
+                      >
+                        数据源类型
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceType_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceType_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceType_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceType"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="MySQL"
+                              >
+                                MySQL
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-clear"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceName_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceName_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceName_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceName"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="mysql-1(10.186.62.13:33061)"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="instanceId"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            数据源名称
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            请选择所属业务来获取对应的数据源
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="instanceId_list_1"
+                                  aria-autocomplete="list"
+                                  aria-controls="instanceId_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="instanceId_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="instanceId"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="mysql-1(10.186.62.13:33061)"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-nested-loading"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <h1
+                      class="ant-typography css-1eepp70"
+                    >
+                      选择扫描类型
+                    </h1>
+                    <div
+                      class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                        >
+                          <label
+                            class="ant-form-item-no-colon"
+                            for="scanTypes"
+                            title=""
+                          >
+                            <div
+                              class="label-cont-custom"
+                            >
+                              <div>
+                                扫描类型
+                              </div>
+                              <div
+                                class="tip-content-box"
+                              >
+                                选择您需要扫描的SQL对象
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                                id="scanTypes"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px; margin-right: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label="全部"
+                                      class="toggle-token-item-label"
+                                      title="全部"
+                                    >
+                                      全部
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        自定义
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        Mybatis 扫描
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        MySQL库表元数据
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        阿里RDS MySQL慢日志
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        SQL文件
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                                  >
+                                    <span
+                                      aria-label=""
+                                      class="toggle-token-item-label"
+                                      title=""
+                                    >
+                                      <div
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                      >
+                                        测试扫描类型
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                                  >
+                                    <div
+                                      class="toggle-token-item-with-checkbox-children"
+                                    >
+                                      <span
+                                        aria-label="check-circle"
+                                        class="anticon anticon-check-circle"
+                                        role="img"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="check-circle"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                          />
+                                        </svg>
+                                      </span>
+                                      <span
+                                        aria-label=""
+                                        class="toggle-token-item-label"
+                                        title=""
+                                      >
+                                        <div
+                                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                                        >
+                                          数据源性能指标
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="has-border css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70"
+                >
+                  编辑扫描详情·数据源性能指标
+                </h1>
+                <div
+                  class="ant-alert ant-alert-info css-wh7f8s"
+                  data-show="true"
+                  role="alert"
+                >
+                  <span
+                    aria-label="info-circle"
+                    class="anticon anticon-info-circle ant-alert-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="info-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="ant-alert-content"
+                  >
+                    <div
+                      class="ant-alert-message"
+                    >
+                      性能指标采集将产生较大性能开销,请谨慎开启
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="mysql_performance_collect_collect_interval_minute"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            采集周期
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            分钟
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
+                            id="mysql_performance_collect_collect_interval_minute"
+                            placeholder="请输入{{name}}"
+                            type="text"
+                            value="10"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </section>
+        </form>
+      </div>
+      <div
+        class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+      >
+        <section
+          class="basic-result-wrapper css-7vto1s"
+        >
+          <div
+            class="ant-result ant-result-info"
+          >
+            <div
+              class="ant-result-icon"
+            >
+              <svg
+                fill="none"
+                height="160"
+                viewBox="0 0 160 160"
+                width="160"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  filter="url(#filter0_d_3998_2816)"
+                >
+                  <rect
+                    fill="white"
+                    height="100"
+                    rx="6"
+                    width="128"
+                    x="15"
+                    y="30"
+                  />
+                  <rect
+                    height="99"
+                    rx="5.5"
+                    stroke="#F2F1F0"
+                    width="127"
+                    x="15.5"
+                    y="30.5"
+                  />
+                </g>
+                <circle
+                  cx="21.5"
+                  cy="36.5"
+                  fill="#F66074"
+                  r="1.5"
+                />
+                <circle
+                  cx="27.5"
+                  cy="36.5"
+                  fill="#EDB054"
+                  r="1.5"
+                />
+                <circle
+                  cx="33.5"
+                  cy="36.5"
+                  fill="#1CB889"
+                  r="1.5"
+                />
+                <rect
+                  fill="#EBEAE7"
+                  height="5"
+                  rx="2"
+                  width="37"
+                  x="27"
+                  y="52"
+                />
+                <rect
+                  fill="#EBEAE7"
+                  height="4"
+                  rx="2"
+                  width="17"
+                  x="27"
+                  y="62"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="19"
+                  x="70"
+                  y="78"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="40"
+                  x="27"
+                  y="78"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="47"
+                  x="42"
+                  y="87"
+                />
+                <rect
+                  fill="#F66074"
+                  height="4"
+                  rx="2"
+                  width="12"
+                  x="27"
+                  y="87"
+                />
+                <rect
+                  fill="#F66074"
+                  height="4"
+                  rx="2"
+                  width="10"
+                  x="79"
+                  y="96"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="13"
+                  x="63"
+                  y="96"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="33"
+                  x="27"
+                  y="96"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="34"
+                  x="55"
+                  y="105"
+                />
+                <rect
+                  fill="#F66074"
+                  height="4"
+                  rx="2"
+                  width="25"
+                  x="27"
+                  y="105"
+                />
+                <rect
+                  fill="#F2F1EF"
+                  height="4"
+                  rx="2"
+                  width="49"
+                  x="27"
+                  y="114"
+                />
+                <rect
+                  fill="#F7F6F4"
+                  height="72"
+                  rx="3"
+                  width="32"
+                  x="99"
+                  y="48"
+                />
+                <rect
+                  fill="white"
+                  height="6"
+                  rx="1"
+                  stroke="#E8E7E6"
+                  width="24"
+                  x="103"
+                  y="52"
+                />
+                <rect
+                  fill="white"
+                  height="6"
+                  rx="1"
+                  stroke="#E8E7E6"
+                  width="24"
+                  x="103"
+                  y="76"
+                />
+                <g
+                  filter="url(#filter1_d_3998_2816)"
+                >
+                  <rect
+                    fill="#4583FF"
+                    height="8"
+                    rx="2"
+                    width="26"
+                    x="102"
+                    y="63"
+                  />
+                </g>
+                <rect
+                  fill="white"
+                  height="6"
+                  rx="1"
+                  stroke="#E8E7E6"
+                  width="24"
+                  x="103"
+                  y="87"
+                />
+                <rect
+                  fill="white"
+                  height="6"
+                  rx="1"
+                  stroke="#E8E7E6"
+                  width="24"
+                  x="103"
+                  y="98"
+                />
+                <rect
+                  fill="white"
+                  height="6"
+                  rx="1"
+                  stroke="#E8E7E6"
+                  width="24"
+                  x="103"
+                  y="109"
+                />
+                <g
+                  filter="url(#filter2_d_3998_2816)"
+                >
+                  <path
+                    d="M134 136C138.418 136 142.418 134.209 145.314 131.314C148.209 128.418 150 124.418 150 120C150 115.582 148.209 111.582 145.314 108.686C142.418 105.791 138.418 104 134 104C129.582 104 125.582 105.791 122.686 108.686C119.791 111.582 118 115.582 118 120C118 124.418 119.791 128.418 122.686 131.314C125.582 134.209 129.582 136 134 136Z"
+                    fill="#1CB889"
+                  />
+                </g>
+                <path
+                  d="M128.4 120L132.6 124.2L141 115.8"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                />
+                <rect
+                  fill="url(#paint0_linear_3998_2816)"
+                  height="50"
+                  width="37"
+                  x="27"
+                  y="73"
+                />
+                <rect
+                  fill="#15C7D4"
+                  height="50"
+                  width="2"
+                  x="62"
+                  y="73"
+                />
+                <defs>
+                  <filter
+                    color-interpolation-filters="sRGB"
+                    filterUnits="userSpaceOnUse"
+                    height="110"
+                    id="filter0_d_3998_2816"
+                    width="138"
+                    x="10"
+                    y="27"
+                  >
+                    <feflood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    />
+                    <fecolormatrix
+                      in="SourceAlpha"
+                      result="hardAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feoffset
+                      dy="2"
+                    />
+                    <fegaussianblur
+                      stdDeviation="2.5"
+                    />
+                    <fecomposite
+                      in2="hardAlpha"
+                      operator="out"
+                    />
+                    <fecolormatrix
+                      type="matrix"
+                      values="0 0 0 0 0.2 0 0 0 0 0.173333 0 0 0 0 0.12 0 0 0 0.1 0"
+                    />
+                    <feblend
+                      in2="BackgroundImageFix"
+                      mode="normal"
+                      result="effect1_dropShadow_3998_2816"
+                    />
+                    <feblend
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_3998_2816"
+                      mode="normal"
+                      result="shape"
+                    />
+                  </filter>
+                  <filter
+                    color-interpolation-filters="sRGB"
+                    filterUnits="userSpaceOnUse"
+                    height="16"
+                    id="filter1_d_3998_2816"
+                    width="34"
+                    x="98"
+                    y="60"
+                  >
+                    <feflood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    />
+                    <fecolormatrix
+                      in="SourceAlpha"
+                      result="hardAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feoffset
+                      dy="1"
+                    />
+                    <fegaussianblur
+                      stdDeviation="2"
+                    />
+                    <fecomposite
+                      in2="hardAlpha"
+                      operator="out"
+                    />
+                    <fecolormatrix
+                      type="matrix"
+                      values="0 0 0 0 0.270588 0 0 0 0 0.513726 0 0 0 0 1 0 0 0 0.4 0"
+                    />
+                    <feblend
+                      in2="BackgroundImageFix"
+                      mode="normal"
+                      result="effect1_dropShadow_3998_2816"
+                    />
+                    <feblend
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_3998_2816"
+                      mode="normal"
+                      result="shape"
+                    />
+                  </filter>
+                  <filter
+                    color-interpolation-filters="sRGB"
+                    filterUnits="userSpaceOnUse"
+                    height="44"
+                    id="filter2_d_3998_2816"
+                    width="44"
+                    x="112"
+                    y="100"
+                  >
+                    <feflood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    />
+                    <fecolormatrix
+                      in="SourceAlpha"
+                      result="hardAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feoffset
+                      dy="2"
+                    />
+                    <fegaussianblur
+                      stdDeviation="3"
+                    />
+                    <fecomposite
+                      in2="hardAlpha"
+                      operator="out"
+                    />
+                    <fecolormatrix
+                      type="matrix"
+                      values="0 0 0 0 0.109804 0 0 0 0 0.721569 0 0 0 0 0.537255 0 0 0 0.4 0"
+                    />
+                    <feblend
+                      in2="BackgroundImageFix"
+                      mode="normal"
+                      result="effect1_dropShadow_3998_2816"
+                    />
+                    <feblend
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_3998_2816"
+                      mode="normal"
+                      result="shape"
+                    />
+                  </filter>
+                  <lineargradient
+                    gradientUnits="userSpaceOnUse"
+                    id="paint0_linear_3998_2816"
+                    x1="64"
+                    x2="27"
+                    y1="73"
+                    y2="73"
+                  >
+                    <stop
+                      stop-color="#1ACEDB"
+                      stop-opacity="0.3"
+                    />
+                    <stop
+                      offset="1"
+                      stop-color="white"
+                      stop-opacity="0"
+                    />
+                  </lineargradient>
+                </defs>
+              </svg>
+            </div>
+            <div
+              class="ant-result-title"
+            >
+              创建SQL管控配置成功
+            </div>
+            <div
+              class="ant-result-extra"
+            >
+              <button
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  重置表单
+                </span>
+              </button>
+              <a
+                href="/sqle/project/700300/sql-management-conf/"
+              >
+                <button
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    查看配置详情
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="environmentTag_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="environment-1"
+            aria-selected="true"
+            id="environmentTag_list_0"
+            role="option"
+          >
+            1
+          </div>
+          <div
+            aria-label="environment-2"
+            aria-selected="false"
+            id="environmentTag_list_1"
+            role="option"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  title="environment-1"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="environment-2"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-2
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="instanceType_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="instanceType_list_0"
+            role="option"
+          >
+            mysql
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="css-1uw16ge"
+                    >
+                      <img
+                        alt=""
+                        src=""
+                      />
+                      <span
+                        title="mysql"
+                      >
+                        mysql
+                      </span>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="instanceId_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="instanceId_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="mysql-1(10.186.62.13:33061)"
+            aria-selected="true"
+            id="instanceId_list_1"
+            role="option"
+          >
+            1739531854064652288
+          </div>
+          <div
+            aria-label="mysql-2(10.186.62.14:33062)"
+            aria-selected="false"
+            id="instanceId_list_2"
+            role="option"
+          >
+            1739531942258282496
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="MySQL"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  title="mysql-1(10.186.62.13:33061)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-1(10.186.62.13:33061)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="mysql-2(10.186.62.14:33062)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-2(10.186.62.14:33062)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="xin-test-database(10.186.62.15:33063)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    xin-test-database(10.186.62.15:33063)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="mysql-5(139.196.241.182:33061)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql-5(139.196.241.182:33061)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="PostgreSQL"
+                    >
+                      PostgreSQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="progres-1(10.186.62.16:5432)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    progres-1(10.186.62.16:5432)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
 <body>
   <div>

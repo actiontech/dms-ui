@@ -12,6 +12,7 @@ import TaskEnabledTips from '../TaskEnabledTips';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { useChartEvent } from './hooks/useChartEvent';
+import { EmptyBox } from '@actiontech/shared/';
 
 export interface SqlInsightsLineChartProps {
   loading: boolean;
@@ -27,6 +28,7 @@ export interface SqlInsightsLineChartProps {
   errorInfo?: string;
   isTaskEnabled?: boolean;
   onGoToEnable?: () => void;
+  instanceId?: string;
 }
 
 const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
@@ -38,7 +40,8 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
   onSelectDate,
   errorInfo,
   isTaskEnabled,
-  onGoToEnable
+  onGoToEnable,
+  instanceId
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
@@ -156,10 +159,13 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
         >
           <ChartWrapper
             loading={loading}
-            dataLength={transformedData.length}
+            dataLength={isTaskEnabled ? transformedData.length : 0}
             emptyCont={
               !isTaskEnabled ? (
-                <TaskEnabledTips onGoToEnable={onGoToEnable} />
+                <TaskEnabledTips
+                  onGoToEnable={onGoToEnable}
+                  instanceId={instanceId}
+                />
               ) : (
                 t('sqlInsights.chart.noData')
               )
@@ -172,18 +178,20 @@ const SqlInsightsLineChart: React.FC<SqlInsightsLineChartProps> = ({
               onEvent={handleChartEvent}
             />
           </ChartWrapper>
-          <div
-            style={{
-              display: maskWidth > 0 ? 'block' : 'none',
-              position: 'absolute',
-              top: maskYPosition,
-              left: maskXPosition,
-              width: maskWidth,
-              height: maskHeight,
-              backgroundColor: 'rgba(197, 212, 235, 0.6)',
-              pointerEvents: 'none'
-            }}
-          ></div>
+          <EmptyBox if={isTaskEnabled}>
+            <div
+              style={{
+                display: maskWidth > 0 ? 'block' : 'none',
+                position: 'absolute',
+                top: maskYPosition,
+                left: maskXPosition,
+                width: maskWidth,
+                height: maskHeight,
+                backgroundColor: 'rgba(197, 212, 235, 0.6)',
+                pointerEvents: 'none'
+              }}
+            ></div>
+          </EmptyBox>
         </div>
       </SqlInsightsLineChartWrapper>
     </>

@@ -6,11 +6,18 @@ import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
-import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpySuccessResponse,
+  sqleMockApi
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import MockDate from 'mockdate';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil';
+import {
+  getBySelector,
+  mockUseCurrentUser
+} from '@actiontech/shared/lib/testUtil';
 import { DateRangeEnum } from '../../index.data';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -39,6 +46,14 @@ describe('DataSourcePerformanceTrend', () => {
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     getSqlPerformanceInsightsSpy =
       sqleMockApi.sqlInsight.getSqlPerformanceInsights();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -80,6 +95,22 @@ describe('DataSourcePerformanceTrend', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('should not render when task is not supported', async () => {
+    getSqlPerformanceInsightsSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          task_support: false
+        }
+      });
+    });
+
+    superRender(<DataSourcePerformanceTrend {...defaultProps} />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(screen.queryByText('数据源综合性能趋势')).not.toBeInTheDocument();
+  });
+
   it('should handle error message', async () => {
     const errorMessage = 'Test error message';
     getSqlPerformanceInsightsSpy.mockImplementation(() => {
@@ -93,6 +124,23 @@ describe('DataSourcePerformanceTrend', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText(errorMessage)).toBeInTheDocument();
+  });
+
+  it('should handle task not enabled state', async () => {
+    getSqlPerformanceInsightsSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          task_support: true,
+          task_enable: false
+        }
+      });
+    });
+
+    superRender(<DataSourcePerformanceTrend {...defaultProps} />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getBySelector('.task-enabled-tips')).toBeInTheDocument();
   });
 
   it('should handle refresh event', async () => {

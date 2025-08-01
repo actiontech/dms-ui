@@ -6,15 +6,13 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Space, Spin } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCallback, useEffect, useState, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import useInstance from '../../hooks/useInstance';
 import {
   BasicSelect,
   BasicRangePicker,
   BasicSegmented,
-  EmptyBox,
-  useTypedNavigate
+  EmptyBox
 } from '@actiontech/shared';
 import dayjs, { Dayjs } from 'dayjs';
 import DataSourcePerformanceTrend from './components/DataSourcePerformanceTrend';
@@ -34,13 +32,16 @@ import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { range } from 'lodash';
 import { SegmentedStyleWrapper, SqlInsightsStyleWrapper } from './style';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useDateRange from './hooks/useDateRange';
+import useInstance from '../../hooks/useInstance';
+import useOpenScanTask from './hooks/useOpenScanTask';
+import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
 const SqlInsights: React.FC = () => {
   const { t } = useTranslation();
-  const { projectName, projectID } = useCurrentProject();
-  const navigate = useTypedNavigate();
+  const { projectName } = useCurrentProject();
+
   const [selectedInstance, setSelectedInstance] = useState<string>();
 
   const {
@@ -60,26 +61,23 @@ const SqlInsights: React.FC = () => {
     instanceList
   } = useInstance();
 
-  const instanceInfo = useMemo(() => {
-    return instanceList.find((item) => item.instance_id === selectedInstance);
+  const instanceEnvironmentTag = useMemo(() => {
+    return instanceList.find(
+      (item: IInstanceTipResV2) => item.instance_id === selectedInstance
+    )?.environment_tag_name;
   }, [selectedInstance, instanceList]);
 
-  const onCreateSqlManagementConf = () => {
-    navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create, {
-      params: {
-        projectID
-      },
-      queries: {
-        instance_id: selectedInstance,
-        environment_tag: instanceInfo?.environment_tag_name
-      }
-    });
-  };
+  const { getAuditPlanDataLoading, onCreateSqlManagementConf } =
+    useOpenScanTask(selectedInstance, instanceEnvironmentTag);
 
   useEffect(() => {
     if (projectName) {
       updateInstanceList(
-        { project_name: projectName },
+        {
+          project_name: projectName,
+          functional_module:
+            getInstanceTipListV2FunctionalModuleEnum.view_sql_insight
+        },
         {
           onSuccess: (data) => {
             if (data.length > 0) {
@@ -89,11 +87,14 @@ const SqlInsights: React.FC = () => {
         }
       );
     }
-  }, [projectName, updateInstanceList]);
+  }, [projectName, updateInstanceList, setSelectedInstance]);
 
-  const handleInstanceChange = useCallback((value: string) => {
-    setSelectedInstance(value);
-  }, []);
+  const handleInstanceChange = useCallback(
+    (value: string) => {
+      setSelectedInstance(value);
+    },
+    [setSelectedInstance]
+  );
 
   const handleDateRangeChange = useCallback<
     Required<BasicRangePickerProps>['onChange']
@@ -172,7 +173,7 @@ const SqlInsights: React.FC = () => {
           </Space>
         }
       />
-      <Spin spinning={getInstanceListLoading}>
+      <Spin spinning={getInstanceListLoading || getAuditPlanDataLoading}>
         <SegmentedStyleWrapper size={12}>
           <Space>
             <BasicSegmented
@@ -218,6 +219,7 @@ const SqlInsights: React.FC = () => {
             instanceId={selectedInstance}
             dateRange={dateRange}
             pollingInterval={autoRefreshInterval}
+            onCreateSqlManagementConf={onCreateSqlManagementConf}
             timePeriod={timePeriod}
           />
           <SlowSqlTrend

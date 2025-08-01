@@ -15,7 +15,10 @@ import {
   mockUseUserOperationPermissionData
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockAuditPlanDetailData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
-import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyErrorResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -206,5 +209,41 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
       2,
       EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List
     );
+  });
+
+  it('should hidden performance collect task', async () => {
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
+    getInstanceAuditPlanDetailSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...mockAuditPlanDetailData,
+          audit_plans: [
+            ...(mockAuditPlanDetailData.audit_plans ?? []),
+            {
+              audit_plan_type: {
+                audit_plan_id: 8,
+                type: 'mysql_performance_collect',
+                desc: '数据源性能指标',
+                token: '',
+                active_status: '',
+                last_collection_status: ''
+              },
+              audit_plan_params: [
+                {
+                  key: 'collect_interval_minute',
+                  desc: '采集周期（分钟）',
+                  value: '10',
+                  type: 'int',
+                  enums_value: null
+                }
+              ]
+            }
+          ]
+        }
+      })
+    );
+    const { queryByText } = sqleSuperRender(<ConfDetail />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(queryByText('数据源性能指标')).not.toBeInTheDocument();
   });
 });
