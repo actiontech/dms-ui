@@ -2805,6 +2805,114 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render param key is empty
 </body>
 `;
 
+exports[`test SqlManagementConf/ScanTypesDynamicParams render performance collect task 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal"
+    >
+      <section
+        class="has-border css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70"
+          >
+            编辑扫描详情·数据源性能指标
+          </h1>
+          <div
+            class="ant-alert ant-alert-info css-wh7f8s"
+            data-show="true"
+            role="alert"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                性能指标采集将产生较大性能开销,请谨慎开启
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy"
+          >
+            <div
+              class="ant-row ant-form-item-row"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label"
+              >
+                <label
+                  class=""
+                  for="mysql_performance_collect_collect_interval_minute"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      采集周期
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分钟
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
+                      id="mysql_performance_collect_collect_interval_minute"
+                      placeholder="请输入{{name}}"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </form>
+  </div>
+</body>
+`;
+
 exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is true 1`] = `
 <body>
   <div />

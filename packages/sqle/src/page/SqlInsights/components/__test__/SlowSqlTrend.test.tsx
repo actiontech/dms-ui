@@ -10,7 +10,8 @@ import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 import MockDate from 'mockdate';
 import {
   getBySelector,
-  mockUseCurrentUser
+  mockUseCurrentUser,
+  mockUsePermission
 } from '@actiontech/shared/lib/testUtil';
 import { DateRangeEnum } from '../../index.data';
 import {
@@ -45,6 +46,14 @@ describe('SlowSqlTrend', () => {
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     getSqlPerformanceInsightsSpy =
       sqleMockApi.sqlInsight.getSqlPerformanceInsights();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);

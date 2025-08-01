@@ -26,7 +26,8 @@ describe('SqlInsightsLineChart', () => {
     loading: false,
     title: 'Test Chart',
     chartData: mockChartData,
-    className: 'test-class'
+    className: 'test-class',
+    isTaskEnabled: true
   };
 
   beforeEach(() => {

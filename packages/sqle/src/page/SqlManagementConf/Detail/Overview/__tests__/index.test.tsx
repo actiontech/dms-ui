@@ -234,4 +234,42 @@ describe('test Overview', () => {
     expect(getByText('重置Token成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(2);
   });
+
+  it('performance collect task', async () => {
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
+    getInstanceAuditPlanOverviewSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          ...mockInstanceAuditPlanInfo,
+          {
+            id: 8,
+            audit_plan_type: {
+              audit_plan_id: 8,
+              type: 'mysql_performance_collect',
+              desc: '数据源性能指标',
+              token: '',
+              active_status: '',
+              last_collection_status: ''
+            },
+            audit_plan_db_type: 'MySQL',
+            audit_plan_instance_name: 'vm1-mysql',
+            exec_cmd: '',
+            token_exp: 0,
+            audit_plan_rule_template: {
+              name: 'default_MySQL_V1Rules',
+              is_global_rule_template: true
+            },
+            total_sql_nums: 0,
+            unsolved_sql_nums: 0,
+            last_collection_time: '2025-07-30T17:35:26.921+08:00',
+            active_status: 'normal',
+            last_collection_status: 'normal'
+          }
+        ]
+      })
+    );
+    const { queryByText } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(queryByText('数据源性能指标')).toBeInTheDocument();
+  });
 });

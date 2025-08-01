@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TaskEnabledTips should not render component when checkActionPermission is false 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center task-enabled-tips"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-typography"
+        >
+          当前管控类型未开启
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      />
+    </div>
+  </div>
+</body>
+`;
+
 exports[`TaskEnabledTips should render component correctly 1`] = `
 <body>
   <div>
@@ -13,7 +37,7 @@ exports[`TaskEnabledTips should render component correctly 1`] = `
         <span
           class="ant-typography"
         >
-          当前管控类型未开启，
+          当前管控类型未开启
         </span>
       </div>
       <div
@@ -22,7 +46,7 @@ exports[`TaskEnabledTips should render component correctly 1`] = `
         <span
           class="css-12wfj2z"
         >
-          去开启
+          [去开启]
         </span>
       </div>
     </div>

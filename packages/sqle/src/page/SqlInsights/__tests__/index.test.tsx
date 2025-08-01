@@ -34,7 +34,7 @@ describe('SqlInsights', () => {
   let getSqlPerformanceInsightsSpy: jest.SpyInstance;
   let getSqlPerformanceInsightsRelatedSQLSpy: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
-
+  let getInstanceAuditPlansSpy: jest.SpyInstance;
   beforeEach(() => {
     MockDate.set(dayjs('2025-07-23 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
@@ -46,6 +46,8 @@ describe('SqlInsights', () => {
     getSqlPerformanceInsightsRelatedSQLSpy =
       sqleMockApi.sqlInsight.getSqlPerformanceInsightsRelatedSQL();
     getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
+    getInstanceAuditPlansSpy =
+      sqleMockApi.instanceAuditPlan.getInstanceAuditPlans();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -77,6 +79,7 @@ describe('SqlInsights', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlansSpy).toHaveBeenCalledTimes(1);
 
     expect(getSqlPerformanceInsightsSpy).toHaveBeenCalledTimes(4);
     expect(screen.getByText('数据源综合性能趋势')).toBeInTheDocument();
