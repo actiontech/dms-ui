@@ -120,7 +120,8 @@ export default {
       title: '概览',
       column: {
         auditPlanType: '智能扫描类型',
-        performanceCollectTips: '性能指标采集将产生较大性能开销,请谨慎开启。开启后,系统将持续采集该数据源的性能数据(如QPS、连接数等)，并生成性能趋势图表，体现在性能洞察页面。',
+        performanceCollectTips:
+          '性能指标采集将产生较大性能开销,请谨慎开启。开启后,系统将持续采集该数据源的性能数据(如QPS、连接数等)，并生成性能趋势图表，体现在性能洞察页面。',
         auditRuleTemplate: '审核规则模板',
         status: '任务状态',
         scanType: '采集方式',

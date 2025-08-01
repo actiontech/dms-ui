@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { cleanup, act } from '@testing-library/react';
+import { cleanup, act, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
@@ -105,7 +105,22 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
       <ConfFormContextProvide
         value={{
           submitLoading,
-          scanTypeMetas: mockAuditPlanMetaData,
+          scanTypeMetas: [
+            ...mockAuditPlanMetaData,
+            {
+              audit_plan_type: 'mysql_performance_collect',
+              audit_plan_type_desc: '数据源性能指标',
+              audit_plan_type_tips: '性能指标采集将产生较大性能开销,请谨慎开启',
+              instance_type: 'MySQL',
+              audit_plan_params: [
+                {
+                  key: 'collect_interval_minute',
+                  desc: '采集周期（分钟）',
+                  value: '10'
+                }
+              ]
+            }
+          ],
           getScanTypeMetaPending: false,
           selectedScanTypeParams,
           defaultValue
@@ -274,5 +289,26 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
         .parentElement?.parentElement?.parentElement?.parentElement
         ?.parentElement
     ).not.toHaveClass('ant-form-item-hidden');
+  });
+
+  it('render performance collect task', async () => {
+    const { baseElement } = customRender(false, [
+      {
+        mysql_performance_collect: [
+          {
+            key: 'collect_interval_minute',
+            desc: '采集周期（分钟）',
+            value: '10',
+            type: AuditPlanParamResV1TypeEnum.int,
+            enums_value: undefined
+          }
+        ]
+      }
+    ]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(
+      screen.getByText('性能指标采集将产生较大性能开销,请谨慎开启')
+    ).toBeInTheDocument();
   });
 });
