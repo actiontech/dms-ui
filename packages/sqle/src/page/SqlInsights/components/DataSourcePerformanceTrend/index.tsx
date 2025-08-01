@@ -13,18 +13,25 @@ const DataSourcePerformanceTrend: React.FC<SqlInsightsChartProps> = ({
   instanceId,
   dateRange,
   pollingInterval,
-  timePeriod
+  timePeriod,
+  onCreateSqlManagementConf
 }) => {
   const { t } = useTranslation();
   const { updateRelateSqlListDateRange } = useRelatedSqlRedux();
-  const { loading, chartData, getChartData, errorMessage } =
-    useSqlInsightsMetric({
-      instanceId,
-      dateRange,
-      metricName: GetSqlPerformanceInsightsMetricNameEnum.comprehensive_trend,
-      pollingInterval,
-      timePeriod
-    });
+  const {
+    loading,
+    chartData,
+    getChartData,
+    errorMessage,
+    isTaskEnabled,
+    isTaskSupported
+  } = useSqlInsightsMetric({
+    instanceId,
+    dateRange,
+    metricName: GetSqlPerformanceInsightsMetricNameEnum.comprehensive_trend,
+    pollingInterval,
+    timePeriod
+  });
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
@@ -34,7 +41,7 @@ const DataSourcePerformanceTrend: React.FC<SqlInsightsChartProps> = ({
     return unsubscribe;
   }, [getChartData]);
 
-  return (
+  return isTaskSupported ? (
     <DataSourcePerformanceTrendStyleWrapper>
       <SqlInsightsLineChart
         loading={loading}
@@ -48,10 +55,16 @@ const DataSourcePerformanceTrend: React.FC<SqlInsightsChartProps> = ({
           updateRelateSqlListDateRange(selectedDateRange);
         }}
         errorInfo={errorMessage}
-        isTaskEnabled
+        isTaskEnabled={isTaskEnabled}
+        onGoToEnable={() =>
+          onCreateSqlManagementConf(
+            GetSqlPerformanceInsightsMetricNameEnum.comprehensive_trend
+          )
+        }
+        instanceId={instanceId}
       />
     </DataSourcePerformanceTrendStyleWrapper>
-  );
+  ) : null;
 };
 
 export default DataSourcePerformanceTrend;

@@ -19,8 +19,8 @@ export default {
   },
 
   taskEnabledTips: {
-    currentControlTypeNotEnabled: '当前管控类型未开启，',
-    goToEnable: '去开启'
+    currentControlTypeNotEnabled: '当前管控类型未开启',
+    goToEnable: '[去开启]'
   },
 
   performanceTrend: {

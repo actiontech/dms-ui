@@ -26,6 +26,7 @@ import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { SqlManagementConfDetailPageHeaderActions } from './action';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useScanTypeVerify from '../Common/ConfForm/useScanTypeVerify';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -54,6 +55,8 @@ const ConfDetail: React.FC = () => {
 
   const [messageApi, contextMessageHolder] = message.useMessage();
 
+  const { isPerformanceCollectScanType } = useScanTypeVerify();
+
   const {
     data,
     error,
@@ -66,7 +69,12 @@ const ConfDetail: React.FC = () => {
       if (searchParams?.active_audit_plan_id) {
         setActiveKey(searchParams.active_audit_plan_id);
       }
-      return res.data.data;
+      return {
+        ...res.data.data,
+        audit_plans: res.data.data?.audit_plans?.filter(
+          (i) => !isPerformanceCollectScanType(i.audit_plan_type?.type)
+        )
+      };
     })
   );
 

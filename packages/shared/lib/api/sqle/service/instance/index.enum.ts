@@ -23,5 +23,7 @@ export enum getInstanceTipListV2FunctionalModuleEnum {
 
   'create_pipeline' = 'create_pipeline',
 
-  'create_version' = 'create_version'
+  'create_version' = 'create_version',
+
+  'view_sql_insight' = 'view_sql_insight'
 }

@@ -32,7 +32,8 @@ type ScatterOnEventType = Required<ScatterConfig>['onEvent'];
 const renderTooltipCustomContent = (
   dataSource: any[],
   sharedTheme: SharedTheme,
-  t: (key: string) => string
+  t: (key: string) => string,
+  yAxisTitle?: string
 ) => {
   const data = dataSource[0]?.data;
   if (!data || data.time === undefined) return null;
@@ -52,9 +53,7 @@ const renderTooltipCustomContent = (
           )
         },
         {
-          label: t(
-            'sqlInsights.relatedSqlList.sqlFingerprintDetail.chart.yAxisTitle'
-          ),
+          label: yAxisTitle,
           value: data.execute_time
         }
         // {
@@ -117,7 +116,12 @@ const SqlExecutionCostTrendChart: React.FC<SqlExecutionCostTrendChartProps> = ({
         fields: ['time', 'cost'],
         formatter: renderTooltipFormatter,
         customContent: (title: string, dataSource: any[]) =>
-          renderTooltipCustomContent(dataSource, sharedTheme, t)
+          renderTooltipCustomContent(
+            dataSource,
+            sharedTheme,
+            t,
+            record.execution_time_trend?.y_info
+          )
       },
       interactions: [
         {
