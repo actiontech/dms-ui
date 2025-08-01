@@ -447,4 +447,85 @@ describe('test sqle/SqlManagementConf/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('environment-2')).toBeInTheDocument();
   });
+
+  it('render create audit plan with performance collect task', async () => {
+    getAuditPlanMetaSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          ...mockAuditPlanMetaData,
+          {
+            audit_plan_type: 'mysql_performance_collect',
+            audit_plan_type_desc: '数据源性能指标',
+            audit_plan_type_tips: '性能指标采集将产生较大性能开销,请谨慎开启',
+            instance_type: 'MySQL',
+            audit_plan_params: [
+              {
+                key: 'collect_interval_minute',
+                desc: '采集周期（分钟）',
+                value: '10',
+                type: 'int',
+                enums_value: null
+              }
+            ],
+            high_priority_conditions: null
+          }
+        ]
+      })
+    );
+    const { baseElement } = sqleSuperRender(
+      <CreateSqlManagementConf />,
+      undefined,
+      {
+        routerProps: {
+          initialEntries: ['/sqle/project/700300/sql-management-conf/create']
+        }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#environmentTag'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(getBySelector('div[title="environment-1"]'));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceType'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('span[title="mysql"]'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceId'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const instance = instanceTipsMockData[0];
+    fireEvent.click(
+      getBySelector(
+        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+      )
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => fireEvent.click(screen.getByText('数据源性能指标')));
+
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(
+      screen.getByText('性能指标采集将产生较大性能开销,请谨慎开启')
+    ).toBeInTheDocument();
+
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(createInstanceAuditPlanSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('创建SQL管控配置成功')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('重置表单'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('重 置'));
+    await act(async () => jest.advanceTimersByTime(0));
+  });
 });

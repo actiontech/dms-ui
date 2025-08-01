@@ -59,8 +59,13 @@ const ActiveSessionTrend: React.FC<SqlInsightsChartProps> = ({
           updateRelateSqlListDateRange(selectedDateRange);
         }}
         errorInfo={errorMessage}
-        onGoToEnable={onCreateSqlManagementConf}
+        onGoToEnable={() =>
+          onCreateSqlManagementConf(
+            GetSqlPerformanceInsightsMetricNameEnum.active_session_trend
+          )
+        }
         isTaskEnabled={isTaskEnabled}
+        instanceId={instanceId}
       />
     </ActiveSessionTrendStyleWrapper>
   ) : null;

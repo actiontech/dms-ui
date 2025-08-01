@@ -17,6 +17,8 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from '../index.type';
 import HightPriorityConditions from './HighPriorityConditions';
+import { ConfFormAlertStyleWrapper } from '../style';
+import useScanTypeVerify from '../useScanTypeVerify';
 
 const ScanTypesDynamicParams: React.FC = () => {
   const { t } = useTranslation();
@@ -31,6 +33,8 @@ const ScanTypesDynamicParams: React.FC = () => {
   );
 
   const { projectName } = useCurrentProject();
+
+  const { isPerformanceCollectScanType } = useScanTypeVerify();
 
   const selectedScanTypeParams = contextValue?.selectedScanTypeParams;
   const scanTypeMetas = contextValue?.scanTypeMetas ?? [];
@@ -75,6 +79,12 @@ const ScanTypesDynamicParams: React.FC = () => {
         typeName: currentScanTypeMeta?.audit_plan_type_desc
       });
 
+      const auditPlanTypeTips = currentScanTypeMeta?.audit_plan_type_tips;
+
+      const isPerformanceCollectType = isPerformanceCollectScanType(
+        currentScanTypeMeta?.audit_plan_type
+      );
+
       const params: FormItem[] = item[key].map((v) => {
         //特殊处理慢日志动态表单的条件渲染。暂时没确定好使用更合理的方案来处理
         if (key === 'mysql_slow_log') {
@@ -93,6 +103,13 @@ const ScanTypesDynamicParams: React.FC = () => {
         <FormAreaLineStyleWrapper key={key} className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemSubTitle>{title}</FormItemSubTitle>
+            <EmptyBox if={!!auditPlanTypeTips}>
+              <ConfFormAlertStyleWrapper
+                message={auditPlanTypeTips}
+                type="info"
+                showIcon
+              />
+            </EmptyBox>
             <EmptyBox if={!!params?.length}>
               <AutoCreatedFormItemByApi
                 formMode={!!defaultValue ? 'update' : 'create'}
@@ -108,14 +125,16 @@ const ScanTypesDynamicParams: React.FC = () => {
                 submitLoading={submitLoading}
               />
             </EmptyBox>
-            <AuditTemplate
-              submitLoading={submitLoading}
-              prefixPath={key}
-              templateList={[...ruleTemplateList, ...globalRuleTemplateList]}
-              loading={
-                getRuleTemplateListLoading || getGlobalRuleTemplateLoading
-              }
-            />
+            <EmptyBox if={!isPerformanceCollectType}>
+              <AuditTemplate
+                submitLoading={submitLoading}
+                prefixPath={key}
+                templateList={[...ruleTemplateList, ...globalRuleTemplateList]}
+                loading={
+                  getRuleTemplateListLoading || getGlobalRuleTemplateLoading
+                }
+              />
+            </EmptyBox>
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
       );
