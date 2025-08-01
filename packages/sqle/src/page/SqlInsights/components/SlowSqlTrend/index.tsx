@@ -56,9 +56,7 @@ const SlowSqlTrend: React.FC<SqlInsightsChartProps> = ({
           EmitterKey.SQL_INSIGHTS_LINE_CHART_MASK_INTERACTION
         }
         onSelectDate={(selectedDateRange) => {
-          if (isTaskEnabled) {
-            updateRelateSqlListDateRange(selectedDateRange);
-          }
+          updateRelateSqlListDateRange(selectedDateRange);
         }}
         errorInfo={errorMessage}
         onGoToEnable={() => {

@@ -1,4 +1,4 @@
-import { act, cleanup, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ActiveSessionTrend from '../ActiveSessionTrend';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -19,6 +19,7 @@ import {
   createSpySuccessResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -208,5 +209,40 @@ describe('ActiveSessionTrend', () => {
     await act(async () => jest.advanceTimersByTime(5000));
 
     expect(getSqlPerformanceInsightsSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call onCreateSqlManagementConf when user has permission and clicks enable link', async () => {
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
+    getSqlPerformanceInsightsSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          task_support: true,
+          task_enable: false
+        }
+      });
+    });
+    const onCreateSqlManagementConfMock = jest.fn();
+    superRender(
+      <ActiveSessionTrend
+        {...defaultProps}
+        onCreateSqlManagementConf={onCreateSqlManagementConfMock}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const enableLink = screen.getByText('[去开启]');
+    fireEvent.click(enableLink);
+
+    expect(onCreateSqlManagementConfMock).toHaveBeenNthCalledWith(
+      1,
+      GetSqlPerformanceInsightsMetricNameEnum.active_session_trend
+    );
   });
 });
