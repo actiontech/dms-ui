@@ -1,4 +1,4 @@
-import { act, cleanup, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import DataSourcePerformanceTrend from '../DataSourcePerformanceTrend';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -18,6 +18,7 @@ import {
 import { DateRangeEnum } from '../../index.data';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -176,5 +177,40 @@ describe('DataSourcePerformanceTrend', () => {
     await act(async () => jest.advanceTimersByTime(5000));
 
     expect(getSqlPerformanceInsightsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should call onCreateSqlManagementConf when user has permission and clicks enable link', async () => {
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
+    getSqlPerformanceInsightsSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          task_support: true,
+          task_enable: false
+        }
+      });
+    });
+    const onCreateSqlManagementConfMock = jest.fn();
+    superRender(
+      <DataSourcePerformanceTrend
+        {...defaultProps}
+        onCreateSqlManagementConf={onCreateSqlManagementConfMock}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const enableLink = screen.getByText('[去开启]');
+    fireEvent.click(enableLink);
+
+    expect(onCreateSqlManagementConfMock).toHaveBeenNthCalledWith(
+      1,
+      GetSqlPerformanceInsightsMetricNameEnum.comprehensive_trend
+    );
   });
 });
