@@ -10,6 +10,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
 import { ScanTypeTagsCellStyleWrapper } from './style';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useScanTypeVerify } from '../../Common/ConfForm/useScanTypeVerify';
 
 type Props = {
   instanceAuditPlanId: string;
@@ -22,7 +23,20 @@ const ScanTypeTagsCell: React.FC<Props> = ({
 }) => {
   const { projectID } = useCurrentProject();
 
+  const { isPerformanceCollectScanType } = useScanTypeVerify();
+
   const renderScanTypeTag = (scanType: IAuditPlanTypeResBase) => {
+    if (isPerformanceCollectScanType(scanType.type)) {
+      return (
+        <TypedLink
+          key={scanType.type}
+          to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+          params={{ projectID, id: instanceAuditPlanId }}
+        >
+          <BasicTag className="pointer">{scanType.desc}</BasicTag>
+        </TypedLink>
+      );
+    }
     return (
       <TypedLink
         key={scanType.type}

@@ -17,16 +17,31 @@ import {
 import { Typography } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-export const ConfDetailOverviewColumns: (
-  projectID: string
-) => ActiontechTableColumn<IInstanceAuditPlanInfo> = (projectID) => {
+export const confDetailOverviewColumns: (
+  projectID: string,
+  isPerformanceCollectScanType: (scanType?: string) => boolean
+) => ActiontechTableColumn<IInstanceAuditPlanInfo> = (
+  projectID,
+  isPerformanceCollectScanType
+) => {
   return [
     {
       dataIndex: 'audit_plan_type',
       title: () => t('managementConf.detail.overview.column.auditPlanType'),
       filterCustomType: 'select',
       filterKey: 'filter_audit_plan_type',
-      render: (data) => {
+      render: (data, record) => {
+        if (isPerformanceCollectScanType(record.audit_plan_type?.type)) {
+          return (
+            <BasicToolTip
+              title={t(
+                'managementConf.detail.overview.column.performanceCollectTips'
+              )}
+            >
+              {data?.desc}
+            </BasicToolTip>
+          );
+        }
         return data?.desc ? (
           <Typography.Link>{data.desc}</Typography.Link>
         ) : (
@@ -38,7 +53,10 @@ export const ConfDetailOverviewColumns: (
       dataIndex: 'audit_plan_rule_template',
       title: () => t('managementConf.detail.overview.column.auditRuleTemplate'),
       render: (ruleTemplate, record) => {
-        if (!ruleTemplate?.name) {
+        if (
+          !ruleTemplate?.name ||
+          isPerformanceCollectScanType(record.audit_plan_type?.type)
+        ) {
           return '-';
         }
         const path = ruleTemplate.is_global_rule_template
@@ -122,13 +140,25 @@ export const ConfDetailOverviewColumns: (
     },
     {
       dataIndex: 'total_sql_nums',
-      title: () => t('managementConf.detail.overview.column.collectedSqlCount')
+      title: () => t('managementConf.detail.overview.column.collectedSqlCount'),
+      render: (text, record) => {
+        if (isPerformanceCollectScanType(record.audit_plan_type?.type)) {
+          return '-';
+        }
+        return text;
+      }
     },
     // #if [ee]
     {
       dataIndex: 'unsolved_sql_nums',
       title: () =>
-        t('managementConf.detail.overview.column.problematicSqlCount')
+        t('managementConf.detail.overview.column.problematicSqlCount'),
+      render: (text, record) => {
+        if (isPerformanceCollectScanType(record.audit_plan_type?.type)) {
+          return '-';
+        }
+        return text;
+      }
     },
     // #endif
     {

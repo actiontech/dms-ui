@@ -3,7 +3,7 @@ import {
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useEffect } from 'react';
-import { ConfDetailOverviewColumns } from './column';
+import { confDetailOverviewColumns } from './column';
 import {
   useCurrentProject,
   usePermission
@@ -19,6 +19,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { SqlManagementConfDetailOverviewTableActions } from './actions';
+import useScanTypeVerify from '../../Common/ConfForm/useScanTypeVerify';
 
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
@@ -32,7 +33,12 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
 
   const { parse2TableActionPermissions } = usePermission();
 
-  const columns = ConfDetailOverviewColumns(projectID);
+  const { isPerformanceCollectScanType } = useScanTypeVerify();
+
+  const columns = confDetailOverviewColumns(
+    projectID,
+    isPerformanceCollectScanType
+  );
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -84,6 +90,9 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
         onRow={(record) => {
           return {
             onClick: () => {
+              if (isPerformanceCollectScanType(record.audit_plan_type?.type)) {
+                return;
+              }
               handleChangeTab(
                 record.audit_plan_type?.audit_plan_id?.toString() ?? ''
               );
