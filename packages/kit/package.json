@@ -1,0 +1,42 @@
+{
+  "name": "@actiontech/dms-kit",
+  "version": "0.0.1",
+  "description": "dms kit",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://10.186.18.19:4873/",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf src",
+    "generate": "pnpm clean && node scripts/generate.js",
+    "prebuild": "pnpm generate",
+    "prepublish": "pnpm build"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "tsup": "^8.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
