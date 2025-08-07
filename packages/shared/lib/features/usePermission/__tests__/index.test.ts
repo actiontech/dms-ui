@@ -240,9 +240,6 @@ describe('usePermission', () => {
         [SystemRole.auditAdministrator]: false
       }
     });
-    mockUseCurrentProject({
-      projectArchive: false
-    });
 
     const { result, rerender } = renderHook(() => usePermission());
 

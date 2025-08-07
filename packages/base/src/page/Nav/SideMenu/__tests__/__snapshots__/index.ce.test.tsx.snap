@@ -164,7 +164,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+        class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
       >
         <span
           class="ant-avatar-string"
@@ -341,7 +341,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+        class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
       >
         <span
           class="ant-avatar-string"

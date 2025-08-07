@@ -392,7 +392,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-1wf5bre"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -1577,7 +1577,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-1wf5bre"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -2253,7 +2253,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-1wf5bre"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -2929,7 +2929,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-1wf5bre"
                                   >
                                     <span
                                       class="ant-avatar-string"

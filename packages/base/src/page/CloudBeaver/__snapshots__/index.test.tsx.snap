@@ -1283,7 +1283,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1514,7 +1514,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1744,7 +1744,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1903,7 +1903,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"
@@ -2719,7 +2719,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -2950,7 +2950,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -3180,7 +3180,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -3339,7 +3339,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"

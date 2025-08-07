@@ -483,7 +483,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"
@@ -645,7 +645,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                              class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                             >
                               <span
                                 class="ant-avatar-string"
