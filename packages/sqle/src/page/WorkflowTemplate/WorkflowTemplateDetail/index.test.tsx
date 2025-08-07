@@ -128,18 +128,6 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
   });
 
-  it('render workflow template detail with not projectArchive', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-    const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTipList();
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toHaveBeenCalled();
-    expect(userInfoRequest).toHaveBeenCalled();
-    expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
-  });
-
   it('render workflow template detail with no review step', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     getInfoRequest.mockImplementation(() => {

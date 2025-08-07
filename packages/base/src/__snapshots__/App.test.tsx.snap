@@ -322,7 +322,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+          class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
         >
           <span
             class="ant-avatar-string"
@@ -1475,7 +1475,7 @@ exports[`App render App when token is existed 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+          class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
         >
           <span
             class="ant-avatar-string"
