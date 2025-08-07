@@ -605,7 +605,7 @@ exports[`test base/project/list should be get data from the request to render th
                       class="ant-table-cell"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                       >
                         business1
                       </span>
@@ -798,7 +798,7 @@ exports[`test base/project/list should be get data from the request to render th
                       class="ant-table-cell"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                       >
                         business2
                       </span>

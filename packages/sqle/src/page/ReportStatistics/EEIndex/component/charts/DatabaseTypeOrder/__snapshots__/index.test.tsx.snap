@@ -468,6 +468,10 @@ exports[`ReportStatistics/DatabaseTypeOrder render tooltip customContent 1`] = `
         "configItem": {
           "maskBg": "rgba(0, 0, 0, 0.6)",
         },
+        "customAvatar": {
+          "backgroundColor": "#fde3cf",
+          "color": "#f56a00",
+        },
         "customDraggerUpload": {
           "backgroundColor": "#f7f6f4",
           "border": "#E8E7E6",

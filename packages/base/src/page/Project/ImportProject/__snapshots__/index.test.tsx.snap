@@ -829,7 +829,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               >
                                 business1
                               </span>
@@ -853,7 +853,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               >
                                 business2
                               </span>
@@ -877,7 +877,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                               >
                                 business3
                               </span>
