@@ -897,7 +897,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                           >
                             business1
                           </span>
@@ -1090,7 +1090,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
                           >
                             business2
                           </span>

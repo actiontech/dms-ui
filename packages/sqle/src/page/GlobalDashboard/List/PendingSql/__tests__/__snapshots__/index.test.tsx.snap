@@ -364,7 +364,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                           class="ant-table-cell audit-status"
                         >
                           <span
-                            class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                            class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
                           >
                             未处理
                           </span>
