@@ -28,6 +28,11 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     &.basic-default-tag-wrapper {
       font-size: 13px !important;
     }
+
+    color: ${({ color, theme }) =>
+      theme.sharedTheme.components.basicTag[color].color} !important;
+    background: ${({ color, theme }) =>
+      theme.sharedTheme.components.basicTag[color].backgroundColor} !important;
   }
 
   &.basic-tag-wrapper.basic-small-tag-wrapper.ant-tag {
@@ -46,13 +51,5 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
   &.basic-tag-wrapper.ant-tag:not(.ant-tag-borderless) {
     border: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-    background: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
-  }
-
-  &.basic-tag-wrapper.ant-tag:not(.basic-default-tag-wrapper) {
-    color: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].color} !important;
-    background: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].backgroundColor} !important;
   }
 `;

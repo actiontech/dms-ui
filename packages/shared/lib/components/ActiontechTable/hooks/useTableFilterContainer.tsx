@@ -8,6 +8,7 @@ import {
   TypeFilterElement
 } from '../index.type';
 import { getColumnsLabel } from '../utils';
+import { isNumber } from 'lodash';
 
 export const mergeFilterButtonMeta = <
   T extends Record<string, any>,
@@ -105,7 +106,10 @@ const useTableFilterContainer = <
       throw new Error('Filter key cannot be empty');
     }
     // #endif
-    return meta.sort((a, b) => (a.filterOrder ?? 0) - (b.filterOrder ?? 0));
+    if (meta.some((i) => isNumber(i.filterOrder))) {
+      return meta.sort((a, b) => (a.filterOrder ?? 0) - (b.filterOrder ?? 0));
+    }
+    return meta;
   }, [columns, extraFilterMeta, filterButtonMeta]);
 
   const updateAllSelectedFilterItem = useCallback(
