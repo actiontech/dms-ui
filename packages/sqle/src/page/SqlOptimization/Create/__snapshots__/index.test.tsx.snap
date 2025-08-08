@@ -13,7 +13,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -453,7 +453,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -1023,7 +1023,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -1043,7 +1043,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -1454,7 +1454,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -1482,7 +1482,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -1894,7 +1894,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -2362,7 +2362,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -2381,7 +2381,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -2821,7 +2821,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -2849,7 +2849,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -3261,7 +3261,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -3760,7 +3760,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -3780,7 +3780,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -4191,7 +4191,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -4219,7 +4219,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -4631,7 +4631,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -5130,7 +5130,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -5150,7 +5150,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -5561,7 +5561,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -5589,7 +5589,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -6001,7 +6001,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -6528,7 +6528,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -6548,7 +6548,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>

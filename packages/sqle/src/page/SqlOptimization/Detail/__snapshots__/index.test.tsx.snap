@@ -19,7 +19,7 @@ exports[`sqle/SqlOptimization/Detail render detail page 1`] = `
               href="/sqle/project/700300/sql-optimization/overview/1234567"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -861,7 +861,7 @@ exports[`sqle/SqlOptimization/Detail render detail page when optimized sql is em
               href="/sqle/project/700300/sql-optimization/overview/1234567"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -1046,7 +1046,7 @@ exports[`sqle/SqlOptimization/Detail render detail page when params empty 1`] = 
               href="/sqle/project/700300/sql-optimization/overview/1234567"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span

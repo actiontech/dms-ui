@@ -36,12 +36,12 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                 MySQL
               </h4>
               <span
-                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
               >
                 1条规则
               </span>
               <span
-                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                 style="background-color: gray;"
               >
                 v2
@@ -1107,12 +1107,12 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                 MySQL
               </h4>
               <span
-                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
               >
                 2条规则
               </span>
               <span
-                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                 style="background-color: gray;"
               >
                 v1
@@ -1988,12 +1988,12 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                 MySQL
               </h4>
               <span
-                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
               >
                 2条规则
               </span>
               <span
-                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                 style="background-color: gray;"
               >
                 v1
@@ -2861,12 +2861,12 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                 MySQL
               </h4>
               <span
-                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
               >
                 2条规则
               </span>
               <span
-                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                 style="background-color: gray;"
               >
                 v1
@@ -3937,12 +3937,12 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                 MySQL
               </h4>
               <span
-                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                class="ant-tag ant-tag-blue base-info-item basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
               >
                 0条规则
               </span>
               <span
-                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                class="ant-tag ant-tag-has-color base-info-item basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                 style="background-color: gray;"
               >
                 v1

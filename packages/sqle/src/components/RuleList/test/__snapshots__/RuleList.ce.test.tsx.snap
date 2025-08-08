@@ -314,7 +314,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span
@@ -502,7 +502,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span
@@ -690,7 +690,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span
@@ -869,7 +869,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span

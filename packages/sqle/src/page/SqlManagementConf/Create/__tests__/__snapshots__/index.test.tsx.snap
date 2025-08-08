@@ -16,7 +16,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -51,7 +51,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -63,7 +63,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="submit"
               >
                 <span>
@@ -594,7 +594,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -2239,7 +2239,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -2250,7 +2250,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                 href="/sqle/project/700300/sql-management-conf/"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -2399,7 +2399,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -2434,7 +2434,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -2446,7 +2446,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="submit"
               >
                 <span>
@@ -3433,7 +3433,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -3468,7 +3468,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -3480,7 +3480,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="submit"
               >
                 <span>
@@ -6070,7 +6070,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -7842,7 +7842,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-11wabdq"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                     >
                       <svg
                         height="16"
@@ -8040,7 +8040,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-11wabdq"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                     >
                       <svg
                         height="16"
@@ -8242,7 +8242,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-11wabdq"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                     >
                       <svg
                         height="16"
@@ -9405,7 +9405,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -9416,7 +9416,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 href="/sqle/project/700300/sql-management-conf/"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -9968,7 +9968,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -10003,7 +10003,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -10015,7 +10015,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="submit"
               >
                 <span>
@@ -11141,7 +11141,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -12355,7 +12355,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -12366,7 +12366,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 href="/sqle/project/700300/sql-management-conf/"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -12720,7 +12720,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
             href="/sqle/project/700300/sql-management-conf"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -12755,7 +12755,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -12767,7 +12767,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="submit"
               >
                 <span>

@@ -92,7 +92,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -123,7 +123,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -555,7 +555,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -567,7 +567,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -659,7 +659,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -690,7 +690,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -1122,7 +1122,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 2`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1134,7 +1134,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -1355,7 +1355,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap when user is not a
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -1386,7 +1386,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap when user is not a
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -1818,7 +1818,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap when user is not a
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1830,7 +1830,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap when user is not a
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -2051,7 +2051,7 @@ exports[`base/System/PushNotification/SMTPSetting render submit SMTP setting ren
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -2082,7 +2082,7 @@ exports[`base/System/PushNotification/SMTPSetting render submit SMTP setting ren
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -2517,7 +2517,7 @@ exports[`base/System/PushNotification/SMTPSetting render submit SMTP setting ren
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="button"
                               >
@@ -2530,7 +2530,7 @@ exports[`base/System/PushNotification/SMTPSetting render submit SMTP setting ren
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="submit"
                               >
@@ -2859,7 +2859,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -2890,7 +2890,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -3322,7 +3322,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3334,7 +3334,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -3639,7 +3639,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -3670,7 +3670,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -4102,7 +4102,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -4114,7 +4114,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -4443,7 +4443,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                         type="button"
                                       >
                                         <span
@@ -4474,7 +4474,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
@@ -4907,7 +4907,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="button"
                               >
@@ -4920,7 +4920,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="submit"
                               >

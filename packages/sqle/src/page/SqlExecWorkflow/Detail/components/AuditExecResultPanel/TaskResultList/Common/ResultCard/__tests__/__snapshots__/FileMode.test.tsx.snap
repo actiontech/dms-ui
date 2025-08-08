@@ -95,7 +95,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                 >
                   准备执行
                 </span>
@@ -111,7 +111,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                     >
                       <svg
                         height="19"
@@ -133,7 +133,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       <svg
                         fill="none"
@@ -258,7 +258,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                 >
                   准备执行
                 </span>
@@ -274,7 +274,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                     >
                       <svg
                         height="19"
@@ -296,7 +296,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       <svg
                         fill="none"
@@ -421,7 +421,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                 >
                   准备执行
                 </span>
@@ -437,7 +437,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                     >
                       <svg
                         height="19"
@@ -460,7 +460,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       <svg
                         fill="none"
@@ -483,7 +483,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw"
+                      class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-tg454x"
                     >
                       <svg
                         height="16"
@@ -608,7 +608,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                 >
                   准备执行
                 </span>
@@ -624,7 +624,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                     >
                       <svg
                         height="19"
@@ -646,7 +646,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       <svg
                         fill="none"
@@ -884,7 +884,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                   class="ant-table-cell exec-status-column"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                                   >
                                     准备执行
                                   </span>

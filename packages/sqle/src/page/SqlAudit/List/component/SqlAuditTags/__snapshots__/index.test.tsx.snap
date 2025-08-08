@@ -11,7 +11,7 @@ exports[`sqle/SqlAudit/SqlAuditTags add tag 1`] = `
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
         >
           test
           <span
@@ -106,7 +106,7 @@ exports[`sqle/SqlAudit/SqlAuditTags add tag 1`] = `
                     class="custom-tag-item"
                   >
                     <span
-                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
                     >
                       test
                     </span>
@@ -115,7 +115,7 @@ exports[`sqle/SqlAudit/SqlAuditTags add tag 1`] = `
                     class="custom-tag-item"
                   >
                     <span
-                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
                     >
                       test1
                     </span>
@@ -171,7 +171,7 @@ exports[`sqle/SqlAudit/SqlAuditTags add tag 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-block basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span
@@ -232,7 +232,7 @@ exports[`sqle/SqlAudit/SqlAuditTags should match snap shot 1`] = `
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
         >
           test
           <span

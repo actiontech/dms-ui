@@ -101,7 +101,7 @@ exports[`sqle/hooks/useSQLAuditRecordTag should get tags data from request 2`] =
           class="ant-select-selection-item"
         >
           <span
-            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-7o2rh7"
+            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-wneatz"
           >
             test
           </span>
@@ -173,7 +173,7 @@ exports[`sqle/hooks/useSQLAuditRecordTag should get tags data from request 3`] =
           class="ant-select-selection-item"
         >
           <span
-            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-7o2rh7"
+            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-wneatz"
           >
             test
           </span>
@@ -254,7 +254,7 @@ exports[`sqle/hooks/useSQLAuditRecordTag should get tags data from request 3`] =
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-7o2rh7"
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-wneatz"
                     >
                       test
                     </span>
@@ -274,7 +274,7 @@ exports[`sqle/hooks/useSQLAuditRecordTag should get tags data from request 3`] =
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-7o2rh7"
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-wneatz"
                     >
                       test1
                     </span>

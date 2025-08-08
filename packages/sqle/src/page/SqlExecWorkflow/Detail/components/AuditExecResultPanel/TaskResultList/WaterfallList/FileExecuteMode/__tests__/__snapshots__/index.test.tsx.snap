@@ -38,7 +38,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 1`] = `
       </span>
     </div>
     <button
-      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span>
@@ -135,7 +135,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
       </span>
     </div>
     <button
-      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span>
@@ -258,7 +258,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -274,7 +274,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"
@@ -296,7 +296,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                                   >
                                     <svg
                                       fill="none"
@@ -420,7 +420,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -435,7 +435,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"
@@ -558,7 +558,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -574,7 +574,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"
@@ -596,7 +596,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                                   >
                                     <svg
                                       fill="none"
@@ -720,7 +720,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -735,7 +735,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"
@@ -858,7 +858,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -874,7 +874,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"
@@ -896,7 +896,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                                    class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                                   >
                                     <svg
                                       fill="none"
@@ -1020,7 +1020,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                               >
                                 准备执行
                               </span>
@@ -1035,7 +1035,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                    class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                                   >
                                     <svg
                                       height="19"

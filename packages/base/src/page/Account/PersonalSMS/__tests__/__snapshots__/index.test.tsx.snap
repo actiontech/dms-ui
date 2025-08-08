@@ -180,7 +180,7 @@ exports[`base/System/GlobalSetting/PersonalSMS render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -227,7 +227,7 @@ exports[`base/System/GlobalSetting/PersonalSMS render init snap 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -239,7 +239,7 @@ exports[`base/System/GlobalSetting/PersonalSMS render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>

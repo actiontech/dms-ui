@@ -198,7 +198,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -210,7 +210,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>

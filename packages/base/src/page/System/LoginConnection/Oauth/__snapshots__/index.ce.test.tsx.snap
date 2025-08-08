@@ -56,7 +56,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-1ubynud"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                               >
                                 社区版
                               </span>
@@ -90,7 +90,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -346,7 +346,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p"
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                               >
                                 专业版
                               </span>
@@ -380,7 +380,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -636,7 +636,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh"
+                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                               >
                                 企业版
                               </span>
@@ -668,7 +668,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -1310,7 +1310,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>
@@ -1328,7 +1328,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>
@@ -1405,7 +1405,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>

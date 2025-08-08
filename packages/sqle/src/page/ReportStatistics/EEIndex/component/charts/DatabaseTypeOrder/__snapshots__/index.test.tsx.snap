@@ -134,7 +134,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap when api return em
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -414,7 +414,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render tooltip customContent 1`] = `
             "color": "#15C7D4",
           },
           "default": {
-            "backgroundColor": "#f7f6f4",
+            "backgroundColor": "#FFFFFF",
             "color": "#575C66",
           },
           "geekblue": {

@@ -364,7 +364,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                           class="ant-table-cell audit-status"
                         >
                           <span
-                            class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-3qh3vw"
+                            class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                           >
                             未处理
                           </span>
@@ -415,7 +415,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>
@@ -558,7 +558,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>

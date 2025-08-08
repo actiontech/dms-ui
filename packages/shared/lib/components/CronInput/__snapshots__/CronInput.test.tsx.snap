@@ -13,7 +13,7 @@ exports[`lib/CronInputCom should match snapshot 1`] = `
         value="0 0 * * *"
       />
       <button
-        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span
