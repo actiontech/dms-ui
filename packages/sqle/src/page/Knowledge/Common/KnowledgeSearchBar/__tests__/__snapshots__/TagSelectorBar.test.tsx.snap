@@ -37,7 +37,7 @@ exports[`TagSelectorBar render init snap 1`] = `
       style="padding-bottom: 4px;"
     >
       <span
-        class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+        class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
       >
         RAND
         <span

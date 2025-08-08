@@ -18,7 +18,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -49,7 +49,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -95,7 +95,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -126,7 +126,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -171,7 +171,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-1uxy5k6"
               disabled=""
               type="button"
             >
@@ -212,7 +212,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -326,7 +326,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -338,7 +338,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -416,7 +416,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-1uxy5k6"
               disabled=""
               type="button"
             >
@@ -457,7 +457,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -571,7 +571,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -583,7 +583,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -660,7 +660,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-1uxy5k6"
               disabled=""
               type="button"
             >
@@ -701,7 +701,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -815,7 +815,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -827,7 +827,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -904,7 +904,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -935,7 +935,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -980,7 +980,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -1011,7 +1011,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -1125,7 +1125,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -1137,7 +1137,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -1175,7 +1175,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -1206,7 +1206,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span
@@ -1320,7 +1320,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -1332,7 +1332,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1uxy5k6"
                           type="button"
                         >
                           <span>
@@ -1370,7 +1370,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span
@@ -1401,7 +1401,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigExtraButtons render snap
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
               type="button"
             >
               <span

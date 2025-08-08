@@ -18,7 +18,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
           href="/sqle/project/700300/sql-audit/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -175,7 +175,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -222,7 +222,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -275,7 +275,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span
@@ -637,7 +637,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                               class="flex-display"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               >
                                 审核成功
                               </span>
@@ -654,7 +654,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+                                  class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
                                 >
                                   test
                                   <span
@@ -773,7 +773,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                               class="flex-display"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               >
                                 审核成功
                               </span>
@@ -1112,7 +1112,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
           href="/sqle/project/700300/sql-audit/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -1269,7 +1269,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1315,7 +1315,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1368,7 +1368,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span
@@ -1603,7 +1603,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                               class="flex-display"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               >
                                 审核成功
                               </span>
@@ -1620,7 +1620,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7"
+                                  class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
                                 >
                                   test
                                   <span
@@ -1739,7 +1739,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                               class="flex-display"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-1ubynud"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               >
                                 审核成功
                               </span>
@@ -2078,7 +2078,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
           href="/sqle/project/700300/sql-audit/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -2235,7 +2235,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -2281,7 +2281,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -2334,7 +2334,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span

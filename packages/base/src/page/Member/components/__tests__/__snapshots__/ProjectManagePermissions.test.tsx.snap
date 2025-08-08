@@ -12,7 +12,7 @@ exports[`base/Member/components/ProjectManagePermissions should handle empty nam
         style="margin-right: 8px; padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
           style="height: 28px;"
         />
       </div>
@@ -21,7 +21,7 @@ exports[`base/Member/components/ProjectManagePermissions should handle empty nam
         style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
           style="height: 28px;"
         >
           项目管理
@@ -90,7 +90,7 @@ exports[`base/Member/components/ProjectManagePermissions should render manage pe
         style="margin-right: 8px; padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
           style="height: 28px;"
         >
           用户管理
@@ -101,7 +101,7 @@ exports[`base/Member/components/ProjectManagePermissions should render manage pe
         style="margin-right: 8px; padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
           style="height: 28px;"
         >
           项目管理
@@ -112,7 +112,7 @@ exports[`base/Member/components/ProjectManagePermissions should render manage pe
         style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1q0j97r"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
           style="height: 28px;"
         >
           数据源管理

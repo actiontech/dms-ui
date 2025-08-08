@@ -245,7 +245,7 @@ exports[`page/Login-ee render login snap 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span>
@@ -253,7 +253,7 @@ exports[`page/Login-ee render login snap 1`] = `
               </span>
             </button>
             <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1uxy5k6"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -514,7 +514,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span
@@ -545,7 +545,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1uxy5k6"
               href="/v1/dms/oauth2/link?target=%252Ftransit%253Ffrom%253Dcloudbeaver"
             >
               <span>
@@ -806,7 +806,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span
@@ -837,7 +837,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1uxy5k6"
               href="/v1/dms/oauth2/link?target=%252Findex1"
             >
               <span>
@@ -1098,7 +1098,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span
@@ -1129,7 +1129,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1uxy5k6"
               href="/v1/dms/oauth2/link?target=%252Fproject%252F700300%252Fcloud-beaver"
             >
               <span>
@@ -1390,7 +1390,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span>
@@ -1692,7 +1692,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1uxy5k6"
               type="submit"
             >
               <span>
@@ -1700,7 +1700,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </span>
             </button>
             <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1uxy5k6"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -1785,7 +1785,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -1815,7 +1815,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <button
-                        class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1uxy5k6"
                         type="submit"
                       >
                         <span>

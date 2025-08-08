@@ -122,7 +122,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1uxy5k6"
             hidden=""
             type="button"
           >
@@ -186,7 +186,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1uxy5k6"
             hidden=""
             type="button"
           >

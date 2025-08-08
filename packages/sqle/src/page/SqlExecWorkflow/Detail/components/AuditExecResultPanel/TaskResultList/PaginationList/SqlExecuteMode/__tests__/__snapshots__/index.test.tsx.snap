@@ -242,7 +242,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                       class="result-card-status-wrap"
                     >
                       <span
-                        class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r"
+                        class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                       >
                         准备执行
                       </span>
@@ -257,7 +257,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q"
+                            class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ym5ohi"
                             style="background-color: gray;"
                           >
                             <svg
@@ -286,7 +286,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>
@@ -311,7 +311,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>
@@ -323,7 +323,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>
@@ -416,7 +416,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   >
                                     <svg
                                       color="#4583FF"
@@ -448,7 +448,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                           >
                             <svg
                               height="18"

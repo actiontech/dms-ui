@@ -3,12 +3,12 @@
 exports[`markdownPreviewOptions should handle label code blocks correctly 1`] = `
 <div>
   <span
-    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-12iqdf6"
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-z186qd"
   >
     test1
   </span>
   <span
-    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-12iqdf6"
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-z186qd"
   >
      test2
   </span>

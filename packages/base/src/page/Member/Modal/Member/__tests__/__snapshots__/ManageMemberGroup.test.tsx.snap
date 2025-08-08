@@ -90,7 +90,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             class="permissions-container"
                           >
                             <span
-                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-194rg1q"
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-ym5ohi"
                               style="background-color: gray;"
                             >
                               test role 1
@@ -105,7 +105,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>
@@ -117,7 +117,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-1uxy5k6"
                               type="button"
                             >
                               <span>
@@ -136,7 +136,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>

@@ -25,7 +25,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span
@@ -53,7 +53,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                 class="extra"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span>
@@ -525,7 +525,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -585,7 +585,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                   disabled=""
                                   type="button"
                                 >
@@ -1029,7 +1029,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1048,7 +1048,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                     type="button"
                                   >
                                     <span>

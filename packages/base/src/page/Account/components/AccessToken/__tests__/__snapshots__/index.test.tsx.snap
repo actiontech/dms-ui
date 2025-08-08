@@ -23,7 +23,7 @@ exports[`test AccessToken should match snapshot 1`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -58,7 +58,7 @@ exports[`test AccessToken should match snapshot 2`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -93,7 +93,7 @@ exports[`test AccessToken should match snapshot 3`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -213,7 +213,7 @@ exports[`test AccessToken should match snapshot 4`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -333,7 +333,7 @@ exports[`test AccessToken should match snapshot 5`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
