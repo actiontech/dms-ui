@@ -273,7 +273,7 @@ exports[`slqe/Whitelist/UpdateWhitelist should send update whitelist request whe
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -285,7 +285,7 @@ exports[`slqe/Whitelist/UpdateWhitelist should send update whitelist request whe
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>

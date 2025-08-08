@@ -208,7 +208,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -224,7 +224,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -376,7 +376,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -392,7 +392,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -544,7 +544,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -560,7 +560,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -712,7 +712,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -728,7 +728,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -880,7 +880,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -896,7 +896,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -1048,7 +1048,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span
@@ -1064,7 +1064,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span

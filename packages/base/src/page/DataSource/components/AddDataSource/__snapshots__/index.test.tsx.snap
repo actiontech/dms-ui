@@ -13,7 +13,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -60,7 +60,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -588,7 +588,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           style="margin-bottom: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -718,7 +718,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -1260,7 +1260,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -1295,7 +1295,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -1307,7 +1307,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -1913,7 +1913,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-bottom: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -2041,7 +2041,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -2435,7 +2435,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2459,7 +2459,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2508,7 +2508,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2532,7 +2532,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2772,7 +2772,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -2784,7 +2784,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -2820,7 +2820,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -2856,7 +2856,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -2868,7 +2868,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -3300,7 +3300,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
             class="ant-result-extra"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>

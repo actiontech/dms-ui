@@ -19,7 +19,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -661,7 +661,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -1242,7 +1242,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -1945,7 +1945,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span

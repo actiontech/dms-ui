@@ -130,6 +130,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                 {step.key.includes('review-step') ? (
                   <DraggableCard
                     {...step}
+                    key={step.key}
                     indexNumber={index}
                     rowKey={step.key}
                     removeReviewNode={props.removeReviewNode}

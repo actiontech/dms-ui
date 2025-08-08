@@ -43,7 +43,7 @@ exports[`LoginBasicSetting updateLoginConfig should match snapshot 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1uxy5k6"
                 hidden=""
                 type="button"
               >

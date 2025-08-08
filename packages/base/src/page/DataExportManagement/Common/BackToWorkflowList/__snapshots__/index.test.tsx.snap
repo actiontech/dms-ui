@@ -6,7 +6,7 @@ exports[`test BackToWorkflowList should match snapshot 1`] = `
     href="/project/700300/data/export"
   >
     <button
-      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span

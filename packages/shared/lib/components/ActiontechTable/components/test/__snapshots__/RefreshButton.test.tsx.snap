@@ -4,7 +4,7 @@ exports[`lib/ActiontechTable-RefreshButton render refresh btn 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span

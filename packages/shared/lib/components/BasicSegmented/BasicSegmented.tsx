@@ -8,8 +8,7 @@ const BasicSegmented: React.FC<BasicSegmentedProps> = (props) => {
   return (
     <SegmentedStyleWrapper
       className={classnames('basic-segmented-wrapper', className)}
-      //todo
-      {...(otherParams as any)}
+      {...otherParams}
     />
   );
 };

@@ -1,10 +1,12 @@
 import { useBoolean } from 'ahooks';
-import { Select, Avatar, Space, Typography } from 'antd';
+import { Select, Typography } from 'antd';
 import React, { useMemo } from 'react';
 import { ResponseCode } from '../../data/common';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
 import { IUserTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetUserTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/user/index.d';
+import { CustomAvatar } from '@actiontech/shared';
+import { CustomAvatarStyleWrapper } from './style';
 
 const useUsername = () => {
   const [usernameList, setUsernameList] = React.useState<IUserTipResV1[]>([]);
@@ -47,16 +49,10 @@ const useUsername = () => {
       value: v.user_id,
       text: v.user_name,
       label: (
-        <Space>
-          <Avatar
-            size="small"
-            //todo
-            style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
-          >
-            {(v.user_name?.[0] ?? '').toUpperCase()}
-          </Avatar>
+        <CustomAvatarStyleWrapper>
+          <CustomAvatar size="small" name={v.user_name} />
           <Typography.Text>{v.user_name}</Typography.Text>
-        </Space>
+        </CustomAvatarStyleWrapper>
       )
     }));
   }, [usernameList]);

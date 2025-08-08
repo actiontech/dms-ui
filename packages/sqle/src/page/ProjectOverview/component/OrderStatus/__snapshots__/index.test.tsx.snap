@@ -89,7 +89,7 @@ exports[`page/ProjectOverview/OrderStatus no permission for create order 1`] = `
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -135,7 +135,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
               href="/sqle/project/700300/exec-workflow/create"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -209,7 +209,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -255,7 +255,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
               href="/sqle/project/700300/exec-workflow/create"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>

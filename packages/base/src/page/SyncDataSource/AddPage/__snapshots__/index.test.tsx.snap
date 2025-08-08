@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -1308,7 +1308,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                                 value="0 0 * * *"
                               />
                               <button
-                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span
@@ -1752,7 +1752,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -1760,7 +1760,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -1768,7 +1768,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -2308,7 +2308,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -2343,7 +2343,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -2355,7 +2355,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -3187,7 +3187,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                                 value="0 0 * * *"
                               />
                               <button
-                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span
@@ -3236,7 +3236,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -3271,7 +3271,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -3283,7 +3283,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span>
@@ -4262,7 +4262,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                                 value="0 0 * * *"
                               />
                               <button
-                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span

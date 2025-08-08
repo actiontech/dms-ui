@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry render drop down me
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span>
@@ -31,7 +31,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry render snap when va
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-1uxy5k6"
       type="button"
     >
       <span>

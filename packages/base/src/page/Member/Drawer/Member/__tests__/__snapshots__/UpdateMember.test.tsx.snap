@@ -431,7 +431,7 @@ exports[`base/Member/Drawer/UpdateMember should render update member form with p
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-snii23"
                                 type="button"
                               >
                                 <span
@@ -473,7 +473,7 @@ exports[`base/Member/Drawer/UpdateMember should render update member form with p
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -485,7 +485,7 @@ exports[`base/Member/Drawer/UpdateMember should render update member form with p
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>

@@ -3,7 +3,7 @@
 exports[`lib/BasicTag should match snapshot 1`] = `
 <div>
   <span
-    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
   />
 </div>
 `;

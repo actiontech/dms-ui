@@ -177,7 +177,7 @@ exports[`base/Member/components/PermissionFields render init snapshot 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
+                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-snii23"
                       type="button"
                     >
                       <span

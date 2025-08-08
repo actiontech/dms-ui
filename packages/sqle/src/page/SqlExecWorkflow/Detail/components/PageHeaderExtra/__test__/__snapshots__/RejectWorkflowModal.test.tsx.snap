@@ -94,7 +94,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                 disabled=""
                 type="button"
               >
@@ -103,7 +103,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1uxy5k6"
                 disabled=""
                 type="button"
               >

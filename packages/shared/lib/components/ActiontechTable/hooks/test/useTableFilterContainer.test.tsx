@@ -173,4 +173,107 @@ describe('lib/ActiontechTable-hooks-useTableFilterContainer', () => {
       ]);
     });
   });
+
+  // - filterOrder sorting
+  it('render filterContainerMeta with correct filterOrder sorting', async () => {
+    const UpdateTableFilterInfoTypeFn = jest.fn();
+    const { result } = renderHook(() =>
+      useTableFilterContainer(
+        [
+          {
+            dataIndex: 'demo1',
+            key: 'demo1',
+            title: 'demo1',
+            filterCustomType: 'input',
+            filterKey: 'demo1_key',
+            filterOrder: 3
+          },
+          {
+            dataIndex: 'demo2',
+            key: 'demo2',
+            title: 'demo2',
+            filterCustomType: 'select',
+            filterKey: 'demo2_key',
+            filterOrder: 1
+          },
+          {
+            dataIndex: 'demo3',
+            key: 'demo3',
+            title: 'demo3',
+            filterCustomType: 'input',
+            filterKey: 'demo3_key'
+          }
+        ],
+        UpdateTableFilterInfoTypeFn,
+        new Map([
+          [
+            'filter_extra',
+            {
+              filterCustomType: 'input',
+              filterKey: 'filter_extra_key',
+              filterLabel: '额外筛选',
+              filterOrder: 2,
+              checked: true
+            }
+          ]
+        ])
+      )
+    );
+
+    await act(() => {
+      result.current.updateFilterButtonMeta((prevMeta) => {
+        const newMeta = new Map(prevMeta);
+        newMeta.set('demo1', {
+          checked: true,
+          filterLabel: 'demo1',
+          filterCustomType: 'input'
+        });
+        newMeta.set('demo2', {
+          checked: true,
+          filterLabel: 'demo2',
+          filterCustomType: 'select'
+        });
+        newMeta.set('demo3', {
+          checked: true,
+          filterLabel: 'demo3',
+          filterCustomType: 'input'
+        });
+        return newMeta;
+      });
+    });
+
+    await act(() => {
+      const filterContainerMeta = result.current.filterContainerMeta;
+      expect(filterContainerMeta).toEqual([
+        {
+          dataIndex: 'demo3',
+          filterCustomType: 'input',
+          filterKey: 'demo3_key',
+          filterLabel: 'demo3',
+          filterOrder: undefined
+        },
+        {
+          dataIndex: 'demo2',
+          filterCustomType: 'select',
+          filterKey: 'demo2_key',
+          filterLabel: 'demo2',
+          filterOrder: 1
+        },
+        {
+          dataIndex: 'filter_extra',
+          filterCustomType: 'input',
+          filterKey: 'filter_extra_key',
+          filterLabel: '额外筛选',
+          filterOrder: 2
+        },
+        {
+          dataIndex: 'demo1',
+          filterCustomType: 'input',
+          filterKey: 'demo1_key',
+          filterLabel: 'demo1',
+          filterOrder: 3
+        }
+      ]);
+    });
+  });
 });

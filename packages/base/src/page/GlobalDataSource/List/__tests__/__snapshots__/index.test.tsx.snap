@@ -66,7 +66,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -361,7 +361,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -381,7 +381,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -530,7 +530,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -542,7 +542,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -552,7 +552,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -593,7 +593,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -613,7 +613,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -675,7 +675,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -687,7 +687,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -697,7 +697,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -738,7 +738,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -807,7 +807,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -819,7 +819,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -829,7 +829,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -1080,7 +1080,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -1375,7 +1375,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -1395,7 +1395,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -1544,7 +1544,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1556,7 +1556,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1566,7 +1566,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -1607,7 +1607,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -1627,7 +1627,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -1689,7 +1689,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1701,7 +1701,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1711,7 +1711,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -1752,7 +1752,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -1821,7 +1821,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1833,7 +1833,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1843,7 +1843,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2094,7 +2094,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -2627,7 +2627,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -2647,7 +2647,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -2796,7 +2796,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -2808,7 +2808,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -2818,7 +2818,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -2859,7 +2859,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -2879,7 +2879,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -2941,7 +2941,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -2953,7 +2953,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -2963,7 +2963,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -3004,7 +3004,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -3073,7 +3073,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3085,7 +3085,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3095,7 +3095,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -3346,7 +3346,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -3641,7 +3641,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -3661,7 +3661,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -3810,7 +3810,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3822,7 +3822,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3832,7 +3832,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -4213,7 +4213,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -4508,7 +4508,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -4528,7 +4528,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -4677,7 +4677,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -4689,7 +4689,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -4699,7 +4699,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -5080,7 +5080,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -5375,7 +5375,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-1
                         </span>
@@ -5395,7 +5395,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                               style="height: 32px;"
                             >
                               连通性测试失败
@@ -5537,7 +5537,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -5565,7 +5565,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -5585,7 +5585,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                               style="height: 32px;"
                             >
                               连通性测试成功
@@ -5640,7 +5640,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -5668,7 +5668,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           environment-2
                         </span>
@@ -5730,7 +5730,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span>
@@ -5968,7 +5968,7 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >

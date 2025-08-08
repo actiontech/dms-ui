@@ -4,7 +4,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render auditing tag
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
     >
       审核中
     </span>

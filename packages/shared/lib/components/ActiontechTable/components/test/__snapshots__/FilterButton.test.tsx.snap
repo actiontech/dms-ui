@@ -4,7 +4,7 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 10px;"
       type="button"
     >
@@ -44,7 +44,7 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 2`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 10px;"
       type="button"
     >
@@ -84,7 +84,7 @@ exports[`lib/ActiontechTable-FilterButton render disabled filter button 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
       disabled=""
       style="padding: 0px 6px 0px 10px;"
       type="button"
@@ -124,7 +124,7 @@ exports[`lib/ActiontechTable-FilterButton render hasSelectedFilter 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 10px;"
       type="button"
     >

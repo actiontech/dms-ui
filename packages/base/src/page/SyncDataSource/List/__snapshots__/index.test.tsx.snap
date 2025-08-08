@@ -203,7 +203,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                             >
                               成功
                             </span>
@@ -233,7 +233,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                                 href="/sync-data-source/update/0002"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -247,7 +247,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -259,7 +259,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -317,7 +317,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                             >
                               成功
                             </span>
@@ -347,7 +347,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                                 href="/sync-data-source/update/1234"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -361,7 +361,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -373,7 +373,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -806,7 +806,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                             >
                               成功
                             </span>
@@ -836,7 +836,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                                 href="/sync-data-source/update/0002"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -850,7 +850,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -862,7 +862,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -920,7 +920,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                             >
                               成功
                             </span>
@@ -950,7 +950,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                                 href="/sync-data-source/update/1234"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -964,7 +964,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -976,7 +976,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1202,7 +1202,7 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                           >
                             成功
                           </span>
@@ -1269,7 +1269,7 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
                           >
                             成功
                           </span>
