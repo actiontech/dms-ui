@@ -1,36 +1,14 @@
 {
   "name": "@actiontech/icons",
-  "version": "0.0.1-rc.1",
+  "version": "1.0.0",
   "description": "",
-  "main": "./dist/index.js",
-  "module": "./es/index.js",
-  "types": "./es/index.d.ts",
+  "main": "src/index.ts",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./es/index.d.ts",
-        "default": "./es/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
-  },
-  "files": [
-    "es"
-  ],
-  "publishConfig": {
-    "registry": "http://10.186.18.19:4873/",
-    "access": "restricted"
-  },
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
     "build": "father build",
-    "prepublishOnly": "pnpm build",
     "icon:g": "svgr --template template/template.cjs -d src svg/ ",
     "docs:g": "node scripts/generate.js"
   },
