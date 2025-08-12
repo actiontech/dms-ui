@@ -1,6 +1,6 @@
 {
   "name": "@actiontech/dms-kit",
-  "version": "0.0.1-rc.3",
+  "version": "0.0.1-rc.8",
   "description": "dms kit",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -28,6 +28,7 @@
     "build": "tsup",
     "clean": "rimraf src",
     "generate": "pnpm clean && node scripts/generate.js",
+    "prebuild": "pnpm generate",
     "prepublish": "pnpm build"
   },
   "devDependencies": {
@@ -38,12 +39,12 @@
     "@actiontech/icons": "workspace:*"
   },
   "peerDependencies": {
-    "@actiontech/icons": "^0",
+    "@actiontech/icons": "0.0.1-rc.1",
     "@ant-design/cssinjs": "^1.17.0",
     "@monaco-editor/react": "^4.6.0",
-    "@mui/material": "^5.11.16",
-    "@mui/styles": "^5.11.16",
-    "@mui/system": "^5.9.1",
+    "@mui/material": "5.11.16",
+    "@mui/styles": "5.11.16",
+    "@mui/system": "5.9.1",
     "ahooks": "^3.7.0",
     "antd": ">=5.7.3",
     "axios": "^1",
