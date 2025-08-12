@@ -173,28 +173,30 @@ import lightTheme from '../theme/light';
 
 import '../types/theme.type';
 
-const themeData = {
+const DEFAULT_THEME_DATA = {
   [SupportTheme.DARK]: darkTheme,
   [SupportTheme.LIGHT]: lightTheme
 };
 
 export interface ThemeProviderProps {
   children: ReactNode;
-  theme?: typeof themeData;
+  themeData?: typeof DEFAULT_THEME_DATA;
+  theme?: SupportTheme
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  theme = themeData
+  themeData = DEFAULT_THEME_DATA,
+  theme = SupportTheme.LIGHT
 }) => {
   return (
-    <StyledEngineProvider>
-      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <MuiThemeProvider theme={themeData[theme]}>{children}</MuiThemeProvider>
     </StyledEngineProvider>
   );
 };
 
-export { themeData as defaultTheme };
+export { DEFAULT_THEME_DATA };
 `;
   fs.writeFileSync(path.join(providersDir, 'theme.tsx'), themeProviderContent);
   console.log('已创建 providers/theme.tsx');
@@ -203,7 +205,6 @@ export { themeData as defaultTheme };
   const localeProviderContent = `import React, { ReactNode, useMemo } from 'react';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { createInstance, i18n as I18nInstance, Resource } from 'i18next';
-
 import { SupportLanguage } from '../enum';
 import zhCN from '../locale/zh-CN';
 import enUS from '../locale/en-US';
@@ -349,8 +350,28 @@ export const LocaleProvider: React.FC<LocaleProviderProps> = ({
   console.log('已创建 providers/locale.tsx');
 
   // index.tsx (barrel exports)
-  const providersIndexContent = `export * from './locale';
-export * from './theme';
+  const providersIndexContent = `import { ThemeProvider, ThemeProviderProps, DEFAULT_THEME_DATA } from './theme';
+import { LocaleProvider, LocaleProviderProps } from './locale';
+import { SupportTheme } from '../enum';
+
+export interface ConfigProviderProps
+  extends ThemeProviderProps,
+    LocaleProviderProps {}
+
+export const ConfigProvider: React.FC<ConfigProviderProps> = ({
+  children,
+  theme = SupportTheme.LIGHT,
+  themeData = DEFAULT_THEME_DATA,
+  ...localProps
+}) => {
+  return (
+    <ThemeProvider theme={theme} themeData={themeData}>
+      <LocaleProvider {...localProps}>{children}</LocaleProvider>
+    </ThemeProvider>
+  );
+};
+
+export { DEFAULT_THEME_DATA };
 `;
   fs.writeFileSync(path.join(providersDir, 'index.tsx'), providersIndexContent);
   console.log('已创建 providers/index.tsx');
