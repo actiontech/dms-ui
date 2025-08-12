@@ -356,7 +356,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
         "color": "#15C7D4",
       },
       "default": {
-        "backgroundColor": "#f7f6f4",
+        "backgroundColor": "#FFFFFF",
         "color": "#575C66",
       },
       "geekblue": {
@@ -409,6 +409,10 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
     },
     "configItem": {
       "maskBg": "rgba(0, 0, 0, 0.6)",
+    },
+    "customAvatar": {
+      "backgroundColor": "#fde3cf",
+      "color": "#f56a00",
     },
     "customDraggerUpload": {
       "backgroundColor": "#f7f6f4",

@@ -111,10 +111,7 @@ describe('sqle/Workflow/List', () => {
     expect(baseElement).toMatchSnapshot;
   });
 
-  it('render snap when projectArchive is false', async () => {
-    mockUseCurrentProject({
-      projectArchive: false
-    });
+  it('render snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;

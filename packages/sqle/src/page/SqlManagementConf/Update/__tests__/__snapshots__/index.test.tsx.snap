@@ -22,7 +22,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                 href="/sqle/project/700300/sql-management-conf"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span
@@ -57,7 +57,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -69,7 +69,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="submit"
                   >
                     <span>
@@ -1518,7 +1518,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -1720,7 +1720,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -1922,7 +1922,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -2324,7 +2324,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                 href="/sqle/project/700300/sql-management-conf"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span
@@ -2359,7 +2359,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -2371,7 +2371,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="submit"
                   >
                     <span>
@@ -3659,7 +3659,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -3861,7 +3861,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -4059,7 +4059,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -4579,7 +4579,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                 href="/sqle/project/700300/sql-management-conf"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                   type="button"
                 >
                   <span
@@ -4614,7 +4614,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -4626,7 +4626,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     type="submit"
                   >
                     <span>
@@ -5914,7 +5914,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -6116,7 +6116,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"
@@ -6314,7 +6314,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                       style="padding-left: 6px; padding-right: 6px;"
                     >
                       <span
-                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
+                        class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1jrjb5j"
                       >
                         <svg
                           height="16"

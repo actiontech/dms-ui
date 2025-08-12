@@ -7,7 +7,7 @@ import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service
 import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
-import { ServiceEnvironmentTagStyleWrapper } from './style';
+import { BasicTag } from '@actiontech/shared';
 
 /*
  *PS：
@@ -115,11 +115,7 @@ export const DataSourceColumns = (
         if (!environment?.name) {
           return '-';
         }
-        return (
-          <ServiceEnvironmentTagStyleWrapper>
-            {environment?.name}
-          </ServiceEnvironmentTagStyleWrapper>
-        );
+        return <BasicTag>{environment?.name}</BasicTag>;
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'

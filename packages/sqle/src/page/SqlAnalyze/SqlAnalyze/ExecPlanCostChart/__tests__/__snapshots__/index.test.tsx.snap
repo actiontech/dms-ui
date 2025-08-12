@@ -450,7 +450,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>
@@ -954,7 +954,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>
@@ -1202,7 +1202,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <span>

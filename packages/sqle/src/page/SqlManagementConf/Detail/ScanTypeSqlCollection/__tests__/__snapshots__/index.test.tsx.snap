@@ -28,7 +28,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -534,7 +534,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -2238,7 +2238,7 @@ LIMIT
                           data-testid="trigger-open-report-drawer"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
                           >
                             审核中
                           </span>
@@ -2799,7 +2799,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
                 style="padding: 0px 6px 0px 8px;"
                 type="button"
               >
@@ -4503,7 +4503,7 @@ LIMIT
                             data-testid="trigger-open-report-drawer"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
                             >
                               审核中
                             </span>
@@ -4751,7 +4751,7 @@ LIMIT
                   target="_blank"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>

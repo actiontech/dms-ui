@@ -26,7 +26,7 @@ const workflowTemplateCardProps = {
 describe('page/WorkflowTemplate/DraggableCard', () => {
   const removeMock = jest.fn();
   const customRender = (data: DraggableCardProps) => {
-    return sqleSuperRender(<DraggableCard {...data} />);
+    return sqleSuperRender(<DraggableCard {...data} key={data.key} />);
   };
 
   it('render no card', async () => {

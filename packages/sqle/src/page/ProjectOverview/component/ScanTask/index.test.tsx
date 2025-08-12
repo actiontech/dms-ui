@@ -65,13 +65,6 @@ describe('page/ProjectOverview/ScanTask', () => {
     );
   });
 
-  it('render no permission for create order', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it('render error info', async () => {
     const request = projectOverview.getStatisticAuditPlan();
     const errorInfo = 'error message';

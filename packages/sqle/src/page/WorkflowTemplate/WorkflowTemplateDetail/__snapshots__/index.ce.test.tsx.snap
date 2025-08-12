@@ -290,7 +290,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-1wf5bre"
                                   >
                                     <span
                                       class="ant-avatar-string"

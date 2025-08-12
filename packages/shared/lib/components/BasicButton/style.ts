@@ -30,7 +30,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* default */
-  &.basic-button-wrapper.ant-btn {
+  &.basic-button-wrapper.ant-btn:not(.ant-btn-text):not(.ant-btn-link) {
     padding: 0 12px;
     background: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.default.default.background};
@@ -58,7 +58,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* primary */
-  &.basic-button-wrapper.ant-btn-primary {
+  &.basic-button-wrapper.ant-btn-primary:not(.ant-btn-text):not(.ant-btn-link) {
     color: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.primary.default.color};
     background: ${({ theme }) =>
