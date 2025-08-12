@@ -10,7 +10,7 @@ exports[`TestDatabaseConnectButton rendering should render basic button with cor
       style="margin-bottom: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -35,7 +35,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode behavior should show error 
       style="margin-bottom: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>
@@ -97,7 +97,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode behavior should show succes
       style="margin-bottom: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
         type="button"
       >
         <span>

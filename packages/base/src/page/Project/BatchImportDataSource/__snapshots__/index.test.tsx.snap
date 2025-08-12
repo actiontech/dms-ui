@@ -13,7 +13,7 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
           href="/project"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span>
@@ -142,7 +142,7 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
                                 type="file"
                               />
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -387,7 +387,7 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -399,7 +399,7 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -435,7 +435,7 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
           href="/project"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -463,7 +463,7 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
           disabled=""
           type="button"
         >
@@ -565,7 +565,7 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
                                 type="file"
                               />
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -620,7 +620,7 @@ exports[`base/Project/BatchImportDataSource render upload file 1`] = `
           href="/project"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -1058,7 +1058,7 @@ exports[`base/Project/BatchImportDataSource render upload file 1`] = `
           class="ant-result-extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span>

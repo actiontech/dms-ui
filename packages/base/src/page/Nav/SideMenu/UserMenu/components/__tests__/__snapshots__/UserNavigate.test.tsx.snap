@@ -4,7 +4,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 1`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+      class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
     >
       <span
         class="ant-avatar-string"
@@ -21,7 +21,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 2`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc"
+      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-6ssfc7"
     >
       <span
         class="ant-avatar-string"
@@ -203,7 +203,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 3`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+      class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
     >
       <span
         class="ant-avatar-string"
@@ -385,7 +385,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc"
+      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-6ssfc7"
     >
       <span
         class="ant-avatar-string"

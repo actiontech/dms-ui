@@ -261,7 +261,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/default_template"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -274,7 +274,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -284,7 +284,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -382,7 +382,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/global_test"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -395,7 +395,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -405,7 +405,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span
@@ -464,7 +464,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                   type="button"
                                 >
                                   <span>
@@ -477,7 +477,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -487,7 +487,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1uxy5k6"
                             type="button"
                           >
                             <span

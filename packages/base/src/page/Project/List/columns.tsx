@@ -4,10 +4,13 @@ import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  TypedLink,
+  BasicTag
+} from '@actiontech/shared';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { ProjectListBusinessTagStyleWrapper } from './style';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProjectV2> => {
@@ -33,11 +36,7 @@ export const ProjectListTableColumnFactory =
           if (!business) {
             return '-';
           }
-          return (
-            <ProjectListBusinessTagStyleWrapper>
-              {business.name}
-            </ProjectListBusinessTagStyleWrapper>
-          );
+          return <BasicTag>{business.name}</BasicTag>;
         }
       },
       {

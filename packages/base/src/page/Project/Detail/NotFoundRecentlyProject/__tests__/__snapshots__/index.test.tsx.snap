@@ -135,7 +135,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -147,7 +147,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     disabled=""
                     type="button"
                   >
@@ -308,7 +308,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -320,7 +320,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     disabled=""
                     type="button"
                   >
@@ -481,7 +481,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -493,7 +493,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                     disabled=""
                     type="button"
                   >

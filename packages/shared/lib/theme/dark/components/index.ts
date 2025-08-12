@@ -23,6 +23,7 @@ import basicEmptyTheme from './empty';
 import basicChartTheme from './chart';
 import basicInfoListTheme from './infoList';
 import tagTheme from './tag';
+import customAvatarTheme from './avatar';
 
 export const darkComponentsTheme: SharedTheme['components'] = {
   basicButton: basicButtonTheme,
@@ -50,5 +51,6 @@ export const darkComponentsTheme: SharedTheme['components'] = {
   basicEmpty: basicEmptyTheme,
   basicChart: basicChartTheme,
   basicInfoList: basicInfoListTheme,
-  basicTag: tagTheme
+  basicTag: tagTheme,
+  customAvatar: customAvatarTheme
 };

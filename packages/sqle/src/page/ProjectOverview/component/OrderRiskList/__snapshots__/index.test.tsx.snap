@@ -25,7 +25,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -98,7 +98,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -141,7 +141,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
               type="button"
             >
               <span>
@@ -342,7 +342,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                         class="ant-space-item"
                                       >
                                         <span
-                                          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                          class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                         >
                                           <span
                                             class="ant-avatar-string"

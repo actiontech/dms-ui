@@ -35,7 +35,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span
@@ -128,7 +128,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           style="margin-right: 12px;"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
@@ -183,7 +183,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -425,7 +425,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
           type="button"
         >
           <span
@@ -518,7 +518,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
           style="margin-right: 12px;"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
@@ -573,7 +573,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
             type="button"
           >
             <span
@@ -818,7 +818,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                           >
                             准备执行
                           </span>

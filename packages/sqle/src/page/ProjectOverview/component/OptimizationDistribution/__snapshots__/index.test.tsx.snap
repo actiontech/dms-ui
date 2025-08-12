@@ -574,7 +574,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
                     type="button"
                   >
                     <span>
@@ -834,7 +834,7 @@ exports[`ProjectOverview/OptimizationDistribution render tooltip customContent 1
             "color": "#15C7D4",
           },
           "default": {
-            "backgroundColor": "#f7f6f4",
+            "backgroundColor": "#FFFFFF",
             "color": "#575C66",
           },
           "geekblue": {
@@ -887,6 +887,10 @@ exports[`ProjectOverview/OptimizationDistribution render tooltip customContent 1
         },
         "configItem": {
           "maskBg": "rgba(0, 0, 0, 0.6)",
+        },
+        "customAvatar": {
+          "backgroundColor": "#fde3cf",
+          "color": "#f56a00",
         },
         "customDraggerUpload": {
           "backgroundColor": "#f7f6f4",

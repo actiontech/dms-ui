@@ -91,14 +91,14 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1150,7 +1150,7 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -1162,7 +1162,7 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -1253,14 +1253,14 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2312,7 +2312,7 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -2324,7 +2324,7 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -2415,14 +2415,14 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -3474,7 +3474,7 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -3486,7 +3486,7 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -3577,14 +3577,14 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -4636,7 +4636,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -4648,7 +4648,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -4739,14 +4739,14 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -5815,7 +5815,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="button"
                               >
@@ -5828,7 +5828,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1uxy5k6"
                                 disabled=""
                                 type="submit"
                               >
@@ -5943,14 +5943,14 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -7001,7 +7001,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -7013,7 +7013,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -7104,14 +7104,14 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -8163,7 +8163,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -8175,7 +8175,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>
@@ -8290,14 +8290,14 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -9349,7 +9349,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -9361,7 +9361,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                 type="submit"
                               >
                                 <span>

@@ -4,7 +4,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when cli
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 8px;"
       type="button"
     >
@@ -571,7 +571,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon setting snap when in dif
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 8px;"
       type="button"
     >
@@ -627,7 +627,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon setting snap when in dif
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-1uxy5k6"
       style="padding: 0px 6px 0px 8px;"
       type="button"
     >

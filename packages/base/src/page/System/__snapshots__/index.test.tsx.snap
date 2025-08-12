@@ -237,7 +237,7 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -268,14 +268,14 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -700,7 +700,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -712,7 +712,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -821,7 +821,7 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -852,14 +852,14 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -1203,7 +1203,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -1215,7 +1215,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -1324,7 +1324,7 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -1355,14 +1355,14 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -1577,7 +1577,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -1589,7 +1589,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -1715,7 +1715,7 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -1746,14 +1746,14 @@ exports[`base/System-ee render snap 1`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -2153,7 +2153,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -2165,7 +2165,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -2405,7 +2405,7 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -2436,14 +2436,14 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -2868,7 +2868,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -2880,7 +2880,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -3094,7 +3094,7 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -3125,14 +3125,14 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -3476,7 +3476,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -3488,7 +3488,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -3573,7 +3573,7 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -3604,14 +3604,14 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -3826,7 +3826,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -3838,7 +3838,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -3979,7 +3979,7 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -4010,14 +4010,14 @@ exports[`base/System-ee render snap 2`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -4417,7 +4417,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -4429,7 +4429,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -4704,7 +4704,7 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -4735,14 +4735,14 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -4957,7 +4957,7 @@ exports[`base/System-ee render snap 3`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -4969,7 +4969,7 @@ exports[`base/System-ee render snap 3`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -5089,7 +5089,7 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -5120,14 +5120,14 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -5342,7 +5342,7 @@ exports[`base/System-ee render snap 3`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -5354,7 +5354,7 @@ exports[`base/System-ee render snap 3`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -5474,7 +5474,7 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -5505,14 +5505,14 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -5727,7 +5727,7 @@ exports[`base/System-ee render snap 3`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -5739,7 +5739,7 @@ exports[`base/System-ee render snap 3`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -5859,7 +5859,7 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -5890,14 +5890,14 @@ exports[`base/System-ee render snap 3`] = `
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -6112,7 +6112,7 @@ exports[`base/System-ee render snap 3`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -6124,7 +6124,7 @@ exports[`base/System-ee render snap 3`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -6399,7 +6399,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -6430,14 +6430,14 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -6652,7 +6652,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -6664,7 +6664,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -6784,7 +6784,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -6815,14 +6815,14 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -7037,7 +7037,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -7049,7 +7049,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -7169,7 +7169,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -7200,14 +7200,14 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -7422,7 +7422,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -7434,7 +7434,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>
@@ -7554,7 +7554,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
                                               type="button"
                                             >
                                               <span
@@ -7585,14 +7585,14 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                             class="ant-space-item"
                                           >
                                             <button
-                                              class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                              class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-1or4o1w"
                                               type="button"
                                             >
                                               <span
                                                 class="ant-btn-icon"
                                               >
                                                 <svg
-                                                  color="#292c33"
+                                                  color="currentColor"
                                                   height="16"
                                                   viewBox="0 0 16 16"
                                                   width="16"
@@ -7807,7 +7807,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
                                       type="button"
                                     >
                                       <span>
@@ -7819,7 +7819,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
                                       type="submit"
                                     >
                                       <span>

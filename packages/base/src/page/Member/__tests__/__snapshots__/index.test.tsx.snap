@@ -25,7 +25,7 @@ exports[`base/Member should render member list when it first entered the member 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -283,7 +283,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                     style="height: 28px;"
                                   >
                                     普通用户
@@ -303,7 +303,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1h1nm3c"
                                     style="height: 28px;"
                                   >
                                     <svg
@@ -366,7 +366,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                     style="height: 28px;"
                                   >
                                     普通用户
@@ -386,7 +386,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   style="padding-bottom: 4px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1h1nm3c"
                                     style="height: 28px;"
                                   >
                                     <svg
@@ -440,7 +440,7 @@ exports[`base/Member should render member list when it first entered the member 
                                           style="padding-bottom: 4px;"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                             style="height: 28px;"
                                           >
                                             开发工程师
@@ -656,7 +656,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                 type="button"
               >
                 <span
@@ -1230,7 +1230,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                           style="margin-right: 4px; padding-bottom: 4px;"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                             style="height: 28px;"
                                           >
                                             开发工程师
@@ -1241,7 +1241,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                           style="padding-bottom: 4px;"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                             style="height: 28px;"
                                           >
                                             运维工程师
@@ -1280,7 +1280,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                           style="padding-bottom: 4px;"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                             style="height: 28px;"
                                           >
                                             开发工程师
@@ -1304,7 +1304,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                     style="height: 28px;"
                                   >
                                     数据源管理
@@ -1315,7 +1315,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   style="padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                                     style="height: 28px;"
                                   >
                                     成员管理

@@ -253,7 +253,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -280,7 +280,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
@@ -534,7 +534,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -561,7 +561,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
@@ -815,7 +815,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -842,7 +842,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
@@ -1096,7 +1096,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -1123,7 +1123,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
@@ -1377,7 +1377,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -1404,7 +1404,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
@@ -1658,7 +1658,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                           role="separator"
                         />
                         <span
-                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                         >
                           <svg
                             height="16"
@@ -1685,7 +1685,7 @@ exports[`test ExportTaskList should match snapshot 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                         type="button"
                       >
                         <span>
