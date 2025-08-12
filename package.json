@@ -9,6 +9,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm icon:build",
     "start": "pnpm --filter base start",
     "start:ee": "pnpm --filter base start:ee",
     "start:demo": "pnpm --filter base start:demo",
