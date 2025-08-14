@@ -4,12 +4,37 @@
   "main": "lib/index.ts",
   "license": "MIT",
   "scripts": {
+    "build": "tsup",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
-    "api:exports:g": "node scripts/generateAPIExports.mjs"
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^"
+  },
+  "peerDependencies": {
+    "@actiontech/icons": "0.0.1-rc.1",
+    "@ant-design/cssinjs": "^1.17.0",
+    "@ant-design/icons": "^4.7.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^5.11.16",
+    "@mui/styles": "^5.11.16",
+    "@mui/system": "^5.9.1",
+    "ahooks": "^3.7.0",
+    "antd": ">=5.7.3",
+    "axios": "^1",
+    "classnames": "^2.3.0",
+    "dayjs": "^1",
+    "i18next": "^23.0.0",
+    "rc-input-number": "~8.0.2",
+    "rc-tree-select": "~5.9.0",
+    "react": ">=17",
+    "react-dom": ">=17",
+    "react-i18next": "^15.0.0",
+    "typescript": ">=5.0.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
   }
 }
