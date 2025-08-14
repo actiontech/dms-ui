@@ -1,50 +1,44 @@
 {
   "name": "@actiontech/dms-kit",
-  "version": "0.0.1-rc.8",
+  "version": "0.0.1-rc.10",
   "description": "dms kit",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.mjs"
       },
       "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
       }
     }
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "publishConfig": {
     "registry": "http://10.186.18.19:4873/",
     "access": "restricted"
   },
   "scripts": {
-    "build": "tsup",
-    "clean": "rimraf src",
-    "generate": "pnpm clean && node scripts/generate.js",
-    "prebuild": "pnpm generate",
     "prepublish": "pnpm build"
-  },
-  "devDependencies": {
-    "rimraf": "^6.0.1",
-    "tsup": "^8.0.0"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:*"
   },
+  "devDependencies": {
+    "tsup": "^8.5.0"
+  },
   "peerDependencies": {
     "@actiontech/icons": "0.0.1-rc.1",
     "@ant-design/cssinjs": "^1.17.0",
-    "@monaco-editor/react": "^4.6.0",
-    "@mui/material": "5.11.16",
-    "@mui/styles": "5.11.16",
-    "@mui/system": "5.9.1",
+    "@mui/material": "^5.11.16",
+    "@mui/styles": "^5.11.16",
+    "@mui/system": "^5.9.1",
     "ahooks": "^3.7.0",
     "antd": ">=5.7.3",
     "axios": "^1",
@@ -58,7 +52,8 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "rc-input-number": "~8.0.2",
-    "rc-tree-select": "~5.9.0"
+    "rc-tree-select": "~5.9.0",
+    "@ant-design/icons": "^4.7.0"
   },
   "license": "MIT"
 }
