@@ -17,6 +17,7 @@ export * from './data/common';
 export * from './data/routePaths';
 export * from './locale';
 
+export * from './components/ActionButton';
 export * from './components/ActiontechTable';
 export * from './components/BasicButton';
 export * from './components/BasicDatePicker';
@@ -60,6 +61,7 @@ export * from './components/SpinIndicator';
 export * from './components/SystemConfigurationHub';
 export * from './components/TestDatabaseConnectButton';
 export * from './components/ToggleTokens';
+export * from './components/TypedRouter';
 export * from './components/VerificationCodeInput';
 
 export * from './providers';

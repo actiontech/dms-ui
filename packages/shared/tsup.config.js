@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup';
 import fs from 'node:fs';
 import path from 'node:path';
 
-function generateEntriesFromPublishEntry(): string[] {
+function generateEntriesFromPublishEntry() {
   const projectRoot = process.cwd();
   const publishEntryPath = path.resolve(projectRoot, 'lib', 'publish-entry.ts');
   let content = '';
@@ -14,12 +14,12 @@ function generateEntriesFromPublishEntry(): string[] {
 
   const exportPathRegex =
     /export\s+(?:type\s+)?(?:\*|\{[^}]*\})\s+from\s+['"](.+?)['"];?/g;
-  const includes = new Set<string>();
+  const includes = new Set();
 
   // 始终保留根入口
   includes.add('./lib/publish-entry.ts');
 
-  let match: RegExpExecArray | null;
+  let match = null;
   while ((match = exportPathRegex.exec(content)) !== null) {
     const rel = match[1];
     if (!rel || !rel.startsWith('./')) continue;
@@ -49,7 +49,6 @@ function generateEntriesFromPublishEntry(): string[] {
       }
       case 'types': {
         includes.add(`./lib/${normalized}.ts`);
-        includes.add(`./lib/${normalized}.tsx`);
         break;
       }
       default: {
@@ -81,8 +80,8 @@ function generateEntriesFromPublishEntry(): string[] {
     '!./lib/**/*.stories.ts',
     '!./lib/**/*.stories.tsx',
     '!./lib/**/*.md',
-    '!./lib/**/*.types.ts',
-    '!./lib/**/*.type.ts',
+    '!./lib/components/**/*.types.ts',
+    '!./lib/components/**/*.type.ts',
     '!./lib/**/test/**'
   ];
 

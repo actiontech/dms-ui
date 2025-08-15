@@ -4,6 +4,6 @@
     "outDir": "./dist",
     "declarationDir": "./dist"
   },
-  "include": ["lib/publish-entry.ts"],
+  "include": ["lib"],
   "exclude": ["node_modules", "dist"]
 }

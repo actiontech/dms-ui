@@ -1,11 +1,10 @@
 {
   "name": "@actiontech/icons",
-  "version": "0.0.1-rc.1",
+  "version": "0.0.1-rc.7",
   "description": "",
   "main": "./dist/index.js",
   "module": "./es/index.js",
   "types": "./es/index.d.ts",
-  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -39,8 +38,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@svgr/cli": "^8.1.0",
-    "dumi": "^2.3.8",
-    "father": "^4.1.0"
+    "@svgr/cli": "8.1.0",
+    "@babel/preset-react": "^7.24.7",
+    "dumi": "2.3.8",
+    "father": "4.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=17"
   }
 }

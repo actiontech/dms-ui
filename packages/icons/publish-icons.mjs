@@ -73,31 +73,6 @@ function copyDirSync(src, dest, options = {}) {
   copyItem(src, dest);
 }
 
-function renameRootPublishEntryToIndex(distRoot) {
-  const renames = [
-    ['publish-entry.js', 'index.js'],
-    ['publish-entry.mjs', 'index.mjs'],
-    ['publish-entry.d.ts', 'index.d.ts'],
-    ['publish-entry.d.mts', 'index.d.mts']
-  ];
-  for (const [fromName, toName] of renames) {
-    const from = path.join(distRoot, fromName);
-    const to = path.join(distRoot, toName);
-    if (!fs.existsSync(from)) continue;
-    try {
-      if (fs.existsSync(to)) fs.rmSync(to, { force: true });
-      fs.renameSync(from, to);
-      console.log(`已重命名: ${fromName} -> ${toName}`);
-    } catch (e) {
-      try {
-        fs.copyFileSync(from, to);
-        fs.unlinkSync(from);
-        console.log(`已复制并替换: ${fromName} -> ${toName}`);
-      } catch {}
-    }
-  }
-}
-
 function showPackageStructure(tmpDir) {
   console.log('\n📦 发包产物结构预览:');
   console.log('='.repeat(50));
@@ -149,8 +124,8 @@ async function confirmPublish() {
   });
 }
 
-function updatePackagePublishVersion(sharedDir, version) {
-  const pubPkgPath = path.join(sharedDir, 'package_publish.json');
+function updatePackagePublishVersion(iconsDir, version) {
+  const pubPkgPath = path.join(iconsDir, 'package_publish.json');
   try {
     const pubPkgContent = readJson(pubPkgPath);
     pubPkgContent.version = version;
@@ -166,16 +141,16 @@ async function main() {
   if (!version) {
     console.error('请通过 --version 或 -v 指定版本号，例如:');
     console.error(
-      '  node packages/shared/publish-shared.mjs --version 0.0.1-rc.9'
+      '  node packages/icons/publish-icons.mjs --version 0.0.1-rc.3'
     );
     process.exit(1);
   }
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  const sharedDir = __dirname;
+  const iconsDir = __dirname;
 
-  const pubPkg = path.join(sharedDir, 'package_publish.json');
+  const pubPkg = path.join(iconsDir, 'package_publish.json');
   ensureFileExists(pubPkg, '发布用 package_publish.json');
 
   // 保存原始版本号，用于后续还原
@@ -184,39 +159,39 @@ async function main() {
 
   const tmpBase = path.join(__dirname, '..');
   const tmpDir = fs.mkdtempSync(
-    path.join(tmpBase, 'actiontech-shared-publish-')
+    path.join(tmpBase, 'actiontech-icons-publish-')
   );
 
   try {
-    console.log(`[1/9] 创建临时目录: ${tmpDir}`);
+    console.log(`[1/7] 创建临时目录: ${tmpDir}`);
 
-    console.log('[2/9] 复制整个 shared 包到临时目录');
+    console.log('[2/7] 复制整个 icons 包到临时目录');
     // 复制整个包目录，但排除一些不需要的文件
-    const excludePatterns = [
+    const excludeTopLevel = new Set([
       'node_modules',
       'dist',
+      'es',
       '.git',
       '.github',
       'coverage',
-      '.nyc_output',
-      '.DS_Store',
-      '*.log'
-    ];
+      '.nyc_output'
+    ]);
 
     const filter = (filePath) => {
-      const relativePath = path.relative(sharedDir, filePath);
-      return !excludePatterns.some((pattern) => {
-        if (pattern.includes('*')) {
-          const regex = new RegExp(pattern.replace('*', '.*'));
-          return regex.test(relativePath);
-        }
-        return relativePath.includes(pattern);
-      });
+      const relativePath = path.relative(iconsDir, filePath);
+      if (!relativePath) return true; // 根目录
+      const segments = relativePath.split(path.sep);
+      const top = segments[0];
+      if (excludeTopLevel.has(top)) return false;
+      const base = path.basename(filePath);
+      if (base === '.DS_Store') return false;
+      if (base.endsWith('.log')) return false;
+      return true;
     };
 
-    copyDirSync(sharedDir, tmpDir, { filter });
+    copyDirSync(iconsDir, tmpDir, { filter });
 
-    console.log('[3/9] 调整 package.json 配置');
+    console.log('[3/7] 调整 package.json 配置');
     // 将 package_publish.json 重命名为 package.json
     const tmpPkgJson = path.join(tmpDir, 'package.json');
     const pubPkgContent = readJson(pubPkg);
@@ -224,70 +199,39 @@ async function main() {
     // 更新版本号
     pubPkgContent.version = version;
 
-    // 移除 prepublish 脚本，避免在临时目录触发构建
+    // 移除 prepublishOnly 脚本，避免在临时目录触发构建
     if (pubPkgContent.scripts) {
-      delete pubPkgContent.scripts.prepublish;
+      delete pubPkgContent.scripts.prepublishOnly;
       delete pubPkgContent.scripts.prepare;
     }
 
     writeJson(tmpPkgJson, pubPkgContent);
 
-    console.log('[4/9] 安装依赖: pnpm install');
+    console.log('[4/7] 安装依赖: pnpm install');
     runCmd('pnpm', ['install'], tmpDir);
 
-    console.log('[5/9] 执行构建: pnpm build');
+    console.log('[5/7] 执行构建: pnpm build');
     runCmd('pnpm', ['build'], tmpDir);
-
-    // 验证构建产物
-    const tmpDistDir = path.join(tmpDir, 'dist');
-    const tmpLibDir = path.join(tmpDir, 'lib');
-    ensureFileExists(tmpDistDir, '构建产物 dist 目录');
-    ensureFileExists(tmpLibDir, '原始资源代码目录');
-    console.log('[6-3/9] 根入口对齐：publish-entry.* -> index.*');
-    renameRootPublishEntryToIndex(tmpDistDir);
-
-    console.log('[6-1/9] 移除 lib 目录');
-    fs.rmSync(tmpLibDir, { recursive: true, force: true });
-    console.log('[6-2/9] 重命名 dist 目录为 lib');
-    fs.renameSync(tmpDistDir, tmpLibDir);
-
-    // 可选: 附带 README/LICENCE
-    const maybeFiles = ['README.md', 'LICENSE', 'LICENSE.md'];
-    for (const f of maybeFiles) {
-      const src = path.join(sharedDir, f);
-      if (fs.existsSync(src)) {
-        fs.copyFileSync(src, path.join(tmpDir, f));
-      }
-    }
 
     // 显示产物结构预览
     showPackageStructure(tmpDir);
-
-    // 移除 @actiontech/shared 依赖
-    if (pubPkgContent.dependencies['@actiontech/shared']) {
-      delete pubPkgContent.dependencies['@actiontech/shared'];
-      writeJson(tmpPkgJson, pubPkgContent);
-    }
 
     // 用户确认发包
     if (!skipConfirm) {
       const confirmed = await confirmPublish();
       if (!confirmed) {
         console.log('❌ 用户取消发布');
-        console.log('[9/9] 清理临时目录');
+        console.log('[7/7] 清理临时目录');
         fs.rmSync(tmpDir, { recursive: true, force: true });
         return;
       }
     }
 
-    console.log('[7/9] 执行发布: npm publish');
+    console.log('[6/7] 执行发布: npm publish');
     runCmd('npm', ['publish'], tmpDir);
 
-    console.log('[8/9] 更新 package_publish.json 版本号');
-    updatePackagePublishVersion(sharedDir, version);
-
-    console.log('[9/9] 清理临时目录');
-    fs.rmSync(tmpDir, { recursive: true, force: true });
+    console.log('[7/7] 更新 package_publish.json 版本号');
+    updatePackagePublishVersion(iconsDir, version);
 
     console.log('✅ 发布完成');
   } catch (err) {
@@ -296,7 +240,7 @@ async function main() {
 
     // 还原原始版本号
     try {
-      const pubPkgPath = path.join(sharedDir, 'package_publish.json');
+      const pubPkgPath = path.join(iconsDir, 'package_publish.json');
       originalPubPkgContent.version = originalVersion;
       writeJson(pubPkgPath, originalPubPkgContent);
       console.log(
@@ -305,13 +249,16 @@ async function main() {
     } catch (restoreErr) {
       console.warn(`⚠️  还原版本号失败: ${restoreErr.message}`);
     }
-
+  } finally {
+    console.log('[8/7] 清理临时目录');
     try {
       if (fs.existsSync(tmpDir)) {
-        console.log('🧹 清理临时目录');
         fs.rmSync(tmpDir, { recursive: true, force: true });
+        console.log('✅ 已清理临时目录');
       }
-    } catch {}
+    } catch (cleanupErr) {
+      console.warn(`⚠️  清理临时目录失败: ${cleanupErr.message}`);
+    }
   }
 }
 
