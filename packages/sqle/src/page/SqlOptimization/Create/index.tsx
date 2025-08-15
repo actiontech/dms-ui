@@ -18,6 +18,7 @@ import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 
 // todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
@@ -101,8 +102,9 @@ const SqlOptimizationCreate = () => {
             text={t('sqlOptimization.create.returnButton')}
             actionType="navigate-link"
             link={{
-              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
-              params: { projectID }
+              to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
+              params: { projectID },
+              queries: { active: SqlAuditSegmentedKey.SqlOptimization }
             }}
           />
         }

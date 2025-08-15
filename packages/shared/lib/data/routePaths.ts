@@ -210,7 +210,7 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-audit',
-        query: 'SQLAuditRecordID'
+        query: 'SQLAuditRecordID&active'
       },
       create: {
         prefix: '/sqle/project/:projectID/sql-audit',

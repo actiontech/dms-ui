@@ -80,7 +80,7 @@ const SqlManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
-const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
+const SqlAudit = React.lazy(() => import('../page/SqlAudit'));
 
 const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
 
@@ -100,6 +100,10 @@ const SqlOptimizationOverview = React.lazy(
 
 const SqlOptimizationDetail = React.lazy(
   () => import('../page/SqlOptimization/Detail')
+);
+
+const SqlOptimizationResult = React.lazy(
+  () => import('../page/SqlOptimization/Result')
 );
 
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
@@ -435,7 +439,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'sqlOptimization',
     element: <SqlOptimization />,
     // #if [ee]
-    permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
+    // permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
     children: [
       {
         index: true,
@@ -460,6 +464,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
     // #endif
   },
+
   {
     path: ROUTE_PATHS.SQLE.PUSH_RULE.index.path,
     key: 'pushRuleConfiguration',
@@ -543,6 +548,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
     path: `${ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.prefix}/${ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.path}`,
     key: 'globalRuleTemplateDetail',
     element: <GlobalRuleTemplateDetail />
+  },
+  {
+    path: '/sql-optimization/result',
+    element: <SqlOptimizationResult />,
+    key: 'sqlOptimizationResult'
   },
   {
     key: 'ruleManager',

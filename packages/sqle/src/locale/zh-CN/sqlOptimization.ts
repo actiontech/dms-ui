@@ -85,5 +85,32 @@ export default {
       beforePlan: '执行计划(优化前)',
       afterPlan: '执行计划(优化后)'
     }
+  },
+  result: {
+    viewOptimizationResult: '查看 SQL 优化结果',
+    newOptimizedQuery: '新的优化查询为',
+    indexOptimizationAdvice: '索引优化建议',
+    optimizedExecutionPlan: '优化后的执行计划',
+    viewDifference: '查看差异',
+    viewTableStructure: '查看表结构',
+    expand: '展开',
+    performanceImprovement: '性能提升',
+    automaticOptimization: '自动优化',
+    whichOptimizationRulesUsed: '使用了哪些优化规则？',
+    clickToViewRuleEffect: '点击查看每个规则对 SQL 语句的影响',
+    compareSqlDifferences: '比较 SQL 优化前后的差异',
+    viewTableStructureAndOptimalIndex: '查看表结构及最佳索引',
+    viewOptimizationResults: '查看优化结果',
+    compareExecutionPlanDifferences: '比较执行计划优化前后的差异',
+    tableStructureForQuery: '该查询的表结构',
+    optimalIndexForQuery: '该查询的最佳索引',
+    details: '详情',
+    beforeOptimization: '优化前',
+    afterOptimization: '优化后',
+    original: '原文',
+    finalOptimized: '最终优化后',
+    originalExecutionPlan: '原执行计划',
+    exitFullscreen: '退出全屏',
+    fullscreenDisplay: '全屏显示'
   }
 };

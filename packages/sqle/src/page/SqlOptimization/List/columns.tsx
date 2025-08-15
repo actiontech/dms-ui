@@ -6,7 +6,7 @@ import {
   ISqlDEVRecord,
   IOptimizationRecord
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
+import { IGetOptimizationRecordsV2Params } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { CustomAvatar, DatabaseTypeLogo } from '@actiontech/shared';
@@ -15,7 +15,7 @@ import OptimizationStatus from '../components/OptimizationStatus';
 import { SqlOptimizationStatusEnum } from '../index.data';
 
 export type SqlOptimizationListTableFilterParamType =
-  PageInfoWithoutIndexAndSize<IGetOptimizationRecordsParams, 'project_name'>;
+  PageInfoWithoutIndexAndSize<IGetOptimizationRecordsV2Params, 'project_name'>;
 
 export const SqlOptimizationListColumns: (
   getLogoUrlByDbType: (dbType: string) => string
@@ -52,16 +52,16 @@ export const SqlOptimizationListColumns: (
         );
       }
     },
-    {
-      dataIndex: 'performance_gain',
-      title: () => t('sqlOptimization.table.performanceGain'),
-      render: (performance) => {
-        if (!performance) {
-          return '-';
-        }
-        return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
-      }
-    },
+    // {
+    //   dataIndex: 'performance_gain',
+    //   title: () => t('sqlOptimization.table.performanceGain'),
+    //   render: (performance) => {
+    //     if (!performance) {
+    //       return '-';
+    //     }
+    //     return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
+    //   }
+    // },
     {
       dataIndex: 'created_time',
       title: () => t('sqlOptimization.table.createTime'),

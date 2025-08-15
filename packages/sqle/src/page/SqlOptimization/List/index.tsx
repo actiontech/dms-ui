@@ -21,16 +21,14 @@ import {
   SqlOptimizationListTableFilterParamType,
   SqlOptimizationListColumns
 } from './columns';
-import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { PageHeader, useTypedNavigate, ActionButton } from '@actiontech/shared';
-import { useTranslation } from 'react-i18next';
-import { PlusOutlined } from '@actiontech/icons';
+import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const SqlOptimizationList = () => {
-  const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
 
   const { projectName, projectID } = useCurrentProject();
@@ -66,7 +64,7 @@ const SqlOptimizationList = () => {
         fuzzy_search: searchKeyword
       };
       return handleTableRequestError(
-        sqlOptimization.getOptimizationRecords(params)
+        SqleApi.SqlOptimizationService.GetOptimizationRecordsV2(params)
       );
     },
     {
@@ -107,23 +105,16 @@ const SqlOptimizationList = () => {
     });
   }, [projectName, updateInstanceList, updateDriverList]);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Refresh_Sql_Optimization_List,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
+
   return (
     <>
-      <PageHeader
-        title={t('sqlOptimization.pageTitle')}
-        extra={
-          <ActionButton
-            type="primary"
-            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
-            text={t('sqlOptimization.create.linkButton')}
-            actionType="navigate-link"
-            link={{
-              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create,
-              params: { projectID }
-            }}
-          />
-        }
-      />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
