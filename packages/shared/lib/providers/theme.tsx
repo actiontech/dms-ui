@@ -17,7 +17,7 @@ const DEFAULT_THEME_DATA = {
 export interface ThemeProviderProps {
   children: ReactNode;
   themeData?: typeof DEFAULT_THEME_DATA;
-  theme?: SupportTheme
+  theme?: SupportTheme;
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
