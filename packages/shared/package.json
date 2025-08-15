@@ -4,12 +4,15 @@
   "main": "lib/index.ts",
   "license": "MIT",
   "scripts": {
+    "build": "tsup",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
-    "api:exports:g": "node scripts/generateAPIExports.mjs"
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
   }
 }

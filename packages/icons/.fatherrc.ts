@@ -6,6 +6,10 @@ export default defineConfig({
     output: 'es'
   },
   cjs: {
-    output: 'dist'
-  },
+    output: 'dist',
+    transformer: 'babel',
+    extraBabelPresets: [
+      ['@babel/preset-react', { runtime: 'automatic', importSource: 'react' }]
+    ]
+  }
 });
