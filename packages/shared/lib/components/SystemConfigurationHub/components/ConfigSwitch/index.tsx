@@ -1,6 +1,9 @@
 import { Popconfirm } from 'antd';
 import { FormItemLabel } from '../../../CustomForm';
-import { BasicSwitch, BasicSwitchProps } from '../../../..';
+import {
+  BasicSwitch,
+  BasicSwitchProps
+} from '../../../../components/BasicSwitch';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
