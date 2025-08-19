@@ -1,0 +1,43 @@
+import React from 'react';
+import { LeftArrowOutlined } from '@actiontech/icons';
+import { ActionButton, PageHeader, useTypedParams } from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
+import ResultContent from './ResultContent';
+import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
+import { SqlOptimizationResultStyleWrapper } from './style';
+
+const SqlOptimizationResult: React.FC = () => {
+  const { t } = useTranslation();
+
+  const { projectID } = useCurrentProject();
+
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_AUDIT.optimization_result>();
+
+  return (
+    <>
+      <PageHeader
+        title={
+          <ActionButton
+            icon={<LeftArrowOutlined />}
+            text={t('sqlOptimization.create.returnButton')}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
+              params: { projectID },
+              queries: { active: SqlAuditSegmentedKey.SqlOptimization }
+            }}
+          />
+        }
+        fixed
+      />
+      <SqlOptimizationResultStyleWrapper>
+        <ResultContent optimizationId={urlParams.optimizationId} />
+      </SqlOptimizationResultStyleWrapper>
+    </>
+  );
+};
+
+export default SqlOptimizationResult;

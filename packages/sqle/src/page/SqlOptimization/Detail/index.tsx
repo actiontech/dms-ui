@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import {
   PageHeader,
   EmptyBox,
@@ -26,6 +29,9 @@ import RecommendIndex from '../components/RecommendIndex';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
+/**
+ * @deprecated
+ */
 const OptimizationDetail = () => {
   const { t } = useTranslation();
 
