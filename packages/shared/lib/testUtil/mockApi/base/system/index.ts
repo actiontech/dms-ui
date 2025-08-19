@@ -303,7 +303,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public getSystemVariables() {
-    const spy = jest.spyOn(configuration, 'getSystemVariablesV1');
+    const spy = jest.spyOn(DMSConfiguration, 'GetSystemVariables');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
@@ -317,7 +317,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateSystemVariables() {
-    const spy = jest.spyOn(configuration, 'updateSystemVariablesV1');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateSystemVariables');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
