@@ -9,6 +9,7 @@ import { iconTheme } from './icon';
 import { dataSourceComparisonTheme } from './dataSourceComparison';
 import { knowledgeTheme } from './knowledge';
 import { sqlInsightTheme } from './sqlInsight';
+import { sqlOptimizationTheme } from './sqlOptimization';
 
 export const sqleLightTheme: SqleTheme = {
   statistics: statisticsTheme,
@@ -19,7 +20,8 @@ export const sqleLightTheme: SqleTheme = {
   icon: iconTheme,
   dataSourceComparison: dataSourceComparisonTheme,
   knowledgeTheme: knowledgeTheme,
-  sqlInsight: sqlInsightTheme
+  sqlInsight: sqlInsightTheme,
+  sqlOptimization: sqlOptimizationTheme
 };
 
 const lightTheme = createTheme({

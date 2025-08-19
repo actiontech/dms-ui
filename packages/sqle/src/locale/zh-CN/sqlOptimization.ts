@@ -4,14 +4,20 @@ export default {
   ceTips:
     '当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的智能调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果',
   table: {
-    optimizationId: '调优ID',
+    optimizationId: 'ID',
+    numberOfRule: '触发调优规则总数',
+    numberOfIndexx: '索引总数',
     optimizationName: '名称',
     instanceName: '数据源',
     dbType: '数据库类型',
     performanceGain: '优化提升性能',
     createTime: '创建时间',
     status: '状态',
-    creator: '创建人'
+    creator: '创建人',
+    autoRefresh: '自动刷新',
+    openAutoRefreshTips: '开启自动刷新（每5秒刷新一次）',
+    closeAutoRefreshTips: '关闭自动刷新（当前每5秒刷新一次）',
+    view: '查看'
   },
   status: {
     finish: '调优成功',
@@ -20,11 +26,11 @@ export default {
   },
   create: {
     linkButton: '创建智能调优',
-    returnButton: '返回智能调优列表',
-    successTips: '创建智能调优成功',
+    returnButton: '返回SQL调优列表',
+    successTips: '创建SQL调优成功',
     base: {
-      title: '创建智能调优',
-      name: '智能调优名称'
+      title: '创建SQL调优',
+      name: 'SQL调优名称'
     },
     sqlInfo: {
       title: '输入SQL',
@@ -37,7 +43,9 @@ export default {
       format: 'SQL美化',
       formatTips:
         '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
-    }
+    },
+    resultTips: '优化进行中，预计5-10分钟后完成。感谢您的耐心等待。',
+    resetForm: '重置表单'
   },
   overview: {
     sqlTable: {
@@ -85,5 +93,32 @@ export default {
       beforePlan: '执行计划(优化前)',
       afterPlan: '执行计划(优化后)'
     }
+  },
+  result: {
+    viewOptimizationResult: '返回SQL调优列表',
+    newOptimizedQuery: '新的优化查询为',
+    indexOptimizationAdvice: '索引优化建议',
+    optimizedExecutionPlan: '优化后的执行计划',
+    viewDifference: '查看差异',
+    viewTableStructure: '查看表结构',
+    expand: '展开',
+    performanceImprovement: '性能提升',
+    automaticOptimization: '自动优化',
+    whichOptimizationRulesUsed: '使用了哪些优化规则？',
+    clickToViewRuleEffect: '点击查看每个规则对 SQL 语句的影响',
+    compareSqlDifferences: '比较 SQL 优化前后的差异',
+    viewTableStructureAndOptimalIndex: '查看表结构及最佳索引',
+    viewOptimizationResults: '查看优化结果',
+    compareExecutionPlanDifferences: '比较执行计划优化前后的差异',
+    tableStructureForQuery: '该查询的表结构',
+    optimalIndexForQuery: '该查询的最佳索引',
+    details: '详情',
+    beforeOptimization: '优化前',
+    afterOptimization: '优化后',
+    original: '原文',
+    finalOptimized: '最终优化后',
+    originalExecutionPlan: '原执行计划',
+    exitFullscreen: '退出全屏',
+    fullscreenDisplay: '全屏显示'
   }
 };
