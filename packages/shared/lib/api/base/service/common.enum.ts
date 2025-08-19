@@ -217,6 +217,8 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_other_audit_plan' = 'view_other_audit_plan',
 
+  'view_sql_insight' = 'view_sql_insight',
+
   'save_audit_plan' = 'save_audit_plan',
 
   'sql_query' = 'sql_query',
