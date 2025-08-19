@@ -37,6 +37,9 @@ import {
   IUpdateSMTPConfigurationReturn,
   ITestSMTPConfigurationParams,
   ITestSMTPConfigurationReturn,
+  IGetSystemVariablesReturn,
+  IUpdateSystemVariablesParams,
+  IUpdateSystemVariablesReturn,
   IGetWebHookConfigurationReturn,
   IUpdateWebHookConfigurationParams,
   IUpdateWebHookConfigurationReturn,
@@ -267,6 +270,26 @@ class ConfigurationService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<ITestSMTPConfigurationReturn>(
       '/v1/dms/configurations/smtp/test',
+      paramsData,
+      options
+    );
+  }
+
+  public GetSystemVariables(options?: AxiosRequestConfig) {
+    return this.get<IGetSystemVariablesReturn>(
+      '/v1/dms/configurations/system_variables',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateSystemVariables(
+    params: IUpdateSystemVariablesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateSystemVariablesReturn>(
+      '/v1/dms/configurations/system_variables',
       paramsData,
       options
     );
