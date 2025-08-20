@@ -9,7 +9,11 @@ import {
 import { IGetOptimizationRecordsV2Params } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { CustomAvatar, DatabaseTypeLogo } from '@actiontech/shared';
+import {
+  CustomAvatar,
+  DatabaseTypeLogo,
+  BasicToolTip
+} from '@actiontech/shared';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import OptimizationStatus from '../components/OptimizationStatus';
 import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -59,13 +63,21 @@ export const SqlOptimizationListColumns: (
     {
       dataIndex: 'status',
       title: () => t('sqlOptimization.table.status'),
-      render: (status) => {
+      render: (status, record) => {
         if (!status) {
           return '-';
         }
-        return (
+
+        const content = (
           <OptimizationStatus status={status as OptimizationRecordStatusEnum} />
         );
+
+        if (status === OptimizationRecordStatusEnum.failed) {
+          return (
+            <BasicToolTip title={record.status_detail}>{content}</BasicToolTip>
+          );
+        }
+        return content;
       }
     },
     {
