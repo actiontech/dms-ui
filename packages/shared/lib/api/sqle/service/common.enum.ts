@@ -396,6 +396,14 @@ export enum OperationRecordListStatusEnum {
   'failed' = 'failed'
 }
 
+export enum OptimizationRecordStatusEnum {
+  'optimizing' = 'optimizing',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
 export enum RecordSourceNameEnum {
   'ide_plugin' = 'ide_plugin'
 }
