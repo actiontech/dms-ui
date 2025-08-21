@@ -28,12 +28,6 @@ const SqlDiffModal: React.FC = () => {
     );
   };
 
-  if (!currentDiffData) {
-    return null;
-  }
-
-  const { originalSql, optimizedSql } = currentDiffData;
-
   return (
     <BasicModal
       title={t('sqlOptimization.result.compareSqlDifferences')}
@@ -45,8 +39,8 @@ const SqlDiffModal: React.FC = () => {
       maskClosable={false}
     >
       <SqlDiffView
-        originalSql={originalSql}
-        optimizedSql={optimizedSql}
+        originalSql={currentDiffData?.originalSql ?? ''}
+        optimizedSql={currentDiffData?.optimizedSql ?? ''}
         originTitle={t('sqlOptimization.result.original')}
         optimizedTitle={t('sqlOptimization.result.finalOptimized')}
       />

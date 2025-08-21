@@ -29,10 +29,6 @@ const QueryPlanFlowModal: React.FC = () => {
     );
   };
 
-  if (!currentQueryPlanData) {
-    return null;
-  }
-
   return (
     <BasicModal
       title={t('sqlOptimization.result.optimizedExecutionPlan')}
@@ -43,9 +39,7 @@ const QueryPlanFlowModal: React.FC = () => {
       maskClosable={false}
       width={1200}
     >
-      <div>
-        <QueryPlanFlow queryPlanDesc={currentQueryPlanData} height={700} />
-      </div>
+      <QueryPlanFlow queryPlanDesc={currentQueryPlanData ?? []} height={700} />
     </BasicModal>
   );
 };

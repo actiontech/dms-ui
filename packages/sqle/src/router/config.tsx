@@ -430,37 +430,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       }
     ]
   },
-  // {
-  //   path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index.path,
-  //   key: 'sqlOptimization',
-  //   element: <SqlOptimization />,
-  //   // #if [ee]
-  //   // permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <SqlOptimizationList />,
-  //       key: 'sqlOptimizationList'
-  //     },
-  //     {
-  //       path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create.path,
-  //       element: <SqlOptimizationCreate />,
-  //       key: 'sqlOptimizationCreate'
-  //     },
-  //     {
-  //       path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview.path,
-  //       element: <SqlOptimizationOverview />,
-  //       key: 'sqlOptimizationOverview'
-  //     },
-  //     {
-  //       path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail.path,
-  //       element: <SqlOptimizationDetail />,
-  //       key: 'sqlOptimizationDetail'
-  //     }
-  //   ]
-  //   // #endif
-  // },
-
   {
     path: ROUTE_PATHS.SQLE.PUSH_RULE.index.path,
     key: 'pushRuleConfiguration',

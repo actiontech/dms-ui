@@ -19,7 +19,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   SqlOptimizationListTableFilterParamType,
-  SqlOptimizationListColumns
+  sqlOptimizationListColumns
 } from './columns';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
@@ -34,7 +34,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import { SqlOptimizationListStyleWrapper } from '../style';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { SqlOptimizationListActions } from './actions';
+import { sqlOptimizationListActions } from './actions';
 
 const SqlOptimizationList = () => {
   const navigate = useTypedNavigate();
@@ -108,7 +108,7 @@ const SqlOptimizationList = () => {
   }, [instanceOptions]);
 
   const columns = useMemo(() => {
-    return SqlOptimizationListColumns(getLogoUrlByDbType);
+    return sqlOptimizationListColumns(getLogoUrlByDbType);
   }, [getLogoUrlByDbType]);
 
   const onView = (record?: IOptimizationRecord) => {
@@ -202,7 +202,7 @@ const SqlOptimizationList = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          actions={SqlOptimizationListActions(onView)}
+          actions={sqlOptimizationListActions(onView)}
         />
       </ActiontechTableWrapper>
     </SqlOptimizationListStyleWrapper>

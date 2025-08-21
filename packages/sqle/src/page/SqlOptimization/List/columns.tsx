@@ -21,7 +21,7 @@ import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/se
 export type SqlOptimizationListTableFilterParamType =
   PageInfoWithoutIndexAndSize<IGetOptimizationRecordsV2Params, 'project_name'>;
 
-export const SqlOptimizationListColumns: (
+export const sqlOptimizationListColumns: (
   getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<
   IOptimizationRecord,

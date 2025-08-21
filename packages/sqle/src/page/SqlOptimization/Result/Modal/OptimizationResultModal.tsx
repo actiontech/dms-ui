@@ -34,10 +34,6 @@ const OptimizationResultModal: React.FC = () => {
     );
   };
 
-  if (!currentResultData) {
-    return null;
-  }
-
   return (
     <BasicModal
       title={t('sqlOptimization.result.viewOptimizationResults')}
@@ -52,10 +48,10 @@ const OptimizationResultModal: React.FC = () => {
         {/* 规则描述 */}
         <div className="rule-info">
           <Typography.Title level={5}>
-            {currentResultData.rule_name}
+            {currentResultData?.rule_name}
           </Typography.Title>
           <Typography.Text type="secondary">
-            {currentResultData.rule_desc}
+            {currentResultData?.rule_desc}
           </Typography.Text>
         </div>
 
@@ -63,7 +59,7 @@ const OptimizationResultModal: React.FC = () => {
         <Space className="performance-improvement-section">
           <Space direction="vertical">
             <ProbabilityDisplay
-              analysis={currentResultData.analysis}
+              analysis={currentResultData?.analysis}
               resultStatus={OptimizationResultStatus.RESOLVED}
             />
 
@@ -76,10 +72,10 @@ const OptimizationResultModal: React.FC = () => {
                 expandable: true
               }}
             >
-              {currentResultData.analysis?.improvement_desc}
+              {currentResultData?.analysis?.improvement_desc}
             </Typography.Paragraph>
           </Space>
-          <AnalysisChart data={currentResultData.analysis} />
+          <AnalysisChart data={currentResultData?.analysis} />
         </Space>
         {/* SQL对比 */}
         <div className="sql-comparison">
@@ -87,8 +83,8 @@ const OptimizationResultModal: React.FC = () => {
             {t('sqlOptimization.result.compareSqlDifferences')}
           </Typography.Title>
           <SqlDiffView
-            originalSql={currentResultData.origin_sql ?? ''}
-            optimizedSql={currentResultData.optimized_sql ?? ''}
+            originalSql={currentResultData?.origin_sql ?? ''}
+            optimizedSql={currentResultData?.optimized_sql ?? ''}
           />
         </div>
       </OptimizationResultModalWrapper>

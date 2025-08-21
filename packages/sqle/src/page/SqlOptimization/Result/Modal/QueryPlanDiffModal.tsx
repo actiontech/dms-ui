@@ -47,23 +47,17 @@ const QueryPlanDiffModal: React.FC = () => {
     setFitViewTrigger((prev) => prev + 1);
   };
 
-  if (!currentQueryPlanDiffData) {
-    return null;
-  }
-
-  const { originalQueryPlan, optimizedQueryPlan } = currentQueryPlanDiffData;
-
   const planConfigs = [
     {
       type: ExecutionPlanType.ORIGINAL,
       title: t('sqlOptimization.result.originalExecutionPlan'),
-      queryPlanDesc: originalQueryPlan,
+      queryPlanDesc: currentQueryPlanDiffData?.originalQueryPlan,
       hiddenCondition: fullscreenPlan === ExecutionPlanType.OPTIMIZED
     },
     {
       type: ExecutionPlanType.OPTIMIZED,
       title: t('sqlOptimization.result.finalOptimized'),
-      queryPlanDesc: optimizedQueryPlan,
+      queryPlanDesc: currentQueryPlanDiffData?.optimizedQueryPlan,
       hiddenCondition: fullscreenPlan === ExecutionPlanType.ORIGINAL
     }
   ];
@@ -110,7 +104,7 @@ const QueryPlanDiffModal: React.FC = () => {
             </div>
             <div className="plan-content">
               <QueryPlanFlow
-                queryPlanDesc={config.queryPlanDesc}
+                queryPlanDesc={config.queryPlanDesc ?? []}
                 height={600}
                 fitViewTrigger={fitViewTrigger}
                 planType={config.type}

@@ -1,4 +1,4 @@
 export enum SqlAuditSegmentedKey {
-  SqlAudit = 'SqlAudit',
-  SqlOptimization = 'SqlOptimization'
+  SqlAudit = 'sql_audit',
+  SqlOptimization = 'sql_optimization'
 }
