@@ -13,19 +13,14 @@ import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import SqlAuditList from './List';
 import SqlOptimizationList from '../SqlOptimization/List';
-import {
-  PermissionsConstantType,
-  usePermission
-} from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { SqlAuditPageHeaderActions } from './actions';
+import { sqlAuditPageHeaderActions } from './actions';
 
 const SqlAudit: React.FC = () => {
   const { t } = useTranslation();
   const [activeKey, setActiveKey] = useState(SqlAuditSegmentedKey.SqlAudit);
 
-  const { checkPagePermission } = usePermission();
   const { projectID } = useCurrentProject();
 
   const extractQuery = useTypedQuery();
@@ -39,9 +34,7 @@ const SqlAudit: React.FC = () => {
   };
 
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
-    const items: Array<
-      SegmentedTabsProps['items'][0] & { permission?: PermissionsConstantType }
-    > = [
+    return [
       {
         label: t('sqlAudit.sqlAudit'),
         value: SqlAuditSegmentedKey.SqlAudit,
@@ -55,20 +48,22 @@ const SqlAudit: React.FC = () => {
         destroyInactivePane: true
       }
     ];
-
-    return items.filter(
-      (item) => !item.permission || checkPagePermission(item.permission)
-    );
-  }, [checkPagePermission, t]);
+  }, [t]);
 
   useEffect(() => {
     const searchParams = extractQuery(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
-    if (searchParams && searchParams.active) {
+    if (
+      searchParams &&
+      searchParams.active &&
+      Object.values(SqlAuditSegmentedKey).includes(
+        searchParams.active as SqlAuditSegmentedKey
+      )
+    ) {
       setActiveKey(searchParams.active as SqlAuditSegmentedKey);
     }
   }, [extractQuery]);
 
-  const pageHeaderActions = SqlAuditPageHeaderActions(projectID, activeKey);
+  const pageHeaderActions = sqlAuditPageHeaderActions(projectID, activeKey);
 
   return (
     <article>

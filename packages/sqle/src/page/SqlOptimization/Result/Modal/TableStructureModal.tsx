@@ -35,12 +35,6 @@ const TableStructureModal: React.FC = () => {
     );
   };
 
-  if (!currentTableData) {
-    return null;
-  }
-
-  const { tableStructure, recommendedIndexes } = currentTableData;
-
   return (
     <BasicModal
       title={t('sqlOptimization.result.viewTableStructureAndOptimalIndex')}
@@ -57,13 +51,20 @@ const TableStructureModal: React.FC = () => {
             <div className="section-title">
               {t('sqlOptimization.result.tableStructureForQuery')}
             </div>
-            <EmptyBox if={!!tableStructure}>
-              <CopyButton content={tableStructure} onlyIcon />
+            <EmptyBox if={!!currentTableData?.tableStructure}>
+              <CopyButton content={currentTableData?.tableStructure} onlyIcon />
             </EmptyBox>
           </div>
           <div className="section-content">
-            <EmptyBox if={!!tableStructure} defaultNode={<BasicEmpty />}>
-              <SQLRenderer wordWrap showLineNumbers sql={tableStructure} />
+            <EmptyBox
+              if={!!currentTableData?.tableStructure}
+              defaultNode={<BasicEmpty />}
+            >
+              <SQLRenderer
+                wordWrap
+                showLineNumbers
+                sql={currentTableData?.tableStructure}
+              />
             </EmptyBox>
           </div>
         </div>
@@ -73,10 +74,17 @@ const TableStructureModal: React.FC = () => {
             <div className="section-title">
               {t('sqlOptimization.result.optimalIndexForQuery')}
             </div>
-            <CopyButton content={recommendedIndexes} onlyIcon />
+            <CopyButton
+              content={currentTableData?.recommendedIndexes}
+              onlyIcon
+            />
           </div>
           <div className="section-content">
-            <SQLRenderer wordWrap showLineNumbers sql={recommendedIndexes} />
+            <SQLRenderer
+              wordWrap
+              showLineNumbers
+              sql={currentTableData?.recommendedIndexes}
+            />
           </div>
         </div>
       </TableStructureModalWrapper>

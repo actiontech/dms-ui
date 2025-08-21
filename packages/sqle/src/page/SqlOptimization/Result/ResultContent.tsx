@@ -49,7 +49,6 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           return res.data.data;
         }
       }),
-    // Promise.resolve(mockData.data),
     {
       onSuccess: () => {
         setOptimizationResultStatus(OptimizationResultStatus.RESOLVED);

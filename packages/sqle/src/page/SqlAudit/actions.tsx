@@ -8,7 +8,7 @@ import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { SqlAuditSegmentedKey } from './index.type';
 
-export const SqlAuditPageHeaderActions = (
+export const sqlAuditPageHeaderActions = (
   projectID: string,
   activeKey = SqlAuditSegmentedKey.SqlAudit
 ): Record<'create-audit' | 'create-optimization', React.ReactNode> => {

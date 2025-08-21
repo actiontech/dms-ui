@@ -3,7 +3,7 @@ import { t } from '../../../locale';
 import { IOptimizationRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-export const SqlOptimizationListActions = (
+export const sqlOptimizationListActions = (
   onView: (record?: IOptimizationRecord) => void
 ): ActiontechTableActionMeta<IOptimizationRecord>[] => {
   return [
