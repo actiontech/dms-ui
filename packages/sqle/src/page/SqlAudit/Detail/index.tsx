@@ -8,7 +8,7 @@ import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_
 import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { SqlAuditPageHeaderActions } from '../List/actions';
+import { SqlAuditPageHeaderActions } from '../actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlAuditDetail = () => {

@@ -5,7 +5,8 @@ import {
   ActionButton,
   BasicButton,
   PageHeader,
-  useTypedNavigate
+  BasicResult,
+  EmptyBox
 } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -18,14 +19,13 @@ import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 
 // todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
 const SqlOptimizationCreate = () => {
   const { t } = useTranslation();
-
-  const navigate = useTypedNavigate();
 
   const { projectID, projectName } = useCurrentProject();
 
@@ -42,13 +42,18 @@ const SqlOptimizationCreate = () => {
     { setTrue: setSubmitPending, setFalse: setSubmitDone }
   ] = useBoolean();
 
+  const [
+    submitSuccessStatus,
+    { setTrue: setSubmitSuccessStatus, setFalse: setSubmitSuccessStatusFalse }
+  ] = useBoolean();
+
   const onSubmit = async () => {
     const baseValue = await baseForm.validateFields();
     const sqlInfoValue = await sqlInfoForm.validateFields();
     setSubmitPending();
 
     sqlOptimization
-      .OptimizeSQLReq({
+      .SQLOptimizeV2({
         optimization_name: baseValue.optimizationName,
         project_name: projectName,
         instance_name: sqlInfoValue.instanceName,
@@ -64,12 +69,7 @@ const SqlOptimizationCreate = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('sqlOptimization.create.successTips'));
-          navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview, {
-            params: {
-              projectID,
-              optimizationId: res.data.data?.sql_optimization_record_id ?? ''
-            }
-          });
+          setSubmitSuccessStatus();
         }
       })
       .finally(() => {
@@ -79,6 +79,7 @@ const SqlOptimizationCreate = () => {
 
   const onResetForm = () => {
     sqlInfoForm.resetFields();
+    setSubmitSuccessStatusFalse();
   };
 
   useEffect(() => {
@@ -101,21 +102,38 @@ const SqlOptimizationCreate = () => {
             text={t('sqlOptimization.create.returnButton')}
             actionType="navigate-link"
             link={{
-              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
-              params: { projectID }
+              to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
+              params: { projectID },
+              queries: { active: SqlAuditSegmentedKey.SqlOptimization }
             }}
           />
         }
         extra={
-          <BasicButton onClick={onResetForm} loading={submitLoading}>
-            {t('common.reset')}
-          </BasicButton>
+          <EmptyBox if={!submitSuccessStatus}>
+            <BasicButton onClick={onResetForm} loading={submitLoading}>
+              {t('common.reset')}
+            </BasicButton>
+          </EmptyBox>
         }
       />
-      <FormSubmitStatusContext.Provider value={submitLoading}>
-        <BaseInfoForm form={baseForm} />
-        <SQLInfoForm form={sqlInfoForm} submit={onSubmit} />
-      </FormSubmitStatusContext.Provider>
+      <EmptyBox
+        if={!submitSuccessStatus}
+        defaultNode={
+          <BasicResult
+            title={t('sqlOptimization.create.resultTips')}
+            extra={[
+              <BasicButton key="reset" onClick={onResetForm}>
+                {t('sqlOptimization.create.resetForm')}
+              </BasicButton>
+            ]}
+          />
+        }
+      >
+        <FormSubmitStatusContext.Provider value={submitLoading}>
+          <BaseInfoForm form={baseForm} />
+          <SQLInfoForm form={sqlInfoForm} submit={onSubmit} />
+        </FormSubmitStatusContext.Provider>
+      </EmptyBox>
     </>
   );
 };
