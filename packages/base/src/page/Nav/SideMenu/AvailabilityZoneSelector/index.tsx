@@ -12,6 +12,7 @@ import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useClearRecoilState from 'provision/src/hooks/useClearRecoilState';
 
 type AvailabilityZoneSelectorProps = {
   zoneTips?: IUidWithName[];
@@ -21,7 +22,9 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
   zoneTips
 }) => {
   const { t } = useTranslation();
-
+  // #if [provision]
+  const { clearRecoilState } = useClearRecoilState();
+  //# endif
   const navigate = useTypedNavigate();
 
   const { availabilityZone, updateRecentlySelectedZone } =
@@ -44,6 +47,9 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
     EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
     EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
     navigate(ROUTE_PATHS.BASE.HOME);
+    // #if [provision]
+    clearRecoilState();
+    //# endif
   };
 
   const customDropdownRender = () => {
