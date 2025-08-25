@@ -1,7 +1,5 @@
-import { BasicButton } from '@actiontech/shared';
-
+import { BasicButton } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
-
 export const UpdateWorkflowTemplateStyleWrapper = styled('div')`
   padding: 0 24px;
 
@@ -83,7 +81,6 @@ export const UpdateWorkflowTemplateStyleWrapper = styled('div')`
     }
   }
 `;
-
 export const StepInfoStyleWrapper = styled(BasicButton)`
   &.basic-button-wrapper.ant-btn {
     width: 480px;
@@ -112,7 +109,6 @@ export const StepInfoStyleWrapper = styled(BasicButton)`
     }
   }
 `;
-
 export const StepButtonStyleWrapper = styled('div')`
   margin-top: 24px;
   display: flex;
@@ -123,7 +119,6 @@ export const StepButtonStyleWrapper = styled('div')`
     margin-right: 12px;
   }
 `;
-
 export const StepNodeAlertStyleWrapper = styled('div')`
   padding: 16px;
   border-radius: 8px;

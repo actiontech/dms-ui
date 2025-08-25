@@ -2,46 +2,33 @@ import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Empty, Popconfirm, Space, Spin, message } from 'antd';
-import {
-  LocalStorageWrapper,
-  EmptyBox,
-  BasicButton,
-  BasicInput
-} from '@actiontech/shared';
+import { EmptyBox, BasicButton, BasicInput } from '@actiontech/dms-kit';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { useBoolean, useRequest } from 'ahooks';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
 import {
   ResponseCode,
   CompanyNoticeDisplayStatusEnum,
   StorageKey
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import { initNavModalStatus } from '../../../../../../store/nav';
 import { ModalName } from '../../../../../../data/ModalName';
 import { IReduxState } from '../../../../../../store';
 import { updateNavModalStatus } from '../../../../../../store/nav';
 import { CompanyNoticeModalStyleWrapper } from '../../../style';
 import { CompanyNoticeModalActions } from './actions';
-
 const CompanyNoticeModal: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => state.nav.modalStatus[ModalName.Company_Notice]
   );
-
   const [value, setValue] = useState('');
-
   const [canEdit, { setTrue: showEditor, setFalse: hideEditor }] = useBoolean();
-
   const [hasDirtyData, setHasDirtyData] = useState(false);
-
   const [submitLoading, { setTrue: startSubmit, setFalse: finishedSubmit }] =
     useBoolean(false);
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { data, loading } = useRequest(
     () =>
       CompanyNotice.GetCompanyNotice().then((res) => {
@@ -50,15 +37,15 @@ const CompanyNoticeModal: React.FC = () => {
           return res.data.data?.notice_str ?? '';
         }
       }),
-    { ready: !!visible }
+    {
+      ready: !!visible
+    }
   );
-
   const resetAllState = useCallback(() => {
     setValue('');
     hideEditor();
     setHasDirtyData(false);
   }, [hideEditor]);
-
   const handleCloseModal = useCallback(() => {
     dispatch(
       updateNavModalStatus({
@@ -66,20 +53,20 @@ const CompanyNoticeModal: React.FC = () => {
         status: false
       })
     );
-
     resetAllState();
   }, [dispatch, resetAllState]);
-
   const handleCancelEdit = useCallback(() => {
     setHasDirtyData(false);
     hideEditor();
     setValue(data ?? '');
   }, [data, hideEditor]);
-
   const submit = () => {
     startSubmit();
-
-    CompanyNotice.UpdateCompanyNotice({ company_notice: { notice_str: value } })
+    CompanyNotice.UpdateCompanyNotice({
+      company_notice: {
+        notice_str: value
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsSystem.notification.successMessage'));
@@ -88,7 +75,6 @@ const CompanyNoticeModal: React.FC = () => {
       })
       .finally(finishedSubmit);
   };
-
   useEffect(() => {
     if (visible) {
       LocalStorageWrapper.set(
@@ -97,7 +83,6 @@ const CompanyNoticeModal: React.FC = () => {
       );
     }
   }, [visible]);
-
   useEffect(() => {
     dispatch(
       initNavModalStatus({
@@ -107,9 +92,7 @@ const CompanyNoticeModal: React.FC = () => {
       })
     );
   }, [dispatch]);
-
   const actions = CompanyNoticeModalActions(showEditor);
-
   return (
     <CompanyNoticeModalStyleWrapper
       width={720}
@@ -136,7 +119,9 @@ const CompanyNoticeModal: React.FC = () => {
                   okText={t('common.ok')}
                   cancelText={t('common.cancel')}
                   onConfirm={handleCancelEdit}
-                  okButtonProps={{ disabled: submitLoading }}
+                  okButtonProps={{
+                    disabled: submitLoading
+                  }}
                 >
                   <BasicButton loading={submitLoading} disabled={submitLoading}>
                     {t('common.cancel')}
@@ -195,5 +180,4 @@ const CompanyNoticeModal: React.FC = () => {
     </CompanyNoticeModalStyleWrapper>
   );
 };
-
 export default CompanyNoticeModal;

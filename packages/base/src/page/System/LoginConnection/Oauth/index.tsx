@@ -2,11 +2,8 @@ import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, Space, Spin, Tag, Typography } from 'antd';
-import {
-  BasicToolTip,
-  EmptyBox,
-  EnterpriseFeatureDisplay
-} from '@actiontech/shared';
+import { BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import {
   ConfigSwitch,
   ConfigModifyBtn,
@@ -14,11 +11,11 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import ConfigField from './components/ConfigField';
 import { switchFieldName } from './index.data';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { OauthFormField } from './index.type';
 import {
   IGetOauth2ConfigurationResData,
@@ -32,7 +29,6 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { useLoginConnectionContext } from '../context';
-
 const Oauth = () => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();
@@ -71,11 +67,9 @@ const Oauth = () => {
       // #endif
     }
   );
-
   const isConfigClosed = useMemo(() => {
     return !oauthConfig?.enable_oauth2;
   }, [oauthConfig]);
-
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     setFormDefaultValue();
@@ -85,7 +79,6 @@ const Oauth = () => {
     setFormDefaultValue();
     startModify();
   };
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const handleSubmit = async (value: OauthFormField) => {
@@ -111,15 +104,12 @@ const Oauth = () => {
       auto_bind_same_name_user: value.autoBindSameNameUser,
       enable_manually_bind: value.enableManuallyBind
     };
-
     if (!!value.scopes) {
       configuration.scopes = value.scopes.split(',');
     }
-
     const params: IUpdateOauth2ConfigurationParams = {
       oauth2: configuration
     };
-
     try {
       const res = await Configuration.UpdateOauth2Configuration(params);
       if (res.data.code === ResponseCode.SUCCESS) {
@@ -131,7 +121,6 @@ const Oauth = () => {
       submitFinish();
     }
   };
-
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
       clientId: oauthConfig?.client_id,
@@ -155,9 +144,7 @@ const Oauth = () => {
       enableManuallyBind: oauthConfig?.enable_manually_bind
     });
   }, [form, oauthConfig]);
-
   const switchOpen = Form.useWatch(switchFieldName, form);
-
   const {
     configSwitchPopoverOpenState,
     generateConfigSwitchPopoverTitle,
@@ -165,7 +152,6 @@ const Oauth = () => {
     handleConfigSwitchChange,
     hiddenConfigSwitchPopover
   } = useConfigSwitchControls(form, switchFieldName);
-
   const onConfigSwitchPopoverConfirm = async () => {
     if (isConfigClosed && modifyFlag) {
       handleClickCancel();
@@ -190,7 +176,6 @@ const Oauth = () => {
       }
     }
   };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IGetOauth2ConfigurationResData> =
     useMemo(() => {
       return [
@@ -273,7 +258,6 @@ const Oauth = () => {
           span: 3,
           dataIndex: 'scopes',
           hidden: !oauthConfig?.enable_oauth2,
-
           render: (val) => {
             const scopes = val as string[];
             return (
@@ -382,7 +366,6 @@ const Oauth = () => {
           dataIndex: 'login_perm_expr',
           hidden: !oauthConfig?.enable_oauth2
         },
-
         {
           label: (
             <BasicToolTip
@@ -473,7 +456,6 @@ const Oauth = () => {
         }
       ];
     }, [oauthConfig?.enable_oauth2, t, baseTheme]);
-
   return (
     <div className="config-form-wrapper">
       <Spin spinning={getConfigLoading}>
@@ -538,5 +520,4 @@ const Oauth = () => {
     </div>
   );
 };
-
 export default Oauth;

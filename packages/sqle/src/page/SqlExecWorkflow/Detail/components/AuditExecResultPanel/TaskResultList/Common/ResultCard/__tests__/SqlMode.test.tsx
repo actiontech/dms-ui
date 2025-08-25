@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 import SQLMode from '../SqlMode';
 import { SqlExecuteResultCardProps } from '../index.type';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';

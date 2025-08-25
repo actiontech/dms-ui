@@ -1,31 +1,26 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Switch, Spin } from 'antd';
-import { EmptyBox, BasicInput } from '@actiontech/shared';
-import { roleNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { EmptyBox, BasicInput } from '@actiontech/dms-kit';
+import { roleNameRule } from '@actiontech/dms-kit';
 import { IRoleFormProps } from './index.type';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import OpPermissionCheckboxGroup from './components/OpPermissionCheckboxGroup';
 import { RoleFormAlertStyleWrapper } from './style';
-
 const RoleForm: React.FC<IRoleFormProps> = (props) => {
   const { t } = useTranslation();
-
   const name = Form.useWatch('name', props.form);
-
   const {
     loading: getOpPermissionListLoading,
     updateOpPermissionList,
     opPermissionList
   } = useOpPermission();
-
   useEffect(() => {
     if (props.visible) {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.member);
     }
   }, [updateOpPermissionList, props.visible]);
-
   return (
     <Form form={props.form} layout="vertical">
       <Form.Item
@@ -60,7 +55,9 @@ const RoleForm: React.FC<IRoleFormProps> = (props) => {
       </EmptyBox>
       <Form.Item name="desc" label={t('dmsUserCenter.role.roleForm.desc')}>
         <BasicInput.TextArea
-          style={{ resize: 'none' }}
+          style={{
+            resize: 'none'
+          }}
           rows={3}
           placeholder={t('common.form.placeholder.input', {
             name: t('dmsUserCenter.role.roleForm.desc')
@@ -92,5 +89,4 @@ const RoleForm: React.FC<IRoleFormProps> = (props) => {
     </Form>
   );
 };
-
 export default RoleForm;

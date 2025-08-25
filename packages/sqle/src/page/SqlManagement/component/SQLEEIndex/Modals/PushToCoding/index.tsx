@@ -6,7 +6,7 @@ import { useBoolean } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ISendSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
@@ -15,7 +15,7 @@ import {
   BasicModal,
   BasicSelect,
   BasicInput
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import {
   SqlManageCodingReqTypeEnum,
   SqlManageCodingReqPriorityEnum
@@ -24,42 +24,33 @@ import {
   CodingIssueUrgencyOptions,
   CodingIssueTypeOptions
 } from './index.data';
-
 type PushToCodingModalFormFields = {
   codingProjectName: string;
   type: string;
   priority: string;
 };
-
 const PushToCodingModal: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextMessageHolder] = message.useMessage();
-
   const {
     open,
     batchSelectSqlManagement,
     updateModalStatus,
     setBatchSelectData
   } = useSqlManagementRedux(ModalName.Push_To_Coding);
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
-
   const [form] = useForm<PushToCodingModalFormFields>();
-
   const { projectName } = useCurrentProject();
-
   const handleReset = () => {
     form.resetFields();
     submitFinish();
   };
-
   const onCloseModal = () => {
     updateModalStatus(ModalName.Push_To_Coding, false);
     setBatchSelectData(null);
     handleReset();
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -84,7 +75,6 @@ const PushToCodingModal: React.FC = () => {
         submitFinish();
       });
   };
-
   return (
     <>
       {contextMessageHolder}
@@ -120,7 +110,11 @@ const PushToCodingModal: React.FC = () => {
           <Form.Item
             label={t('sqlManagement.table.action.pushToCodingForm.type')}
             name="type"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
             initialValue={SqlManageCodingReqTypeEnum.MISSION}
           >
             <BasicSelect options={CodingIssueTypeOptions}></BasicSelect>
@@ -128,7 +122,11 @@ const PushToCodingModal: React.FC = () => {
           <Form.Item
             label={t('sqlManagement.table.action.pushToCodingForm.urgency')}
             name="priority"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
             initialValue={SqlManageCodingReqPriorityEnum.LOW}
           >
             <BasicSelect options={CodingIssueUrgencyOptions}></BasicSelect>
@@ -138,5 +136,4 @@ const PushToCodingModal: React.FC = () => {
     </>
   );
 };
-
 export default PushToCodingModal;

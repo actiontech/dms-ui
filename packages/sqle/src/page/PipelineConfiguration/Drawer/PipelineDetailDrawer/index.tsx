@@ -1,4 +1,5 @@
-import { BasicDrawer, BasicButton, useTypedNavigate } from '@actiontech/shared';
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../..//store';
@@ -12,8 +13,8 @@ import {
 import { SqleApi } from '@actiontech/shared/lib/api/';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PipelineNodeTableColumn } from './column';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -21,36 +22,30 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useEffect, useRef, useCallback } from 'react';
 import { PipelineDetailModalStyleWrapper } from './style';
 import classNames from 'classnames';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { PipelineConfigurationDetailListActions } from './actions';
-
 const PipelineDetailDrawer: React.FC = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const dispatch = useDispatch();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { projectName, projectID } = useCurrentProject();
-
   const visible = useSelector<IReduxState, boolean>((state) => {
     return !!state.pipeline.modalStatus[
       ModalName.Pipeline_Configuration_Detail_Modal
     ];
   });
-
   const nodeListRef = useRef<HTMLElement>(null);
-
   const pipelineState = useSelector<
     IReduxState,
-    { id?: number; showTour: boolean }
+    {
+      id?: number;
+      showTour: boolean;
+    }
   >((state) => ({
     id: state.pipeline.selectPipelineId,
     showTour: state.pipeline.showPipelineNodeTour
   }));
-
   const { loading, data, refresh } = useRequest(
     () =>
       SqleApi.PipelineService.getPipelineDetailV1({
@@ -65,7 +60,6 @@ const PipelineDetailDrawer: React.FC = () => {
       ready: !!pipelineState.id
     }
   );
-
   const { run: resetToken, loading: resetTokenLoading } = useRequest(
     (id: string) => {
       return SqleApi.PipelineService.refreshPipelineNodeTokenV1({
@@ -81,15 +75,23 @@ const PipelineDetailDrawer: React.FC = () => {
         }
       });
     },
-    { manual: true }
+    {
+      manual: true
+    }
   );
-
   const hidePipelineNodeTour = useCallback(() => {
-    dispatch(updatePipelineNodeTourStatus({ show: false }));
+    dispatch(
+      updatePipelineNodeTourStatus({
+        show: false
+      })
+    );
   }, [dispatch]);
-
   const closeDrawer = () => {
-    dispatch(updateSelectPipelineId({ id: undefined }));
+    dispatch(
+      updateSelectPipelineId({
+        id: undefined
+      })
+    );
     hidePipelineNodeTour();
     dispatch(
       updatePipelineModalStatus({
@@ -98,7 +100,6 @@ const PipelineDetailDrawer: React.FC = () => {
       })
     );
   };
-
   const onDelete = () => {
     const hide = messageApi.loading(t('pipelineConfiguration.table.deleting'));
     SqleApi.PipelineService.deletePipelineV1({
@@ -116,20 +117,22 @@ const PipelineDetailDrawer: React.FC = () => {
         hide();
       });
   };
-
   const onEdit = () => {
     closeDrawer();
     navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update, {
-      params: { projectID, id: pipelineState.id?.toString() ?? '' }
+      params: {
+        projectID,
+        id: pipelineState.id?.toString() ?? ''
+      }
     });
   };
-
   useEffect(() => {
     if (pipelineState.showTour && visible && !loading) {
-      window.addEventListener('click', hidePipelineNodeTour, { once: true });
+      window.addEventListener('click', hidePipelineNodeTour, {
+        once: true
+      });
     }
   }, [visible, pipelineState.showTour, loading, hidePipelineNodeTour]);
-
   return (
     <PipelineDetailModalStyleWrapper
       ref={nodeListRef}
@@ -203,5 +206,4 @@ const PipelineDetailDrawer: React.FC = () => {
     </PipelineDetailModalStyleWrapper>
   );
 };
-
 export default PipelineDetailDrawer;

@@ -14,7 +14,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 describe('base/Member', () => {
   beforeEach(() => {

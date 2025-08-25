@@ -8,26 +8,24 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit/es/components/SystemConfigurationHub';
 import { SMTPSettingFormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import ConfigField from './components/ConfigField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
-
 const SMTPSetting = () => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();
-
   const {
     form,
     renderConfigForm,
@@ -40,7 +38,6 @@ const SMTPSetting = () => {
     switchFieldName,
     switchFieldLabel: t('dmsSystem.smtp.enable')
   });
-
   const {
     data: smtpInfo,
     refresh: refreshSMTPInfo,
@@ -58,9 +55,7 @@ const SMTPSetting = () => {
       }
     }
   );
-
   const switchOpen = Form.useWatch(switchFieldName, form);
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<ISMTPConfigurationResData> =
     useMemo(() => {
       return [
@@ -104,10 +99,8 @@ const SMTPSetting = () => {
         }
       ];
     }, [t, smtpInfo, baseTheme]);
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const submit = (values: SMTPSettingFormFields) => {
     startSubmit();
     Configuration.UpdateSMTPConfiguration({
@@ -131,11 +124,9 @@ const SMTPSetting = () => {
         submitFinish();
       });
   };
-
   const isConfigClosed = useMemo(() => {
     return !smtpInfo?.enable_smtp_notify;
   }, [smtpInfo]);
-
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
       host: smtpInfo?.smtp_host,
@@ -148,18 +139,15 @@ const SMTPSetting = () => {
       passwordConfirm: undefined
     });
   }, [form, smtpInfo]);
-
   const handleClickModify = useCallback(() => {
     setFormDefaultValue();
     startModify();
   }, [startModify, setFormDefaultValue]);
-
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     setFormDefaultValue();
     modifyFinish();
   };
-
   const {
     configSwitchPopoverOpenState,
     generateConfigSwitchPopoverTitle,
@@ -167,7 +155,6 @@ const SMTPSetting = () => {
     handleConfigSwitchChange,
     hiddenConfigSwitchPopover
   } = useConfigSwitchControls(form, switchFieldName);
-
   const onConfigSwitchPopoverConfirm = () => {
     if (isConfigClosed && modifyFlag) {
       handleClickCancel();
@@ -193,7 +180,6 @@ const SMTPSetting = () => {
         });
     }
   };
-
   return (
     <div className="config-form-wrapper">
       <Spin spinning={loading || submitLoading}>
@@ -247,5 +233,4 @@ const SMTPSetting = () => {
     </div>
   );
 };
-
 export default SMTPSetting;

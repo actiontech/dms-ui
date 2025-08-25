@@ -5,7 +5,7 @@ import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskL
 import SyncTaskList from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { syncTaskListMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

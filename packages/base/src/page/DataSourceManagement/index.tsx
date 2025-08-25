@@ -2,10 +2,9 @@ import { useTranslation } from 'react-i18next';
 import {
   PageHeader,
   SegmentedTabs,
-  SegmentedTabsProps,
-  useTypedNavigate,
-  useTypedQuery
-} from '@actiontech/shared';
+  SegmentedTabsProps
+} from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
 import { Space } from 'antd';
@@ -20,19 +19,15 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import { DataSourceManagementPageHeaderActions } from './action';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
   const [activeKey, setActiveKey] = useState(
     DataSourceManagerSegmentedKey.GlobalDataSource
   );
-
   const { checkPagePermission } = usePermission();
-
   const extractQuery = useTypedQuery();
   const navigate = useTypedNavigate();
-
   const onRefresh = () => {
     if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
       eventEmitter.emit(EmitterKey.DMS_Refresh_Global_Data_Source);
@@ -40,10 +35,11 @@ const DataSourceManagement: React.FC = () => {
       eventEmitter.emit(EmitterKey.DMS_Refresh_Sync_Data_Source);
     }
   };
-
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
     const items: Array<
-      SegmentedTabsProps['items'][0] & { permission: PermissionsConstantType }
+      SegmentedTabsProps['items'][0] & {
+        permission: PermissionsConstantType;
+      }
     > = [
       {
         label: t('dmsGlobalDataSource.pageTitle'),
@@ -60,7 +56,6 @@ const DataSourceManagement: React.FC = () => {
         permission: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE
       }
     ];
-
     return items.filter((item) => checkPagePermission(item.permission));
   }, [checkPagePermission, t]);
 
@@ -94,7 +89,6 @@ const DataSourceManagement: React.FC = () => {
       setActiveKey(searchParams.active as DataSourceManagerSegmentedKey);
     }
   }, [extractQuery]);
-
   return (
     <article>
       <PageHeader
@@ -116,7 +110,9 @@ const DataSourceManagement: React.FC = () => {
         onChange={(key) => {
           setActiveKey(key);
           navigate(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index, {
-            queries: { active: key },
+            queries: {
+              active: key
+            },
             replace: true
           });
         }}
@@ -125,5 +121,4 @@ const DataSourceManagement: React.FC = () => {
     </article>
   );
 };
-
 export default DataSourceManagement;

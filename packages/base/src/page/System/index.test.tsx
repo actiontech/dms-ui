@@ -4,7 +4,7 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../testUtils/superRender';
 import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
 import { ModalName } from '../../data/ModalName';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

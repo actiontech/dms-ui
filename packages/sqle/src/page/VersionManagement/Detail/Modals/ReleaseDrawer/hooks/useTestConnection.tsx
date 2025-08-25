@@ -1,5 +1,5 @@
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   TargetReleaseInstanceType,
   TargetReleaseWorkflowType
@@ -8,17 +8,19 @@ import { useRequest } from 'ahooks';
 import { IBatchCheckInstanceIsConnectableByNameParams } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useMemo, useCallback } from 'react';
-import { EmptyBox, ReminderInformation } from '@actiontech/shared';
+import { EmptyBox, ReminderInformation } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-
 const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
   const { projectName } = useCurrentProject();
-
   const { t } = useTranslation();
-
   const instanceNames = useMemo(() => {
     return releaseWorkflows?.reduce(
-      (prev: Array<{ name: string }>, next: TargetReleaseWorkflowType) => {
+      (
+        prev: Array<{
+          name: string;
+        }>,
+        next: TargetReleaseWorkflowType
+      ) => {
         return prev.concat(
           next.target_release_instances
             ?.filter((i: TargetReleaseInstanceType) => !!i.target_instance_name)
@@ -30,7 +32,6 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
       []
     );
   }, [releaseWorkflows]);
-
   const {
     data: connectionInfo,
     loading: getConnectionInfoLoading,
@@ -42,7 +43,6 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
         instances: instanceNames,
         project_name: projectName
       };
-
       return instance
         .batchCheckInstanceIsConnectableByName(params)
         .then((res) => {
@@ -51,16 +51,16 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
           }
         });
     },
-    { manual: true }
+    {
+      manual: true
+    }
   );
-
   const renderTestDatabasesConnectInfo = useCallback(
     (name?: string) => {
       const result = connectionInfo?.find((v) => v.instance_name === name);
       if (!result) {
         return null;
       }
-
       return (
         <>
           <EmptyBox if={!!result.is_instance_connectable}>
@@ -84,11 +84,9 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
     },
     [t, connectionInfo]
   );
-
   const clearConnectionInfo = useCallback(() => {
     setConnectionInfo(undefined);
   }, [setConnectionInfo]);
-
   return {
     renderTestDatabasesConnectInfo,
     getConnectionInfoLoading,
@@ -97,5 +95,4 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
     clearConnectionInfo
   };
 };
-
 export default useTestConnection;

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Table } from 'antd';
 import useBackendTable from './useBackendTable';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import {
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum

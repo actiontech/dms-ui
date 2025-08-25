@@ -7,31 +7,25 @@ import {
   RadioGroupProps,
   Space
 } from 'antd';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
+import { BasicInput, EmptyBox } from '@actiontech/dms-kit';
+import { phoneRule } from '@actiontech/dms-kit';
 import {
   ConfigModifyBtn,
   ConfigTestBtn,
   ConfigTestPopoverForm
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
-
+} from '@actiontech/dms-kit';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { TestFeishuConfigurationReqV1AccountTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { TestFormFields } from '../index.type';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
+import { ResponseCode } from '@actiontech/dms-kit';
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   enabled: string | boolean;
   handleClickModify: () => void;
 }
-
 const ConfigExtraButtons = ({
   isConfigClosed,
   extraButtonsVisible,
@@ -40,7 +34,6 @@ const ConfigExtraButtons = ({
 }: ConfigExtraButtonsProps) => {
   const { t } = useTranslation();
   const [message, messageContextHolder] = messageApi.useMessage();
-
   const [testForm] = Form.useForm<TestFormFields>();
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
   const [receiveType, setReceiveType] =
@@ -48,17 +41,14 @@ const ConfigExtraButtons = ({
       TestFeishuConfigurationReqV1AccountTypeEnum.email
     );
   const testing = useRef(false);
-
   const testLarkAuditConfiguration = async () => {
     if (testing.current) {
       return;
     }
     const values = await testForm.validateFields();
-
     testing.current = true;
     toggleTestPopoverVisible(false);
     const hide = message.loading(t('dmsSystem.larkAudit.testing'), 0);
-
     configuration
       .testFeishuAuditConfigV1({
         account:
@@ -84,18 +74,15 @@ const ConfigExtraButtons = ({
         setReceiveType(TestFeishuConfigurationReqV1AccountTypeEnum.email);
       });
   };
-
   const handleChangeReceiveType: RadioGroupProps['onChange'] = (e) => {
     const type = e.target.value;
     setReceiveType(type);
-
     if (type === TestFeishuConfigurationReqV1AccountTypeEnum.email) {
       testForm.resetFields(['receivePhone']);
     } else {
       testForm.resetFields(['receiveEmail']);
     }
   };
-
   const onTestPopoverOpen = (open: boolean) => {
     if (!enabled) {
       return;
@@ -106,7 +93,6 @@ const ConfigExtraButtons = ({
     }
     toggleTestPopoverVisible(open);
   };
-
   return (
     <>
       {messageContextHolder}
@@ -129,7 +115,9 @@ const ConfigExtraButtons = ({
                   initialValue={
                     TestFeishuConfigurationReqV1AccountTypeEnum.email
                   }
-                  style={{ marginBottom: 0 }}
+                  style={{
+                    marginBottom: 0
+                  }}
                 >
                   <Radio.Group size="small" onChange={handleChangeReceiveType}>
                     <Radio.Button
@@ -151,7 +139,9 @@ const ConfigExtraButtons = ({
                   }
                   defaultNode={
                     <FormItemNoLabel
-                      style={{ marginBottom: 0 }}
+                      style={{
+                        marginBottom: 0
+                      }}
                       name="receiveEmail"
                       label={t('dmsSystem.larkAudit.email')}
                       rules={[
@@ -172,7 +162,9 @@ const ConfigExtraButtons = ({
                   }
                 >
                   <FormItemNoLabel
-                    style={{ marginBottom: 0 }}
+                    style={{
+                      marginBottom: 0
+                    }}
                     name="receivePhone"
                     label={t('dmsSystem.larkAudit.phone')}
                     rules={[
@@ -198,5 +190,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

@@ -1,20 +1,16 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  BasicButton,
-  BasicResult,
-  PageHeader,
-  useTypedParams
-} from '@actiontech/shared';
+import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { Space, Spin } from 'antd';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import classNames from 'classnames';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   useUpdateRuleTemplateForm,
@@ -23,11 +19,9 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
-
   const {
     form,
     getAllRulesLoading,
@@ -52,25 +46,19 @@ const UpdateRuleTemplate = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useUpdateRuleTemplateForm();
-
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
-
   const [
     updateTemplateFormLoading,
     { setTrue: startLoad, setFalse: finishLoad }
   ] = useBoolean();
-
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.update>();
   const { projectName } = useCurrentProject();
-
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
-
   const gotoListPage = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
     onGoToGlobalRuleTemplateList();
   };
-
   const submit = useCallback(() => {
     startSubmit();
     const baseInfo = form.getFieldsValue();
@@ -79,7 +67,10 @@ const UpdateRuleTemplate = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : [],
         is_custom_rule: !!rule.is_custom_rule
       };
@@ -99,7 +90,6 @@ const UpdateRuleTemplate = () => {
         finishSubmit();
       });
   }, [activeRule, finishSubmit, form, nextStep, startSubmit]);
-
   useEffect(() => {
     startLoad();
     rule_template
@@ -125,7 +115,6 @@ const UpdateRuleTemplate = () => {
     setRuleTemplate,
     setFilteredRule
   ]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -212,5 +201,4 @@ const UpdateRuleTemplate = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default UpdateRuleTemplate;

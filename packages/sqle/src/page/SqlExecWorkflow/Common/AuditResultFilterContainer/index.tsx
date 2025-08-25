@@ -1,18 +1,14 @@
 import { Space } from 'antd';
 import { AuditResultFilterContainerStyleWrapper } from './style';
 import { AuditResultFilterContainerProps } from './index.type';
-import {
-  CustomSegmentedFilter,
-  CustomSegmentedFilterBaseValue,
-  EmptyBox
-} from '@actiontech/shared';
+import { CustomSegmentedFilter, EmptyBox } from '@actiontech/dms-kit';
+import { CustomSegmentedFilterBaseValue } from '@actiontech/dms-kit/es/components/CustomSegmentedFilter/CustomSegmentedFilter.types';
 import { useMemo } from 'react';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import classNames from 'classnames';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
-import { floatRound } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit';
+import { floatRound } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-
 const AuditResultFilterContainer = <
   T extends CustomSegmentedFilterBaseValue = string
 >(
@@ -27,7 +23,6 @@ const AuditResultFilterContainer = <
     className,
     ...filterProps
   } = props;
-
   const auditLevelScoreCommonClass = useMemo(() => {
     return {
       'audit-level-normal':
@@ -37,7 +32,6 @@ const AuditResultFilterContainer = <
       'audit-level-warn': auditLevel === AuditTaskResV1AuditLevelEnum.warn
     };
   }, [auditLevel]);
-
   return (
     <AuditResultFilterContainerStyleWrapper
       className={classNames('audit-result-filter-container-wrapper', className)}
@@ -92,5 +86,4 @@ const AuditResultFilterContainer = <
     </AuditResultFilterContainerStyleWrapper>
   );
 };
-
 export default AuditResultFilterContainer;

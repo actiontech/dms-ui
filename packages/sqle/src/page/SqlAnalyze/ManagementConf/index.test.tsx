@@ -17,7 +17,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import { translateTimeForRequest } from '@actiontech/dms-kit';
 
 jest.mock('react-router', () => {
   return {

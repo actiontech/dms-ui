@@ -8,7 +8,7 @@ import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/co
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 
 export type WhitelistTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetAuditWhitelistV1Params & {

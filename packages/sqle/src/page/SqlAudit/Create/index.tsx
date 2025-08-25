@@ -1,12 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
 import { Spin, message } from 'antd';
-import {
-  ActionButton,
-  BasicButton,
-  PageHeader,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
+import { ActionButton, useTypedNavigate } from '@actiontech/shared';
 import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
@@ -15,24 +11,20 @@ import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_
 import { SqlAuditBaseInfoFormFields } from './BaseInfoForm/index.type';
 import { SQLInfoFormFields, SQLInfoFormProps } from './SQLInfoForm/index.type';
 import { ICreateSQLAuditRecordV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ISQLAuditRecordResData } from '@actiontech/shared/lib/api/sqle/service/common';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
-
 const SqlAuditCreate = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
   const { projectID, projectName } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [baseForm] = useForm<SqlAuditBaseInfoFormFields>();
   const [sqlInfoForm] = useForm<SQLInfoFormFields>();
   const [auditId, setAuditId] = useState<string>('');
   const [auditLoading, setAuditLoading] = useState(false);
-
   const auditSQL: SQLInfoFormProps['submit'] = async (values) => {
     const baseValues = await baseForm.validateFields();
     const params: ICreateSQLAuditRecordV1Params = {
@@ -52,7 +44,6 @@ const SqlAuditCreate = () => {
         : undefined,
       git_branch_name: values.gitBranch
     };
-
     return sql_audit_record.CreateSQLAuditRecordV1(params).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS && res.data.data) {
         if ((baseValues.tags?.length ?? 0) > 0) {
@@ -64,7 +55,6 @@ const SqlAuditCreate = () => {
       }
     });
   };
-
   const updateTags = async (
     record: ISQLAuditRecordResData,
     values: SqlAuditBaseInfoFormFields
@@ -82,22 +72,22 @@ const SqlAuditCreate = () => {
         }
       });
   };
-
   const onResetForm = () => {
     baseForm.resetFields();
     sqlInfoForm.resetFields();
   };
-
   useEffect(() => {
     if (auditId) {
       navigate(ROUTE_PATHS.SQLE.SQL_AUDIT.detail, {
-        params: { projectID, sql_audit_record_id: auditId }
+        params: {
+          projectID,
+          sql_audit_record_id: auditId
+        }
       });
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditId]);
-
   return (
     <>
       {messageContextHolder}
@@ -110,7 +100,9 @@ const SqlAuditCreate = () => {
             actionType="navigate-link"
             link={{
               to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
-              params: { projectID }
+              params: {
+                projectID
+              }
             }}
           />
         }
@@ -135,5 +127,4 @@ const SqlAuditCreate = () => {
     </>
   );
 };
-
 export default SqlAuditCreate;

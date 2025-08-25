@@ -2,7 +2,7 @@ import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useBoolean } from 'ahooks';
 import { useCallback, useState, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const useSQLVersionTips = () => {

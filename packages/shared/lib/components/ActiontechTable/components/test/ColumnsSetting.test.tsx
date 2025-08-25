@@ -8,8 +8,8 @@ import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { ColumnsSettingProps } from '../../index.type';
 import ColumnsSetting from '../ColumnsSetting';
 import { mockUseTableSettings } from './mockHooks/mockUseTableSettings';
-import { eventEmitter } from '../../../../utils/EventEmitter';
-import EmitterKey from '../../../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { mockUseTableSettingsData } from './mockHooks/data';
 
 const tableNameMock = 'demo_list';

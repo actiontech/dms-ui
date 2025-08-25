@@ -1,5 +1,5 @@
 import React from 'react';
-import { SupportTheme } from '../../enum';
+import { SupportTheme } from '@actiontech/dms-kit';
 import useCurrentUser from '../useCurrentUser';
 
 const useChangeTheme = () => {

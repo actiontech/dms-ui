@@ -1,5 +1,9 @@
 import { Button, Form, Upload, UploadProps } from 'antd';
-import { BasicButton, EmptyBox, ReminderInformation } from '@actiontech/shared';
+import {
+  BasicButton,
+  EmptyBox,
+  ReminderInformation
+} from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import {
@@ -8,23 +12,17 @@ import {
 } from '../../../../hooks/useRuleTemplateForm/index.type';
 import { getRuleTemplateFileV1FileTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import DownloadTemplateModal from './components/DownloadTemplateModal';
-
 type Props = UploadProps & {
   uploadCheckStatus: FileUploadCheckStatusType;
 };
-
 const FileUpload: React.FC<Props> = ({ uploadCheckStatus, ...props }) => {
   const { t } = useTranslation();
-
   const form = Form.useFormInstance<SelectFileFormFields>();
-
   const fileType = Form.useWatch('fileType', form);
-
   const [
     downloadTemplateModalVisibility,
     { setTrue: openModal, setFalse: closeModal }
   ] = useBoolean();
-
   return (
     <div className="vertical-flex">
       <div className="flex-display">
@@ -57,5 +55,4 @@ const FileUpload: React.FC<Props> = ({ uploadCheckStatus, ...props }) => {
     </div>
   );
 };
-
 export default FileUpload;

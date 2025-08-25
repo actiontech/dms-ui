@@ -1,10 +1,9 @@
-import { BasicButton, BasicModal } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/dms-kit';
 import { ExportRuleTemplateProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Form, Radio } from 'antd';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { exportRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
-
 const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
   open,
   form,
@@ -37,9 +36,18 @@ const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
         </>
       }
     >
-      <Form form={form} wrapperCol={{ push: 1 }}>
+      <Form
+        form={form}
+        wrapperCol={{
+          push: 1
+        }}
+      >
         <FormItemLabel
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true
+            }
+          ]}
           initialValue={exportRuleTemplateV1ExportTypeEnum.csv}
           className="has-required-style"
           name="exportFileType"
@@ -47,7 +55,10 @@ const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
         >
           <Radio.Group
             options={Object.values(exportRuleTemplateV1ExportTypeEnum).map(
-              (v) => ({ label: v, value: v })
+              (v) => ({
+                label: v,
+                value: v
+              })
             )}
           />
         </FormItemLabel>
@@ -55,5 +66,4 @@ const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
     </BasicModal>
   );
 };
-
 export default ExportRuleTemplate;

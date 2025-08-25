@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateUserOperationPermissions } from '../../../store/permission';
 

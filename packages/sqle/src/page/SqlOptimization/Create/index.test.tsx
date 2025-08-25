@@ -19,7 +19,7 @@ import {
 import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

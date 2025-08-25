@@ -1,11 +1,10 @@
 import VersionManagementList from './List';
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { Typography } from 'antd';
-
 const VersionManagement = () => {
   const { t } = useTranslation();
-
   return (
     <>
       {/* #if [ce] */}
@@ -25,5 +24,4 @@ const VersionManagement = () => {
     </>
   );
 };
-
 export default VersionManagement;

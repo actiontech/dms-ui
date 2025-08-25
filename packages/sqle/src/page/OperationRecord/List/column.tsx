@@ -1,4 +1,4 @@
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableColumn,

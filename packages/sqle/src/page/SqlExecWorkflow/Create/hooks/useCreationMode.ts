@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const useCreationMode = () => {
   const extractQueries = useTypedQuery();

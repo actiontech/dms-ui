@@ -8,7 +8,6 @@ import { ActionButton } from '@actiontech/shared';
 import { t } from '../../locale';
 import { ModalName } from '../../data/ModalName';
 import { PlusOutlined } from '@actiontech/icons';
-
 export const UserCenterPageHeaderActions = (
   activePage: UserCenterListEnum,
   handleClick: (modalName: ModalName) => void

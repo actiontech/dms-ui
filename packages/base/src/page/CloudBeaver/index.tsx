@@ -3,27 +3,19 @@ import { Card, Space, Typography, Spin } from 'antd';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
-import {
-  PageHeader,
-  EnterpriseFeatureDisplay,
-  BasicButton,
-  EmptyBox,
-  useTypedQuery
-} from '@actiontech/shared';
+import { PageHeader, BasicButton, EmptyBox } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay, useTypedQuery } from '@actiontech/shared';
 import {
   CloudBeaverContentStyleWrapper,
   CloudBeaverContentSpaceStyleWrapper,
   CloudBeaverContentIconStyleWrapper
 } from './style';
 import CBOperationLogsList from './List/index';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
-
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
-
   const { data, loading, runAsync } = useRequest(
     () => {
       return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
@@ -34,19 +26,16 @@ const CloudBeaver = () => {
       manual: true
     }
   );
-
   useEffect(() => {
     runAsync().then((res) => {
       if (res?.enable_sql_query && res.sql_query_root_uri) {
         const params = extractQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index);
-
         if (params?.open_cloud_beaver === 'true') {
           window.location.href = res.sql_query_root_uri;
         }
       }
     });
   }, [extractQueries, runAsync]);
-
   const openCloudBeaver = () => {
     runAsync().then((res) => {
       if (res?.enable_sql_query && res.sql_query_root_uri) {
@@ -54,7 +43,6 @@ const CloudBeaver = () => {
       }
     });
   };
-
   return (
     <>
       <PageHeader
@@ -110,5 +98,4 @@ const CloudBeaver = () => {
     </>
   );
 };
-
 export default CloudBeaver;

@@ -25,17 +25,13 @@ import {
   RuleItemAnimationStyleWrapper,
   WaveProgressStyleWrapper
 } from './style';
-import {
-  BasicButton,
-  CopyIcon,
-  floatToPercent,
-  SQLRenderer
-} from '@actiontech/shared';
+import { BasicButton, CopyIcon } from '@actiontech/dms-kit';
+import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
+import { SQLRenderer } from '@actiontech/shared';
 import classNames from 'classnames';
 import { MOCK_PROCESSING_STAGES } from './index.data';
 import { Button } from 'antd';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
-
 const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
   isProgressActive,
   overallStatus,
@@ -105,7 +101,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
         newCompletedRules.add(rule.ruleId);
       }
     });
-
     if (newCompletedRules.size > 0) {
       setCompletedRuleAnimations(
         (prev) => new Set([...prev, ...newCompletedRules])
@@ -130,7 +125,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       ) {
         return null;
       }
-
       return (
         <RewrittenSqlDisplayStyleWrapper className="rewritten-sql-display">
           <div className="rewritten-sql-header">
@@ -180,15 +174,12 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
   const getRuleStatusText = useCallback(
     (rule: IRuleProgressInfo) => {
       const stageData = ruleProcessingStages.get(rule.ruleId);
-
       if (rule.status === RewriteSuggestionStatusEnum.processed) {
         return t('sqlRewrite.ruleStatusCompleted');
       }
-
       if (!stageData) {
         return t('sqlRewrite.ruleStatusWaiting');
       }
-
       const currentStage = MOCK_PROCESSING_STAGES[stageData.currentStageIndex];
       return currentStage.label;
     },
@@ -200,7 +191,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     (rule: IRuleProgressInfo) => {
       const stageData = ruleProcessingStages.get(rule.ruleId);
       if (!stageData) return null;
-
       return {
         stage: MOCK_PROCESSING_STAGES[stageData.currentStageIndex]
       };
@@ -249,12 +239,9 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
   const startRuleStageProgress = useCallback(
     (ruleId: string) => {
       clearRuleTimer(ruleId);
-
       let currentStageIndex = 0;
-
       const stageStep = () => {
         const currentStage = MOCK_PROCESSING_STAGES[currentStageIndex];
-
         setRuleProcessingStages((prev) => {
           const newMap = new Map(prev);
           newMap.set(ruleId, {
@@ -275,7 +262,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
         }
         // 如果是最后一个阶段，保持在当前阶段不再变化
       };
-
       stageStep();
     },
     [clearRuleTimer, getRandomDuration]
@@ -286,12 +272,10 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     ruleProgressList.forEach((rule) => {
       const isProcessing = rule.status === RewriteSuggestionStatusEnum.initial;
       const hasExistingTimer = activeProgressTimers.current.has(rule.ruleId);
-
       if (isProcessing && !hasExistingTimer) {
         const initialDelay = setTimeout(() => {
           startRuleStageProgress(rule.ruleId);
         }, Math.random() * 1000 + 500);
-
         activeProgressTimers.current.set(rule.ruleId, initialDelay);
       } else if (!isProcessing && hasExistingTimer) {
         clearRuleTimer(rule.ruleId);
@@ -302,7 +286,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
         });
       }
     });
-
     const currentRuleIds = new Set(ruleProgressList.map((rule) => rule.ruleId));
     const timers = activeProgressTimers.current;
     for (const [ruleId] of timers) {
@@ -334,7 +317,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       clearAllTimers();
       onError?.(t('sqlRewrite.ruleStatusError'));
     }
-
     return () => {
       clearAllTimers();
     };
@@ -351,7 +333,9 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
           <div className="compact-progress-bar">
             <div
               className="progress-fill"
-              style={{ width: `${overallProgress}%` }}
+              style={{
+                width: `${overallProgress}%`
+              }}
             />
           </div>
         </div>
@@ -376,7 +360,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       </CompactProgressStyleWrapper>
     );
   }, [overallProgress, ruleProgressList, t, handleToggleExpanded]);
-
   if (errorMessage) {
     return (
       <RewriteFailedStyleWrapper>
@@ -391,10 +374,11 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       </RewriteFailedStyleWrapper>
     );
   }
-
   return (
     <RewriteProgressContainerStyleWrapper
-      className={classNames({ completed: !isExpanded })}
+      className={classNames({
+        completed: !isExpanded
+      })}
     >
       {!isExpanded ? (
         renderCompactProgress()
@@ -432,7 +416,9 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
             <div className="overall-progress-bar">
               <div
                 className="progress-fill"
-                style={{ width: `${overallProgress}%` }}
+                style={{
+                  width: `${overallProgress}%`
+                }}
               />
             </div>
             <div className="progress-text">
@@ -495,7 +481,6 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
                                           s.status === currentStage.stage.status
                                       )
                                     : -1;
-
                                   return (
                                     <div
                                       key={item.status}
@@ -544,5 +529,4 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
     </RewriteProgressContainerStyleWrapper>
   );
 };
-
 export default RewriteProgressDisplay;

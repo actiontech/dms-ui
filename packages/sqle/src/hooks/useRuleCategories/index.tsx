@@ -1,6 +1,6 @@
 import ruleTemplate from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ReactNode, useMemo } from 'react';
 import { RuleCategoryDictionaryGroup, DictionaryType } from './index.data';
 import { Typography } from 'antd';

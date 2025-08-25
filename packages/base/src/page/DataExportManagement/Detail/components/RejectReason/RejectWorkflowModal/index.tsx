@@ -1,4 +1,4 @@
-import { BasicButton, BasicInput, BasicModal } from '@actiontech/shared';
+import { BasicButton, BasicInput, BasicModal } from '@actiontech/dms-kit';
 import { Form, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { RejectWorkflowModalFormFields } from './index.type';
@@ -7,34 +7,27 @@ import { RejectWorkflowModalAlertStyleWrapper } from './style';
 import { useBoolean } from 'ahooks';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import eventEmitter from '../../../../../../utils/EventEmitter';
-
 const RejectWorkflowModal: React.FC = () => {
   const { workflowRejectOpen, updateWorkflowRejectOpen, workflowInfo } =
     useDataExportDetailReduxManage();
-
   const closeModal = () => {
     updateWorkflowRejectOpen(false);
   };
   const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<RejectWorkflowModalFormFields>();
-
   const { t } = useTranslation();
-
   const resetAndCloseRejectModal = () => {
     form.resetFields();
     closeModal();
   };
-
   const [
     rejectWorkflowLoading,
     { setFalse: finishRejectWorkflow, setTrue: startRejectWorkflow }
   ] = useBoolean();
-
   const rejectWorkflow = (
     workflowID: string,
     values: RejectWorkflowModalFormFields
@@ -59,7 +52,6 @@ const RejectWorkflowModal: React.FC = () => {
         finishRejectWorkflow();
       });
   };
-
   return (
     <BasicModal
       title={t('dmsDataExport.detail.action.reject.modal.title')}
@@ -114,5 +106,4 @@ const RejectWorkflowModal: React.FC = () => {
     </BasicModal>
   );
 };
-
 export default RejectWorkflowModal;

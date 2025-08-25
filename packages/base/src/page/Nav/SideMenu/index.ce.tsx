@@ -1,12 +1,9 @@
-import {
-  DEFAULT_PROJECT_ID,
-  DEFAULT_PROJECT_NAME
-} from '@actiontech/shared/lib/data/common';
+import { DEFAULT_PROJECT_ID, DEFAULT_PROJECT_NAME } from '@actiontech/dms-kit';
 import { Typography, Spin } from 'antd';
 import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';
 import { CEModeProjectWrapperStyleWrapper } from './style';
-import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
+import { SideMenuStyleWrapper } from '@actiontech/dms-kit';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';

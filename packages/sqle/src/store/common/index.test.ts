@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { commonModalReducer } from '.';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 
 describe('store/common', () => {
   const testStore = createSlice({

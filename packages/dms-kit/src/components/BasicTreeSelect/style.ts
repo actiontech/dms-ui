@@ -1,7 +1,17 @@
-import { styled } from '@mui/material/styles';
-import { TreeSelect } from 'antd';
+import { StyledComponent } from '@emotion/styled';
+import { styled, Theme } from '@mui/material/styles';
+import { MUIStyledCommonProps } from '@mui/system/createStyled';
+import { TreeSelect, TreeSelectProps } from 'antd';
 
-export const BasicTreeSelectStyleWrapper = styled(TreeSelect<any>)`
+export const BasicTreeSelectStyleWrapper: StyledComponent<
+  TreeSelectProps<any> & {
+    children?: React.ReactNode;
+  } & {
+    ref?: React.Ref<any> | undefined;
+  } & MUIStyledCommonProps<Theme>,
+  {},
+  {}
+> = styled(TreeSelect<any>)`
   &.ant-select.basic-tree-select-wrapper {
     .ant-select-clear {
       width: 14px;

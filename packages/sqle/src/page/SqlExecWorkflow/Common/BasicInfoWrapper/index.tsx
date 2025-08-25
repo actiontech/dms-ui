@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import { BasicInfoStyleWrapper } from './style';
 import { BasicInfoWrapperProps } from './index.type';
-import { EmptyBox, BasicTag, TypedLink } from '@actiontech/shared';
+import { EmptyBox, BasicTag } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { Space } from 'antd';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
   desc,
@@ -17,9 +17,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   sqlVersion
 }) => {
   const { t } = useTranslation();
-
   const { projectID } = useCurrentProject();
-
   return (
     <BasicInfoStyleWrapper
       className={classNames(className)}
@@ -108,5 +106,4 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
     </BasicInfoStyleWrapper>
   );
 };
-
 export default BasicInfoWrapper;

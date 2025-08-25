@@ -23,24 +23,19 @@ import {
 } from './columns';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { PageHeader, useTypedNavigate, ActionButton } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { ActionButton } from '@actiontech/shared';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { PlusOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const SqlOptimizationList = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const { projectName, projectID } = useCurrentProject();
-
   const { username } = useCurrentUser();
-
   const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
-
   const { instanceOptions, updateInstanceList } = useInstance();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -53,10 +48,8 @@ const SqlOptimizationList = () => {
     IOptimizationRecord,
     SqlOptimizationListTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const { data, loading, refresh } = useRequest(
     () => {
       const params: IGetOptimizationRecordsParams = {
@@ -73,7 +66,6 @@ const SqlOptimizationList = () => {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'sql_optimization_list',
@@ -81,7 +73,6 @@ const SqlOptimizationList = () => {
     }),
     [username]
   );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IOptimizationRecord, FilterCustomProps>([
       [
@@ -92,21 +83,17 @@ const SqlOptimizationList = () => {
       ]
     ]);
   }, [instanceOptions]);
-
   const columns = useMemo(() => {
     return SqlOptimizationListColumns(getLogoUrlByDbType);
   }, [getLogoUrlByDbType]);
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-
   useEffect(() => {
     updateDriverList();
     updateInstanceList({
       project_name: projectName
     });
   }, [projectName, updateInstanceList, updateDriverList]);
-
   return (
     <>
       <PageHeader
@@ -119,13 +106,18 @@ const SqlOptimizationList = () => {
             actionType="navigate-link"
             link={{
               to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create,
-              params: { projectID }
+              params: {
+                projectID
+              }
             }}
           />
         }
       />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
         setting={tableSetting}
         filterButton={{
           filterButtonMeta,
@@ -176,5 +168,4 @@ const SqlOptimizationList = () => {
     </>
   );
 };
-
 export default SqlOptimizationList;

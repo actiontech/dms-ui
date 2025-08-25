@@ -11,7 +11,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { paramsSerializer } from '@actiontech/shared';
+import { paramsSerializer } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

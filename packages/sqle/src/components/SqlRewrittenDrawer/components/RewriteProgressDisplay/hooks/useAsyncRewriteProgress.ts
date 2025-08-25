@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { AsyncRewriteTaskStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import TaskService from '@actiontech/shared/lib/api/sqle/service/task';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   IAsyncRewriteTaskParams,
   IRewriteTaskResult,
@@ -21,7 +21,7 @@ import {
   saveSqlRewriteCache,
   getSqlRewriteCache
 } from '../../../utils/sqlRewriteCache';
-import { getErrorMessage } from '@actiontech/shared';
+import { getErrorMessage } from '@actiontech/dms-kit';
 
 /**
  * 异步重写进度轮询 Hook

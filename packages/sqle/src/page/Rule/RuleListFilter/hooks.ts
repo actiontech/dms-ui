@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { FormInstance, Form } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/features';

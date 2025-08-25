@@ -11,8 +11,8 @@ import {
   GetGlobalWorkflowStatisticsFilterStatusListEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { paramsSerializer } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { paramsSerializer } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 
 const useDashboardFilter = () => {

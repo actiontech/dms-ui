@@ -11,7 +11,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useDispatch } from 'react-redux';
 import { PipelineFormType } from '../index.type';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const usePipelineConfigurationFormState = () => {
   const navigate = useTypedNavigate();

@@ -2,9 +2,9 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult,
-  useTypedParams
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
 import { Space, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
@@ -13,28 +13,23 @@ import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IUpdateSqlVersionV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useMemo } from 'react';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
 import { useState } from 'react';
 import { VersionStage } from '../Common/VersionForm/index.type';
 import { isEqual } from 'lodash';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
-
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 const VersionManagementUpdate = () => {
   const { t } = useTranslation();
-
   const { versionId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update>();
-
   const { projectName } = useCurrentProject();
-
   const [initStages, setInitStages] = useState<VersionStage[]>();
-
   const {
     form,
     submitting,
@@ -43,7 +38,6 @@ const VersionManagementUpdate = () => {
     submitSuccessStatus,
     successfulSubmit
   } = useVersionFormState();
-
   const { data: versionDetail, loading: getVersionDetailLoading } = useRequest(
     () =>
       sqlVersion
@@ -80,7 +74,6 @@ const VersionManagementUpdate = () => {
       !versionDetail?.sql_version_stage_detail?.[0]?.workflow_details?.length,
     [versionDetail]
   );
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     submitPending();
@@ -101,7 +94,6 @@ const VersionManagementUpdate = () => {
         )
       }))
     };
-
     if (!allowEditStages || isEqual(initStages, values.stages)) {
       delete params.update_sql_version_stage;
     }
@@ -114,11 +106,9 @@ const VersionManagementUpdate = () => {
       })
       .finally(() => submitDone());
   };
-
   const onReset = () => {
     form.resetFields(['version', 'desc']);
   };
-
   return (
     <>
       <PageHeader
@@ -163,5 +153,4 @@ const VersionManagementUpdate = () => {
     </>
   );
 };
-
 export default VersionManagementUpdate;

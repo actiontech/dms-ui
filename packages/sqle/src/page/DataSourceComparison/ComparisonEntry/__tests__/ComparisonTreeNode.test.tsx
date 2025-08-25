@@ -12,7 +12,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import DatabaseComparisonMockService from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { Copy, Download } from '@actiontech/shared';
+import { Copy, Download } from '@actiontech/dms-kit';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import dayjs from 'dayjs';
 import MockDate from 'mockdate';

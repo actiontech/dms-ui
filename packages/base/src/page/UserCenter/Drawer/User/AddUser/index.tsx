@@ -6,30 +6,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import { IReduxState } from '../../../../../store';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import dayjs from 'dayjs';
-
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
-
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [createLoading, { setTrue, setFalse }] = useBoolean();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Add_User]
   );
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -39,7 +32,6 @@ const AddUser = () => {
       })
     );
   }, [dispatch, form]);
-
   const addUser = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
@@ -71,7 +63,6 @@ const AddUser = () => {
         setFalse();
       });
   }, [onClose, form, setFalse, setTrue, t, messageApi]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.user.userList.addUserButton')}
@@ -94,5 +85,4 @@ const AddUser = () => {
     </BasicDrawer>
   );
 };
-
 export default AddUser;

@@ -8,7 +8,7 @@ import {
 } from '@actiontech/icons';
 import { GenerateMenuItemI18nConfig } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared';
 import { PERMISSIONS } from '@actiontech/shared/lib/features';
 

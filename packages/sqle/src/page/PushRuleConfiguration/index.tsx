@@ -1,17 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { PushRuleConfigurationStyleWrapper } from './style';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import ReportPushConfigService from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Spin, Typography } from 'antd';
 import WorkflowUpdateNotifier from './components/WorkflowUpdateNotifier';
 import SqlManagementIssuePush from './components/SqlManagementIssuePush';
-
 const PushRuleConfiguration: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const {
     data: pushRuleConfig,
     loading,
@@ -21,14 +20,12 @@ const PushRuleConfiguration: React.FC = () => {
       project_name: projectName
     }).then((res) => res.data.data)
   );
-
   const workflowUpdateNotifierConfig = pushRuleConfig?.find(
     (v) => v.type === 'workflow'
   );
   const sqlManagementIssuePushConfig = pushRuleConfig?.find(
     (v) => v.type === 'sql_manage'
   );
-
   return (
     <PushRuleConfigurationStyleWrapper>
       <PageHeader title={t('pushRule.pageTitle')} />
@@ -60,5 +57,4 @@ const PushRuleConfiguration: React.FC = () => {
     </PushRuleConfigurationStyleWrapper>
   );
 };
-
 export default PushRuleConfiguration;

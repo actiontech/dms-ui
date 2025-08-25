@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@actiontech/shared": "workspace:^",
+    "@actiontech/dms-kit": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
     "sqle": "workspace:^",
     "@actiontech/icons": "workspace:^"

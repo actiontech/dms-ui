@@ -1,16 +1,16 @@
-import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
+  LocalStorageWrapper,
   SupportLanguage,
   SupportTheme,
   SystemRole
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   IUidWithName,
   IUserBindProject
 } from '@actiontech/shared/lib/api/base/service/common';
-import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
+import { DEFAULT_LANGUAGE } from '@actiontech/dms-kit';
 
 export type IBindProject = { archived?: boolean } & IUserBindProject;
 

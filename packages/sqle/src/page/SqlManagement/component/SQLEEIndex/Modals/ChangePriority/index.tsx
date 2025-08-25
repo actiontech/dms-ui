@@ -7,14 +7,13 @@ import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { BatchUpdateSqlManageReqPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
-import { BasicButton, BasicModal } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/dms-kit';
 import { useEffect } from 'react';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
-
+import { FormItemLabelStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/FormItem/style';
 enum SqlManagePriority {
   high = 'high',
   low = 'low'
@@ -22,34 +21,28 @@ enum SqlManagePriority {
 type FormFields = {
   priority: SqlManagePriority;
 };
-
 const ChangePriority: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextMessageHolder] = message.useMessage();
-
   const {
     open,
     selectSqlManagement: currentSelected,
     setSelectData,
     updateModalStatus
   } = useSqlManagementRedux(ModalName.Change_SQL_Priority);
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
   const [form] = useForm<FormFields>();
   const { projectName } = useCurrentProject();
-
   const handleReset = () => {
     form.resetFields();
     submitFinish();
   };
-
   const onCloseModal = () => {
     updateModalStatus(ModalName.Change_SQL_Priority, false);
     setSelectData(null);
     handleReset();
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -75,7 +68,6 @@ const ChangePriority: React.FC = () => {
         submitFinish();
       });
   };
-
   useEffect(() => {
     if (open) {
       form.setFieldValue(
@@ -86,7 +78,6 @@ const ChangePriority: React.FC = () => {
       );
     }
   }, [currentSelected?.priority, form, open]);
-
   return (
     <>
       {contextMessageHolder}
@@ -117,7 +108,11 @@ const ChangePriority: React.FC = () => {
           <FormItemLabelStyleWrapper
             label={t('sqlManagement.table.action.single.updatePriority.label')}
             name="priority"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
           >
             <Radio.Group>
               <Space direction="vertical" size={0}>
@@ -138,7 +133,9 @@ const ChangePriority: React.FC = () => {
                   return (
                     <Radio
                       key={item.value}
-                      style={{ lineHeight: '32px' }}
+                      style={{
+                        lineHeight: '32px'
+                      }}
                       value={item.value}
                     >
                       {item.label}
@@ -153,5 +150,4 @@ const ChangePriority: React.FC = () => {
     </>
   );
 };
-
 export default ChangePriority;

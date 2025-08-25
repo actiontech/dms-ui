@@ -1,40 +1,38 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState, useRef, useMemo, useContext } from 'react';
-
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { SqlAuditBaseInfoFormProps } from './index.type';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 import {
   BasicSelect,
   BasicInput,
   BasicButton,
   BasicTag
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { Divider, Form, InputRef, SelectProps, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
 import { useForm } from 'antd/es/form/Form';
-import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { tagNameRule } from '@actiontech/dms-kit';
 import { FormSubmitStatusContext } from '..';
 import { BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
-
 const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading, updateSQLAuditRecordTag, auditRecordTags } =
     useSQLAuditRecordTag();
-  const [extraTagForm] = useForm<{ extraTag: string }>();
+  const [extraTagForm] = useForm<{
+    extraTag: string;
+  }>();
   const inputRef = useRef<InputRef>(null);
   const [formTagVal, setFormTagVal] = useState<string[]>([]);
   const [customTags, setCustomTags] = useState<string[]>([]);
@@ -52,7 +50,6 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
       };
     });
   }, [auditRecordTags, customTags]);
-
   const tagRender: SelectProps['tagRender'] = (props) => {
     return (
       <BasicTag
@@ -70,7 +67,6 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
       </BasicTag>
     );
   };
-
   const onCreateTag = async (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
@@ -86,17 +82,14 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
     form.setFieldsValue({
       tags: [...formTagVal, tag]
     });
-
     setTimeout(() => {
       extraTagForm.resetFields();
     }, 0);
   };
-
   useEffect(() => {
     updateSQLAuditRecordTag(projectName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectName]);
-
   return (
     <>
       {messageContextHolder}
@@ -129,15 +122,25 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
                 dropdownRender={(menu) => (
                   <>
                     {menu}
-                    <Divider style={{ margin: '8px 0' }} />
+                    <Divider
+                      style={{
+                        margin: '8px 0'
+                      }}
+                    />
                     <Form
                       form={extraTagForm}
                       layout="inline"
-                      initialValues={{ extraTag: '' }}
+                      initialValues={{
+                        extraTag: ''
+                      }}
                     >
                       <Form.Item
                         name="extraTag"
-                        rules={[{ validator: tagNameRule() }]}
+                        rules={[
+                          {
+                            validator: tagNameRule()
+                          }
+                        ]}
                       >
                         <BasicInput
                           placeholder={t(
@@ -170,5 +173,4 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
     </>
   );
 };
-
 export default BaseInfoForm;

@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
-import { ActionButton, PageHeader, useTypedParams } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { ActionButton, useTypedParams } from '@actiontech/shared';
 import BasicInfoWrapper from './BasicInfoWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
@@ -9,11 +10,9 @@ import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { SqlAuditPageHeaderActions } from '../List/actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
-
   const { sql_audit_record_id } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_AUDIT.detail>();
   const { projectID, projectName } = useCurrentProject();
@@ -27,7 +26,6 @@ const SqlAuditDetail = () => {
       })
       .then((res) => res.data.data)
   );
-
   const basicInfoData = useMemo(() => {
     return {
       id: pluginAuditRecord?.sql_audit_record_id ?? '',
@@ -36,13 +34,10 @@ const SqlAuditDetail = () => {
       task: pluginAuditRecord?.task
     };
   }, [pluginAuditRecord]);
-
   const auditResultData = useMemo(() => {
     return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
   }, [pluginAuditRecord]);
-
   const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
-
   return (
     <>
       <Spin spinning={dataLoading}>
@@ -55,7 +50,9 @@ const SqlAuditDetail = () => {
               actionType="navigate-link"
               link={{
                 to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
-                params: { projectID }
+                params: {
+                  projectID
+                }
               }}
             />
           }
@@ -63,7 +60,9 @@ const SqlAuditDetail = () => {
         />
         <div
           className="hasTopHeader clearPaddingBottom"
-          style={{ height: '60px' }}
+          style={{
+            height: '60px'
+          }}
         />
         <BasicInfoWrapper {...basicInfoData} />
         <AuditResultList tasks={auditResultData} showTaskTab={false} />
@@ -71,5 +70,4 @@ const SqlAuditDetail = () => {
     </>
   );
 };
-
 export default SqlAuditDetail;

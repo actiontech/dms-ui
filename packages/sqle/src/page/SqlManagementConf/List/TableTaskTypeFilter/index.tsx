@@ -6,7 +6,7 @@ import { TableTaskTypeFilterStyleWrapper } from './style';
 import {
   FilterButtonStyleWrapper,
   FilterButtonLabelStyleWrapper
-} from '@actiontech/shared/lib/styleWrapper/element';
+} from '@actiontech/dms-kit';
 import { AuditPlanTypesV1InstanceTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAuditPlanTypesV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableTaskTypeFilterProps } from './index.type';

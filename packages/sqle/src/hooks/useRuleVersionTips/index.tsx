@@ -1,7 +1,7 @@
-import { BasicSelectProps } from '@actiontech/shared';
+import { BasicSelectProps } from '@actiontech/dms-kit';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetDriverRuleVersionTipsV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { useCallback, useState } from 'react';
 

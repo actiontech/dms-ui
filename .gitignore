@@ -24,6 +24,7 @@ dist
 /build
 /packages/icons-svg/es/*
 /packages/icons-svg/lib/*
+/packages/dms-kit/lib/*
 
 # misc
 .DS_Store

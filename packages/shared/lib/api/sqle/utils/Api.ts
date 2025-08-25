@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SQLE_BASE_URL } from '../../../data/common';
+import { SQLE_BASE_URL } from '@actiontech/dms-kit';
 import ApiBase from '../../common/ApiBase';
 import { addFailedRequest } from '../../common/authInvalid';
 

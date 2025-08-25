@@ -1,9 +1,8 @@
 import classNames from 'classnames';
 import { BasicInfoWrapperProps } from './index.type';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { DataExportStatusDictionary } from '../index.data';
 import { BasicInfoStyleWrapper } from './style';
-
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
   desc,
@@ -82,5 +81,4 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
     </BasicInfoStyleWrapper>
   );
 };
-
 export default BasicInfoWrapper;

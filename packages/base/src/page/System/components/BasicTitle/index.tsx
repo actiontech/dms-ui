@@ -1,20 +1,17 @@
 import { ReactNode } from 'react';
 import { Space, Row } from 'antd';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-
 export type SystemBasicTitleProps = {
   title: ReactNode | string;
   titleTip?: ReactNode | string;
   titleExtra?: ReactNode | string;
   children: ReactNode | string;
 };
-
 const SystemBasicTitle = (props: SystemBasicTitleProps) => {
   const { title, children, titleTip, titleExtra } = props;
   const { baseTheme } = useThemeStyleData();
-
   return (
     <section className="system-form-wrapper">
       <Row
@@ -40,5 +37,4 @@ const SystemBasicTitle = (props: SystemBasicTitleProps) => {
     </section>
   );
 };
-
 export default SystemBasicTitle;

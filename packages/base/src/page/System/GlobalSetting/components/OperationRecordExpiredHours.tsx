@@ -1,13 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigItem } from '@actiontech/shared';
-import {
-  EditInputNumber,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
+import { ConfigItem } from '@actiontech/dms-kit';
+import { EditInputNumber, LabelContent } from '@actiontech/dms-kit';
 import useValidatorNumber from './useValidatorNumber';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
-
 export interface OperationRecordExpiredHoursProps {
   expiredHours: number | undefined;
   fieldVisible: boolean;
@@ -18,7 +14,6 @@ export interface OperationRecordExpiredHoursProps {
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
 }
-
 const OperationRecordExpiredHours = ({
   expiredHours,
   fieldVisible,
@@ -60,5 +55,4 @@ const OperationRecordExpiredHours = ({
     </>
   );
 };
-
 export default OperationRecordExpiredHours;

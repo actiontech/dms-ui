@@ -1,12 +1,11 @@
-import { BasicTreeSelect } from '@actiontech/shared';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { BasicTreeSelect } from '@actiontech/dms-kit';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
 import { Form, TreeSelectProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DatabaseComparisonFromFields } from '../../index.type';
 import useDataSourceSelectorTree from '../../hooks/useDataSourceSelectorTree';
 import { EnvironmentSelectStyleWrapper } from './style';
 import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
-
 type Props = {
   executeComparisonPending: boolean;
   updateComparisonResult: (data?: ISchemaObject[]) => void;
@@ -21,7 +20,6 @@ type Props = {
   | 'disableTreeNodesBasedOnSelection'
   | 'validatorDataSourceTreeSelector'
 >;
-
 const EnvironmentSelector: React.FC<Props> = ({
   executeComparisonPending,
   treeLoadedKeys,
@@ -38,12 +36,10 @@ const EnvironmentSelector: React.FC<Props> = ({
   const form = Form.useFormInstance<DatabaseComparisonFromFields>();
   const baselineInstance = Form.useWatch('baselineInstance', form);
   const comparisonInstance = Form.useWatch('comparisonInstance', form);
-
   const onChange: TreeSelectProps['onChange'] = () => {
     updateComparisonResult(undefined);
     comparisonObjectTreeOnCheck([]);
   };
-
   const databaseComparisonSelectorCommonProps: TreeSelectProps = {
     treeLoadedKeys,
     onTreeExpand,
@@ -115,5 +111,4 @@ const EnvironmentSelector: React.FC<Props> = ({
     </>
   );
 };
-
 export default EnvironmentSelector;

@@ -6,7 +6,7 @@ import { t } from '../../../../locale';
 import generateTag from '../../utils/generateTag';
 import { Space, Popover, Typography } from 'antd';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import { groupBy } from 'lodash';
 

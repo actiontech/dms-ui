@@ -1,8 +1,8 @@
-import { ActionButton, BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { SubmitWorkflowButtonProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { InfoHexagonOutlined } from '@actiontech/icons';
-
+import { ActionButton } from '@actiontech/shared';
 const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
   isConfirmationRequiredForSubmission,
   loading,
@@ -11,7 +11,6 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
   hasExceptionAuditRule
 }) => {
   const { t } = useTranslation();
-
   if (hasExceptionAuditRule) {
     return (
       <ActionButton
@@ -24,12 +23,13 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
           title: t('execWorkflow.create.auditResult.submitTooltipTitle'),
           okText: t('execWorkflow.create.auditResult.continueSubmission'),
           onConfirm: onClick,
-          okButtonProps: { loading }
+          okButtonProps: {
+            loading
+          }
         }}
       />
     );
   }
-
   if (isConfirmationRequiredForSubmission) {
     return (
       <ActionButton
@@ -42,17 +42,17 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
           title: submitWorkflowConfirmationMessage,
           okText: t('execWorkflow.create.auditResult.continueSubmission'),
           onConfirm: onClick,
-          okButtonProps: { loading }
+          okButtonProps: {
+            loading
+          }
         }}
       />
     );
   }
-
   return (
     <BasicButton loading={loading} type="primary" onClick={onClick}>
       {t('execWorkflow.create.auditResult.submit')}
     </BasicButton>
   );
 };
-
 export default SubmitWorkflowButton;

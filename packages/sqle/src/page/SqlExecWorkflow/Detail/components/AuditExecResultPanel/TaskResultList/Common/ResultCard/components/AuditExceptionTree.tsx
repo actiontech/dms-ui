@@ -1,4 +1,4 @@
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { TaskAuditResultTreeStyleWrapper } from './style';
 import { useMemo } from 'react';
 import { DataNode } from 'antd/es/tree';

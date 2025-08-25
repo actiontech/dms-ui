@@ -1,4 +1,4 @@
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import CreationResult from './CreationResult';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
@@ -8,36 +8,33 @@ import {
   BasicButton,
   EmptyBox,
   LazyLoadComponent,
-  PageHeader,
-  useTypedQuery
-} from '@actiontech/shared';
+  PageHeader
+} from '@actiontech/dms-kit';
+import { useTypedQuery } from '@actiontech/shared';
 import ConfForm from '../Common/ConfForm';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { ScanTypeParams } from '../Common/ConfForm/index.type';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
 import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
-
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const instanceAuditPlanCreatedId = useRef<string>('');
   const extractQueries = useTypedQuery();
-
   const { mergeFromValueIntoParams } = useAsyncParams();
   const { generateSubmitDataWithFormValues } = usePriorityConditionsParams();
-
   const {
     form,
     getScanTypeMetaPending,
@@ -51,7 +48,6 @@ const Create: React.FC = () => {
     backToForm,
     resetFormExceptFreezingFields
   } = useSqlManagementConfFormSharedStates();
-
   const onReset = () => {
     const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
@@ -62,7 +58,6 @@ const Create: React.FC = () => {
       form.resetFields();
     }
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -105,7 +100,6 @@ const Create: React.FC = () => {
         finishSubmit();
       });
   };
-
   return (
     <ConfFormContextProvide
       value={{
@@ -163,5 +157,4 @@ const Create: React.FC = () => {
     </ConfFormContextProvide>
   );
 };
-
 export default Create;

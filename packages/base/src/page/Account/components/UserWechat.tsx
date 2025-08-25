@@ -1,14 +1,10 @@
-import { ConfigItem } from '@actiontech/shared';
+import { ConfigItem } from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import {
-  EditInput,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EditInput, LabelContent } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
-
 const UserWechat: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
@@ -19,7 +15,6 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
     wxidFieldVisible,
     { setTrue: showWechatField, setFalse: hideWechatField }
   ] = useBoolean(false);
-
   const onSubmit = (value: string) => {
     User.UpdateCurrentUser({
       current_user: {
@@ -33,7 +28,6 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
       }
     });
   };
-
   return (
     <ConfigItem
       label={<LabelContent>{t('dmsAccount.wechat')}</LabelContent>}
@@ -51,5 +45,4 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
     />
   );
 };
-
 export default UserWechat;

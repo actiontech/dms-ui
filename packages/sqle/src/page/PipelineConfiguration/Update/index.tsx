@@ -2,9 +2,9 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult,
-  useTypedParams
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
 import {
@@ -12,14 +12,14 @@ import {
   formItemLayout,
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 import { Spin, Space } from 'antd';
 import { BriefcaseFilled } from '@actiontech/icons';
 import PipelineConfigurationForm from '../Common/ConfigurationForm';
 import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { omit } from 'lodash';
 import {
   updatePipelineNodeAuditMethodEnum,
@@ -27,14 +27,11 @@ import {
   updatePipelineNodeTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import usePipelineConfigurationFormState from '../Common/ConfigurationForm/hooks/usePipelineConfigurationFormState';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdatePipelineConfiguration = () => {
   const { t } = useTranslation();
-
   const { id } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update>();
-
   const {
     form,
     submitLoading,
@@ -46,7 +43,6 @@ const UpdatePipelineConfiguration = () => {
     setSelectPipelineId,
     openPipelineDetailModal
   } = usePipelineConfigurationFormState();
-
   const { loading: getPipelineDetailLoading } = useRequest(() =>
     pipeline
       .getPipelineDetailV1({
@@ -69,7 +65,6 @@ const UpdatePipelineConfiguration = () => {
         }
       })
   );
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -99,11 +94,9 @@ const UpdatePipelineConfiguration = () => {
         finishSubmit();
       });
   };
-
   const onReset = () => {
     form.resetFields(['description', 'address', 'nodes']);
   };
-
   return (
     <>
       <PageHeader
@@ -174,5 +167,4 @@ const UpdatePipelineConfiguration = () => {
     </>
   );
 };
-
 export default UpdatePipelineConfiguration;

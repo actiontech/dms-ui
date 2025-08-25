@@ -1,26 +1,22 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import { Space } from 'antd';
-import { BasicModal, BasicSelect, BasicButton } from '@actiontech/shared';
+import { BasicModal, BasicSelect, BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useTypedNavigate } from '@actiontech/shared';
 import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
-
 const AvailabilityZoneWrapper: React.FC = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useTypedNavigate();
-
   const {
     availabilityZone,
     updateRecentlySelectedZone,
     availabilityZoneOptions
   } = useRecentlySelectedZone();
-
   const [zoneModalVisible, setZoneModalVisible] = useState(true);
   const [selectedZone, setSelectedZone] = useState<string>();
   const [pendingPath, setPendingPath] = useState<string | null>(null);
-
   useEffect(() => {
     if (!availabilityZone) {
       const { pathname, search } = location;
@@ -28,11 +24,9 @@ const AvailabilityZoneWrapper: React.FC = () => {
       setZoneModalVisible(true);
     }
   }, [location, availabilityZone]);
-
   const onModalCancel = () => {
     navigate(-1);
   };
-
   const onModalOk = () => {
     updateRecentlySelectedZone({
       uid: selectedZone ?? '',
@@ -40,21 +34,18 @@ const AvailabilityZoneWrapper: React.FC = () => {
         availabilityZoneOptions.find((zone) => zone?.value === selectedZone)
           ?.label ?? ''
     });
-
     setZoneModalVisible(false);
     if (pendingPath) {
       navigate(pendingPath);
       setPendingPath(null);
     }
   };
-
   const isZoneConfigured = !!availabilityZoneOptions?.length;
   const isMemoriredZoneNotInOptions = useMemo(
     () =>
       !availabilityZoneOptions?.some((v) => v.value === availabilityZone?.uid),
     [availabilityZoneOptions, availabilityZone]
   );
-
   if (isZoneConfigured && isMemoriredZoneNotInOptions) {
     return (
       <BasicModal
@@ -88,8 +79,6 @@ const AvailabilityZoneWrapper: React.FC = () => {
       </BasicModal>
     );
   }
-
   return <Outlet />;
 };
-
 export default AvailabilityZoneWrapper;

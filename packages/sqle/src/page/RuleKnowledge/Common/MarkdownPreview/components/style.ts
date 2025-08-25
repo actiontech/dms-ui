@@ -1,12 +1,11 @@
 import { styled } from '@mui/material/styles';
-import { BasicTag, SQLRenderer } from '@actiontech/shared';
-
+import { BasicTag } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 export const LabelPreviewStyleWrapper = styled(BasicTag)`
   &.ant-tag {
     display: inline-block !important;
   }
 `;
-
 export const SqlDiffPreviewStyleWrapper = styled('div')`
   .diff-header {
     display: flex;
@@ -19,7 +18,6 @@ export const SqlDiffPreviewStyleWrapper = styled('div')`
     }
   }
 `;
-
 export const SqlPreviewStyleWrapper = styled(SQLRenderer.Snippet)`
   padding: 8px;
 `;

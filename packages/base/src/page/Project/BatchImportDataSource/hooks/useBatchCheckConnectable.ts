@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IImportDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { useBoolean } from 'ahooks';
 import {

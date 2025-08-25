@@ -8,8 +8,7 @@ import { t } from '../../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
 import { ReactNode } from 'react';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const DataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
   onDeleteDataSource: (uid: string, name: string) => void,
@@ -33,7 +32,9 @@ export const DataSourceListActions = (
       {
         key: 'delete-db-service',
         text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
+        buttonProps: () => ({
+          danger: true
+        }),
         confirm: (record) => ({
           title: t('dmsDataSource.deleteDatabase.confirmMessage', {
             name: record?.name
@@ -84,7 +85,6 @@ export const DataSourceListActions = (
     ]
   };
 };
-
 export const DataSourcePageHeaderActions = (
   projectID: string,
   batchTestDatabaseConnection: () => void,
@@ -115,7 +115,9 @@ export const DataSourcePageHeaderActions = (
         actionType="navigate-link"
         link={{
           to: ROUTE_PATHS.BASE.DATA_SOURCE.batch_import,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>
@@ -136,7 +138,9 @@ export const DataSourcePageHeaderActions = (
         actionType="navigate-link"
         link={{
           to: ROUTE_PATHS.BASE.DATA_SOURCE.create,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>

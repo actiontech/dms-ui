@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { DownOutlined } from '@actiontech/icons';
 import knowledge_base from '@actiontech/shared/lib/api/sqle/service/knowledge_base';
 import { useRequest, useControllableValue } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { Popover, Checkbox, Empty } from 'antd';
-import { BasicInput, BasicTag, EmptyBox } from '@actiontech/shared';
+import { BasicInput, BasicTag, EmptyBox } from '@actiontech/dms-kit';
 import {
   KnowledgeSearchTagsPopoverStyleWrapper,
   KnowledgeTagSelectorBarStyleWrapper
@@ -12,17 +12,14 @@ import {
 import { useMemo, useState } from 'react';
 import { TagSelectorBarProps } from '../index.type';
 import classNames from 'classnames';
-
 const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
   const { t } = useTranslation();
-
   const [selectedTags, setSelectedTags] = useControllableValue<
     TagSelectorBarProps['value']
   >(props, {
     defaultValue: []
   });
   const [tagSearchText, setTagSearchText] = useState('');
-
   const { data: tagOptions } = useRequest(() =>
     knowledge_base.getKnowledgeBaseTagList().then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
@@ -37,12 +34,10 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
       return [];
     })
   );
-
   const handleTagRemove = (tagToRemove: string) => {
     const filteredTags = selectedTags?.filter((tag) => tag !== tagToRemove);
     setSelectedTags?.(filteredTags);
   };
-
   const filteredTagOptions = useMemo(() => {
     return (
       tagOptions?.map((option) => ({
@@ -53,7 +48,6 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
       })) ?? []
     );
   }, [tagSearchText, tagOptions]);
-
   return (
     <KnowledgeTagSelectorBarStyleWrapper size={4} wrap>
       <Popover
@@ -86,7 +80,9 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
                   <Checkbox
                     key={option.value}
                     value={option.value}
-                    className={classNames({ 'hidden-checkbox': option.hidden })}
+                    className={classNames({
+                      'hidden-checkbox': option.hidden
+                    })}
                   >
                     <span title={option.label}>{option.label}</span>
                   </Checkbox>
@@ -116,5 +112,4 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
     </KnowledgeTagSelectorBarStyleWrapper>
   );
 };
-
 export default TagSelectorBar;

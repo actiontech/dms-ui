@@ -13,8 +13,8 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqleApi } from '@actiontech/shared/lib/api/';
 import { relatedSqlListColumn, RelatedSqlListFilterParams } from './column';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { EmptyRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { formatTime } from '@actiontech/shared';
+import { EmptyRowStyleWrapper } from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { useEffect, useMemo } from 'react';
 import { GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
@@ -29,11 +29,9 @@ import { IReduxState } from '../../../../store';
 // } from '../../../../store/sqlInsights';
 import { RelatedSqlFilterSourceOptions } from './data';
 import useRelatedSqlRedux from './useRelatedSqlRedux';
-
 export interface RelatedSqlListProps {
   instanceId?: string;
 }
-
 const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -46,7 +44,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       endTime: formatTime(selectedDateRange?.[1])
     };
   });
-
   const {
     tableChange,
     pagination,
@@ -55,7 +52,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
     sortInfo,
     createSortParams
   } = useTableRequestParams<IRelatedSQLInfo, RelatedSqlListFilterParams>();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -95,7 +91,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       columns,
       updateTableFilterInfo
     );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IRelatedSQLInfo, FilterCustomProps>([
       [
@@ -109,7 +104,6 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       ]
     ]);
   }, []);
-
   const { data: listData, loading } = useRequest(
     () => {
       if (!startTime || !endTime) {
@@ -130,9 +124,7 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         page_size: pagination.page_size,
         ...tableFilterInfo
       };
-
       createSortParams(params);
-
       return handleTableRequestError(
         SqleApi.SqlInsightService.GetSqlPerformanceInsightsRelatedSQL(params)
       );
@@ -149,18 +141,15 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
       ready: !!instanceId
     }
   );
-
   useEffect(() => {
     updateTableFilterInfo({
       filter_source:
         GetSqlPerformanceInsightsRelatedSQLFilterSourceEnum.workflow
     });
     updateAllSelectedFilterItem(true);
-
     return () => clearDateRange();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
     <RelatedSqlListStyleWrapper>
       <EmptyRowStyleWrapper>
@@ -192,12 +181,13 @@ const RelatedSqlList: React.FC<RelatedSqlListProps> = ({ instanceId }) => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        scroll={{ x: 'max-content' }}
+        scroll={{
+          x: 'max-content'
+        }}
         isPaginationFixed={false}
         // actions={tableActions}
       />
     </RelatedSqlListStyleWrapper>
   );
 };
-
 export default RelatedSqlList;

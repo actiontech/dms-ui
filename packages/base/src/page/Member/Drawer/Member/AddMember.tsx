@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
@@ -13,27 +13,19 @@ import { IMemberFormFields } from '../index.type';
 import MemberForm from './MemberForm';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { IAddMemberParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { MemberDrawerStyledWrapper } from '../../style';
-
 const AddMember: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [form] = Form.useForm<IMemberFormFields>();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const visible = useSelector(
     (state: IReduxState) => state.member.modalStatus[ModalName.DMS_Add_Member]
   );
-
   const { projectID } = useCurrentProject();
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IAddMemberParams = {
@@ -58,7 +50,6 @@ const AddMember: React.FC = () => {
         submitFinish();
       });
   };
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -68,7 +59,6 @@ const AddMember: React.FC = () => {
       })
     );
   };
-
   return (
     <MemberDrawerStyledWrapper
       open={visible}
@@ -92,5 +82,4 @@ const AddMember: React.FC = () => {
     </MemberDrawerStyledWrapper>
   );
 };
-
 export default AddMember;

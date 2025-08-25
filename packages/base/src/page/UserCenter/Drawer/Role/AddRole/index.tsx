@@ -10,25 +10,18 @@ import { useBoolean } from 'ahooks';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
-
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
 const AddRole = () => {
   const [form] = Form.useForm<IRoleFormFields>();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [createLoading, { setTrue, setFalse }] = useBoolean();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Add_Role]
   );
-
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -38,7 +31,6 @@ const AddRole = () => {
       })
     );
   }, [dispatch, form]);
-
   const addRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
@@ -64,7 +56,6 @@ const AddRole = () => {
         setFalse();
       });
   }, [onClose, form, setFalse, setTrue, t, messageApi]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.role.createRole.modalTitle')}
@@ -86,5 +77,4 @@ const AddRole = () => {
     </BasicDrawer>
   );
 };
-
 export default AddRole;

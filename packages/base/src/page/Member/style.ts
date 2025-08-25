@@ -1,14 +1,12 @@
 import { styled } from '@mui/material/styles';
 import { Row, Checkbox } from 'antd';
-import { BasicDrawer } from '@actiontech/shared';
-
+import { BasicDrawer } from '@actiontech/dms-kit';
 export const ProjectMemberStyleWrapper = styled('section')`
   .ant-tabs-nav {
     margin-bottom: 0 !important;
     padding-left: 24px;
   }
 `;
-
 export const FormListDeleteIconWrap = styled('section')`
   height: 36px;
   width: 36px;
@@ -25,7 +23,6 @@ export const FormListDeleteIconWrap = styled('section')`
       theme.sharedTheme.components.basicSelect.hover.border};
   }
 `;
-
 export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
   .member-form-add-button {
     background-color: ${({ theme }) =>
@@ -37,13 +34,11 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
     font-size: 14px !important;
   }
 `;
-
 export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
   .ant-col {
     height: 100%;
   }
 `;
-
 export const MemberPermissionCheckboxGroupStyleWrapper = styled(Checkbox.Group)`
   &.ant-checkbox-group {
     width: 100%;

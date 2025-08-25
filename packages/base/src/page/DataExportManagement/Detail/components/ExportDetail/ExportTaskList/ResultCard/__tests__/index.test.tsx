@@ -3,7 +3,7 @@ import ExportResultCard from '..';
 import { baseSuperRender } from '../../../../../../../../testUtils/superRender';
 import { ListDataExportTaskSQLsResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { mockDataExportDetailRedux } from '../../../../../testUtils/mockUseDataExportDetailReduxManage';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 
 describe('test base/DataExport/Detail/ExportTaskList/ResultCard', () => {
   it('should match snapshot', () => {

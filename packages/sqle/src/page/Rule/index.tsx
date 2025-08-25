@@ -4,14 +4,14 @@ import {
   BasicEmpty,
   BasicTag,
   EmptyBox,
-  PageHeader,
-  TypedLink
-} from '@actiontech/shared';
+  PageHeader
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { RuleList, RuleStatus } from '../../components/RuleList';
 import {
   RuleStatusWrapperStyleWrapper,
   ToggleButtonStyleWrapper
-} from '@actiontech/shared/lib/styleWrapper/element';
+} from '@actiontech/dms-kit';
 import { RuleBaseInfoStyleWrapper, RuleListStyleWrapper } from './style';
 import { FilterOutlined } from '@actiontech/icons';
 import useRuleListFilter from './RuleListFilter/hooks';
@@ -20,17 +20,15 @@ import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import CustomSearchInput from '../../components/RuleList/RuleFilter/RuleFilterCommonFields/CustomInput';
 import useRuleList from '../../components/RuleList/useRuleList';
 import { useMemo } from 'react';
 import { RuleListFilterForm } from './index.type';
-
 const Rule = () => {
   const { t } = useTranslation();
   const [form] = Form.useForm<RuleListFilterForm>();
   const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
-
   const {
     showNotRuleTemplatePage,
     setShowNorRuleTemplatePage,
@@ -44,14 +42,11 @@ const Rule = () => {
     toggleFilterVisible,
     onFuzzyKeywordChange
   } = useRuleListFilter(form);
-
   const filterDbType = Form.useWatch('filter_db_type', form);
   const filterRuleVersion = Form.useWatch('filter_rule_version', form);
-
   const templateRulesWithStatus = useMemo(() => {
     return getCurrentStatusRules(allRules, templateRules, filterRuleTemplate);
   }, [getCurrentStatusRules, allRules, templateRules, filterRuleTemplate]);
-
   return (
     <RuleListStyleWrapper>
       <PageHeader title={t('rule.pageTitle')} />
@@ -121,7 +116,9 @@ const Rule = () => {
                     <TypedLink
                       className="link-create-project-rule-template-btn"
                       to={ROUTE_PATHS.SQLE.RULE_TEMPLATE.create}
-                      params={{ projectID: projectID ?? '' }}
+                      params={{
+                        projectID: projectID ?? ''
+                      }}
                     >
                       {t('rule.createRuleTemplate')}
                     </TypedLink>
@@ -142,5 +139,4 @@ const Rule = () => {
     </RuleListStyleWrapper>
   );
 };
-
 export default Rule;

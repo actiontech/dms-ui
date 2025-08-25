@@ -1,8 +1,5 @@
-import {
-  BasicRangePickerProps,
-  PageHeader,
-  CustomSelect
-} from '@actiontech/shared';
+import { PageHeader, CustomSelect } from '@actiontech/dms-kit';
+import { BasicRangePickerProps } from '@actiontech/dms-kit/es/components/BasicRangePicker/BasicRangePicker.types';
 import { useTranslation } from 'react-i18next';
 import { Space, Spin } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -13,7 +10,7 @@ import {
   BasicRangePicker,
   BasicSegmented,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import dayjs, { Dayjs } from 'dayjs';
 import DataSourcePerformanceTrend from './components/DataSourcePerformanceTrend';
 import {
@@ -28,8 +25,8 @@ import TopSqlTrend from './components/TopSqlTrend';
 import ActiveSessionTrend from './components/ActiveSessionTrend';
 import RelatedSqlList from './components/RelatedSqlList';
 import DrawerManager from './components/DrawerManager';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { range } from 'lodash';
 import { SegmentedStyleWrapper, SqlInsightsStyleWrapper } from './style';
 import useDateRange from './hooks/useDateRange';
@@ -37,13 +34,10 @@ import useInstance from '../../hooks/useInstance';
 import useOpenScanTask from './hooks/useOpenScanTask';
 import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-
 const SqlInsights: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const [selectedInstance, setSelectedInstance] = useState<string>();
-
   const {
     dateRange,
     setDateRange,
@@ -53,23 +47,19 @@ const SqlInsights: React.FC = () => {
     setAutoRefreshInterval,
     getDataRange
   } = useDateRange();
-
   const {
     updateInstanceList,
     loading: getInstanceListLoading,
     instanceIDOptions,
     instanceList
   } = useInstance();
-
   const instanceEnvironmentTag = useMemo(() => {
     return instanceList.find(
       (item: IInstanceTipResV2) => item.instance_id === selectedInstance
     )?.environment_tag_name;
   }, [selectedInstance, instanceList]);
-
   const { getAuditPlanDataLoading, onCreateSqlManagementConf } =
     useOpenScanTask(selectedInstance, instanceEnvironmentTag);
-
   useEffect(() => {
     if (projectName) {
       updateInstanceList(
@@ -88,14 +78,12 @@ const SqlInsights: React.FC = () => {
       );
     }
   }, [projectName, updateInstanceList, setSelectedInstance]);
-
   const handleInstanceChange = useCallback(
     (value: string) => {
       setSelectedInstance(value);
     },
     [setSelectedInstance]
   );
-
   const handleDateRangeChange = useCallback<
     Required<BasicRangePickerProps>['onChange']
   >(
@@ -106,11 +94,9 @@ const SqlInsights: React.FC = () => {
     },
     [setDateRange]
   );
-
   const onRefresh = () => {
     eventEmitter.emit(EmitterKey.SQL_INSIGHTS_LINE_CHART_REFRESH);
   };
-
   const onSegmentedChange = useCallback(
     (value: SegmentedValue) => {
       setTimePeriod(value as DateRangeEnum);
@@ -121,21 +107,18 @@ const SqlInsights: React.FC = () => {
     },
     [getDataRange, setDateRange, setTimePeriod]
   );
-
   const handleAutoRefreshIntervalChange = useCallback(
     (value: AutoRefreshIntervalEnum) => {
       setAutoRefreshInterval(value);
     },
     [setAutoRefreshInterval]
   );
-
   const disabledTime = (date: Dayjs | null) => {
     const currentTime = dayjs();
     if (date && date.isSame(currentTime, 'day')) {
       const hours = currentTime?.hour() ?? 0;
       const minutes = currentTime?.minute() ?? 0;
       const seconds = currentTime?.second() ?? 0;
-
       const disabledConfig = {
         disabledHours: () => range(hours + 1, 24),
         disabledMinutes: (selectedHour: number) =>
@@ -145,12 +128,10 @@ const SqlInsights: React.FC = () => {
             ? range(seconds + 1, 60)
             : []
       };
-
       return disabledConfig;
     }
     return {};
   };
-
   return (
     <>
       <PageHeader
@@ -166,7 +147,9 @@ const SqlInsights: React.FC = () => {
               onChange={handleInstanceChange}
               loading={getInstanceListLoading}
               options={instanceIDOptions}
-              style={{ width: 240 }}
+              style={{
+                width: 240
+              }}
               size="small"
               className="instance-select"
             />
@@ -204,7 +187,9 @@ const SqlInsights: React.FC = () => {
               value={autoRefreshInterval}
               onChange={handleAutoRefreshIntervalChange}
               options={AutoRefreshIntervalOptions}
-              style={{ width: 200 }}
+              style={{
+                width: 200
+              }}
               size="small"
               prefix={t('sqlInsights.autoRefreshTimeGap')}
               allowClear={false}
@@ -250,5 +235,4 @@ const SqlInsights: React.FC = () => {
     </>
   );
 };
-
 export default SqlInsights;
