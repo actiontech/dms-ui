@@ -6,8 +6,11 @@ import {
   IGetOptimizationSQLsRes,
   IGetOptimizationSQLRes,
   IGetDBPerformanceImproveOverviewResp,
-  IGetOptimizationOverviewResp
+  IGetOptimizationOverviewResp,
+  IGetOptimizationDetailRes
 } from '../common.d';
+
+import { GetOptimizationRecordsV2FilterStatusEnum } from './index.enum';
 
 export interface IGetOptimizationRecordsParams {
   fuzzy_search?: string;
@@ -106,3 +109,72 @@ export interface IGetOptimizationOverviewParams {
 
 export interface IGetOptimizationOverviewReturn
   extends IGetOptimizationOverviewResp {}
+
+export interface IGetOptimizationRecordsV2Params {
+  fuzzy_search?: string;
+
+  filter_instance_name?: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  filter_status?: GetOptimizationRecordsV2FilterStatusEnum;
+
+  page_index: number;
+
+  page_size: number;
+
+  project_name: string;
+}
+
+export interface IGetOptimizationRecordsV2Return
+  extends IGetOptimizationRecordsRes {}
+
+export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
+  project_name: string;
+
+  instance_name?: string;
+
+  schema_name?: string;
+
+  db_type?: string;
+
+  optimization_name: string;
+
+  sql_content?: string;
+
+  input_sql_file?: any;
+
+  input_zip_file?: any;
+
+  input_mybatis_xml_file?: any;
+
+  git_http_url?: string;
+
+  git_user_name?: string;
+
+  git_user_password?: string;
+}
+
+export interface ISQLOptimizeV2Return extends IOptimizeSQLRes {}
+
+export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLParams {
+  project_name: string;
+
+  instance_name: string;
+
+  origin_sql: string;
+}
+
+export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLReturn
+  extends IGetOptimizationDetailRes {}
+
+export interface IGetOptimizationSQLDetailV2Params {
+  project_name: string;
+
+  optimization_record_id: string;
+}
+
+export interface IGetOptimizationSQLDetailV2Return
+  extends IGetOptimizationDetailRes {}

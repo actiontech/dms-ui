@@ -1,5 +1,5 @@
 import { useRequest } from 'ahooks';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { IOptimizationRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   useCurrentProject,
@@ -19,19 +19,29 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   SqlOptimizationListTableFilterParamType,
-  SqlOptimizationListColumns
+  sqlOptimizationListColumns
 } from './columns';
-import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { PageHeader, useTypedNavigate, ActionButton } from '@actiontech/shared';
-import { useTranslation } from 'react-i18next';
-import { PlusOutlined } from '@actiontech/icons';
+import {
+  useTypedNavigate,
+  BasicToolTip,
+  ActiontechTableWrapper
+} from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import { SqlOptimizationListStyleWrapper } from '../style';
+import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
+import { sqlOptimizationListActions } from './actions';
 
 const SqlOptimizationList = () => {
+  const navigate = useTypedNavigate();
+
   const { t } = useTranslation();
 
-  const navigate = useTypedNavigate();
+  const [autoRefreshEnabled, setAutoRefreshEnabled] = useState(true);
 
   const { projectName, projectID } = useCurrentProject();
 
@@ -57,7 +67,7 @@ const SqlOptimizationList = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { data, loading, refresh } = useRequest(
+  const { data, loading, refresh, cancel, run } = useRequest(
     () => {
       const params: IGetOptimizationRecordsParams = {
         ...pagination,
@@ -66,11 +76,15 @@ const SqlOptimizationList = () => {
         fuzzy_search: searchKeyword
       };
       return handleTableRequestError(
-        sqlOptimization.getOptimizationRecords(params)
+        SqleApi.SqlOptimizationService.GetOptimizationRecordsV2(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo]
+      refreshDeps: [pagination, tableFilterInfo],
+      pollingInterval: 5000,
+      onError: () => {
+        cancel();
+      }
     }
   );
 
@@ -94,8 +108,17 @@ const SqlOptimizationList = () => {
   }, [instanceOptions]);
 
   const columns = useMemo(() => {
-    return SqlOptimizationListColumns(getLogoUrlByDbType);
+    return sqlOptimizationListColumns(getLogoUrlByDbType);
   }, [getLogoUrlByDbType]);
+
+  const onView = (record?: IOptimizationRecord) => {
+    navigate(ROUTE_PATHS.SQLE.SQL_AUDIT.optimization_result, {
+      params: {
+        projectID,
+        optimizationId: record?.optimization_id ?? ''
+      }
+    });
+  };
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
@@ -107,73 +130,82 @@ const SqlOptimizationList = () => {
     });
   }, [projectName, updateInstanceList, updateDriverList]);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Refresh_Sql_Optimization_List,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
+
   return (
-    <>
-      <PageHeader
-        title={t('sqlOptimization.pageTitle')}
-        extra={
-          <ActionButton
-            type="primary"
-            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
-            text={t('sqlOptimization.create.linkButton')}
-            actionType="navigate-link"
-            link={{
-              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create,
-              params: { projectID }
-            }}
-          />
-        }
-      />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        setting={tableSetting}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-        loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        className="table-row-cursor"
-        setting={tableSetting}
-        dataSource={data?.list}
-        rowKey={(record: IOptimizationRecord) => {
-          return `${record?.optimization_id}`;
-        }}
-        pagination={{
-          total: data?.total ?? 0,
-          current: pagination.page_index
-        }}
-        loading={loading}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        onRow={(record) => {
-          return {
-            onClick() {
-              navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview, {
-                params: {
-                  projectID,
-                  optimizationId: record.optimization_id ?? ''
+    <SqlOptimizationListStyleWrapper>
+      <ActiontechTableWrapper loading={loading} setting={tableSetting}>
+        <TableToolbar
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          actions={[
+            {
+              key: 'auto-refresh',
+              text: (
+                <BasicToolTip
+                  title={
+                    autoRefreshEnabled
+                      ? t('sqlOptimization.table.closeAutoRefreshTips')
+                      : t('sqlOptimization.table.openAutoRefreshTips')
+                  }
+                >
+                  {t('sqlOptimization.table.autoRefresh')}
+                </BasicToolTip>
+              ),
+              buttonProps: {
+                className: classNames({
+                  'switch-btn-active': autoRefreshEnabled
+                }),
+                onClick: () => {
+                  if (autoRefreshEnabled) {
+                    cancel();
+                  } else {
+                    run();
+                  }
+                  setAutoRefreshEnabled(!autoRefreshEnabled);
                 }
-              });
+              }
             }
-          };
-        }}
-      />
-    </>
+          ]}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          setting={tableSetting}
+          dataSource={data?.list}
+          rowKey={(record: IOptimizationRecord) => {
+            return `${record?.optimization_id}`;
+          }}
+          pagination={{
+            total: data?.total ?? 0,
+            current: pagination.page_index
+          }}
+          loading={loading}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          actions={sqlOptimizationListActions(onView)}
+        />
+      </ActiontechTableWrapper>
+    </SqlOptimizationListStyleWrapper>
   );
 };
 

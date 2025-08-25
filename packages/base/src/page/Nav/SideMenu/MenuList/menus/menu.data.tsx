@@ -15,7 +15,6 @@ export const SQLE_MENU_STRUCT: MenuTreeI18n[] = [
       'data-export',
       'sql-audit',
       'plugin-audit',
-      'sql-optimization',
       'data-source-comparison'
     ]
   },
