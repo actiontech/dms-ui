@@ -51,7 +51,7 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
     meta: {
       score: {
         // alias: '得分',
-        max: 7,
+        // max: 7,
         range: [0, 1.1]
         // nice: true // 自动调整min max
       }

@@ -34,9 +34,6 @@ export const TableStructureModalWrapper = styled('div')`
 `;
 
 export const OptimizationResultModalWrapper = styled('div')`
-  max-height: calc(100vh - 118px);
-  overflow-y: auto;
-
   .rule-info {
     padding: 16px;
     background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
