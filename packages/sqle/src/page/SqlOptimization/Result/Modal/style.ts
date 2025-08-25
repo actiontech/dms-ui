@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { BasicModal } from '@actiontech/shared';
 
 export const TableStructureModalWrapper = styled('div')`
   .section {
@@ -125,6 +126,31 @@ export const QueryPlanDiffModalWrapper = styled('div')`
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
       border-radius: 6px;
       overflow: hidden;
+    }
+  }
+`;
+
+export const OptimizationResultModalStyleWrapper = styled(BasicModal)`
+  &.ant-modal {
+    width: 85vw !important;
+    min-width: 800px !important;
+    max-width: 1200px !important;
+
+    @media (max-width: 1440px) {
+      width: 85vw !important;
+      max-width: 1000px !important;
+      min-width: 900px !important;
+    }
+
+    @media (max-width: 1200px) {
+      width: 90vw !important;
+      max-width: 900px !important;
+      min-width: 800px !important;
+    }
+
+    @media (max-width: 900px) {
+      width: 95vw !important;
+      max-width: 800px !important;
     }
   }
 `;

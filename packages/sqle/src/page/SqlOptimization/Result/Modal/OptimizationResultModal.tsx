@@ -1,10 +1,12 @@
-import { BasicModal } from '@actiontech/shared';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import { ModalName } from '../../../../data/ModalName';
 import { updateSqlOptimizationModalStatus } from '../../../../store/sqlOptimization';
 import { useTranslation } from 'react-i18next';
-import { OptimizationResultModalWrapper } from './style';
+import {
+  OptimizationResultModalWrapper,
+  OptimizationResultModalStyleWrapper
+} from './style';
 import AnalysisChart from '../components/AnalysisChart';
 import SqlDiffView from '../components/SqlDiffView';
 import { Space, Typography } from 'antd';
@@ -35,12 +37,13 @@ const OptimizationResultModal: React.FC = () => {
   };
 
   return (
-    <BasicModal
+    <OptimizationResultModalStyleWrapper
       title={t('sqlOptimization.result.viewOptimizationResults')}
       open={open}
       onCancel={handleCancel}
       footer={null}
-      width={1200}
+      wrapClassName="dynamic-width-modal"
+      size="large"
       centered
       maskClosable={false}
     >
@@ -88,7 +91,7 @@ const OptimizationResultModal: React.FC = () => {
           />
         </div>
       </OptimizationResultModalWrapper>
-    </BasicModal>
+    </OptimizationResultModalStyleWrapper>
   );
 };
 
