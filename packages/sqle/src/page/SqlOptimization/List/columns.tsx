@@ -13,10 +13,8 @@ import { CustomAvatar, DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { floatToPercent } from '@actiontech/dms-kit';
 import OptimizationStatus from '../components/OptimizationStatus';
 import { SqlOptimizationStatusEnum } from '../index.data';
-export type SqlOptimizationListTableFilterParamType = PageInfoWithoutIndexAndSize<
-  IGetOptimizationRecordsParams,
-  'project_name'
->;
+export type SqlOptimizationListTableFilterParamType =
+  PageInfoWithoutIndexAndSize<IGetOptimizationRecordsParams, 'project_name'>;
 export const SqlOptimizationListColumns: (
   getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<

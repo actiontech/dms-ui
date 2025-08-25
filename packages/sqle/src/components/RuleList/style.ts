@@ -343,7 +343,9 @@ export const EmptyRuleStyleWrapper = styled('div')`
   font-weight: 500;
   line-height: 20px;
 `;
-export const RuleFilterCustomInputStyleWrapper = styled(CustomInputStyleWrapper)`
+export const RuleFilterCustomInputStyleWrapper = styled(
+  CustomInputStyleWrapper
+)`
   width: 210px;
 `;
 export const RuleFilterCommonFieldSelectStyleWrapper = styled(Space)`

@@ -9,11 +9,12 @@ import {
 import {
   BasicButton,
   BasicDrawer,
-  Copy, Download,
+  Copy,
+  Download,
   BasicToolTip,
   EmptyBox
 } from '@actiontech/dms-kit';
-import {  SQLRenderer } from '@actiontech/shared';
+import { SQLRenderer } from '@actiontech/shared';
 import {
   ModifiedSqlStyleWrapper,
   DiffSQLEditorWrapperStyleWrapper,
