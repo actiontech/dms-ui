@@ -18,6 +18,10 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
+      - name: Build packages
+        run: |
+          pnpm --filter @actiontech/dms-kit build
+
       - name: Code lint checker
         run: pnpm checker
 
