@@ -42,7 +42,19 @@ export default {
       tips: '为了提高调优结果的准确度，系统将执行数据库分析操作',
       format: 'SQL美化',
       formatTips:
-        '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
+        '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。',
+      form: {
+        optimizationType: '调优类型',
+        optimizationTypeDesc:
+          '在线调优时，平台将根据所选数据源的实际库表结构给出建议；离线调优时，平台将不会连接数据源。',
+        onlineOptimization: '在线调优',
+        offlineOptimization: '离线调优',
+        sql: 'SQL语句',
+        executionPlan: '执行计划',
+        executionPlanPlaceholder: '请输入执行计划（可选）',
+        tableStructure: '表结构',
+        tableStructurePlaceholder: '请输入表结构（可选）'
+      }
     },
     resultTips: '优化进行中，预计5-10分钟后完成。感谢您的耐心等待。',
     resetForm: '重置表单'
@@ -119,6 +131,7 @@ export default {
     finalOptimized: '最终优化后',
     originalExecutionPlan: '原执行计划',
     exitFullscreen: '退出全屏',
-    fullscreenDisplay: '全屏显示'
+    fullscreenDisplay: '全屏显示',
+    drawerTitle: 'SQL调优结果详情'
   }
 };

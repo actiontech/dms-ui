@@ -10,7 +10,9 @@ describe('SqlRewrittenDrawer', () => {
     taskID: 'task-123',
     originSqlInfo: {
       sql: 'select * from table',
-      number: 1
+      number: 1,
+      instanceName: 'mysql',
+      schema: 'dms'
     }
   };
   it('should match snapshot', () => {

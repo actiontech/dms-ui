@@ -14,7 +14,11 @@ import {
 
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
-  jumpToAnalyze: (sqlManageID: string) => void,
+  jumpToAnalyze: (
+    sqlManageID: string,
+    instanceName?: string,
+    schema?: string
+  ) => void,
   openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
   onCreateWhitelist: (record?: ISqlManage) => void,
   language: SupportLanguage,
@@ -95,7 +99,11 @@ export const SqlManagementRowAction = (
         text: t('sqlManagement.table.action.analyze'),
         key: 'analyze-sql',
         onClick: (record) => {
-          jumpToAnalyze(record?.id?.toString() ?? '');
+          jumpToAnalyze(
+            record?.id?.toString() ?? '',
+            record?.instance_name,
+            record?.schema_name
+          );
         }
       },
       {

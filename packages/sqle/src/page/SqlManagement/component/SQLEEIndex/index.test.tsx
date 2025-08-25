@@ -430,7 +430,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('分析'));
     expect(openSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/sql-management/${sqlManageListData.data[0].id}/analyze`,
+      `/sqle/project/${mockProjectInfo.projectID}/sql-management/${sqlManageListData.data[0].id}/analyze?instance_name=mysql&schema=dms`,
       '_blank'
     );
     openSpy.mockRestore();

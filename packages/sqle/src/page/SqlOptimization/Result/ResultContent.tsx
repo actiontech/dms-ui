@@ -14,51 +14,18 @@ import {
   updateQueryPlanFlowModalData,
   updateQueryPlanDiffModalData
 } from '../../../store/sqlOptimization';
-import { OptimizationResultStatus } from './index.type';
-import { useRequest } from 'ahooks';
-import { SqleApi } from '@actiontech/shared/lib/api';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
-interface SqlOptimizationResultProps {
-  isVerticalLayout?: boolean;
-  optimizationId?: string;
-}
+import { SqlOptimizationResultProps } from './index.type';
 
 const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
   isVerticalLayout = false,
-  optimizationId
+  optimizationResult,
+  optimizationResultStatus,
+  errorMessage,
+  optimizationResultLoading
 }) => {
   const dispatch = useDispatch();
-  const { projectName } = useCurrentProject();
 
   const [advisedIndex, setAdvisedIndex] = useState('');
-
-  const [optimizationResultStatus, setOptimizationResultStatus] =
-    useState<OptimizationResultStatus>();
-
-  const [errorMessage, setErrorMessage] = useState<string>();
-
-  const { data: optimizationResult, loading } = useRequest(
-    () =>
-      SqleApi.SqlOptimizationService.GetOptimizationSQLDetailV2({
-        project_name: projectName,
-        optimization_record_id: optimizationId ?? ''
-      }).then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          return res.data.data;
-        }
-      }),
-    {
-      onSuccess: () => {
-        setOptimizationResultStatus(OptimizationResultStatus.RESOLVED);
-      },
-      onError: (e) => {
-        setOptimizationResultStatus(OptimizationResultStatus.FAILED);
-        setErrorMessage(e.message);
-      }
-    }
-  );
 
   const { optimizedSql, optimizedQueryPlan } = useMemo(() => {
     const steps = optimizationResult?.optimize?.steps;
@@ -180,7 +147,7 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
   }, [optimizationResult]);
 
   return (
-    <Spin spinning={loading}>
+    <Spin spinning={optimizationResultLoading}>
       <SqlOptimizationResultContainerWrapper gutter={24}>
         <LeftContent
           optimizedSql={optimizedSql}

@@ -21,7 +21,8 @@ import {
   CustomSegmentedFilter,
   PageHeader,
   useTypedNavigate,
-  useTypedParams
+  useTypedParams,
+  useTypedQuery
 } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
@@ -42,6 +43,8 @@ const SqlFileStatementOverview: React.FC = () => {
     useTypedParams<
       typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
     >();
+
+  const extractQuery = useTypedQuery();
 
   const navigate = useTypedNavigate();
   const { requestErrorMessage, handleTableRequestError } =
@@ -97,6 +100,10 @@ const SqlFileStatementOverview: React.FC = () => {
         tableFilterInfo
       ]
     }
+  );
+
+  const searchParams = extractQuery(
+    ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
   );
 
   return (
@@ -172,6 +179,8 @@ const SqlFileStatementOverview: React.FC = () => {
         onChange={tableChange}
         taskId={taskId}
         isPaginationFixed
+        instanceName={searchParams?.instance_name ?? ''}
+        schema={searchParams?.schema ?? ''}
       />
     </SqlFileStatementOverviewStyleWrapper>
   );

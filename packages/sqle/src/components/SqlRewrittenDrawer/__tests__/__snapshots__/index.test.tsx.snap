@@ -8,7 +8,9 @@ exports[`SqlRewrittenDrawer should match snapshot 1`] = `
     open={true}
     originSqlInfo={
       {
+        "instanceName": "mysql",
         "number": 1,
+        "schema": "dms",
         "sql": "select * from table",
       }
     }

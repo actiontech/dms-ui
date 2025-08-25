@@ -159,17 +159,6 @@ export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
 
 export interface ISQLOptimizeV2Return extends IOptimizeSQLRes {}
 
-export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLParams {
-  project_name: string;
-
-  instance_name: string;
-
-  origin_sql: string;
-}
-
-export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLReturn
-  extends IGetOptimizationDetailRes {}
-
 export interface IGetOptimizationSQLDetailV2Params {
   project_name: string;
 

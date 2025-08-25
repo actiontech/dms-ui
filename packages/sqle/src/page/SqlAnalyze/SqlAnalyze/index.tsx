@@ -28,6 +28,8 @@ export type SqlAnalyzeProps = {
   initTime?: Dayjs;
   selectedPoint?: Array<IChartPoint | undefined>;
   setSelectedPoint?: Dispatch<SetStateAction<(IChartPoint | undefined)[]>>;
+  onCreateSqlOptimizationOrview?: () => void;
+  createSqlOptimizationLoading?: boolean;
 };
 
 export type ExecPlanParams = Pick<
@@ -40,6 +42,8 @@ export type ExecPlanParams = Pick<
   | 'initTime'
   | 'selectedPoint'
   | 'setSelectedPoint'
+  | 'onCreateSqlOptimizationOrview'
+  | 'createSqlOptimizationLoading'
 >;
 
 export type ExecPlanCostChartProps = {

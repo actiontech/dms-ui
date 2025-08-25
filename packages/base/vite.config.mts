@@ -114,13 +114,13 @@ export default defineConfig(() => {
       open: true,
       proxy: {
         '^(/v|/sqle/v)': {
-          target: 'http://10.186.62.13:11000/'
+          target: 'http://10.186.63.28:10000/'
         },
         '^/provision/v': {
-          target: 'http://10.186.62.13:11000/'
+          target: 'http://10.186.63.28:10000/'
         },
         '^/logo': {
-          target: 'http://10.186.62.13:11000/'
+          target: 'http://10.186.63.28:10000/'
         }
       },
       cors: true

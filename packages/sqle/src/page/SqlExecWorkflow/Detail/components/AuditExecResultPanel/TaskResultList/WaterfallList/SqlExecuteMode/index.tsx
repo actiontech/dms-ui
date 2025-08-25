@@ -23,7 +23,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   backupConflict,
   dbType,
   enableBackup,
-  taskStatus
+  taskStatus,
+  instanceName,
+  schema
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -173,6 +175,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
                 dbType={dbType}
                 enableBackup={enableBackup}
                 taskStatus={taskStatus}
+                instanceName={instanceName}
+                schema={schema}
               />
             </List.Item>
           );

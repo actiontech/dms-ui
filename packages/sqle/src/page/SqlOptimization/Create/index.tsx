@@ -12,7 +12,12 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
-import { BaseFormFields, SqlInfoFormFields } from '../index.type';
+import {
+  BaseFormFields,
+  OptimizationTypeEnum,
+  SqlInfoFormFields,
+  UploadTypeEnum
+} from '../index.type';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
@@ -20,9 +25,9 @@ import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
-
-// todo 后续统一移除掉 context 尽量统一用 redux 来管理
-export const FormSubmitStatusContext = React.createContext<boolean>(false);
+import { useDispatch, useSelector } from 'react-redux';
+import { updateSubmitLoading } from '../../../store/sqlOptimization';
+import { IReduxState } from '../../../store';
 
 const SqlOptimizationCreate = () => {
   const { t } = useTranslation();
@@ -37,10 +42,11 @@ const SqlOptimizationCreate = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const [
-    submitLoading,
-    { setTrue: setSubmitPending, setFalse: setSubmitDone }
-  ] = useBoolean();
+  const dispatch = useDispatch();
+
+  const submitLoading = useSelector(
+    (state: IReduxState) => state.sqlOptimization.submitLoading
+  );
 
   const [
     submitSuccessStatus,
@@ -50,15 +56,19 @@ const SqlOptimizationCreate = () => {
   const onSubmit = async () => {
     const baseValue = await baseForm.validateFields();
     const sqlInfoValue = await sqlInfoForm.validateFields();
-    setSubmitPending();
-
+    dispatch(updateSubmitLoading({ loading: true }));
     sqlOptimization
       .SQLOptimizeV2({
         optimization_name: baseValue.optimizationName,
         project_name: projectName,
         instance_name: sqlInfoValue.instanceName,
         schema_name: sqlInfoValue.instanceSchema,
-        sql_content: sqlInfoValue.sql,
+        sql_content:
+          sqlInfoValue.optimizationType === OptimizationTypeEnum.online
+            ? sqlInfoValue.sql
+            : sqlInfoValue.offlineSql,
+        metadata: sqlInfoValue.tableStructure,
+        explain_info: sqlInfoValue.executionPlan,
         input_sql_file: sqlInfoValue.sqlFile?.[0],
         input_mybatis_xml_file: sqlInfoValue.mybatisFile?.[0],
         input_zip_file: sqlInfoValue.zipFile?.[0],
@@ -73,7 +83,7 @@ const SqlOptimizationCreate = () => {
         }
       })
       .finally(() => {
-        setSubmitDone();
+        dispatch(updateSubmitLoading({ loading: false }));
       });
   };
 
@@ -85,7 +95,7 @@ const SqlOptimizationCreate = () => {
   useEffect(() => {
     baseForm.setFieldsValue({
       optimizationName: `${
-        OptimizationNameUploadTypePrefix[uploadType]
+        OptimizationNameUploadTypePrefix[uploadType ?? UploadTypeEnum.sql]
       }${dayjs().format('YYYYMMDDhhmmssSSS')}`
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -129,10 +139,8 @@ const SqlOptimizationCreate = () => {
           />
         }
       >
-        <FormSubmitStatusContext.Provider value={submitLoading}>
-          <BaseInfoForm form={baseForm} />
-          <SQLInfoForm form={sqlInfoForm} submit={onSubmit} />
-        </FormSubmitStatusContext.Provider>
+        <BaseInfoForm form={baseForm} />
+        <SQLInfoForm form={sqlInfoForm} submit={onSubmit} />
       </EmptyBox>
     </>
   );

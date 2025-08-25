@@ -202,6 +202,8 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           dbType={currentTask?.instance_db_type}
           enableBackup={currentTask?.enable_backup}
           taskStatus={currentTask?.status}
+          instanceName={currentTask?.instance_name}
+          schema={currentTask?.instance_schema}
         />
       </EmptyBox>
     </AuditExecResultPanelStyleWrapper>

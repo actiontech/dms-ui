@@ -27,6 +27,7 @@ interface QueryPlanDiffData {
 
 type SqlOptimizationReduxState = {
   modalStatus: ModalStatus;
+  submitLoading: boolean;
   diffModal: {
     currentDiffData: SqlDiffData | null;
   };
@@ -46,6 +47,7 @@ type SqlOptimizationReduxState = {
 
 const initialState: SqlOptimizationReduxState = {
   modalStatus: {},
+  submitLoading: false,
   diffModal: {
     currentDiffData: null
   },
@@ -105,6 +107,12 @@ const sqlOptimization = createSlice({
     ) {
       state.queryPlanDiffModal.currentQueryPlanDiffData = queryPlanDiffData;
     },
+    updateSubmitLoading(
+      state,
+      { payload: { loading } }: PayloadAction<{ loading: boolean }>
+    ) {
+      state.submitLoading = loading;
+    },
     ...commonModalReducer()
   }
 });
@@ -115,6 +123,7 @@ export const {
   updateOptimizationResultModalData,
   updateQueryPlanFlowModalData,
   updateQueryPlanDiffModalData,
+  updateSubmitLoading,
   initModalStatus: initSqlOptimizationModalStatus,
   updateModalStatus: updateSqlOptimizationModalStatus
 } = sqlOptimization.actions;

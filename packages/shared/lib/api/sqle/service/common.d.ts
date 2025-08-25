@@ -42,6 +42,7 @@ import {
   ObjectDiffResultComparisonResultEnum,
   OperationRecordListStatusEnum,
   OptimizationRecordStatusEnum,
+  OptimizationSQLDetailStatusEnum,
   RecordSourceNameEnum,
   RelatedSQLInfoSourceEnum,
   ReportPushConfigListPushUserTypeEnum,
@@ -2713,6 +2714,10 @@ export interface IOptimizationSQLDetail {
 
   origin_sql?: string;
 
+  status?: OptimizationSQLDetailStatusEnum;
+
+  status_detail?: string;
+
   total_analysis?: ITotalAnalysis;
 
   total_state?: string;
@@ -2735,9 +2740,11 @@ export interface IOptimizationsummary {
 }
 
 export interface IOptimizeSQLReq {
-  db_type?: string;
+  explain_info?: string;
 
   instance_name?: string;
+
+  metadata?: string;
 
   optimization_name?: string;
 

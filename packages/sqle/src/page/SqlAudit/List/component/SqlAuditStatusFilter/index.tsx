@@ -4,6 +4,9 @@ import { BasicSegmented } from '@actiontech/shared';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { sqlAuditStatusDictionary } from '../../../../../hooks/useStaticStatus/index.data';
 
+/**
+ * @deprecated
+ */
 const SqlAuditStatusFilter: React.FC<{
   status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all';
   onChange: (
