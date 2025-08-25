@@ -235,6 +235,28 @@ describe('base/router-sqle-ee', () => {
           expect(baseElement).toMatchSnapshot();
           expect(screen.getByText('sqlAuditDetail')).toBeInTheDocument();
         });
+
+        it('render route createSqlOptimization', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/sql-audit/create-optimization`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(
+            screen.getByText('sqlAuditCreateOptimization')
+          ).toBeInTheDocument();
+        });
+
+        it('render route optimizationResult', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/sql-audit/optimization-result/optimization_record_id`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('sqlOptimizationResult')).toBeInTheDocument();
+        });
       });
 
       it('render route pluginAuditList', async () => {
@@ -245,50 +267,6 @@ describe('base/router-sqle-ee', () => {
         await act(async () => jest.advanceTimersByTime(300));
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('pluginAuditList')).toBeInTheDocument();
-      });
-
-      describe('render route sqlOptimization', () => {
-        it('render route sqlOptimization', async () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sql-optimization`
-          ]);
-
-          await act(async () => jest.advanceTimersByTime(300));
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('sqlOptimizationList')).toBeInTheDocument();
-        });
-
-        it('render route sqlOptimizationCreate', async () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sql-optimization/create`
-          ]);
-
-          await act(async () => jest.advanceTimersByTime(300));
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('sqlOptimizationCreate')).toBeInTheDocument();
-        });
-
-        it('render route sqlOptimizationOverview', async () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sql-optimization/overview/testId`
-          ]);
-
-          await act(async () => jest.advanceTimersByTime(300));
-          expect(baseElement).toMatchSnapshot();
-          expect(
-            screen.getByText('sqlOptimizationOverview')
-          ).toBeInTheDocument();
-        });
-
-        it('render route sqlOptimizationDetail', async () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sql-optimization/detail/MySQL/testId/1`
-          ]);
-
-          await act(async () => jest.advanceTimersByTime(300));
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('sqlOptimizationDetail')).toBeInTheDocument();
-        });
       });
 
       it('render route dashboard', async () => {

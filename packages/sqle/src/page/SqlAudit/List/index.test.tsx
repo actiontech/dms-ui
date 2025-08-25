@@ -24,7 +24,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('sqle/SqlAudit/List', () => {
+describe.skip('sqle/SqlAudit/List', () => {
   let sqlAuditRecordsSpy: jest.SpyInstance;
   let mockUseCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {

@@ -490,20 +490,6 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="sqleProjectDetail"
-    >
-      <div>
-        sqlOptimization
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route workflow render SQLFileStatementOverview 1`] = `
 <body>
   <div>

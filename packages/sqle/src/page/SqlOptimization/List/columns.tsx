@@ -30,11 +30,8 @@ export const sqlOptimizationListColumns: (
   return [
     {
       dataIndex: 'optimization_id',
-      title: () => t('sqlOptimization.table.optimizationId')
-    },
-    {
-      dataIndex: 'number_of_rule',
-      title: () => t('sqlOptimization.table.numberOfRule')
+      title: () => t('sqlOptimization.table.optimizationId'),
+      show: false
     },
     {
       dataIndex: 'optimization_name',
@@ -43,6 +40,9 @@ export const sqlOptimizationListColumns: (
     {
       dataIndex: 'instance_name',
       title: () => t('sqlOptimization.table.instanceName'),
+      render: (instanceName) => {
+        return instanceName || '-';
+      },
       filterCustomType: 'select',
       filterKey: 'filter_instance_name'
     },
@@ -89,6 +89,10 @@ export const sqlOptimizationListColumns: (
         }
         return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
       }
+    },
+    {
+      dataIndex: 'number_of_rule',
+      title: () => t('sqlOptimization.table.numberOfRule')
     },
     {
       dataIndex: 'number_of_index',

@@ -181,21 +181,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "plugin-audit",
         "to": "/sqle/project/600300/plugin-audit",
       },
-      {
-        "icon": <RiseSquareOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-optimization",
-        "label": <ForwardRef(TypedLink)
-          to="/sqle/project/600300/sql-optimization"
-        >
-          智能调优
-        </ForwardRef(TypedLink)>,
-        "permission": "page:sql_optimization",
-        "structKey": "sql-optimization",
-        "to": "/sqle/project/600300/sql-optimization",
-      },
+      null,
       {
         "icon": <ComparisonOutlined
           height={18}

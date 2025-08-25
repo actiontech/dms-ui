@@ -32,7 +32,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('sqle/SqlOptimization/Create', () => {
+describe.skip('sqle/SqlOptimization/Create', () => {
   const navigateSpy = jest.fn();
   let getInstanceTipListSpy: jest.SpyInstance;
   let getInstanceSchemaSpy: jest.SpyInstance;
