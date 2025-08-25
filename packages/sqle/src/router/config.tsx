@@ -448,12 +448,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create.path,
         element: <PipelineConfigurationCreation />,
-        key: 'sqlOptimizationCreate'
+        key: 'createPipelineConfiguration'
       },
       {
         path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update.path,
         element: <PipelineConfigurationUpdate />,
-        key: 'sqlOptimizationCreate'
+        key: 'updatePipelineConfiguration'
       }
     ]
   },
@@ -475,7 +475,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update.path,
         element: <VersionManagementUpdate />,
-        key: 'versionManagementCreation'
+        key: 'versionManagementUpdate'
       },
       {
         path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail.path,
