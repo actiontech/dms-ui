@@ -7,7 +7,6 @@ import { ActionButton } from '@actiontech/shared';
 import { PlusOutlined } from '@actiontech/icons';
 import { ModalName } from '../../data/ModalName';
 import { MemberListTypeEnum } from './index.enum';
-
 export const MemberListPageHeaderActions = (
   onClick: (modalName: ModalName) => void,
   activePage: MemberListTypeEnum

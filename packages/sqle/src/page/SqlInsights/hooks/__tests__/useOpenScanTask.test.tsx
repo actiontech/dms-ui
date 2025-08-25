@@ -3,7 +3,7 @@ import useOpenScanTask from '../useOpenScanTask';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 import { useTypedNavigate } from '@actiontech/shared';

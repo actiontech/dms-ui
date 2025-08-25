@@ -2,9 +2,9 @@ import { useRequest } from 'ahooks';
 import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 import { decompressFromEncodedURIComponent } from 'lz-string';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
+import { jsonParse } from '@actiontech/dms-kit';
 import { IDatabaseDiffModifySQL } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { FormInstance } from 'antd';
 import {
   SqlAuditInfoFormFields,
@@ -12,7 +12,7 @@ import {
 } from '../../../../../../index.type';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useMemo } from 'react';
 
 type Params = {

@@ -1,18 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { Alert, Card, Space, Spin, Typography, message } from 'antd';
-import { BasicButton, BasicToolTip, Copy } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
+import { Copy } from '@actiontech/dms-kit';
 import SystemBasicTitle from '../components/BasicTitle';
 import { useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { GitSSHConfigStyleWrapper } from './style';
-
 const { Text, Paragraph } = Typography;
-
 const GitSSHConfig: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const {
     loading: getLoading,
     run: getPublicKey,
@@ -22,7 +20,6 @@ const GitSSHConfig: React.FC = () => {
       (res) => res.data.data?.public_key
     );
   });
-
   const { loading: generateLoading, run: generateSSHKey } = useRequest(
     () => {
       return SqleApi.ConfigurationService.genSSHPublicKey();
@@ -36,14 +33,12 @@ const GitSSHConfig: React.FC = () => {
       }
     }
   );
-
   const onCopy = () => {
     if (publicKey) {
       Copy.copyTextByTextarea(publicKey);
       messageApi.success(t('common.copied'));
     }
   };
-
   return (
     <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.gitSSH')}>
       {messageContextHolder}
@@ -94,5 +89,4 @@ const GitSSHConfig: React.FC = () => {
     </SystemBasicTitle>
   );
 };
-
 export default GitSSHConfig;

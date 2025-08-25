@@ -5,29 +5,23 @@ import {
   OptimizationRuleItemStyleWrapper,
   MarkdownPreviewModeStyleWrapper
 } from '../Common/style';
-import {
-  BasicTypographyEllipsis,
-  EmptyBox,
-  LazyLoadComponent,
-  TypedLink
-} from '@actiontech/shared';
+import { EmptyBox, LazyLoadComponent } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import RuleLevelIcon from '../../../RuleList/RuleLevelIcon';
 import { useToggle } from 'ahooks';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import rehypeSanitize from 'rehype-sanitize';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { CopySqlAction, ShowSqlDifferenceAction } from '../Common/actions';
 import RewrittenSqlCommonEditor from '../Common/RewrittenSqlCommonEditor';
-
 type Props = {
   dataSource: IRewriteSuggestion;
   originalSql: string;
   taskID: string;
   sqlNumber: number;
 };
-
 const RewrittenSuggestionItem: React.FC<Props> = ({
   dataSource,
   originalSql,
@@ -40,15 +34,12 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
     useToggle(true);
   const [showDetails, { toggle: toggleShowDetails }] = useToggle();
   const { projectID } = useCurrentProject();
-
   const displaySQL = useMemo(() => {
     if (!ddl_dcl) {
       return rewritten_sql;
     }
-
     return `${ddl_dcl}\n\n${rewritten_sql}`;
   }, [ddl_dcl, rewritten_sql]);
-
   return (
     <>
       <OptimizationRuleItemStyleWrapper
@@ -113,5 +104,4 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
     </>
   );
 };
-
 export default RewrittenSuggestionItem;

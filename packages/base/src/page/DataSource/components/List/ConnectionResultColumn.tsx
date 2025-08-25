@@ -1,22 +1,19 @@
 import { useTranslation } from 'react-i18next';
-import { BasicTag, BasicToolTip } from '@actiontech/shared';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { BasicTag, BasicToolTip } from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
 import { Space, Typography } from 'antd';
 import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-
 type Props = {
   connectionStatus?: ListDBServiceV2LastConnectionTestStatusEnum;
   connectionTestTime?: string;
   connectionErrorMessage?: string;
 };
-
 const ConnectionStatusColumn: React.FC<Props> = ({
   connectionStatus,
   connectionTestTime,
   connectionErrorMessage
 }) => {
   const { t } = useTranslation();
-
   if (
     connectionStatus ===
     ListDBServiceV2LastConnectionTestStatusEnum.connect_success
@@ -31,13 +28,18 @@ const ConnectionStatusColumn: React.FC<Props> = ({
           </Typography.Text>
         }
       >
-        <BasicTag style={{ height: 32 }} color="green" size="small">
+        <BasicTag
+          style={{
+            height: 32
+          }}
+          color="green"
+          size="small"
+        >
           {t('dmsDataSource.databaseList.connectSucceed')}
         </BasicTag>
       </BasicToolTip>
     );
   }
-
   if (
     connectionStatus ===
     ListDBServiceV2LastConnectionTestStatusEnum.connect_failed
@@ -61,14 +63,18 @@ const ConnectionStatusColumn: React.FC<Props> = ({
           </Space>
         }
       >
-        <BasicTag style={{ height: 32 }} color="red" size="small">
+        <BasicTag
+          style={{
+            height: 32
+          }}
+          color="red"
+          size="small"
+        >
           {t('dmsDataSource.databaseList.connectFailed')}
         </BasicTag>
       </BasicToolTip>
     );
   }
-
   return <>-</>;
 };
-
 export default ConnectionStatusColumn;

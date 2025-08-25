@@ -9,11 +9,11 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
   CompanyNoticeDisplayStatusEnum,
   SupportLanguage
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 
 jest.mock('react-redux', () => {

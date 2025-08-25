@@ -1,12 +1,6 @@
-import {
-  BasicEmpty,
-  BasicTable,
-  EmptyBox,
-  SQLRenderer
-} from '@actiontech/shared';
-
+import { BasicEmpty, BasicTable, EmptyBox } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import { ProcessListComStyleWrapper } from './style';
-
 const ProcessListCom = () => {
   return (
     <ProcessListComStyleWrapper>
@@ -14,7 +8,12 @@ const ProcessListCom = () => {
       <section className="basic-cont-wrapper">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <BasicTable
-            columns={[{ dataIndex: 'index', key: 'index' }]}
+            columns={[
+              {
+                dataIndex: 'index',
+                key: 'index'
+              }
+            ]}
             pagination={false}
           />
         </EmptyBox>
@@ -23,7 +22,12 @@ const ProcessListCom = () => {
       <section className="basic-cont-wrapper">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <BasicTable
-            columns={[{ dataIndex: 'index', key: 'index' }]}
+            columns={[
+              {
+                dataIndex: 'index',
+                key: 'index'
+              }
+            ]}
             pagination={false}
           />
         </EmptyBox>
@@ -44,5 +48,4 @@ WHERE ID != connection_id() AND info != '' AND db NOT IN ('information_schema','
     </ProcessListComStyleWrapper>
   );
 };
-
 export default ProcessListCom;

@@ -9,11 +9,11 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import ConfigExtraButtons from './conponents/ConfigExtraButtons';
 import ConfigField from './conponents/ConfigField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { switchFieldName } from './index.data';
 import {

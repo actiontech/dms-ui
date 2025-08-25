@@ -12,7 +12,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 
 describe('OverallRewrittenSuggestion', () => {
   const mockProps = {

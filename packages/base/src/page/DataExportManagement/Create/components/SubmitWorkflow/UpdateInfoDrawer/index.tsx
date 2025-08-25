@@ -1,4 +1,4 @@
-import { BasicDrawer } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/dms-kit';
 import useCreateDataExportReduxManage from '../../../hooks/index.redux';
 import useCreateExportTaskForm from '../../../hooks/useCreateExportTaskForm';
 import { useRef } from 'react';
@@ -7,7 +7,7 @@ import { Divider, Spin } from 'antd';
 import BaseInfoFormItem from '../../CreateTask/BaseInfoForm/BaseInfoFormItem';
 import { useTranslation } from 'react-i18next';
 import ExportSourceFormItem from '../../CreateTask/ExportSourceForm/ExportSourceFormItem';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import ExportMethodFormItem from '../../CreateTask/ExportMethodForm/ExportMethodFormItem';
 import {
   UpdateBseInfoFormStyleWrapper,
@@ -18,12 +18,9 @@ import {
 } from './style';
 import ExportFormAction from '../../CreateTask/ExportFormAction';
 import BaseInfoTag from './BaseInfoTag';
-
 const UpdateInfoDrawer: React.FC = () => {
   const { t } = useTranslation();
-
   const syncDataReady = useRef(false);
-
   const { formValues, updateModalStatus, updateDataExportInfoOpen } =
     useCreateDataExportReduxManage();
   const {
@@ -34,25 +31,28 @@ const UpdateInfoDrawer: React.FC = () => {
     formatSQLAction,
     auditLoading
   } = useCreateExportTaskForm();
-
   const closeHandle = () => {
     if (auditLoading) {
       return;
     }
-
     updateModalStatus({
       modalName: ModalName.DMS_UPDATE_EXPORT_TASK_INFO,
       status: false
     });
   };
-
   return (
     <BasicDrawer
       afterOpenChange={(open) => {
         if (open && !syncDataReady.current) {
-          baseForm.setFieldsValue({ ...formValues?.baseValues });
-          sourceForm.setFieldsValue({ ...formValues?.sourceValues });
-          methodForm.setFieldsValue({ ...formValues?.methodValues });
+          baseForm.setFieldsValue({
+            ...formValues?.baseValues
+          });
+          sourceForm.setFieldsValue({
+            ...formValues?.sourceValues
+          });
+          methodForm.setFieldsValue({
+            ...formValues?.methodValues
+          });
           syncDataReady.current = true;
         }
       }}
@@ -75,7 +75,11 @@ const UpdateInfoDrawer: React.FC = () => {
           <BaseInfoFormItem slot={<BaseInfoTag />} />
         </UpdateBseInfoFormStyleWrapper>
 
-        <Divider style={{ marginTop: 12 }} />
+        <Divider
+          style={{
+            marginTop: 12
+          }}
+        />
 
         <UpdateSourceInfoFormStyleWrapper
           labelAlign="left"
@@ -91,7 +95,11 @@ const UpdateInfoDrawer: React.FC = () => {
           <ExportSourceFormItem sourceForm={sourceForm} baseForm={baseForm} />
         </UpdateSourceInfoFormStyleWrapper>
 
-        <Divider style={{ marginTop: 0 }} />
+        <Divider
+          style={{
+            marginTop: 0
+          }}
+        />
 
         <UpdateMethodInfoFormStyleWrapper
           labelAlign="left"
@@ -122,5 +130,4 @@ const UpdateInfoDrawer: React.FC = () => {
     </BasicDrawer>
   );
 };
-
 export default UpdateInfoDrawer;

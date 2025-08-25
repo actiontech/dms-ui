@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { baseStoreData } from './base';
 import { SQLEStoreData } from 'sqle/src/store';
-import { findDuplicateKeys } from '@actiontech/shared/lib/utils/Common';
+import { findDuplicateKeys } from '@actiontech/dms-kit';
 
 // #if [DEV]
 const dupKeys = findDuplicateKeys([baseStoreData, SQLEStoreData]);

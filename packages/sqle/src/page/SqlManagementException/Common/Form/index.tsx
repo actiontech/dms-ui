@@ -1,39 +1,36 @@
 import { Alert, Form, Radio } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SqlManagementExceptionFormProps } from '../../index.type';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { whiteSpaceSql } from '@actiontech/dms-kit';
 import {
   useMonacoEditor,
   MonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { BasicInput, EmptyBox, BasicSelect } from '@actiontech/shared';
+import { DrawerFormLayout } from '@actiontech/dms-kit';
+import { BasicInput, EmptyBox, BasicSelect } from '@actiontech/dms-kit';
 import { SqlManagementExceptionMatchTypeOptions } from '../../index.data';
 import useInstance from '../../../../hooks/useInstance';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { WarningFilled } from '@actiontech/icons';
-
 const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   form,
   isUpdate
 }) => {
   const { t } = useTranslation();
-
-  const { editorDidMount } = useMonacoEditor(form, { formName: 'sql' });
-
+  const { editorDidMount } = useMonacoEditor(form, {
+    formName: 'sql'
+  });
   const matchType = Form.useWatch('type', form);
-
   const { updateInstanceList, generateInstanceSelectOption, loading } =
     useInstance();
-
   const { projectName } = useCurrentProject();
-
   useEffect(() => {
-    updateInstanceList({ project_name: projectName });
+    updateInstanceList({
+      project_name: projectName
+    });
   }, [updateInstanceList, projectName]);
-
   return (
     <Form form={form} layout="vertical" {...DrawerFormLayout}>
       <Form.Item
@@ -127,5 +124,4 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
     </Form>
   );
 };
-
 export default SqlManagementExceptionForm;

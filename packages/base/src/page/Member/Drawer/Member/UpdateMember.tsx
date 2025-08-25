@@ -3,7 +3,7 @@ import { message, Form, Space } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
@@ -13,11 +13,10 @@ import { IMemberFormFields } from '../index.type';
 import MemberForm from './MemberForm';
 import formatMemberRole from '../../Common/formatMemberRole';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { MemberDrawerStyledWrapper } from '../../style';
 import { IUpdateMemberParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
-
 const UpdateMember: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -30,7 +29,6 @@ const UpdateMember: React.FC = () => {
     visible: state.member.modalStatus[ModalName.DMS_Update_Member],
     selectMember: state.member.selectMember
   }));
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IUpdateMemberParams = {
@@ -59,7 +57,6 @@ const UpdateMember: React.FC = () => {
         submitFinish();
       });
   };
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -69,7 +66,6 @@ const UpdateMember: React.FC = () => {
       })
     );
   };
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -83,7 +79,6 @@ const UpdateMember: React.FC = () => {
       });
     }
   }, [form, selectMember, visible]);
-
   return (
     <MemberDrawerStyledWrapper
       open={visible}
@@ -107,5 +102,4 @@ const UpdateMember: React.FC = () => {
     </MemberDrawerStyledWrapper>
   );
 };
-
 export default UpdateMember;

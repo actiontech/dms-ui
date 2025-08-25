@@ -1,12 +1,9 @@
 import { styled } from '@mui/material/styles';
-
 import { AuditResultMessageProps } from './index.type';
-import { BasicTag } from '@actiontech/shared';
-
+import { BasicTag } from '@actiontech/dms-kit';
 export const ResultIconTagStyleWrapper = styled(BasicTag)`
   width: fit-content;
 `;
-
 export const AuditResultMessageStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
@@ -27,7 +24,6 @@ export const AuditResultMessageStyleWrapper = styled('div')`
     word-break: break-all;
   }
 `;
-
 export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
   showAnnotation: AuditResultMessageProps['showAnnotation'];
 }>`
@@ -60,7 +56,6 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
     }
   }
 `;
-
 export const AuditExceptionItemStyleWrapper = styled('div')`
   &.exception-item {
     .exception-item-rule-desc-wrapper {

@@ -1,8 +1,10 @@
-import { BasicButton } from '@actiontech/shared/lib/components/BasicButton';
-import { BasicModal } from '@actiontech/shared/lib/components';
+import {
+  BasicButton,
+  BasicModal,
+  ReminderInformation
+} from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { ReminderInformation } from '@actiontech/shared/lib/components/ReminderInformation';
 import { ConnectableInfoModalWrapper } from '../style';
 
 interface IConnectableErrorModalProps {

@@ -4,7 +4,7 @@ import { ProjectSelectorLabelStyleWrapper } from '../../../../Nav/SideMenu/Proje
 import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
 import { NotFoundProjectProps } from './index.type';
 import { FlagFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useTypedNavigate } from '@actiontech/shared';
 
 const NotFoundProject: React.FC<NotFoundProjectProps> = ({

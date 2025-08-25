@@ -1,15 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { CreateExportTaskFormEntryProps } from '../index.type';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemSubTitle } from '@actiontech/dms-kit';
 import ExportTaskFormItem from './ExportSourceFormItem';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { ExportSourceFormStyleWrapper } from './style';
-import { BasicToolTip } from '@actiontech/shared';
-
+import { BasicToolTip } from '@actiontech/dms-kit';
 const ExportSourceForm: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm'>
 > = ({ sourceForm, baseForm }) => {
@@ -38,5 +37,4 @@ const ExportSourceForm: React.FC<
     </ExportSourceFormStyleWrapper>
   );
 };
-
 export default ExportSourceForm;

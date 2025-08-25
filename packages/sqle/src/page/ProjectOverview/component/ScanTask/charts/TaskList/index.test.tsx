@@ -14,7 +14,7 @@ import {
   barChartToolTipCustomContent
 } from './index.data';
 import { SqleTheme } from '../../../../../../types/theme.type';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 
 describe('page/ProjectOverview/TaskList', () => {
   ignoreConsoleErrors([

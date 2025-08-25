@@ -1,5 +1,5 @@
-import { BasicSegmented } from '@actiontech/shared';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicSegmented } from '@actiontech/dms-kit';
+import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
 import AuditResultTable from './Table';
 import { useState } from 'react';
 import { AuditResultListProps } from './index.type';
@@ -7,10 +7,9 @@ import { AuditResultStyleWrapper } from './style';
 import { useRequest } from 'ahooks';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import DbServiceSegmentedLabel from '../DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const AuditResultList: React.FC<AuditResultListProps> = ({
   taskIDs,
   projectID,
@@ -18,13 +17,10 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   onSuccessGetDataExportTaskSqls
 }) => {
   const [tasks, setTasks] = useState<IGetDataExportTask[]>([]);
-
   const [currentTaskID, setCurrentTaskID] = useState<string>();
-
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
   };
-
   useRequest(
     () =>
       DataExportTask.BatchGetDataExportTask({
@@ -43,7 +39,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       refreshDeps: taskIDs
     }
   );
-
   return (
     <AuditResultStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
@@ -75,5 +70,4 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     </AuditResultStyleWrapper>
   );
 };
-
 export default AuditResultList;

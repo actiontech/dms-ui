@@ -1,7 +1,7 @@
 import {
   DMS_DEFAULT_WEB_LOGO_URL,
   DMS_DEFAULT_WEB_TITLE
-} from '@actiontech/shared/lib/data/common';
+} from '@actiontech/dms-kit';
 import { useDispatch, useSelector } from 'react-redux';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';

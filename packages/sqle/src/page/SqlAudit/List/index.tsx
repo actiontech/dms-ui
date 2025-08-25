@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { message } from 'antd';
-import { PageHeader, useTypedQuery } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { useTypedQuery } from '@actiontech/shared';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -29,19 +30,16 @@ import SqlAuditListColumn, {
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { useBoolean } from 'ahooks';
 import { SqlAuditPageHeaderActions } from './actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ISQLAuditRecordExtraParams } from './index.type';
-
 const SqlAuditList = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
   const extractQueries = useTypedQuery();
-
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -65,9 +63,7 @@ const SqlAuditList = () => {
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
   >('all');
-
   const { instanceIDOptions, updateInstanceList } = useInstance();
-
   const {
     data: dataList,
     loading,
@@ -84,7 +80,6 @@ const SqlAuditList = () => {
         fuzzy_search_tags: searchKeyword,
         filter_sql_audit_record_ids: filterDataFromUrl
       };
-
       return handleTableRequestError(
         sql_audit_record.getSQLAuditRecordsV1(params)
       );
@@ -114,7 +109,6 @@ const SqlAuditList = () => {
       }
     }
   );
-
   const updateTags = useCallback(
     async (tags: string[], id: string) => {
       sql_audit_record
@@ -135,7 +129,6 @@ const SqlAuditList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [projectName]
   );
-
   const columns = useMemo(
     () => SqlAuditListColumn(projectID, projectName, updateTags),
     [projectID, projectName, updateTags]
@@ -155,7 +148,12 @@ const SqlAuditList = () => {
     >(columns, updateTableFilterInfo, ExtraFilterMeta());
   const filterCustomProps = useMemo(() => {
     return new Map<keyof ISQLAuditRecordExtraParams, FilterCustomProps>([
-      ['instance_name', { options: instanceIDOptions }],
+      [
+        'instance_name',
+        {
+          options: instanceIDOptions
+        }
+      ],
       [
         'auditTime',
         {
@@ -164,20 +162,16 @@ const SqlAuditList = () => {
       ]
     ]);
   }, [instanceIDOptions]);
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName
     });
   }, [projectName, updateInstanceList]);
-
   const pageLoading = useMemo(
     () => (polling ? false : loading),
     [polling, loading]
   );
-
   const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
-
   return (
     <>
       {messageContextHolder}
@@ -190,7 +184,10 @@ const SqlAuditList = () => {
       {/* table */}
       <ActiontechTableWrapper loading={pageLoading} setting={tableSetting}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: pageLoading }}
+          refreshButton={{
+            refresh,
+            disabled: pageLoading
+          }}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -231,5 +228,4 @@ const SqlAuditList = () => {
     </>
   );
 };
-
 export default SqlAuditList;

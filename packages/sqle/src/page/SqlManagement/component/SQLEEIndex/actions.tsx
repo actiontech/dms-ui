@@ -1,7 +1,7 @@
 import { t } from '../../../../locale';
 import { ModalName } from '../../../../data/ModalName';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionsConstantType

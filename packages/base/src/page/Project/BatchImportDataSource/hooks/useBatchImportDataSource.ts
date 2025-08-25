@@ -4,13 +4,10 @@ import {
   BatchImportDataSourceFormValueType,
   FileUploadCheckStatusType
 } from '../index.type';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
-import {
-  MIMETypeEnum,
-  ResponseBlobJsonType
-} from '@actiontech/shared/lib/enum';
-import { isExportFileResponse } from '@actiontech/shared/lib/utils/Common';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { jsonParse } from '@actiontech/dms-kit';
+import { MIMETypeEnum, ResponseBlobJsonType } from '@actiontech/dms-kit';
+import { isExportFileResponse } from '@actiontech/dms-kit';
 import { AxiosResponse } from 'axios';
 import { useTranslation } from 'react-i18next';
 import { IImportDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';

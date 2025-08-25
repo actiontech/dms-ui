@@ -3,10 +3,9 @@ import ReportDrawer from '../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from './index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
   open,
@@ -20,7 +19,6 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
     auditResultRecord?.audit_result ?? [],
     dbType ?? ''
   );
-
   return (
     <ReportDrawer
       open={open}
@@ -62,5 +60,4 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
     />
   );
 };
-
 export default AuditResultDrawer;

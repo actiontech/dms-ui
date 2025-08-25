@@ -1,4 +1,4 @@
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
 
 export const ConfirmMethodFormItemLabelStyleWrapper = styled(FormItemLabel)`

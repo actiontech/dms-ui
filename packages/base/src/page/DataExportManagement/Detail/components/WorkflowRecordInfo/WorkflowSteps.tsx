@@ -4,8 +4,8 @@ import { WorkflowStepsProps } from './index.type';
 import { useCallback, useMemo } from 'react';
 import { CustomSteps, WorkflowStepsItemStyleWrapper } from './style';
 import { Space } from 'antd';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { EmptyBox } from '@actiontech/shared';
+import { formatTime } from '@actiontech/dms-kit';
+import { EmptyBox } from '@actiontech/dms-kit';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IWorkflowStep } from '@actiontech/shared/lib/api/base/service/common';
@@ -16,7 +16,6 @@ import {
   PlusCircleFilled,
   CheckCircleFilled
 } from '@actiontech/icons';
-
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
   currentStepNumber,
@@ -38,11 +37,9 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     ) {
       return 2;
     }
-
     if (workflowStatus === WorkflowRecordStatusEnum.wait_for_export) {
       return 3;
     }
-
     if (
       [
         WorkflowRecordStatusEnum.exporting,
@@ -54,7 +51,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       return 4;
     }
   }, [currentStepNumber, workflowStatus]);
-
   const renderTitle = useCallback(
     (type?: string) => {
       if (type === 'create') {
@@ -68,16 +64,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       if (type === 'approve') {
         return t('dmsDataExport.detail.record.steps.approve');
       }
-
       if (type === 'execute') {
         return t('dmsDataExport.detail.record.steps.execute');
       }
-
       return t('dmsDataExport.detail.operator.unknown');
     },
     [t]
   );
-
   const renderOrderStepsItemContent = useCallback(
     (step: IWorkflowStep) => {
       if (step.type === 'execute') {
@@ -142,7 +135,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       taskStatusNumber?.exporting
     ]
   );
-
   const renderOrderStepsItem = useCallback(
     (title: string, step: any) => {
       return (
@@ -155,13 +147,11 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     },
     [renderOrderStepsItemContent]
   );
-
   const renderOrderStepsItemIcon = useCallback(
     (type?: string) => {
       if (type === 'create') {
         return <PlusCircleFilled color="currentColor" />;
       }
-
       if (type === 'approve') {
         const isRejected = workflowStatus === WorkflowRecordStatusEnum.rejected;
         return (
@@ -171,7 +161,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           />
         );
       }
-
       if (type === 'execute') {
         if (
           workflowStatus &&
@@ -182,7 +171,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         ) {
           return <CloseCircleFilled color={sharedTheme.uiToken.colorWarning} />;
         }
-
         if (workflowStatus === WorkflowRecordStatusEnum.failed) {
           return <CloseCircleFilled color={sharedTheme.uiToken.colorWarning} />;
         }
@@ -191,7 +179,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     },
     [workflowStatus, sharedTheme.uiToken.colorWarning]
   );
-
   const stepsItems = useMemo(() => {
     if (!workflowSteps) {
       return [];
@@ -202,7 +189,9 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       {
         type: 'create',
         number: 1,
-        operation_user: { name: createUser },
+        operation_user: {
+          name: createUser
+        },
         operation_time: createTime
       },
       {
@@ -210,14 +199,18 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         type: 'approve',
         number: 2
       },
-      { type: 'execute', number: 3 }
+      {
+        type: 'execute',
+        number: 3
+      }
     ].map<StepProps>((v, i) => {
       const isNextRejected = workflowSteps[i + 1]?.state === 'rejected';
-
       return {
         title: renderOrderStepsItem(renderTitle(v.type), v),
         icon: renderOrderStepsItemIcon(v.type),
-        className: classNames({ 'prev-rejected-step': isNextRejected })
+        className: classNames({
+          'prev-rejected-step': isNextRejected
+        })
       };
     });
   }, [
@@ -243,5 +236,4 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     </div>
   );
 };
-
 export default WorkflowSteps;

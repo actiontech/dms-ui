@@ -14,7 +14,7 @@ import { Trans } from 'react-i18next';
 import { TasksResultCardStyleWrapper } from './style';
 import { SqlFileOutlined } from '@actiontech/icons';
 import { TypedLink } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,

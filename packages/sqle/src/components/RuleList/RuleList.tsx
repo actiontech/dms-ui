@@ -4,10 +4,10 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import {
   EmptyBox,
   BasicButton,
-  basicTooltipCommonProps,
   BasicToolTip,
   BasicEmpty
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { basicTooltipCommonProps } from '@actiontech/dms-kit';
 import { RuleListProps, RuleStatusEnum, EnumActionType } from './index.type';
 import {
   EmptyRuleStyleWrapper,
@@ -36,9 +36,7 @@ import {
 } from '@actiontech/icons';
 import { RuleCategoryDictionaryGroup } from '../../hooks/useRuleCategories/index.data';
 import { usePermission } from '@actiontech/shared/lib/features';
-
 const scrollStepRange = 30;
-
 export const pageRemainingHeight = (
   pageHeaderHeight: RuleListProps['pageHeaderHeight']
 ) => {
@@ -50,7 +48,6 @@ export const pageRemainingHeight = (
   // #endif
   return headerHeight;
 };
-
 const RuleList: React.FC<RuleListProps> = ({
   rules = [],
   pageHeaderHeight,
@@ -62,18 +59,14 @@ const RuleList: React.FC<RuleListProps> = ({
   tags
 }) => {
   const { t } = useTranslation();
-
   const { moduleFeatureSupport } = usePermission();
-
   const isDisabled = useMemo(
     () => actionType === RuleStatusEnum.disabled,
     [actionType]
   );
-
   const currentFilterTagList = useMemo(() => {
     return tags?.split(',') ?? [];
   }, [tags]);
-
   const renderLevelIcon = (level?: RuleResV1LevelEnum) => {
     const levelIcon = () => {
       if (level === RuleResV1LevelEnum.error) {
@@ -93,12 +86,10 @@ const RuleList: React.FC<RuleListProps> = ({
       </div>
     );
   };
-
   const renderRuleCategory = (categories: IRuleResV1['categories']) => {
     if (!categories) {
       return;
     }
-
     return Object.keys(categories)?.map((category, index) => {
       return (
         <RuleItemTagStyleWrapper
@@ -122,7 +113,6 @@ const RuleList: React.FC<RuleListProps> = ({
       );
     });
   };
-
   const renderParams = (params?: IRuleParamResV1[]) => {
     if (!params) {
       return undefined;
@@ -138,7 +128,6 @@ const RuleList: React.FC<RuleListProps> = ({
       </RuleItemTagStyleWrapper>
     );
   };
-
   const renderLevelContent = (rule: IRuleResV1) => {
     return (
       <div className="level-content">
@@ -188,7 +177,6 @@ const RuleList: React.FC<RuleListProps> = ({
       </div>
     );
   };
-
   const renderAction = (rule: IRuleResV1) => {
     return (
       <section className="action-wrapper">
@@ -256,17 +244,14 @@ const RuleList: React.FC<RuleListProps> = ({
       </section>
     );
   };
-
   const [scrollData, setScrollData] = useState<IRuleResV1[]>([]);
   const stepRef = useRef(0);
   const [currentRuleDetail, setCurrentRuleDetail] = useState<IRuleResV1>();
   const [visible, { setTrue: showRuleDetail, setFalse: hideRuleDetail }] =
     useBoolean();
-
   const onScroll = () => {
     setRulesRenderData();
   };
-
   const setRulesRenderData = () => {
     if (!rules.length) return;
     const step = stepRef.current;
@@ -297,9 +282,7 @@ const RuleList: React.FC<RuleListProps> = ({
       stepRef.current = step + 1;
     }
   };
-
   const rulesRef = useRef<IRuleResV1[]>();
-
   useEffect(() => {
     // fix Warning: Maximum update depth exceeded
     if (!isEqual(rulesRef.current, rules)) {
@@ -310,7 +293,6 @@ const RuleList: React.FC<RuleListProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rules]);
-
   return (
     <>
       <RulesStyleWrapper
@@ -382,5 +364,4 @@ const RuleList: React.FC<RuleListProps> = ({
     </>
   );
 };
-
 export default RuleList;

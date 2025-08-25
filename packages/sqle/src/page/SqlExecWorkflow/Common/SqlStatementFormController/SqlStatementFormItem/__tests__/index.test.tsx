@@ -5,7 +5,7 @@ import { Form } from 'antd';
 import SqlStatementFormItem from '..';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

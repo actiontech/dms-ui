@@ -1,21 +1,19 @@
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
 import {
   MonacoEditor,
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { whiteSpaceSql } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { ExportMethodEnum } from './index.enum';
-import { ModeSwitcher } from '@actiontech/shared';
+import { ModeSwitcher } from '@actiontech/dms-kit';
 import { PanelCardOutlined } from '@actiontech/icons';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
-
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 const ExportMethodFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'methodForm'>
 > = ({ methodForm }) => {
   const { t } = useTranslation();
-
   const { editorDidMount } = useMonacoEditor(methodForm, {
     formName: 'sql'
   });
@@ -27,7 +25,9 @@ const ExportMethodFormItem: React.FC<
             {
               label: t('dmsDataExport.create.form.method.manualInput'),
               value: ExportMethodEnum.sql,
-              colProps: { span: 8 },
+              colProps: {
+                span: 8
+              },
               icon: <PanelCardOutlined width={18} height={18} />
             }
           ]}
@@ -60,5 +60,4 @@ const ExportMethodFormItem: React.FC<
     </>
   );
 };
-
 export default ExportMethodFormItem;

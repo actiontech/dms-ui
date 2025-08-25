@@ -1,7 +1,7 @@
 import i18n from 'i18next';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { Tooltip } from '@ant-design/plots';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToNumberPercent } from '@actiontech/dms-kit';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 
 export const renderTooltipFormatter: Tooltip['formatter'] = (item) => {

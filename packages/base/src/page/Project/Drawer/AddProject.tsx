@@ -9,27 +9,21 @@ import { IReduxState } from '../../../store';
 import { updateProjectModalStatus } from '../../../store/project';
 import EventEmitter from '../../../utils/EventEmitter';
 import ProjectForm from './ProjectForm/ProjectForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ProjectFormFields } from './ProjectForm';
 import { IAddProjectV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
-
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
 const AddProject: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [form] = useForm<ProjectFormFields>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const visible = useSelector(
     (state: IReduxState) => state.project.modalStatus[ModalName.DMS_Add_Project]
   );
-
   const closeDrawer = () => {
     form.resetFields();
     dispatch(
@@ -39,7 +33,6 @@ const AddProject: React.FC = () => {
       })
     );
   };
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IAddProjectV2Params = {
@@ -69,7 +62,6 @@ const AddProject: React.FC = () => {
         submitFinish();
       });
   };
-
   return (
     <>
       <BasicDrawer
@@ -98,5 +90,4 @@ const AddProject: React.FC = () => {
     </>
   );
 };
-
 export default AddProject;

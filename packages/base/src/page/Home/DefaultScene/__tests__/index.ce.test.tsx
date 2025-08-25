@@ -4,7 +4,7 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import CEDefaultScene from '../index.ce';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 describe('test base/home/CEDefaultScene', () => {
   it('should match snapshot when role is admin', () => {

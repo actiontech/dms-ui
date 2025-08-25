@@ -1,12 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { BasicInput, BasicSwitch } from '@actiontech/shared';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
+import { BasicInput, BasicSwitch } from '@actiontech/dms-kit';
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { validatorPort } from '@actiontech/dms-kit';
 import { Form } from 'antd';
-
 const ConfigField = () => {
   const { t } = useTranslation();
   const updatePassword = Form.useWatch('update_password');
@@ -17,7 +13,11 @@ const ConfigField = () => {
         name="enable_ssl"
         valuePropName="checked"
         className="has-required-style"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicSwitch />
       </FormItemLabel>
@@ -25,7 +25,11 @@ const ConfigField = () => {
         label={t('dmsSystem.ldap.ldapServerHost')}
         name="ldap_server_host"
         className="has-required-style"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -87,7 +91,11 @@ const ConfigField = () => {
         label={t('dmsSystem.ldap.ldapConnectPwd')}
         name="ldap_connect_pwd"
         className="has-required-style"
-        rules={[{ required: updatePassword }]}
+        rules={[
+          {
+            required: updatePassword
+          }
+        ]}
         hidden={!updatePassword}
       >
         <BasicInput.Password
@@ -163,5 +171,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

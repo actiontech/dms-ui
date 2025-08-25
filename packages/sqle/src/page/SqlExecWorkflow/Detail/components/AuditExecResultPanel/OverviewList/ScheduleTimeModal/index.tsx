@@ -1,4 +1,4 @@
-import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
+import { timeAddZero } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { Form } from 'antd';
 import { useForm } from 'antd/es/form/Form';
@@ -8,19 +8,18 @@ import {
   BasicButton,
   BasicModal,
   BasicTag,
-  EmptyBox,
-  ToggleTokensOptionsType
-} from '@actiontech/shared';
+  EmptyBox
+} from '@actiontech/dms-kit';
+import { ToggleTokensOptionsType } from '@actiontech/dms-kit';
 import { ScheduleTimeFormFields, ScheduleTimeModalProps } from './index.type';
-import { FormItemNoLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
+import { FormItemNoLabelStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/FormItem/style';
 import dayjs, { Dayjs } from 'dayjs';
-import { BasicDatePicker } from '@actiontech/shared';
+import { BasicDatePicker } from '@actiontech/dms-kit';
 import ConfirmationSettingForm from './components/ConfirmationSettingForm';
 import { useEffect, useState } from 'react';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { ScheduleTimeModelDescribeStyleWrapper } from './style';
 import { checkTimeInWithMaintenanceTime } from '../../../../../Common/utils';
-
 const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
   open,
   closeScheduleModal,
@@ -39,12 +38,9 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     'notification_confirmation',
     form
   );
-
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
-
   const [confirmTypeTokens, setConfirmTypeTokens] =
     useState<ToggleTokensOptionsType>([]);
-
   useEffect(() => {
     form.setFieldValue('confirmation_method', undefined);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -59,7 +55,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     form.resetFields();
     closeScheduleModal();
   };
-
   const disabledDate = (current: Dayjs) => {
     return current && current <= dayjs().startOf('day');
   };
@@ -67,7 +62,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     const current = dayjs(value);
     const isToday =
       dayjs(value).format('YYYY-MM-DD') === dayjs().format('YYYY-MM-DD');
-
     let allHours = range(0, 24);
     if (maintenanceTime.length > 0) {
       maintenanceTime.forEach((item) => {
@@ -81,7 +75,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     if (maintenanceTime.length === 0 && !!value) {
       allHours = allHours.fill(-1);
     }
-
     if (isToday) {
       range(0, dayjs().hour()).forEach((item, i) => {
         allHours[item] = i;
@@ -93,7 +86,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
       }
       return [...sum, prev];
     }, []);
-
     const allMinutes: Set<number> = new Set();
     const hour = current.hour();
     if (!Number.isNaN(hour)) {
@@ -128,7 +120,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
         });
       }
     }
-
     if (isToday && hour === dayjs().hour()) {
       range(0, dayjs().minute()).forEach((item) => {
         allMinutes.delete(item);
@@ -142,7 +133,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
       disabledMinutes: () => disabledMinutes
     };
   };
-
   const createDefaultRangeTime = () => {
     if (maintenanceTime.length === 0) {
       return dayjs('00:00:00', 'HH:mm:ss');
@@ -151,7 +141,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     const minute = maintenanceTime[0].maintenance_start_time?.minute ?? 0;
     return dayjs(`${timeAddZero(hour)}:${timeAddZero(minute)}:00`, 'HH:mm:ss');
   };
-
   const scheduleTimeHandle = async () => {
     const values = await form.validateFields();
     scheduleStart();
@@ -166,7 +155,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
       resetAndCloseScheduleModal();
     });
   };
-
   return (
     <BasicModal
       title={t('execWorkflow.detail.operator.onlineRegularly')}
@@ -181,7 +169,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             // #if [ee]
             disabled={submitButtonDisabled}
             // #endif
-
             type="primary"
             onClick={scheduleTimeHandle}
             loading={scheduleLoading}
@@ -234,7 +221,6 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
                     t('execWorkflow.detail.operator.execScheduledBeforeNow')
                   );
                 }
-
                 if (checkTimeInWithMaintenanceTime(rule, maintenanceTime)) {
                   return Promise.resolve();
                 }
@@ -266,5 +252,4 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     </BasicModal>
   );
 };
-
 export default ScheduleTimeModal;

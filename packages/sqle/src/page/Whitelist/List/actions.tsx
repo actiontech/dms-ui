@@ -7,7 +7,6 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { PlusOutlined } from '@actiontech/icons';
-
 export const WhitelistTableActions: (
   onUpdate: (record: IAuditWhitelistResV1) => void,
   onDelete: (whitelistId: number) => void
@@ -28,7 +27,9 @@ export const WhitelistTableActions: (
       {
         key: 'remove-whitelist',
         text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
+        buttonProps: () => ({
+          danger: true
+        }),
         confirm: (record) => ({
           title: t('whitelist.operate.confirmDelete'),
           onConfirm: () => onDelete(record?.audit_whitelist_id ?? 0)
@@ -38,7 +39,6 @@ export const WhitelistTableActions: (
     ]
   };
 };
-
 export const WhitelistPageHeaderActions = (
   openCreateWhitelistModal: () => void
 ): Record<'create-whitelist', React.ReactNode> => ({

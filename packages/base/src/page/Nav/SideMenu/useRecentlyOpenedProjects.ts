@@ -1,5 +1,5 @@
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { StorageKey } from '@actiontech/dms-kit';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { cloneDeep, remove } from 'lodash';
 import { useCallback, useEffect, useMemo, useState } from 'react';

@@ -1,8 +1,7 @@
 import { PopconfirmProps, SpaceProps } from 'antd';
-import { BasicButtonProps } from '../BasicButton';
 import { Key, ReactNode } from 'react';
 import { RoutePathValue, TypedLinkProps } from '../TypedRouter';
-import { BasicTooltipProps } from '../BasicToolTip';
+import { BasicButtonProps, BasicTooltipProps } from '@actiontech/dms-kit';
 
 type ActionButtonBase = Omit<BasicButtonProps, 'children'> & {
   text?: ReactNode;

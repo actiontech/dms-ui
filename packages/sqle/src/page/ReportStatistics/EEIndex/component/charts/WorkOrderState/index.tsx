@@ -7,11 +7,11 @@ import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import useOrderStateBar from './useOrderStateBar';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import { AxiosResponse } from 'axios';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { IWorkflowStatusCountV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetWorkflowStatusCountV1Return } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToNumberPercent } from '@actiontech/dms-kit';
 
 /**
  * 注意：

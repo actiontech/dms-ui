@@ -3,7 +3,7 @@ import {
   AsyncRewriteTaskStatusEnum,
   RewriteSuggestionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit';
 import RewriteProgressDisplay from '../../components/RewriteProgressDisplay/index';
 import {
   IRewriteProgressDisplayProps,

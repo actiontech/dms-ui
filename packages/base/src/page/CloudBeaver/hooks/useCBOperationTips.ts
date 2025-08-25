@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useState, useMemo } from 'react';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
 import { IGetCBOperationLogTipsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 

@@ -1,4 +1,4 @@
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';

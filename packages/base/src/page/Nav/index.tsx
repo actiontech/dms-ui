@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
+import { LayoutStyleWrapper } from '@actiontech/dms-kit';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 
 // #if [ee]

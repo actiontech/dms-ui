@@ -1,9 +1,9 @@
 import { t } from '../../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { Typography } from 'antd';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { ProfileFilled } from '@actiontech/icons';
 import { TypedLink } from '@actiontech/shared';
 

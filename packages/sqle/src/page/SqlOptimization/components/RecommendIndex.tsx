@@ -1,14 +1,13 @@
 import { SqlOptimizationSqlBlockStyleWrapper } from '../style';
-import { EmptyBox, SQLRenderer } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
 import { LikeFilled } from '@actiontech/icons';
-
-const RecommendIndex: React.FC<{ recommendations?: string[] }> = ({
-  recommendations
-}) => {
+const RecommendIndex: React.FC<{
+  recommendations?: string[];
+}> = ({ recommendations }) => {
   const { t } = useTranslation();
-
   return (
     <SqlOptimizationSqlBlockStyleWrapper>
       <EmptyBox
@@ -29,5 +28,4 @@ const RecommendIndex: React.FC<{ recommendations?: string[] }> = ({
     </SqlOptimizationSqlBlockStyleWrapper>
   );
 };
-
 export default RecommendIndex;

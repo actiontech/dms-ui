@@ -1,8 +1,8 @@
 import { renderHook, act } from '@testing-library/react';
 import useRecentlySelectedZone, { DEFAULT_MAX_SELECTED_ZONE_NUMBER } from '..';
 import { useSelector, useDispatch } from 'react-redux';
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { StorageKey } from '@actiontech/dms-kit';
 import { cloneDeep } from 'lodash';
 import {
   updateMemorizedAvailabilityZone,
@@ -15,8 +15,8 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn()
 }));
 
-jest.mock('@actiontech/shared', () => ({
-  ...jest.requireActual('@actiontech/shared'),
+jest.mock('@actiontech/dms-kit', () => ({
+  ...jest.requireActual('@actiontech/dms-kit'),
   LocalStorageWrapper: {
     get: jest.fn(),
     set: jest.fn()

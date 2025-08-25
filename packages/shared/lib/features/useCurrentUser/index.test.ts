@@ -1,7 +1,7 @@
 import useCurrentUser from '.';
 import { renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
-import { SupportLanguage, SupportTheme, SystemRole } from '../../enum';
+import { SupportLanguage, SupportTheme, SystemRole } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { IUidWithName, IUserBindProject } from '../../api/base/service/common';
 

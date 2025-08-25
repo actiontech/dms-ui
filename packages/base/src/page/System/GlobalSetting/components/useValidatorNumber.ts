@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { message } from 'antd';
-import { integerValidate } from '@actiontech/shared/lib/utils/Common';
+import { integerValidate } from '@actiontech/dms-kit';
 
 const useValidatorNumber = () => {
   const { t } = useTranslation();

@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import useInitDataWithRequest from './hooks/useInitDataWithRequest';
 import { Spin } from 'antd';
 import { WorkflowDetailStyleWrapper } from './style';
-import { EmptyBox, PageHeader } from '@actiontech/shared';
+import { EmptyBox, PageHeader } from '@actiontech/dms-kit';
 import BackToList from '../Common/BackToList';
 import WorkflowDetailPageHeaderExtra from './components/PageHeaderExtra';
 import useGenerateWorkflowStepsProps from './hooks/useGenerateWorkflowStepsProps';
@@ -21,21 +21,16 @@ import ModifySqlStatement from './components/ModifySqlStatement';
 import useAuditExecResultPanelSetup from './hooks/useAuditExecResultPanelSetup';
 import AuditExecResultPanel from './components/AuditExecResultPanel';
 import SqlRollback from './components/SqlRollback';
-
 const SqlWorkflowDetail: React.FC = () => {
   const { username } = useCurrentUser();
-
   const [
     workflowStepsVisibility,
     { setFalse: closeWorkflowSteps, setTrue: showWorkflowSteps }
   ] = useBoolean(false);
-
   const [isAtRollbackStep, { setTrue: startRollback, setFalse: stopRollback }] =
     useBoolean();
-
   const { taskInfos, workflowInfo, refreshWorkflowInfo, initLoading } =
     useInitDataWithRequest();
-
   const {
     maintenanceTimeInfo,
     canRejectWorkflow,
@@ -47,7 +42,6 @@ const SqlWorkflowDetail: React.FC = () => {
     getOverviewLoading,
     requestErrorMessage: overviewTableErrorMessage
   } = useAuditExecResultPanelSetup();
-
   const {
     taskInfos: modifiedTasks,
     isAtModifySqlStatementStep,
@@ -57,12 +51,10 @@ const SqlWorkflowDetail: React.FC = () => {
     isConfirmationRequiredForSubmission,
     modifySqlAudit
   } = useModifySql(workflowInfo?.mode === WorkflowResV2ModeEnum.same_sqls);
-
   const {
     passAction,
     executingAction,
     rejectAction,
-
     completeAction,
     terminateAction,
     messageContextHolder,
@@ -79,7 +71,6 @@ const SqlWorkflowDetail: React.FC = () => {
       (v) => v.state === WorkflowStepResV2StateEnum.rejected
     );
   }, [workflowInfo?.record?.workflow_step_list]);
-
   return (
     <Spin spinning={initLoading} delay={400}>
       {messageContextHolder}
@@ -183,5 +174,4 @@ const SqlWorkflowDetail: React.FC = () => {
     </Spin>
   );
 };
-
 export default SqlWorkflowDetail;

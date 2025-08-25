@@ -1,17 +1,15 @@
 import { useToggle } from 'ahooks';
 import { WorkflowHistoryStepsProps } from '../index.type';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { WorkflowHistoryStepsStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import WorkflowSteps from './WorkflowSteps';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
-
 const WorkflowHistorySteps: React.FC<WorkflowHistoryStepsProps> = ({
   recordHistoryList
 }) => {
   const { t } = useTranslation();
   const [open, { toggle }] = useToggle();
-
   return (
     <WorkflowHistoryStepsStyleWrapper>
       <div className="history-steps-trigger-wrapper" onClick={toggle}>
@@ -32,5 +30,4 @@ const WorkflowHistorySteps: React.FC<WorkflowHistoryStepsProps> = ({
     </WorkflowHistoryStepsStyleWrapper>
   );
 };
-
 export default WorkflowHistorySteps;

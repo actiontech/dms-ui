@@ -1,13 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { useMemo } from 'react';
-import { BasicTag } from '@actiontech/shared';
-import { BasicTagColor } from '@actiontech/shared/lib/theme/theme.type';
-
+import { BasicTag } from '@actiontech/dms-kit';
+import { BasicTagColor } from '@actiontech/dms-kit/es/theme/theme.type';
 export interface ISqlAuditStatusTag {
   status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum;
 }
-
 const SqlAuditStatusTag = ({ status }: ISqlAuditStatusTag) => {
   const { t } = useTranslation();
   const color = useMemo(() => {
@@ -25,5 +23,4 @@ const SqlAuditStatusTag = ({ status }: ISqlAuditStatusTag) => {
     </>
   );
 };
-
 export default SqlAuditStatusTag;

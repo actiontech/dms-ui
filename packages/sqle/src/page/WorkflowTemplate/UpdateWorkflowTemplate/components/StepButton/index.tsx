@@ -1,15 +1,13 @@
 import React from 'react';
 import { StepButtonStyleWrapper } from '../../style';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-
 interface IStepButtonProps {
   currentStep: number;
   totalStep: number;
   prevStep?: () => void;
   nextStep?: () => void;
 }
-
 const StepButton: React.FC<IStepButtonProps> = (props) => {
   const { t } = useTranslation();
   return (
@@ -27,5 +25,4 @@ const StepButton: React.FC<IStepButtonProps> = (props) => {
     </StepButtonStyleWrapper>
   );
 };
-
 export default StepButton;

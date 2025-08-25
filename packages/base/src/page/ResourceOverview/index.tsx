@@ -1,4 +1,4 @@
-import { PageHeader } from '@actiontech/shared/';
+import { PageHeader } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import {
   ResourceOverviewDetailStyleWrapper,

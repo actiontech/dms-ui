@@ -1,30 +1,26 @@
 import { Form } from 'antd';
-import { BasicSelect, BasicInput } from '@actiontech/shared';
+import { BasicSelect, BasicInput } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { IMemberGroupFormProps } from '../index.type';
 import PermissionFields from '../../components/PermissionFields';
 import { useEffect } from 'react';
 import useUsername from '../../../../hooks/useUsername';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-
+import { nameRule } from '@actiontech/dms-kit';
+import { filterOptionByLabel } from '@actiontech/dms-kit';
 const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
   form,
   isUpdate,
   projectID
 }) => {
   const { t } = useTranslation();
-
   const {
     loading: getUsernameListLoading,
     updateUsernameList,
     generateUsernameSelectOption
   } = useUsername();
-
   useEffect(() => {
     updateUsernameList();
   }, [updateUsernameList]);
-
   return (
     <Form form={form} layout="vertical">
       <Form.Item
@@ -74,5 +70,4 @@ const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
     </Form>
   );
 };
-
 export default MemberGroupForm;

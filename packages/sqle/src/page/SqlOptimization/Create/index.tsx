@@ -1,14 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import React, { useEffect } from 'react';
 import { Form, message } from 'antd';
-import {
-  ActionButton,
-  BasicButton,
-  PageHeader,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
+import {  ActionButton,useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
 import { BaseFormFields, SqlInfoFormFields } from '../index.type';
@@ -17,36 +13,26 @@ import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 // todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
-
 const SqlOptimizationCreate = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const { projectID, projectName } = useCurrentProject();
-
   const [baseForm] = Form.useForm<BaseFormFields>();
-
   const [sqlInfoForm] = Form.useForm<SqlInfoFormFields>();
-
   const uploadType = Form.useWatch('uploadType', sqlInfoForm);
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [
     submitLoading,
     { setTrue: setSubmitPending, setFalse: setSubmitDone }
   ] = useBoolean();
-
   const onSubmit = async () => {
     const baseValue = await baseForm.validateFields();
     const sqlInfoValue = await sqlInfoForm.validateFields();
     setSubmitPending();
-
     sqlOptimization
       .OptimizeSQLReq({
         optimization_name: baseValue.optimizationName,
@@ -76,11 +62,9 @@ const SqlOptimizationCreate = () => {
         setSubmitDone();
       });
   };
-
   const onResetForm = () => {
     sqlInfoForm.resetFields();
   };
-
   useEffect(() => {
     baseForm.setFieldsValue({
       optimizationName: `${
@@ -89,7 +73,6 @@ const SqlOptimizationCreate = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadType]);
-
   return (
     <>
       {messageContextHolder}
@@ -102,7 +85,9 @@ const SqlOptimizationCreate = () => {
             actionType="navigate-link"
             link={{
               to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
-              params: { projectID }
+              params: {
+                projectID
+              }
             }}
           />
         }
@@ -119,5 +104,4 @@ const SqlOptimizationCreate = () => {
     </>
   );
 };
-
 export default SqlOptimizationCreate;
