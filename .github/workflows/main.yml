@@ -18,9 +18,8 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Build packages
-        run: |
-          pnpm --filter @actiontech/dms-kit build
+      - name: Build dms-kit package
+        run: pnpm --filter @actiontech/dms-kit build
 
       - name: Code lint checker
         run: pnpm checker
@@ -37,6 +36,9 @@ jobs:
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
+      - name: Build dms-kit package
+        run: pnpm --filter @actiontech/dms-kit build
 
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
@@ -55,6 +57,9 @@ jobs:
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
+      - name: Build dms-kit package
+        run: pnpm --filter @actiontech/dms-kit build
 
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
