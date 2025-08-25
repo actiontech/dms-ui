@@ -40,7 +40,7 @@ const OptimizationResultModal: React.FC = () => {
       open={open}
       onCancel={handleCancel}
       footer={null}
-      size="large"
+      width={1200}
       centered
       maskClosable={false}
     >
