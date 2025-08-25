@@ -15,56 +15,60 @@ import {
   CheckboxMultipleBlankFilled
 } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-export const RuleTemplateColumns = (): ActiontechTableColumn<IRuleTemplateResV1> => {
-  const { getLogoUrlByDbType } = useDbServiceDriver();
-  return [
-    {
-      dataIndex: 'rule_template_name',
-      title: () => t('ruleTemplate.ruleTemplateList.table.templateName'),
-      render(name, row) {
-        if (!name) {
-          return '-';
+export const RuleTemplateColumns =
+  (): ActiontechTableColumn<IRuleTemplateResV1> => {
+    const { getLogoUrlByDbType } = useDbServiceDriver();
+    return [
+      {
+        dataIndex: 'rule_template_name',
+        title: () => t('ruleTemplate.ruleTemplateList.table.templateName'),
+        render(name, row) {
+          if (!name) {
+            return '-';
+          }
+          return (
+            <TypedLink
+              to={ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail}
+              params={{
+                templateName: name,
+                dbType: row?.db_type ?? ''
+              }}
+            >
+              <Space size={12}>
+                <ProfileSquareFilled />
+                {name}
+              </Space>
+            </TypedLink>
+          );
         }
-        return (
-          <TypedLink
-            to={ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail}
-            params={{
-              templateName: name,
-              dbType: row?.db_type ?? ''
-            }}
-          >
-            <Space size={12}>
-              <ProfileSquareFilled />
-              {name}
-            </Space>
-          </TypedLink>
-        );
-      }
-    },
-    {
-      dataIndex: 'desc',
-      ellipsis: true,
-      className: 'ellipsis-column-width',
-      title: () => t('ruleTemplate.ruleTemplateList.table.desc'),
-      render: (desc) => {
-        if (!desc) return '';
-        return <BasicTypographyEllipsis textCont={desc} />;
-      }
-    },
-    {
-      dataIndex: 'db_type',
-      title: () => t('ruleTemplate.ruleTemplateList.table.dbType'),
-      render(type) {
-        if (!type) {
-          return '-';
+      },
+      {
+        dataIndex: 'desc',
+        ellipsis: true,
+        className: 'ellipsis-column-width',
+        title: () => t('ruleTemplate.ruleTemplateList.table.desc'),
+        render: (desc) => {
+          if (!desc) return '';
+          return <BasicTypographyEllipsis textCont={desc} />;
         }
-        return (
-          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
-        );
+      },
+      {
+        dataIndex: 'db_type',
+        title: () => t('ruleTemplate.ruleTemplateList.table.dbType'),
+        render(type) {
+          if (!type) {
+            return '-';
+          }
+          return (
+            <DatabaseTypeLogo
+              dbType={type}
+              logoUrl={getLogoUrlByDbType(type)}
+            />
+          );
+        }
       }
-    }
-  ];
-};
+    ];
+  };
 export const RuleTemplateActions = (
   onNavigateUpdateRuleTemplate: (templateName: string) => void,
   onDelete: (name: string) => void,

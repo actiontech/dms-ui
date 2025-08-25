@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import React, { useEffect } from 'react';
 import { Form, message } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/dms-kit';
-import {  ActionButton,useTypedNavigate } from '@actiontech/shared';
+import { ActionButton, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/dms-kit';
 import BaseInfoForm from './BaseInfoForm';

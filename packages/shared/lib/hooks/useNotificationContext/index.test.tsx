@@ -12,7 +12,6 @@ jest.mock('antd', () => ({
   }
 }));
 
-
 const api = {
   success: jest.fn(),
   error: jest.fn(),

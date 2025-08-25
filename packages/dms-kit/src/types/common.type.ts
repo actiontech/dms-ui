@@ -1,6 +1,4 @@
 import { RuleObject } from 'antd/es/form';
-import { SystemRole } from '../enum';
-import { IndexRouteObject, NonIndexRouteObject } from 'react-router-dom';
 
 export type Dictionary = {
   [key: string]: string | number | boolean | Dictionary | string[] | undefined;
