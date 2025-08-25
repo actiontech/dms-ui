@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { BasicDrawer, EmptyBox } from '@actiontech/shared';
+import { BasicDrawer, EmptyBox } from '@actiontech/dms-kit';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Form } from 'antd';
 import useRuleParams from '../../BackendForm/useRuleParams';
@@ -7,22 +7,17 @@ import { RuleDetailItemStyleWrapper } from './style';
 import RuleBaseInfo from './RuleBaseInfo';
 import { ruleLevelDictionary } from '../../../hooks/useStaticStatus/index.data';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import classNames from 'classnames';
-
 export type IEditRuleTemplate = {
   visible: boolean;
   dataSource: IRuleResV1 | undefined;
   onClosed: () => void;
 };
-
 const RuleDetailModal = (props: IEditRuleTemplate) => {
   const { t } = useTranslation();
-
   const { visible, dataSource, onClosed } = props;
-
   const { formItemData } = useRuleParams(dataSource?.params || []);
-
   return (
     <BasicDrawer
       open={visible}
@@ -71,5 +66,4 @@ const RuleDetailModal = (props: IEditRuleTemplate) => {
     </BasicDrawer>
   );
 };
-
 export default RuleDetailModal;

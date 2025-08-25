@@ -2,18 +2,16 @@ import {
   CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-import { BasicInput } from '@actiontech/shared';
-import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { BasicInput } from '@actiontech/dms-kit';
+import { workflowNameRule } from '@actiontech/dms-kit';
 import PipelineNodeField from './PipelineNodeField';
 import React from 'react';
-
-const PipelineConfigurationForm: React.FC<{ isEditionMode?: boolean }> = ({
-  isEditionMode = false
-}) => {
+const PipelineConfigurationForm: React.FC<{
+  isEditionMode?: boolean;
+}> = ({ isEditionMode = false }) => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemSubTitle>
@@ -35,8 +33,12 @@ const PipelineConfigurationForm: React.FC<{ isEditionMode?: boolean }> = ({
               name: t('pipelineConfiguration.form.name')
             })
           },
-          { validator: workflowNameRule() },
-          { max: 59 }
+          {
+            validator: workflowNameRule()
+          },
+          {
+            max: 59
+          }
         ]}
       >
         <BasicInput disabled={isEditionMode} />
@@ -75,12 +77,13 @@ const PipelineConfigurationForm: React.FC<{ isEditionMode?: boolean }> = ({
             })
           }
         ]}
-        wrapperCol={{ span: 24 }}
+        wrapperCol={{
+          span: 24
+        }}
       >
         <PipelineNodeField />
       </FormItemLabel>
     </>
   );
 };
-
 export default PipelineConfigurationForm;

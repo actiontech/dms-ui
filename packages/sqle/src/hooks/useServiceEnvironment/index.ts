@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useMemo } from 'react';
 
 const useServiceEnvironment = () => {

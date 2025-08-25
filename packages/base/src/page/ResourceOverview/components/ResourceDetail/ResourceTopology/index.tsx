@@ -1,16 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { Card, Tree, Space, type TreeDataNode } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DownOutlined, RightOutlined } from '@actiontech/icons';
 import { AntTreeNodeProps } from 'antd/es/tree';
 import classNames from 'classnames';
-
 interface TreeNodeData extends TreeDataNode {
   key: string;
   children?: TreeNodeData[];
 }
-
 interface ResourceTopologyProps {
   topology: TreeNodeData[];
   selectedKey?: string;
@@ -18,7 +16,6 @@ interface ResourceTopologyProps {
   expandedKeys: string[];
   setExpandedKeys: (keys: string[]) => void;
 }
-
 const ResourceTopology: React.FC<ResourceTopologyProps> = ({
   topology,
   selectedKey,
@@ -29,16 +26,13 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
   const { t } = useTranslation();
   const [autoExpandParent, setAutoExpandParent] = useState<boolean>(true);
   const [allKeys, setAllKeys] = useState<string[]>([]);
-
   const onExpand = (keys: React.Key[]) => {
     setExpandedKeys(keys as string[]);
     setAutoExpandParent(false);
   };
-
   const onSelect = (keys: React.Key[]) => {
     setSelectedKey(keys[0] as string);
   };
-
   const getAllKeys = useCallback(() => {
     const keys: string[] = [];
     const traverse = (nodes: TreeNodeData[]) => {
@@ -52,7 +46,6 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
     traverse(topology ?? []);
     return keys;
   }, [topology]);
-
   const toggleExpandAll = useCallback(
     (expand: boolean) => {
       if (expand) {
@@ -64,7 +57,6 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
     },
     [setExpandedKeys, allKeys]
   );
-
   useEffect(() => {
     if (topology.length > 0) {
       const keys = getAllKeys();
@@ -72,7 +64,6 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
       setExpandedKeys(keys);
     }
   }, [topology, getAllKeys, setExpandedKeys]);
-
   return (
     <Card
       title={t('resourceOverview.resourceTopology')}
@@ -117,5 +108,4 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
     </Card>
   );
 };
-
 export default ResourceTopology;

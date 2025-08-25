@@ -1,4 +1,4 @@
-import { lightThemeUI } from '@actiontech/shared/lib/theme/light/basic';
+import { lightThemeUI } from '@actiontech/dms-kit/es/theme/light/basic';
 import { SideMenuTheme } from '../type';
 
 export const sideMenuTheme: SideMenuTheme = {

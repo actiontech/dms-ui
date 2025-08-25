@@ -3,12 +3,9 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import {
-  SQLRenderer,
-  EditText,
-  BasicTag,
-  basicTooltipCommonProps
-} from '@actiontech/shared';
+import { EditText, BasicTag } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
+import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';
 import { ExpandedBackupSqlType } from './index.type';
 import { IGetBackupSqlListV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import ExecStatusTag from '../AuditExecResultPanel/TaskResultList/Common/ResultCard/components/ExecStatusTag';
@@ -16,7 +13,6 @@ import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/a
 import { BackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlBackupStatusDictionary } from './index.data';
-
 export type WorkflowRollbackSqlTableFilterParamType =
   PageInfoWithoutIndexAndSize<
     IGetBackupSqlListV1Params & {
@@ -25,7 +21,6 @@ export type WorkflowRollbackSqlTableFilterParamType =
     },
     'project_name' | 'workflow_id'
   >;
-
 export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
   ExpandedBackupSqlType,
   WorkflowRollbackSqlTableFilterParamType
@@ -98,7 +93,6 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
     }
   ];
 };
-
 export const WorkflowRollbackSelectedSqlTableColumn: (
   onUpdateSqlRemake: (id: string, remake?: string) => void
 ) => ActiontechTableColumn<ExpandedBackupSqlType> = (onUpdateSqlRemake) => {

@@ -1,14 +1,8 @@
 import { useTranslation } from 'react-i18next';
-
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { BasicInput } from '@actiontech/shared';
-
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { BasicInput } from '@actiontech/dms-kit';
 const ConfigField = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemLabel
@@ -20,7 +14,11 @@ const ConfigField = () => {
           />
         }
         name="url"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -37,7 +35,11 @@ const ConfigField = () => {
           />
         }
         name="token"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicInput.Password
           placeholder={t('common.form.placeholder.input', {
@@ -48,5 +50,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

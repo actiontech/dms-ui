@@ -3,13 +3,10 @@ import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import {
-  FormItemBigTitle,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle, FormItemLabel } from '@actiontech/dms-kit';
 import Icon from '@ant-design/icons';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import {
   BatchImportDataSourceFormType,
   FileUploadCheckStatusType

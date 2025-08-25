@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Space } from 'antd';
-
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import { SyncOutlined } from '@ant-design/icons';
 import { EEIndexStyleWrapper } from '../style';
 import CardWrapper from '../../../components/CardWrapper';
@@ -13,17 +12,13 @@ import DiffOrderReject from './component/topList/DiffOrderReject';
 import SqlOnLineSpendTime from './component/topList/SqlOnLineSpendTime';
 import OrderQuantityTrend from './component/charts/OrderQuantityTrend';
 import CardNumberShow from './component/cardNumberShow';
-
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-
 const EEIndex = () => {
   const { t } = useTranslation();
-
   const onRefreshPage = () => {
     eventEmitter.emit(EmitterKey.Refresh_Report_Statistics);
   };
-
   return (
     <>
       <PageHeader
@@ -108,5 +103,4 @@ const EEIndex = () => {
     </>
   );
 };
-
 export default EEIndex;

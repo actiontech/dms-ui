@@ -1,4 +1,4 @@
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useMemo, useEffect } from 'react';
@@ -28,33 +28,26 @@ import {
 } from './column';
 import { SqlManagementExceptionMatchTypeOptions } from '../index.data';
 import { message } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useSqlManagementExceptionRedux from '../hooks/useSqlManagementExceptionRedux';
 import { usePermission } from '@actiontech/shared/lib/features';
 import {
   SqlManagementExceptionActions,
   SqlManagementExceptionPageHeaderActions
 } from './actions';
-
 const SqlManagementExceptionList = () => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const { projectName } = useCurrentProject();
-
   const {
     openCreateSqlManagementExceptionModal,
     updateSelectSqlManagementExceptionRecord,
     dispatch
   } = useSqlManagementExceptionRedux();
-
   const pageHeaderActions = SqlManagementExceptionPageHeaderActions(
     openCreateSqlManagementExceptionModal
   );
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -67,10 +60,8 @@ const SqlManagementExceptionList = () => {
     IBlacklistResV1,
     SqlManagementExceptionTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: whitelistList,
     loading,
@@ -84,26 +75,27 @@ const SqlManagementExceptionList = () => {
         project_name: projectName,
         fuzzy_search_content: searchKeyword
       };
-
       return handleTableRequestError(blacklist.getBlacklistV1(params));
     },
     {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IBlacklistResV1, FilterCustomProps>([
-      ['type', { options: SqlManagementExceptionMatchTypeOptions }]
+      [
+        'type',
+        {
+          options: SqlManagementExceptionMatchTypeOptions
+        }
+      ]
     ]);
   }, []);
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(
       SqlManagementExceptionListColumns(),
       updateTableFilterInfo
     );
-
   const onUpdate = useCallback(
     (selectRow?: IBlacklistResV1) => {
       updateSelectSqlManagementExceptionRecord(selectRow);
@@ -116,7 +108,6 @@ const SqlManagementExceptionList = () => {
     },
     [dispatch, updateSelectSqlManagementExceptionRecord]
   );
-
   const onDelete = useCallback(
     (id?: number) => {
       const hide = messageApi.loading(
@@ -141,13 +132,11 @@ const SqlManagementExceptionList = () => {
     },
     [messageApi, projectName, refresh, t]
   );
-
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
       SqlManagementExceptionActions(onUpdate, onDelete)
     );
   }, [onDelete, onUpdate, parse2TableActionPermissions]);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Sql_management_Exception_List,
@@ -155,7 +144,6 @@ const SqlManagementExceptionList = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   return (
     <>
       {messageContextHolder}
@@ -165,7 +153,10 @@ const SqlManagementExceptionList = () => {
       />
       <ActiontechTableWrapper loading={loading}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: loading }}
+          refreshButton={{
+            refresh,
+            disabled: loading
+          }}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -201,5 +192,4 @@ const SqlManagementExceptionList = () => {
     </>
   );
 };
-
 export default SqlManagementExceptionList;

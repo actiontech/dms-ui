@@ -6,36 +6,31 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
 import WorkflowTemplateStepInfo from './components/WorkflowTemplateStepInfo';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { WorkflowTemplateStyleWrapper } from './style';
 import useUsername from '../../../hooks/useUsername';
 import { WorkflowTemplatePageHeaderActions } from './actions';
-
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
-
   const {
     updateUsernameList,
     usernameList,
     loading: getUsernameListLoading
   } = useUsername();
-
   React.useEffect(() => {
-    updateUsernameList({ filter_project: projectName });
+    updateUsernameList({
+      filter_project: projectName
+    });
   }, [projectName, updateUsernameList]);
-
   const [reviewSteps, setReviewSteps] = useState<IWorkFlowStepTemplateResV1[]>(
     []
   );
-
   const [execSteps, setExecSteps] = useState<IWorkFlowStepTemplateResV1>({
     assignee_user_id_list: [],
     desc: ''
   });
-
   const { data: workflowTemplate, loading: getWorkflowTemplateLoading } =
     useRequest(
       () =>
@@ -58,12 +53,10 @@ const WorkflowTemplateDetail: React.FC = () => {
         ready: !!projectName
       }
     );
-
   const pageHeaderActions = WorkflowTemplatePageHeaderActions(
     projectID,
     workflowTemplate?.workflow_template_name
   );
-
   return (
     <WorkflowTemplateStyleWrapper>
       <PageHeader
@@ -92,5 +85,4 @@ const WorkflowTemplateDetail: React.FC = () => {
     </WorkflowTemplateStyleWrapper>
   );
 };
-
 export default WorkflowTemplateDetail;

@@ -12,11 +12,15 @@ import {
   updateUserUid,
   updateLanguage
 } from '../../../../base/src/store/user';
-import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
+import {
+  ResponseCode,
+  SupportLanguage,
+  SystemRole,
+  DEFAULT_LANGUAGE,
+  ROUTE_PATHS
+} from '@actiontech/dms-kit';
 import User from '../../api/base/service/User';
-import { DEFAULT_LANGUAGE } from '../../locale';
 import { useTypedNavigate } from '../../components/TypedRouter';
-import { ROUTE_PATHS } from '../../data/routePaths';
 
 const useUserInfo = () => {
   const dispatch = useDispatch();

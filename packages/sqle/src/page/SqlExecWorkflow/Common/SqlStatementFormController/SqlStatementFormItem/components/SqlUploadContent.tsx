@@ -1,38 +1,33 @@
 import { Form } from 'antd';
 import { SqlUploadContentProps } from './index.type';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
-import { CustomDraggerUpload, LazyLoadComponent } from '@actiontech/shared';
+import { CustomDraggerUpload, LazyLoadComponent } from '@actiontech/dms-kit';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { whiteSpaceSql } from '@actiontech/dms-kit';
 import {
   MonacoEditor,
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { NamePath } from 'antd/es/form/interface';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
-
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
   fieldPrefixPath,
   currentSqlUploadType
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-
   const generateFieldName = (name: string) => {
     return [fieldPrefixPath, name];
   };
-
   const { editorDidMount } = useMonacoEditor(form, {
     formName: generateFieldName('form_data')
   });
-
   const removeFile = (fieldName: NamePath) => {
     form.setFieldValue(fieldName, []);
   };
-
   return (
     <>
       <LazyLoadComponent
@@ -121,5 +116,4 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
     </>
   );
 };
-
 export default SqlUploadContent;

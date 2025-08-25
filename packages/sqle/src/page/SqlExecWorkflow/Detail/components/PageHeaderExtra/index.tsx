@@ -1,4 +1,4 @@
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -19,18 +19,15 @@ import {
   RollbackWorkflowAction,
   RetryWorkflowAction
 } from './action';
-
 const WorkflowDetailPageHeaderExtra: React.FC<
   WorkflowDetailPageHeaderExtraProps
 > = (props) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const [
     rejectModalVisible,
     { setTrue: openRejectModal, setFalse: closeRejectModal }
   ] = useBoolean();
-
   const {
     messageContextHolder,
     closeWorkflowButtonMeta,
@@ -44,8 +41,10 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     retryWorkflowButtonMeta,
     executable,
     executable_reason
-  } = useWorkflowDetailAction({ projectName, ...props });
-
+  } = useWorkflowDetailAction({
+    projectName,
+    ...props
+  });
   return (
     <WorkflowPageHeaderExtraStyleWrapper>
       {messageContextHolder}
@@ -122,5 +121,4 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     </WorkflowPageHeaderExtraStyleWrapper>
   );
 };
-
 export default WorkflowDetailPageHeaderExtra;

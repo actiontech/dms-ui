@@ -1,16 +1,16 @@
+import { BasicInput } from '@actiontech/dms-kit';
 import {
-  BasicInput,
   FormInputBotBorder,
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared';
-import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
+} from '@actiontech/dms-kit';
+import { workflowNameRule } from '@actiontech/dms-kit';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
+const BaseInfoFormItem: React.FC<{
+  slot?: ReactNode;
+}> = ({ slot }) => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemNoLabel
@@ -58,5 +58,4 @@ const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
     </>
   );
 };
-
 export default BaseInfoFormItem;

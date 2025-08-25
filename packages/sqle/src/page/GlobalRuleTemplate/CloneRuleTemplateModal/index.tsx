@@ -1,15 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { Col, Form, Row, Space, Typography } from 'antd';
-import {
-  BasicButton,
-  BasicDrawer,
-  BasicInput,
-  TypedLink
-} from '@actiontech/shared';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { nameRule } from '@actiontech/dms-kit';
 import { CloneRuleTemplateModalProps } from './index.type';
-
 const CloneRuleTemplateModal: React.FC<CloneRuleTemplateModalProps> = ({
   visible,
   onClose,
@@ -20,7 +15,6 @@ const CloneRuleTemplateModal: React.FC<CloneRuleTemplateModalProps> = ({
   form
 }) => {
   const { t } = useTranslation();
-
   return (
     <BasicDrawer
       open={visible}
@@ -86,5 +80,4 @@ const CloneRuleTemplateModal: React.FC<CloneRuleTemplateModalProps> = ({
     </BasicDrawer>
   );
 };
-
 export default CloneRuleTemplateModal;

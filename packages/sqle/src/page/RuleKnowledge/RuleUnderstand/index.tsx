@@ -1,7 +1,7 @@
 import { Empty, Typography, Spin } from 'antd';
 import { RuleUnderstandProps } from './index.type';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import EditKnowledgeContent from './EditKnowledgeContent';
 import rehypeSanitize from 'rehype-sanitize';
 import {
@@ -13,10 +13,9 @@ import classNames from 'classnames';
 import { useRef } from 'react';
 import { useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import Graph from '../../Knowledge/Graph';
 import { markdownPreviewOptions } from '../Common/MarkdownPreview/markdownPreviewOptions';
-
 const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   content,
   loading,
@@ -28,7 +27,6 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
 }) => {
   const { t } = useTranslation();
   const markdownRef = useRef<HTMLDivElement>(null);
-
   const { data: graphData, loading: getGraphLoading } = useRequest(() =>
     SqleApi.KnowledgeBaseService.getKnowledgeGraph({
       filter_by_rule_name: ruleName
@@ -41,10 +39,11 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
       }
     })
   );
-
   return (
     <RuleKnowledgeDocumentStyleWrapper
-      className={classNames({ 'card-editing-status': isModifying })}
+      className={classNames({
+        'card-editing-status': isModifying
+      })}
     >
       <Spin spinning={loading || getGraphLoading}>
         {isModifying ? (
@@ -92,5 +91,4 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
     </RuleKnowledgeDocumentStyleWrapper>
   );
 };
-
 export default RuleUnderstand;

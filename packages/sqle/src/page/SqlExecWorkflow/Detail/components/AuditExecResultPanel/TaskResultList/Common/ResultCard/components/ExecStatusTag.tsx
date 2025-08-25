@@ -1,9 +1,8 @@
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { BasicTagColor } from '@actiontech/shared/lib/theme/theme.type';
+import { BasicTagColor } from '@actiontech/dms-kit/es/theme/theme.type';
 import { useTranslation } from 'react-i18next';
 import { execStatusDictionary } from '../../../../../../../../../hooks/useStaticStatus/index.data';
-
 const execStatusMap: {
   [key in getAuditTaskSQLsV2FilterExecStatusEnum]?: BasicTagColor;
 } = {
@@ -17,11 +16,9 @@ const execStatusMap: {
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue',
   [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]: 'orange'
 };
-
 export interface ExecStatusTagProps {
   status: getAuditTaskSQLsV2FilterExecStatusEnum;
 }
-
 const ExecStatusTag: React.FC<ExecStatusTagProps> = ({ status }) => {
   const { t } = useTranslation();
   return (
@@ -30,5 +27,4 @@ const ExecStatusTag: React.FC<ExecStatusTagProps> = ({ status }) => {
     </BasicTag>
   );
 };
-
 export default ExecStatusTag;

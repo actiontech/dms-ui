@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
-import { BasicButton } from '../../BasicButton';
+import { BasicButton } from '@actiontech/dms-kit';
 
 const FilterButton = <T extends Record<string, any>>({
   filterButtonMeta = new Map(),

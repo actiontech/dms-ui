@@ -9,7 +9,7 @@ import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.typ
 import { TasksStatusCount } from '../index.type';
 import { useBoolean } from 'ahooks';
 import { useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export const WORKFLOW_OVERVIEW_TAB_KEY = 'WORKFLOW_OVERVIEW_TAB_KEY';
 

@@ -15,7 +15,7 @@ import { PendingSqlListColumn, PendingSqlListAction } from './column';
 import { GlobalDashboardListProps } from '../../index.type';
 import { PendingSqlTableStyleWrapper } from '../../style';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
   filterValues,

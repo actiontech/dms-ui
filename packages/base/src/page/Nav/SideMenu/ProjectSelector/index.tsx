@@ -1,24 +1,19 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { InputRef, SelectProps } from 'antd';
-import {
-  BasicButton,
-  BasicEmpty,
-  EmptyBox,
-  TypedLink
-} from '@actiontech/shared';
-import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
+import { BasicButton, BasicEmpty, EmptyBox } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import {
   ProjectSelectorPopupMenuStyleWrapper,
   ProjectSelectorStyleWrapper
 } from './style';
-import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
-import { fuzzySearchAndSortByWeight } from '@actiontech/shared/lib/utils/Tool';
+import { fuzzySearchAndSortByWeight } from '@actiontech/dms-kit';
 import { ArrowRightOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import CustomSelectSearchInput from '@actiontech/dms-kit/es/components/CustomSelect/CustomSelectSearchInput';
+import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/dms-kit/es/components/CustomSelect/style';
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
   prefix,
@@ -34,14 +29,12 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   const [lastActiveMenuItem, setLastActiveMenuItem] = useState<
     Element | undefined
   >();
-
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const filterBindProjects = fuzzySearchAndSortByWeight(
       searchValue,
       bindProjects ?? [],
       'project_name'
     );
-
     return (
       <>
         <ProjectSelectorPopupMenuStyleWrapper>
@@ -110,7 +103,6 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
       </>
     );
   };
-
   return (
     <ProjectSelectorStyleWrapper
       open={open}
@@ -135,7 +127,6 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
       dropdownRender={renderDropdown}
       onDropdownVisibleChange={(visible) => {
         setOpen(visible);
-
         if (!visible) {
           setSearchValue('');
         }
@@ -154,5 +145,4 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
     />
   );
 };
-
 export default ProjectSelector;

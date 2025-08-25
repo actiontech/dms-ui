@@ -11,15 +11,15 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import Login from '.';
 import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey,
   SystemRole
-} from '@actiontech/shared/lib/enum';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+} from '@actiontech/dms-kit';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

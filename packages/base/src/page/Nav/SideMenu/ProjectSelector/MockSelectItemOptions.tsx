@@ -7,7 +7,7 @@ import {
 import { IBindProject } from './index.type';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const MockSelectItemOptions: React.FC<{
   list: IBindProject[];

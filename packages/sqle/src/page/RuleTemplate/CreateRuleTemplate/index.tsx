@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, PageHeader, BasicResult } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { RuleTemplateContStyleWrapper } from './style';
 import RuleTemplateForm from '../RuleTemplateForm';
@@ -15,12 +15,9 @@ import {
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
-
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
-
   const {
     form,
     getAllRulesLoading,
@@ -43,9 +40,7 @@ const CreateRuleTemplate = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useCreateRuleTemplateForm();
-
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
-
   const submit = useCallback(() => {
     startSubmit();
     const baseInfo = form.getFieldsValue();
@@ -54,7 +49,10 @@ const CreateRuleTemplate = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : [],
         is_custom_rule: !!rule.is_custom_rule
       };
@@ -77,7 +75,6 @@ const CreateRuleTemplate = () => {
         finishSubmit();
       });
   }, [startSubmit, form, activeRule, projectName, nextStep, finishSubmit]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -162,5 +159,4 @@ const CreateRuleTemplate = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default CreateRuleTemplate;

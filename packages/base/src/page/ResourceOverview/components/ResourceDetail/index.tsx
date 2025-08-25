@@ -28,7 +28,7 @@ import {
   ResourceDetailTableActions,
   ResourceDetailToolbarActions
 } from './actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import ResourceTopology from './ResourceTopology';
 import useFilterParams from './hooks/useFilterParams';
 import EmitterKey from '../../../../data/EmitterKey';

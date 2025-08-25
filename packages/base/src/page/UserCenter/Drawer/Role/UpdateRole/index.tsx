@@ -11,30 +11,22 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
-
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
 const UpdateRole = () => {
   const [form] = Form.useForm<IRoleFormFields>();
-
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [updateLoading, { setTrue, setFalse }] = useBoolean();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Update_Role]
   );
-
   const currentRole = useSelector<IReduxState, IListRole | null>(
     (state) => state.userCenter.selectRole
   );
-
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -44,7 +36,6 @@ const UpdateRole = () => {
       })
     );
   }, [dispatch, form]);
-
   const updateRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
@@ -71,7 +62,6 @@ const UpdateRole = () => {
         setFalse();
       });
   }, [onClose, currentRole?.uid, form, setFalse, setTrue, t, messageApi]);
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -82,7 +72,6 @@ const UpdateRole = () => {
       });
     }
   }, [visible, currentRole, form]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.role.updateRole.modalTitle')}
@@ -108,5 +97,4 @@ const UpdateRole = () => {
     </BasicDrawer>
   );
 };
-
 export default UpdateRole;

@@ -1,5 +1,5 @@
 import { Popover, Space } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { DownloadDropdownStyleWrapper } from '../../../../Common/DownloadRecord/style';
@@ -11,15 +11,13 @@ import {
   ListLayoutFilled,
   ListLayoutOutlined
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 const ListLayoutSelector: React.FC<{
   onChange: (v: TaskResultListLayoutEnum) => void;
   value: TaskResultListLayoutEnum;
 }> = ({ value, onChange }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-
   const renderDownloadDropdown = () => {
     return (
       <DownloadDropdownStyleWrapper>
@@ -83,5 +81,4 @@ const ListLayoutSelector: React.FC<{
     </Popover>
   );
 };
-
 export default ListLayoutSelector;

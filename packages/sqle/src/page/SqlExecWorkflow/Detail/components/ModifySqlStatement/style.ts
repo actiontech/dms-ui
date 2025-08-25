@@ -1,4 +1,4 @@
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { styled } from '@mui/material';
 
 export const ModifySqlStatementFormStyleWrapper = styled(FormStyleWrapper)`

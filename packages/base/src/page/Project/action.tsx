@@ -5,8 +5,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../locale';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const ProjectManagementPageHeaderActions = (
   onExport: () => void,
   exportPending: boolean,

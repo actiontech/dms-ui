@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import { DragOutlined } from '@actiontech/icons';
 import { getColumnsLabel } from '../utils';
-import { BasicToolTip } from '../../BasicToolTip';
+import { BasicToolTip } from '@actiontech/dms-kit';
 
 export type typeFixed = 'left' | 'right' | 'no-fixed';
 export interface IColumnsItems<T> {

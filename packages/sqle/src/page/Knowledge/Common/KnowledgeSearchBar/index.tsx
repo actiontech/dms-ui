@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { SearchOutlined } from '@actiontech/icons';
 import { useControllableValue } from 'ahooks';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { BasicInput, EmptyBox } from '@actiontech/dms-kit';
 import { KnowledgeSearchBarStyleWrapper } from './style';
 import { KnowledgeSearchBarProps } from './index.type';
 import TagSelectorBar from './TagSelectorBar';
 import { message } from 'antd';
-
 const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
   const {
     onSearch,
@@ -15,13 +14,11 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
     ...restProps
   } = props;
   const { t } = useTranslation();
-
   const [searchText, setSearchText] = useControllableValue(restProps, {
     valuePropName: 'searchText',
     trigger: 'setSearchText',
     defaultValue: ''
   });
-
   const [selectedTags, setSelectedTags] = useControllableValue<
     KnowledgeSearchBarProps['selectedTags']
   >(restProps, {
@@ -29,17 +26,17 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
     trigger: 'setSelectedTags',
     defaultValue: []
   });
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const handleSearch = () => {
     if (!allowSearchEmptyText && !searchText.trim()) {
       messageApi.info(t('knowledgeBase.search.emptySearchTextTips'));
       return;
     }
-    onSearch?.({ searchText, selectedTags });
+    onSearch?.({
+      searchText,
+      selectedTags
+    });
   };
-
   return (
     <KnowledgeSearchBarStyleWrapper>
       {contextHolder}
@@ -59,7 +56,10 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
             handleSearch();
           }}
           bordered={false}
-          autoSize={{ minRows: 1, maxRows: 3 }}
+          autoSize={{
+            minRows: 1,
+            maxRows: 3
+          }}
         />
         <div className="search-icon" onClick={handleSearch}>
           <SearchOutlined width={20} height={20} />
@@ -68,5 +68,4 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
     </KnowledgeSearchBarStyleWrapper>
   );
 };
-
 export default KnowledgeSearchBar;

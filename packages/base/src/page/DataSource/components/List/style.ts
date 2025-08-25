@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { BasicTag } from '@actiontech/shared';
-
+import { BasicTag } from '@actiontech/dms-kit';
 /**
  * todo Basic宽度默认占据一行 使用时不太方便 后续对BasicTag的样式进行调整
  */

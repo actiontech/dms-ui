@@ -17,7 +17,7 @@ import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport'
 import { AddDataExportTaskResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { useState } from 'react';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/dms-kit';
 
 describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   const CustomCom = ({

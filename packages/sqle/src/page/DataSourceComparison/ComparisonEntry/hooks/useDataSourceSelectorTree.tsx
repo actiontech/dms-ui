@@ -1,5 +1,5 @@
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { Form, TreeSelectProps } from 'antd';
@@ -9,16 +9,15 @@ import { DatabaseFilled, DatabaseSchemaFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { DatabaseSelectorTitleStyleWrapper } from '../style';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { IDatabaseComparisonObject } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   DatabaseComparisonFromFields,
   SelectedInstanceInfo
 } from '../index.type';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
+import { FormValidatorRule } from '@actiontech/dms-kit/es/types/common.type';
 import { useTranslation } from 'react-i18next';
-
 type DefaultOptionType = {
   id: string;
   pId: string;
@@ -29,15 +28,11 @@ type DefaultOptionType = {
   disabled?: boolean;
   dbType: string;
 };
-
 const TREE_DATA_PARENT_NODE_ID = 'TREE_DATA_PARENT_NODE_ID';
-
 const INSTANCE_SCHEMA_SEPARATOR = '_INSTANCE_SCHEMA_SEPARATOR_';
-
 const useDataSourceSelectorTree = () => {
   const { t } = useTranslation();
   const { getLogoUrlByDbType } = useDatabaseType();
-
   const [treeData, setTreeData] = useState<DefaultOptionType[]>([]);
   const { projectName } = useCurrentProject();
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
@@ -54,12 +49,10 @@ const useDataSourceSelectorTree = () => {
     loading: instanceLoading,
     instanceList
   } = useInstance();
-
   const [
     getInstanceSchemaPending,
     { setTrue: startGetInstanceSchema, setFalse: getInstanceSchemaDone }
   ] = useBoolean();
-
   const onLoadTreeData: TreeSelectProps<
     string,
     DefaultOptionType
@@ -67,12 +60,9 @@ const useDataSourceSelectorTree = () => {
     if (treeExpandedKeys.includes(id)) {
       return Promise.resolve();
     }
-
     setTreeLoadedKeys((keys) => [...keys, id]);
     const instanceInfo = instanceList.find((v) => v.instance_id === id);
-
     startGetInstanceSchema();
-
     return instance
       .getInstanceSchemasV1({
         instance_name: instanceInfo?.instance_name!,
@@ -111,7 +101,6 @@ const useDataSourceSelectorTree = () => {
   const onTreeExpand: TreeSelectProps['onTreeExpand'] = (keys) => {
     setTreeExpandedKeys(keys);
   };
-
   const disableTreeNodesBasedOnSelection = (
     otherValue?: string
   ): TreeSelectProps<string, DefaultOptionType>['treeData'] => {
@@ -133,7 +122,6 @@ const useDataSourceSelectorTree = () => {
       };
     });
   };
-
   const parse2DatabaseCompareObject = (
     value?: string
   ): IDatabaseComparisonObject => {
@@ -151,7 +139,6 @@ const useDataSourceSelectorTree = () => {
       instance_id: value
     };
   };
-
   const getInstanceInfoBySelectedValue = (
     value?: string
   ): SelectedInstanceInfo | undefined => {
@@ -163,7 +150,6 @@ const useDataSourceSelectorTree = () => {
       const instanceInfo = instanceList.find(
         (v) => v.instance_id === instanceId
       );
-
       return {
         instanceId,
         schemaName,
@@ -171,16 +157,13 @@ const useDataSourceSelectorTree = () => {
         instanceType: instanceInfo?.instance_type ?? ''
       };
     }
-
     const instanceInfo = instanceList.find((v) => v.instance_id === value);
-
     return {
       instanceId: value,
       instanceName: instanceInfo?.instance_name ?? '',
       instanceType: instanceInfo?.instance_type ?? ''
     };
   };
-
   const validatorDataSourceTreeSelector = useCallback((): FormValidatorRule => {
     const getSelectionLevel = (value: string): 'data-source' | 'schema' => {
       return value.includes(INSTANCE_SCHEMA_SEPARATOR)
@@ -191,13 +174,10 @@ const useDataSourceSelectorTree = () => {
       if (!selectedBaselineInstanceValue || !selectedComparisonInstanceValue) {
         return Promise.resolve();
       }
-
       const baselineLevel = getSelectionLevel(selectedBaselineInstanceValue);
-
       const comparisonLevel = getSelectionLevel(
         selectedComparisonInstanceValue
       );
-
       if (baselineLevel !== comparisonLevel) {
         const errorMessage =
           baselineLevel === 'schema'
@@ -205,14 +185,11 @@ const useDataSourceSelectorTree = () => {
             : t(
                 'dataSourceComparison.entry.selectorValidatorDataSourceMessage'
               );
-
         return Promise.reject(errorMessage);
       }
-
       return Promise.resolve();
     };
   }, [selectedBaselineInstanceValue, selectedComparisonInstanceValue, t]);
-
   useEffect(() => {
     updateInstanceList(
       {
@@ -271,7 +248,6 @@ const useDataSourceSelectorTree = () => {
     sharedTheme.uiToken.colorPrimary,
     updateInstanceList
   ]);
-
   return {
     form,
     selectedBaselineInstanceValue,
@@ -288,5 +264,4 @@ const useDataSourceSelectorTree = () => {
     getTreeDataPending: instanceLoading || getInstanceSchemaPending
   };
 };
-
 export default useDataSourceSelectorTree;

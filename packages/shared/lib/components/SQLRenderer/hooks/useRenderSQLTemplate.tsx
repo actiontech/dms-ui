@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { SQLRendererProps } from '../SQLRenderer.types';
-import HighlightCode from '../../../utils/HighlightCode';
+import { HighlightCode } from '@actiontech/dms-kit';
 
 const useRenderSQLTemplate = (
   params: Pick<

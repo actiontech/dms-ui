@@ -5,7 +5,7 @@
 import UserMenu from '.';
 import { cleanup } from '@testing-library/react';
 import { SupportTheme } from 'sqle/src/theme';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';

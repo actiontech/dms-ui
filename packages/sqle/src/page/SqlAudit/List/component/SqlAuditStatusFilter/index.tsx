@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { sqlAuditStatusDictionary } from '../../../../../hooks/useStaticStatus/index.data';
-
 const SqlAuditStatusFilter: React.FC<{
   status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all';
   onChange: (
@@ -38,5 +37,4 @@ const SqlAuditStatusFilter: React.FC<{
     />
   );
 };
-
 export default SqlAuditStatusFilter;

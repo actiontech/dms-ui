@@ -1,10 +1,6 @@
-import {
-  PageHeader,
-  EmptyBox,
-  BasicToolTip,
-  useTypedParams,
-  ActionButton
-} from '@actiontech/shared';
+import { PageHeader, EmptyBox, BasicToolTip } from '@actiontech/dms-kit';
+import { ActionButton } from '@actiontech/shared';
+import { useTypedParams } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
@@ -14,7 +10,7 @@ import { SqlOptimizationOverviewBaseInfoStyleWrapper } from '../style';
 import { DetailComStyleWrapper, HeaderSpaceTagStyleWrapper } from '../style';
 import OptimizationSqlList from './OptimizationSqlList';
 import { useState } from 'react';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
 import { SqlOptimizationStatusEnum } from '../index.data';
 import {
@@ -24,20 +20,14 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const OptimizationOverview = () => {
   const { t } = useTranslation();
-
   const { sqleTheme } = useThemeStyleData();
-
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview>();
-
   const { projectID, projectName } = useCurrentProject();
-
   const [sqlListLoading, setSqlListLoading] = useState<boolean>(false);
-
   const {
     data: optimizationRecord,
     loading: recordLoading,
@@ -60,7 +50,6 @@ const OptimizationOverview = () => {
       }
     }
   );
-
   return (
     <>
       <Spin
@@ -79,7 +68,9 @@ const OptimizationOverview = () => {
               actionType="navigate-link"
               link={{
                 to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
-                params: { projectID }
+                params: {
+                  projectID
+                }
               }}
             />
           }
@@ -221,5 +212,4 @@ const OptimizationOverview = () => {
     </>
   );
 };
-
 export default OptimizationOverview;

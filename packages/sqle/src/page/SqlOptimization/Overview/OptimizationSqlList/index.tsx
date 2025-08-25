@@ -14,7 +14,7 @@ import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimiz
 import { IGetOptimizationSQLsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { SqlOptimizationStatusEnum } from '../../index.data';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const OptimizationSqlList: React.FC<{
   projectName: string;

@@ -1,7 +1,8 @@
-import { CopyIcon, HighlightCode } from '@actiontech/shared';
+import { CopyIcon, HighlightCode } from '@actiontech/dms-kit';
 import { SqlOptimizationCodeBlockStyleWrapper } from '../style';
-
-const CodeBlock: React.FC<{ code: string }> = ({ code }) => {
+const CodeBlock: React.FC<{
+  code: string;
+}> = ({ code }) => {
   return (
     <SqlOptimizationCodeBlockStyleWrapper>
       <span className="copy-icon">
@@ -16,5 +17,4 @@ const CodeBlock: React.FC<{ code: string }> = ({ code }) => {
     </SqlOptimizationCodeBlockStyleWrapper>
   );
 };
-
 export default CodeBlock;

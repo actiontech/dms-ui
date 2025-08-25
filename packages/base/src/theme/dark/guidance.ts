@@ -1,7 +1,7 @@
 import {
   darkThemeUI,
   darkThemeBasic
-} from '@actiontech/shared/lib/theme/dark/basic';
+} from '@actiontech/dms-kit/es/theme/dark/basic';
 import { GuidanceTheme } from '../type';
 
 export const guidanceTheme: GuidanceTheme = {

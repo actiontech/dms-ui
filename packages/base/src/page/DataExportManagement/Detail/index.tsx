@@ -1,7 +1,7 @@
 import { Spin } from 'antd';
 import { WorkflowDetailStyleWrapper } from './style';
 import BackToWorkflowList from '../Common/BackToWorkflowList';
-import { EmptyBox, PageHeader } from '@actiontech/shared';
+import { EmptyBox, PageHeader } from '@actiontech/dms-kit';
 import { useEffect, useMemo } from 'react';
 import useDataExportDetailReduxManage from './hooks/index.redux';
 import BasicInfoWrapper from '../Common/BasicInfoWrapper';
@@ -15,25 +15,20 @@ import ExportDetail from './components/ExportDetail';
 import ExportDetailPageHeaderAction from './components/PageHeaderAction';
 import WorkflowRecordInfo from './components/WorkflowRecordInfo';
 import RejectWorkflowModal from './components/RejectReason/RejectWorkflowModal';
-
 const WorkflowDetail: React.FC = () => {
   const { clearAllDetailState, workflowInfo, workflowStepOpen } =
     useDataExportDetailReduxManage();
-
   const { getTaskInfosLoading, getWorkflowLoading } = useInitDataWithRequest();
-
   const currentRejectedStep = useMemo(() => {
     return workflowInfo?.workflow_record?.workflow_step_list?.find(
       (v) => v.state === WorkflowStepStateEnum.rejected
     );
   }, [workflowInfo?.workflow_record?.workflow_step_list]);
-
   useEffect(() => {
     return () => {
       clearAllDetailState();
     };
   }, [clearAllDetailState]);
-
   return (
     <Spin spinning={getTaskInfosLoading || getWorkflowLoading}>
       <WorkflowDetailStyleWrapper workflowStepOpen={workflowStepOpen}>
@@ -70,5 +65,4 @@ const WorkflowDetail: React.FC = () => {
     </Spin>
   );
 };
-
 export default WorkflowDetail;

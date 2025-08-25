@@ -1,12 +1,12 @@
 import { useRequest } from 'ahooks';
 import dayjs, { Dayjs } from 'dayjs';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import { translateTimeForRequest } from '@actiontech/dms-kit';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { IChartPoint } from '@actiontech/shared/lib/api/sqle/service/common';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
 
 export type getSqlExecPlanCostDataSourceParams = {

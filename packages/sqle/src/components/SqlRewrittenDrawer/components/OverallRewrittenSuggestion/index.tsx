@@ -1,4 +1,5 @@
-import { EmptyBox, SQLRenderer } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   BusinessWarningStyleWrapper,
@@ -25,7 +26,6 @@ import {
 import RewrittenSqlCommonEditor from '../Common/RewrittenSqlCommonEditor';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { Typography } from 'antd';
-
 type Props = {
   originalSql: string;
   rewrittenSql?: string;
@@ -39,7 +39,6 @@ type Props = {
   rewrittenSqlLogicDesc: string;
   isRewriting: boolean;
 };
-
 const OverallRewrittenSuggestion: React.FC<Props> = ({
   rewrittenSql,
   originalSql,
@@ -55,7 +54,6 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
-
   const TitleCommonIcon = (
     <RingOutlined
       color={sharedTheme.uiToken.colorPrimary}
@@ -63,28 +61,24 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
       width={24}
     />
   );
-
   const [showSqlDifference, { toggle: toggleShowSqlDifference }] =
     useToggle(true);
   const [
     showExecuteOrderExplanation,
     { toggle: toggleShowExecuteOrderExplanation }
   ] = useToggle(false);
-
   const overallDDL = useMemo(() => {
     return `${suggestions
       .map((v) => v.ddl_dcl)
       .filter(Boolean)
       .join('\n\n')}`;
   }, [suggestions]);
-
   const readonlyEditorHeight = useMemo(() => {
     if (!overallDDL) {
       return 200;
     }
     return overallDDL.split('\n').length * 40;
   }, [overallDDL]);
-
   const renderSummaryText = () => {
     if (isRewriting) {
       return <li>{t('sqlRewrite.rewriteInProgressTip')}</li>;
@@ -107,7 +101,6 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
       </>
     );
   };
-
   return (
     <section>
       <OverallRewrittenItem
@@ -245,5 +238,4 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
     </section>
   );
 };
-
 export default OverallRewrittenSuggestion;

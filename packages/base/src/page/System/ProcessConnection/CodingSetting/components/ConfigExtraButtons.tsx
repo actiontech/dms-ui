@@ -1,24 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { Space, Form, message } from 'antd';
-import { BasicInput } from '@actiontech/shared';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { BasicInput } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { useRef, useState } from 'react';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   ConfigModifyBtn,
   ConfigTestBtn,
   ConfigTestPopoverForm
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
-
+} from '@actiontech/dms-kit';
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
   enabled: boolean;
 }
-
 const ConfigExtraButtons = ({
   isConfigClosed,
   extraButtonsVisible,
@@ -26,25 +24,22 @@ const ConfigExtraButtons = ({
   enabled
 }: ConfigExtraButtonsProps) => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [testForm] = Form.useForm<any>();
-
   const testing = useRef(false);
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-
   const testCodingConfiguration = async () => {
     if (testing.current) {
       return;
     }
     const values = await testForm.validateFields();
-
     testing.current = true;
     toggleTestPopoverVisible(false);
     const hide = messageApi.loading(t('dmsSystem.codingDocking.testing'), 0);
     configuration
-      .testCodingConfigV1({ coding_project_name: values.codingProjectName })
+      .testCodingConfigV1({
+        coding_project_name: values.codingProjectName
+      })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           if (res.data.data?.is_message_sent_normally) {
@@ -62,7 +57,6 @@ const ConfigExtraButtons = ({
         testForm.resetFields();
       });
   };
-
   const onTestPopoverOpen = (open: boolean) => {
     if (!enabled) {
       return;
@@ -72,7 +66,6 @@ const ConfigExtraButtons = ({
     }
     toggleTestPopoverVisible(open);
   };
-
   return (
     <>
       {messageContextHolder}
@@ -92,8 +85,14 @@ const ConfigExtraButtons = ({
                 <FormItemLabel
                   name="codingProjectName"
                   label={t('dmsSystem.codingDocking.codingProjectName')}
-                  style={{ marginBottom: 0 }}
-                  rules={[{ required: true }]}
+                  style={{
+                    marginBottom: 0
+                  }}
+                  rules={[
+                    {
+                      required: true
+                    }
+                  ]}
                 >
                   <BasicInput
                     placeholder={t('common.form.placeholder.input', {
@@ -113,5 +112,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { BasicButton, useTypedNavigate } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { Column, ColumnConfig } from '@ant-design/plots';
 import {
   useChangeTheme,
@@ -16,7 +17,7 @@ import { DBHealthEnum } from './index.enum';
 import { DataSourceCountDataType } from './index.type';
 import ToolTipCustomContent from './ToolTipCustomContent';
 import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 /**
   todo: 柱形图的 柱子宽度 与边距（组之间，单柱子之间）不能同时设置
@@ -30,10 +31,8 @@ const DataSourceCount = () => {
   const { t } = useTranslation();
   const { currentTheme } = useChangeTheme();
   const navigate = useTypedNavigate();
-
   const { projectName, projectID } = useCurrentProject();
   const { sharedTheme, sqleTheme } = useThemeStyleData();
-
   const [data, setData] = useState<DataSourceCountDataType[]>([
     {
       type: 'MySQL',
@@ -43,7 +42,10 @@ const DataSourceCount = () => {
     }
   ]);
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
-    () => statistic.GetInstanceHealthV1({ project_name: projectName }),
+    () =>
+      statistic.GetInstanceHealthV1({
+        project_name: projectName
+      }),
     {
       onSuccess: (res) => {
         const dbHealths: IDBTypeHealth[] = res.data.data ?? [];
@@ -76,7 +78,6 @@ const DataSourceCount = () => {
       }
     }
   );
-
   const config: ColumnConfig = useMemo(() => {
     return {
       data,
@@ -92,8 +93,10 @@ const DataSourceCount = () => {
       columnStyle: {
         radius: [4, 4, 0, 0]
       },
-      isGroup: true, // 是否分组柱形图
-      seriesField: 'category', // 分组拆分字段
+      isGroup: true,
+      // 是否分组柱形图
+      seriesField: 'category',
+      // 分组拆分字段
       xAxis: {
         animate: false,
         line: null,
@@ -145,15 +148,16 @@ const DataSourceCount = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [t, sharedTheme, sqleTheme, data]);
-
   const hasData = useMemo(() => {
     return Number(data.some((item) => item.value));
   }, [data]);
-
   const onGetMore = () => {
-    navigate(ROUTE_PATHS.BASE.DATA_SOURCE.index, { params: { projectID } });
+    navigate(ROUTE_PATHS.BASE.DATA_SOURCE.index, {
+      params: {
+        projectID
+      }
+    });
   };
-
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.dataSourceCount.title')}
@@ -178,5 +182,4 @@ const DataSourceCount = () => {
     </CardWrapper>
   );
 };
-
 export default DataSourceCount;

@@ -4,7 +4,7 @@ import { DataSourceFormField } from '../components/Form/index.type';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import { useBoolean } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api/';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import {
   getDBServiceConnectableErrorMessage,

@@ -10,7 +10,8 @@
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
-    "@actiontech/icons": "workspace:^"
+    "@actiontech/icons": "workspace:^",
+    "@actiontech/dms-kit": "workspace:^"
   },
   "devDependencies": {
     "tsup": "^8.5.0"

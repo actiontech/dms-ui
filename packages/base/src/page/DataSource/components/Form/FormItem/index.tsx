@@ -11,16 +11,12 @@ import {
   BasicSwitch,
   EmptyBox,
   TestDatabaseConnectButton
-} from '@actiontech/shared';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
+} from '@actiontech/dms-kit';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
+import { validatorPort } from '@actiontech/dms-kit';
 import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import { DataSourceFormContext } from '../../../context';
-
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
@@ -31,26 +27,23 @@ const DatabaseFormItem: React.FC<{
   isExternalInstance?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
-
   const formContext = useContext(DataSourceFormContext);
-
   const [
     hideConnectionInfo,
     { setFalse: setConnectionInfoShow, setTrue: setConnectionInfoHide }
   ] = useBoolean(true);
-
   const [needUpdatePassword, setNeedUpdatePassword] = useState(false);
   const changeNeedUpdatePassword = (check: boolean) => {
     setNeedUpdatePassword(check);
-    props.form.setFieldsValue({ needUpdatePassword: check });
+    props.form.setFieldsValue({
+      needUpdatePassword: check
+    });
   };
-
   const testDatabaseConnect = async () => {
     formContext?.onCheckConnectable(props.currentAsyncParams).finally(() => {
       setConnectionInfoShow();
     });
   };
-
   useEffect(() => {
     const resetConnectAbleStatus = () => {
       setConnectionInfoHide();
@@ -67,7 +60,6 @@ const DatabaseFormItem: React.FC<{
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
     <>
       <FormItemLabel
@@ -210,5 +202,4 @@ const DatabaseFormItem: React.FC<{
     </>
   );
 };
-
 export default DatabaseFormItem;

@@ -5,8 +5,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const SqlAuditPageHeaderActions = (
   projectID: string
 ): Record<'create-audit', React.ReactNode> => {
@@ -20,7 +19,9 @@ export const SqlAuditPageHeaderActions = (
           icon={<PlusOutlined width={10} height={10} color="currentColor" />}
           link={{
             to: ROUTE_PATHS.SQLE.SQL_AUDIT.create,
-            params: { projectID }
+            params: {
+              projectID
+            }
           }}
         />
       </PermissionControl>

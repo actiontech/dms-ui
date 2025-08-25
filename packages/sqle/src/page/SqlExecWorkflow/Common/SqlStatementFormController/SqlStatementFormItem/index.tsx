@@ -1,9 +1,6 @@
-import { ModeSwitcher } from '@actiontech/shared';
+import { ModeSwitcher } from '@actiontech/dms-kit';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { defaultUploadTypeOptions } from './index.data';
 import { SqlStatementFormItemProps } from './index.type';
@@ -15,7 +12,6 @@ import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
 import { RingPieFilled } from '@actiontech/icons';
 import SqlBackupSwitcher from './components/SqlBackupSwitcher';
-
 const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   fieldPrefixPath,
   clearSqlContentFormWhenChangeUploadType = true,
@@ -31,16 +27,13 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();
-
   const currentUploadTypeFieldName = useMemo(() => {
     return [fieldPrefixPath, 'currentUploadType'];
   }, [fieldPrefixPath]);
-
   const currentUploadType = Form.useWatch(
     currentUploadTypeFieldName,
     form
   ) as AuditTaskResV1SqlSourceEnum;
-
   const uploadTypeChangeHandle = () => {
     if (clearSqlContentFormWhenChangeUploadType) {
       form.resetFields([
@@ -50,7 +43,6 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
       ]);
     }
   };
-
   return (
     <>
       <FormItemLabel
@@ -68,7 +60,9 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         initialValue={defaultUploadTypeOptions[0].value}
       >
         <ModeSwitcher
-          rowProps={{ gutter: 12 }}
+          rowProps={{
+            gutter: 12
+          }}
           options={defaultUploadTypeOptions}
           onChange={uploadTypeChangeHandle}
           disabled={disabledUploadType}
@@ -108,5 +102,4 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
     </>
   );
 };
-
 export default SqlStatementFormItem;

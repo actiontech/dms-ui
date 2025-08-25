@@ -1,18 +1,17 @@
 import { Steps, Typography, StepProps } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { PluginAuditDefaultPromptsWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
-
+import { SupportLanguage } from '@actiontech/dms-kit';
 const DefaultPrompts = () => {
   const { t } = useTranslation();
   const { language } = useCurrentUser();
-
   const stepItems = (desc: string): StepProps[] => {
-    return desc.split('\n').map((i) => ({ title: i }));
+    return desc.split('\n').map((i) => ({
+      title: i
+    }));
   };
-
   return (
     <PluginAuditDefaultPromptsWrapper direction="vertical" align="center">
       <Typography.Title level={3}>
@@ -38,5 +37,4 @@ const DefaultPrompts = () => {
     </PluginAuditDefaultPromptsWrapper>
   );
 };
-
 export default DefaultPrompts;

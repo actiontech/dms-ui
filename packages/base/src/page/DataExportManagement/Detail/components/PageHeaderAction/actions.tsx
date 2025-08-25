@@ -6,7 +6,6 @@ import {
 import { ActionButton } from '@actiontech/shared';
 import { ActionMeta } from './index.type';
 import { Divider } from 'antd';
-
 export const CloseWorkflowAction = (closeWorkflowButtonMeta: ActionMeta) => {
   return (
     <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE}>
@@ -26,7 +25,6 @@ export const CloseWorkflowAction = (closeWorkflowButtonMeta: ActionMeta) => {
     </PermissionControl>
   );
 };
-
 export const RejectWorkflowAction = (rejectWorkflowButtonMeta: ActionMeta) => {
   return (
     <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT}>
@@ -38,7 +36,6 @@ export const RejectWorkflowAction = (rejectWorkflowButtonMeta: ActionMeta) => {
     </PermissionControl>
   );
 };
-
 export const ApproveWorkflowAction = (
   approveWorkflowButtonMeta: ActionMeta
 ) => {
@@ -56,7 +53,6 @@ export const ApproveWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const ExecuteWorkflowAction = (executeExportButtonMeta: ActionMeta) => {
   return (
     <PermissionControl

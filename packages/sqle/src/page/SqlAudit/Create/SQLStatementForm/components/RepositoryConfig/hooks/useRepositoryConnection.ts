@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { SelectProps, Form } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { SQLInfoFormFields } from '../../../../SQLInfoForm/index.type';
 
 const useRepositoryConnection = () => {

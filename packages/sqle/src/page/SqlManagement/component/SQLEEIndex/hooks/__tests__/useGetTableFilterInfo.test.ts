@@ -4,7 +4,7 @@ import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
-import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelectProps } from '@actiontech/dms-kit';
 import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';

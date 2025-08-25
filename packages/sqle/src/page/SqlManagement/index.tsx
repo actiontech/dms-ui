@@ -1,12 +1,10 @@
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import SQLEEIndex from './component/SQLEEIndex';
-
 const SqlManagement = () => {
   const { t } = useTranslation();
-
   return (
     <article>
       {/* #if [ce] */}
@@ -25,5 +23,4 @@ const SqlManagement = () => {
     </article>
   );
 };
-
 export default SqlManagement;

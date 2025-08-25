@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
+import { CustomLabelContent } from '@actiontech/dms-kit';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ICodingConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { FormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import {
@@ -20,7 +20,7 @@ import {
   ConfigSwitch,
   ConfigSubmitButtonField,
   useConfigSwitchControls
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 
 const CodingSetting: React.FC = () => {
   const { t } = useTranslation();

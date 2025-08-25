@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowStepsStyleWrapper } from './style';
 import WorkflowBasicInfo from './WorkflowBasicInfo';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import WorkflowSteps from './WorkflowSteps';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import { CloseOutlined } from '@actiontech/icons';

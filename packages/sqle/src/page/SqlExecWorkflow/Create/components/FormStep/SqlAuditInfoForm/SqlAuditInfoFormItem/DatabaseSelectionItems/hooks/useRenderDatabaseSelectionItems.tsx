@@ -1,8 +1,9 @@
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { DatabaseSelectionItemProps } from '../../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTip, TypedLink } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
@@ -16,9 +17,8 @@ import useCreationMode from '../../../../../../hooks/useCreationMode';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../../store';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
   sqlStatementTabActiveKey,
@@ -26,20 +26,19 @@ const useRenderDatabaseSelectionItems = ({
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
-> & { instanceList?: IInstanceTipResV2[] }) => {
+> & {
+  instanceList?: IInstanceTipResV2[];
+}) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
-
   const { isCloneMode, isRollbackMode } = useCreationMode();
-
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
       clonedExecWorkflowSqlAuditInfo:
         state.sqlExecWorkflow.clonedExecWorkflowSqlAuditInfo
     };
   });
-
   useEffect(() => {
     if (isCloneMode || isRollbackMode) {
       sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo?.databaseInfo?.forEach(
@@ -52,7 +51,6 @@ const useRenderDatabaseSelectionItems = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const updateSchemaList = async (key: string, instanceName: string) => {
     instance
       .getInstanceSchemasV1({
@@ -72,7 +70,6 @@ const useRenderDatabaseSelectionItems = ({
         });
       });
   };
-
   const getSupportedFileModeByInstanceType = (key: string, dbType: string) => {
     system
       .getSystemModuleStatus({
@@ -87,25 +84,25 @@ const useRenderDatabaseSelectionItems = ({
         }
       });
   };
-
   const updateRuleTemplateNameAndDbType = (
     key: string,
     instanceName: string
   ) => {
     instance
-      .getInstanceV2({ instance_name: instanceName, project_name: projectName })
+      .getInstanceV2({
+        instance_name: instanceName,
+        project_name: projectName
+      })
       .then(async (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dbSourceInfoCollection.set(key, {
             dbType: res.data.data?.db_type,
             ruleTemplate: res.data.data?.rule_template
           });
-
           getSupportedFileModeByInstanceType(key, res.data.data?.db_type ?? '');
         }
       });
   };
-
   const handleInstanceChange = (key: string, instanceName?: string) => {
     if (instanceName) {
       const targetInstance = instanceList?.find(
@@ -129,7 +126,6 @@ const useRenderDatabaseSelectionItems = ({
       sqlStatementTabActiveKey.set(key);
     }
   };
-
   useEffect(() => {
     // 克隆或者回滚时，因为是从store中取instanceName ，此时可能instance list接口还未结束
     // 导致enableBackup被赋予了默认值false，所以需要在instance list接口完成后，重新设置enableBackup
@@ -146,13 +142,11 @@ const useRenderDatabaseSelectionItems = ({
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [instanceList]);
-
   const handleInstanceSchemaChange = (key: string, schemaName?: string) => {
     dbSourceInfoCollection.set(key, {
       schemaName
     });
   };
-
   const getInstanceSchemaOptions = (key: string) => {
     return (
       dbSourceInfoCollection.value?.[key]?.schemaList?.map((item) => {
@@ -163,15 +157,12 @@ const useRenderDatabaseSelectionItems = ({
       }) ?? []
     );
   };
-
   const getInstanceSchemaLoading = (key: string) => {
     return dbSourceInfoCollection.value?.[key]?.getSchemaLoading;
   };
-
   const renderRuleTemplateDisplay = (key: string) => {
     const rule = dbSourceInfoCollection.value?.[key]?.ruleTemplate;
     const dbType = dbSourceInfoCollection.value?.[key]?.dbType;
-
     if (!rule || !dbType) {
       return (
         <BasicButton
@@ -180,11 +171,9 @@ const useRenderDatabaseSelectionItems = ({
         />
       );
     }
-
     const path = rule.is_global_rule_template
       ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
-
     return (
       <BasicToolTip
         title={
@@ -214,7 +203,6 @@ const useRenderDatabaseSelectionItems = ({
       </BasicToolTip>
     );
   };
-
   const renderDeleteItemButton = (
     fields: FormListFieldData[],
     key: string,
@@ -228,7 +216,6 @@ const useRenderDatabaseSelectionItems = ({
         )?.[0] ?? ''
       );
     };
-
     return (
       <BasicButton
         className="data-source-row-button data-source-col-delete-button"
@@ -253,7 +240,6 @@ const useRenderDatabaseSelectionItems = ({
       />
     );
   };
-
   const renderAddItemButton = (
     fields: FormListFieldData[],
     handleClick: () => void
@@ -275,7 +261,6 @@ const useRenderDatabaseSelectionItems = ({
       </BasicButton>
     );
   };
-
   return {
     handleInstanceChange,
     handleInstanceSchemaChange,
@@ -286,5 +271,4 @@ const useRenderDatabaseSelectionItems = ({
     renderAddItemButton
   };
 };
-
 export default useRenderDatabaseSelectionItems;

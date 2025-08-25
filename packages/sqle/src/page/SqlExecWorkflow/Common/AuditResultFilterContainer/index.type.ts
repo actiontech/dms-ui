@@ -1,7 +1,7 @@
 import {
   CustomSegmentedFilterBaseValue,
   CustomSegmentedFilterProps
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type AuditResultFilterContainerProps<

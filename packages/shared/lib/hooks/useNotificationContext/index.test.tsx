@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import useNotificationContext from '.';
-import { eventEmitter } from '../../utils/EventEmitter';
-import EmitterKey from '../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { notification } from 'antd';
 import { superRender } from '../../testUtil/superRender';
 
@@ -11,6 +11,7 @@ jest.mock('antd', () => ({
     useNotification: jest.fn()
   }
 }));
+
 
 const api = {
   success: jest.fn(),

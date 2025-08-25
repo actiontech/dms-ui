@@ -9,13 +9,13 @@ import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import CloneRuleTemplateModal from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal';
 import { CloneRuleTemplateFormFields } from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal/index.type';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const CloneRuleTemplate = () => {
   const { t } = useTranslation();

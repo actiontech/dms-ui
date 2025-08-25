@@ -2,31 +2,25 @@ import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { Form, message, Radio, RadioGroupProps, Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
+import { BasicInput, EmptyBox } from '@actiontech/dms-kit';
 import {
   ConfigModifyBtn,
   ConfigTestBtn,
   ConfigTestPopoverForm
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
-
+} from '@actiontech/dms-kit';
+import { phoneRule } from '@actiontech/dms-kit';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { TestFormFields } from '../index.type';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-
 export interface ConfigExtraButtonsProps {
   enabled: string | boolean;
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
 }
-
 const ConfigExtraButtons = ({
   enabled,
   isConfigClosed,
@@ -35,14 +29,12 @@ const ConfigExtraButtons = ({
 }: ConfigExtraButtonsProps) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
   const [testForm] = useForm<TestFormFields>();
   const [receiveType, setReceiveType] =
     useState<TestFeishuConfigurationAccountTypeEnum>(
       TestFeishuConfigurationAccountTypeEnum.email
     );
-
   const testing = useRef(false);
   const testLarkConfiguration = async () => {
     if (testing.current) {
@@ -80,7 +72,6 @@ const ConfigExtraButtons = ({
         setReceiveType(TestFeishuConfigurationAccountTypeEnum.email);
       });
   };
-
   const onTestPopoverOpen = (open: boolean) => {
     if (!enabled) {
       return;
@@ -91,11 +82,9 @@ const ConfigExtraButtons = ({
     }
     toggleTestPopoverVisible(open);
   };
-
   const handleChangeReceiveType: RadioGroupProps['onChange'] = (e) => {
     const type = e.target.value;
     setReceiveType(type);
-
     if (type === TestFeishuConfigurationAccountTypeEnum.email) {
       testForm.resetFields(['receivePhone']);
     } else {
@@ -120,7 +109,9 @@ const ConfigExtraButtons = ({
                   name="receiveType"
                   label={t('dmsSystem.lark.receiveType')}
                   initialValue={TestFeishuConfigurationAccountTypeEnum.email}
-                  style={{ marginBottom: 0 }}
+                  style={{
+                    marginBottom: 0
+                  }}
                 >
                   <Radio.Group size="small" onChange={handleChangeReceiveType}>
                     <Radio.Button
@@ -141,7 +132,9 @@ const ConfigExtraButtons = ({
                   }
                   defaultNode={
                     <FormItemNoLabel
-                      style={{ marginBottom: 0 }}
+                      style={{
+                        marginBottom: 0
+                      }}
                       name="receiveEmail"
                       rules={[
                         {
@@ -164,7 +157,9 @@ const ConfigExtraButtons = ({
                   }
                 >
                   <FormItemNoLabel
-                    style={{ marginBottom: 0 }}
+                    style={{
+                      marginBottom: 0
+                    }}
                     name="receivePhone"
                     rules={[
                       {
@@ -195,5 +190,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

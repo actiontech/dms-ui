@@ -9,12 +9,12 @@ import { AxiosResponse } from 'axios';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { IGetWorkflowPercentCountedByInstanceTypeV1Return } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { IWorkflowPercentCountedByInstanceType } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { floatToNumberPercent } from '@actiontech/dms-kit';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const renderLabelContent = (obj: { [key: string]: any }) => {

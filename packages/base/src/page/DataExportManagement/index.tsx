@@ -1,12 +1,10 @@
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import { Outlet } from 'react-router-dom';
-
 const DataExportManagement: React.FC = () => {
   const { t } = useTranslation();
-
   return (
     <article>
       {/* #if [ce] */}
@@ -25,5 +23,4 @@ const DataExportManagement: React.FC = () => {
     </article>
   );
 };
-
 export default DataExportManagement;

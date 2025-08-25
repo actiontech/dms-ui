@@ -7,7 +7,7 @@ import {
   SupportTheme,
   SystemRole,
   UserRolesType
-} from '../../enum';
+} from '@actiontech/dms-kit';
 import {
   updateTheme as updateReduxTheme,
   updateLanguage as updateReduxLanguage

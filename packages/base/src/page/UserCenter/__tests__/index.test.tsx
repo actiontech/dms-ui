@@ -6,7 +6,7 @@ import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter'
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import { ExportDetailPageHeaderExtraStyleWrapper } from './style';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { Divider, message } from 'antd';
 import useActionButtonState from './useActionButtonState';
 import {
@@ -10,26 +10,20 @@ import {
   ApproveWorkflowAction,
   ExecuteWorkflowAction
 } from './actions';
-
 const ExportDetailPageHeaderAction: React.FC = () => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { workflowStepOpen, updateWorkflowStepOpen } =
     useDataExportDetailReduxManage();
-
   const workflowDetailClickHandle = () => {
     updateWorkflowStepOpen(true);
   };
-
   const {
     closeWorkflowButtonMeta,
     approveWorkflowButtonMeta,
     executeExportButtonMeta,
     rejectWorkflowButtonMeta
   } = useActionButtonState(messageApi);
-
   return (
     <ExportDetailPageHeaderExtraStyleWrapper>
       {messageContextHolder}
@@ -64,5 +58,4 @@ const ExportDetailPageHeaderAction: React.FC = () => {
     </ExportDetailPageHeaderExtraStyleWrapper>
   );
 };
-
 export default ExportDetailPageHeaderAction;
