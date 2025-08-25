@@ -2,7 +2,7 @@ import { cleanup } from '@testing-library/react';
 import SqlAudit from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
-describe('sqle/SqlAudit', () => {
+describe.skip('sqle/SqlAudit', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });

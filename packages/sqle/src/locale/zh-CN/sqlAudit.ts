@@ -110,5 +110,5 @@ export default {
   },
   result: {
     deleteRuleTip: '该规则已删除'
-  },
+  }
 };
