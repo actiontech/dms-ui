@@ -3,13 +3,9 @@ import { useTranslation } from 'react-i18next';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  BasicButton,
-  PageHeader,
-  useTypedNavigate,
-  useTypedParams
-} from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedParams } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { Space, Spin, message } from 'antd';
 import ConfForm from '../Common/ConfForm';
@@ -17,21 +13,20 @@ import {
   ScanTypeParams,
   SqlManagementConfFormFields
 } from '../Common/ConfForm/index.type';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
 import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqleApi } from '@actiontech/shared/lib/api';
-
 const Update: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
@@ -39,10 +34,8 @@ const Update: React.FC = () => {
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update>();
   const [messageApi, messageContextHolder] = message.useMessage();
   const navigate = useTypedNavigate();
-
   const { mergeFromValueIntoParams, generateFormValueByParams } =
     useAsyncParams();
-
   const {
     generateFormValuesWithAPIResponse,
     generateSubmitDataWithFormValues
@@ -57,7 +50,6 @@ const Update: React.FC = () => {
     scanTypeMetas,
     resetFormExceptFreezingFields
   } = useSqlManagementConfFormSharedStates();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -73,16 +65,13 @@ const Update: React.FC = () => {
             prioritySqlConditions,
             ...paramValues
           } = values[item] as ScanTypeParams;
-
           const auditPlanParamsWithScanType =
             scanTypeMetas?.find((v) => v.audit_plan_type === item)
               ?.audit_plan_params ?? [];
-
           const mergedBackendAdditionalParams = mergeFromValueIntoParams(
             paramValues as BackendFormValues,
             auditPlanParamsWithScanType
           );
-
           const params: IAuditPlan = {
             audit_plan_type: item,
             rule_template_name: ruleTemplateName,
@@ -96,7 +85,6 @@ const Update: React.FC = () => {
                   (auditPlanParam) =>
                     auditPlanParam.key === backendAdditionalParam.key
                 )?.type;
-
                 return !(
                   type === AuditPlanParamResV1TypeEnum.password &&
                   !backendAdditionalParam.value
@@ -111,7 +99,9 @@ const Update: React.FC = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('managementConf.update.successTips'));
           navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index, {
-            params: { projectID }
+            params: {
+              projectID
+            }
           });
         }
       })
@@ -119,7 +109,6 @@ const Update: React.FC = () => {
         finishSubmit();
       });
   };
-
   const { data: auditPlanDetail, loading: getDetailLoading } = useRequest(() =>
     SqleApi.InstanceAuditPlanService.getInstanceAuditPlanDetailV2({
       project_name: projectName,
@@ -128,7 +117,6 @@ const Update: React.FC = () => {
       return res.data.data;
     })
   );
-
   const defaultValue = useMemo<SqlManagementConfFormFields>(() => {
     return {
       environmentTag: auditPlanDetail?.environment ?? '',
@@ -153,7 +141,10 @@ const Update: React.FC = () => {
           ),
           ...generateFormValueByParams(cur.audit_plan_params ?? [])
         };
-        return { ...acc, [cur.audit_plan_type?.type!]: params };
+        return {
+          ...acc,
+          [cur.audit_plan_type?.type!]: params
+        };
       }, {})
     };
   }, [
@@ -166,7 +157,6 @@ const Update: React.FC = () => {
     generateFormValuesWithAPIResponse,
     scanTypeMetas
   ]);
-
   return (
     <ConfFormContextProvide
       value={{
@@ -216,5 +206,4 @@ const Update: React.FC = () => {
     </ConfFormContextProvide>
   );
 };
-
 export default Update;

@@ -8,14 +8,14 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
+import { CustomLabelContent } from '@actiontech/dms-kit';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IFeishuConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   PERMISSIONS,

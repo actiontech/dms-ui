@@ -4,7 +4,9 @@ import {
   BasicDrawer,
   BasicTag,
   EmptyBox,
-  BasicToolTip,
+  BasicToolTip
+} from '@actiontech/dms-kit';
+import {
   SQLRenderer,
   BasicTypographyEllipsis,
   parse2ReactRouterPath
@@ -19,9 +21,8 @@ import { Typography, Space } from 'antd';
 import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import AuditExceptionItem from '../AuditResultMessage/AuditExceptionItem';
-
 const ReportDrawer = ({
   open,
   title,
@@ -33,9 +34,7 @@ const ReportDrawer = ({
   extra
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
-
   const { sqleTheme } = useThemeStyleData();
-
   const closeModal = () => {
     onClose();
   };
@@ -55,14 +54,12 @@ const ReportDrawer = ({
         auditResultWithNormalLevel: normalLevel
       };
     }, [data?.auditResult]);
-
   const resultDataIsEmpty = useMemo(() => {
     return (
       (Array.isArray(data?.auditResult) && !data?.auditResult.length) ||
       !data?.auditResult
     );
   }, [data?.auditResult]);
-
   return (
     <>
       <BasicDrawer
@@ -242,5 +239,4 @@ const ReportDrawer = ({
     </>
   );
 };
-
 export default ReportDrawer;

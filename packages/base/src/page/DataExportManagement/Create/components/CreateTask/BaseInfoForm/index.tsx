@@ -3,8 +3,8 @@ import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 import BaseInfoFormItem from './BaseInfoFormItem';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { BriefcaseFilled } from '@actiontech/icons';

@@ -5,19 +5,18 @@ import {
   BasicSelect,
   BasicSwitch,
   EmptyBox
-} from '@actiontech/shared';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit';
+import { FormAreaBlockStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   FormItemLabel,
   FormItemSubTitle,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit';
 import Select, { SelectProps, BaseOptionType } from 'antd/es/select';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { FaLessThanEqualOutlined } from '@actiontech/icons';
 import ConfirmSwitch from './ConfirmSwitch';
 import { SqlAuditFieldsSubTitleWrapper } from '../style';
-
 type SqlAuditFieldsValue = {
   needSqlAuditService: boolean;
   ruleTemplateId: string;
@@ -29,26 +28,20 @@ type SqlAuditFieldsValue = {
   workbenchTemplateName: string;
   allowQueryWhenLessThanAuditLevel: string;
 };
-
 type SqlAuditFieldsProps = {
   getTemplateOptionsLoading: boolean;
   ruleTemplateOptions: SelectProps['options'];
   onNeedAuditForSqlQueryChange: (value: boolean) => void;
 };
-
 const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
   getTemplateOptionsLoading,
   ruleTemplateOptions,
   onNeedAuditForSqlQueryChange
 }) => {
   const { t } = useTranslation();
-
   const form = Form.useFormInstance();
-
   const needSqlAuditService = Form.useWatch('needSqlAuditService');
-
   const needAuditForSqlQuery = Form.useWatch('needAuditForSqlQuery');
-
   const changeRuleTemplate = (
     value: string,
     option: BaseOptionType,
@@ -58,7 +51,6 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
       [key]: option.key
     });
   };
-
   return (
     <FormAreaBlockStyleWrapper>
       <SqlAuditFieldsSubTitleWrapper direction="vertical">
@@ -244,5 +236,4 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
     </FormAreaBlockStyleWrapper>
   );
 };
-
 export default SqlAuditFields;

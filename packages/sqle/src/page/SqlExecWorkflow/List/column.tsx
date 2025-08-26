@@ -1,16 +1,13 @@
-import {
-  BasicTypographyEllipsis,
-  CustomAvatar,
-  BasicTag
-} from '@actiontech/shared';
+import { CustomAvatar, BasicTag } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
 import { t } from '../../../locale';
 import WorkflowStatus from './components/WorkflowStatus';
 import {
@@ -21,8 +18,7 @@ import { WorkflowNameStyleWrapper } from './style';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { Space } from 'antd';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   WorkflowDetailResV1WithExtraParams,
   SqlExecWorkflowListTableFilterParam
@@ -43,7 +39,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
         checked: false
       }
     ],
-
     [
       'instance_name',
       {
@@ -55,7 +50,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ]
   ]);
 };
-
 export const SqlExecWorkflowListColumn: (
   projectID: string
 ) => ActiontechTableColumn<
@@ -98,7 +92,12 @@ export const SqlExecWorkflowListColumn: (
             linkData={{
               route: parse2ReactRouterPath(
                 ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
-                { params: { projectID, workflowId: record.workflow_id ?? '' } }
+                {
+                  params: {
+                    projectID,
+                    workflowId: record.workflow_id ?? ''
+                  }
+                }
               ),
               text: t('execWorkflow.create.createResult.viewWorkflowDetail')
             }}

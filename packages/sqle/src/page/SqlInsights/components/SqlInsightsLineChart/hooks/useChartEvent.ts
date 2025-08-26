@@ -2,8 +2,8 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import { useMemoizedFn } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import dayjs from 'dayjs';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { MessageInstance } from 'antd/es/message/interface';
 import { LineConfig } from '@ant-design/plots';
 

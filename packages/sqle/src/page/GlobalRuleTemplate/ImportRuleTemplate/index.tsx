@@ -7,15 +7,15 @@ import {
   BasicResult,
   EmptyBox,
   PageHeader
-} from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   CustomLabelContent,
   FormItemBigTitle,
   FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+} from '@actiontech/dms-kit';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
@@ -25,7 +25,7 @@ import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import Icon from '@ant-design/icons';
 import {
   useImportRuleTemplateForm,
@@ -36,12 +36,9 @@ import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 import { exportRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import FileUpload from '../../RuleTemplate/ImportRuleTemplate/FileUpload';
-
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
-
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
-
   const {
     ruleTemplateFormVisibility,
     selectFileForm,
@@ -70,18 +67,13 @@ const ImportRuleTemplate: React.FC = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useImportRuleTemplateForm();
-
   const fileType = Form.useWatch('fileType', selectFileForm);
-
   const { projectName } = useCurrentProject();
-
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
-
   const gotoListPage = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
     onGoToGlobalRuleTemplateList();
   };
-
   const submit = useCallback(() => {
     startCreate();
     const baseInfo = ruleTemplateForm.getFieldsValue();
@@ -90,7 +82,10 @@ const ImportRuleTemplate: React.FC = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : []
       };
     });
@@ -111,7 +106,6 @@ const ImportRuleTemplate: React.FC = () => {
         finishCreate();
       });
   }, [activeRule, finishCreate, nextStep, ruleTemplateForm, startCreate]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -179,7 +173,11 @@ const ImportRuleTemplate: React.FC = () => {
                   <span>{t('ruleTemplate.importRuleTemplate.title')}</span>
                 </FormItemBigTitle>
                 <FormItemLabel
-                  rules={[{ required: true }]}
+                  rules={[
+                    {
+                      required: true
+                    }
+                  ]}
                   initialValue={exportRuleTemplateV1ExportTypeEnum.csv}
                   name="fileType"
                   className="has-required-style"
@@ -265,5 +263,4 @@ const ImportRuleTemplate: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default ImportRuleTemplate;

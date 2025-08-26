@@ -4,13 +4,12 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/pipeline/index.d';
 import { t } from '../../../locale';
-import { BasicTypographyEllipsis, BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IPipelineDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Typography, Space, Popover } from 'antd';
-
 export type PipelineConfigurationTableFilterParamType =
   PageInfoWithoutIndexAndSize<IGetPipelinesV1Params, 'project_name'>;
-
 export const pipelineConfigurationListColumns: (
   onViewPipelineDetail: (id?: number) => void
 ) => ActiontechTableColumn<IPipelineDetail, IGetPipelinesV1Params> = (
@@ -75,7 +74,9 @@ export const pipelineConfigurationListColumns: (
                 </Space>
               }
               placement="top"
-              overlayStyle={{ maxWidth: 450 }}
+              overlayStyle={{
+                maxWidth: 450
+              }}
               trigger="click"
             >
               <Typography.Link>

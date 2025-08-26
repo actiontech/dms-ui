@@ -4,40 +4,32 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import RuleUnderstand from './RuleUnderstand';
-import { EmptyBox, PageHeader, useTypedParams } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EmptyBox, PageHeader } from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   RuleKnowledgeContentStyleWrapper,
   RuleKnowledgeStyleWrapper
 } from './style';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { RuleKnowledgeEditActions } from './actions';
 import { useBoolean } from 'ahooks';
 import KnowledgeBaseInfo from './components/KnowledgeBaseInfo';
 import PageHeaderExtraAction from './components/PageHeaderExtraAction';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
-
 const RuleKnowledge: React.FC = () => {
   const { t } = useTranslation();
   const { currentTheme } = useChangeTheme();
-
   const [isModifying, { setTrue: startModify, setFalse: modifyFinish }] =
     useBoolean();
-
   const [hasDirtyData, setHasDirtyData] = useState(false);
-
   const [editValue, setEditValue] = useState<string>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const { ruleName = '', dbType = '' } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index>();
-
   const [isCustomRule, setIsCustomRule] = useState(false);
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const {
     data: ruleKnowledgeInfo,
     loading,
@@ -64,7 +56,6 @@ const RuleKnowledge: React.FC = () => {
       manual: true
     }
   );
-
   const submit = () => {
     startSubmit();
     const request = isCustomRule
@@ -78,7 +69,6 @@ const RuleKnowledge: React.FC = () => {
           knowledge_content: editValue,
           db_type: dbType
         });
-
     request
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -93,13 +83,11 @@ const RuleKnowledge: React.FC = () => {
         submitFinish();
       });
   };
-
   useEffect(() => {
     if (isModifying) {
       setEditValue(ruleKnowledgeInfo?.knowledge_content);
     }
   }, [ruleKnowledgeInfo?.knowledge_content, isModifying]);
-
   useEffect(() => {
     if (!!ruleName && !!dbType) {
       SqleApi.RuleTemplateService.getRuleListV1({
@@ -110,7 +98,6 @@ const RuleKnowledge: React.FC = () => {
           const ruleInfo = res.data.data.find(
             (i) => i.rule_name === ruleName && i.db_type === dbType
           );
-
           if (!!ruleInfo?.db_type) {
             setIsCustomRule(!!ruleInfo.is_custom_rule);
             getRuleKnowledge(!!ruleInfo.is_custom_rule, ruleInfo.db_type);
@@ -120,9 +107,7 @@ const RuleKnowledge: React.FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const actions = RuleKnowledgeEditActions(startModify, loading);
-
   return (
     <RuleKnowledgeStyleWrapper data-color-mode={currentTheme}>
       {contextHolder}

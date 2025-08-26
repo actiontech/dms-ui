@@ -1,12 +1,11 @@
 import React, { useCallback } from 'react';
 import { useRequest } from 'ahooks';
 import DBService from '../../api/base/service/DBService';
-import { ResponseCode } from '../../enum';
+import { ResponseCode, DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateDriverMeta } from '../../../../base/src/store/database';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo/DatabaseTypeLogo';
 import { Select } from 'antd';
 
 const useDbServiceDriver = () => {

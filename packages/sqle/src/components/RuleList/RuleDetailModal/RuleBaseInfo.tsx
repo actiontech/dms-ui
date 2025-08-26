@@ -3,7 +3,8 @@ import { RuleDetailItemStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
-import { EmptyBox, parse2ReactRouterPath } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { parse2ReactRouterPath } from '@actiontech/shared';
 import { RuleItemTagStyleWrapper } from '../style';
 import {
   RuleCategoryDictionaryGroup,
@@ -11,23 +12,19 @@ import {
 } from '../../../hooks/useRuleCategories/index.data';
 import { isEmpty } from 'lodash';
 import { usePermission } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;
   children?: ReactNode;
   showKnowledge?: boolean;
 };
-
 const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
   dataSource,
   children,
   showKnowledge
 }) => {
   const { t } = useTranslation();
-
   const { moduleFeatureSupport } = usePermission();
-
   const renderRuleCategory = (categories: IRuleResV1['categories']) => {
     if (!categories || isEmpty(categories)) {
       return;
@@ -53,7 +50,6 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
       );
     });
   };
-
   return (
     <>
       <Form.Item label={t('ruleTemplate.editModal.rule')} name="desc">
@@ -129,5 +125,4 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
     </>
   );
 };
-
 export default RuleBaseInfo;

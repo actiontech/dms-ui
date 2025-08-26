@@ -16,7 +16,7 @@ import {
   mockRuleCategoriesData,
   GetDriverRuleVersionTipsMockData
 } from './data';
-import { MIMETypeEnum } from '../../../../enum';
+import { MIMETypeEnum } from '@actiontech/dms-kit';
 import { AxiosResponse } from 'axios';
 
 class MockRuleTemplateApi implements MockSpyApy {

@@ -3,13 +3,13 @@ import type { DataNode, TreeProps } from 'antd/es/tree';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import AuditResultMessage from '../../../../../../../../../components/AuditResultMessage';
 import { TaskAuditResultTreeStyleWrapper } from './style';
 import { DownOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export interface AuditResultTreeProps {
   auditResult?: IAuditResult[];

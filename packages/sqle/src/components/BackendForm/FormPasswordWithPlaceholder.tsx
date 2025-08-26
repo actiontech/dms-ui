@@ -1,6 +1,5 @@
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput } from '@actiontech/dms-kit';
 import { useState } from 'react';
-
 export const PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE =
   'PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE';
 
@@ -30,7 +29,6 @@ type Props = {
   onChange?: (value: string) => void;
   disabled?: boolean;
 };
-
 const FormPasswordWithPlaceholder: React.FC<Props> = ({
   enabled,
   id,
@@ -42,14 +40,11 @@ const FormPasswordWithPlaceholder: React.FC<Props> = ({
     if (!!value) {
       return value;
     }
-
     if (enabled) {
       return PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE;
     }
-
     return undefined;
   });
-
   return (
     <BasicInput.Password
       id={id}
@@ -73,5 +68,4 @@ const FormPasswordWithPlaceholder: React.FC<Props> = ({
     />
   );
 };
-
 export default FormPasswordWithPlaceholder;

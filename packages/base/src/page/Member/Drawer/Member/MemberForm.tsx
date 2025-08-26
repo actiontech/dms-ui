@@ -1,30 +1,27 @@
 import { useEffect } from 'react';
 import { Form } from 'antd';
-import { BasicSelect, BasicToolTip, TypedLink } from '@actiontech/shared';
+import { BasicSelect, BasicToolTip } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
 import { IMemberFormProps } from '../index.type';
 import useUsername from '../../../../hooks/useUsername';
 import PermissionFields from '../../components/PermissionFields';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { filterOptionByLabel } from '@actiontech/dms-kit';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const MemberForm: React.FC<IMemberFormProps> = ({
   form,
   isUpdate,
   projectID
 }) => {
   const { t } = useTranslation();
-
   const {
     loading: getUsernameListLoading,
     updateUsernameList,
     generateUsernameSelectOption
   } = useUsername();
-
   useEffect(() => {
     updateUsernameList();
   }, [updateUsernameList]);
-
   return (
     <Form form={form} layout="vertical">
       <Form.Item
@@ -68,5 +65,4 @@ const MemberForm: React.FC<IMemberFormProps> = ({
     </Form>
   );
 };
-
 export default MemberForm;

@@ -1,4 +1,4 @@
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 import { PayloadAction } from '@reduxjs/toolkit';
 
 export const commonModalReducer = <

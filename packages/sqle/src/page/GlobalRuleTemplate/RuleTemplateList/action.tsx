@@ -8,7 +8,7 @@ import {
   CheckboxMultipleBlankFilled,
   LogoutBoxFilled
 } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const RuleTemplateListActions = (

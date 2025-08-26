@@ -1,4 +1,4 @@
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
 import { Form, Space } from 'antd';
 import { Card } from 'antd';

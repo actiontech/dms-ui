@@ -1,12 +1,11 @@
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import { IDatabaseDiffModifySQL } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Space } from 'antd';
 import { DatabaseFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { useEffect, useState } from 'react';
 import ModifiedSqlContentList from './List';
-
 type Props = {
   instanceName: string;
   instanceType: string;
@@ -14,7 +13,6 @@ type Props = {
   auditResultCollapseActiveKeys: string[];
   auditResultCollapseActiveKeysOnChange: (keys: string[]) => void;
 };
-
 const ModifiedSqlAuditResult: React.FC<Props> = ({
   dataSource,
   instanceName,
@@ -24,11 +22,9 @@ const ModifiedSqlAuditResult: React.FC<Props> = ({
 }) => {
   const { sharedTheme } = useThemeStyleData();
   const [activeTabKey, setActiveTabKey] = useState('');
-
   const currentDatabaseDiffModifySqlInfo = dataSource?.find(
     (v) => v.schema_name === activeTabKey
   );
-
   useEffect(() => {
     setActiveTabKey(dataSource?.[0]?.schema_name ?? '');
   }, [dataSource]);
@@ -68,5 +64,4 @@ const ModifiedSqlAuditResult: React.FC<Props> = ({
     </>
   );
 };
-
 export default ModifiedSqlAuditResult;

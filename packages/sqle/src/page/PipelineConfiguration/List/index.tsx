@@ -1,4 +1,5 @@
-import { PageHeader, EmptyBox, useTypedNavigate } from '@actiontech/shared';
+import { PageHeader, EmptyBox } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
 import { useEffect } from 'react';
@@ -20,7 +21,7 @@ import {
   pipelineConfigurationListColumns,
   PipelineConfigurationTableFilterParamType
 } from './column';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import PipelineDetailDrawer from '../Drawer/PipelineDetailDrawer';
 import { useDispatch } from 'react-redux';
 import {
@@ -28,26 +29,19 @@ import {
   updatePipelineModalStatus
 } from '../../../store/pipeline';
 import { ModalName } from '../../../data/ModalName';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { usePermission } from '@actiontech/shared/lib/features';
 import {
   PipelineConfigurationListActions,
   PipelineConfigurationListPageHeaderActions
 } from './actions';
-
 const PipelineConfigurationList = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const dispatch = useDispatch();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { projectID, projectName } = useCurrentProject();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const {
     tableChange,
     pagination,
@@ -58,10 +52,8 @@ const PipelineConfigurationList = () => {
     IPipelineDetail,
     PipelineConfigurationTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: pipelineList,
     loading,
@@ -74,20 +66,20 @@ const PipelineConfigurationList = () => {
         project_name: projectName,
         fuzzy_search_name_desc: searchKeyword
       };
-
       return handleTableRequestError(pipeline.getPipelinesV1(params));
     },
     {
       refreshDeps: [pagination]
     }
   );
-
   const onEdit = (id?: number) => {
     navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update, {
-      params: { projectID, id: id?.toString() ?? '' }
+      params: {
+        projectID,
+        id: id?.toString() ?? ''
+      }
     });
   };
-
   const onDelete = (id?: number) => {
     const hide = messageApi.loading(t('pipelineConfiguration.table.deleting'));
     pipeline
@@ -105,9 +97,12 @@ const PipelineConfigurationList = () => {
         hide();
       });
   };
-
   const onViewPipelineDetail = (id?: number) => {
-    dispatch(updateSelectPipelineId({ id }));
+    dispatch(
+      updateSelectPipelineId({
+        id
+      })
+    );
     dispatch(
       updatePipelineModalStatus({
         modalName: ModalName.Pipeline_Configuration_Detail_Modal,
@@ -115,7 +110,6 @@ const PipelineConfigurationList = () => {
       })
     );
   };
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Pipeline_Configuration_list,
@@ -123,10 +117,8 @@ const PipelineConfigurationList = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   const pageHeaderActions =
     PipelineConfigurationListPageHeaderActions(projectID);
-
   return (
     <>
       {messageContextHolder}
@@ -139,7 +131,10 @@ const PipelineConfigurationList = () => {
         defaultNode={<DefaultPrompts />}
       >
         <TableToolbar
-          refreshButton={{ refresh, disabled: loading }}
+          refreshButton={{
+            refresh,
+            disabled: loading
+          }}
           searchInput={{
             onChange: setSearchKeyword,
             onSearch: () => {
@@ -169,5 +164,4 @@ const PipelineConfigurationList = () => {
     </>
   );
 };
-
 export default PipelineConfigurationList;

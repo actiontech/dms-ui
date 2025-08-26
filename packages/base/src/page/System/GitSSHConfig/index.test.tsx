@@ -3,7 +3,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../testUtils/superRender';
 import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { getSSHPublicKeyMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration/data';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/GitSSHConfig', () => {

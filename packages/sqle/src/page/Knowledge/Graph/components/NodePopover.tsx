@@ -5,7 +5,7 @@ import { EdgeType, NodeType } from '../index.type';
 import debounce from 'lodash/debounce';
 import { parse2ReactRouterPath } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 interface NodePopoverProps {
   nodeId: string | null;

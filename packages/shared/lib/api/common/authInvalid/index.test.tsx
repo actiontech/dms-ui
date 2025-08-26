@@ -3,9 +3,9 @@ import { redirectToLogin, refreshAuthToken, addFailedRequest } from '.';
 import store from '../../../../../base/src/store';
 import * as history from 'history';
 import axios from 'axios';
-import { ResponseCode } from '../../../enum';
-import { eventEmitter } from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 
 jest.mock('axios');
 jest.mock('react-redux', () => {
@@ -15,7 +15,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('../../../utils/EventEmitter', () => ({
+jest.mock('@actiontech/dms-kit/es/utils/EventEmitter', () => ({
   eventEmitter: {
     emit: jest.fn()
   }

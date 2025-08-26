@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';

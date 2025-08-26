@@ -4,8 +4,8 @@ import {
   NotificationInstance
 } from 'antd/es/notification/interface';
 import { useCallback, useEffect } from 'react';
-import { eventEmitter } from '../../utils/EventEmitter';
-import EmitterKey from '../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import {
   NotificationDescriptionStyleWrapper,
   NotificationMessageStyleWrapper

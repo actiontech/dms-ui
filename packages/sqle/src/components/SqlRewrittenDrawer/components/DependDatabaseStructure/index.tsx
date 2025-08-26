@@ -1,18 +1,17 @@
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Alert, List, Space } from 'antd';
 import RuleLevelIcon from '../../../RuleList/RuleLevelIcon';
-import { BasicButton, BasicTypographyEllipsis } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { OptimizationRuleItemStyleWrapper } from '../Common/style';
 import { useTranslation } from 'react-i18next';
 import EmptyContent from '../Common/EmptyContent';
 import { WarningFilled } from '@actiontech/icons';
 import { DependDatabaseStructureStyleWrapper } from './style';
-
 type Props = {
   dataSource: IRewriteSuggestion[];
   toggleEnableStructureOptimizeAction: () => void;
 };
-
 const DependDatabaseStructure: React.FC<Props> = ({
   dataSource,
   toggleEnableStructureOptimizeAction
@@ -64,5 +63,4 @@ const DependDatabaseStructure: React.FC<Props> = ({
     </DependDatabaseStructureStyleWrapper>
   );
 };
-
 export default DependDatabaseStructure;

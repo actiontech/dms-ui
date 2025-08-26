@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Column, ColumnConfig, Line, LineConfig } from '@ant-design/plots';
 import { BasicLineChartStyleWrapper } from './style';
-import BasicEmpty from '../BasicEmpty/BasicEmpty';
+import { BasicEmpty } from '@actiontech/dms-kit';
 import { BasicChartProps } from './BasicChart.types';
 import { ChartTypeEnum } from './BasicChart.enum';
 

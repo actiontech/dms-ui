@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { useMemo, useEffect } from 'react';
 import { Spin, message } from 'antd';
 import ConfigField from './components/ConfigField';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { FormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import {
@@ -11,7 +11,7 @@ import {
   ConfigSwitch,
   ConfigSubmitButtonField,
   useConfigSwitchControls
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { PersonalSMSProps } from './index.type';
 import { DmsApi } from '@actiontech/shared/lib/api';
 

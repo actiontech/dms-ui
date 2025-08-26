@@ -7,7 +7,7 @@ import {
   FolderFilled,
   MagnifierFilled
 } from '@actiontech/icons';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useCallback, useState } from 'react';
 import {
@@ -31,13 +31,11 @@ import {
   ObjectDiffResultComparisonResultEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ComparisonTreeNodeTitleStyleWrapper } from '../component/ComparisonTreeNode/style';
-
 const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
   const { sharedTheme } = useThemeStyleData();
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [selectedObjectNodeKey, setSelectedObjectNodeKey] = useState<string>();
-
   const [
     comparisonDetailDrawerOpen,
     {
@@ -45,7 +43,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
       setTrue: openComparisonDetailDrawer
     }
   ] = useBoolean();
-
   const resetStateAndCloseComparisonDetailDrawer = () => {
     setSelectedObjectNodeKey(undefined);
     closeComparisonDetailDrawer();
@@ -118,14 +115,12 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
     },
     [comparisonResults, sharedTheme.uiToken.colorPrimary]
   );
-
   const assemblingComparisonTreeData = useCallback(
     (instanceName: string): TreeProps['treeData'] => {
       const openDetailDrawer = (nodeKey: string) => {
         openComparisonDetailDrawer();
         setSelectedObjectNodeKey(nodeKey);
       };
-
       const renderViewDetail = (key: string) => {
         return (
           <BasicToolTip title={t('common.showDetail')}>
@@ -140,7 +135,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
           </BasicToolTip>
         );
       };
-
       return [
         {
           key: TREE_PARENT_NODE_KEY,
@@ -224,7 +218,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
       t
     ]
   );
-
   const generateGetComparisonDetailParams = (
     nodeKey: string,
     baselineInstanceId?: string,
@@ -238,7 +231,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
     );
     const { objectName, objectType, baselineSchemaName, comparisonSchemaName } =
       parseTreeNodeKey(nodeKey, comparisonResults);
-
     if (
       comparisonResult === ObjectDiffResultComparisonResultEnum.base_not_exist
     ) {
@@ -256,7 +248,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
         }
       };
     }
-
     if (
       comparisonResult ===
       ObjectDiffResultComparisonResultEnum.comparison_not_exist
@@ -293,7 +284,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
       }
     };
   };
-
   const generateModifiedSqlParams = (
     nodeKey: string,
     baselineInstanceId?: string,
@@ -303,7 +293,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
   ): IGenDatabaseDiffModifySQLsV1Params => {
     const { objectName, objectType, baselineSchemaName, comparisonSchemaName } =
       parseTreeNodeKey(nodeKey, comparisonResults);
-
     return {
       project_name: projectName,
       base_instance_id: baselineInstanceId,
@@ -323,7 +312,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
       ]
     };
   };
-
   return {
     assemblingBaselineTreeData,
     assemblingComparisonTreeData,
@@ -334,5 +322,4 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
     generateModifiedSqlParams
   };
 };
-
 export default useComparisonResultTree;

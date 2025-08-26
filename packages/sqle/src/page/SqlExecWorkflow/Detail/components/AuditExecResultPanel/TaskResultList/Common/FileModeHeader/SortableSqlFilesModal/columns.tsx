@@ -1,5 +1,5 @@
-import { BasicTableProps } from '@actiontech/shared/lib/components/BasicTable';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicTableProps } from '@actiontech/dms-kit';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IAuditFileStatistic } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../../../../../../locale';

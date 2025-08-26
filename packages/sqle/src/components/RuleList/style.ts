@@ -1,8 +1,7 @@
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { styled } from '@mui/material/styles';
-import { CustomInputStyleWrapper } from '@actiontech/shared/lib/components/CustomInput/style';
-
+import { CustomInputStyleWrapper } from '@actiontech/dms-kit/es/components/CustomInput/style';
 export const RuleStatusSegmentedStyleWrapper = styled(BasicSegmented)`
   .ant-segmented-item-selected.enabled-rule {
     color: ${({ theme }) =>
@@ -16,7 +15,6 @@ export const RuleStatusSegmentedStyleWrapper = styled(BasicSegmented)`
         .disabledColor} !important;
   }
 `;
-
 export const RuleTypeStyleWrapper = styled('div')`
   display: flex;
   justify-content: start;
@@ -26,8 +24,9 @@ export const RuleTypeStyleWrapper = styled('div')`
   align-self: stretch;
   width: 100%;
 `;
-
-export const RuleTypeItemStyleWrapper = styled('div')<{ active?: boolean }>`
+export const RuleTypeItemStyleWrapper = styled('div')<{
+  active?: boolean;
+}>`
   display: flex;
   height: 28px;
   padding: 0 8px;
@@ -69,7 +68,6 @@ export const RuleTypeItemStyleWrapper = styled('div')<{ active?: boolean }>`
     margin-left: 4px;
   }
 `;
-
 export const RulesStyleWrapper = styled('div')<{
   pageHeaderHeight: number;
   paddingBottomNone: boolean;
@@ -105,7 +103,6 @@ export const RulesStyleWrapper = styled('div')<{
     }
   }
 `;
-
 export const RuleItemStyleWrapper = styled('div')`
   display: flex;
   padding: 16px 20px;
@@ -218,7 +215,6 @@ export const RuleItemStyleWrapper = styled('div')`
     }
   }
 `;
-
 export const RuleItemTagStyleWrapper = styled(Space)`
   display: flex;
   height: 22px;
@@ -335,7 +331,6 @@ export const RuleItemTagStyleWrapper = styled(Space)`
     }
   }
 `;
-
 export const EmptyRuleStyleWrapper = styled('div')`
   display: flex;
   padding: 16px 10px;
@@ -348,13 +343,11 @@ export const EmptyRuleStyleWrapper = styled('div')`
   font-weight: 500;
   line-height: 20px;
 `;
-
 export const RuleFilterCustomInputStyleWrapper = styled(
   CustomInputStyleWrapper
 )`
   width: 210px;
 `;
-
 export const RuleFilterCommonFieldSelectStyleWrapper = styled(Space)`
   .ant-space-item {
     display: flex;

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { StorageKey } from '@actiontech/dms-kit';
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import { cloneDeep, remove } from 'lodash';
 import { useSelector, useDispatch } from 'react-redux';

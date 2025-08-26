@@ -4,10 +4,9 @@ import useRenderSQLTemplate from '../hooks/useRenderSQLTemplate';
 import { SQLSnippetRendererProps } from '../SQLRenderer.types';
 import { SQLRendererStyleWrapper } from '../style';
 import { Spin, Typography } from 'antd';
-import HighlightCode from '../../../utils/HighlightCode';
 import { useMemo } from 'react';
 import { isNumber } from 'lodash';
-import { basicTooltipCommonProps } from '../../BasicToolTip';
+import { basicTooltipCommonProps, HighlightCode } from '@actiontech/dms-kit';
 
 const Snippet: React.FC<SQLSnippetRendererProps> = ({
   rows = 10,

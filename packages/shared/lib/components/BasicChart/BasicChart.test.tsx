@@ -2,12 +2,13 @@ import { superRender } from '../../testUtil/superRender';
 import BasicChart from './BasicChart';
 import { ChartTypeEnum } from './BasicChart.enum';
 import { BasicChartProps } from './BasicChart.types';
-import BasicEmpty from '../BasicEmpty/BasicEmpty';
+import { BasicEmpty } from '@actiontech/dms-kit';
 import { screen } from '@testing-library/react';
 
-jest.mock('../BasicEmpty/BasicEmpty', () => {
-  return jest.fn().mockImplementation(() => null);
-});
+jest.mock('@actiontech/dms-kit', () => ({
+  ...jest.requireActual('@actiontech/dms-kit'),
+  BasicEmpty: jest.fn().mockImplementation(() => null)
+}));
 
 describe('lib/BasicChart', () => {
   const customRender = (params: BasicChartProps) => {

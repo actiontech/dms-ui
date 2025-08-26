@@ -1,8 +1,10 @@
-import sharedDarkTheme from '@actiontech/shared/lib/theme/dark';
-import sharedLightTheme from '@actiontech/shared/lib/theme/light';
 import lightTheme from './light';
 import darkTheme from './dark';
-import { SupportTheme } from '@actiontech/shared/lib/enum';
+import {
+  SupportTheme,
+  darkTheme as sharedDarkTheme,
+  lightTheme as sharedLightTheme
+} from '@actiontech/dms-kit';
 
 const ThemeData = {
   [SupportTheme.DARK]: {

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RuleManagerSegmentedKey } from '../../page/RuleManager/index.type';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 
 type GlobalRuleTemplateListState = {
   selectGlobalRuleTemplate: null | IRuleTemplateResV1;

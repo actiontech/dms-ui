@@ -1,11 +1,10 @@
-import { LazyLoadComponent, SQLRenderer } from '@actiontech/shared';
-
+import { LazyLoadComponent } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 type Props = {
   showSqlDifference: boolean;
   originalSql: string;
   rewrittenSql: string;
 };
-
 const RewrittenSqlCommonEditor: React.FC<Props> = ({
   showSqlDifference,
   originalSql,
@@ -26,5 +25,4 @@ const RewrittenSqlCommonEditor: React.FC<Props> = ({
     </>
   );
 };
-
 export default RewrittenSqlCommonEditor;

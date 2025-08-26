@@ -1,14 +1,13 @@
-import { BasicButton, BasicModal, EmptyBox } from '@actiontech/shared';
+import { BasicButton, BasicModal, EmptyBox } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
 import { UI_VERSION } from '../../../../../../scripts/version';
 import { VersionModalFeatureContentStyleWrapper } from '../../../style';
 import useVersionInfo from '../../hooks/useVersionInfo';
 import React, { useEffect } from 'react';
 import { VersionEnum } from '../../index.enum';
 import { BasicVersionModalProps } from '../../index.type';
-
 const BasicVersionModal: React.FC<BasicVersionModalProps> = ({
   open,
   width,
@@ -18,15 +17,12 @@ const BasicVersionModal: React.FC<BasicVersionModalProps> = ({
   setVersionModalClose
 }) => {
   const { t } = useTranslation();
-
   const { sqleVersion, dmsVersion, updateVersionInfo } = useVersionInfo();
-
   useEffect(() => {
     if (open) {
       updateVersionInfo();
     }
   }, [open, updateVersionInfo]);
-
   return (
     <BasicModal
       size="large"
@@ -89,5 +85,4 @@ const BasicVersionModal: React.FC<BasicVersionModalProps> = ({
     </BasicModal>
   );
 };
-
 export default BasicVersionModal;

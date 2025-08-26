@@ -10,11 +10,8 @@ import {
   TableToolbar
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
-import {
-  PageHeader,
-  CustomSegmentedFilter,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { PageHeader, CustomSegmentedFilter } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
@@ -37,7 +34,7 @@ import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/w
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ExtraFilterMeta, SqlExecWorkflowListColumn } from './column';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { TableRowSelection } from 'antd/es/table/interface';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
 import {
@@ -49,9 +46,8 @@ import {
   SqlExecWorkflowTableToolbarActions
 } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { WorkflowDetailResV1WithExtraParams } from './index.type';
-
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -62,12 +58,9 @@ const SqlExecWorkflowList: React.FC = () => {
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceIDOptions, updateInstanceList } = useInstance();
   const { username } = useCurrentUser();
-
   const { parse2TableToolbarActionPermissions, checkActionPermission } =
     usePermission();
-
   const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -80,7 +73,6 @@ const SqlExecWorkflowList: React.FC = () => {
     IWorkflowDetailResV1,
     SqlExecWorkflowListTableFilterParam
   >();
-
   const {
     data: workflowList,
     loading,
@@ -100,7 +92,6 @@ const SqlExecWorkflowList: React.FC = () => {
       refreshDeps: [tableFilterInfo, pagination, filterStatus]
     }
   );
-
   const columns = useMemo(
     () => SqlExecWorkflowListColumn(projectID),
     [projectID]
@@ -112,18 +103,26 @@ const SqlExecWorkflowList: React.FC = () => {
     }),
     [username]
   );
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer<
       WorkflowDetailResV1WithExtraParams,
       SqlExecWorkflowListTableFilterParam
     >(columns, updateTableFilterInfo, ExtraFilterMeta());
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof WorkflowDetailResV1WithExtraParams, FilterCustomProps>(
       [
-        ['create_user_name', { options: usernameOptions }],
-        ['current_step_assignee_user_name_list', { options: usernameOptions }],
+        [
+          'create_user_name',
+          {
+            options: usernameOptions
+          }
+        ],
+        [
+          'current_step_assignee_user_name_list',
+          {
+            options: usernameOptions
+          }
+        ],
         [
           'instance_name',
           {
@@ -143,15 +142,18 @@ const SqlExecWorkflowList: React.FC = () => {
           }
         ],
         // #if [ee]
-        ['sql_version_name', { options: sqlVersionOptions }]
+        [
+          'sql_version_name',
+          {
+            options: sqlVersionOptions
+          }
+        ]
         // #endif
       ]
     );
   }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
   const rowSelection = {
@@ -160,7 +162,6 @@ const SqlExecWorkflowList: React.FC = () => {
       setSelectedRowKeys(keys);
     }
   };
-
   const batchCloseAction = useCallback(() => {
     const canCancel: boolean = selectedRowKeys.every((e) => {
       const status = workflowList?.list?.filter(
@@ -204,7 +205,6 @@ const SqlExecWorkflowList: React.FC = () => {
     messageApi,
     t
   ]);
-
   const toolbarActions = useMemo(() => {
     return parse2TableToolbarActionPermissions(
       SqlExecWorkflowTableToolbarActions({
@@ -219,9 +219,10 @@ const SqlExecWorkflowList: React.FC = () => {
     selectedRowKeys?.length,
     parse2TableToolbarActionPermissions
   ]);
-
   useEffect(() => {
-    updateUsernameList({ filter_project: projectName });
+    updateUsernameList({
+      filter_project: projectName
+    });
     updateInstanceList({
       project_name: projectName
     });
@@ -256,7 +257,10 @@ const SqlExecWorkflowList: React.FC = () => {
       />
       <ActiontechTableWrapper loading={loading} setting={tableSetting}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: loading }}
+          refreshButton={{
+            refresh,
+            disabled: loading
+          }}
           actions={toolbarActions}
           filterButton={{
             filterButtonMeta,
@@ -310,7 +314,10 @@ const SqlExecWorkflowList: React.FC = () => {
             return {
               onClick() {
                 navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
-                  params: { workflowId: record.workflow_id ?? '', projectID }
+                  params: {
+                    workflowId: record.workflow_id ?? '',
+                    projectID
+                  }
                 });
               }
             };
@@ -320,5 +327,4 @@ const SqlExecWorkflowList: React.FC = () => {
     </SqlExecWorkflowListStyleWrapper>
   );
 };
-
 export default SqlExecWorkflowList;

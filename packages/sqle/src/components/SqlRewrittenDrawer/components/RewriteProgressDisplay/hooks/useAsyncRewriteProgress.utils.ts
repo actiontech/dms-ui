@@ -5,7 +5,7 @@ import {
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IRuleProgressInfo } from '../index.type';
 import { IRewriteTaskResult } from './useAsyncRewriteProgress.type';
-import { floatToPercent } from '@actiontech/shared';
+import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
 
 /**
  * 将后端返回的 IRewriteSuggestion[] 转换为前端进度展示所需的 IRuleProgressInfo[]

@@ -1,26 +1,21 @@
-import { BasicDrawer, BasicInput, BasicButton } from '@actiontech/shared';
+import { BasicDrawer, BasicInput, BasicButton } from '@actiontech/dms-kit';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { PasswordFormFields } from '../index.type';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../../store/user';
-
 export const UpdatePassword: React.FC<{
   open: boolean;
   onClose: () => void;
 }> = ({ open, onClose }) => {
   const { t } = useTranslation();
-
   const [form] = Form.useForm<PasswordFormFields>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const dispatch = useDispatch();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -32,19 +27,21 @@ export const UpdatePassword: React.FC<{
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(updateToken({ token: '' }));
+          dispatch(
+            updateToken({
+              token: ''
+            })
+          );
         }
       })
       .finally(() => {
         submitFinish();
       });
   };
-
   const internalCloseHandle = () => {
     form.resetFields();
     onClose();
   };
-
   return (
     <BasicDrawer
       title={t('dmsAccount.modifyPassword.title')}
@@ -138,5 +135,4 @@ export const UpdatePassword: React.FC<{
     </BasicDrawer>
   );
 };
-
 export default UpdatePassword;

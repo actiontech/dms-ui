@@ -1,4 +1,4 @@
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
@@ -10,30 +10,25 @@ import {
   CloseCircleFilled,
   CheckCircleFilled
 } from '@actiontech/icons';
-
-const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
-  auditResult
-}) => {
+const AuditResultTag: React.FC<{
+  auditResult?: IAuditSQLResult[];
+}> = ({ auditResult }) => {
   const { t } = useTranslation();
-
   const noticeResult = useMemo(() => {
     return (
       auditResult?.filter((i) => i.level === RuleResV1LevelEnum.notice) || []
     );
   }, [auditResult]);
-
   const errorResult = useMemo(() => {
     return (
       auditResult?.filter((i) => i.level === RuleResV1LevelEnum.error) || []
     );
   }, [auditResult]);
-
   const warnResult = useMemo(() => {
     return (
       auditResult?.filter((i) => i.level === RuleResV1LevelEnum.warn) || []
     );
   }, [auditResult]);
-
   if (!auditResult?.length) {
     return (
       <BasicTag
@@ -82,5 +77,4 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
     );
   }
 };
-
 export default AuditResultTag;

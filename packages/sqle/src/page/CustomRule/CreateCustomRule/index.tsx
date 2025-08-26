@@ -3,21 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import { useBoolean } from 'ahooks';
 import classNames from 'classnames';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
+import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
-
 const CreateCustomRule: React.FC = () => {
   const { t } = useTranslation();
   const [createLoading, { setTrue: startCreate, setFalse: finishCreate }] =
     useBoolean();
-
   const {
     form,
     editScriptForm,
@@ -29,11 +27,9 @@ const CreateCustomRule: React.FC = () => {
     resetAll,
     onGoCustomRuleList
   } = useCustomRuleTemplateForm();
-
   const submit = useCallback(async () => {
     const baseInfo = await form.validateFields();
     const values = await editScriptForm.validateFields();
-
     startCreate();
     rule_template
       .createCustomRuleV1({
@@ -59,7 +55,6 @@ const CreateCustomRule: React.FC = () => {
         finishCreate();
       });
   }, [editScriptForm, finishCreate, form, nextStep, startCreate]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -132,5 +127,4 @@ const CreateCustomRule: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default CreateCustomRule;

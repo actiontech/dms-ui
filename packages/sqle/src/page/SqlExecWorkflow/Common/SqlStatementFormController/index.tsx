@@ -2,10 +2,9 @@ import { Empty } from 'antd';
 import SqlStatementFormItem from './SqlStatementFormItem';
 import { useControllableValue } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { BasicSegmented, EmptyBox } from '@actiontech/dms-kit';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from './SqlStatementFormItem/index.data';
 import { SqlStatementFormControllerProps } from './index.type';
-
 const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
   activeKey: key,
   onChange: changeHandle,
@@ -22,9 +21,11 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
           onChange: changeHandle,
           defaultValue: defaultKey
         }
-      : { onChange: changeHandle, defaultValue: defaultKey }
+      : {
+          onChange: changeHandle,
+          defaultValue: defaultKey
+        }
   );
-
   const renderEE = () => {
     if (props.isSameSqlForAll) {
       return (
@@ -39,7 +40,6 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
         />
       );
     }
-
     return (
       <EmptyBox
         if={props.databaseInfo?.length > 0}
@@ -63,7 +63,9 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
             key: v.key,
             value: v.key
           }))}
-          style={{ marginBottom: 16 }}
+          style={{
+            marginBottom: 16
+          }}
         />
 
         {props.databaseInfo?.map((v) => {
@@ -107,5 +109,4 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
     </>
   );
 };
-
 export default SqlStatementFormController;

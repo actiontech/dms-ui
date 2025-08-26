@@ -13,7 +13,7 @@ import {
   useCurrentProject,
   usePermission
 } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
 import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import Member from '@actiontech/shared/lib/api/base/service/Member';

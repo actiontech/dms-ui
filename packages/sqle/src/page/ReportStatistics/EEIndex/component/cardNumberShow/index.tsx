@@ -6,18 +6,18 @@ import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import {
   floatRound,
   minuteToHourMinute
-} from '@actiontech/shared/lib/utils/Math';
+} from '@actiontech/dms-kit/es/utils/Math';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { AxiosResponse } from 'axios';
 import usePanelCommonRequest from '../../hooks/usePanelCommonRequest';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import {
   IGetWorkflowAuditPassPercentV1Return,
   IGetWorkflowCountV1Return,
   IGetWorkflowDurationOfWaitingForAuditV1Return
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit/es/utils/Common';
 import {
   TrendCardFilled,
   CheckDoubleSquareFilled,

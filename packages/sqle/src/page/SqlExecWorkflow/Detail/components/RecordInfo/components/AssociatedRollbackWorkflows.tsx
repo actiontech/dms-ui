@@ -5,7 +5,7 @@ import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/s
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { TypedLink } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { AssociatedRollbackWorkflowsProps } from '../index.type';
 
 const AssociatedRollbackWorkflows: React.FC<

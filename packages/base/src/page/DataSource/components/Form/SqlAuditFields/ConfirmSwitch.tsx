@@ -1,42 +1,35 @@
-import { BasicSwitch } from '@actiontech/shared';
+import { BasicSwitch } from '@actiontech/dms-kit';
 import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-
 type ConfirmSwitchProps = {
   checked?: boolean;
   onChange?: (value: boolean) => void;
   onConfirm?: () => void;
 };
-
 const ConfirmSwitch: React.FC<ConfirmSwitchProps> = ({
   checked,
   onChange,
   onConfirm
 }) => {
   const { t } = useTranslation();
-
   const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
     useState<boolean>(false);
-
   const onOpenChange = (open: boolean) => {
     if (!checked) {
       return;
     }
     setAuditRequiredPopupVisible(open);
   };
-
   const onSwitchChange = (value: boolean) => {
     if (value) {
       onChange?.(value);
     }
   };
-
   const onInnerConfirm = () => {
     onChange?.(false);
     onConfirm?.();
   };
-
   return (
     <Popconfirm
       title={t('dmsDataSource.dataSourceForm.closeAuditSqlServiceTips')}
@@ -53,5 +46,4 @@ const ConfirmSwitch: React.FC<ConfirmSwitchProps> = ({
     </Popconfirm>
   );
 };
-
 export default ConfirmSwitch;

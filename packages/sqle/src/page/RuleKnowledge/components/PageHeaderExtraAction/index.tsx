@@ -1,7 +1,6 @@
-import { EmptyBox, BasicButton } from '@actiontech/shared';
+import { EmptyBox, BasicButton } from '@actiontech/dms-kit';
 import { Space, Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
-
 interface PageHeaderExtraActionProps {
   hasDirtyData: boolean;
   submitLoading: boolean;
@@ -9,7 +8,6 @@ interface PageHeaderExtraActionProps {
   onConfirm: () => void;
   onSubmit: () => void;
 }
-
 const PageHeaderExtraAction: React.FC<PageHeaderExtraActionProps> = ({
   hasDirtyData,
   submitLoading,
@@ -18,7 +16,6 @@ const PageHeaderExtraAction: React.FC<PageHeaderExtraActionProps> = ({
   onSubmit
 }) => {
   const { t } = useTranslation();
-
   return (
     <Space>
       <EmptyBox
@@ -46,5 +43,4 @@ const PageHeaderExtraAction: React.FC<PageHeaderExtraActionProps> = ({
     </Space>
   );
 };
-
 export default PageHeaderExtraAction;

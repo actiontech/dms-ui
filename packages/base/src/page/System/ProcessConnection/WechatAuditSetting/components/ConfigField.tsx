@@ -1,18 +1,19 @@
 import { useTranslation } from 'react-i18next';
-
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
-import { BasicInput } from '@actiontech/shared';
-
+import { FormItemLabel } from '@actiontech/dms-kit';
+import { BasicInput } from '@actiontech/dms-kit';
 const ConfigField = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemLabel
         className="has-required-style"
         label={t('dmsSystem.wechatAudit.corpID')}
         name="corpID"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -24,7 +25,11 @@ const ConfigField = () => {
         className="has-required-style"
         label={t('dmsSystem.wechatAudit.corpSecret')}
         name="corpSecret"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
       >
         <BasicInput.Password
           placeholder={t('common.form.placeholder.input', {
@@ -35,5 +40,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

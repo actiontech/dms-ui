@@ -6,6 +6,7 @@
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/shared": "workspace:^1.0.0",
+    "@actiontech/dms-kit": "workspace:^",
     "@react-sigma/core": "^5.0.2",
     "@react-sigma/graph-search": "^5.0.3",
     "@react-sigma/layout-force": "^5.0.2",

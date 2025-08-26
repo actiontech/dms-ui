@@ -2,8 +2,8 @@ import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space, Divider, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CustomSelect } from '@actiontech/dms-kit';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import {
   DatabaseSchemaFilled,
   DatabaseFilled,
@@ -11,18 +11,13 @@ import {
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import {
-  BasicButton,
-  BasicToolTip,
-  BasicSelect,
-  TypedLink,
-  FormItemNoLabel
-} from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { BasicButton, BasicToolTip, BasicSelect } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { DataSourceFieldProps } from '../../../index.type';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const DataSourceField: React.FC<DataSourceFieldProps> = ({
   fieldNamePath,
   instanceOptions,
@@ -31,7 +26,6 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
   instanceTipsLoading
 }) => {
   const form = Form.useFormInstance();
-
   const { instanceIdFormName, instanceNameFormName, schemaFormName } = useMemo(
     () => ({
       instanceIdFormName: [...fieldNamePath, 'target_instance_id'],
@@ -40,17 +34,11 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
     }),
     [fieldNamePath]
   );
-
   const instanceName = Form.useWatch(instanceNameFormName, form);
-
   const instanceId = Form.useWatch(instanceIdFormName, form);
-
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
-
   const { sqleTheme } = useThemeStyleData();
-
   const { data: instanceInfo, loading: getInstanceInfoLoading } = useRequest(
     () =>
       instance
@@ -67,7 +55,6 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
       ready: !!instanceName
     }
   );
-
   const { data: schemaOptions, loading: getSchemaLoading } = useRequest(
     () =>
       instance
@@ -83,9 +70,10 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
             }));
           }
         }),
-    { ready: !!instanceName }
+    {
+      ready: !!instanceName
+    }
   );
-
   const renderRuleTemplateDisplay = () => {
     const ruleTemplate = instanceInfo?.rule_template;
     const dbType = instanceInfo?.db_type;
@@ -97,11 +85,9 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
         />
       );
     }
-
     const path = ruleTemplate.is_global_rule_template
       ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
-
     return (
       <BasicToolTip
         title={
@@ -132,7 +118,6 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
       </BasicToolTip>
     );
   };
-
   useEffect(() => {
     if (instanceId) {
       const instanceData = instanceList.find(
@@ -144,7 +129,6 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
       );
     }
   }, [instanceId, form, instanceList, instanceNameFormName]);
-
   return (
     <Space size={12}>
       <FormItemNoLabel
@@ -223,5 +207,4 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
     </Space>
   );
 };
-
 export default DataSourceField;

@@ -7,7 +7,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { EnvironmentFilled } from '@actiontech/icons';
 import { TypedLink } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { AssociatedVersionStageWorkflowsProps } from '../index.type';
 
 const AssociatedWorkflows: React.FC<AssociatedVersionStageWorkflowsProps> = ({

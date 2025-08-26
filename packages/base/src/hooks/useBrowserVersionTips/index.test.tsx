@@ -1,6 +1,6 @@
 import { baseSuperRenderHook } from '../../testUtils/superRender';
 import useBrowserVersionTips from '.';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import { act, cleanup } from '@testing-library/react';
 
 describe('useBrowserVersionTips', () => {

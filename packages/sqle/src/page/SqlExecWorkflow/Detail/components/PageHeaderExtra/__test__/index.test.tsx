@@ -10,7 +10,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid } from '@actiontech/dms-kit';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import MockDate from 'mockdate';

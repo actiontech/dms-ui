@@ -12,7 +12,7 @@ import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IOptimizationRecordOverview } from '@actiontech/shared/lib/api/sqle/service/common';
 import { OrderQuantityTrendExtraStyleWrapper } from '../../../ReportStatistics/EEIndex/component/charts/OrderQuantityTrend/style';
-import { BasicRangePicker } from '@actiontech/shared';
+import { BasicRangePicker } from '@actiontech/dms-kit';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { RangePickerProps } from 'antd/es/date-picker';
 import dayjs, { Dayjs } from 'dayjs';
@@ -24,27 +24,18 @@ import {
   renderTooltipFormatter
 } from './index.data';
 import { ArrowRightOutlined } from '@actiontech/icons';
-
 const dateFormat = 'YYYY-MM-DD';
-
 type RangeValue = [Dayjs | null, Dayjs | null];
-
 const OptimizationDistribution = () => {
   const { t } = useTranslation();
-
   const { projectName } = useCurrentProject();
-
   const { currentTheme } = useChangeTheme();
-
   const defaultRangeValue: RangePickerProps['defaultValue'] = [
     dayjs().subtract(30, 'day'),
     dayjs()
   ];
-
   const [range, setRange] = useState<RangeValue>(defaultRangeValue);
-
   const [data, setData] = useState<IOptimizationRecordOverview[]>([]);
-
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
     () =>
       sqlOptimization.getOptimizationOverview({
@@ -62,7 +53,6 @@ const OptimizationDistribution = () => {
       }
     }
   );
-
   const maxVal = useMemo(() => {
     if (!data.length) {
       return {
@@ -87,9 +77,7 @@ const OptimizationDistribution = () => {
     });
     return valueFlag;
   }, [data]);
-
   const { sharedTheme } = useThemeStyleData();
-
   const config: AreaConfig = {
     data,
     xField: 'time',
@@ -108,7 +96,8 @@ const OptimizationDistribution = () => {
       size: 3,
       color: sharedTheme.uiToken.colorPrimary
     },
-    smooth: true, // 是否配置平滑
+    smooth: true,
+    // 是否配置平滑
     annotations: [
       {
         type: 'text',
@@ -163,7 +152,6 @@ const OptimizationDistribution = () => {
       }
     ]
   };
-
   const disabledDate: RangePickerProps['disabledDate'] = (current: Dayjs) => {
     const noAfterToday = current && current > dayjs().endOf('day');
     const exceedLimitDay = 90;
@@ -172,16 +160,13 @@ const OptimizationDistribution = () => {
       range[1] && range[1].diff(current, 'days') > exceedLimitDay;
     return noAfterToday || !!tooEarly || !!tooLate;
   };
-
   const onChange = (values: RangeValue | null) => {
     setRange(values!);
   };
-
   useEffect(() => {
     getApiData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [range]);
-
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.optimizationDistribution.title')}
@@ -220,5 +205,4 @@ const OptimizationDistribution = () => {
     </CardWrapper>
   );
 };
-
 export default OptimizationDistribution;

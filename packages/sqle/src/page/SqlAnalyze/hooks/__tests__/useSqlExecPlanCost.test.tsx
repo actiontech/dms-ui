@@ -5,8 +5,8 @@ import useSqlExecPlanCost from '../useSqlExecPlanCost';
 import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { mockSqlManageSqlAnalysisChartData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { translateTimeForRequest } from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
 import { DateRangeEnum } from '../../SqlAnalyze/ExecPlanCostChart/index.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 

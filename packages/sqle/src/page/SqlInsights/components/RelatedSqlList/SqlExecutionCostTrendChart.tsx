@@ -8,7 +8,7 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import dayjs from 'dayjs';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { useMemoizedFn } from 'ahooks';
 import {
   SqlExecutionCostTrendChartStyleWrapper

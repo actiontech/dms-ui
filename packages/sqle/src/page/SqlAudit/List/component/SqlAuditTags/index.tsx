@@ -1,20 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useMemo, useRef } from 'react';
-
 import {
   BasicButton,
   BasicEmpty,
   BasicInput,
   BasicTag,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { PlusOutlined } from '@ant-design/icons';
 import { SqlAuditTagsButton, SqlAuditTagsPopoverCont } from './style';
 import { Divider, Form, InputRef, Popover, Space, Spin, message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import useSQLAuditRecordTag from '../../../../../hooks/useSQLAuditRecordTag';
-import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
-
+import { tagNameRule } from '@actiontech/dms-kit';
 export interface ISqlAuditTags {
   projectName: string;
   defaultTags: string[];
@@ -27,29 +25,26 @@ const SqlAuditTags = ({
 }: ISqlAuditTags) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [open, setOpen] = useState(false);
-  const [extraTagForm] = useForm<{ extraTag: string }>();
+  const [extraTagForm] = useForm<{
+    extraTag: string;
+  }>();
   const inputRef = useRef<InputRef>(null);
   const { loading, updateSQLAuditRecordTag, auditRecordTags } =
     useSQLAuditRecordTag();
-
   const removing = useRef(false);
   const removeTag = async (tag: string) => {
     if (removing.current) {
       return;
     }
-
     updateTags(tags.filter((v) => v !== tag)).finally(() => {
       removing.current = false;
     });
   };
-
   const handelClickAddTagsIcon = () => {
     setOpen(true);
     updateSQLAuditRecordTag(projectName);
   };
-
   const content = useMemo(() => {
     const createTag = async (
       e: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -71,12 +66,9 @@ const SqlAuditTags = ({
         return;
       }
       updateTags([...tags, realTag]);
-
       extraTagForm.resetFields();
-
       setOpen(false);
     };
-
     return (
       <Spin spinning={loading}>
         {messageContextHolder}
@@ -101,13 +93,27 @@ const SqlAuditTags = ({
               </div>
             ))}
           </EmptyBox>
-          <Divider style={{ marginTop: '2px', marginBottom: '8px' }} />
+          <Divider
+            style={{
+              marginTop: '2px',
+              marginBottom: '8px'
+            }}
+          />
           <Form
             form={extraTagForm}
             layout="inline"
-            initialValues={{ extraTag: '' }}
+            initialValues={{
+              extraTag: ''
+            }}
           >
-            <Form.Item name="extraTag" rules={[{ validator: tagNameRule() }]}>
+            <Form.Item
+              name="extraTag"
+              rules={[
+                {
+                  validator: tagNameRule()
+                }
+              ]}
+            >
               <BasicInput
                 placeholder={t(
                   'sqlAudit.list.action.updateTags.addTag.placeholder'
@@ -127,7 +133,6 @@ const SqlAuditTags = ({
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditRecordTags, extraTagForm, loading, t, tags, updateTags]);
-
   return (
     <>
       <Space size={8}>
@@ -173,5 +178,4 @@ const SqlAuditTags = ({
     </>
   );
 };
-
 export default SqlAuditTags;

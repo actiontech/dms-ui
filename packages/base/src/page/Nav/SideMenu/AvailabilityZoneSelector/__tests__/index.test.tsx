@@ -8,7 +8,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

@@ -11,9 +11,9 @@ import {
   BasicToolTip,
   EmptyBox,
   formatTime
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { message } from 'antd';
-import { ToggleButtonStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { ToggleButtonStyleWrapper } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean, useRequest, useToggle } from 'ahooks';
 import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
@@ -40,35 +40,28 @@ import {
 import ModifiedSqlDrawer from './component/ModifiedSqlDrawer';
 import { Key, useMemo, useState, useRef } from 'react';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
-
 const ComparisonEntry: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
   const treeRef = useRef<ComparisonTreeNodeRef>(null);
-
   const [
     showDifferencesOnly,
     { toggle: toggleShowDifferencesOnly, setLeft: resetShowDifferencesOnly }
   ] = useToggle(false);
-
   const [
     modifiedSqlDrawerOpen,
     { setTrue: openModifiedSqlDrawer, setFalse: closeOpenModifiedSqlDrawer }
   ] = useBoolean();
-
   const [checkedObjectNodeKeys, setCheckedObjectNodeKeys] = useState<string[]>(
     []
   );
-
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
-
   const [comparisonStartTime, setComparisonStartTime] = useState<string>();
   const [comparisonEndTime, setComparisonEndTime] = useState<string>();
   const [filterType, setFilterType] = useState<
     ObjectDiffResultComparisonResultEnum | undefined
   >();
-
   const {
     form,
     selectedBaselineInstanceValue,
@@ -77,7 +70,6 @@ const ComparisonEntry: React.FC = () => {
     getInstanceInfoBySelectedValue,
     ...otherHookValues
   } = useDataSourceSelectorTree();
-
   const {
     data: comparisonResults,
     run: executeComparisonApi,
@@ -101,19 +93,16 @@ const ComparisonEntry: React.FC = () => {
       manual: true
     }
   );
-
   const filteredComparisonResults = useMemo(() => {
     if (!showDifferencesOnly && !filterType) {
       return comparisonResults ?? [];
     }
-
     if (
       showDifferencesOnly &&
       filterType === ObjectDiffResultComparisonResultEnum.same
     ) {
       return [];
     }
-
     return (comparisonResults ?? [])
       .filter((item) => {
         if (showDifferencesOnly) {
@@ -137,34 +126,29 @@ const ComparisonEntry: React.FC = () => {
                 return true;
               }
             );
-
             const typeFilteredObjects = filterType
               ? filteredObjects?.filter(
                   (result) => result.comparison_result === filterType
                 )
               : filteredObjects;
-
             return {
               ...diffObject,
               objects_diff_result: typeFilteredObjects
             };
           }
         );
-
         return {
           ...item,
           database_diff_objects: filteredDiffObjects
         };
       });
   }, [comparisonResults, showDifferencesOnly, filterType]);
-
   const selectedBaselineInstanceInfo = getInstanceInfoBySelectedValue(
     selectedBaselineInstanceValue
   );
   const selectedComparisonInstanceInfo = getInstanceInfoBySelectedValue(
     selectedComparisonInstanceValue
   );
-
   const genDatabaseDiffModifiedSQLsParams:
     | IGenDatabaseDiffModifySQLsV1Params
     | undefined = useMemo(() => {
@@ -192,7 +176,6 @@ const ComparisonEntry: React.FC = () => {
             key
           };
         });
-
         const groupedResults = parseResults.reduce(
           (acc, curr) => {
             const key = `${curr.base_schema_name}_${curr.comparison_schema_name}`;
@@ -217,7 +200,6 @@ const ComparisonEntry: React.FC = () => {
             }
           >
         );
-
         return Object.values(groupedResults).map(
           ({ base_schema_name, comparison_schema_name, keys }) => ({
             base_schema_name,
@@ -246,7 +228,6 @@ const ComparisonEntry: React.FC = () => {
     selectedComparisonInstanceInfo?.instanceId,
     selectedComparisonInstanceInfo?.schemaName
   ]);
-
   const {
     loading: generateModifySqlPending,
     data: databaseDiffModifiedSqlInfos,
@@ -262,7 +243,6 @@ const ComparisonEntry: React.FC = () => {
       manual: true
     }
   );
-
   const executeComparison = async () => {
     const values = await form.validateFields();
     updateComparisonResult(undefined);
@@ -274,12 +254,10 @@ const ComparisonEntry: React.FC = () => {
     setComparisonEndTime(undefined);
     executeComparisonApi(values.baselineInstance, values.comparisonInstance);
   };
-
   const onCloseModifiedSqlDrawer = () => {
     updateModifiedSqlInfos(undefined);
     closeOpenModifiedSqlDrawer();
   };
-
   const generateModifiedSqlEvent = () => {
     if (filteredComparisonResults && genDatabaseDiffModifiedSQLsParams) {
       const comparisonResultsWithCheckNodeKeys = filteredWithoutParentNodeKey(
@@ -295,31 +273,25 @@ const ComparisonEntry: React.FC = () => {
         messageApi.error(t('dataSourceComparison.entry.generateSQLErrorTips'));
         return;
       }
-
       openModifiedSqlDrawer();
       generateModifiedSqlInfoApi();
     }
   };
-
   const noDifferencesFound = useMemo(() => {
     return filteredComparisonResults.every(
       (item) => item.comparison_result === SchemaObjectComparisonResultEnum.same
     );
   }, [filteredComparisonResults]);
-
   const handleCardClick = (type: ObjectDiffResultComparisonResultEnum) => {
     setFilterType(type === filterType ? undefined : type);
-
     const allMatchStatusExpandedKeys = generateAllMatchStatusExpandedKeys(
       type,
       filteredComparisonResults
     );
     if (!allMatchStatusExpandedKeys) return;
-
     setTreeExpandedKeys((keys) => {
       return [...keys, ...allMatchStatusExpandedKeys];
     });
-
     setTimeout(() => {
       const nodeKey = getFirstMatchNodeKey(filteredComparisonResults, type);
       if (nodeKey) {
@@ -331,8 +303,10 @@ const ComparisonEntry: React.FC = () => {
 
         // 等待外层滚动完成后再滚动 Tree
         setTimeout(() => {
-          treeRef.current?.scrollToNode({ key: nodeKey, align: 'top' });
-
+          treeRef.current?.scrollToNode({
+            key: nodeKey,
+            align: 'top'
+          });
           const waitForScroll = () => {
             requestAnimationFrame(() => {
               const getHighlightClass = (
@@ -349,7 +323,6 @@ const ComparisonEntry: React.FC = () => {
                     return '.object-comparison-result-pass';
                 }
               };
-
               const highlightClass = getHighlightClass(type);
               if (highlightClass) {
                 const nodes = document.querySelectorAll(highlightClass);
@@ -366,13 +339,11 @@ const ComparisonEntry: React.FC = () => {
               }
             });
           };
-
           waitForScroll();
         }, 300);
       }
     }, 100);
   };
-
   return (
     <ComparisonEntryStyleWrapper>
       {messageContextHolder}
@@ -394,7 +365,9 @@ const ComparisonEntry: React.FC = () => {
           onClick={executeComparison}
           disabled={executeComparisonPending}
           loading={executeComparisonPending}
-          style={{ marginTop: 16 }}
+          style={{
+            marginTop: 16
+          }}
         >
           {t('dataSourceComparison.entry.executeComparison')}
         </BasicButton>
@@ -516,5 +489,4 @@ const ComparisonEntry: React.FC = () => {
     </ComparisonEntryStyleWrapper>
   );
 };
-
 export default ComparisonEntry;

@@ -3,7 +3,7 @@ import {
   BasicButton,
   EmptyBox,
   BasicResult
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
 import {
@@ -11,13 +11,13 @@ import {
   formItemLayout,
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { BriefcaseFilled } from '@actiontech/icons';
 import PipelineConfigurationForm from '../Common/ConfigurationForm';
 import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { omit } from 'lodash';
 import usePipelineConfigurationFormState from '../Common/ConfigurationForm/hooks/usePipelineConfigurationFormState';
 import {
@@ -25,10 +25,8 @@ import {
   pipelineNodeBaseObjectTypeEnum,
   pipelineNodeBaseTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const CreatePipelineConfiguration = () => {
   const { t } = useTranslation();
-
   const {
     form,
     submitLoading,
@@ -40,7 +38,6 @@ const CreatePipelineConfiguration = () => {
     openPipelineDetailModal,
     projectName
   } = usePipelineConfigurationFormState();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -67,11 +64,9 @@ const CreatePipelineConfiguration = () => {
         finishSubmit();
       });
   };
-
   const onReset = () => {
     form.resetFields();
   };
-
   return (
     <>
       <PageHeader
@@ -138,5 +133,4 @@ const CreatePipelineConfiguration = () => {
     </>
   );
 };
-
 export default CreatePipelineConfiguration;

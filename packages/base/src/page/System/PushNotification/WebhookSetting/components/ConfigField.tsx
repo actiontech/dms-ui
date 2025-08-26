@@ -1,11 +1,8 @@
 import { useTranslation } from 'react-i18next';
-
-import { BasicInput, BasicInputNumber } from '@actiontech/shared';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
-
+import { BasicInput, BasicInputNumber } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 const ConfigField = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemLabel
@@ -55,5 +52,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

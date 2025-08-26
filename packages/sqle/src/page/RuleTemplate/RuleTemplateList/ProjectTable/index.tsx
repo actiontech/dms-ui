@@ -12,7 +12,7 @@ import {
   initRuleTemplateListModalStatus,
   updateRuleTemplateListModalStatus
 } from '../../../../store/ruleTemplate';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   useTableRequestError,
   ActiontechTable,
@@ -28,7 +28,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { RuleTemplateTableActions } from '../actions';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const ProjectTable = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();

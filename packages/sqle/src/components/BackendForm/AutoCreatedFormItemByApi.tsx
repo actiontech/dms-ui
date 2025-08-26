@@ -1,32 +1,22 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
 import { BackendFormProps } from '.';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/dms-kit';
 import useRuleParams from './useRuleParams';
 import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';
-
 const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
   const { t } = useTranslation();
-
   const { paramsKey = 'params', isFullLine } = props;
-
   const formItemLayoutVal = useMemo(() => {
     if (isFullLine) {
       return formItemLayout.fullLine;
     }
     return formItemLayout.spaceBetween;
   }, [isFullLine]);
-
   const { formItemData } = useRuleParams(props.params);
-
   return (
     <>
       {formItemData.map((item) => {
@@ -48,7 +38,6 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-
         if (item.type === 'password') {
           return (
             <FormItemLabel
@@ -68,7 +57,6 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-
         if (item.enums_value && item.enums_value.length > 0) {
           return (
             <FormItemLabel
@@ -91,7 +79,6 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-
         if (item.type === 'int') {
           return (
             <FormItemLabel
@@ -114,7 +101,6 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-
         return (
           <FormItemLabel
             hidden={!!item.hidden}
@@ -133,5 +119,4 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
     </>
   );
 };
-
 export default AutoCreatedFormItemByApi;

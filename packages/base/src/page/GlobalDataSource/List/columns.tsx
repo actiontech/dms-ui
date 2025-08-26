@@ -1,4 +1,4 @@
-import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
+import { timeAddZero } from '@actiontech/dms-kit';
 import { Tag } from 'antd';
 import { t } from '../../../locale';
 import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
@@ -7,15 +7,16 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IListGlobalDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import ConnectionResultColumn from '../../DataSource/components/List/ConnectionResultColumn';
 import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ServiceEnvironmentTagStyleWrapper } from '../../DataSource/components/List/style';
-
 export type GLobalDataSourceListParamType = PageInfoWithoutIndexAndSize<
-  IListGlobalDBServicesV2Params & { page_index: number }
+  IListGlobalDBServicesV2Params & {
+    page_index: number;
+  }
 >;
-
 export const GlobalDataSourceColumns = (
   getLogoUrlByDbType: (dbType: string) => string
 ): ActiontechTableColumn<
@@ -99,7 +100,6 @@ export const GlobalDataSourceColumns = (
       filterKey: 'filter_by_db_type',
       render: (dbType) => {
         if (!dbType) return '-';
-
         return (
           <DatabaseTypeLogo
             dbType={dbType}

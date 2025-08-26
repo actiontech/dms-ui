@@ -1,9 +1,6 @@
-export {
-  ResponseCode,
-  CharCode,
-  SystemRole,
-  ModalSize
-} from '@actiontech/shared/lib/enum';
+export { ResponseCode } from '@actiontech/dms-kit';
+
+export { CharCode, SystemRole, ModalSize } from '@actiontech/dms-kit';
 
 export {
   ModalFormLayout,
@@ -13,7 +10,7 @@ export {
   FilterFormColLayout,
   FilterFormLayout,
   FilterFormRowLayout
-} from '@actiontech/shared/lib/data/common';
+} from '@actiontech/dms-kit';
 
 export const instanceListDefaultKey = 'all';
 export const ruleTemplateListDefaultKey = 'all';

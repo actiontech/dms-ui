@@ -1,8 +1,8 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
 import useTableSettings from '../useTableSettings';
-import LocalStorageWrapper from '../../../../utils/LocalStorageWrapper';
-import { eventEmitter } from '../../../../utils/EventEmitter';
-import EmitterKey from '../../../../data/EmitterKey';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 
 describe('lib/ActiontechTable-hooks-useTableSettings', () => {
   const tableName = 'tableList';

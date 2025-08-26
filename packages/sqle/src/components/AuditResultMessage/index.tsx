@@ -6,7 +6,7 @@ import {
   AuditResultMessageStyleWrapper,
   AuditResultMessageWithAnnotationStyleWrapper
 } from './style';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { Tag, Typography } from 'antd';
 import {
@@ -15,9 +15,7 @@ import {
   InfoHexagonFilled,
   CloseCircleFilled
 } from '@actiontech/icons';
-
 const passStatusLevelData = ['normal', 'UNKNOWN'];
-
 const AuditResultMessage = ({
   auditResult,
   styleClass,
@@ -27,7 +25,6 @@ const AuditResultMessage = ({
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
   const [visible, { set }] = useBoolean(true);
-
   const renderIcon = useMemo(() => {
     const { level } = auditResult || {};
     if (!level || passStatusLevelData.includes(level)) {
@@ -43,7 +40,6 @@ const AuditResultMessage = ({
       return <CloseCircleFilled width={20} height={20} />;
     }
   }, [auditResult]);
-
   const renderMessage = useMemo(() => {
     const { level, message } = auditResult || {};
     if (message) return message;
@@ -51,7 +47,6 @@ const AuditResultMessage = ({
       return t('components.auditResultMessage.auditPassed');
     return '';
   }, [auditResult, t]);
-
   if (!auditResult || JSON.stringify(auditResult) === '{}')
     return (
       <AuditResultMessageStyleWrapper className={classNames([styleClass])}>
@@ -63,7 +58,6 @@ const AuditResultMessage = ({
         </span>
       </AuditResultMessageStyleWrapper>
     );
-
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
       className={classNames(styleClass, {
@@ -101,5 +95,4 @@ const AuditResultMessage = ({
     </AuditResultMessageWithAnnotationStyleWrapper>
   );
 };
-
 export default AuditResultMessage;

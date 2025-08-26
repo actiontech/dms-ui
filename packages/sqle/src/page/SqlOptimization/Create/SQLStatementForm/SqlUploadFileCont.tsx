@@ -10,26 +10,19 @@ import {
   MonacoEditor,
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
-import {
-  CustomDraggerUpload,
-  EmptyBox,
-  FormItemNoLabel
-} from '@actiontech/shared';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { CustomDraggerUpload, EmptyBox } from '@actiontech/dms-kit';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import { FormSubmitStatusContext } from '..';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
-
+import { whiteSpaceSql } from '@actiontech/dms-kit';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const uploadType = Form.useWatch('uploadType', form);
-
   const { editorDidMount } = useMonacoEditor(form, {
     formName: 'sql'
   });
-
   const removeFile = useCallback(
     (fileName: keyof SQLStatementFields) => {
       form.setFieldsValue({
@@ -38,7 +31,6 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
     },
     [form]
   );
-
   return (
     <>
       {/* sql */}
@@ -145,5 +137,4 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
     </>
   );
 };
-
 export default SqlUploadFileCont;

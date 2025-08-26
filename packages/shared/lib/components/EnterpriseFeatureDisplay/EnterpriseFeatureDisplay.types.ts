@@ -1,5 +1,4 @@
-import { I18nKey } from '../../locale';
-import { BasicTagColor } from '../../theme/theme.type';
+import { I18nKey, BasicTagColor } from '@actiontech/dms-kit';
 
 export type EnterpriseFeatureDisplayProps = {
   children: React.ReactNode;

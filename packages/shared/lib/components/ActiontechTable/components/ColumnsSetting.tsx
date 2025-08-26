@@ -4,8 +4,8 @@ import { Popover } from 'antd';
 import { CatchTableColumnValueType, ColumnsSettingProps } from '../index.type';
 import useTableSettings from '../hooks/useTableSettings';
 import { ColumnsSettingDropdownStyleWrapper } from './style';
-import { eventEmitter } from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { cloneDeep } from 'lodash';
 import type { DragEndEvent, DragMoveEvent } from '@dnd-kit/core';
 import {
@@ -23,7 +23,7 @@ import {
 import ColumnsItems, { typeFixed } from './ColumnsItems';
 import { DownOutlined, UpOutlined, SettingOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
-import { BasicButton } from '../../BasicButton';
+import { BasicButton } from '@actiontech/dms-kit';
 
 /**
  * todo:

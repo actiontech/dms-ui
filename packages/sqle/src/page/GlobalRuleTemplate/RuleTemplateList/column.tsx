@@ -6,19 +6,15 @@ import {
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { Space } from 'antd';
-import {
-  BasicTypographyEllipsis,
-  DatabaseTypeLogo,
-  TypedLink
-} from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import {
   ProfileSquareFilled,
   LogoutBoxFilled,
   CheckboxMultipleBlankFilled
 } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
     const { getLogoUrlByDbType } = useDbServiceDriver();
@@ -30,11 +26,13 @@ export const RuleTemplateColumns =
           if (!name) {
             return '-';
           }
-
           return (
             <TypedLink
               to={ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail}
-              params={{ templateName: name, dbType: row?.db_type ?? '' }}
+              params={{
+                templateName: name,
+                dbType: row?.db_type ?? ''
+              }}
             >
               <Space size={12}>
                 <ProfileSquareFilled />
@@ -61,7 +59,6 @@ export const RuleTemplateColumns =
           if (!type) {
             return '-';
           }
-
           return (
             <DatabaseTypeLogo
               dbType={type}
@@ -72,7 +69,6 @@ export const RuleTemplateColumns =
       }
     ];
   };
-
 export const RuleTemplateActions = (
   onNavigateUpdateRuleTemplate: (templateName: string) => void,
   onDelete: (name: string) => void,
@@ -85,7 +81,9 @@ export const RuleTemplateActions = (
   title?: ActiontechTableColumn<IRuleTemplateResV1>[0]['title'];
 } => {
   if (!canOperate) {
-    return { buttons: [] };
+    return {
+      buttons: []
+    };
   }
   return {
     buttons: [
@@ -102,7 +100,9 @@ export const RuleTemplateActions = (
       {
         key: 'remove-rule-template',
         text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
+        buttonProps: () => ({
+          danger: true
+        }),
         confirm: (record) => ({
           title: t('ruleTemplate.deleteRuleTemplate.tips', {
             name: record?.rule_template_name

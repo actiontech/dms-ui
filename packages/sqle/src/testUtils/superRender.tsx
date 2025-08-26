@@ -4,7 +4,7 @@ import {
   WrapperOptions,
   RenderParams
 } from '@actiontech/shared/lib/testUtil/superRender';
-import sharedTheme from '@actiontech/shared/lib/theme/light';
+import { lightTheme as sharedTheme } from '@actiontech/dms-kit';
 import lightTheme from '../theme/light';
 import { renderHook } from '@testing-library/react-hooks';
 import { storeFactory } from './mockRedux';

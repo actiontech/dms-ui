@@ -8,11 +8,11 @@ import {
 import { WhitelistColumn, WhitelistTableFilterParamType } from './columns';
 import { ModalName } from '../../../data/ModalName';
 import { message } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { updateWhitelistModalStatus } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
@@ -30,21 +30,16 @@ import {
 import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
 import { WhitelistTableActions, WhitelistPageHeaderActions } from './actions';
-
 const WhitelistList = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const { dispatch, updateSelectWhitelistRecord, openCreateWhitelistModal } =
     useWhitelistRedux();
-
   const pageHeaderActions = WhitelistPageHeaderActions(
     openCreateWhitelistModal
   );
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -57,12 +52,9 @@ const WhitelistList = () => {
     IAuditWhitelistResV1,
     WhitelistTableFilterParamType
   >();
-
   const columns = useMemo(() => WhitelistColumn(), []);
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: whitelistList,
     loading,
@@ -76,7 +68,6 @@ const WhitelistList = () => {
         project_name: projectName,
         fuzzy_search_value: searchKeyword
       };
-
       return handleTableRequestError(
         audit_whitelist.getAuditWhitelistV1(params)
       );
@@ -85,7 +76,6 @@ const WhitelistList = () => {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const openUpdateWhitelistModal = useCallback(
     (selectRow: IAuditWhitelistResV1) => {
       updateSelectWhitelistRecord(selectRow);
@@ -98,7 +88,6 @@ const WhitelistList = () => {
     },
     [dispatch, updateSelectWhitelistRecord]
   );
-
   const removeWhitelist = useCallback(
     (whitelistId: number) => {
       const hide = messageApi.loading(t('whitelist.operate.deleting'));
@@ -119,22 +108,23 @@ const WhitelistList = () => {
     },
     [messageApi, projectName, refresh, t]
   );
-
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
       WhitelistTableActions(openUpdateWhitelistModal, removeWhitelist)
     );
   }, [parse2TableActionPermissions, openUpdateWhitelistModal, removeWhitelist]);
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IAuditWhitelistResV1, FilterCustomProps>([
-      ['match_type', { options: whitelistMatchTypeOptions }]
+      [
+        'match_type',
+        {
+          options: whitelistMatchTypeOptions
+        }
+      ]
     ]);
   }, []);
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Whitelist_List,
@@ -142,7 +132,6 @@ const WhitelistList = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   return (
     <>
       {messageContextHolder}
@@ -152,7 +141,10 @@ const WhitelistList = () => {
       />
       <ActiontechTableWrapper loading={loading}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: loading }}
+          refreshButton={{
+            refresh,
+            disabled: loading
+          }}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -189,5 +181,4 @@ const WhitelistList = () => {
     </>
   );
 };
-
 export default WhitelistList;

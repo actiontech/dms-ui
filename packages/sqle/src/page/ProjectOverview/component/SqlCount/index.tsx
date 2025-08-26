@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import ChartContTitle from '../../../../page/ReportStatistics/EEIndex/component/base/ChartContTitle';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { RingProgress, RingProgressConfig } from '@ant-design/plots';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import {
@@ -15,7 +15,7 @@ import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { PopoverTooltipStyleWrapper } from '../../../../components/ChartCom/ChartTooltip/style';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { floor } from 'lodash';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit';
 
 const SqlCount = () => {
   const { t } = useTranslation();

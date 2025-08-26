@@ -1,12 +1,10 @@
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import PluginAuditList from './List';
-
 const PluginAudit = () => {
   const { t } = useTranslation();
-
   return (
     <section>
       <PageHeader title={t('pluginAudit.pageTitle')} />
@@ -23,5 +21,4 @@ const PluginAudit = () => {
     </section>
   );
 };
-
 export default PluginAudit;

@@ -1,13 +1,13 @@
-import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
+import { DEFAULT_PROJECT_ID } from '@actiontech/dms-kit';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
 import { useDispatch } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { updateUserOperationPermissions } from '../../../store/permission';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const CEIndexProjectDetail: React.FC = () => {
   const location = useLocation();

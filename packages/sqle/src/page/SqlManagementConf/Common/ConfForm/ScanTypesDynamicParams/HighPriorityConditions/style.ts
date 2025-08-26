@@ -1,6 +1,5 @@
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
-
 export const HighPriorityConditionDescTagStyleWrapper = styled(BasicTag)`
   height: 36px !important;
   margin-right: 0 !important;

@@ -6,14 +6,15 @@ import {
   BookMarkOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTip, EmptyBox, useTypedNavigate } from '@actiontech/shared';
+import { BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { ModuleRedDotModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
@@ -21,9 +22,8 @@ import {
   PermissionsConstantType,
   usePermission
 } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { IModuleRedDots } from '@actiontech/shared/lib/api/sqle/service/common';
-
 type QuickActionItemType = {
   key: string;
   title: React.ReactNode;
@@ -32,23 +32,17 @@ type QuickActionItemType = {
   permission?: PermissionsConstantType;
   dot?: boolean;
 };
-
 type QuickActionsProps = {
   systemModuleRedDots?: IModuleRedDots;
   setSystemModuleRedDotsLoading: (loading: boolean) => void;
 };
-
 const QuickActions: React.FC<QuickActionsProps> = ({
   setSystemModuleRedDotsLoading
 }) => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const location = useLocation();
-
   const { checkPagePermission } = usePermission();
-
   const { data } = useRequest(
     () =>
       system.GetSystemModuleRedDots().then((res) => {
@@ -66,7 +60,6 @@ const QuickActions: React.FC<QuickActionsProps> = ({
       }
     }
   );
-
   const actionItems: Array<QuickActionItemType> = useMemo(() => {
     const actionList: Array<QuickActionItemType> = [
       {
@@ -107,11 +100,9 @@ const QuickActions: React.FC<QuickActionsProps> = ({
       if (!item.permission) {
         return true;
       }
-
       return checkPagePermission(item.permission);
     });
   }, [t, data, checkPagePermission]);
-
   return (
     <QuickActionsStyleWrapper>
       <Space className="action-space-wrapper">
@@ -138,5 +129,4 @@ const QuickActions: React.FC<QuickActionsProps> = ({
     </QuickActionsStyleWrapper>
   );
 };
-
 export default QuickActions;

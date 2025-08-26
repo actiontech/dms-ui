@@ -10,30 +10,22 @@ import { useBoolean } from 'ahooks';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-
 const CloneRole = () => {
   const [form] = Form.useForm<IRoleFormFields>();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [createLoading, { setTrue, setFalse }] = useBoolean();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Clone_Role]
   );
-
   const currentRole = useSelector<IReduxState, IListRole | null>(
     (state) => state.userCenter.selectRole
   );
-
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -43,7 +35,6 @@ const CloneRole = () => {
       })
     );
   }, [dispatch, form]);
-
   const cloneRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
@@ -69,7 +60,6 @@ const CloneRole = () => {
         setFalse();
       });
   }, [onClose, form, setFalse, setTrue, t, messageApi]);
-
   useEffect(() => {
     if (visible && currentRole) {
       form.setFieldsValue({
@@ -79,7 +69,6 @@ const CloneRole = () => {
       });
     }
   }, [visible, currentRole, form]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.role.cloneRole.modalTitle')}
@@ -110,5 +99,4 @@ const CloneRole = () => {
     </BasicDrawer>
   );
 };
-
 export default CloneRole;

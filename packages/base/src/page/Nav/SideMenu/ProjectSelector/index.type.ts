@@ -1,5 +1,5 @@
+import { CustomSelectProps } from '@actiontech/dms-kit';
 import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
-import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
 
 export type RecentlyProjectsRecordType = Record<
   string,
