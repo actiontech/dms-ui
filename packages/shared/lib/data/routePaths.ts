@@ -199,11 +199,13 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: ':taskId/:sqlNum/analyze'
+        path: ':taskId/:sqlNum/analyze',
+        query: 'instance_name&schema'
       },
       sql_files_overview: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: ':taskId/files/:fileId/sqls'
+        path: ':taskId/files/:fileId/sqls',
+        query: 'instance_name&schema'
       }
     },
     SQL_AUDIT: {
@@ -252,7 +254,8 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
-        path: ':instanceAuditPlanId/analyze/:id'
+        path: ':instanceAuditPlanId/analyze/:id',
+        query: 'instance_name&schema'
       }
     },
     SQL_MANAGEMENT: {
@@ -263,7 +266,8 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',
-        path: ':sqlManageId/analyze'
+        path: ':sqlManageId/analyze',
+        query: 'instance_name&schema'
       }
     },
     SQL_INSIGHTS: {
