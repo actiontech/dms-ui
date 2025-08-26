@@ -144,6 +144,10 @@ export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
 
   sql_content?: string;
 
+  explain_info?: string;
+
+  metadata?: string;
+
   input_sql_file?: any;
 
   input_zip_file?: any;
@@ -158,17 +162,6 @@ export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
 }
 
 export interface ISQLOptimizeV2Return extends IOptimizeSQLRes {}
-
-export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLParams {
-  project_name: string;
-
-  instance_name: string;
-
-  origin_sql: string;
-}
-
-export interface IGetLatestOptimizationSQLDetailByInstanceAndSQLReturn
-  extends IGetOptimizationDetailRes {}
 
 export interface IGetOptimizationSQLDetailV2Params {
   project_name: string;

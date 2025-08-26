@@ -404,6 +404,14 @@ export enum OptimizationRecordStatusEnum {
   'finish' = 'finish'
 }
 
+export enum OptimizationSQLDetailStatusEnum {
+  'optimizing' = 'optimizing',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
 export enum RecordSourceNameEnum {
   'ide_plugin' = 'ide_plugin'
 }
