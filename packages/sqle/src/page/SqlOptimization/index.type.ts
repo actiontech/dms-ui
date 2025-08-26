@@ -1,5 +1,10 @@
 import { FormInstance, SelectProps } from 'antd';
 
+export enum OptimizationTypeEnum {
+  online = 'online',
+  offline = 'offline'
+}
+
 export enum UploadTypeEnum {
   sql,
   sqlFile,
@@ -16,6 +21,7 @@ export type BaseForm = FormInstance<BaseFormFields>;
 
 export type SqlInfoFormFields = {
   name: string;
+  optimizationType: OptimizationTypeEnum;
   uploadType: UploadTypeEnum;
   sql: string;
   sqlFile: File[];
@@ -23,10 +29,13 @@ export type SqlInfoFormFields = {
   zipFile: File[];
   instanceName: string;
   instanceSchema: string;
-  dbType: string;
   gitHttpUrl: string;
   gitUserName: string;
   gitUserPassword: string;
+  // 离线调优专用字段
+  offlineSql?: string;
+  executionPlan?: string;
+  tableStructure?: string;
 };
 
 export type SqlInfoForm = FormInstance<SqlInfoFormFields>;

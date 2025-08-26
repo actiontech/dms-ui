@@ -10,15 +10,20 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import SqlAnalyze from '../SqlAnalyze';
-import { useTypedParams } from '@actiontech/shared';
+import { useTypedParams, useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
 import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
+import useSqlOptimization from '../hooks/useSqlOptimization';
+import SqlOptimizationResultDrawer from '../Drawer/SqlOptimizationResultDrawer';
 
 const SQLManageAnalyze = () => {
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze>();
   const { projectName } = useCurrentProject();
+
+  const extractQueries = useTypedQuery();
+
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const [sqlExplain, setSqlExplain] = useState<ISQLExplain>();
@@ -32,6 +37,13 @@ const SQLManageAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
+  const {
+    setOptimizationCreationParams,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  } = useSqlOptimization();
+
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
@@ -41,9 +53,18 @@ const SQLManageAnalyze = () => {
       });
       if (res.data.code === ResponseCode.SUCCESS) {
         setErrorMessage('');
-        setSqlExplain(res.data.data?.sql_explain);
-        setTableMetas(res.data.data?.table_metas);
-        setPerformancesStatistics(res.data.data?.performance_statistics);
+        const { data } = res.data;
+        const queryParams = extractQueries(
+          ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze
+        );
+        setSqlExplain(data?.sql_explain);
+        setTableMetas(data?.table_metas);
+        setPerformancesStatistics(data?.performance_statistics);
+        setOptimizationCreationParams({
+          instance_name: queryParams?.instance_name,
+          schema_name: queryParams?.schema,
+          sql_content: data?.sql_explain?.sql
+        });
       } else {
         if (res.data.code === ResponseCode.NotSupportDML) {
           setErrorType('info');
@@ -59,7 +80,9 @@ const SQLManageAnalyze = () => {
     getSqlAnalyzeFinish,
     projectName,
     startGetSqlAnalyze,
-    urlParams.sqlManageId
+    urlParams.sqlManageId,
+    extractQueries,
+    setOptimizationCreationParams
   ]);
 
   const {
@@ -81,22 +104,30 @@ const SQLManageAnalyze = () => {
   }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-      sqlExecPlanCostDataSource={data}
-      getSqlExecPlanCostDataSourceLoading={getSqlExecPlanCostDataSourceLoading}
-      getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
-      getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
-      showExecPlanCostChart
-      initTime={initTime}
-      selectedPoint={selectedPoint}
-      setSelectedPoint={setSelectedPoint}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        sqlExecPlanCostDataSource={data}
+        getSqlExecPlanCostDataSourceLoading={
+          getSqlExecPlanCostDataSourceLoading
+        }
+        getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
+        getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
+        showExecPlanCostChart
+        initTime={initTime}
+        selectedPoint={selectedPoint}
+        setSelectedPoint={setSelectedPoint}
+        onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
+        createSqlOptimizationLoading={createSqlOptimizationLoading}
+        allowSqlOptimization={allowSqlOptimization}
+      />
+      <SqlOptimizationResultDrawer />
+    </>
   );
 };
 

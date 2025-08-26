@@ -22,7 +22,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   backupConflict,
   dbType,
   enableBackup,
-  taskStatus
+  taskStatus,
+  instanceName,
+  schema
 }) => {
   const { t } = useTranslation();
 
@@ -87,6 +89,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
               dbType={dbType}
               enableBackup={enableBackup}
               taskStatus={taskStatus}
+              instanceName={instanceName}
+              schema={schema}
             />
           </List.Item>
         );
