@@ -14,7 +14,6 @@
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
-    "@actiontech/icons": "workspace:^",
     "ahooks": "^3.7.0",
     "axios": ">=0.27.2",
     "classnames": "^2.3.0",
@@ -28,6 +27,7 @@
     "cron-parser": "^4.9.0"
   },
   "peerDependencies": {
+    "@actiontech/icons": "0.0.1-rc.7",
     "react": ">=17",
     "react-dom": ">=17",
     "react-router-dom": "^6.10.0",

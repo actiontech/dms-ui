@@ -325,8 +325,8 @@ importers:
   packages/dms-kit:
     dependencies:
       '@actiontech/icons':
-        specifier: workspace:^
-        version: link:../icons
+        specifier: 0.0.1-rc.7
+        version: 0.0.1-rc.7(react@18.3.1)
       '@ant-design/cssinjs':
         specifier: 1.17.0
         version: 1.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -549,6 +549,11 @@ importers:
         version: 7.20.7
 
 packages:
+
+  '@actiontech/icons@0.0.1-rc.7':
+    resolution: {integrity: sha512-Jt3qHlhMhGBt8B523ftokV6kQpE4mT9oAb/DWOPLwvsv6BnSw1P1APweF4sRvy/IBsPxaS4beFkeANfjjJ4KuQ==}
+    peerDependencies:
+      react: '>=17'
 
   '@adobe/css-tools@4.4.2':
     resolution: {integrity: sha512-baYZExFpsdkBNuvGKTKWCwKH57HRZLVtycZS05WTQNVOiXVSeAki3nU35zlRbToeMW8aHlJfyS+1C4BOv27q0A==}
@@ -10907,6 +10912,10 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@actiontech/icons@0.0.1-rc.7(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
 
   '@adobe/css-tools@4.4.2': {}
 
