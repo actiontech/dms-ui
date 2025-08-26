@@ -25,8 +25,6 @@ import {
   IGetOptimizationRecordsV2Return,
   ISQLOptimizeV2Params,
   ISQLOptimizeV2Return,
-  IGetLatestOptimizationSQLDetailByInstanceAndSQLParams,
-  IGetLatestOptimizationSQLDetailByInstanceAndSQLReturn,
   IGetOptimizationSQLDetailV2Params,
   IGetOptimizationSQLDetailV2Return
 } from './index.d';
@@ -253,6 +251,14 @@ class SqlOptimizationService extends ServiceBase {
       paramsData.append('sql_content', params.sql_content as any);
     }
 
+    if (params.explain_info != undefined) {
+      paramsData.append('explain_info', params.explain_info as any);
+    }
+
+    if (params.metadata != undefined) {
+      paramsData.append('metadata', params.metadata as any);
+    }
+
     if (params.input_sql_file != undefined) {
       paramsData.append('input_sql_file', params.input_sql_file as any);
     }
@@ -286,21 +292,6 @@ class SqlOptimizationService extends ServiceBase {
       `/v2/projects/${project_name}/sql_optimization_records`,
       paramsData,
       config
-    );
-  }
-
-  public GetLatestOptimizationSQLDetailByInstanceAndSQL(
-    params: IGetLatestOptimizationSQLDetailByInstanceAndSQLParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    return this.get<IGetLatestOptimizationSQLDetailByInstanceAndSQLReturn>(
-      `/v2/projects/${project_name}/sql_optimization_records/instance_sql_latest_detail`,
-      paramsData,
-      options
     );
   }
 
