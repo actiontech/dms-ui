@@ -25,6 +25,7 @@ dist
 /packages/icons-svg/es/*
 /packages/icons-svg/lib/*
 /packages/dms-kit/lib/*
+/packages/dms-kit/.dumi/tmp*
 
 # misc
 .DS_Store
