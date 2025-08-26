@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { SQLStatementFormProps, UploadTypeEnum } from '../../index.type';
 import {
   BasicInput,
@@ -8,15 +8,18 @@ import {
   ModeSwitcher
 } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
-import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
 import { RingPieFilled } from '@actiontech/icons';
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../store';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
-  const submitLoading = useContext(FormSubmitStatusContext);
+  const submitLoading = useSelector(
+    (state: IReduxState) => state.sqlOptimization.submitLoading
+  );
 
   const uploadType = Form.useWatch('uploadType', form);
 

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { DatabaseInfoProps } from '../../index.type';
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Alert, Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
@@ -15,7 +15,6 @@ import {
   FormItemNoLabel,
   TypedLink
 } from '@actiontech/shared';
-import { FormSubmitStatusContext } from '..';
 import {
   DatabaseSchemaFilled,
   DatabaseFilled,
@@ -24,6 +23,8 @@ import {
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../store';
 
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,
@@ -33,7 +34,9 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   const { t } = useTranslation();
   const { projectID, projectName } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
-  const submitLoading = useContext(FormSubmitStatusContext);
+  const submitLoading = useSelector(
+    (state: IReduxState) => state.sqlOptimization.submitLoading
+  );
 
   const [instanceInfo, setInstanceInfo] = useState<IInstanceResV2>();
   const instanceName = Form.useWatch('instanceName', form);
