@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useContext } from 'react';
+import { useCallback } from 'react';
 import {
   SQLStatementFields,
   SQLStatementFormProps,
@@ -16,13 +16,16 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { FormSubmitStatusContext } from '..';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../store';
 
 const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
-  const submitLoading = useContext(FormSubmitStatusContext);
+  const submitLoading = useSelector(
+    (state: IReduxState) => state.sqlOptimization.submitLoading
+  );
 
   const uploadType = Form.useWatch('uploadType', form);
 
