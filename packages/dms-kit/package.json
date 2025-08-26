@@ -24,10 +24,10 @@
     "nprogress": "^0.2.0",
     "query-string": "^7.1.1",
     "highlight.js": "^11.0.1",
-    "cron-parser": "^4.9.0"
+    "cron-parser": "^4.9.0",
+    "@actiontech/icons": "workspace:^"
   },
   "peerDependencies": {
-    "@actiontech/icons": "0.0.1-rc.7",
     "react": ">=17",
     "react-dom": ">=17",
     "react-router-dom": "^6.10.0",
