@@ -43,7 +43,7 @@ const SqlOptimizationResultDrawer = () => {
     optimizationResultLoading,
     getOptimizationResult,
     cancelOptimizationRequestPolling
-  } = useOptimizationResult(5000);
+  } = useOptimizationResult({ pollingInterval: 5000 });
 
   const onClose = () => {
     dispatch(

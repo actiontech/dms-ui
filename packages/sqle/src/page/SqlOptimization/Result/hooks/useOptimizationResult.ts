@@ -6,7 +6,13 @@ import { OptimizationResultStatus } from '../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const useOptimizationResult = (pollingInterval = 0) => {
+interface UseOptimizationResultParams {
+  pollingInterval?: number;
+}
+
+const useOptimizationResult = (params?: UseOptimizationResultParams) => {
+  const { pollingInterval = 0 } = params ?? {};
+
   const { projectName } = useCurrentProject();
 
   const [optimizationResultStatus, setOptimizationResultStatus] =
