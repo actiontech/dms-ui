@@ -88,11 +88,11 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    const addButton = getAllBySelector('.ant-dropdown-menu-item')[2];
+    const addButton = getBySelector('.add-button-wraper');
     fireEvent.click(addButton);
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(getBySelector('.add-mode')).toBeInTheDocument();
+    expect(getBySelector('.edit-mode')).toBeInTheDocument();
   });
 
   it('should call onAdd when add new option', async () => {
@@ -100,16 +100,16 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    const addButton = getAllBySelector('.ant-dropdown-menu-item')[2];
+    const addButton = getBySelector('.add-button-wraper');
     fireEvent.click(addButton);
     await act(async () => jest.advanceTimersByTime(0));
 
-    const input = getBySelector('.add-mode input');
+    const input = getBySelector('.edit-mode input');
     fireEvent.change(input!, { target: { value: 'New Option' } });
     await act(async () => jest.advanceTimersByTime(0));
 
     const saveButton = getBySelector(
-      '.add-mode .button-group button:last-child'
+      '.edit-mode .button-group button:last-child'
     );
     fireEvent.click(saveButton);
     await act(async () => jest.advanceTimersByTime(0));
@@ -122,12 +122,12 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    const addButton = getAllBySelector('.ant-dropdown-menu-item')[2];
+    const addButton = getBySelector('.add-button-wraper');
     fireEvent.click(addButton);
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(
-      getBySelector('.add-mode .button-group button:last-child')
+      getBySelector('.edit-mode .button-group button:last-child')
     ).toBeDisabled();
   });
 
@@ -261,9 +261,7 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(getAllBySelector('.ant-dropdown-menu-item').length).toBe(
-      mockOptions.length
-    );
+    expect(queryBySelector('.add-button-wraper')).not.toBeInTheDocument();
   });
 
   it('should not show edit button when updatable is false', async () => {
@@ -293,7 +291,7 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    const addButton = getAllBySelector('.ant-dropdown-menu-item')[2];
+    const addButton = getBySelector('.add-button-wraper');
     fireEvent.click(addButton);
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -303,7 +301,7 @@ describe('EditableSelect', () => {
 
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(queryBySelector('.add-mode')).not.toBeInTheDocument();
+    expect(queryBySelector('.edit-mode')).not.toBeInTheDocument();
   });
 
   it('should show custom placeholder', async () => {
@@ -324,7 +322,7 @@ describe('EditableSelect', () => {
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    const addButton = getAllBySelector('.ant-dropdown-menu-item')[2];
+    const addButton = getBySelector('.add-button-wraper');
     expect(addButton.textContent).toContain('Custom Add');
   });
 
@@ -340,5 +338,130 @@ describe('EditableSelect', () => {
     fireEvent.click(deleteButton);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('Custom Delete Confirm')).toBeInTheDocument();
+  });
+
+  describe('Search functionality', () => {
+    const searchableOptions: EditableSelectOption[] = [
+      { value: '1', label: 'Apple' },
+      { value: '2', label: 'Banana' },
+      { value: '3', label: 'Cherry' },
+      { value: '4', label: 'Date' },
+      { value: '5', label: 'Elderberry' }
+    ];
+
+    it('should show search input when searchable is true', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: true
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      expect(getBySelector('.editable-select-search')).toBeInTheDocument();
+      expect(
+        getBySelector('.editable-select-search input')
+      ).toBeInTheDocument();
+    });
+
+    it('should not show search input when searchable is false', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: false
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      expect(
+        queryBySelector('.editable-select-search')
+      ).not.toBeInTheDocument();
+    });
+
+    it('should filter options when searching', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: true
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const searchInput = getBySelector('.editable-select-search input');
+      fireEvent.change(searchInput, { target: { value: 'app' } });
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const menuItems = getAllBySelector('.ant-dropdown-menu-item');
+      expect(menuItems.length).toBe(1);
+      expect(menuItems[0].textContent).toContain('Apple');
+    });
+
+    it('should filter options case-insensitively', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: true
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const searchInput = getBySelector('.editable-select-search input');
+      fireEvent.change(searchInput, { target: { value: 'BANANA' } });
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const menuItems = getAllBySelector('.ant-dropdown-menu-item');
+      expect(menuItems.length).toBe(1);
+      expect(menuItems[0].textContent).toContain('Banana');
+    });
+
+    it('should reset search when dropdown closes', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: true
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const searchInput = getBySelector('.editable-select-search input');
+      fireEvent.change(searchInput, { target: { value: 'apple' } });
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+      fireEvent.click(firstOption);
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const searchInputAfterReopen = getBySelector(
+        '.editable-select-search input'
+      ) as HTMLInputElement;
+      expect(searchInputAfterReopen.value).toBe('');
+    });
+
+    it('should show custom search placeholder', async () => {
+      customRender({
+        options: searchableOptions,
+        searchable: true,
+        searchPlaceholder: 'Search fruits...'
+      });
+
+      fireEvent.click(getBySelector('.editable-select-trigger'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      const searchInput = getBySelector('.editable-select-search input');
+      expect(searchInput.getAttribute('placeholder')).toBe('Search fruits...');
+    });
+  });
+
+  it('should render with custom contentMaxHeight', async () => {
+    const { baseElement } = customRender({
+      contentMaxHeight: 400
+    });
+    fireEvent.click(getBySelector('.editable-select-trigger'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(baseElement).toBeInTheDocument();
   });
 });

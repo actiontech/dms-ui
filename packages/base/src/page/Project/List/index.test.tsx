@@ -11,6 +11,7 @@ import { baseSuperRender } from '../../../testUtils/superRender';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => {
   return {
@@ -250,5 +251,35 @@ describe('test base/project/list', () => {
     expect(screen.queryAllByText('启 用')[0]).not.toBeDisabled();
 
     expect(screen.queryAllByText('冻 结')[0]).not.toBeDisabled();
+  });
+
+  it('render table list when action filter', async () => {
+    baseSuperRender(<ProjectList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
+    const searchInputEle = getBySelector(
+      '.basic-input-wrapper #actiontech-table-search-input'
+    );
+    await act(async () => {
+      fireEvent.input(searchInputEle, {
+        target: { value: 'test' }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => {
+      fireEvent.keyDown(searchInputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await act(() => jest.advanceTimersByTime(300));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getProjectListSpy).toHaveBeenCalled();
+    expect(getProjectListSpy).toHaveBeenCalledWith({
+      fuzzy_keyword: 'test',
+      page_index: 1,
+      page_size: 20
+    });
   });
 });

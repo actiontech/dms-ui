@@ -51,7 +51,7 @@ describe('Project/EnvironmentField', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('添加环境属性'));
     await act(async () => jest.advanceTimersByTime(0));
-    const input = getBySelector('.add-mode input');
+    const input = getBySelector('.edit-mode input');
     fireEvent.change(input, { target: { value: 'test' } });
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('添 加'));
