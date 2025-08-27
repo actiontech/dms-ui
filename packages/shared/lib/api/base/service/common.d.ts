@@ -2435,6 +2435,12 @@ export interface ISystemVariablesResV1 {
 
   operation_record_expired_hours?: number;
 
+  system_variable_sql_manage_raw_expired_hours?: number;
+
+  system_variable_ssh_primary_key?: string;
+
+  system_variable_workflow_expired_hours?: number;
+
   url?: string;
 }
 
@@ -2828,6 +2834,12 @@ export interface IUpdateSystemVariablesReqV1 {
   cb_operation_logs_expired_hours?: number;
 
   operation_record_expired_hours?: number;
+
+  system_variable_sql_manage_raw_expired_hours?: number;
+
+  system_variable_ssh_primary_key?: string;
+
+  system_variable_workflow_expired_hours?: number;
 
   url?: string;
 }
