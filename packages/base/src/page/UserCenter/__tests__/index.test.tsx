@@ -43,7 +43,8 @@ describe('base/UserCenter', () => {
     expect(userListSpy).toHaveBeenCalledTimes(1);
     expect(userListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     fireEvent.click(screen.getByText('添加用户'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -110,7 +111,8 @@ describe('base/UserCenter', () => {
     expect(userListSpy).toHaveBeenCalledTimes(2);
     expect(userListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
