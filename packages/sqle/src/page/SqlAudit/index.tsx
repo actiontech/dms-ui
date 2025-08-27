@@ -3,7 +3,8 @@ import {
   PageHeader,
   SegmentedTabs,
   SegmentedTabsProps,
-  useTypedQuery
+  useTypedQuery,
+  EmptyBox
 } from '@actiontech/shared';
 import { SqlAuditSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
@@ -12,10 +13,12 @@ import { TableRefreshButton } from '@actiontech/shared/lib/components/Actiontech
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import SqlAuditList from './List';
-import SqlOptimizationList from '../SqlOptimization/List';
+import SqlOptimizationList from '../SqlOptimization';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { sqlAuditPageHeaderActions } from './actions';
+import { usePermission } from '@actiontech/shared/lib/features';
+import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
 
 const SqlAudit: React.FC = () => {
   const { t } = useTranslation();
@@ -24,6 +27,8 @@ const SqlAudit: React.FC = () => {
   const { projectID } = useCurrentProject();
 
   const extractQuery = useTypedQuery();
+
+  const { checkPagePermission } = usePermission();
 
   const onRefresh = () => {
     if (activeKey === SqlAuditSegmentedKey.SqlAudit) {
@@ -77,7 +82,13 @@ const SqlAudit: React.FC = () => {
         extra={
           <>
             {pageHeaderActions['create-audit']}
-            {pageHeaderActions['create-optimization']}
+            {/* #if [ee] */}
+            <EmptyBox
+              if={checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION)}
+            >
+              {pageHeaderActions['create-optimization']}
+            </EmptyBox>
+            {/* #endif */}
           </>
         }
       />

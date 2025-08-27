@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ActionButton, PageHeader, useTypedParams } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +7,7 @@ import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqlOptimizationResultStyleWrapper } from './style';
+import useOptimizationResult from './hooks/useOptimizationResult';
 
 const SqlOptimizationResult: React.FC = () => {
   const { t } = useTranslation();
@@ -15,6 +16,20 @@ const SqlOptimizationResult: React.FC = () => {
 
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_AUDIT.optimization_result>();
+
+  const {
+    optimizationResultStatus,
+    errorMessage,
+    optimizationResult,
+    optimizationResultLoading,
+    getOptimizationResult
+  } = useOptimizationResult();
+
+  useEffect(() => {
+    if (urlParams.optimizationId) {
+      getOptimizationResult(urlParams.optimizationId);
+    }
+  }, [urlParams.optimizationId, getOptimizationResult]);
 
   return (
     <>
@@ -34,7 +49,12 @@ const SqlOptimizationResult: React.FC = () => {
         fixed
       />
       <SqlOptimizationResultStyleWrapper>
-        <ResultContent optimizationId={urlParams.optimizationId} />
+        <ResultContent
+          optimizationResultStatus={optimizationResultStatus}
+          errorMessage={errorMessage}
+          optimizationResult={optimizationResult}
+          optimizationResultLoading={optimizationResultLoading}
+        />
       </SqlOptimizationResultStyleWrapper>
     </>
   );
