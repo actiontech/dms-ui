@@ -23,4 +23,7 @@ export interface EditableSelectProps {
   placeholder?: string;
   disabled?: boolean;
   errorMessage?: string;
+  searchable?: boolean;
+  searchPlaceholder?: string;
+  contentMaxHeight?: number;
 }
