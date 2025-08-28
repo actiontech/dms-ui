@@ -19,11 +19,24 @@ import sqlManageMock from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManag
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import {
+  mockUsePermission,
+  mockUseCurrentUser
+} from '@actiontech/shared/lib/testUtil';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../data/ModalName';
 
 jest.mock('react-router', () => {
   return {
     ...jest.requireActual('react-router'),
     useParams: jest.fn()
+  };
+});
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
   };
 });
 
@@ -40,11 +53,27 @@ describe('SqlAnalyze/SQLManage', () => {
     MockDate.set(currentTime.valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
+    mockUseCurrentUser();
     useParamsMock.mockReturnValue({
       sqlManageId: 'sqlManageId1',
       sqlNum: '123',
       projectName
     });
+    mockUsePermission({}, { useSpyOnMockHooks: true });
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlAnalyze: {
+          modalStatus: {
+            [ModalName.Sql_Optimization_Result_Drawer]: false
+          },
+          resultDrawer: {
+            currentResultDrawerData: {
+              optimizationId: '1'
+            }
+          }
+        }
+      })
+    );
     getSqlManageSqlAnalysisChartSpy =
       sqlManageMock.getSqlManageSqlAnalysisChart();
   });

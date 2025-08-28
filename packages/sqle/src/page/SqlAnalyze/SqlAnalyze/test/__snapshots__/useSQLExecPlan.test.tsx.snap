@@ -11,11 +11,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
-        <h3
-          class="header-title"
+        <div
+          class="sql-title-wrapper"
         >
-          SQL语句
-        </h3>
+          <h3>
+            SQL语句
+          </h3>
+        </div>
       </div>
       <div
         class="ant-space-item"
@@ -450,11 +452,22 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox
+        if={false}
+      >
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -558,11 +571,20 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox>
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -746,11 +768,22 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox
+        if={false}
+      >
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -854,11 +887,22 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox
+        if={false}
+      >
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -962,11 +1006,22 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox
+        if={false}
+      >
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -1070,11 +1125,22 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
   size={0}
 >
   <React.Fragment>
-    <h3
-      className="header-title"
+    <div
+      className="sql-title-wrapper"
     >
-      SQL语句
-    </h3>
+      <h3>
+        SQL语句
+      </h3>
+      <EmptyBox
+        if={false}
+      >
+        <BasicButton
+          type="primary"
+        >
+          SQL优化
+        </BasicButton>
+      </EmptyBox>
+    </div>
     <section
       className="basic-cont-wrapper sql-cont"
     >
@@ -1129,11 +1195,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
-        <h3
-          class="header-title"
+        <div
+          class="sql-title-wrapper"
         >
-          SQL语句
-        </h3>
+          <h3>
+            SQL语句
+          </h3>
+        </div>
       </div>
       <div
         class="ant-space-item"
@@ -2273,11 +2341,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
-        <h3
-          class="header-title"
+        <div
+          class="sql-title-wrapper"
         >
-          SQL语句
-        </h3>
+          <h3>
+            SQL语句
+          </h3>
+        </div>
       </div>
       <div
         class="ant-space-item"

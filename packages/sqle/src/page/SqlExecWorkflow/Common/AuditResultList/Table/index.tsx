@@ -31,6 +31,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   projectID,
   updateTaskRecordCount,
   dbType,
+  instanceName,
+  schema,
   allowSwitchBackupPolicy = false,
   supportedBackupPolicies,
   updateTaskAuditRuleExceptionStatus
@@ -75,11 +77,19 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       }
       window.open(
         parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
-          params: { projectID, taskId: taskID ?? '', sqlNum: sqlNum.toString() }
+          params: {
+            projectID,
+            taskId: taskID ?? '',
+            sqlNum: sqlNum.toString()
+          },
+          queries: {
+            instance_name: instanceName ?? '',
+            schema: schema ?? ''
+          }
         })
       );
     },
-    [projectID, taskID]
+    [projectID, taskID, instanceName, schema]
   );
   const updateSqlDescribeProtect = useRef(false);
 
@@ -157,10 +167,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       handleOpenSqlRewrittenDrawer();
       handleChangeOriginInfo({
         sql: record.exec_sql ?? '',
-        number: record.number ?? 0
+        number: record.number ?? 0,
+        instanceName: instanceName ?? '',
+        schema: schema ?? ''
       });
     },
-    [handleOpenSqlRewrittenDrawer, handleChangeOriginInfo]
+    [handleOpenSqlRewrittenDrawer, handleChangeOriginInfo, instanceName, schema]
   );
 
   const actions = useMemo(() => {
@@ -187,12 +199,14 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   );
 
   const columns = useMemo(() => {
-    return AuditResultForCreateWorkflowColumn(
+    const columnList = AuditResultForCreateWorkflowColumn(
       updateSqlDescribe,
       onClickAuditResult,
-      onSwitchSqlBackupPolicy,
-      allowSwitchBackupPolicy
+      onSwitchSqlBackupPolicy
     );
+    return allowSwitchBackupPolicy
+      ? columnList
+      : columnList.filter((column) => column.dataIndex !== 'backup_strategy');
   }, [
     onSwitchSqlBackupPolicy,
     updateSqlDescribe,

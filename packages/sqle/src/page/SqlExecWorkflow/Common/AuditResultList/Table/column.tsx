@@ -15,8 +15,7 @@ import { BackupStrategyDictionary } from './index.data';
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
-  onSwitchSqlBackupPolicy: (sqlID?: number) => void,
-  showBackupStrategy?: boolean
+  onSwitchSqlBackupPolicy: (sqlID?: number) => void
 ): ActiontechTableColumn<IAuditTaskSQLResV2> => {
   return [
     {
@@ -86,8 +85,7 @@ export const AuditResultForCreateWorkflowColumn = (
             />
           </AuditResultBackupPolicyColumnStyleWrapper>
         );
-      },
-      show: showBackupStrategy
+      }
     },
     // #endif
     {

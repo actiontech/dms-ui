@@ -48,6 +48,7 @@ describe('test ScanTypeSqlCollection', () => {
         exportDone={jest.fn()}
         exportPending={jest.fn()}
         auditPlanType="default"
+        instanceName="test"
       />
     );
   };

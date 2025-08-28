@@ -83,6 +83,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
           projectID,
           taskId: taskId ?? '',
           sqlNum: props.number?.toString() ?? ''
+        },
+        queries: {
+          instance_name: props.instanceName ?? '',
+          schema: props.schema ?? ''
         }
       })
     );

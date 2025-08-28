@@ -6,13 +6,16 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import { sqlOptimizationRecordsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import {
+  createSpyErrorResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -21,7 +24,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe.skip('sqle/SqlOptimizationList', () => {
+describe('sqle/SqlOptimizationList', () => {
   let getOptimizationRecordsSpy: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
   const navigateSpy = jest.fn();
@@ -47,16 +50,6 @@ describe.skip('sqle/SqlOptimizationList', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render create optimization button', async () => {
-    sqleSuperRender(<SqlOptimizationList />);
-    expect(getOptimizationRecordsSpy).toHaveBeenCalled();
-    expect(screen.getByText('创建智能调优')).toBeInTheDocument();
-    expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute(
-      'href'
-    );
-    fireEvent.click(screen.getByText('创建智能调优'));
   });
 
   it('filter data with search', async () => {
@@ -89,14 +82,99 @@ describe.skip('sqle/SqlOptimizationList', () => {
     sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    const tableRows = getAllBySelector(
-      '.ant-table-content .ant-table-tbody .ant-table-row'
-    );
-    fireEvent.click(tableRows[0]);
+    fireEvent.click(screen.getAllByText('查 看')[0]);
     await act(async () => jest.advanceTimersByTime(100));
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/sql-optimization/overview/${sqlOptimizationRecordsMockData[0].optimization_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/sql-audit/optimization-result/${sqlOptimizationRecordsMockData[0].optimization_id}`
     );
+  });
+
+  it('should refresh table data ', async () => {
+    sqleSuperRender(<SqlOptimizationList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    act(() => {
+      eventEmitter.emit(EmitterKey.Refresh_Sql_Optimization_List);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should polling request every 5 seconds with auto refresh enabled', async () => {
+    sqleSuperRender(<SqlOptimizationList />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(5000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should cancel polling when auto refresh button is clicked to disable', async () => {
+    sqleSuperRender(<SqlOptimizationList />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(5000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+
+    const autoRefreshButton = screen.getByText('自动刷新');
+    await act(async () => {
+      fireEvent.click(autoRefreshButton);
+    });
+
+    await act(async () => jest.advanceTimersByTime(10000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should re-enable polling when auto refresh button is clicked again', async () => {
+    sqleSuperRender(<SqlOptimizationList />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    const autoRefreshButton = screen.getByText('自动刷新');
+    await act(async () => {
+      fireEvent.click(autoRefreshButton);
+    });
+
+    await act(async () => jest.advanceTimersByTime(5000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      fireEvent.click(autoRefreshButton);
+    });
+
+    await act(async () => jest.advanceTimersByTime(5000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should cancel polling when API request fails', async () => {
+    getOptimizationRecordsSpy
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: sqlOptimizationRecordsMockData,
+          total_nums: sqlOptimizationRecordsMockData.length
+        })
+      )
+      .mockImplementationOnce(() =>
+        createSpyErrorResponse({
+          data: null
+        })
+      );
+
+    sqleSuperRender(<SqlOptimizationList />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(5000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
+
+    await act(async () => jest.advanceTimersByTime(10000));
+    expect(getOptimizationRecordsSpy).toHaveBeenCalledTimes(2);
   });
 });
