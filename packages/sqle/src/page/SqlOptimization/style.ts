@@ -220,3 +220,7 @@ export const SqlOptimizationListStyleWrapper = styled('section')`
     background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
   }
 `;
+
+export const SqlOptimizationTipsStyleWrapper = styled('section')`
+  padding: 20px 40px;
+`;

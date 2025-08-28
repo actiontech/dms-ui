@@ -43,7 +43,12 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
   const mockProps = {
     open: true,
     taskID: 'task-123',
-    originSqlInfo: { number: 1, sql: 'SELECT * FROM table;' },
+    originSqlInfo: {
+      number: 1,
+      sql: 'SELECT * FROM table;',
+      instanceName: 'mysql',
+      schema: 'dms'
+    },
     width: 920,
     title: 'sql-rewrite',
     maskClosable: true,

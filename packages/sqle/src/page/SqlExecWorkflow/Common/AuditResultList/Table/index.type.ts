@@ -15,6 +15,8 @@ export interface AuditResultTableProps
   auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum | null;
   projectID: string;
   dbType?: string;
+  instanceName?: string;
+  schema?: string;
   supportedBackupPolicies?: InstanceTipResV2SupportedBackupStrategyEnum[];
 }
 

@@ -1,17 +1,19 @@
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay } from '@actiontech/shared';
-import { PageHeader } from '@actiontech/shared';
-import { Outlet } from 'react-router-dom';
+import { EnterpriseFeatureDisplay, EmptyBox } from '@actiontech/shared';
+import SqlOptimizationList from './List';
+import { usePermission } from '@actiontech/shared/lib/features';
+import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
+import { Alert } from 'antd';
+import { SqlOptimizationTipsStyleWrapper } from './style';
 
 const SqlOptimization = () => {
   const { t } = useTranslation();
 
+  const { checkPagePermission } = usePermission();
+
   return (
     <section>
-      {/* #if [ce] */}
-      <PageHeader title={t('sqlOptimization.pageTitle')} />
-      {/* #endif */}
       <EnterpriseFeatureDisplay
         featureName={t('sqlOptimization.pageTitle')}
         eeFeatureDescription={
@@ -20,7 +22,20 @@ const SqlOptimization = () => {
           </Typography.Paragraph>
         }
       >
-        <Outlet />
+        <EmptyBox
+          if={checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION)}
+          defaultNode={
+            <SqlOptimizationTipsStyleWrapper>
+              <Alert
+                message={t('sqlOptimization.noConfiagurationTips')}
+                type="info"
+                showIcon
+              />
+            </SqlOptimizationTipsStyleWrapper>
+          }
+        >
+          <SqlOptimizationList />
+        </EmptyBox>
       </EnterpriseFeatureDisplay>
     </section>
   );

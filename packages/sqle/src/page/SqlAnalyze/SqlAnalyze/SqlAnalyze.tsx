@@ -30,7 +30,10 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
   } = props;
 
   const { generateTableSchemaContent } = useTableSchema();
@@ -42,7 +45,10 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
   });
 
   const [tabStatus, setTabStatus] = useState<string>('sql');
