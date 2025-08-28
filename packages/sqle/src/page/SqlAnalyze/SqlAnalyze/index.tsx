@@ -31,6 +31,8 @@ export type SqlAnalyzeProps = {
   onCreateSqlOptimizationOrview?: () => void;
   createSqlOptimizationLoading?: boolean;
   allowSqlOptimization?: boolean;
+  getPerformanceStatistics?: () => void;
+  isPerformanceInfoLoaded?: boolean;
 };
 
 export type ExecPlanParams = Pick<
@@ -46,6 +48,8 @@ export type ExecPlanParams = Pick<
   | 'onCreateSqlOptimizationOrview'
   | 'createSqlOptimizationLoading'
   | 'allowSqlOptimization'
+  | 'getPerformanceStatistics'
+  | 'isPerformanceInfoLoaded'
 >;
 
 export type ExecPlanCostChartProps = {

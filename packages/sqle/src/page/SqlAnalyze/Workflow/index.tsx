@@ -23,6 +23,9 @@ const WorkflowSqlAnalyze = () => {
 
   const [errorMessage, setErrorMessage] = useState<string>('');
 
+  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
+    useBoolean();
+
   const [sqlExplain, setSqlExplain] = useState<ISQLExplain>();
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
@@ -40,46 +43,62 @@ const WorkflowSqlAnalyze = () => {
     allowSqlOptimization
   } = useSqlOptimization();
 
-  const getSqlAnalyze = useCallback(async () => {
-    startGetSqlAnalyze();
-    try {
-      const res = await task.getTaskAnalysisDataV2({
-        task_id: urlParams.taskId ?? '',
-        number: Number.parseInt(urlParams.sqlNum ?? '', 10)
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        const { data } = res.data;
-        const queryParams = extractQueries(
-          ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze
-        );
-        setSqlExplain(data?.sql_explain);
-        setTableMetas(data?.table_metas);
-        setPerformancesStatistics(data?.performance_statistics);
-        setOptimizationCreationParams({
-          instance_name: queryParams?.instance_name,
-          schema_name: queryParams?.schema,
-          sql_content: data?.sql_explain?.sql
+  const getSqlAnalyze = useCallback(
+    async (affectRowsEnabled = false) => {
+      startGetSqlAnalyze();
+      try {
+        const res = await task.getTaskAnalysisDataV2({
+          task_id: urlParams.taskId ?? '',
+          number: Number.parseInt(urlParams.sqlNum ?? '', 10),
+          affectRowsEnabled
         });
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+        if (res.data.code === ResponseCode.SUCCESS) {
+          if (affectRowsEnabled) {
+            setPerformanceInfoLoaded();
+          }
+          setErrorMessage('');
+          const { data } = res.data;
+          const queryParams = extractQueries(
+            ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze
+          );
+          setSqlExplain(data?.sql_explain);
+          setTableMetas(data?.table_metas);
+          setPerformancesStatistics(data?.performance_statistics);
+          setOptimizationCreationParams({
+            instance_name: queryParams?.instance_name,
+            schema_name: queryParams?.schema,
+            sql_content: data?.sql_explain?.sql
+          });
         } else {
-          setErrorType('error');
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            if (res.data.code === ResponseCode.NotSupportDML) {
+              setErrorType('info');
+            } else {
+              setErrorType('error');
+            }
+            setErrorMessage(res.data.message ?? '');
+          }
         }
-        setErrorMessage(res.data.message ?? '');
+      } finally {
+        getSqlAnalyzeFinish();
       }
-    } finally {
-      getSqlAnalyzeFinish();
-    }
-  }, [
-    getSqlAnalyzeFinish,
-    startGetSqlAnalyze,
-    urlParams.sqlNum,
-    urlParams.taskId,
-    extractQueries,
-    setOptimizationCreationParams
-  ]);
+    },
+    [
+      getSqlAnalyzeFinish,
+      startGetSqlAnalyze,
+      urlParams.sqlNum,
+      urlParams.taskId,
+      extractQueries,
+      setOptimizationCreationParams,
+      setPerformanceInfoLoaded
+    ]
+  );
+
+  const getPerformanceStatistics = useCallback(async () => {
+    getSqlAnalyze(true);
+  }, [getSqlAnalyze]);
 
   useEffect(() => {
     getSqlAnalyze();
@@ -97,6 +116,8 @@ const WorkflowSqlAnalyze = () => {
         onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
+        getPerformanceStatistics={getPerformanceStatistics}
+        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
       />
       <SqlOptimizationResultDrawer />
     </>

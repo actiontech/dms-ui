@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
 
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
@@ -77,9 +77,21 @@ describe('SqlAnalyze/Workflow', () => {
     jest.clearAllTimers();
   });
 
-  const mockGetAnalyzeData = () => {
+  const mockGetAnalyzeData = (hasAffectRows = false) => {
     const spy = jest.spyOn(task, 'getTaskAnalysisDataV2');
-    spy.mockImplementation(() => resolveThreeSecond(WorkflowSqlAnalyzeData));
+    spy.mockImplementation(() =>
+      resolveThreeSecond({
+        ...WorkflowSqlAnalyzeData,
+        performance_statistics: {
+          affect_rows: hasAffectRows
+            ? {
+                count: 10,
+                err_message: ''
+              }
+            : undefined
+        }
+      })
+    );
     return spy;
   };
 
@@ -89,7 +101,8 @@ describe('SqlAnalyze/Workflow', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       task_id: 'taskId1',
-      number: 123
+      number: 123,
+      affectRowsEnabled: false
     });
     await act(async () => jest.advanceTimersByTime(300));
     expect(container).toMatchSnapshot();
@@ -101,6 +114,26 @@ describe('SqlAnalyze/Workflow', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should get performance statistics', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<WorkflowSqlAnalyze />);
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      task_id: 'taskId1',
+      number: 123,
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenNthCalledWith(2, {
+      task_id: 'taskId1',
+      number: 123,
+      affectRowsEnabled: true
+    });
   });
 
   it('should render error result of type "info" when response code is 8001', async () => {
