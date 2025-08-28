@@ -63,6 +63,8 @@ export interface IListBusinessTagsParams {
   page_index?: number;
 
   page_size: number;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListBusinessTagsReturn extends IListBusinessTagsReply {}
@@ -212,6 +214,8 @@ export interface IListProjectsV2Params {
   filter_by_business_tag?: string;
 
   filter_by_desc?: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListProjectsV2Return extends IListProjectReplyV2 {}
