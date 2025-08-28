@@ -18,11 +18,25 @@ import { WorkflowSqlAnalyzeData } from '../__testData__';
 import WorkflowSqlAnalyze from '.';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import {
+  mockUsePermission,
+  mockUseCurrentUser,
+  mockUseCurrentProject
+} from '@actiontech/shared/lib/testUtil';
+import { ModalName } from '../../../data/ModalName';
+import { useSelector } from 'react-redux';
 
 jest.mock('react-router', () => {
   return {
     ...jest.requireActual('react-router'),
     useParams: jest.fn()
+  };
+});
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
   };
 });
 
@@ -38,6 +52,23 @@ describe('SqlAnalyze/Workflow', () => {
       taskId: 'taskId1',
       sqlNum: '123'
     });
+    mockUseCurrentUser();
+    mockUseCurrentProject();
+    mockUsePermission({}, { useSpyOnMockHooks: true });
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlAnalyze: {
+          modalStatus: {
+            [ModalName.Sql_Optimization_Result_Drawer]: false
+          },
+          resultDrawer: {
+            currentResultDrawerData: {
+              optimizationId: '1'
+            }
+          }
+        }
+      })
+    );
   });
 
   afterEach(() => {

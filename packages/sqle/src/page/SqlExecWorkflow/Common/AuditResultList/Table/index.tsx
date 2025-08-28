@@ -199,12 +199,14 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   );
 
   const columns = useMemo(() => {
-    return AuditResultForCreateWorkflowColumn(
+    const columnList = AuditResultForCreateWorkflowColumn(
       updateSqlDescribe,
       onClickAuditResult,
-      onSwitchSqlBackupPolicy,
-      allowSwitchBackupPolicy
+      onSwitchSqlBackupPolicy
     );
+    return allowSwitchBackupPolicy
+      ? columnList
+      : columnList.filter((column) => column.dataIndex !== 'backup_strategy');
   }, [
     onSwitchSqlBackupPolicy,
     updateSqlDescribe,

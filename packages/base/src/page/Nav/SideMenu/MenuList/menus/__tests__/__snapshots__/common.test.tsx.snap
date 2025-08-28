@@ -43,7 +43,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `
       null,
       null,
       null,
-      null,
     ],
     "label": "SQL开发",
     "permission": undefined,
@@ -162,7 +161,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "label": <ForwardRef(TypedLink)
           to="/sqle/project/600300/sql-audit"
         >
-          快捷审核
+          快捷诊断
         </ForwardRef(TypedLink)>,
         "structKey": "sql-audit",
         "to": "/sqle/project/600300/sql-audit",
@@ -181,7 +180,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "plugin-audit",
         "to": "/sqle/project/600300/plugin-audit",
       },
-      null,
       {
         "icon": <ComparisonOutlined
           height={18}
