@@ -176,6 +176,8 @@ export interface IGetSqlManageSqlAnalysisV1Params {
   project_name: string;
 
   sql_manage_id: string;
+
+  affectRowsEnabled?: boolean;
 }
 
 export interface IGetSqlManageSqlAnalysisV1Return
