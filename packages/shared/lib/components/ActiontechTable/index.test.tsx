@@ -110,17 +110,24 @@ describe('lib/ActiontechTable', () => {
         rowKey: 'name',
         columns: [
           {
-            dataIndex: 'a',
+            dataIndex: 'name',
             title: '名称'
           },
           {
-            dataIndex: 'b',
+            dataIndex: 'age',
             title: '年龄',
             show: false
           }
-        ]
+        ],
+        setting: {
+          tableName: 'test_list',
+          username: 'admin'
+        }
       });
       expect(baseElement).toMatchSnapshot();
+      await act(async () => {
+        await jest.advanceTimersByTime(300);
+      });
       expect(screen.queryByText('年龄')).not.toBeInTheDocument();
     });
   });

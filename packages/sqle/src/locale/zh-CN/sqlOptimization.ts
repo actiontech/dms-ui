@@ -56,9 +56,30 @@ export default {
         executionPlanPlaceholder: '请输入执行计划（可选）',
         tableStructure: '表结构',
         tableStructurePlaceholder: '请输入表结构（可选）'
+      },
+      uploadTypeEnum: {
+        sql: '输入SQL语句',
+        sqlFile: '上传SQL文件',
+        mybatisFile: '上传Mybatis的XML文件',
+        zipFile: '上传ZIP文件',
+        git: '配置GIT仓库'
+      },
+      uploadLabelEnum: {
+        sql: 'SQL语句',
+        sqlFile: 'SQL文件',
+        mybatisFile: 'Mybatis的XML文件',
+        zipFile: 'ZIP文件',
+        gitUrl: 'GIT地址'
+      },
+      uploadFileTip: {
+        sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
+        mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
+        zipFile:
+          '点击选择ZIP文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核'
       }
     },
     resultTips: '优化进行中，预计5-10分钟后完成。感谢您的耐心等待。',
+    simpleSqlTips: '当前仅支持对单条SQL进行调优',
     resetForm: '重置表单'
   },
   overview: {

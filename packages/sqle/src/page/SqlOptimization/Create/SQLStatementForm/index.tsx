@@ -5,12 +5,12 @@ import {
   BasicInput,
   EmptyBox,
   FormItemLabel,
-  ModeSwitcher
+  ModeSwitcher,
+  CustomLabelContent
 } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
-import { RingPieFilled } from '@actiontech/icons';
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
@@ -39,14 +39,14 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   return (
     <>
       <FormItemLabel
-        className="has-required-style"
+        className="has-required-style has-label-tip"
         required={true}
         name="uploadType"
         label={
-          <>
-            <RingPieFilled className="custom-icon-ellipse" />
-            <span>{t('sqlAudit.create.sqlInfo.form.uploadType')}</span>
-          </>
+          <CustomLabelContent
+            title={t('sqlOptimization.create.sqlInfo.uploadType')}
+            tips={t('sqlOptimization.create.simpleSqlTips')}
+          />
         }
         initialValue={UploadTypeEnum.sql}
         style={{ marginBottom: 16 }}
@@ -73,12 +73,12 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
             }
           ]}
           {...formItemLayout.fullLine}
-          label={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
+          label={t('sqlOptimization.create.sqlInfo.uploadLabelEnum.gitUrl')}
         >
           <BasicInput
             disabled={submitLoading}
             placeholder={t('common.form.placeholder.input', {
-              name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')
+              name: t('sqlOptimization.create.sqlInfo.uploadLabelEnum.gitUrl')
             })}
           />
         </FormItemLabel>

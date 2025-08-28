@@ -29,7 +29,8 @@ import { IReduxState } from '../../../../store';
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,
   instanceLoading,
-  instanceOptions
+  instanceOptions,
+  getInstanceDbType
 }) => {
   const { t } = useTranslation();
   const { projectID, projectName } = useCurrentProject();
@@ -54,7 +55,10 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   };
 
   const handleInstanceNameChange = (name: string) => {
-    form.setFieldsValue({ instanceSchema: undefined });
+    form.setFieldsValue({
+      instanceSchema: undefined,
+      dbType: getInstanceDbType(name)
+    });
     updateRuleTemplateName(name);
   };
 

@@ -7,7 +7,10 @@ import {
   IDBPerformanceImproveOverview,
   IOptimizationRecordOverview
 } from '../../../../api/sqle/service/common';
-import { OptimizationRecordStatusEnum } from '../../../../api/sqle/service/common.enum';
+import {
+  OptimizationRecordStatusEnum,
+  OptimizationSQLDetailStatusEnum
+} from '../../../../api/sqle/service/common.enum';
 
 export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
   {
@@ -15,27 +18,30 @@ export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
     optimization_name: 'UI20240417112938231',
     instance_name: 'dd1',
     db_type: 'MySQL',
-    performance_improve: 1108.2454657790013,
     created_time: '2024-04-17T03:33:09Z',
     created_user: 'admin',
-    status: OptimizationRecordStatusEnum.finish
+    status: OptimizationRecordStatusEnum.finish,
+    number_of_index: 2,
+    number_of_rule: 2,
+    performance_improve: 2.384615385
   },
   {
     optimization_id: '1234567',
     optimization_name: 'SQLfile20240417112938232',
     instance_name: 'dd1',
     db_type: '',
-    status: OptimizationRecordStatusEnum.failed
+    status: OptimizationRecordStatusEnum.failed,
+    status_detail: 'Optimize total state: pending'
   },
   {
     optimization_id: '12345678',
     optimization_name: 'GIT20240417112938233',
-    instance_name: 'dd1',
-    db_type: 'MySQL',
-    performance_improve: 1108.2454657790013,
     created_time: '2024-04-17T03:33:09Z',
     created_user: 'admin',
-    status: OptimizationRecordStatusEnum.optimizing
+    status: OptimizationRecordStatusEnum.optimizing,
+    number_of_index: 0,
+    number_of_rule: 0,
+    performance_improve: 0
   }
 ];
 
@@ -92,6 +98,8 @@ export const optimizationRecordSqlMockData: IOptimizationSQL[] = [
 
 export const optimizationDetailMockData: IOptimizationSQLDetail = {
   id: 1,
+  status: OptimizationSQLDetailStatusEnum.finish,
+  status_detail: '',
   origin_sql:
     "SELECT \r\n    s.student_id\r\nFROM \r\n    students s\r\nLEFT JOIN\r\n    student_classes sc\r\nON \r\n    s.student_id = sc.student_id\r\nWHERE\r\n    s.student_id IN (\r\n        SELECT student_id FROM enrollments\r\n    )\r\n    AND DATE(s.create_at) >= '2024-01-01'",
   metadata:
