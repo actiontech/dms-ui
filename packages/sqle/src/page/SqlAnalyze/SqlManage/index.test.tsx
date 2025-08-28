@@ -56,14 +56,18 @@ describe('SqlAnalyze/SQLManage', () => {
     MockDate.reset();
   });
 
-  const mockGetAnalyzeData = () => {
+  const mockGetAnalyzeData = (hasAffectRows = false) => {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisV1');
     spy.mockImplementation(() =>
       resolveThreeSecond({
         ...SQLManageSqlAnalyzeData,
-        sql_explain: {
-          ...SQLManageSqlAnalyzeData.sql_explain,
-          cost: 3
+        performance_statistics: {
+          affect_rows: hasAffectRows
+            ? {
+                count: 10,
+                err_message: ''
+              }
+            : undefined
         }
       })
     );
@@ -76,7 +80,8 @@ describe('SqlAnalyze/SQLManage', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
-      sql_manage_id: 'sqlManageId1'
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: false
     });
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(300));
@@ -89,6 +94,26 @@ describe('SqlAnalyze/SQLManage', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should get performance statistics', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<SQLManageAnalyze />);
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      project_name: projectName,
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenNthCalledWith(2, {
+      project_name: projectName,
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: true
+    });
   });
 
   it('filter sql execution plan cost', async () => {

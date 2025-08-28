@@ -32,35 +32,51 @@ const SQLManageAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
-  const getSqlAnalyze = useCallback(async () => {
-    startGetSqlAnalyze();
-    try {
-      const res = await SqlManage.GetSqlManageSqlAnalysisV1({
-        sql_manage_id: urlParams.sqlManageId ?? '',
-        project_name: projectName
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        setSqlExplain(res.data.data?.sql_explain);
-        setTableMetas(res.data.data?.table_metas);
-        setPerformancesStatistics(res.data.data?.performance_statistics);
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
+    useBoolean();
+
+  const getSqlAnalyze = useCallback(
+    async (affectRowsEnabled = false) => {
+      startGetSqlAnalyze();
+      try {
+        const res = await SqlManage.GetSqlManageSqlAnalysisV1({
+          sql_manage_id: urlParams.sqlManageId ?? '',
+          project_name: projectName,
+          affectRowsEnabled
+        });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          if (affectRowsEnabled) {
+            setPerformanceInfoLoaded();
+          }
+          setErrorMessage('');
+          const { data } = res.data;
+          setSqlExplain(data?.sql_explain);
+          setTableMetas(data?.table_metas);
+          setPerformancesStatistics(data?.performance_statistics);
         } else {
-          setErrorType('error');
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            if (res.data.code === ResponseCode.NotSupportDML) {
+              setErrorType('info');
+            } else {
+              setErrorType('error');
+            }
+            setErrorMessage(res.data.message ?? '');
+          }
         }
-        setErrorMessage(res.data.message ?? '');
+      } finally {
+        getSqlAnalyzeFinish();
       }
-    } finally {
-      getSqlAnalyzeFinish();
-    }
-  }, [
-    getSqlAnalyzeFinish,
-    projectName,
-    startGetSqlAnalyze,
-    urlParams.sqlManageId
-  ]);
+    },
+    [
+      getSqlAnalyzeFinish,
+      projectName,
+      startGetSqlAnalyze,
+      urlParams.sqlManageId,
+      setPerformanceInfoLoaded
+    ]
+  );
 
   const {
     data,
@@ -72,6 +88,10 @@ const SQLManageAnalyze = () => {
     setSelectedPoint
   } = useSqlExecPlanCost(urlParams.sqlManageId ?? '');
 
+  const getPerformanceStatistics = useCallback(async () => {
+    getSqlAnalyze(true);
+  }, [getSqlAnalyze]);
+
   useEffect(() => {
     getSqlAnalyze();
     getSqlExecPlanCostDataSource({
@@ -81,22 +101,28 @@ const SQLManageAnalyze = () => {
   }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-      sqlExecPlanCostDataSource={data}
-      getSqlExecPlanCostDataSourceLoading={getSqlExecPlanCostDataSourceLoading}
-      getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
-      getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
-      showExecPlanCostChart
-      initTime={initTime}
-      selectedPoint={selectedPoint}
-      setSelectedPoint={setSelectedPoint}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        sqlExecPlanCostDataSource={data}
+        getSqlExecPlanCostDataSourceLoading={
+          getSqlExecPlanCostDataSourceLoading
+        }
+        getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
+        getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
+        showExecPlanCostChart
+        initTime={initTime}
+        selectedPoint={selectedPoint}
+        setSelectedPoint={setSelectedPoint}
+        getPerformanceStatistics={getPerformanceStatistics}
+        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
+      />
+    </>
   );
 };
 

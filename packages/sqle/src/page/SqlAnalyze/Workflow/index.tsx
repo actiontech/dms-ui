@@ -19,6 +19,9 @@ const WorkflowSqlAnalyze = () => {
 
   const [errorMessage, setErrorMessage] = useState<string>('');
 
+  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
+    useBoolean();
+
   const [sqlExplain, setSqlExplain] = useState<ISQLExplain>();
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
@@ -29,49 +32,70 @@ const WorkflowSqlAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
-  const getSqlAnalyze = useCallback(async () => {
-    startGetSqlAnalyze();
-    try {
-      const res = await task.getTaskAnalysisDataV2({
-        task_id: urlParams.taskId ?? '',
-        number: Number.parseInt(urlParams.sqlNum ?? '', 10)
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        setSqlExplain(res.data.data?.sql_explain);
-        setTableMetas(res.data.data?.table_metas);
-        setPerformancesStatistics(res.data.data?.performance_statistics);
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+  const getSqlAnalyze = useCallback(
+    async (affectRowsEnabled = false) => {
+      startGetSqlAnalyze();
+      try {
+        const res = await task.getTaskAnalysisDataV2({
+          task_id: urlParams.taskId ?? '',
+          number: Number.parseInt(urlParams.sqlNum ?? '', 10),
+          affectRowsEnabled
+        });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          if (affectRowsEnabled) {
+            setPerformanceInfoLoaded();
+          }
+          setErrorMessage('');
+          const { data } = res.data;
+          setSqlExplain(data?.sql_explain);
+          setTableMetas(data?.table_metas);
+          setPerformancesStatistics(data?.performance_statistics);
         } else {
-          setErrorType('error');
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            if (res.data.code === ResponseCode.NotSupportDML) {
+              setErrorType('info');
+            } else {
+              setErrorType('error');
+            }
+            setErrorMessage(res.data.message ?? '');
+          }
         }
-        setErrorMessage(res.data.message ?? '');
+      } finally {
+        getSqlAnalyzeFinish();
       }
-    } finally {
-      getSqlAnalyzeFinish();
-    }
-  }, [
-    getSqlAnalyzeFinish,
-    startGetSqlAnalyze,
-    urlParams.sqlNum,
-    urlParams.taskId
-  ]);
+    },
+    [
+      getSqlAnalyzeFinish,
+      startGetSqlAnalyze,
+      urlParams.sqlNum,
+      urlParams.taskId,
+      setPerformanceInfoLoaded
+    ]
+  );
+
+  const getPerformanceStatistics = useCallback(async () => {
+    getSqlAnalyze(true);
+  }, [getSqlAnalyze]);
 
   useEffect(() => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
 
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        getPerformanceStatistics={getPerformanceStatistics}
+        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
+      />
+    </>
   );
 };
 

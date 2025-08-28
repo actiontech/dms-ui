@@ -227,6 +227,8 @@ export interface IGetTaskAnalysisDataV2Params {
   task_id: string;
 
   number: number;
+
+  affectRowsEnabled?: boolean;
 }
 
 export interface IGetTaskAnalysisDataV2Return
