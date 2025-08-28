@@ -166,4 +166,56 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenCalledTimes(3);
   });
+
+  it('should show performance statistics data when isPerformanceInfoLoaded is true', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        isPerformanceInfoLoaded: true
+      })
+    );
+
+    const { baseElement } = superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 1500,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('1,500')).toBeInTheDocument();
+  });
+
+  it('should call getPerformanceStatistics when button is clicked', async () => {
+    const getPerformanceStatisticsSpy = jest.fn();
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        isPerformanceInfoLoaded: false,
+        getPerformanceStatistics: getPerformanceStatisticsSpy
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    const button = screen.getByText('获 取');
+    fireEvent.click(button);
+
+    expect(getPerformanceStatisticsSpy).toHaveBeenCalledTimes(1);
+  });
 });

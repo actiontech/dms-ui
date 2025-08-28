@@ -35,6 +35,9 @@ const ManagementConfAnalyze = () => {
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
   ] = useBoolean();
 
+  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
+    useBoolean();
+
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
   const {
@@ -44,48 +47,60 @@ const ManagementConfAnalyze = () => {
     allowSqlOptimization
   } = useSqlOptimization();
 
-  const getSqlAnalyze = useCallback(async () => {
-    startGetSqlAnalyze();
-    try {
-      const res = await instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
-        project_name: projectName,
-        instance_audit_plan_id: urlParams.instanceAuditPlanId ?? '',
-        id: urlParams.id ?? ''
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        const { data } = res.data;
-        const queryParams = extractQueries(
-          ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze
-        );
-        setSqlExplain(data?.sql_explain);
-        setTableMetas(data?.table_metas);
-        setPerformancesStatistics(data?.performance_statistics);
-        setOptimizationCreationParams({
-          instance_name: queryParams?.instance_name,
-          schema_name: queryParams?.schema,
-          sql_content: data?.sql_explain?.sql
+  const getSqlAnalyze = useCallback(
+    async (affectRowsEnabled = false) => {
+      startGetSqlAnalyze();
+      try {
+        const res = await instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
+          project_name: projectName,
+          instance_audit_plan_id: urlParams.instanceAuditPlanId ?? '',
+          id: urlParams.id ?? '',
+          affectRowsEnabled
         });
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+        if (res.data.code === ResponseCode.SUCCESS) {
+          if (affectRowsEnabled) {
+            setPerformanceInfoLoaded();
+          }
+          setErrorMessage('');
+          const { data } = res.data;
+          const queryParams = extractQueries(
+            ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze
+          );
+          setSqlExplain(data?.sql_explain);
+          setTableMetas(data?.table_metas);
+          setPerformancesStatistics(data?.performance_statistics);
+          setOptimizationCreationParams({
+            instance_name: queryParams?.instance_name,
+            schema_name: queryParams?.schema,
+            sql_content: data?.sql_explain?.sql
+          });
         } else {
-          setErrorType('error');
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            if (res.data.code === ResponseCode.NotSupportDML) {
+              setErrorType('info');
+            } else {
+              setErrorType('error');
+            }
+            setErrorMessage(res.data.message ?? '');
+          }
         }
-        setErrorMessage(res.data.message ?? '');
+      } finally {
+        getSqlAnalyzeFinish();
       }
-    } finally {
-      getSqlAnalyzeFinish();
-    }
-  }, [
-    startGetSqlAnalyze,
-    projectName,
-    urlParams.instanceAuditPlanId,
-    urlParams.id,
-    getSqlAnalyzeFinish,
-    extractQueries,
-    setOptimizationCreationParams
-  ]);
+    },
+    [
+      startGetSqlAnalyze,
+      projectName,
+      urlParams.instanceAuditPlanId,
+      urlParams.id,
+      getSqlAnalyzeFinish,
+      extractQueries,
+      setOptimizationCreationParams,
+      setPerformanceInfoLoaded
+    ]
+  );
 
   const {
     data,
@@ -96,6 +111,10 @@ const ManagementConfAnalyze = () => {
     selectedPoint,
     setSelectedPoint
   } = useSqlExecPlanCost(urlParams.id ?? '');
+
+  const getPerformanceStatistics = useCallback(async () => {
+    getSqlAnalyze(true);
+  }, [getSqlAnalyze]);
 
   useEffect(() => {
     getSqlAnalyze();
@@ -127,6 +146,8 @@ const ManagementConfAnalyze = () => {
         onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
+        getPerformanceStatistics={getPerformanceStatistics}
+        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
       />
       <SqlOptimizationResultDrawer />
     </>

@@ -30,7 +30,9 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     setSelectedPoint,
     onCreateSqlOptimizationOrview,
     createSqlOptimizationLoading,
-    allowSqlOptimization
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
@@ -202,9 +204,21 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                   </div>
                 </div>
                 <div className="number-cont">
-                  {affect_rows?.count
-                    ? formatParamsBySeparator(affect_rows?.count)
-                    : '--'}
+                  <EmptyBox
+                    if={isPerformanceInfoLoaded}
+                    defaultNode={
+                      <BasicButton
+                        type="primary"
+                        onClick={getPerformanceStatistics}
+                      >
+                        {t('sqlQuery.executePlan.getPerformanceStatistics')}
+                      </BasicButton>
+                    }
+                  >
+                    {affect_rows?.count
+                      ? formatParamsBySeparator(affect_rows?.count)
+                      : '--'}
+                  </EmptyBox>
                 </div>
               </div>
             </EmptyBox>
