@@ -37,6 +37,9 @@ const SQLManageAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
+  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
+    useBoolean();
+
   const {
     setOptimizationCreationParams,
     onCreateSqlOptimizationOrview,
@@ -44,46 +47,58 @@ const SQLManageAnalyze = () => {
     allowSqlOptimization
   } = useSqlOptimization();
 
-  const getSqlAnalyze = useCallback(async () => {
-    startGetSqlAnalyze();
-    try {
-      const res = await SqlManage.GetSqlManageSqlAnalysisV1({
-        sql_manage_id: urlParams.sqlManageId ?? '',
-        project_name: projectName
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        const { data } = res.data;
-        const queryParams = extractQueries(
-          ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze
-        );
-        setSqlExplain(data?.sql_explain);
-        setTableMetas(data?.table_metas);
-        setPerformancesStatistics(data?.performance_statistics);
-        setOptimizationCreationParams({
-          instance_name: queryParams?.instance_name,
-          schema_name: queryParams?.schema,
-          sql_content: data?.sql_explain?.sql
+  const getSqlAnalyze = useCallback(
+    async (affectRowsEnabled = false) => {
+      startGetSqlAnalyze();
+      try {
+        const res = await SqlManage.GetSqlManageSqlAnalysisV1({
+          sql_manage_id: urlParams.sqlManageId ?? '',
+          project_name: projectName,
+          affectRowsEnabled
         });
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+        if (res.data.code === ResponseCode.SUCCESS) {
+          if (affectRowsEnabled) {
+            setPerformanceInfoLoaded();
+          }
+          setErrorMessage('');
+          const { data } = res.data;
+          const queryParams = extractQueries(
+            ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze
+          );
+          setSqlExplain(data?.sql_explain);
+          setTableMetas(data?.table_metas);
+          setPerformancesStatistics(data?.performance_statistics);
+          setOptimizationCreationParams({
+            instance_name: queryParams?.instance_name,
+            schema_name: queryParams?.schema,
+            sql_content: data?.sql_explain?.sql
+          });
         } else {
-          setErrorType('error');
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            if (res.data.code === ResponseCode.NotSupportDML) {
+              setErrorType('info');
+            } else {
+              setErrorType('error');
+            }
+            setErrorMessage(res.data.message ?? '');
+          }
         }
-        setErrorMessage(res.data.message ?? '');
+      } finally {
+        getSqlAnalyzeFinish();
       }
-    } finally {
-      getSqlAnalyzeFinish();
-    }
-  }, [
-    getSqlAnalyzeFinish,
-    projectName,
-    startGetSqlAnalyze,
-    urlParams.sqlManageId,
-    extractQueries,
-    setOptimizationCreationParams
-  ]);
+    },
+    [
+      getSqlAnalyzeFinish,
+      projectName,
+      startGetSqlAnalyze,
+      urlParams.sqlManageId,
+      extractQueries,
+      setOptimizationCreationParams,
+      setPerformanceInfoLoaded
+    ]
+  );
 
   const {
     data,
@@ -94,6 +109,10 @@ const SQLManageAnalyze = () => {
     selectedPoint,
     setSelectedPoint
   } = useSqlExecPlanCost(urlParams.sqlManageId ?? '');
+
+  const getPerformanceStatistics = useCallback(async () => {
+    getSqlAnalyze(true);
+  }, [getSqlAnalyze]);
 
   useEffect(() => {
     getSqlAnalyze();
@@ -125,6 +144,8 @@ const SQLManageAnalyze = () => {
         onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
+        getPerformanceStatistics={getPerformanceStatistics}
+        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
       />
       <SqlOptimizationResultDrawer />
     </>
