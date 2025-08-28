@@ -54,7 +54,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     MockDate.reset();
   });
 
-  const mockGetAnalyzeData = () => {
+  const mockGetAnalyzeData = (hasAffectRows = false) => {
     const spy = jest.spyOn(
       instance_audit_plan,
       'getAuditPlanSqlAnalysisDataV1'
@@ -62,9 +62,13 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     spy.mockImplementation(() =>
       resolveThreeSecond({
         ...AuditPlanSqlAnalyzeData,
-        sql_explain: {
-          ...AuditPlanSqlAnalyzeData.sql_explain,
-          cost: 3
+        performance_statistics: {
+          affect_rows: hasAffectRows
+            ? {
+                count: 10,
+                err_message: ''
+              }
+            : undefined
         }
       })
     );
@@ -78,7 +82,8 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
       instance_audit_plan_id: '1',
-      id: '2'
+      id: '2',
+      affectRowsEnabled: false
     });
     expect(container).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3500));
@@ -88,6 +93,28 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should get performance statistics', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<ManagementConfAnalyze />);
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      project_name: projectName,
+      instance_audit_plan_id: '1',
+      id: '2',
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenNthCalledWith(2, {
+      project_name: projectName,
+      instance_audit_plan_id: '1',
+      id: '2',
+      affectRowsEnabled: true
+    });
   });
 
   it('filter sql execution plan cost', async () => {
