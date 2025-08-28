@@ -80,7 +80,9 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
             {
               required: true,
               message: t('common.form.placeholder.upload', {
-                name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.sqlFile')
+                name: t(
+                  'sqlOptimization.create.sqlInfo.uploadLabelEnum.sqlFile'
+                )
               })
             }
           ]}
@@ -90,7 +92,7 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
             accept=".sql"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'sqlFile')}
-            title={t('sqlAudit.create.sqlInfo.uploadFileTip.sqlFile')}
+            title={t('sqlOptimization.create.sqlInfo.uploadFileTip.sqlFile')}
             disabled={submitLoading}
           />
         </FormItemNoLabel>
@@ -104,7 +106,9 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
             {
               required: true,
               message: t('common.form.placeholder.upload', {
-                name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.mybatisFile')
+                name: t(
+                  'sqlOptimization.create.sqlInfo.uploadLabelEnum.mybatisFile'
+                )
               })
             }
           ]}
@@ -114,7 +118,9 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
             accept=".xml"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'mybatisFile')}
-            title={t('sqlAudit.create.sqlInfo.uploadFileTip.mybatisFile')}
+            title={t(
+              'sqlOptimization.create.sqlInfo.uploadFileTip.mybatisFile'
+            )}
             disabled={submitLoading}
           />
         </FormItemNoLabel>
@@ -129,7 +135,9 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
               {
                 required: true,
                 message: t('common.form.placeholder.upload', {
-                  name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.zipFile')
+                  name: t(
+                    'sqlOptimization.create.sqlInfo.uploadLabelEnum.zipFile'
+                  )
                 })
               }
             ]}
@@ -139,7 +147,7 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
               accept=".zip"
               beforeUpload={() => false}
               onRemove={removeFile.bind(null, 'zipFile')}
-              title={t('sqlAudit.create.sqlInfo.uploadFileTip.zipFile')}
+              title={t('sqlOptimization.create.sqlInfo.uploadFileTip.zipFile')}
               disabled={submitLoading}
             />
           </FormItemNoLabel>

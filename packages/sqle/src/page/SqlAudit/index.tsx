@@ -68,7 +68,7 @@ const SqlAudit: React.FC = () => {
     }
   }, [extractQuery]);
 
-  const pageHeaderActions = sqlAuditPageHeaderActions(projectID, activeKey);
+  const pageHeaderActions = sqlAuditPageHeaderActions(projectID);
 
   return (
     <article>
@@ -80,7 +80,7 @@ const SqlAudit: React.FC = () => {
           </Space>
         }
         extra={
-          <>
+          <Space>
             {pageHeaderActions['create-audit']}
             {/* #if [ee] */}
             <EmptyBox
@@ -89,7 +89,7 @@ const SqlAudit: React.FC = () => {
               {pageHeaderActions['create-optimization']}
             </EmptyBox>
             {/* #endif */}
-          </>
+          </Space>
         }
       />
 

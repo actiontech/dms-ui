@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Form, message } from 'antd';
 import {
   ActionButton,
@@ -63,6 +63,7 @@ const SqlOptimizationCreate = () => {
         project_name: projectName,
         instance_name: sqlInfoValue.instanceName,
         schema_name: sqlInfoValue.instanceSchema,
+        db_type: sqlInfoValue.dbType,
         sql_content:
           sqlInfoValue.optimizationType === OptimizationTypeEnum.online
             ? sqlInfoValue.sql
