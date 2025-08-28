@@ -13,7 +13,8 @@ import {
   BasicInput,
   EmptyBox,
   MonacoEditor,
-  useMonacoEditor
+  useMonacoEditor,
+  BasicSelect
 } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
@@ -32,6 +33,7 @@ import {
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
+import useDatabaseType from '../../../../hooks/useDatabaseType';
 
 const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
   const { t } = useTranslation();
@@ -50,34 +52,49 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
   const {
     instanceOptions,
     updateInstanceList,
-    instanceList,
-    loading: instanceLoading
+    loading: instanceLoading,
+    getInstanceDbType
   } = useInstance();
 
+  const {
+    loading: getDriverMetaLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
+
   useEffect(() => {
-    updateInstanceList({
-      project_name: projectName,
-      functional_module:
-        getInstanceTipListV2FunctionalModuleEnum.create_optimization
-    });
-  }, [projectName, updateInstanceList]);
+    if (optimizationType === OptimizationTypeEnum.offline) {
+      updateDriverNameList();
+    } else if (optimizationType === OptimizationTypeEnum.online) {
+      updateInstanceList({
+        project_name: projectName,
+        functional_module:
+          getInstanceTipListV2FunctionalModuleEnum.create_optimization
+      });
+    }
+  }, [projectName, updateInstanceList, updateDriverNameList, optimizationType]);
 
   const optimizationTypeChange: RadioGroupProps['onChange'] = () => {
     form.setFieldsValue({
       instanceName: undefined,
-      instanceSchema: undefined
+      instanceSchema: undefined,
+      dbType: undefined
     });
   };
 
   const formatSql = async () => {
     const values = await form.getFieldsValue();
-    const dbType = instanceList.find(
-      (v) => v.instance_name === values.instanceName
-    )?.instance_type;
-    const sql = formatterSQL(values.sql, dbType);
-    form.setFieldsValue({
-      sql
-    });
+    if (values.optimizationType === OptimizationTypeEnum.online) {
+      const sql = formatterSQL(values.sql, values.dbType);
+      form.setFieldsValue({
+        sql
+      });
+    } else {
+      const sql = formatterSQL(values?.offlineSql ?? '', values.dbType);
+      form.setFieldsValue({
+        offlineSql: sql
+      });
+    }
   };
 
   return (
@@ -108,15 +125,35 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
           </Radio>
         </Radio.Group>
       </FormItemLabel>
-
+      <FormItemLabel
+        hidden={optimizationType === OptimizationTypeEnum.online}
+        className="has-required-style"
+        name="dbType"
+        label={t('sqlAudit.create.sqlInfo.form.dbType')}
+        rules={[
+          {
+            required: optimizationType === OptimizationTypeEnum.offline
+          }
+        ]}
+        {...formItemLayout.spaceBetween}
+      >
+        <BasicSelect loading={getDriverMetaLoading} disabled={submitLoading}>
+          {generateDriverSelectOptions()}
+        </BasicSelect>
+      </FormItemLabel>
       <EmptyBox
         if={optimizationType === OptimizationTypeEnum.online}
         defaultNode={
           <>
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="offlineSql"
-              label={t('sqlOptimization.create.sqlInfo.form.sql')}
+              label={
+                <CustomLabelContent
+                  title={t('sqlOptimization.create.sqlInfo.form.sql')}
+                  tips={t('sqlOptimization.create.simpleSqlTips')}
+                />
+              }
               {...formItemLayout.fullLine}
               rules={[
                 {
@@ -141,28 +178,34 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
             <FormItemLabel
               name="executionPlan"
               label={t('sqlOptimization.create.sqlInfo.form.executionPlan')}
-              {...formItemLayout.spaceBetween}
+              {...formItemLayout.fullLine}
             >
               <BasicInput.TextArea
                 placeholder={t(
                   'sqlOptimization.create.sqlInfo.form.executionPlanPlaceholder'
                 )}
-                rows={3}
                 disabled={submitLoading}
+                autoSize={{
+                  maxRows: 8,
+                  minRows: 6
+                }}
               />
             </FormItemLabel>
 
             <FormItemLabel
               name="tableStructure"
               label={t('sqlOptimization.create.sqlInfo.form.tableStructure')}
-              {...formItemLayout.spaceBetween}
+              {...formItemLayout.fullLine}
             >
               <BasicInput.TextArea
                 placeholder={t(
                   'sqlOptimization.create.sqlInfo.form.tableStructurePlaceholder'
                 )}
-                rows={3}
                 disabled={submitLoading}
+                autoSize={{
+                  maxRows: 8,
+                  minRows: 6
+                }}
               />
             </FormItemLabel>
           </>
@@ -172,6 +215,7 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
           form={form}
           instanceLoading={instanceLoading}
           instanceOptions={instanceOptions}
+          getInstanceDbType={getInstanceDbType}
         />
 
         <SQLStatementForm form={form} />
@@ -186,17 +230,24 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
         >
           {t('sqlOptimization.create.sqlInfo.optimize')}
         </BasicButton>
-        <Space hidden={uploadType !== UploadTypeEnum.sql}>
-          <BasicButton onClick={formatSql} loading={submitLoading}>
-            {t('sqlOptimization.create.sqlInfo.format')}
-          </BasicButton>
-          <BasicToolTip
-            prefixIcon={<InfoCircleOutlined />}
-            title={t('sqlOptimization.create.sqlInfo.formatTips', {
-              supportType: Object.keys(FormatLanguageSupport).join('、')
-            })}
-          />
-        </Space>
+        <EmptyBox
+          if={
+            uploadType === UploadTypeEnum.sql ||
+            optimizationType === OptimizationTypeEnum.offline
+          }
+        >
+          <Space>
+            <BasicButton onClick={formatSql} loading={submitLoading}>
+              {t('sqlOptimization.create.sqlInfo.format')}
+            </BasicButton>
+            <BasicToolTip
+              prefixIcon={<InfoCircleOutlined />}
+              title={t('sqlOptimization.create.sqlInfo.formatTips', {
+                supportType: Object.keys(FormatLanguageSupport).join('、')
+              })}
+            />
+          </Space>
+        </EmptyBox>
       </Space>
     </>
   );

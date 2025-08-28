@@ -8,22 +8,13 @@ import {
 } from '../../../store/sqlAnalyze';
 import { IReduxState } from '../../../store';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import {
-  BasicEmpty,
-  BasicDrawer,
-  BasicResult,
-  TypedLink
-} from '@actiontech/shared';
+import { BasicEmpty, BasicDrawer, BasicResult } from '@actiontech/shared';
 import { useEffect } from 'react';
 import useOptimizationResult from '../../SqlOptimization/Result/hooks/useOptimizationResult';
 import { Spin, Space } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 
 const SqlOptimizationResultDrawer = () => {
   const { t } = useTranslation();
-  const { projectID } = useCurrentProject();
   const dispatch = useDispatch();
 
   const { open, optimizationId } = useSelector((state: IReduxState) => {
@@ -87,19 +78,7 @@ const SqlOptimizationResultDrawer = () => {
                 </span>
               </Space>
               <span>
-                {t('sqlAnalyze.optimizationResultDrawer.canAlsoEnter')}
-                <TypedLink
-                  to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
-                  params={{ projectID }}
-                  queries={{
-                    active: SqlAuditSegmentedKey.SqlOptimization
-                  }}
-                >
-                  {t(
-                    'sqlAnalyze.optimizationResultDrawer.quickAuditSqlOptimization'
-                  )}
-                </TypedLink>
-                {t('sqlAnalyze.optimizationResultDrawer.trackProgress')}
+                {t('sqlAnalyze.optimizationResultDrawer.trackProgressTips')}
               </span>
             </Space>
           }

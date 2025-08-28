@@ -85,7 +85,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-ooqjkw"
+              class="css-5exkve"
             >
               <div
                 class="ant-space ant-space-vertical full-width-element"
@@ -94,11 +94,13 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
                 >
-                  <h3
-                    class="header-title"
+                  <div
+                    class="sql-title-wrapper"
                   >
-                    SQL语句
-                  </h3>
+                    <h3>
+                      SQL语句
+                    </h3>
+                  </div>
                 </div>
                 <div
                   class="ant-space-item"
@@ -6687,7 +6689,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
             class="tab-cont-wrapper"
           >
             <section
-              class="css-ooqjkw"
+              class="css-5exkve"
             >
               <div
                 class="ant-space ant-space-vertical full-width-element"
@@ -6696,11 +6698,13 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
                 >
-                  <h3
-                    class="header-title"
+                  <div
+                    class="sql-title-wrapper"
                   >
-                    SQL语句
-                  </h3>
+                    <h3>
+                      SQL语句
+                    </h3>
+                  </div>
                 </div>
                 <div
                   class="ant-space-item"
@@ -7110,7 +7114,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 2`
             class="tab-cont-wrapper"
           >
             <section
-              class="css-ooqjkw"
+              class="css-5exkve"
             >
               <div
                 class="ant-space ant-space-vertical full-width-element"

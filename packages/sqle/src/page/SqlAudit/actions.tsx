@@ -6,11 +6,9 @@ import {
 import { t } from '../../locale';
 import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { SqlAuditSegmentedKey } from './index.type';
 
 export const sqlAuditPageHeaderActions = (
-  projectID: string,
-  activeKey = SqlAuditSegmentedKey.SqlAudit
+  projectID: string
 ): Record<'create-audit' | 'create-optimization', React.ReactNode> => {
   return {
     'create-audit': (
@@ -24,7 +22,6 @@ export const sqlAuditPageHeaderActions = (
             to: ROUTE_PATHS.SQLE.SQL_AUDIT.create,
             params: { projectID }
           }}
-          hidden={activeKey !== SqlAuditSegmentedKey.SqlAudit}
         />
       </PermissionControl>
     ),
@@ -38,7 +35,6 @@ export const sqlAuditPageHeaderActions = (
           to: ROUTE_PATHS.SQLE.SQL_AUDIT.create_optimization,
           params: { projectID }
         }}
-        hidden={activeKey !== SqlAuditSegmentedKey.SqlOptimization}
       />
     )
   };

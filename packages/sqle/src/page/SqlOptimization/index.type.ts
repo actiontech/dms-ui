@@ -29,6 +29,7 @@ export type SqlInfoFormFields = {
   zipFile: File[];
   instanceName: string;
   instanceSchema: string;
+  dbType: string;
   gitHttpUrl: string;
   gitUserName: string;
   gitUserPassword: string;
@@ -49,6 +50,7 @@ export type DatabaseInfoProps = {
   form: FormInstance<SqlInfoFormFields>;
   instanceLoading: boolean;
   instanceOptions: SelectProps['options'];
+  getInstanceDbType: (instanceName: string) => string;
 };
 
 export type SQLStatementFormProps = Pick<SqlInfoFormProps, 'form'>;

@@ -73,7 +73,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                   </svg>
                 </span>
                 <span>
-                  创建审核
+                  创建SQL审核
                 </span>
               </button>
             </a>
