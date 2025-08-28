@@ -22,7 +22,7 @@ class SqlOptimization implements MockSpyApy {
   }
 
   public getOptimizationRecords() {
-    const spy = jest.spyOn(sqlOptimization, 'getOptimizationRecords');
+    const spy = jest.spyOn(sqlOptimization, 'GetOptimizationRecordsV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: sqlOptimizationRecordsMockData,
@@ -33,7 +33,7 @@ class SqlOptimization implements MockSpyApy {
   }
 
   public optimizeSQLReq() {
-    const spy = jest.spyOn(sqlOptimization, 'OptimizeSQLReq');
+    const spy = jest.spyOn(sqlOptimization, 'SQLOptimizeV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: createOptimizationResMockData })
     );

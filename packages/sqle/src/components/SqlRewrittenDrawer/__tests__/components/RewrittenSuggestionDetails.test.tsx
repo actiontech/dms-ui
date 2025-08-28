@@ -48,7 +48,9 @@ LIMIT 1000 OFFSET 500;
         dataSource: [],
         originalSql,
         taskID: 'task-123',
-        sqlNumber: 1
+        sqlNumber: 1,
+        instanceName: 'mysql',
+        schema: 'dms'
       };
 
       sqleSuperRender(<RewrittenSuggestionDetails {...props} />);
@@ -63,7 +65,9 @@ LIMIT 1000 OFFSET 500;
         dataSource: mockDataSource,
         originalSql,
         taskID: 'task-123',
-        sqlNumber: 1
+        sqlNumber: 1,
+        instanceName: 'mysql',
+        schema: 'dms'
       };
 
       sqleSuperRender(<RewrittenSuggestionDetails {...props} />);
@@ -98,7 +102,9 @@ LIMIT 1000 OFFSET 500;
       dataSource: mockDataSource,
       originalSql,
       taskID: 'task-123',
-      sqlNumber: 1
+      sqlNumber: 1,
+      instanceName: 'mysql',
+      schema: 'dms'
     };
 
     it('should toggle details visibility on click', () => {
@@ -181,7 +187,7 @@ LIMIT 1000 OFFSET 500;
 
       expect(screen.getByText('在SQL分析中查看当前表结构')).toHaveAttribute(
         'href',
-        `/sqle/project/700300/exec-workflow/${mockProps.taskID}/${mockProps.sqlNumber}/analyze`
+        `/sqle/project/700300/exec-workflow/${mockProps.taskID}/${mockProps.sqlNumber}/analyze?instance_name=mysql&schema=dms`
       );
     });
 
