@@ -2,7 +2,8 @@ import {
   SQLRenderer,
   BasicModal,
   EmptyBox,
-  BasicEmpty
+  BasicEmpty,
+  BasicInput
 } from '@actiontech/shared';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
@@ -60,10 +61,14 @@ const TableStructureModal: React.FC = () => {
               if={!!currentTableData?.tableStructure}
               defaultNode={<BasicEmpty />}
             >
-              <SQLRenderer
-                wordWrap
-                showLineNumbers
-                sql={currentTableData?.tableStructure}
+              <BasicInput.TextArea
+                value={currentTableData?.tableStructure}
+                readOnly
+                autoSize={{
+                  maxRows: 10,
+                  minRows: 6
+                }}
+                bordered={false}
               />
             </EmptyBox>
           </div>
