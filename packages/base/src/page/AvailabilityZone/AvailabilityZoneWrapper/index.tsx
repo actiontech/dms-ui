@@ -5,6 +5,8 @@ import { BasicModal, BasicSelect, BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { useTypedNavigate } from '@actiontech/shared';
 import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import { useRef } from 'react';
+import { useUserInfo } from '@actiontech/shared/lib/features';
 
 const AvailabilityZoneWrapper: React.FC = () => {
   const { t } = useTranslation();
@@ -19,12 +21,14 @@ const AvailabilityZoneWrapper: React.FC = () => {
 
   const [zoneModalVisible, setZoneModalVisible] = useState(true);
   const [selectedZone, setSelectedZone] = useState<string>();
-  const [pendingPath, setPendingPath] = useState<string | null>(null);
+  const pendingPath = useRef<string | null>(null);
+  const { refreshProjectListAsync, getUserInfoLoading, updateUserInfo } =
+    useUserInfo();
 
   useEffect(() => {
     if (!availabilityZone) {
       const { pathname, search } = location;
-      setPendingPath(pathname + search);
+      pendingPath.current = pathname + search;
       setZoneModalVisible(true);
     }
   }, [location, availabilityZone]);
@@ -40,34 +44,40 @@ const AvailabilityZoneWrapper: React.FC = () => {
         availabilityZoneOptions.find((zone) => zone?.value === selectedZone)
           ?.label ?? ''
     });
-
     setZoneModalVisible(false);
-    if (pendingPath) {
-      navigate(pendingPath);
-      setPendingPath(null);
-    }
+    // refreshProjectListAsync();
+    updateUserInfo();
+    // refreshProjectListAsync().then(() => {
+    // if (pendingPath.current) {
+    //   navigate(pendingPath.current);
+    //   pendingPath.current = null;
+    // }
+    // });
   };
 
   const isZoneConfigured = !!availabilityZoneOptions?.length;
-  const isMemoriredZoneNotInOptions = useMemo(
+  const isMemorizedZoneNotInOptions = useMemo(
     () =>
       !availabilityZoneOptions?.some((v) => v.value === availabilityZone?.uid),
     [availabilityZoneOptions, availabilityZone]
   );
 
-  if (isZoneConfigured && isMemoriredZoneNotInOptions) {
+  console.log(isZoneConfigured && isMemorizedZoneNotInOptions);
+
+  if (isZoneConfigured && isMemorizedZoneNotInOptions) {
     return (
       <BasicModal
         title={t('availabilityZone.wrapper.modalTitle')}
         open={zoneModalVisible}
         footer={
           <Space>
-            <BasicButton onClick={onModalCancel}>
+            <BasicButton onClick={onModalCancel} disabled={getUserInfoLoading}>
               {t('common.cancel')}
             </BasicButton>
             <BasicButton
               onClick={onModalOk}
               disabled={!selectedZone}
+              loading={getUserInfoLoading}
               type="primary"
             >
               {t('common.ok')}
