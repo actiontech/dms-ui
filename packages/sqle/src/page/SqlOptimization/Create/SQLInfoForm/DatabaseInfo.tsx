@@ -1,28 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { DatabaseInfoProps } from '../../index.type';
-import { useCallback, useState } from 'react';
 import { Alert, Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
-import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import {
-  BasicButton,
-  BasicToolTip,
-  FormItemLabel,
-  FormItemNoLabel,
-  TypedLink
-} from '@actiontech/shared';
-import {
-  DatabaseSchemaFilled,
-  DatabaseFilled,
-  ProfileSquareFilled
-} from '@actiontech/icons';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/shared';
+import { DatabaseSchemaFilled, DatabaseFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 
@@ -33,78 +18,26 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   getInstanceDbType
 }) => {
   const { t } = useTranslation();
-  const { projectID, projectName } = useCurrentProject();
+
+  const { projectName } = useCurrentProject();
+
   const { sqleTheme } = useThemeStyleData();
+
   const submitLoading = useSelector(
     (state: IReduxState) => state.sqlOptimization.submitLoading
   );
 
-  const [instanceInfo, setInstanceInfo] = useState<IInstanceResV2>();
   const instanceName = Form.useWatch('instanceName', form);
+
   const { loading: getInstanceSchemaListLoading, schemaList } =
     useInstanceSchema(projectName, instanceName);
-
-  const updateRuleTemplateName = (name: string) => {
-    instance
-      .getInstanceV2({ instance_name: name, project_name: projectName })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setInstanceInfo(res.data.data);
-        }
-      });
-  };
 
   const handleInstanceNameChange = (name: string) => {
     form.setFieldsValue({
       instanceSchema: undefined,
       dbType: getInstanceDbType(name)
     });
-    updateRuleTemplateName(name);
   };
-
-  const renderRuleTemplateDisplay = useCallback(() => {
-    if (!instanceInfo || !instanceInfo.rule_template) {
-      return (
-        <BasicButton
-          style={{ width: 36, height: 36 }}
-          icon={<ProfileSquareFilled width={18} height={18} />}
-        />
-      );
-    }
-
-    const path = instanceInfo.rule_template.is_global_rule_template
-      ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
-      : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
-
-    return (
-      <BasicToolTip
-        title={
-          <TypedLink
-            to={path}
-            params={{
-              projectID,
-              dbType: instanceInfo.db_type ?? '',
-              templateName: instanceInfo.rule_template.name ?? ''
-            }}
-            target="_blank"
-          >
-            {t('rule.form.ruleTemplate')}: {instanceInfo.rule_template.name}
-          </TypedLink>
-        }
-      >
-        <BasicButton
-          style={{ width: 36, height: 36 }}
-          icon={
-            <ProfileSquareFilled
-              width={18}
-              height={18}
-              color={sqleTheme.icon.execWorkFlow.profileSquareFilled}
-            />
-          }
-        />
-      </BasicToolTip>
-    );
-  }, [instanceInfo, projectID, t, sqleTheme]);
 
   return (
     <div>
@@ -189,7 +122,6 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
             }))}
           />
         </FormItemNoLabel>
-        {renderRuleTemplateDisplay()}
       </Space>
       <Alert
         type="warning"
