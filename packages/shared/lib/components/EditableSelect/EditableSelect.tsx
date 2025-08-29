@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Dropdown, Menu, Space, Popconfirm, Spin } from 'antd';
 import { BasicButton } from '../BasicButton';
 import { BasicInput } from '../BasicInput';
@@ -19,6 +19,7 @@ import {
 } from '@actiontech/icons';
 import type { MenuProps } from 'antd';
 import { ReminderInformation } from '../ReminderInformation';
+import { BasicEmpty } from '../BasicEmpty';
 
 const EditableSelect: React.FC<EditableSelectProps> = ({
   value,
@@ -35,7 +36,10 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   addable = true,
   updatable = true,
   deletable = true,
-  errorMessage
+  errorMessage,
+  searchable = true,
+  searchPlaceholder,
+  contentMaxHeight = 320
 }) => {
   const { t } = useTranslation();
   const [newItemName, setNewItemName] = useState('');
@@ -48,6 +52,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   const [deletingItem, setDeletingItem] = useState<EditableSelectOption | null>(
     null
   );
+  const [searchValue, setSearchValue] = useState('');
 
   const handleAdd = () => {
     onAdd?.(newItemName);
@@ -86,6 +91,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     setEditingItem(null);
     setEditName('');
     setDeletingItem(null);
+    setSearchValue('');
   };
 
   const onOpenChange = (open: boolean) => {
@@ -95,8 +101,19 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     setDropdownOpen(open);
   };
 
+  const filteredOptions = useMemo(() => {
+    if (!searchable || !searchValue.trim()) {
+      return options;
+    }
+
+    const searchTerm = searchValue.toLowerCase().trim();
+    return options.filter((option) =>
+      option.label.toLowerCase().includes(searchTerm)
+    );
+  }, [searchable, searchValue, options]);
+
   const generateMenuItems = (): MenuProps['items'] => {
-    const optionItems: MenuProps['items'] = options.map((option) => ({
+    const optionItems: MenuProps['items'] = filteredOptions.map((option) => ({
       key: option.value,
       className: classNames({
         'editable-select-menu-item-active': option?.value === value
@@ -183,74 +200,84 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
       )
     }));
 
-    if (addable) {
-      optionItems.push({
-        type: 'divider'
-      });
-
-      if (isAdding) {
-        optionItems.push({
-          key: 'add-new',
-          label: (
-            <div className="add-mode" onClick={(e) => e.stopPropagation()}>
-              <BasicInput
-                value={newItemName}
-                autoFocus
-                onChange={(e) => setNewItemName(e.target.value)}
-                placeholder={t('common.form.placeholder.input')}
-              />
-              <div className="button-group">
-                <BasicButton
-                  size="small"
-                  onClick={() => {
-                    setIsAdding(false);
-                    setNewItemName('');
-                  }}
-                >
-                  {t('common.cancel')}
-                </BasicButton>
-                <BasicButton
-                  type="primary"
-                  size="small"
-                  onClick={handleAdd}
-                  disabled={!newItemName.trim()}
-                >
-                  {t('common.add')}
-                </BasicButton>
-              </div>
-            </div>
-          )
-        });
-      } else {
-        optionItems.push({
-          key: 'add-button',
-          icon: <PlusOutlined width={14} height={14} />,
-          onClick: () => startAdding(),
-          label: addButtonText ?? t('common.add')
-        });
-      }
-    }
-
     return optionItems;
   };
 
-  const dropdownContent = (
-    <EditableSelectStyleWrapper>
+  const dropdownContentRender = (
+    <EditableSelectStyleWrapper height={contentMaxHeight}>
       <Spin spinning={loading}>
-        <Menu
-          className="editable-select-menu"
-          items={generateMenuItems()}
-          selectedKeys={value ? [value.toString()] : []}
-        />
+        <EmptyBox if={searchable}>
+          <div className="editable-select-search">
+            <BasicInput
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder={
+                searchPlaceholder ??
+                t('common.actiontechTable.searchInput.placeholder')
+              }
+              allowClear
+              bordered={false}
+            />
+          </div>
+        </EmptyBox>
+
+        <EmptyBox if={!!filteredOptions.length} defaultNode={<BasicEmpty />}>
+          <Menu
+            className="editable-select-menu"
+            items={generateMenuItems()}
+            selectedKeys={value ? [value.toString()] : []}
+          />
+        </EmptyBox>
+
+        <EmptyBox if={addable}>
+          <div className="editable-select-add-section">
+            {isAdding ? (
+              <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
+                <BasicInput
+                  value={newItemName}
+                  autoFocus
+                  onChange={(e) => setNewItemName(e.target.value)}
+                  placeholder={t('common.form.placeholder.input')}
+                />
+                <div className="button-group">
+                  <BasicButton
+                    size="small"
+                    onClick={() => {
+                      setIsAdding(false);
+                      setNewItemName('');
+                    }}
+                  >
+                    {t('common.cancel')}
+                  </BasicButton>
+                  <BasicButton
+                    type="primary"
+                    size="small"
+                    onClick={handleAdd}
+                    disabled={!newItemName.trim()}
+                  >
+                    {t('common.add')}
+                  </BasicButton>
+                </div>
+              </div>
+            ) : (
+              <Space
+                className="add-button-wraper"
+                onClick={() => startAdding()}
+              >
+                <PlusOutlined width={14} height={14} />
+                {addButtonText ?? t('common.add')}
+              </Space>
+            )}
+          </div>
+        </EmptyBox>
       </Spin>
     </EditableSelectStyleWrapper>
   );
-
   const selectedLabel = options.find((o) => o.value === value)?.label;
 
   return (
     <Dropdown
-      dropdownRender={() => dropdownContent}
+      dropdownRender={() => dropdownContentRender}
       trigger={['click']}
       open={dropdownOpen}
       onOpenChange={onOpenChange}
