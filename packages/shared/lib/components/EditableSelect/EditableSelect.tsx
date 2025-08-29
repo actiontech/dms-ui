@@ -1,4 +1,4 @@
-import { useState, useMemo, forwardRef } from 'react';
+import { useState, useMemo } from 'react';
 import { Dropdown, Menu, Space, Popconfirm, Spin } from 'antd';
 import { BasicButton } from '../BasicButton';
 import { BasicInput } from '../BasicInput';
@@ -19,6 +19,7 @@ import {
 } from '@actiontech/icons';
 import type { MenuProps } from 'antd';
 import { ReminderInformation } from '../ReminderInformation';
+import { BasicEmpty } from '../BasicEmpty';
 
 const EditableSelect: React.FC<EditableSelectProps> = ({
   value,
@@ -202,85 +203,81 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     return optionItems;
   };
 
-  const dropdownContentRender = () => {
-    // 自定义dropdownContent需要传递ref 否则antd会抛出ref warning
-    const DropdownContentComponent = forwardRef<HTMLDivElement>(({}, ref) => (
+  const dropdownContentRender = (
+    <EditableSelectStyleWrapper height={contentMaxHeight}>
       <Spin spinning={loading}>
-        <EditableSelectStyleWrapper ref={ref as any} height={contentMaxHeight}>
-          <EmptyBox if={searchable}>
-            <div className="editable-select-search">
-              <BasicInput
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                placeholder={
-                  searchPlaceholder ??
-                  t('common.actiontechTable.searchInput.placeholder')
-                }
-                allowClear
-                bordered={false}
-              />
-            </div>
-          </EmptyBox>
+        <EmptyBox if={searchable}>
+          <div className="editable-select-search">
+            <BasicInput
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder={
+                searchPlaceholder ??
+                t('common.actiontechTable.searchInput.placeholder')
+              }
+              allowClear
+              bordered={false}
+            />
+          </div>
+        </EmptyBox>
 
+        <EmptyBox if={!!filteredOptions.length} defaultNode={<BasicEmpty />}>
           <Menu
             className="editable-select-menu"
             items={generateMenuItems()}
             selectedKeys={value ? [value.toString()] : []}
           />
+        </EmptyBox>
 
-          <EmptyBox if={addable}>
-            <div className="editable-select-add-section">
-              {isAdding ? (
-                <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
-                  <BasicInput
-                    value={newItemName}
-                    autoFocus
-                    onChange={(e) => setNewItemName(e.target.value)}
-                    placeholder={t('common.form.placeholder.input')}
-                  />
-                  <div className="button-group">
-                    <BasicButton
-                      size="small"
-                      onClick={() => {
-                        setIsAdding(false);
-                        setNewItemName('');
-                      }}
-                    >
-                      {t('common.cancel')}
-                    </BasicButton>
-                    <BasicButton
-                      type="primary"
-                      size="small"
-                      onClick={handleAdd}
-                      disabled={!newItemName.trim()}
-                    >
-                      {t('common.add')}
-                    </BasicButton>
-                  </div>
+        <EmptyBox if={addable}>
+          <div className="editable-select-add-section">
+            {isAdding ? (
+              <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
+                <BasicInput
+                  value={newItemName}
+                  autoFocus
+                  onChange={(e) => setNewItemName(e.target.value)}
+                  placeholder={t('common.form.placeholder.input')}
+                />
+                <div className="button-group">
+                  <BasicButton
+                    size="small"
+                    onClick={() => {
+                      setIsAdding(false);
+                      setNewItemName('');
+                    }}
+                  >
+                    {t('common.cancel')}
+                  </BasicButton>
+                  <BasicButton
+                    type="primary"
+                    size="small"
+                    onClick={handleAdd}
+                    disabled={!newItemName.trim()}
+                  >
+                    {t('common.add')}
+                  </BasicButton>
                 </div>
-              ) : (
-                <Space
-                  className="add-button-wraper"
-                  onClick={() => startAdding()}
-                >
-                  <PlusOutlined width={14} height={14} />
-                  {addButtonText ?? t('common.add')}
-                </Space>
-              )}
-            </div>
-          </EmptyBox>
-        </EditableSelectStyleWrapper>
+              </div>
+            ) : (
+              <Space
+                className="add-button-wraper"
+                onClick={() => startAdding()}
+              >
+                <PlusOutlined width={14} height={14} />
+                {addButtonText ?? t('common.add')}
+              </Space>
+            )}
+          </div>
+        </EmptyBox>
       </Spin>
-    ));
-
-    return <DropdownContentComponent />;
-  };
-
+    </EditableSelectStyleWrapper>
+  );
   const selectedLabel = options.find((o) => o.value === value)?.label;
 
   return (
     <Dropdown
-      dropdownRender={dropdownContentRender}
+      dropdownRender={() => dropdownContentRender}
       trigger={['click']}
       open={dropdownOpen}
       onOpenChange={onOpenChange}

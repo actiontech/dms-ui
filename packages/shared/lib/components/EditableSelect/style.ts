@@ -4,13 +4,17 @@ export const EditableSelectStyleWrapper = styled('div')<{
   height: number;
 }>`
   background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-  max-height: ${({ height }) => `${height}px`};
   box-shadow: ${({ theme }) =>
     theme.sharedTheme.components.basicSelect.default.boxShadow};
+  border-radius: 8px;
+
+  .ant-spin-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: ${({ height }) => `${height}px`};
+    overflow: hidden;
+  }
 
   .editable-select-search {
     border-bottom: 1px solid

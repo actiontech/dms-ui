@@ -2397,14 +2397,14 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
-        class="ant-spin-nested-loading"
+        class="css-8go0jz"
+        height="320"
       >
         <div
-          class="ant-spin-container"
+          class="ant-spin-nested-loading"
         >
           <div
-            class="css-9c180b"
-            height="320"
+            class="ant-spin-container"
           >
             <div
               class="editable-select-search"
