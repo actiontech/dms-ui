@@ -1,7 +1,8 @@
 // import { SettingOutlined } from '@ant-design/icons';
 import { t } from '../../../../locale/index';
 import { UploadTypeEnum } from '../../index.type';
-import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
+// import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
+import { PanelCardOutlined } from '@actiontech/icons';
 import { ModeSwitcherOptionsType } from '@actiontech/shared';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
@@ -12,7 +13,7 @@ export const uploadTypeOptions: ModeSwitcherOptionsType = [
     colProps: {
       span: 8
     }
-  },
+  }
   // {
   //   icon: <FileUploadFilled width={18} height={18} />,
   //   label: t('sqlOptimization.create.sqlInfo.uploadTypeEnum.sqlFile'),
@@ -21,14 +22,14 @@ export const uploadTypeOptions: ModeSwitcherOptionsType = [
   //     span: 8
   //   }
   // },
-  {
-    icon: <FileUploadFilled width={18} height={18} />,
-    label: t('sqlOptimization.create.sqlInfo.uploadTypeEnum.mybatisFile'),
-    value: UploadTypeEnum.mybatisFile,
-    colProps: {
-      span: 8
-    }
-  }
+  // {
+  //   icon: <FileUploadFilled width={18} height={18} />,
+  //   label: t('sqlOptimization.create.sqlInfo.uploadTypeEnum.mybatisFile'),
+  //   value: UploadTypeEnum.mybatisFile,
+  //   colProps: {
+  //     span: 8
+  //   }
+  // }
   // {
   //   icon: <FileUploadFilled width={18} height={18} />,
   //   label: t('sqlOptimization.create.sqlInfo.uploadTypeEnum.zipFile'),
