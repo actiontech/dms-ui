@@ -35,6 +35,7 @@ import { SqlOptimizationListStyleWrapper } from '../style';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { sqlOptimizationListActions } from './actions';
+import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SqlOptimizationList = () => {
   const navigate = useTypedNavigate();
@@ -67,6 +68,12 @@ const SqlOptimizationList = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
+  const isNoneOptimizingRecord = (data?: IOptimizationRecord[]) => {
+    return !data?.some(
+      (i) => i.status === OptimizationRecordStatusEnum.optimizing
+    );
+  };
+
   const { data, loading, refresh, cancel, run } = useRequest(
     () => {
       const params: IGetOptimizationRecordsParams = {
@@ -84,6 +91,11 @@ const SqlOptimizationList = () => {
       pollingInterval: 5000,
       onError: () => {
         cancel();
+      },
+      onSuccess: (res) => {
+        if (isNoneOptimizingRecord(res.list)) {
+          cancel();
+        }
       }
     }
   );
@@ -171,7 +183,8 @@ const SqlOptimizationList = () => {
                     run();
                   }
                   setAutoRefreshEnabled(!autoRefreshEnabled);
-                }
+                },
+                hidden: isNoneOptimizingRecord(data?.list)
               }
             }
           ]}
