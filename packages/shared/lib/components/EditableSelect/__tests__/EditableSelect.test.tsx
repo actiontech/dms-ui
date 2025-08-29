@@ -51,6 +51,16 @@ describe('EditableSelect', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('should render select when options is empty', async () => {
+    const { baseElement } = customRender({ options: [] });
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(getBySelector('.editable-select-trigger'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render without options', async () => {
     const { baseElement } = customRender({ options: [] });
     expect(baseElement).toMatchSnapshot();
