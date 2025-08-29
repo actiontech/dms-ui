@@ -1091,7 +1091,14 @@ exports[`SqlAnalyze/SQLManage filter sql execution plan cost 1`] = `
                       <div
                         class="number-cont"
                       >
-                        10
+                        <button
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            获 取
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </section>
@@ -7058,7 +7065,14 @@ exports[`SqlAnalyze/SQLManage should get analyze data from origin 1`] = `
                       <div
                         class="number-cont"
                       >
-                        --
+                        <button
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            获 取
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </section>
@@ -8164,7 +8178,14 @@ exports[`SqlAnalyze/SQLManage should get analyze data from origin 2`] = `
                       <div
                         class="number-cont"
                       >
-                        10
+                        <button
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            获 取
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </section>
@@ -19450,412 +19471,516 @@ exports[`SqlAnalyze/SQLManage should render error result of type "info" when res
           class="css-1nr7lyg"
         >
           <section
-            class="basic-result-wrapper css-7vto1s"
+            class="tab-wrapper"
           >
             <div
-              class="ant-result ant-result-info"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
-                class="ant-result-icon"
+                class="ant-segmented-group"
               >
-                <svg
-                  fill="none"
-                  height="160"
-                  viewBox="0 0 160 160"
-                  width="160"
-                  xmlns="http://www.w3.org/2000/svg"
+                <label
+                  class="ant-segmented-item ant-segmented-item-selected"
                 >
-                  <g
-                    filter="url(#filter0_d_3998_2816)"
+                  <input
+                    checked=""
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="SQL解析"
                   >
-                    <rect
-                      fill="white"
-                      height="100"
-                      rx="6"
-                      width="128"
-                      x="15"
-                      y="30"
-                    />
-                    <rect
-                      height="99"
-                      rx="5.5"
-                      stroke="#F2F1F0"
-                      width="127"
-                      x="15.5"
-                      y="30.5"
-                    />
-                  </g>
-                  <circle
-                    cx="21.5"
-                    cy="36.5"
-                    fill="#F66074"
-                    r="1.5"
-                  />
-                  <circle
-                    cx="27.5"
-                    cy="36.5"
-                    fill="#EDB054"
-                    r="1.5"
-                  />
-                  <circle
-                    cx="33.5"
-                    cy="36.5"
-                    fill="#1CB889"
-                    r="1.5"
-                  />
-                  <rect
-                    fill="#EBEAE7"
-                    height="5"
-                    rx="2"
-                    width="37"
-                    x="27"
-                    y="52"
-                  />
-                  <rect
-                    fill="#EBEAE7"
-                    height="4"
-                    rx="2"
-                    width="17"
-                    x="27"
-                    y="62"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="19"
-                    x="70"
-                    y="78"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="40"
-                    x="27"
-                    y="78"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="47"
-                    x="42"
-                    y="87"
-                  />
-                  <rect
-                    fill="#F66074"
-                    height="4"
-                    rx="2"
-                    width="12"
-                    x="27"
-                    y="87"
-                  />
-                  <rect
-                    fill="#F66074"
-                    height="4"
-                    rx="2"
-                    width="10"
-                    x="79"
-                    y="96"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="13"
-                    x="63"
-                    y="96"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="33"
-                    x="27"
-                    y="96"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="34"
-                    x="55"
-                    y="105"
-                  />
-                  <rect
-                    fill="#F66074"
-                    height="4"
-                    rx="2"
-                    width="25"
-                    x="27"
-                    y="105"
-                  />
-                  <rect
-                    fill="#F2F1EF"
-                    height="4"
-                    rx="2"
-                    width="49"
-                    x="27"
-                    y="114"
-                  />
-                  <rect
-                    fill="#F7F6F4"
-                    height="72"
-                    rx="3"
-                    width="32"
-                    x="99"
-                    y="48"
-                  />
-                  <rect
-                    fill="white"
-                    height="6"
-                    rx="1"
-                    stroke="#E8E7E6"
-                    width="24"
-                    x="103"
-                    y="52"
-                  />
-                  <rect
-                    fill="white"
-                    height="6"
-                    rx="1"
-                    stroke="#E8E7E6"
-                    width="24"
-                    x="103"
-                    y="76"
-                  />
-                  <g
-                    filter="url(#filter1_d_3998_2816)"
-                  >
-                    <rect
-                      fill="#4583FF"
-                      height="8"
-                      rx="2"
-                      width="26"
-                      x="102"
-                      y="63"
-                    />
-                  </g>
-                  <rect
-                    fill="white"
-                    height="6"
-                    rx="1"
-                    stroke="#E8E7E6"
-                    width="24"
-                    x="103"
-                    y="87"
-                  />
-                  <rect
-                    fill="white"
-                    height="6"
-                    rx="1"
-                    stroke="#E8E7E6"
-                    width="24"
-                    x="103"
-                    y="98"
-                  />
-                  <rect
-                    fill="white"
-                    height="6"
-                    rx="1"
-                    stroke="#E8E7E6"
-                    width="24"
-                    x="103"
-                    y="109"
-                  />
-                  <g
-                    filter="url(#filter2_d_3998_2816)"
-                  >
-                    <path
-                      d="M134 136C138.418 136 142.418 134.209 145.314 131.314C148.209 128.418 150 124.418 150 120C150 115.582 148.209 111.582 145.314 108.686C142.418 105.791 138.418 104 134 104C129.582 104 125.582 105.791 122.686 108.686C119.791 111.582 118 115.582 118 120C118 124.418 119.791 128.418 122.686 131.314C125.582 134.209 129.582 136 134 136Z"
-                      fill="#1CB889"
-                    />
-                  </g>
-                  <path
-                    d="M128.4 120L132.6 124.2L141 115.8"
-                    stroke="white"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                  />
-                  <rect
-                    fill="url(#paint0_linear_3998_2816)"
-                    height="50"
-                    width="37"
-                    x="27"
-                    y="73"
-                  />
-                  <rect
-                    fill="#15C7D4"
-                    height="50"
-                    width="2"
-                    x="62"
-                    y="73"
-                  />
-                  <defs>
-                    <filter
-                      color-interpolation-filters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                      height="110"
-                      id="filter0_d_3998_2816"
-                      width="138"
-                      x="10"
-                      y="27"
-                    >
-                      <feflood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
-                      <fecolormatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feoffset
-                        dy="2"
-                      />
-                      <fegaussianblur
-                        stdDeviation="2.5"
-                      />
-                      <fecomposite
-                        in2="hardAlpha"
-                        operator="out"
-                      />
-                      <fecolormatrix
-                        type="matrix"
-                        values="0 0 0 0 0.2 0 0 0 0 0.173333 0 0 0 0 0.12 0 0 0 0.1 0"
-                      />
-                      <feblend
-                        in2="BackgroundImageFix"
-                        mode="normal"
-                        result="effect1_dropShadow_3998_2816"
-                      />
-                      <feblend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_3998_2816"
-                        mode="normal"
-                        result="shape"
-                      />
-                    </filter>
-                    <filter
-                      color-interpolation-filters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                      height="16"
-                      id="filter1_d_3998_2816"
-                      width="34"
-                      x="98"
-                      y="60"
-                    >
-                      <feflood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
-                      <fecolormatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feoffset
-                        dy="1"
-                      />
-                      <fegaussianblur
-                        stdDeviation="2"
-                      />
-                      <fecomposite
-                        in2="hardAlpha"
-                        operator="out"
-                      />
-                      <fecolormatrix
-                        type="matrix"
-                        values="0 0 0 0 0.270588 0 0 0 0 0.513726 0 0 0 0 1 0 0 0 0.4 0"
-                      />
-                      <feblend
-                        in2="BackgroundImageFix"
-                        mode="normal"
-                        result="effect1_dropShadow_3998_2816"
-                      />
-                      <feblend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_3998_2816"
-                        mode="normal"
-                        result="shape"
-                      />
-                    </filter>
-                    <filter
-                      color-interpolation-filters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                      height="44"
-                      id="filter2_d_3998_2816"
-                      width="44"
-                      x="112"
-                      y="100"
-                    >
-                      <feflood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
-                      <fecolormatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feoffset
-                        dy="2"
-                      />
-                      <fegaussianblur
-                        stdDeviation="3"
-                      />
-                      <fecomposite
-                        in2="hardAlpha"
-                        operator="out"
-                      />
-                      <fecolormatrix
-                        type="matrix"
-                        values="0 0 0 0 0.109804 0 0 0 0 0.721569 0 0 0 0 0.537255 0 0 0 0.4 0"
-                      />
-                      <feblend
-                        in2="BackgroundImageFix"
-                        mode="normal"
-                        result="effect1_dropShadow_3998_2816"
-                      />
-                      <feblend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_3998_2816"
-                        mode="normal"
-                        result="shape"
-                      />
-                    </filter>
-                    <lineargradient
-                      gradientUnits="userSpaceOnUse"
-                      id="paint0_linear_3998_2816"
-                      x1="64"
-                      x2="27"
-                      y1="73"
-                      y2="73"
-                    >
-                      <stop
-                        stop-color="#1ACEDB"
-                        stop-opacity="0.3"
-                      />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0"
-                      />
-                    </lineargradient>
-                  </defs>
-                </svg>
-              </div>
-              <div
-                class="ant-result-title"
-              >
-                error
+                    SQL解析
+                  </div>
+                </label>
               </div>
             </div>
+          </section>
+          <section
+            class="tab-cont-wrapper"
+          >
+            <section
+              class="css-ooqjkw"
+            >
+              <div
+                class="ant-space ant-space-vertical full-width-element"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
+                  <h3
+                    class="header-title"
+                  >
+                    SQL语句
+                  </h3>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
+                  <section
+                    class="basic-cont-wrapper sql-cont"
+                  >
+                    <div
+                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                    >
+                      <span
+                        class="empty-sql-placeholder"
+                      >
+                        -
+                      </span>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
+                  <section
+                    class="css-1pqpq6o"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <h3>
+                          SQL执行计划代价趋势
+                        </h3>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <div
+                              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                            >
+                              <div
+                                class="ant-segmented-group"
+                              >
+                                <label
+                                  class="ant-segmented-item ant-segmented-item-selected"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="24小时"
+                                  >
+                                    24小时
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="7天"
+                                  >
+                                    7天
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="30天"
+                                  >
+                                    30天
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="css-1y8q0oh"
+                            >
+                              <div
+                                class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
+                              >
+                                <div
+                                  class="ant-picker-input ant-picker-input-active"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="开始日期"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-range-separator"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    width="14"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-picker-input"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="结束日期"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-active-bar"
+                                  style="left: 0px; width: 0px; position: absolute;"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="chart-wrapper"
+                    >
+                      <div
+                        class="ant-spin-nested-loading"
+                      >
+                        <div
+                          class="ant-spin-container"
+                        >
+                          <div
+                            class="chart-wrapper css-1hgbe7b"
+                          >
+                            <div
+                              class="chart-box"
+                            >
+                              <div
+                                data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06 17:22:53","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07 17:32:53","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07 17:42:53","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07 17:52:53","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"x":"2025-01-09 12:00:00"}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["2025-01-07 17:42:53","min"],"end":["2025-01-07 17:42:53","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["2025-01-07 17:52:53","min"],"end":["2025-01-07 17:52:53","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
+                                data-testid="mock-antd-plots"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div>
+                    <div
+                      class="history-exec-plan-wrapper"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center header-title full-width-element"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          执行计划
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary"
+                          >
+                            2025-01-07 17:42:53
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary"
+                          >
+                            代价
+                            ：
+                            2.2
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+                      >
+                        <div
+                          class="ant-spin-nested-loading"
+                        >
+                          <div
+                            class="ant-spin-container"
+                          >
+                            <div
+                              class="ant-table ant-table-scroll-horizontal"
+                            >
+                              <div
+                                class="ant-table-container"
+                              >
+                                <div
+                                  class="ant-table-content"
+                                  style="overflow-x: auto; overflow-y: hidden;"
+                                >
+                                  <table
+                                    style="min-width: 100%; table-layout: auto;"
+                                  >
+                                    <colgroup />
+                                    <thead
+                                      class="ant-table-thead"
+                                    >
+                                      <tr>
+                                        <td
+                                          class="ant-table-cell"
+                                        />
+                                      </tr>
+                                    </thead>
+                                    <tbody
+                                      class="ant-table-tbody"
+                                    >
+                                      <tr
+                                        aria-hidden="true"
+                                        class="ant-table-measure-row"
+                                        style="height: 0px; font-size: 0px;"
+                                      >
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="ant-table-row ant-table-row-level-0"
+                                        data-row-key="key_name"
+                                      >
+                                        <td
+                                          class="ant-table-cell"
+                                        />
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="history-exec-plan-wrapper"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center header-title full-width-element"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          执行计划
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary"
+                          >
+                            2025-01-07 17:52:53
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary"
+                          >
+                            代价
+                            ：
+                            5.2
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+                      >
+                        <div
+                          class="ant-spin-nested-loading"
+                        >
+                          <div
+                            class="ant-spin-container"
+                          >
+                            <div
+                              class="ant-table ant-table-scroll-horizontal"
+                            >
+                              <div
+                                class="ant-table-container"
+                              >
+                                <div
+                                  class="ant-table-content"
+                                  style="overflow-x: auto; overflow-y: hidden;"
+                                >
+                                  <table
+                                    style="min-width: 100%; table-layout: auto;"
+                                  >
+                                    <colgroup />
+                                    <thead
+                                      class="ant-table-thead"
+                                    >
+                                      <tr>
+                                        <td
+                                          class="ant-table-cell"
+                                        />
+                                      </tr>
+                                    </thead>
+                                    <tbody
+                                      class="ant-table-tbody"
+                                    >
+                                      <tr
+                                        aria-hidden="true"
+                                        class="ant-table-measure-row"
+                                        style="height: 0px; font-size: 0px;"
+                                      >
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="ant-table-row ant-table-row-level-0"
+                                        data-row-key="key_name"
+                                      >
+                                        <td
+                                          class="ant-table-cell"
+                                        />
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
+                  <h3
+                    class="header-title"
+                  >
+                    性能统计
+                  </h3>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <section
+                    class="basic-cont-wrapper"
+                  >
+                    <div
+                      class="line-wrapper"
+                    >
+                      <div
+                        class="line-left"
+                      >
+                        <span
+                          class="icon-line"
+                        >
+                          <svg
+                            height="12"
+                            viewBox="0 0 14 12"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              height="2"
+                              rx="0.5"
+                              width="10"
+                            />
+                            <rect
+                              height="2"
+                              rx="0.5"
+                              width="10"
+                              x="4"
+                              y="5"
+                            />
+                            <rect
+                              height="2"
+                              rx="0.5"
+                              width="10"
+                              y="10"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="line-desc"
+                        >
+                          <h3>
+                            影响行数
+                          </h3>
+                          <p
+                            class="line-text"
+                          >
+                            区别于执行计划的rows列，显示SQL的实际影响行数
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="number-cont"
+                      >
+                        <button
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            获 取
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </section>
           </section>
         </section>
       </div>
