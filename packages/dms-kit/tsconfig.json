@@ -8,6 +8,9 @@
       "~/*": [
         "./src/*"
       ],
+      "@actiontech/dms-kit": [
+        "./src"
+      ]
     },
     "declaration": true,
     "declarationMap": false,

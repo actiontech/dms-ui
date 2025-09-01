@@ -1,6 +1,6 @@
 {
   "name": "@actiontech/dms-kit",
-  "version": "0.0.2",
+  "version": "0.0.2-beta.6",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
@@ -9,6 +9,7 @@
     "build": "father build",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
+    "docs:preview": "dumi preview",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
