@@ -11,11 +11,11 @@ import {
 } from '@actiontech/shared';
 import StatusTag from '../../../SqlManagement/component/SQLEEIndex/StatusTag';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { ProjectPriorityDictionary } from '../../index.data';
 import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { Typography } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export const PendingSqlListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void

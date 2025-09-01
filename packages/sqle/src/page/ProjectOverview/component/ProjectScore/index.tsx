@@ -10,7 +10,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-import { floatRound } from '@actiontech/shared/lib/utils/Math';
+import { floatRound } from '@actiontech/dms-kit';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 
 enum EnumLevel {

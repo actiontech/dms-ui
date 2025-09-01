@@ -3,11 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import MemberModals from './Modals';
 import { Space } from 'antd';
-import {
-  PageHeader,
-  SegmentedTabs,
-  SegmentedTabsProps
-} from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
+import { SegmentedTabsProps } from '@actiontech/dms-kit';
 import { ProjectMemberStyleWrapper } from './style';
 import { MemberListTypeEnum } from './index.enum';
 import MemberList from './List/MemberList';
@@ -18,18 +15,13 @@ import { TableRefreshButton } from '@actiontech/shared/lib/components/Actiontech
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { MemberListPageHeaderActions } from './actions';
-
 const Member: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [activePage, setActivePage] = useState(MemberListTypeEnum.member_list);
-
   const onRefreshTable = () => {
     EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
   };
-
   const pageItems: SegmentedTabsProps['items'] = [
     {
       value: MemberListTypeEnum.member_list,
@@ -42,7 +34,6 @@ const Member: React.FC = () => {
       children: <MemberGroupList activePage={activePage} />
     }
   ];
-
   const renderExtraButton = () => {
     const handleClick = (modalName: ModalName) => {
       dispatch(
@@ -52,12 +43,10 @@ const Member: React.FC = () => {
         })
       );
     };
-
     const pageHeaderActions = MemberListPageHeaderActions(
       handleClick,
       activePage
     );
-
     return (
       <>
         {pageHeaderActions['add-member']}
@@ -65,7 +54,6 @@ const Member: React.FC = () => {
       </>
     );
   };
-
   return (
     <ProjectMemberStyleWrapper>
       <PageHeader
@@ -86,5 +74,4 @@ const Member: React.FC = () => {
     </ProjectMemberStyleWrapper>
   );
 };
-
 export default Member;

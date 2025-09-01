@@ -1,5 +1,5 @@
 import { Form, Space } from 'antd';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useMemo, useEffect, useCallback } from 'react';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
@@ -8,7 +8,7 @@ import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
 import { useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { RuleListFilterProps } from '../index.type';
 import { RuleListFilterStyleWrapper } from './style';
 import { RuleFilterCommonFields } from '../../../components/RuleList';

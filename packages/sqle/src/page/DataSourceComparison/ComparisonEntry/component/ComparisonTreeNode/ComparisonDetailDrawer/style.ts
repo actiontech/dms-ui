@@ -1,4 +1,4 @@
-import { BasicCollapseStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicCollapseStyleWrapper } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
 
 export const DiffSQLEditorWrapperStyleWrapper = styled('div')`

@@ -10,33 +10,25 @@ import { updateMemberModalStatus } from '../../../../store/member';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { IMemberGroupFormFields } from '../index.type';
 import MemberGroupForm from './MemberGroupForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import formatMemberRole from '../../Common/formatMemberRole';
 import { IUpdateMemberGroupParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
 import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { MemberDrawerStyledWrapper } from '../../style';
-
 const UpdateMemberGroup: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { projectID } = useCurrentProject();
-
   const [form] = Form.useForm<IMemberGroupFormFields>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const { visible, selectMemberGroup } = useSelector((state: IReduxState) => ({
     visible: state.member.modalStatus[ModalName.DMS_Update_Member_Group],
     selectMemberGroup: state.member.selectMemberGroup
   }));
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IUpdateMemberGroupParams = {
@@ -66,7 +58,6 @@ const UpdateMemberGroup: React.FC = () => {
         submitFinish();
       });
   };
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -76,7 +67,6 @@ const UpdateMemberGroup: React.FC = () => {
       })
     );
   };
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -93,7 +83,6 @@ const UpdateMemberGroup: React.FC = () => {
       });
     }
   }, [form, visible, selectMemberGroup]);
-
   return (
     <MemberDrawerStyledWrapper
       open={visible}
@@ -117,5 +106,4 @@ const UpdateMemberGroup: React.FC = () => {
     </MemberDrawerStyledWrapper>
   );
 };
-
 export default UpdateMemberGroup;

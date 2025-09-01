@@ -1,9 +1,6 @@
-import {
-  FormItemLabel,
-  CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel, CustomLabelContent } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicInputNumber, BasicToolTip } from '@actiontech/shared';
+import { EmptyBox, BasicInputNumber, BasicToolTip } from '@actiontech/dms-kit';
 import { Form } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { SqlBackupSwitcherProps } from './index.type';
@@ -13,7 +10,6 @@ import useCreationMode from '../../../../Create/hooks/useCreationMode';
 import SwitchField from './SwitchField';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import { sortBy } from 'lodash';
-
 const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   fieldPrefixPath,
   databaseInfo,
@@ -23,18 +19,13 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   isAuditing
 }) => {
   const { t } = useTranslation();
-
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-
   const { isCloneMode } = useCreationMode();
-
   const currentExecuteMode = Form.useWatch(
     [fieldPrefixPath, 'exec_mode'],
     form
   );
-
   const enableBackup = Form.useWatch([fieldPrefixPath, 'backup'], form);
-
   const getInstanceEnableBackup = useCallback(() => {
     if (isSameSqlForAll) {
       return databaseInfo.some((item) => item.enableBackup);
@@ -44,7 +35,6 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
       false
     );
   }, [databaseInfo, fieldPrefixPath, isSameSqlForAll]);
-
   const getInstanceBackupMaxRows = useCallback(() => {
     if (isSameSqlForAll) {
       const enableBackupInstances = databaseInfo.filter((i) => i.enableBackup);
@@ -58,21 +48,18 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
         ?.backupMaxRows ?? 1000
     );
   }, [databaseInfo, fieldPrefixPath, isSameSqlForAll]);
-
   const enableBackupInstanceName = useMemo(() => {
     return databaseInfo
       .filter((i) => i.enableBackup)
       .map((i) => i.instanceName)
       .join(',');
   }, [databaseInfo]);
-
   useEffect(() => {
     if (isAtFormStep && !isAuditing.value && !isCloneMode) {
       const currentEnableBackup = getInstanceEnableBackup();
       if (!form.isFieldTouched([fieldPrefixPath, 'backup'])) {
         form.setFieldValue([fieldPrefixPath, 'backup'], currentEnableBackup);
       }
-
       if (!form.isFieldTouched([fieldPrefixPath, 'backupMaxRows'])) {
         form.setFieldValue(
           [fieldPrefixPath, 'backupMaxRows'],
@@ -89,12 +76,10 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
     isAuditing,
     getInstanceBackupMaxRows
   ]);
-
   const allowBackup = useMemo(() => {
     return databaseInfo.find((item) => item.key === fieldPrefixPath)
       ?.allowBackup;
   }, [databaseInfo, fieldPrefixPath]);
-
   return (
     <EmptyBox
       if={
@@ -110,8 +95,12 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
             tips={t('execWorkflow.create.form.sqlInfo.switchSqlBackupTips')}
           />
         }
-        labelCol={{ span: 22 }}
-        wrapperCol={{ span: 2 }}
+        labelCol={{
+          span: 22
+        }}
+        wrapperCol={{
+          span: 2
+        }}
         name={[fieldPrefixPath, 'backup']}
         valuePropName="checked"
       >
@@ -149,8 +138,12 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
               )}
             />
           }
-          labelCol={{ span: 14 }}
-          wrapperCol={{ span: 10 }}
+          labelCol={{
+            span: 14
+          }}
+          wrapperCol={{
+            span: 10
+          }}
           name={[fieldPrefixPath, 'backupMaxRows']}
           initialValue={1000}
         >
@@ -160,5 +153,4 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
     </EmptyBox>
   );
 };
-
 export default SqlBackupSwitcher;

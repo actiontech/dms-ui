@@ -1,7 +1,7 @@
 import {
   lightThemeUI,
   lightThemeBasic
-} from '@actiontech/shared/lib/theme/light/basic';
+} from '@actiontech/dms-kit/es/theme/light/basic';
 import { GuidanceTheme } from '../type';
 
 export const guidanceTheme: GuidanceTheme = {

@@ -1,10 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
-import {
-  EnterpriseFeatureDisplay,
-  PageHeader,
-  SegmentedTabs
-} from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
@@ -13,19 +10,15 @@ import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
 import { RuleManagerPageHeaderActions } from './action';
-
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
-
   const { activeKey, updateActiveSegmentedKey } = useRuleManagerSegmented();
-
   const refresh = () => {
     eventEmitter.emit(EmitterKey.Refresh_Global_Rule_Template_List);
     // #if [ee]
     eventEmitter.emit(EmitterKey.Refresh_Custom_Rule_Template_List);
     // #endif
   };
-
   const renderExtraButton = () => {
     const pageHeaderActions = RuleManagerPageHeaderActions(activeKey);
     return (
@@ -40,7 +33,6 @@ const RuleManager: React.FC = () => {
       </>
     );
   };
-
   return (
     <article>
       <PageHeader
@@ -83,5 +75,4 @@ const RuleManager: React.FC = () => {
     </article>
   );
 };
-
 export default RuleManager;

@@ -1,12 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigItem } from '@actiontech/shared';
-import {
-  EditInput,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
+import { ConfigItem } from '@actiontech/dms-kit';
+import { EditInput, LabelContent } from '@actiontech/dms-kit';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
-
 export interface UrlAddressPrefixTipsProps {
   url: string | undefined;
   fieldVisible: boolean;
@@ -17,7 +13,6 @@ export interface UrlAddressPrefixTipsProps {
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
 }
-
 const UrlAddressPrefixTips = ({
   url,
   fieldVisible,
@@ -55,5 +50,4 @@ const UrlAddressPrefixTips = ({
     </>
   );
 };
-
 export default UrlAddressPrefixTips;

@@ -3,7 +3,7 @@ import { IReduxState } from '../../store';
 import {
   DMS_DEFAULT_WEB_TITLE,
   DMS_DEFAULT_WEB_LOGO_URL
-} from '@actiontech/shared/lib/data/common';
+} from '@actiontech/dms-kit';
 import { IBasicInfo } from '@actiontech/shared/lib/api/base/service/common';
 import { useDispatch } from 'react-redux';
 import { updateWebTitleAndLogo } from '../../store/system';

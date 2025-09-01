@@ -1,14 +1,10 @@
-import { ConfigItem } from '@actiontech/shared';
+import { ConfigItem } from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import {
-  EditInput,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EditInput, LabelContent } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
-
 const UserPhone: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
@@ -19,7 +15,6 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
     phoneFieldVisible,
     { setTrue: showPhoneField, setFalse: hidePhoneField }
   ] = useBoolean(false);
-
   const onSubmit = (value: string) => {
     User.UpdateCurrentUser({
       current_user: {
@@ -33,7 +28,6 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
       }
     });
   };
-
   const phoneValidator = (value: string): boolean => {
     const reg = /^1\d{10}$/;
     if (value && !reg.test(value)) {
@@ -45,7 +39,6 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
     }
     return true;
   };
-
   return (
     <ConfigItem
       label={<LabelContent>{t('dmsAccount.phone')}</LabelContent>}
@@ -64,5 +57,4 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
     />
   );
 };
-
 export default UserPhone;

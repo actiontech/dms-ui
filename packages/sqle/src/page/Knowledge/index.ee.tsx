@@ -1,25 +1,24 @@
-import { PageHeader, useTypedNavigate } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { KnowledgeStyleWrapper } from './style';
 import KnowledgeSearchBar from './Common/KnowledgeSearchBar';
 import { KnowledgeSearchBarProps } from './Common/KnowledgeSearchBar/index.type';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import KnowledgeGraph from './Graph';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
+import { ResponseCode } from '@actiontech/dms-kit';
 const KnowledgeEE: React.FC = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const onSearch: KnowledgeSearchBarProps['onSearch'] = ({ searchText }) => {
     navigate(ROUTE_PATHS.SQLE.KNOWLEDGE.refined, {
-      queries: { keywords: searchText }
+      queries: {
+        keywords: searchText
+      }
     });
   };
-
   const { data: graphData } = useRequest(() =>
     SqleApi.KnowledgeBaseService.getKnowledgeGraph({}).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
@@ -30,7 +29,6 @@ const KnowledgeEE: React.FC = () => {
       }
     })
   );
-
   return (
     <>
       <PageHeader title={t('knowledgeBase.pageTitle')} />
@@ -43,5 +41,4 @@ const KnowledgeEE: React.FC = () => {
     </>
   );
 };
-
 export default KnowledgeEE;

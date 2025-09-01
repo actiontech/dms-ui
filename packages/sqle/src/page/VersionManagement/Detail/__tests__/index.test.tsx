@@ -24,7 +24,7 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

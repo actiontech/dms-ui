@@ -2,20 +2,16 @@ import React, { useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo, ResponseCode } from '@actiontech/dms-kit';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<
     IListDBServiceTipItem[]
   >([]);
-
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDbServiceDriver();
-
   const updateDbServiceList = React.useCallback(
     (params: IListDBServiceTipsParams) => {
       setTrue();
@@ -36,12 +32,10 @@ const useDbService = () => {
     },
     [setFalse, setTrue]
   );
-
   const dbTypeList: string[] = useMemo(
     () => Array.from(new Set(dbServiceList.map((v) => v.db_type ?? ''))),
     [dbServiceList]
   );
-
   const generateCommonOptions = React.useCallback(
     (valueType: 'id' | 'name') => {
       return dbTypeList.map((type) => {
@@ -87,11 +81,9 @@ const useDbService = () => {
   const generateDbServiceIDSelectOptions = React.useCallback(() => {
     return generateCommonOptions('id');
   }, [generateCommonOptions]);
-
   const generateDbServiceSelectOptions = React.useCallback(() => {
     return generateCommonOptions('name');
   }, [generateCommonOptions]);
-
   const generateCommonDbServiceOptions = React.useCallback(
     (valueType: 'id' | 'name') => {
       return dbTypeList.map((type) => ({
@@ -114,15 +106,12 @@ const useDbService = () => {
     },
     [dbServiceList, dbTypeList, getLogoUrlByDbType]
   );
-
   const dbServiceOptions = useMemo(() => {
     return generateCommonDbServiceOptions('name');
   }, [generateCommonDbServiceOptions]);
-
   const dbServiceIDOptions = useMemo(() => {
     return generateCommonDbServiceOptions('id');
   }, [generateCommonDbServiceOptions]);
-
   return {
     dbServiceList,
     dbServiceOptions,
@@ -133,5 +122,4 @@ const useDbService = () => {
     dbServiceIDOptions
   };
 };
-
 export default useDbService;

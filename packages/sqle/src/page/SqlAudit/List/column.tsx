@@ -7,20 +7,19 @@ import {
 import { IGetSQLAuditRecordsV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
 import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
-import { floatRound, floatToPercent } from '@actiontech/shared/lib/utils/Math';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicToolTip, TypedLink } from '@actiontech/shared';
+import { floatRound, floatToPercent } from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
+import { BasicToolTip } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import SqlAuditTags from './component/SqlAuditTags';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ISQLAuditRecordExtraParams } from './index.type';
-
 export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSQLAuditRecordsV1Params,
   'project_name'
 >;
-
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   ISQLAuditRecordExtraParams,
   SqlAuditListTableFilterParamType
@@ -49,7 +48,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ]
   ]);
 };
-
 const SqlAuditListColumn: (
   projectID: string,
   projectName: string,
@@ -70,7 +68,10 @@ const SqlAuditListColumn: (
         return (
           <TypedLink
             to={ROUTE_PATHS.SQLE.SQL_AUDIT.detail}
-            params={{ projectID, sql_audit_record_id: id }}
+            params={{
+              projectID,
+              sql_audit_record_id: id
+            }}
           >
             {id}
           </TypedLink>
@@ -85,7 +86,6 @@ const SqlAuditListColumn: (
         if (!record.task?.instance_name) {
           return '-';
         }
-
         return record.instance?.db_host && record.instance.db_port ? (
           <BasicToolTip
             title={`${record.instance?.db_host}:${record.instance?.db_port}`}
@@ -171,5 +171,4 @@ const SqlAuditListColumn: (
     }
   ];
 };
-
 export default SqlAuditListColumn;

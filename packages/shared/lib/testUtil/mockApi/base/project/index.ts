@@ -9,7 +9,7 @@ import {
   mockCheckDBServicesPrivilegesData
 } from './data';
 import { AxiosResponse } from 'axios';
-import { MIMETypeEnum } from '../../../../enum';
+import { MIMETypeEnum } from '@actiontech/dms-kit';
 import Project from '../../../../api/base/service/Project';
 import DBService from '../../../../api/base/service/DBService';
 

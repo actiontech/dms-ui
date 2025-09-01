@@ -20,7 +20,7 @@ import configuration from '@actiontech/shared/lib/api/sqle/service/configuration
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import 'blob-polyfill';
 import { AxiosResponse } from 'axios';
-import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
+import { MIMETypeEnum } from '@actiontech/dms-kit';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({

@@ -16,7 +16,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DataExportWorkflowList } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

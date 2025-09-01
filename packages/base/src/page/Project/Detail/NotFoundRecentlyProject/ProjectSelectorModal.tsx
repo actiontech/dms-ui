@@ -1,13 +1,12 @@
 import { InputRef, SelectProps, Space } from 'antd';
-import { BasicButton, BasicModal } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { SelectProjectModalContentStyleWrapper } from './style';
 import ProjectSelector from '../../../Nav/SideMenu/ProjectSelector';
 import { ProjectSelectorPopupMenuStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';
 import { ProjectSelectorModalProps } from './index.type';
-import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { useRef, useState } from 'react';
-
+import CustomSelectSearchInput from '@actiontech/dms-kit/es/components/CustomSelect/CustomSelectSearchInput';
 const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
   onModalOk,
   open,
@@ -19,7 +18,6 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
   const { t } = useTranslation();
   const searchInputRef = useRef<InputRef>(null);
   const [searchValue, setSearchValue] = useState('');
-
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     return (
       <ProjectSelectorPopupMenuStyleWrapper>
@@ -37,7 +35,6 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
       </ProjectSelectorPopupMenuStyleWrapper>
     );
   };
-
   return (
     <BasicModal
       open={open}
@@ -75,5 +72,4 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
     </BasicModal>
   );
 };
-
 export default ProjectSelectorModal;

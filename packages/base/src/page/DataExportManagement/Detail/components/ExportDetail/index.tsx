@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowDetailExportResultStyleWrapper } from './style';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, BasicSegmented, EmptyBox } from '@actiontech/dms-kit';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import OverviewList from './OverviewList';
 import ExportTaskList from './ExportTaskList';
@@ -11,15 +11,12 @@ import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTa
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { PanelCardOutlined } from '@actiontech/icons';
-
 const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
-
 const ExportDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const { taskInfos, curTaskID, updateCurTaskID } =
     useDataExportDetailReduxManage();
-
   const generateCurrentTaskLabel = (
     dbServiceName?: string,
     auditLevel?: AuditTaskResV1AuditLevelEnum
@@ -27,7 +24,6 @@ const ExportDetail: React.FC = () => {
     if (!dbServiceName) {
       return '-';
     }
-
     return (
       <DbServiceSegmentedLabel
         dbServiceName={dbServiceName}
@@ -35,7 +31,6 @@ const ExportDetail: React.FC = () => {
       />
     );
   };
-
   const [
     downloadSQLsLoading,
     { setFalse: finishDownloadSQLs, setTrue: startDownloadSQLs }
@@ -51,7 +46,6 @@ const ExportDetail: React.FC = () => {
       finishDownloadSQLs();
     }
   };
-
   return (
     <WorkflowDetailExportResultStyleWrapper>
       <div className="export-result-title">
@@ -99,5 +93,4 @@ const ExportDetail: React.FC = () => {
     </WorkflowDetailExportResultStyleWrapper>
   );
 };
-
 export default ExportDetail;

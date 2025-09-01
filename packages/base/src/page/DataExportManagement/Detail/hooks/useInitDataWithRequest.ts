@@ -1,6 +1,6 @@
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useDataExportDetailReduxManage from './index.redux';
 import { useRequest } from 'ahooks';
@@ -9,7 +9,7 @@ import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const useInitDataWithRequest = () => {
   const { workflowID } =

@@ -1,10 +1,5 @@
-import {
-  ActionButton,
-  BasicButton,
-  BasicResult,
-  PageHeader,
-  useTypedParams
-} from '@actiontech/shared';
+import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
+import { ActionButton, useTypedParams } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
 import React, { useState } from 'react';
@@ -34,42 +29,34 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateWorkflowTemplate: React.FC = () => {
   const { t } = useTranslation();
-
   const [form] = useForm<ReviewNodeField>();
   const [basicForm] = useForm<BaseFormFields>();
-
   const [selectLevel, setSelectLevel] =
     useState<BaseFormFields['allowSubmitWhenLessAuditLevel']>(undefined);
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
-
   const [updateSuccess, setUpdateSuccess] = useState(false);
-
   const urlParams = useTypedParams<typeof ROUTE_PATHS.SQLE.PROGRESS.update>();
   const { projectName, projectID } = useCurrentProject();
-
   const {
     loading: getUsernameListLoading,
     updateUsernameList,
     generateUsernameSelectOption,
     usernameList
   } = useUsername();
-
   React.useEffect(() => {
-    updateUsernameList({ filter_project: projectName });
+    updateUsernameList({
+      filter_project: projectName
+    });
   }, [projectName, updateUsernameList]);
-
   const updateBaseInfo = (
     info: BaseFormFields['allowSubmitWhenLessAuditLevel']
   ) => {
     setSelectLevel(info);
   };
-
   const submitProgress = async (): Promise<
     AxiosResponse<IUpdateWorkflowTemplateV1Return>
   > => {
@@ -80,7 +67,10 @@ const UpdateWorkflowTemplate: React.FC = () => {
     }));
     const templateList: IWorkFlowStepTemplateReqV1[] = [
       ...reviewTempData,
-      { ...execSteps, type: WorkFlowStepTemplateReqV1TypeEnum.sql_execute }
+      {
+        ...execSteps,
+        type: WorkFlowStepTemplateReqV1TypeEnum.sql_execute
+      }
     ];
     startSubmit();
     return workflow
@@ -97,7 +87,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
       })
       .finally(() => submitFinish());
   };
-
   const { data: workflowTemplate, loading: getWorkflowTemplateLoading } =
     useRequest(
       () =>
@@ -124,26 +113,20 @@ const UpdateWorkflowTemplate: React.FC = () => {
         ready: !!projectName && !!urlParams.workflowName
       }
     );
-
   const [currentStep, setCurrentStep] = useState<number>(0);
-
   const [reviewSteps, setReviewSteps] = useState<IWorkFlowStepTemplateResV1[]>(
     []
   );
-
   const [execSteps, setExecSteps] = useState<IWorkFlowStepTemplateResV1>({
     assignee_user_id_list: [],
     desc: ''
   });
-
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
   };
-
   const prevStep = () => {
     setCurrentStep(currentStep - 1);
   };
-
   const updateReviewAndExecNodeInfo = (
     nodeData: IWorkFlowStepTemplateResV1
   ) => {
@@ -155,7 +138,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
       setReviewSteps(temp);
     }
   };
-
   const renderLeftStepInfo = (step: number) => {
     if (step === 0) {
       return (
@@ -194,7 +176,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
       />
     );
   };
-
   const handleAddReviewNode = () => {
     (currentStep === 0 ? basicForm : form).validateFields().then(() => {
       setReviewSteps([
@@ -209,14 +190,12 @@ const UpdateWorkflowTemplate: React.FC = () => {
       setCurrentStep(reviewSteps.length + 1);
     });
   };
-
   const handleRemoveReviewNode = () => {
     const temp = cloneDeep(reviewSteps);
     temp.splice(currentStep - 1, 1);
     setReviewSteps(temp);
     prevStep();
   };
-
   const handleReset = () => {
     setCurrentStep(0);
     updateBaseInfo(undefined);
@@ -228,7 +207,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
       type: WorkFlowStepTemplateReqV1TypeEnum.sql_execute
     });
   };
-
   const handleExchangeReviewNode = (from: number, to: number) => {
     const temp = cloneDeep(reviewSteps);
     temp.splice(from < to ? to + 1 : to, 0, temp[from]);
@@ -242,12 +220,10 @@ const UpdateWorkflowTemplate: React.FC = () => {
       setCurrentStep(from < to ? currentStep - 1 : currentStep + 1);
     }
   };
-
   const handleClickReviewNode = (index: number) => {
     const step = index < 1 ? index : index - 1;
     form.validateFields().then(() => setCurrentStep(step));
   };
-
   return (
     <WorkflowTemplateStyleWrapper>
       <Spin spinning={getWorkflowTemplateLoading}>
@@ -260,7 +236,9 @@ const UpdateWorkflowTemplate: React.FC = () => {
               actionType="navigate-link"
               link={{
                 to: ROUTE_PATHS.SQLE.PROGRESS.index,
-                params: { projectID }
+                params: {
+                  projectID
+                }
               }}
             />
           }
@@ -318,7 +296,9 @@ const UpdateWorkflowTemplate: React.FC = () => {
                 actionType="navigate-link"
                 link={{
                   to: ROUTE_PATHS.SQLE.PROGRESS.index,
-                  params: { projectID }
+                  params: {
+                    projectID
+                  }
                 }}
               />
             }
@@ -328,5 +308,4 @@ const UpdateWorkflowTemplate: React.FC = () => {
     </WorkflowTemplateStyleWrapper>
   );
 };
-
 export default UpdateWorkflowTemplate;

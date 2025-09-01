@@ -9,7 +9,7 @@ import {
   TableFilterContainerProps,
   TypeFilterElement
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { ExcludeSymbol } from '@actiontech/shared/lib/types/common.type';
+import { ExcludeSymbol } from '@actiontech/dms-kit/es/types/common.type';
 import { Tooltip, Typography } from 'antd';
 import { ColumnType } from 'antd/es/table';
 import { groupBy } from 'lodash';

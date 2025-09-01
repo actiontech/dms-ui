@@ -1,4 +1,4 @@
-import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
+import { StringDictionary } from '@actiontech/dms-kit/es/types/common.type';
 import { t } from '../../../../../locale/index';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 
@@ -16,7 +16,7 @@ import {
   getSQLEOperateStepItem
 } from './sqle';
 import { LockFilled, SnippetsFilled, UtilOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),

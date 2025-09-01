@@ -9,13 +9,13 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
 import { WebhookFormFields } from './index.type';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionControl

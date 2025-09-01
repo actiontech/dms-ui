@@ -14,7 +14,7 @@ import {
   ICreateAndAuditTaskV1Params
 } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   SqlAuditInfoFormFields,
   SqlStatementFields,

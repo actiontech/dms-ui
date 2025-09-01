@@ -18,7 +18,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 
 describe('RewrittenSuggestionDetails and RewrittenSuggestionItem', () => {
   const originalSql = `

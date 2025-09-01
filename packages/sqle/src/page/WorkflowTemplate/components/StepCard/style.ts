@@ -1,8 +1,6 @@
-import { BasicButton } from '@actiontech/shared';
-
+import { BasicButton } from '@actiontech/dms-kit';
 import { styled } from '@mui/material/styles';
 import { Card } from 'antd';
-
 export const StepCardStyleWrapper = styled(Card)`
   display: flex;
   width: 480px;
@@ -92,7 +90,6 @@ export const StepCardStyleWrapper = styled(Card)`
     }
   }
 `;
-
 export const WorkflowTemplateStepInfoStyleWrapper = styled('div')`
   padding: 40px 0;
   display: flex;
@@ -220,14 +217,12 @@ export const WorkflowTemplateStepInfoStyleWrapper = styled('div')`
     }
   }
 `;
-
 export const TemplateLevelStyleWrapper = styled('div')`
   .level-step-desc {
     width: 60px;
     margin-right: 16px;
   }
 `;
-
 export const ReviewNodeCloseButton = styled(BasicButton)`
   &.basic-button-wrapper.ant-btn.ant-btn-circle.ant-btn-icon-only {
     width: 24px;

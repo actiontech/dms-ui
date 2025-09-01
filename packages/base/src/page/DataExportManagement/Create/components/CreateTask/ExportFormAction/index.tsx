@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { ExportFormActionProps } from './index.type';
-import { BasicButton, BasicToolTip } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
 import { Space } from 'antd';
-import { FormatLanguageSupport } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { FormatLanguageSupport } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
-
 const ExportFormAction: React.FC<ExportFormActionProps> = ({
   auditAction,
   auditLoading,
@@ -36,5 +35,4 @@ const ExportFormAction: React.FC<ExportFormActionProps> = ({
     </Space>
   );
 };
-
 export default ExportFormAction;

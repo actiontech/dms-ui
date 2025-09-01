@@ -1,5 +1,5 @@
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
-import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
+import { CustomSelect } from '@actiontech/dms-kit';
+import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/dms-kit/es/components/CustomSelect/style';
 
 import { styled } from '@mui/material/styles';
 

@@ -9,8 +9,7 @@ import { t } from '../../../locale';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Typography } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const SqlManagementConfPageHeaderActions = (
   projectID: string
 ): Record<'add', ReactNode> => {
@@ -24,7 +23,9 @@ export const SqlManagementConfPageHeaderActions = (
           actionType="navigate-link"
           link={{
             to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create,
-            params: { projectID }
+            params: {
+              projectID
+            }
           }}
           text={t('managementConf.list.pageAction.enableAuditPlan')}
         />
@@ -32,7 +33,6 @@ export const SqlManagementConfPageHeaderActions = (
     )
   };
 };
-
 export const SqlManagementConfTableActions = ({
   editAction,
   deleteAction,

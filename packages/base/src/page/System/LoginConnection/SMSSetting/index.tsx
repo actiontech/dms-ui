@@ -6,7 +6,7 @@ import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { IGetSmsConfigurationReplyItem } from '@actiontech/shared/lib/api/base/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { FormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import {
@@ -16,7 +16,7 @@ import {
   ConfigSubmitButtonField,
   useConfigSwitchControls,
   CustomLabelContent
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionControl

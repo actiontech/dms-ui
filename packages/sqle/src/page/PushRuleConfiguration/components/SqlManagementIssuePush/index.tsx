@@ -5,21 +5,19 @@ import type {
 } from './index.type';
 import { useRequest } from 'ahooks';
 import ReportPushConfig from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
+import { CustomAvatar, BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
 import {
-  CustomAvatar,
-  BasicToolTip,
   ConfigModifyBtn,
   ConfigSubmitButtonField,
   ConfigSwitch,
-  EmptyBox,
   ReadOnlyConfigColumnsType,
   useConfigRender,
   useConfigSwitchControls
-} from '@actiontech/shared';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+} from '@actiontech/dms-kit';
+import { formatTime } from '@actiontech/dms-kit';
 import { useEffect, useMemo } from 'react';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
 import ConfigFields from './ConfigFields';
@@ -28,7 +26,7 @@ import {
   UpdateReportPushConfigReqV1TriggerTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import useUsername from '../../../../hooks/useUsername';
-import { getNextExecutionTimesByCronExpression } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
+import { getNextExecutionTimesByCronExpression } from '@actiontech/dms-kit/es/components/CronInput/useCron/cron.tool';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useCurrentTime from './useCurrentTime';
@@ -36,9 +34,7 @@ import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
-
 const switchFieldName: keyof SqlManagementIssuePushFields = 'enabled';
-
 const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
   config,
   refetch
@@ -48,14 +44,12 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
   const [messageApi, messageContextHolder] = message.useMessage();
   const { sharedTheme } = useThemeStyleData();
   const currentTime = useCurrentTime(60 * 1000);
-
   const {
     usernameList,
     generateUsernameSelectOption,
     updateUsernameList,
     loading: fetchUserTipsPending
   } = useUsername();
-
   const {
     form,
     renderConfigForm,
@@ -77,7 +71,6 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
       </BasicToolTip>
     )
   });
-
   const {
     configSwitchPopoverOpenState,
     generateConfigSwitchPopoverTitle,
@@ -85,7 +78,6 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
     handleConfigSwitchChange,
     hiddenConfigSwitchPopover
   } = useConfigSwitchControls(form, switchFieldName);
-
   const readonlyColumnsConfig = useMemo<
     ReadOnlyConfigColumnsType<IReportPushConfigList>
   >(() => {
@@ -168,7 +160,6 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
     t,
     usernameList
   ]);
-
   const { run: onSubmit, loading: submitPending } = useRequest(
     (configSwitchEnabled: boolean, values?: SqlManagementIssuePushFields) => {
       return ReportPushConfig.UpdateReportPushConfig({
@@ -192,27 +183,25 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
         }
       });
     },
-    { manual: true }
+    {
+      manual: true
+    }
   );
-
   const setFormDefaultValues = () => {
     form.setFieldsValue({
       minutesInterval: config?.push_frequency_cron,
       pushUserList: config?.push_user_list ?? []
     });
   };
-
   const handleClickModify = () => {
     startModify();
     setFormDefaultValues();
   };
-
   const handleClickCancel = () => {
     form.setFieldValue(switchFieldName, !!config?.enabled);
     setFormDefaultValues();
     modifyFinish();
   };
-
   const onConfigSwitchPopoverConfirm = () => {
     if (!config?.enabled && modifyFlag) {
       handleClickCancel();
@@ -221,15 +210,14 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
       onSubmit(false);
     }
   };
-
   useEffect(() => {
-    updateUsernameList({ filter_project: projectName });
+    updateUsernameList({
+      filter_project: projectName
+    });
   }, [projectName, updateUsernameList]);
-
   useEffect(() => {
     form.setFieldValue(switchFieldName, !!config?.enabled);
   }, [config?.enabled, form]);
-
   return (
     <>
       {messageContextHolder}
@@ -288,5 +276,4 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
     </>
   );
 };
-
 export default SqlManagementIssuePush;

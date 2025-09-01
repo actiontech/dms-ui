@@ -6,7 +6,7 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared/lib/components/ActionButton';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { PlusOutlined } from '@actiontech/icons';
 
 export const PipelineConfigurationListPageHeaderActions = (

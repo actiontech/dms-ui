@@ -4,10 +4,10 @@ import {
   CatchTableColumnsType
 } from '../index.type';
 import { useCallback, useEffect, useState } from 'react';
-import { eventEmitter } from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { getColumnsLabel } from '../utils';
-import LocalStorageWrapper from '../../../utils/LocalStorageWrapper';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { isEqual } from 'lodash';
 
 const useTableSettings = <

@@ -8,9 +8,9 @@ import { baseSuperRender } from '../../testUtils/superRender';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import BindUser from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

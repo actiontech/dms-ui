@@ -5,15 +5,15 @@ import {
   BasicInput,
   BasicSelect,
   CronInput,
-  EmptyBox,
-  TypedLink
-} from '@actiontech/shared';
+  EmptyBox
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   CustomLabelContent,
   FormInputBotBorder,
@@ -21,9 +21,9 @@ import {
   FormItemLabel,
   FormItemNoLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/CustomForm';
-import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
+} from '@actiontech/dms-kit';
+import { checkCron } from '@actiontech/dms-kit/es/components/CronInput/useCron/cron.tool';
+import { nameRule } from '@actiontech/dms-kit';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
@@ -31,7 +31,6 @@ import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreate
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SyncTaskFormProps } from './index.type';
 import SqlAuditFields from '../../DataSource/components/Form/SqlAuditFields';
-
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
   defaultValue,
@@ -42,18 +41,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   const { t } = useTranslation();
   const isUpdate = useMemo<boolean>(() => !!defaultValue, [defaultValue]);
   const source = Form.useWatch('source', form);
-
   const { generateFormValueByParams } = useAsyncParams();
-
   const {
     loading: getTaskSourceListLoading,
     generateTaskSourceSelectOption,
     generateTaskSourceDbTypesSelectOption,
     generateTaskSourceAdditionalParams
   } = taskSourceTips;
-
   const formParams = generateTaskSourceAdditionalParams(source);
-
   const handleChangeInstanceType = (type: string) => {
     // #if [sqle]
     form.resetFields([
@@ -67,7 +62,6 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     updateGlobalRuleTemplateList(type);
     // #endif
   };
-
   const handleChangeAuditEnabled = (check: boolean) => {
     if (!check) {
       form.setFieldsValue({
@@ -83,7 +77,6 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
       }
     }
   };
-
   const handleChangeSource = () => {
     form.setFieldsValue({
       instanceType: undefined
@@ -96,7 +89,6 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     updateGlobalRuleTemplateList,
     globalRuleTemplateList
   } = useGlobalRuleTemplate();
-
   const templateOptions = useMemo(() => {
     return globalRuleTemplateList.map((v) => ({
       key: v.rule_template_id,
@@ -145,15 +137,12 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
       updateGlobalRuleTemplateByInstanceType();
       // #endif
     };
-
     EventEmitter.subscribe(EmitterKey.DMS_SYNC_TASK_RESET_FORM, resetForm);
-
     return () => {
       EventEmitter.unsubscribe(EmitterKey.DMS_SYNC_TASK_RESET_FORM, resetForm);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValue?.db_type, form, isUpdate]);
-
   useEffect(() => {
     if (!!defaultValue) {
       form.setFieldsValue({
@@ -191,7 +180,6 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValue, form]);
-
   return (
     <Spin spinning={loading} delay={300}>
       <FormStyleWrapper
@@ -216,8 +204,12 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 },
                 ...nameRule()
               ]}
-              labelCol={{ span: 0 }}
-              wrapperCol={{ span: 24 }}
+              labelCol={{
+                span: 0
+              }}
+              wrapperCol={{
+                span: 24
+              }}
             >
               <FormInputBotBorder
                 disabled={isUpdate}
@@ -314,7 +306,11 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
 
             <Alert
               message={
-                <div style={{ fontSize: '12px' }}>
+                <div
+                  style={{
+                    fontSize: '12px'
+                  }}
+                >
                   {t('dmsSyncDataSource.syncTaskForm.helpTips')}
                   <TypedLink
                     to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
@@ -379,5 +375,4 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     </Spin>
   );
 };
-
 export default SyncTaskForm;

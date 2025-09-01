@@ -2,7 +2,7 @@ import { typeTaskItem } from '.';
 import { defaultItemKey } from '../../index.data';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import { t } from '../../../../../../locale';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { SqleTheme } from '../../../../../../types/theme.type';
 
 export const barChartLabelContent: (data: typeTaskItem) => string = (data) => {

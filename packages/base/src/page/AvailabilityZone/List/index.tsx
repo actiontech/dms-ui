@@ -1,4 +1,4 @@
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import {
   AvailabilityZonePageHeaderActions,
@@ -27,24 +27,18 @@ import { IListGatewaysParams } from '@actiontech/shared/lib/api/base/service/Gat
 import { AvailabilityZoneListColumns } from './column';
 import { usePermission } from '@actiontech/shared/lib/features';
 import { message, Space } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
+import { ResponseCode } from '@actiontech/dms-kit';
 const AvailabilityZoneList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const { tableChange, pagination } = useTableRequestParams<
     IGateway,
     IListGatewaysParams
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: gateways,
     loading: getGatewaysLoading,
@@ -62,7 +56,6 @@ const AvailabilityZoneList: React.FC = () => {
       refreshDeps: [pagination]
     }
   );
-
   const onCreate = () => {
     dispatch(
       updateAvailabilityZoneModalStatus({
@@ -71,7 +64,6 @@ const AvailabilityZoneList: React.FC = () => {
       })
     );
   };
-
   const tableActions = useMemo(() => {
     const onEdit = (record?: IGateway) => {
       dispatch(
@@ -80,9 +72,12 @@ const AvailabilityZoneList: React.FC = () => {
           status: true
         })
       );
-      dispatch(updateSelectAvailabilityZone({ availabilityZone: record }));
+      dispatch(
+        updateSelectAvailabilityZone({
+          availabilityZone: record
+        })
+      );
     };
-
     const onDelete = (record?: IGateway) => {
       DmsApi.GatewayService.DeleteGateway({
         gateway_id: record?.gateway_id ?? ''
@@ -98,7 +93,6 @@ const AvailabilityZoneList: React.FC = () => {
       AvailabilityZoneTableActions(onEdit, onDelete)
     );
   }, [dispatch, parse2TableActionPermissions, refresh, messageApi, t]);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Availability_Zone_Page,
@@ -106,9 +100,7 @@ const AvailabilityZoneList: React.FC = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   const pageHeaderActions = AvailabilityZonePageHeaderActions(onCreate);
-
   return (
     <>
       <PageHeader
@@ -137,5 +129,4 @@ const AvailabilityZoneList: React.FC = () => {
     </>
   );
 };
-
 export default AvailabilityZoneList;

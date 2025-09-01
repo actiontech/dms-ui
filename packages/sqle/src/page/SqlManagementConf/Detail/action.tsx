@@ -5,14 +5,12 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
-
 type Params = {
   exportPending: boolean;
   onExport: () => void;
   auditPending: boolean;
   onAuditImmediately: () => void;
 };
-
 export const SqlManagementConfDetailPageHeaderActions = ({
   exportPending,
   onAuditImmediately,

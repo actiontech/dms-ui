@@ -1,33 +1,28 @@
-import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
+import { BasicModal, BasicButton, BasicSelect } from '@actiontech/dms-kit';
 import { Space, Form, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { UpdateTaskBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BackupStrategyOptions } from '../../../../Common/AuditResultList/Table/index.data';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
-
 type BatchSwitchBackupStrategyModalProps = {
   taskID?: string;
   open: boolean;
   onCancel: () => void;
   currentTaskSupportedBackupPolicies?: InstanceTipResV2SupportedBackupStrategyEnum[];
 };
-
 const BatchSwitchBackupStrategyModal: React.FC<
   BatchSwitchBackupStrategyModalProps
 > = ({ taskID, open, onCancel, currentTaskSupportedBackupPolicies }) => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [form] = Form.useForm<{
     strategy: UpdateTaskBackupStrategyReqStrategyEnum;
   }>();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     onClose();
@@ -50,12 +45,10 @@ const BatchSwitchBackupStrategyModal: React.FC<
         }
       });
   };
-
   const onClose = () => {
     form.resetFields();
     onCancel();
   };
-
   const options = useMemo(() => {
     return BackupStrategyOptions.filter((i) =>
       currentTaskSupportedBackupPolicies?.includes(
@@ -63,7 +56,6 @@ const BatchSwitchBackupStrategyModal: React.FC<
       )
     );
   }, [currentTaskSupportedBackupPolicies]);
-
   return (
     <BasicModal
       open={open}
@@ -85,7 +77,14 @@ const BatchSwitchBackupStrategyModal: React.FC<
           {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicyTips')}
         </Typography.Text>
         <Form form={form} layout="vertical">
-          <Form.Item name="strategy" rules={[{ required: true }]}>
+          <Form.Item
+            name="strategy"
+            rules={[
+              {
+                required: true
+              }
+            ]}
+          >
             <BasicSelect options={options} />
           </Form.Item>
         </Form>
@@ -93,5 +92,4 @@ const BatchSwitchBackupStrategyModal: React.FC<
     </BasicModal>
   );
 };
-
 export default BatchSwitchBackupStrategyModal;

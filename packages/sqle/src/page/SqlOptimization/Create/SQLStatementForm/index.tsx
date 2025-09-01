@@ -1,25 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { useContext, useEffect } from 'react';
 import { SQLStatementFormProps, UploadTypeEnum } from '../../index.type';
-import {
-  BasicInput,
-  EmptyBox,
-  FormItemLabel,
-  ModeSwitcher
-} from '@actiontech/shared';
+import { BasicInput, EmptyBox, ModeSwitcher } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
 import { RingPieFilled } from '@actiontech/icons';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const uploadType = Form.useWatch('uploadType', form);
-
   useEffect(() => {
     form.resetFields([
       'sql',
@@ -32,7 +25,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadType]);
-
   return (
     <>
       <FormItemLabel
@@ -46,12 +38,20 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           </>
         }
         initialValue={UploadTypeEnum.sql}
-        style={{ marginBottom: 16 }}
-        wrapperCol={{ span: 24 }}
-        labelCol={{ span: 24 }}
+        style={{
+          marginBottom: 16
+        }}
+        wrapperCol={{
+          span: 24
+        }}
+        labelCol={{
+          span: 24
+        }}
       >
         <ModeSwitcher
-          rowProps={{ gutter: [10, 10] }}
+          rowProps={{
+            gutter: [10, 10]
+          }}
           options={uploadTypeOptions}
           disabled={submitLoading}
         />
@@ -107,5 +107,4 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     </>
   );
 };
-
 export default SQLStatementFormWrapper;

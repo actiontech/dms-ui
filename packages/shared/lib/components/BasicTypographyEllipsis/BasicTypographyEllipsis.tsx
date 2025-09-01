@@ -3,7 +3,7 @@ import { TypographyStyleWrapper } from './style';
 import classNames from 'classnames';
 import { EllipsisConfig } from 'antd/es/typography/Base';
 import { TypedLink } from '../TypedRouter';
-import { basicTooltipCommonProps } from '../BasicToolTip';
+import { basicTooltipCommonProps } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsisProps } from './BasicTypographyEllipsis.types';
 
 // 外层需要一个 max-width 容器 "例如：.ellipsis-column-width"

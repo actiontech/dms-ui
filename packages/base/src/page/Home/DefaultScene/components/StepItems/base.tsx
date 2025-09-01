@@ -1,9 +1,9 @@
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { t } from '../../../../../locale';
 import { DataSourceManagerSegmentedKey } from '../../../../DataSourceManagement/index.type';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 import { MemberFilled, DatabaseFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 
 export const getDatabaseManagerSteps: (
   arg: DevopsStepsProps

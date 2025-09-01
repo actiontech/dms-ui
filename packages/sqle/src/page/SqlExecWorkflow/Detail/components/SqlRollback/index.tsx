@@ -1,10 +1,6 @@
 import { SqlRollbackProps } from './index.type';
-import {
-  EmptyBox,
-  PageHeader,
-  BasicButton,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { EmptyBox, PageHeader, BasicButton } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState, useMemo } from 'react';
@@ -14,7 +10,7 @@ import {
   WorkflowRollbackSqlTableFilterParamType
 } from './columns';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { SqlRollbackTableStyleWrapper } from './style';
 import { TransferDirection } from 'antd/es/transfer';
 import { cloneDeep } from 'lodash';
@@ -40,9 +36,8 @@ import {
   updateClonedExecWorkflowBaseInfo,
   updateWorkflowRollbackSqlIds
 } from '../../../../../store/sqlExecWorkflow';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { Space, SelectProps } from 'antd';
-
 const SqlRollback: React.FC<SqlRollbackProps> = ({
   isAtRollbackStep,
   backToWorkflowDetail,
@@ -50,31 +45,22 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
   workflowInfo
 }) => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const navigate = useTypedNavigate();
-
   const [targetKeys, setTargetKeys] = useState<string[]>([]);
-
   const [selectedList, setSelectedList] = useState<ExpandedBackupSqlType[]>([]);
-
   const { pagination, tableChange, updateTableFilterInfo, tableFilterInfo } =
     useTableRequestParams<
       ExpandedBackupSqlType,
       WorkflowRollbackSqlTableFilterParamType
     >();
-
   const { updateAllSelectedFilterItem, filterContainerMeta } =
     useTableFilterContainer(
       WorkflowRollbackSqlTableColumn(),
       updateTableFilterInfo
     );
-
   const { projectName, projectID } = useCurrentProject();
-
   const { updateInstanceList, instanceIDOptions, instanceList } = useInstance();
-
   const { data, loading, mutate } = useRequest(
     () => {
       return workflow
@@ -106,7 +92,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
       ready: isAtRollbackStep
     }
   );
-
   const onChange: TableTransferProps['onChange'] = (
     nextTargetKeys: string[],
     direction: TransferDirection,
@@ -116,7 +101,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
       const selected = selectedList.filter((i) => {
         return !moveKeys.includes(i.id ?? '');
       });
-
       const clonedData = cloneDeep(data?.list ?? []);
       clonedData.forEach((i) => {
         if (moveKeys.includes(i.id ?? '')) {
@@ -153,7 +137,10 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
           ...sortedTaskSql,
           ...taskSqlGroup[key]
             .sort((a, b) => (b?.exec_order ?? 0) - (a?.exec_order ?? 0))
-            .map((item, index) => ({ ...item, rollbackOrder: index + 1 }))
+            .map((item, index) => ({
+              ...item,
+              rollbackOrder: index + 1
+            }))
         ];
       });
       setSelectedList(sortedTaskSql);
@@ -164,7 +151,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     }
     setTargetKeys(nextTargetKeys);
   };
-
   const taskInstanceIdOptions = useMemo(() => {
     const instanceNames = taskInfos?.map((i) => i.instance_name);
     const instanceIds = instanceNames?.map(
@@ -183,27 +169,35 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     });
     return instanceOptions;
   }, [taskInfos, instanceIDOptions, instanceList]);
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof ExpandedBackupSqlType, FilterCustomProps>([
-      ['instance_name', { options: taskInstanceIdOptions }],
-      ['exec_status', { options: SqlExecStatusOptions }]
+      [
+        'instance_name',
+        {
+          options: taskInstanceIdOptions
+        }
+      ],
+      [
+        'exec_status',
+        {
+          options: SqlExecStatusOptions
+        }
+      ]
     ]);
   }, [taskInstanceIdOptions]);
-
   const onUpdateSqlRemake = (id: string, remark?: string) => {
     const clonedSelectedList = cloneDeep(selectedList);
     const editItemIndex = clonedSelectedList.findIndex((i) => i.id === id) ?? 0;
     clonedSelectedList[editItemIndex].remark = remark;
     setSelectedList(clonedSelectedList);
   };
-
   const removeMultilineComments = (sql: string) => {
     return sql.replace(/\/\*/g, '--').replace(/\*\//g, '');
   };
-
   const onCreateWorkflow = () => {
-    const sqlStatement: { [key: string]: SqlStatementFields } = {};
+    const sqlStatement: {
+      [key: string]: SqlStatementFields;
+    } = {};
     let description = '';
     selectedList.forEach((i) => {
       if (i.remark) {
@@ -220,7 +214,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         instanceSchema: taskInfo.instance_schema
       };
     });
-
     taskIds.forEach((id, index) => {
       let sqlFormData = '';
       taskSqlGroup[id]?.forEach((item) => {
@@ -248,7 +241,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         desc: description
       })
     );
-
     dispatch(
       updateClonedExecWorkflowSqlAuditInfo({
         isSameSqlForAll: false,
@@ -261,20 +253,19 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         workflowRollbackSqlIds: sqlIds
       })
     );
-
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
-      params: { projectID },
+      params: {
+        projectID
+      },
       queries: {
         rollbackWorkflowId: workflowInfo?.workflow_id
       }
     });
   };
-
   const onBack = () => {
     setSelectedList([]);
     backToWorkflowDetail();
   };
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName,
@@ -282,12 +273,10 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [updateInstanceList, projectName]);
-
   useEffect(() => {
     updateAllSelectedFilterItem(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
     <EmptyBox if={isAtRollbackStep}>
       <PageHeader
@@ -341,5 +330,4 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     </EmptyBox>
   );
 };
-
 export default SqlRollback;

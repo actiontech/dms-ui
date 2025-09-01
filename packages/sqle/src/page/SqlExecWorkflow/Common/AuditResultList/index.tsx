@@ -1,5 +1,5 @@
-import { BasicSegmented, EmptyBox, BasicButton } from '@actiontech/shared';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicSegmented, EmptyBox, BasicButton } from '@actiontech/dms-kit';
+import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { AuditResultForCreateWorkflowStyleWrapper } from './style';
@@ -18,7 +18,6 @@ import {
   auditLevelDictionary,
   translateDictionaryI18nLabel
 } from '../../../../hooks/useStaticStatus/index.data';
-
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
@@ -36,22 +35,17 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     auditLevelFilterValue,
     setAuditLevelFilterValue
   } = useAuditResultFilterParams();
-
   const [currentTaskID, setCurrentTaskID] = useState<string>();
-
   const currentTask = useMemo(
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
-
   const currentTaskSupportedBackupPolicies = useMemo(() => {
     return tasksSupportedBackupPolicies?.[currentTask?.task_id ?? 0];
   }, [tasksSupportedBackupPolicies, currentTask?.task_id]);
-
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
   };
-
   const generateCurrentTaskLabel = (
     instanceName?: string,
     auditLevel?: AuditTaskResV1AuditLevelEnum
@@ -59,7 +53,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     if (!instanceName) {
       return '-';
     }
-
     return (
       <InstanceSegmentedLabel
         instanceName={instanceName}
@@ -67,13 +60,11 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       />
     );
   };
-
   useEffect(() => {
     if (typeof tasks?.[0]?.task_id !== 'undefined') {
       setCurrentTaskID(`${tasks[0].task_id}`);
     }
   }, [tasks]);
-
   return (
     <AuditResultForCreateWorkflowStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
@@ -106,7 +97,12 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
             >
               {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicy')}
             </BasicButton>
-            <Divider type="vertical" style={{ height: 28 }} />
+            <Divider
+              type="vertical"
+              style={{
+                height: 28
+              }}
+            />
           </EmptyBox>
           {/* #endif */}
           <ToggleButtonStyleWrapper
@@ -118,7 +114,12 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
             {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
 
-          <Divider type="vertical" style={{ height: 28 }} />
+          <Divider
+            type="vertical"
+            style={{
+              height: 28
+            }}
+          />
           <EmptyBox if={!!currentTaskID}>
             <DownloadRecord noDuplicate={noDuplicate} taskId={currentTaskID!} />
           </EmptyBox>
@@ -153,5 +154,4 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     </AuditResultForCreateWorkflowStyleWrapper>
   );
 };
-
 export default AuditResultList;

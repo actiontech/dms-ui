@@ -1,8 +1,8 @@
-import { ActionButton, BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { SubmitWorkflowButtonProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { InfoHexagonOutlined } from '@actiontech/icons';
-
+import { ActionButton } from '@actiontech/shared';
 const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
   loading,
   onClick,
@@ -10,7 +10,6 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
   executeSQLsIsDQL
 }) => {
   const { t } = useTranslation();
-
   if (hasExceptionAuditRule) {
     return (
       <ActionButton
@@ -23,12 +22,13 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
           title: t('dmsDataExport.create.submit.hasExceptionRule'),
           okText: t('dmsDataExport.create.submit.continueSubmission'),
           onConfirm: onClick,
-          okButtonProps: { loading }
+          okButtonProps: {
+            loading
+          }
         }}
       />
     );
   }
-
   if (!executeSQLsIsDQL) {
     return (
       <ActionButton
@@ -42,12 +42,10 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
       />
     );
   }
-
   return (
     <BasicButton loading={loading} type="primary" onClick={onClick}>
       {t('dmsDataExport.create.submit.buttonText')}
     </BasicButton>
   );
 };
-
 export default SubmitWorkflowButton;

@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { useGetLevelData } from '../../../hooks/useGetLevelData';
 import { ClockCircleOutlined } from '@actiontech/icons';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 
 const WorkflowTemplateAuthInfo: React.FC<WorkflowTemplateAuthInfoProps> = ({
   level,

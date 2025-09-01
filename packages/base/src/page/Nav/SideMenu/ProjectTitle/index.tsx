@@ -1,4 +1,4 @@
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useSystemConfig from '../../../../hooks/useSystemConfig';
 import { useTypedNavigate } from '@actiontech/shared';
 

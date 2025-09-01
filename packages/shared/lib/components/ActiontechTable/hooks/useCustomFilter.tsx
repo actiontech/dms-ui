@@ -7,10 +7,13 @@ import {
   FilterCustomProps,
   UpdateTableFilterInfoType
 } from '../index.type';
-import { CustomSelect, CustomSelectProps } from '../../CustomSelect';
+import {
+  CustomSelect,
+  CustomSelectProps,
+  CustomInput
+} from '@actiontech/dms-kit';
 import { CustomFilterRangePickerStyleWrapper } from '../components/style';
 import { SearchOutlined } from '@actiontech/icons';
-import { CustomInput } from '../../CustomInput';
 
 const useCustomFilter = () => {
   const { t } = useTranslation();

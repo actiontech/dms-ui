@@ -1,16 +1,15 @@
-import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
+import { BasicButton, BasicModal, BasicSelect } from '@actiontech/dms-kit';
 import {
   DownloadTemplateFormFields,
   DownloadTemplateModalProps
 } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Form, message } from 'antd';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useDatabaseType from '../../../../../../hooks/useDatabaseType';
 import { useEffect } from 'react';
-
 const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
   open,
   fileType,
@@ -20,7 +19,6 @@ const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
   const [form] = Form.useForm<DownloadTemplateFormFields>();
   const { dbTypeOptions, updateDriverNameList } = useDatabaseType();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { runAsync: downloadTemplate, loading: submitPending } = useRequest(
     (dbType: string) =>
       rule_template.getRuleTemplateFileV1(
@@ -28,18 +26,18 @@ const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
           instance_type: dbType,
           file_type: fileType
         },
-        { responseType: 'blob' }
+        {
+          responseType: 'blob'
+        }
       ),
     {
       manual: true
     }
   );
-
   const closeModalAndResetForm = () => {
     onClose();
     form.resetFields();
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     const hideLoading = messageApi.loading(
@@ -54,13 +52,11 @@ const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
         hideLoading();
       });
   };
-
   useEffect(() => {
     if (open) {
       updateDriverNameList();
     }
   }, [open, updateDriverNameList]);
-
   return (
     <BasicModal
       size="small"
@@ -88,7 +84,11 @@ const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
       {messageContextHolder}
       <Form form={form}>
         <FormItemLabel
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true
+            }
+          ]}
           name="dbType"
           className="has-required-style"
           label={t('ruleTemplate.importRuleTemplate.dbType')}
@@ -99,5 +99,4 @@ const DownloadTemplateModal: React.FC<DownloadTemplateModalProps> = ({
     </BasicModal>
   );
 };
-
 export default DownloadTemplateModal;

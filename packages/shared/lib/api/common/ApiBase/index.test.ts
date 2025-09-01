@@ -1,9 +1,9 @@
 import ApiBase from '.';
-import Download from '../../../utils/Download';
+import { Download } from '@actiontech/dms-kit';
 import axios from 'axios';
 import { TestMockApi } from '../../../testUtil/mockApi';
-import { eventEmitter } from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import 'blob-polyfill';
 
 const downloadSpy = jest.spyOn(Download, 'downloadByCreateElementA');

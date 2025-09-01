@@ -20,7 +20,7 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

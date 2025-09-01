@@ -2,54 +2,46 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult,
-  TypedLink
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { Form } from 'antd';
-import {
-  FormItemBigTitle,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemBigTitle, FormItemLabel } from '@actiontech/dms-kit';
 import Icon from '@ant-design/icons';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
 import FileUpload from './FileUpload';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useState } from 'react';
 import { IPreviewImportProjectsV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { importProjectListColumn } from './column';
 import { ImportProjectUploadFileWrapper } from '../style';
 import { LeftArrowOutlined, OverviewOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const ImportProject = () => {
   const { t } = useTranslation();
-
-  const [selectFileForm] = Form.useForm<{ projectsFile: File }>();
-
+  const [selectFileForm] = Form.useForm<{
+    projectsFile: File;
+  }>();
   const [showProjectsTable, { setTrue: showTable, setFalse: hideTable }] =
     useBoolean();
-
   const [
     importLoading,
     { setTrue: setImportPending, setFalse: setImportDone }
   ] = useBoolean();
-
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean(false);
-
   const [importProjects, setImportProjects] = useState<
     IPreviewImportProjectsV2[]
   >([]);
-
   const onSubmit = async () => {
     await selectFileForm.validateFields();
     setImportPending();
@@ -65,14 +57,12 @@ const ImportProject = () => {
         setImportDone();
       });
   };
-
   const resetAndHideResult = () => {
     selectFileForm.resetFields();
     hideResult();
     hideTable();
     setImportProjects([]);
   };
-
   return (
     <ImportProjectUploadFileWrapper>
       <PageHeader
@@ -191,5 +181,4 @@ const ImportProject = () => {
     </ImportProjectUploadFileWrapper>
   );
 };
-
 export default ImportProject;

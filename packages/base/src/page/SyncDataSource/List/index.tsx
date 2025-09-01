@@ -2,7 +2,7 @@ import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SyncTaskListTableColumnFactory } from './column';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 import {
   ActiontechTable,

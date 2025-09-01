@@ -1,4 +1,4 @@
-import { lightThemeUI } from '@actiontech/shared/lib/theme/light/basic';
+import { lightThemeUI } from '@actiontech/dms-kit/es/theme/light/basic';
 import { DataExportTheme } from '../type';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
