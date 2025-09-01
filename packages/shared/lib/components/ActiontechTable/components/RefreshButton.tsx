@@ -1,4 +1,4 @@
-import { BasicButton } from '../../BasicButton';
+import { BasicButton } from '@actiontech/dms-kit';
 import { TableRefreshButtonProps } from '../index.type';
 import { RefreshOutlined } from '@actiontech/icons';
 

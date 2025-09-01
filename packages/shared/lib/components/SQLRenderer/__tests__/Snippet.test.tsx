@@ -3,7 +3,7 @@ import { getBySelector } from '../../../testUtil/customQuery';
 import { superRender } from '../../../testUtil/superRender';
 import Snippet from '../component/Snippet';
 import { SQLSnippetRendererProps } from '../SQLRenderer.types';
-import Copy from '../../../utils/Copy';
+import { Copy } from '@actiontech/dms-kit';
 import { act } from '@testing-library/react';
 
 describe('test SQLRenderer.Snippet', () => {

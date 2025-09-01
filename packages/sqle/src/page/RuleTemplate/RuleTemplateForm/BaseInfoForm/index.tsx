@@ -1,22 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useCallback, useEffect, useState } from 'react';
-import { BasicButton, BasicInput, BasicSelect } from '@actiontech/shared';
+import { BasicButton, BasicInput, BasicSelect } from '@actiontech/dms-kit';
 import { Rule } from 'antd/es/form';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { nameRule } from '@actiontech/dms-kit';
 import { RuleTemplateBaseInfoFormProps } from './index.type';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import {
-  FormInputBotBorder,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormInputBotBorder, FormItemNoLabel } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { useWatch } from 'antd/es/form/Form';
 import useRuleVersionTips from '../../../../hooks/useRuleVersionTips';
-
 const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
   const { t } = useTranslation();
   const {
@@ -24,18 +20,14 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
     updateDriverNameList,
     generateDriverSelectOptions
   } = useDatabaseType();
-
   const {
     generateRuleVersionOptions,
     loading: getRuleVersionLoading,
     updateRuleVersionTips
   } = useRuleVersionTips();
-
   const selectedDbType = useWatch(['db_type'], props.form);
-
   const isUpdate = useMemo(() => !!props.defaultData, [props.defaultData]);
   const [formDefaultLoading, setFormDefaultLoading] = useState(false);
-
   const nameFormRule: () => Rule[] = useCallback(() => {
     const rule: Rule[] = [
       {
@@ -45,18 +37,15 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
         })
       }
     ];
-
     if (!isUpdate) {
       rule.push(...nameRule());
     }
     return rule;
   }, [isUpdate, t]);
-
   useEffect(() => {
     updateDriverNameList();
     updateRuleVersionTips();
   }, [props.projectName, updateDriverNameList, updateRuleVersionTips]);
-
   useEffect(() => {
     if (!!props.defaultData) {
       setFormDefaultLoading(true);
@@ -70,7 +59,6 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.defaultData]);
-
   return (
     <FormStyleWrapper
       colon={false}
@@ -92,7 +80,9 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
         name="templateDesc"
       >
         <BasicInput.TextArea
-          style={{ resize: 'none' }}
+          style={{
+            resize: 'none'
+          }}
           placeholder={t(
             'ruleTemplate.ruleTemplateForm.placeholder.templateDesc'
           )}
@@ -161,5 +151,4 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
     </FormStyleWrapper>
   );
 };
-
 export default BaseInfoForm;

@@ -1,20 +1,16 @@
-import { BasicButton, BasicToolTip } from '@actiontech/shared';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlFormatterAndSubmitterProps } from './index.type';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '@actiontech/shared/lib/utils/FormatterSQL';
+import { FormatLanguageSupport, formatterSQL } from '@actiontech/dms-kit';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
-import { FormValidateError } from '@actiontech/shared/lib/types/common.type';
-
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
+import { FormValidateError } from '@actiontech/dms-kit/es/types/common.type';
 const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   fieldPrefixPath,
   isAuditing,
@@ -27,12 +23,10 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-
   const [
     formatterLoading,
     { setFalse: finishFormatter, setTrue: startFormatter }
   ] = useBoolean();
-
   const internalSubmit = async () => {
     form
       .validateFields()
@@ -50,7 +44,6 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
         }
       });
   };
-
   const formatSql = async () => {
     const getInstanceType = (name: string) => {
       startFormatter();
@@ -68,7 +61,6 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
     const instanceName = isSameSqlForAll
       ? databaseInfo?.[0]?.instanceName
       : databaseInfo.find((v) => v.key === fieldPrefixPath)?.instanceName;
-
     if (originSql && originSql !== SQL_EDITOR_PLACEHOLDER_VALUE) {
       if (instanceName) {
         const dbType = (await getInstanceType(instanceName))?.db_type;
@@ -114,5 +106,4 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
     </FormItemNoLabel>
   );
 };
-
 export default SqlFormatterAndSubmitter;

@@ -5,7 +5,7 @@ import {
   RenderParams
 } from '@actiontech/shared/lib/testUtil/superRender';
 import { renderHook } from '@testing-library/react-hooks';
-import lightTheme from '@actiontech/shared/lib/theme/light';
+import { lightTheme } from '@actiontech/dms-kit';
 import basePackageTheme from '../theme/light';
 
 const themeData = {

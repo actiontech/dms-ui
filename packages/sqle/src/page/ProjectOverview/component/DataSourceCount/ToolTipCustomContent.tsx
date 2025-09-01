@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { DBHealthEnum } from './index.enum';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { SqleTheme } from '../../../../types/theme.type';
 
 interface IToolTipCustomContentProps {

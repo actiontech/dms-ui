@@ -4,15 +4,13 @@ import {
   ICurrentProjectAdmin,
   IProjectManagePermission
 } from '@actiontech/shared/lib/api/base/service/common';
-import { BasicTag, EmptyBox } from '@actiontech/shared';
-
+import { BasicTag, EmptyBox } from '@actiontech/dms-kit';
 interface ProjectManagePermissionsProps {
   isProjectAdmin: boolean;
   currentProjectAdmin?: ICurrentProjectAdmin;
   managePermissions?: IProjectManagePermission[];
   isGroup?: boolean;
 }
-
 const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
   isProjectAdmin,
   currentProjectAdmin,
@@ -20,7 +18,6 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
   isGroup = false
 }) => {
   const { t } = useTranslation();
-
   if (isProjectAdmin || !!currentProjectAdmin?.is_admin) {
     return (
       <EmptyBox if={!isGroup} defaultNode="ALL">
@@ -35,14 +32,15 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
           }
           title={null}
           placement="top"
-          overlayStyle={{ maxWidth: 450 }}
+          overlayStyle={{
+            maxWidth: 450
+          }}
         >
           ALL
         </Popover>
       </EmptyBox>
     );
   }
-
   if (managePermissions.length > 0) {
     return (
       <Space wrap>
@@ -51,7 +49,9 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
             if={!isGroup}
             defaultNode={
               <BasicTag
-                style={{ height: 28 }}
+                style={{
+                  height: 28
+                }}
                 size="small"
                 key={permission.uid}
               >
@@ -70,11 +70,15 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
               }
               title={null}
               placement="top"
-              overlayStyle={{ maxWidth: 450 }}
+              overlayStyle={{
+                maxWidth: 450
+              }}
               key={permission.uid}
             >
               <BasicTag
-                style={{ height: 28 }}
+                style={{
+                  height: 28
+                }}
                 size="small"
                 key={permission.uid}
               >
@@ -86,8 +90,6 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
       </Space>
     );
   }
-
   return '-';
 };
-
 export default ProjectManagePermissions;

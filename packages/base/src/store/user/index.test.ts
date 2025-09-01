@@ -9,13 +9,13 @@ import reducers, {
   updateLanguage
 } from '.';
 import { IReduxState } from '..';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
   StorageKey,
   SupportLanguage,
   SupportTheme,
   SystemRole
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 
 describe('store user', () => {
   const state: IReduxState['user'] = {

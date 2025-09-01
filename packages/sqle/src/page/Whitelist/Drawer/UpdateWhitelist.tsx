@@ -9,8 +9,8 @@ import {
   UpdateAuditWhitelistReqV1MatchTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Space, Form, message } from 'antd';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../data/EmitterKey';
 import { ModalName } from '../../../data/ModalName';
@@ -19,11 +19,9 @@ import { updateWhitelistModalStatus } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import { WhitelistFormFields } from './index.type';
 import WhitelistForm from './WhitelistForm';
-
 const UpdateWhitelist = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<WhitelistFormFields>();
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.whitelist.modalStatus[ModalName.Update_Whitelist]
@@ -36,7 +34,6 @@ const UpdateWhitelist = () => {
   const dispatch = useDispatch();
   const [createLoading, { setTrue: startCreate, setFalse: createFinish }] =
     useBoolean();
-
   const closeModal = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -46,7 +43,6 @@ const UpdateWhitelist = () => {
       })
     );
   }, [dispatch, form]);
-
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
@@ -80,7 +76,6 @@ const UpdateWhitelist = () => {
     messageApi,
     t
   ]);
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -92,7 +87,6 @@ const UpdateWhitelist = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
-
   return (
     <>
       {messageContextHolder}
@@ -121,5 +115,4 @@ const UpdateWhitelist = () => {
     </>
   );
 };
-
 export default UpdateWhitelist;

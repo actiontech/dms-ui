@@ -4,14 +4,14 @@ import dayjs from 'dayjs';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqleApi } from '@actiontech/shared/lib/api/';
 import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import { useEffect } from 'react';
 import { DateRangeEnum } from '../index.data';
 import useDateRange from './useDateRange';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 
 interface UseSqlInsightsMetricProps {
   instanceId?: string;

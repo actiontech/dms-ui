@@ -2,24 +2,22 @@ import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { useForm } from 'antd/es/form/Form';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
-import { BasicInput } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/dms-kit';
+import { BasicInput } from '@actiontech/dms-kit';
 import {
   ConfigModifyBtn,
   ConfigTestBtn,
   ConfigTestPopoverForm
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
+import { ResponseCode } from '@actiontech/dms-kit';
 export type typeConfigExtraButtons = {
   isConfigClosed: boolean;
   enabled: string | number | boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
 };
-
 const ConfigExtraButtons = ({
   isConfigClosed,
   enabled,
@@ -27,14 +25,12 @@ const ConfigExtraButtons = ({
   handleClickModify
 }: typeConfigExtraButtons) => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-  const [testForm] = useForm<{ receiveEmail?: string }>();
-
+  const [testForm] = useForm<{
+    receiveEmail?: string;
+  }>();
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-
   const testTing = useRef(false);
-
   const onTestPopoverOpen = (open: boolean) => {
     if (!enabled) {
       return;
@@ -44,7 +40,6 @@ const ConfigExtraButtons = ({
     }
     toggleTestPopoverVisible(open);
   };
-
   const handleTest = async () => {
     if (testTing.current) {
       return;
@@ -68,7 +63,9 @@ const ConfigExtraButtons = ({
           const resData = res.data?.data;
           if (resData?.is_smtp_send_normal) {
             messageApi.success(
-              t('dmsSystem.smtp.testSuccess', { email: values.receiveEmail })
+              t('dmsSystem.smtp.testSuccess', {
+                email: values.receiveEmail
+              })
             );
             testForm.resetFields();
           } else {
@@ -84,7 +81,6 @@ const ConfigExtraButtons = ({
         testForm.resetFields();
       });
   };
-
   return (
     <>
       {messageContextHolder}
@@ -101,7 +97,9 @@ const ConfigExtraButtons = ({
               <Form form={testForm} colon={false} {...formItemLayout.fullLine}>
                 <FormItemLabel
                   className="has-required-style"
-                  style={{ marginBottom: 0 }}
+                  style={{
+                    marginBottom: 0
+                  }}
                   name="receiveEmail"
                   label={t('dmsSystem.smtp.receiver')}
                   rules={[
@@ -131,5 +129,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

@@ -1,6 +1,6 @@
 import { superRenderHook } from '../../testUtil/superRender';
 import { act } from '@testing-library/react';
-import { SupportTheme } from '../../enum';
+import { SupportTheme } from '@actiontech/dms-kit';
 import useChangeTheme from '.';
 import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';
 

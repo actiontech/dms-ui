@@ -1,14 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Typography } from 'antd';
-
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { ReportStatisticsEEIndexStyleWrapper } from './style';
-
 import EEIndex from './EEIndex';
-
 const ReportStatistics = () => {
   const { t } = useTranslation();
-
   return (
     <ReportStatisticsEEIndexStyleWrapper>
       {/* #if [ce] */}
@@ -28,5 +25,4 @@ const ReportStatistics = () => {
     </ReportStatisticsEEIndexStyleWrapper>
   );
 };
-
 export default ReportStatistics;

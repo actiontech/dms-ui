@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AxiosResponse } from 'axios';
 import { useState } from 'react';
-import { getErrorMessage } from '../../../utils/Common';
+import { getErrorMessage } from '@actiontech/dms-kit';
 
 const useTableRequestError = () => {
   const [requestErrorMessage, setRequestErrorMessage] = useState('');

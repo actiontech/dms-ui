@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 import { ModalName } from '../../data/ModalName';
 
 type PipelineReduxState = {

@@ -3,28 +3,28 @@ import classNames from 'classnames';
 import { useCallback } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { Space, Spin, Form, Radio } from 'antd';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import {
   BasicButton,
   BasicResult,
   EmptyBox,
   PageHeader
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
 import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   CustomLabelContent,
   FormItemBigTitle,
   FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit';
 import Icon from '@ant-design/icons';
 import RuleTemplateForm from '../RuleTemplateForm';
 import {
@@ -34,14 +34,10 @@ import {
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 import { exportProjectRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import FileUpload from './FileUpload';
-
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
-
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
-
   const {
     ruleTemplateFormVisibility,
     selectFileForm,
@@ -70,9 +66,7 @@ const ImportRuleTemplate = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useImportRuleTemplateForm();
-
   const fileType = Form.useWatch('fileType', selectFileForm);
-
   const submit = useCallback(() => {
     startCreate();
     const baseInfo = ruleTemplateForm.getFieldsValue();
@@ -81,7 +75,10 @@ const ImportRuleTemplate = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : [],
         is_custom_rule: !!rule.is_custom_rule
       };
@@ -111,7 +108,6 @@ const ImportRuleTemplate = () => {
     nextStep,
     finishCreate
   ]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -181,7 +177,11 @@ const ImportRuleTemplate = () => {
                   <span>{t('ruleTemplate.importRuleTemplate.title')}</span>
                 </FormItemBigTitle>
                 <FormItemLabel
-                  rules={[{ required: true }]}
+                  rules={[
+                    {
+                      required: true
+                    }
+                  ]}
                   initialValue={exportProjectRuleTemplateV1ExportTypeEnum.csv}
                   name="fileType"
                   className="has-required-style"
@@ -267,5 +267,4 @@ const ImportRuleTemplate = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default ImportRuleTemplate;

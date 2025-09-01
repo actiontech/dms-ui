@@ -9,7 +9,7 @@ import {
   GetUserAuthenticationTypeEnum,
   ListDBServiceV2LastConnectionTestStatusEnum
 } from '../../../../api/base/service/common.enum';
-import { SupportLanguage } from '../../../../enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 
 export const UserInfo = {
   token: 'Dhsiwkow133jn',

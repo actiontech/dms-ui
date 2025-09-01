@@ -6,7 +6,7 @@ import cloudBeaver from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeave
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { enableSqlQueryUrlData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
 import { baseSuperRender } from '../../testUtils/superRender';
 
 describe('test base/page/CloudBeaver', () => {

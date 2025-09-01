@@ -4,56 +4,43 @@ import { useDispatch } from 'react-redux';
 import { Typography, Form } from 'antd';
 import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from '../Login/components/LoginLayout';
-import {
-  BasicButton,
-  BasicInput,
-  useTypedNavigate,
-  useTypedQuery
-} from '@actiontech/shared';
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { BasicButton, BasicInput } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
-} from '@actiontech/shared/lib/data/routePaths';
-import { LocalStorageWrapper } from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
-} from '@actiontech/shared/lib/enum';
-
+} from '@actiontech/dms-kit';
 const BindUser = () => {
   const navigate = useTypedNavigate();
-
   const { baseTheme } = useThemeStyleData();
-
   const dispatch = useDispatch();
-
   const { t } = useTranslation();
-
   const extractQueries = useTypedQuery();
   const urlParams = useMemo(() => {
     return extractQueries(ROUTE_PATHS.BASE.USER_BIND.index);
   }, [extractQueries]);
-
   useBrowserVersionTips();
-
   const loginLock = useRef(false);
-
   const concatToken = (token = '') => {
     if (!token) {
       return '';
     }
     return `Bearer ${token}`;
   };
-
   const navigateToTarget = useCallback(() => {
     const encodedTarget = urlParams?.target;
     if (encodedTarget) {
@@ -70,7 +57,6 @@ const BindUser = () => {
       navigate(ROUTE_PATHS.BASE.HOME);
     }
   }, [navigate, urlParams]);
-
   const login = (values: OauthLoginFormFields) => {
     const oauth2Token = urlParams?.oauth2_token;
     loginLock.current = true;
@@ -92,7 +78,11 @@ const BindUser = () => {
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
+          dispatch(
+            updateToken({
+              token: concatToken(res.data.data?.token)
+            })
+          );
           navigateToTarget();
           // #if [ee]
           LocalStorageWrapper.set(
@@ -106,7 +96,6 @@ const BindUser = () => {
         loginLock.current = false;
       });
   };
-
   useEffect(() => {
     const error = urlParams?.error;
     if (error) {
@@ -130,7 +119,11 @@ const BindUser = () => {
       navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
       return;
     }
-    dispatch(updateToken({ token: concatToken(token) }));
+    dispatch(
+      updateToken({
+        token: concatToken(token)
+      })
+    );
     navigateToTarget();
   }, [
     dispatch,
@@ -141,7 +134,6 @@ const BindUser = () => {
     urlParams?.error,
     urlParams?.user_exist
   ]);
-
   return (
     <LoginLayout>
       <Form onFinish={login} disabled={loginLock.current}>
@@ -212,5 +204,4 @@ const BindUser = () => {
     </LoginLayout>
   );
 };
-
 export default BindUser;

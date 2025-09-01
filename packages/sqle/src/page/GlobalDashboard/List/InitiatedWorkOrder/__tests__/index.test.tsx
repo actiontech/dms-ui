@@ -10,7 +10,7 @@ import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { paramsSerializer } from '@actiontech/shared';
+import { paramsSerializer } from '@actiontech/dms-kit';
 
 describe('sqle/GlobalDashboard/InitiatedWorkOrder', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;

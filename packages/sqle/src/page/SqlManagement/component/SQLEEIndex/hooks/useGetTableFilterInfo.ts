@@ -7,7 +7,7 @@ import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
 import { useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const useGetTableFilterInfo = () => {

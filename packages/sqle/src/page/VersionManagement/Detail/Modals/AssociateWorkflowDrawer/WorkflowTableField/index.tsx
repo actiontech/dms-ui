@@ -2,8 +2,8 @@ import { IAssociateWorkflows } from '@actiontech/shared/lib/api/sqle/service/com
 import { useTranslation } from 'react-i18next';
 import WorkflowStatus from '../../../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BasicTable, BasicTableProps } from '@actiontech/shared';
-
+import { BasicTable } from '@actiontech/dms-kit';
+import { BasicTableProps } from '@actiontech/dms-kit/es/components/BasicTable/BasicTable.types';
 const WorkflowTableField: React.FC<{
   value?: React.Key[];
   onChange?: (value: React.Key[]) => void;
@@ -11,11 +11,9 @@ const WorkflowTableField: React.FC<{
   loading: boolean;
 }> = ({ loading, workflowList, onChange, value }) => {
   const { t } = useTranslation();
-
   const onSelectChange = (keys: React.Key[]) => {
     onChange?.(keys);
   };
-
   const columns: BasicTableProps<IAssociateWorkflows>['columns'] = [
     {
       dataIndex: 'workflow_name',
@@ -36,7 +34,6 @@ const WorkflowTableField: React.FC<{
       render: (desc: string) => desc || '-'
     }
   ];
-
   return (
     <BasicTable
       loading={loading}
@@ -51,5 +48,4 @@ const WorkflowTableField: React.FC<{
     />
   );
 };
-
 export default WorkflowTableField;

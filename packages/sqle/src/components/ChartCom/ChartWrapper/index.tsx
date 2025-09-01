@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 import { Box } from '@mui/system';
 import { ChartWrapperStyleWrapper } from './style';
-import { BasicEmpty } from '@actiontech/shared';
-
+import { BasicEmpty } from '@actiontech/dms-kit';
 export interface IChartWrapper {
   loading: boolean;
   children: ReactNode;
@@ -11,11 +10,9 @@ export interface IChartWrapper {
   emptyCont?: string | ReactNode;
   onRefresh?: () => void;
 }
-
 const ChartWrapper = (props: IChartWrapper) => {
   const { children, loading, emptyCont, errorInfo, onRefresh, dataLength } =
     props;
-
   return (
     <ChartWrapperStyleWrapper className="chart-wrapper">
       {loading || !dataLength || !!errorInfo ? (
@@ -34,5 +31,4 @@ const ChartWrapper = (props: IChartWrapper) => {
     </ChartWrapperStyleWrapper>
   );
 };
-
 export default ChartWrapper;

@@ -2,24 +2,15 @@ import { Form, Typography, Space, Checkbox } from 'antd';
 import React, { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import {
-  BasicInput,
-  BasicButton,
-  BasicToolTip,
-  useTypedQuery
-} from '@actiontech/shared';
+import { BasicInput, BasicButton, BasicToolTip } from '@actiontech/dms-kit';
+import { useTypedQuery } from '@actiontech/shared';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { LoginFormProps } from '../types';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { SystemRole } from '@actiontech/shared/lib/enum';
-import {
-  DMS_REDIRECT_KEY_PARAMS_NAME,
-  ROUTE_PATHS
-} from '@actiontech/shared/lib/data/routePaths';
-
+import { SystemRole } from '@actiontech/dms-kit';
+import { DMS_REDIRECT_KEY_PARAMS_NAME, ROUTE_PATHS } from '@actiontech/dms-kit';
 const OAUTH2_LOGIN_URL = '/v1/dms/oauth2/link';
-
 const LoginForm: React.FC<LoginFormProps> = ({
   onSubmit,
   loading,
@@ -27,12 +18,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
   hidden
 }) => {
   const { t } = useTranslation();
-
   const username = Form.useWatch('username', form);
   const extractQueries = useTypedQuery();
-
   const { baseTheme } = useThemeStyleData();
-
   const { run: getOauth2Tips, data: oauthConfig } = useRequest(
     () => {
       return DmsApi.OAuth2Service.GetOauth2Tips().then(
@@ -43,7 +31,6 @@ const LoginForm: React.FC<LoginFormProps> = ({
       manual: true
     }
   );
-
   const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
     () => {
       return DmsApi.ConfigurationService.GetLoginTips().then(
@@ -54,7 +41,6 @@ const LoginForm: React.FC<LoginFormProps> = ({
       manual: true
     }
   );
-
   const oauth2LoginUrl = useMemo(() => {
     const target = extractQueries(ROUTE_PATHS.BASE.LOGIN.index)?.target;
     if (target) {
@@ -64,13 +50,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
     }
     return OAUTH2_LOGIN_URL;
   }, [extractQueries]);
-
   const renderLoginButton = () => {
     const disabledLoginButton =
       username === SystemRole.admin
         ? false
         : !!loginBasicConfig?.disable_user_pwd_login;
-
     const loginNode = (
       <BasicButton
         type="primary"
@@ -92,7 +76,6 @@ const LoginForm: React.FC<LoginFormProps> = ({
         </BasicToolTip>
       );
     }
-
     return loginNode;
   };
 
@@ -181,5 +164,4 @@ const LoginForm: React.FC<LoginFormProps> = ({
     </Form>
   );
 };
-
 export default LoginForm;

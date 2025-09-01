@@ -1,13 +1,14 @@
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SensitiveDisplay, TypedLink, BasicToolTip } from '@actiontech/shared';
+import { SensitiveDisplay, BasicToolTip } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import {
   InstanceAuditPlanInfoLastCollectionStatusEnum,
   InstanceAuditPlanInfoActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import {
   CheckCircleOutlined,
   CloseHexagonOutlined,
@@ -15,8 +16,7 @@ import {
   InfoCircleOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const confDetailOverviewColumns: (
   projectID: string,
   isPerformanceCollectScanType: (scanType?: string) => boolean
@@ -62,7 +62,6 @@ export const confDetailOverviewColumns: (
         const path = ruleTemplate.is_global_rule_template
           ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
           : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
-
         return (
           <TypedLink
             onClick={(e) => {

@@ -2,11 +2,13 @@ import { TableProps, ButtonProps, PopconfirmProps, InputProps } from 'antd';
 import { RangePickerProps } from 'antd/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { CSSProperties, Key, ReactNode } from 'react';
-import { CustomSelectProps } from '../CustomSelect';
-import { BasicButtonProps } from '../BasicButton';
 import { TypedLinkProps } from '../TypedRouter';
 import { ExcludeSymbol } from '../../types/common.type';
-import { CustomInputProps } from '../CustomInput';
+import {
+  CustomInputProps,
+  CustomSelectProps,
+  BasicButtonProps
+} from '@actiontech/dms-kit';
 
 //======================================= utils
 

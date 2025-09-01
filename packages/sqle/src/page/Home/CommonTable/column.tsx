@@ -1,15 +1,12 @@
 import { t } from '../../../locale';
-import {
-  BasicTypographyEllipsis,
-  EmptyBox,
-  TypedLink
-} from '@actiontech/shared';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
+import { formatTime } from '@actiontech/dms-kit';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BriefcaseFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 // todo TypedLink 涉及其他组件，暂时不处理
 export const commonColumn: (
@@ -28,7 +25,10 @@ export const commonColumn: (
               <BriefcaseFilled width={14} height={14} />
               <TypedLink
                 to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
-                params={{ projectID, workflowId: record.workflow_id ?? '' }}
+                params={{
+                  projectID,
+                  workflowId: record.workflow_id ?? ''
+                }}
               >
                 {text}
               </TypedLink>
@@ -66,6 +66,5 @@ export const commonColumn: (
       }
     }
   ];
-
   return column;
 };

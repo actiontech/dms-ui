@@ -9,11 +9,11 @@ import {
   useConfigRender,
   useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { WechatFormFields } from './index.type';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import {

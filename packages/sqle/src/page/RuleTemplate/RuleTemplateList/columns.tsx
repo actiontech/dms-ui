@@ -6,17 +6,12 @@ import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
 import { Space } from 'antd';
-import {
-  BasicTypographyEllipsis,
-  DatabaseTypeLogo,
-  TypedLink
-} from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ProfileSquareFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export type RuleTemplateTableParamType =
   PageInfoWithoutIndexAndSize<IGetProjectRuleTemplateListV1Params>;
-
 export const RuleTemplateTableColumn: (
   projectID: string,
   getLogoUrlByDbType: (dbType: string) => string,
@@ -33,7 +28,6 @@ export const RuleTemplateTableColumn: (
         if (!name) {
           return '';
         }
-
         const path = isGlobal
           ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
           : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;

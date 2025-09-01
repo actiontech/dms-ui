@@ -1,9 +1,8 @@
-import { BasicSwitch } from '@actiontech/shared';
+import { BasicSwitch } from '@actiontech/dms-kit';
 import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { SwitcherFieldProps } from './index.type';
-
 const SwitchField: React.FC<SwitcherFieldProps> = ({
   checked,
   onChange,
@@ -11,12 +10,10 @@ const SwitchField: React.FC<SwitcherFieldProps> = ({
   disabled = false
 }) => {
   const { t } = useTranslation();
-
   const [
     popconfirmOpen,
     { setTrue: showPopconfirm, setFalse: hidePopconfirm }
   ] = useBoolean();
-
   return (
     <Popconfirm
       title={title}
@@ -44,5 +41,4 @@ const SwitchField: React.FC<SwitcherFieldProps> = ({
     </Popconfirm>
   );
 };
-
 export default SwitchField;

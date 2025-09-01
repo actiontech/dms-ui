@@ -1,36 +1,31 @@
 import { useTranslation } from 'react-i18next';
 import { Form, Radio } from 'antd';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   BasicInput,
   BasicToolTip,
   EmptyBox,
   ReminderInformation,
-  TypedLink,
   BasicButton,
   BasicSelect
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { GitProtocolType, RepositoryConfigProps } from './index.type';
 import useRepositoryConnection from './hooks/useRepositoryConnection';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { filterOptionByLabel } from '@actiontech/dms-kit/es/components/BasicSelect/utils';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { SQLInfoFormFields } from '../../../SQLInfoForm/index.type';
-
 const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
   submitLoading
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SQLInfoFormFields>();
   const protocol = Form.useWatch('gitProtocol', form);
-
   const {
     branchOptions,
     isConnectable,
@@ -40,7 +35,6 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
     connectionErrorMsg,
     initConnectionState
   } = useRepositoryConnection();
-
   const handleChangeProtocol = () => {
     form.resetFields([
       'gitHttpUrl',
@@ -50,7 +44,6 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
     ]);
     initConnectionState();
   };
-
   const protocolOptions = [
     {
       label: 'HTTP/HTTPS',
@@ -74,7 +67,9 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
             <TypedLink
               target="_blank"
               to={ROUTE_PATHS.BASE.SYSTEM.index}
-              queries={{ active_tab: 'git_ssh_config' }}
+              queries={{
+                active_tab: 'git_ssh_config'
+              }}
             >
               {t('sqlAudit.create.sqlInfo.uploadLabelEnum.configureSsh')}
             </TypedLink>
@@ -83,7 +78,6 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
       )
     }
   ];
-
   return (
     <>
       <FormItemLabel
@@ -91,7 +85,11 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
         label={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitProtocol')}
         name="gitProtocol"
         initialValue={GitProtocolType.HTTP}
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true
+          }
+        ]}
         {...formItemLayout.spaceBetween}
       >
         <Radio.Group
@@ -222,5 +220,4 @@ const RepositoryConfig: React.FC<RepositoryConfigProps> = ({
     </>
   );
 };
-
 export default RepositoryConfig;

@@ -19,7 +19,7 @@ import sqlDEVRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRec
 import { sqlDEVRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord/data';
 import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

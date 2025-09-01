@@ -1,15 +1,13 @@
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import DBAPanel from './DBAPanel';
 import DEVPanel from './DEVPanel';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
-
 const Home = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const { data: workflowStatistics, refresh: getWorkflowStatistics } =
     useRequest(
       () =>
@@ -22,7 +20,6 @@ const Home = () => {
         refreshDeps: [projectName]
       }
     );
-
   return (
     <>
       <PageHeader title={t('dashboard.pageTitle')} />
@@ -38,9 +35,8 @@ const Home = () => {
         projectName={projectName}
       />
       {/* todo 智能扫描重构，先隐藏 
-      <AuditPlanRiskList projectName={projectName} projectID={projectID} /> */}
+       <AuditPlanRiskList projectName={projectName} projectID={projectID} /> */}
     </>
   );
 };
-
 export default Home;

@@ -8,12 +8,15 @@ import {
   updateUserUid,
   updateUserInfoFetchStatus
 } from '../../../../../base/src/store/user';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../../data/routePaths';
+import {
+  DMS_REDIRECT_KEY_PARAMS_NAME,
+  ResponseCode,
+  getErrorMessage,
+  getResponseCode
+} from '@actiontech/dms-kit';
 import { IRefreshSessionReturn } from '../../base/service/Session/index.d';
-import { ResponseCode } from '../../../enum';
-import { getErrorMessage, getResponseCode } from '../../../utils';
-import EmitterKey from '../../../data/EmitterKey';
-import { eventEmitter } from '../../../utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import { ArgsProps } from 'antd/es/notification/interface';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
 import i18n from 'i18next';

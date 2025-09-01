@@ -6,7 +6,7 @@ import {
   BasicInput,
   BasicSelect,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Form, Space } from 'antd';
 import useStaticStatus from '../../../hooks/useStaticStatus';
@@ -15,7 +15,6 @@ import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { IRuleTemplateForm } from './index.type';
 import { IRuleParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import RuleBaseInfo from '../../../components/RuleList/RuleDetailModal/RuleBaseInfo';
-
 export type IEditRuleTemplate = {
   visible: boolean;
   title: string | ReactNode;
@@ -24,15 +23,12 @@ export type IEditRuleTemplate = {
   onSubmit: (values: IRuleResV1) => void;
   submitLoading?: boolean;
 };
-
 const EditRuleTemplate = (props: IEditRuleTemplate) => {
   const { t } = useTranslation();
-
   const { visible, title, dataSource, onClosed, submitLoading } = props;
   const [form] = Form.useForm<IRuleTemplateForm>();
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
   const { generateFormValueByParams } = useAsyncParams();
-
   useEffect(() => {
     if (!!dataSource) {
       if (!!dataSource.params && dataSource.params.length > 0) {
@@ -58,12 +54,10 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form, dataSource, visible]);
-
   const onCancel = () => {
     form?.resetFields();
     onClosed();
   };
-
   const onPreSubmit = useCallback(async () => {
     const values: IRuleTemplateForm = await form.validateFields();
     const params = props.dataSource?.params?.map((item) => {
@@ -92,7 +86,6 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
       level: values.level
     });
   }, [form, props]);
-
   return (
     <BasicDrawer
       open={visible}
@@ -146,5 +139,4 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
     </BasicDrawer>
   );
 };
-
 export default EditRuleTemplate;

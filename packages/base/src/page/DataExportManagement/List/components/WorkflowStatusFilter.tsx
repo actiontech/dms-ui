@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import { DataExportStatusDictionary } from '../../Common/index.data';
-
 const WorkflowStatusFilter: React.FC<{
   status: ListDataExportWorkflowsFilterByStatusEnum | 'all';
   onChange: (status: ListDataExportWorkflowsFilterByStatusEnum | 'all') => void;
@@ -33,5 +32,4 @@ const WorkflowStatusFilter: React.FC<{
     />
   );
 };
-
 export default WorkflowStatusFilter;

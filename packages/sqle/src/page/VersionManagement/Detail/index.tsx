@@ -1,9 +1,5 @@
-import {
-  PageHeader,
-  EmptyBox,
-  useTypedNavigate,
-  useTypedParams
-} from '@actiontech/shared';
+import { PageHeader, EmptyBox } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedParams } from '@actiontech/shared';
 import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 import BackToList from '../Common/BackToList';
 import { useState, useEffect } from 'react';
@@ -37,7 +33,7 @@ import {
   useCurrentUser,
   usePermission
 } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { Spin, Space } from 'antd';
 import {
   IWorkflowDetailWithInstance,
@@ -52,26 +48,17 @@ import EmitterKey from '../../../data/EmitterKey';
 import VersionDetailModals from './Modals';
 import { StageNodeData, CustomEdgeData } from './index.type';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const VersionDetail = () => {
   const dispatch = useDispatch();
-
   const navigate = useTypedNavigate();
-
   const { versionId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
-
   const { projectName, projectID } = useCurrentProject();
-
   const { userRoles } = useCurrentUser();
-
   const { checkDbServicePermission } = usePermission();
-
   const [nodes, setNodes] = useState<Node<StageNodeData>[]>([]);
-
   const [edges, setEdges] = useState<Edge<CustomEdgeData>[]>([]);
-
   const [
     modifyWorkflowSqlStatement,
     {
@@ -79,12 +66,14 @@ const VersionDetail = () => {
       setFalse: hideModifyWorkflowSqlStatement
     }
   ] = useBoolean();
-
   const onRetry = (id: string) => {
-    dispatch(updateSelectWorkflowId({ workflowId: id }));
+    dispatch(
+      updateSelectWorkflowId({
+        workflowId: id
+      })
+    );
     showModifySqlStatementStep();
   };
-
   const onRelease = (
     stageId: number,
     workflowList: IWorkflowDetailWithInstance[]
@@ -95,7 +84,11 @@ const VersionDetail = () => {
         status: true
       })
     );
-    dispatch(updateSelectVersionStageId({ stageId }));
+    dispatch(
+      updateSelectVersionStageId({
+        stageId
+      })
+    );
     const finishedWorkflowList: IWorkflowDetailWithInstance[] = [];
     workflowList
       .filter(
@@ -121,7 +114,6 @@ const VersionDetail = () => {
       })
     );
   };
-
   const onExecute = (workflowList: IWorkflowDetailWithInstance[]) => {
     dispatch(
       updateVersionManagementModalStatus({
@@ -153,7 +145,6 @@ const VersionDetail = () => {
       })
     );
   };
-
   const onAssociateWorkflow = (stageId: number) => {
     dispatch(
       updateVersionManagementModalStatus({
@@ -161,10 +152,12 @@ const VersionDetail = () => {
         status: true
       })
     );
-
-    dispatch(updateSelectVersionStageId({ stageId }));
+    dispatch(
+      updateSelectVersionStageId({
+        stageId
+      })
+    );
   };
-
   const onOfflineExecute = (id: string) => {
     dispatch(
       updateVersionManagementModalStatus({
@@ -172,10 +165,12 @@ const VersionDetail = () => {
         status: true
       })
     );
-
-    dispatch(updateSelectWorkflowId({ workflowId: id }));
+    dispatch(
+      updateSelectWorkflowId({
+        workflowId: id
+      })
+    );
   };
-
   const onCreateNewWorkflow = (
     id?: number,
     name?: string,
@@ -187,14 +182,15 @@ const VersionDetail = () => {
       })
     );
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
-      params: { projectID },
+      params: {
+        projectID
+      },
       queries: {
         versionId: id?.toString() ?? '',
         versionName: encodeURIComponent(name ?? '')
       }
     });
   };
-
   const {
     data: versionDetail,
     loading: getVersionDetailLoading,
@@ -239,11 +235,9 @@ const VersionDetail = () => {
             if (isFirstStage) {
               return 'input';
             }
-
             if (isLastStage) {
               return 'output';
             }
-
             return undefined;
           };
           stageNameNodes.push({
@@ -253,7 +247,10 @@ const VersionDetail = () => {
               label: stage.stage_name,
               stageId: stage.stage_id ?? 0
             },
-            position: { x: index * 530, y: 0 },
+            position: {
+              x: index * 530,
+              y: 0
+            },
             sourcePosition: !isLastStage ? Position.Right : undefined,
             targetPosition: !isFirstStage ? Position.Left : undefined
           });
@@ -281,7 +278,6 @@ const VersionDetail = () => {
               0,
               waitForExecuteWorkflowIndex
             );
-
             if (waitForExecuteWorkflowUpperList.length === 0) {
               return true;
             }
@@ -294,15 +290,16 @@ const VersionDetail = () => {
               ) {
                 return true;
               }
-
               return false;
             });
           };
-
           stageActionNodes.push({
             id: `${stage.stage_id}_actionNode`,
             type: 'actionNode',
-            position: { x: index * 530, y: 40 },
+            position: {
+              x: index * 530,
+              y: 40
+            },
             data: {
               stageId: stage.stage_id ?? 0,
               onExecute: !!stage.workflow_details?.length
@@ -321,11 +318,11 @@ const VersionDetail = () => {
               if (!!currentSequenceWorkflow) {
                 return currentSequenceWorkflow;
               }
-
-              return { workflow_sequence: workflow.workflow_sequence };
+              return {
+                workflow_sequence: workflow.workflow_sequence
+              };
             });
           };
-
           stageWorkflowNodes.push({
             id: `${stage.stage_id}_workflowNode`,
             type: 'stageNode',
@@ -349,10 +346,12 @@ const VersionDetail = () => {
                 !isLastStage && !!stage.workflow_details?.length,
               versionStatus: status
             },
-            position: { x: index * 530, y: 78 }
+            position: {
+              x: index * 530,
+              y: 78
+            }
           });
         });
-
         stageNameNodes.forEach((node, index) => {
           if (index !== stageNameNodes.length - 1) {
             nodeEdges.push({
@@ -362,7 +361,6 @@ const VersionDetail = () => {
             });
           }
         });
-
         const allowRelease = (workflowList: IWorkflowDetailWithInstance[]) => {
           if (workflowList.filter((i) => !!i.status).length === 0) {
             return false;
@@ -378,16 +376,13 @@ const VersionDetail = () => {
           const finishedWorkflowIndex = exceptReleasedWorkflows.findIndex(
             (i) => i.status === WorkflowDetailWithInstanceStatusEnum.finished
           );
-
           if (finishedWorkflowIndex === -1) {
             return false;
           }
-
           const finishedWorkflowUpperList = exceptReleasedWorkflows.slice(
             0,
             finishedWorkflowIndex
           );
-
           if (finishedWorkflowUpperList.length === 0) {
             return true;
           }
@@ -402,7 +397,6 @@ const VersionDetail = () => {
             return false;
           });
         };
-
         const hasNextStageCreateWorkflowPermission = (stageId: number) => {
           const currentStageIndex = sortedStageDetail.findIndex(
             (i) => i.stage_id === stageId
@@ -440,7 +434,6 @@ const VersionDetail = () => {
             });
           }
         });
-
         setNodes([
           ...stageNameNodes,
           ...stageWorkflowNodes,
@@ -450,7 +443,6 @@ const VersionDetail = () => {
       }
     }
   );
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Version_Management_Detail,
@@ -458,7 +450,6 @@ const VersionDetail = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   return (
     <>
       <EmptyBox
@@ -508,5 +499,4 @@ const VersionDetail = () => {
     </>
   );
 };
-
 export default VersionDetail;

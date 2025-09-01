@@ -4,32 +4,25 @@ import { SqlInfoFormProps } from '../../index.type';
 import { UploadTypeEnum } from '../../../SqlAudit/Create/SQLInfoForm/index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form, Space } from 'antd';
-import { BasicButton, BasicToolTip } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '@actiontech/shared/lib/utils/FormatterSQL';
+import { FormatLanguageSupport, formatterSQL } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
-
 const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const uploadType = Form.useWatch('uploadType', form);
-
   const {
     instanceOptions,
     updateInstanceList,
     instanceList,
     loading: instanceLoading
   } = useInstance();
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName,
@@ -37,7 +30,6 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
         getInstanceTipListV2FunctionalModuleEnum.create_optimization
     });
   }, [projectName, updateInstanceList]);
-
   const formatSql = async () => {
     const values = await form.getFieldsValue();
     const dbType = instanceList.find(
@@ -48,7 +40,6 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
       sql
     });
   };
-
   return (
     <>
       <DatabaseInfo
@@ -81,5 +72,4 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
     </>
   );
 };
-
 export default SQLInfoFormItem;

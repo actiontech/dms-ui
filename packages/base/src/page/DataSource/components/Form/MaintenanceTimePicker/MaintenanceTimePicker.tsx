@@ -9,9 +9,8 @@ import {
   BasicRangePicker,
   BasicTag,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { MaintenanceTimePickerPopoverWrapper } from './style';
-
 const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
   const { value = [], onChange } = props;
   const [messageApi, contextHolder] = message.useMessage();
@@ -19,11 +18,8 @@ const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
     popoverVisible,
     { toggle: popoverVisibleChange, setFalse: closePopover }
   ] = useBoolean();
-
   const { t } = useTranslation();
-
   const [range, setRange] = useState<[Dayjs | null, Dayjs | null] | null>();
-
   const turnMomentToMaintenanceTime = (
     startMoment: Dayjs,
     endMoment: Dayjs
@@ -39,7 +35,6 @@ const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
       }
     };
   };
-
   const add = () => {
     if (range && range[0] && range[1]) {
       const newRange = turnMomentToMaintenanceTime(range[0], range[1]);
@@ -61,19 +56,15 @@ const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
     closePopover();
     setRange(null);
   };
-
   const deleteTime = (index: number) => {
     onChange?.([...value.slice(0, index), ...value.slice(index + 1)]);
   };
-
   const addZero = (num: number) => {
     return num < 10 ? `0${num}` : num;
   };
-
   const generateKey = (time: MaintenanceTimeValue) => {
     return `${time.startTime.hour}${time.startTime.minute}${time.endTime.hour}${time.endTime.minute}`;
   };
-
   return (
     <Space className="full-width-element">
       {contextHolder}
@@ -130,5 +121,4 @@ const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
     </Space>
   );
 };
-
 export default MaintenanceTimePicker;

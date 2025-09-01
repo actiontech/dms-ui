@@ -1,6 +1,6 @@
 import BasicInfoWrapper from '../../../Common/BasicInfoWrapper';
 import { AuditResultStepProps } from './index.type';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
 import BackToList from '../../../Common/BackToList';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,6 @@ import { useState, useEffect, useMemo } from 'react';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
   baseFormValues,
@@ -37,7 +36,6 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
       setTrue: openUpdateSqlAuditInfoDrawer
     }
   ] = useBoolean(false);
-
   const [
     switchBackupPolicyOpen,
     {
@@ -45,26 +43,19 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
       setFalse: closeSwitchBackupPolicyModal
     }
   ] = useBoolean();
-
   const [taskID, setTaskID] = useState<string>();
-
   const [
     currentTaskSupportedBackupPolicies,
     setCurrentTaskSupportedBackupPolicies
   ] = useState<InstanceTipResV2SupportedBackupStrategyEnum[]>();
-
   const { instanceList, updateInstanceList } = useInstance();
-
   const { projectName } = useCurrentProject();
-
   const internalCreateWorkflow = () => {
     startCreate();
-
     createAction().finally(() => {
       finishCreate();
     });
   };
-
   const tasksSupportedBackupPolicies = useMemo(() => {
     const policies: {
       [key: number]: InstanceTipResV2SupportedBackupStrategyEnum[] | undefined;
@@ -78,7 +69,6 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
     });
     return policies;
   }, [instanceList, tasks]);
-
   const onBatchSwitchBackupPolicy = (
     currentTaskID?: string,
     supportedBackupStrategy?: InstanceTipResV2SupportedBackupStrategyEnum[]
@@ -90,7 +80,9 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
 
   // #if [ee]
   useEffect(() => {
-    updateInstanceList({ project_name: projectName });
+    updateInstanceList({
+      project_name: projectName
+    });
   }, [projectName, updateInstanceList]);
   // #endif
   return (
@@ -153,5 +145,4 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
     </>
   );
 };
-
 export default AuditResultStep;

@@ -6,8 +6,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { VersionComparisonItem } from '../EnterpriseFeatureDisplay.types';
 import { CheckStrongOutlined } from '@actiontech/icons';
-import { BasicButton } from '../../BasicButton';
-import { BasicTag } from '../../BasicTag';
+import { BasicButton, BasicTag } from '@actiontech/dms-kit';
 import { versionList } from '../EnterpriseFeatureDisplay.data';
 
 const VersionComparison: React.FC = () => {

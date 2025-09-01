@@ -6,8 +6,7 @@ import {
 import { t } from '../../../locale';
 import { compressToEncodedURIComponent } from 'lz-string';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 type CreateWorkflowActionParams = {
   apiParams: IGenDatabaseDiffModifySQLsV1Params;
   comparisonInstanceID: string;
@@ -15,7 +14,6 @@ type CreateWorkflowActionParams = {
   projectID: string;
   dbExistingSchemas: string[];
 };
-
 export const CreateWorkflowForModifiedSqlAction = (
   params: CreateWorkflowActionParams
 ) => {
@@ -26,11 +24,13 @@ export const CreateWorkflowForModifiedSqlAction = (
     comparisonInstanceName,
     dbExistingSchemas
   } = params;
-
   const compressionData = compressToEncodedURIComponent(
-    JSON.stringify({ ...apiParams, comparisonInstanceName, dbExistingSchemas })
+    JSON.stringify({
+      ...apiParams,
+      comparisonInstanceName,
+      dbExistingSchemas
+    })
   );
-
   return (
     <PermissionControl
       permission={
@@ -47,8 +47,12 @@ export const CreateWorkflowForModifiedSqlAction = (
         )}
         link={{
           to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
-          params: { projectID },
-          queries: { gen_modified_sql_params: compressionData },
+          params: {
+            projectID
+          },
+          queries: {
+            gen_modified_sql_params: compressionData
+          },
           target: '_blank'
         }}
       />

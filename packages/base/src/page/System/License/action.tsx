@@ -1,11 +1,11 @@
-import { ActionButton, BasicTooltipProps } from '@actiontech/shared';
+import { ActionButton } from '@actiontech/shared';
+import { BasicTooltipProps } from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
-
 type Params = {
   collectActionTooltipProps: BasicTooltipProps;
   collectAction: {
@@ -16,7 +16,6 @@ type Params = {
     onClick: () => void;
   };
 };
-
 export const LicenseActions = (
   params: Params
 ): Record<'collect_license' | 'import_license', ReactNode> => {

@@ -2,25 +2,20 @@ import React, { useEffect } from 'react';
 import { UpdateWorkflowTemplateStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
-import { BasicSelect } from '@actiontech/shared';
+import { BasicSelect } from '@actiontech/dms-kit';
 import { BaseFormProps } from './index.type';
 import useStaticStatus from '../../../../../hooks/useStaticStatus';
 import StepButton from '../StepButton';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const BasicInfo: React.FC<BaseFormProps> = (props) => {
   const { t } = useTranslation();
-
   const { form } = props;
-
   const { getAuditLevelStatusSelectOption } = useStaticStatus();
-
   const nextStep = async () => {
     const value = await form.validateFields();
     props.updateBaseInfo(value?.allowSubmitWhenLessAuditLevel);
     props.nextStep();
   };
-
   useEffect(() => {
     if (!!props.defaultData) {
       form.setFieldsValue({
@@ -36,13 +31,11 @@ const BasicInfo: React.FC<BaseFormProps> = (props) => {
       });
     }
   }, [form, props.defaultData]);
-
   const handleChangeLevel = (
     level: WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
   ) => {
     props.updateBaseInfo(level);
   };
-
   return (
     <>
       <UpdateWorkflowTemplateStyleWrapper>
@@ -89,5 +82,4 @@ const BasicInfo: React.FC<BaseFormProps> = (props) => {
     </>
   );
 };
-
 export default BasicInfo;

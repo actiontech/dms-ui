@@ -2,33 +2,26 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect } from 'react';
 import classNames from 'classnames';
 import { Space } from 'antd';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  BasicButton,
-  PageHeader,
-  BasicResult,
-  useTypedParams
-} from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, PageHeader, BasicResult } from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
 import RuleTemplateForm from '../RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   useUpdateRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.update>();
-
   const {
     step,
     nextStep,
@@ -53,9 +46,7 @@ const UpdateRuleTemplate = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useUpdateRuleTemplateForm();
-
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
-
   const getRuleTemplate = useCallback(() => {
     rule_template
       .getProjectRuleTemplateV1({
@@ -77,11 +68,9 @@ const UpdateRuleTemplate = () => {
     setRuleTemplate,
     setFilteredRule
   ]);
-
   useEffect(() => {
     getRuleTemplate();
   }, [getRuleTemplate]);
-
   const submit = useCallback(() => {
     startSubmit();
     const baseInfo = form.getFieldsValue();
@@ -90,7 +79,10 @@ const UpdateRuleTemplate = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : [],
         is_custom_rule: !!rule.is_custom_rule
       };
@@ -111,7 +103,6 @@ const UpdateRuleTemplate = () => {
         finishSubmit();
       });
   }, [activeRule, finishSubmit, form, projectName, startSubmit, nextStep]);
-
   return (
     <>
       <PageLayoutHasFixedHeaderStyleWrapper>
@@ -204,5 +195,4 @@ const UpdateRuleTemplate = () => {
     </>
   );
 };
-
 export default UpdateRuleTemplate;

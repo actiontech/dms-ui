@@ -1,8 +1,8 @@
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import BaseInfoForm from './BaseInfoForm';
 import { CreateWorkflowFormStepProps } from './index.type';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, PageHeader, EmptyBox } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import SqlAuditInfoForm from './SqlAuditInfoForm';
 import { SqlAuditInfoFormStyleWrapper } from './style';
@@ -13,7 +13,6 @@ import { Tour } from 'antd';
 import type { TourProps } from 'antd';
 import { useState, useRef, useMemo } from 'react';
 import useCreationMode from '../../hooks/useCreationMode';
-
 const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   baseInfoForm,
   sqlAuditInfoForm,
@@ -21,14 +20,10 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
-
   const [open, setOpen] = useState<boolean>(true);
-
   const { isCloneMode } = useCreationMode();
-
   const workflowNameFieldRef = useRef<HTMLElement>(null);
   const dataSourceFieldRef = useRef<HTMLElement>(null);
-
   const tourSteps: TourProps['steps'] = useMemo(
     () => [
       {
@@ -42,13 +37,11 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
     ],
     [t]
   );
-
   const resetAllForm = () => {
     baseInfoForm.resetFields();
     sqlAuditInfoForm.resetFields();
     sharedStepDetail.resetAllSharedData();
   };
-
   const handleInstanceNameChange = useCallback(
     (name: string) => {
       if (!baseInfoForm.isFieldTouched('workflow_subject')) {
@@ -59,7 +52,6 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
     },
     [baseInfoForm]
   );
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -101,5 +93,4 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default FormStep;

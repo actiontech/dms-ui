@@ -13,7 +13,7 @@ import {
 } from './columns';
 import useInstance from '../../../hooks/useInstance';
 import useUsername from '../../../hooks/useUsername';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import {
   updatePluginAuditModalStatus,
@@ -37,20 +37,15 @@ import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
 import { usePermission } from '@actiontech/shared/lib/features';
 import { PluginAuditListActions } from './actions';
-
 const PluginAuditList = () => {
   const dispatch = useDispatch();
   const { projectName } = useCurrentProject();
-
   const { username } = useCurrentUser();
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceOptions, updateInstanceList } = useInstance();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
     useWhitelistRedux();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -63,14 +58,10 @@ const PluginAuditList = () => {
     ISqlDEVRecord,
     PluginAuditListTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const firstRequest = useRef<boolean>(true);
-
   const [showEmptyPrompt, { setTrue: setEmptyPromptShow }] = useBoolean();
-
   const { data, loading, refresh } = useRequest(
     () => {
       const params = {
@@ -99,7 +90,6 @@ const PluginAuditList = () => {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'plugin_audit_list',
@@ -107,7 +97,6 @@ const PluginAuditList = () => {
     }),
     [username]
   );
-
   const onCreateWhitelist = useCallback(
     (record?: ISqlDEVRecord) => {
       openCreateWhitelistModal();
@@ -117,7 +106,6 @@ const PluginAuditList = () => {
     },
     [openCreateWhitelistModal, updateSelectWhitelistRecord]
   );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof ISqlDEVRecord, FilterCustomProps>([
       [
@@ -129,7 +117,10 @@ const PluginAuditList = () => {
       [
         'creator',
         {
-          options: usernameOptions.map((i) => ({ ...i, value: i.text }))
+          options: usernameOptions.map((i) => ({
+            ...i,
+            value: i.text
+          }))
         }
       ],
       [
@@ -140,7 +131,6 @@ const PluginAuditList = () => {
       ]
     ]);
   }, [instanceOptions, usernameOptions]);
-
   const columns = useMemo(() => {
     const onOpenDrawer = (pluginAuditRecord: ISqlDEVRecord) => {
       dispatch(
@@ -149,33 +139,37 @@ const PluginAuditList = () => {
           status: true
         })
       );
-      dispatch(updatePluginAuditRecord({ pluginAuditRecord }));
+      dispatch(
+        updatePluginAuditRecord({
+          pluginAuditRecord
+        })
+      );
     };
-
     return PluginAuditListColumns(onOpenDrawer);
   }, [dispatch]);
-
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
       PluginAuditListActions(onCreateWhitelist)
     );
   }, [parse2TableActionPermissions, onCreateWhitelist]);
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-
   useEffect(() => {
-    updateUsernameList({ filter_project: projectName });
+    updateUsernameList({
+      filter_project: projectName
+    });
     updateInstanceList({
       project_name: projectName
     });
   }, [projectName, updateInstanceList, updateUsernameList]);
-
   return (
     <EmptyBox if={!showEmptyPrompt || loading} defaultNode={<DefaultPrompts />}>
       <ActiontechTableWrapper loading={loading} setting={tableSetting}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: loading }}
+          refreshButton={{
+            refresh,
+            disabled: loading
+          }}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -215,5 +209,4 @@ const PluginAuditList = () => {
     </EmptyBox>
   );
 };
-
 export default PluginAuditList;

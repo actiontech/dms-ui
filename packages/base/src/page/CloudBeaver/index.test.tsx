@@ -11,7 +11,7 @@ import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter'
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

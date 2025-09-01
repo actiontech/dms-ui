@@ -2,10 +2,12 @@ import {
   PageHeader,
   EmptyBox,
   HighlightCode,
-  SQLRenderer,
+  CopyIcon
+} from '@actiontech/dms-kit';
+import {
   ActionButton,
+  SQLRenderer,
   useTypedParams,
-  CopyIcon,
   parse2ReactRouterPath
 } from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
@@ -20,22 +22,17 @@ import {
 } from '../style';
 import CardWrapper from '../../../components/CardWrapper';
 import CodeBlock from '../components/CodeBlock';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
+import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
+import { jsonParse } from '@actiontech/dms-kit';
 import RecommendIndex from '../components/RecommendIndex';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const OptimizationDetail = () => {
   const { t } = useTranslation();
-
   const { projectID, projectName } = useCurrentProject();
-
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail>();
-
   const [showRewriteSql, { setTrue: showRewriteSqlTrue }] = useBoolean();
-
   const { data: optimizationDetail, loading: recordLoading } = useRequest(
     () =>
       sqlOptimization
@@ -53,7 +50,6 @@ const OptimizationDetail = () => {
       }
     }
   );
-
   return (
     <>
       <Spin spinning={recordLoading}>
@@ -217,5 +213,4 @@ const OptimizationDetail = () => {
     </>
   );
 };
-
 export default OptimizationDetail;

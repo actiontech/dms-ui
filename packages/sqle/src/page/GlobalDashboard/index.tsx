@@ -1,8 +1,5 @@
-import {
-  PageHeader,
-  SegmentedTabs,
-  SegmentedTabsProps
-} from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
+import { SegmentedTabsProps } from '@actiontech/dms-kit/es/components/SegmentedTabs/SegmentedTabs.types';
 import useDashboardFilter from './hooks/useDashboardFilter';
 import GlobalDashboardTableFilter from './components/TableFilter';
 import { useState, useMemo } from 'react';
@@ -15,10 +12,8 @@ import InitiatedWorkOrder from './List/InitiatedWorkOrder';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
-
   const {
     projectOptions,
     instanceIDOptions,
@@ -31,11 +26,9 @@ const GlobalDashBoard = () => {
     pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics
   } = useDashboardFilter();
-
   const [activeKey, setActiveKey] = useState(
     GlobalDashBoardSegmentedEnum.PendingWorkOrder
   );
-
   const onRefresh = () => {
     if (activeKey === GlobalDashBoardSegmentedEnum.PendingWorkOrder) {
       eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Work_Order);
@@ -48,7 +41,6 @@ const GlobalDashBoard = () => {
     }
     refreshStatistics();
   };
-
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
     return [
       {
@@ -108,7 +100,6 @@ const GlobalDashBoard = () => {
     pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics
   ]);
-
   return (
     <>
       <PageHeader
@@ -135,5 +126,4 @@ const GlobalDashBoard = () => {
     </>
   );
 };
-
 export default GlobalDashBoard;

@@ -4,21 +4,16 @@ import { Spin, Space } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import classNames from 'classnames';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';
-import {
-  BasicButton,
-  BasicResult,
-  PageHeader,
-  useTypedParams
-} from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { UpdateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateCustomRule: React.FC = () => {
   const { t } = useTranslation();
   const { ruleID = '' } =
@@ -34,25 +29,23 @@ const UpdateCustomRule: React.FC = () => {
     resetAll,
     onGoCustomRuleList
   } = useCustomRuleTemplateForm(true);
-
   const [updateLoading, { setTrue: startUpdate, setFalse: finishUpdate }] =
     useBoolean();
-
   const { data, loading: getCustomRuleLoading } = useRequest(
     () =>
       rule_template
-        .getCustomRuleV1({ rule_id: ruleID })
+        .getCustomRuleV1({
+          rule_id: ruleID
+        })
         .then((res) => res.data.data),
     {
       ready: !!ruleID
     }
   );
-
   const submit = useCallback(async () => {
     const baseInfo = await form.validateFields();
     const values = await editScriptForm.validateFields();
     startUpdate();
-
     rule_template
       .updateCustomRuleV1({
         rule_id: ruleID,
@@ -77,7 +70,6 @@ const UpdateCustomRule: React.FC = () => {
         finishUpdate();
       });
   }, [editScriptForm, finishUpdate, form, nextStep, ruleID, startUpdate]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -153,5 +145,4 @@ const UpdateCustomRule: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default UpdateCustomRule;

@@ -11,7 +11,7 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
 import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
 

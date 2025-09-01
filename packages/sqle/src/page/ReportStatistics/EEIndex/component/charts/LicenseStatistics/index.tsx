@@ -5,7 +5,7 @@ import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import ChartContTitle from '../../base/ChartContTitle';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import LicenseColumn from './licenseColumn';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { ILicenseUsageItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';

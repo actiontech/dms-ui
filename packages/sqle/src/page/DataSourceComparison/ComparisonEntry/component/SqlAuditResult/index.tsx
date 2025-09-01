@@ -5,21 +5,16 @@ import { SqlAuditResultStyleWrapper } from '../ComparisonTreeNode/ComparisonDeta
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { useTranslation } from 'react-i18next';
 import { Result, Spin } from 'antd';
-import {
-  BasicToolTip,
-  EmptyBox,
-  parse2ReactRouterPath
-} from '@actiontech/shared';
+import { BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
+import { parse2ReactRouterPath } from '@actiontech/shared';
 import AuditExceptionItem from '../../../../../components/AuditResultMessage/AuditExceptionItem';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 type Props = {
   auditResults: IAuditResultItem[];
   instanceType: string;
   auditError?: string;
   shouldFetchRules: boolean;
 };
-
 const AuditResult: React.FC<Props> = ({
   auditResults,
   instanceType,
@@ -27,13 +22,11 @@ const AuditResult: React.FC<Props> = ({
   shouldFetchRules
 }) => {
   const { t } = useTranslation();
-
   const resultDataIsEmpty = useMemo(() => {
     return (
       (Array.isArray(auditResults) && !auditResults.length) || !auditResults
     );
   }, [auditResults]);
-
   const { auditResultWithNormalLevel, auditResultWithAuditException } =
     useMemo(() => {
       const normalLevel: IAuditResultItem[] = [];
@@ -50,13 +43,11 @@ const AuditResult: React.FC<Props> = ({
         auditResultWithNormalLevel: normalLevel
       };
     }, [auditResults]);
-
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     auditResultWithNormalLevel,
     instanceType,
     shouldFetchRules && !auditError
   );
-
   if (auditError) {
     return (
       <Result
@@ -66,11 +57,9 @@ const AuditResult: React.FC<Props> = ({
       />
     );
   }
-
   if (resultDataIsEmpty) {
     return <AuditResultMessage styleClass="result-item" />;
   }
-
   return (
     <Spin spinning={loading} delay={300}>
       <SqlAuditResultStyleWrapper>
@@ -147,5 +136,4 @@ const AuditResult: React.FC<Props> = ({
     </Spin>
   );
 };
-
 export default AuditResult;

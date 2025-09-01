@@ -1,15 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import { BasicInput } from '@actiontech/dms-kit';
 import {
-  BasicInput,
   CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared';
-import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
-
+} from '@actiontech/dms-kit';
+import { workflowNameRule } from '@actiontech/dms-kit';
 const VersionBaseInfo: React.FC = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemSubTitle>
@@ -31,8 +29,12 @@ const VersionBaseInfo: React.FC = () => {
               name: t('versionManagement.form.name')
             })
           },
-          { validator: workflowNameRule() },
-          { max: 59 }
+          {
+            validator: workflowNameRule()
+          },
+          {
+            max: 59
+          }
         ]}
       >
         <BasicInput />
@@ -56,5 +58,4 @@ const VersionBaseInfo: React.FC = () => {
     </>
   );
 };
-
 export default VersionBaseInfo;

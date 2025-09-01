@@ -1,6 +1,6 @@
 import { Popover, Space } from 'antd';
 import { DownloadRecordProps } from './index.type';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -12,7 +12,7 @@ import {
   PanelCardOutlined,
   DownArrowLineOutlined
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 // import { useCurrentProject } from '@actiontech/shared/lib/features';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
@@ -29,18 +29,21 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
       {
         task_id: taskId
       },
-      { responseType: 'blob' }
+      {
+        responseType: 'blob'
+      }
     );
     setOpen(false);
   };
-
   const downloadReport = () => {
     task.downloadAuditTaskSQLReportV1(
       {
         task_id: taskId,
         no_duplicate: noDuplicate
       },
-      { responseType: 'blob' }
+      {
+        responseType: 'blob'
+      }
     );
     setOpen(false);
   };
@@ -79,12 +82,11 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
         {/* <div className="download-record-item" onClick={downloadRollbackSql}>
           <PanelCardOutlined className="download-record-item-icon" />
           {t('execWorkflow.audit.downloadRollbackSql')}
-        </div> */}
+         </div> */}
         {/* #endif */}
       </DownloadDropdownStyleWrapper>
     );
   };
-
   return (
     <Popover
       open={open}
@@ -112,5 +114,4 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
     </Popover>
   );
 };
-
 export default DownloadRecord;

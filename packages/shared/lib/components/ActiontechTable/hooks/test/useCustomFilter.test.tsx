@@ -1,7 +1,7 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
 import useCustomFilter from '../useCustomFilter';
 import { TypeFilterElement } from '../../index.type';
-import { CustomInputProps } from '../../../CustomInput';
+import { CustomInputProps } from '@actiontech/dms-kit';
 
 describe('lib/ActiontechTable-hooks', () => {
   beforeEach(() => {

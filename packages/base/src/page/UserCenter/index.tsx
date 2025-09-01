@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import {
-  PageHeader,
-  SegmentedTabs,
-  SegmentedTabsProps
-} from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
+import { SegmentedTabsProps } from '@actiontech/dms-kit';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -18,18 +15,13 @@ import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { UserCenterPageHeaderActions } from './action';
-
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [activePage, setActivePage] = useState(UserCenterListEnum.user_list);
-
   const onRefreshTable = () => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
-
   const pageItems: SegmentedTabsProps['items'] = [
     {
       value: UserCenterListEnum.user_list,
@@ -47,7 +39,6 @@ const UserCenter: React.FC = () => {
       children: <PermissionList activePage={activePage} />
     }
   ];
-
   const renderExtraButton = () => {
     const handleClick = (modalName: ModalName) => {
       dispatch(
@@ -57,12 +48,10 @@ const UserCenter: React.FC = () => {
         })
       );
     };
-
     const pageHeaderActions = UserCenterPageHeaderActions(
       activePage,
       handleClick
     );
-
     return (
       <>
         {pageHeaderActions['add_user']}
@@ -70,11 +59,9 @@ const UserCenter: React.FC = () => {
       </>
     );
   };
-
   const handleTabChange = (key: UserCenterListEnum) => {
     setActivePage(key);
   };
-
   return (
     <section>
       <PageHeader
@@ -99,5 +86,4 @@ const UserCenter: React.FC = () => {
     </section>
   );
 };
-
 export default UserCenter;

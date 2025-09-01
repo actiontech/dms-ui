@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Card } from 'antd';
 import { SQLStatisticsWrapper } from './style';
 import { useMemo } from 'react';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 
 export interface ISQLStatisticsProps {
   loading: boolean;

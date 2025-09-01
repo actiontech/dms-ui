@@ -1,4 +1,4 @@
-import { BasicDrawer } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/dms-kit';
 import {
   UpdateBaseInfoFormStyleWrapper,
   UpdateWorkflowFormTitleStyleWrapper,
@@ -17,7 +17,6 @@ import { UpdateFormDrawerProps } from './index.type';
 import { SqlAuditInfoFormProps } from '../../FormStep/SqlAuditInfoForm/index.type';
 import BaseInfoFormItem from '../../FormStep/BaseInfoForm/BaseInfoFormItem';
 import SqlAuditInfoFormItem from '../../FormStep/SqlAuditInfoForm/SqlAuditInfoFormItem';
-
 const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
   open,
   onClose,
@@ -31,15 +30,12 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
   const syncDataReady = useRef(false);
   const [baseInfoForm] = useForm<WorkflowBaseInfoFormFields>();
   const [sqlAuditInfoForm] = useForm<SqlAuditInfoFormFields>();
-
   const closeHandle = () => {
     if (sharedStepDetail.isAuditing.value) {
       return;
     }
-
     onClose();
   };
-
   const internalSubmit: SqlAuditInfoFormProps['auditAction'] = async (
     values
   ) => {
@@ -48,13 +44,16 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
       onClose();
     });
   };
-
   return (
     <BasicDrawer
       afterOpenChange={(_open) => {
         if (_open && !syncDataReady.current) {
-          baseInfoForm.setFieldsValue({ ...baseFormValues });
-          sqlAuditInfoForm.setFieldsValue({ ...sqlAuditInfoFormValues });
+          baseInfoForm.setFieldsValue({
+            ...baseFormValues
+          });
+          sqlAuditInfoForm.setFieldsValue({
+            ...sqlAuditInfoFormValues
+          });
           syncDataReady.current = true;
         }
       }}
@@ -77,7 +76,11 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
           <BaseInfoFormItem slot={<BaseInfoTag />} />
         </UpdateBaseInfoFormStyleWrapper>
 
-        <Divider style={{ marginTop: 12 }} />
+        <Divider
+          style={{
+            marginTop: 12
+          }}
+        />
 
         <UpdateSqlAuditInfoFormStyleWrapper
           labelAlign="left"
@@ -97,5 +100,4 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
     </BasicDrawer>
   );
 };
-
 export default UpdateFormDrawer;

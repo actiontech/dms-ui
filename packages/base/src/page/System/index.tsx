@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Row } from 'antd';
-import { BasicSegmented, PageHeader, useTypedQuery } from '@actiontech/shared';
+import { BasicSegmented, PageHeader } from '@actiontech/dms-kit';
+import { useTypedQuery } from '@actiontech/shared';
 import { SystemStyleWrapper } from './style';
 import { initSystemModalStatus } from '../../store/system';
 import { ModalName } from '../../data/ModalName';
@@ -15,14 +16,11 @@ import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
 import GitSSHConfig from './GitSSHConfig';
 import DatabaseAccountPasswordPolicyForm from './DatabaseAccountPasswordPolicy';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const System = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
   const extractQueries = useTypedQuery();
-
   const options = useMemo(
     () => [
       // #if [sqle]
@@ -43,7 +41,6 @@ const System = () => {
         value: SystemSegmentedKeyEnum.LoginConnection,
         components: <LoginConnection />
       },
-
       // #if [sqle]
       {
         label: t('dmsSystem.tabPaneTitle.globalConfiguration'),
@@ -79,13 +76,10 @@ const System = () => {
     ],
     [t]
   );
-
   const [activeTabKey, setActiveTabKey] = useState(options[0].value);
-
   const renderActiveTab = useCallback(() => {
     return options.find((item) => item.value === activeTabKey)?.components;
   }, [activeTabKey, options]);
-
   useEffect(() => {
     const urlSearchParams = extractQueries(ROUTE_PATHS.BASE.SYSTEM.index);
     if (urlSearchParams && urlSearchParams.active_tab) {
@@ -122,5 +116,4 @@ const System = () => {
     </SystemStyleWrapper>
   );
 };
-
 export default System;

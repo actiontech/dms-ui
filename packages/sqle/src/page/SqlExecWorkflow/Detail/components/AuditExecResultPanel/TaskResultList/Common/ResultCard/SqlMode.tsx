@@ -2,13 +2,12 @@ import {
   BasicButton,
   BasicTag,
   BasicToolTip,
-  Copy,
   EmptyBox,
-  SQLRenderer,
   SegmentedTabs
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { Copy, ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { Divider, Space, Spin, message } from 'antd';
 import { useState, useMemo } from 'react';
@@ -23,7 +22,7 @@ import { TasksResultCardStyleWrapper } from './style';
 import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { TaskResultContentTypeEnum } from './index.data';
 import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
 import {
@@ -32,10 +31,9 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/dms-kit';
 import AuditExceptionTree from './components/AuditExceptionTree';
 import { IAuditResultItem } from '../../../../../../../../components/ReportDrawer/index.type';
-
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
   taskId,
@@ -43,17 +41,12 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   ...props
 }) => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { sqleTheme } = useThemeStyleData();
-
   const [loading, { setTrue: updateDescPending, setFalse: updateDescDone }] =
     useBoolean();
-
   const [currentContentKey, setCurrentContentKey] =
     useState<TaskResultContentTypeEnum>(TaskResultContentTypeEnum.exec_sql);
-
   const { auditResultWithNormalLevel, auditResultWithAuditException } =
     useMemo(() => {
       const normalLevel: IAuditResultItem[] = [];
@@ -70,12 +63,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
         auditResultWithNormalLevel: normalLevel
       };
     }, [props?.audit_result]);
-
   const onCopyExecSql = () => {
     Copy.copyTextByTextarea(props.exec_sql ?? '');
     messageApi.success(t('common.copied'));
   };
-
   const onClickAnalyze = () => {
     window.open(
       parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
@@ -87,7 +78,6 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       })
     );
   };
-
   const updateSqlDescribe = (sqlDescribe: string) => {
     updateDescPending();
     task
@@ -105,7 +95,6 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
         updateDescDone();
       });
   };
-
   const formattedRollbackSql = useMemo(() => {
     try {
       return props.rollback_sqls
@@ -116,7 +105,6 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       return props.rollback_sqls?.join('\n');
     }
   }, [props.rollback_sqls, props.dbType]);
-
   const sqlBackupResult = useMemo(() => {
     if (props.backup_result) {
       return props.backup_result;
@@ -133,7 +121,6 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       ? t('execWorkflow.audit.table.backupExecuteBeforeTips')
       : '';
   }, [props.taskStatus, props.backup_result, t]);
-
   return (
     <TasksResultCardStyleWrapper>
       {contextHolder}
@@ -313,5 +300,4 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
     </TasksResultCardStyleWrapper>
   );
 };
-
 export default SqlMode;

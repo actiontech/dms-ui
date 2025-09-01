@@ -9,13 +9,12 @@ import { updateMemberModalStatus } from '../../../../store/member';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { IMemberGroupFormFields } from '../index.type';
 import MemberGroupForm from './MemberGroupForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAddMemberGroupParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
 import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { MemberDrawerStyledWrapper } from '../../style';
-
 const AddMemberGroup: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ const AddMemberGroup: React.FC = () => {
     (state: IReduxState) =>
       state.member.modalStatus[ModalName.DMS_Add_Member_Group]
   );
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IAddMemberGroupParams = {
@@ -58,7 +56,6 @@ const AddMemberGroup: React.FC = () => {
         submitFinish();
       });
   };
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -68,7 +65,6 @@ const AddMemberGroup: React.FC = () => {
       })
     );
   };
-
   return (
     <MemberDrawerStyledWrapper
       open={visible}
@@ -92,5 +88,4 @@ const AddMemberGroup: React.FC = () => {
     </MemberDrawerStyledWrapper>
   );
 };
-
 export default AddMemberGroup;

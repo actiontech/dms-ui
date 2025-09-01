@@ -2,7 +2,7 @@ import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExp
 import EmitterKey from '../../../../data/EmitterKey';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { MessageInstance } from 'antd/es/message/interface';

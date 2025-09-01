@@ -13,7 +13,7 @@ import {
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

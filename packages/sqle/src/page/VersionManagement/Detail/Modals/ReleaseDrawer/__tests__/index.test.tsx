@@ -19,7 +19,7 @@ import {
   instanceSchemasMockData
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {
