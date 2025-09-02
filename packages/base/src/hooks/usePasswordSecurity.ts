@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import { useCallback, useEffect, useRef } from 'react';
 import { Modal } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { LocalStorageWrapper, useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { StorageKey } from '@actiontech/shared/lib/enum';
-import { useSelector, useDispatch } from 'react-redux';
-import { IReduxState } from '../store';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateIsFirstLogin, updatePasswordSecurity } from '../store/user';
+import { IReduxState } from '../store';
 
 /**
  * 密码安全相关hooks
@@ -15,7 +16,6 @@ import { updateIsFirstLogin, updatePasswordSecurity } from '../store/user';
 export const usePasswordSecurity = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
-  const [modal, modalContextHolder] = Modal.useModal();
   const dispatch = useDispatch();
   const modalWarningRef = useRef<any>(null);
   const modalConfirmRef = useRef<any>(null);
@@ -27,6 +27,7 @@ export const usePasswordSecurity = () => {
       passwordExpiryDays: state.user.passwordExpiryDays
     })
   );
+
   /**
    * 处理强制修改密码弹窗
    */
@@ -42,36 +43,37 @@ export const usePasswordSecurity = () => {
   /**
    * 检查并显示强制修改密码弹窗
    */
-  const checkForcePasswordChange = useCallback(() => {
-    if (modalWarningRef.current) {
-      return true;
-    }
-    if (isFirstLogin || passwordExpired) {
-      let title = '';
-      let content = '';
+  const checkForcePasswordChange = useCallback(
+    (isFirstLogin: boolean, passwordExpired: boolean) => {
+      console.log(isFirstLogin, passwordExpired);
+      if (isFirstLogin || passwordExpired) {
+        let title = '';
+        let content = '';
 
-      if (isFirstLogin) {
-        title = t('dmsAccount.modifyPassword.forceChangeTitle');
-        content = t('dmsAccount.modifyPassword.forceChangeDesc');
-      } else if (passwordExpired) {
-        title = t('dmsAccount.modifyPassword.passwordExpiryTitle');
-        content = t('dmsAccount.modifyPassword.passwordExpiryDesc');
+        if (isFirstLogin) {
+          title = t('dmsAccount.modifyPassword.forceChangeTitle');
+          content = t('dmsAccount.modifyPassword.forceChangeDesc');
+        } else if (passwordExpired) {
+          title = t('dmsAccount.modifyPassword.passwordExpiryTitle');
+          content = t('dmsAccount.modifyPassword.passwordExpiryDesc');
+        }
+
+        modalWarningRef.current = Modal.warning({
+          title,
+          content,
+          okText: t('dmsAccount.modifyPassword.button'),
+          onOk: handleForcePasswordChange,
+          closable: false,
+          maskClosable: false,
+          centered: true
+        });
+
+        return true;
       }
-
-      modalWarningRef.current = modal.warning({
-        title,
-        content,
-        okText: t('dmsAccount.modifyPassword.button'),
-        onOk: handleForcePasswordChange,
-        closable: false,
-        maskClosable: false,
-        centered: true
-      });
-
-      return true;
-    }
-    return false;
-  }, [isFirstLogin, passwordExpired, modal, t, handleForcePasswordChange]);
+      return false;
+    },
+    [t, handleForcePasswordChange]
+  );
 
   /**
    * 处理密码过期提醒弹窗
@@ -94,37 +96,38 @@ export const usePasswordSecurity = () => {
   /**
    * 检查并显示密码过期提醒弹窗
    */
-  const checkPasswordExpiryNotice = useCallback(() => {
-    if (modalConfirmRef.current) {
-      return;
-    }
-    if (
-      !isFirstLogin &&
-      !passwordExpired &&
-      passwordExpiryDays <= 7 &&
-      passwordExpiryDays > 0
-    ) {
-      modalConfirmRef.current = modal.confirm({
-        title: t('dmsAccount.modifyPassword.passwordExpiryWarning', {
-          days: passwordExpiryDays
-        }),
-        content: t('dmsAccount.modifyPassword.passwordExpiryWarningDesc'),
-        okText: t('dmsAccount.modifyPassword.button'),
-        cancelText: t('dmsAccount.modifyPassword.passwordExpiryWarningCancel'),
-        onOk: handlePasswordExpiryWarning,
-        onCancel: skipPasswordExpiryWarning,
-        centered: true
-      });
-    }
-  }, [
-    isFirstLogin,
-    passwordExpired,
-    passwordExpiryDays,
-    modal,
-    t,
-    handlePasswordExpiryWarning,
-    skipPasswordExpiryWarning
-  ]);
+  const checkPasswordExpiryNotice = useCallback(
+    (
+      isFirstLogin: boolean,
+      passwordExpired: boolean,
+      passwordExpiryDays: number
+    ) => {
+      if (modalConfirmRef.current) {
+        return;
+      }
+      if (
+        !isFirstLogin &&
+        !passwordExpired &&
+        passwordExpiryDays <= 7 &&
+        passwordExpiryDays > 0
+      ) {
+        modalConfirmRef.current = Modal.confirm({
+          title: t('dmsAccount.modifyPassword.passwordExpiryWarning', {
+            days: passwordExpiryDays
+          }),
+          content: t('dmsAccount.modifyPassword.passwordExpiryWarningDesc'),
+          okText: t('dmsAccount.modifyPassword.button'),
+          cancelText: t(
+            'dmsAccount.modifyPassword.passwordExpiryWarningCancel'
+          ),
+          onOk: handlePasswordExpiryWarning,
+          onCancel: skipPasswordExpiryWarning,
+          centered: true
+        });
+      }
+    },
+    [t, handlePasswordExpiryWarning, skipPasswordExpiryWarning]
+  );
 
   const updateIsFirstLoginState = useCallback(
     (state: boolean) => {
@@ -152,29 +155,27 @@ export const usePasswordSecurity = () => {
   /**
    * 初始化密码安全检查
    */
-  const initPasswordSecurityCheck = useCallback(async () => {
-    const needForceChange = checkForcePasswordChange();
+  const initPasswordSecurityCheck = useCallback(
+    async (
+      isFirstLogin: boolean,
+      passwordExpired: boolean,
+      passwordExpiryDays: number
+    ) => {
+      const needForceChange = checkForcePasswordChange(
+        isFirstLogin,
+        passwordExpired
+      );
 
-    if (!needForceChange && !modalWarningRef.current) {
-      checkPasswordExpiryNotice();
-    }
-  }, [checkForcePasswordChange, checkPasswordExpiryNotice]);
-
-  useEffect(() => {
-    initPasswordSecurityCheck();
-  }, [initPasswordSecurityCheck]);
-
-  useEffect(() => {
-    return () => {
-      if (modalWarningRef.current) {
-        modalWarningRef.current.destroy();
+      if (!needForceChange && !modalWarningRef.current) {
+        checkPasswordExpiryNotice(
+          isFirstLogin,
+          passwordExpired,
+          passwordExpiryDays
+        );
       }
-
-      if (modalConfirmRef.current) {
-        modalConfirmRef.current.destroy();
-      }
-    };
-  }, []);
+    },
+    [checkForcePasswordChange, checkPasswordExpiryNotice]
+  );
 
   return {
     completeFirstLoginPasswordChange,
@@ -183,6 +184,6 @@ export const usePasswordSecurity = () => {
     updateIsFirstLoginState,
     passwordExpired,
     passwordExpiryDays,
-    modalContextHolder
+    initPasswordSecurityCheck
   };
 };

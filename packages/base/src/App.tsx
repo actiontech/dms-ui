@@ -115,8 +115,6 @@ function App() {
   const { checkPagePermission } = usePermission();
 
   // 密码安全检查
-  const { modalContextHolder: passwordSecurityModalContextHolder } =
-    usePasswordSecurity();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -275,7 +273,6 @@ function App() {
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
-              {passwordSecurityModalContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
                 {body}
               </EmptyBox>

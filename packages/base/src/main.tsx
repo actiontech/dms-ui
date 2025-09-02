@@ -8,15 +8,15 @@ import { RecoilRoot } from 'recoil';
 import { initReactI18n } from './locale';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <Provider store={store}>
-        <Router>
-          <App />
-        </Router>
-      </Provider>
-    </RecoilRoot>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <RecoilRoot>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </RecoilRoot>
+  // </React.StrictMode>
 );
 
 initReactI18n();

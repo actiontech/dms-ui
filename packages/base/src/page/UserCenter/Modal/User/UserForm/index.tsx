@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { BasicToolTip } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import PasswordStrengthIndicator from '../../../../Account/components/PasswordStrengthIndicator';
+import { validatePasswordComplexity } from '../../../../../utils/passwordComplexity';
 
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();
@@ -15,6 +17,22 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
+
+  // 密码复杂度验证
+  const passwordComplexityValidator = (_: any, value: string) => {
+    if (!value) {
+      return Promise.resolve();
+    }
+
+    const result = validatePasswordComplexity(value);
+    if (!result.isValid) {
+      return Promise.reject(new Error(result.errors[0]));
+    }
+
+    return Promise.resolve();
+  };
+
+  const password = Form.useWatch('password', props.form);
 
   useEffect(() => {
     if (props.visible) {
@@ -73,8 +91,14 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
                     message: t('common.form.rule.require', {
                       name: t('common.password')
                     })
+                  },
+                  {
+                    validator: passwordComplexityValidator
                   }
                 ]}
+                extra={
+                  password && <PasswordStrengthIndicator password={password} />
+                }
               >
                 <BasicInput.Password
                   placeholder={t('common.form.placeholder.input', {

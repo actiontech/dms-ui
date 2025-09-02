@@ -25,6 +25,7 @@ import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
 import { UserService, SessionService } from '@actiontech/shared/lib/api';
 import { useState } from 'react';
+import { usePasswordSecurity } from '../../hooks/usePasswordSecurity';
 
 const INITIAL_USERNAME = 'admin';
 const INITIAL_PASSWORD = 'admin';
@@ -60,6 +61,8 @@ const Login = () => {
 
   const navigate = useTypedNavigate();
   const extractQueries = useTypedQuery();
+
+  const { initPasswordSecurityCheck } = usePasswordSecurity();
 
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
@@ -145,6 +148,15 @@ const Login = () => {
                 passwordExpiryDays: data?.password_expiry_days ?? 0
               }
             })
+          );
+          const isFirstLogin =
+            formData.username === INITIAL_USERNAME &&
+            formData.password === INITIAL_PASSWORD;
+
+          initPasswordSecurityCheck(
+            isFirstLogin,
+            data?.password_expired ?? false,
+            data?.password_expiry_days ?? 0
           );
           if (data?.two_factor_enabled) {
             showVerificationForm();

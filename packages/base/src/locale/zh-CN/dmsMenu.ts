@@ -69,10 +69,10 @@ export default {
   },
 
   platformMetrics: {
-    seconds: '{seconds}秒',
-    minutes: '{minutes}分钟',
-    hours: '{hours}小时',
-    days: '{days}天',
+    seconds: '{{seconds}}秒',
+    minutes: '{{minutes}}分钟',
+    hours: '{{hours}}小时',
+    days: '{{days}}天',
     cpuUsage: 'CPU使用率',
     memoryUsagePercent: '内存使用率',
     goroutineCount: 'Goroutine数量',
