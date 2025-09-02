@@ -1,4 +1,5 @@
 export enum VersionEnum {
   DMS = 'dms',
-  SQLE = 'sqle'
+  SQLE = 'sqle',
+  PROVISION = 'provision'
 }

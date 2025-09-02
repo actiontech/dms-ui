@@ -77,7 +77,13 @@ export const ComponentControlHeight = {
   sm: 28
 };
 
+export const NOT_TIME = '0001-01-01T08:05:43.000+08:05';
+
 export const SQLE_BASE_URL = '/sqle/';
+
+export const PROVISION_BASE_URL = '/provision/';
+
+export const DIAGNOSIS_BASE_URL = '/';
 
 export const DrawerFormLayout = {
   labelCol: { span: 24 },
@@ -89,7 +95,21 @@ export const SystemFormLayout = {
   wrapperCol: { span: 12 }
 };
 
-export const DMS_DEFAULT_WEB_TITLE = 'SQLE';
+const ALL_TITLE = [
+  //#if [dms]
+  'DMS',
+  // #endif
+
+  // #if [sqle]
+  'SQLE',
+  // #endif
+
+  // #if [provision]
+  'provision'
+  // #endif
+];
+
+export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';
 
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';

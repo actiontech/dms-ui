@@ -99,4 +99,39 @@ describe('lib/CustomSelect', () => {
     });
     expect(container).toMatchSnapshot();
   });
+
+  it('should render when optionCustomLabel is true', async () => {
+    const { baseElement } = customRender({
+      className: 'custom-select-class',
+      placeholder: '自定义placeholder',
+      prefix: 'isRenderLabel',
+      allowClear: false,
+      optionCustomLabel: (optionVal) => (
+        <span>
+          {optionVal.text}
+          {optionVal.value}
+        </span>
+      ),
+      size: 'middle',
+      options: [
+        {
+          label: <span style={{ color: 'red' }}>label-test</span>,
+          text: '111',
+          value: 'value1'
+        }
+      ]
+    });
+    await act(async () => {
+      fireEvent.mouseDown(
+        getBySelector('.ant-select-selection-search input', baseElement)
+      );
+      await jest.advanceTimersByTime(300);
+    });
+    expect(getAllBySelector('.ant-select-item', baseElement).length).toBe(1);
+    await act(async () => {
+      fireEvent.click(screen.getByText('label-test'));
+      await jest.advanceTimersByTime(300);
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
 });

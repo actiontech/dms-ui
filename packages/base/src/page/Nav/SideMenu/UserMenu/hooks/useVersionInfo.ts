@@ -4,6 +4,9 @@ import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 const useVersionInfo = () => {
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
   const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
+  const [provisionVersion, setProvisionVersion] = useState<string | undefined>(
+    ''
+  );
 
   const formatServerVersion = (version?: string): string => {
     if (!version) {
@@ -27,13 +30,19 @@ const useVersionInfo = () => {
         (i) => i.name === 'sqle'
       )?.version;
       setSqleVersion(formatServerVersion(sqle));
+
+      const provision = res.data.data?.components?.find(
+        (i) => i.name === 'provision'
+      )?.version;
+      setProvisionVersion(formatServerVersion(provision));
     });
   }, []);
 
   return {
     updateVersionInfo,
     dmsVersion,
-    sqleVersion
+    sqleVersion,
+    provisionVersion
   };
 };
 

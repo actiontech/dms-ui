@@ -37,6 +37,9 @@ const useTableRequestParams = <
     filterInfo: unknown
   ): filterInfo is (prevFilterInfo: F) => F => typeof filterInfo === 'function';
 
+  /**
+   * @notice: filterInfo 期望 筛选数据的不同，重置 page_index 为 1, 还需要考虑
+   */
   const updateTableFilterInfo: UpdateTableFilterInfoType<F> = (filterInfo) => {
     const filterInfoData = isFilterInfoUpdaterFunction(filterInfo)
       ? filterInfo(tableFilterInfo)

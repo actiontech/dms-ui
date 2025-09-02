@@ -19,7 +19,8 @@ const BasicVersionModal: React.FC<BasicVersionModalProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { sqleVersion, dmsVersion, updateVersionInfo } = useVersionInfo();
+  const { sqleVersion, dmsVersion, provisionVersion, updateVersionInfo } =
+    useVersionInfo();
 
   useEffect(() => {
     if (open) {
@@ -63,6 +64,9 @@ const BasicVersionModal: React.FC<BasicVersionModalProps> = ({
             <Typography>UI: {UI_VERSION}</Typography>
             <EmptyBox if={versions.some((v) => v === VersionEnum.DMS)}>
               <Typography>DMS: {dmsVersion || '-'}</Typography>
+            </EmptyBox>
+            <EmptyBox if={versions.some((v) => v === VersionEnum.PROVISION)}>
+              <Typography>PROVISION: {provisionVersion || '-'}</Typography>
             </EmptyBox>
             <EmptyBox if={versions.some((v) => v === VersionEnum.SQLE)}>
               <Typography>SQLE: {sqleVersion || '-'}</Typography>

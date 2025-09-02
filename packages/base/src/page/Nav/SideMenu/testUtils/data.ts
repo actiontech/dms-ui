@@ -12,5 +12,6 @@ export const mockRecentlyOpenedProjectsData = {
 export const mockVersionInfoData = {
   updateVersionInfo: jest.fn(),
   dmsVersion: 'dms-ce 081d27e60f',
-  sqleVersion: 'sqle-ce 081d27e699'
+  sqleVersion: 'sqle-ce 081d27e699',
+  provisionVersion: 'PROVISION: main b8c2eabbae'
 };

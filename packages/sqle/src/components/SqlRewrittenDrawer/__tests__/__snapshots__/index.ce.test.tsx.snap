@@ -1108,7 +1108,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                             class="title"
                           >
                             Action 
-                            SQLE
+                            DMS
                           </div>
                           <p
                             class="cont-tip"
@@ -1207,7 +1207,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                             class="title"
                           >
                             Action 
-                            SQLE
+                            DMS
                           </div>
                           <p
                             class="cont-tip"

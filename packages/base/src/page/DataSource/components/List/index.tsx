@@ -263,7 +263,11 @@ const DataSourceList = () => {
     return new Map<keyof IListDBService, FilterCustomProps>([
       [
         'name',
-        { options: dbServiceOptions, loading: getDbServiceOptionsLoading }
+        {
+          options: dbServiceOptions,
+          loading: getDbServiceOptionsLoading,
+          value: tableFilterInfo.filter_by_name
+        }
       ],
       [
         'db_type',
@@ -282,7 +286,8 @@ const DataSourceList = () => {
     dbServiceOptions,
     generateDatabaseTestConnectionStatusSelectOptions,
     getDbServiceOptionsLoading,
-    getDriveOptionsLoading
+    getDriveOptionsLoading,
+    tableFilterInfo.filter_by_name
   ]);
 
   const tableActions = useMemo(() => {
@@ -314,6 +319,21 @@ const DataSourceList = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
+
+  useEffect(() => {
+    const instanceNameQuery = extractQuery(
+      ROUTE_PATHS.BASE.DATA_SOURCE.index
+    )?.name;
+
+    if (instanceNameQuery) {
+      updateAllSelectedFilterItem(true);
+      updateTableFilterInfo({
+        ...tableChange,
+        filter_by_name: instanceNameQuery
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

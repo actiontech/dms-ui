@@ -1067,7 +1067,7 @@ exports[`slqe/SqlOptimization CE should match snap shot 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"
@@ -1166,7 +1166,7 @@ exports[`slqe/SqlOptimization CE should match snap shot 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"

@@ -4,6 +4,8 @@ import { initReactI18next } from 'react-i18next';
 import baseZhCN from './packages/base/src/locale/zh-CN';
 import sqleZhCN from './packages/sqle/src/locale/zh-CN';
 import commonZhCN from './packages/shared/lib/locale/zh-CN';
+import provisionZhCN from './packages/provision/src/locale/zh-CN';
+import diagnosisZhCN from './packages/diagnosis/src/locale/zh-CN';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as Enzyme from 'enzyme';
 import 'jest-canvas-mock';
@@ -33,6 +35,8 @@ i18n.use(initReactI18next).init({
       translation: {
         ...baseZhCN.translation,
         ...sqleZhCN.translation,
+        ...provisionZhCN.translation,
+        ...diagnosisZhCN.translation,
         ...commonZhCN.translation
       }
     }

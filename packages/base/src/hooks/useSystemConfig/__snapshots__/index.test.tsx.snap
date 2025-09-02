@@ -27,7 +27,7 @@ exports[`test base/hooks/useSystemConfig render default web title and logo 1`] =
     <span
       class="label label-base"
     >
-      SQLE
+      DMS
     </span>
   </div>
 </div>

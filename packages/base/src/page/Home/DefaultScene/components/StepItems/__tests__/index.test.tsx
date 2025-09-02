@@ -131,6 +131,18 @@ describe('test base/Home/StepItems', () => {
       `/project/${projectID}/data/export/create`
     );
 
+    fireEvent.click(screen.getByText('账号列表'));
+    expect(navigateSpy).toHaveBeenCalledTimes(15);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/database-account`
+    );
+
+    fireEvent.click(screen.getByText('临期列表'));
+    expect(navigateSpy).toHaveBeenCalledTimes(16);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/database-account-password`
+    );
+
     cleanup();
     jest.clearAllMocks();
 

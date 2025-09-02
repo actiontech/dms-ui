@@ -1,14 +1,13 @@
 import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../../../../locale/index';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
-
 import {
   getDatabaseManagerSteps,
   getMemberAndPermissionSteps,
   getSqlEditorStep,
-  getDataExportTask
+  getDataExportTask,
+  getDataMask
 } from './base';
-
 import {
   getAuditProgressStep,
   getAuditManageStep,
@@ -17,6 +16,7 @@ import {
 } from './sqle';
 import { LockFilled, SnippetsFilled, UtilOutlined } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { getDatabaseAuthStep } from './provision';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),
@@ -34,7 +34,6 @@ export const AdminUserDevopsSteps: (
   getDatabaseManagerSteps({ navigate, projectID, iconColor }),
   getMemberAndPermissionSteps({ navigate, projectID, iconColor }),
 
-  // #if [sqle]
   {
     key: 'safetyRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
@@ -44,15 +43,23 @@ export const AdminUserDevopsSteps: (
       </CommonIconStyleWrapper>
     ),
     children: [
+      // #if [sqle]
       getAuditManageStep({
         navigate,
         projectID,
         setOpenRulePageProjectSelectorModal
       }),
+      // #endif
+
+      // #if [provision]
+      getDatabaseAuthStep({ navigate, projectID }),
+      // #endif
+
+      // #if [sqle]
       getAuditProgressStep({ navigate, projectID })
+      // #endif
     ]
   },
-  // #endif
 
   {
     key: 'queryAndModify',
@@ -74,11 +81,14 @@ export const AdminUserDevopsSteps: (
       getDataModifyStep({ navigate, projectID }),
       // #endif
 
-      getDataExportTask({ navigate, projectID })
+      getDataExportTask({ navigate, projectID }),
+
+      // #if [dms]
+      getDataMask({ navigate, projectID })
+      // #endif
     ]
   },
 
-  // #if [sqle]
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
@@ -101,11 +111,14 @@ export const AdminUserDevopsSteps: (
         content: t(
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
-        buttons: [...getSQLEOperateStepItem({ navigate, projectID })]
+        buttons: [
+          // #if [sqle]
+          ...getSQLEOperateStepItem({ navigate, projectID })
+          // #endif
+        ]
       }
     ]
   }
-  // #endif
 ];
 
 export const NormalUserDevopsSteps: (

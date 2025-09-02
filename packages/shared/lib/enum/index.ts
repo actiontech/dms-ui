@@ -1,5 +1,6 @@
 export enum PackageNameEnum {
-  SQLE = 'sqle'
+  SQLE = 'sqle',
+  PROVISION = 'provision'
 }
 
 export enum SupportLanguage {
@@ -64,7 +65,9 @@ export enum StorageKey {
   SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE',
   DMS_CB_CHANNEL = 'DMS_CB_CHANNEL',
   IS_FIRST_LOGIN = 'IS_FIRST_LOGIN',
-  PASSWORD_EXPIRED_INFO = 'PASSWORD_EXPIRED_INFO'
+  PASSWORD_EXPIRED_INFO = 'PASSWORD_EXPIRED_INFO',
+  // diagnosis user id
+  DIAGNOSIS_USER_ID = 'DIAGNOSIS_USER_ID'
 }
 
 /**
@@ -98,3 +101,7 @@ export type ResponseBlobJsonType = {
   code: number;
   message: string;
 };
+
+export enum KeyboardType {
+  Enter = 'Enter'
+}

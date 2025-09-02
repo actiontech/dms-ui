@@ -22,7 +22,7 @@ const StepItems: React.FC<{ steps: UserDevopsStepsFactory }> = ({ steps }) => {
                 <div className="step-title">{step.title}</div>
               </div>
             </div>
-            <Row wrap={false}>
+            <Row wrap={true}>
               {step.children.map((stepChild) => (
                 <Col className="content-wrapper" key={stepChild.key} span={8}>
                   <div className="sub-title">{stepChild.title}</div>

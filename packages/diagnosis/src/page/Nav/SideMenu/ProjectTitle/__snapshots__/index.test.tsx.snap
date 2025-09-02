@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagnosis/ProjectTitle should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="home-page-shortcut"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="label label-primary"
+        >
+          Action
+        </span>
+        <span
+          class="label label-base"
+        >
+          Diagnosis
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`diagnosis/ProjectTitle should return to home page by click project title 1`] = `
+<body>
+  <div>
+    <div
+      class="home-page-shortcut"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="label label-primary"
+        >
+          Action
+        </span>
+        <span
+          class="label label-base"
+        >
+          Diagnosis
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

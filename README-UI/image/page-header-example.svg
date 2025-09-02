@@ -1,0 +1,51 @@
+<svg fill="none" viewBox="0 0 1060 60" width="1060" height="60" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .css-1kcdww5 {
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          align-items: center;
+          padding: 0px 40px 0 0;
+          height: 60px;
+          background-color: rgb(252, 251, 249);
+          border-bottom: 1px solid rgb(232, 231, 230);
+        }
+
+        .extra {
+          display: flex;
+          align-items: center;
+        }
+
+        .text {
+          color: #F66074;
+          margin-right: 12px;
+        }
+
+        .css-1odtbz .refresh-icon {
+          width: 28px;
+          height: 28px;
+          display: flex;
+          -webkit-box-pack: center;
+          justify-content: center;
+        }
+      </style>
+
+      <div class="actiontech-page-header-namespace css-1kcdww5">
+        <div class="title">
+          <div class="antd-v5-space css-usv6ax antd-v5-space-horizontal antd-v5-space-align-center" style="gap: 10px;">
+            <div class="antd-v5-space-item" style="">
+              <div>项目概览</div>
+            </div>
+          </div>
+        </div>
+        <div class="extra">
+          <div class="text">缺少右侧边距以及可能存在的页面刷新按钮</div>
+          <div class="no">❌</div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
