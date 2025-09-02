@@ -2492,10 +2492,10 @@ exports[`App render App when token is existed 1`] = `
 exports[`App render App when token is not existed 1`] = `
 <div>
   <section
-    class="css-1zkush"
+    class="css-o1i80t"
   >
     <div
-      class="css-9y19rd"
+      class="css-18s5z73"
     >
       <div
         class="banner"
@@ -2508,7 +2508,7 @@ exports[`App render App when token is not existed 1`] = `
       </div>
     </div>
     <div
-      class="css-zhd3kf"
+      class="css-5swmpb"
     >
       <div
         class="login-page-right-content"

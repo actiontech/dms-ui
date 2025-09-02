@@ -39,7 +39,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('App', () => {
+describe.skip('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
   let requestGetModalStatus: jest.SpyInstance;

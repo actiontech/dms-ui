@@ -29,7 +29,12 @@ export const ROUTE_PATHS = {
         query: 'active_tab'
       }
     },
-    ACCOUNT: '/account',
+    ACCOUNT: {
+      index: {
+        path: '/account',
+        query: 'action'
+      }
+    },
     DATA_SOURCE_MANAGEMENT: {
       index: {
         path: '/data-source-management',

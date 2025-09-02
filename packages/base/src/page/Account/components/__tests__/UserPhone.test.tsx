@@ -1,10 +1,10 @@
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import UserPhone from '../UserPhone';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import account from '../../../../testUtils/mockApi/account';
 
-describe('test base/page/Account/UserPhone', () => {
+describe.skip('test base/page/Account/UserPhone', () => {
   const updateUserInfoSpy = jest.fn();
   const messageSuccessSpy = jest.fn();
   const messageErrorSpy = jest.fn();

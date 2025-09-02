@@ -51,11 +51,23 @@ export default {
     viewVersion: 'Version',
     logout: 'Logout',
     notice: 'Notice',
+    platformMetrics: 'Hardware Metrics',
     language: {
       text: 'Language',
       zhCN: '中文',
       enUS: 'English'
     }
+  },
+
+  platformMetrics: {
+    cpuUsage: 'CPU Usage',
+    memoryUsagePercent: 'Memory Usage',
+    goroutineCount: 'Goroutine Count',
+    processId: 'Process ID',
+    uptime: 'Uptime',
+    memoryUsage: 'Memory Usage',
+    totalMemory: 'Total Memory',
+    timestamp: 'Data Timestamp'
   },
 
   globalSettings: {

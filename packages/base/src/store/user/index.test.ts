@@ -30,7 +30,10 @@ describe('store user', () => {
     managementPermissions: [],
     role: '',
     isUserInfoFetched: false,
-    language: SupportLanguage.zhCN
+    language: SupportLanguage.zhCN,
+    isFirstLogin: false,
+    passwordExpired: false,
+    passwordExpiryDays: 0
   };
 
   it('should update token when dispatch updateToken action', () => {
@@ -50,7 +53,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -71,7 +77,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -93,7 +102,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -115,7 +127,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -136,7 +151,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -152,7 +170,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: true
+      isUserInfoFetched: true,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -181,7 +202,10 @@ describe('store user', () => {
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 
@@ -203,7 +227,10 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      isFirstLogin: false,
+      passwordExpired: false,
+      passwordExpiryDays: 0
     });
   });
 });

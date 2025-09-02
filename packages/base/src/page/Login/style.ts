@@ -4,13 +4,27 @@ export const LoginPageStyleWrapper = styled('section')`
   width: 100vw;
   height: 100vh;
   display: flex;
+  min-height: 600px;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const LoginPageLeftStyleWrapper = styled('div')`
+  flex: 0 0 auto;
   width: 50%;
   height: 100%;
   overflow: hidden;
   background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+  min-width: 400px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 300px;
+    min-width: unset;
+  }
 
   .banner {
     position: absolute;
@@ -19,6 +33,11 @@ export const LoginPageLeftStyleWrapper = styled('div')`
     width: 50%;
     height: 100%;
     filter: blur(0.2px);
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: 300px;
+    }
   }
 
   .login-background-img {
@@ -29,27 +48,45 @@ export const LoginPageLeftStyleWrapper = styled('div')`
 `;
 
 export const LoginPageRightStyleWrapper = styled('div')`
-  width: 50%;
+  flex: 1;
+  min-width: 0;
   height: 100%;
   background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: calc(100vh - 300px);
+    min-height: 400px;
+  }
 
   .login-page-right-content {
-    width: 400px;
+    width: 100%;
+    max-width: 420px;
+    min-width: 320px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0 20px;
+    }
 
     .content-header {
       width: 100%;
-      height: 56px;
+      min-height: 56px;
       margin-bottom: 40px;
       display: flex;
+      align-items: flex-start;
+      gap: 16px;
 
       .logo {
         display: flex;
         width: 56px;
         height: 56px;
-        margin-right: 16px;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
         border-radius: 6px;
@@ -57,32 +94,47 @@ export const LoginPageRightStyleWrapper = styled('div')`
 
         img {
           max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
         }
       }
 
       .title {
         display: flex;
-        height: 100%;
+        min-width: 0;
+        flex: 1;
         align-items: center;
-        flex-shrink: 0;
         align-self: stretch;
+        min-height: 56px;
 
         .label {
-          text-align: center;
           font-feature-settings: 'case' on;
-          font-size: 32px;
+          font-size: 28px;
           font-style: normal;
           font-weight: 700;
-          line-height: 56px;
+          line-height: 1.4;
+          word-break: break-word;
+          hyphens: auto;
+
+          @media (max-width: 768px) {
+            font-size: 24px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 20px;
+          }
         }
 
         .label-primary {
           color: ${({ theme }) => theme.sharedTheme.nav.title.color[0]};
-          margin-right: 10px;
+          margin-right: 8px;
+          flex-shrink: 0;
         }
 
         .label-base {
           color: ${({ theme }) => theme.sharedTheme.nav.title.color[1]};
+          flex: 1;
+          min-width: 0;
         }
       }
     }

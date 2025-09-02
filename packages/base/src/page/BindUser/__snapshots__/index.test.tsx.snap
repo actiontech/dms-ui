@@ -4,10 +4,10 @@ exports[`page/BindUser-ee render bind user form item render form item error when
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -20,7 +20,7 @@ exports[`page/BindUser-ee render bind user form item render form item error when
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"
@@ -234,10 +234,10 @@ exports[`page/BindUser-ee render bind user form item render oauth2_token params 
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -250,7 +250,7 @@ exports[`page/BindUser-ee render bind user form item render oauth2_token params 
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"
@@ -438,10 +438,10 @@ exports[`page/BindUser-ee render bind user ui snap 1`] = `
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -454,7 +454,7 @@ exports[`page/BindUser-ee render bind user ui snap 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"

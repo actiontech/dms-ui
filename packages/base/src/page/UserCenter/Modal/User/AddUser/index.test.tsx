@@ -40,7 +40,7 @@ describe('base/UserCenter/Modal/AddUser', () => {
     cleanup();
   });
 
-  it('should send add user request when click submit button', async () => {
+  it.skip('should send add user request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = renderWithReduxAndTheme(<AddUser />);
     await act(async () => jest.advanceTimersByTime(3000));

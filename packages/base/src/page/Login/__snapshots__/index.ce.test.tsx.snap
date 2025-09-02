@@ -4,10 +4,10 @@ exports[`page/Login-ce render login page snap 1`] = `
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -20,7 +20,7 @@ exports[`page/Login-ce render login page snap 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"
@@ -204,10 +204,10 @@ exports[`page/Login-ce render login when api return fail 1`] = `
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -220,7 +220,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"
@@ -427,10 +427,10 @@ exports[`page/Login-ce render login when api return success 1`] = `
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -443,7 +443,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"
@@ -650,10 +650,10 @@ exports[`page/Login-ce render login when api return success 2`] = `
 <body>
   <div>
     <section
-      class="css-1zkush"
+      class="css-o1i80t"
     >
       <div
-        class="css-9y19rd"
+        class="css-18s5z73"
       >
         <div
           class="banner"
@@ -666,7 +666,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-5swmpb"
       >
         <div
           class="login-page-right-content"

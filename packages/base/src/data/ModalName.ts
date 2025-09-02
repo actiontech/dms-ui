@@ -24,6 +24,7 @@ export enum ModalName {
 
   // header
   Company_Notice = 'Company_Notice',
+  Platform_Metrics = 'Platform_Metrics',
 
   //data export
   DMS_UPDATE_EXPORT_TASK_INFO = 'DMS_UPDATE_EXPORT_TASK_INFO',

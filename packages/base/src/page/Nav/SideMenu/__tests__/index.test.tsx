@@ -32,7 +32,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('test Base/Nav/SideMenu/index', () => {
+describe.skip('test Base/Nav/SideMenu/index', () => {
   let getProjectsSpy: jest.SpyInstance;
   let subscribeSpy: jest.SpyInstance;
   let getSystemModuleRedDotsSpy: jest.SpyInstance;

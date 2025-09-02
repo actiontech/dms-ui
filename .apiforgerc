@@ -1,0 +1,22 @@
+{
+  "client": {
+    "sqle-ui": {
+      "project": "sqle-ui",
+      "output": "packages/shared/lib/api/sqle/service",
+      "branch": "main",
+      "swaggerPath": "",
+      "swaggerOutput": "",
+      "plugin": "dot-remove",
+      "template": "complex"
+    },
+    "dms-ui": {
+      "project": "dms-ui",
+      "output": "packages/shared/lib/api/base/service",
+      "branch": "main",
+      "swaggerPath": "",
+      "swaggerOutput": "",
+      "plugin": "simple-cleaner",
+      "template": "complex"
+    }
+  }
+}

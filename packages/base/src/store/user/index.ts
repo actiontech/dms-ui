@@ -14,6 +14,11 @@ import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 export type IBindProject = { archived?: boolean } & IUserBindProject;
 
+type PasswordSecurity = {
+  passwordExpired: boolean;
+  passwordExpiryDays: number;
+};
+
 type UserReduxState = {
   username: string;
   role: SystemRole | '';
@@ -24,7 +29,28 @@ type UserReduxState = {
   uid: string;
   isUserInfoFetched: boolean;
   language: SupportLanguage;
-};
+  isFirstLogin: boolean;
+} & PasswordSecurity;
+
+const localStoragePasswordSecurity: PasswordSecurity = (() => {
+  try {
+    const localString = LocalStorageWrapper.get(
+      StorageKey.PASSWORD_EXPIRED_INFO
+    );
+    if (localString) {
+      return JSON.parse(localString);
+    }
+    return {
+      passwordExpired: false,
+      passwordExpiryDays: 0
+    };
+  } catch (error) {
+    return {
+      passwordExpired: false,
+      passwordExpiryDays: 0
+    };
+  }
+})();
 
 const initialState: UserReduxState = {
   username: '',
@@ -41,7 +67,10 @@ const initialState: UserReduxState = {
   language: LocalStorageWrapper.getOrDefault(
     StorageKey.Language,
     DEFAULT_LANGUAGE
-  ) as SupportLanguage
+  ) as SupportLanguage,
+  isFirstLogin:
+    LocalStorageWrapper.get(StorageKey.IS_FIRST_LOGIN) === String(true),
+  ...localStoragePasswordSecurity
 };
 
 const user = createSlice({
@@ -107,6 +136,23 @@ const user = createSlice({
     },
     updateUserInfoFetchStatus: (state, { payload }: PayloadAction<boolean>) => {
       state.isUserInfoFetched = payload;
+    },
+    updateIsFirstLogin: (state, { payload }: PayloadAction<boolean>) => {
+      state.isFirstLogin = payload;
+      LocalStorageWrapper.set(StorageKey.IS_FIRST_LOGIN, String(payload));
+    },
+    updatePasswordSecurity: (
+      state,
+      {
+        payload: { passwordSecurity }
+      }: PayloadAction<{ passwordSecurity: PasswordSecurity }>
+    ) => {
+      state.passwordExpired = passwordSecurity.passwordExpired;
+      state.passwordExpiryDays = passwordSecurity.passwordExpiryDays;
+      LocalStorageWrapper.set(
+        StorageKey.PASSWORD_EXPIRED_INFO,
+        JSON.stringify(passwordSecurity)
+      );
     }
   }
 });
@@ -119,7 +165,9 @@ export const {
   updateBindProjects,
   updateManagementPermissions,
   updateUserUid,
-  updateUserInfoFetchStatus
+  updateUserInfoFetchStatus,
+  updateIsFirstLogin,
+  updatePasswordSecurity
 } = user.actions;
 
 export default user.reducer;

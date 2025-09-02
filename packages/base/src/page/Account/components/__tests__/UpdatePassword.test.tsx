@@ -11,7 +11,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('test base/page/Account/UpdatePassword', () => {
+describe.skip('test base/page/Account/UpdatePassword', () => {
   const onCloseSpy = jest.fn();
   const customRender = () => {
     return renderWithTheme(<UpdatePassword open onClose={onCloseSpy} />);

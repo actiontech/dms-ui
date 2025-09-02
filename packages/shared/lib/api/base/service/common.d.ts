@@ -816,6 +816,14 @@ export interface IGetOauth2TipsResData {
   login_tip?: string;
 }
 
+export interface IGetPlatformMetricsReply {
+  code?: number;
+
+  data?: IPlatformMetrics;
+
+  message?: string;
+}
+
 export interface IGetProjectTipsReply {
   code?: number;
 
@@ -1708,6 +1716,24 @@ export interface IPersonalizationReq {
   title?: string;
 }
 
+export interface IPlatformMetrics {
+  cpu_usage?: number;
+
+  goroutine_count?: number;
+
+  memory_usage?: number;
+
+  memory_usage_percent?: number;
+
+  process_id?: number;
+
+  timestamp?: number;
+
+  total_memory?: number;
+
+  uptime?: number;
+}
+
 export interface IPlugin {
   get_database_driver_logos_url?: string;
 
@@ -2266,6 +2292,10 @@ export interface IVerifyUserLoginReply {
   code?: number;
 
   data?: {
+    password_expired?: boolean;
+
+    password_expiry_days?: number;
+
     phone?: string;
 
     two_factor_enabled?: boolean;

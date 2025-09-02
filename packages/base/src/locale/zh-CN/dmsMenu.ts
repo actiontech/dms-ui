@@ -53,11 +53,27 @@ export default {
     viewVersion: '查看版本号',
     logout: '退出登录',
     notice: '系统公告',
+    platformMetrics: '硬件监控',
     language: {
       text: '语言',
       zhCN: '中文',
       enUS: 'English'
     }
+  },
+
+  platformMetrics: {
+    seconds: '{seconds}秒',
+    minutes: '{minutes}分钟',
+    hours: '{hours}小时',
+    days: '{days}天',
+    cpuUsage: 'CPU使用率',
+    memoryUsagePercent: '内存使用率',
+    goroutineCount: 'Goroutine数量',
+    processId: '进程ID',
+    uptime: '运行时间',
+    memoryUsage: '内存使用量',
+    totalMemory: '总内存',
+    timestamp: '数据时间戳'
   },
 
   globalSettings: {

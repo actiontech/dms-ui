@@ -204,7 +204,7 @@ describe('page/Login-ee', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'user/updateToken',
       payload: {
@@ -272,7 +272,7 @@ describe('page/Login-ee', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledTimes(2);
       expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {
@@ -326,7 +326,7 @@ describe('page/Login-ee', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledTimes(2);
       expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {

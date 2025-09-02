@@ -82,7 +82,7 @@ export const BaseGlobalRouterConfig: RouterConfigItem[] = [
     permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
   },
   {
-    path: ROUTE_PATHS.BASE.ACCOUNT,
+    path: ROUTE_PATHS.BASE.ACCOUNT.index.path,
     key: 'account',
     element: <Account />
   },

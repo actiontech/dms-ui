@@ -54,9 +54,6 @@ const UpdateUser = () => {
 
     const userParams: IUpdateUser = {
       password: values.passwordConfirm,
-      email: values.email ?? '',
-      phone: values.phone ?? '',
-      wxid: values.wxid ?? '',
       op_permission_uids: values.opPermissionUids ?? [],
       is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
     };
@@ -86,9 +83,6 @@ const UpdateUser = () => {
     if (visible) {
       form.setFieldsValue({
         username: currentUser?.name,
-        email: currentUser?.email,
-        phone: currentUser?.phone,
-        wxid: currentUser?.wxid,
         opPermissionUids: currentUser?.op_permissions?.map((v) => v.uid ?? ''),
         isDisabled:
           (currentUser?.stat ?? ListUserStatEnum.未知) ===

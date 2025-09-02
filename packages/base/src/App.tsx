@@ -42,7 +42,7 @@ import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-
+import { usePasswordSecurity } from './hooks/usePasswordSecurity';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -112,6 +112,10 @@ function App() {
   const { isDriverInfoFetched, updateDriverList } = useDbServiceDriver();
 
   const { checkPagePermission } = usePermission();
+
+  // 密码安全检查
+  const { modalContextHolder: passwordSecurityModalContextHolder } =
+    usePasswordSecurity();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -269,6 +273,7 @@ function App() {
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
+              {passwordSecurityModalContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
                 {body}
               </EmptyBox>

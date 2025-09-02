@@ -1,7 +1,11 @@
 import { message, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { updateToken } from '../../store/user';
+import {
+  updateIsFirstLogin,
+  updatePasswordSecurity,
+  updateToken
+} from '../../store/user';
 import LoginLayout from './components/LoginLayout';
 import { useTypedNavigate, useTypedQuery, EmptyBox } from '@actiontech/shared';
 import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
@@ -21,6 +25,9 @@ import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
 import { UserService, SessionService } from '@actiontech/shared/lib/api';
 import { useState } from 'react';
+
+const INITIAL_USERNAME = 'admin';
+const INITIAL_PASSWORD = 'admin';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -67,6 +74,12 @@ const Login = () => {
       }
     })
       .then((res) => {
+        if (
+          loginFormValues.username === INITIAL_USERNAME &&
+          loginFormValues.password === INITIAL_PASSWORD
+        ) {
+          dispatch(updateIsFirstLogin(true));
+        }
         const token = res.data.data?.token
           ? `Bearer ${res.data.data.token}`
           : '';
@@ -125,6 +138,14 @@ const Login = () => {
       .then((res) => {
         const { code, data } = res.data;
         if (code === ResponseCode.SUCCESS) {
+          dispatch(
+            updatePasswordSecurity({
+              passwordSecurity: {
+                passwordExpired: data?.password_expired ?? false,
+                passwordExpiryDays: data?.password_expiry_days ?? 0
+              }
+            })
+          );
           if (data?.two_factor_enabled) {
             showVerificationForm();
             setPhone(data.phone);

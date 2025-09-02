@@ -17,5 +17,6 @@ exports[`base/Nav/SideMenu/UserMenu should match snapshot 1`] = `
     setVersionModalClose={[Function]}
   />
   <CompanyNoticeModal />
+  <PlatformMetricsModal />
 </Fragment>
 `;

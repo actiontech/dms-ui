@@ -42,3 +42,5 @@ yarn-error.log*
 docs-dist
 docs-dist.tar.gz
 es
+
+/.cursor

@@ -46,9 +46,6 @@ const AddUser = () => {
       user: {
         name: values.username,
         password: values.passwordConfirm,
-        email: values.email ?? '',
-        phone: values.phone ?? '',
-        wxid: values.wxid ?? '',
         op_permission_uids: values.opPermissionUids ?? []
       }
     })

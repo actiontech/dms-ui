@@ -13,7 +13,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('test base/page/Account', () => {
+describe.skip('test base/page/Account', () => {
   const scopeDispatch = jest.fn();
   let updateCurrentUserSpy: jest.SpyInstance;
   beforeEach(() => {

@@ -4,7 +4,8 @@ import {
   UserCircleFilled,
   InfoCircleFilled,
   LanguageFilled,
-  ArrowRightOutlined
+  ArrowRightOutlined,
+  MagnifierFilled
 } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { CustomAvatarStyleWrapper } from '@actiontech/shared/lib/components/CustomAvatar/style';
@@ -145,7 +146,7 @@ const UserNavigate: React.FC<Props> = ({
       key: 'account',
       icon: <UserCircleFilled />,
       text: t('dmsMenu.userNavigate.account'),
-      onClick: () => navigate(ROUTE_PATHS.BASE.ACCOUNT)
+      onClick: () => navigate(ROUTE_PATHS.BASE.ACCOUNT.index)
     },
     // #if [ee]
     {
@@ -161,6 +162,18 @@ const UserNavigate: React.FC<Props> = ({
         )
     },
     // #endif
+    {
+      key: 'platformMetrics',
+      icon: <MagnifierFilled />,
+      text: t('dmsMenu.userNavigate.platformMetrics'),
+      onClick: () =>
+        dispatch(
+          updateNavModalStatus({
+            modalName: ModalName.Platform_Metrics,
+            status: true
+          })
+        )
+    },
     {
       key: 'viewVersion',
       icon: <InfoCircleFilled />,

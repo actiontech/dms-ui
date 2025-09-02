@@ -8,11 +8,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
+import { useMemo } from 'react';
 
 const UserWechat: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
-  userBaseInfo
+  userBaseInfo,
+  privacyAuthorization
 }) => {
   const { t } = useTranslation();
   const [
@@ -20,7 +22,14 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
     { setTrue: showWechatField, setFalse: hideWechatField }
   ] = useBoolean(false);
 
+  const isAuthorized = privacyAuthorization?.isAuthorized ?? false;
+
   const onSubmit = (value: string) => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+
     User.UpdateCurrentUser({
       current_user: {
         wxid: value
@@ -34,13 +43,29 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
     });
   };
 
+  const handleShowWechatField = () => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+    showWechatField();
+  };
+
+  const descNode = useMemo(() => {
+    if (isAuthorized) {
+      return !!userBaseInfo?.wxid ? userBaseInfo?.wxid : '-';
+    }
+    return t('dmsAccount.privacy.unauthorizedTip');
+  }, [isAuthorized, userBaseInfo?.wxid, t]);
+
   return (
     <ConfigItem
       label={<LabelContent>{t('dmsAccount.wechat')}</LabelContent>}
-      descNode={!!userBaseInfo?.wxid ? userBaseInfo?.wxid : '-'}
+      descNode={descNode}
       fieldVisible={wxidFieldVisible}
-      showField={showWechatField}
+      showField={handleShowWechatField}
       hideField={hideWechatField}
+      needEditButton={isAuthorized}
       inputNode={
         <EditInput
           fieldValue={userBaseInfo?.wxid ?? ''}

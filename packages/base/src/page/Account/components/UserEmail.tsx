@@ -9,11 +9,13 @@ import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
 import { emailValidate } from '@actiontech/shared/lib/utils/Common';
+import { useMemo } from 'react';
 
 const UserEmail: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
-  userBaseInfo
+  userBaseInfo,
+  privacyAuthorization
 }) => {
   const { t } = useTranslation();
   const [
@@ -21,7 +23,14 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
     { setTrue: showEmailField, setFalse: hideEmailField }
   ] = useBoolean(false);
 
+  const isAuthorized = privacyAuthorization?.isAuthorized ?? false;
+
   const onSubmit = (value: string) => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+
     User.UpdateCurrentUser({
       current_user: {
         email: value
@@ -33,6 +42,14 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
         hideEmailField();
       }
     });
+  };
+
+  const handleShowEmailField = () => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+    showEmailField();
   };
   const emailValidator = (value: string): boolean => {
     if (value && !emailValidate(value)) {
@@ -46,15 +63,23 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
     return true;
   };
 
+  const descNode = useMemo(() => {
+    if (isAuthorized) {
+      return !!userBaseInfo?.email ? userBaseInfo?.email : '-';
+    }
+    return t('dmsAccount.privacy.unauthorizedTip');
+  }, [isAuthorized, userBaseInfo?.email, t]);
+
   return (
     <ConfigItem
       label={
         <LabelContent>{t('dmsUserCenter.user.userForm.email')}</LabelContent>
       }
-      descNode={!!userBaseInfo?.email ? userBaseInfo?.email : '-'}
+      descNode={descNode}
       fieldVisible={emailFieldVisible}
-      showField={showEmailField}
+      showField={handleShowEmailField}
       hideField={hideEmailField}
+      needEditButton={isAuthorized}
       inputNode={
         <EditInput
           fieldValue={userBaseInfo?.email ?? ''}

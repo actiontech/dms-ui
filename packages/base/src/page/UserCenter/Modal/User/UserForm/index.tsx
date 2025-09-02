@@ -3,7 +3,6 @@ import { Form, Switch } from 'antd';
 import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/shared';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import { BasicToolTip } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
@@ -115,42 +114,6 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
             </EmptyBox>
           );
         }}
-      </Form.Item>
-      <Form.Item
-        name="email"
-        label={t('dmsUserCenter.user.userForm.email')}
-        rules={[
-          {
-            type: 'email',
-            message: t('common.form.rule.email')
-          }
-        ]}
-      >
-        <BasicInput
-          placeholder={t('common.form.placeholder.input', {
-            name: t('dmsUserCenter.user.userForm.email')
-          })}
-        />
-      </Form.Item>
-      <Form.Item
-        name="phone"
-        label={t('dmsUserCenter.user.userForm.phone')}
-        rules={phoneRule()}
-        className="input-number-hide-arrows"
-      >
-        <BasicInput
-          type="number"
-          placeholder={t('common.form.placeholder.input', {
-            name: t('dmsUserCenter.user.userForm.phone')
-          })}
-        />
-      </Form.Item>
-      <Form.Item name="wxid" label={t('dmsUserCenter.user.userForm.wxid')}>
-        <BasicInput
-          placeholder={t('common.form.placeholder.input', {
-            name: t('dmsUserCenter.user.userForm.wxid')
-          })}
-        />
       </Form.Item>
       <Form.Item
         name="opPermissionUids"

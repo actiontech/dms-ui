@@ -15,6 +15,7 @@ export { default as MemberGroupService } from './service/MemberGroup';
 export { default as NotificationService } from './service/Notification';
 export { default as OAuth2Service } from './service/OAuth2';
 export { default as OpPermissionService } from './service/OpPermission';
+export { default as PlatformMetricsService } from './service/PlatformMetrics';
 export { default as ProjectService } from './service/Project';
 export { default as RoleService } from './service/Role';
 export { default as SMSService } from './service/SMS';

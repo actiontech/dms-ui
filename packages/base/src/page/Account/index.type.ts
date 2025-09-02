@@ -7,10 +7,15 @@ export type PasswordFormFields = {
   newPasswordConfirm: string;
 };
 
+export type PrivacyAuthorizationProps = {
+  isAuthorized: boolean;
+};
+
 export type UpdateComponentCommonProps = {
   userBaseInfo?: IGetUser;
   messageApi: MessageInstance;
   updateUserInfo: () => void;
+  privacyAuthorization?: PrivacyAuthorizationProps;
 };
 
 export type GenerateTokenModalProps = {

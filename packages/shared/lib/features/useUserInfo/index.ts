@@ -58,6 +58,7 @@ const useUserInfo = () => {
   const {
     loading: getUserInfoLoading,
     run: getUserInfo,
+    runAsync: getUserInfoAsync,
     refresh: updateUserInfo,
     data: userInfo
   } = useRequest(
@@ -122,6 +123,7 @@ const useUserInfo = () => {
   return {
     getUserInfoLoading,
     getUserInfo,
+    getUserInfoAsync,
     updateUserInfo,
     clearUserInfo,
     userInfo: userInfo?.data.data

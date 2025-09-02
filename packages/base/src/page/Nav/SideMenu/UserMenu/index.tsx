@@ -4,6 +4,7 @@ import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
 import CompanyNoticeModal from './Modal/CompanyNoticeModal';
 import VersionModal from './Modal/VersionModal';
+import PlatformMetricsModal from './Modal/PlatformMetricsModal';
 
 const UserMenu: React.FC<UserMenuProps> = ({ language, username }) => {
   const [
@@ -28,6 +29,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ language, username }) => {
       {/* #if [ee] */}
       <CompanyNoticeModal />
       {/* #endif */}
+      <PlatformMetricsModal />
     </>
   );
 };

@@ -8,11 +8,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
+import { useMemo } from 'react';
 
 const UserPhone: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
-  userBaseInfo
+  userBaseInfo,
+  privacyAuthorization
 }) => {
   const { t } = useTranslation();
   const [
@@ -20,7 +22,14 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
     { setTrue: showPhoneField, setFalse: hidePhoneField }
   ] = useBoolean(false);
 
+  const isAuthorized = privacyAuthorization?.isAuthorized ?? false;
+
   const onSubmit = (value: string) => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+
     User.UpdateCurrentUser({
       current_user: {
         phone: value
@@ -32,6 +41,14 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
         hidePhoneField();
       }
     });
+  };
+
+  const handleShowPhoneField = () => {
+    if (!isAuthorized) {
+      messageApi.warning(t('dmsAccount.privacy.unauthorizedTip'));
+      return;
+    }
+    showPhoneField();
   };
 
   const phoneValidator = (value: string): boolean => {
@@ -46,13 +63,21 @@ const UserPhone: React.FC<UpdateComponentCommonProps> = ({
     return true;
   };
 
+  const descNode = useMemo(() => {
+    if (isAuthorized) {
+      return !!userBaseInfo?.phone ? userBaseInfo?.phone : '-';
+    }
+    return t('dmsAccount.privacy.unauthorizedTip');
+  }, [isAuthorized, userBaseInfo?.phone, t]);
+
   return (
     <ConfigItem
       label={<LabelContent>{t('dmsAccount.phone')}</LabelContent>}
-      descNode={!!userBaseInfo?.phone ? userBaseInfo?.phone : '-'}
+      descNode={descNode}
       fieldVisible={phoneFieldVisible}
-      showField={showPhoneField}
+      showField={handleShowPhoneField}
       hideField={hidePhoneField}
+      needEditButton={isAuthorized}
       inputNode={
         <EditInput
           fieldValue={userBaseInfo?.phone ?? ''}

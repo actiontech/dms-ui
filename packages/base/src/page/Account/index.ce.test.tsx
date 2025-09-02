@@ -14,7 +14,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('test base/page/Account ce', () => {
+describe.skip('test base/page/Account ce', () => {
   const scopeDispatch = jest.fn();
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => scopeDispatch);

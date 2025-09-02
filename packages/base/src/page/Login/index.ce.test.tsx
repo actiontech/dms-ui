@@ -76,7 +76,7 @@ describe('page/Login-ce', () => {
         password: 'admin'
       }
     });
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'user/updateToken',
       payload: {

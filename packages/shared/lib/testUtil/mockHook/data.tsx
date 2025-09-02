@@ -63,6 +63,7 @@ export const mockUserInfo = {
   getUserInfo: jest.fn(),
   updateUserInfo: jest.fn(),
   clearUserInfo: jest.fn(),
+  getUserInfoAsync: jest.fn().mockImplementation(() => Promise.resolve()),
   userInfo: {
     authentication_type: GetUserAuthenticationTypeEnum.dms,
     email: 'admin@gmail.com',

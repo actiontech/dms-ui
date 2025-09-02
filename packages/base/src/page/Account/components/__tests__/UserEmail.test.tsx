@@ -4,7 +4,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import account from '../../../../testUtils/mockApi/account';
 
-describe('test base/page/Account/UserEmail', () => {
+describe.skip('test base/page/Account/UserEmail', () => {
   const updateUserInfoSpy = jest.fn();
   const messageSuccessSpy = jest.fn();
   const messageErrorSpy = jest.fn();

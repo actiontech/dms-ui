@@ -5,9 +5,6 @@ export interface IUserFormFields {
   password: string;
   passwordConfirm: string;
   needUpdatePassWord?: boolean;
-  email?: string;
-  phone?: string;
-  wxid?: string;
   opPermissionUids?: string[];
   isDisabled: boolean;
 }
