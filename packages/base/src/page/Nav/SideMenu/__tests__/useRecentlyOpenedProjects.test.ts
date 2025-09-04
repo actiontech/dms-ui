@@ -308,4 +308,181 @@ describe('test useRecentlyOpenedProjects.test', () => {
       EmitterKey.Update_Current_Project_ID
     );
   });
+
+  it('should test getRecentlyProjectId method behavior', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const LocalStorageWrapperGetSpy = jest.spyOn(LocalStorageWrapper, 'get');
+
+    // Test case 1: when localStorage is empty
+    LocalStorageWrapperGetSpy.mockReturnValue('');
+    mockUseCurrentUser({
+      username: username1,
+      bindProjects
+    });
+
+    const { result } = renderHook(() => useRecentlyOpenedProjects());
+
+    expect(result.current.getRecentlyProjectId()).toBeUndefined();
+
+    // Test case 2: when localStorage has valid data but no matching bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [{ project_id: '999', project_name: 'non_bind_project' }]
+      })
+    );
+
+    expect(result.current.getRecentlyProjectId()).toBeUndefined();
+
+    // Test case 3: when localStorage has valid data with matching bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [
+          { project_id: '400', project_name: 'default1' },
+          { project_id: '300', project_name: 'default' }
+        ]
+      })
+    );
+
+    expect(result.current.getRecentlyProjectId()).toBe('400');
+
+    // Test case 4: when localStorage has invalid JSON data
+    LocalStorageWrapperGetSpy.mockReturnValue('{invalid json}');
+
+    expect(result.current.getRecentlyProjectId()).toBeUndefined();
+    expect(errorSpy).toHaveBeenCalled();
+
+    // Test case 5: when user has no recently opened projects for current username
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username2]: [{ project_id: '400', project_name: 'default1' }]
+      })
+    );
+
+    expect(result.current.getRecentlyProjectId()).toBeUndefined();
+
+    // Test case 6: when localStorage has projects but none match current user's bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [
+          { project_id: '888', project_name: 'non_bind1' },
+          { project_id: '999', project_name: 'non_bind2' }
+        ]
+      })
+    );
+
+    expect(result.current.getRecentlyProjectId()).toBeUndefined();
+  });
+
+  it('should test getRecentlyProjectIdByUserInfo method behavior', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const LocalStorageWrapperGetSpy = jest.spyOn(LocalStorageWrapper, 'get');
+
+    mockUseCurrentUser({
+      username: username1,
+      bindProjects
+    });
+
+    const { result } = renderHook(() => useRecentlyOpenedProjects());
+
+    // Test case 1: when userInfo is undefined
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(undefined)
+    ).toBeUndefined();
+
+    // Test case 2: when localStorage is empty
+    LocalStorageWrapperGetSpy.mockReturnValue('');
+    const userInfo1 = {
+      name: username1,
+      user_bind_projects: [
+        { project_id: '300', project_name: 'default', is_manager: true },
+        { project_id: '400', project_name: 'default1', is_manager: false }
+      ]
+    };
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfo1)
+    ).toBeUndefined();
+
+    // Test case 3: when localStorage has valid data but no matching bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [{ project_id: '999', project_name: 'non_bind_project' }]
+      })
+    );
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfo1)
+    ).toBeUndefined();
+
+    // Test case 4: when localStorage has valid data with matching bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [
+          { project_id: '400', project_name: 'default1' },
+          { project_id: '300', project_name: 'default' }
+        ]
+      })
+    );
+
+    expect(result.current.getRecentlyProjectIdByUserInfo(userInfo1)).toBe(
+      '400'
+    );
+
+    // Test case 5: when localStorage has invalid JSON data
+    LocalStorageWrapperGetSpy.mockReturnValue('{invalid json}');
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfo1)
+    ).toBeUndefined();
+    expect(errorSpy).toHaveBeenCalled();
+
+    // Test case 6: when user has no recently opened projects for the specified username
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username2]: [{ project_id: '400', project_name: 'default1' }]
+      })
+    );
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfo1)
+    ).toBeUndefined();
+
+    // Test case 7: when localStorage has projects but none match user's bind projects
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [
+          { project_id: '888', project_name: 'non_bind1' },
+          { project_id: '999', project_name: 'non_bind2' }
+        ]
+      })
+    );
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfo1)
+    ).toBeUndefined();
+
+    // Test case 7: when multiple projects in localStorage, return the first matching one
+    const userInfoMultipleProjects = {
+      name: username1,
+      user_bind_projects: [
+        { project_id: '300', project_name: 'default', is_manager: true },
+        { project_id: '400', project_name: 'default1', is_manager: false },
+        { project_id: '500', project_name: 'default2', is_manager: false }
+      ]
+    };
+
+    LocalStorageWrapperGetSpy.mockReturnValue(
+      JSON.stringify({
+        [username1]: [
+          { project_id: '500', project_name: 'default2' },
+          { project_id: '300', project_name: 'default' },
+          { project_id: '400', project_name: 'default1' }
+        ]
+      })
+    );
+
+    expect(
+      result.current.getRecentlyProjectIdByUserInfo(userInfoMultipleProjects)
+    ).toBe('500');
+  });
 });
