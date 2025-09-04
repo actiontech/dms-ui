@@ -1,19 +1,27 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import AvailabilityZoneWrapper from '..';
-import { useLocation, Outlet, useNavigate } from 'react-router-dom';
+import { useLocation, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from '../../../../testUtils/mockHooks/data';
+import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
+import { baseMockApi } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: jest.fn(),
   Outlet: jest.fn(),
-  useNavigate: jest.fn()
+  useNavigate: jest.fn(),
+  useParams: jest.fn()
 }));
 
 describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
   const navigateSpy = jest.fn();
+
+  const getRecentlyProjectIdByUserInfoSpy = jest.fn();
+
+  let getCurrentUserSpy: jest.SpyInstance;
+  const useParamsSpy: jest.Mock = useParams as jest.Mock;
 
   const mockAvailabilityZoneOptions = [
     { value: 'zone-123', label: 'Test Zone' },
@@ -22,6 +30,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    getCurrentUserSpy = baseMockApi.global.getCurrentUser();
 
     (Outlet as jest.Mock).mockImplementation(() => <div>Outlet Content</div>);
 
@@ -31,6 +40,11 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       pathname: '/test-path',
       search: '?test=true'
     }));
+    useParamsSpy.mockReturnValue({ projectID: undefined });
+    mockUseRecentlyOpenedProjects({
+      getRecentlyProjectIdByUserInfo: getRecentlyProjectIdByUserInfoSpy
+    });
+
     mockUseRecentlySelectedZone();
   });
 
@@ -101,12 +115,11 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
     fireEvent.click(screen.getByText('确 认'));
 
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(updateRecentlySelectedZoneSpy).toHaveBeenCalledWith({
       uid: 'zone-123',
       name: 'Test Zone'
     });
-
-    expect(navigateSpy).toHaveBeenCalledWith('/test-path?test=true');
   });
 
   it('should show modal when memorized zone not in available options', () => {
@@ -133,5 +146,124 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
     expect(screen.getByText('Outlet Content')).toBeInTheDocument();
     expect(screen.queryByText('选择可用区')).not.toBeInTheDocument();
+  });
+
+  describe('Project path replacement logic', () => {
+    const updateRecentlySelectedZoneSpy = jest.fn();
+
+    beforeEach(() => {
+      mockUseRecentlySelectedZone({
+        ...mockUseRecentlySelectedZoneData,
+        updateRecentlySelectedZone: updateRecentlySelectedZoneSpy,
+        availabilityZoneOptions: mockAvailabilityZoneOptions
+      });
+    });
+
+    it('should navigate to project path when memorized project exists and no default project in URL', async () => {
+      getRecentlyProjectIdByUserInfoSpy.mockReturnValue('project-123');
+
+      (useLocation as jest.Mock).mockImplementation(() => ({
+        pathname: '/sqle/project//dashboard',
+        search: '?test=true'
+      }));
+
+      superRender(<AvailabilityZoneWrapper />);
+
+      const selectElement = screen.getByRole('combobox');
+      fireEvent.mouseDown(selectElement);
+
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('Test Zone'));
+      fireEvent.click(screen.getByText('确 认'));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/sqle/project/project-123/dashboard?test=true',
+        { replace: true }
+      );
+    });
+
+    it('should navigate to project path when memorized project exists and default project in URL', async () => {
+      getRecentlyProjectIdByUserInfoSpy.mockReturnValue('project-123');
+      useParamsSpy.mockReturnValue({ projectID: '700300' });
+
+      (useLocation as jest.Mock).mockImplementation(() => ({
+        pathname: '/sqle/project/700300/dashboard',
+        search: '?test=true'
+      }));
+
+      superRender(<AvailabilityZoneWrapper />);
+
+      const selectElement = screen.getByRole('combobox');
+      fireEvent.mouseDown(selectElement);
+
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('Test Zone'));
+      fireEvent.click(screen.getByText('确 认'));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/sqle/project/project-123/dashboard?test=true',
+        { replace: true }
+      );
+    });
+
+    it('should replace project id when project id in url but project id not in bind projects', async () => {
+      getRecentlyProjectIdByUserInfoSpy.mockReturnValue(undefined);
+      useParamsSpy.mockReturnValue({ projectID: '123456' });
+
+      (useLocation as jest.Mock).mockImplementation(() => ({
+        pathname: '/sqle/project/123456/dashboard',
+        search: '?test=true'
+      }));
+
+      superRender(<AvailabilityZoneWrapper />);
+
+      const selectElement = screen.getByRole('combobox');
+      fireEvent.mouseDown(selectElement);
+
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('Test Zone'));
+      fireEvent.click(screen.getByText('确 认'));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(getCurrentUserSpy).toHaveBeenCalledTimes(1);
+
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/sqle/project//dashboard?test=true',
+        { replace: true }
+      );
+    });
+
+    it('should handle path without sqle prefix correctly', async () => {
+      getRecentlyProjectIdByUserInfoSpy.mockReturnValue('project-123');
+
+      (useLocation as jest.Mock).mockImplementation(() => ({
+        pathname: '/project//dashboard',
+        search: '?test=true'
+      }));
+
+      superRender(<AvailabilityZoneWrapper />);
+
+      const selectElement = screen.getByRole('combobox');
+      fireEvent.mouseDown(selectElement);
+
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('Test Zone'));
+      fireEvent.click(screen.getByText('确 认'));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/project/project-123/dashboard?test=true',
+        { replace: true }
+      );
+    });
   });
 });
