@@ -266,5 +266,10 @@ export default {
     bottomDesc:
       'For complete functional comparisons of each version, please refer to:',
     functionalComparison: 'Functional comparison'
+  },
+  verificationCodeInput: {
+    code: 'Verification code',
+    sendCode: 'Send code',
+    secondsLater: 'Retry in {{number}} seconds'
   }
 };
