@@ -11,7 +11,8 @@ class MockBaseApi implements MockApi {
       this.response7007(),
       this.responseToken(),
       this.mockLoginWithoutToken(),
-      this.responseFileStream()
+      this.responseFileStream(),
+      this.response7006()
     ];
   }
 
@@ -72,6 +73,18 @@ class MockBaseApi implements MockApi {
         ctx.json({
           code: 7007,
           msg: 'Bad Gateway'
+        })
+      );
+    });
+  }
+
+  private response7006() {
+    return rest.post('/test/7006', (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          code: 7006,
+          msg: 'Not found current user'
         })
       );
     });

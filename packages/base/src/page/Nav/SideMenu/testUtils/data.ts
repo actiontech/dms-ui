@@ -7,7 +7,8 @@ export const mockRecentlyOpenedProjectsData = {
   ],
   updateRecentlyProject: jest.fn(),
   currentProjectID: '0',
-  getRecentlyProjectId: jest.fn()
+  getRecentlyProjectId: jest.fn(),
+  getRecentlyProjectIdByUserInfo: jest.fn()
 };
 
 export const mockVersionInfoData = {
