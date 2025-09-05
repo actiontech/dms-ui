@@ -265,5 +265,31 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
         { replace: true }
       );
     });
+
+    it('should handle path with provision prefix', async () => {
+      getRecentlyProjectIdByUserInfoSpy.mockReturnValue('project-123');
+
+      (useLocation as jest.Mock).mockImplementation(() => ({
+        pathname: '/provision/project//dashboard',
+        search: '?test=true'
+      }));
+
+      superRender(<AvailabilityZoneWrapper />);
+
+      const selectElement = screen.getByRole('combobox');
+      fireEvent.mouseDown(selectElement);
+
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('Test Zone'));
+      fireEvent.click(screen.getByText('确 认'));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(navigateSpy).toHaveBeenCalledWith(
+        '/provision/project/project-123/dashboard?test=true',
+        { replace: true }
+      );
+    });
   });
 });
