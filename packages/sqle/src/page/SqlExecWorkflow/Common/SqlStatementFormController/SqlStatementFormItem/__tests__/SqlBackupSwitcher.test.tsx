@@ -167,8 +167,8 @@ describe('test SqlBackupSwitcher', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when database allow backup but not enable backup', async () => {
-    const { baseElement } = customRender(
+  it('when database is not enable backup, should not render switch', async () => {
+    customRender(
       [
         {
           key: '1',
@@ -176,30 +176,11 @@ describe('test SqlBackupSwitcher', () => {
           schemaName: 'test',
           enableBackup: false,
           allowBackup: true
-        },
-        {
-          key: '2',
-          instanceName: 'mysql-2',
-          schemaName: 'test2',
-          enableBackup: false,
-          allowBackup: true
         }
       ],
       true
     );
-    expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
-    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
-      'false'
-    );
+    expect(screen.queryByText('是否选择开启备份')).not.toBeInTheDocument();
     expect(screen.queryByText('回滚行数限制')).not.toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-    fireEvent.click(getBySelector('button'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
-      'true'
-    );
-    expect(screen.getByText('回滚行数限制')).toBeInTheDocument();
-    expect(getBySelector('.ant-input-number-input')).not.toBeDisabled();
-    expect(getBySelector('.ant-input-number-input')).toHaveValue('1000');
   });
 });

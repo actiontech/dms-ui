@@ -99,7 +99,9 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
     <EmptyBox
       if={
         currentExecuteMode !==
-          CreateAuditTasksGroupReqV1ExecModeEnum.sql_file && allowBackup
+          CreateAuditTasksGroupReqV1ExecModeEnum.sql_file &&
+        allowBackup &&
+        getInstanceEnableBackup()
       }
     >
       <FormItemLabel
