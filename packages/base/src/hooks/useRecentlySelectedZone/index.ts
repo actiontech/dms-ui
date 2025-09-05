@@ -65,20 +65,20 @@ const useRecentlySelectedZone = () => {
     (zone: IUidWithName) => {
       setAvailabilityZone(zone);
 
-      const currentReocrd = cloneDeep(recentlySelectedZoneRecord ?? []);
-      if (currentReocrd.some((v) => v.uid === zone.uid)) {
-        remove(currentReocrd, (v) => v.uid === zone.uid);
+      const currentRecord = cloneDeep(recentlySelectedZoneRecord ?? []);
+      if (currentRecord.some((v) => v.uid === zone.uid)) {
+        remove(currentRecord, (v) => v.uid === zone.uid);
       }
 
-      currentReocrd.unshift(zone);
+      currentRecord.unshift(zone);
 
-      if (currentReocrd.length > DEFAULT_MAX_SELECTED_ZONE_NUMBER) {
-        currentReocrd.pop();
+      if (currentRecord.length > DEFAULT_MAX_SELECTED_ZONE_NUMBER) {
+        currentRecord.pop();
       }
 
-      setRecentlySelectedZoneRecord(currentReocrd);
+      setRecentlySelectedZoneRecord(currentRecord);
 
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     },
     [
       recentlySelectedZoneRecord,
@@ -92,15 +92,15 @@ const useRecentlySelectedZone = () => {
     // 如果当前选择的区域在已配置的区域中是不存在的，则从最近选择区域中移除并且删除当前选择的区域
     if (!zoneTips?.some((v) => v.uid === availabilityZone?.uid)) {
       setAvailabilityZone(undefined);
-      const currentReocrd = cloneDeep(recentlySelectedZoneRecord ?? []);
-      currentReocrd.forEach((i) => {
+      const currentRecord = cloneDeep(recentlySelectedZoneRecord ?? []);
+      currentRecord.forEach((i) => {
         if (i.uid === availabilityZone?.uid) {
-          remove(currentReocrd, (v) => v.uid === i.uid);
+          remove(currentRecord, (v) => v.uid === i.uid);
         }
       });
-      setRecentlySelectedZoneRecord(currentReocrd);
+      setRecentlySelectedZoneRecord(currentRecord);
 
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     }
 
     // 如果当前选择的区域在已配置的区域中存在，但是name不相同，则更新name
@@ -115,15 +115,15 @@ const useRecentlySelectedZone = () => {
         ...availabilityZone,
         name: zoneTips.find((v) => v.uid === availabilityZone?.uid)?.name
       });
-      const currentReocrd = cloneDeep(recentlySelectedZoneRecord ?? []);
-      currentReocrd.forEach((i) => {
+      const currentRecord = cloneDeep(recentlySelectedZoneRecord ?? []);
+      currentRecord.forEach((i) => {
         if (i.uid === availabilityZone?.uid) {
           i.name = name;
         }
       });
-      setRecentlySelectedZoneRecord(currentReocrd);
+      setRecentlySelectedZoneRecord(currentRecord);
 
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     }
   };
 
