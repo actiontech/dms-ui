@@ -18,7 +18,8 @@ export enum ResponseCode {
   BatchTaskNotFullyCompleted = 8005,
 
   // availability zone
-  CurrentAvailabilityZoneError = 7007
+  CurrentAvailabilityZoneError = 7007,
+  NotFoundCurrentUser = 7006
 }
 
 export enum SupportTheme {

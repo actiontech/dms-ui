@@ -6,7 +6,9 @@ export const mockRecentlyOpenedProjectsData = {
     }
   ],
   updateRecentlyProject: jest.fn(),
-  currentProjectID: '0'
+  currentProjectID: '0',
+  getRecentlyProjectId: jest.fn(),
+  getRecentlyProjectIdByUserInfo: jest.fn()
 };
 
 export const mockVersionInfoData = {
