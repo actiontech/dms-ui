@@ -16,7 +16,7 @@ class SqlOptimization implements MockSpyApy {
     this.optimizeSQLReq();
     this.getOptimizationRecordReq();
     this.getOptimizationSQLs();
-    this.getOptimizationReq();
+    this.getOptimizationSQLDetail();
     this.getDBPerformanceImproveOverview();
     this.getOptimizationOverview();
   }
@@ -59,8 +59,8 @@ class SqlOptimization implements MockSpyApy {
     return spy;
   }
 
-  public getOptimizationReq() {
-    const spy = jest.spyOn(sqlOptimization, 'GetOptimizationReq');
+  public getOptimizationSQLDetail() {
+    const spy = jest.spyOn(sqlOptimization, 'GetOptimizationSQLDetailV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: optimizationDetailMockData

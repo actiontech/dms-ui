@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlDiffView should render with custom titles 1`] = `
+<body>
+  <div>
+    <div
+      class="css-15dvtve"
+    >
+      <div
+        class="diff-header"
+      >
+        <div
+          class="diff-label original"
+        >
+          Original Query
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="diff-label optimized"
+        >
+          Optimized Query
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="diff-content"
+      >
+        <div
+          class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+        >
+          <input
+            height="200"
+            language="sql"
+            modified="SELECT id, name FROM users WHERE active = 1"
+            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+            original="SELECT * FROM users"
+            theme="editorCustomTheme"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SqlDiffView should render with different length SQLs 1`] = `
+<body>
+  <div>
+    <div
+      class="css-15dvtve"
+    >
+      <div
+        class="diff-header"
+      >
+        <div
+          class="diff-label original"
+        >
+          优化前
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="diff-label optimized"
+        >
+          优化后
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="diff-content"
+      >
+        <div
+          class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+        >
+          <input
+            height="304"
+            language="sql"
+            modified="SELECT u.id,
+       u.name,
+       u.email,
+       u.created_at,
+       u.updated_at
+FROM users u
+LEFT JOIN profiles p ON u.id = p.user_id
+WHERE u.active = 1
+  AND u.verified = 1
+ORDER BY u.created_at DESC
+LIMIT 100"
+            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+            original="SELECT id FROM users"
+            theme="editorCustomTheme"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SqlDiffView should render with empty SQL strings 1`] = `
+<body>
+  <div>
+    <div
+      class="css-15dvtve"
+    >
+      <div
+        class="diff-header"
+      >
+        <div
+          class="diff-label original"
+        >
+          优化前
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="diff-label optimized"
+        >
+          优化后
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            title="复制"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="diff-content"
+      >
+        <div
+          class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+        >
+          <input
+            height="200"
+            language="sql"
+            modified=""
+            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+            original=""
+            theme="editorCustomTheme"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

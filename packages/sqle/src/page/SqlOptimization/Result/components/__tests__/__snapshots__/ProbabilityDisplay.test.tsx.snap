@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProbabilityDisplay should render "Best" when improvement rate is negative 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            Best
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render "Best" when improvement rate is zero 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            Best
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render "NULL" when analysis state is failed 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            NULL
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render "NULL" when result status is not resolved 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            NULL
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render with high improvement rate 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            85.7
+            <span>
+              %
+            </span>
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render with resolved status and positive improvement rate 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            15
+            <span>
+              %
+            </span>
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render with undefined analysis 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            Best
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProbabilityDisplay should render with undefined improvement_rate 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="css-19v9tj3"
+        >
+          <div
+            class="probability-number"
+            style="background-clip: text;"
+          >
+            Best
+          </div>
+          <svg
+            height="30"
+            version="1.1"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+              fill="#FCAF19"
+              transform="translate(14,2)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          性能提升
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

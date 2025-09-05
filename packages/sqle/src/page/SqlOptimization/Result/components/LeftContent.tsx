@@ -99,6 +99,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
                 icon={<FullScreenOutlined />}
                 size="small"
                 onClick={onExpandQueryPlan}
+                className="view-query-plan-diff-button"
               >
                 {t('sqlOptimization.result.expand')}
               </BasicButton>

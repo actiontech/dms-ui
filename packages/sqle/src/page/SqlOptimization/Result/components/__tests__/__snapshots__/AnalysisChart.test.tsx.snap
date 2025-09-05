@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/SqlOptimization/Result/components/AnalysisChart should render correctly with valid data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1anu5"
+    >
+      <div
+        class="chart-wrapper css-1hgbe7b"
+      >
+        <div
+          class="chart-box"
+        >
+          <div
+            data-custom-params="{"data":[{"name":"执行计划","score":1,"type":"原文"},{"name":"执行计划","score":4,"type":"最终优化后"},{"name":"扫描预估","score":1,"type":"原文"},{"name":"扫描预估","score":1,"type":"最终优化后"},{"name":"索引使用","score":1,"type":"原文"},{"name":"索引使用","score":1,"type":"最终优化后"},{"name":"SQL复杂度","score":1,"type":"原文"},{"name":"SQL复杂度","score":7,"type":"最终优化后"},{"name":"网络传输","score":4,"type":"原文"},{"name":"网络传输","score":4,"type":"最终优化后"},{"name":"其他","score":4,"type":"原文"},{"name":"其他","score":6,"type":"最终优化后"}],"xField":"name","yField":"score","seriesField":"type","meta":{"score":{"range":[0,1.1]}},"xAxis":{"line":null,"tickLine":null,"grid":{"line":{"style":{"lineWidth":1,"lineDash":null}}},"label":{"labelLineWidth":0,"labelDirection":"negative"}},"yAxis":{"line":null,"label":null},"area":{"style":{"fillOpacity":0.15}},"tooltip":{},"legend":false,"smooth":true}"
+            data-testid="mock-antd-plots"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

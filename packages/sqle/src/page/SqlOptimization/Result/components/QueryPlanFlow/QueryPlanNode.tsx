@@ -10,10 +10,9 @@ interface QueryPlanItem {
   summary: string[];
   children: QueryPlanItem[];
   operator: string;
-  [x: string]: any;
 }
 
-interface QueryPlanNodeData extends Record<string, unknown> {
+export interface QueryPlanNodeData extends Record<string, unknown> {
   detail: QueryPlanItem;
   level: number;
   hasChildren?: boolean;
@@ -37,25 +36,7 @@ const QueryPlanNode: React.FC<NodeProps<Node<QueryPlanNodeData>>> = ({
   const [isExpanded, setIsExpanded] = useState(true);
 
   const content = useMemo(() => {
-    let conditionString = '';
-    if (detail?.conditions) {
-      detail?.conditions?.forEach((item: any) => {
-        if (typeof item === 'string') {
-          conditionString += JSON.stringify(item);
-        }
-      });
-    }
-
-    const summaryString = detail?.summary?.join('\n');
-
-    const contentStr =
-      detail?.columns?.join('') ||
-      detail?.table ||
-      detail?.join_condition ||
-      conditionString ||
-      summaryString ||
-      '';
-    return contentStr;
+    return detail?.summary?.join('\n');
   }, [detail]);
 
   const handleToggleExpand = (event: React.MouseEvent) => {

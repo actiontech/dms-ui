@@ -64,10 +64,7 @@ const TableStructureModal: React.FC = () => {
               <BasicInput.TextArea
                 value={currentTableData?.tableStructure}
                 readOnly
-                autoSize={{
-                  maxRows: 10,
-                  minRows: 6
-                }}
+                rows={8}
                 bordered={false}
               />
             </EmptyBox>

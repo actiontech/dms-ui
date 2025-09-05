@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryPlanNode should render root node with basic data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1wqoq18"
+    >
+      <div
+        class="query-plan-node-card"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+          style="width: 100%;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <div
+              class="operator-row"
+            >
+              <div
+                class="operator-left"
+              >
+                <span
+                  class="collapse-icon"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <h5
+                  class="ant-typography operator-title"
+                >
+                  Table Scan
+                </h5>
+              </div>
+              <span
+                class="node-index"
+              >
+                #
+                1
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="content-text"
+            >
+              <span
+                class="ant-typography"
+              >
+                Scanning users table
+Filter: id &gt; 100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanNode should render with multiline summary data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1wqoq18"
+    >
+      <div
+        class="query-plan-node-card"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+          style="width: 100%;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <div
+              class="operator-row"
+            >
+              <div
+                class="operator-left"
+              >
+                <span
+                  class="collapse-icon"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <h5
+                  class="ant-typography operator-title"
+                >
+                  Complex Join
+                </h5>
+              </div>
+              <span
+                class="node-index"
+              >
+                #
+                1
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="content-text"
+            >
+              <span
+                class="ant-typography"
+              >
+                First line of operation
+Second line with details
+Third line with more info
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanNode should render with optimized plan type 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1wqoq18"
+    >
+      <div
+        class="query-plan-node-card"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+          style="width: 100%;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <div
+              class="operator-row"
+            >
+              <div
+                class="operator-left"
+              >
+                <span
+                  class="collapse-icon"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <h5
+                  class="ant-typography operator-title"
+                >
+                  Table Scan
+                </h5>
+              </div>
+              <span
+                class="node-index"
+              >
+                #
+                1
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="content-text"
+            >
+              <span
+                class="ant-typography"
+              >
+                Scanning users table
+Filter: id &gt; 100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanNode should render with original plan type 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1vz5s1g"
+    >
+      <div
+        class="query-plan-node-card"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+          style="width: 100%;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <div
+              class="operator-row"
+            >
+              <div
+                class="operator-left"
+              >
+                <span
+                  class="collapse-icon"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <h5
+                  class="ant-typography operator-title"
+                >
+                  Table Scan
+                </h5>
+              </div>
+              <span
+                class="node-index"
+              >
+                #
+                1
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="content-text"
+            >
+              <span
+                class="ant-typography"
+              >
+                Scanning users table
+Filter: id &gt; 100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanNode should render without nodeIndex 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1wqoq18"
+    >
+      <div
+        class="query-plan-node-card"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+          style="width: 100%;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <div
+              class="operator-row"
+            >
+              <div
+                class="operator-left"
+              >
+                <span
+                  class="collapse-icon"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <h5
+                  class="ant-typography operator-title"
+                >
+                  Table Scan
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="content-text"
+            >
+              <span
+                class="ant-typography"
+              >
+                Scanning users table
+Filter: id &gt; 100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

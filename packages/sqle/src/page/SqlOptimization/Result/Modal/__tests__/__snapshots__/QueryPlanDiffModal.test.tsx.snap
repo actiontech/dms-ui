@@ -1,0 +1,1667 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/SqlOptimization/Result/Modal/QueryPlanDiffModal should render modal when open with data 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap ant-modal-centered"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 1200px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                比较执行计划优化前后的差异
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+              style="padding-top: 0px;"
+            >
+              <div
+                class="css-2ddcye"
+              >
+                <div
+                  class="plan-section "
+                  style="display: flex;"
+                >
+                  <div
+                    class="plan-header"
+                  >
+                    <div
+                      class="plan-title"
+                    >
+                      原执行计划
+                    </div>
+                    <div
+                      class="plan-actions"
+                    >
+                      <button
+                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                        title="全屏显示"
+                        type="button"
+                      >
+                        <span
+                          class="ant-btn-icon"
+                        >
+                          <svg
+                            class="FullScreenOutlined_svg__icon"
+                            height="16"
+                            viewBox="0 0 1024 1024"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M213.333 213.333h213.334V128h-256A42.667 42.667 0 0 0 128 170.667v256h85.333zM170.667 896h256v-85.333H213.333V597.333H128v256A42.667 42.667 0 0 0 170.667 896M896 853.333v-256h-85.333v213.334H597.333V896h256A42.667 42.667 0 0 0 896 853.333m-298.667-640h213.334v213.334H896v-256A42.667 42.667 0 0 0 853.333 128h-256z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="plan-content"
+                  >
+                    <div
+                      class="css-8xvjlf"
+                      style="height: 600px;"
+                    >
+                      <div
+                        class="react-flow light"
+                        data-testid="rf__wrapper"
+                        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+                      >
+                        <div
+                          class="react-flow__renderer"
+                          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                        >
+                          <div
+                            class="react-flow__pane draggable"
+                            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                          >
+                            <div
+                              class="react-flow__viewport xyflow__viewport react-flow__container"
+                              style="transform: translate(0px,0px) scale(1);"
+                            >
+                              <div
+                                class="react-flow__edges"
+                              />
+                              <div
+                                class="react-flow__edgelabel-renderer"
+                              />
+                              <div
+                                class="react-flow__nodes"
+                                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                              >
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-0"
+                                  data-testid="rf__node-node-0"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Projection
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              1
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              1 column
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-0-null-source"
+                                      data-nodeid="node-0"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-1"
+                                  data-testid="rf__node-node-1"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-1-null-target"
+                                      data-nodeid="node-1"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Filter
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              2
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              2 conditions
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-1-null-source"
+                                      data-nodeid="node-1"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-2"
+                                  data-testid="rf__node-node-2"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(-190px,240px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-2-null-target"
+                                      data-nodeid="node-2"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Join
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              3
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              Left Outer Join
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-2-null-source"
+                                      data-nodeid="node-2"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-3"
+                                  data-testid="rf__node-node-3"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(-380px,360px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-3-null-target"
+                                      data-nodeid="node-3"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Table Scan
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              4
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              students s
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-4"
+                                  data-testid="rf__node-node-4"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(0px,360px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-4-null-target"
+                                      data-nodeid="node-4"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Table Scan
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              5
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              student_classes sc
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-5"
+                                  data-testid="rf__node-node-5"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(380px,240px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-5-null-target"
+                                      data-nodeid="node-5"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Subquery
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              6
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              (subquery1)
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-5-null-source"
+                                      data-nodeid="node-5"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-6"
+                                  data-testid="rf__node-node-6"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(380px,360px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-6-null-target"
+                                      data-nodeid="node-6"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Projection
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              7
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              student_id
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-6-null-source"
+                                      data-nodeid="node-6"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-7"
+                                  data-testid="rf__node-node-7"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(380px,480px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1vz5s1g"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-7-null-target"
+                                      data-nodeid="node-7"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Table Scan
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              8
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              enrollments
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="react-flow__viewport-portal"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <svg
+                          class="react-flow__background"
+                          data-testid="rf__background"
+                          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                        >
+                          <pattern
+                            height="20"
+                            id="pattern-1"
+                            patternTransform="translate(-11,-11)"
+                            patternUnits="userSpaceOnUse"
+                            width="20"
+                            x="0"
+                            y="0"
+                          >
+                            <circle
+                              class="react-flow__background-pattern dots"
+                              cx="0.5"
+                              cy="0.5"
+                              r="0.5"
+                            />
+                          </pattern>
+                          <rect
+                            fill="url(#pattern-1)"
+                            height="100%"
+                            width="100%"
+                            x="0"
+                            y="0"
+                          />
+                        </svg>
+                        <div
+                          class="react-flow__panel react-flow__attribution bottom left"
+                          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+                          style="pointer-events: all;"
+                        >
+                          <a
+                            aria-label="React Flow attribution"
+                            href="https://reactflow.dev"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            React Flow
+                          </a>
+                        </div>
+                        <div
+                          id="react-flow__node-desc-1"
+                          style="display: none;"
+                        >
+                          Press enter or space to select a node.
+                          You can then use the arrow keys to move the node around.
+                           Press delete to remove it and escape to cancel.
+                           
+                        </div>
+                        <div
+                          id="react-flow__edge-desc-1"
+                          style="display: none;"
+                        >
+                          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+                        </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="assertive"
+                          id="react-flow__aria-live-1"
+                          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="plan-section "
+                  style="display: flex;"
+                >
+                  <div
+                    class="plan-header"
+                  >
+                    <div
+                      class="plan-title"
+                    >
+                      最终优化后
+                    </div>
+                    <div
+                      class="plan-actions"
+                    >
+                      <button
+                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                        title="全屏显示"
+                        type="button"
+                      >
+                        <span
+                          class="ant-btn-icon"
+                        >
+                          <svg
+                            class="FullScreenOutlined_svg__icon"
+                            height="16"
+                            viewBox="0 0 1024 1024"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M213.333 213.333h213.334V128h-256A42.667 42.667 0 0 0 128 170.667v256h85.333zM170.667 896h256v-85.333H213.333V597.333H128v256A42.667 42.667 0 0 0 170.667 896M896 853.333v-256h-85.333v213.334H597.333V896h256A42.667 42.667 0 0 0 896 853.333m-298.667-640h213.334v213.334H896v-256A42.667 42.667 0 0 0 853.333 128h-256z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="plan-content"
+                  >
+                    <div
+                      class="css-8xvjlf"
+                      style="height: 600px;"
+                    >
+                      <div
+                        class="react-flow light"
+                        data-testid="rf__wrapper"
+                        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+                      >
+                        <div
+                          class="react-flow__renderer"
+                          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                        >
+                          <div
+                            class="react-flow__pane draggable"
+                            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                          >
+                            <div
+                              class="react-flow__viewport xyflow__viewport react-flow__container"
+                              style="transform: translate(0px,0px) scale(1);"
+                            >
+                              <div
+                                class="react-flow__edges"
+                              />
+                              <div
+                                class="react-flow__edgelabel-renderer"
+                              />
+                              <div
+                                class="react-flow__nodes"
+                                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                              >
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-0"
+                                  data-testid="rf__node-node-0"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Projection
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              1
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              s.student_id
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-0-null-source"
+                                      data-nodeid="node-0"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-1"
+                                  data-testid="rf__node-node-1"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-1-null-target"
+                                      data-nodeid="node-1"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Filter
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              2
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              2 conditions
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-1-null-source"
+                                      data-nodeid="node-1"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-2"
+                                  data-testid="rf__node-node-2"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(-190px,240px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-2-null-target"
+                                      data-nodeid="node-2"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Table Scan
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              3
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              students s
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-3"
+                                  data-testid="rf__node-node-3"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(190px,240px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-3-null-target"
+                                      data-nodeid="node-3"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Subquery
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              4
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              (subquery1)
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-3-null-source"
+                                      data-nodeid="node-3"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-4"
+                                  data-testid="rf__node-node-4"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(190px,360px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-4-null-target"
+                                      data-nodeid="node-4"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Projection
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              5
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              student_id
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                      data-handlepos="bottom"
+                                      data-id="1-node-4-null-source"
+                                      data-nodeid="node-4"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  aria-describedby="react-flow__node-desc-1"
+                                  class="react-flow__node react-flow__node-queryPlanNode"
+                                  data-id="node-5"
+                                  data-testid="rf__node-node-5"
+                                  role="button"
+                                  style="z-index: 0; transform: translate(190px,480px); pointer-events: none; visibility: hidden;"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="css-1wqoq18"
+                                  >
+                                    <div
+                                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                      data-handlepos="top"
+                                      data-id="1-node-5-null-target"
+                                      data-nodeid="node-5"
+                                    />
+                                    <div
+                                      class="query-plan-node-card"
+                                    >
+                                      <div
+                                        class="ant-space ant-space-vertical"
+                                        style="width: 100%;"
+                                      >
+                                        <div
+                                          class="ant-space-item"
+                                          style="margin-bottom: 8px;"
+                                        >
+                                          <div
+                                            class="operator-row"
+                                          >
+                                            <div
+                                              class="operator-left"
+                                            >
+                                              <span
+                                                class="collapse-icon"
+                                              >
+                                                <span
+                                                  aria-label="down"
+                                                  class="anticon anticon-down"
+                                                  role="img"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    data-icon="down"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    height="1em"
+                                                    viewBox="64 64 896 896"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </span>
+                                              <h5
+                                                class="ant-typography operator-title"
+                                              >
+                                                Table Scan
+                                              </h5>
+                                            </div>
+                                            <span
+                                              class="node-index"
+                                            >
+                                              #
+                                              6
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="ant-space-item"
+                                        >
+                                          <div
+                                            class="content-text"
+                                          >
+                                            <span
+                                              class="ant-typography"
+                                            >
+                                              enrollments
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="react-flow__viewport-portal"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <svg
+                          class="react-flow__background"
+                          data-testid="rf__background"
+                          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                        >
+                          <pattern
+                            height="20"
+                            id="pattern-1"
+                            patternTransform="translate(-11,-11)"
+                            patternUnits="userSpaceOnUse"
+                            width="20"
+                            x="0"
+                            y="0"
+                          >
+                            <circle
+                              class="react-flow__background-pattern dots"
+                              cx="0.5"
+                              cy="0.5"
+                              r="0.5"
+                            />
+                          </pattern>
+                          <rect
+                            fill="url(#pattern-1)"
+                            height="100%"
+                            width="100%"
+                            x="0"
+                            y="0"
+                          />
+                        </svg>
+                        <div
+                          class="react-flow__panel react-flow__attribution bottom left"
+                          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+                          style="pointer-events: all;"
+                        >
+                          <a
+                            aria-label="React Flow attribution"
+                            href="https://reactflow.dev"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            React Flow
+                          </a>
+                        </div>
+                        <div
+                          id="react-flow__node-desc-1"
+                          style="display: none;"
+                        >
+                          Press enter or space to select a node.
+                          You can then use the arrow keys to move the node around.
+                           Press delete to remove it and escape to cancel.
+                           
+                        </div>
+                        <div
+                          id="react-flow__edge-desc-1"
+                          style="display: none;"
+                        >
+                          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+                        </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="assertive"
+                          id="react-flow__aria-live-1"
+                          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
