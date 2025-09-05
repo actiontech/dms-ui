@@ -69,10 +69,13 @@ const AvailabilityZoneWrapper: React.FC = () => {
           res.data.data
         );
 
+        const projectIdReplacementReg =
+          /^(\/sqle\/|\/provision\/|\/)project\/([^\/]+)\/(.+)$/;
+
         // 当前项目不在用户绑定项目中 并且不存在近期选择项目 则需要去选择项目
         if (!!projectID && !isProjectInBindProjects && !memorizedProjectID) {
           const newPathname = location.pathname.replace(
-            /^(\/sqle\/|\/)project\/([^\/]+)\/(.+)$/,
+            projectIdReplacementReg,
             (_, prefix, projectId, target) => {
               return `${prefix}project//${target}`;
             }
@@ -82,7 +85,7 @@ const AvailabilityZoneWrapper: React.FC = () => {
           // 路径中没有默认项目
           if (!projectID) {
             const newPathname = location.pathname.replace(
-              /^(\/sqle\/|\/)project\/\/(.+)$/,
+              /^(\/sqle\/|\/provision\/|\/)project\/\/(.+)$/,
               (_, prefix, target) => {
                 return `${prefix}project/${memorizedProjectID}/${target}`;
               }
@@ -94,7 +97,7 @@ const AvailabilityZoneWrapper: React.FC = () => {
             // 这是后端的业务逻辑 如果没有给后端传递可用区信息 则默认走当前ip的服务
             // 这时项目下的页面路经就会携带项目id，如果选择其他可用区就会报错，因为可能在其他可用区中用户可能不属于该项目
             const newPathname = location.pathname.replace(
-              /^(\/sqle\/|\/)project\/([^\/]+)\/(.+)$/,
+              projectIdReplacementReg,
               (_, prefix, projectId, target) => {
                 return `${prefix}project/${memorizedProjectID}/${target}`;
               }
