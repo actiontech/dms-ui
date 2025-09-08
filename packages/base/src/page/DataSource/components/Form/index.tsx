@@ -296,14 +296,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       submit();
       return;
     }
-    formContext?.onCheckConnectable().then((isConnectable) => {
+    formContext?.onCheckConnectable(params).then((isConnectable) => {
       if (isConnectable) {
         submit();
       } else {
         openModal();
       }
     });
-  }, [formContext, submit, openModal, props]);
+  }, [formContext, submit, openModal, props, params]);
 
   useEffect(() => {
     const { unsubscribe: unsubscribeSubmit } = EventEmitter.subscribe(
