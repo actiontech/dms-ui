@@ -25,6 +25,7 @@ import {
 } from '@actiontech/shared/lib/testUtil';
 import { ModalName } from '../../../data/ModalName';
 import { useSelector } from 'react-redux';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 
 jest.mock('react-router', () => {
   return {
@@ -44,6 +45,7 @@ describe('SqlAnalyze/Workflow', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+  let sqlOptimizeSpy: jest.SpyInstance;
 
   beforeEach(() => {
     MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
@@ -54,7 +56,12 @@ describe('SqlAnalyze/Workflow', () => {
     });
     mockUseCurrentUser();
     mockUseCurrentProject();
-    mockUsePermission({}, { useSpyOnMockHooks: true });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         sqlAnalyze: {
@@ -69,6 +76,7 @@ describe('SqlAnalyze/Workflow', () => {
         }
       })
     );
+    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
   });
 
   afterEach(() => {
@@ -134,6 +142,25 @@ describe('SqlAnalyze/Workflow', () => {
       number: 123,
       affectRowsEnabled: true
     });
+  });
+
+  it('should create sql optimization task', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<WorkflowSqlAnalyze />, undefined, {
+      routerProps: {
+        initialEntries: ['/analyze?instance_name=Mysql1&schema=sqle']
+      }
+    });
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      task_id: 'taskId1',
+      number: 123,
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should render error result of type "info" when response code is 8001', async () => {

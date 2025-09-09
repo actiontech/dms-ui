@@ -357,4 +357,61 @@ describe('useInstance', () => {
     });
     expect(baseElementWithOptions).toMatchSnapshot();
   });
+
+  describe('getInstanceDbType', () => {
+    test('should return correct database type when instance is found', async () => {
+      const requestSpy = mockRequest();
+      requestSpy.mockImplementation(() =>
+        resolveThreeSecond([
+          { instance_name: 'mysql_instance', instance_type: 'mysql' },
+          { instance_name: 'oracle_instance', instance_type: 'oracle' },
+          { instance_name: 'postgres_instance', instance_type: 'postgresql' }
+        ])
+      );
+      const { result, waitForNextUpdate } = renderHook(() => useInstance());
+
+      act(() => {
+        result.current.updateInstanceList({ project_name: projectName });
+      });
+
+      jest.advanceTimersByTime(3000);
+      await waitForNextUpdate();
+
+      expect(result.current.getInstanceDbType('mysql_instance')).toBe('mysql');
+
+      expect(result.current.getInstanceDbType('oracle_instance')).toBe(
+        'oracle'
+      );
+
+      expect(result.current.getInstanceDbType('postgres_instance')).toBe(
+        'postgresql'
+      );
+    });
+
+    test('should return empty string when instance is not found', async () => {
+      const requestSpy = mockRequest();
+      requestSpy.mockImplementation(() =>
+        resolveThreeSecond([
+          { instance_name: 'mysql_instance', instance_type: 'mysql' },
+          { instance_name: 'oracle_instance', instance_type: 'oracle' }
+        ])
+      );
+      const { result, waitForNextUpdate } = renderHook(() => useInstance());
+
+      act(() => {
+        result.current.updateInstanceList({ project_name: projectName });
+      });
+
+      jest.advanceTimersByTime(3000);
+      await waitForNextUpdate();
+
+      expect(result.current.getInstanceDbType('non_existent_instance')).toBe(
+        ''
+      );
+
+      expect(result.current.getInstanceDbType('')).toBe('');
+
+      expect(result.current.getInstanceDbType(undefined as any)).toBe('');
+    });
+  });
 });

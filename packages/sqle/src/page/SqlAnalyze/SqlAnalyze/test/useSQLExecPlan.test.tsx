@@ -218,4 +218,54 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
 
     expect(getPerformanceStatisticsSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('should render sql optimization button', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onCreateSqlOptimizationOrview: jest.fn(),
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(screen.getByText('SQL优化')).toBeInTheDocument();
+  });
+
+  it('should hide sql optimization button when execution plan is not exist', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onCreateSqlOptimizationOrview: jest.fn(),
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: undefined,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(screen.queryByText('SQL优化')).not.toBeInTheDocument();
+  });
 });
