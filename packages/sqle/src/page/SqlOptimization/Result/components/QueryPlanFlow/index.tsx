@@ -4,14 +4,7 @@ import '@xyflow/react/dist/style.css';
 import { QueryPlanFlowWrapper } from '../style';
 import QueryPlanNode from './QueryPlanNode';
 import { IQueryPlanNode } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ExecutionPlanType } from '../../index.type';
-
-interface QueryPlanFlowProps {
-  queryPlanDesc: IQueryPlanNode[];
-  height?: number;
-  fitViewTrigger?: number; // 用于触发重新适应视图
-  planType?: ExecutionPlanType; // 执行计划类型
-}
+import { QueryPlanFlowProps } from './index.type';
 
 const QueryPlanFlow: React.FC<QueryPlanFlowProps> = ({
   queryPlanDesc,

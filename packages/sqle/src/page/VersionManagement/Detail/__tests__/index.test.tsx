@@ -10,7 +10,7 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useSelector, useDispatch } from 'react-redux';
-import { mockReactFlow } from '../mockData/mockReactFlow';
+import { mockReactFlow } from '@actiontech/shared/lib/testUtil/mockModule/mockReactFlow';
 import { useNavigate } from 'react-router-dom';
 import {
   getSqlVersionDetailV1MockData,

@@ -4,23 +4,7 @@ import type { Node, NodeProps } from '@xyflow/react';
 import { Space, Typography } from 'antd';
 import { DownOutlined, RightOutlined } from '@ant-design/icons';
 import { QueryPlanNodeWrapper } from '../style';
-import { ExecutionPlanType } from '../../index.type';
-
-interface QueryPlanItem {
-  summary: string[];
-  children: QueryPlanItem[];
-  operator: string;
-  [x: string]: any;
-}
-
-interface QueryPlanNodeData extends Record<string, unknown> {
-  detail: QueryPlanItem;
-  level: number;
-  hasChildren?: boolean;
-  isRootNode?: boolean;
-  nodeIndex?: number;
-  planType?: ExecutionPlanType;
-}
+import { QueryPlanNodeData } from './index.type';
 
 const QueryPlanNode: React.FC<NodeProps<Node<QueryPlanNodeData>>> = ({
   data,
@@ -37,25 +21,7 @@ const QueryPlanNode: React.FC<NodeProps<Node<QueryPlanNodeData>>> = ({
   const [isExpanded, setIsExpanded] = useState(true);
 
   const content = useMemo(() => {
-    let conditionString = '';
-    if (detail?.conditions) {
-      detail?.conditions?.forEach((item: any) => {
-        if (typeof item === 'string') {
-          conditionString += JSON.stringify(item);
-        }
-      });
-    }
-
-    const summaryString = detail?.summary?.join('\n');
-
-    const contentStr =
-      detail?.columns?.join('') ||
-      detail?.table ||
-      detail?.join_condition ||
-      conditionString ||
-      summaryString ||
-      '';
-    return contentStr;
+    return detail?.summary?.join('\n');
   }, [detail]);
 
   const handleToggleExpand = (event: React.MouseEvent) => {
