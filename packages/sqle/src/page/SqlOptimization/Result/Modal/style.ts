@@ -27,9 +27,6 @@ export const TableStructureModalWrapper = styled('div')`
       border: 1px solid
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
       border-radius: 8px;
-      overflow: hidden;
-      max-height: 300px;
-      overflow-y: auto;
     }
   }
 `;
