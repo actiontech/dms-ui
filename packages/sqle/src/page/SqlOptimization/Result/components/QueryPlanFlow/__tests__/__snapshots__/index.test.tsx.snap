@@ -1,0 +1,1350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryPlanFlow should render deeply nested query plan 1`] = `
+<body>
+  <div>
+    <div
+      class="css-8xvjlf"
+      style="height: 300px;"
+    >
+      <div
+        class="react-flow light"
+        data-testid="rf__wrapper"
+        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+      >
+        <div
+          class="react-flow__renderer"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <div
+            class="react-flow__pane draggable"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+          >
+            <div
+              class="react-flow__viewport xyflow__viewport react-flow__container"
+              style="transform: translate(0px,0px) scale(1);"
+            >
+              <div
+                class="react-flow__edges"
+              />
+              <div
+                class="react-flow__edgelabel-renderer"
+              />
+              <div
+                class="react-flow__nodes"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-0"
+                  data-testid="rf__node-node-0"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Root
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              1
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Root operation
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-0-null-source"
+                      data-nodeid="node-0"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-1"
+                  data-testid="rf__node-node-1"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-1-null-target"
+                      data-nodeid="node-1"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Level 1
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              2
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              First level
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-1-null-source"
+                      data-nodeid="node-1"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-2"
+                  data-testid="rf__node-node-2"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,240px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-2-null-target"
+                      data-nodeid="node-2"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Level 2
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              3
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Second level
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-2-null-source"
+                      data-nodeid="node-2"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-3"
+                  data-testid="rf__node-node-3"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,360px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-3-null-target"
+                      data-nodeid="node-3"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Level 3
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              4
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Third level
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="react-flow__viewport-portal"
+              />
+            </div>
+          </div>
+        </div>
+        <svg
+          class="react-flow__background"
+          data-testid="rf__background"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <pattern
+            height="20"
+            id="pattern-1"
+            patternTransform="translate(-11,-11)"
+            patternUnits="userSpaceOnUse"
+            width="20"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="react-flow__background-pattern dots"
+              cx="0.5"
+              cy="0.5"
+              r="0.5"
+            />
+          </pattern>
+          <rect
+            fill="url(#pattern-1)"
+            height="100%"
+            width="100%"
+            x="0"
+            y="0"
+          />
+        </svg>
+        <div
+          class="react-flow__panel react-flow__attribution bottom left"
+          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+          style="pointer-events: all;"
+        >
+          <a
+            aria-label="React Flow attribution"
+            href="https://reactflow.dev"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            React Flow
+          </a>
+        </div>
+        <div
+          id="react-flow__node-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select a node.
+          You can then use the arrow keys to move the node around.
+           Press delete to remove it and escape to cancel.
+           
+        </div>
+        <div
+          id="react-flow__edge-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="assertive"
+          id="react-flow__aria-live-1"
+          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanFlow should render query plan flow 1`] = `
+<body>
+  <div>
+    <div
+      class="css-8xvjlf"
+      style="height: 500px;"
+    >
+      <div
+        class="react-flow light"
+        data-testid="rf__wrapper"
+        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+      >
+        <div
+          class="react-flow__renderer"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <div
+            class="react-flow__pane draggable"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+          >
+            <div
+              class="react-flow__viewport xyflow__viewport react-flow__container"
+              style="transform: translate(0px,0px) scale(1);"
+            >
+              <div
+                class="react-flow__edges"
+              />
+              <div
+                class="react-flow__edgelabel-renderer"
+              />
+              <div
+                class="react-flow__nodes"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-0"
+                  data-testid="rf__node-node-0"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Table Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              1
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Scanning users table
+Filter: id &gt; 100
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-0-null-source"
+                      data-nodeid="node-0"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-1"
+                  data-testid="rf__node-node-1"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-1-null-target"
+                      data-nodeid="node-1"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Index Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              2
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Using index idx_users_id
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="react-flow__viewport-portal"
+              />
+            </div>
+          </div>
+        </div>
+        <svg
+          class="react-flow__background"
+          data-testid="rf__background"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <pattern
+            height="20"
+            id="pattern-1"
+            patternTransform="translate(-11,-11)"
+            patternUnits="userSpaceOnUse"
+            width="20"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="react-flow__background-pattern dots"
+              cx="0.5"
+              cy="0.5"
+              r="0.5"
+            />
+          </pattern>
+          <rect
+            fill="url(#pattern-1)"
+            height="100%"
+            width="100%"
+            x="0"
+            y="0"
+          />
+        </svg>
+        <div
+          class="react-flow__panel react-flow__attribution bottom left"
+          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+          style="pointer-events: all;"
+        >
+          <a
+            aria-label="React Flow attribution"
+            href="https://reactflow.dev"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            React Flow
+          </a>
+        </div>
+        <div
+          id="react-flow__node-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select a node.
+          You can then use the arrow keys to move the node around.
+           Press delete to remove it and escape to cancel.
+           
+        </div>
+        <div
+          id="react-flow__edge-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="assertive"
+          id="react-flow__aria-live-1"
+          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanFlow should render with optimized planType 1`] = `
+<body>
+  <div>
+    <div
+      class="css-8xvjlf"
+      style="height: 300px;"
+    >
+      <div
+        class="react-flow light"
+        data-testid="rf__wrapper"
+        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+      >
+        <div
+          class="react-flow__renderer"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <div
+            class="react-flow__pane draggable"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+          >
+            <div
+              class="react-flow__viewport xyflow__viewport react-flow__container"
+              style="transform: translate(0px,0px) scale(1);"
+            >
+              <div
+                class="react-flow__edges"
+              />
+              <div
+                class="react-flow__edgelabel-renderer"
+              />
+              <div
+                class="react-flow__nodes"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-0"
+                  data-testid="rf__node-node-0"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Table Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              1
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Scanning users table
+Filter: id &gt; 100
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-0-null-source"
+                      data-nodeid="node-0"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-1"
+                  data-testid="rf__node-node-1"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1wqoq18"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-1-null-target"
+                      data-nodeid="node-1"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Index Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              2
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Using index idx_users_id
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="react-flow__viewport-portal"
+              />
+            </div>
+          </div>
+        </div>
+        <svg
+          class="react-flow__background"
+          data-testid="rf__background"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <pattern
+            height="20"
+            id="pattern-1"
+            patternTransform="translate(-11,-11)"
+            patternUnits="userSpaceOnUse"
+            width="20"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="react-flow__background-pattern dots"
+              cx="0.5"
+              cy="0.5"
+              r="0.5"
+            />
+          </pattern>
+          <rect
+            fill="url(#pattern-1)"
+            height="100%"
+            width="100%"
+            x="0"
+            y="0"
+          />
+        </svg>
+        <div
+          class="react-flow__panel react-flow__attribution bottom left"
+          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+          style="pointer-events: all;"
+        >
+          <a
+            aria-label="React Flow attribution"
+            href="https://reactflow.dev"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            React Flow
+          </a>
+        </div>
+        <div
+          id="react-flow__node-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select a node.
+          You can then use the arrow keys to move the node around.
+           Press delete to remove it and escape to cancel.
+           
+        </div>
+        <div
+          id="react-flow__edge-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="assertive"
+          id="react-flow__aria-live-1"
+          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`QueryPlanFlow should render with planType 1`] = `
+<body>
+  <div>
+    <div
+      class="css-8xvjlf"
+      style="height: 300px;"
+    >
+      <div
+        class="react-flow light"
+        data-testid="rf__wrapper"
+        style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+      >
+        <div
+          class="react-flow__renderer"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <div
+            class="react-flow__pane draggable"
+            style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+          >
+            <div
+              class="react-flow__viewport xyflow__viewport react-flow__container"
+              style="transform: translate(0px,0px) scale(1);"
+            >
+              <div
+                class="react-flow__edges"
+              />
+              <div
+                class="react-flow__edgelabel-renderer"
+              />
+              <div
+                class="react-flow__nodes"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-0"
+                  data-testid="rf__node-node-0"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1vz5s1g"
+                  >
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Table Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              1
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Scanning users table
+Filter: id &gt; 100
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                      data-handlepos="bottom"
+                      data-id="1-node-0-null-source"
+                      data-nodeid="node-0"
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-describedby="react-flow__node-desc-1"
+                  class="react-flow__node react-flow__node-queryPlanNode"
+                  data-id="node-1"
+                  data-testid="rf__node-node-1"
+                  role="button"
+                  style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-1vz5s1g"
+                  >
+                    <div
+                      class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                      data-handlepos="top"
+                      data-id="1-node-1-null-target"
+                      data-nodeid="node-1"
+                    />
+                    <div
+                      class="query-plan-node-card"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                        style="width: 100%;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="operator-row"
+                          >
+                            <div
+                              class="operator-left"
+                            >
+                              <span
+                                class="collapse-icon"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <h5
+                                class="ant-typography operator-title"
+                              >
+                                Index Scan
+                              </h5>
+                            </div>
+                            <span
+                              class="node-index"
+                            >
+                              #
+                              2
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="content-text"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              Using index idx_users_id
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="react-flow__viewport-portal"
+              />
+            </div>
+          </div>
+        </div>
+        <svg
+          class="react-flow__background"
+          data-testid="rf__background"
+          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+        >
+          <pattern
+            height="20"
+            id="pattern-1"
+            patternTransform="translate(-11,-11)"
+            patternUnits="userSpaceOnUse"
+            width="20"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="react-flow__background-pattern dots"
+              cx="0.5"
+              cy="0.5"
+              r="0.5"
+            />
+          </pattern>
+          <rect
+            fill="url(#pattern-1)"
+            height="100%"
+            width="100%"
+            x="0"
+            y="0"
+          />
+        </svg>
+        <div
+          class="react-flow__panel react-flow__attribution bottom left"
+          data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+          style="pointer-events: all;"
+        >
+          <a
+            aria-label="React Flow attribution"
+            href="https://reactflow.dev"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            React Flow
+          </a>
+        </div>
+        <div
+          id="react-flow__node-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select a node.
+          You can then use the arrow keys to move the node around.
+           Press delete to remove it and escape to cancel.
+           
+        </div>
+        <div
+          id="react-flow__edge-desc-1"
+          style="display: none;"
+        >
+          Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="assertive"
+          id="react-flow__aria-live-1"
+          style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -25,6 +25,7 @@ import {
 } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 
 jest.mock('react-router', () => {
   return {
@@ -46,6 +47,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+  let sqlOptimizeSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
   let currentTime = dayjs('2025-01-09 12:00:00');
@@ -60,8 +62,14 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       id: '2',
       projectName
     });
+    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
     getSqlManageSqlAnalysisChartSpy = sqlManage.getSqlManageSqlAnalysisChart();
-    mockUsePermission({}, { useSpyOnMockHooks: true });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         sqlAnalyze: {
@@ -195,6 +203,26 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should create sql optimization task', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<ManagementConfAnalyze />, undefined, {
+      routerProps: {
+        initialEntries: ['/analyze?instance_name=Mysql1&schema=sqle']
+      }
+    });
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      project_name: projectName,
+      instance_audit_plan_id: '1',
+      id: '2',
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);
   });
 
   test('should render error result of type "error" when response code is not 8001', async () => {
