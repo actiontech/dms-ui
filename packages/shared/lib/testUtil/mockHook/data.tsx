@@ -7,6 +7,7 @@ import {
 import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
 import DatabaseTypeLogo from '../../components/DatabaseTypeLogo/DatabaseTypeLogo';
 import { SupportLanguage } from '../../enum';
+import { GetUserSystemEnum } from '../../../lib/api/base/service/common.enum';
 
 export const mockCurrentUserReturn = {
   isAdmin: true,
@@ -49,7 +50,8 @@ export const mockCurrentUserReturn = {
     [SystemRole.auditAdministrator]: true,
     [SystemRole.projectDirector]: true
   },
-  hasGlobalViewingPermission: true
+  hasGlobalViewingPermission: true,
+  systemPreference: GetUserSystemEnum.MANAGEMENT
 };
 
 export const mockProjectInfo = {

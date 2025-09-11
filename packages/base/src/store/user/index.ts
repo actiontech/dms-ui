@@ -11,6 +11,7 @@ import {
   IUserBindProject
 } from '@actiontech/shared/lib/api/base/service/common';
 import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
+import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export type IBindProject = { archived?: boolean } & IUserBindProject;
 
@@ -24,6 +25,7 @@ type UserReduxState = {
   uid: string;
   isUserInfoFetched: boolean;
   language: SupportLanguage;
+  systemPreference?: GetUserSystemEnum;
 };
 
 const initialState: UserReduxState = {
@@ -41,7 +43,8 @@ const initialState: UserReduxState = {
   language: LocalStorageWrapper.getOrDefault(
     StorageKey.Language,
     DEFAULT_LANGUAGE
-  ) as SupportLanguage
+  ) as SupportLanguage,
+  systemPreference: undefined
 };
 
 const user = createSlice({
@@ -107,6 +110,14 @@ const user = createSlice({
     },
     updateUserInfoFetchStatus: (state, { payload }: PayloadAction<boolean>) => {
       state.isUserInfoFetched = payload;
+    },
+    updateSystemPreference: (
+      state,
+      {
+        payload: { systemPreference }
+      }: PayloadAction<{ systemPreference?: GetUserSystemEnum }>
+    ) => {
+      state.systemPreference = systemPreference;
     }
   }
 });
@@ -119,7 +130,8 @@ export const {
   updateBindProjects,
   updateManagementPermissions,
   updateUserUid,
-  updateUserInfoFetchStatus
+  updateUserInfoFetchStatus,
+  updateSystemPreference
 } = user.actions;
 
 export default user.reducer;

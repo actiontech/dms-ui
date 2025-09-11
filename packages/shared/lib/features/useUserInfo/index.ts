@@ -10,7 +10,8 @@ import {
   updateUser,
   updateUserInfoFetchStatus,
   updateUserUid,
-  updateLanguage
+  updateLanguage,
+  updateSystemPreference
 } from '../../../../base/src/store/user';
 import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
 import User from '../../api/base/service/User';
@@ -52,6 +53,7 @@ const useUserInfo = () => {
         managementPermissions: []
       })
     );
+
     dispatch(updateUserInfoFetchStatus(false));
   }, [dispatch]);
 
@@ -98,6 +100,12 @@ const useUserInfo = () => {
           dispatch(
             updateManagementPermissions({
               managementPermissions: data?.op_permissions ?? []
+            })
+          );
+
+          dispatch(
+            updateSystemPreference({
+              systemPreference: data?.system
             })
           );
 
