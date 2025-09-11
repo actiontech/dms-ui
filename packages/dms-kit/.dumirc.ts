@@ -13,6 +13,19 @@ export default defineConfig({
   resolve: {
     atomDirs: [{ type: 'components', dir: 'src/components' }]
   },
+  // 配置dumi忽略某些文件，仅用于文档生成
+  conventionRoutes: {
+    // 排除测试文件
+    exclude: [
+      /\/demo\//,
+      /\/demos\//,
+      /\/__tests__\//,
+      /\/__snapshots__\//,
+      /\.test\.(ts|tsx|js|jsx)$/,
+      /\.snap$/,
+      /\/testUtil\//
+    ]
+  },
   alias: {
     '@actiontech/dms-kit': join(__dirname, 'src'),
     '@actiontech/icons': join(__dirname, '../icons/src')
