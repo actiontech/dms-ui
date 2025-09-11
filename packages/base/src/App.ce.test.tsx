@@ -30,6 +30,10 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('./data/metaEnv', () => ({
+  isPROD: true
+}));
+
 describe('test App ce', () => {
   const scopeDispatch = jest.fn();
   beforeEach(() => {
