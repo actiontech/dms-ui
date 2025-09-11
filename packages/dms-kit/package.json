@@ -15,6 +15,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "father build",
+    "dev": "father dev --incremental",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
