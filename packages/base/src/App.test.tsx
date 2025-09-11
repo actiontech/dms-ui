@@ -48,6 +48,10 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('./data/metaEnv', () => ({
+  isPROD: true
+}));
+
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
