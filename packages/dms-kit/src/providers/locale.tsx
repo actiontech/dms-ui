@@ -81,7 +81,7 @@ export function createKitI18n(
     lng: language,
     fallbackLng,
     resources: mergedResources,
-    interpolation: { escapeValue: false },
+    interpolation: { escapeValue: false, skipOnVariables: false },
     defaultNS: 'translation'
   });
 
