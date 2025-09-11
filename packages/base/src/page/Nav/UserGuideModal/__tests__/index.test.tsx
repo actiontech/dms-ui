@@ -84,6 +84,41 @@ describe('UserGuideModal', () => {
     expect(window.location.href).toBe('/cloudbeaver');
   });
 
+  it('should not open CloudBeaver automatically when systemPreference is WORKBENCH and sql_query_root_uri is the same as location.pathname', async () => {
+    const hrefSetSpy = jest.fn();
+    Object.defineProperty(window, 'location', {
+      value: {
+        ...originLocation,
+        pathname: '/cloudbeaver',
+        set href(value: string) {
+          hrefSetSpy(value);
+        }
+      },
+      writable: true
+    });
+
+    mockUseCurrentUser({
+      systemPreference: GetUserSystemEnum.WORKBENCH
+    });
+
+    getSQLQueryConfigurationSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          enable_sql_query: true,
+          sql_query_root_uri: '/cloudbeaver'
+        }
+      })
+    );
+
+    superRender(<UserGuideModal />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
+
+    expect(hrefSetSpy).not.toHaveBeenCalled();
+  });
+
   it('should call updateCurrentUser API when confirm button is clicked with MANAGEMENT system', async () => {
     mockUseCurrentUser({ systemPreference: undefined });
 
