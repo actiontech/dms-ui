@@ -82,9 +82,8 @@ export default {
   sqlPerformanceInsights: '性能洞察',
 
   userGuide: {
-    title: '欢迎回来！',
-    description:
-      '为了让您的使用更便捷，请选择一个您希望在下次登录时默认进入的页面。',
+    title: '请选择默认进入的页面',
+    description: '请选择默认进入的页面',
     dataWorkspace: {
       label: '数据工作台',
       description: '直接进入数据分析和操作界面。'
@@ -94,6 +93,6 @@ export default {
       description: '用于系统配置、用户和权限管理。'
     },
     skipButton: '跳过，以后再说',
-    confirmButton: '确认并进入系统'
+    confirmButton: '确认并进入'
   }
 };
