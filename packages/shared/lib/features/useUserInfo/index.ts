@@ -10,7 +10,8 @@ import {
   updateUser,
   updateUserInfoFetchStatus,
   updateUserUid,
-  updateLanguage
+  updateLanguage,
+  updateSystemPreference
 } from '../../../../base/src/store/user';
 import {
   ResponseCode,
@@ -56,6 +57,7 @@ const useUserInfo = () => {
         managementPermissions: []
       })
     );
+
     dispatch(updateUserInfoFetchStatus(false));
   }, [dispatch]);
 
@@ -101,6 +103,12 @@ const useUserInfo = () => {
           dispatch(
             updateManagementPermissions({
               managementPermissions: data?.op_permissions ?? []
+            })
+          );
+
+          dispatch(
+            updateSystemPreference({
+              systemPreference: data?.system
             })
           );
 

@@ -18,6 +18,7 @@ export default defineConfig(() => {
   const isDemo = buildTypes.includes('DEMO');
   const isPROVISION = buildTypes.includes('PROVISION');
   const isDMS = isSQLE && isPROVISION;
+  const isPROD = buildTypes.includes('PROD');
 
   const genTitle = () => {
     if (isDMS) {
@@ -47,7 +48,8 @@ export default defineConfig(() => {
           sqle: isSQLE,
           provision: isPROVISION,
           dms: isDMS,
-          demo: isDemo
+          demo: isDemo,
+          prod: isPROD
         }
       }),
       eslint({
