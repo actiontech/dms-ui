@@ -3,11 +3,9 @@ import { RangePickerProps } from 'antd/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { CSSProperties, Key, ReactNode } from 'react';
 import { ExcludeSymbol } from '../../types/common.type';
-import {
-  CustomInputProps,
-  CustomSelectProps,
-  BasicButtonProps
-} from '@actiontech/dms-kit';
+import { CustomInputProps } from '../CustomInput';
+import { BasicButtonProps } from '../BasicButton';
+import { CustomSelectProps } from '../CustomSelect';
 
 //======================================= utils
 
