@@ -551,11 +551,17 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           >
             <EmptyBox
               defaultNode={
-                <BasicButton
+                <ActionButton
+                  actionType="confirm"
+                  confirm={
+                    {
+                      "onConfirm": undefined,
+                      "title": "该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？",
+                    }
+                  }
+                  text="获取"
                   type="primary"
-                >
-                  获取
-                </BasicButton>
+                />
               }
             >
               --
@@ -749,11 +755,17 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           >
             <EmptyBox
               defaultNode={
-                <BasicButton
+                <ActionButton
+                  actionType="confirm"
+                  confirm={
+                    {
+                      "onConfirm": undefined,
+                      "title": "该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？",
+                    }
+                  }
+                  text="获取"
                   type="primary"
-                >
-                  获取
-                </BasicButton>
+                />
               }
             >
               --
@@ -867,11 +879,17 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           >
             <EmptyBox
               defaultNode={
-                <BasicButton
+                <ActionButton
+                  actionType="confirm"
+                  confirm={
+                    {
+                      "onConfirm": undefined,
+                      "title": "该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？",
+                    }
+                  }
+                  text="获取"
                   type="primary"
-                >
-                  获取
-                </BasicButton>
+                />
               }
             >
               --
@@ -985,11 +1003,17 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           >
             <EmptyBox
               defaultNode={
-                <BasicButton
+                <ActionButton
+                  actionType="confirm"
+                  confirm={
+                    {
+                      "onConfirm": undefined,
+                      "title": "该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？",
+                    }
+                  }
+                  text="获取"
                   type="primary"
-                >
-                  获取
-                </BasicButton>
+                />
               }
             >
               10
@@ -1103,11 +1127,17 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
           >
             <EmptyBox
               defaultNode={
-                <BasicButton
+                <ActionButton
+                  actionType="confirm"
+                  confirm={
+                    {
+                      "onConfirm": undefined,
+                      "title": "该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？",
+                    }
+                  }
+                  text="获取"
                   type="primary"
-                >
-                  获取
-                </BasicButton>
+                />
               }
             >
               --
