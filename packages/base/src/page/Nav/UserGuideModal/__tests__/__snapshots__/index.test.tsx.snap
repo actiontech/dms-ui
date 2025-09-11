@@ -36,7 +36,7 @@ exports[`UserGuideModal should render correctly when systemPreference is undefin
                 class="ant-modal-title"
                 id="test-id"
               >
-                欢迎回来！
+                请选择默认进入的页面
               </div>
             </div>
             <div
@@ -45,11 +45,6 @@ exports[`UserGuideModal should render correctly when systemPreference is undefin
               <div
                 class="css-4nxgo3"
               >
-                <div
-                  class="guide-content"
-                >
-                  为了让您的使用更便捷，请选择一个您希望在下次登录时默认进入的页面。
-                </div>
                 <div
                   class="option-container"
                 >
@@ -127,11 +122,11 @@ exports[`UserGuideModal should render correctly when systemPreference is undefin
                   class="button-container"
                 >
                   <button
-                    class="ant-btn ant-btn-primary ant-btn-lg primary-button"
+                    class="ant-btn ant-btn-primary ant-btn-lg primary-button basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
-                      确认并进入系统
+                      确认并进入
                     </span>
                   </button>
                 </div>

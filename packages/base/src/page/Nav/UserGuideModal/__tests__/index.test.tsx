@@ -6,14 +6,26 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil';
 import { useDispatch } from 'react-redux';
-import UserGuideModal from '../index';
 import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { updateSystemPreference } from '../../../../store/user';
+import UserGuideModal from '../index';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn()
 }));
+
+jest.mock('../../../../data/metaEnv', () => ({
+  isPROD: true
+}));
+
+const originLocation = window.location;
+Object.defineProperty(window, 'location', {
+  value: {
+    ...originLocation
+  },
+  writable: true
+});
 
 describe('UserGuideModal', () => {
   const mockDispatch = jest.fn();
@@ -37,7 +49,7 @@ describe('UserGuideModal', () => {
     mockUseCurrentUser({ systemPreference: undefined });
     const { baseElement } = superRender(<UserGuideModal />);
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('欢迎回来！')).toBeInTheDocument();
+    expect(screen.getByText('请选择默认进入的页面')).toBeInTheDocument();
   });
 
   it('should not render modal when systemPreference is MANAGEMENT', () => {
@@ -46,7 +58,7 @@ describe('UserGuideModal', () => {
     });
     superRender(<UserGuideModal />);
 
-    expect(screen.queryByText('欢迎回来！')).not.toBeInTheDocument();
+    expect(screen.queryByText('请选择默认进入的页面')).not.toBeInTheDocument();
   });
 
   it('should open CloudBeaver automatically when systemPreference is WORKBENCH', async () => {
@@ -54,11 +66,22 @@ describe('UserGuideModal', () => {
       systemPreference: GetUserSystemEnum.WORKBENCH
     });
 
+    getSQLQueryConfigurationSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          enable_sql_query: true,
+          sql_query_root_uri: '/cloudbeaver'
+        }
+      })
+    );
+
     superRender(<UserGuideModal />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
+
+    expect(window.location.href).toBe('/cloudbeaver');
   });
 
   it('should call updateCurrentUser API when confirm button is clicked with MANAGEMENT system', async () => {
@@ -66,7 +89,7 @@ describe('UserGuideModal', () => {
 
     superRender(<UserGuideModal />);
 
-    const confirmButton = screen.getByText('确认并进入系统');
+    const confirmButton = screen.getByText('确认并进入');
     fireEvent.click(confirmButton);
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -92,7 +115,7 @@ describe('UserGuideModal', () => {
     );
     fireEvent.click(workbenchRadio);
 
-    const confirmButton = screen.getByText('确认并进入系统');
+    const confirmButton = screen.getByText('确认并进入');
     fireEvent.click(confirmButton);
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -103,37 +126,8 @@ describe('UserGuideModal', () => {
       }
     });
 
-    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-
     expect(mockDispatch).toHaveBeenCalledWith(
       updateSystemPreference({ systemPreference: GetUserSystemEnum.WORKBENCH })
     );
-  });
-
-  it('should redirect to CloudBeaver when SQL query is enabled and has valid URI', async () => {
-    mockUseCurrentUser({ systemPreference: undefined });
-
-    getSQLQueryConfigurationSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          enable_sql_query: true,
-          sql_query_root_uri: '/cloudbeaver'
-        }
-      })
-    );
-
-    superRender(<UserGuideModal />);
-
-    const workbenchRadio = screen.getByDisplayValue(
-      GetUserSystemEnum.WORKBENCH
-    );
-    fireEvent.click(workbenchRadio);
-
-    const confirmButton = screen.getByText('确认并进入系统');
-    fireEvent.click(confirmButton);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
   });
 });

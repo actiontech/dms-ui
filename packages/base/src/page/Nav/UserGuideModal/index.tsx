@@ -1,8 +1,8 @@
-import { Radio, Button } from 'antd';
+import { Radio } from 'antd';
 import type { RadioGroupProps } from 'antd';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BasicModal } from '@actiontech/dms-kit';
+import { BasicModal, BasicButton } from '@actiontech/dms-kit';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { UserGuideModalStyleWrapper } from './style';
 import {
@@ -14,6 +14,7 @@ import { ResponseCode } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import { updateSystemPreference } from '../../../store/user';
+import { isPROD } from '../../../data/metaEnv';
 
 const UserGuideModal: React.FC = () => {
   const { t } = useTranslation();
@@ -35,15 +36,13 @@ const UserGuideModal: React.FC = () => {
       );
     },
     {
-      manual: true,
       onSuccess: (res) => {
-        if (res?.enable_sql_query && res.sql_query_root_uri) {
+        if (res?.enable_sql_query && res.sql_query_root_uri && isPROD) {
           // 因为sql_query_root_uri是不携带origin的，只有pathname。所以开发环境localhost不可以直接跳转到CB
-          //# if [prod]
           window.location.href = res.sql_query_root_uri;
-          //# endif
         }
-      }
+      },
+      ready: systemPreference === GetUserSystemEnum.WORKBENCH
     }
   );
 
@@ -71,12 +70,6 @@ const UserGuideModal: React.FC = () => {
     }
   );
 
-  useEffect(() => {
-    if (systemPreference === GetUserSystemEnum.WORKBENCH) {
-      openCloudBeaver();
-    }
-  }, [systemPreference, openCloudBeaver]);
-
   const options = [
     {
       value: GetUserSystemEnum.WORKBENCH,
@@ -99,10 +92,6 @@ const UserGuideModal: React.FC = () => {
       closable={false}
     >
       <UserGuideModalStyleWrapper>
-        <div className="guide-content">
-          {t('dmsMenu.userGuide.description')}
-        </div>
-
         <div className="option-container">
           <Radio.Group
             value={system}
@@ -127,7 +116,7 @@ const UserGuideModal: React.FC = () => {
         </div>
 
         <div className="button-container">
-          <Button
+          <BasicButton
             type="primary"
             size="large"
             onClick={updateCurrentUserSystem}
@@ -135,7 +124,7 @@ const UserGuideModal: React.FC = () => {
             loading={updateCurrentUserSystemLoading || openCloudBeaverLoading}
           >
             {t('dmsMenu.userGuide.confirmButton')}
-          </Button>
+          </BasicButton>
         </div>
       </UserGuideModalStyleWrapper>
     </BasicModal>
