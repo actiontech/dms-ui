@@ -37,8 +37,14 @@ const UserGuideModal: React.FC = () => {
     },
     {
       onSuccess: (res) => {
-        if (res?.enable_sql_query && res.sql_query_root_uri && isPROD) {
-          // 因为sql_query_root_uri是不携带origin的，只有pathname。所以开发环境localhost不可以直接跳转到CB
+        if (
+          res?.enable_sql_query &&
+          res.sql_query_root_uri &&
+          res.sql_query_root_uri !== location.pathname &&
+          isPROD
+        ) {
+          // res.sql_query_root_uri !== location.pathname 防止无限刷新
+          // isPROD 因为sql_query_root_uri是不携带origin的，只有pathname。所以开发环境localhost不可以直接跳转到CB
           window.location.href = res.sql_query_root_uri;
         }
       },
