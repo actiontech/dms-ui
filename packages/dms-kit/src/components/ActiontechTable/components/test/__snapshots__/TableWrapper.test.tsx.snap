@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableWrapper should render TableWrapper with loading 1`] = `
+<div>
+  <div
+    class="ant-spin-nested-loading"
+  >
+    <div>
+      <div
+        aria-busy="true"
+        aria-live="polite"
+        class="ant-spin ant-spin-spinning"
+      >
+        <span
+          class="ant-spin-dot ant-spin-dot-spin"
+        >
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+        </span>
+      </div>
+    </div>
+    <div
+      class="ant-spin-container ant-spin-blur"
+    >
+      <div>
+        TableWrapper
+      </div>
+    </div>
+  </div>
+</div>
+`;
