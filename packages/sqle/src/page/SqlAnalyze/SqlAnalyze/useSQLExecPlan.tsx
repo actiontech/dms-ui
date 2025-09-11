@@ -5,7 +5,8 @@ import {
   BasicTable,
   BasicResult,
   SQLRenderer,
-  BasicButton
+  BasicButton,
+  ActionButton
 } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
@@ -207,12 +208,19 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                   <EmptyBox
                     if={isPerformanceInfoLoaded}
                     defaultNode={
-                      <BasicButton
+                      <ActionButton
                         type="primary"
-                        onClick={getPerformanceStatistics}
-                      >
-                        {t('sqlQuery.executePlan.getPerformanceStatistics')}
-                      </BasicButton>
+                        text={t(
+                          'sqlQuery.executePlan.getPerformanceStatistics'
+                        )}
+                        actionType="confirm"
+                        confirm={{
+                          title: t(
+                            'sqlQuery.executePlan.getPerformanceStatisticsTips'
+                          ),
+                          onConfirm: getPerformanceStatistics
+                        }}
+                      />
                     }
                   >
                     {affect_rows?.count

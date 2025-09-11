@@ -38,6 +38,8 @@ export default {
     sqlExplain: '执行计划',
     performanceStatistics: '性能统计',
     getPerformanceStatistics: '获取',
+    getPerformanceStatisticsTips:
+      '该操作需要下发真实SQL，可能影响数据库性能，生产环境谨慎操作！确认获取吗？',
     affectRows: '影响行数',
     affectRowTips: '区别于执行计划的rows列，显示SQL的实际影响行数',
     optimize: 'SQL优化'
