@@ -213,8 +213,9 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
 
-    const button = screen.getByText('获 取');
-    fireEvent.click(button);
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('确 认'));
 
     expect(getPerformanceStatisticsSpy).toHaveBeenCalledTimes(1);
   });
