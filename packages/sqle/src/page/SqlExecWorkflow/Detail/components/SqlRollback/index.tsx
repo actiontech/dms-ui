@@ -265,7 +265,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
       params: { projectID },
       queries: {
-        rollbackWorkflowId: workflowInfo?.workflow_id
+        rollback_workflow_id: workflowInfo?.workflow_id
       }
     });
   };

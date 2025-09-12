@@ -84,7 +84,7 @@ describe('sqle/SqlAudit/List', () => {
 
   it('should request list with url params', async () => {
     sqleSuperRender(<SqlAuditList />, undefined, {
-      routerProps: { initialEntries: ['/sql-audit?SQLAuditRecordID=123456'] }
+      routerProps: { initialEntries: ['/sql-audit?sql_audit_record_id=123456'] }
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);

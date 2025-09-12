@@ -58,8 +58,8 @@ const SqlAuditList = () => {
   >();
   const filterDataFromUrl = useMemo(() => {
     const searchStr = extractQueries(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
-    if (searchStr?.SQLAuditRecordID) {
-      return searchStr.SQLAuditRecordID ?? undefined;
+    if (searchStr?.sql_audit_record_id) {
+      return searchStr.sql_audit_record_id ?? undefined;
     }
   }, [extractQueries]);
 
