@@ -79,5 +79,20 @@ export default {
     switchAvailabilityZone: '切换可用区将重新加载数据，是否确认？',
     pleaseSelect: '请选择'
   },
-  sqlPerformanceInsights: '性能洞察'
+  sqlPerformanceInsights: '性能洞察',
+
+  userGuide: {
+    title: '请选择默认进入的页面',
+    description: '请选择默认进入的页面',
+    dataWorkspace: {
+      label: '数据工作台',
+      description: '直接进入数据分析和操作界面。'
+    },
+    adminPanel: {
+      label: '管理后台',
+      description: '用于系统配置、用户和权限管理。'
+    },
+    skipButton: '跳过，以后再说',
+    confirmButton: '确认并进入'
+  }
 };
