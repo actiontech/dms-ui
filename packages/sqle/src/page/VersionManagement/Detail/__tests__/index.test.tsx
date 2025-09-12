@@ -114,9 +114,9 @@ describe('sqle/VersionManagement/Detail', () => {
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${
         mockProjectInfo.projectID
-      }/exec-workflow/create?versionId=${
+      }/exec-workflow/create?version_id=${
         mockVersionData?.sql_version_id
-      }&versionName=${encodeURIComponent(mockVersionData?.version ?? '')}`
+      }&version_name=${encodeURIComponent(mockVersionData?.version ?? '')}`
     );
   });
 

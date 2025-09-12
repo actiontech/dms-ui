@@ -189,8 +189,8 @@ const VersionDetail = () => {
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
       params: { projectID },
       queries: {
-        versionId: id?.toString() ?? '',
-        versionName: encodeURIComponent(name ?? '')
+        version_id: id?.toString() ?? '',
+        version_name: encodeURIComponent(name ?? '')
       }
     });
   };

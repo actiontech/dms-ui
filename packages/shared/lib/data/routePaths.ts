@@ -191,7 +191,7 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project/:projectID/exec-workflow',
         path: 'create',
         query:
-          'sourceWorkflowId&versionId&versionName&compression_data&from&gen_modified_sql_params&rollbackWorkflowId'
+          'source_workflow_id&version_id&version_name&compression_data&from&gen_modified_sql_params&rollback_workflow_id'
       },
       detail: {
         prefix: '/sqle/project/:projectID/exec-workflow',
@@ -212,7 +212,7 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-audit',
-        query: 'SQLAuditRecordID&active'
+        query: 'sql_audit_record_id&active'
       },
       create: {
         prefix: '/sqle/project/:projectID/sql-audit',
