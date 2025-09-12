@@ -8,6 +8,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '../../testUtil/mockApi';
+import { GetUserSystemEnum } from '../../api/base/service/common.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -52,7 +53,7 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
 
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
@@ -78,6 +79,12 @@ describe('useUserInfo', () => {
         managementPermissions: []
       },
       type: 'user/updateManagementPermissions'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: {
+        systemPreference: GetUserSystemEnum.MANAGEMENT
+      },
+      type: 'user/updateSystemPreference'
     });
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: true,
