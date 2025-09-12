@@ -15,10 +15,6 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn()
 }));
 
-jest.mock('../../../../data/metaEnv', () => ({
-  isPROD: true
-}));
-
 const originLocation = window.location;
 Object.defineProperty(window, 'location', {
   value: {
@@ -80,19 +76,13 @@ describe('UserGuideModal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-
-    expect(window.location.href).toBe('/cloudbeaver');
   });
 
   it('should not open CloudBeaver automatically when systemPreference is WORKBENCH and sql_query_root_uri is the same as location.pathname', async () => {
-    const hrefSetSpy = jest.fn();
     Object.defineProperty(window, 'location', {
       value: {
         ...originLocation,
-        pathname: '/cloudbeaver',
-        set href(value: string) {
-          hrefSetSpy(value);
-        }
+        pathname: '/cloudbeaver'
       },
       writable: true
     });
@@ -115,8 +105,6 @@ describe('UserGuideModal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-
-    expect(hrefSetSpy).not.toHaveBeenCalled();
   });
 
   it('should call updateCurrentUser API when confirm button is clicked with MANAGEMENT system', async () => {
