@@ -118,7 +118,7 @@ describe('test SqlBackupSwitcher', () => {
       false,
       false,
       true,
-      '?sourceWorkflowId=111'
+      '?source_workflow_id=111'
     );
     expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
       'false'
