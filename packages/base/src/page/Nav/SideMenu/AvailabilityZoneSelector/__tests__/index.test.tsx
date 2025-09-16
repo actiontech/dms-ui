@@ -9,6 +9,7 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import * as useClearRecoilState from 'provision/src/hooks/useClearRecoilState';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -25,11 +26,16 @@ describe('AvailabilityZoneSelector', () => {
   const navigateSpy = jest.fn();
   const emitSpy = jest.spyOn(EventEmitter, 'emit');
 
+  const mockClearRecoilState = jest.fn();
+
   beforeEach(() => {
     mockUseRecentlySelectedZone({
       availabilityZone: mockZoneTips[0]
     });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    jest
+      .spyOn(useClearRecoilState, 'default')
+      .mockImplementation(() => ({ clearRecoilState: mockClearRecoilState }));
     jest.useFakeTimers();
   });
 
@@ -153,6 +159,7 @@ describe('AvailabilityZoneSelector', () => {
     );
     expect(emitSpy).toHaveBeenCalledWith(EmitterKey.DMS_Reload_Initial_Data);
     expect(navigateSpy).toHaveBeenCalledWith(ROUTE_PATHS.BASE.HOME);
+    expect(mockClearRecoilState).toHaveBeenCalled();
   });
 
   it('does not trigger popconfirm for currently selected zone', async () => {
@@ -180,5 +187,6 @@ describe('AvailabilityZoneSelector', () => {
     ).not.toHaveBeenCalled();
     expect(emitSpy).not.toHaveBeenCalled();
     expect(navigateSpy).not.toHaveBeenCalled();
+    expect(mockClearRecoilState).not.toHaveBeenCalled();
   });
 });
