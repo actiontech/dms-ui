@@ -76,6 +76,7 @@ const useTableAction = () => {
             />
           );
         }
+        return <ActionButton {...commonProps} key={action.key} />;
       };
       if (actions.length === 1) {
         return render(actions[0]);

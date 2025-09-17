@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import BackToWorkflowList from '../../../Common/BackToWorkflowList';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
 import { CreateDataExportPageEnum } from '../../../../../store/dataExport';
+
 const CreateExportTask: React.FC = () => {
   const { t } = useTranslation();
   const { updatePageState } = useCreateDataExportReduxManage();
@@ -23,6 +24,7 @@ const CreateExportTask: React.FC = () => {
     auditLoading,
     resetAllForms
   } = useCreateExportTaskForm();
+
   return (
     <Spin spinning={auditLoading}>
       <PageLayoutHasFixedHeaderStyleWrapper>
@@ -36,7 +38,11 @@ const CreateExportTask: React.FC = () => {
           }
         />
         <BaseInfoForm baseForm={baseForm} />
-        <ExportSourceForm sourceForm={sourceForm} baseForm={baseForm} />
+        <ExportSourceForm
+          sourceForm={sourceForm}
+          baseForm={baseForm}
+          methodForm={methodForm}
+        />
         <ExportMethodForm methodForm={methodForm} />
 
         <FormAreaBlockStyleWrapper
