@@ -928,3 +928,233 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
   </div>
 </body>
 `;
+
+exports[`test TaskResultList/SQLStatementResultTable should render exec result tooltip 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1r1dawj"
+    >
+      <div
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table ant-table-scroll-horizontal"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup>
+                      <col
+                        style="width: 100px;"
+                      />
+                    </colgroup>
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          序号
+                        </th>
+                        <th
+                          class="ant-table-cell ellipsis-column-large-width"
+                          scope="col"
+                        >
+                          执行语句
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          审核结果
+                        </th>
+                        <th
+                          class="ant-table-cell exec-status-column"
+                          scope="col"
+                        >
+                          执行结果
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="1"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          1
+                        </td>
+                        <td
+                          class="ant-table-cell ellipsis-column-large-width"
+                        >
+                          <div
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
+                            >
+                              <span>
+                                <span
+                                  class="hljs-keyword"
+                                >
+                                  SELECT
+                                </span>
+                                 
+                                <span
+                                  class="hljs-operator"
+                                >
+                                  *
+                                </span>
+                                 
+                                <span
+                                  class="hljs-keyword"
+                                >
+                                  FROM
+                                </span>
+                                 ab.xx;
+                              </span>
+                            </div>
+                            <div
+                              class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
+                            >
+                              <span
+                                aria-label="copy"
+                                class="anticon anticon-copy"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="copy"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="audit-result-wrapper"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                    fill="#F66074"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell exec-status-column"
+                        >
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+                              >
+                                执行失败
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
