@@ -95,7 +95,8 @@ export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
 export const DMS_DEFAULT_WEB_LOGO_URL = '/logo.png';
 export const TRANSIT_FROM_CONSTANT = {
-  cloudbeaver: 'cloudbeaver'
+  cloudbeaver: 'cloudbeaver',
+  odc_client: 'odc_client'
 };
 export const SQLE_INSTANCE_SOURCE_NAME = 'SQLE';
 export const SQL_EDITOR_PLACEHOLDER_VALUE = '/* input your sql */';
