@@ -18,12 +18,13 @@ const SqlOptimizationResult: React.FC = () => {
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_AUDIT.optimization_result>();
 
   const {
-    optimizationResultStatus,
     errorMessage,
     optimizationResult,
-    optimizationResultLoading,
-    getOptimizationResult
-  } = useOptimizationResult();
+    getOptimizationResult,
+    optimizationResultLoading
+  } = useOptimizationResult({
+    pollingInterval: 5000
+  });
 
   useEffect(() => {
     if (urlParams.optimizationId) {
@@ -50,7 +51,6 @@ const SqlOptimizationResult: React.FC = () => {
       />
       <SqlOptimizationResultStyleWrapper>
         <ResultContent
-          optimizationResultStatus={optimizationResultStatus}
           errorMessage={errorMessage}
           optimizationResult={optimizationResult}
           optimizationResultLoading={optimizationResultLoading}

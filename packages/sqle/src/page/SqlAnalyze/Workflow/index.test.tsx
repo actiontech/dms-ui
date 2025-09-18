@@ -21,7 +21,8 @@ import dayjs from 'dayjs';
 import {
   mockUsePermission,
   mockUseCurrentUser,
-  mockUseCurrentProject
+  mockUseCurrentProject,
+  mockUseDbServiceDriver
 } from '@actiontech/shared/lib/testUtil';
 import { ModalName } from '../../../data/ModalName';
 import { useSelector } from 'react-redux';
@@ -54,6 +55,7 @@ describe('SqlAnalyze/Workflow', () => {
       taskId: 'taskId1',
       sqlNum: '123'
     });
+    mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockUseCurrentProject();
     mockUsePermission(

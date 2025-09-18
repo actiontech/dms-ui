@@ -11,7 +11,7 @@ import AnalysisChart from '../components/AnalysisChart';
 import SqlDiffView from '../components/SqlDiffView';
 import { Space, Typography } from 'antd';
 import ProbabilityDisplay from '../components/ProbabilityDisplay';
-import { OptimizationResultStatus } from '../index.type';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const OptimizationResultModal: React.FC = () => {
   const { t } = useTranslation();
@@ -63,7 +63,7 @@ const OptimizationResultModal: React.FC = () => {
           <Space direction="vertical">
             <ProbabilityDisplay
               analysis={currentResultData?.analysis}
-              resultStatus={OptimizationResultStatus.RESOLVED}
+              optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
             />
 
             <Typography.Title level={5}>

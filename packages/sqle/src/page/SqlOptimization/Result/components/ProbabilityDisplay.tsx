@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ProbabilityDisplayWrapper } from './style';
 import { Space, Typography } from 'antd';
 import { ProbabilityDisplayProps } from '../index.type';
-import { OptimizationResultStatus } from '../index.type';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { EmptyBox } from '@actiontech/shared';
 import { floatToPercent } from '@actiontech/shared/lib/utils';
 import { useTranslation } from 'react-i18next';
@@ -15,7 +15,7 @@ enum UnusualRateText {
 
 const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
   analysis,
-  resultStatus
+  optimizationStatus
 }) => {
   const { t } = useTranslation();
 
@@ -24,13 +24,13 @@ const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
   const { rate, showPercentSign } = useMemo(() => {
     const getRate = () => {
       if (
-        resultStatus !== OptimizationResultStatus.RESOLVED ||
+        optimizationStatus !== OptimizationSQLDetailStatusEnum.finish ||
         analysis?.state === 'failed'
       ) {
         return UnusualRateText.NULL;
       }
       if (
-        resultStatus === OptimizationResultStatus.RESOLVED &&
+        optimizationStatus === OptimizationSQLDetailStatusEnum.finish &&
         (!analysis?.improvement_rate || analysis?.improvement_rate <= 0)
       ) {
         return UnusualRateText.Best;
@@ -41,7 +41,7 @@ const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
       rate: getRate(),
       showPercentSign: typeof getRate() === 'number' ? true : false
     };
-  }, [analysis, resultStatus]);
+  }, [analysis, optimizationStatus]);
 
   return (
     <Space direction="vertical">
