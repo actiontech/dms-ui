@@ -15,18 +15,17 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlManageMock from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import {
   mockUsePermission,
   mockUseCurrentUser,
-  mockUseDbServiceDriver
+  mockUseDbServiceDriver,
+  sqleMockApi
 } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
-import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 
 jest.mock('react-router', () => {
   return {
@@ -49,6 +48,7 @@ describe('SqlAnalyze/SQLManage', () => {
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   let sqlOptimizeSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
   let currentTime = dayjs('2025-01-09 12:00:00');
@@ -83,9 +83,10 @@ describe('SqlAnalyze/SQLManage', () => {
         }
       })
     );
-    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
+    sqlOptimizeSpy = sqleMockApi.sqlOptimization.optimizeSQLReq();
     getSqlManageSqlAnalysisChartSpy =
-      sqlManageMock.getSqlManageSqlAnalysisChart();
+      sqleMockApi.sqlManage.getSqlManageSqlAnalysisChart();
+    getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
   });
 
   afterEach(() => {
@@ -233,6 +234,7 @@ describe('SqlAnalyze/SQLManage', () => {
       affectRowsEnabled: false
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('SQL优化'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);

@@ -21,7 +21,8 @@ import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import {
   mockUsePermission,
   mockUseCurrentUser,
-  mockUseDbServiceDriver
+  mockUseDbServiceDriver,
+  sqleMockApi
 } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
@@ -48,6 +49,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   let sqlOptimizeSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
   let currentTime = dayjs('2025-01-09 12:00:00');
@@ -62,8 +64,10 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       id: '2',
       projectName
     });
-    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
-    getSqlManageSqlAnalysisChartSpy = sqlManage.getSqlManageSqlAnalysisChart();
+    sqlOptimizeSpy = sqleMockApi.sqlOptimization.optimizeSQLReq();
+    getSqlManageSqlAnalysisChartSpy =
+      sqleMockApi.sqlManage.getSqlManageSqlAnalysisChart();
+    getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
     mockUsePermission(
       {
         checkPagePermission: jest.fn().mockReturnValue(true)
@@ -220,6 +224,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       affectRowsEnabled: false
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('SQL优化'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);

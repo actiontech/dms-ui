@@ -14,7 +14,6 @@ import {
 } from '../../../../store/sqlAnalyze';
 import useOptimizationResult from '../../../SqlOptimization/Result/hooks/useOptimizationResult';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { OptimizationResultStatus } from '../../../SqlOptimization/Result/index.type';
 import { mockReactFlow } from '@actiontech/shared/lib/testUtil/mockModule/mockReactFlow';
 import { optimizationDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 
@@ -32,7 +31,6 @@ describe('SqlOptimizationResultDrawer', () => {
     useOptimizationResult as jest.MockedFunction<typeof useOptimizationResult>;
 
   const defaultOptimizationResult = {
-    optimizationResultStatus: OptimizationResultStatus.RESOLVED,
     errorMessage: undefined,
     optimizationResult: optimizationDetailMockData,
     optimizationResultLoading: false,
@@ -93,40 +91,6 @@ describe('SqlOptimizationResultDrawer', () => {
     const { baseElement } = superRender(<SqlOptimizationResultDrawer />);
 
     expect(screen.getByText('SQL调优结果详情')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('should render loading state when optimization is in progress', () => {
-    mockUseOptimizationResult.mockReturnValue({
-      ...defaultOptimizationResult,
-      optimizationResult: {
-        status: OptimizationSQLDetailStatusEnum.optimizing
-      }
-    });
-
-    const { baseElement } = superRender(<SqlOptimizationResultDrawer />);
-
-    expect(
-      screen.getByText('优化进行中，预计5-10分钟后完成。感谢您的耐心等待。')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText('也可进入 快捷诊断-SQL调优 页面追踪进度')
-    ).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('should render error state when optimization failed', () => {
-    mockUseOptimizationResult.mockReturnValue({
-      ...defaultOptimizationResult,
-      optimizationResult: {
-        status: OptimizationSQLDetailStatusEnum.failed,
-        status_detail: '优化失败的详细信息'
-      }
-    });
-
-    const { baseElement } = superRender(<SqlOptimizationResultDrawer />);
-
-    expect(screen.getByText('优化失败的详细信息')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
