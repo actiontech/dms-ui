@@ -6,6 +6,7 @@ import {
 import { screen } from '@testing-library/react';
 import AnalysisChart from '../AnalysisChart';
 import { ITotalAnalysis } from '@actiontech/shared/lib/api/sqle/service/common';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -80,6 +81,17 @@ describe('sqle/SqlOptimization/Result/components/AnalysisChart', () => {
     );
 
     expect(screen.getByText('数据加载失败')).toBeInTheDocument();
+  });
+
+  it('should handle optimizing state correctly', () => {
+    superRender(
+      <AnalysisChart
+        data={{}}
+        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
+      />
+    );
+
+    expect(screen.getByText('优化进行中')).toBeInTheDocument();
   });
 
   it('should handle null data gracefully', () => {
