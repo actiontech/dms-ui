@@ -29,3 +29,8 @@ export type AccessTokenProps = {
   hasExpired?: boolean;
   updateUserInfo: () => void;
 };
+
+export type DefaultLoginPageProps = {
+  userBaseInfo?: IGetUser;
+  updateUserInfo: () => void;
+};
