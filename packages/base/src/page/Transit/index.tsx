@@ -6,6 +6,7 @@ import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/dms-kit';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+
 const TARGET_DATA = (projectID: string): Record<string, string> => {
   return {
     create_workflow: parse2ReactRouterPath(
@@ -15,9 +16,18 @@ const TARGET_DATA = (projectID: string): Record<string, string> => {
           projectID
         }
       }
+    ),
+    create_export_workflow: parse2ReactRouterPath(
+      ROUTE_PATHS.BASE.DATA_EXPORT.create,
+      {
+        params: {
+          projectID
+        }
+      }
     )
   };
 };
+
 const Transit: React.FC = () => {
   const navigate = useTypedNavigate();
   const { bindProjects } = useCurrentUser();
