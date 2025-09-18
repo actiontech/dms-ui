@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserGuide should render modal when location not form ODC 1`] = `
+exports[`UserGuideModal should render correctly when systemPreference is undefined 1`] = `
 <body>
   <div />
   <div>
