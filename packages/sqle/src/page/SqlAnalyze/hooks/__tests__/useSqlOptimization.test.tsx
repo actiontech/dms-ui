@@ -3,15 +3,18 @@ import { useDispatch } from 'react-redux';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import useSqlOptimization from '../useSqlOptimization';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import {
+  mockUseDbServiceDriver,
+  mockUseCurrentProject,
+  mockUsePermission,
+  sqleMockApi
+} from '@actiontech/shared/lib/testUtil';
 import { ModalName } from '../../../../data/ModalName';
 import {
   updateSqlAnalyzeModalStatus,
   initSqlAnalyzeModalStatus,
   updateResultDrawerData
 } from '../../../../store/sqlAnalyze';
-import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import {
   createSpySuccessResponse,
   createSpyFailResponse
@@ -25,12 +28,14 @@ jest.mock('react-redux', () => ({
 describe('SqlAnalyze/useSqlOptimization', () => {
   const mockDispatch = jest.fn();
   let sqlOptimizeSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
   const currentTime = dayjs('2025-01-09 12:00:00');
 
   beforeEach(() => {
     MockDate.set(currentTime.valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
+    mockUseDbServiceDriver();
     mockUsePermission(
       {
         checkPagePermission: jest.fn().mockReturnValue(true)
@@ -40,7 +45,8 @@ describe('SqlAnalyze/useSqlOptimization', () => {
       }
     );
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
-    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
+    sqlOptimizeSpy = sqleMockApi.sqlOptimization.optimizeSQLReq();
+    getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
   });
 
   afterEach(() => {
@@ -77,8 +83,9 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     );
   });
 
-  it('should allow SQL optimization when instance name is set and permission is granted', () => {
+  it('should allow SQL optimization when instance name is set and permission is granted', async () => {
     const { result } = renderHook(() => useSqlOptimization());
+    await act(async () => jest.advanceTimersByTime(3000));
 
     act(() => {
       result.current.setOptimizationCreationParams({
@@ -91,13 +98,27 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     expect(result.current.allowSqlOptimization).toBe(true);
   });
 
-  it('should not allow SQL optimization when instance name is not set', () => {
+  it('should not allow SQL optimization when instance name is not set', async () => {
     const { result } = renderHook(() => useSqlOptimization());
+    await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.allowSqlOptimization).toBe(false);
   });
 
-  it('should not allow SQL optimization when permission is denied', () => {
+  it('should not allow SQL optimization when updateInstanceList is loading', async () => {
+    const { result } = renderHook(() => useSqlOptimization());
+    act(() => {
+      result.current.setOptimizationCreationParams({
+        instance_name: 'test-instance',
+        schema_name: 'test-schema',
+        sql_content: 'SELECT * FROM users'
+      });
+    });
+
+    expect(result.current.allowSqlOptimization).toBe(false);
+  });
+
+  it('should not allow SQL optimization when permission is denied', async () => {
     mockUsePermission(
       {
         checkPagePermission: jest.fn().mockReturnValue(false)
@@ -108,6 +129,7 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     );
 
     const { result } = renderHook(() => useSqlOptimization());
+    await act(async () => jest.advanceTimersByTime(3000));
 
     act(() => {
       result.current.setOptimizationCreationParams({
@@ -120,6 +142,8 @@ describe('SqlAnalyze/useSqlOptimization', () => {
 
   it('should create SQL optimization successfully', async () => {
     const { result } = renderHook(() => useSqlOptimization());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     const mockOptimizationId = 'test-optimization-id';
 
     sqlOptimizeSpy.mockImplementation(() =>
@@ -132,7 +156,7 @@ describe('SqlAnalyze/useSqlOptimization', () => {
 
     act(() => {
       result.current.setOptimizationCreationParams({
-        instance_name: 'test-instance',
+        instance_name: 'mysql-1',
         schema_name: 'test-schema',
         sql_content: 'SELECT * FROM users'
       });
@@ -153,9 +177,10 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     expect(result.current.optimizationRecordId).toBe(mockOptimizationId);
 
     expect(sqlOptimizeSpy).toHaveBeenCalledWith({
+      db_type: 'MySQL',
       optimization_name: `UI${currentTime.format('YYYYMMDDhhmmssSSS')}`,
       project_name: 'default',
-      instance_name: 'test-instance',
+      instance_name: 'mysql-1',
       schema_name: 'test-schema',
       sql_content: 'SELECT * FROM users'
     });

@@ -365,6 +365,44 @@ exports[`SqlOptimizationCard should render error state when errorMessage is prov
 </body>
 `;
 
+exports[`SqlOptimizationCard should render optimizing state when optimizationStatus is optimizing 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-small sql-optimization-card css-arvsbo"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            Test Title
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <button>
+              Extra Button
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div>
+          Test Content
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`SqlOptimizationCard should render with custom className 1`] = `
 <body>
   <div>
