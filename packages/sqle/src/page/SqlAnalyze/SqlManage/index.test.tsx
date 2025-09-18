@@ -21,7 +21,8 @@ import dayjs from 'dayjs';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import {
   mockUsePermission,
-  mockUseCurrentUser
+  mockUseCurrentUser,
+  mockUseDbServiceDriver
 } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
@@ -54,6 +55,7 @@ describe('SqlAnalyze/SQLManage', () => {
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
     useParamsMock.mockReturnValue({
       sqlManageId: 'sqlManageId1',
       sqlNum: '123',

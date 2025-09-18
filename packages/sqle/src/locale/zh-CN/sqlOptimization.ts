@@ -155,6 +155,7 @@ export default {
     originalExecutionPlan: '原执行计划',
     exitFullscreen: '退出全屏',
     fullscreenDisplay: '全屏显示',
-    drawerTitle: 'SQL调优结果详情'
+    drawerTitle: 'SQL调优结果详情',
+    optimizing: '优化进行中'
   }
 };

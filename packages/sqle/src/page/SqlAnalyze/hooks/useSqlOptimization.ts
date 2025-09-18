@@ -14,12 +14,17 @@ import { useEffect, useState, useMemo } from 'react';
 import dayjs from 'dayjs';
 import { usePermission } from '@actiontech/shared/lib/features';
 import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
+import useInstance from '../../../hooks/useInstance';
 
 const useSqlOptimization = () => {
   const { projectName } = useCurrentProject();
   const dispatch = useDispatch();
   const { checkPagePermission } = usePermission();
-
+  const {
+    getInstanceDbType,
+    updateInstanceList,
+    loading: updateInstanceListloading
+  } = useInstance();
   const [optimizationCreationParams, setOptimizationCreationParams] = useState<
     Pick<ISQLOptimizeV2Params, 'instance_name' | 'schema_name' | 'sql_content'>
   >({});
@@ -49,7 +54,10 @@ const useSqlOptimization = () => {
         project_name: projectName,
         instance_name: optimizationCreationParams.instance_name,
         schema_name: optimizationCreationParams.schema_name,
-        sql_content: optimizationCreationParams.sql_content
+        sql_content: optimizationCreationParams.sql_content,
+        db_type: getInstanceDbType(
+          optimizationCreationParams.instance_name ?? ''
+        )
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           return res.data.data?.sql_optimization_record_id;
@@ -86,9 +94,20 @@ const useSqlOptimization = () => {
   const allowSqlOptimization = useMemo(() => {
     return (
       !!optimizationCreationParams.instance_name &&
-      checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION)
+      checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION) &&
+      !updateInstanceListloading
     );
-  }, [optimizationCreationParams.instance_name, checkPagePermission]);
+  }, [
+    optimizationCreationParams.instance_name,
+    checkPagePermission,
+    updateInstanceListloading
+  ]);
+
+  useEffect(() => {
+    updateInstanceList({
+      project_name: projectName
+    });
+  }, [projectName, updateInstanceList]);
 
   return {
     optimizationRecordId,
