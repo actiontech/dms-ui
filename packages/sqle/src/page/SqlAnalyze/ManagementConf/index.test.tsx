@@ -20,7 +20,8 @@ import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import {
   mockUsePermission,
-  mockUseCurrentUser
+  mockUseCurrentUser,
+  mockUseDbServiceDriver
 } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
@@ -55,6 +56,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
     useParamsMock.mockReturnValue({
       instanceAuditPlanId: '1',
       id: '2',

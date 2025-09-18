@@ -2,7 +2,6 @@ import { useRequest } from 'ahooks';
 import { useState } from 'react';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { OptimizationResultStatus } from '../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
@@ -15,15 +14,12 @@ const useOptimizationResult = (params?: UseOptimizationResultParams) => {
 
   const { projectName } = useCurrentProject();
 
-  const [optimizationResultStatus, setOptimizationResultStatus] =
-    useState<OptimizationResultStatus>();
-
   const [errorMessage, setErrorMessage] = useState<string>();
 
   const {
     data: optimizationResult,
-    loading: optimizationResultLoading,
     run: getOptimizationResult,
+    loading,
     cancel: cancelOptimizationRequestPolling
   } = useRequest(
     (id: string) =>
@@ -40,11 +36,9 @@ const useOptimizationResult = (params?: UseOptimizationResultParams) => {
         if (res?.status !== OptimizationSQLDetailStatusEnum.optimizing) {
           cancelOptimizationRequestPolling();
         }
-        setOptimizationResultStatus(OptimizationResultStatus.RESOLVED);
       },
       onError: (e) => {
         cancelOptimizationRequestPolling();
-        setOptimizationResultStatus(OptimizationResultStatus.FAILED);
         setErrorMessage(e.message);
       },
       manual: true,
@@ -53,10 +47,9 @@ const useOptimizationResult = (params?: UseOptimizationResultParams) => {
   );
 
   return {
-    optimizationResultStatus,
     errorMessage,
     optimizationResult,
-    optimizationResultLoading,
+    optimizationResultLoading: !!optimizationResult ? false : loading,
     getOptimizationResult,
     cancelOptimizationRequestPolling
   };
