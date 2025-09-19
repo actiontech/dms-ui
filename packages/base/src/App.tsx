@@ -56,6 +56,7 @@ import { eventEmitter as sharedEventEmitter } from '@actiontech/shared/lib/utils
 import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
 import { debounce } from 'lodash';
+import ErrorBoundary from './page/ErrorBoundary';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -344,7 +345,7 @@ function App() {
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
+                <ErrorBoundary>{body}</ErrorBoundary>
               </EmptyBox>
             </ThemeProvider>
           </StyledEngineProvider>
