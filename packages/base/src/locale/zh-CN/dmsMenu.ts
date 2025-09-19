@@ -83,16 +83,15 @@ export default {
 
   userGuide: {
     title: '请选择默认进入的页面',
-    description: '请选择默认进入的页面',
-    dataWorkspace: {
-      label: '数据工作台',
-      description: '直接进入数据分析和操作界面。'
+    description: '您可以随时在「个人中心」-「登录设置」中修改此配置。',
+    sqlWorkbench: {
+      label: 'SQL工作台',
+      description: '为数据分析师和开发者提供，用于数据查询与操作。'
     },
     adminPanel: {
       label: '管理后台',
-      description: '用于系统配置、用户和权限管理。'
+      description: '为系统管理员提供，用于用户授权与系统配置。'
     },
-    skipButton: '跳过，以后再说',
     confirmButton: '确认并进入'
   }
 };
