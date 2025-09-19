@@ -4,17 +4,20 @@ import { RocketFilled } from '@actiontech/icons';
 import { Typography } from 'antd';
 import { IOptimizeStep } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useTranslation } from 'react-i18next';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 interface OptimizeStepsProps {
   optimizeSteps: IOptimizeStep[];
   onOptimizationRuleClick?: (stepIndex: number) => void;
   errorMessage?: string;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
   optimizeSteps,
   onOptimizationRuleClick,
-  errorMessage
+  errorMessage,
+  optimizationStatus
 }) => {
   const { t } = useTranslation();
   const handleRuleClick = (stepIndex: number) => {
@@ -35,7 +38,17 @@ const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
       <div className="steps-list">
         <EmptyBox
           if={!!optimizeSteps.length}
-          defaultNode={<BasicEmpty errorInfo={errorMessage} />}
+          defaultNode={
+            <BasicEmpty
+              errorInfo={errorMessage}
+              emptyCont={
+                optimizationStatus ===
+                OptimizationSQLDetailStatusEnum.optimizing
+                  ? t('sqlOptimization.result.optimizing')
+                  : t('common.tip.no_data')
+              }
+            />
+          }
         >
           {optimizeSteps.map((step, index) => (
             <div

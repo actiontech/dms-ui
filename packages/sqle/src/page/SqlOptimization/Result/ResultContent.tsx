@@ -19,7 +19,6 @@ import { SqlOptimizationResultProps } from './index.type';
 const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
   isVerticalLayout = false,
   optimizationResult,
-  optimizationResultStatus,
   errorMessage,
   optimizationResultLoading
 }) => {
@@ -159,15 +158,16 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           onViewQueryPlanDiff={onViewQueryPlanDiff}
           onExpandQueryPlan={onExpandQueryPlan}
           isVerticalLayout={isVerticalLayout}
+          optimizationStatus={optimizationResult?.status}
         />
 
         <RightContent
           isVerticalLayout={isVerticalLayout}
           totalAnalysis={optimizationResult?.total_analysis}
-          optimizationResultStatus={optimizationResultStatus}
           optimizeSteps={optimizationResult?.optimize?.steps ?? []}
           errorMessage={errorMessage}
           onOptimizationRuleClick={onViewOptimizationResult}
+          optimizationStatus={optimizationResult?.status}
         />
 
         <SqlOptimizationModals />

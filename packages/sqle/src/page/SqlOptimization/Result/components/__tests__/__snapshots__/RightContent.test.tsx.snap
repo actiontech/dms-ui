@@ -28,7 +28,7 @@ exports[`RightContent should render with empty content 1`] = `
                   class="probability-number"
                   style="background-clip: text;"
                 >
-                  Best
+                  NULL
                 </div>
                 <svg
                   height="30"
@@ -246,7 +246,7 @@ exports[`RightContent should render with error message 1`] = `
                   class="probability-number"
                   style="background-clip: text;"
                 >
-                  Best
+                  NULL
                 </div>
                 <svg
                   height="30"
@@ -485,7 +485,7 @@ exports[`RightContent should render with horizontal layout by default 1`] = `
                   class="probability-number"
                   style="background-clip: text;"
                 >
-                  Best
+                  NULL
                 </div>
                 <svg
                   height="30"
@@ -662,7 +662,7 @@ exports[`RightContent should render with horizontal layout when isVerticalLayout
                   class="probability-number"
                   style="background-clip: text;"
                 >
-                  Best
+                  NULL
                 </div>
                 <svg
                   height="30"
@@ -839,7 +839,7 @@ exports[`RightContent should render with vertical layout when isVerticalLayout i
                   class="probability-number"
                   style="background-clip: text;"
                 >
-                  Best
+                  NULL
                 </div>
                 <svg
                   height="30"

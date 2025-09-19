@@ -7,17 +7,20 @@ import {
   ITotalAnalysis,
   IAnalysisDetail
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 interface AnalysisChartProps {
   data?: ITotalAnalysis;
   loading?: boolean;
   errorMessage?: string;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const AnalysisChart: React.FC<AnalysisChartProps> = ({
   data,
   loading = false,
-  errorMessage
+  errorMessage,
+  optimizationStatus
 }) => {
   const { t } = useTranslation();
 
@@ -103,6 +106,11 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
         loading={loading}
         dataLength={radarData.length}
         errorInfo={errorMessage}
+        emptyCont={
+          optimizationStatus === OptimizationSQLDetailStatusEnum.optimizing
+            ? t('sqlOptimization.result.optimizing')
+            : t('common.tip.no_data')
+        }
       >
         <Radar {...config} />
       </ChartWrapper>

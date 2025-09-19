@@ -1,10 +1,6 @@
 import { ITotalAnalysis } from '@actiontech/shared/lib/api/sqle/service/common';
 import useOptimizationResult from './hooks/useOptimizationResult';
-
-export enum OptimizationResultStatus {
-  RESOLVED = 'resolved',
-  FAILED = 'failed'
-}
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export enum ExecutionPlanType {
   ORIGINAL = 'original',
@@ -13,7 +9,7 @@ export enum ExecutionPlanType {
 
 export interface ProbabilityDisplayProps {
   analysis?: ITotalAnalysis;
-  resultStatus?: OptimizationResultStatus;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 export interface SqlOptimizationResultProps

@@ -4,7 +4,7 @@ import {
   mockUseCurrentProject,
   mockUseCurrentUser
 } from '@actiontech/shared/lib/testUtil';
-import { OptimizationResultStatus } from '../../index.type';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('RightContent', () => {
   const mockProps = {
@@ -17,7 +17,7 @@ describe('RightContent', () => {
         }
       ]
     },
-    optimizationResultStatus: OptimizationResultStatus.RESOLVED,
+    optimiationStatus: OptimizationSQLDetailStatusEnum.finish,
     optimizeSteps: [
       {
         chat_id: 'chat_1',

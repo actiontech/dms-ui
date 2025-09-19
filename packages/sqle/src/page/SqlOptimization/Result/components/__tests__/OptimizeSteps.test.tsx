@@ -5,6 +5,7 @@ import {
   mockUseCurrentUser
 } from '@actiontech/shared/lib/testUtil';
 import { fireEvent, screen, act } from '@testing-library/react';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('OptimizeSteps', () => {
   const mockOptimizeSteps = [
@@ -64,6 +65,17 @@ describe('OptimizeSteps', () => {
         optimizeSteps={[]}
         errorMessage="Failed to load optimization steps"
         onOptimizationRuleClick={mockOnOptimizationRuleClick}
+      />
+    );
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render optimizing state', () => {
+    const { baseElement } = superRender(
+      <OptimizeSteps
+        optimizeSteps={[]}
+        onOptimizationRuleClick={mockOnOptimizationRuleClick}
+        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
       />
     );
     expect(baseElement).toMatchSnapshot();
