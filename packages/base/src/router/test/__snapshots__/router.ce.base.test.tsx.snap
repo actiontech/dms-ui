@@ -578,9 +578,9 @@ exports[`base/router-base-ce render base route data snap 1`] = `
   },
   {
     "element": <div>
-      null
+      notFound
     </div>,
-    "key": "null",
+    "key": "notFound",
     "path": "*",
   },
 ]
