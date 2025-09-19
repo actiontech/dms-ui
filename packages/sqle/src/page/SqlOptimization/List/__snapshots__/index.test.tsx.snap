@@ -594,7 +594,6 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                               >
                                 <button
                                   class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  disabled=""
                                   type="button"
                                 >
                                   <span>
@@ -704,7 +703,6 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                               >
                                 <button
                                   class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  disabled=""
                                   type="button"
                                 >
                                   <span>

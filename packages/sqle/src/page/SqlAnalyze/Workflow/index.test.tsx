@@ -21,11 +21,12 @@ import dayjs from 'dayjs';
 import {
   mockUsePermission,
   mockUseCurrentUser,
-  mockUseCurrentProject
+  mockUseCurrentProject,
+  mockUseDbServiceDriver,
+  sqleMockApi
 } from '@actiontech/shared/lib/testUtil';
 import { ModalName } from '../../../data/ModalName';
 import { useSelector } from 'react-redux';
-import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 
 jest.mock('react-router', () => {
   return {
@@ -46,6 +47,7 @@ describe('SqlAnalyze/Workflow', () => {
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   let sqlOptimizeSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
 
   beforeEach(() => {
     MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
@@ -54,6 +56,7 @@ describe('SqlAnalyze/Workflow', () => {
       taskId: 'taskId1',
       sqlNum: '123'
     });
+    mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockUseCurrentProject();
     mockUsePermission(
@@ -76,7 +79,8 @@ describe('SqlAnalyze/Workflow', () => {
         }
       })
     );
-    sqlOptimizeSpy = sqlOptimization.optimizeSQLReq();
+    sqlOptimizeSpy = sqleMockApi.sqlOptimization.optimizeSQLReq();
+    getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
   });
 
   afterEach(() => {
@@ -160,6 +164,7 @@ describe('SqlAnalyze/Workflow', () => {
       affectRowsEnabled: false
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('SQL优化'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);

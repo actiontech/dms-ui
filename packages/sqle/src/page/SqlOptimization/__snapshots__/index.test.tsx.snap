@@ -595,7 +595,6 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                 >
                                   <button
                                     class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    disabled=""
                                     type="button"
                                   >
                                     <span>
@@ -705,7 +704,6 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                 >
                                   <button
                                     class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    disabled=""
                                     type="button"
                                   >
                                     <span>

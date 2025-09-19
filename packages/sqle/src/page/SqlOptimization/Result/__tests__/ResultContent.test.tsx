@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { mockReactFlow } from '@actiontech/shared/lib/testUtil/mockModule/mockReactFlow';
-import { OptimizationResultStatus } from '../index.type';
 import { optimizationDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import { ModalName } from '../../../../data/ModalName';
 
@@ -74,7 +73,6 @@ describe('sqle/SqlOptimization/ResultContent', () => {
 
   const customRender = (props = {}) => {
     const defaultProps = {
-      optimizationResultStatus: OptimizationResultStatus.RESOLVED,
       errorMessage: undefined,
       optimizationResult: optimizationDetailMockData,
       optimizationResultLoading: false,
@@ -108,8 +106,7 @@ describe('sqle/SqlOptimization/ResultContent', () => {
   it('should render with error message', async () => {
     const errorMessage = 'Test error message';
     const { container } = customRender({
-      errorMessage,
-      optimizationResultStatus: OptimizationResultStatus.FAILED
+      errorMessage
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toBeInTheDocument();

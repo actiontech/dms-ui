@@ -2,6 +2,8 @@ import React from 'react';
 import { BasicEmpty } from '@actiontech/shared';
 import { SqlOptimizationCardWrapper } from './style';
 import classNames from 'classnames';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useTranslation } from 'react-i18next';
 
 export interface SqlOptimizationCardProps {
   title: string;
@@ -10,6 +12,7 @@ export interface SqlOptimizationCardProps {
   className?: string;
   errorMessage?: string;
   isEmpty?: boolean;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const SqlOptimizationCard: React.FC<SqlOptimizationCardProps> = ({
@@ -18,8 +21,10 @@ const SqlOptimizationCard: React.FC<SqlOptimizationCardProps> = ({
   children,
   className = '',
   errorMessage,
-  isEmpty = false
+  isEmpty = false,
+  optimizationStatus
 }) => {
+  const { t } = useTranslation();
   const isEmptyOrError = isEmpty || !!errorMessage;
 
   return (
@@ -30,7 +35,18 @@ const SqlOptimizationCard: React.FC<SqlOptimizationCardProps> = ({
       bordered={false}
       size="small"
     >
-      {isEmptyOrError ? <BasicEmpty errorInfo={errorMessage} /> : children}
+      {isEmptyOrError ? (
+        <BasicEmpty
+          emptyCont={
+            optimizationStatus === OptimizationSQLDetailStatusEnum.optimizing
+              ? t('sqlOptimization.result.optimizing')
+              : t('common.tip.no_data')
+          }
+          errorInfo={errorMessage}
+        />
+      ) : (
+        children
+      )}
     </SqlOptimizationCardWrapper>
   );
 };

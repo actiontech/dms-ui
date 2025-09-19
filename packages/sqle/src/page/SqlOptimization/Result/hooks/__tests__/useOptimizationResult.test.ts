@@ -7,7 +7,6 @@ import {
 import { sqlOptimization } from '@actiontech/shared/lib/testUtil/mockApi/sqle';
 import useOptimizationResult from '../useOptimizationResult';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { OptimizationResultStatus } from '../../index.type';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   createSpySuccessResponse,
@@ -33,7 +32,6 @@ describe('useOptimizationResult', () => {
   it('should initialize with default values', () => {
     const { result } = superRenderHook(() => useOptimizationResult());
 
-    expect(result.current.optimizationResultStatus).toBeUndefined();
     expect(result.current.errorMessage).toBeUndefined();
     expect(result.current.optimizationResult).toBeUndefined();
     expect(result.current.optimizationResultLoading).toBe(false);
@@ -64,9 +62,6 @@ describe('useOptimizationResult', () => {
     });
 
     expect(result.current.optimizationResultLoading).toBe(false);
-    expect(result.current.optimizationResultStatus).toBe(
-      OptimizationResultStatus.RESOLVED
-    );
     expect(result.current.optimizationResult).toEqual(mockData);
     expect(result.current.errorMessage).toBeUndefined();
 
@@ -88,9 +83,6 @@ describe('useOptimizationResult', () => {
     });
 
     expect(result.current.optimizationResultLoading).toBe(false);
-    expect(result.current.optimizationResultStatus).toBe(
-      OptimizationResultStatus.FAILED
-    );
     expect(result.current.errorMessage).toBe('Network Error');
     expect(result.current.optimizationResult).toBeUndefined();
   });
@@ -133,9 +125,6 @@ describe('useOptimizationResult', () => {
     });
 
     expect(result.current.optimizationResult).toEqual(mockOptimizingData);
-    expect(result.current.optimizationResultStatus).toBe(
-      OptimizationResultStatus.RESOLVED
-    );
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -269,7 +258,6 @@ describe('useOptimizationResult', () => {
   it('should handle empty params correctly', () => {
     const { result } = superRenderHook(() => useOptimizationResult(undefined));
 
-    expect(result.current.optimizationResultStatus).toBeUndefined();
     expect(result.current.errorMessage).toBeUndefined();
     expect(result.current.optimizationResult).toBeUndefined();
     expect(result.current.optimizationResultLoading).toBe(false);

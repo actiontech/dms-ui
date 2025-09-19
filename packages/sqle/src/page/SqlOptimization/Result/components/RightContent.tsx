@@ -8,25 +8,25 @@ import {
   ITotalAnalysis,
   IOptimizeStep
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { OptimizationResultStatus } from '../index.type';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export interface RightContentProps {
   isVerticalLayout?: boolean;
   totalAnalysis?: ITotalAnalysis;
-  optimizationResultStatus?: OptimizationResultStatus;
   optimizeSteps: IOptimizeStep[];
   errorMessage?: string;
   onOptimizationRuleClick: (stepIndex: number) => void;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const RightContent: React.FC<RightContentProps> = ({
   isVerticalLayout = false,
   totalAnalysis,
-  optimizationResultStatus,
   optimizeSteps,
   errorMessage,
-  onOptimizationRuleClick
+  onOptimizationRuleClick,
+  optimizationStatus
 }) => {
   const { sqleTheme } = useThemeStyleData();
 
@@ -38,15 +38,20 @@ const RightContent: React.FC<RightContentProps> = ({
       <Space direction="vertical" size={16}>
         <ProbabilityDisplay
           analysis={totalAnalysis}
-          resultStatus={optimizationResultStatus}
+          optimizationStatus={optimizationStatus}
         />
         <div className="analysis-chart">
-          <AnalysisChart data={totalAnalysis} errorMessage={errorMessage} />
+          <AnalysisChart
+            data={totalAnalysis}
+            errorMessage={errorMessage}
+            optimizationStatus={optimizationStatus}
+          />
         </div>
         <OptimizeSteps
           optimizeSteps={optimizeSteps}
           onOptimizationRuleClick={onOptimizationRuleClick}
           errorMessage={errorMessage}
+          optimizationStatus={optimizationStatus}
         />
       </Space>
     </SqlOptimizationRightContentWrapper>

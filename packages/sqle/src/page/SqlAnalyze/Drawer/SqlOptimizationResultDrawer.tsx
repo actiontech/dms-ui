@@ -8,10 +8,9 @@ import {
 } from '../../../store/sqlAnalyze';
 import { IReduxState } from '../../../store';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BasicEmpty, BasicDrawer, BasicResult } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/shared';
 import { useEffect } from 'react';
 import useOptimizationResult from '../../SqlOptimization/Result/hooks/useOptimizationResult';
-import { Spin, Space } from 'antd';
 
 const SqlOptimizationResultDrawer = () => {
   const { t } = useTranslation();
@@ -28,12 +27,11 @@ const SqlOptimizationResultDrawer = () => {
   });
 
   const {
-    optimizationResultStatus,
     errorMessage,
     optimizationResult,
-    optimizationResultLoading,
     getOptimizationResult,
-    cancelOptimizationRequestPolling
+    cancelOptimizationRequestPolling,
+    optimizationResultLoading
   } = useOptimizationResult({ pollingInterval: 5000 });
 
   const onClose = () => {
@@ -62,46 +60,6 @@ const SqlOptimizationResultDrawer = () => {
     }
   }, [open, getOptimizationResult, optimizationId, optimizationResult?.status]);
 
-  const contentRender = () => {
-    if (
-      !optimizationResult ||
-      optimizationResult?.status === OptimizationSQLDetailStatusEnum.optimizing
-    ) {
-      return (
-        <BasicResult
-          title={
-            <Space direction="vertical">
-              <Space size={20}>
-                <Spin />
-                <span>
-                  {t('sqlAnalyze.optimizationResultDrawer.resultTips')}
-                </span>
-              </Space>
-              <span>
-                {t('sqlAnalyze.optimizationResultDrawer.trackProgressTips')}
-              </span>
-            </Space>
-          }
-        />
-      );
-    }
-    if (optimizationResult?.status === OptimizationSQLDetailStatusEnum.finish) {
-      return (
-        <ResultContent
-          isVerticalLayout={true}
-          optimizationResultStatus={optimizationResultStatus}
-          errorMessage={errorMessage}
-          optimizationResult={optimizationResult}
-          optimizationResultLoading={optimizationResultLoading}
-        />
-      );
-    } else if (
-      optimizationResult?.status === OptimizationSQLDetailStatusEnum.failed
-    ) {
-      return <BasicEmpty errorInfo={optimizationResult.status_detail} />;
-    }
-  };
-
   return (
     <BasicDrawer
       title={t('sqlAnalyze.optimizationResultDrawer.title')}
@@ -111,7 +69,12 @@ const SqlOptimizationResultDrawer = () => {
       maskClosable={false}
       size="large"
     >
-      {contentRender()}
+      <ResultContent
+        isVerticalLayout={true}
+        errorMessage={errorMessage}
+        optimizationResult={optimizationResult}
+        optimizationResultLoading={optimizationResultLoading}
+      />
     </BasicDrawer>
   );
 };
