@@ -3,18 +3,23 @@ import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import { AnalysisChartWrapper } from './style';
-import { ITotalAnalysis } from '@actiontech/shared/lib/api/sqle/service/common';
-
+import {
+  ITotalAnalysis,
+  IAnalysisDetail
+} from '@actiontech/shared/lib/api/sqle/service/common';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 interface AnalysisChartProps {
   data?: ITotalAnalysis;
   loading?: boolean;
   errorMessage?: string;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const AnalysisChart: React.FC<AnalysisChartProps> = ({
   data,
   loading = false,
-  errorMessage
+  errorMessage,
+  optimizationStatus
 }) => {
   const { t } = useTranslation();
 
@@ -25,16 +30,16 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
       type: string;
     }> = [];
 
-    data?.detail?.forEach((item: any) => {
+    data?.detail?.forEach((item: IAnalysisDetail) => {
       transformedData.push(
         {
-          name: item.category,
-          score: item.original_score,
+          name: item.category ?? '',
+          score: item.original_score ?? 0,
           type: t('sqlOptimization.result.original')
         },
         {
-          name: item.category,
-          score: item.optimized_score,
+          name: item.category ?? '',
+          score: item.optimized_score ?? 0,
           type: t('sqlOptimization.result.finalOptimized')
         }
       );
@@ -82,12 +87,11 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
         fillOpacity: 0.15
       }
     },
-
     tooltip: {
-      formatter: (datum: any) => {
+      formatter: (datum) => {
         return {
-          name: datum.type,
-          value: `${datum.score}分`
+          name: datum?.type ?? '',
+          value: `${datum?.score ?? 0}分`
         };
       }
     },
@@ -101,6 +105,11 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
         loading={loading}
         dataLength={radarData.length}
         errorInfo={errorMessage}
+        emptyCont={
+          optimizationStatus === OptimizationSQLDetailStatusEnum.optimizing
+            ? t('sqlOptimization.result.optimizing')
+            : t('common.tip.no_data')
+        }
       >
         <Radar {...config} />
       </ChartWrapper>

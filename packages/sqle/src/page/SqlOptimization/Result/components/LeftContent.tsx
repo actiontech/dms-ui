@@ -11,6 +11,7 @@ import SqlOptimizationCard from './SqlOptimizationCard';
 import CopyButton from './CopyButton';
 import QueryPlanFlow from './QueryPlanFlow';
 import { IQueryPlanNode } from '@actiontech/shared/lib/api/sqle/service/common';
+import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export interface LeftContentProps {
   optimizedSql?: string;
@@ -22,6 +23,7 @@ export interface LeftContentProps {
   onViewQueryPlanDiff: () => void;
   onExpandQueryPlan: () => void;
   isVerticalLayout?: boolean;
+  optimizationStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 const LeftContent: React.FC<LeftContentProps> = ({
@@ -33,7 +35,8 @@ const LeftContent: React.FC<LeftContentProps> = ({
   onViewTableStructure,
   onViewQueryPlanDiff,
   onExpandQueryPlan,
-  isVerticalLayout = false
+  isVerticalLayout = false,
+  optimizationStatus
 }) => {
   const { t } = useTranslation();
 
@@ -57,6 +60,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
           }
           isEmpty={!optimizedSql}
           errorMessage={errorMessage}
+          optimizationStatus={optimizationStatus}
         >
           <SQLRenderer wordWrap showLineNumbers sql={optimizedSql} />
         </SqlOptimizationCard>
@@ -79,6 +83,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
           isEmpty={!advisedIndex}
           errorMessage={errorMessage}
           className="execution-plan-flow-card"
+          optimizationStatus={optimizationStatus}
         >
           <SQLRenderer wordWrap showLineNumbers sql={advisedIndex} />
         </SqlOptimizationCard>
@@ -99,6 +104,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
                 icon={<FullScreenOutlined />}
                 size="small"
                 onClick={onExpandQueryPlan}
+                className="view-query-plan-diff-button"
               >
                 {t('sqlOptimization.result.expand')}
               </BasicButton>
@@ -106,6 +112,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
           }
           isEmpty={!optimizedQueryPlan?.length}
           errorMessage={errorMessage}
+          optimizationStatus={optimizationStatus}
         >
           <QueryPlanFlow
             queryPlanDesc={optimizedQueryPlan ?? []}
