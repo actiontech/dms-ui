@@ -150,7 +150,7 @@ describe('sqle/VersionManagement/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('上线失败')).toBeInTheDocument();
-    expect(screen.getByText('重 试')).toBeInTheDocument();
+    expect(screen.getByText('修改工单')).toBeInTheDocument();
     expect(screen.getByText('已线下执行')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('已线下执行'));
@@ -178,7 +178,7 @@ describe('sqle/VersionManagement/Detail', () => {
     );
     const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('重 试'));
+    fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
