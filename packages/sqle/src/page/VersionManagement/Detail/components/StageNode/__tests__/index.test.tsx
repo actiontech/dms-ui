@@ -154,7 +154,7 @@ describe('sqle/VersionManagement/Detail/StageNode', () => {
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('.card-action-wrap')).toBeVisible();
 
-    fireEvent.click(screen.getByText('重 试'));
+    fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(retrySpy).toHaveBeenCalledTimes(1);
 
