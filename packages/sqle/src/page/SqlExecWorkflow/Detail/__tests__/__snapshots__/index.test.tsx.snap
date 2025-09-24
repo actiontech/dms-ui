@@ -75,7 +75,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     type="button"
                   >
                     <span>
-                      重 试
+                      修改工单
                     </span>
                   </button>
                   <button
@@ -829,7 +829,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     type="button"
                   >
                     <span>
-                      重 试
+                      修改工单
                     </span>
                   </button>
                   <button
@@ -1385,7 +1385,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     type="button"
                   >
                     <span>
-                      重 试
+                      修改工单
                     </span>
                   </button>
                   <button
@@ -2262,7 +2262,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     type="button"
                   >
                     <span>
-                      重 试
+                      修改工单
                     </span>
                   </button>
                   <button
@@ -3185,7 +3185,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     type="button"
                   >
                     <span>
-                      重 试
+                      修改工单
                     </span>
                   </button>
                   <button
