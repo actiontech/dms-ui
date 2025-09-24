@@ -79,7 +79,7 @@ export default {
   stageNode: {
     workflowDesc: '工单描述',
     executeTime: '上线时间',
-    retry: '重试',
+    updateInfo: '修改工单',
     offlineExecuted: '已线下执行',
     addExistingWorkflow: '添加已有工单',
     createWorkflow: '创建新工单'
