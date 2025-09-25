@@ -1,4 +1,4 @@
-import * as useRecentlySelectedZone from '../../hooks/useRecentlySelectedZone';
+import * as useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from './data';
 
 export const mockUseRecentlySelectedZone = (

@@ -4,7 +4,7 @@ import {
   mockUseCurrentUser,
   baseMockApi
 } from '@actiontech/shared/lib/testUtil';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import UserGuide from '../index';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import {
@@ -14,7 +14,8 @@ import {
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useDispatch: jest.fn()
+  useDispatch: jest.fn(),
+  useSelector: jest.fn()
 }));
 
 describe('UserGuide', () => {
@@ -25,6 +26,13 @@ describe('UserGuide', () => {
     baseMockApi.cloudBeaver.getSqlQueryUrl();
     baseMockApi.userCenter.updateCurrentUser();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        availabilityZone: {
+          availabilityZoneTips: []
+        }
+      });
+    });
     mockUseRecentlySelectedZone();
     jest.useFakeTimers();
   });

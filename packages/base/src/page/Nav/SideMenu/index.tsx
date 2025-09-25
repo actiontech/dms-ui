@@ -24,16 +24,24 @@ import AvailabilityZoneSelector from './AvailabilityZoneSelector';
 import { ProjectTitleStyleWrapper } from './style';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { EmptyBox } from '@actiontech/dms-kit';
-import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
 import { updateUserOperationPermissions } from '../../../store/permission';
+import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
   const dispatch = useDispatch();
   const { userOperationPermissions } = usePermission();
   const { fetchUserPermissions, isUserPermissionsLoading } =
     useFetchPermissionData();
-  const { verifyRecentlySelectedZoneRecord } = useRecentlySelectedZone();
+  const {
+    verifyRecentlySelectedZoneRecord,
+    setAvailabilityZone,
+    availabilityZone,
+    updateRecentlySelectedZone
+  } = useRecentlySelectedZone();
   const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
     useState(false);
   const { username, theme, updateTheme, bindProjects, language, userId } =
@@ -69,6 +77,7 @@ const SideMenu: React.FC = () => {
       }
     }
   );
+
   const {
     data: zoneTips,
     loading: getZoneTipsLoading,
@@ -168,6 +177,15 @@ const SideMenu: React.FC = () => {
     );
     return unsubscribe;
   }, [refreshZoneTips]);
+
+  useEffect(() => {
+    const { unsubscribe } = sharedEventEmitter.subscribe(
+      sharedEmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE,
+      setAvailabilityZone
+    );
+    return unsubscribe;
+  }, [setAvailabilityZone]);
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Sync_Project_Archived_Status,
@@ -189,7 +207,11 @@ const SideMenu: React.FC = () => {
           <ProjectTitleStyleWrapper>
             <ProjectTitle />
             <EmptyBox if={!!zoneTips?.length}>
-              <AvailabilityZoneSelector zoneTips={zoneTips} />
+              <AvailabilityZoneSelector
+                zoneTips={zoneTips}
+                availabilityZone={availabilityZone}
+                updateRecentlySelectedZone={updateRecentlySelectedZone}
+              />
             </EmptyBox>
           </ProjectTitleStyleWrapper>
           {/* #if [sqle] */}
