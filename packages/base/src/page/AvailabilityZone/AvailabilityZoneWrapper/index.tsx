@@ -4,16 +4,26 @@ import { Space } from 'antd';
 import { BasicModal, BasicSelect, BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useTypedNavigate } from '@actiontech/shared';
-import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../store';
+
 const AvailabilityZoneWrapper: React.FC = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useTypedNavigate();
-  const {
-    availabilityZone,
-    updateRecentlySelectedZone,
-    availabilityZoneOptions
-  } = useRecentlySelectedZone();
+
+  const { availabilityZoneOptions } = useSelector((state: IReduxState) => ({
+    availabilityZoneOptions: state.availabilityZone.availabilityZoneTips?.map(
+      (zone) => ({
+        label: zone.name,
+        value: zone.uid
+      })
+    )
+  }));
+
+  const { availabilityZone, updateRecentlySelectedZone } =
+    useRecentlySelectedZone();
   const [zoneModalVisible, setZoneModalVisible] = useState(true);
   const [selectedZone, setSelectedZone] = useState<string>();
   const [pendingPath, setPendingPath] = useState<string | null>(null);
