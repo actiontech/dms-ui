@@ -27,8 +27,6 @@ import { EmptyBox } from '@actiontech/dms-kit';
 import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
 import { updateUserOperationPermissions } from '../../../store/permission';
-import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
-import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
@@ -38,7 +36,6 @@ const SideMenu: React.FC = () => {
     useFetchPermissionData();
   const {
     verifyRecentlySelectedZoneRecord,
-    setAvailabilityZone,
     availabilityZone,
     updateRecentlySelectedZone
   } = useRecentlySelectedZone();
@@ -177,14 +174,6 @@ const SideMenu: React.FC = () => {
     );
     return unsubscribe;
   }, [refreshZoneTips]);
-
-  useEffect(() => {
-    const { unsubscribe } = sharedEventEmitter.subscribe(
-      sharedEmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE,
-      setAvailabilityZone
-    );
-    return unsubscribe;
-  }, [setAvailabilityZone]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(

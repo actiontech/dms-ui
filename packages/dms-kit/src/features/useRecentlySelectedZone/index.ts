@@ -36,18 +36,18 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
       setAvailabilityZone(zone);
       const parsedData = getStorageZoneRecord();
       eventEmitter.emit(EmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE, zone);
-      const currentReocrd = cloneDeep(parsedData);
-      if (currentReocrd.some((v) => v.uid === zone.uid)) {
-        remove(currentReocrd, (v) => v.uid === zone.uid);
+      const currentRecord = cloneDeep(parsedData);
+      if (currentRecord.some((v) => v.uid === zone.uid)) {
+        remove(currentRecord, (v) => v.uid === zone.uid);
       }
 
-      currentReocrd.unshift(zone);
+      currentRecord.unshift(zone);
 
-      if (currentReocrd.length > DEFAULT_MAX_SELECTED_ZONE_NUMBER) {
-        currentReocrd.pop();
+      if (currentRecord.length > DEFAULT_MAX_SELECTED_ZONE_NUMBER) {
+        currentRecord.pop();
       }
 
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     },
     [
       setAvailabilityZone,
@@ -61,13 +61,13 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
     const parsedData = getStorageZoneRecord();
     if (!zoneTips?.some((v) => v.uid === availabilityZone?.uid)) {
       setAvailabilityZone(undefined);
-      const currentReocrd = cloneDeep(parsedData);
-      currentReocrd.forEach((i) => {
+      const currentRecord = cloneDeep(parsedData);
+      currentRecord.forEach((i) => {
         if (i.uid === availabilityZone?.uid) {
-          remove(currentReocrd, (v) => v.uid === i.uid);
+          remove(currentRecord, (v) => v.uid === i.uid);
         }
       });
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     }
 
     // 如果当前选择的区域在已配置的区域中存在，但是name不相同，则更新name
@@ -78,13 +78,13 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
       )
     ) {
       const name = zoneTips.find((v) => v.uid === availabilityZone?.uid)?.name;
-      const currentReocrd = cloneDeep(parsedData);
-      currentReocrd.forEach((i) => {
+      const currentRecord = cloneDeep(parsedData);
+      currentRecord.forEach((i) => {
         if (i.uid === availabilityZone?.uid) {
           i.name = name;
         }
       });
-      setStorageRecentlySelectedZoneRecord(currentReocrd);
+      setStorageRecentlySelectedZoneRecord(currentRecord);
     }
   };
 
@@ -103,6 +103,14 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
       initializeAvailabilityZone();
     }
   }, [initializeAvailabilityZone, manualInit]);
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE,
+      setAvailabilityZone
+    );
+    return unsubscribe;
+  }, [setAvailabilityZone]);
 
   return {
     availabilityZone,
