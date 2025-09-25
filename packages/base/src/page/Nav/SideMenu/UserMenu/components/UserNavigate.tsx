@@ -29,7 +29,7 @@ import User from '@actiontech/shared/lib/api/base/service/User';
 import { updateLanguage as updateReduxLanguage } from '../../../../../../../base/src/store/user';
 import { Radio } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import useRecentlySelectedZone from '../../../../../hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { updateUserOperationPermissions } from '../../../../../store/permission';
 
 type Props = {
@@ -52,7 +52,9 @@ const UserNavigate: React.FC<Props> = ({
   const [open, setOpen] = useState(false);
 
   //# if [ee]
-  const { clearRecentlySelectedZone } = useRecentlySelectedZone();
+  const { clearRecentlySelectedZone } = useRecentlySelectedZone({
+    manualInit: true
+  });
   //# endif
 
   const logout = () => {

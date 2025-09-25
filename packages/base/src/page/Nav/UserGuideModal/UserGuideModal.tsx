@@ -14,7 +14,9 @@ import { useDispatch } from 'react-redux';
 import { updateSystemPreference } from '../../../store/user';
 import UserGuideContent from './UserGuideContent';
 import { Typography } from 'antd';
-import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../store';
 
 const UserGuideModal: React.FC = () => {
   const { t } = useTranslation();
@@ -23,11 +25,12 @@ const UserGuideModal: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const {
-    availabilityZone,
-    availabilityZoneOptions,
-    updateRecentlySelectedZone
-  } = useRecentlySelectedZone();
+  const availabilityZoneTips = useSelector(
+    (state: IReduxState) => state.availabilityZone.availabilityZoneTips
+  );
+
+  const { availabilityZone, updateRecentlySelectedZone } =
+    useRecentlySelectedZone();
 
   const [system, setSystem] = useState(GetUserSystemEnum.MANAGEMENT);
 
@@ -49,11 +52,8 @@ const UserGuideModal: React.FC = () => {
           res.sql_query_root_uri !== location.pathname
         ) {
           // 如果当前设置了可用区 并且没有最近选择的可用区记录 则设置一个默认的可用区
-          if (!!availabilityZoneOptions.length && !availabilityZone) {
-            updateRecentlySelectedZone({
-              uid: availabilityZoneOptions[0].value,
-              name: availabilityZoneOptions[0].label
-            });
+          if (!!availabilityZoneTips.length && !availabilityZone) {
+            updateRecentlySelectedZone(availabilityZoneTips[0]);
           }
 
           // res.sql_query_root_uri !== location.pathname 防止无限刷新
