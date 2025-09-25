@@ -1,9 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "./src",
-    "../base/src/testUtils/mockHooks/mockUseRecentlySelectedZone.ts"
-  ],
+  "include": ["./src"],
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"],
