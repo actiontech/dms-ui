@@ -19,7 +19,10 @@ import {
   StorageKey,
   SystemRole
 } from '@actiontech/shared/lib/enum';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+import {
+  OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
+  ROUTE_PATHS
+} from '@actiontech/shared/lib/data/routePaths';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -211,6 +214,7 @@ describe('page/Login-ee', () => {
         token: `Bearer ${UserInfo.token}`
       }
     });
+    expect(navigateSpy).toHaveBeenCalledWith(ROUTE_PATHS.BASE.HOME);
   });
 
   describe('render login success when has location search val', () => {
