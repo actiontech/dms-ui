@@ -51,12 +51,12 @@ const AvailabilityZoneWrapper: React.FC = () => {
     }
   };
   const isZoneConfigured = !!availabilityZoneOptions?.length;
-  const isMemoriredZoneNotInOptions = useMemo(
+  const isMemoriedZoneNotInOptions = useMemo(
     () =>
       !availabilityZoneOptions?.some((v) => v.value === availabilityZone?.uid),
     [availabilityZoneOptions, availabilityZone]
   );
-  if (isZoneConfigured && isMemoriredZoneNotInOptions) {
+  if (isZoneConfigured && isMemoriedZoneNotInOptions) {
     return (
       <BasicModal
         title={t('availabilityZone.wrapper.modalTitle')}
