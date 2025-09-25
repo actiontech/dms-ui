@@ -5,7 +5,7 @@ import {
   baseMockApi,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { updateSystemPreference } from '../../../../store/user';
 import UserGuideModal from '../UserGuideModal';
@@ -13,7 +13,8 @@ import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/moc
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useDispatch: jest.fn()
+  useDispatch: jest.fn(),
+  useSelector: jest.fn()
 }));
 
 const originLocation = window.location;
@@ -34,6 +35,13 @@ describe('UserGuideModal', () => {
     getSQLQueryConfigurationSpy = baseMockApi.cloudBeaver.getSqlQueryUrl();
     updateCurrentUserSpy = baseMockApi.userCenter.updateCurrentUser();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        availabilityZone: {
+          availabilityZoneTips: []
+        }
+      });
+    });
     mockUseRecentlySelectedZone();
     jest.useFakeTimers();
   });
@@ -85,14 +93,21 @@ describe('UserGuideModal', () => {
       systemPreference: GetUserSystemEnum.WORKBENCH
     });
 
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        availabilityZone: {
+          availabilityZoneTips: [
+            {
+              name: 'test',
+              uid: 'test'
+            }
+          ]
+        }
+      });
+    });
+
     const mockUpdateRecentlySelectedZone = jest.fn();
     mockUseRecentlySelectedZone({
-      availabilityZoneOptions: [
-        {
-          label: 'test',
-          value: 'test'
-        }
-      ],
       availabilityZone: undefined,
       updateRecentlySelectedZone: mockUpdateRecentlySelectedZone
     });

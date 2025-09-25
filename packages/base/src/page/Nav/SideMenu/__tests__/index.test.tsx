@@ -21,6 +21,8 @@ import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/moc
 import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 
 jest.mock('react-redux', () => {
   return {
@@ -165,5 +167,18 @@ describe('test Base/Nav/SideMenu/index', () => {
     baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getUserOpPermissionSpy).toHaveBeenCalled();
+  });
+
+  it('should set availability zone when DMS_SYNC_CURRENT_AVAILABILITY_ZONE event is emitted', async () => {
+    const setAvailabilityZoneSpy = jest.fn();
+    mockUseRecentlySelectedZone({
+      setAvailabilityZone: setAvailabilityZoneSpy
+    });
+    baseSuperRender(<SideMenu />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    sharedEventEmitter.emit(
+      sharedEmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE
+    );
+    expect(setAvailabilityZoneSpy).toHaveBeenCalledTimes(1);
   });
 });

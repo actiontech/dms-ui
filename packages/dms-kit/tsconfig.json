@@ -1,25 +1,18 @@
 {
   "extends": "../../tsconfig.json",
   "include": [
-    "./src"
+    "./src",
+    "../base/src/testUtils/mockHooks/mockUseRecentlySelectedZone.ts"
   ],
   "compilerOptions": {
     "paths": {
-      "~/*": [
-        "./src/*"
-      ],
-      "@actiontech/dms-kit": [
-        "./src"
-      ]
+      "~/*": ["./src/*"],
+      "@actiontech/dms-kit": ["./src"]
     },
     "declaration": true,
     "declarationMap": false,
     "emitDeclarationOnly": false,
-    "noEmit": false,
+    "noEmit": false
   },
-  "exclude": [
-    "node_modules",
-    "es",
-    "lib",
-  ]
+  "exclude": ["node_modules", "es", "lib"]
 }
