@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, cleanup } from '@testing-library/react';
 import { superRenderHook } from '../../../testUtil/superRender';
 import useRecentlySelectedZone, {
   DEFAULT_MAX_SELECTED_ZONE_NUMBER
@@ -49,7 +49,7 @@ describe('useRecentlySelectedZone', () => {
   });
 
   it('should update record: move to front, unique, trim to max, and emit', () => {
-    const eventEmtterSpy = jest.spyOn(eventEmitter, 'emit');
+    const eventEmitterSpy = jest.spyOn(eventEmitter, 'emit');
     const { result } = superRenderHook(() => useRecentlySelectedZone<Zone>());
     const z1 = { uid: 'u1', name: 'zone-1' };
     const z2 = { uid: 'u2', name: 'zone-2' };
@@ -69,10 +69,12 @@ describe('useRecentlySelectedZone', () => {
     expect(saved[0]).toEqual(z4);
     expect(saved).toHaveLength(DEFAULT_MAX_SELECTED_ZONE_NUMBER);
     expect(saved.map((i: Zone) => i.uid)).toEqual(['u4', 'u1', 'u3']);
-    expect(eventEmtterSpy).toHaveBeenCalledWith(
+    expect(eventEmitterSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE,
       z4
     );
+
+    eventEmitterSpy.mockRestore();
   });
 
   it('should verify: remove current when not in tips', () => {
@@ -140,5 +142,15 @@ describe('useRecentlySelectedZone', () => {
       storage.get(StorageKey.DMS_AVAILABILITY_ZONE) || '[]'
     );
     expect(saved).toEqual([]);
+  });
+
+  it('should set availability zone when DMS_SYNC_CURRENT_AVAILABILITY_ZONE event is emitted', async () => {
+    const zone = { uid: 'u1', name: 'zone-1' };
+    const { result } = superRenderHook(() => useRecentlySelectedZone<Zone>());
+    expect(result.current.availabilityZone).toBeUndefined();
+    act(() =>
+      eventEmitter.emit(EmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE, zone)
+    );
+    expect(result.current.availabilityZone).toEqual(zone);
   });
 });

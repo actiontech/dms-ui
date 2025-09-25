@@ -168,17 +168,4 @@ describe('test Base/Nav/SideMenu/index', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getUserOpPermissionSpy).toHaveBeenCalled();
   });
-
-  it('should set availability zone when DMS_SYNC_CURRENT_AVAILABILITY_ZONE event is emitted', async () => {
-    const setAvailabilityZoneSpy = jest.fn();
-    mockUseRecentlySelectedZone({
-      setAvailabilityZone: setAvailabilityZoneSpy
-    });
-    baseSuperRender(<SideMenu />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    sharedEventEmitter.emit(
-      sharedEmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE
-    );
-    expect(setAvailabilityZoneSpy).toHaveBeenCalledTimes(1);
-  });
 });

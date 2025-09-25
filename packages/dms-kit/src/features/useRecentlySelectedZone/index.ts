@@ -104,6 +104,14 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
     }
   }, [initializeAvailabilityZone, manualInit]);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.DMS_SYNC_CURRENT_AVAILABILITY_ZONE,
+      setAvailabilityZone
+    );
+    return unsubscribe;
+  }, [setAvailabilityZone]);
+
   return {
     availabilityZone,
     updateRecentlySelectedZone,
