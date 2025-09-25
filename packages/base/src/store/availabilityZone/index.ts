@@ -8,16 +8,12 @@ type AvailabilityZoneReduxState = {
   modalStatus: ModalStatus;
   selectAvailabilityZone: IGateway | null;
   availabilityZoneTips: IUidWithName[];
-  // memorizedAvailabilityZone: IUidWithName | undefined;
-  // recentlySelectedZoneRecord: IUidWithName[];
 };
 
 const initialState: AvailabilityZoneReduxState = {
   modalStatus: {},
   selectAvailabilityZone: null,
   availabilityZoneTips: []
-  // memorizedAvailabilityZone: undefined,
-  // recentlySelectedZoneRecord: []
 };
 
 const dmsAvailabilityZone = createSlice({
@@ -40,22 +36,6 @@ const dmsAvailabilityZone = createSlice({
     ) {
       state.availabilityZoneTips = availabilityZoneTips;
     },
-    // updateMemorizedAvailabilityZone(
-    //   state,
-    //   {
-    //     payload: { memorizedAvailabilityZone }
-    //   }: PayloadAction<{ memorizedAvailabilityZone: IUidWithName | undefined }>
-    // ) {
-    //   state.memorizedAvailabilityZone = memorizedAvailabilityZone;
-    // },
-    // updateRecentlySelectedZoneRecord(
-    //   state,
-    //   {
-    //     payload: { recentlySelectedZoneRecord }
-    //   }: PayloadAction<{ recentlySelectedZoneRecord: IUidWithName[] }>
-    // ) {
-    //   state.recentlySelectedZoneRecord = recentlySelectedZoneRecord;
-    // },
     ...commonModalReducer()
   }
 });
@@ -65,8 +45,6 @@ export const {
   initModalStatus: initAvailabilityZoneModalStatus,
   updateModalStatus: updateAvailabilityZoneModalStatus,
   updateAvailabilityZoneTips
-  // updateMemorizedAvailabilityZone,
-  // updateRecentlySelectedZoneRecord
 } = dmsAvailabilityZone.actions;
 
 export default dmsAvailabilityZone.reducer;
