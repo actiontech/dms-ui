@@ -4,9 +4,10 @@ import AvailabilityZoneWrapper from '..';
 import { useLocation, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from '../../../../testUtils/mockHooks/data';
-import { useSelector } from 'react-redux';
-import { baseMockApi } from '@actiontech/shared/lib/testUtil';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
+import { baseMockApi } from '@actiontech/shared/lib/testUtil';
+import { useSelector } from 'react-redux';
+import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-redux', () => {
   return {
@@ -56,6 +57,10 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
     mockUseRecentlySelectedZone();
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
+        user: {
+          uid: '123',
+          systemPreference: undefined
+        },
         availabilityZone: {
           availabilityZoneTips: [
             { uid: 'zone-123', name: 'Test Zone' },
@@ -152,16 +157,15 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
   it('should render Outlet directly when no zones are configured', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
+        user: {
+          uid: '123',
+          systemPreference: undefined
+        },
         availabilityZone: {
           availabilityZoneTips: []
         }
       });
     });
-    mockUseRecentlySelectedZone({
-      ...mockUseRecentlySelectedZoneData,
-      availabilityZoneOptions: []
-    });
-
     superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('Outlet Content')).toBeInTheDocument();
@@ -174,8 +178,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
     beforeEach(() => {
       mockUseRecentlySelectedZone({
         ...mockUseRecentlySelectedZoneData,
-        updateRecentlySelectedZone: updateRecentlySelectedZoneSpy,
-        availabilityZoneOptions: mockAvailabilityZoneOptions
+        updateRecentlySelectedZone: updateRecentlySelectedZoneSpy
       });
     });
 
