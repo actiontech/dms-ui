@@ -8,7 +8,7 @@ import { t } from '../../../locale';
 import { ReactNode } from 'react';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableActionsConfig } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const VersionManagementPageHeaderActions = (

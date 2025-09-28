@@ -2,7 +2,7 @@ import { t } from '../../../locale';
 import { EmptyBox } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { formatTime } from '@actiontech/dms-kit';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BriefcaseFilled } from '@actiontech/icons';

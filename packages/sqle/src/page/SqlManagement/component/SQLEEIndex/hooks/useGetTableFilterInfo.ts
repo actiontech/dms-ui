@@ -1,4 +1,4 @@
-import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
+import { FilterCustomProps } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useEffect, useMemo } from 'react';
 import useStaticStatus from './useStaticStatus';
 import { useCurrentProject } from '@actiontech/shared/lib/features';

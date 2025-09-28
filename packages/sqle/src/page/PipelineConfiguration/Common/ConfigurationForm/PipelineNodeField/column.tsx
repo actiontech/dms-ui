@@ -1,7 +1,7 @@
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../../../locale/index';
 import { PipelineNodeTypeDictionary } from '../index.data';
 import { DragHandle } from './DragTableRow';

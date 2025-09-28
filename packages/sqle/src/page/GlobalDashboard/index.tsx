@@ -11,7 +11,7 @@ import PendingSql from './List/PendingSql';
 import InitiatedWorkOrder from './List/InitiatedWorkOrder';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
   const {

@@ -2,7 +2,7 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from 'i18next';
 import { GetAuditTaskSQLsPrams } from './index.type';
 

@@ -1,6 +1,6 @@
 import { t } from '../../../../locale';
 import { IResourceListData } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetResourceOverviewResourceListV1Params } from '@actiontech/shared/lib/api/base/service/ResourceOverview/index.d';
 import { DatabaseTypeLogo, BasicToolTip } from '@actiontech/dms-kit';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';

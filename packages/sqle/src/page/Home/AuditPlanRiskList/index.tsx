@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import {
   ActiontechTable,
   useTableRequestError
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { TableTitleStyleWrapper } from '../CommonTable/style';
 import { CustomToolbar } from '../CommonTable/CustomToolbar';
