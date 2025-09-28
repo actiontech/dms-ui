@@ -8,7 +8,7 @@ import {
   FilterCustomProps,
   ColumnsSettingProps,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest, useBoolean } from 'ahooks';
 import {
   useCurrentProject,

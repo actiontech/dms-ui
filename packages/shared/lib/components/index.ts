@@ -1,5 +1,4 @@
 export * from './ActionButton';
-export * from './ActiontechTable';
 export * from './BackButton';
 
 export * from './BasicTypographyEllipsis';

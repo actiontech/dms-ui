@@ -6,11 +6,11 @@ import {
   PERMISSIONS,
   PermissionsConstantType
 } from '@actiontech/shared/lib/features';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableAction';
 import {
   ActiontechTableActionsConfig,
   ActiontechTableToolbarActionMeta
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,

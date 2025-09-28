@@ -6,7 +6,7 @@ import {
   useTableFilterContainer,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import useStaticStatus from '../../../../../../../hooks/useStaticStatus';

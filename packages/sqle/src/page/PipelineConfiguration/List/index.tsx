@@ -12,7 +12,7 @@ import {
   useTableRequestError,
   useTableRequestParams,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
 import { IGetPipelinesV1Params } from '@actiontech/shared/lib/api/sqle/service/pipeline/index.d';
 import { IPipelineDetail } from '@actiontech/shared/lib/api/sqle/service/common';

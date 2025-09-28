@@ -1,4 +1,4 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IPipelineNodeDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale/index';
 import { PipelineNodeTypeDictionary } from '../../Common/ConfigurationForm/index.data';

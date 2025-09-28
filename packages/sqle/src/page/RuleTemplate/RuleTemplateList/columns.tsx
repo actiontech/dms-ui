@@ -1,7 +1,7 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';

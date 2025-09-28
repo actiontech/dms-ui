@@ -3,7 +3,7 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetSQLAuditRecordsV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
 import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';

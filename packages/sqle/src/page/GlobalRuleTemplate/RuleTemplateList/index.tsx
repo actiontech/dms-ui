@@ -20,17 +20,20 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import ExportRuleTemplateModal from './Modal/ExportRuleTemplate';
 import { RuleTemplateListActions } from './action';
 import { usePermission } from '@actiontech/shared/lib/features';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   hiddenOperations = false
 }) => {
   const { t } = useTranslation();
+  const navigate = useTypedNavigate();
   const [messageApi, messageContextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const { tableChange, pagination } =
@@ -110,11 +113,18 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
       );
     };
 
+    const editTemplate = (templateName: string) => {
+      navigate(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.update, {
+        params: { templateName }
+      });
+    };
+
     return parse2TableActionPermissions(
       RuleTemplateListActions(
         deleteTemplate,
         openCloneRuleTemplateModal,
-        openExportRuleTemplateModal
+        openExportRuleTemplateModal,
+        editTemplate
       )
     );
   }, [
@@ -123,7 +133,8 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     messageApi,
     parse2TableActionPermissions,
     refreshRuleTemplate,
-    t
+    t,
+    navigate
   ]);
 
   useEffect(() => {

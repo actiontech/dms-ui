@@ -12,7 +12,7 @@ import {
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
 import ConfDetailOverview from './Overview';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';

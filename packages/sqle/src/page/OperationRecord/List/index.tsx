@@ -17,7 +17,7 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,

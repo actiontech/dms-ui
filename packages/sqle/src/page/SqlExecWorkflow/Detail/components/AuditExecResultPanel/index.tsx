@@ -14,7 +14,7 @@ import { Divider, Space } from 'antd';
 import {
   TableFilterButton,
   TableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ToggleButtonStyleWrapper } from '../../../Common/style';
 import DownloadRecord from '../../../Common/DownloadRecord';
 import AuditResultFilterContainer from '../../../Common/AuditResultFilterContainer';

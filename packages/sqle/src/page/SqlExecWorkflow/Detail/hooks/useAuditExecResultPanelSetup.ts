@@ -1,7 +1,7 @@
 import { IGetWorkflowTasksItemV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GetWorkflowTasksItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
+import { useTableRequestError } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { useState, useMemo } from 'react';

@@ -1,5 +1,5 @@
-import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
-import { TableRefreshButtonProps } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import RefreshButton from '@actiontech/dms-kit/es/components/ActiontechTable/components/RefreshButton';
+import { TableRefreshButtonProps } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { Space } from 'antd';
 import { DASHBOARD_COMMON_GET_ORDER_NUMBER } from '.';
 import { useTranslation } from 'react-i18next';

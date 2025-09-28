@@ -4,7 +4,7 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV3Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';

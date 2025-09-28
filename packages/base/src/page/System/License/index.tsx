@@ -11,7 +11,7 @@ import { ModalName } from '../../../data/ModalName';
 import SystemBasicTitle from '../components/BasicTitle';
 import ImportLicense from './Modal/ImportLicense';
 import { LicenseColumn } from './index.data';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { LicenseActions } from './action';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { DEFAULT_LANGUAGE } from '@actiontech/dms-kit';

@@ -2,7 +2,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
 import { useBoolean, useRequest } from 'ahooks';
 import { AuditResultForCreateOrderColumn } from './column';

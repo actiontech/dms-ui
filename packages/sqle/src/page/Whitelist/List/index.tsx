@@ -26,7 +26,7 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
 import { WhitelistTableActions, WhitelistPageHeaderActions } from './actions';
