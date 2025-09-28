@@ -2,7 +2,7 @@ import { timeAddZero } from '@actiontech/dms-kit';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';

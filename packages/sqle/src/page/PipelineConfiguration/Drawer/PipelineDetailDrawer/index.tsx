@@ -15,7 +15,7 @@ import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { FormItemLabel } from '@actiontech/dms-kit';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { PipelineNodeTableColumn } from './column';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';

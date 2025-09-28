@@ -1,4 +1,4 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/dms-kit';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

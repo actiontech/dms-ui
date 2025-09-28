@@ -5,7 +5,7 @@ import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTa
 import {
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import ResultCard from './ResultCard';

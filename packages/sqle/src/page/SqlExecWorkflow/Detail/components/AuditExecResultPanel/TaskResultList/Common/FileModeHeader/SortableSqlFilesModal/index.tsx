@@ -29,7 +29,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
+import { useTableRequestError } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({

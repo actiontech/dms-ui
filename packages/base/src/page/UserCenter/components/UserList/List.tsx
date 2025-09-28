@@ -7,7 +7,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/User/index.d';

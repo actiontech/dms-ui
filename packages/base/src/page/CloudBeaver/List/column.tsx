@@ -1,7 +1,7 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../locale';

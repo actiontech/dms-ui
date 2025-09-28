@@ -16,7 +16,7 @@ import {
   TableFilterContainer,
   ActiontechTableWrapper,
   ColumnsSettingProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResourceDetailListColumns } from './columns';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';

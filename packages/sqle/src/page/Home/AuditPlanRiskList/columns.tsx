@@ -1,5 +1,5 @@
 import { t } from '../../../locale';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { formatTime } from '@actiontech/dms-kit';
 import { Typography } from 'antd';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';

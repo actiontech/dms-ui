@@ -11,7 +11,7 @@ import {
   TableToolbar,
   ColumnsSettingProps,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import {
   IExportSqlManageV2Params,

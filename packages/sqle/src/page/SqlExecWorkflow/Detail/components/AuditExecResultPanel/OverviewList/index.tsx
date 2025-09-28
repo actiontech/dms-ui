@@ -5,7 +5,7 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import ScheduleTimeModal from './ScheduleTimeModal';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { auditResultOverviewColumn } from './column';
 import { WorkflowOverviewListProps } from './index.type';
 import { AuditResultOverviewListAction } from './action';
