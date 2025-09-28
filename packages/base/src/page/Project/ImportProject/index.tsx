@@ -15,7 +15,7 @@ import { Form } from 'antd';
 import { FormItemBigTitle, FormItemLabel } from '@actiontech/dms-kit';
 import Icon from '@ant-design/icons';
 import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
 import FileUpload from './FileUpload';
 import { DmsApi } from '@actiontech/shared/lib/api';

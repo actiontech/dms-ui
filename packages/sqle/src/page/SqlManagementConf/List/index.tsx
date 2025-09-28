@@ -8,7 +8,7 @@ import {
   useTableFilterContainer,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   useCurrentProject,
   useCurrentUser,

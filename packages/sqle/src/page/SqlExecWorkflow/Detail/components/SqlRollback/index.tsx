@@ -19,7 +19,7 @@ import {
   useTableFilterContainer,
   useTableRequestParams,
   FilterCustomProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import TableTransfer from './TableTransfer';
 import { ExpandedBackupSqlType, TableTransferProps } from './index.type';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';

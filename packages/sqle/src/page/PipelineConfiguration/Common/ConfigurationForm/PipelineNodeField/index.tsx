@@ -18,7 +18,7 @@ import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DragTableRow } from './DragTableRow';
 import { PipelineNodeType } from '../index.type';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 const PipelineNodeField: React.FC<PipelineNodeFieldProps> = ({
   value,
   onChange

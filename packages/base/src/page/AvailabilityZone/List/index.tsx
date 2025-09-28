@@ -19,7 +19,7 @@ import {
   useTableRequestError,
   useTableRequestParams,
   TableRefreshButton
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { IGateway } from '@actiontech/shared/lib/api/base/service/common';

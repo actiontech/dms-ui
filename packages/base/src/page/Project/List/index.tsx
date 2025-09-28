@@ -5,7 +5,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { usePermission, useUserInfo } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';

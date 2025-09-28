@@ -2,7 +2,7 @@ import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/comm
 import {
   ActiontechTableColumn,
   ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../../../../locale';
 import ExportTaskStatus from '../../../../Common/TaskStatus';
 import { formatTime } from '@actiontech/dms-kit';

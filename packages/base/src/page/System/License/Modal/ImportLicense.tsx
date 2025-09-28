@@ -6,7 +6,7 @@ import { Form, message, Upload } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { RcFile } from 'antd/es/upload';
 import { BasicButton, BasicModal } from '@actiontech/dms-kit';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { LicenseColumn } from '../index.data';
 import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import EventEmitter from '../../../../utils/EventEmitter';

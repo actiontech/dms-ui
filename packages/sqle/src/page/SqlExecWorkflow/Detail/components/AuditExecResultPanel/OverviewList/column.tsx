@@ -10,7 +10,7 @@ import {
 import {
   ActiontechTableColumn,
   ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { formatTime } from '@actiontech/dms-kit';
 import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
 import { CustomAvatar } from '@actiontech/dms-kit';

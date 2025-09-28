@@ -11,7 +11,7 @@ import MemberList from './List/MemberList';
 import MemberGroupList from './List/MemberGroupList';
 import { updateMemberModalStatus } from '../../store/member';
 import { ModalName } from '../../data/ModalName';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { MemberListPageHeaderActions } from './actions';

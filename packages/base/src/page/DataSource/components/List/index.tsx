@@ -20,7 +20,7 @@ import {
   FilterCustomProps,
   TableToolbar,
   TableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,

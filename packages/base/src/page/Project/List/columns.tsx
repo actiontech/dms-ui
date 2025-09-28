@@ -1,7 +1,7 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/dms-kit';
 import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';

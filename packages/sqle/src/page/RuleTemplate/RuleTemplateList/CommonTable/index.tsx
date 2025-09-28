@@ -14,7 +14,7 @@ import {
   useTableRequestError,
   ActiontechTable,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 
 const CommonTable = () => {
   const { projectID } = useCurrentProject();

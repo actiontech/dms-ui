@@ -2,7 +2,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { permissionListColumns } from './column';
 import { UserCenterListEnum } from '../../index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';

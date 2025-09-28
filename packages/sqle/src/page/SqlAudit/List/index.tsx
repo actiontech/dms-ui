@@ -13,7 +13,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import SqlAuditStatusFilter from './component/SqlAuditStatusFilter';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '../../../data/common';

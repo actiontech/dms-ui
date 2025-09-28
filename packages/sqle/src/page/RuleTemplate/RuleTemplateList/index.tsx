@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import { PageHeader, EmptyBox, SegmentedTabs } from '@actiontech/dms-kit';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useState } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { EnumTemplateType } from './index.type';

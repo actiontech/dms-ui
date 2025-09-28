@@ -3,7 +3,7 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/dms-kit';
 import { CustomAvatar } from '@actiontech/dms-kit';

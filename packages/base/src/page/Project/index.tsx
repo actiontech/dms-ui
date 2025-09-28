@@ -1,5 +1,5 @@
 import { PageHeader } from '@actiontech/dms-kit';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import EventEmitter from '../../utils/EventEmitter';

@@ -4,7 +4,7 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableColumn,
   InlineActiontechTableMoreActionsButtonMeta
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { Space } from 'antd';
 import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
