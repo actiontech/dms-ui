@@ -4,7 +4,8 @@ import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/P
 import {
   ActiontechTable,
   useTableRequestError,
-  useTableRequestParams
+  useTableRequestParams,
+  TableToolbar
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { usePermission, useUserInfo } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
@@ -34,10 +35,13 @@ const ProjectList: React.FC = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { pagination, tableChange } = useTableRequestParams<
-    IListProjectV2,
-    IListProjectsV2Params
-  >();
+  const {
+    pagination,
+    tableChange,
+    searchKeyword,
+    setSearchKeyword,
+    refreshBySearchKeyword
+  } = useTableRequestParams<IListProjectV2, IListProjectsV2Params>();
 
   const {
     data: projectListData,
@@ -46,7 +50,8 @@ const ProjectList: React.FC = () => {
   } = useRequest(
     () => {
       const params: IListProjectsV2Params = {
-        ...pagination
+        ...pagination,
+        fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(
         DmsApi.ProjectService.ListProjectsV2(params)
@@ -137,6 +142,14 @@ const ProjectList: React.FC = () => {
   return (
     <>
       {contextHolder}
+      <TableToolbar
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
+        }}
+      />
       <ActiontechTable
         dataSource={projectListData?.list}
         pagination={{

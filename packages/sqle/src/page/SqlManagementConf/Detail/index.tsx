@@ -121,6 +121,7 @@ const ConfDetail: React.FC = () => {
           auditPlanType={v.audit_plan_type?.type ?? ''}
           activeTabKey={activeKey}
           instanceType={data.instance_type ?? ''}
+          instanceName={data.instance_name ?? ''}
           exportPending={exportPending}
           exportDone={exportDone}
         />

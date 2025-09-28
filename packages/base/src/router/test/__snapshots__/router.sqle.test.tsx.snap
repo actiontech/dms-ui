@@ -4,7 +4,7 @@ exports[`base/router-sqle-ee render route sqle index page 1`] = `
 <body>
   <div>
     <div>
-      null
+      notFound
     </div>
   </div>
 </body>
@@ -480,6 +480,50 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route createSqlOptimization 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditCreateOptimization
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route optimizationResult 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlOptimizationResult
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditCreate 1`] = `
 <body>
   <div>
@@ -688,94 +732,6 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
         >
           <div>
             UpdateSqlManagementConf
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimization 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div
-          data-test-parent-id="sqlOptimization"
-        >
-          <div>
-            sqlOptimizationList
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationCreate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div
-          data-test-parent-id="sqlOptimization"
-        >
-          <div>
-            sqlOptimizationCreate
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div
-          data-test-parent-id="sqlOptimization"
-        >
-          <div>
-            sqlOptimizationDetail
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationOverview 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div
-          data-test-parent-id="sqlOptimization"
-        >
-          <div>
-            sqlOptimizationOverview
           </div>
         </div>
       </div>

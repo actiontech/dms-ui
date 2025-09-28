@@ -203,6 +203,23 @@ const useWorkflowDetailAction = ({
     username
   ]);
 
+  const manualExecuteButtonVisibility = useMemo(() => {
+    if (!workflowInfo?.record?.status) {
+      return false;
+    }
+    const isAssigneeUser = workflowInfo.record.workflow_step_list
+      ?.find((v) => v.type === WorkflowStepResV2TypeEnum.sql_execute)
+      ?.assignee_user_name_list?.includes(username);
+    return (
+      [
+        WorkflowRecordResV2StatusEnum.wait_for_execution,
+        WorkflowRecordResV2StatusEnum.exec_failed
+      ].includes(workflowInfo.record.status) &&
+      isAssigneeUser &&
+      checkInTimeWithMaintenanceTimeInfo(dayjs())
+    );
+  }, [checkInTimeWithMaintenanceTimeInfo, workflowInfo, username]);
+
   const executingWorkflow = () => {
     if (!executingButtonVisibility) {
       return;
@@ -219,7 +236,7 @@ const useWorkflowDetailAction = ({
   ] = useBoolean();
 
   const completeWorkflow = () => {
-    if (!executingButtonVisibility) {
+    if (!manualExecuteButtonVisibility) {
       return;
     }
     completeStart();
@@ -333,7 +350,7 @@ const useWorkflowDetailAction = ({
     manualExecuteWorkflowButtonMeta: {
       action: completeWorkflow,
       loading: completeLoading,
-      hidden: !executingButtonVisibility
+      hidden: !manualExecuteButtonVisibility
     },
     terminateWorkflowButtonMeta: {
       action: terminateWorkflow,

@@ -20,11 +20,15 @@ export type SqlExecuteResultCardProps = BaseProps &
     dbType?: string;
     enableBackup?: boolean;
     taskStatus?: AuditTaskResV1StatusEnum;
+    instanceName?: string;
+    schema?: string;
   };
 
 export type FileExecuteResultCardProps = BaseProps &
   IAuditFileStatistic & {
     projectID: string;
+    instanceName?: string;
+    schema?: string;
   };
 
 export type ResultCardProps =

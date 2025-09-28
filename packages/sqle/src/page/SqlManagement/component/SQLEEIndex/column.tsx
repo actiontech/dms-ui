@@ -180,11 +180,9 @@ const SqlManagementColumn: (
               <TypedLink
                 target="_blank"
                 to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
-                params={{
-                  projectID
-                }}
+                params={{ projectID }}
                 queries={{
-                  SQLAuditRecordID: source.sql_source_ids.join(',')
+                  sql_audit_record_id: source.sql_source_ids.join(',')
                 }}
               >
                 {source.sql_source_desc}

@@ -49,7 +49,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   activeTabKey,
   instanceType,
   exportDone,
-  exportPending
+  exportPending,
+  instanceName
 }) => {
   const { t } = useTranslation();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
@@ -382,6 +383,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                 projectID,
                 instanceAuditPlanId,
                 id: currentAuditResultRecord?.id ?? ''
+              },
+              queries: {
+                instance_name: instanceName,
+                schema: currentAuditResultRecord?.schema_name ?? ''
               }
             }}
           />

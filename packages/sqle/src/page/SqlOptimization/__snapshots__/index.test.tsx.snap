@@ -1,9 +1,927 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/SqlOptimization render table data 1`] = `
+exports[`sqle/SqlOptimization should render enterprise feature display with proper feature name 1`] = `
 <body>
   <div>
-    <section />
+    <section>
+      <section
+        class="css-1uy51o3"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px; padding-bottom: 8px;"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 12px;"
+                  >
+                    <span
+                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                    >
+                      <input
+                        class="ant-input ant-input-sm"
+                        id="actiontech-table-search-input"
+                        placeholder="输入关键字搜索"
+                        type="text"
+                        value=""
+                      />
+                      <span
+                        class="ant-input-suffix"
+                      >
+                        <span
+                          class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                          role="button"
+                          tabindex="-1"
+                        >
+                          <svg
+                            fill="currentColor"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                            />
+                          </svg>
+                        </span>
+                        <svg
+                          class="custom-icon custom-icon-search"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                      style="padding: 0px 6px 0px 10px;"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 2px;"
+                        >
+                          筛选
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <svg
+                            color="currentColor"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 12px;"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-active basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          自动刷新
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                      style="padding: 0px 6px 0px 8px;"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            class="custom-icon custom-icon-setting"
+                            height="11"
+                            viewBox="0 0 13 11"
+                            width="13"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 5px;"
+                        >
+                          表格设置
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <svg
+                            class="custom-icon custom-icon-arrow-down"
+                            color="currentColor"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                  >
+                    <div
+                      class="ant-table-container"
+                    >
+                      <div
+                        class="ant-table-content"
+                        style="overflow-x: auto; overflow-y: hidden;"
+                      >
+                        <table
+                          style="min-width: 100%; table-layout: auto;"
+                        >
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col
+                              style="width: 82px;"
+                            />
+                          </colgroup>
+                          <thead
+                            class="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                名称
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                数据源
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                数据库类型
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                状态
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                优化提升性能
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                触发调优规则总数
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                索引总数
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                创建人
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                创建时间
+                              </th>
+                              <th
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                scope="col"
+                                style="position: sticky; right: 0px;"
+                              >
+                                操作
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="ant-table-tbody"
+                          >
+                            <tr
+                              aria-hidden="true"
+                              class="ant-table-measure-row"
+                              style="height: 0px; font-size: 0px;"
+                            >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="123456"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                UI20240417112938231
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                dd1
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <div
+                                  class="css-1uw16ge"
+                                >
+                                  <img
+                                    alt=""
+                                  />
+                                  <span
+                                    title="MySQL"
+                                  >
+                                    MySQL
+                                  </span>
+                                </div>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <section
+                                  class="css-3q8fl"
+                                >
+                                  <svg
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                      stroke="#41BF9A"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      d="m5.083 8 2.084 2.083 4.166-4.166"
+                                      stroke="#41BF9A"
+                                      stroke-linejoin="round"
+                                      stroke-width="1.5"
+                                    />
+                                  </svg>
+                                  <span>
+                                    调优成功
+                                  </span>
+                                </section>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                238.46%
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    >
+                                      <span
+                                        class="ant-avatar-string"
+                                        style="transform: scale(1) translateX(-50%);"
+                                      >
+                                        A
+                                      </span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2024-04-17 11:33:09
+                              </td>
+                              <td
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                style="position: sticky; right: 0px;"
+                              >
+                                <div
+                                  class="css-new95e"
+                                >
+                                  <button
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="1234567"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                SQLfile20240417112938232
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                dd1
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <section
+                                      class="css-3q8fl"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                          stroke="#F59957"
+                                          stroke-width="1.5"
+                                        />
+                                      </svg>
+                                      <span>
+                                        调优失败
+                                      </span>
+                                    </section>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              />
+                              <td
+                                class="ant-table-cell"
+                              />
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                style="position: sticky; right: 0px;"
+                              >
+                                <div
+                                  class="css-new95e"
+                                >
+                                  <button
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="12345678"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                GIT20240417112938233
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <section
+                                  class="css-3q8fl"
+                                >
+                                  <svg
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                      stroke="#6094FC"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      clip-rule="evenodd"
+                                      d="M8 3.155V8l-4.207 2.404a1 1 0 0 0 .377.385L7.5 12.71a1 1 0 0 0 1 0l3.33-1.922a1 1 0 0 0 .5-.866V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+                                      fill="#6094FC"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                  <span>
+                                    调优进行中
+                                  </span>
+                                </section>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                0
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                0
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    >
+                                      <span
+                                        class="ant-avatar-string"
+                                        style="transform: scale(1) translateX(-50%);"
+                                      >
+                                        A
+                                      </span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2024-04-17 11:33:09
+                              </td>
+                              <td
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                style="position: sticky; right: 0px;"
+                              >
+                                <div
+                                  class="css-new95e"
+                                >
+                                  <button
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <ul
+                    class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
+                  >
+                    <li
+                      class="ant-pagination-total-text"
+                    >
+                      <span>
+                        共 3 条数据
+                      </span>
+                    </li>
+                    <li
+                      aria-disabled="true"
+                      class="ant-pagination-prev ant-pagination-disabled"
+                      title="上一页"
+                    >
+                      <button
+                        class="ant-pagination-item-link"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-label="left"
+                          class="anticon anticon-left"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="left"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li
+                      class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                      tabindex="0"
+                      title="1"
+                    >
+                      <a
+                        rel="nofollow"
+                      >
+                        1
+                      </a>
+                    </li>
+                    <li
+                      aria-disabled="true"
+                      class="ant-pagination-next ant-pagination-disabled"
+                      title="下一页"
+                    >
+                      <button
+                        class="ant-pagination-item-link"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-label="right"
+                          class="anticon anticon-right"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="right"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li
+                      class="ant-pagination-options"
+                    >
+                      <div
+                        aria-label="页码"
+                        class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                              aria-autocomplete="list"
+                              aria-controls="rc_select_TEST_OR_SSR_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-label="页码"
+                              aria-owns="rc_select_TEST_OR_SSR_list"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="rc_select_TEST_OR_SSR"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-item"
+                            title="20 条/页"
+                          >
+                            20 条/页
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/SqlOptimization should render no configuration tips when user has no permission 1`] = `
+<body>
+  <div>
+    <section>
+      <section
+        class="css-o5qd8c"
+      >
+        <div
+          class="ant-alert ant-alert-info"
+          data-show="true"
+          role="alert"
+        >
+          <span
+            aria-label="info-circle"
+            class="anticon anticon-info-circle ant-alert-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="info-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+              />
+            </svg>
+          </span>
+          <div
+            class="ant-alert-content"
+          >
+            <div
+              class="ant-alert-message"
+            >
+              SQL调优功能可以帮助您自动优化SQL性能。该功能为付费增值模块，请联系商务获取详细信息。
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
   </div>
 </body>
 `;

@@ -17,17 +17,18 @@ describe('test TaskResultList/SQLStatementResultTable', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
+    jest.useFakeTimers();
     mockUseCurrentUser();
   });
   afterEach(() => {
     cleanup();
+    jest.useRealTimers();
   });
 
   it('should match snapshot', async () => {
     const openSpy = jest.spyOn(window, 'open');
     openSpy.mockImplementation(jest.fn());
     rule_template.getRuleList();
-    jest.useFakeTimers();
     const { baseElement } = sqleSuperRender(
       <SqlStatementResultTable
         taskId="1"
@@ -84,7 +85,34 @@ describe('test TaskResultList/SQLStatementResultTable', () => {
     fireEvent.click(screen.getByText('分 析'));
 
     expect(openSpy).toHaveBeenCalledTimes(1);
+  });
 
-    jest.useRealTimers();
+  it('should render exec result tooltip', async () => {
+    rule_template.getRuleList();
+    jest.useFakeTimers();
+    const { baseElement } = sqleSuperRender(
+      <SqlStatementResultTable
+        taskId="1"
+        dataSource={[
+          {
+            number: 1,
+            exec_sql: 'SELECT * FROM ab.xx;',
+            audit_result: [
+              {
+                level: 'error',
+                message: 'schema ab 不存在',
+                rule_name: '',
+                db_type: 'MySQL'
+              }
+            ],
+            exec_status: 'failed',
+            exec_result:
+              "exec sql failed: \nSELECT * FROM ab.xx; \nError 1049 (42000): Unknown database 'ab'"
+          }
+        ]}
+      />
+    );
+
+    expect(baseElement).toMatchSnapshot();
   });
 });

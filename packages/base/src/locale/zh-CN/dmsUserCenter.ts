@@ -19,6 +19,7 @@ export default {
     },
     userForm: {
       username: '用户名',
+      usernameNoSpaces: '用户名不支持空格',
       needUpdatePassWord: '是否需要更新密码',
       passwordConfirm: '确认密码',
       passwordConfirmPlaceholder: '请保持两次密码输入一致',

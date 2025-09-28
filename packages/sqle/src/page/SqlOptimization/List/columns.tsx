@@ -6,16 +6,22 @@ import {
   ISqlDEVRecord,
   IOptimizationRecord
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
+import { IGetOptimizationRecordsV2Params } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/dms-kit';
-import { CustomAvatar, DatabaseTypeLogo } from '@actiontech/dms-kit';
-import { floatToPercent } from '@actiontech/dms-kit';
+import {
+  CustomAvatar,
+  DatabaseTypeLogo,
+  BasicToolTip,
+  formatTime,
+  floatToPercent
+} from '@actiontech/dms-kit';
 import OptimizationStatus from '../components/OptimizationStatus';
-import { SqlOptimizationStatusEnum } from '../index.data';
+import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export type SqlOptimizationListTableFilterParamType =
-  PageInfoWithoutIndexAndSize<IGetOptimizationRecordsParams, 'project_name'>;
-export const SqlOptimizationListColumns: (
+  PageInfoWithoutIndexAndSize<IGetOptimizationRecordsV2Params, 'project_name'>;
+
+export const sqlOptimizationListColumns: (
   getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<
   IOptimizationRecord,
@@ -24,7 +30,8 @@ export const SqlOptimizationListColumns: (
   return [
     {
       dataIndex: 'optimization_id',
-      title: () => t('sqlOptimization.table.optimizationId')
+      title: () => t('sqlOptimization.table.optimizationId'),
+      show: false
     },
     {
       dataIndex: 'optimization_name',
@@ -33,6 +40,9 @@ export const SqlOptimizationListColumns: (
     {
       dataIndex: 'instance_name',
       title: () => t('sqlOptimization.table.instanceName'),
+      render: (instanceName) => {
+        return instanceName || '-';
+      },
       filterCustomType: 'select',
       filterKey: 'filter_instance_name'
     },
@@ -50,7 +60,27 @@ export const SqlOptimizationListColumns: (
       }
     },
     {
-      dataIndex: 'performance_gain',
+      dataIndex: 'status',
+      title: () => t('sqlOptimization.table.status'),
+      render: (status, record) => {
+        if (!status) {
+          return '-';
+        }
+
+        const content = (
+          <OptimizationStatus status={status as OptimizationRecordStatusEnum} />
+        );
+
+        if (status === OptimizationRecordStatusEnum.failed) {
+          return (
+            <BasicToolTip title={record.status_detail}>{content}</BasicToolTip>
+          );
+        }
+        return content;
+      }
+    },
+    {
+      dataIndex: 'performance_improve',
       title: () => t('sqlOptimization.table.performanceGain'),
       render: (performance) => {
         if (!performance) {
@@ -60,29 +90,25 @@ export const SqlOptimizationListColumns: (
       }
     },
     {
-      dataIndex: 'created_time',
-      title: () => t('sqlOptimization.table.createTime'),
-      render: (value) => {
-        return formatTime(value, '-');
-      }
+      dataIndex: 'number_of_rule',
+      title: () => t('sqlOptimization.table.numberOfRule')
     },
     {
-      dataIndex: 'status',
-      title: () => t('sqlOptimization.table.status'),
-      render: (status) => {
-        if (!status) {
-          return '-';
-        }
-        return (
-          <OptimizationStatus status={status as SqlOptimizationStatusEnum} />
-        );
-      }
+      dataIndex: 'number_of_index',
+      title: () => t('sqlOptimization.table.numberOfIndexx')
     },
     {
       dataIndex: 'created_user',
       title: () => t('sqlOptimization.table.creator'),
       render: (creator: ISqlDEVRecord['creator']) => {
         return creator ? <CustomAvatar name={creator} /> : '-';
+      }
+    },
+    {
+      dataIndex: 'created_time',
+      title: () => t('sqlOptimization.table.createTime'),
+      render: (value) => {
+        return formatTime(value, '-');
       }
     }
   ];

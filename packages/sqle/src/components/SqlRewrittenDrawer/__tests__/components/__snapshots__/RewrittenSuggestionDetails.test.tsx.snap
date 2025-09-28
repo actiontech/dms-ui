@@ -318,7 +318,7 @@ WITH tmp AS (
         </div>
         <a
           class="sql-analyze-link"
-          href="/sqle/project/700300/exec-workflow/task-123/1/analyze"
+          href="/sqle/project/700300/exec-workflow/task-123/1/analyze?instance_name=mysql&schema=dms"
           target="_blank"
         >
           在SQL分析中查看当前表结构

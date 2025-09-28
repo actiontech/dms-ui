@@ -1,7 +1,5 @@
 import {
   ActiontechTableColumn,
-  ActiontechTableFilterMeta,
-  ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetSQLAuditRecordsV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
@@ -15,39 +13,11 @@ import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import SqlAuditTags from './component/SqlAuditTags';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { ISQLAuditRecordExtraParams } from './index.type';
+
 export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSQLAuditRecordsV1Params,
   'project_name'
 >;
-export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
-  ISQLAuditRecordExtraParams,
-  SqlAuditListTableFilterParamType
-> = () => {
-  return new Map<
-    keyof ISQLAuditRecordExtraParams,
-    ActiontechTableFilterMetaValue<SqlAuditListTableFilterParamType>
-  >([
-    [
-      'instance_name',
-      {
-        filterCustomType: 'select',
-        filterKey: 'filter_instance_id',
-        filterLabel: t('sqlAudit.list.filter.instanceName'),
-        checked: false
-      }
-    ],
-    [
-      'auditTime',
-      {
-        filterCustomType: 'date-range',
-        filterKey: ['filter_create_time_from', 'filter_create_time_to'],
-        filterLabel: t('sqlAudit.list.filter.auditTime'),
-        checked: false
-      }
-    ]
-  ]);
-};
 const SqlAuditListColumn: (
   projectID: string,
   projectName: string,
@@ -96,7 +66,9 @@ const SqlAuditListColumn: (
           record.task?.instance_name
         );
       },
-      width: 200
+      width: 200,
+      filterKey: 'filter_instance_id',
+      filterCustomType: 'select'
     },
     {
       dataIndex: 'sql_audit_status',
@@ -114,7 +86,9 @@ const SqlAuditListColumn: (
             />
           </span>
         );
-      }
+      },
+      filterKey: 'filter_sql_audit_status',
+      filterCustomType: 'select'
     },
     {
       dataIndex: 'tags',
@@ -167,7 +141,9 @@ const SqlAuditListColumn: (
       render(time) {
         return formatTime(time, '-');
       },
-      width: 200
+      width: 200,
+      filterKey: ['filter_create_time_from', 'filter_create_time_to'],
+      filterCustomType: 'date-range'
     }
   ];
 };

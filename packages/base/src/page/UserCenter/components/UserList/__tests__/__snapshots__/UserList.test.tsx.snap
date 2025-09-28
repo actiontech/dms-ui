@@ -4,6 +4,75 @@ exports[`base/UserCenter/UserList render user table 1`] = `
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入关键字搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -918,6 +987,75 @@ exports[`base/UserCenter/UserList render user table 1`] = `
 exports[`base/UserCenter/UserList should disabled action when current role is not admin and not global manager 1`] = `
 <div>
   <div
+    class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+    style="flex-wrap: wrap; margin-bottom: -8px;"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px; padding-bottom: 8px;"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+          >
+            <input
+              class="ant-input ant-input-sm"
+              id="actiontech-table-search-input"
+              placeholder="输入关键字搜索"
+              type="text"
+              value=""
+            />
+            <span
+              class="ant-input-suffix"
+            >
+              <span
+                class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                role="button"
+                tabindex="-1"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+              <svg
+                class="custom-icon custom-icon-search"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-space-item"
+      style="padding-bottom: 8px;"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+  </div>
+  <div
     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
   >
     <div
@@ -1679,6 +1817,75 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
 
 exports[`base/UserCenter/UserList should hidden action column when is not admin 1`] = `
 <div>
+  <div
+    class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+    style="flex-wrap: wrap; margin-bottom: -8px;"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px; padding-bottom: 8px;"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+          >
+            <input
+              class="ant-input ant-input-sm"
+              id="actiontech-table-search-input"
+              placeholder="输入关键字搜索"
+              type="text"
+              value=""
+            />
+            <span
+              class="ant-input-suffix"
+            >
+              <span
+                class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                role="button"
+                tabindex="-1"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+              <svg
+                class="custom-icon custom-icon-search"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-space-item"
+      style="padding-bottom: 8px;"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+  </div>
   <div
     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
   >
@@ -2593,6 +2800,75 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
 exports[`base/UserCenter/UserList should refresh user table when change current page 1`] = `
 <body>
   <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入关键字搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
     <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
@@ -5143,6 +5419,75 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
 <body>
   <div>
     <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入关键字搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
+    <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
@@ -7691,6 +8036,75 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
 exports[`base/UserCenter/UserList should render empty tips when request not success 1`] = `
 <body>
   <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px; padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <span
+              class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            >
+              <input
+                class="ant-input ant-input-sm"
+                id="actiontech-table-search-input"
+                placeholder="输入关键字搜索"
+                type="text"
+                value=""
+              />
+              <span
+                class="ant-input-suffix"
+              >
+                <span
+                  class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                    />
+                  </svg>
+                </span>
+                <svg
+                  class="custom-icon custom-icon-search"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+        />
+      </div>
+    </div>
     <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >

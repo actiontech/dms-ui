@@ -52,6 +52,7 @@ import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils
 import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { debounce } from 'lodash';
+import ErrorBoundary from './page/ErrorBoundary';
 import './index.less';
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -314,7 +315,7 @@ function App() {
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
+                <ErrorBoundary>{body}</ErrorBoundary>
               </EmptyBox>
             </ThemeProvider>
           </StyledEngineProvider>

@@ -28,7 +28,12 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   } = props;
   const { generateTableSchemaContent } = useTableSchema();
   const { generateSQLExecPlanContent } = useSQLExecPlan({
@@ -39,7 +44,12 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   });
   const [tabStatus, setTabStatus] = useState<string>('sql');
   const createError = () => {

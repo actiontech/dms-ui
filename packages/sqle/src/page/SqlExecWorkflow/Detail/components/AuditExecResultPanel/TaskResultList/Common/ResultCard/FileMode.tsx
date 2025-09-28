@@ -117,16 +117,23 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
             loading={loading}
             errorMessage={requestErrorMessage}
             pagination={false}
+            taskId={taskId}
             caption={
               <div className="flex-display flex-end-horizontal">
                 <Trans i18nKey={'audit.fileModeExecute.sqlsTips'}>
                   <TypedLink
                     to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
                     params={{ projectID, taskId, fileId: props.file_id ?? '' }}
+                    queries={{
+                      instance_name: props.instanceName ?? '',
+                      schema: props.schema ?? ''
+                    }}
                   />
                 </Trans>
               </div>
             }
+            instanceName={props.instanceName}
+            schema={props.schema}
           />
         )
       }
@@ -141,7 +148,9 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
     props.file_id,
     props.file_name,
     requestErrorMessage,
-    taskId
+    taskId,
+    props.instanceName,
+    props.schema
   ]);
 
   return (

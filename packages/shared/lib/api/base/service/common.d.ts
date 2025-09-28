@@ -1020,6 +1020,14 @@ export interface IGetSmsConfigurationReplyItem {
   url?: string;
 }
 
+export interface IGetSystemVariablesReply {
+  code?: number;
+
+  data?: ISystemVariablesResV1;
+
+  message?: string;
+}
+
 export interface IGetUser {
   access_token_info?: IAccessTokenInfo;
 
@@ -1779,10 +1787,6 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
-  member_group?: IProjectMemberGroup;
-
-  op_permissions?: IUidWithName[];
-
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -2434,6 +2438,20 @@ export interface ISyncGatewayReq {
   gateways?: IGateway[];
 }
 
+export interface ISystemVariablesResV1 {
+  cb_operation_logs_expired_hours?: number;
+
+  operation_record_expired_hours?: number;
+
+  system_variable_sql_manage_raw_expired_hours?: number;
+
+  system_variable_ssh_primary_key?: string;
+
+  system_variable_workflow_expired_hours?: number;
+
+  url?: string;
+}
+
 export interface ITask {
   task_uid?: string;
 }
@@ -2820,6 +2838,20 @@ export interface IUpdateSmsConfiguration {
 
 export interface IUpdateSmsConfigurationReq {
   update_sms_configuration?: IUpdateSmsConfiguration;
+}
+
+export interface IUpdateSystemVariablesReqV1 {
+  cb_operation_logs_expired_hours?: number;
+
+  operation_record_expired_hours?: number;
+
+  system_variable_sql_manage_raw_expired_hours?: number;
+
+  system_variable_ssh_primary_key?: string;
+
+  system_variable_workflow_expired_hours?: number;
+
+  url?: string;
 }
 
 export interface IUpdateUser {

@@ -15,7 +15,7 @@ export default {
   whitelist: '审核SQL例外',
   sqlManagementExcept: '管控SQL例外',
   workflowTemplate: '审批流程模板',
-  sqlAudit: '快捷审核',
+  sqlAudit: '快捷诊断',
   pluginAudit: 'IDE审核',
   sqlOptimization: '智能调优',
   sqlManagement: 'SQL管控',

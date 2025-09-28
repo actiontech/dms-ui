@@ -1,11 +1,46 @@
 import { styled } from '@mui/material/styles';
 
-export const EditableSelectStyleWrapper = styled('div')`
+export const EditableSelectStyleWrapper = styled('div')<{
+  height: number;
+}>`
   background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+  box-shadow: ${({ theme }) =>
+    theme.sharedTheme.components.basicSelect.default.boxShadow};
+  border-radius: 8px;
+
+  .ant-spin-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: ${({ height }) => `${height}px`};
+    overflow: hidden;
+  }
+
+  .editable-select-search {
+    border-bottom: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+
+    .ant-input {
+      height: 28px;
+    }
+  }
+
+  .editable-select-add-section {
+    border-top: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    padding: 5px 12px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+  }
 
   .editable-select-menu {
-    max-height: 300px;
+    border: none;
+    flex: 1;
     overflow: auto;
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 0;
 
     .menu-item-content {
       display: flex;
@@ -18,10 +53,23 @@ export const EditableSelectStyleWrapper = styled('div')`
         padding: 0 8px;
       }
     }
+  }
 
-    .add-mode {
-      padding: 0 8px;
-    }
+  .editable-select-menu-item-active {
+    font-weight: 600;
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.basic.colorPrimaryBgActive};
+  }
+
+  .add-button-wraper {
+    cursor: pointer;
+    height: 28px;
+    width: 100%;
+  }
+
+  .edit-mode {
+    width: 100%;
+    padding: 0 8px;
 
     .button-group {
       display: flex;
@@ -29,12 +77,6 @@ export const EditableSelectStyleWrapper = styled('div')`
       gap: 8px;
       margin-top: 8px;
     }
-  }
-
-  .editable-select-menu-item-active {
-    font-weight: 600;
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.basic.colorPrimaryBgActive};
   }
 `;
 
