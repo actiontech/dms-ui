@@ -28,7 +28,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button

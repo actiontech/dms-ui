@@ -100,7 +100,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                       size="small"
                       onClick={() => onRetry?.(workflow?.workflow_id ?? '')}
                     >
-                      {t('versionManagement.stageNode.retry')}
+                      {t('versionManagement.stageNode.updateInfo')}
                     </BasicButton>
                     <BasicButton
                       size="small"

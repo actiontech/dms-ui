@@ -74,7 +74,9 @@ export const PendingSqlListColumn: (
                 target="_blank"
                 to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
                 params={{ projectID: record.project_uid ?? '' }}
-                queries={{ SQLAuditRecordID: source.sql_source_ids.join(',') }}
+                queries={{
+                  sql_audit_record_id: source.sql_source_ids.join(',')
+                }}
               >
                 {source.sql_source_desc}
               </TypedLink>

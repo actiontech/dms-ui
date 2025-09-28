@@ -186,8 +186,8 @@ const VersionDetail = () => {
         projectID
       },
       queries: {
-        versionId: id?.toString() ?? '',
-        versionName: encodeURIComponent(name ?? '')
+        version_id: id?.toString() ?? '',
+        version_name: encodeURIComponent(name ?? '')
       }
     });
   };

@@ -26,7 +26,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button
@@ -75,6 +75,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </button>
       <button
         class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        hidden=""
         tooltip="[object Object]"
         type="button"
       >
@@ -246,7 +247,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button
@@ -312,6 +313,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
             class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             confirm="[object Object]"
             disabled=""
+            hidden=""
             type="button"
           >
             <span>
@@ -420,7 +422,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button
@@ -558,7 +560,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button
@@ -694,7 +696,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
         type="button"
       >
         <span>
-          重 试
+          修改工单
         </span>
       </button>
       <button

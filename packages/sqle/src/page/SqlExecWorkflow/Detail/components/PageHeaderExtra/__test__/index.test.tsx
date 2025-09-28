@@ -348,7 +348,47 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
           workflow_step_list: [
             {
               number: 1,
-              type: WorkflowStepResV2TypeEnum.create_workflow,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
+              assignee_user_name_list: ['admin'],
+              operation_time: '2024-02-22T18:08:00+08:00'
+            }
+          ]
+        }
+      },
+      maintenanceTimeInfo: []
+    });
+    expect(
+      screen.getByText('标记为人工上线').closest('button')
+    ).not.toHaveAttribute('hidden');
+    await act(async () => {
+      fireEvent.click(screen.getByText('标记为人工上线'));
+      await jest.advanceTimersByTime(100);
+    });
+    expect(
+      screen.getByText(
+        '当前操作仅修改工单状态，而不对数据源产生操作，是否确认标记为人工上线?'
+      )
+    ).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(screen.getByText('确 认'));
+      await jest.advanceTimersByTime(100);
+    });
+  });
+
+  it('render manual execute button when status is exec_failed and executable is false', async () => {
+    mockUseCurrentProject({ projectArchive: false });
+
+    customRender({
+      workflowStepsVisibility: true,
+      workflowInfo: {
+        workflow_id: '1',
+        record: {
+          status: WorkflowRecordResV2StatusEnum.exec_failed,
+          executable: false,
+          workflow_step_list: [
+            {
+              number: 1,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
               assignee_user_name_list: ['admin'],
               operation_time: '2024-02-22T18:08:00+08:00'
             }
@@ -511,8 +551,8 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         }
       }
     });
-    expect(screen.getByText('重 试')).toBeVisible();
-    fireEvent.click(screen.getByText('重 试'));
+    expect(screen.getByText('修改工单')).toBeVisible();
+    fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(showModifySqlStatementStep).toHaveBeenCalledTimes(1);
   });

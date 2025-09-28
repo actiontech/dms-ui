@@ -31,6 +31,7 @@ export { default as SquareCardFilled } from './SquareCardFilled';
 export { default as StampFilled } from './StampFilled';
 export { default as ThunderBoltFilled } from './ThunderBoltFilled';
 export { default as TokenFilled } from './TokenFilled';
+export { default as TransferFilled } from './TransferFilled';
 export { default as UserCircleFilled } from './UserCircleFilled';
 export { default as UserFilled } from './UserFilled';
 export { default as UserShieldFilled } from './UserShieldFilled';

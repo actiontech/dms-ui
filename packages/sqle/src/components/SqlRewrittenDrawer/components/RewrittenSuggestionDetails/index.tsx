@@ -9,13 +9,17 @@ type Props = {
   originalSql: string;
   taskID: string;
   sqlNumber: number;
+  instanceName?: string;
+  schema?: string;
 };
 
 const RewrittenSuggestionDetails: React.FC<Props> = ({
   dataSource,
   originalSql,
   taskID,
-  sqlNumber
+  sqlNumber,
+  instanceName,
+  schema
 }) => {
   const { t } = useTranslation();
   const generateOverallRewrittenSql = (sql?: string, ddl?: string): string => {
@@ -46,6 +50,8 @@ const RewrittenSuggestionDetails: React.FC<Props> = ({
                     dataSource[index - 1].ddl_dcl
                   )
             }
+            instanceName={instanceName}
+            schema={schema}
           />
         );
       }}

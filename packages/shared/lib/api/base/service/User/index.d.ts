@@ -28,6 +28,8 @@ export interface IListUsersParams {
   filter_by_uids?: string;
 
   filter_del_user?: boolean;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListUsersReturn extends IListUserReply {}

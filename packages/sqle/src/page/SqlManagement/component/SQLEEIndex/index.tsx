@@ -230,12 +230,13 @@ const SQLEEIndex = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const jumpToAnalyze = useCallback(
-    (sqlManageID: string) => {
+    (sqlManageID: string, instanceName?: string, schema?: string) => {
       window.open(
         parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze, {
-          params: {
-            projectID,
-            sqlManageId: sqlManageID
+          params: { projectID, sqlManageId: sqlManageID },
+          queries: {
+            instance_name: instanceName,
+            schema
           }
         }),
         '_blank'

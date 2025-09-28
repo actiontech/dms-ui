@@ -27,12 +27,17 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
     if (typeof sqlNum === 'undefined') {
       return;
     }
+
     window.open(
       parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
         params: {
           projectID,
           taskId: props.taskId ?? '',
           sqlNum: sqlNum.toString()
+        },
+        queries: {
+          instance_name: props.instanceName ?? '',
+          schema: props.schema ?? ''
         }
       })
     );

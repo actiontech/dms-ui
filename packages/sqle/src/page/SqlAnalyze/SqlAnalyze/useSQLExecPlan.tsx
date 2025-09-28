@@ -1,6 +1,12 @@
 import { Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicTable, BasicResult } from '@actiontech/dms-kit';
+import {
+  EmptyBox,
+  BasicTable,
+  BasicResult,
+  BasicButton,
+  ActionButton
+} from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
@@ -21,7 +27,12 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     getSqlExecPlanCostDataSourceError,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
@@ -54,7 +65,25 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     const renderSQL = () => {
       return (
         <>
-          <h3 className="header-title">{t('sqlQuery.executePlan.sql')}</h3>
+          <div className="sql-title-wrapper">
+            <h3>{t('sqlQuery.executePlan.sql')}</h3>
+            <EmptyBox
+              if={
+                !!explain &&
+                !!explain.head &&
+                !!explain.rows &&
+                allowSqlOptimization
+              }
+            >
+              <BasicButton
+                type="primary"
+                onClick={onCreateSqlOptimizationOrview}
+                loading={createSqlOptimizationLoading}
+              >
+                {t('sqlQuery.executePlan.optimize')}
+              </BasicButton>
+            </EmptyBox>
+          </div>
           <section className="basic-cont-wrapper sql-cont">
             <SQLRenderer.Snippet showCopyIcon sql={sql ?? ''} />
           </section>
@@ -168,9 +197,28 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                   </div>
                 </div>
                 <div className="number-cont">
-                  {affect_rows?.count
-                    ? formatParamsBySeparator(affect_rows?.count)
-                    : '--'}
+                  <EmptyBox
+                    if={isPerformanceInfoLoaded}
+                    defaultNode={
+                      <ActionButton
+                        type="primary"
+                        text={t(
+                          'sqlQuery.executePlan.getPerformanceStatistics'
+                        )}
+                        actionType="confirm"
+                        confirm={{
+                          title: t(
+                            'sqlQuery.executePlan.getPerformanceStatisticsTips'
+                          ),
+                          onConfirm: getPerformanceStatistics
+                        }}
+                      />
+                    }
+                  >
+                    {affect_rows?.count
+                      ? formatParamsBySeparator(affect_rows?.count)
+                      : '--'}
+                  </EmptyBox>
                 </div>
               </div>
             </EmptyBox>
