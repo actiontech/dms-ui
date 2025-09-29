@@ -1,10 +1,10 @@
 import {
   darkThemeBasic,
   darkThemeUI
-} from '@actiontech/shared/lib/theme/dark/basic';
+} from '@actiontech/dms-kit/es/theme/dark/basic';
 import { WorkflowTemplateTheme } from '../type';
 import { rectColorName } from './statistics';
-import { darkComponentsTheme } from '@actiontech/shared/lib/theme/dark/components';
+import { darkComponentsTheme } from '@actiontech/dms-kit/es/theme/dark/components';
 
 export const workflowTemplateTheme: WorkflowTemplateTheme = {
   progress: {

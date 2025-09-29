@@ -2,12 +2,11 @@ import {
   BasicDrawer,
   BasicButton,
   BasicInput,
-  TypedLink,
-  useTypedParams,
   CustomLabelContent,
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { TypedLink, useTypedParams } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Space, Form, message, SelectProps, Spin, Typography } from 'antd';
 import { ModalName } from '../../../../../data/ModalName';
@@ -19,7 +18,7 @@ import {
   updateSelectVersionStageId,
   updateSelectVersionStageWorkflowList
 } from '../../../../../store/versionManagement';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
+import { DrawerFormLayout } from '@actiontech/dms-kit';
 import { RingPieFilled } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
@@ -30,30 +29,21 @@ import { ReleaseWorkflowFormType } from '../../index.type';
 import useTestConnection from './hooks/useTestConnection';
 import { useRequest, useBoolean } from 'ahooks';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const ReleaseDrawer: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const { versionId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
-
   const { projectName, projectID } = useCurrentProject();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<ReleaseWorkflowFormType>();
-
   const [submitting, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const releaseWorkflows = Form.useWatch('release_workflows', form);
-
   const {
     renderTestDatabasesConnectInfo,
     getConnectionInfoLoading,
@@ -61,7 +51,6 @@ const ReleaseDrawer: React.FC = () => {
     testConnectionAble,
     clearConnectionInfo
   } = useTestConnection(releaseWorkflows);
-
   const {
     loading: instanceTipsLoading,
     updateInstanceList,
@@ -69,7 +58,6 @@ const ReleaseDrawer: React.FC = () => {
     instanceIDOptions,
     instanceList
   } = useInstance();
-
   const { stageId, currentStageWorkflowList, visible } = useSelector(
     (state: IReduxState) => ({
       stageId: state.versionManagement.stageId,
@@ -81,7 +69,6 @@ const ReleaseDrawer: React.FC = () => {
         ]
     })
   );
-
   const { data: nextStageInstances, loading: getNextStageInstanceLoading } =
     useRequest(
       () => {
@@ -133,7 +120,6 @@ const ReleaseDrawer: React.FC = () => {
         }
       }
     );
-
   const onClose = () => {
     form.resetFields();
     clearConnectionInfo();
@@ -143,10 +129,17 @@ const ReleaseDrawer: React.FC = () => {
         status: false
       })
     );
-    dispatch(updateSelectVersionStageId({ stageId: null }));
-    dispatch(updateSelectVersionStageWorkflowList({ workflowList: null }));
+    dispatch(
+      updateSelectVersionStageId({
+        stageId: null
+      })
+    );
+    dispatch(
+      updateSelectVersionStageWorkflowList({
+        workflowList: null
+      })
+    );
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -172,7 +165,6 @@ const ReleaseDrawer: React.FC = () => {
         submitFinish();
       });
   };
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName,
@@ -180,7 +172,6 @@ const ReleaseDrawer: React.FC = () => {
         getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [updateInstanceList, projectName]);
-
   const filteredInstanceIdOptions = useMemo(() => {
     const newOptions: SelectProps['options'] = [];
     instanceIDOptions.forEach((item) => {
@@ -203,7 +194,6 @@ const ReleaseDrawer: React.FC = () => {
     });
     return newOptions;
   }, [instanceIDOptions, nextStageInstances]);
-
   return (
     <BasicDrawer
       open={visible}
@@ -346,5 +336,4 @@ const ReleaseDrawer: React.FC = () => {
     </BasicDrawer>
   );
 };
-
 export default ReleaseDrawer;

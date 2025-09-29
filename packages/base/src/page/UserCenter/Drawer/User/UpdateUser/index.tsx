@@ -9,7 +9,7 @@ import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import { ModalName } from '../../../../../data/ModalName';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import {
   IListUser,
@@ -17,28 +17,20 @@ import {
 } from '@actiontech/shared/lib/api/base/service/common';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
-import { SystemRole } from '@actiontech/shared/lib/enum';
-
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
+import { SystemRole } from '@actiontech/dms-kit';
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
-
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [updateLoading, { setTrue, setFalse }] = useBoolean();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Update_User]
   );
-
   const currentUser = useSelector<IReduxState, IListUser | null>(
     (state) => state.userCenter.selectUser
   );
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -48,10 +40,8 @@ const UpdateUser = () => {
       })
     );
   }, [dispatch, form]);
-
   const updateUser = async () => {
     const values = await form.validateFields();
-
     const userParams: IUpdateUser = {
       password: values.passwordConfirm,
       email: values.email ?? '',
@@ -63,7 +53,6 @@ const UpdateUser = () => {
       is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
     };
     setTrue();
-
     User.UpdateUser({
       user_uid: currentUser?.uid ?? '',
       user: userParams
@@ -83,7 +72,6 @@ const UpdateUser = () => {
         setFalse();
       });
   };
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -100,7 +88,6 @@ const UpdateUser = () => {
       });
     }
   }, [visible, currentUser, form]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.user.updateUser.title')}
@@ -132,5 +119,4 @@ const UpdateUser = () => {
     </BasicDrawer>
   );
 };
-
 export default UpdateUser;

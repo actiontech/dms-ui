@@ -1,8 +1,8 @@
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { act, renderHook } from '@testing-library/react';
 import useRecentlyOpenedProjects from '../useRecentlyOpenedProjects';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { StorageKey } from '@actiontech/dms-kit';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';

@@ -5,7 +5,7 @@ import {
   mockUseCurrentUser
 } from '@actiontech/shared/lib/testUtil';
 import { fireEvent, screen, act } from '@testing-library/react';
-import { Copy } from '@actiontech/shared';
+import { Copy } from '@actiontech/dms-kit';
 
 describe('CopyButton', () => {
   const mockContent = 'SELECT * FROM users WHERE id = 1';

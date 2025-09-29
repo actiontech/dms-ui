@@ -3,13 +3,13 @@ import {
   IFilterTip
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { FilterMetaFilterInputTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   ActiontechTableFilterMeta,
   TableFilterContainerProps,
   TypeFilterElement
-} from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { ExcludeSymbol } from '@actiontech/shared/lib/types/common.type';
+} from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
+import { ExcludeSymbol } from '@actiontech/dms-kit/es/types/common.type';
 import { Tooltip, Typography } from 'antd';
 import { ColumnType } from 'antd/es/table';
 import { groupBy } from 'lodash';

@@ -4,7 +4,7 @@ import { useForm } from 'antd/es/form/Form';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../data/EmitterKey';
 import { ModalName } from '../../../data/ModalName';
 import { IReduxState } from '../../../store';
@@ -14,28 +14,22 @@ import ProjectForm from './ProjectForm/ProjectForm';
 import { updateProjectModalStatus } from '../../../store/project';
 import { IUpdateProjectV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
 import {
   ProjectV2ProjectPriorityEnum,
   UpdateProjectV2ProjectPriorityEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
-
 const UpdateProject: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [form] = useForm<ProjectFormFields>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const { visible, selectProjectItem } = useSelector((state: IReduxState) => ({
     visible: state.project.modalStatus[ModalName.DMS_Update_Project],
     selectProjectItem: state.project.selectProject ?? undefined
   }));
-
   const closeDrawer = () => {
     form.resetFields();
     dispatch(
@@ -45,7 +39,6 @@ const UpdateProject: React.FC = () => {
       })
     );
   };
-
   const submit = async () => {
     const values = await form.validateFields();
     const params: IUpdateProjectV2Params = {
@@ -76,7 +69,6 @@ const UpdateProject: React.FC = () => {
         submitFinish();
       });
   };
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -88,7 +80,6 @@ const UpdateProject: React.FC = () => {
       });
     }
   }, [form, visible, selectProjectItem]);
-
   return (
     <>
       <BasicDrawer
@@ -117,5 +108,4 @@ const UpdateProject: React.FC = () => {
     </>
   );
 };
-
 export default UpdateProject;

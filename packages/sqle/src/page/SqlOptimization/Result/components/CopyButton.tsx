@@ -1,4 +1,4 @@
-import { BasicButton, Copy } from '@actiontech/shared';
+import { BasicButton, Copy } from '@actiontech/dms-kit';
 import { CheckboxMultipleBlankFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';

@@ -5,19 +5,19 @@ import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
 import { IGetInstanceTipListV2Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import useDatabaseType from '../useDatabaseType';
 import { SqleApi } from '@actiontech/shared/lib/api';
-
 const useInstance = () => {
   const [instanceList, setInstanceList] = useState<IInstanceTipResV2[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDatabaseType();
-
   const updateInstanceList = useCallback(
     (
       params: IGetInstanceTipListV2Params,
-      options?: { onSuccess?: (data: IInstanceTipResV2[]) => void }
+      options?: {
+        onSuccess?: (data: IInstanceTipResV2[]) => void;
+      }
     ) => {
       setTrue();
       SqleApi.InstanceService.getInstanceTipListV2(params)
@@ -38,7 +38,6 @@ const useInstance = () => {
     },
     [setFalse, setTrue]
   );
-
   const generateInstanceSelectOption = useCallback(
     (instance_type: string = instanceListDefaultKey) => {
       let filterInstanceList: IInstanceTipResV2[] = [];
@@ -49,7 +48,6 @@ const useInstance = () => {
       } else {
         filterInstanceList = instanceList;
       }
-
       const instanceTypeList: string[] = Array.from(
         new Set(filterInstanceList.map((v) => v.instance_type ?? ''))
       );
@@ -84,7 +82,6 @@ const useInstance = () => {
     },
     [getLogoUrlByDbType, instanceList]
   );
-
   const instanceOptions = useMemo(() => {
     const instanceTypeList: string[] = Array.from(
       new Set(instanceList.map((v) => v.instance_type ?? ''))
@@ -143,5 +140,4 @@ const useInstance = () => {
     getInstanceDbType
   };
 };
-
 export default useInstance;

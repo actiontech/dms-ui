@@ -83,6 +83,8 @@ export default defineConfig([
     '**/packages/shared/lib/api/*',
     '**/packages/**/mockApi/*',
     '**/packages/**/testUtil/*',
+    '**/packages/**/demo/*',
+    '**/packages/**/demos/*',
     'jest-setup.ts',
     'node_modules/*',
     '**/packages/*/node_modules/*',

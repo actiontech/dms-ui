@@ -8,10 +8,9 @@ import { t } from '../../../locale';
 import { ReactNode } from 'react';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableActionsConfig } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { PlusOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const VersionManagementPageHeaderActions = (
   projectID: string
 ): Record<'add', ReactNode> => {
@@ -26,7 +25,9 @@ export const VersionManagementPageHeaderActions = (
           actionType="navigate-link"
           link={{
             to: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.create,
-            params: { projectID }
+            params: {
+              projectID
+            }
           }}
           text={t('versionManagement.operation.add')}
         />
@@ -34,7 +35,6 @@ export const VersionManagementPageHeaderActions = (
     )
   };
 };
-
 export const VersionManagementTableActions = ({
   onEdit,
   onDelete,
@@ -77,7 +77,9 @@ export const VersionManagementTableActions = ({
       {
         key: 'delete-button',
         text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
+        buttonProps: () => ({
+          danger: true
+        }),
         confirm: (record) => ({
           title: t('versionManagement.list.action.deleteConfirm'),
           onConfirm: () => onDelete(record?.version_id)

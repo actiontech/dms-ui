@@ -1,4 +1,4 @@
-import { EventEmitter } from '@actiontech/shared';
+import { EventEmitter } from '@actiontech/dms-kit';
 import EmitterKey from '../data/EmitterKey';
 
 const eventEmitter = new EventEmitter<EmitterKey>();

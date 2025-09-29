@@ -1,4 +1,4 @@
-import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
+import { SupportLanguage, SupportTheme } from '@actiontech/dms-kit';
 import { VersionEnum } from './index.enum';
 
 export type UserMenuProps = {

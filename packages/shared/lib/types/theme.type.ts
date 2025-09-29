@@ -26,7 +26,7 @@ import {
   BasicInfoListTheme,
   BasicTagTheme,
   NavTheme
-} from '../theme/theme.type';
+} from '@actiontech/dms-kit';
 
 export interface SharedTheme {
   uiToken: UITokenTheme;

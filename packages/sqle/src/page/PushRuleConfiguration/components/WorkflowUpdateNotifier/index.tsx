@@ -8,16 +8,15 @@ import {
   WorkflowPushFrequencyDictionary,
   WorkflowPushUserTypeDictionary
 } from './index.data';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
+import { BasicSwitch, BasicToolTip } from '@actiontech/dms-kit';
 import {
-  BasicSwitch,
-  BasicToolTip,
   ReadOnlyConfigColumnsType,
   useConfigRender
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import ReportPushConfig from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean, useRequest } from 'ahooks';
 import {
   UpdateReportPushConfigReqV1PushUserTypeEnum,
@@ -31,9 +30,7 @@ import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
-
 const switchFieldName: keyof WorkflowUpdateNotifierFields = 'enabled';
-
 const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
   config,
   refetch
@@ -42,7 +39,6 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
   const { projectName } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { sharedTheme } = useThemeStyleData();
-
   const { run: onSubmit, loading: submitPending } = useRequest(
     () =>
       ReportPushConfig.UpdateReportPushConfig({
@@ -62,9 +58,10 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
           );
         }
       }),
-    { manual: true }
+    {
+      manual: true
+    }
   );
-
   const { renderConfigForm } = useConfigRender<WorkflowUpdateNotifierFields>({
     switchFieldName,
     switchFieldLabel: (
@@ -78,17 +75,14 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
       </BasicToolTip>
     )
   });
-
   const [
     configSwitchPopoverVisible,
     { setTrue: showConfigSwitchPopover, setFalse: closeConfigSwitchPopover }
   ] = useBoolean(false);
-
   const onConfigSwitchPopoverConfirm = () => {
     closeConfigSwitchPopover();
     onSubmit();
   };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IReportPushConfigList> =
     useMemo(() => {
       return config?.enabled
@@ -123,7 +117,6 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
           ]
         : [];
     }, [config?.enabled, t]);
-
   return (
     <>
       {messageContextHolder}
@@ -167,5 +160,4 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
     </>
   );
 };
-
 export default WorkflowUpdateNotifier;

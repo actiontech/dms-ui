@@ -6,13 +6,12 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   DownArrowLineOutlined,
   PlusOutlined,
   MinusCircleOutlined
 } from '@actiontech/icons';
-
 export const SqlExecWorkflowExportAction = (
   exportWorkflow: () => void,
   exportWorkflowDisabled: boolean
@@ -30,7 +29,6 @@ export const SqlExecWorkflowExportAction = (
     </PermissionControl>
   );
 };
-
 export const SqlExecWorkflowCreateAction = (projectID: string): ReactNode => {
   return (
     <PermissionControl
@@ -43,13 +41,14 @@ export const SqlExecWorkflowCreateAction = (projectID: string): ReactNode => {
         icon={<PlusOutlined width={10} height={10} color="currentColor" />}
         link={{
           to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>
   );
 };
-
 export const SqlExecWorkflowTableToolbarActions = ({
   disabled,
   loading,

@@ -4,14 +4,14 @@ import { useDispatch } from 'react-redux';
 import { baseSuperRender } from '../../testUtils/superRender';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
-} from '@actiontech/shared/lib/enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+} from '@actiontech/dms-kit';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 import BindUser from '.';
 

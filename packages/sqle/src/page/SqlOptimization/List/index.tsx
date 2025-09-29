@@ -16,19 +16,16 @@ import {
   FilterCustomProps,
   ColumnsSettingProps,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   SqlOptimizationListTableFilterParamType,
   sqlOptimizationListColumns
 } from './columns';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import {
-  useTypedNavigate,
-  BasicToolTip,
-  ActiontechTableWrapper
-} from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { BasicToolTip, ActiontechTableWrapper } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { SqlOptimizationListStyleWrapper } from '../style';
@@ -45,13 +42,9 @@ const SqlOptimizationList = () => {
   const [autoRefreshEnabled, setAutoRefreshEnabled] = useState(true);
 
   const { projectName, projectID } = useCurrentProject();
-
   const { username } = useCurrentUser();
-
   const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
-
   const { instanceOptions, updateInstanceList } = useInstance();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -64,7 +57,6 @@ const SqlOptimizationList = () => {
     IOptimizationRecord,
     SqlOptimizationListTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -99,7 +91,6 @@ const SqlOptimizationList = () => {
       }
     }
   );
-
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'sql_optimization_list',
@@ -107,7 +98,6 @@ const SqlOptimizationList = () => {
     }),
     [username]
   );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IOptimizationRecord, FilterCustomProps>([
       [
@@ -118,7 +108,6 @@ const SqlOptimizationList = () => {
       ]
     ]);
   }, [instanceOptions]);
-
   const columns = useMemo(() => {
     return sqlOptimizationListColumns(getLogoUrlByDbType);
   }, [getLogoUrlByDbType]);
@@ -134,7 +123,6 @@ const SqlOptimizationList = () => {
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-
   useEffect(() => {
     updateDriverList();
     updateInstanceList({
@@ -221,5 +209,4 @@ const SqlOptimizationList = () => {
     </SqlOptimizationListStyleWrapper>
   );
 };
-
 export default SqlOptimizationList;

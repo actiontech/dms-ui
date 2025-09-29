@@ -25,8 +25,8 @@ import {
   GetSqlManageListV2FilterPriorityEnum,
   exportSqlManageV1FilterPriorityEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
+import { SystemRole } from '@actiontech/dms-kit';
 import { useSearchParams } from 'react-router-dom';
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 

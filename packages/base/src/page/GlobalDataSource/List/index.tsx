@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { message, Modal } from 'antd';
-import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
+import { TestConnectDisableReasonStyleWrapper } from '@actiontech/dms-kit/es/components/TestDatabaseConnectButton/style';
 import {
   useDbServiceDriver,
   usePermission
@@ -9,7 +9,7 @@ import {
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import ProjectService from '@actiontech/shared/lib/api/base/service/Project';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -18,7 +18,7 @@ import {
   FilterCustomProps,
   TableToolbar,
   TableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   GlobalDataSourceColumns,
@@ -30,7 +30,7 @@ import useProjectTips from '../../../hooks/useProjectTips';
 import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 import { GlobalDataSourceListActions } from './action';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useStaticTips from '../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';

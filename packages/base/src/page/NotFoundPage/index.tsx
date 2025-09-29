@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Typography, Space, Spin } from 'antd';
-import { BasicButton, useTypedNavigate, BasicResult } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { BasicButton, BasicResult, ROUTE_PATHS } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { SuggestionList } from './style';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';

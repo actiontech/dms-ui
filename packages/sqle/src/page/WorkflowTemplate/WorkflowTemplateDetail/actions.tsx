@@ -5,8 +5,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { EditOutlined } from '@ant-design/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const WorkflowTemplatePageHeaderActions = (
   projectID: string,
   templateName?: string

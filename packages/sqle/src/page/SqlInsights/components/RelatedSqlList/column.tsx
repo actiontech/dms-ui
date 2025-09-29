@@ -1,4 +1,4 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlPerformanceInsightsRelatedSQLParams } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.d';
 import { RelatedSQLInfoSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';

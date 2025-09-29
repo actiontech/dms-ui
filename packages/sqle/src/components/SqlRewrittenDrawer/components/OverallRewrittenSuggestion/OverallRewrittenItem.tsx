@@ -3,9 +3,8 @@ import {
   OverallRewrittenItemStyleWrapper,
   OverallRewrittenTitleStyleWrapper
 } from './style';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import classNames from 'classnames';
-
 type Props = {
   title: string;
   action?: ReactNode;
@@ -13,7 +12,6 @@ type Props = {
   className?: string;
   children: ReactNode;
 };
-
 const OverallRewrittenItem: React.FC<Props> = ({
   title,
   icon,
@@ -38,5 +36,4 @@ const OverallRewrittenItem: React.FC<Props> = ({
     </OverallRewrittenItemStyleWrapper>
   );
 };
-
 export default OverallRewrittenItem;

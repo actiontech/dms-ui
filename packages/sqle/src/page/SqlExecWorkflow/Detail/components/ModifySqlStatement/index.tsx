@@ -15,15 +15,15 @@ import { useEffect, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 import useSharedStepDetail from '../../../Create/hooks/useSharedStepDetail';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -36,7 +36,6 @@ import { BriefcaseFilled, LeftArrowOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import useCheckTaskAuditRuleExceptionStatus from '../../../Create/hooks/useCheckTaskAuditRuleExceptionStatus';
-
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
   modifiedTasks,
@@ -56,28 +55,20 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const { updateInstanceList, instanceList } = useInstance();
-
   const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
     useCheckTaskAuditRuleExceptionStatus();
-
   const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
-
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { isAuditing, sqlStatementTabActiveKey, resetAllSharedData } =
     useSharedStepDetail();
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const [
     getAllSqlStatementLoading,
     { setTrue: startGetAllSqlStatement, setFalse: finishGetAllSqlStatement }
   ] = useBoolean(false);
-
   const modifySqlSubmit = async () => {
     if (!modifiedTasks?.length) {
       return;
@@ -88,7 +79,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       );
       return;
     }
-
     startSubmit();
     workflow
       .updateWorkflowV2({
@@ -108,7 +98,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         submitFinish();
       });
   };
-
   const databaseInfo = useMemo<CreateWorkflowDatabaseInfo>(() => {
     return (currentTasks ?? [])
       .map((item, index) => {
@@ -125,7 +114,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       })
       .filter((v) => !!v.instanceName);
   }, [currentTasks, instanceList, isSameSqlForAll]);
-
   const innerAuditAction = async (values: SqlAuditInfoFormFields) => {
     isAuditing.set(true);
     try {
@@ -146,13 +134,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       isAuditing.set(false);
     }
   };
-
   const innerBackToDetail = () => {
     backToDetail();
     form.resetFields();
     resetAllSharedData();
   };
-
   useEffect(() => {
     const getAllSqlStatement = () => {
       const request = (taskId: string) => {
@@ -169,11 +155,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
             }
           });
       };
-
       const formDataTasks = (currentTasks ?? []).filter(
         (v) => v.sql_source === AuditTaskResV1SqlSourceEnum.form_data
       );
-
       if (formDataTasks.length > 0) {
         startGetAllSqlStatement();
         Promise.all(
@@ -213,7 +197,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         sqlStatementTabActiveKey.set(
           currentTasks?.[0]?.task_id?.toString() ?? ''
         );
-
         currentTasks?.forEach((item) => {
           form.setFieldValue(item.task_id?.toString() ?? '', {
             currentUploadType: item.sql_source,
@@ -250,7 +233,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     t('execWorkflow.create.auditResult.leaveTip'),
     isAtRejectStep && !!modifiedTasks?.length
   );
-
   return isAtRejectStep ? (
     <Spin
       spinning={getAllSqlStatementLoading || isAuditing.value || submitLoading}
@@ -325,5 +307,4 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     </Spin>
   ) : null;
 };
-
 export default ModifySqlStatement;

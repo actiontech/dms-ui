@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared/lib/testUtil';
 import { sqlOptimization } from '@actiontech/shared/lib/testUtil/mockApi/sqle';
 import useOptimizationResult from '../useOptimizationResult';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   createSpySuccessResponse,

@@ -1,20 +1,18 @@
 import { RollbackWorkflowEntryProps } from '../index.type';
 import { Dropdown, MenuProps } from 'antd';
-import { BasicButton, TypedLink } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { DownOutlined } from '@actiontech/icons';
 import { useMemo } from 'react';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { RollbackWorkflowItemStyleWrapper } from './style';
-
 const RollbackWorkflowEntry: React.FC<RollbackWorkflowEntryProps> = ({
   workflows
 }) => {
   const { t } = useTranslation();
-
   const { projectID } = useCurrentProject();
-
   const menuItems: MenuProps['items'] = useMemo(() => {
     return (
       workflows?.map((item) => {
@@ -25,7 +23,10 @@ const RollbackWorkflowEntry: React.FC<RollbackWorkflowEntryProps> = ({
               <TypedLink
                 target="_blank"
                 to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
-                params={{ projectID, workflowId: item.workflow_id ?? '' }}
+                params={{
+                  projectID,
+                  workflowId: item.workflow_id ?? ''
+                }}
               >
                 {item.workflow_name}
               </TypedLink>
@@ -36,9 +37,13 @@ const RollbackWorkflowEntry: React.FC<RollbackWorkflowEntryProps> = ({
       }) ?? []
     );
   }, [workflows, projectID]);
-
   return (
-    <Dropdown menu={{ items: menuItems }} trigger={['click']}>
+    <Dropdown
+      menu={{
+        items: menuItems
+      }}
+      trigger={['click']}
+    >
       <BasicButton>
         {t('execWorkflow.detail.associatedRollbackWorkflow')}
         <DownOutlined color="currentColor" />
@@ -46,5 +51,4 @@ const RollbackWorkflowEntry: React.FC<RollbackWorkflowEntryProps> = ({
     </Dropdown>
   );
 };
-
 export default RollbackWorkflowEntry;

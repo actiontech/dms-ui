@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { ActionButtonProps } from './ActionButton.types';
 import { useTranslation } from 'react-i18next';
-import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
 import { Popconfirm } from 'antd';
 import { RoutePathValue, TypedLink, TypedLinkProps } from '../TypedRouter';
-import { BasicButton } from '../BasicButton';
-import { BasicToolTip } from '../BasicToolTip';
+import {
+  BasicButton,
+  BasicToolTip,
+  PopconfirmMessageStyleWrapper
+} from '@actiontech/dms-kit';
 
 const ActionButton = <T extends RoutePathValue>(
   props: ActionButtonProps<T>

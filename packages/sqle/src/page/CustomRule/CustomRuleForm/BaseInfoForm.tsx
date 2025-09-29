@@ -8,30 +8,27 @@ import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   FormInputBotBorder,
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+} from '@actiontech/dms-kit';
 import {
   BasicButton,
   BasicInput,
   BasicSelect,
   BasicToolTip
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import useRuleCategories from '../../../hooks/useRuleCategories';
 import { InfoCircleOutlined } from '@actiontech/icons';
-
 const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
   const { t } = useTranslation();
-
   const {
     loading: getDriverNameListLoading,
     updateDriverNameList,
     generateDriverSelectOptions
   } = useDatabaseType();
-
   const {
     getRuleCategoriesLoading,
     auditAccuracyOptions,
@@ -40,15 +37,11 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
     auditPurposeOptions,
     performanceLevelOptions
   } = useRuleCategories();
-
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
-
   const isUpdate = useMemo(() => !!props.defaultData, [props.defaultData]);
-
   useEffect(() => {
     updateDriverNameList();
   }, [updateDriverNameList]);
-
   useEffect(() => {
     if (!!props.defaultData) {
       props.form.setFieldsValue({
@@ -64,14 +57,21 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
       });
     }
   }, [props.defaultData, props.form]);
-
   return (
     <FormStyleWrapper
       colon={false}
       labelAlign="left"
       form={props.form as FormInstance<CustomRuleFormBaseInfoFields>}
     >
-      <FormItemNoLabel name="desc" validateFirst rules={[{ required: true }]}>
+      <FormItemNoLabel
+        name="desc"
+        validateFirst
+        rules={[
+          {
+            required: true
+          }
+        ]}
+      >
         <FormInputBotBorder
           disabled={isUpdate}
           placeholder={t('common.form.placeholder.input', {
@@ -239,5 +239,4 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
     </FormStyleWrapper>
   );
 };
-
 export default BaseInfoForm;

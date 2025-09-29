@@ -11,7 +11,7 @@ import {
 
 import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams, useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useSqlOptimization from '../hooks/useSqlOptimization';
 import SqlOptimizationResultDrawer from '../Drawer/SqlOptimizationResultDrawer';
 

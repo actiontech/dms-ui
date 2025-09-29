@@ -11,7 +11,7 @@ import {
   mockGlobalWorkflowListData,
   mockRollbackSqlData
 } from './data';
-import { ResponseCode } from '../../../../enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { AxiosResponse } from 'axios';
 
 class MockWorkflowApi implements MockSpyApy {

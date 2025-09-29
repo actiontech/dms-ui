@@ -1,37 +1,32 @@
 import { DashOutlined } from '@actiontech/icons';
-import {
-  BasicButton,
-  BasicTag,
-  BasicToolTip,
-  TypedLink
-} from '@actiontech/shared';
+import { BasicButton, BasicTag, BasicToolTip } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { IAuditPlanTypeResBase } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
 import { ScanTypeTagsCellStyleWrapper } from './style';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useScanTypeVerify } from '../../Common/ConfForm/useScanTypeVerify';
-
 type Props = {
   instanceAuditPlanId: string;
   scanTypes: IAuditPlanTypeResBase[];
 };
-
 const ScanTypeTagsCell: React.FC<Props> = ({
   scanTypes,
   instanceAuditPlanId
 }) => {
   const { projectID } = useCurrentProject();
-
   const { isPerformanceCollectScanType } = useScanTypeVerify();
-
   const renderScanTypeTag = (scanType: IAuditPlanTypeResBase) => {
     if (isPerformanceCollectScanType(scanType.type)) {
       return (
         <TypedLink
           key={scanType.type}
           to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-          params={{ projectID, id: instanceAuditPlanId }}
+          params={{
+            projectID,
+            id: instanceAuditPlanId
+          }}
         >
           <BasicTag className="pointer">{scanType.desc}</BasicTag>
         </TypedLink>
@@ -41,7 +36,10 @@ const ScanTypeTagsCell: React.FC<Props> = ({
       <TypedLink
         key={scanType.type}
         to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-        params={{ projectID, id: instanceAuditPlanId }}
+        params={{
+          projectID,
+          id: instanceAuditPlanId
+        }}
         queries={{
           active_audit_plan_id: scanType.audit_plan_id?.toString() ?? ''
         }}
@@ -50,16 +48,13 @@ const ScanTypeTagsCell: React.FC<Props> = ({
       </TypedLink>
     );
   };
-
   const render = () => {
     if (!scanTypes || !scanTypes.length) {
       return '-';
     }
-
     if (scanTypes.length <= 2) {
       return <>{scanTypes.map((item) => renderScanTypeTag(item))}</>;
     }
-
     return (
       <>
         {scanTypes.slice(0, 2).map((item) => renderScanTypeTag(item))}
@@ -80,10 +75,8 @@ const ScanTypeTagsCell: React.FC<Props> = ({
       </>
     );
   };
-
   return (
     <ScanTypeTagsCellStyleWrapper>{render()}</ScanTypeTagsCellStyleWrapper>
   );
 };
-
 export default ScanTypeTagsCell;

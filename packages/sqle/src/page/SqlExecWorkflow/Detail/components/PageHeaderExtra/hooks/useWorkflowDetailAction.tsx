@@ -1,5 +1,5 @@
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useCallback, useMemo } from 'react';

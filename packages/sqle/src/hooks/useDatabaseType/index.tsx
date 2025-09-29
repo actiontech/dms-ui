@@ -3,27 +3,23 @@ import { useBoolean } from 'ahooks';
 import { ResponseCode } from '../../data/common';
 import { Select, SelectProps } from 'antd';
 import { IDriverMeta } from '@actiontech/shared/lib/api/sqle/service/common';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-
 const useDatabaseType = () => {
   const [driverNameList, setDriverNameList] = useState<string[]>([]);
   const [driverMeta, setDriverMeta] = useState<IDriverMeta[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { driverMeta: dbServiceDrivers } = useDbServiceDriver();
-
   const getLogoUrlByDbType = useCallback(
     (dbType: string) => {
       if (!dbType) return '';
-
       return (
         dbServiceDrivers.find((v) => v.db_type === dbType)?.logo_path ?? ''
       );
     },
     [dbServiceDrivers]
   );
-
   const updateDriverNameList = useCallback(() => {
     setTrue();
     configuration
@@ -47,7 +43,6 @@ const useDatabaseType = () => {
         setFalse();
       });
   }, [setFalse, setTrue]);
-
   const generateDriverSelectOptions = useCallback(() => {
     return driverMeta.map((v) => {
       return (
@@ -60,7 +55,6 @@ const useDatabaseType = () => {
       );
     });
   }, [driverMeta, getLogoUrlByDbType]);
-
   const dbTypeOptions: SelectProps['options'] = useMemo(() => {
     return driverMeta.map((item) => ({
       label: (
@@ -72,7 +66,6 @@ const useDatabaseType = () => {
       value: item.driver_name
     }));
   }, [driverMeta, getLogoUrlByDbType]);
-
   return {
     driverNameList,
     loading,

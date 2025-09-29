@@ -2,12 +2,12 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult,
-  BackButton
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { BackButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BatchImportDataSourceForm from '../../Project/BatchImportDataSource/UploadForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useBatchImportDataSource from '../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
@@ -15,10 +15,8 @@ import { LeftArrowOutlined } from '@actiontech/icons';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import ConnectableErrorModal from '../../Project/BatchImportDataSource/ConnectableErrorModal';
 import useBatchCheckConnectable from '../../Project/BatchImportDataSource/hooks/useBatchCheckConnectable';
-
 const GlobalBatchImportDataSource = () => {
   const { t } = useTranslation();
-
   const {
     importLoading,
     setImportPending,
@@ -33,7 +31,6 @@ const GlobalBatchImportDataSource = () => {
     uploadCheckStatus,
     clearUploadCheckStatus
   } = useBatchImportDataSource();
-
   const {
     batchCheckConnectable,
     batchCheckConnectableLoading,
@@ -42,7 +39,6 @@ const GlobalBatchImportDataSource = () => {
     hideConnectErrorModal,
     connectableInfo
   } = useBatchCheckConnectable();
-
   const onSubmit = async () => {
     setImportPending();
     DmsApi.ProjectService.ImportDBServicesOfProjectsV2({
@@ -58,7 +54,6 @@ const GlobalBatchImportDataSource = () => {
         hideConnectErrorModal();
       });
   };
-
   const onCheckConnectableBeforeSubmit = async () => {
     await form.validateFields();
     await batchCheckConnectable(dbServices ?? []).then((res) => {
@@ -69,7 +64,6 @@ const GlobalBatchImportDataSource = () => {
       }
     });
   };
-
   const onUploadCustomRequest = useCallback<
     Required<UploadProps>['customRequest']
   >(
@@ -77,8 +71,12 @@ const GlobalBatchImportDataSource = () => {
       setDBservices([]);
       clearUploadCheckStatus();
       DmsApi.ProjectService.ImportDBServicesOfProjectsCheckV2(
-        { db_services_file: option.file },
-        { responseType: 'blob' }
+        {
+          db_services_file: option.file
+        },
+        {
+          responseType: 'blob'
+        }
       )
         .then((res) => {
           importServicesCheck(res);
@@ -90,7 +88,6 @@ const GlobalBatchImportDataSource = () => {
     },
     [importServicesCheck, setDBservices, clearUploadCheckStatus]
   );
-
   return (
     <>
       <PageHeader
@@ -147,5 +144,4 @@ const GlobalBatchImportDataSource = () => {
     </>
   );
 };
-
 export default GlobalBatchImportDataSource;

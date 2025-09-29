@@ -1,17 +1,16 @@
 import {
   BasicButton,
   BasicDrawer,
-  BasicInputNumber,
-  CustomLabelContent
-} from '@actiontech/shared';
+  BasicInputNumber
+} from '@actiontech/dms-kit';
+import { CustomLabelContent } from '@actiontech/dms-kit';
 import { GenerateTokenFields, GenerateTokenModalProps } from '../../index.type';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { AccessTokenModalFormItemLabelStyleWrapper } from './style';
-
 const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
   open,
   onClose,
@@ -19,14 +18,11 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
 }) => {
   const { t } = useTranslation();
   const [form] = Form.useForm<GenerateTokenFields>();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
-
     User.GenAccessToken({
       expiration_days: values.expirationDays.toString()
     })
@@ -40,12 +36,10 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
         submitFinish();
       });
   };
-
   const internalCloseHandle = () => {
     form.resetFields();
     onClose();
   };
-
   return (
     <BasicDrawer
       open={open}
@@ -92,7 +86,6 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
               if (!value) {
                 return '';
               }
-
               return `${Math.floor(value as number)}`;
             }}
             min={1}
@@ -107,5 +100,4 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
     </BasicDrawer>
   );
 };
-
 export default GenerateTokenModal;

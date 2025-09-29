@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PageHeader, BasicButton, ConfigItem } from '@actiontech/shared';
+import { PageHeader, BasicButton, ConfigItem } from '@actiontech/dms-kit';
 import useUserInfo from '@actiontech/shared/lib/features/useUserInfo';
 import {
   AccountContentStyleWrapper,
@@ -9,30 +9,26 @@ import {
 import UpdatePassword from './components/UpdatePassword';
 import { useBoolean } from 'ahooks';
 import { Spin, message } from 'antd';
-import { LabelContent } from '@actiontech/shared/lib/components/ConfigItem';
+import { LabelContent } from '@actiontech/dms-kit';
 import UserWechat from './components/UserWechat';
 import UserPhone from './components/UserPhone';
 import UserEmail from './components/UserEmail';
 import AccessToken from './components/AccessToken';
 import PersonalSMS from './PersonalSMS';
+import LoginConfiguration from './components/LoginConfiguration';
 
 const Account: React.FC = () => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [
     updatePasswordDrawerVisible,
     { setTrue: showUpdatePasswordDrawer, setFalse: hideUpdatePasswordDrawer }
   ] = useBoolean();
-
   const { userInfo, getUserInfo, updateUserInfo, getUserInfoLoading } =
     useUserInfo();
-
   useEffect(() => {
     getUserInfo();
   }, [getUserInfo]);
-
   return (
     <div>
       {contextHolder}
@@ -88,10 +84,13 @@ const Account: React.FC = () => {
             loading={getUserInfoLoading}
           />
           {/* #endif */}
+          <LoginConfiguration
+            userBaseInfo={userInfo}
+            updateUserInfo={updateUserInfo}
+          />
         </Spin>
       </AccountContentStyleWrapper>
     </div>
   );
 };
-
 export default Account;

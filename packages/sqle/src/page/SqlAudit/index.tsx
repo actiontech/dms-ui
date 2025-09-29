@@ -1,20 +1,20 @@
 import { useTranslation } from 'react-i18next';
+import { useTypedQuery } from '@actiontech/shared';
 import {
   PageHeader,
   SegmentedTabs,
   SegmentedTabsProps,
-  useTypedQuery,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { SqlAuditSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
 import { Space } from 'antd';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import SqlAuditList from './List';
 import SqlOptimizationList from '../SqlOptimization';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { sqlAuditPageHeaderActions } from './actions';
 import { usePermission } from '@actiontech/shared/lib/features';

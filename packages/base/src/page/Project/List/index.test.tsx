@@ -10,7 +10,7 @@ import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/pr
 import { baseSuperRender } from '../../../testUtils/superRender';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => {

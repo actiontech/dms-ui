@@ -14,10 +14,12 @@ import {
   CustomDraggerUpload,
   EmptyBox,
   FormItemNoLabel
-} from '@actiontech/shared';
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+} from '@actiontech/dms-kit';
+import {
+  getFileFromUploadChangeEvent,
+  whiteSpaceSql,
+  SQL_EDITOR_PLACEHOLDER_VALUE
+} from '@actiontech/dms-kit';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 
@@ -28,11 +30,9 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
   );
 
   const uploadType = Form.useWatch('uploadType', form);
-
   const { editorDidMount } = useMonacoEditor(form, {
     formName: 'sql'
   });
-
   const removeFile = useCallback(
     (fileName: keyof SQLStatementFields) => {
       form.setFieldsValue({
@@ -41,7 +41,6 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
     },
     [form]
   );
-
   return (
     <>
       {/* sql */}
@@ -156,5 +155,4 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
     </>
   );
 };
-
 export default SqlUploadFileCont;

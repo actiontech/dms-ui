@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicEmpty } from '@actiontech/shared';
+import { BasicEmpty } from '@actiontech/dms-kit';
 import { SqlOptimizationCardWrapper } from './style';
 import classNames from 'classnames';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';

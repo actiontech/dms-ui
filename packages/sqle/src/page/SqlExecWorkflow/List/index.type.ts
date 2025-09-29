@@ -1,5 +1,5 @@
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
-import { PageInfoWithoutIndexAndSize } from '@actiontech/shared/lib/components/ActiontechTable';
+import { PageInfoWithoutIndexAndSize } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export type SqlExecWorkflowListTableFilterParam = PageInfoWithoutIndexAndSize<

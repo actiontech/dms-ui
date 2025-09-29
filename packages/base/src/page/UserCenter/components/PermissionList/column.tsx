@@ -1,4 +1,4 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../../locale';
 import { getOpRangeTypeName } from '../../../../hooks/useOpPermission/index.data';

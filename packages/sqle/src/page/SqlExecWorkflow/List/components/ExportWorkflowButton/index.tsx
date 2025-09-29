@@ -1,6 +1,6 @@
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IExportWorkflowV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { message } from 'antd';

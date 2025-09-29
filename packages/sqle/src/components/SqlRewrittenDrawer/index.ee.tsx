@@ -1,4 +1,4 @@
-import { BasicButton, BasicDrawer, EmptyBox } from '@actiontech/shared';
+import { BasicButton, BasicDrawer, EmptyBox } from '@actiontech/dms-kit';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { CollapseProps, Modal } from 'antd';
@@ -20,7 +20,6 @@ import {
 import { CollapseItemKeyEnum } from './index.enum';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import { hasSqlBeenRewritten } from './utils/sqlRewriteCache';
-
 const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   open,
   taskID,
@@ -30,7 +29,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   const { t } = useTranslation();
   const [modal, modalContextHolder] = Modal.useModal();
   const { currentTheme } = useChangeTheme();
-
   const originSqlNumber = originSqlInfo?.number ?? 0;
   const originalSql = originSqlInfo?.sql ?? '';
 
@@ -51,7 +49,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     errorMessage,
     updateEnableStructureOptimize
   } = useAsyncRewriteProgress({});
-
   const toggleEnableStructureOptimizeAction = useCallback(() => {
     toggleStructureOptimize(taskID, originSqlNumber);
   }, [toggleStructureOptimize, taskID, originSqlNumber]);
@@ -90,17 +87,14 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
 
   // 页面离开确认
   usePrompt(t('sqlRewrite.leavePageConfirm'), isRewriteTaskRunning);
-
   const collapseItems = useMemo<CollapseProps['items']>(() => {
     // 如果没有重写结果，返回空数组
     if (!rewriteResult?.suggestions) {
       return [];
     }
-
     const statementTypeSuggestion: IRewriteSuggestion[] = [];
     const structureTypeSuggestion: IRewriteSuggestion[] = [];
     const otherTypeSuggestion: IRewriteSuggestion[] = [];
-
     rewriteResult.suggestions.forEach((item) => {
       if (item.type === RewriteSuggestionTypeEnum.statement) {
         statementTypeSuggestion.push(item);
@@ -110,7 +104,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         otherTypeSuggestion.push(item);
       }
     });
-
     const optimizedSuggestions = enableStructureOptimize
       ? [...statementTypeSuggestion, ...structureTypeSuggestion]
       : statementTypeSuggestion;
@@ -118,7 +111,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       ? []
       : structureTypeSuggestion;
     const businessSuggestions = otherTypeSuggestion;
-
     return [
       {
         key: CollapseItemKeyEnum.overall_rewritten_suggestion,
@@ -237,7 +229,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     originSqlInfo?.instanceName,
     originSqlInfo?.schema
   ]);
-
   useEffect(() => {
     if (open) {
       if (!hasSqlBeenRewritten(taskID, originSqlNumber)) {
@@ -256,7 +247,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     resetAllState,
     loadCachedRewriteResult
   ]);
-
   return (
     <BasicDrawer
       {...props}
@@ -306,5 +296,4 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     </BasicDrawer>
   );
 };
-
 export default SqlRewrittenDrawerEE;

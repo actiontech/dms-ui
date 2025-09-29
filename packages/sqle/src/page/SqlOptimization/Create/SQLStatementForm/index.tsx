@@ -7,11 +7,11 @@ import {
   FormItemLabel,
   ModeSwitcher,
   CustomLabelContent
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 
@@ -22,7 +22,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   );
 
   const uploadType = Form.useWatch('uploadType', form);
-
   useEffect(() => {
     form.resetFields([
       'sql',
@@ -35,7 +34,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadType]);
-
   return (
     <>
       <FormItemLabel
@@ -49,12 +47,20 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           />
         }
         initialValue={UploadTypeEnum.sql}
-        style={{ marginBottom: 16 }}
-        wrapperCol={{ span: 24 }}
-        labelCol={{ span: 24 }}
+        style={{
+          marginBottom: 16
+        }}
+        wrapperCol={{
+          span: 24
+        }}
+        labelCol={{
+          span: 24
+        }}
       >
         <ModeSwitcher
-          rowProps={{ gutter: [10, 10] }}
+          rowProps={{
+            gutter: [10, 10]
+          }}
           options={uploadTypeOptions}
           disabled={submitLoading}
         />
@@ -110,5 +116,4 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     </>
   );
 };
-
 export default SQLStatementFormWrapper;

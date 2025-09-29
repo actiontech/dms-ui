@@ -1,15 +1,11 @@
-import { ConfigItem } from '@actiontech/shared';
+import { ConfigItem } from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import {
-  EditInput,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EditInput, LabelContent } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { UpdateComponentCommonProps } from '../index.type';
-import { emailValidate } from '@actiontech/shared/lib/utils/Common';
-
+import { emailValidate } from '@actiontech/dms-kit';
 const UserEmail: React.FC<UpdateComponentCommonProps> = ({
   messageApi,
   updateUserInfo,
@@ -20,7 +16,6 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
     emailFieldVisible,
     { setTrue: showEmailField, setFalse: hideEmailField }
   ] = useBoolean(false);
-
   const onSubmit = (value: string) => {
     User.UpdateCurrentUser({
       current_user: {
@@ -45,7 +40,6 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
     }
     return true;
   };
-
   return (
     <ConfigItem
       label={
@@ -66,5 +60,4 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
     />
   );
 };
-
 export default UserEmail;

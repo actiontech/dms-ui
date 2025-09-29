@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   ListOpPermissionsFilterByTargetEnum,
   ListOpPermissionsServiceEnum

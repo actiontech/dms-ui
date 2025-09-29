@@ -1,4 +1,4 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IPreviewImportProjectsV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { t } from '../../../locale';

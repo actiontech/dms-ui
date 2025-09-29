@@ -1,13 +1,13 @@
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { PageHeader } from '@actiontech/dms-kit';
 import {
-  ActionButton,
-  PageHeader,
   parse2ReactRouterPath,
-  TablePagination,
   useTypedQuery,
-  paramsSerializer
+  ActionButton
 } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { TablePagination } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
+import { paramsSerializer } from '@actiontech/dms-kit';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import {
   ResultWrapperStyleWrapper,
@@ -20,20 +20,16 @@ import { IGetKnowledgeBaseListParams } from '@actiontech/shared/lib/api/sqle/ser
 import HighlightText from './HighlightText';
 import { useEffect, useState } from 'react';
 import { List } from 'antd';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import useKnowledgeSearchBar from '../Common/KnowledgeSearchBar/hooks/useKnowledgeSearchBar';
 import KnowledgeSearchBar from '../Common/KnowledgeSearchBar';
-
 const defaultPageSize = 20;
 const defaultPageIndex = 1;
-
 const KnowledgeSearchResults: React.FC = () => {
   const { t } = useTranslation();
   const { searchText, selectedTags, setSearchText, setSelectedTags } =
     useKnowledgeSearchBar();
-
   const extractQueries = useTypedQuery();
-
   const [pagination, setPagination] = useState<TablePagination>({
     page_index: defaultPageIndex,
     page_size: defaultPageSize
@@ -66,7 +62,6 @@ const KnowledgeSearchResults: React.FC = () => {
       manual: true
     }
   );
-
   const navigateToRuleKnowledge = (ruleName: string, dbType: string) => {
     window.open(
       parse2ReactRouterPath(ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index, {
@@ -77,7 +72,6 @@ const KnowledgeSearchResults: React.FC = () => {
       })
     );
   };
-
   useEffect(() => {
     const params = extractQueries(ROUTE_PATHS.SQLE.KNOWLEDGE.refined);
     if (params?.keywords || params?.tags) {
@@ -91,7 +85,6 @@ const KnowledgeSearchResults: React.FC = () => {
       });
     }
   }, [extractQueries, startSearch, setSearchText, setSelectedTags]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -101,7 +94,9 @@ const KnowledgeSearchResults: React.FC = () => {
             text={t('knowledgeBase.searchResults.backToKnowledgeBase')}
             icon={<LeftArrowOutlined />}
             actionType="navigate-link"
-            link={{ to: ROUTE_PATHS.SQLE.KNOWLEDGE.index }}
+            link={{
+              to: ROUTE_PATHS.SQLE.KNOWLEDGE.index
+            }}
           />
         }
       />
@@ -210,5 +205,4 @@ const KnowledgeSearchResults: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default KnowledgeSearchResults;

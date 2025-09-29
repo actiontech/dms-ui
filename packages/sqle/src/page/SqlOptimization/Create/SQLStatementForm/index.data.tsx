@@ -3,7 +3,7 @@ import { t } from '../../../../locale/index';
 import { UploadTypeEnum } from '../../index.type';
 // import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
 import { PanelCardOutlined } from '@actiontech/icons';
-import { ModeSwitcherOptionsType } from '@actiontech/shared';
+import { ModeSwitcherOptionsType } from '@actiontech/dms-kit';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
   {

@@ -7,7 +7,6 @@ import {
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
 import { IGateway } from '@actiontech/shared/lib/api/base/service/common';
-
 export const AvailabilityZonePageHeaderActions = (
   onCreate: () => void
 ): Record<'create_availability_zone', ReactNode> => {
@@ -25,7 +24,6 @@ export const AvailabilityZonePageHeaderActions = (
     )
   };
 };
-
 export const AvailabilityZoneTableActions = (
   onEdit: (record?: IGateway) => void,
   onDelete: (record?: IGateway) => void

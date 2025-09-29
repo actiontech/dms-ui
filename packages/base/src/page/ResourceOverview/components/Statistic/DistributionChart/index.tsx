@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 import ChartWrapper from 'sqle/src/components/ChartCom/ChartWrapper';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import ChartTooltip from 'sqle/src/components/ChartCom/ChartTooltip';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
+import { SharedTheme } from '@actiontech/dms-kit';
+import { floatToNumberPercent } from '@actiontech/dms-kit';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 

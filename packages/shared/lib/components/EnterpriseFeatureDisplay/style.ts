@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Space, Card } from 'antd';
-import { BasicTagColor } from '../../theme/theme.type';
+import { BasicTagColor } from '@actiontech/dms-kit';
 
 export const CEIndexStyleWrapper = styled('section')`
   background: ${({ theme }) => theme.sharedTheme.basic.colorBgLayoutGray};

@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
@@ -10,27 +10,20 @@ import { updateAvailabilityZoneModalStatus } from '../../../../store/availabilit
 import EventEmitter from '../../../../utils/EventEmitter';
 import { AvailabilityZoneFormType } from '../Form/type';
 import AvailabilityZoneForm from '../Form';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import dayjs from 'dayjs';
-
 const CreateAvailabilityZoneDrawer: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [form] = Form.useForm<AvailabilityZoneFormType>();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
-
   const visible = useSelector(
     (state: IReduxState) =>
       state.availabilityZone.modalStatus[ModalName.DMS_Create_Availability_zone]
   );
-
   const submit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -53,7 +46,6 @@ const CreateAvailabilityZoneDrawer: React.FC = () => {
         submitFinish();
       });
   };
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -63,7 +55,6 @@ const CreateAvailabilityZoneDrawer: React.FC = () => {
       })
     );
   };
-
   return (
     <BasicDrawer
       open={visible}
@@ -85,5 +76,4 @@ const CreateAvailabilityZoneDrawer: React.FC = () => {
     </BasicDrawer>
   );
 };
-
 export default CreateAvailabilityZoneDrawer;

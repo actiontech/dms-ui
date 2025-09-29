@@ -4,34 +4,27 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV3Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import {
-  BasicToolTip,
-  CustomAvatar,
-  EditText,
-  SQLRenderer,
-  TypedLink,
-  basicTooltipCommonProps
-} from '@actiontech/shared';
+import { BasicToolTip, CustomAvatar, EditText } from '@actiontech/dms-kit';
+import { SQLRenderer, TypedLink } from '@actiontech/shared';
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
-import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
+import { BasicTag, basicTooltipCommonProps } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   PERMISSIONS,
   PermissionsConstantType
 } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV3Params,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
 >;
-
 export type ExtraFilterMetaType = ISqlManage & {
   filter_by_environment_tag?: string;
   filter_source?: string;
@@ -40,7 +33,6 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_rule_name?: string;
   time?: string;
 };
-
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   ExtraFilterMetaType,
   SqlManagementTableFilterParamType
@@ -108,7 +100,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ]
   ]);
 };
-
 const SqlManagementColumn: (
   projectID: string,
   updateRemark: (id: number, remark: string) => void,
@@ -202,7 +193,10 @@ const SqlManagementColumn: (
             <TypedLink
               target="_blank"
               to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-              params={{ projectID, id: source.sql_source_ids[0] }}
+              params={{
+                projectID,
+                id: source.sql_source_ids[0]
+              }}
             >
               {source.sql_source_desc ?? source.sql_source_type}
             </TypedLink>
@@ -267,7 +261,6 @@ const SqlManagementColumn: (
         if (priority === 'low') {
           return t('sqlManagement.table.column.lowPriority');
         }
-
         return '-';
       }
     },
@@ -324,7 +317,6 @@ const SqlManagementColumn: (
         if (!Array.isArray(endpoints) || endpoints.length === 0) {
           return '-';
         }
-
         return (
           <BasicToolTip
             title={
@@ -337,7 +329,13 @@ const SqlManagementColumn: (
               ) : null
             }
           >
-            <BasicTag style={{ marginRight: 0 }}>{endpoints[0]}</BasicTag>
+            <BasicTag
+              style={{
+                marginRight: 0
+              }}
+            >
+              {endpoints[0]}
+            </BasicTag>
             {endpoints.length > 1 ? '...' : null}
           </BasicToolTip>
         );
@@ -388,5 +386,4 @@ const SqlManagementColumn: (
     }
   ];
 };
-
 export default SqlManagementColumn;

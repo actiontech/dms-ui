@@ -1,11 +1,10 @@
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { BasicTag, BasicToolTip, DatabaseTypeLogo } from '@actiontech/shared';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { BasicTag, BasicToolTip, DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
-
 export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDBServiceSyncTask> =
   () => {
     const { getLogoUrlByDbType } = useDbServiceDriver();
@@ -29,7 +28,6 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDB
           if (!type) {
             return '-';
           }
-
           return (
             <DatabaseTypeLogo
               dbType={type}
@@ -49,14 +47,12 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDB
               </BasicToolTip>
             );
           }
-
           if (!lastSyncErr && !!record.last_sync_success_time)
             return (
               <Space>
                 <BasicTag color="green">{t('common.success')}</BasicTag>
               </Space>
             );
-
           return '-';
         }
       },

@@ -1,6 +1,6 @@
 import { Popover } from 'antd';
 import { ContextMenuProps } from './index.type';
-import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
+import { PopoverInnerStyleWrapper } from '@actiontech/dms-kit';
 import { useControllableValue } from 'ahooks';
 import classNames from 'classnames';
 

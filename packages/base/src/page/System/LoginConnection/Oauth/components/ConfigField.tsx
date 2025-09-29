@@ -1,17 +1,10 @@
 import { useTranslation } from 'react-i18next';
-
-import { BasicInput, BasicSwitch, EmptyBox } from '@actiontech/shared';
-import {
-  FormItemLabel,
-  CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
+import { BasicInput, BasicSwitch, EmptyBox } from '@actiontech/dms-kit';
+import { FormItemLabel, CustomLabelContent } from '@actiontech/dms-kit';
 import { Form } from 'antd';
-
 const ConfigField = () => {
   const { t } = useTranslation();
-
   const autoCreateUser = Form.useWatch('autoCreateUser');
-
   return (
     <>
       <FormItemLabel
@@ -379,5 +372,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

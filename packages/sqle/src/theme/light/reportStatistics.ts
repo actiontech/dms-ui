@@ -1,7 +1,7 @@
 import {
   lightThemeBasic,
   lightThemeUI
-} from '@actiontech/shared/lib/theme/light/basic';
+} from '@actiontech/dms-kit/es/theme/light/basic';
 import { ReportStatisticsTheme } from '../type';
 import { rectColorName } from './statistics';
 

@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import classNames from 'classnames';
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import {
@@ -17,12 +17,9 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined } from '@actiontech/icons';
-
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
-
   const { projectName } = useCurrentProject();
-
   const {
     form,
     getAllRulesLoading,
@@ -45,16 +42,12 @@ const CreateRuleTemplate = () => {
     ruleFilterForm,
     filterCategoryTags
   } = useCreateRuleTemplateForm();
-
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
-
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
-
   const gotoListPage = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
     onGoToGlobalRuleTemplateList();
   };
-
   const submit = useCallback(() => {
     startSubmit();
     const baseInfo = form.getFieldsValue();
@@ -63,7 +56,10 @@ const CreateRuleTemplate = () => {
         name: rule.rule_name,
         level: rule.level,
         params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
+          ? rule.params.map((v) => ({
+              key: v.key,
+              value: v.value
+            }))
           : [],
         is_custom_rule: !!rule.is_custom_rule
       };
@@ -85,7 +81,6 @@ const CreateRuleTemplate = () => {
         finishSubmit();
       });
   }, [activeRule, finishSubmit, form, nextStep, startSubmit]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -167,5 +162,4 @@ const CreateRuleTemplate = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default CreateRuleTemplate;

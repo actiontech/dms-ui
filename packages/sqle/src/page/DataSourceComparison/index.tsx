@@ -1,9 +1,9 @@
-import { PageHeader, EnterpriseFeatureDisplay } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import ComparisonEntry from './ComparisonEntry';
 import { DataSourceComparisonStyleWrapper } from './style';
-
 const DataSourceComparison: React.FC = () => {
   const { t } = useTranslation();
   return (
@@ -26,5 +26,4 @@ const DataSourceComparison: React.FC = () => {
     </DataSourceComparisonStyleWrapper>
   );
 };
-
 export default DataSourceComparison;

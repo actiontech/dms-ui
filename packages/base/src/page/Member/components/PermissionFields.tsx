@@ -2,20 +2,20 @@ import { Col, Form, Spin, Alert } from 'antd';
 import {
   BasicSelect,
   BasicInput,
-  FormItemSubTitle,
   BasicSwitch,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { FormItemSubTitle } from '@actiontech/dms-kit';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import useRole from '../../../hooks/useRole';
 import useDbService from '../../../hooks/useDbService';
 import { MemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { filterOptionByLabel } from '@actiontech/dms-kit';
 import {
   DrawerFormIconWrapper,
   FormListAddButtonWrapper
-} from '@actiontech/shared/lib/styleWrapper/element';
+} from '@actiontech/dms-kit';
 import {
   MemberRoleSelectorRowStyleWrapper,
   MemberPermissionCheckboxGroupStyleWrapper
@@ -24,42 +24,35 @@ import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../hooks/useOpPermission';
 import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
-
 type PermissionFieldsProps = {
   projectID: string;
 };
-
 const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
   const { t } = useTranslation();
-
   const isProjectAdmin = Form.useWatch('isProjectAdmin');
-
   const { checkActionPermission } = usePermission();
-
   const {
     loading: getRoleListLoading,
     updateRoleList,
     generateRoleSelectOption
   } = useRole();
-
   const {
     loading: getDbServiceListLoading,
     updateDbServiceList,
     generateDbServiceIDSelectOptions
   } = useDbService();
-
   const {
     loading: getOpPermissionListLoading,
     updateOpPermissionList,
     opPermissionList
   } = useOpPermission();
-
   useEffect(() => {
     updateRoleList();
-    updateDbServiceList({ project_uid: projectID });
+    updateDbServiceList({
+      project_uid: projectID
+    });
     updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.project);
   }, [projectID, updateDbServiceList, updateRoleList, updateOpPermissionList]);
-
   return (
     <>
       <FormItemSubTitle className="member-form-sub-title">
@@ -123,7 +116,11 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
                         label={
                           index === 0 ? t('dmsMember.roleSelector.opRange') : ''
                         }
-                        rules={[{ required: true }]}
+                        rules={[
+                          {
+                            required: true
+                          }
+                        ]}
                       >
                         <BasicSelect
                           placeholder={t('common.form.placeholder.select', {
@@ -147,7 +144,11 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
                         {...field}
                         key={field.key}
                         name={[field.name, 'role_uid']}
-                        rules={[{ required: true }]}
+                        rules={[
+                          {
+                            required: true
+                          }
+                        ]}
                       >
                         <BasicSelect<string>
                           popupMatchSelectWidth={false}
@@ -207,5 +208,4 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
     </>
   );
 };
-
 export default PermissionFields;

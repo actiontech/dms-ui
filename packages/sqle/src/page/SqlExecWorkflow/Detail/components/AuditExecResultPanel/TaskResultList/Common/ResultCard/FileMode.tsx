@@ -8,13 +8,13 @@ import { useMemo } from 'react';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
+import { useTableRequestError } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import SqlStatementResultTable from '../SqlStatementResultTable';
 import { Trans } from 'react-i18next';
 import { TasksResultCardStyleWrapper } from './style';
 import { SqlFileOutlined } from '@actiontech/icons';
 import { TypedLink } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,

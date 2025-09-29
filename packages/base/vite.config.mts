@@ -53,7 +53,8 @@ export default defineConfig(() => {
       eslint({
         exclude: [
           '**/node_modules/**',
-          '**/packages/**/lib/api/**',
+          '**/packages/**/lib/**',
+          '**/packages/**/es/**',
           '!**/packages/**/lib/api/common/**'
         ]
       }),

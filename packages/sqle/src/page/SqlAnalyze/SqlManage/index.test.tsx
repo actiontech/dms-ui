@@ -17,7 +17,7 @@ import SQLManageAnalyze from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import { translateTimeForRequest } from '@actiontech/dms-kit';
 import {
   mockUsePermission,
   mockUseCurrentUser,

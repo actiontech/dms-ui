@@ -1,6 +1,6 @@
 import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
 import {
   useCurrentProject,
   usePermission
@@ -17,28 +17,23 @@ import {
   TableToolbar,
   TableFilterContainer,
   useTableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { message } from 'antd';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   VersionManagementPageHeaderActions,
   VersionManagementTableActions
 } from './action';
-
 const VersionManagementList = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const { projectID, projectName } = useCurrentProject();
   const { checkActionPermission } = usePermission();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -51,10 +46,8 @@ const VersionManagementList = () => {
     ISqlVersionResV1,
     VersionManagementTableFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: versionData,
     loading,
@@ -68,26 +61,25 @@ const VersionManagementList = () => {
         project_name: projectName,
         fuzzy_search: searchKeyword
       };
-
       return handleTableRequestError(sqlVersion.getSqlVersionListV1(params));
     },
     {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(
       VersionManagementTableColumns(projectID),
       updateTableFilterInfo
     );
-
   const onEdit = (id?: number) => {
     navigate(ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update, {
-      params: { projectID, versionId: id?.toString() ?? '' }
+      params: {
+        projectID,
+        versionId: id?.toString() ?? ''
+      }
     });
   };
-
   const onDelete = (id?: number) => {
     const hide = messageApi.loading(
       t('versionManagement.list.action.deleting')
@@ -109,7 +101,6 @@ const VersionManagementList = () => {
         hide();
       });
   };
-
   const onLock = (id?: number) => {
     const hide = messageApi.loading(t('versionManagement.list.action.locking'));
     sqlVersion
@@ -127,9 +118,7 @@ const VersionManagementList = () => {
         hide();
       });
   };
-
   const pageHeaderActions = VersionManagementPageHeaderActions(projectID);
-
   return (
     <>
       {messageContextHolder}
@@ -138,7 +127,10 @@ const VersionManagementList = () => {
         extra={pageHeaderActions.add}
       />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -179,5 +171,4 @@ const VersionManagementList = () => {
     </>
   );
 };
-
 export default VersionManagementList;

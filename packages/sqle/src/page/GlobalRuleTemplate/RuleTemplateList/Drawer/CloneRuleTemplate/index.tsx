@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { ModalName } from '../../../../../data/ModalName';
 import { IReduxState } from '../../../../../store';

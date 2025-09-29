@@ -12,7 +12,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '../../../data/common';
 import useInstance from '../../../hooks/useInstance';
@@ -26,7 +26,7 @@ import SqlAuditListColumn, {
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { useBoolean } from 'ahooks';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ISQLAuditRecordExtraParams } from './index.type';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -38,10 +38,8 @@ const SqlAuditList = () => {
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
   const extractQueries = useTypedQuery();
-
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -62,9 +60,7 @@ const SqlAuditList = () => {
       return searchStr.sql_audit_record_id ?? undefined;
     }
   }, [extractQueries]);
-
   const { instanceIDOptions, updateInstanceList } = useInstance();
-
   const {
     data: dataList,
     loading,
@@ -79,7 +75,6 @@ const SqlAuditList = () => {
         fuzzy_search_tags: searchKeyword,
         filter_sql_audit_record_ids: filterDataFromUrl
       };
-
       return handleTableRequestError(
         sql_audit_record.getSQLAuditRecordsV1(params)
       );
@@ -104,7 +99,6 @@ const SqlAuditList = () => {
       }
     }
   );
-
   const updateTags = useCallback(
     async (tags: string[], id: string) => {
       sql_audit_record
@@ -125,7 +119,6 @@ const SqlAuditList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [projectName]
   );
-
   const columns = useMemo(
     () => SqlAuditListColumn(projectID, projectName, updateTags),
     [projectID, projectName, updateTags]
@@ -156,7 +149,6 @@ const SqlAuditList = () => {
       ['sql_audit_status', { options: sqlAuditStatusOptions }]
     ]);
   }, [instanceIDOptions]);
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName
@@ -175,7 +167,6 @@ const SqlAuditList = () => {
     () => (polling ? false : loading),
     [polling, loading]
   );
-
   return (
     <>
       {messageContextHolder}
@@ -217,5 +208,4 @@ const SqlAuditList = () => {
     </>
   );
 };
-
 export default SqlAuditList;

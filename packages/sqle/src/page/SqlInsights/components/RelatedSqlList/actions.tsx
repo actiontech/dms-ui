@@ -1,4 +1,4 @@
-import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableActionMeta } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale';
 

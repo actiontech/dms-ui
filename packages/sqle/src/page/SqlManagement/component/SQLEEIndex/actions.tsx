@@ -1,16 +1,16 @@
 import { t } from '../../../../locale';
 import { ModalName } from '../../../../data/ModalName';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 import {
   PERMISSIONS,
   PermissionsConstantType
 } from '@actiontech/shared/lib/features';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableAction';
 import {
   ActiontechTableActionsConfig,
   ActiontechTableToolbarActionMeta
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,

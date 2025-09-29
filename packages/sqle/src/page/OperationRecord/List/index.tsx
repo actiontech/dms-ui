@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
 import operationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
 import {
   IGetOperationRecordListV1Params,
@@ -17,7 +17,7 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,
@@ -27,28 +27,20 @@ import useOperationTypeName from '../../../hooks/useOperationTypeName';
 import useOperationActions from '../../../hooks/useOperationActions';
 import { ResponseCode } from '../../../data/common';
 import { DownArrowLineOutlined } from '@actiontech/icons';
-
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const { projectName } = useCurrentProject();
-
   const [currentOperationTypeName, setCurrentOperationTypeName] =
     useState<string>();
-
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
-
   const { updateOperationTypeNameList, operationTypeNameOptions } =
     useOperationTypeName();
-
   const { updateOperationActions, operationActionOptions } =
     useOperationActions();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -61,10 +53,8 @@ const OperationRecordList: React.FC = () => {
     IOperationRecordList,
     OperationRecordListFilterParamType
   >();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: operationRecordList,
     loading,
@@ -85,7 +75,6 @@ const OperationRecordList: React.FC = () => {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IOperationRecordList, FilterCustomProps>([
       [
@@ -115,15 +104,12 @@ const OperationRecordList: React.FC = () => {
     operationActionOptions,
     currentOperationTypeName
   ]);
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
-
   useEffect(() => {
     updateOperationTypeNameList();
     updateOperationActions();
   }, [updateOperationActions, updateOperationTypeNameList]);
-
   const onExport = () => {
     startExport();
     const hideLoading = messageApi.loading(
@@ -149,7 +135,6 @@ const OperationRecordList: React.FC = () => {
         finishExport();
       });
   };
-
   return (
     <article>
       {contextHolder}
@@ -169,7 +154,10 @@ const OperationRecordList: React.FC = () => {
         }
       />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -205,5 +193,4 @@ const OperationRecordList: React.FC = () => {
     </article>
   );
 };
-
 export default OperationRecordList;

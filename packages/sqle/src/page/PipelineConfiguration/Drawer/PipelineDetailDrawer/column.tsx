@@ -1,11 +1,10 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IPipelineNodeDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale/index';
 import { PipelineNodeTypeDictionary } from '../../Common/ConfigurationForm/index.data';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { Typography } from 'antd';
 import { PipelineDetailModalIntegrationInfoStyleWrapper } from './style';
-
 export const PipelineNodeTableColumn =
   (): ActiontechTableColumn<IPipelineNodeDetail> => {
     return [
@@ -35,7 +34,9 @@ export const PipelineNodeTableColumn =
               titleWidth={360}
               title={
                 <PipelineDetailModalIntegrationInfoStyleWrapper
-                  copyable={{ text: value?.split('#启动命令#\n')?.[1] }}
+                  copyable={{
+                    text: value?.split('#启动命令#\n')?.[1]
+                  }}
                 >
                   {value}
                 </PipelineDetailModalIntegrationInfoStyleWrapper>

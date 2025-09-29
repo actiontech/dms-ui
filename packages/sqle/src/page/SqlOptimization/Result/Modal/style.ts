@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { BasicModal } from '@actiontech/shared';
+import { BasicModal } from '@actiontech/dms-kit';
 
 export const TableStructureModalWrapper = styled('div')`
   .section {

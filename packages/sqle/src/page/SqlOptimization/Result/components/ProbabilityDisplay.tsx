@@ -3,8 +3,7 @@ import { ProbabilityDisplayWrapper } from './style';
 import { Space, Typography } from 'antd';
 import { ProbabilityDisplayProps } from '../index.type';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { EmptyBox } from '@actiontech/shared';
-import { floatToPercent } from '@actiontech/shared/lib/utils';
+import { EmptyBox, floatToPercent } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 

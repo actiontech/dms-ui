@@ -1,4 +1,5 @@
-import { BasicTypographyEllipsis, LazyLoadComponent } from '@actiontech/shared';
+import { LazyLoadComponent } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useToggle } from 'ahooks';
 import rehypeSanitize from 'rehype-sanitize';
@@ -9,16 +10,13 @@ import {
   OptimizationDescriptionStyleWrapper,
   MarkdownPreviewModeStyleWrapper
 } from '../Common/style';
-
 type Props = IRewriteSuggestion;
-
 const BusinessRewrittenDetails: React.FC<Props> = ({
   audit_level,
   rule_name,
   desc
 }) => {
   const [showDetails, { toggle: toggleShowDetails }] = useToggle();
-
   return (
     <>
       <OptimizationRuleItemStyleWrapper
@@ -46,5 +44,4 @@ const BusinessRewrittenDetails: React.FC<Props> = ({
     </>
   );
 };
-
 export default BusinessRewrittenDetails;

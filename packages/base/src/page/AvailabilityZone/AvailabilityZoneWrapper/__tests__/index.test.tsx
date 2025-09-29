@@ -6,6 +6,15 @@ import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/moc
 import { mockUseRecentlySelectedZoneData } from '../../../../testUtils/mockHooks/data';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
 import { baseMockApi } from '@actiontech/shared/lib/testUtil';
+import { useSelector } from 'react-redux';
+import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -46,6 +55,20 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
     });
 
     mockUseRecentlySelectedZone();
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: {
+          uid: '123',
+          systemPreference: undefined
+        },
+        availabilityZone: {
+          availabilityZoneTips: [
+            { uid: 'zone-123', name: 'Test Zone' },
+            { uid: 'zone-456', name: 'Another Zone' }
+          ]
+        }
+      });
+    });
   });
 
   afterEach(() => {
@@ -59,8 +82,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
     mockUseRecentlySelectedZone({
       ...mockUseRecentlySelectedZoneData,
-      availabilityZone: mockZone,
-      availabilityZoneOptions: mockAvailabilityZoneOptions
+      availabilityZone: mockZone
     });
 
     const { container } = superRender(<AvailabilityZoneWrapper />);
@@ -71,8 +93,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
   it('should show modal when availabilityZone is not set', () => {
     mockUseRecentlySelectedZone({
-      ...mockUseRecentlySelectedZoneData,
-      availabilityZoneOptions: mockAvailabilityZoneOptions
+      ...mockUseRecentlySelectedZoneData
     });
 
     superRender(<AvailabilityZoneWrapper />);
@@ -85,8 +106,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
   it('should navigate back when clicking Cancel button', () => {
     mockUseRecentlySelectedZone({
-      ...mockUseRecentlySelectedZoneData,
-      availabilityZoneOptions: mockAvailabilityZoneOptions
+      ...mockUseRecentlySelectedZoneData
     });
 
     superRender(<AvailabilityZoneWrapper />);
@@ -101,8 +121,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
     mockUseRecentlySelectedZone({
       ...mockUseRecentlySelectedZoneData,
-      updateRecentlySelectedZone: updateRecentlySelectedZoneSpy,
-      availabilityZoneOptions: mockAvailabilityZoneOptions
+      updateRecentlySelectedZone: updateRecentlySelectedZoneSpy
     });
     superRender(<AvailabilityZoneWrapper />);
 
@@ -127,8 +146,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
     mockUseRecentlySelectedZone({
       ...mockUseRecentlySelectedZoneData,
-      availabilityZone: mockZone,
-      availabilityZoneOptions: mockAvailabilityZoneOptions
+      availabilityZone: mockZone
     });
 
     superRender(<AvailabilityZoneWrapper />);
@@ -137,11 +155,17 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
   });
 
   it('should render Outlet directly when no zones are configured', () => {
-    mockUseRecentlySelectedZone({
-      ...mockUseRecentlySelectedZoneData,
-      availabilityZoneOptions: []
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: {
+          uid: '123',
+          systemPreference: undefined
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
+        }
+      });
     });
-
     superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('Outlet Content')).toBeInTheDocument();
@@ -154,8 +178,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
     beforeEach(() => {
       mockUseRecentlySelectedZone({
         ...mockUseRecentlySelectedZoneData,
-        updateRecentlySelectedZone: updateRecentlySelectedZoneSpy,
-        availabilityZoneOptions: mockAvailabilityZoneOptions
+        updateRecentlySelectedZone: updateRecentlySelectedZoneSpy
       });
     });
 

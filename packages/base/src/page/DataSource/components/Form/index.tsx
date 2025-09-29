@@ -14,17 +14,17 @@ import {
   BasicSelect,
   BasicSwitch,
   EmptyBox,
-  TypedLink,
   BasicModal,
   BasicButton,
   ReminderInformation
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import {
   FormInputBotBorder,
   FormItemBigTitle,
@@ -32,8 +32,8 @@ import {
   FormItemNoLabel,
   FormItemSubTitle,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
+} from '@actiontech/dms-kit';
+import { nameRule } from '@actiontech/dms-kit';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
 import { turnDataSourceAsyncFormToCommon } from '../../tool';
@@ -45,19 +45,18 @@ import classNames from 'classnames';
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
-import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/shared/lib/data/common';
+import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/dms-kit';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
 import {
   getSystemModuleStatusDbTypeEnum,
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EnvironmentField from './EnvironmentField';
 import { DataSourceFormContext } from '../../context';
 import { useBoolean } from 'ahooks';
 import { FormCheckConnectableInfoModalWrapper } from './style';
 import SqlAuditFields from './SqlAuditFields';
-
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
   const isExternalInstance = useMemo<boolean>(() => {
@@ -66,31 +65,22 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     }
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
-
   const formContext = useContext(DataSourceFormContext);
-
   const [databaseType, setDatabaseType] = useState<string>('');
   const [currentDBTypeSupportBackup, setCurrentDBTypeSupportBackup] =
     useState<boolean>(false);
-
   const [modalOpen, { setTrue: openModal, setFalse: closeModal }] =
     useBoolean(false);
-
   const {
     driverMeta,
     loading: updateDriverListLoading,
     updateDriverList,
     generateDriverSelectOptions
   } = useDbServiceDriver();
-
   const { updateProjects, projectIDOptions } = useProjectTips();
-
   const { projectID } = useCurrentProject();
-
   const project = Form.useWatch('project', props.form);
-
   const enableBackup = Form.useWatch('enableBackup', props.form);
-
   const getBackupSupportStatus = useCallback((value: string) => {
     system
       .getSystemModuleStatus({
@@ -103,7 +93,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         }
       });
   }, []);
-
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
@@ -148,7 +137,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   } = useRequest(() =>
     rule_template.getRuleTemplateTipsV1({}).then((res) => res.data.data ?? [])
   );
-
   const ruleTemplateOptions = useMemo(() => {
     return [...ruleTemplateList, ...globalRuleTemplateList]
       .filter((v) => (databaseType ? v.db_type === databaseType : true))
@@ -160,7 +148,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         };
       });
   }, [ruleTemplateList, globalRuleTemplateList, databaseType]);
-
   const changeAuditEnabled = (check: boolean) => {
     if (!check) {
       props.form.setFieldsValue({
@@ -182,15 +169,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     if (!driverMeta || !databaseType) {
       return [];
     }
-
     const temp = driverMeta.find((item) => item.db_type === databaseType);
     if (!temp) {
       return [];
     }
-
     return turnDataSourceAsyncFormToCommon(temp.params ?? []);
   }, [databaseType, driverMeta]);
-
   useEffect(() => {
     if (!!props.defaultData) {
       props.form.setFieldsValue({
@@ -268,12 +252,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     props.form.resetFields();
     setDatabaseType('');
   }, [props.form]);
-
   const submit = useCallback(async () => {
     const values = props.form.getFieldsValue();
     if (values.params) {
       values.asyncParams = mergeFromValueIntoParams(values.params, params).map(
-        (v) => ({ name: v.key, value: v.value })
+        (v) => ({
+          name: v.key,
+          value: v.value
+        })
       );
       delete values.params;
     }
@@ -281,7 +267,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       closeModal();
     });
   }, [mergeFromValueIntoParams, params, props, closeModal]);
-
   useEffect(() => {
     const { unsubscribe: unsubscribeReset } = EventEmitter.subscribe(
       EmitterKey.DMS_Reset_DataSource_Form,
@@ -289,7 +274,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     );
     return unsubscribeReset;
   }, [reset]);
-
   const onCheckConnectableBeforeSubmit = useCallback(async () => {
     const values = await props.form.validateFields();
     if (props.isUpdate && !values.needUpdatePassword) {
@@ -304,7 +288,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       }
     });
   }, [formContext, submit, openModal, props, params]);
-
   useEffect(() => {
     const { unsubscribe: unsubscribeSubmit } = EventEmitter.subscribe(
       EmitterKey.DMS_Submit_DataSource_Form,
@@ -312,19 +295,16 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     );
     return unsubscribeSubmit;
   }, [onCheckConnectableBeforeSubmit]);
-
   useEffect(() => {
     updateDriverList();
     updateProjects();
   }, [updateDriverList, updateProjects]);
-
   useEffect(() => {
     if (projectID) {
       props.form.setFieldValue('project', projectID);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
-
   const hasBorder = () => {
     let border = false;
     // #if [dms]
@@ -332,7 +312,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     // #endif
     return border;
   };
-
   return (
     <FormStyleWrapper
       form={props.form as FormInstance<DataSourceFormField>}
@@ -363,8 +342,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
               },
               ...nameRule()
             ]}
-            labelCol={{ span: 0 }}
-            wrapperCol={{ span: 24 }}
+            labelCol={{
+              span: 0
+            }}
+            wrapperCol={{
+              span: 24
+            }}
           >
             <FormInputBotBorder
               disabled={props.isUpdate}
@@ -379,7 +362,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           <FormItemLabel
             label={t('dmsDataSource.dataSourceForm.project')}
             name="project"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
             className="has-required-style"
             initialValue={projectID}
           >
@@ -409,7 +396,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             className="has-required-style"
             label={t('dmsDataSource.dataSourceForm.environmentAttribute')}
             name="environmentTagId"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
           >
             <EnvironmentField projectID={project} disabled={!project} />
           </FormItemLabel>
@@ -431,7 +422,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       </FormAreaLineStyleWrapper>
       {/* #if [sqle] */}
       <FormAreaLineStyleWrapper
-        className={classNames({ 'has-border': hasBorder() })}
+        className={classNames({
+          'has-border': hasBorder()
+        })}
       >
         <SqlAuditFields
           getTemplateOptionsLoading={
@@ -531,8 +524,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             }
             name="is_enable_masking"
             valuePropName="checked"
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 11, push: 1 }}
+            labelCol={{
+              span: 12
+            }}
+            wrapperCol={{
+              span: 11,
+              push: 1
+            }}
           >
             <BasicSwitch />
           </FormItemLabel>
@@ -569,5 +567,4 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     </FormStyleWrapper>
   );
 };
-
 export default DataSourceForm;

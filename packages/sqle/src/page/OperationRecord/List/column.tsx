@@ -1,9 +1,9 @@
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetOperationRecordListV1Params } from '@actiontech/shared/lib/api/sqle/service/OperationRecord/index.d';
 import { t } from '../../../locale';
 import OperationStatus from '../components/OperationStatus';

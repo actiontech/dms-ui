@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useTypedParams, useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
 import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
 import useSqlOptimization from '../hooks/useSqlOptimization';

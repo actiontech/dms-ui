@@ -1,5 +1,5 @@
 import { Form, FormInstance } from 'antd';
-import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+import { FilterContainerStyleWrapper } from '@actiontech/dms-kit/es/components/ActiontechTable/components/style';
 import RuleFilterCommonFields from './RuleFilterCommonFields';
 import { RuleFilterFieldsType } from '../index.type';
 

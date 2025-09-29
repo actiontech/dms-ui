@@ -4,7 +4,7 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../../locale';
-import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid, SystemRole } from '@actiontech/dms-kit';
 
 export const UserListActions = (
   onEditUser: (record?: IListUser) => void,

@@ -1,8 +1,10 @@
 import {
   EmptyBox,
-  PageHeader,
-  SegmentedTabs,
   SegmentedTabsProps,
+  PageHeader,
+  SegmentedTabs
+} from '@actiontech/dms-kit';
+import {
   useTypedNavigate,
   useTypedParams,
   useTypedQuery
@@ -10,7 +12,7 @@ import {
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
 import ConfDetailOverview from './Overview';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
@@ -18,45 +20,36 @@ import { useLocation } from 'react-router-dom';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Result, Space } from 'antd';
-import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
+import { getErrorMessage } from '@actiontech/dms-kit';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { SqlManagementConfDetailPageHeaderActions } from './action';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useScanTypeVerify from '../Common/ConfForm/useScanTypeVerify';
-
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const { id } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail>();
-
   const extractQueries = useTypedQuery();
-
   const searchParams = extractQueries(
     ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail
   );
-
   const location = useLocation();
   const navigate = useTypedNavigate();
   const { projectName } = useCurrentProject();
-
   const [activeKey, setActiveKey] = useState(
     SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
   );
   const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
     useBoolean();
-
   const [auditing, { setTrue: auditPending, setFalse: auditDone }] =
     useBoolean();
-
   const [messageApi, contextMessageHolder] = message.useMessage();
-
   const { isPerformanceCollectScanType } = useScanTypeVerify();
-
   const {
     data,
     error,
@@ -77,16 +70,22 @@ const ConfDetail: React.FC = () => {
       };
     })
   );
-
   const handleChangeTable = useCallback(
     (tab: string) => {
       setActiveKey(tab);
       if (tab === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY) {
-        navigate(location.pathname, { replace: true });
+        navigate(location.pathname, {
+          replace: true
+        });
       } else if (searchParams?.active_audit_plan_id) {
         navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail, {
-          params: { projectID, id: id ?? '' },
-          queries: { active_audit_plan_id: tab },
+          params: {
+            projectID,
+            id: id ?? ''
+          },
+          queries: {
+            active_audit_plan_id: tab
+          },
           replace: true
         });
       }
@@ -99,7 +98,6 @@ const ConfDetail: React.FC = () => {
       searchParams?.active_audit_plan_id
     ]
   );
-
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -130,7 +128,6 @@ const ConfDetail: React.FC = () => {
       )
     })) ?? [])
   ];
-
   const onRefresh = () => {
     if (activeKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY) {
       eventEmitter.emit(EmitterKey.Refresh_Sql_Management_Conf_Overview_List);
@@ -138,11 +135,9 @@ const ConfDetail: React.FC = () => {
       eventEmitter.emit(EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List);
     }
   };
-
   const exportScanTypeSqlDetail = () => {
     eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List);
   };
-
   const onAuditImmediately = () => {
     auditPending();
     SqleApi.InstanceAuditPlanService.auditPlanTriggerSqlAuditV1({
@@ -164,14 +159,12 @@ const ConfDetail: React.FC = () => {
         auditDone();
       });
   };
-
   const pageHeaderActions = SqlManagementConfDetailPageHeaderActions({
     onAuditImmediately,
     auditPending: auditing,
     onExport: exportScanTypeSqlDetail,
     exportPending: exporting
   });
-
   return (
     <>
       {contextMessageHolder}
@@ -210,5 +203,4 @@ const ConfDetail: React.FC = () => {
     </>
   );
 };
-
 export default ConfDetail;
