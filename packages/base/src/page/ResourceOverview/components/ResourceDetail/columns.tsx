@@ -1,12 +1,11 @@
 import { t } from '../../../../locale';
 import { IResourceListData } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetResourceOverviewResourceListV1Params } from '@actiontech/shared/lib/api/base/service/ResourceOverview/index.d';
-import { DatabaseTypeLogo, BasicToolTip } from '@actiontech/shared';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { DatabaseTypeLogo, BasicToolTip } from '@actiontech/dms-kit';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { FlagFilled, DatabaseSchemaFilled } from '@actiontech/icons';
 import { ResourceOverviewTheme } from '../../../../theme/type';
-
 export const ResourceDetailListColumns = (
   getLogoUrlByDbType: (dbType: string) => string,
   theme: ResourceOverviewTheme
@@ -25,7 +24,6 @@ export const ResourceDetailListColumns = (
       title: t('resourceOverview.resourceList.type'),
       render: (dbType) => {
         if (!dbType) return '-';
-
         return (
           <DatabaseTypeLogo
             dbType={dbType}

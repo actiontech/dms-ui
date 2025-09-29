@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import { SQLRendererProps } from '../SQLRenderer.types';
 import { useCallback } from 'react';
-import Copy from '../../../utils/Copy';
-import { CopyIcon } from '../../CopyIcon';
+import { CopyIcon, Copy } from '@actiontech/dms-kit';
 
 const useRenderCopyIcon = (
   params: Pick<

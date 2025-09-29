@@ -45,9 +45,12 @@ module.exports = {
     '!packages/**/index.enum.ts',
     '!packages/sqle/src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
     '!packages/shared/lib/hooks/usePrompt/index.tsx',
-    '!packages/sqle/src/page/Knowledge/Graph/components/**'
+    '!packages/sqle/src/page/Knowledge/Graph/components/**',
+    '!packages/**/demo/**',
+    '!packages/**/demos/**'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  testPathIgnorePatterns: ['/node_modules/', '/demo/', '/demos/'],
   reporters: [
     'default',
     [

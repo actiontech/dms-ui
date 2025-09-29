@@ -9,9 +9,9 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

@@ -6,13 +6,13 @@ import { LineConfig, Line } from '@ant-design/plots';
 import { ILine } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlInsightsLineChartWrapper } from './style';
 import classNames from 'classnames';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { message } from 'antd';
 import TaskEnabledTips from '../TaskEnabledTips';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { useChartEvent } from './hooks/useChartEvent';
-import { EmptyBox } from '@actiontech/shared/';
+import { EmptyBox } from '@actiontech/dms-kit';
 
 export interface SqlInsightsLineChartProps {
   loading: boolean;

@@ -1,10 +1,10 @@
 import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IOptimizationSQL } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 
 export type IOptimizationSQLIncludeOrder = IOptimizationSQL & { order: number };

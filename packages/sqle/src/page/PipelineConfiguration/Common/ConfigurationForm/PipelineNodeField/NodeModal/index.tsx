@@ -3,15 +3,12 @@ import {
   BasicButton,
   BasicInput,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { PipelineNodeModalProps } from '../../index.type';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { workflowNameRule } from '@actiontech/dms-kit';
 import {
   PipelineNodeTypeOptions,
   PipelineNodeObjectTypeOptions,
@@ -30,10 +27,9 @@ import useRuleTemplate from '../../../../../../hooks/useRuleTemplate';
 import { ruleTemplateListDefaultKey } from '../../../../../../data/common';
 import { useRequest } from 'ahooks';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useDatabaseType from '../../../../../../hooks/useDatabaseType';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-
 const NodeModal: React.FC<PipelineNodeModalProps> = ({
   visible,
   editNodeId,
@@ -43,41 +39,31 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
   nodeNameList
 }) => {
   const { t } = useTranslation();
-
   const auditMethod = Form.useWatch('audit_method', form);
-
   const instanceName = Form.useWatch('instance_name', form);
-
   const templateName = Form.useWatch('rule_template_name', form);
-
   const instanceType = Form.useWatch('instance_type', form);
-
   const { projectName } = useCurrentProject();
-
   const {
     instanceOptions,
     updateInstanceList,
     loading: getInstanceLoading
   } = useInstance();
-
   const {
     loading: getDriverMetaLoading,
     updateDriverNameList,
     generateDriverSelectOptions
   } = useDatabaseType();
-
   const {
     loading: getGlobalRuleTemplateLoading,
     updateGlobalRuleTemplateList,
     globalRuleTemplateTipsOptions
   } = useGlobalRuleTemplate();
-
   const {
     loading: getRuleTemplateListLoading,
     updateRuleTemplateList,
     ruleTemplateTipsOptions
   } = useRuleTemplate();
-
   const ruleTemplateOptions = useMemo(() => {
     return [
       ...ruleTemplateTipsOptions(instanceType ?? ruleTemplateListDefaultKey),
@@ -86,7 +72,6 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
       )
     ];
   }, [ruleTemplateTipsOptions, globalRuleTemplateTipsOptions, instanceType]);
-
   const { loading: instanceInfoLoading } = useRequest(
     () => {
       return instance
@@ -108,7 +93,6 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
       refreshDeps: [instanceName]
     }
   );
-
   useEffect(() => {
     if (auditMethod === pipelineNodeDetailAuditMethodEnum.offline) {
       form.resetFields(['instance_name']);
@@ -116,11 +100,9 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
       form.resetFields(['instance_type']);
     }
   }, [auditMethod, form]);
-
   const onInstanceTypeChange = () => {
     form.resetFields(['rule_template_name']);
   };
-
   useEffect(() => {
     if (auditMethod === pipelineNodeDetailAuditMethodEnum.online) {
       updateInstanceList({
@@ -130,16 +112,13 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
       });
     }
   }, [projectName, auditMethod, updateInstanceList]);
-
   useEffect(() => {
     updateRuleTemplateList(projectName);
     updateGlobalRuleTemplateList();
   }, [projectName, updateGlobalRuleTemplateList, updateRuleTemplateList]);
-
   useEffect(() => {
     updateDriverNameList();
   }, [updateDriverNameList]);
-
   return (
     <PipelineNodeModalStyleWrapper
       open={visible}
@@ -163,8 +142,12 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
           name="name"
           label={t('pipelineConfiguration.form.node.name')}
           rules={[
-            { required: true },
-            { validator: workflowNameRule() },
+            {
+              required: true
+            },
+            {
+              validator: workflowNameRule()
+            },
             {
               validator: (_, value) => {
                 if (nodeNameList.includes(value)) {
@@ -175,7 +158,9 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
                 return Promise.resolve();
               }
             },
-            { max: 59 }
+            {
+              max: 59
+            }
           ]}
         >
           <BasicInput />
@@ -183,7 +168,11 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
         <FormItemLabel
           name="type"
           label={t('pipelineConfiguration.form.node.type')}
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true
+            }
+          ]}
           initialValue={pipelineNodeBaseTypeEnum.audit}
         >
           <BasicSelect options={PipelineNodeTypeOptions} />
@@ -274,7 +263,11 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
                 tips={t('pipelineConfiguration.form.node.instanceTips')}
               />
             }
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
           >
             <BasicSelect
               options={instanceOptions}
@@ -313,5 +306,4 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
     </PipelineNodeModalStyleWrapper>
   );
 };
-
 export default NodeModal;

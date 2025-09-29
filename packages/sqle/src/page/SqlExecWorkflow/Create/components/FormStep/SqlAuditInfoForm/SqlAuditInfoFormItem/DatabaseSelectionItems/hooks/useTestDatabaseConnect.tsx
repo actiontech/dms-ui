@@ -1,6 +1,6 @@
-import { ReminderInformation, EmptyBox } from '@actiontech/shared';
+import { ReminderInformation, EmptyBox } from '@actiontech/dms-kit';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { useCallback, useMemo } from 'react';
@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { DatabaseSelectionItemProps } from '../../../index.type';
 import { IBatchCheckInstanceIsConnectableByNameParams } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { DatabaseSelectionFields } from '../index.type';
-
 const useTestDatabaseConnect = ({
   databaseInfo,
   instanceTestConnectResults
@@ -20,14 +19,12 @@ const useTestDatabaseConnect = ({
   const { projectName } = useCurrentProject();
   const [testLoading, { setTrue: testStart, setFalse: testFinish }] =
     useBoolean();
-
   const disabledTestConnect = useMemo(
     () =>
       databaseInfo?.map((v) => v?.instanceName)?.filter((v) => !!v).length ===
       0,
     [databaseInfo]
   );
-
   const testDatabaseConnect = useCallback(async () => {
     const instances =
       (databaseInfo ?? [])
@@ -35,16 +32,13 @@ const useTestDatabaseConnect = ({
           name: v?.instanceName
         }))
         ?.filter((v) => !!v.name) ?? [];
-
     if (instances.length === 0) {
       return;
     }
-
     const params: IBatchCheckInstanceIsConnectableByNameParams = {
       instances: instances,
       project_name: projectName
     };
-
     testStart();
     instance
       .batchCheckInstanceIsConnectableByName(params)
@@ -63,7 +57,6 @@ const useTestDatabaseConnect = ({
     testFinish,
     testStart
   ]);
-
   const renderTestDatabasesConnectInfo = useCallback(
     (name: string) => {
       const result = instanceTestConnectResults.value?.find(
@@ -72,7 +65,6 @@ const useTestDatabaseConnect = ({
       if (!result) {
         return null;
       }
-
       return (
         <>
           <EmptyBox if={!!result.is_instance_connectable}>
@@ -96,7 +88,6 @@ const useTestDatabaseConnect = ({
     },
     [instanceTestConnectResults.value, t]
   );
-
   return {
     testDatabaseConnect,
     testLoading,
@@ -104,5 +95,4 @@ const useTestDatabaseConnect = ({
     disabledTestConnect
   };
 };
-
 export default useTestDatabaseConnect;

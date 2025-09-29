@@ -18,7 +18,7 @@ import {
 } from '../../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from '../index.type';

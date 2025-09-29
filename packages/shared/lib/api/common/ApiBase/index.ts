@@ -1,6 +1,4 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { ResponseCode } from '../../../enum';
-import Download from '../../../utils/Download';
 import i18n from 'i18next';
 import store from '../../../../../base/src/store';
 import {
@@ -8,12 +6,14 @@ import {
   getResponseCode,
   isExportFileResponse,
   isFileStreamResponse,
-  getRecentlySelectedZone
-} from '../../../utils/Common';
-import { eventEmitter } from '../../../utils/EventEmitter';
+  getRecentlySelectedZone,
+  ResponseCode,
+  Download
+} from '@actiontech/dms-kit';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
 import { ArgsProps } from 'antd/es/notification/interface';
-import EmitterKey from '../../../data/EmitterKey';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 
 class ApiBase {
   public interceptorsResponse(

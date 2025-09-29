@@ -1,14 +1,10 @@
-import {
-  BasicButton,
-  BasicTypographyEllipsis,
-  EmptyBox
-} from '@actiontech/shared';
+import { BasicButton, EmptyBox } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { RejectReasonStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { RejectReasonProps } from './index.type';
 import { Col, Row } from 'antd';
 import { RejectFileFilled } from '@actiontech/icons';
-
 const RejectReason: React.FC<RejectReasonProps> = ({
   stepInfo,
   currentUsername,
@@ -16,12 +12,18 @@ const RejectReason: React.FC<RejectReasonProps> = ({
   createWorkflowUserName
 }) => {
   const { t } = useTranslation();
-
   return (
     <RejectReasonStyleWrapper>
       <RejectFileFilled width={24} height={24} />
       <Row wrap={false} align="middle" className="full-width-element">
-        <Col xxl={{ span: 22 }} sm={{ span: 20 }}>
+        <Col
+          xxl={{
+            span: 22
+          }}
+          sm={{
+            span: 20
+          }}
+        >
           <div className="reject-workflow-reason-content">
             <div className="reject-workflow-reason-content-text">
               {t('execWorkflow.detail.operator.rejectDetail', {
@@ -38,7 +40,14 @@ const RejectReason: React.FC<RejectReasonProps> = ({
           </div>
         </Col>
 
-        <Col xxl={{ span: 2 }} sm={{ span: 4 }}>
+        <Col
+          xxl={{
+            span: 2
+          }}
+          sm={{
+            span: 4
+          }}
+        >
           <EmptyBox
             if={currentUsername === createWorkflowUserName}
             defaultNode={
@@ -58,5 +67,4 @@ const RejectReason: React.FC<RejectReasonProps> = ({
     </RejectReasonStyleWrapper>
   );
 };
-
 export default RejectReason;

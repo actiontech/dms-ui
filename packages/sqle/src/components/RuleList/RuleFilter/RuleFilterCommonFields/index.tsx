@@ -1,21 +1,18 @@
 import CustomSearchInput from './CustomInput';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect } from '@actiontech/dms-kit';
 import useRuleCategories from '../../../../hooks/useRuleCategories';
 import { InfoCircleOutlined } from '@actiontech/icons';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { RuleFilterCommonFieldSelectStyleWrapper } from '../../style';
-
 type Props = {
   withoutFuzzyKeywordFilterItem?: boolean;
 };
-
 const RuleFilterCommonFields: React.FC<Props> = ({
   withoutFuzzyKeywordFilterItem = false
 }) => {
   const { t } = useTranslation();
-
   const {
     getRuleCategoriesLoading,
     auditAccuracyOptions,
@@ -24,7 +21,6 @@ const RuleFilterCommonFields: React.FC<Props> = ({
     auditPurposeOptions,
     performanceLevelOptions
   } = useRuleCategories();
-
   return (
     <Space size={12}>
       {!withoutFuzzyKeywordFilterItem && (
@@ -93,5 +89,4 @@ const RuleFilterCommonFields: React.FC<Props> = ({
     </Space>
   );
 };
-
 export default RuleFilterCommonFields;

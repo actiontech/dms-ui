@@ -4,10 +4,10 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const useInitDataWithRequest = (workflowId?: string) => {
   const urlParams =

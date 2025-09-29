@@ -1,5 +1,5 @@
 import { OptimizeStepsWrapper } from './style';
-import { BasicTag, BasicEmpty, EmptyBox } from '@actiontech/shared';
+import { BasicTag, BasicEmpty, EmptyBox } from '@actiontech/dms-kit';
 import { RocketFilled } from '@actiontech/icons';
 import { Typography } from 'antd';
 import { IOptimizeStep } from '@actiontech/shared/lib/api/sqle/service/common';

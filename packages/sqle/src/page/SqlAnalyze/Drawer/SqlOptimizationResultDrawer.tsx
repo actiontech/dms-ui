@@ -8,7 +8,7 @@ import {
 } from '../../../store/sqlAnalyze';
 import { IReduxState } from '../../../store';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BasicDrawer } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/dms-kit';
 import { useEffect } from 'react';
 import useOptimizationResult from '../../SqlOptimization/Result/hooks/useOptimizationResult';
 

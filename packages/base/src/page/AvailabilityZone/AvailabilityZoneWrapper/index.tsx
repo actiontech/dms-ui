@@ -1,13 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, Outlet, useParams } from 'react-router-dom';
 import { Space } from 'antd';
-import { BasicModal, BasicSelect, BasicButton } from '@actiontech/shared';
+import { BasicModal, BasicSelect, BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { useTypedNavigate } from '@actiontech/shared';
-import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../store';
 import { useUserInfo } from '@actiontech/shared/lib/features';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useBoolean } from 'ahooks';
 
 const AvailabilityZoneWrapper: React.FC = () => {
@@ -15,13 +17,17 @@ const AvailabilityZoneWrapper: React.FC = () => {
   const location = useLocation();
   const navigate = useTypedNavigate();
   const { projectID } = useParams<{ projectID: string }>();
-
+  const { availabilityZoneOptions } = useSelector((state: IReduxState) => ({
+    availabilityZoneOptions: state.availabilityZone.availabilityZoneTips?.map(
+      (zone) => ({
+        label: zone.name,
+        value: zone.uid
+      })
+    )
+  }));
   const { getRecentlyProjectIdByUserInfo } = useRecentlyOpenedProjects();
-  const {
-    availabilityZone,
-    updateRecentlySelectedZone,
-    availabilityZoneOptions
-  } = useRecentlySelectedZone();
+  const { availabilityZone, updateRecentlySelectedZone } =
+    useRecentlySelectedZone();
 
   const [zoneModalVisible, setZoneModalVisible] = useState(false);
   const [selectedZone, setSelectedZone] = useState<string>();
@@ -50,7 +56,6 @@ const AvailabilityZoneWrapper: React.FC = () => {
   const onModalCancel = () => {
     navigate(-1);
   };
-
   const onModalOk = () => {
     startConfirm();
     updateRecentlySelectedZone({
@@ -150,5 +155,4 @@ const AvailabilityZoneWrapper: React.FC = () => {
     return <Outlet />;
   }
 };
-
 export default AvailabilityZoneWrapper;

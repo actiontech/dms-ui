@@ -1,19 +1,18 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import { t } from '../../../locale';
 import ResultIconRender from '../../../components/AuditResultMessage/ResultIconRender';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { CustomAvatar, SQLRenderer } from '@actiontech/shared';
-
+import { formatTime } from '@actiontech/dms-kit';
+import { CustomAvatar } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 export type PluginAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlDEVRecordListParams,
   'project_name'
 >;
-
 export const PluginAuditListColumns: (
   onOpenDrawer: (record: ISqlDEVRecord) => void
 ) => ActiontechTableColumn<

@@ -2,7 +2,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { ISQLOptimizeV2Params } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ModalName } from '../../../data/ModalName';
 import {
   updateSqlAnalyzeModalStatus,

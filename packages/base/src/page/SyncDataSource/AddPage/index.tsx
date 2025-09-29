@@ -5,15 +5,15 @@ import { Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import SyncTaskForm from '../Form';
 import {
-  BackButton,
   BasicButton,
   BasicResult,
   EmptyBox,
   LazyLoadComponent,
   PageHeader
-} from '@actiontech/shared';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
+import { BackButton } from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { DatabaseFilled } from '@actiontech/icons';
@@ -23,29 +23,23 @@ import { IAddDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/ser
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import useTaskSource from '../../../hooks/useTaskSource';
 import { SyncTaskFormFields } from '../Form/index.type';
-
 const AddSyncTask: React.FC = () => {
   const { t } = useTranslation();
   const [form] = useForm<SyncTaskFormFields>();
   const { mergeFromValueIntoParams } = useAsyncParams();
-
   const [
     submitResultVisibility,
     { setTrue: showResult, setFalse: hiddenResult }
   ] = useBoolean();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const { updateTaskSourceList, ...taskSourceTips } = useTaskSource();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
-
     const additionalParams = taskSourceTips.generateTaskSourceAdditionalParams(
       values.source
     );
-
     const params: IAddDBServiceSyncTaskParams = {
       db_service_sync_task: {
         name: values.name,
@@ -75,7 +69,6 @@ const AddSyncTask: React.FC = () => {
         )
       }
     };
-
     DBServiceSyncTaskService.AddDBServiceSyncTask(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -86,16 +79,13 @@ const AddSyncTask: React.FC = () => {
         submitFinish();
       });
   };
-
   const resetAndHideResult = useCallback(() => {
     hiddenResult();
     EventEmitter.emit(EmitterKey.DMS_SYNC_TASK_RESET_FORM);
   }, [hiddenResult]);
-
   useEffect(() => {
     updateTaskSourceList();
   }, [updateTaskSourceList]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
@@ -164,5 +154,4 @@ const AddSyncTask: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default AddSyncTask;

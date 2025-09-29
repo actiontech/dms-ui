@@ -20,6 +20,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -27,16 +28,25 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }));
 
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
+
 describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
   const dispatchSpy = jest.fn();
   const templateName = publicRuleTemplateListMockData[0].rule_template_name;
   let getRuleTemplateListSpy: jest.SpyInstance;
   let mockUseCurrentUserSpy: jest.SpyInstance;
+  const navigateSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUserSpy = mockUseCurrentUser();
     mockUseDbServiceDriver();
+    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -153,6 +163,18 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     expect(deleteRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: publicRuleTemplateListMockData[0].rule_template_name
     });
+  });
+
+  it('click edit button', async () => {
+    getRuleTemplateListSpy.mockClear();
+    getRuleTemplateListSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [publicRuleTemplateListMockData[0]] })
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('编 辑'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('click export button', async () => {

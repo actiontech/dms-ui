@@ -1,4 +1,4 @@
-import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
+import { DEFAULT_PROJECT_ID } from '@actiontech/dms-kit';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 import { DefaultSceneStepContainerWrapper } from '../style';
 import StepItems from './components/StepItems';

@@ -6,36 +6,25 @@ import {
   updateVersionManagementModalStatus,
   updateSelectVersionStageWorkflowList
 } from '../../../../../store/versionManagement';
-import {
-  BasicModal,
-  BasicButton,
-  TypedLink,
-  useTypedParams
-} from '@actiontech/shared';
+import { BasicModal, BasicButton } from '@actiontech/dms-kit';
+import { TypedLink, useTypedParams } from '@actiontech/shared';
 import { Space, Typography, message } from 'antd';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useBoolean } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const BatchExecuteModal: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const { projectName, projectID } = useCurrentProject();
-
   const { versionId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [submitting, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const { currentStageWorkflowList, visible } = useSelector(
     (state: IReduxState) => ({
       currentStageWorkflowList:
@@ -46,7 +35,6 @@ const BatchExecuteModal: React.FC = () => {
         ]
     })
   );
-
   const onClose = () => {
     dispatch(
       updateVersionManagementModalStatus({
@@ -54,9 +42,12 @@ const BatchExecuteModal: React.FC = () => {
         status: false
       })
     );
-    dispatch(updateSelectVersionStageWorkflowList({ workflowList: null }));
+    dispatch(
+      updateSelectVersionStageWorkflowList({
+        workflowList: null
+      })
+    );
   };
-
   const onSubmit = () => {
     startSubmit();
     sqlVersion
@@ -84,7 +75,6 @@ const BatchExecuteModal: React.FC = () => {
         submitFinish();
       });
   };
-
   return (
     <BasicModal
       open={visible}
@@ -111,7 +101,10 @@ const BatchExecuteModal: React.FC = () => {
           <TypedLink
             key={index}
             to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
-            params={{ projectID, workflowId: workflow.workflow_id ?? '' }}
+            params={{
+              projectID,
+              workflowId: workflow.workflow_id ?? ''
+            }}
             target="_blank"
           >
             {workflow.workflow_name}
@@ -121,5 +114,4 @@ const BatchExecuteModal: React.FC = () => {
     </BasicModal>
   );
 };
-
 export default BatchExecuteModal;

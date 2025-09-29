@@ -1,25 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { Form, message, Space } from 'antd';
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput } from '@actiontech/dms-kit';
 import {
   ConfigModifyBtn,
   ConfigTestBtn,
   ConfigTestPopoverForm
-} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+} from '@actiontech/dms-kit';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { TestFormFields } from '../index.type';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
-
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/dms-kit';
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
   enabled: boolean;
 }
-
 const ConfigExtraButtons = ({
   isConfigClosed,
   extraButtonsVisible,
@@ -29,22 +27,20 @@ const ConfigExtraButtons = ({
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [testForm] = Form.useForm<TestFormFields>();
-
   const testing = useRef(false);
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-
   const testWechatAuditConfiguration = async () => {
     if (testing.current) {
       return;
     }
     const values = await testForm.validateFields();
-
     testing.current = true;
     toggleTestPopoverVisible(false);
     const hide = messageApi.loading(t('dmsSystem.wechatAudit.testing'), 0);
-
     configuration
-      .testWechatAuditConfigV1({ wechat_id: values.wechatUserID })
+      .testWechatAuditConfigV1({
+        wechat_id: values.wechatUserID
+      })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           if (res.data.data?.is_message_sent_normally) {
@@ -62,7 +58,6 @@ const ConfigExtraButtons = ({
         testForm.resetFields();
       });
   };
-
   const onTestPopoverOpen = (open: boolean) => {
     if (!enabled) {
       return;
@@ -72,7 +67,6 @@ const ConfigExtraButtons = ({
     }
     toggleTestPopoverVisible(open);
   };
-
   return (
     <>
       {messageContextHolder}
@@ -92,8 +86,14 @@ const ConfigExtraButtons = ({
                 <FormItemLabel
                   name="wechatUserID"
                   label={t('dmsSystem.wechatAudit.wechatUserID')}
-                  style={{ marginBottom: 0 }}
-                  rules={[{ required: true }]}
+                  style={{
+                    marginBottom: 0
+                  }}
+                  rules={[
+                    {
+                      required: true
+                    }
+                  ]}
                 >
                   <BasicInput
                     placeholder={t('common.form.placeholder.input', {
@@ -110,5 +110,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

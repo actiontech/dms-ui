@@ -33,6 +33,12 @@ describe('test ExportSourceFormItem', () => {
               getFieldValue: getBaseFormFieldValueSpy
             } as any
           }
+          methodForm={
+            {
+              setFieldValue: setBaseFormFieldValueSpy,
+              getFieldValue: getBaseFormFieldValueSpy
+            } as any
+          }
         />
       </Form>
     );

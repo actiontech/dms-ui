@@ -2,17 +2,12 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback, useEffect, useState } from 'react';
 import { Button, message, Empty, Typography, Spin } from 'antd';
-import {
-  BasicButton,
-  EmptyBox,
-  PageHeader,
-  useTypedNavigate,
-  useTypedParams
-} from '@actiontech/shared';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedParams } from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import DataSourceForm from '../Form';
 import { useForm } from 'antd/es/form/Form';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -20,34 +15,27 @@ import { DataSourceFormField } from '../Form/index.type';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { IUpdateDBServiceV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
-
 const UpdateDataSource = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const { projectID } = useCurrentProject();
-
   const [initError, setInitError] = useState('');
   const [form] = useForm<DataSourceFormField>();
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.BASE.DATA_SOURCE.update>();
-
   const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
     useCheckConnectable(form);
-
   const [retryLoading, setRetryLoading] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const [instanceInfo, setInstanceInfo] = useState<
     IListDBServiceV2 | undefined
   >();
-
   const updateDatabase = async (values: DataSourceFormField) => {
     startSubmit();
     const params: IUpdateDBServiceV2Params = {
@@ -102,7 +90,6 @@ const UpdateDataSource = () => {
     if (!!values.needUpdatePassword && !!values.password && params.db_service) {
       params.db_service.password = values.password;
     }
-
     return DmsApi.DBServiceService.UpdateDBServiceV2(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -121,11 +108,9 @@ const UpdateDataSource = () => {
         submitFinish();
       });
   };
-
   const onSubmitForm = async () => {
     EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
   };
-
   const getInstanceInfo = useCallback(() => {
     setRetryLoading(true);
     DmsApi.DBServiceService.ListDBServicesV2({
@@ -137,7 +122,10 @@ const UpdateDataSource = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const instance = res.data.data?.[0];
-          setInstanceInfo({ ...instance, password: '' });
+          setInstanceInfo({
+            ...instance,
+            password: ''
+          });
           setInitError('');
         } else {
           setInitError(res.data.message ?? t('common.unknownError'));
@@ -147,13 +135,11 @@ const UpdateDataSource = () => {
         setRetryLoading(false);
       });
   }, [projectID, t, urlParams.dbServiceUid]);
-
   useEffect(() => {
     if (!!urlParams.dbServiceUid && !!projectID) {
       getInstanceInfo();
     }
   }, [getInstanceInfo, projectID, urlParams.dbServiceUid]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {messageContextHolder}
@@ -221,5 +207,4 @@ const UpdateDataSource = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default UpdateDataSource;

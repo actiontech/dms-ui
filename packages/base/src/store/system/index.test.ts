@@ -1,7 +1,7 @@
 import reducers, { updateWebTitleAndLogo } from '.';
 
 import { IReduxState } from '..';
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
 
 describe('store system', () => {
   const state: IReduxState['system'] = {

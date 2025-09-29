@@ -2,12 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../../store';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTranslation } from 'react-i18next';
-import {
-  BasicModal,
-  BasicButton,
-  BasicInput,
-  FormItemLabel
-} from '@actiontech/shared';
+import { BasicModal, BasicButton, BasicInput } from '@actiontech/dms-kit';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { Form, Space, message } from 'antd';
 import { useBoolean } from 'ahooks';
 import {
@@ -15,26 +11,21 @@ import {
   updateSelectWorkflowId
 } from '../../../../../store/versionManagement';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
+import { DrawerFormLayout } from '@actiontech/dms-kit';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-
 const OfflineExecModal = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [submitting, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
-  const [form] = Form.useForm<{ remarks: string }>();
-
+  const [form] = Form.useForm<{
+    remarks: string;
+  }>();
   const { projectName } = useCurrentProject();
-
   const { workflowId, visible } = useSelector((state: IReduxState) => ({
     workflowId: state.versionManagement.workflowId,
     visible:
@@ -42,7 +33,6 @@ const OfflineExecModal = () => {
         ModalName.Version_Management_Offline_Execute_Modal
       ]
   }));
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -51,9 +41,12 @@ const OfflineExecModal = () => {
         status: false
       })
     );
-    dispatch(updateSelectWorkflowId({ workflowId: null }));
+    dispatch(
+      updateSelectWorkflowId({
+        workflowId: null
+      })
+    );
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -76,7 +69,6 @@ const OfflineExecModal = () => {
       })
       .finally(() => submitFinish());
   };
-
   return (
     <BasicModal
       open={visible}
@@ -98,7 +90,11 @@ const OfflineExecModal = () => {
         <FormItemLabel
           className="has-required-style"
           label={t('versionManagement.offlineExec.remarks')}
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true
+            }
+          ]}
           name="remarks"
         >
           <BasicInput.TextArea />
@@ -107,5 +103,4 @@ const OfflineExecModal = () => {
     </BasicModal>
   );
 };
-
 export default OfflineExecModal;

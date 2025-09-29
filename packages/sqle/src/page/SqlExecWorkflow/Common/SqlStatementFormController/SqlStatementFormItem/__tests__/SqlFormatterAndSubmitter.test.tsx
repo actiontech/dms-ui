@@ -7,8 +7,8 @@ import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/ser
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+import { formatterSQL } from '@actiontech/dms-kit';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 
 describe('test SqlFormatterAndSubmitter', () => {
   let getInstanceSpy: jest.SpyInstance;

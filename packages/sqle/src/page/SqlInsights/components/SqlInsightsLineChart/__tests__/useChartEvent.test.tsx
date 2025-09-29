@@ -5,8 +5,8 @@ import {
 } from '@testing-library/react-hooks';
 import MockDate from 'mockdate';
 import { useChartEvent } from '../hooks/useChartEvent';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import dayjs from 'dayjs';
 import { LineConfig } from '@ant-design/plots';
 

@@ -1,4 +1,4 @@
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { styled } from '@mui/material/styles';
 
 export const SqlManagementTableStyleWrapper = styled(ActiontechTable)<{

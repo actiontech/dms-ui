@@ -7,7 +7,7 @@ import {
   SupportTheme,
   SystemRole,
   UserRolesType
-} from '../../enum';
+} from '@actiontech/dms-kit';
 import {
   updateTheme as updateReduxTheme,
   updateLanguage as updateReduxLanguage
@@ -23,7 +23,8 @@ const useCurrentUser = () => {
     theme,
     isUserInfoFetched,
     userId,
-    language
+    language,
+    systemPreference
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -33,7 +34,8 @@ const useCurrentUser = () => {
       theme: state.user.theme,
       isUserInfoFetched: state.user.isUserInfoFetched,
       userId: state.user.uid,
-      language: state.user.language
+      language: state.user.language,
+      systemPreference: state.user.systemPreference
     };
   });
 
@@ -95,7 +97,8 @@ const useCurrentUser = () => {
     isCertainProjectManager,
     userRoles,
     language,
-    updateLanguage
+    updateLanguage,
+    systemPreference
   };
 };
 export default useCurrentUser;

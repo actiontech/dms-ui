@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserGuideModal should render correctly when systemPreference is undefined 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap ant-modal-centered"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                请选择默认进入的页面
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="css-6idih2"
+              >
+                <div
+                  class="ant-radio-group ant-radio-group-outline radio-group"
+                >
+                  <label
+                    class="ant-radio-wrapper radio-option"
+                  >
+                    <span
+                      class="ant-radio"
+                    >
+                      <input
+                        class="ant-radio-input"
+                        type="radio"
+                        value="WORKBENCH"
+                      />
+                      <span
+                        class="ant-radio-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="option-content"
+                      >
+                        <div
+                          class="option-label"
+                        >
+                          SQL工作台
+                        </div>
+                        <div
+                          class="option-description"
+                        >
+                          为数据分析师和开发者提供，用于数据查询与操作。
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                  <label
+                    class="ant-radio-wrapper ant-radio-wrapper-checked radio-option"
+                  >
+                    <span
+                      class="ant-radio ant-radio-checked"
+                    >
+                      <input
+                        checked=""
+                        class="ant-radio-input"
+                        type="radio"
+                        value="MANAGEMENT"
+                      />
+                      <span
+                        class="ant-radio-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="option-content"
+                      >
+                        <div
+                          class="option-label"
+                        >
+                          管理后台
+                        </div>
+                        <div
+                          class="option-description"
+                        >
+                          为系统管理员提供，用于用户授权与系统配置。
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <span
+                class="ant-typography ant-typography-secondary"
+              >
+                您可以随时在「个人中心」-「登录设置」中修改此配置。
+              </span>
+              <div
+                class="css-1uwiqhz"
+              >
+                <button
+                  class="ant-btn ant-btn-primary ant-btn-lg primary-button basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    确认并进入
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

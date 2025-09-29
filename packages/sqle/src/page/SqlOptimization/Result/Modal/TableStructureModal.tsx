@@ -1,10 +1,10 @@
 import {
-  SQLRenderer,
   BasicModal,
   EmptyBox,
   BasicEmpty,
   BasicInput
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import { ModalName } from '../../../../data/ModalName';

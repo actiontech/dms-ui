@@ -1,10 +1,6 @@
 import { Handle, Position } from '@xyflow/react';
-import {
-  BasicButton,
-  EmptyBox,
-  BasicTypographyEllipsis,
-  TypedLink
-} from '@actiontech/shared';
+import { BasicButton, EmptyBox } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { Card, Space, Typography } from 'antd';
 import type { Node, NodeProps } from '@xyflow/react';
 import { StageNodeStyleWrapper } from '../../style';
@@ -19,8 +15,7 @@ import {
 import { StageNodeData } from '../../index.type';
 import { SqlVersionDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   data,
   isConnectable
@@ -35,11 +30,8 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
     onCreateNewWorkflow,
     versionStatus
   } = data;
-
   const { t } = useTranslation();
-
   const { projectID } = useCurrentProject();
-
   const displayWorkflow = useMemo(() => {
     // 版本初始化不存在工单时 统一展示一个空占位
     if (!workflowList?.length) {
@@ -47,7 +39,6 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
     }
     return workflowList;
   }, [workflowList]);
-
   return (
     <StageNodeStyleWrapper>
       <EmptyBox if={!isFirstStage}>
@@ -153,5 +144,4 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
     </StageNodeStyleWrapper>
   );
 };
-
 export default StageNode;

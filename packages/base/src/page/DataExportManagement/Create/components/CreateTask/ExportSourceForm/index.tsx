@@ -1,18 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { CreateExportTaskFormEntryProps } from '../index.type';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemSubTitle } from '@actiontech/dms-kit';
 import ExportTaskFormItem from './ExportSourceFormItem';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { ExportSourceFormStyleWrapper } from './style';
-import { BasicToolTip } from '@actiontech/shared';
-
+import { BasicToolTip } from '@actiontech/dms-kit';
 const ExportSourceForm: React.FC<
-  Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm'>
-> = ({ sourceForm, baseForm }) => {
+  Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm' | 'methodForm'>
+> = ({ sourceForm, baseForm, methodForm }) => {
   const { t } = useTranslation();
   return (
     <ExportSourceFormStyleWrapper
@@ -32,11 +31,14 @@ const ExportSourceForm: React.FC<
               {t('dmsDataExport.create.form.source.title')}
             </BasicToolTip>
           </FormItemSubTitle>
-          <ExportTaskFormItem sourceForm={sourceForm} baseForm={baseForm} />
+          <ExportTaskFormItem
+            sourceForm={sourceForm}
+            baseForm={baseForm}
+            methodForm={methodForm}
+          />
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
     </ExportSourceFormStyleWrapper>
   );
 };
-
 export default ExportSourceForm;

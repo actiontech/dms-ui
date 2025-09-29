@@ -1,16 +1,13 @@
 import { useBoolean } from 'ahooks';
 import React, { useMemo } from 'react';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Select, Space, Typography } from 'antd';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
-import { CustomAvatar } from '@actiontech/shared';
+import { CustomAvatar, ResponseCode } from '@actiontech/dms-kit';
 import { IListMemberTipsParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import { IListMemberTipsItem } from '@actiontech/shared/lib/api/base/service/common';
-
 const useMemberTips = () => {
   const [memberTips, setMemberTips] = React.useState<IListMemberTipsItem[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
-
   const updateMemberTips = React.useCallback(
     (params: IListMemberTipsParams) => {
       setTrue();
@@ -31,7 +28,6 @@ const useMemberTips = () => {
     },
     [setFalse, setTrue]
   );
-
   const generateMemberSelectOptions = React.useCallback(() => {
     return memberTips.map((member) => {
       return (
@@ -45,7 +41,6 @@ const useMemberTips = () => {
       );
     });
   }, [memberTips]);
-
   const memberOptions = useMemo(() => {
     return memberTips.map((member) => ({
       text: member.user_name,
@@ -58,7 +53,6 @@ const useMemberTips = () => {
       value: member.user_id
     }));
   }, [memberTips]);
-
   return {
     memberTips,
     loading,
@@ -67,5 +61,4 @@ const useMemberTips = () => {
     memberOptions
   };
 };
-
 export default useMemberTips;

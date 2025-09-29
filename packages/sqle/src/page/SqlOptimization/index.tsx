@@ -1,6 +1,7 @@
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay, EmptyBox } from '@actiontech/shared';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import SqlOptimizationList from './List';
 import { usePermission } from '@actiontech/shared/lib/features';
 import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
@@ -40,5 +41,4 @@ const SqlOptimization = () => {
     </section>
   );
 };
-
 export default SqlOptimization;

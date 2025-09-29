@@ -4,13 +4,13 @@ import { WorkflowStepsProps } from '../index.type';
 import { useCallback, useMemo } from 'react';
 import { CustomSteps, WorkflowStepsItemStyleWrapper } from '../style';
 import { Space } from 'antd';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import {
   WorkflowRecordResV2StatusEnum,
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { IWorkflowStepResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import {
@@ -19,7 +19,6 @@ import {
   PlusCircleFilled,
   CheckCircleFilled
 } from '@actiontech/icons';
-
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
   currentStepNumber,
@@ -28,14 +27,11 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
-
   const stepNumber = useMemo(() => {
     if (typeof currentStepNumber === 'number') {
       return currentStepNumber;
     }
-
     let number = 1;
-
     if (!workflowSteps) {
       return number;
     }
@@ -70,33 +66,26 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     if (number === 1) {
       number = workflowSteps.length;
     }
-
     return number;
   }, [currentStepNumber, workflowStatus, workflowSteps]);
-
   const renderTitle = useCallback(
     (type?: WorkflowStepResV2TypeEnum) => {
       if (type === WorkflowStepResV2TypeEnum.create_workflow) {
         return t('execWorkflow.detail.operator.createWorkflowStep');
       }
-
       if (type === WorkflowStepResV2TypeEnum.update_workflow) {
         return t('execWorkflow.detail.operator.updateWorkflowStep');
       }
-
       if (type === WorkflowStepResV2TypeEnum.sql_review) {
         return t('execWorkflow.detail.operator.reviewWorkflowStep');
       }
-
       if (type === WorkflowStepResV2TypeEnum.sql_execute) {
         return t('execWorkflow.detail.operator.executeWorkflowStep');
       }
-
       return t('execWorkflow.detail.operator.unknown');
     },
     [t]
   );
-
   const renderWorkflowStepsItemContent = useCallback(
     (step: IWorkflowStepResV2) => {
       if (step.type === WorkflowStepResV2TypeEnum.sql_execute) {
@@ -121,7 +110,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           </>
         );
       }
-
       return (
         <>
           <EmptyBox
@@ -168,7 +156,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       tasksStatusCount?.success
     ]
   );
-
   const renderWorkflowStepsItem = useCallback(
     (title: string, step: IWorkflowStepResV2) => {
       return (
@@ -183,7 +170,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     },
     [renderWorkflowStepsItemContent]
   );
-
   const renderWorkflowStepsItemIcon = useCallback(
     (type?: WorkflowStepResV2TypeEnum, state?: WorkflowStepResV2StateEnum) => {
       if (
@@ -192,7 +178,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       ) {
         return <PlusCircleFilled fill="currentColor" color="currentColor" />;
       }
-
       if (type === WorkflowStepResV2TypeEnum.sql_review) {
         const isRejected =
           workflowStatus === WorkflowRecordResV2StatusEnum.rejected &&
@@ -204,7 +189,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           />
         );
       }
-
       if (type === WorkflowStepResV2TypeEnum.sql_execute) {
         if (
           workflowStatus &&
@@ -223,7 +207,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             />
           );
         }
-
         if (workflowStatus === WorkflowRecordResV2StatusEnum.exec_failed) {
           return (
             <CloseCircleOutlined color={sharedTheme.uiToken.colorWarning} />
@@ -239,16 +222,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
       workflowSteps?.length
     ]
   );
-
   const stepsItems = useMemo(() => {
     if (!workflowSteps) {
       return [];
     }
-
     return workflowSteps.map<StepProps>((v, i) => {
       const isNextRejected =
         workflowSteps[i + 1]?.state === WorkflowStepResV2StateEnum.rejected;
-
       return {
         title: renderWorkflowStepsItem(renderTitle(v.type), v),
         icon: renderWorkflowStepsItemIcon(v.type, v.state),
@@ -261,7 +241,6 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     renderTitle,
     workflowSteps
   ]);
-
   return (
     <div className="custom-steps-wrapper">
       <div className="custom-steps-wrapper-title">
@@ -277,5 +256,4 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     </div>
   );
 };
-
 export default WorkflowSteps;

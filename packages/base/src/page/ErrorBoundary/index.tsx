@@ -1,8 +1,9 @@
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
-import { BasicResult, BasicButton, useTypedNavigate } from '@actiontech/shared';
+import { BasicResult, BasicButton } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const ErrorBoundary: React.FC<{ children: React.ReactNode }> = ({
   children

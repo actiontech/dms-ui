@@ -2,14 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { Form, message } from 'antd';
 import {
-  ActionButton,
   BasicButton,
   PageHeader,
   BasicResult,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { ActionButton } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
 import {
@@ -23,7 +23,7 @@ import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSubmitLoading } from '../../../store/sqlOptimization';
@@ -33,13 +33,9 @@ const SqlOptimizationCreate = () => {
   const { t } = useTranslation();
 
   const { projectID, projectName } = useCurrentProject();
-
   const [baseForm] = Form.useForm<BaseFormFields>();
-
   const [sqlInfoForm] = Form.useForm<SqlInfoFormFields>();
-
   const uploadType = Form.useWatch('uploadType', sqlInfoForm);
-
   const [messageApi, messageContextHolder] = message.useMessage();
 
   const dispatch = useDispatch();
@@ -52,7 +48,6 @@ const SqlOptimizationCreate = () => {
     submitSuccessStatus,
     { setTrue: setSubmitSuccessStatus, setFalse: setSubmitSuccessStatusFalse }
   ] = useBoolean();
-
   const onSubmit = async () => {
     const baseValue = await baseForm.validateFields();
     const sqlInfoValue = await sqlInfoForm.validateFields();
@@ -87,12 +82,10 @@ const SqlOptimizationCreate = () => {
         dispatch(updateSubmitLoading({ loading: false }));
       });
   };
-
   const onResetForm = () => {
     sqlInfoForm.resetFields();
     setSubmitSuccessStatusFalse();
   };
-
   useEffect(() => {
     baseForm.setFieldsValue({
       optimizationName: `${
@@ -101,7 +94,6 @@ const SqlOptimizationCreate = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadType]);
-
   return (
     <>
       {messageContextHolder}
@@ -146,5 +138,4 @@ const SqlOptimizationCreate = () => {
     </>
   );
 };
-
 export default SqlOptimizationCreate;

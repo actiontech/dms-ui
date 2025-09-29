@@ -1,26 +1,25 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
-import { BasicSelect } from '@actiontech/shared';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { BasicSelect } from '@actiontech/dms-kit';
+import { filterOptionByLabel } from '@actiontech/dms-kit/es/components/BasicSelect/utils';
 import useUsername from '../../../../../../hooks/useUsername';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAssignmentForm } from './index.type';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
-
+import { FormItemLabelStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/FormItem/style';
 const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
   const { t } = useTranslation();
   const { loading, updateUsernameList, generateUsernameSelectOption } =
     useUsername();
   const { projectName } = useCurrentProject();
-
   useEffect(() => {
     if (props.init) {
-      updateUsernameList({ filter_project: projectName });
+      updateUsernameList({
+        filter_project: projectName
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.init]);
-
   return (
     <Form form={form}>
       <FormItemLabelStyleWrapper
@@ -51,5 +50,4 @@ const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
     </Form>
   );
 };
-
 export default AssignmentForm;

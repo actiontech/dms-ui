@@ -7,9 +7,10 @@ import {
 } from '../../../../api/base/service/common';
 import {
   GetUserAuthenticationTypeEnum,
-  ListDBServiceV2LastConnectionTestStatusEnum
+  ListDBServiceV2LastConnectionTestStatusEnum,
+  GetUserSystemEnum
 } from '../../../../api/base/service/common.enum';
-import { SupportLanguage } from '../../../../enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 
 export const UserInfo = {
   token: 'Dhsiwkow133jn',
@@ -30,7 +31,8 @@ export const GetUserPayload: IGetUser = {
       project_id: '700300',
       project_name: 'default'
     }
-  ]
+  ],
+  system: GetUserSystemEnum.MANAGEMENT
 };
 
 export const oauth2Tips: IGetOauth2TipsResData = {

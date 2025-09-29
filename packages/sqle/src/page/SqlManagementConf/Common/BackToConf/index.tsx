@@ -2,8 +2,7 @@ import { ActionButton } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const BackToConf: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -14,10 +13,11 @@ const BackToConf: React.FC = () => {
       actionType="navigate-link"
       link={{
         to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index,
-        params: { projectID }
+        params: {
+          projectID
+        }
       }}
     />
   );
 };
-
 export default BackToConf;

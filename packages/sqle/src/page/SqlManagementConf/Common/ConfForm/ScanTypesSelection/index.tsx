@@ -6,13 +6,7 @@ import {
 import { Form, Spin } from 'antd';
 import { useContext, useMemo } from 'react';
 import { ConfFormContext } from '../context';
-import {
-  BasicTypographyEllipsis,
-  CustomLabelContent,
-  FormItemLabel,
-  FormItemSubTitle,
-  ToggleTokensOptionsType
-} from '@actiontech/shared';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { ScanTypeParams, SqlManagementConfFormFields } from '../index.type';
 import classNames from 'classnames';
 import { useRequest } from 'ahooks';
@@ -20,7 +14,13 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useAsyncParams from '../../../../../components/BackendForm/useAsyncParams';
 import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import {
+  ResponseCode,
+  CustomLabelContent,
+  FormItemLabel,
+  FormItemSubTitle,
+  ToggleTokensOptionsType
+} from '@actiontech/dms-kit';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from './index.data';
 
 const ScanTypesSelection: React.FC = () => {

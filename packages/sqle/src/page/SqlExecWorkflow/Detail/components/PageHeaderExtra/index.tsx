@@ -1,4 +1,4 @@
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -26,12 +26,10 @@ const WorkflowDetailPageHeaderExtra: React.FC<
 > = (props) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const [
     rejectModalVisible,
     { setTrue: openRejectModal, setFalse: closeRejectModal }
   ] = useBoolean();
-
   const {
     messageContextHolder,
     closeWorkflowButtonMeta,
@@ -46,10 +44,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     executable,
     executable_reason
   } = useWorkflowDetailAction({ projectName, ...props });
-  // console.log(
-  //   'manualExecuteWorkflowButtonMeta',
-  //   manualExecuteWorkflowButtonMeta
-  // );
+
   return (
     <WorkflowPageHeaderExtraStyleWrapper>
       {messageContextHolder}
@@ -127,5 +122,4 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     </WorkflowPageHeaderExtraStyleWrapper>
   );
 };
-
 export default WorkflowDetailPageHeaderExtra;

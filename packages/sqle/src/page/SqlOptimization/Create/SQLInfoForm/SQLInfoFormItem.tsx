@@ -12,25 +12,18 @@ import {
   BasicToolTip,
   BasicInput,
   EmptyBox,
-  MonacoEditor,
-  useMonacoEditor,
   BasicSelect
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { MonacoEditor, useMonacoEditor } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
 
 import SQLStatementForm from '../SQLStatementForm';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '@actiontech/shared/lib/utils/FormatterSQL';
+import { FormatLanguageSupport, formatterSQL } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
-import {
-  FormItemLabel,
-  CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemLabel, CustomLabelContent } from '@actiontech/dms-kit';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
@@ -96,7 +89,6 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
       });
     }
   };
-
   return (
     <>
       <FormItemLabel
@@ -252,5 +244,4 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
     </>
   );
 };
-
 export default SQLInfoFormItem;

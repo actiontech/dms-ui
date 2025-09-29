@@ -6,8 +6,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { MinusCircleOutlined, PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const DataExportManagementTableToolbarActions = ({
   disabled,
   loading,
@@ -39,7 +38,6 @@ export const DataExportManagementTableToolbarActions = ({
     }
   ];
 };
-
 export const DataExportManagementCreateAction = (
   projectID: string
 ): React.ReactNode => {
@@ -52,7 +50,9 @@ export const DataExportManagementCreateAction = (
         icon={<PlusOutlined width={10} height={10} color="currentColor" />}
         link={{
           to: ROUTE_PATHS.BASE.DATA_EXPORT.create,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>

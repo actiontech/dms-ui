@@ -3,57 +3,45 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../store/user';
 import LoginLayout from './components/LoginLayout';
-import { useTypedNavigate, useTypedQuery, EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum,
   ResponseCode
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
-} from '@actiontech/shared/lib/data/routePaths';
+} from '@actiontech/dms-kit';
 import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useState } from 'react';
-
 const Login = () => {
   const { t } = useTranslation();
-
   useBrowserVersionTips();
-
   const [loginForm] = Form.useForm<LoginFormFieldValue>();
-
   const username = Form.useWatch('username', loginForm);
-
   const [verificationCodeForm] = Form.useForm<VerificationCodeFormFieldValue>();
-
   const dispatch = useDispatch();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [loading, { setTrue, setFalse }] = useBoolean();
-
   const [phone, setPhone] = useState<string>();
-
   const [
     verifyCodeLoading,
     { setTrue: verifyCodePending, setFalse: verifyCodeDone }
   ] = useBoolean();
-
   const [
     allowVerificationCode,
     { setTrue: showVerificationForm, setFalse: hideVerificationForm }
   ] = useBoolean();
-
   const navigate = useTypedNavigate();
   const extractQueries = useTypedQuery();
-
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
     const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
@@ -108,7 +96,6 @@ const Login = () => {
         verifyCodeDone();
       });
   };
-
   const login = (formData: LoginFormFieldValue) => {
     // #if [ee]
     if (!formData.userAgreement) {

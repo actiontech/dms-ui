@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import SystemRoleTagList from '..';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid } from '@actiontech/dms-kit';
 import { superRender } from '@actiontech/shared/lib/testUtil';
 
 describe('PermissionTagList', () => {

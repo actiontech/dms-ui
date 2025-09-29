@@ -1,5 +1,5 @@
 import { Space, Spin, message } from 'antd';
-import { BasicSegmented, BasicRangePicker } from '@actiontech/shared';
+import { BasicSegmented, BasicRangePicker } from '@actiontech/dms-kit';
 import { Line, LineConfig, Tooltip } from '@ant-design/plots';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { SqlAnalyzeCostLineChartStyleWrapper } from '../style';
@@ -9,20 +9,18 @@ import { ExecPlanCostChartProps } from '../index';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useState, useMemo } from 'react';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { t } from '../../../../locale/index';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import { CompareExecutionPlanButtonStyleWrapper } from './style';
 import { range } from 'lodash';
-
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item?.x,
     value: item?.y
   };
 };
-
 const renderTooltipCustomContent = (
   dataSource: any[],
   sharedTheme: SharedTheme
@@ -43,7 +41,9 @@ const renderTooltipCustomContent = (
         {
           label: (
             <CompareExecutionPlanButtonStyleWrapper
-              style={{ color: sharedTheme.uiToken.colorTextTertiary }}
+              style={{
+                color: sharedTheme.uiToken.colorTextTertiary
+              }}
             >
               {t('sqlQuery.executePlan.compareTips')}
             </CompareExecutionPlanButtonStyleWrapper>
@@ -54,7 +54,6 @@ const renderTooltipCustomContent = (
     />
   );
 };
-
 const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
   sqlExecPlanCostDataSource = [],
   getSqlExecPlanCostDataSource,
@@ -66,15 +65,11 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
   onScrollIntoView
 }) => {
   const { currentTheme } = useChangeTheme();
-
   const { sharedTheme } = useThemeStyleData();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [timePeriod, setTimePeriod] = useState<DateRangeEnum>(
     DateRangeEnum['24H']
   );
-
   const { data, exceptUndefinedDataSource } = useMemo(() => {
     const filteredDataSource = sqlExecPlanCostDataSource.filter(
       (i) => i.y !== undefined
@@ -91,7 +86,6 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
       // ),
     };
   }, [sqlExecPlanCostDataSource]);
-
   const config: LineConfig = useMemo(() => {
     return {
       data,
@@ -163,7 +157,6 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
       }
     };
   }, [data, sharedTheme, selectedPoint]);
-
   const onSegmentedChange = (value: SegmentedValue) => {
     setTimePeriod(value as DateRangeEnum);
     let startTime = dayjs(initTime).subtract(24, 'hour');
@@ -179,17 +172,14 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
       rangeType: value as DateRangeEnum
     });
   };
-
   const onRefresh = () => {
     onSegmentedChange(DateRangeEnum['24H']);
   };
-
   const disabledTime = (date: Dayjs | null) => {
     if (date && date.isSame(initTime, 'day')) {
       const hours = initTime?.hour() ?? 0;
       const minutes = initTime?.minute() ?? 0;
       const seconds = initTime?.second() ?? 0;
-
       const disabledConfig = {
         disabledHours: () => range(hours + 1, 24),
         disabledMinutes: (selectedHour: number) =>
@@ -199,12 +189,10 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
             ? range(seconds + 1, 60)
             : []
       };
-
       return disabledConfig;
     }
     return {};
   };
-
   return (
     <SqlAnalyzeCostLineChartStyleWrapper>
       {contextHolder}
@@ -283,5 +271,4 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
     </SqlAnalyzeCostLineChartStyleWrapper>
   );
 };
-
 export default ExecPlanCostChart;

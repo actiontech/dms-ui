@@ -5,8 +5,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../../../locale';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const CreateSqlExecWorkflowAction = (projectID: string): ReactNode => {
   return (
     <PermissionControl
@@ -17,7 +16,9 @@ export const CreateSqlExecWorkflowAction = (projectID: string): ReactNode => {
         text={t('execWorkflow.list.createButtonText')}
         link={{
           to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
         size="small"
       />

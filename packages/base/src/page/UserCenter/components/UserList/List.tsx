@@ -8,8 +8,8 @@ import {
   useTableRequestError,
   useTableRequestParams,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/User/index.d';
 import User from '@actiontech/shared/lib/api/base/service/User';

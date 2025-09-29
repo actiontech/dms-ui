@@ -1,20 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
-
 import { message, Space } from 'antd';
-import { BasicToolTip, BasicButton } from '@actiontech/shared';
-import { ConfigModifyBtn } from '@actiontech/shared/lib/components/SystemConfigurationHub';
-
+import { BasicToolTip, BasicButton } from '@actiontech/dms-kit';
+import { ConfigModifyBtn } from '@actiontech/dms-kit';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ThunderBoltFilled } from '@actiontech/icons';
-
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
 }
-
 const ConfigExtraButtons = ({
   isConfigClosed,
   extraButtonsVisible,
@@ -22,7 +18,6 @@ const ConfigExtraButtons = ({
 }: ConfigExtraButtonsProps) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const testTing = useRef(false);
   const testDingTalkConfiguration = () => {
     if (testTing.current) {
@@ -46,7 +41,6 @@ const ConfigExtraButtons = ({
         testTing.current = false;
       });
   };
-
   return (
     <>
       {messageContextHolder}
@@ -66,5 +60,4 @@ const ConfigExtraButtons = ({
     </>
   );
 };
-
 export default ConfigExtraButtons;

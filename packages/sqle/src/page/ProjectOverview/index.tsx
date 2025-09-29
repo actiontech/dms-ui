@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Space, Row, Col } from 'antd';
-import { PageHeader, EmptyBox } from '@actiontech/shared';
+import { PageHeader, EmptyBox } from '@actiontech/dms-kit';
 import { SyncOutlined } from '@ant-design/icons';
 import { OverviewStyleWrapper } from './style';
 import ProjectScore from './component/ProjectScore';
@@ -17,21 +17,16 @@ import {
   useCurrentProject,
   usePermission
 } from '@actiontech/shared/lib/features';
-
 const Overview = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
-
   const { moduleFeatureSupport } = usePermission();
-
   const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
   }, []);
-
   useEffect(() => {
     onRefreshPage();
   }, [onRefreshPage, projectID]);
-
   return (
     <>
       <PageHeader
@@ -83,9 +78,9 @@ const Overview = () => {
             </Row>
           </Col>
           {/* todo 智能扫描重构 先隐藏  
-          <Col span={6} className="right-chart">
+           <Col span={6} className="right-chart">
             <ScanTask />
-          </Col> */}
+           </Col> */}
           <EmptyBox if={moduleFeatureSupport.sqlOptimization}>
             <Col span={24}>
               <Row className="marginTop20" gutter={20}>
@@ -110,11 +105,11 @@ const Overview = () => {
                 </div>
               </Col>
               {/* todo 智能扫描重构 先隐藏 
-              <Col span={12}>
+               <Col span={12}>
                 <div className="item-wrapper height668 scan-risk">
                   <ScanRiskList />
                 </div>
-              </Col> */}
+               </Col> */}
             </Row>
           </Col>
         </Row>
@@ -122,5 +117,4 @@ const Overview = () => {
     </>
   );
 };
-
 export default Overview;

@@ -1,22 +1,21 @@
 import { Alert, Form, Radio } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { WhitelistFormProps } from './index.type';
-import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { whiteSpaceSql } from '@actiontech/dms-kit';
 import {
   useMonacoEditor,
   MonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { DrawerFormLayout } from '@actiontech/dms-kit';
+import { BasicInput, EmptyBox } from '@actiontech/dms-kit';
 import { whitelistMatchTypeOptions } from '../index.data';
 import { WarningFilled } from '@actiontech/icons';
-
 const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
   const { t } = useTranslation();
-
-  const { editorDidMount } = useMonacoEditor(props.form, { formName: 'sql' });
-
+  const { editorDidMount } = useMonacoEditor(props.form, {
+    formName: 'sql'
+  });
   return (
     <Form form={props.form} layout="vertical" {...DrawerFormLayout}>
       <Form.Item
@@ -67,5 +66,4 @@ const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
     </Form>
   );
 };
-
 export default WhitelistForm;

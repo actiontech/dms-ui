@@ -1,5 +1,5 @@
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { StorageKey } from '@actiontech/dms-kit';
 import { compressToBase64 } from 'lz-string';
 import { useEffect } from 'react';
 

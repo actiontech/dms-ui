@@ -1,4 +1,4 @@
-import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableActionMeta } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import { IOptimizationRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 

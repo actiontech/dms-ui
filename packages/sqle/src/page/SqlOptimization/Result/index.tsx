@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ActionButton, PageHeader, useTypedParams } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/dms-kit';
+import { useTypedParams, ActionButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import ResultContent from './ResultContent';
 import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqlOptimizationResultStyleWrapper } from './style';
 import useOptimizationResult from './hooks/useOptimizationResult';

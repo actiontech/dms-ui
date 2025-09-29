@@ -1,35 +1,25 @@
 import { useTranslation } from 'react-i18next';
 import { useContext, useEffect, useMemo } from 'react';
-
 import {
   AuditTypeEnum,
   SQLInfoFormItemProps,
   UploadTypeEnum
 } from './index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-
-import {
-  FormItemLabel,
-  CustomLabelContent
-} from '@actiontech/shared/lib/components/CustomForm';
-
+import { FormItemLabel, CustomLabelContent } from '@actiontech/dms-kit';
 import { Form, Radio, RadioGroupProps, SelectProps, Space } from 'antd';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
-import { BasicButton, BasicSelect, BasicToolTip } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { BasicButton, BasicSelect, BasicToolTip } from '@actiontech/dms-kit';
 import DatabaseInfo from './DatabaseInfo';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '@actiontech/shared/lib/utils/FormatterSQL';
+import { FormatLanguageSupport, formatterSQL } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useGlobalRuleTemplate from '../../../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../../../hooks/useRuleTemplate';
-
 const SQLInfoFormItem = ({
   form,
   submit,
@@ -38,12 +28,9 @@ const SQLInfoFormItem = ({
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const auditType = Form.useWatch('auditType', form);
   const uploadType = Form.useWatch('uploadType', form);
-
   const selectedDbType = Form.useWatch('dbType', form);
-
   const {
     loading: getDriverMetaLoading,
     updateDriverNameList,
@@ -55,19 +42,16 @@ const SQLInfoFormItem = ({
     instanceList,
     loading: instanceLoading
   } = useInstance();
-
   const {
     loading: getRuleTemplateTipsPending,
     ruleTemplateList,
     updateRuleTemplateList
   } = useRuleTemplate();
-
   const {
     loading: getGlobalRuleTemplateTipsPending,
     globalRuleTemplateList,
     updateGlobalRuleTemplateList
   } = useGlobalRuleTemplate();
-
   useEffect(() => {
     if (auditType === AuditTypeEnum.static) {
       updateDriverNameList();
@@ -79,7 +63,6 @@ const SQLInfoFormItem = ({
       });
     }
   }, [projectName, updateDriverNameList, updateInstanceList, auditType]);
-
   useEffect(() => {
     if (selectedDbType) {
       updateRuleTemplateList(projectName, selectedDbType);
@@ -91,13 +74,11 @@ const SQLInfoFormItem = ({
     updateGlobalRuleTemplateList,
     updateRuleTemplateList
   ]);
-
   const auditTypeChange: RadioGroupProps['onChange'] = () => {
     form.setFieldsValue({
       instanceName: undefined
     });
   };
-
   const formatSql = async () => {
     const values = await form.getFieldsValue();
     const dbType =
@@ -110,7 +91,6 @@ const SQLInfoFormItem = ({
       sql
     });
   };
-
   const internalSubmit = async () => {
     const params = await form.validateFields();
     setAuditLoading(true);
@@ -118,7 +98,6 @@ const SQLInfoFormItem = ({
       setAuditLoading(false);
     });
   };
-
   const ruleTemplateOptions: SelectProps['options'] = useMemo(() => {
     return [...ruleTemplateList, ...globalRuleTemplateList].map((item) => {
       return {
@@ -127,7 +106,6 @@ const SQLInfoFormItem = ({
       };
     });
   }, [globalRuleTemplateList, ruleTemplateList]);
-
   return (
     <>
       <FormItemLabel
@@ -180,7 +158,11 @@ const SQLInfoFormItem = ({
       />
       <FormItemLabel
         className="has-required-style has-label-tip"
-        rules={[{ required: auditType !== AuditTypeEnum.dynamic }]}
+        rules={[
+          {
+            required: auditType !== AuditTypeEnum.dynamic
+          }
+        ]}
         name="ruleTemplate"
         hidden={auditType === AuditTypeEnum.dynamic}
         label={
@@ -223,5 +205,4 @@ const SQLInfoFormItem = ({
     </>
   );
 };
-
 export default SQLInfoFormItem;

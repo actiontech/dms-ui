@@ -1,14 +1,14 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { VersionStatusDictionary } from '../index.data';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export type VersionManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlVersionListV1Params,

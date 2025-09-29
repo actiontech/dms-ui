@@ -1,16 +1,14 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
 import { Select, Tooltip } from 'antd';
-import { EmptyBox } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EmptyBox } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-
 const useRole = () => {
   const [roleList, setRoleList] = React.useState<IListRole[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
-
   const updateRoleList = React.useCallback(() => {
     setTrue();
     Role.ListRoles({
@@ -30,7 +28,6 @@ const useRole = () => {
         setFalse();
       });
   }, [setFalse, setTrue]);
-
   const generateRoleSelectOption = React.useCallback(
     (params?: { showTooltip?: boolean; excludeDisabled?: boolean }) => {
       const { showTooltip = false, excludeDisabled = false } = params ?? {};
@@ -69,7 +66,6 @@ const useRole = () => {
     },
     [roleList]
   );
-
   return {
     roleList,
     loading,
@@ -77,5 +73,4 @@ const useRole = () => {
     generateRoleSelectOption
   };
 };
-
 export default useRole;

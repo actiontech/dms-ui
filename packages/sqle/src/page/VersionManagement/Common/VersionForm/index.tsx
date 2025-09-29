@@ -3,8 +3,8 @@ import { BriefcaseFilled } from '@actiontech/icons';
 import VersionBaseInfo from './BaseInfo';
 import DeploymentConf from './DeploymentConf';
 import { VersionFormAreaBlockStyleWrapper } from './style';
-import { FormAreaLineStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
-import { FormItemBigTitle } from '@actiontech/shared';
+import { FormAreaLineStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/dms-kit';
 
 const VersionForm: React.FC<{
   isUpdate?: boolean;

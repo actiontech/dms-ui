@@ -7,8 +7,8 @@ import {
   useTableRequestError,
   useTableRequestParams,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ModalName } from '../../../../data/ModalName';

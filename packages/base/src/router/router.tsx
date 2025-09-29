@@ -6,7 +6,7 @@ import {
   BaseGlobalRouterConfig,
   BaseProjectRouterConfig
 } from './router.base';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 // #if [sqle]
 import {

@@ -1,4 +1,4 @@
-import { BasicModal } from '@actiontech/shared';
+import { BasicModal } from '@actiontech/dms-kit';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import { ModalName } from '../../../../data/ModalName';

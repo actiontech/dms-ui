@@ -1,20 +1,20 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   ISqlDEVRecord,
   IOptimizationRecord
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetOptimizationRecordsV2Params } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
   CustomAvatar,
   DatabaseTypeLogo,
-  BasicToolTip
-} from '@actiontech/shared';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+  BasicToolTip,
+  formatTime,
+  floatToPercent
+} from '@actiontech/dms-kit';
 import OptimizationStatus from '../components/OptimizationStatus';
 import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
@@ -51,7 +51,6 @@ export const sqlOptimizationListColumns: (
       title: () => t('sqlOptimization.table.dbType'),
       render: (dbType) => {
         if (!dbType) return '-';
-
         return (
           <DatabaseTypeLogo
             dbType={dbType}

@@ -4,21 +4,20 @@ import {
   EmptyBox,
   BasicTable,
   BasicResult,
-  SQLRenderer,
   BasicButton,
   ActionButton
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';
 import ExecPlanCostChart from './ExecPlanCostChart';
 import { ExecPlanParams } from './index';
 import { useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-
 const useSQLExecPlan = (params: ExecPlanParams) => {
   const {
     sqlExecPlanCostDataSource,
@@ -37,15 +36,14 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
-
   const targetRef = useRef<HTMLDivElement>(null);
-
   const onScrollIntoView = () => {
     if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+      targetRef.current.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const sortedSelectedPoint = useMemo(() => {
     if (!selectedPoint) {
       return;
@@ -54,7 +52,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
       dayjs(a?.x).isBefore(dayjs(b?.x)) ? -1 : 1
     );
   }, [selectedPoint]);
-
   const generateSQLExecPlanContent = <
     T extends Pick<
       SQLExecPlanItem,
@@ -65,7 +62,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     item: T
   ) => {
     const { sql, classic_result: explain, err_message, affect_rows } = item;
-
     const renderSQL = () => {
       return (
         <>
@@ -94,7 +90,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         </>
       );
     };
-
     const renderSqlCostChart = () => {
       return (
         <ExecPlanCostChart
@@ -111,7 +106,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         />
       );
     };
-
     const renderExecPlanComparison = () => {
       if (!sortedSelectedPoint) {
         return;
@@ -152,7 +146,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         );
       });
     };
-
     const renderSQLExecPlan = () => {
       return (
         <>
@@ -174,7 +167,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         </>
       );
     };
-
     const renderPerformanceStatistics = () => {
       return (
         <>
@@ -234,7 +226,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         </>
       );
     };
-
     return (
       <Space direction="vertical" className="full-width-element" size={0}>
         {renderSQL()}
@@ -246,10 +237,8 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
       </Space>
     );
   };
-
   return {
     generateSQLExecPlanContent
   };
 };
-
 export default useSQLExecPlan;

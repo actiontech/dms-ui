@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { AuditExecResultPanelProps } from './index.type';
 import { AuditExecResultPanelStyleWrapper } from './style';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
+import { BasicSegmented, EmptyBox } from '@actiontech/dms-kit';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSetup';
 import {
   AuditTaskResV1AuditLevelEnum,
@@ -14,7 +14,7 @@ import { Divider, Space } from 'antd';
 import {
   TableFilterButton,
   TableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ToggleButtonStyleWrapper } from '../../../Common/style';
 import DownloadRecord from '../../../Common/DownloadRecord';
 import AuditResultFilterContainer from '../../../Common/AuditResultFilterContainer';
@@ -28,7 +28,6 @@ import TaskResultList from './TaskResultList';
 import useTaskResultSetup from './hooks/useTaskResultSetup';
 import ListLayoutSelector from './ListLayoutSelector';
 import WorkflowOverviewList from './OverviewList';
-
 const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
   activeTabKey,
   taskInfos,
@@ -51,7 +50,6 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     currentListLayout,
     onTaskListLayoutChange
   } = useTaskResultSetup();
-
   const generateCurrentTaskLabel = (
     instanceName?: string,
     auditLevel?: AuditTaskResV1AuditLevelEnum
@@ -59,7 +57,6 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     if (!instanceName) {
       return '-';
     }
-
     return (
       <InstanceSegmentedLabel
         instanceName={instanceName}
@@ -67,12 +64,10 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
       />
     );
   };
-
   const currentTask = useMemo(
     () => taskInfos.find((v) => v.task_id?.toString() === activeTabKey),
     [activeTabKey, taskInfos]
   );
-
   const assigneeUserNames = useMemo(() => {
     return (
       resetProps.workflowInfo?.record?.workflow_step_list?.find(
@@ -83,7 +78,6 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     resetProps.workflowInfo?.record?.current_step_number,
     resetProps.workflowInfo?.record?.workflow_step_list
   ]);
-
   return (
     <AuditExecResultPanelStyleWrapper>
       <div className="audit-result-title">{t('audit.result')}</div>
@@ -149,7 +143,12 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
         updateTableFilterInfo={updateTableFilterInfo}
         filterCustomProps={
           new Map([
-            ['audit_level', { options: getAuditLevelStatusSelectOptionValues }]
+            [
+              'audit_level',
+              {
+                options: getAuditLevelStatusSelectOptionValues
+              }
+            ]
           ])
         }
       />
@@ -209,5 +208,4 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     </AuditExecResultPanelStyleWrapper>
   );
 };
-
 export default AuditExecResultPanel;

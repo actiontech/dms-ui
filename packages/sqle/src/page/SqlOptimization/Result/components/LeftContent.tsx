@@ -1,6 +1,7 @@
 import React from 'react';
 import { Space, Col } from 'antd';
-import { SQLRenderer, BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import {
   TransferFilled,
   MagnifierFilled,

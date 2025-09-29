@@ -7,8 +7,8 @@ import {
   updateSqlInsightsModalStatus
 } from '../../../../../store/sqlInsights';
 import { useTranslation } from 'react-i18next';
-import { BasicDrawer } from '@actiontech/shared/lib/components/BasicDrawer';
-import { BasicButton, HighlightCode, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox } from '@actiontech/dms-kit';
+import { HighlightCode, BasicDrawer } from '@actiontech/dms-kit';
 import { Descriptions, Divider, Steps, Typography, Spin } from 'antd';
 import {
   IRelatedSQLInfo,
@@ -20,27 +20,22 @@ import {
   TransactionInfoLockTypeEnumDict,
   TransactionInfoLockTypeEnumFlagDict
 } from './data';
-
 const SqlRelatedTransactionDrawer = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [loading, setLoading] = useState(false);
   const [transactionData, setTransactionData] =
     useState<IRelatedTransactionInfo>();
-
   const dispatch = useDispatch();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) =>
       !!state.sqlInsights.modalStatus[
         ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer
       ]
   );
-
   const selectedRecord = useSelector<IReduxState, IRelatedSQLInfo | null>(
     (state) => state.sqlInsights.relateSqlList.selectedRecord
   );
-
   const closeModal = useCallback(() => {
     dispatch(
       updateSqlInsightsModalStatus({
@@ -50,7 +45,6 @@ const SqlRelatedTransactionDrawer = () => {
       })
     );
   }, [dispatch]);
-
   useEffect(() => {
     dispatch(
       initSqlInsightsModalStatus({
@@ -61,14 +55,11 @@ const SqlRelatedTransactionDrawer = () => {
       })
     );
   }, [dispatch]);
-
   const onShowSQAnalysis = useCallback(() => {
     // console.log('onShowSQAnalysis');
   }, []);
-
   const getTransactionData = useCallback(async () => {
     if (!projectName || !selectedRecord || !visible) return;
-
     setLoading(true);
     try {
       const res =
@@ -85,11 +76,9 @@ const SqlRelatedTransactionDrawer = () => {
       setLoading(false);
     }
   }, [projectName, selectedRecord, visible]);
-
   useEffect(() => {
     getTransactionData();
   }, [getTransactionData]);
-
   return (
     <BasicDrawer
       open={visible}
@@ -276,5 +265,4 @@ const SqlRelatedTransactionDrawer = () => {
     </BasicDrawer>
   );
 };
-
 export default SqlRelatedTransactionDrawer;

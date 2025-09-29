@@ -3,9 +3,9 @@ import { DataSourcePerformanceTrendStyleWrapper } from './style';
 import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import SqlInsightsLineChart from '../SqlInsightsLineChart';
 import useSqlInsightsMetric from '../../hooks/useSqlInsightsMetric';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import useRelatedSqlRedux from '../RelatedSqlList/useRelatedSqlRedux';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import { useEffect } from 'react';
 import { SqlInsightsChartProps } from '../../index.type';
 

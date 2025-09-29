@@ -1,4 +1,4 @@
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { OverviewListAction, OverviewListColumn } from './column';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';

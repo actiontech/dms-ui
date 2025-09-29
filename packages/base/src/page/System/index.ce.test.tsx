@@ -9,7 +9,7 @@ import { baseSuperRender } from '../../testUtils/superRender';
 import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('base/System-ee', () => {
