@@ -10,7 +10,6 @@ export const mockUseRecentlySelectedZoneData = {
   availabilityZone: undefined,
   updateRecentlySelectedZone: jest.fn(),
   setAvailabilityZone: jest.fn(),
-  initializeAvailabilityZone: jest.fn(),
   verifyRecentlySelectedZoneRecord: jest.fn(),
   clearRecentlySelectedZone: jest.fn()
 };
