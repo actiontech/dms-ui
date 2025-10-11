@@ -52,9 +52,7 @@ const UserNavigate: React.FC<Props> = ({
   const [open, setOpen] = useState(false);
 
   //# if [ee]
-  const { clearRecentlySelectedZone } = useRecentlySelectedZone({
-    manualInit: true
-  });
+  const { clearRecentlySelectedZone } = useRecentlySelectedZone();
   //# endif
 
   const logout = () => {

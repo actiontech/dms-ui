@@ -7,10 +7,22 @@ import { eventEmitter } from '../../utils/EventEmitter';
 
 export const DEFAULT_MAX_SELECTED_ZONE_NUMBER = 3;
 
-const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
-  manualInit = false
-}: { manualInit?: boolean } = {}) => {
-  const [availabilityZone, setAvailabilityZone] = useState<T>();
+const useRecentlySelectedZone = <
+  T extends { uid?: string; name?: string }
+>() => {
+  const [availabilityZone, setAvailabilityZone] = useState<T | undefined>(
+    () => {
+      const data = LocalStorageWrapper.get(StorageKey.DMS_AVAILABILITY_ZONE);
+      try {
+        const parsedData: T[] = JSON.parse(data || '[]');
+        return parsedData?.[0] ?? undefined;
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        return undefined;
+      }
+    }
+  );
 
   const setStorageRecentlySelectedZoneRecord = useCallback((record: T[]) => {
     LocalStorageWrapper.set(
@@ -88,21 +100,10 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
     }
   };
 
-  const initializeAvailabilityZone = useCallback(() => {
-    const parsedData = getStorageZoneRecord();
-    setAvailabilityZone(parsedData?.[0] ?? undefined);
-  }, [getStorageZoneRecord]);
-
   const clearRecentlySelectedZone = useCallback(() => {
     setAvailabilityZone(undefined);
     setStorageRecentlySelectedZoneRecord([]);
   }, [setAvailabilityZone, setStorageRecentlySelectedZoneRecord]);
-
-  useEffect(() => {
-    if (!manualInit) {
-      initializeAvailabilityZone();
-    }
-  }, [initializeAvailabilityZone, manualInit]);
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
@@ -115,7 +116,6 @@ const useRecentlySelectedZone = <T extends { uid?: string; name?: string }>({
   return {
     availabilityZone,
     updateRecentlySelectedZone,
-    initializeAvailabilityZone,
     verifyRecentlySelectedZoneRecord,
     clearRecentlySelectedZone,
     setAvailabilityZone
