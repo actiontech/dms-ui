@@ -18,7 +18,7 @@ describe('useRecentlySelectedZone', () => {
     localStorage.setItem(StorageKey.DMS_AVAILABILITY_ZONE, JSON.stringify([]));
   });
 
-  it('should initialize from storage when manualInit is false (default)', () => {
+  it('should initialize from storage', () => {
     const initial: Zone[] = [
       { uid: 'u1', name: 'zone-1' },
       { uid: 'u2', name: 'zone-2' }
@@ -29,22 +29,6 @@ describe('useRecentlySelectedZone', () => {
     );
 
     const { result } = superRenderHook(() => useRecentlySelectedZone<Zone>());
-    expect(result.current.availabilityZone).toEqual(initial[0]);
-  });
-
-  it('should not auto initialize when manualInit is true', () => {
-    const initial: Zone[] = [{ uid: 'u1', name: 'zone-1' }];
-    localStorage.setItem(
-      StorageKey.DMS_AVAILABILITY_ZONE,
-      JSON.stringify(initial)
-    );
-
-    const { result } = superRenderHook(() =>
-      useRecentlySelectedZone<Zone>({ manualInit: true })
-    );
-    expect(result.current.availabilityZone).toBeUndefined();
-
-    act(() => result.current.initializeAvailabilityZone());
     expect(result.current.availabilityZone).toEqual(initial[0]);
   });
 
