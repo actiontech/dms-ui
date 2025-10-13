@@ -285,6 +285,9 @@ importers:
       ts-jest:
         specifier: 27.1.5
         version: 27.1.5(@babel/core@7.26.10)(@types/jest@29.5.12)(babel-jest@29.7.0(@babel/core@7.26.10))(jest@29.1.2(@types/node@18.19.84)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.9.2(@swc/helpers@0.5.1))(@types/node@18.19.84)(typescript@5.8.2)))(typescript@5.8.2)
+      tsx:
+        specifier: ^4.20.5
+        version: 4.20.5
       typescript:
         specifier: ^5.0.2
         version: 5.8.2
@@ -23650,7 +23653,6 @@ snapshots:
       get-tsconfig: 4.10.0
     optionalDependencies:
       fsevents: 2.3.3
-    optional: true
 
   tty-browserify@0.0.0: {}
 
