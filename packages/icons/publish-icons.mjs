@@ -124,27 +124,10 @@ async function confirmPublish() {
   });
 }
 
-function updatePackagePublishVersion(iconsDir, version) {
-  const pubPkgPath = path.join(iconsDir, 'package_publish.json');
-  try {
-    const pubPkgContent = readJson(pubPkgPath);
-    pubPkgContent.version = version;
-    writeJson(pubPkgPath, pubPkgContent);
-    console.log(`✅ 已更新 package_publish.json 版本号为: ${version}`);
-  } catch (err) {
-    console.warn(`⚠️  更新 package_publish.json 版本号失败: ${err.message}`);
-  }
-}
-
 async function main() {
-  const { version, skipConfirm } = parseArgs(process.argv);
-  if (!version) {
-    console.error('请通过 --version 或 -v 指定版本号，例如:');
-    console.error(
-      '  node packages/icons/publish-icons.mjs --version 0.0.1-rc.3'
-    );
-    process.exit(1);
-  }
+  const { skipConfirm } = parseArgs(process.argv);
+
+  const version = readJson(path.join(iconsDir, 'package.json')).version;
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
@@ -229,9 +212,6 @@ async function main() {
 
     console.log('[6/7] 执行发布: npm publish');
     runCmd('npm', ['publish'], tmpDir);
-
-    console.log('[7/7] 更新 package_publish.json 版本号');
-    updatePackagePublishVersion(iconsDir, version);
 
     console.log('✅ 发布完成');
   } catch (err) {

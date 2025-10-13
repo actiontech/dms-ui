@@ -34,7 +34,9 @@
     "api_client:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-client -y",
     "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y",
     "ai-doc": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli ai-doc",
-    "postinstall": "pnpm --filter @actiontech/dms-kit build"
+    "postinstall": "pnpm --filter @actiontech/dms-kit build",
+    "publish_and_docs_deploy": "pnpm install && pnpm -C scripts/publishAndDocsDeploy install --ignore-workspace && tsx scripts/publishAndDocsDeploy/index.ts",
+    "publish_and_docs_deploy1": "tsx scripts/publishAndDocsDeploy/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -92,6 +94,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-prettier": "^4.0.2",
     "ts-jest": "27.1.5",
+    "tsx": "^4.20.5",
     "typescript": "^5.0.2",
     "typescript-eslint": "^8.28.0",
     "vite": "^5.2.6",

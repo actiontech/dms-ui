@@ -144,6 +144,13 @@ import { TrendCardFilled } from '@actiontech/icons';
 export default () => <TrendCardFilled width={32} height={32} />
 ```
 
+## DashboardOutlined
+```jsx
+import { DashboardOutlined } from '@actiontech/icons';
+
+export default () => <DashboardOutlined width={32} height={32} />
+```
+
 ## DoubleDatabaseOutlined
 ```jsx
 import { DoubleDatabaseOutlined } from '@actiontech/icons';
