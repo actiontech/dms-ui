@@ -1,14 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { BasicInput, BasicSwitch } from '@actiontech/shared';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
-
+import { BasicInput, BasicSwitch } from '@actiontech/dms-kit';
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { validatorPort } from '@actiontech/dms-kit';
 const ConfigField = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemLabel
@@ -125,5 +120,4 @@ const ConfigField = () => {
     </>
   );
 };
-
 export default ConfigField;

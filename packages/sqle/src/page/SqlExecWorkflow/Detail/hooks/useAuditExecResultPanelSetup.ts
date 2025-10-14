@@ -1,7 +1,7 @@
 import { IGetWorkflowTasksItemV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GetWorkflowTasksItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
+import { useTableRequestError } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { useState, useMemo } from 'react';
@@ -9,7 +9,7 @@ import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.typ
 import { TasksStatusCount } from '../index.type';
 import { useBoolean } from 'ahooks';
 import { useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export const WORKFLOW_OVERVIEW_TAB_KEY = 'WORKFLOW_OVERVIEW_TAB_KEY';
 

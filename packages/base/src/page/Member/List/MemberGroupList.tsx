@@ -6,7 +6,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   useCurrentProject,
   usePermission
@@ -16,7 +16,7 @@ import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common
 import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
 import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
 import { MemberGroupListColumns } from './column';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   updateMemberModalStatus,
   updateSelectMemberGroup

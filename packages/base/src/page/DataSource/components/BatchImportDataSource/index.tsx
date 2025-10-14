@@ -2,27 +2,24 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult,
-  TypedLink
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import ConnectableErrorModal from '../../../Project/BatchImportDataSource/ConnectableErrorModal';
 import useBatchCheckConnectable from '../../../Project/BatchImportDataSource/hooks/useBatchCheckConnectable';
-
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
-
   const { projectID } = useCurrentProject();
-
   const {
     importLoading,
     setImportPending,
@@ -37,7 +34,6 @@ const BatchImportDataSource = () => {
     uploadCheckStatus,
     clearUploadCheckStatus
   } = useBatchImportDataSource();
-
   const {
     batchCheckConnectable,
     batchCheckConnectableLoading,
@@ -46,7 +42,6 @@ const BatchImportDataSource = () => {
     hideConnectErrorModal,
     connectableInfo
   } = useBatchCheckConnectable();
-
   const onSubmit = async () => {
     setImportPending();
     DmsApi.DBServiceService.ImportDBServicesOfOneProjectV2({
@@ -63,7 +58,6 @@ const BatchImportDataSource = () => {
         hideConnectErrorModal();
       });
   };
-
   const onCheckConnectableBeforeSubmit = async () => {
     await form.validateFields();
     await batchCheckConnectable(dbServices ?? []).then((res) => {
@@ -74,7 +68,6 @@ const BatchImportDataSource = () => {
       }
     });
   };
-
   const onUploadCustomRequest = useCallback<
     Required<UploadProps>['customRequest']
   >(
@@ -86,7 +79,9 @@ const BatchImportDataSource = () => {
           project_uid: projectID,
           db_services_file: option.file
         },
-        { responseType: 'blob' }
+        {
+          responseType: 'blob'
+        }
       )
         .then((res) => {
           importServicesCheck(res);
@@ -98,14 +93,15 @@ const BatchImportDataSource = () => {
     },
     [importServicesCheck, projectID, setDBservices, clearUploadCheckStatus]
   );
-
   return (
     <>
       <PageHeader
         title={
           <TypedLink
             to={ROUTE_PATHS.BASE.DATA_SOURCE.index}
-            params={{ projectID }}
+            params={{
+              projectID
+            }}
           >
             <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsDataSource.backDesc')}
@@ -160,5 +156,4 @@ const BatchImportDataSource = () => {
     </>
   );
 };
-
 export default BatchImportDataSource;

@@ -5,7 +5,7 @@ import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskL
 import SyncTaskList from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { syncTaskListMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -93,6 +93,15 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     expect(screen.getByText('同步任务成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestTableList).toHaveBeenCalledTimes(2);
+  });
+
+  it('render edit button action', async () => {
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getAllByText('编 辑')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should not render action column when user no operation permissions', async () => {

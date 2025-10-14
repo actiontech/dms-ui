@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
-import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
+import { SideMenuStyleWrapper } from '@actiontech/dms-kit';
 import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
@@ -18,45 +18,42 @@ import { updateBindProjects } from '../../../store/user';
 import { updateAvailabilityZoneTips } from '../../../store/availabilityZone';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import QuickActions from './QuickActions';
-import { CustomSelectProps, useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useTypedNavigate } from '@actiontech/shared';
+import { CustomSelectProps, ROUTE_PATHS } from '@actiontech/dms-kit';
 import AvailabilityZoneSelector from './AvailabilityZoneSelector';
 import { ProjectTitleStyleWrapper } from './style';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { EmptyBox } from '@actiontech/shared';
-import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { EmptyBox } from '@actiontech/dms-kit';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
 import { updateUserOperationPermissions } from '../../../store/permission';
 
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
   const dispatch = useDispatch();
-
   const { userOperationPermissions } = usePermission();
-
   const { fetchUserPermissions, isUserPermissionsLoading } =
     useFetchPermissionData();
-
-  const { verifyRecentlySelectedZoneRecord } = useRecentlySelectedZone();
-
+  const {
+    verifyRecentlySelectedZoneRecord,
+    availabilityZone,
+    updateRecentlySelectedZone
+  } = useRecentlySelectedZone();
   const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
     useState(false);
-
   const { username, theme, updateTheme, bindProjects, language, userId } =
     useCurrentUser();
-
   const { recentlyProjects, currentProjectID, getRecentlyProjectId } =
     useRecentlyOpenedProjects();
-
   const {
     data: projectList,
     loading: getProjectListLoading,
     refresh: refreshProjectList
   } = useRequest(
     () =>
-      DmsApi.ProjectService.ListProjectsV2({ page_size: 9999 }).then(
-        (res) => res?.data?.data ?? []
-      ),
+      DmsApi.ProjectService.ListProjectsV2({
+        page_size: 9999
+      }).then((res) => res?.data?.data ?? []),
     {
       refreshDeps: [currentProjectID],
       onSuccess: (res) => {
@@ -64,10 +61,11 @@ const SideMenu: React.FC = () => {
           const archived =
             res.find((project) => project.uid === item.project_id)?.archived ??
             false;
-
-          return { ...item, archived };
+          return {
+            ...item,
+            archived
+          };
         });
-
         dispatch(
           updateBindProjects({
             bindProjects: newBindProjects
@@ -93,23 +91,22 @@ const SideMenu: React.FC = () => {
       onSuccess: (res) => {
         verifyRecentlySelectedZoneRecord(res ?? []);
         dispatch(
-          updateAvailabilityZoneTips({ availabilityZoneTips: res ?? [] })
+          updateAvailabilityZoneTips({
+            availabilityZoneTips: res ?? []
+          })
         );
       }
     }
   );
-
   const getProjectArchived = useCallback(
     (itemProjectId: string) =>
       (projectList ?? []).find((project) => project.uid === itemProjectId)
         ?.archived ?? false,
     [projectList]
   );
-
   const projectSelectorOptions = useMemo<SelectProps['options']>(() => {
     return recentlyProjects.map((v) => {
       const isProjectArchived = getProjectArchived(v?.project_id ?? '');
-
       return {
         value: v.project_id,
         label: (
@@ -129,12 +126,10 @@ const SideMenu: React.FC = () => {
       };
     });
   }, [getProjectArchived, recentlyProjects]);
-
   const bindProjectsWithArchiveStatus = useMemo<IBindProject[]>(
     () =>
       bindProjects.map((v) => {
         const isProjectArchived = getProjectArchived(v?.project_id ?? '');
-
         return {
           ...v,
           archived: isProjectArchived
@@ -142,20 +137,19 @@ const SideMenu: React.FC = () => {
       }),
     [bindProjects, getProjectArchived]
   );
-
   const isCurrentProjectArchived = useMemo(
     () => getProjectArchived(currentProjectID ?? ''),
     [currentProjectID, getProjectArchived]
   );
-
   const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (
     projectID
   ) => {
     navigate(ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index, {
-      params: { projectID }
+      params: {
+        projectID
+      }
     });
   };
-
   useEffect(() => {
     const id = getRecentlyProjectId();
     if (!!id && !userOperationPermissions && !isUserPermissionsLoading) {
@@ -173,13 +167,11 @@ const SideMenu: React.FC = () => {
     userOperationPermissions,
     isUserPermissionsLoading
   ]);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Availability_Zone_Selector,
       refreshZoneTips
     );
-
     return unsubscribe;
   }, [refreshZoneTips]);
 
@@ -188,7 +180,6 @@ const SideMenu: React.FC = () => {
       EmitterKey.DMS_Sync_Project_Archived_Status,
       refreshProjectList
     );
-
     return unsubscribe;
   }, [refreshProjectList]); // 防止刷新时，项目列表未更新，导致项目列表不显示
 
@@ -205,7 +196,11 @@ const SideMenu: React.FC = () => {
           <ProjectTitleStyleWrapper>
             <ProjectTitle />
             <EmptyBox if={!!zoneTips?.length}>
-              <AvailabilityZoneSelector zoneTips={zoneTips} />
+              <AvailabilityZoneSelector
+                zoneTips={zoneTips}
+                availabilityZone={availabilityZone}
+                updateRecentlySelectedZone={updateRecentlySelectedZone}
+              />
             </EmptyBox>
           </ProjectTitleStyleWrapper>
           {/* #if [sqle] */}
@@ -239,5 +234,4 @@ const SideMenu: React.FC = () => {
     </SideMenuStyleWrapper>
   );
 };
-
 export default SideMenu;

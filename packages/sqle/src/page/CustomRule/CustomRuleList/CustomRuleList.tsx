@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { Spin, message, Space, Popconfirm } from 'antd';
-import { BasicButton, useTypedNavigate } from '@actiontech/shared';
-import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { BasicButton } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
+import { TableToolbar } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ICustomRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -24,8 +25,7 @@ import {
   PermissionControl,
   usePermission
 } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -33,7 +33,6 @@ const CustomRuleList: React.FC = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { activeKey } = useRuleManagerSegmented();
   const { checkActionPermission } = usePermission();
-
   const {
     data: ruleList,
     run: getCustomRuleList,
@@ -59,10 +58,8 @@ const CustomRuleList: React.FC = () => {
       ready: activeKey === RuleManagerSegmentedKey.CustomRule
     }
   );
-
   const { searchRuleName, DbFilter, setSearchRuleName } =
     useCustomRuleFilterForm(getCustomRuleList, activeKey);
-
   const deleteRule = (item: ICustomRuleResV1) => {
     setDeleteLoading(true);
     rule_template
@@ -72,7 +69,9 @@ const CustomRuleList: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('customRule.deleteSuccessTips', { desc: item.desc })
+            t('customRule.deleteSuccessTips', {
+              desc: item.desc
+            })
           );
           refresh();
         }
@@ -81,15 +80,14 @@ const CustomRuleList: React.FC = () => {
         setDeleteLoading(false);
       });
   };
-
   const onAction = (record: ICustomRuleResV1, type: EnumActionType) => {
     if (type !== EnumActionType.edit) return;
-
     navigate(ROUTE_PATHS.SQLE.CUSTOM_RULE.update, {
-      params: { ruleID: record.rule_id ?? '' }
+      params: {
+        ruleID: record.rule_id ?? ''
+      }
     });
   };
-
   const renderDisabledNode = (item: ICustomRuleResV1) => {
     return (
       <PermissionControl
@@ -126,7 +124,6 @@ const CustomRuleList: React.FC = () => {
       </PermissionControl>
     );
   };
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Custom_Rule_Template_List,
@@ -134,7 +131,6 @@ const CustomRuleList: React.FC = () => {
     );
     return unsubscribe;
   }, [refresh]);
-
   return (
     <Spin spinning={loading}>
       {messageContextHolder}
@@ -146,7 +142,9 @@ const CustomRuleList: React.FC = () => {
             placeholder: t('common.form.placeholder.searchInput', {
               name: t('customRule.filterForm.ruleName')
             }),
-            style: { width: 240 }
+            style: {
+              width: 240
+            }
           }}
         >
           {DbFilter()}
@@ -174,5 +172,4 @@ const CustomRuleList: React.FC = () => {
     </Spin>
   );
 };
-
 export default CustomRuleList;

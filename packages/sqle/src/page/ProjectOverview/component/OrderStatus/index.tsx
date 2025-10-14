@@ -4,7 +4,7 @@ import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import ChartContTitle from '../../../../page/ReportStatistics/EEIndex/component/base/ChartContTitle';
 import useOrderStateBar from '../../../../page/ReportStatistics/EEIndex/component/charts/WorkOrderState/useOrderStateBar';
 import OrderStateBar from '../../../../components/ChartCom/OrderStateBar';

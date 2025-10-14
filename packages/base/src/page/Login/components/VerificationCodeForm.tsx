@@ -1,14 +1,10 @@
-import {
-  VerificationCodeInput,
-  BasicButton,
-  maskPhoneNumber
-} from '@actiontech/shared';
+import { VerificationCodeInput, BasicButton } from '@actiontech/dms-kit';
+import { maskPhoneNumber } from '@actiontech/dms-kit';
 import { Form, Typography, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { VerificationCodeReturnButtonStyleWrapper } from '../style';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { VerificationCodeFormProps } from '../types';
-
 const VerificationCodeForm: React.FC<VerificationCodeFormProps> = ({
   loading,
   onVerify,
@@ -18,11 +14,11 @@ const VerificationCodeForm: React.FC<VerificationCodeFormProps> = ({
   phone
 }) => {
   const { t } = useTranslation();
-
   const onSendCode = () => {
-    return DmsApi.SMSService.SendSmsCode({ username });
+    return DmsApi.SMSService.SendSmsCode({
+      username
+    });
   };
-
   return (
     <Form onFinish={onVerify} form={form}>
       <Form.Item>
@@ -64,5 +60,4 @@ const VerificationCodeForm: React.FC<VerificationCodeFormProps> = ({
     </Form>
   );
 };
-
 export default VerificationCodeForm;

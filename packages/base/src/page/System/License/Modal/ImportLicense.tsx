@@ -2,40 +2,34 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useBoolean } from 'ahooks';
-
 import { Form, message, Upload } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { RcFile } from 'antd/es/upload';
-import { BasicButton, BasicModal } from '@actiontech/shared';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { BasicButton, BasicModal } from '@actiontech/dms-kit';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { LicenseColumn } from '../index.data';
-
-import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
 import { updateSystemModalStatus } from '../../../../store/system';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
-import { ModalSize, ResponseCode } from '@actiontech/shared/lib/enum';
+import { ModalSize } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
-
 const ImportLicenseModal = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const visible = useSelector(
     (state: IReduxState) =>
       state.system.modalStatus[ModalName.DMS_Import_License]
   );
-
   const [licenseData, setLicenseData] = useState<ILicenseItem[]>([]);
   const [prepareLoading, { setTrue: startPrepare, setFalse: prepareFinish }] =
     useBoolean();
   const [form] = useForm();
-
   const fileChange = (currentFile: RcFile) => {
     startPrepare();
     Configuration.CheckLicense({
@@ -56,7 +50,6 @@ const ImportLicenseModal = () => {
       });
     return false;
   };
-
   const close = () => {
     form.resetFields();
     dispatch(
@@ -66,10 +59,8 @@ const ImportLicenseModal = () => {
       })
     );
   };
-
   const [importLoading, { setTrue: startImport, setFalse: importFinish }] =
     useBoolean();
-
   const submit = async () => {
     const values = await form.validateFields();
     startImport();
@@ -86,7 +77,6 @@ const ImportLicenseModal = () => {
       importFinish();
     }
   };
-
   return (
     <BasicModal
       title={t('dmsSystem.license.import')}
@@ -132,5 +122,4 @@ const ImportLicenseModal = () => {
     </BasicModal>
   );
 };
-
 export default ImportLicenseModal;

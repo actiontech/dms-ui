@@ -9,7 +9,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
@@ -29,6 +29,12 @@ jest.mock('react-redux', () => {
     useDispatch: jest.fn()
   };
 });
+
+jest.mock('react-error-boundary', () => ({
+  ErrorBoundary: ({ children }: { children: React.ReactNode }) => {
+    return children;
+  }
+}));
 
 describe('test App ce', () => {
   const scopeDispatch = jest.fn();

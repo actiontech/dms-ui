@@ -5,7 +5,7 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 
 const useBatchIgnoreOrSolve = (
   selectedRowKeys: Key[],

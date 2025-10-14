@@ -1,12 +1,12 @@
 import BaseInfoForm from './BaseInfoForm';
 import ExportMethodForm from './ExportMethodForm';
 import ExportSourceForm from './ExportSourceForm';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormAreaBlockStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import useCreateExportTaskForm from '../../hooks/useCreateExportTaskForm';
 import ExportFormAction from './ExportFormAction';
 import { Spin } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicButton, PageHeader } from '@actiontech/dms-kit';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import BackToWorkflowList from '../../../Common/BackToWorkflowList';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
@@ -38,10 +38,18 @@ const CreateExportTask: React.FC = () => {
           }
         />
         <BaseInfoForm baseForm={baseForm} />
-        <ExportSourceForm sourceForm={sourceForm} baseForm={baseForm} />
+        <ExportSourceForm
+          sourceForm={sourceForm}
+          baseForm={baseForm}
+          methodForm={methodForm}
+        />
         <ExportMethodForm methodForm={methodForm} />
 
-        <FormAreaBlockStyleWrapper style={{ paddingBottom: 80 }}>
+        <FormAreaBlockStyleWrapper
+          style={{
+            paddingBottom: 80
+          }}
+        >
           <ExportFormAction
             auditAction={() => {
               return auditAction().then((res) => {
@@ -59,5 +67,4 @@ const CreateExportTask: React.FC = () => {
     </Spin>
   );
 };
-
 export default CreateExportTask;

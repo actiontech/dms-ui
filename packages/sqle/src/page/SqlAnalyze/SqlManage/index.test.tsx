@@ -15,15 +15,29 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlManageMock from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import { translateTimeForRequest } from '@actiontech/dms-kit';
+import {
+  mockUsePermission,
+  mockUseCurrentUser,
+  mockUseDbServiceDriver,
+  sqleMockApi
+} from '@actiontech/shared/lib/testUtil';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../data/ModalName';
 
 jest.mock('react-router', () => {
   return {
     ...jest.requireActual('react-router'),
     useParams: jest.fn()
+  };
+});
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
   };
 });
 
@@ -33,6 +47,8 @@ describe('SqlAnalyze/SQLManage', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+  let sqlOptimizeSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
   let currentTime = dayjs('2025-01-09 12:00:00');
@@ -40,13 +56,37 @@ describe('SqlAnalyze/SQLManage', () => {
     MockDate.set(currentTime.valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
+    mockUseCurrentUser();
+    mockUseDbServiceDriver();
     useParamsMock.mockReturnValue({
       sqlManageId: 'sqlManageId1',
       sqlNum: '123',
       projectName
     });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlAnalyze: {
+          modalStatus: {
+            [ModalName.Sql_Optimization_Result_Drawer]: false
+          },
+          resultDrawer: {
+            currentResultDrawerData: {
+              optimizationId: '1'
+            }
+          }
+        }
+      })
+    );
+    sqlOptimizeSpy = sqleMockApi.sqlOptimization.optimizeSQLReq();
     getSqlManageSqlAnalysisChartSpy =
-      sqlManageMock.getSqlManageSqlAnalysisChart();
+      sqleMockApi.sqlManage.getSqlManageSqlAnalysisChart();
+    getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
   });
 
   afterEach(() => {
@@ -56,14 +96,18 @@ describe('SqlAnalyze/SQLManage', () => {
     MockDate.reset();
   });
 
-  const mockGetAnalyzeData = () => {
+  const mockGetAnalyzeData = (hasAffectRows = false) => {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisV1');
     spy.mockImplementation(() =>
       resolveThreeSecond({
         ...SQLManageSqlAnalyzeData,
-        sql_explain: {
-          ...SQLManageSqlAnalyzeData.sql_explain,
-          cost: 3
+        performance_statistics: {
+          affect_rows: hasAffectRows
+            ? {
+                count: 10,
+                err_message: ''
+              }
+            : undefined
         }
       })
     );
@@ -76,7 +120,8 @@ describe('SqlAnalyze/SQLManage', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
-      sql_manage_id: 'sqlManageId1'
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: false
     });
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(300));
@@ -89,6 +134,28 @@ describe('SqlAnalyze/SQLManage', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should get performance statistics', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<SQLManageAnalyze />);
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      project_name: projectName,
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenNthCalledWith(2, {
+      project_name: projectName,
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: true
+    });
   });
 
   it('filter sql execution plan cost', async () => {
@@ -153,6 +220,26 @@ describe('SqlAnalyze/SQLManage', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should create sql optimization task', async () => {
+    const spy = mockGetAnalyzeData(true);
+    superRender(<SQLManageAnalyze />, undefined, {
+      routerProps: {
+        initialEntries: ['/analyze?instance_name=Mysql1&schema=sqle']
+      }
+    });
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+      project_name: projectName,
+      sql_manage_id: 'sqlManageId1',
+      affectRowsEnabled: false
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should render error result of type "error" when response code is not 8001', async () => {

@@ -1,7 +1,4 @@
-import {
-  CustomSelect,
-  CustomSelectProps
-} from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect, CustomSelectProps } from '@actiontech/dms-kit';
 
 const CustomSelectField: React.FC<
   CustomSelectProps & { onAfterChange: (v: string) => void }

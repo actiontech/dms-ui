@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Space } from 'antd';
-import { CustomInputStyleWrapper } from '@actiontech/shared/lib/components/CustomInput/style';
+import { CustomInputStyleWrapper } from '@actiontech/dms-kit/es/components/CustomInput/style';
 
 export const HeaderSpaceTagStyleWrapper = styled(Space)`
   .tag-icon {

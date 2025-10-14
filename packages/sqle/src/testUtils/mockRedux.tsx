@@ -2,7 +2,7 @@ import whitelist from '../store/whitelist';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { Dictionary } from '@actiontech/shared/lib/types/common.type';
+import { Dictionary } from '@actiontech/dms-kit/es/types/common.type';
 import sqlManagement from '../store/sqlManagement';
 import sqlManagementException from '../store/sqlManagementException';
 import pipeline from '../store/pipeline';

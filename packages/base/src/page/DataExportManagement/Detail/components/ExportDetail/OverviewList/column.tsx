@@ -2,15 +2,14 @@ import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/comm
 import {
   ActiontechTableColumn,
   ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../../../../locale';
 import ExportTaskStatus from '../../../../Common/TaskStatus';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import dayjs from 'dayjs';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
-
 export const OverviewListColumn: () => ActiontechTableColumn<
   IGetDataExportTask,
   unknown,
@@ -59,14 +58,12 @@ export const OverviewListColumn: () => ActiontechTableColumn<
     }
   ];
 };
-
 const checkExportTimeHasExpired = (startTime?: string, timeout = 24) => {
   if (!startTime || !dayjs(startTime)) {
     return true;
   }
   return dayjs().isAfter(dayjs(startTime).add(timeout, 'hour'));
 };
-
 export const OverviewListAction: (
   downloadLoading: boolean,
   downloadAction: (taskID: string) => void

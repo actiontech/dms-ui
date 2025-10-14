@@ -2,11 +2,11 @@ import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
-} from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+} from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { t } from '../../../../locale';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
+import { OpPermissionTypeUid, SystemRole } from '@actiontech/dms-kit';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import SystemRoleTagList from '../../../../components/SystemRoleTagList';
 import ProjectTagList from '../../../../components/ProjectTagList';

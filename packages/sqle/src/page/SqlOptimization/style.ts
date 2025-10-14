@@ -213,3 +213,14 @@ export const HeaderSpaceTagStyleWrapper = styled(Space)`
     }
   }
 `;
+
+export const SqlOptimizationListStyleWrapper = styled('section')`
+  &.basic-button-wrapper.ant-btn-default.switch-btn-active {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
+  }
+`;
+
+export const SqlOptimizationTipsStyleWrapper = styled('section')`
+  padding: 20px 40px;
+`;

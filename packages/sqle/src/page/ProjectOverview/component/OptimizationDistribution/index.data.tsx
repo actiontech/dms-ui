@@ -1,5 +1,5 @@
 import { IOptimizationRecordOverview } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { Tooltip } from '@ant-design/plots';
 import { t } from '../../../../locale';

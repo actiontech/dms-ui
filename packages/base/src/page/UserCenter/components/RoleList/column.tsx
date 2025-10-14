@@ -1,12 +1,12 @@
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import generateTag from '../../utils/generateTag';
 import { Space, Popover, Typography } from 'antd';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import { groupBy } from 'lodash';
 

@@ -2,7 +2,7 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   useTableRequestParams,
   useTableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import useAuditResultFilterParams from '../../../../Common/AuditResultFilterContainer/useAuditResultFilterParams';
 import { AuditTaskExtraFilterMeta } from '../index.data';
 import { GetAuditTaskSQLsPrams } from '../index.type';

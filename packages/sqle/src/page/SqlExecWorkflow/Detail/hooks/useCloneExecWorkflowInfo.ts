@@ -16,11 +16,11 @@ import { useCallback } from 'react';
 import { SqlStatementFields } from '../../Create/index.type';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
-import { ResponseBlobJsonType } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { jsonParse } from '@actiontech/dms-kit';
+import { ResponseBlobJsonType } from '@actiontech/dms-kit';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const useCloneExecWorkflowInfo = (
   taskInfos: IAuditTaskResV1[],
@@ -196,7 +196,7 @@ const useCloneExecWorkflowInfo = (
     );
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
       params: { projectID },
-      queries: { sourceWorkflowId: workflowInfo?.workflow_id ?? '' }
+      queries: { source_workflow_id: workflowInfo?.workflow_id ?? '' }
     });
   }, [
     taskInfos,

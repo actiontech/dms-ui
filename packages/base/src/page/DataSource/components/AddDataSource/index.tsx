@@ -3,40 +3,33 @@ import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
 import { useForm } from 'antd/es/form/Form';
 import { Space, Typography } from 'antd';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import {
   BasicButton,
   PageHeader,
   BasicResult,
-  EmptyBox,
-  BackButton,
-  useTypedNavigate
-} from '@actiontech/shared';
+  EmptyBox
+} from '@actiontech/dms-kit';
+import { BackButton, useTypedNavigate } from '@actiontech/shared';
 import DataSourceForm from '../Form';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
-
 const AddDataSource = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
   const [form] = useForm<DataSourceFormField>();
-
   const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
     useCheckConnectable(form);
-
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
   const addDatabase = async (values: DataSourceFormField) => {
     startSubmit();
     const dbService: IDBServiceV2 = {
@@ -95,21 +88,17 @@ const AddDataSource = () => {
         submitFinish();
       });
   };
-
   const resetAndHideResult = useCallback(() => {
     hideResult();
     form.resetFields();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form]);
-
   const onReset = () => {
     EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
   };
-
   const onSubmit = async () => {
     EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
   };
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <DataSourceFormContextProvide
@@ -164,5 +153,4 @@ const AddDataSource = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default AddDataSource;

@@ -2,7 +2,7 @@ import { cleanup, act } from '@testing-library/react';
 import MenuList from '.';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

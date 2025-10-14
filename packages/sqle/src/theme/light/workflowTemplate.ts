@@ -3,8 +3,8 @@ import { rectColorName } from './statistics';
 import {
   lightThemeUI,
   lightThemeBasic
-} from '@actiontech/shared/lib/theme/light/basic';
-import { lightComponentsTheme } from '@actiontech/shared/lib/theme/light/components';
+} from '@actiontech/dms-kit/es/theme/light/basic';
+import { lightComponentsTheme } from '@actiontech/dms-kit/es/theme/light/components';
 
 export const workflowTemplateTheme: WorkflowTemplateTheme = {
   progress: {

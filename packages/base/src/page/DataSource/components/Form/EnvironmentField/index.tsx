@@ -1,36 +1,27 @@
-import {
-  EditableSelect,
-  EditableSelectProps,
-  EditableSelectOption
-} from '@actiontech/shared';
+import { EditableSelect } from '@actiontech/dms-kit';
+import { EditableSelectProps, EditableSelectOption } from '@actiontech/dms-kit';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { message } from 'antd';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { useBoolean } from 'ahooks';
-
 interface EnvironmentFieldProps extends Omit<EditableSelectProps, 'options'> {
   projectID?: string;
 }
-
 const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
   projectID,
   ...props
 }) => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [boundServices, setBoundServices] = useState<IListDBServiceV2[]>([]);
-
   const [
     operationLoading,
     { setTrue: startOperationLoading, setFalse: stopOperationLoading }
   ] = useBoolean();
-
   const {
     data: environmentTags,
     refresh,
@@ -54,7 +45,6 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
       ready: !!projectID
     }
   );
-
   const onAdd = (v: string) => {
     startOperationLoading();
     DmsApi.ProjectService.CreateEnvironmentTag({
@@ -73,7 +63,6 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         stopOperationLoading();
       });
   };
-
   const deleteEnvironmentTag = (environmentTagUid: string) => {
     startOperationLoading();
     DmsApi.ProjectService.DeleteEnvironmentTag({
@@ -92,7 +81,6 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         stopOperationLoading();
       });
   };
-
   const onDelete = (item: EditableSelectOption) => {
     const environmentTagUid = item.value.toString();
     DmsApi.DBServiceService.ListDBServicesV2({
@@ -112,7 +100,6 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         stopOperationLoading();
       });
   };
-
   const onUpdate = (item: EditableSelectOption) => {
     startOperationLoading();
     DmsApi.ProjectService.UpdateEnvironmentTag({
@@ -132,7 +119,6 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         stopOperationLoading();
       });
   };
-
   return (
     <>
       {contextHolder}
@@ -163,5 +149,4 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
     </>
   );
 };
-
 export default EnvironmentField;

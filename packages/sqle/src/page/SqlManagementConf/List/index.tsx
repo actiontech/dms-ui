@@ -1,4 +1,4 @@
-import { LazyLoadComponent, PageHeader } from '@actiontech/shared';
+import { LazyLoadComponent, PageHeader } from '@actiontech/dms-kit';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
@@ -8,7 +8,7 @@ import {
   useTableFilterContainer,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   useCurrentProject,
   useCurrentUser,
@@ -40,7 +40,6 @@ import {
   SqlManagementConfPageHeaderActions,
   SqlManagementConfTableActions
 } from './action';
-
 const List: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
@@ -48,14 +47,11 @@ const List: React.FC = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
-
   const { getLogoUrlByDbType } = useDbServiceDriver();
-
   const columns = useMemo(
     () => SqlManagementConfColumns(projectID, getLogoUrlByDbType),
     [getLogoUrlByDbType, projectID]
   );
-
   const {
     tableFilterInfo,
     tableChange,
@@ -68,12 +64,9 @@ const List: React.FC = () => {
     IInstanceAuditPlanResV1,
     InstanceAuditPlanTableFilterParamType
   >();
-
   const { parse2TableActionPermissions } = usePermission();
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
-
   const {
     filterCustomData,
     filterCustomProps,
@@ -81,12 +74,10 @@ const List: React.FC = () => {
     updateInstanceList,
     updateEnvironmentList
   } = useTableFilter();
-
   const [
     taskTypeShowStatus,
     { setFalse: setTaskTypeHide, setTrue: setTaskTypeShow }
   ] = useBoolean(true);
-
   const onChangeTaskTypeShow = () => {
     if (taskTypeShowStatus) {
       setTaskTypeHide();
@@ -94,7 +85,6 @@ const List: React.FC = () => {
       setTaskTypeShow();
     }
   };
-
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'sql_management_conf',
@@ -102,13 +92,11 @@ const List: React.FC = () => {
     }),
     [username]
   );
-
   const {
     loading: getTaskTypesLoading,
     auditPlanTypes,
     updateAuditPlanTypes
   } = useAuditPlanTypes();
-
   const {
     data: planList,
     loading: getTableDataLoading,
@@ -133,7 +121,6 @@ const List: React.FC = () => {
       refreshDeps: [tableFilterInfo, pagination, filterCustomData, projectName]
     }
   );
-
   const { editAction, disabledAction, enabledAction, deleteAction } =
     useTableAction({
       refresh: onRefresh,
@@ -141,23 +128,20 @@ const List: React.FC = () => {
       projectName,
       messageApi
     });
-
   const pageHeaderActions = SqlManagementConfPageHeaderActions(projectID);
-
   useEffect(() => {
     if (taskTypeShowStatus) {
       updateAuditPlanTypes();
     }
   }, [taskTypeShowStatus, updateAuditPlanTypes]);
-
   useEffect(() => {
-    updateInstanceList({ project_name: projectName });
+    updateInstanceList({
+      project_name: projectName
+    });
   }, [updateInstanceList, projectName]);
-
   useEffect(() => {
     updateEnvironmentList(projectID);
   }, [updateEnvironmentList, projectID]);
-
   return (
     <SqlManagementConfPageStyleWrapper>
       <PageHeader
@@ -166,7 +150,10 @@ const List: React.FC = () => {
       />
       <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
         <TableToolbar
-          refreshButton={{ refresh: onRefresh, disabled: getTableDataLoading }}
+          refreshButton={{
+            refresh: onRefresh,
+            disabled: getTableDataLoading
+          }}
           setting={tableSetting}
           actions={[
             {
@@ -242,5 +229,4 @@ const List: React.FC = () => {
     </SqlManagementConfPageStyleWrapper>
   );
 };
-
 export default List;

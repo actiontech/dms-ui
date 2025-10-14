@@ -1,18 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import { sqlManagementDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { GetSqlManageListV3FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-
 export type TypeStatus = GetSqlManageListV3FilterStatusEnum | 'all';
-
 interface IStatusFilter {
   status: TypeStatus;
   onChange: (status: TypeStatus) => void;
 }
-
 const StatusFilter = ({ status, onChange }: IStatusFilter) => {
   const { t } = useTranslation();
-
   return (
     <BasicSegmented
       value={status}
@@ -39,5 +35,4 @@ const StatusFilter = ({ status, onChange }: IStatusFilter) => {
     />
   );
 };
-
 export default StatusFilter;

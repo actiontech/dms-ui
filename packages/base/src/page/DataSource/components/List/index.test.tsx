@@ -8,7 +8,7 @@ import {
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
+import { SupportTheme, SystemRole } from '@actiontech/dms-kit';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourceList from '.';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';

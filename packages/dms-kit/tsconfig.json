@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./src"],
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"],
+      "@actiontech/dms-kit": ["./src"]
+    },
+    "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "noEmit": false
+  },
+  "exclude": ["node_modules", "es", "lib"]
+}

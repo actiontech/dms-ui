@@ -1,4 +1,4 @@
-import { darkThemeUI } from '@actiontech/shared/lib/theme/dark/basic';
+import { darkThemeUI } from '@actiontech/dms-kit/es/theme/dark/basic';
 import { DataExportTheme } from '../type';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 

@@ -19,7 +19,7 @@ import {
   instanceTipsMockData
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/dms-kit';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {

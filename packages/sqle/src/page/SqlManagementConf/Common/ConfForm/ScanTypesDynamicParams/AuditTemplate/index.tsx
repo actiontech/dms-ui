@@ -1,25 +1,18 @@
 import { useTranslation } from 'react-i18next';
-import { BasicSelect } from '@actiontech/shared';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { BasicSelect } from '@actiontech/dms-kit';
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { IAuditTemplateProps } from './index.type';
 import { useMemo } from 'react';
-
 const AuditTemplate = (props: IAuditTemplateProps) => {
   const { t } = useTranslation();
-
   const { prefixPath, templateList, loading, submitLoading } = props;
-
   const ruleTemplateOptions = useMemo(() => {
     return templateList.map((item) => ({
       label: item.rule_template_name,
       value: item.rule_template_name
     }));
   }, [templateList]);
-
   return (
     <>
       <FormItemLabel
@@ -57,5 +50,4 @@ const AuditTemplate = (props: IAuditTemplateProps) => {
     </>
   );
 };
-
 export default AuditTemplate;

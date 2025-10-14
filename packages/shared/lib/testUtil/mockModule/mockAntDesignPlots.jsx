@@ -17,6 +17,7 @@ const Area = MockPlots;
 const Bar = MockPlots;
 const RingProgress = MockPlots;
 const Scatter = MockPlots;
+const Radar = MockPlots;
 const mockRegisterShape = jest.fn();
 const G2 = {
   registerShape: jest.fn()
@@ -138,6 +139,7 @@ export {
   Bar,
   RingProgress,
   Scatter,
+  Radar,
   PieWithCustomRenderCalled,
   BarWithCustomRenderCalled,
   AreaWithCustomRenderCalled,

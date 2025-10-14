@@ -6,26 +6,18 @@ import { TableSchemaItem, UseTableSchemaOption } from '.';
 import { ResponseCode } from '../../../data/common';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import {
-  EmptyBox,
-  BasicTable,
-  BasicResult,
-  SQLRenderer
-} from '@actiontech/shared';
-
+import { EmptyBox, BasicTable, BasicResult } from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 const useTableSchema = (options?: UseTableSchemaOption) => {
   const { t } = useTranslation();
   const { schemaName, dataSourceName } = options ?? {};
-
   const idFactory = useCallback(
     (tableName: string) => {
       return `${tableName}-${schemaName}-${dataSourceName}`;
     },
     [dataSourceName, schemaName]
   );
-
   const [tableSchemas, setTableSchemas] = useState<TableSchemaItem[]>([]);
-
   const getTableSchemas = useCallback(
     async (tableName: string, projectName: string) => {
       if (!schemaName || !dataSourceName) {
@@ -58,13 +50,10 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
     },
     [dataSourceName, idFactory, schemaName, tableSchemas]
   );
-
   const closeTableSchema = (id: string) => {
     setTableSchemas(tableSchemas.filter((v) => v.id !== id));
   };
-
   const { tableColumnFactory } = useBackendTable();
-
   const generateTableSchemaContent = <
     T extends Pick<TableSchemaItem, 'errorMessage' | 'tableMeta'> & {
       isShow?: boolean;
@@ -86,7 +75,6 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
         </>
       );
     };
-
     const renderTableIndexTable = () => {
       return (
         <>
@@ -99,7 +87,6 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
         </>
       );
     };
-
     const renderCreateTableSql = () => {
       return (
         <>
@@ -115,10 +102,8 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
         </>
       );
     };
-
     const hasError = !!item.errorMessage || !!item.tableMeta.message;
     const hiddenVal = typeof item.isShow === 'boolean' ? !item.isShow : false;
-
     const renderErrorMessage = () => {
       if (hiddenVal) return <></>;
       if (!!item.tableMeta.message) {
@@ -135,7 +120,6 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
       }
       return undefined;
     };
-
     return (
       <EmptyBox if={!hasError} defaultNode={renderErrorMessage()}>
         <Space
@@ -151,7 +135,6 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
       </EmptyBox>
     );
   };
-
   return {
     tableSchemas,
     closeTableSchema,
@@ -159,5 +142,4 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
     generateTableSchemaContent
   };
 };
-
 export default useTableSchema;

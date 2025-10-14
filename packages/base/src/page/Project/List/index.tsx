@@ -4,8 +4,9 @@ import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/P
 import {
   ActiontechTable,
   useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+  useTableRequestParams,
+  TableToolbar
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { usePermission, useUserInfo } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
@@ -13,7 +14,7 @@ import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { ProjectListTableColumnFactory } from './columns';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import {
@@ -34,10 +35,13 @@ const ProjectList: React.FC = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { pagination, tableChange } = useTableRequestParams<
-    IListProjectV2,
-    IListProjectsV2Params
-  >();
+  const {
+    pagination,
+    tableChange,
+    searchKeyword,
+    setSearchKeyword,
+    refreshBySearchKeyword
+  } = useTableRequestParams<IListProjectV2, IListProjectsV2Params>();
 
   const {
     data: projectListData,
@@ -46,7 +50,8 @@ const ProjectList: React.FC = () => {
   } = useRequest(
     () => {
       const params: IListProjectsV2Params = {
-        ...pagination
+        ...pagination,
+        fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(
         DmsApi.ProjectService.ListProjectsV2(params)
@@ -137,6 +142,14 @@ const ProjectList: React.FC = () => {
   return (
     <>
       {contextHolder}
+      <TableToolbar
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
+        }}
+      />
       <ActiontechTable
         dataSource={projectListData?.list}
         pagination={{

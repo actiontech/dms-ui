@@ -1,4 +1,4 @@
-import { PageHeader } from '@actiontech/shared/';
+import { PageHeader } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import {
   ResourceOverviewDetailStyleWrapper,
@@ -6,7 +6,7 @@ import {
 } from './style';
 import ResourceDetail from './components/ResourceDetail';
 import ResourceOverviewStatistic from './components/Statistic';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { Space } from 'antd';
 import EmitterKey from '../../data/EmitterKey';
 import EventEmitter from '../../utils/EventEmitter';

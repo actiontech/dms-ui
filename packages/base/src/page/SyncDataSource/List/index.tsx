@@ -2,21 +2,24 @@ import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SyncTaskListTableColumnFactory } from './column';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode, ROUTE_PATHS } from '@actiontech/dms-kit';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 import {
   ActiontechTable,
   useTableRequestError
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useEffect } from 'react';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { SyncTaskListActions } from './action';
 import { usePermission } from '@actiontech/shared/lib/features';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextHoler] = message.useMessage();
+
+  const navigate = useTypedNavigate();
 
   const { parse2TableActionPermissions } = usePermission();
 
@@ -65,6 +68,12 @@ const SyncTaskList: React.FC = () => {
       });
   };
 
+  const editSyncTask = (taskId: string) => {
+    navigate(ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update, {
+      params: { taskId }
+    });
+  };
+
   const { loading, data, refresh } = useRequest(() =>
     handleTableRequestError(DBServiceSyncTaskService.ListDBServiceSyncTasks())
   );
@@ -94,7 +103,8 @@ const SyncTaskList: React.FC = () => {
         actions={parse2TableActionPermissions(
           SyncTaskListActions({
             syncAction,
-            deleteAction
+            deleteAction,
+            editSyncTask
           })
         )}
       />

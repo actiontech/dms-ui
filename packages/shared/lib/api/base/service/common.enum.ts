@@ -46,6 +46,12 @@ export enum GetUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum GetUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
+}
+
 export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_success' = 'connect_success',
 
@@ -170,6 +176,12 @@ export enum ListUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum ListUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
+}
+
 export enum ListUserGroupStatEnum {
   '正常' = '正常',
 
@@ -216,6 +228,8 @@ export enum OpPermissionItemOpPermissionTypeEnum {
   'execute_workflow' = 'execute_workflow',
 
   'view_other_audit_plan' = 'view_other_audit_plan',
+
+  'view_sql_insight' = 'view_sql_insight',
 
   'save_audit_plan' = 'save_audit_plan',
 
@@ -318,6 +332,12 @@ export enum TestFeishuConfigurationAccountTypeEnum {
   'phone' = 'phone'
 }
 
+export enum UpdateCurrentUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
+}
+
 export enum UpdateProjectProjectPriorityEnum {
   'high' = 'high',
 
@@ -336,6 +356,12 @@ export enum UpdateProjectV2ProjectPriorityEnum {
   'low' = 'low',
 
   'unknown' = 'unknown'
+}
+
+export enum UpdateUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
 }
 
 export enum WorkflowRecordStatusEnum {

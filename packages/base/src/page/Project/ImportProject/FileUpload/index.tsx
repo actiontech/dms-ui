@@ -1,22 +1,18 @@
 import { Upload, UploadProps, Button } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { ImportProjectUploadFileFieldWrapper } from '../../style';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
-
 const FileUpload: React.FC<UploadProps> = (props) => {
   const { t } = useTranslation();
-
   const [loading, { setTrue: setPending, setFalse: setDone }] = useBoolean();
-
   const onDownload = () => {
     setPending();
-    Project.GetImportProjectsTemplate({ responseType: 'blob' }).finally(() =>
-      setDone()
-    );
+    Project.GetImportProjectsTemplate({
+      responseType: 'blob'
+    }).finally(() => setDone());
   };
-
   return (
     <ImportProjectUploadFileFieldWrapper>
       <Upload {...props}>
@@ -28,5 +24,4 @@ const FileUpload: React.FC<UploadProps> = (props) => {
     </ImportProjectUploadFileFieldWrapper>
   );
 };
-
 export default FileUpload;

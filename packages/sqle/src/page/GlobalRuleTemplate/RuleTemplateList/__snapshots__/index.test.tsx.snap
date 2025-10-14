@@ -257,18 +257,14 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
-                              <a
-                                href="/sqle/rule-manager/global-update/default_template"
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
-                                  type="button"
-                                >
-                                  <span>
-                                    编 辑
-                                  </span>
-                                </button>
-                              </a>
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"
@@ -378,18 +374,14 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
-                              <a
-                                href="/sqle/rule-manager/global-update/global_test"
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
-                                  type="button"
-                                >
-                                  <span>
-                                    编 辑
-                                  </span>
-                                </button>
-                              </a>
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"
@@ -460,18 +452,14 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
-                              <a
-                                href="/sqle/rule-manager/global-update/"
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
-                                  type="button"
-                                >
-                                  <span>
-                                    编 辑
-                                  </span>
-                                </button>
-                              </a>
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"

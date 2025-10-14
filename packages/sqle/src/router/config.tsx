@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { PERMISSIONS } from '@actiontech/shared/lib/features';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -80,26 +80,16 @@ const SqlManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
-const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
+const SqlAudit = React.lazy(() => import('../page/SqlAudit'));
 
 const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
-
-const SqlOptimization = React.lazy(() => import('../page/SqlOptimization'));
-
-const SqlOptimizationList = React.lazy(
-  () => import('../page/SqlOptimization/List')
-);
 
 const SqlOptimizationCreate = React.lazy(
   () => import('../page/SqlOptimization/Create')
 );
 
-const SqlOptimizationOverview = React.lazy(
-  () => import('../page/SqlOptimization/Overview')
-);
-
-const SqlOptimizationDetail = React.lazy(
-  () => import('../page/SqlOptimization/Detail')
+const SqlOptimizationResult = React.lazy(
+  () => import('../page/SqlOptimization/Result')
 );
 
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
@@ -282,6 +272,16 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: ROUTE_PATHS.SQLE.SQL_AUDIT.detail.path,
         element: <SqlAuditDetail />,
         key: 'sqlAuditDetail'
+      },
+      {
+        path: ROUTE_PATHS.SQLE.SQL_AUDIT.create_optimization.path,
+        element: <SqlOptimizationCreate />,
+        key: 'sqlAuditCreateOptimization'
+      },
+      {
+        path: ROUTE_PATHS.SQLE.SQL_AUDIT.optimization_result.path,
+        element: <SqlOptimizationResult />,
+        key: 'sqlOptimizationResult'
       }
     ]
   },
@@ -431,36 +431,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index.path,
-    key: 'sqlOptimization',
-    element: <SqlOptimization />,
-    // #if [ee]
-    permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
-    children: [
-      {
-        index: true,
-        element: <SqlOptimizationList />,
-        key: 'sqlOptimizationList'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create.path,
-        element: <SqlOptimizationCreate />,
-        key: 'sqlOptimizationCreate'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview.path,
-        element: <SqlOptimizationOverview />,
-        key: 'sqlOptimizationOverview'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail.path,
-        element: <SqlOptimizationDetail />,
-        key: 'sqlOptimizationDetail'
-      }
-    ]
-    // #endif
-  },
-  {
     path: ROUTE_PATHS.SQLE.PUSH_RULE.index.path,
     key: 'pushRuleConfiguration',
     element: <PushRuleConfiguration />,
@@ -478,12 +448,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create.path,
         element: <PipelineConfigurationCreation />,
-        key: 'sqlOptimizationCreate'
+        key: 'createPipelineConfiguration'
       },
       {
         path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update.path,
         element: <PipelineConfigurationUpdate />,
-        key: 'sqlOptimizationCreate'
+        key: 'updatePipelineConfiguration'
       }
     ]
   },
@@ -505,7 +475,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update.path,
         element: <VersionManagementUpdate />,
-        key: 'versionManagementCreation'
+        key: 'versionManagementUpdate'
       },
       {
         path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail.path,

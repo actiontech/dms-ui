@@ -1,4 +1,4 @@
-import { BasicButton, BasicModal, BasicTable } from '@actiontech/shared';
+import { BasicButton, BasicModal, BasicTable } from '@actiontech/dms-kit';
 import { Alert, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
@@ -29,10 +29,9 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useTableRequestError } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-
 const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
   open,
   onClose,
@@ -43,9 +42,7 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
-
   const draggedItemCollection = useRef<Set<string>>(new Set());
-
   const submit = () => {
     const filesToSort: IFileToSort[] = Array.from(
       draggedItemCollection.current
@@ -55,7 +52,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
         new_index: (dataSource.findIndex((item) => item.file_id === v) ?? 0) + 1
       };
     });
-
     task
       .updateSqlFileOrderV1({
         files_to_sort: filesToSort,
@@ -75,11 +71,9 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
         }
       });
   };
-
   const [dataSource, setDataSource] = useState<IAuditFileStatistic[]>([]);
   const { handleTableRequestError, requestErrorMessage } =
     useTableRequestError();
-
   const {
     run: fetchMoreData,
     data,
@@ -87,7 +81,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
   } = useRequest(
     () => {
       const page = dataSource ? Math.ceil(dataSource.length / 20) + 1 : 1;
-
       return handleTableRequestError(
         task.getAuditFileList({
           task_id: taskId,
@@ -103,7 +96,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
       ready: open
     }
   );
-
   const resetDataSource = () => {
     handleTableRequestError(
       task.getAuditFileList({
@@ -117,7 +109,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
       return res;
     });
   };
-
   const closeModal = () => {
     onClose();
     setDataSource([]);
@@ -133,7 +124,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
       }
     })
   );
-
   const onDragEnd = ({ active, over }: DragEndEvent) => {
     if (active.id !== over?.id) {
       setDataSource((prev) => {
@@ -146,7 +136,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
       draggedItemCollection.current.add(active.id as string);
     }
   };
-
   const TableRow = (props: SortableSQLFilesTableRowProps) => {
     const {
       attributes,
@@ -158,15 +147,18 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
     } = useSortable({
       id: props['data-row-key']
     });
-
     const style: React.CSSProperties = {
       ...props.style,
       transform: CSS.Translate.toString(transform),
       transition,
       cursor: 'move',
-      ...(isDragging ? { position: 'relative', zIndex: 9999 } : {})
+      ...(isDragging
+        ? {
+            position: 'relative',
+            zIndex: 9999
+          }
+        : {})
     };
-
     return (
       <tr
         {...props}
@@ -177,7 +169,6 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
       />
     );
   };
-
   return (
     <>
       {messageContextHolder}
@@ -203,7 +194,9 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
         }
       >
         <Alert
-          style={{ marginBottom: 12 }}
+          style={{
+            marginBottom: 12
+          }}
           message={t(
             'execWorkflow.audit.fileModeExecute.sortableSQLFilesModal.tips'
           )}
@@ -258,5 +251,4 @@ const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
     </>
   );
 };
-
 export default SortableSqlFilesModal;

@@ -2,7 +2,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import { t } from '../../../../locale/index';
 import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
-import { ModeSwitcherOptionsType } from '@actiontech/shared';
+import { ModeSwitcherOptionsType } from '@actiontech/dms-kit/es/components/ModeSwitcher/ModeSwitcher.types';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
   {

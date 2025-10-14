@@ -1,4 +1,4 @@
-import { floatRound } from '@actiontech/shared/lib/utils/Math';
+import { floatRound } from '@actiontech/dms-kit';
 import { ColumnProgressStyleWrapper } from './style';
 
 interface IColumnProgress {

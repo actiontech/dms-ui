@@ -8,11 +8,11 @@ import {
   ActiontechTableToolbarActionWithPermissions,
   CheckActionPermissionOtherValues
 } from './index.type';
-import { ActiontechTableProps } from '../../components/ActiontechTable';
+import { ActiontechTableProps } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   ActiontechTableActionsConfig,
   ActiontechTableToolbarActionMeta
-} from '../../components/ActiontechTable/index.type';
+} from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum

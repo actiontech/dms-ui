@@ -1,16 +1,15 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import useHideConfigInputNode from '../../../../../shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
-import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import useHideConfigInputNode from '@actiontech/dms-kit/es/components/ConfigItem/hooks/useHideConfigInputNode';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import { ResponseCode, ConfigFieldMapMeta } from '@actiontech/dms-kit';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Spin } from 'antd';
 import SystemBasicTitle from '../components/BasicTitle';
 import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';
 import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
 import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
-import { ConfigFieldMapMeta } from '@actiontech/shared';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();
@@ -78,7 +77,9 @@ const GlobalSetting = () => {
     loading: getConfigLoading,
     refresh
   } = useRequest(() =>
-    configuration.getSystemVariablesV1().then((res) => res?.data?.data ?? {})
+    DmsApi.ConfigurationService.GetSystemVariables().then(
+      (res) => res?.data?.data ?? {}
+    )
   );
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -91,11 +92,10 @@ const GlobalSetting = () => {
     const fieldMeta = fieldMetaMap.get(fieldName);
 
     startSubmit();
-    configuration
-      .updateSystemVariablesV1({
-        ...globalConfig,
-        [fieldName]: value
-      })
+    DmsApi.ConfigurationService.UpdateSystemVariables({
+      ...globalConfig,
+      [fieldName]: value
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           refresh();

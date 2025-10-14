@@ -7,7 +7,7 @@ import {
   IListMember,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 export const MemberListActions = (
   onEditMember: (record: IListMember | undefined) => void,

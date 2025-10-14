@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import React from 'react';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { Select } from 'antd';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';

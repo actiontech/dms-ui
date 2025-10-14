@@ -2,17 +2,17 @@ import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../locale';
-import {
-  DatabaseTypeLogo,
-  TypedLink,
-  BasicToolTip,
-  EmptyBox
-} from '@actiontech/shared';
+import { DatabaseTypeLogo, BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
+import { TypedLink } from '@actiontech/shared';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import {
+  formatTime,
+  TableColumnWithIconStyleWrapper,
+  ROUTE_PATHS
+} from '@actiontech/dms-kit';
 import {
   CheckCircleOutlined,
   CloseHexagonOutlined,
@@ -24,11 +24,8 @@ import {
   AuditPlanTypeResBaseActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ScanTypeTagsCell from './ScanTypeTagsCell';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { InfoCircleOutlined } from '@actiontech/icons/';
 import { PlanListTaskTypeButtonStyleWrapper } from './style';
-
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
   InstanceAuditPlanTableFilterParamType
@@ -47,7 +44,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ]
   ]);
 };
-
 export const SqlManagementConfColumns: (
   projectID: string,
   getLogoUrlByDbType: (dbType: string) => string
@@ -98,7 +94,6 @@ export const SqlManagementConfColumns: (
         if (!type) {
           return '-';
         }
-
         return (
           <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         );

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 import { commonModalReducer } from '../common';
 
 type NavReduxState = {

@@ -1,15 +1,13 @@
 import React, { useMemo, useState } from 'react';
 import { useBoolean } from 'ahooks';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
-
 const useGlobalDataSourceType = () => {
   const [dbTypeList, setDBTypeList] = useState<string[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDbServiceDriver();
-
   const updateDbTypeList = React.useCallback(() => {
     setTrue();
     DBService.ListGlobalDBServicesTips()
@@ -25,7 +23,6 @@ const useGlobalDataSourceType = () => {
         setFalse();
       });
   }, [setFalse, setTrue]);
-
   const dbTypeOptions = useMemo(() => {
     return dbTypeList.map((item) => ({
       value: item,
@@ -35,7 +32,6 @@ const useGlobalDataSourceType = () => {
       )
     }));
   }, [dbTypeList, getLogoUrlByDbType]);
-
   return {
     updateDbTypeList,
     loading,
@@ -43,5 +39,4 @@ const useGlobalDataSourceType = () => {
     dbTypeOptions
   };
 };
-
 export default useGlobalDataSourceType;

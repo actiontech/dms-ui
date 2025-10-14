@@ -18,7 +18,7 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { listCBOperationLogsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { ModalName } from '../../../data/ModalName';
 import { ModalName as SqleModalName } from 'sqle/src/data/ModalName';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {

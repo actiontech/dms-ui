@@ -5,13 +5,12 @@ import {
   Edge,
   getBezierPath
 } from '@xyflow/react';
-import { BasicButton, EmptyBox, BasicToolTip } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTip } from '@actiontech/dms-kit';
 import { PaperPlaneFilled } from '@actiontech/icons';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { CustomEdgeStyleWrapper } from '../../style';
 import { CustomEdgeData } from '../../index.type';
-
 const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
   sourceX,
   sourceY,
@@ -24,7 +23,6 @@ const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
   data
 }) => {
   const { t } = useTranslation();
-
   const [edgePath, labelX, labelY] = getBezierPath({
     sourceX,
     sourceY,
@@ -33,7 +31,6 @@ const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
     targetY,
     targetPosition
   });
-
   return (
     <>
       <BaseEdge path={edgePath} markerEnd={markerEnd} style={style} />
@@ -70,5 +67,4 @@ const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
     </>
   );
 };
-
 export default CustomEdge;

@@ -1,7 +1,7 @@
 import {
   ActiontechTable,
   useTableRequestError
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useEffect } from 'react';
 import { confDetailOverviewColumns } from './column';
 import {
@@ -15,7 +15,7 @@ import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../index.data';
 import { useTableAction } from './useTableAction';
 import { Spin, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { SqlManagementConfDetailOverviewTableActions } from './actions';

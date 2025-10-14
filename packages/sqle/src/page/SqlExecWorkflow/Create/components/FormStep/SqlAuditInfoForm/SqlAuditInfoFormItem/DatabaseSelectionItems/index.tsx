@@ -1,7 +1,4 @@
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { DatabaseSelectionItemProps } from '../../index.type';
 import { Divider, Form, Space, SelectProps } from 'antd';
@@ -14,26 +11,26 @@ import {
   SqlAuditInfoFormFields,
   SqlStatementFields
 } from '../../../../../index.type';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect } from '@actiontech/dms-kit';
 import useRenderDatabaseSelectionItems from './hooks/useRenderDatabaseSelectionItems';
-import { BasicButton, useTypedQuery } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { useTypedQuery } from '@actiontech/shared';
 import {
   DatabaseSchemaFilled,
   RingPieFilled,
   DatabaseFilled
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../store';
 import useCreationMode from '../../../../../hooks/useCreationMode';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
-import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { TRANSIT_FROM_CONSTANT } from '@actiontech/dms-kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
+import { jsonParse } from '@actiontech/dms-kit';
 import useSetFormValuesWithGenModifiedSqlParams from './hooks/useSetFormValuesWithGenModifiedSqlParams';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
   ...sharedStepDetail
@@ -42,18 +39,14 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
   const { projectName } = useCurrentProject();
   const extractQueries = useTypedQuery();
-
   const { sqleTheme } = useThemeStyleData();
-
   const { isAssociationVersionMode } = useCreationMode();
-
   const { versionFirstStageInstances } = useSelector((state: IReduxState) => {
     return {
       versionFirstStageInstances:
         state.sqlExecWorkflow.versionFirstStageInstances
     };
   });
-
   const {
     testDatabaseConnect,
     testLoading,
@@ -63,14 +56,12 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     databaseInfo: Form.useWatch('databaseInfo', form),
     instanceTestConnectResults: sharedStepDetail.instanceTestConnectResults
   });
-
   const {
     loading: instanceTipsLoading,
     updateInstanceList,
     instanceOptions,
     instanceList
   } = useInstance();
-
   const {
     handleInstanceChange,
     handleInstanceSchemaChange,
@@ -84,7 +75,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     sqlStatementTabActiveKey: sharedStepDetail.sqlStatementTabActiveKey,
     instanceList
   });
-
   useSetFormValuesWithGenModifiedSqlParams({
     form,
     handleInstanceChange,
@@ -92,7 +82,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     handleInstanceNameChange,
     setGetModifiedSQLsPending: sharedStepDetail.getModifiedSQLsPending.set
   });
-
   const versionFirstStageInstanceOptions = useMemo(() => {
     const newOptions: SelectProps['options'] = [];
     instanceOptions.forEach((item) => {
@@ -115,7 +104,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     });
     return newOptions;
   }, [instanceOptions, versionFirstStageInstances]);
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName,
@@ -123,7 +111,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
         getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [projectName, updateInstanceList]);
-
   useEffect(() => {
     const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create
@@ -145,9 +132,13 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
             schema: string;
             sql: string;
           }>(decompressFromEncodedURIComponent(compressionData));
-
           form.setFieldsValue({
-            databaseInfo: [{ instanceName, instanceSchema: schema }],
+            databaseInfo: [
+              {
+                instanceName,
+                instanceSchema: schema
+              }
+            ],
             [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
               form_data: sql
             } as SqlStatementFields
@@ -165,7 +156,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [extractQueries, form]);
-
   return (
     <>
       <FormItemLabel
@@ -328,5 +318,4 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     </>
   );
 };
-
 export default DatabaseSelectionItem;

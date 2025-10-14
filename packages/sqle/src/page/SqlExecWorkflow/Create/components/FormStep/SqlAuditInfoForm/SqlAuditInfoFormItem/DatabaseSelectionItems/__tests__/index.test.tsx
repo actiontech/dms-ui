@@ -14,7 +14,7 @@ import { mockDatabaseType } from '../../../../../../../../../testUtils/mockHooks
 import { Form } from 'antd';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
-import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { TRANSIT_FROM_CONSTANT } from '@actiontech/dms-kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
@@ -102,7 +102,7 @@ describe('test DatabaseSelectionItems', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
+            `/sqle/project/700300/exec-workflow/create?version_name=v1-test&version_id=1`
           ]
         }
       }

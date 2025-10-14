@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
 import { Space, message, Form } from 'antd';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
@@ -24,33 +24,24 @@ import {
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const UpdateSqlManagementException = () => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<SqlManagementExceptionFormFieldType>();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) =>
       !!state.sqlManagementException.modalStatus[
         ModalName.Update_Sql_Management_Exception
       ]
   );
-
   const { projectName } = useCurrentProject();
-
   const currentSqlManagementExceptionRecord = useSelector<
     IReduxState,
     IBlacklistResV1 | null
   >((state) => state.sqlManagementException.selectSqlManagementExceptionRecord);
-
   const dispatch = useDispatch();
-
   const [createLoading, { setTrue: startCreate, setFalse: createFinish }] =
     useBoolean();
-
   const closeModal = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -59,13 +50,15 @@ const UpdateSqlManagementException = () => {
         status: false
       })
     );
-    dispatch(updateSelectSqlManagementException({ selectRow: null }));
+    dispatch(
+      updateSelectSqlManagementException({
+        selectRow: null
+      })
+    );
   }, [dispatch, form]);
-
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
-
     const content = () => {
       if (
         values.type === CreateBlacklistReqV1TypeEnum.sql ||
@@ -73,10 +66,8 @@ const UpdateSqlManagementException = () => {
       ) {
         return values.sql;
       }
-
       return values[values.type];
     };
-
     blacklist
       .updateBlacklistV1({
         project_name: projectName,
@@ -106,7 +97,6 @@ const UpdateSqlManagementException = () => {
     messageApi,
     t
   ]);
-
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -131,7 +121,6 @@ const UpdateSqlManagementException = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
-
   return (
     <>
       {messageContextHolder}
@@ -160,5 +149,4 @@ const UpdateSqlManagementException = () => {
     </>
   );
 };
-
 export default UpdateSqlManagementException;

@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { CustomLoadingIndicatorStyleWrapper } from './style';
-import { SpinIndicator } from '@actiontech/shared';
-
+import { SpinIndicator } from '@actiontech/dms-kit';
 const CustomLoadingIndicator: React.FC = () => {
   const { t } = useTranslation();
   return (
@@ -17,5 +16,4 @@ const CustomLoadingIndicator: React.FC = () => {
     </CustomLoadingIndicatorStyleWrapper>
   );
 };
-
 export default CustomLoadingIndicator;

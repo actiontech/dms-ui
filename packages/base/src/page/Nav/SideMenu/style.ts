@@ -1,14 +1,12 @@
 import { styled } from '@mui/material/styles';
 import { Space } from 'antd';
-import { BasicModal } from '@actiontech/shared';
+import { BasicModal } from '@actiontech/dms-kit';
 import { NotificationFilled } from '@ant-design/icons';
-
 export const VersionModalFeatureContentStyleWrapper = styled(Space)`
   & .ant-space-item {
     width: 100%;
   }
 `;
-
 export const CEModeProjectWrapperStyleWrapper = styled('div')`
   display: flex;
   width: 100%;
@@ -37,7 +35,6 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
     line-height: 20px;
   }
 `;
-
 export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
   &.company-notice-modal {
     .ant-modal-body {
@@ -45,14 +42,12 @@ export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
     }
   }
 `;
-
 export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
   color: ${({ theme }) =>
     theme.sharedTheme.basic.colorFontGrayByWhite} !important;
   width: 16px;
   height: 16px;
 `;
-
 export const QuickActionsStyleWrapper = styled('div')`
   width: 100%;
   margin-bottom: 8px;
@@ -105,7 +100,6 @@ export const QuickActionsStyleWrapper = styled('div')`
     }
   }
 `;
-
 export const ProjectTitleStyleWrapper = styled('div')`
   display: flex;
   align-items: center;

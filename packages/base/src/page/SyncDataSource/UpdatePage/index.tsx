@@ -2,18 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback, useEffect, useState } from 'react';
 import { Empty, message, Space, Typography } from 'antd';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
 import {
   BackButton,
-  BasicButton,
-  EmptyBox,
-  PageHeader,
   useTypedNavigate,
   useTypedParams
 } from '@actiontech/shared';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { useForm } from 'antd/es/form/Form';
 import SyncTaskForm from '../Form';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -25,17 +23,14 @@ import { IUpdateDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/
 import useTaskSource from '../../../hooks/useTaskSource';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SyncTaskFormFields } from '../Form/index.type';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateSyncTask: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
-
   const [messageApi, contextHoler] = message.useMessage();
   const [form] = useForm<SyncTaskFormFields>();
   const { updateTaskSourceList, ...taskSourceTips } = useTaskSource();
   const { mergeFromValueIntoParams } = useAsyncParams();
-
   const { taskId } =
     useTypedParams<typeof ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update>();
   const [initError, setInitError] = useState('');
@@ -44,15 +39,12 @@ const UpdateSyncTask: React.FC = () => {
   const [taskInfoLoading, setTaskInfoLoading] = useState(false);
   const [syncInstanceTask, setSyncInstanceTask] =
     useState<IGetDBServiceSyncTask>();
-
   const onSubmit = async () => {
     const values: SyncTaskFormFields = await form.validateFields();
     startSubmit();
-
     const additionalParams = taskSourceTips.generateTaskSourceAdditionalParams(
       values.source
     );
-
     const params: IUpdateDBServiceSyncTaskParams = {
       db_service_sync_task_uid: taskId ?? '',
       db_service_sync_task: {
@@ -83,13 +75,14 @@ const UpdateSyncTask: React.FC = () => {
         )
       }
     };
-
     DBServiceSyncTaskService.UpdateDBServiceSyncTask(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsSyncDataSource.updateSyncTask.successTips'));
           navigate(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index, {
-            queries: { active: DataSourceManagerSegmentedKey.SyncDataSource },
+            queries: {
+              active: DataSourceManagerSegmentedKey.SyncDataSource
+            },
             replace: true
           });
         }
@@ -98,7 +91,6 @@ const UpdateSyncTask: React.FC = () => {
         submitFinish();
       });
   };
-
   const getSyncInstanceTask = useCallback(() => {
     if (!taskId) {
       setInitError(t('common.unknownError'));
@@ -120,16 +112,13 @@ const UpdateSyncTask: React.FC = () => {
         setTaskInfoLoading(false);
       });
   }, [t, taskId]);
-
   const reset = () => {
     EventEmitter.emit(EmitterKey.DMS_SYNC_TASK_RESET_FORM);
   };
-
   useEffect(() => {
     getSyncInstanceTask();
     updateTaskSourceList();
   }, [getSyncInstanceTask, updateTaskSourceList]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {contextHoler}
@@ -160,7 +149,9 @@ const UpdateSyncTask: React.FC = () => {
         if={!initError}
         defaultNode={
           <Empty
-            style={{ marginTop: 160 }}
+            style={{
+              marginTop: 160
+            }}
             image={Empty.PRESENTED_IMAGE_DEFAULT}
             description={
               <Typography.Text type="danger">
@@ -195,5 +186,4 @@ const UpdateSyncTask: React.FC = () => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default UpdateSyncTask;

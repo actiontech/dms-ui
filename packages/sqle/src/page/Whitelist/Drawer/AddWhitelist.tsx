@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
 import { Space, message, Form } from 'antd';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ModalName } from '../../../data/ModalName';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -19,11 +19,11 @@ import WhitelistForm from './WhitelistForm';
 import { WhitelistFormFields } from './index.type';
 import { initWhitelistModalStatus } from '../../../store/whitelist';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-
-const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
+const AddWhitelist: React.FC<{
+  onCreated?: () => void;
+}> = ({ onCreated }) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<WhitelistFormFields>();
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.whitelist.modalStatus[ModalName.Add_Whitelist]
@@ -32,12 +32,10 @@ const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
     IReduxState,
     IAuditWhitelistResV1 | null
   >((state) => state.whitelist.selectWhitelist);
-
   const dispatch = useDispatch();
   const [createLoading, { setTrue: startCreate, setFalse: createFinish }] =
     useBoolean();
   const { projectName } = useCurrentProject();
-
   const closeModal = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -46,9 +44,12 @@ const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
         status: false
       })
     );
-    dispatch(updateSelectWhitelist({ selectRow: null }));
+    dispatch(
+      updateSelectWhitelist({
+        selectRow: null
+      })
+    );
   }, [dispatch, form]);
-
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
@@ -80,7 +81,6 @@ const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
     messageApi,
     t
   ]);
-
   useEffect(() => {
     if (visible && !!currentWhitelist?.value) {
       form.setFieldsValue({
@@ -89,14 +89,16 @@ const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
-
   useEffect(() => {
     const modalStatus = {
       [ModalName.Add_Whitelist]: false
     };
-    dispatch(initWhitelistModalStatus({ modalStatus }));
+    dispatch(
+      initWhitelistModalStatus({
+        modalStatus
+      })
+    );
   }, [dispatch]);
-
   return (
     <>
       {messageContextHolder}
@@ -125,5 +127,4 @@ const AddWhitelist: React.FC<{ onCreated?: () => void }> = ({ onCreated }) => {
     </>
   );
 };
-
 export default AddWhitelist;

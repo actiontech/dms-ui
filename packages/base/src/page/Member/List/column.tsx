@@ -1,16 +1,15 @@
 import { Typography, Space, Popover } from 'antd';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
   IListMember,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
 import ProjectManagePermissions from '../components/ProjectManagePermissions';
-import { BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import ProjectTagList from '../../../components/ProjectTagList';
 import SystemRoleTagList from '../../../components/SystemRoleTagList';
 import ProjectOpPermissions from '../components/ProjectOpPermissions';
-
 export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
@@ -64,7 +63,6 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
       ) {
         return '-';
       }
-
       if (record.is_project_admin || !!record.current_project_admin?.is_admin) {
         return (
           <Popover
@@ -79,13 +77,14 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
             }
             title={null}
             placement="top"
-            overlayStyle={{ maxWidth: 450 }}
+            overlayStyle={{
+              maxWidth: 450
+            }}
           >
             ALL
           </Popover>
         );
       }
-
       return <ProjectOpPermissions permissions={permissions} />;
     }
   },
@@ -104,7 +103,6 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     }
   }
 ];
-
 export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'name',
@@ -151,11 +149,9 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
       ) {
         return '-';
       }
-
       if (record.is_project_admin) {
         return 'ALL';
       }
-
       return <ProjectOpPermissions permissions={permissions} />;
     }
   },

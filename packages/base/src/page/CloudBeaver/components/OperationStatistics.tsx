@@ -1,7 +1,7 @@
 import { Col, Typography, Space } from 'antd';
 import { AccountStatisticsStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/dms-kit';
 
 const OperationStatistics: React.FC<{
   total?: number;

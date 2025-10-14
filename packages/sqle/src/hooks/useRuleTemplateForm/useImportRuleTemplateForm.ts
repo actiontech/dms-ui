@@ -7,7 +7,7 @@ import {
   MIMETypeEnum,
   ResponseBlobJsonType,
   ResponseCode
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import { FileUploadCheckStatusType, SelectFileFormFields } from './index.type';
 import { Form, UploadProps } from 'antd';
 import useFormStep from './useFormStep';
@@ -18,7 +18,7 @@ import {
   getErrorMessage,
   isExportFileResponse,
   jsonParse
-} from '@actiontech/shared/lib/utils/Common';
+} from '@actiontech/dms-kit';
 
 const useImportRuleTemplate = () => {
   const { t } = useTranslation();

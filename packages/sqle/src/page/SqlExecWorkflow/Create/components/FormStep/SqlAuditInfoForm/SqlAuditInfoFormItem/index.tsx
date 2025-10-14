@@ -1,9 +1,9 @@
 import { Form } from 'antd';
 import { SqlAuditInfoFormItemProps } from '../index.type';
 import DatabaseSelectionItem from './DatabaseSelectionItems';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-import { BasicSwitch } from '@actiontech/shared';
+import { BasicSwitch } from '@actiontech/dms-kit';
 import { useEffect, useMemo } from 'react';
 import {
   CreateWorkflowDatabaseInfo,
@@ -12,16 +12,13 @@ import {
 import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { RingPieFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { forwardRef } from 'react';
-
 const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
   ({ auditAction, handleInstanceNameChange, ...sharedStepDetail }, ref) => {
     const { t } = useTranslation();
     const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-
     const isSameSqlForAll = Form.useWatch('isSameSqlForAll', form);
-
     const databaseInfo: CreateWorkflowDatabaseInfo = useMemo(() => {
       return Object.keys(sharedStepDetail.dbSourceInfoCollection.value)
         .map((key) => {
@@ -44,7 +41,6 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
         })
         .filter((v) => !!v.instanceName);
     }, [sharedStepDetail.dbSourceInfoCollection]);
-
     const isSupportFileModeExecuteSqlRecord: Record<string, boolean> =
       useMemo(() => {
         if (isSameSqlForAll) {
@@ -70,7 +66,6 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
           };
         }, {});
       }, [isSameSqlForAll, sharedStepDetail.dbSourceInfoCollection.value]);
-
     useEffect(() => {
       const dbTypeSet = new Set(
         Object.keys(sharedStepDetail.dbSourceInfoCollection.value)
@@ -87,7 +82,6 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form, sharedStepDetail.dbSourceInfoCollection.value]);
-
     return (
       <>
         <section ref={ref}>
@@ -122,8 +116,12 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
               </div>
             </div>
           }
-          labelCol={{ span: 22 }}
-          wrapperCol={{ span: 2 }}
+          labelCol={{
+            span: 22
+          }}
+          wrapperCol={{
+            span: 2
+          }}
         >
           <BasicSwitch
             disabled={sharedStepDetail.isDisabledForDifferenceSql.value}
@@ -144,5 +142,4 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
     );
   }
 );
-
 export default SqlAuditInfoFormItem;

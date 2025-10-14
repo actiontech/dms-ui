@@ -2,7 +2,7 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableActionsConfig,
   ActiontechTableToolbarActionMeta
-} from '../../components/ActiontechTable/index.type';
+} from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { PermissionsConstantType } from './permissions';
 
 type ReplacePermissions<T> = Omit<T, 'permissions'> & {

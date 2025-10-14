@@ -2,14 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { WorkflowRecordInfoProps } from './index.type';
 import { WorkflowStepsStyleWrapper } from './style';
 import WorkflowBasicInfo from './components/WorkflowBasicInfo';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import WorkflowSteps from './components/WorkflowSteps';
-import { EmptyBox, LazyLoadComponent } from '@actiontech/shared';
+import { EmptyBox, LazyLoadComponent } from '@actiontech/dms-kit';
 import WorkflowHistorySteps from './components/WorkflowHistorySteps';
 import { CloseOutlined } from '@actiontech/icons';
 import AssociatedWorkflows from './components/AssociatedWorkflows';
 import AssociatedRollbackWorkflows from './components/AssociatedRollbackWorkflows';
-
 const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   visibility,
   workflowInfo,
@@ -17,7 +16,6 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   onClose
 }) => {
   const { t } = useTranslation();
-
   return (
     <LazyLoadComponent open={visibility}>
       <WorkflowStepsStyleWrapper>
@@ -68,5 +66,4 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
     </LazyLoadComponent>
   );
 };
-
 export default WorkflowRecordInfo;

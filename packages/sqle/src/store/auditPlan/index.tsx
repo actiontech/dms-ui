@@ -4,7 +4,7 @@ import {
   IAuditPlanResV2,
   IAuditPlanReportSQLResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 type AuditPlanReduxState = {
   modalStatus: ModalStatus;
   selectAuditPlan: IAuditPlanResV2 | null;

@@ -1,0 +1,546 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableSelect should render select when options is empty 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render select when options is empty 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
+      open=""
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          fill="none"
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up ant-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="css-8go0jz"
+        height="320"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="editable-select-search"
+            >
+              <span
+                class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-borderless"
+              >
+                <input
+                  class="ant-input ant-input-borderless"
+                  placeholder="输入关键字搜索"
+                  type="text"
+                  value=""
+                />
+                <span
+                  class="ant-input-suffix"
+                >
+                  <span
+                    class="ant-input-clear-icon ant-input-clear-icon-hidden"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div
+              class="ant-empty is-icon-tips css-19kysfv"
+            >
+              <div
+                class="ant-empty-image"
+              >
+                <svg
+                  fill="none"
+                  height="80"
+                  viewBox="0 0 80 80"
+                  width="80"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#clip0_1412_15009)"
+                  >
+                    <path
+                      d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                      fill="#EBEAE7"
+                    />
+                    <path
+                      d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                      fill="#F2F1EF"
+                    />
+                    <path
+                      d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                      fill="#E6E4E3"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="clip0_1412_15009"
+                    >
+                      <rect
+                        fill="white"
+                        height="80"
+                        width="80"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <div
+                class="ant-empty-description"
+              >
+                <span
+                  class="no-data-cont"
+                >
+                  暂无数据
+                </span>
+              </div>
+              <div
+                class="ant-empty-footer"
+              />
+            </div>
+            <div
+              class="editable-select-add-section"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center add-button-wraper"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 10 10"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m5.02.5-.012 9M.5 5h9"
+                      stroke="#1CB889"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  添加
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render select with options 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render select with options 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
+      open=""
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          fill="none"
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up ant-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="css-8go0jz"
+        height="320"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="editable-select-search"
+            >
+              <span
+                class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-borderless"
+              >
+                <input
+                  class="ant-input ant-input-borderless"
+                  placeholder="输入关键字搜索"
+                  type="text"
+                  value=""
+                />
+                <span
+                  class="ant-input-suffix"
+                >
+                  <span
+                    class="ant-input-clear-icon ant-input-clear-icon-hidden"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <ul
+              class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light editable-select-menu"
+              data-menu-list="true"
+              role="menu"
+              tabindex="0"
+            >
+              <li
+                class="ant-dropdown-menu-item ant-dropdown-menu-item-only-child"
+                data-menu-id="rc-menu-uuid-test-1"
+                role="menuitem"
+                tabindex="-1"
+              >
+                <span
+                  class="ant-dropdown-menu-title-content"
+                >
+                  <div>
+                    <div
+                      class="menu-item-content"
+                    >
+                      <span>
+                        Option 1
+                      </span>
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <button
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1uxy5k6"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                  fill="#8A8F99"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1uxy5k6"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="14"
+                                viewBox="0 0 18 18"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li
+                class="ant-dropdown-menu-item ant-dropdown-menu-item-only-child"
+                data-menu-id="rc-menu-uuid-test-2"
+                role="menuitem"
+                tabindex="-1"
+              >
+                <span
+                  class="ant-dropdown-menu-title-content"
+                >
+                  <div>
+                    <div
+                      class="menu-item-content"
+                    >
+                      <span>
+                        Option 2
+                      </span>
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <button
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1uxy5k6"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                  fill="#8A8F99"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1uxy5k6"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="14"
+                                viewBox="0 0 18 18"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+            </ul>
+            <div
+              aria-hidden="true"
+              style="display: none;"
+            />
+            <div
+              class="editable-select-add-section"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center add-button-wraper"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 10 10"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m5.02.5-.012 9M.5 5h9"
+                      stroke="#1CB889"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  添加
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render without options 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;

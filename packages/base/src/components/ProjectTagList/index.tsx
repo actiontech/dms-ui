@@ -1,16 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import { useMemo, useState } from 'react';
 import { FlagFilled } from '@actiontech/icons';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-
 export interface ProjectTagListProps {
   projectList?: string[];
   maxDisplayCount?: number;
   highlightCurrentProject?: boolean;
 }
-
 const ProjectTagList: React.FC<ProjectTagListProps> = ({
   projectList = [],
   maxDisplayCount = 3,
@@ -18,28 +16,24 @@ const ProjectTagList: React.FC<ProjectTagListProps> = ({
 }) => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
-
   const { projectName } = useCurrentProject();
-
   const displayProjects = useMemo(() => {
     return expanded ? projectList : projectList.slice(0, maxDisplayCount);
   }, [expanded, projectList, maxDisplayCount]);
-
   if (!Array.isArray(projectList) || projectList.length === 0) {
     return <>-</>;
   }
-
   const handleToggleExpand = () => {
     setExpanded(!expanded);
   };
-
   const hasMoreProjects = projectList.length > maxDisplayCount;
-
   return (
     <Space size={[0, 4]} wrap>
       {displayProjects.map((project) => (
         <BasicTag
-          style={{ height: 28 }}
+          style={{
+            height: 28
+          }}
           size="small"
           color={
             project === projectName && highlightCurrentProject
@@ -55,7 +49,10 @@ const ProjectTagList: React.FC<ProjectTagListProps> = ({
 
       {hasMoreProjects && !expanded && (
         <BasicTag
-          style={{ height: 28, cursor: 'pointer' }}
+          style={{
+            height: 28,
+            cursor: 'pointer'
+          }}
           size="small"
           color="blue"
           onClick={handleToggleExpand}
@@ -68,7 +65,10 @@ const ProjectTagList: React.FC<ProjectTagListProps> = ({
 
       {expanded && (
         <BasicTag
-          style={{ height: 28, cursor: 'pointer' }}
+          style={{
+            height: 28,
+            cursor: 'pointer'
+          }}
           size="small"
           color="blue"
           onClick={handleToggleExpand}
@@ -79,5 +79,4 @@ const ProjectTagList: React.FC<ProjectTagListProps> = ({
     </Space>
   );
 };
-
 export default ProjectTagList;

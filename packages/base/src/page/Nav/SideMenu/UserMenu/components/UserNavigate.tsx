@@ -7,28 +7,29 @@ import {
   ArrowRightOutlined
 } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
-import { CustomAvatarStyleWrapper } from '@actiontech/shared/lib/components/CustomAvatar/style';
+import { CustomAvatarStyleWrapper } from '@actiontech/dms-kit/es/components/CustomAvatar/style';
 import { useState } from 'react';
 import { useUserInfo } from '@actiontech/shared/lib/features';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
-import { ResponseCode, SupportLanguage } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper, ResponseCode } from '@actiontech/dms-kit';
+import { SupportLanguage } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../../store/nav';
 import { ModalName } from '../../../../../data/ModalName';
-import { LocalStorageWrapper, useTypedNavigate } from '@actiontech/shared';
+import { useTypedNavigate } from '@actiontech/shared';
 import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
-} from '@actiontech/shared/lib/enum';
+} from '@actiontech/dms-kit';
 import { useBoolean, useRequest } from 'ahooks';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { updateLanguage as updateReduxLanguage } from '../../../../../../../base/src/store/user';
 import { Radio } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import useRecentlySelectedZone from '../../../../../hooks/useRecentlySelectedZone';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { updateUserOperationPermissions } from '../../../../../store/permission';
 
 type Props = {

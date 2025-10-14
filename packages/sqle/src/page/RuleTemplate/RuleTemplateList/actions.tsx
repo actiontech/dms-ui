@@ -12,8 +12,7 @@ import {
   LoginBoxOutlined
 } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const RuleTemplateTableActions = (
   onAction: (
     record: IProjectRuleTemplateResV1 | undefined,
@@ -71,7 +70,6 @@ export const RuleTemplateTableActions = (
     ]
   };
 };
-
 export const RuleTemplatePageHeaderActions = (
   projectID: string
 ): Record<
@@ -88,7 +86,9 @@ export const RuleTemplatePageHeaderActions = (
         actionType="navigate-link"
         link={{
           to: ROUTE_PATHS.SQLE.RULE_TEMPLATE.import,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>
@@ -104,7 +104,9 @@ export const RuleTemplatePageHeaderActions = (
         actionType="navigate-link"
         link={{
           to: ROUTE_PATHS.SQLE.RULE_TEMPLATE.create,
-          params: { projectID }
+          params: {
+            projectID
+          }
         }}
       />
     </PermissionControl>

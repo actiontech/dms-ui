@@ -1,13 +1,12 @@
-import { BasicDrawer, EnterpriseFeatureDisplay } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/dms-kit';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { SqlRewrittenDrawerWithBaseProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Typography } from 'antd';
-
 const SqlRewrittenDrawerCE: React.FC<SqlRewrittenDrawerWithBaseProps> = (
   props
 ) => {
   const { t } = useTranslation();
-
   return (
     <BasicDrawer {...props}>
       <EnterpriseFeatureDisplay
@@ -25,5 +24,4 @@ const SqlRewrittenDrawerCE: React.FC<SqlRewrittenDrawerWithBaseProps> = (
     </BasicDrawer>
   );
 };
-
 export default SqlRewrittenDrawerCE;

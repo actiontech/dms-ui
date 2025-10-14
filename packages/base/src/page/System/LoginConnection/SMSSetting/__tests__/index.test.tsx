@@ -6,7 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import SMSSetting from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 describe('base/System/GlobalSetting/SMSSetting', () => {
   let getSmsConfigurationSpy: jest.SpyInstance;

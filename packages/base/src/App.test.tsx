@@ -19,10 +19,10 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { compressToBase64 } from 'lz-string';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routePaths';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/dms-kit';
+import { SystemRole } from '@actiontech/dms-kit';
 import { AuthRouterConfig } from './router/router';
 import { cloneDeep } from 'lodash';
 import dmsSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
@@ -32,8 +32,8 @@ import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
-import { eventEmitter as sharedEventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -47,6 +47,12 @@ jest.mock('react-redux', () => {
     useDispatch: jest.fn()
   };
 });
+
+jest.mock('react-error-boundary', () => ({
+  ErrorBoundary: ({ children }: { children: React.ReactNode }) => {
+    return children;
+  }
+}));
 
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
@@ -93,6 +99,9 @@ describe('App', () => {
           modalStatus: {
             [ModalName.Company_Notice]: false
           }
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
         }
       });
     });
@@ -289,13 +298,6 @@ describe('App', () => {
     baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
-  });
-
-  it('should initialize the availability zone', () => {
-    baseSuperRender(<App />);
-    expect(
-      mockUseRecentlySelectedZoneData.initializeAvailabilityZone
-    ).toHaveBeenCalledTimes(1);
   });
 
   it('should reload the initial data when the event is triggered', async () => {

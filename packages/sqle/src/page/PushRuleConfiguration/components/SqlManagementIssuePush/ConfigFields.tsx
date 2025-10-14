@@ -1,25 +1,19 @@
 import { useTranslation } from 'react-i18next';
-import { BasicSelect } from '@actiontech/shared';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
-import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInput';
-
+import { BasicSelect } from '@actiontech/dms-kit';
+import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
+import { checkCron } from '@actiontech/dms-kit/es/components/CronInput/useCron/cron.tool';
+import CronInputCom from '@actiontech/dms-kit/es/components/CronInput/CronInput';
 type Props = {
   submitPending: boolean;
   fetchUserTipsPending: boolean;
   generateUsernameSelectOption: () => JSX.Element[];
 };
-
 const ConfigFields: React.FC<Props> = ({
   submitPending,
   fetchUserTipsPending,
   generateUsernameSelectOption
 }) => {
   const { t } = useTranslation();
-
   return (
     <>
       <FormItemLabel
@@ -81,5 +75,4 @@ const ConfigFields: React.FC<Props> = ({
     </>
   );
 };
-
 export default ConfigFields;

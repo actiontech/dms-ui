@@ -4,7 +4,6 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
-
 export const RuleKnowledgeEditActions = (
   onEdit: () => void,
   loading: boolean

@@ -181,6 +181,8 @@ export interface IGetAuditPlanSqlAnalysisDataV1Params {
   instance_audit_plan_id: string;
 
   id: string;
+
+  affectRowsEnabled?: boolean;
 }
 
 export interface IGetAuditPlanSqlAnalysisDataV1Return

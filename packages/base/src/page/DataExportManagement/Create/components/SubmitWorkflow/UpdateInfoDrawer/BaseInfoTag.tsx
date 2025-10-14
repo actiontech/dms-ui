@@ -1,4 +1,4 @@
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import dayjs from 'dayjs';
 import {
@@ -7,7 +7,6 @@ import {
 } from '@actiontech/shared/lib/features';
 import { FlagFilled, UserFilled, ClockCircleFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
-
 const BaseInfoTag: React.FC = () => {
   const { projectName } = useCurrentProject();
   const { username } = useCurrentUser();
@@ -35,5 +34,4 @@ const BaseInfoTag: React.FC = () => {
     </Space>
   );
 };
-
 export default BaseInfoTag;

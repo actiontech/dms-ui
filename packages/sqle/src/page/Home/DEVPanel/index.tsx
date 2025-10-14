@@ -2,7 +2,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -13,7 +13,7 @@ import {
 import { DEVPanelFilterKey, IDEVPanelProps } from './index.type';
 import { commonColumn } from '../CommonTable/column';
 import { useRequest } from 'ahooks';
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import {
   DashboardCommonListStyleWrapper,
   NoBorderedPageHeaderStyleWrapper,
@@ -29,7 +29,6 @@ import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/w
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { MenuSquareFilled } from '@actiontech/icons';
-
 const DEVPanel: React.FC<IDEVPanelProps> = ({
   workflowStatistics,
   getWorkflowStatistics,
@@ -41,12 +40,9 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
   const [filterStatus, setFilterStatus] = useState<DEVPanelFilterKey>(
     getWorkflowsV1FilterStatusEnum.wait_for_audit
   );
-
   const columns = useMemo(() => commonColumn(projectID), [projectID]);
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: orderList,
     loading,
@@ -66,17 +62,14 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
       refreshDeps: [filterStatus]
     }
   );
-
   const refresh = useCallback(() => {
     refreshTable();
     getWorkflowStatistics();
   }, [getWorkflowStatistics, refreshTable]);
-
   const { tableChange } = useTableRequestParams<
     IWorkflowDetailResV1,
     DASHBOARD_COMMON_FILTER_TYPE
   >();
-
   return (
     <DashboardCommonListStyleWrapper>
       <NoBorderedPageHeaderStyleWrapper>
@@ -86,7 +79,12 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
         </TableTitleStyleWrapper>
       </NoBorderedPageHeaderStyleWrapper>
 
-      <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
+      <CustomToolbar
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
+      >
         <BasicSegmented
           options={[
             {
@@ -131,5 +129,4 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
     </DashboardCommonListStyleWrapper>
   );
 };
-
 export default DEVPanel;

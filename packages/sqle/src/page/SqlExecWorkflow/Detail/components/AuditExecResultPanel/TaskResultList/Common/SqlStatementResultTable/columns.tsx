@@ -1,7 +1,9 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import ExecStatusTag from '../ResultCard/components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { BasicTableProps, SQLRenderer } from '@actiontech/shared';
+import { SQLRenderer } from '@actiontech/shared';
+import { BasicTableProps } from '@actiontech/dms-kit/es/components/BasicTable/BasicTable.types';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import { t } from '../../../../../../../../locale';
 import ResultIconRender from '../../../../../../../../components/AuditResultMessage/ResultIconRender';
 
@@ -54,8 +56,12 @@ export const SQLStatementResultColumns = (
       dataIndex: 'exec_status',
       title: () => t('audit.table.execResult'),
       className: 'exec-status-column',
-      render: (status: getAuditTaskSQLsV2FilterExecStatusEnum) => {
-        return <ExecStatusTag status={status} />;
+      render: (status: getAuditTaskSQLsV2FilterExecStatusEnum, record) => {
+        return (
+          <BasicToolTip title={record.exec_result}>
+            <ExecStatusTag status={status} />
+          </BasicToolTip>
+        );
       }
     }
   ];

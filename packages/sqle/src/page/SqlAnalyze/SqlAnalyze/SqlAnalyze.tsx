@@ -1,19 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import React, { useMemo, useState } from 'react';
 import { Spin } from 'antd';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import {
   EmptyBox,
   BasicResult,
   BasicSegmented,
   PageHeader
-} from '@actiontech/shared';
-
+} from '@actiontech/dms-kit';
 import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
 import useSQLExecPlan from './useSQLExecPlan';
 import { SqlAnalyzeProps } from '.';
-
 const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
   const { t } = useTranslation();
   const {
@@ -30,9 +28,13 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   } = props;
-
   const { generateTableSchemaContent } = useTableSchema();
   const { generateSQLExecPlanContent } = useSQLExecPlan({
     sqlExecPlanCostDataSource,
@@ -42,11 +44,14 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     showExecPlanCostChart,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   });
-
   const [tabStatus, setTabStatus] = useState<string>('sql');
-
   const createError = () => {
     if (errorType === 'error') {
       return (
@@ -59,7 +64,6 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     }
     return <BasicResult status={errorType} title={errorMessage} />;
   };
-
   const getSegmentedOption = useMemo(() => {
     if (
       !(
@@ -67,9 +71,19 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
         tableMetas?.table_meta_items.length
       )
     ) {
-      return [{ label: t('sqlAnalyze.sqlExplain'), value: 'sql' }];
+      return [
+        {
+          label: t('sqlAnalyze.sqlExplain'),
+          value: 'sql'
+        }
+      ];
     }
-    return [{ label: t('sqlAnalyze.sqlExplain'), value: 'sql' }].concat(
+    return [
+      {
+        label: t('sqlAnalyze.sqlExplain'),
+        value: 'sql'
+      }
+    ].concat(
       (tableMetas?.table_meta_items ?? []).map((table) => {
         return {
           label: t('sqlAnalyze.tableTitle', {
@@ -80,7 +94,6 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
       })
     );
   }, [tableMetas?.table_meta_items, t]);
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader fixed title={t('sqlAnalyze.pageTitle')} />
@@ -122,5 +135,4 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
-
 export default SqlAnalyze;

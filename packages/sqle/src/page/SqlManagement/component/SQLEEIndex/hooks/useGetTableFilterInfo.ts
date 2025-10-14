@@ -1,4 +1,4 @@
-import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
+import { FilterCustomProps } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useEffect, useMemo } from 'react';
 import useStaticStatus from './useStaticStatus';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
@@ -7,7 +7,7 @@ import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
 import { useTypedQuery } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const useGetTableFilterInfo = () => {

@@ -5,7 +5,6 @@ import {
 import { WorkflowDetailActionMeta } from './index.type';
 import { ActionButton } from '@actiontech/shared';
 import { t } from '../../../../../locale';
-
 export const CloseWorkflowAction = (
   closeWorkflowButtonMeta: WorkflowDetailActionMeta
 ) => {
@@ -29,7 +28,6 @@ export const CloseWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const CloneWorkflowAction = (
   executeInOtherInstanceMeta: WorkflowDetailActionMeta
 ) => {
@@ -45,7 +43,6 @@ export const CloneWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const BatchRejectWorkflowAction = (
   rejectWorkflowButtonMeta: WorkflowDetailActionMeta,
   openRejectModal: () => void
@@ -62,7 +59,6 @@ export const BatchRejectWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const ApproveWorkflowAction = (
   approveWorkflowButtonMeta: WorkflowDetailActionMeta
 ) => {
@@ -81,7 +77,6 @@ export const ApproveWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const BatchExecWorkflowAction = (
   batchExecutingWorkflowButtonMeta: WorkflowDetailActionMeta,
   executable?: boolean,
@@ -111,7 +106,6 @@ export const BatchExecWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const MarkManuallyExecWorkflowAction = (
   manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta,
   executable?: boolean,
@@ -141,7 +135,6 @@ export const MarkManuallyExecWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const TerminateWorkflowAction = (
   terminateWorkflowButtonMeta: WorkflowDetailActionMeta
 ) => {
@@ -165,7 +158,6 @@ export const TerminateWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const RefreshWorkflowAction = (refreshWorkflow: () => void) => {
   return (
     <ActionButton
@@ -174,7 +166,6 @@ export const RefreshWorkflowAction = (refreshWorkflow: () => void) => {
     />
   );
 };
-
 export const RollbackWorkflowAction = (
   rollbackWorkflowButtonMeta: WorkflowDetailActionMeta
 ) => {
@@ -191,7 +182,6 @@ export const RollbackWorkflowAction = (
     </PermissionControl>
   );
 };
-
 export const RetryWorkflowAction = (
   retryWorkflowButtonMeta: WorkflowDetailActionMeta
 ) => {
@@ -200,7 +190,7 @@ export const RetryWorkflowAction = (
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY}
     >
       <ActionButton
-        text={t('execWorkflow.detail.operator.retry')}
+        text={t('execWorkflow.create.auditResult.updateInfo')}
         hidden={retryWorkflowButtonMeta.hidden}
         onClick={() => retryWorkflowButtonMeta.action()}
         loading={retryWorkflowButtonMeta.loading}

@@ -2,16 +2,16 @@ import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
-  BasicTypographyEllipsis,
   EmptyBox
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   CustomLabelContent,
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+} from '@actiontech/dms-kit';
+import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { Col, Divider, Form, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
@@ -21,13 +21,11 @@ import {
 } from '../../index.type';
 import { MenuSquareFilled } from '@actiontech/icons';
 import { HighPriorityConditionDescTagStyleWrapper } from './style';
-
 type Props = {
   prefixPath: string;
   submitLoading: boolean;
   conditions: IHighPriorityConditionResV1[];
 };
-
 const HighPriorityConditions: React.FC<Props> = ({
   prefixPath,
   submitLoading,
@@ -35,24 +33,20 @@ const HighPriorityConditions: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlManagementConfFormFields>();
-
   const conditionsValues: PrioritySqlConditionsParams = Form.useWatch(
     [prefixPath, 'prioritySqlConditions'],
     form
   );
-
   const isMarkHighPrioritySql = Form.useWatch(
     [prefixPath, 'markHighPrioritySql'],
     form
   );
-
   const generatePriorityConditionsFieldName = (
     key: string,
     name: keyof HighPriorityConditionParams
   ) => {
     return [prefixPath, 'prioritySqlConditions', key, name];
   };
-
   const getEnabledStatusByKey = (key: string) => {
     return conditionsValues?.[key]?.checked;
   };
@@ -185,7 +179,11 @@ const HighPriorityConditions: React.FC<Props> = ({
 
               <Divider
                 type="vertical"
-                style={{ height: 36, marginLeft: 6, marginRight: 12 }}
+                style={{
+                  height: 36,
+                  marginLeft: 6,
+                  marginRight: 12
+                }}
               />
 
               <FormItemNoLabel
@@ -235,5 +233,4 @@ const HighPriorityConditions: React.FC<Props> = ({
     </>
   );
 };
-
 export default HighPriorityConditions;

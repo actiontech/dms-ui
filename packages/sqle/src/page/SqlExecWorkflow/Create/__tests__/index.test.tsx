@@ -22,7 +22,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/dms-kit';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -172,7 +172,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/exec-workflow/create?sourceWorkflowId=123456`
+            `/sqle/project/700300/exec-workflow/create?source_workflow_id=123456`
           ]
         }
       }
@@ -875,7 +875,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
+            `/sqle/project/700300/exec-workflow/create?version_name=v1-test&version_id=1`
           ]
         }
       }
@@ -1109,7 +1109,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/exec-workflow/create?rollbackWorkflowId=1`
+            `/sqle/project/700300/exec-workflow/create?rollback_workflow_id=1`
           ]
         }
       }

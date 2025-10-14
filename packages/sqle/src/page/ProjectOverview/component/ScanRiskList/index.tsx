@@ -4,16 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Typography } from 'antd';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatTime } from '@actiontech/dms-kit';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { ScanTaskFilled } from '@actiontech/icons';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 
@@ -22,28 +22,27 @@ const ScanRiskList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { projectName, projectID } = useCurrentProject();
-
   const [data, setData] = useState<IRiskAuditPlan[]>();
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
-    () => statistic.getRiskAuditPlanV1({ project_name: projectName }),
+    () =>
+      statistic.getRiskAuditPlanV1({
+        project_name: projectName
+      }),
     {
       onSuccess: (res) => {
         setData(res.data.data ?? []);
       }
     }
   );
-
   const onGetMore = () => {
     navigate(`/sqle/project/${projectID}/audit-plan`);
   };
-
   const tableProps: ITableTopList<IRiskAuditPlan> = {
     apiLoading: loading,
     rowKey: 'audit_plan_report_id',
     errorCont: errorMessage,
     dataSource: data?.slice(0, 10) // todo: 数据回来为什么是大于 10 条的（由于接口在其他地方有使用，后端暂时未修改接口返回数量，该处仅需展示10条）
   };
-
   const columnData: () => ITableTopList<IRiskAuditPlan>['columns'] = () => {
     return [
       {
@@ -77,7 +76,6 @@ const ScanRiskList = () => {
           if (!name) {
             return '-';
           }
-
           return (
             <Link to={`project/${projectID}/audit-plan/detail/${name}`}>
               {name}
@@ -113,7 +111,6 @@ const ScanRiskList = () => {
       }
     ];
   };
-
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.auditPlanRisk.title')}
@@ -137,5 +134,4 @@ const ScanRiskList = () => {
     </CardWrapper>
   );
 };
-
 export default ScanRiskList;

@@ -11,7 +11,7 @@ import {
 } from '../../../api/base/service/common.enum';
 import { IOpPermissionItem } from '../../../api/base/service/common';
 import { mockProjectInfo } from '../../../testUtil/mockHook/data';
-import { SystemRole } from '../../../enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import { ActiontechTableActionsWithPermissions } from '../index.type';
 
 jest.mock('react-redux', () => ({

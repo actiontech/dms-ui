@@ -4,19 +4,20 @@ import {
   EmptyBox,
   BasicTable,
   BasicResult,
-  SQLRenderer
-} from '@actiontech/shared';
+  BasicButton,
+  ActionButton
+} from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';
 import ExecPlanCostChart from './ExecPlanCostChart';
 import { ExecPlanParams } from './index';
 import { useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-
 const useSQLExecPlan = (params: ExecPlanParams) => {
   const {
     sqlExecPlanCostDataSource,
@@ -26,19 +27,23 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     getSqlExecPlanCostDataSourceError,
     initTime,
     selectedPoint,
-    setSelectedPoint
+    setSelectedPoint,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization,
+    getPerformanceStatistics,
+    isPerformanceInfoLoaded
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
-
   const targetRef = useRef<HTMLDivElement>(null);
-
   const onScrollIntoView = () => {
     if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+      targetRef.current.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const sortedSelectedPoint = useMemo(() => {
     if (!selectedPoint) {
       return;
@@ -47,7 +52,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
       dayjs(a?.x).isBefore(dayjs(b?.x)) ? -1 : 1
     );
   }, [selectedPoint]);
-
   const generateSQLExecPlanContent = <
     T extends Pick<
       SQLExecPlanItem,
@@ -58,18 +62,34 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     item: T
   ) => {
     const { sql, classic_result: explain, err_message, affect_rows } = item;
-
     const renderSQL = () => {
       return (
         <>
-          <h3 className="header-title">{t('sqlQuery.executePlan.sql')}</h3>
+          <div className="sql-title-wrapper">
+            <h3>{t('sqlQuery.executePlan.sql')}</h3>
+            <EmptyBox
+              if={
+                !!explain &&
+                !!explain.head &&
+                !!explain.rows &&
+                allowSqlOptimization
+              }
+            >
+              <BasicButton
+                type="primary"
+                onClick={onCreateSqlOptimizationOrview}
+                loading={createSqlOptimizationLoading}
+              >
+                {t('sqlQuery.executePlan.optimize')}
+              </BasicButton>
+            </EmptyBox>
+          </div>
           <section className="basic-cont-wrapper sql-cont">
             <SQLRenderer.Snippet showCopyIcon sql={sql ?? ''} />
           </section>
         </>
       );
     };
-
     const renderSqlCostChart = () => {
       return (
         <ExecPlanCostChart
@@ -86,7 +106,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         />
       );
     };
-
     const renderExecPlanComparison = () => {
       if (!sortedSelectedPoint) {
         return;
@@ -127,7 +146,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         );
       });
     };
-
     const renderSQLExecPlan = () => {
       return (
         <>
@@ -149,7 +167,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         </>
       );
     };
-
     const renderPerformanceStatistics = () => {
       return (
         <>
@@ -180,9 +197,28 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                   </div>
                 </div>
                 <div className="number-cont">
-                  {affect_rows?.count
-                    ? formatParamsBySeparator(affect_rows?.count)
-                    : '--'}
+                  <EmptyBox
+                    if={isPerformanceInfoLoaded}
+                    defaultNode={
+                      <ActionButton
+                        type="primary"
+                        text={t(
+                          'sqlQuery.executePlan.getPerformanceStatistics'
+                        )}
+                        actionType="confirm"
+                        confirm={{
+                          title: t(
+                            'sqlQuery.executePlan.getPerformanceStatisticsTips'
+                          ),
+                          onConfirm: getPerformanceStatistics
+                        }}
+                      />
+                    }
+                  >
+                    {affect_rows?.count
+                      ? formatParamsBySeparator(affect_rows?.count)
+                      : '--'}
+                  </EmptyBox>
                 </div>
               </div>
             </EmptyBox>
@@ -190,7 +226,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         </>
       );
     };
-
     return (
       <Space direction="vertical" className="full-width-element" size={0}>
         {renderSQL()}
@@ -202,10 +237,8 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
       </Space>
     );
   };
-
   return {
     generateSQLExecPlanContent
   };
 };
-
 export default useSQLExecPlan;

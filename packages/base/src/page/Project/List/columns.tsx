@@ -1,16 +1,12 @@
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { TableColumnWithIconStyleWrapper, BasicTag } from '@actiontech/dms-kit';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import {
-  BasicTypographyEllipsis,
-  TypedLink,
-  BasicTag
-} from '@actiontech/shared';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProjectV2> => {

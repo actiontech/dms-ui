@@ -4,9 +4,14 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum
 } from '../../api/base/service/common.enum';
-import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo/DatabaseTypeLogo';
-import { SupportLanguage } from '../../enum';
+import {
+  OpPermissionTypeUid,
+  SupportTheme,
+  SystemRole,
+  DatabaseTypeLogo,
+  SupportLanguage
+} from '@actiontech/dms-kit';
+import { GetUserSystemEnum } from '../../../lib/api/base/service/common.enum';
 
 export const mockCurrentUserReturn = {
   isAdmin: true,
@@ -49,7 +54,8 @@ export const mockCurrentUserReturn = {
     [SystemRole.auditAdministrator]: true,
     [SystemRole.projectDirector]: true
   },
-  hasGlobalViewingPermission: true
+  hasGlobalViewingPermission: true,
+  systemPreference: GetUserSystemEnum.MANAGEMENT
 };
 
 export const mockProjectInfo = {
@@ -62,6 +68,7 @@ export const mockUserInfo = {
   getUserInfo: jest.fn(),
   updateUserInfo: jest.fn(),
   clearUserInfo: jest.fn(),
+  refreshProjectListAsync: jest.fn(),
   userInfo: {
     authentication_type: GetUserAuthenticationTypeEnum.dms,
     email: 'admin@gmail.com',

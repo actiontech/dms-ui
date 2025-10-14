@@ -5,7 +5,7 @@ import {
 import { Form } from 'antd';
 import { IUserFormFields, IUserFormProps } from './index.type';
 import UserForm from '.';
-import { screen } from '@testing-library/react';
+import { screen, fireEvent, act } from '@testing-library/react';
 
 describe('base/UserCenter/Drawer/UserForm', () => {
   const customRender = (
@@ -35,5 +35,23 @@ describe('base/UserCenter/Drawer/UserForm', () => {
     const baseElement = customRender({ isAdmin: true, isUpdate: true });
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByLabelText('是否禁用')).not.toBeInTheDocument();
+  });
+
+  it('should show error when username contains spaces', async () => {
+    const { result } = superRenderHook(() => Form.useForm<IUserFormFields>());
+    const form = result.current[0];
+
+    superRender(<UserForm form={form} visible={true} />);
+
+    const usernameInput = screen.getByPlaceholderText('请输入用户名');
+
+    fireEvent.change(usernameInput, { target: { value: 'user name' } });
+
+    await act(async () => {
+      const error = await form.validateFields(['username']).catch((err) => err);
+
+      expect(error.errorFields).toHaveLength(1);
+      expect(error.errorFields[0].errors).toContain('用户名不支持空格');
+    });
   });
 });

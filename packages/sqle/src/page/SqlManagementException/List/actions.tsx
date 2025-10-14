@@ -7,7 +7,6 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { PlusOutlined } from '@actiontech/icons';
-
 export const SqlManagementExceptionActions: (
   onUpdate: (record?: IBlacklistResV1) => void,
   onDelete: (id?: number) => void
@@ -28,7 +27,9 @@ export const SqlManagementExceptionActions: (
       {
         key: 'delete-button',
         text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
+        buttonProps: () => ({
+          danger: true
+        }),
         confirm: (record) => ({
           title: t('sqlManagementException.operate.confirmDelete'),
           onConfirm: () => onDelete(record?.blacklist_id)
@@ -38,7 +39,6 @@ export const SqlManagementExceptionActions: (
     ]
   };
 };
-
 export const SqlManagementExceptionPageHeaderActions = (
   openCreateSqlManagementExceptionModal: () => void
 ): Record<'create-sql-exception', React.ReactNode> => ({

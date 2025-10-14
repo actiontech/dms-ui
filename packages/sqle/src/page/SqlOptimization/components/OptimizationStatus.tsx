@@ -1,31 +1,31 @@
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
 import { OptimizationStatusStyleWrapper } from '../style';
-import { SqlOptimizationStatusEnum } from '../index.data';
 import {
   CheckHexagonOutlined,
   AdvancedHexagonFilled,
   InfoHexagonOutlined
 } from '@actiontech/icons';
+import { OptimizationRecordStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const optimizationStatusMap = () => {
-  return new Map<SqlOptimizationStatusEnum, ReactNode>([
+  return new Map<OptimizationRecordStatusEnum, ReactNode>([
     [
-      SqlOptimizationStatusEnum.optimizing,
+      OptimizationRecordStatusEnum.optimizing,
       <>
         <AdvancedHexagonFilled />
         <span>{t('sqlOptimization.status.optimizing')}</span>
       </>
     ],
     [
-      SqlOptimizationStatusEnum.finish,
+      OptimizationRecordStatusEnum.finish,
       <>
         <CheckHexagonOutlined />
         <span>{t('sqlOptimization.status.finish')}</span>
       </>
     ],
     [
-      SqlOptimizationStatusEnum.failed,
+      OptimizationRecordStatusEnum.failed,
       <>
         <InfoHexagonOutlined />
         <span>{t('sqlOptimization.status.failed')}</span>
@@ -35,7 +35,7 @@ const optimizationStatusMap = () => {
 };
 
 const OptimizationStatus: React.FC<{
-  status: SqlOptimizationStatusEnum;
+  status: OptimizationRecordStatusEnum;
 }> = ({ status }) => {
   return (
     <OptimizationStatusStyleWrapper>

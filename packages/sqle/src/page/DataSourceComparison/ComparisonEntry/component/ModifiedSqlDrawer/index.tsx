@@ -1,4 +1,4 @@
-import { BasicDrawer } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/dms-kit';
 import { IDatabaseDiffModifySQL } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,6 @@ import { CreateWorkflowForModifiedSqlAction } from '../../actions';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 import ModifiedSqlAuditResult from '../ModifiedSqlAuditResult';
 import { useState } from 'react';
-
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -19,7 +18,6 @@ type Props = {
   genDatabaseDiffModifiedSQLsParams: IGenDatabaseDiffModifySQLsV1Params;
   dbExistingSchemas: string[];
 };
-
 const ModifiedSqlDrawer: React.FC<Props> = ({
   open,
   databaseDiffModifiedSqlInfos,
@@ -34,12 +32,10 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
   const { projectID } = useCurrentProject();
   const [auditResultCollapseActiveKeys, setAuditResultCollapseActiveKeys] =
     useState<string[]>([]);
-
   const resetDrawerAndClose = () => {
     onClose();
     setAuditResultCollapseActiveKeys([]);
   };
-
   return (
     <BasicDrawer
       open={open}
@@ -68,5 +64,4 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
     </BasicDrawer>
   );
 };
-
 export default ModifiedSqlDrawer;

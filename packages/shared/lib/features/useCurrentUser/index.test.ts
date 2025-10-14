@@ -1,9 +1,10 @@
 import useCurrentUser from '.';
 import { renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
-import { SupportLanguage, SupportTheme, SystemRole } from '../../enum';
+import { SupportLanguage, SupportTheme, SystemRole } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { IUidWithName, IUserBindProject } from '../../api/base/service/common';
+import { GetUserSystemEnum } from '../../api/base/service/common.enum';
 
 export const mockBindProjects: IUserBindProject[] = [
   {
@@ -66,7 +67,8 @@ describe('hooks/useCurrentUser', () => {
           bindProjects: mockBindProjects,
           managementPermissions: mockManagementPermissions,
           theme: SupportTheme.LIGHT,
-          language: SupportLanguage.enUS
+          language: SupportLanguage.enUS,
+          systemPreference: GetUserSystemEnum.MANAGEMENT
         }
       });
     });
@@ -91,6 +93,7 @@ describe('hooks/useCurrentUser', () => {
       [SystemRole.projectDirector]: true,
       [SystemRole.systemAdministrator]: false
     });
+    expect(result.current.systemPreference).toBe(GetUserSystemEnum.MANAGEMENT);
   });
 
   it('when current user not admin or certain project manager', () => {

@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
-import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/dms-kit';
 
 type SystemReduxState = {
   modalStatus: ModalStatus;

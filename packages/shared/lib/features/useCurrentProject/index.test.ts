@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useCurrentProject from '.';
-import { DEFAULT_PROJECT_NAME } from '../../data/common';
+import { DEFAULT_PROJECT_NAME } from '@actiontech/dms-kit';
 import { superRenderHook } from '../../testUtil/superRender';
 
 jest.mock('react-router-dom', () => ({

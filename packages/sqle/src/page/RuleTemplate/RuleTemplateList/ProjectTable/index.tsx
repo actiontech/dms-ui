@@ -12,12 +12,12 @@ import {
   initRuleTemplateListModalStatus,
   updateRuleTemplateListModalStatus
 } from '../../../../store/ruleTemplate';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   useTableRequestError,
   ActiontechTable,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
@@ -28,7 +28,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { RuleTemplateTableActions } from '../actions';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const ProjectTable = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();

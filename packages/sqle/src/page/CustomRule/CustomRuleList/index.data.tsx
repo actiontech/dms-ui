@@ -2,7 +2,7 @@ import { IGetCustomRulesV1Params } from '@actiontech/shared/lib/api/sqle/service
 import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../locale';
 
 export const CustomRuleFilterContainerMeta: () => ActiontechTableFilterMeta<
