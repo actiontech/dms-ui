@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { useDispatch } from 'react-redux';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { updateUserUid } from '../../store/user';
 import { useUserInfo } from '@actiontech/shared/lib/features';
 import Session from '@actiontech/shared/lib/api/base/service/Session';

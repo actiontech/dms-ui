@@ -1,4 +1,4 @@
-import { BasicTable } from '@actiontech/shared';
+import { BasicTable } from '@actiontech/dms-kit';
 import { SqlStatementResultTableProps } from './index.type';
 import { SQLStatementResultColumns } from './columns';
 import { useBoolean } from 'ahooks';
@@ -8,8 +8,7 @@ import { SQLStatementResultTableStyleWrapper } from './style';
 import AuditResultDrawer from '../../../../../../Common/AuditResultList/Table/AuditResultDrawer';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
   props
 ) => {
@@ -17,32 +16,32 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
     auditResultDrawerVisibility,
     { setFalse: closeAuditResultDrawer, setTrue: openAuditResultDrawer }
   ] = useBoolean();
-
   const { projectID } = useCurrentProject();
-
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
-
   const onClickAuditResult = (record: IAuditTaskSQLResV2) => {
     openAuditResultDrawer();
     setCurrentAuditResultRecord(record);
   };
-
   const handleClickAnalyze = (sqlNum?: number) => {
     if (typeof sqlNum === 'undefined') {
       return;
     }
+
     window.open(
       parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
         params: {
           projectID,
           taskId: props.taskId ?? '',
           sqlNum: sqlNum.toString()
+        },
+        queries: {
+          instance_name: props.instanceName ?? '',
+          schema: props.schema ?? ''
         }
       })
     );
   };
-
   return (
     <SQLStatementResultTableStyleWrapper>
       <BasicTable
@@ -61,5 +60,4 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
     </SQLStatementResultTableStyleWrapper>
   );
 };
-
 export default SqlStatementResultTable;

@@ -8,8 +8,8 @@ import {
   MethodFormFieldsType,
   SourceFormFieldsType
 } from '../components/CreateTask/index.type';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { formatterSQL } from '@actiontech/dms-kit';
 
 const useCreateExportTaskForm = () => {
   const [baseForm] = useForm<BaseFormFieldsType>();

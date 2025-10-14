@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
 import { Space, message, Form } from 'antd';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import { BasicButton, BasicDrawer } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ModalName } from '../../../../data/ModalName';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -20,35 +20,26 @@ import SqlManagementExceptionForm from '../../Common/Form';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-
 const CreateSqlManagementException: React.FC<{
   onCreated?: () => void;
 }> = ({ onCreated }) => {
   const { t } = useTranslation();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [form] = Form.useForm<SqlManagementExceptionFormFieldType>();
-
   const visible = useSelector<IReduxState, boolean>(
     (state) =>
       !!state.sqlManagementException.modalStatus[
         ModalName.Create_Sql_Management_Exception
       ]
   );
-
   const currentSqlManagementExceptionRecord = useSelector<
     IReduxState,
     IBlacklistResV1 | null
   >((state) => state.sqlManagementException.selectSqlManagementExceptionRecord);
-
   const dispatch = useDispatch();
-
   const [createLoading, { setTrue: startCreate, setFalse: createFinish }] =
     useBoolean();
-
   const { projectName } = useCurrentProject();
-
   const closeModal = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -57,9 +48,12 @@ const CreateSqlManagementException: React.FC<{
         status: false
       })
     );
-    dispatch(updateSelectSqlManagementException({ selectRow: null }));
+    dispatch(
+      updateSelectSqlManagementException({
+        selectRow: null
+      })
+    );
   }, [dispatch, form]);
-
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
@@ -70,7 +64,6 @@ const CreateSqlManagementException: React.FC<{
       ) {
         return values.sql;
       }
-
       return values[values.type];
     };
     blacklist
@@ -101,14 +94,16 @@ const CreateSqlManagementException: React.FC<{
     messageApi,
     t
   ]);
-
   useEffect(() => {
     const modalStatus = {
       [ModalName.Create_Sql_Management_Exception]: false
     };
-    dispatch(initSqlManagementExceptModalStatus({ modalStatus }));
+    dispatch(
+      initSqlManagementExceptModalStatus({
+        modalStatus
+      })
+    );
   }, [dispatch]);
-
   useEffect(() => {
     if (visible && !!currentSqlManagementExceptionRecord?.content) {
       form.setFieldsValue({
@@ -117,7 +112,6 @@ const CreateSqlManagementException: React.FC<{
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
-
   return (
     <>
       {messageContextHolder}
@@ -146,5 +140,4 @@ const CreateSqlManagementException: React.FC<{
     </>
   );
 };
-
 export default CreateSqlManagementException;

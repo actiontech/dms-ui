@@ -2,31 +2,27 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult,
-  ActionButton
-} from '@actiontech/shared';
+  BasicResult
+} from '@actiontech/dms-kit';
+import { ActionButton } from '@actiontech/shared';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
 import VersionForm from '../Common/VersionForm';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
 import { useState } from 'react';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/CustomForm/style';
-
+} from '@actiontech/dms-kit/es/components/CustomForm/style';
 const VersionManagementCreation = () => {
   const { t } = useTranslation();
-
   const { projectName, projectID } = useCurrentProject();
-
   const [versionId, setVersionId] = useState<number>();
-
   const {
     form,
     submitting,
@@ -36,7 +32,6 @@ const VersionManagementCreation = () => {
     successfulSubmit,
     backToForm
   } = useVersionFormState();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     submitPending();
@@ -65,12 +60,10 @@ const VersionManagementCreation = () => {
       })
       .finally(() => submitDone());
   };
-
   const onReset = () => {
     form.resetFields();
     backToForm();
   };
-
   return (
     <>
       <PageHeader
@@ -126,5 +119,4 @@ const VersionManagementCreation = () => {
     </>
   );
 };
-
 export default VersionManagementCreation;

@@ -10,7 +10,7 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useSelector, useDispatch } from 'react-redux';
-import { mockReactFlow } from '../mockData/mockReactFlow';
+import { mockReactFlow } from '@actiontech/shared/lib/testUtil/mockModule/mockReactFlow';
 import { useNavigate } from 'react-router-dom';
 import {
   getSqlVersionDetailV1MockData,
@@ -24,7 +24,7 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -114,9 +114,9 @@ describe('sqle/VersionManagement/Detail', () => {
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${
         mockProjectInfo.projectID
-      }/exec-workflow/create?versionId=${
+      }/exec-workflow/create?version_id=${
         mockVersionData?.sql_version_id
-      }&versionName=${encodeURIComponent(mockVersionData?.version ?? '')}`
+      }&version_name=${encodeURIComponent(mockVersionData?.version ?? '')}`
     );
   });
 
@@ -150,7 +150,7 @@ describe('sqle/VersionManagement/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('上线失败')).toBeInTheDocument();
-    expect(screen.getByText('重 试')).toBeInTheDocument();
+    expect(screen.getByText('修改工单')).toBeInTheDocument();
     expect(screen.getByText('已线下执行')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('已线下执行'));
@@ -178,7 +178,7 @@ describe('sqle/VersionManagement/Detail', () => {
     );
     const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('重 试'));
+    fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {

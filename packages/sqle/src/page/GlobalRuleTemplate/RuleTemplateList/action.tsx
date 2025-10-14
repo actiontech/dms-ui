@@ -8,13 +8,12 @@ import {
   CheckboxMultipleBlankFilled,
   LogoutBoxFilled
 } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const RuleTemplateListActions = (
   onDelete: (name: string) => void,
   openCloneRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
-  openExportRuleTemplateModal: (rowData: IRuleTemplateResV1) => void
+  openExportRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
+  editTemplate: (templateName: string) => void
 ): ActiontechTableActionsWithPermissions<IRuleTemplateResV1> => {
   return {
     buttons: [
@@ -22,13 +21,9 @@ export const RuleTemplateListActions = (
         key: 'edit-rule-template',
         text: t('common.edit'),
         permissions: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT,
-        link(record) {
-          return {
-            to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.update, {
-              params: { templateName: record?.rule_template_name ?? '' }
-            })
-          };
-        }
+        buttonProps: (record) => ({
+          onClick: () => editTemplate(record?.rule_template_name ?? '')
+        })
       },
       {
         key: 'remove-rule-template',

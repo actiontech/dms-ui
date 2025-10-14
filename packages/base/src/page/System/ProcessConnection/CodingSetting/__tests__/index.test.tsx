@@ -6,7 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import CodingSetting from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 describe('base/System/ProcessConnection/CodingSetting', () => {
   let getCodingConfigurationSpy: jest.SpyInstance;

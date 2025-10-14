@@ -1,5 +1,5 @@
 import { OpPermissionItemOpPermissionTypeEnum } from '../../api/base/service/common.enum';
-import { SystemModuleSupported, SystemRole } from '../../enum';
+import { SystemModuleSupported, SystemRole } from '@actiontech/dms-kit';
 import { PERMISSIONS, PermissionsConstantType } from './permissions';
 
 export type PermissionDetail = {

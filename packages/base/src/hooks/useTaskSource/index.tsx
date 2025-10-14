@@ -1,20 +1,17 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IDBServiceSyncTaskTip } from '@actiontech/shared/lib/api/base/service/common';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
-
 const useTaskSource = () => {
   const [taskSourceList, setTaskSourceList] = React.useState<
     IDBServiceSyncTaskTip[]
   >([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
-
   const { getLogoUrlByDbType } = useDbServiceDriver();
-
   const updateTaskSourceList = React.useCallback(() => {
     setTrue();
     DBServiceSyncTaskService.ListDBServiceSyncTaskTips()
@@ -32,7 +29,6 @@ const useTaskSource = () => {
         setFalse();
       });
   }, [setFalse, setTrue]);
-
   const generateTaskSourceSelectOption = React.useCallback(() => {
     return taskSourceList.map((item) => {
       return (
@@ -45,7 +41,6 @@ const useTaskSource = () => {
       );
     });
   }, [taskSourceList]);
-
   const generateTaskSourceDbTypesSelectOption = React.useCallback(
     (source: string) => {
       const dbTypes =
@@ -64,7 +59,6 @@ const useTaskSource = () => {
     },
     [getLogoUrlByDbType, taskSourceList]
   );
-
   const generateTaskSourceAdditionalParams = React.useCallback(
     (source: string) => {
       return taskSourceList.find((v) => v.service_source_name === source)
@@ -72,7 +66,6 @@ const useTaskSource = () => {
     },
     [taskSourceList]
   );
-
   return {
     taskSourceList,
     loading,
@@ -82,5 +75,4 @@ const useTaskSource = () => {
     generateTaskSourceAdditionalParams
   };
 };
-
 export default useTaskSource;

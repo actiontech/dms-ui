@@ -1,6 +1,5 @@
-import { ToggleTokens } from '@actiontech/shared';
+import { ToggleTokens } from '@actiontech/dms-kit';
 import { styled } from '@mui/material';
-
 export const ScanTypesSelectorStyleWrapper = styled(ToggleTokens)`
   &.scan-types-selector {
     display: grid !important;
@@ -43,7 +42,6 @@ export const ScanTypesSelectorStyleWrapper = styled(ToggleTokens)`
     }
   }
 `;
-
 export const EmptyDataTipsStyleWrapper = styled('span')`
   color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
 `;

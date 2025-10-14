@@ -58,7 +58,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -67,11 +67,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -242,7 +244,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                         <div
                           class="number-cont"
                         >
-                          --
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>
@@ -340,7 +349,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -349,11 +358,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -524,7 +535,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                         <div
                           class="number-cont"
                         >
-                          --
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>
@@ -1172,7 +1190,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -1181,11 +1199,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -1619,7 +1639,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                         <div
                           class="number-cont"
                         >
-                          10
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>
@@ -7245,7 +7272,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -7254,11 +7281,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -7429,7 +7458,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                         <div
                           class="number-cont"
                         >
-                          10
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>
@@ -13055,7 +13091,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -13064,11 +13100,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -13360,7 +13398,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                         <div
                           class="number-cont"
                         >
-                          10
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>
@@ -18986,7 +19031,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
               class="tab-cont-wrapper"
             >
               <section
-                class="css-ooqjkw"
+                class="css-5exkve"
               >
                 <div
                   class="ant-space ant-space-vertical full-width-element"
@@ -18995,11 +19040,13 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                     class="ant-space-item"
                     style="margin-bottom: 0px;"
                   >
-                    <h3
-                      class="header-title"
+                    <div
+                      class="sql-title-wrapper"
                     >
-                      SQL语句
-                    </h3>
+                      <h3>
+                        SQL语句
+                      </h3>
+                    </div>
                   </div>
                   <div
                     class="ant-space-item"
@@ -19992,7 +20039,14 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                         <div
                           class="number-cont"
                         >
-                          10
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              获 取
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </section>

@@ -1,5 +1,5 @@
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { SharedTheme } from '@actiontech/dms-kit';
+import { floatToPercent } from '@actiontech/dms-kit';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { SqleTheme } from '../../../../types/theme.type';
 import { t } from '../../../../locale';

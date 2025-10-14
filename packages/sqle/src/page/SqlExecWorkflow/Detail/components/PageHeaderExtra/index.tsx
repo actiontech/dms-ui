@@ -1,4 +1,4 @@
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -19,18 +19,17 @@ import {
   RollbackWorkflowAction,
   RetryWorkflowAction
 } from './action';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const WorkflowDetailPageHeaderExtra: React.FC<
   WorkflowDetailPageHeaderExtraProps
 > = (props) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-
   const [
     rejectModalVisible,
     { setTrue: openRejectModal, setFalse: closeRejectModal }
   ] = useBoolean();
-
   const {
     messageContextHolder,
     closeWorkflowButtonMeta,
@@ -72,7 +71,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       )}
       {MarkManuallyExecWorkflowAction(
         manualExecuteWorkflowButtonMeta,
-        executable,
+        props.workflowInfo?.record?.status ===
+          WorkflowRecordResV2StatusEnum.exec_failed || executable,
         executable_reason
       )}
 
@@ -122,5 +122,4 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     </WorkflowPageHeaderExtraStyleWrapper>
   );
 };
-
 export default WorkflowDetailPageHeaderExtra;

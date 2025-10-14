@@ -9,7 +9,7 @@ import Project from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../data/EmitterKey';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-redux', () => {

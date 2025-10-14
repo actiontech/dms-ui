@@ -4833,7 +4833,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核
@@ -5145,7 +5145,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核
@@ -7653,7 +7653,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核
@@ -7965,7 +7965,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核
@@ -10473,7 +10473,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核
@@ -10785,7 +10785,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <a
-                              href="/sqle/project/700300/sql-audit?SQLAuditRecordID=123"
+                              href="/sqle/project/700300/sql-audit?sql_audit_record_id=123"
                               target="_blank"
                             >
                               SQL审核

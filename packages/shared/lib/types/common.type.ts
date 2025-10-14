@@ -1,37 +1,18 @@
-import { RuleObject } from 'antd/es/form';
 import { PermissionsConstantType } from '../features';
-import { SystemRole } from '../enum';
+import { SystemRole } from '@actiontech/dms-kit';
 import { IndexRouteObject, NonIndexRouteObject } from 'react-router-dom';
 
-export type Dictionary = {
-  [key: string]: string | number | boolean | Dictionary | string[] | undefined;
-};
-
-export type StringDictionary = {
-  [key: string]: string;
-};
-
-export type ModalStatus = {
-  [key: string]: boolean;
-};
-
-export type FormValidatorRule = RuleObject['validator'];
-
-export type TemplateKeyPath<T> = {
-  [key in keyof T]: key extends string
-    ? T[key] extends Record<string, any>
-      ? `${key}.${TemplateKeyPath<T[key]>}`
-      : key
-    : never;
-}[keyof T];
-
-export interface IStore {
-  [key: string]: any;
-}
-
-export type PermissionReduxState = {
-  sqlOptimizationIsSupported: boolean;
-};
+export type {
+  Dictionary,
+  StringDictionary,
+  ModalStatus,
+  FormValidatorRule,
+  TemplateKeyPath,
+  IStore,
+  PermissionReduxState,
+  ExcludeSymbol,
+  FormValidateError
+} from '@actiontech/dms-kit/src/types/common.type';
 
 type BaseRouterConfigItem = {
   key: string;
@@ -49,15 +30,3 @@ export type RouterConfigItem =
       BaseRouterConfigItem & {
         children?: RouterConfigItem[];
       });
-
-export type ExcludeSymbol<T> = T extends symbol ? never : T;
-
-export type FormValidateError<T> = {
-  values: T;
-  errorFields: Array<{
-    name: string[];
-    errors: string[];
-    warnings: string[];
-  }>;
-  outOfDate: boolean;
-};

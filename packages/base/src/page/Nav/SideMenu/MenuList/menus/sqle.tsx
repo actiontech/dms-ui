@@ -6,7 +6,6 @@ import {
   ManagementFilled,
   WorkflowFilled,
   OverviewOutlined,
-  RiseSquareOutlined,
   ResolveFileFilled,
   ExceptionFileOutlined,
   MagnifierFilled,
@@ -23,7 +22,7 @@ import {
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const projectOverviewMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   label: 'dmsMenu.projectOverview',
@@ -53,19 +52,6 @@ const pluginAuditMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   icon: <CodeOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/plugin-audit`,
   structKey: 'plugin-audit'
-});
-
-const sqlOptimizationMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
-  label: 'dmsMenu.sqlOptimization',
-  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index, {
-    params: { projectID }
-  }),
-  icon: <RiseSquareOutlined width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-optimization`,
-  structKey: 'sql-optimization',
-  // #if [ee]
-  permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION
-  // #endif
 });
 
 const sqlExecWorkflowMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
@@ -212,7 +198,6 @@ const sqleMenusCollection = [
   projectOverviewMenuItem,
   sqlAuditMenuItem,
   pluginAuditMenuItem,
-  sqlOptimizationMenuItem,
   sqlExecWorkflowMenuItem,
   sqlManagementMenuItem,
   projectRuleTemplateMenuItem,

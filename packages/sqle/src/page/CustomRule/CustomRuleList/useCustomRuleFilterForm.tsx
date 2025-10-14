@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SelectProps } from 'antd';
 import useDatabaseType from '../../../hooks/useDatabaseType';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect } from '@actiontech/dms-kit';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const useRuleFilterForm = (

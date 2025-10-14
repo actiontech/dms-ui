@@ -5,8 +5,8 @@ import {
   PermissionsConstantType
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
-import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableAction';
+import { ActiontechTableActionsConfig } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 
 type Params = {
   checkActionPermission: (

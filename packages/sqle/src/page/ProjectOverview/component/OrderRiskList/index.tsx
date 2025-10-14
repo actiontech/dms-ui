@@ -5,45 +5,40 @@ import CardWrapper from '../../../../components/CardWrapper';
 import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
-import {
-  CustomAvatar,
-  BasicButton,
-  TypedLink,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { CustomAvatar, BasicButton } from '@actiontech/dms-kit';
+import { TypedLink, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { IRiskWorkflow } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { BriefcaseFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const OrderRiskList = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
   const { projectName, projectID } = useCurrentProject();
-
   const [data, setData] = useState<IRiskWorkflow[]>();
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
-    () => statistic.statisticRiskWorkflowV1({ project_name: projectName }),
+    () =>
+      statistic.statisticRiskWorkflowV1({
+        project_name: projectName
+      }),
     {
       onSuccess: (res) => {
         setData(res.data.data);
       }
     }
   );
-
   const tableProps: ITableTopList<IRiskWorkflow> = {
     apiLoading: loading,
     rowKey: (record) => `${record?.workflow_id}-${record?.workflow_name}`,
     errorCont: errorMessage,
     dataSource: data
   };
-
   const columnData: () => ITableTopList<IRiskWorkflow>['columns'] = () => {
     return [
       {
@@ -56,7 +51,10 @@ const OrderRiskList = () => {
               <BriefcaseFilled width={14} height={14} />
               <TypedLink
                 to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
-                params={{ projectID, workflowId: record.workflow_id ?? '' }}
+                params={{
+                  projectID,
+                  workflowId: record.workflow_id ?? ''
+                }}
               >
                 {name}
               </TypedLink>
@@ -93,13 +91,13 @@ const OrderRiskList = () => {
       }
     ];
   };
-
   const onGetMore = () => {
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index, {
-      params: { projectID }
+      params: {
+        projectID
+      }
     });
   };
-
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.orderRisk.title')}
@@ -122,11 +120,12 @@ const OrderRiskList = () => {
           hideTop3Style
           {...tableProps}
           columns={columnData()}
-          scroll={{ y: '500px' }}
+          scroll={{
+            y: '500px'
+          }}
         />
       </ChartWrapper>
     </CardWrapper>
   );
 };
-
 export default OrderRiskList;

@@ -1,28 +1,24 @@
 import { IUserFormProps } from './index.type';
 import { Form, Switch } from 'antd';
-import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/shared';
+import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/dms-kit';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
-import { BasicToolTip } from '@actiontech/shared';
+import { phoneRule } from '@actiontech/dms-kit';
+import { BasicToolTip } from '@actiontech/dms-kit';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
-
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();
-
   const {
     loading: getOpPermissionListLoading,
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
-
   useEffect(() => {
     if (props.visible) {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
     }
   }, [updateOpPermissionList, props.visible]);
-
   return (
     <Form form={props.form} layout="vertical">
       <Form.Item
@@ -35,6 +31,10 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
             message: t('common.form.rule.require', {
               name: t('dmsUserCenter.user.userForm.username')
             })
+          },
+          {
+            pattern: /^\S*$/,
+            message: t('dmsUserCenter.user.userForm.usernameNoSpaces')
           }
         ]}
       >
@@ -193,5 +193,4 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     </Form>
   );
 };
-
 export default UserForm;

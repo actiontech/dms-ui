@@ -9,12 +9,12 @@ import {
 import {
   BasicButton,
   BasicDrawer,
-  BasicToolTip,
   Copy,
   Download,
-  EmptyBox,
-  SQLRenderer
-} from '@actiontech/shared';
+  BasicToolTip,
+  EmptyBox
+} from '@actiontech/dms-kit';
+import { SQLRenderer } from '@actiontech/shared';
 import {
   ModifiedSqlStyleWrapper,
   DiffSQLEditorWrapperStyleWrapper,
@@ -37,7 +37,6 @@ import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import ModifiedSqlAuditResultList from '../../ModifiedSqlAuditResult/List';
-
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -48,13 +47,11 @@ type Props = {
   selectedComparisonInstanceInfo?: SelectedInstanceInfo;
   selectedObjectNodeKey: string;
 };
-
 enum CollapseItemKeyEnum {
   baseline = 'baseline',
   comparison = 'comparison',
   modified = 'modified'
 }
-
 const ComparisonDetailDrawer: React.FC<Props> = ({
   open,
   onClose,
@@ -68,7 +65,6 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const { sharedTheme } = useThemeStyleData();
-
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading: getDetailPending, data: comparisonDetail } = useRequest(
     () =>
@@ -79,14 +75,12 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       ready: open
     }
   );
-
   const [tableDDLAuditResultActiveKey, setTableDDLAuditResultActiveKey] =
     useState<CollapseItemKeyEnum[]>([]);
   const [
     modifiedSqlAuditResultCollapseActiveKeys,
     setModifiedSqlAuditResultCollapseActiveKeys
   ] = useState<string[]>([]);
-
   const {
     loading: generateModifiedSqlPending,
     data: modifiedSqlResult,
@@ -100,7 +94,6 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       manual: true
     }
   );
-
   const modifiedSqls = useMemo(() => {
     return (
       modifiedSqlResult?.[0]?.modify_sqls
@@ -108,10 +101,8 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
         ?.join('\n') ?? ''
     );
   }, [modifiedSqlResult]);
-
   const auditResultCollapseItems: CollapseProps['items'] = useMemo(() => {
     const items: CollapseProps['items'] = [];
-
     if (comparisonDetail?.base_sql) {
       items.push({
         key: CollapseItemKeyEnum.baseline,
@@ -135,7 +126,6 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
         )
       });
     }
-
     if (comparisonDetail?.comparison_sql) {
       items.push({
         key: CollapseItemKeyEnum.comparison,
@@ -159,7 +149,6 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
         )
       });
     }
-
     return items;
   }, [
     comparisonDetail?.base_sql,
@@ -169,12 +158,10 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     t,
     tableDDLAuditResultActiveKey
   ]);
-
   const copyModifiedSql = () => {
     Copy.copyTextByTextarea(modifiedSqls);
     messageApi.success(t('common.copied'));
   };
-
   const downloadModifiedSql = () => {
     Download.downloadByCreateElementA(
       modifiedSqls,
@@ -183,18 +170,15 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       }-modified-sql-${dayjs().format('YYYYMMDDhhmmss')}.sql`
     );
   };
-
   const resetDrawerAndClose = () => {
     onClose();
     setTableDDLAuditResultActiveKey([]);
     setModifiedSqlAuditResultCollapseActiveKeys([]);
   };
-
   const { baselineSchemaName, comparisonSchemaName } = parseTreeNodeKey(
     selectedObjectNodeKey,
     comparisonResults
   );
-
   return (
     <BasicDrawer
       title={t('dataSourceComparison.entry.comparisonDetail.title')}
@@ -256,7 +240,9 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
                       'modified-sql-wrapper'
                     );
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
+                      element.scrollIntoView({
+                        behavior: 'smooth'
+                      });
                     }
                   }, 0);
                 });
@@ -340,5 +326,4 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     </BasicDrawer>
   );
 };
-
 export default ComparisonDetailDrawer;

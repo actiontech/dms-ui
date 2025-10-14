@@ -4,28 +4,24 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const SyncTaskListActions: (params: {
   syncAction: (taskId: string) => void;
   deleteAction: (taskId: string) => void;
+  editSyncTask: (taskId: string) => void;
 }) => ActiontechTableActionsWithPermissions<IListDBServiceSyncTask> = ({
   syncAction,
-  deleteAction
+  deleteAction,
+  editSyncTask
 }) => {
   return [
     {
       key: 'edit',
       text: t('common.edit'),
       permissions: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT,
-      link(record) {
-        return {
-          to: parse2ReactRouterPath(ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update, {
-            params: { taskId: record?.uid ?? '' }
-          })
-        };
-      }
+      buttonProps: (record) => ({
+        onClick: () => editSyncTask(record?.uid ?? '')
+      })
     },
     {
       key: 'sync',

@@ -537,7 +537,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        重 试
+                                        修改工单
                                       </span>
                                     </button>
                                   </div>
@@ -714,7 +714,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        重 试
+                                        修改工单
                                       </span>
                                     </button>
                                   </div>
@@ -1551,7 +1551,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        重 试
+                                        修改工单
                                       </span>
                                     </button>
                                   </div>

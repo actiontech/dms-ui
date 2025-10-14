@@ -1,4 +1,4 @@
-import { darkThemeUI } from '@actiontech/shared/lib/theme/dark/basic';
+import { darkThemeUI } from '@actiontech/dms-kit/es/theme/dark/basic';
 import { KnowledgeTheme } from '../type';
 
 export const knowledgeTheme: KnowledgeTheme = {

@@ -7,7 +7,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetGlobalWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -17,7 +17,7 @@ import {
 import { GlobalDashboardListProps } from '../../index.type';
 import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkOrder/column';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
-import { paramsSerializer } from '@actiontech/shared';
+import { paramsSerializer } from '@actiontech/dms-kit';
 
 const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
   filterValues,

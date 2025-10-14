@@ -1,4 +1,4 @@
-import { BasicButton, BasicInput, BasicModal } from '@actiontech/shared';
+import { BasicButton, BasicInput, BasicModal } from '@actiontech/dms-kit';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
@@ -6,7 +6,6 @@ import {
   RejectWorkflowModalProps
 } from './index.type';
 import { RejectWorkflowModalAlertStyleWrapper } from './style';
-
 const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
   open,
   close,
@@ -14,9 +13,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
   reject
 }) => {
   const [form] = Form.useForm<RejectWorkflowModalFormFields>();
-
   const { t } = useTranslation();
-
   const resetAndCloseRejectModal = () => {
     form.resetFields();
     close();
@@ -71,5 +68,4 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
     </BasicModal>
   );
 };
-
 export default RejectWorkflowModal;

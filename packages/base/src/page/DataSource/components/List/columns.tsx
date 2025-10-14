@@ -1,13 +1,13 @@
-import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
+import { timeAddZero } from '@actiontech/dms-kit';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo, BasicTag } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
-import { BasicTag } from '@actiontech/shared';
 
 /*
  *PS：
@@ -18,7 +18,6 @@ export type DataSourceListParamType = Omit<
   IListDBServicesV2Params,
   'page_index' | 'page_size' | 'project_uid'
 >;
-
 export const DataSourceColumns = (
   getLogoUrlByDbType: (dbType: string) => string
 ): ActiontechTableColumn<
@@ -80,7 +79,6 @@ export const DataSourceColumns = (
       filterKey: 'filter_by_db_type',
       render: (dbType) => {
         if (!dbType) return '-';
-
         return (
           <DatabaseTypeLogo
             dbType={dbType}
@@ -120,7 +118,6 @@ export const DataSourceColumns = (
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'
     },
-
     // #if [dms]
     {
       dataIndex: 'is_enable_masking',
@@ -160,12 +157,10 @@ export const DataSourceColumns = (
     }
   ];
 };
-
 export enum DataMaskingFilterTypeEnum {
   'checked' = 'checked',
   'unchecked' = 'unchecked'
 }
-
 export const filterDataMaskOptions = [
   {
     value: DataMaskingFilterTypeEnum.checked,

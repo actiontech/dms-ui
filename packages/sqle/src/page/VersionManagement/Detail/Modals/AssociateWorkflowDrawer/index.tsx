@@ -3,12 +3,9 @@ import { IReduxState } from '../../../../../store';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTranslation } from 'react-i18next';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import {
-  BasicDrawer,
-  BasicButton,
-  useTypedParams,
-  FormItemNoLabel
-} from '@actiontech/shared';
+import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
+import { FormItemNoLabel } from '@actiontech/dms-kit';
 import { Form, Space, message } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import {
@@ -16,30 +13,24 @@ import {
   updateSelectVersionStageId
 } from '../../../../../store/versionManagement';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
+import { DrawerFormLayout } from '@actiontech/dms-kit';
 import WorkflowTableField from './WorkflowTableField';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const AssociateWorkflowDrawer: React.FC = () => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
-
   const [messageApi, messageContextHolder] = message.useMessage();
-
   const [submitting, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-
-  const [form] = Form.useForm<{ workflow_ids: React.Key[] }>();
-
+  const [form] = Form.useForm<{
+    workflow_ids: React.Key[];
+  }>();
   const { projectName } = useCurrentProject();
-
   const { versionId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
-
   const { stageId, visible } = useSelector((state: IReduxState) => ({
     stageId: state.versionManagement.stageId,
     visible:
@@ -47,7 +38,6 @@ const AssociateWorkflowDrawer: React.FC = () => {
         ModalName.Version_Management_Associate_Workflow_Modal
       ]
   }));
-
   const { data: workflowData, loading: getWorkflowDataLoading } = useRequest(
     () =>
       sqlVersion
@@ -65,7 +55,6 @@ const AssociateWorkflowDrawer: React.FC = () => {
       ready: !!stageId && visible
     }
   );
-
   const onClose = () => {
     form.resetFields();
     dispatch(
@@ -74,9 +63,12 @@ const AssociateWorkflowDrawer: React.FC = () => {
         status: false
       })
     );
-    dispatch(updateSelectVersionStageId({ stageId: null }));
+    dispatch(
+      updateSelectVersionStageId({
+        stageId: null
+      })
+    );
   };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -98,7 +90,6 @@ const AssociateWorkflowDrawer: React.FC = () => {
       })
       .finally(() => submitFinish());
   };
-
   return (
     <BasicDrawer
       open={visible}
@@ -139,5 +130,4 @@ const AssociateWorkflowDrawer: React.FC = () => {
     </BasicDrawer>
   );
 };
-
 export default AssociateWorkflowDrawer;

@@ -5,8 +5,7 @@ import { Table, TableProps } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { TableTopListStyleWrapper } from './style';
-import { BasicEmpty, SpinIndicator } from '@actiontech/shared';
-
+import { BasicEmpty, SpinIndicator } from '@actiontech/dms-kit';
 export interface ITableTopList<RecordType> extends TableProps<RecordType> {
   apiLoading: boolean;
   emptyCont?: string | ReactNode;
@@ -14,7 +13,6 @@ export interface ITableTopList<RecordType> extends TableProps<RecordType> {
   onRefresh?: () => void;
   hideTop3Style?: boolean; // 默认为 true, 需要展示前 3 的背景颜色
 }
-
 const TableTopList = <T extends Record<string, any>>(
   props: ITableTopList<T>
 ) => {
@@ -32,7 +30,6 @@ const TableTopList = <T extends Record<string, any>>(
   } = props;
   const { sqleTheme } = useThemeStyleData();
   const dataLength = dataSource?.length ?? 0;
-
   return (
     <TableTopListStyleWrapper className="report-base-table-wrapper">
       <Table
@@ -78,5 +75,4 @@ const TableTopList = <T extends Record<string, any>>(
     </TableTopListStyleWrapper>
   );
 };
-
 export default TableTopList;

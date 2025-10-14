@@ -9,9 +9,9 @@ import {
   PageHeader,
   BasicButton,
   BasicResult,
-  EmptyBox,
-  useTypedParams
-} from '@actiontech/shared';
+  EmptyBox
+} from '@actiontech/dms-kit';
+import { useTypedParams } from '@actiontech/shared';
 import { RuleStatus, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
 import {
@@ -25,22 +25,18 @@ import {
   LeftArrowOutlined
 } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { RuleFilter, useRuleFilterForm } from '../RuleList';
 import { RuleStatusEnum } from '../RuleList/index.type';
-
 const RuleDetail = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { goBack } = useBack();
-
   const { form, fuzzyKeyword, tags } = useRuleFilterForm();
-
   const { templateName, dbType } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail>();
   const { projectName } = useCurrentProject();
   const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
-
   const {
     data: projectRuleData,
     loading: projectRuleLoading,
@@ -63,7 +59,6 @@ const RuleDetail = () => {
       refreshDeps: [projectName, templateName, fuzzyKeyword, tags]
     }
   );
-
   const {
     data: globalTemplateRules,
     loading: getGlobalTemplateRulesLoading,
@@ -85,7 +80,6 @@ const RuleDetail = () => {
       refreshDeps: [templateName, fuzzyKeyword, tags]
     }
   );
-
   const {
     data: allRules,
     loading: getAllRulesLoading,
@@ -105,14 +99,12 @@ const RuleDetail = () => {
       manual: true
     }
   );
-
   const errorStatus = useMemo(() => {
     if (projectName) {
       return !(allRulesError || projectRuleError);
     }
     return !(allRulesError || globalError);
   }, [allRulesError, projectRuleError, globalError, projectName]);
-
   const apiLoading = useMemo(() => {
     if (projectName) {
       return projectRuleLoading || getAllRulesLoading;
@@ -124,18 +116,15 @@ const RuleDetail = () => {
     getAllRulesLoading,
     projectName
   ]);
-
   const ruleData = useMemo(() => {
     if (projectName) {
       return projectRuleData;
     }
     return globalTemplateRules;
   }, [projectRuleData, globalTemplateRules, projectName]);
-
   const templateRulesWithStatus = useMemo(() => {
     return getCurrentStatusRules(allRules, ruleData, templateName);
   }, [allRules, getCurrentStatusRules, ruleData, templateName]);
-
   return (
     <RuleTemplateDetailStyleWrapper>
       <PageHeader
@@ -222,5 +211,4 @@ const RuleDetail = () => {
     </RuleTemplateDetailStyleWrapper>
   );
 };
-
 export default RuleDetail;

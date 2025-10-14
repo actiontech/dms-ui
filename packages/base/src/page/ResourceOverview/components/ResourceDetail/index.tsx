@@ -16,7 +16,7 @@ import {
   TableFilterContainer,
   ActiontechTableWrapper,
   ColumnsSettingProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResourceDetailListColumns } from './columns';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
@@ -28,7 +28,7 @@ import {
   ResourceDetailTableActions,
   ResourceDetailToolbarActions
 } from './actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import ResourceTopology from './ResourceTopology';
 import useFilterParams from './hooks/useFilterParams';
 import EmitterKey from '../../../../data/EmitterKey';

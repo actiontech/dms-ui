@@ -3,21 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
 import { LinkTextStyleWrapper } from './style';
 import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
-import { EmptyBox } from '@actiontech/shared';
-
+import { EmptyBox } from '@actiontech/dms-kit';
 export interface TaskEnabledTipsProps {
   onGoToEnable?: () => void;
   instanceId?: string;
 }
-
 const TaskEnabledTips: React.FC<TaskEnabledTipsProps> = ({
   onGoToEnable,
   instanceId
 }) => {
   const { t } = useTranslation();
-
   const { checkActionPermission } = usePermission();
-
   return (
     <Space className="task-enabled-tips">
       <Typography.Text>
@@ -38,5 +34,4 @@ const TaskEnabledTips: React.FC<TaskEnabledTipsProps> = ({
     </Space>
   );
 };
-
 export default TaskEnabledTips;

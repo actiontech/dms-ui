@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
 import { mockDriver } from '../../../testUtils/mockRequest';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

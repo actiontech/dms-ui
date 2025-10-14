@@ -2,7 +2,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -13,7 +13,7 @@ import {
 import { DBAPanelFilterKey, IDBAPanelProps } from './index.type';
 import { commonColumn } from '../CommonTable/column';
 import { useRequest } from 'ahooks';
-import { BasicSegmented } from '@actiontech/shared';
+import { BasicSegmented } from '@actiontech/dms-kit';
 import {
   DashboardCommonListStyleWrapper,
   NoBorderedPageHeaderStyleWrapper,
@@ -29,7 +29,6 @@ import {
   useCurrentUser
 } from '@actiontech/shared/lib/features';
 import { BookMarkTagFilled } from '@actiontech/icons';
-
 const DBAPanel: React.FC<IDBAPanelProps> = ({
   workflowStatistics,
   getWorkflowStatistics,
@@ -42,10 +41,8 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
     getWorkflowsV1FilterStatusEnum.wait_for_audit
   );
   const columns = useMemo(() => commonColumn(projectID), [projectID]);
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const {
     data: orderList,
     loading,
@@ -65,17 +62,14 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
       refreshDeps: [filterStatus]
     }
   );
-
   const refresh = useCallback(() => {
     refreshTable();
     getWorkflowStatistics();
   }, [getWorkflowStatistics, refreshTable]);
-
   const { tableChange } = useTableRequestParams<
     IWorkflowDetailResV1,
     DASHBOARD_COMMON_FILTER_TYPE
   >();
-
   return (
     <DashboardCommonListStyleWrapper>
       <NoBorderedPageHeaderStyleWrapper>
@@ -85,7 +79,12 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
         </TableTitleStyleWrapper>
       </NoBorderedPageHeaderStyleWrapper>
 
-      <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
+      <CustomToolbar
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
+      >
         <BasicSegmented
           options={[
             {
@@ -123,5 +122,4 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
     </DashboardCommonListStyleWrapper>
   );
 };
-
 export default DBAPanel;

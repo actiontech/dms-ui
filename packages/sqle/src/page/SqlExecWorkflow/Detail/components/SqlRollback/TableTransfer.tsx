@@ -1,11 +1,10 @@
-import { BasicTable } from '@actiontech/shared';
+import { BasicTable } from '@actiontech/dms-kit';
 import { Transfer } from 'antd';
 import {
   TableTransferProps,
   TableRowSelection,
   ExpandedBackupSqlType
 } from './index.type';
-
 const TableTransfer: React.FC<TableTransferProps> = (props) => {
   const {
     leftColumns,
@@ -29,7 +28,9 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
         const columns = isLeftTable ? leftColumns : rightColumns;
         const rowSelection: TableRowSelection<ExpandedBackupSqlType> = {
           getCheckboxProps: isLeftTable
-            ? (item) => ({ disabled: item.disabled })
+            ? (item) => ({
+                disabled: item.disabled
+              })
             : undefined,
           onChange(selectedRowKeys) {
             onItemSelectAll(selectedRowKeys as string[], 'replace');
@@ -37,7 +38,6 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
           selectedRowKeys: listSelectedKeys,
           columnWidth: 60
         };
-
         return (
           <BasicTable
             rowSelection={rowSelection}
@@ -56,7 +56,10 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
             })}
             pagination={isLeftTable ? leftPagination : undefined}
             onChange={isLeftTable ? onTableChange : undefined}
-            scroll={{ y: '700px', x: true }}
+            scroll={{
+              y: '700px',
+              x: true
+            }}
             className={isLeftTable ? 'left-table' : 'right-table'}
           />
         );
@@ -64,5 +67,4 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
     </Transfer>
   );
 };
-
 export default TableTransfer;

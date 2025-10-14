@@ -41,6 +41,8 @@ import {
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
   OperationRecordListStatusEnum,
+  OptimizationRecordStatusEnum,
+  OptimizationSQLDetailStatusEnum,
   RecordSourceNameEnum,
   RelatedSQLInfoSourceEnum,
   ReportPushConfigListPushUserTypeEnum,
@@ -133,6 +135,88 @@ export interface IRuleCategoryStatistic {
   count?: number;
 
   tag?: string;
+}
+
+export interface IAdvisedIndex {
+  indexes?: IIndexInfo[];
+
+  message?: string;
+
+  state?: string;
+}
+
+export interface IAnalysis {
+  detail?: IAnalysisDetail[];
+
+  improvement_desc?: string;
+
+  improvement_rate?: number;
+
+  state?: string;
+
+  total_score?: number;
+}
+
+export interface IAnalysisDetail {
+  category?: string;
+
+  optimized_score?: number;
+
+  original_score?: number;
+}
+
+export interface IIndexInfo {
+  create_index_statement?: string;
+
+  reason?: string;
+}
+
+export interface IOptimizeDetail {
+  state?: string;
+
+  steps?: IOptimizeStep[];
+}
+
+export interface IOptimizeStep {
+  analysis?: IAnalysis;
+
+  chat_id?: string;
+
+  optimized_sql?: string;
+
+  query_plan?: IQueryPlan;
+
+  rule_desc?: string;
+
+  rule_id?: string;
+
+  rule_name?: string;
+}
+
+export interface IQueryPlan {
+  query_plan_desc?: IQueryPlanNode[];
+
+  state?: string;
+}
+
+export interface IQueryPlanNode {
+  children?: IQueryPlanNode[];
+
+  operator?: string;
+
+  summary?: string[];
+}
+
+export interface ITotalAnalysis {
+  detail?: IAnalysisDetail[];
+
+  improvement_desc?: string;
+
+  improvement_rate?: number;
+
+  state?: string;
+
+  total_score?: number;
 }
 
 export interface IAbnormalAuditPlanInstance {
@@ -2576,13 +2660,19 @@ export interface IOptimizationRecord {
 
   instance_name?: string;
 
+  number_of_index?: number;
+
+  number_of_rule?: number;
+
   optimization_id?: string;
 
   optimization_name?: string;
 
-  performance_gain?: number;
+  performance_improve?: number;
 
-  status?: string;
+  status?: OptimizationRecordStatusEnum;
+
+  status_detail?: string;
 }
 
 export interface IOptimizationRecordOverview {
@@ -2610,15 +2700,27 @@ export interface IOptimizationSQL {
 }
 
 export interface IOptimizationSQLDetail {
-  explain_validation_details?: IExplainValidationDetail;
+  advised_index?: IAdvisedIndex;
 
-  index_recommendations?: string[];
+  id?: number;
 
-  optimized_sql?: string;
+  metadata?: string;
 
-  original_sql?: string;
+  optimization_id?: string;
 
-  triggered_rule?: IRewriteRule[];
+  optimize?: IOptimizeDetail;
+
+  origin_query_plan?: IQueryPlan;
+
+  origin_sql?: string;
+
+  status?: OptimizationSQLDetailStatusEnum;
+
+  status_detail?: string;
+
+  total_analysis?: ITotalAnalysis;
+
+  total_state?: string;
 }
 
 export interface IOptimizationsummary {
@@ -2638,9 +2740,11 @@ export interface IOptimizationsummary {
 }
 
 export interface IOptimizeSQLReq {
-  db_type?: string;
+  explain_info?: string;
 
   instance_name?: string;
+
+  metadata?: string;
 
   optimization_name?: string;
 
@@ -4477,6 +4581,14 @@ export interface IGetInstanceTipsResV2 {
   code?: number;
 
   data?: IInstanceTipResV2[];
+
+  message?: string;
+}
+
+export interface IGetOptimizationDetailRes {
+  code?: number;
+
+  data?: IOptimizationSQLDetail;
 
   message?: string;
 }

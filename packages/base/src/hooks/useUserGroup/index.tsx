@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useState } from 'react';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IListUserGroup } from '@actiontech/shared/lib/api/base/service/common';
 import UserGroup from '@actiontech/shared/lib/api/base/service/UserGroup';
 

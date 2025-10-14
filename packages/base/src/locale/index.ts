@@ -1,17 +1,17 @@
-import { StorageKey, SupportLanguage } from '@actiontech/shared/lib/enum';
+import { StorageKey, SupportLanguage } from '@actiontech/dms-kit';
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import sqleZhCN from 'sqle/src/locale/zh-CN';
 import sqleEnUS from 'sqle/src/locale/en-US';
-import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
-import commonEnUS from '@actiontech/shared/lib/locale/en-US';
+import commonZhCN from '@actiontech/dms-kit/es/locale/zh-CN';
+import commonEnUS from '@actiontech/dms-kit/es/locale/en-US';
 import zhCN from './zh-CN';
 import enUS from './en-US';
 import { TOptions } from 'i18next';
-import { LocalStorageWrapper } from '@actiontech/shared';
-import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
-import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
-import { findDuplicateKeys } from '@actiontech/shared/lib/utils/Common';
+import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { TemplateKeyPath } from '@actiontech/dms-kit/es/types/common.type';
+import { DEFAULT_LANGUAGE } from '@actiontech/dms-kit/es/locale';
+import { findDuplicateKeys } from '@actiontech/dms-kit';
 
 // #if [DEV]
 const zh_dupKeys = findDuplicateKeys([

@@ -1,4 +1,5 @@
-import { BasicButton, Copy, HighlightCode } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
+import { Copy, HighlightCode } from '@actiontech/dms-kit';
 import { Divider, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportResultCardProp } from './index.type';
@@ -10,18 +11,14 @@ import {
 } from '../../style';
 import AuditResultTag from './AuditResultTag';
 import { DownOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-
+import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const onCopyExecSql = () => {
     Copy.copyTextByTextarea(props.sql ?? '');
     messageApi.success(t('common.copied'));
   };
-
   return (
     <ExportResultCardStyleWrapper>
       {contextHolder}
@@ -88,5 +85,4 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
     </ExportResultCardStyleWrapper>
   );
 };
-
 export default ExportResultCard;

@@ -8,7 +8,7 @@ import TableTopList, {
 
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import { ISqlAverageExecutionTime } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   IGetSqlAverageExecutionTimeV1Params,

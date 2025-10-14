@@ -5,7 +5,7 @@ import { ResponseCode } from '../../data/common';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
 import { IUserTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetUserTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/user/index.d';
-import { CustomAvatar } from '@actiontech/shared';
+import { CustomAvatar } from '@actiontech/dms-kit';
 import { CustomAvatarStyleWrapper } from './style';
 
 const useUsername = () => {

@@ -8,7 +8,7 @@ import TableTopList, {
   ITableTopList
 } from '../../../../../../components/ChartCom/TableTopList';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import {
   IGetWorkflowRejectedPercentGroupByCreatorV1Params,
   IGetWorkflowRejectedPercentGroupByCreatorV1Return

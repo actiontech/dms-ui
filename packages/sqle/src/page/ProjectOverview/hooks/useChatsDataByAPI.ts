@@ -4,7 +4,7 @@ import { useBoolean } from 'ahooks';
 import { useEffect, useState, useCallback } from 'react';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 
 const useChatsDataByAPI = <
   T extends {

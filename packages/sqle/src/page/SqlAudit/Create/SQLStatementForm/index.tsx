@@ -1,24 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/dms-kit';
 import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
-import { EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import { EmptyBox, ModeSwitcher } from '@actiontech/dms-kit';
 import SqlUploadFileCont from './components/SqlUploadCont';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
 import { RingPieFilled } from '@actiontech/icons';
 import RepositoryConfig from './components/RepositoryConfig';
-
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
-
   const uploadType = Form.useWatch('uploadType', form);
-
   const handleChangeUploadType = () => {
     form.resetFields([
       'sql',
@@ -32,7 +29,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       'gitProtocol'
     ]);
   };
-
   return (
     <>
       <FormItemLabel
@@ -46,13 +42,21 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           </>
         }
         initialValue={UploadTypeEnum.sql}
-        style={{ marginBottom: 16 }}
-        wrapperCol={{ span: 24 }}
-        labelCol={{ span: 24 }}
+        style={{
+          marginBottom: 16
+        }}
+        wrapperCol={{
+          span: 24
+        }}
+        labelCol={{
+          span: 24
+        }}
       >
         <ModeSwitcher
           onChange={handleChangeUploadType}
-          rowProps={{ gutter: [10, 10] }}
+          rowProps={{
+            gutter: [10, 10]
+          }}
           options={uploadTypeOptions}
           disabled={submitLoading}
         />
@@ -66,5 +70,4 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     </>
   );
 };
-
 export default SQLStatementFormWrapper;

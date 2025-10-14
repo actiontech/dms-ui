@@ -5,31 +5,29 @@ import {
   AvailabilityZoneSelectorStyleWrapper,
   AvailabilityZoneMenuStyleWrapper
 } from './style';
-import { BasicEmpty, useTypedNavigate } from '@actiontech/shared';
+import { BasicEmpty } from '@actiontech/dms-kit';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import useRecentlySelectedZone from '../../../../hooks/useRecentlySelectedZone';
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 type AvailabilityZoneSelectorProps = {
   zoneTips?: IUidWithName[];
+  availabilityZone?: IUidWithName;
+  updateRecentlySelectedZone: (zone: IUidWithName) => void;
 };
 
 const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
-  zoneTips
+  zoneTips,
+  availabilityZone,
+  updateRecentlySelectedZone
 }) => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
-
-  const { availabilityZone, updateRecentlySelectedZone } =
-    useRecentlySelectedZone();
-
   const [searchText, setSearchText] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const filteredZones = useCallback(() => {
     return (
       zoneTips?.filter((zone) =>
@@ -37,7 +35,6 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
       ) ?? []
     );
   }, [searchText, zoneTips]);
-
   const handleSelectZone = (zone: IUidWithName) => {
     updateRecentlySelectedZone(zone);
     setDropdownOpen(false);
@@ -45,7 +42,6 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
     EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
     navigate(ROUTE_PATHS.BASE.HOME);
   };
-
   const customDropdownRender = () => {
     const zones = filteredZones();
     return (
@@ -85,7 +81,6 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
                   </Popconfirm>
                 );
               }
-
               return (
                 <div
                   key={zone.uid}
@@ -107,7 +102,6 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
       </AvailabilityZoneMenuStyleWrapper>
     );
   };
-
   return (
     <Dropdown
       open={dropdownOpen}
@@ -130,5 +124,4 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
     </Dropdown>
   );
 };
-
 export default AvailabilityZoneSelector;

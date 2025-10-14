@@ -96,7 +96,7 @@ export default {
     rule: {
       descMessage: '步骤描述不能超过255个字符',
       userRequired: '最少需要添加一个指定人',
-      userMessage: '最多只能添加三个指定人'
+      userMessage: '最多只能添加十个指定人'
     }
   },
 

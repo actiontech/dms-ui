@@ -1,12 +1,9 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { message, Modal, Space } from 'antd';
-import {
-  PageHeader,
-  useTypedNavigate,
-  useTypedQuery
-} from '@actiontech/shared';
-import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
+import { PageHeader } from '@actiontech/dms-kit';
+import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
+import { TestConnectDisableReasonStyleWrapper } from '@actiontech/dms-kit/es/components/TestDatabaseConnectButton/style';
 import {
   useCurrentProject,
   useDbServiceDriver,
@@ -14,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import useDbService from '../../../../hooks/useDbService';
 import { useBoolean, useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -23,7 +20,7 @@ import {
   FilterCustomProps,
   TableToolbar,
   TableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,
@@ -32,7 +29,7 @@ import {
   filterDataMaskOptions
 } from './columns';
 import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useStaticTips from '../../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
@@ -40,22 +37,18 @@ import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
 } from '../../../../utils/common';
-
 const DataSourceList = () => {
   const { t } = useTranslation();
-
   const navigate = useTypedNavigate();
   const extractQuery = useTypedQuery();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { parse2TableActionPermissions } = usePermission();
   const { projectID } = useCurrentProject();
-
   const [
     batchTestDatabaseConnectionPending,
     { setFalse: finishTestConnection, setTrue: startTestConnection }
   ] = useBoolean();
-
   const {
     dbDriverOptions,
     getLogoUrlByDbType,
@@ -67,15 +60,12 @@ const DataSourceList = () => {
     loading: getDbServiceOptionsLoading,
     updateDbServiceList
   } = useDbService();
-
   const {
     environmentOptions,
     loading: getEnvironmentListLoading,
     updateEnvironmentList
   } = useServiceEnvironment();
-
   const { generateDatabaseTestConnectionStatusSelectOptions } = useStaticTips();
-
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -90,7 +80,6 @@ const DataSourceList = () => {
   });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
   const createEnableMaskingParams = (
     params: DataSourceListParamType,
     enableMasking: DataMaskingFilterTypeEnum
@@ -99,7 +88,6 @@ const DataSourceList = () => {
     params.is_enable_masking =
       enableMasking === DataMaskingFilterTypeEnum.checked;
   };
-
   const {
     data: dataSourceList,
     loading,
@@ -125,32 +113,40 @@ const DataSourceList = () => {
       ready: !!projectID
     }
   );
-
   const navigateToUpdatePage = useCallback(
     (dbServiceUid: string) => {
       navigate(ROUTE_PATHS.BASE.DATA_SOURCE.update, {
-        params: { projectID, dbServiceUid }
+        params: {
+          projectID,
+          dbServiceUid
+        }
       });
     },
     [navigate, projectID]
   );
-
   const navigateToSqlManagementConf = useCallback(
     (uid: string, environment: string, instanceAuditPlanId?: string) => {
       if (instanceAuditPlanId) {
         navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update, {
-          params: { projectID, id: instanceAuditPlanId }
+          params: {
+            projectID,
+            id: instanceAuditPlanId
+          }
         });
       } else {
         navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create, {
-          params: { projectID },
-          queries: { instance_id: uid, environment_tag: environment }
+          params: {
+            projectID
+          },
+          queries: {
+            instance_id: uid,
+            environment_tag: environment
+          }
         });
       }
     },
     [navigate, projectID]
   );
-
   const deleteDatabase = useCallback(
     (dbServiceUid: string, dvServiceName: string) => {
       const hideLoading = messageApi.loading(
@@ -179,7 +175,6 @@ const DataSourceList = () => {
     },
     [messageApi, refresh, t, projectID]
   );
-
   const testDatabaseConnection = useCallback(
     (dbServiceUid: string, dbServiceName: string) => {
       const hide = messageApi.loading(
@@ -222,7 +217,6 @@ const DataSourceList = () => {
     },
     [messageApi, modalApi, projectID, refresh, t]
   );
-
   const batchTestDatabaseConnection = () => {
     if (!dataSourceList?.list || dataSourceList.list.length === 0) {
       messageApi.error(t('dmsDataSource.batchTestConnection.notFoundData'));
@@ -250,35 +244,48 @@ const DataSourceList = () => {
         finishTestConnection();
       });
   };
-
   const columns = useMemo(
     () => DataSourceColumns(getLogoUrlByDbType),
     [getLogoUrlByDbType]
   );
-
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListDBServiceV2, FilterCustomProps>([
       [
         'name',
-        { options: dbServiceOptions, loading: getDbServiceOptionsLoading }
+        {
+          options: dbServiceOptions,
+          loading: getDbServiceOptionsLoading
+        }
       ],
       [
         'db_type',
-        { options: dbDriverOptions, loading: getDriveOptionsLoading }
+        {
+          options: dbDriverOptions,
+          loading: getDriveOptionsLoading
+        }
       ],
       [
         'last_connection_test_status',
-        { options: generateDatabaseTestConnectionStatusSelectOptions }
+        {
+          options: generateDatabaseTestConnectionStatusSelectOptions
+        }
       ],
       [
         'environment_tag',
-        { options: environmentOptions, loading: getEnvironmentListLoading }
+        {
+          options: environmentOptions,
+          loading: getEnvironmentListLoading
+        }
       ],
       // #if [dms]
-      ['is_enable_masking', { options: filterDataMaskOptions }]
+      [
+        'is_enable_masking',
+        {
+          options: filterDataMaskOptions
+        }
+      ]
       // #endif
     ]);
   }, [
@@ -290,7 +297,6 @@ const DataSourceList = () => {
     environmentOptions,
     getEnvironmentListLoading
   ]);
-
   const tableActions = useMemo(() => {
     return parse2TableActionPermissions(
       DataSourceListActions(
@@ -312,16 +318,16 @@ const DataSourceList = () => {
     batchTestDatabaseConnection,
     batchTestDatabaseConnectionPending
   );
-
   useEffect(() => {
     if (projectID) {
       updateDriverList();
-      updateDbServiceList({ project_uid: projectID });
+      updateDbServiceList({
+        project_uid: projectID
+      });
       updateEnvironmentList(projectID);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
-
   return (
     <>
       {modalContextHolder}
@@ -339,7 +345,10 @@ const DataSourceList = () => {
         }
       />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        refreshButton={{
+          refresh,
+          disabled: loading
+        }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -376,5 +385,4 @@ const DataSourceList = () => {
     </>
   );
 };
-
 export default DataSourceList;

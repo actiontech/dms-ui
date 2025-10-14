@@ -1,0 +1,1683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlOptimizationResultDrawer should render correctly when drawer is open with finished optimization 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  SQL调优结果详情
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-row css-px2bq7"
+                    style="margin-left: -12px; margin-right: -12px;"
+                  >
+                    <div
+                      class="ant-col ant-col-24"
+                      style="padding-left: 12px; padding-right: 12px;"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="ant-card ant-card-small sql-optimization-card css-arvsbo"
+                          >
+                            <div
+                              class="ant-card-head"
+                            >
+                              <div
+                                class="ant-card-head-wrapper"
+                              >
+                                <div
+                                  class="ant-card-head-title"
+                                >
+                                  新的优化查询为
+                                </div>
+                                <div
+                                  class="ant-card-extra"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            class="TransferFilled_svg__icon"
+                                            height="16"
+                                            viewBox="0 0 1024 1024"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M789.333 586.667c1.558 0 3.094.106 4.587.32l2.39.426 2.517.683 3.541 1.344 2.987 1.493 2.346 1.494 2.347 1.856 1.92 1.749a33 33 0 0 1 2.453 2.773l1.878 2.603 1.514 2.645a31.9 31.9 0 0 1 0 29.227l-1.536 2.645-.725 1.088-1.835 2.39-1.749 1.898-170.667 170.667a32 32 0 0 1-47.466-42.837l2.197-2.432 116.032-116.032H234.667a32 32 0 0 1-3.072-63.851l3.072-.15zm0-170.667H234.667l-2.134-.064-2.858-.32-2.198-.427-2.474-.682-1.558-.534-2.986-1.301-1.067-.533a31.8 31.8 0 0 1-7.467-5.611l-1.344-1.45-1.386-1.707-1.622-2.347-1.514-2.688-1.238-2.773-.917-2.774-.427-1.621-.512-2.795-.277-3.2v-2.133l.043-1.195.32-2.837.426-2.197.32-1.28.79-2.454 1.408-3.306.533-1.024a32.6 32.6 0 0 1 4.693-6.55l1.856-1.813 171.179-149.803a32 32 0 0 1 44.501 45.888l-2.346 2.283-106.582 93.227 469.504.021a32 32 0 0 1 3.072 63.85z"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          查看差异
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                        title="复制"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          复制
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-card-body"
+                            >
+                              <div
+                                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                              >
+                                <pre>
+                                  <code>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        1
+                                      </span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        SELECT
+                                      </span>
+                                       
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        2
+                                      </span>
+                                          s.student_id
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        3
+                                      </span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        FROM
+                                      </span>
+                                       
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        4
+                                      </span>
+                                          students s
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        5
+                                      </span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        WHERE
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        6
+                                      </span>
+                                          s.student_id 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        IN
+                                      </span>
+                                       (
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        7
+                                      </span>
+                                              
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        SELECT
+                                      </span>
+                                       student_id 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        FROM
+                                      </span>
+                                       enrollments 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        WHERE
+                                      </span>
+                                       s.student_id 
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        =
+                                      </span>
+                                       enrollments.student_id
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        8
+                                      </span>
+                                          )
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        9
+                                      </span>
+                                          
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        AND
+                                      </span>
+                                       s.create_at 
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        &gt;=
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-string"
+                                      >
+                                        '2024-01-01 00:00:00'
+                                      </span>
+                                    </div>
+                                  </code>
+                                </pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="ant-card ant-card-small sql-optimization-card execution-plan-flow-card css-arvsbo"
+                          >
+                            <div
+                              class="ant-card-head"
+                            >
+                              <div
+                                class="ant-card-head-wrapper"
+                              >
+                                <div
+                                  class="ant-card-head-title"
+                                >
+                                  索引优化建议
+                                </div>
+                                <div
+                                  class="ant-card-extra"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 1024 1024"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M910.423 893.2 790.027 772.662c31.305-42.579 49.833-95.127 49.833-151.932 0-141.624-115.086-256.85-256.54-256.85S326.785 479.106 326.785 620.73 441.866 877.58 583.32 877.58c56.737 0 109.222-18.55 151.75-49.893l120.397 120.538c7.59 7.593 17.532 11.393 27.479 11.393s19.888-3.8 27.478-11.394c15.174-15.198 15.174-39.832-.001-55.024M583.32 814.359c-106.638 0-193.39-86.863-193.39-193.629s86.752-193.628 193.39-193.628 193.395 86.861 193.395 193.628-86.758 193.629-193.395 193.629"
+                                              fill="#C3C6CD"
+                                            />
+                                            <path
+                                              d="M251.215 631.364c0-181.288 146.78-328.252 327.844-328.252 110.88 0 208.904 55.113 268.236 139.473V124.164c0-32.988-26.736-59.78-59.715-59.78H161.91c-32.977 0-59.714 26.763-59.714 59.779v775.672c0 32.99 26.735 59.782 59.715 59.782h417.148c-181.063 0-327.844-146.964-327.844-328.253m-29.803-447.616c0-16.481 13.344-29.841 29.804-29.841h447.06c16.46 0 29.804 13.36 29.804 29.84s-13.343 29.842-29.804 29.842h-447.06c-16.46 0-29.804-13.361-29.804-29.841"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          查看表结构
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                        title="复制"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          复制
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-card-body"
+                            >
+                              <div
+                                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                              >
+                                <pre>
+                                  <code>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        1
+                                      </span>
+                                      <span
+                                        class="hljs-comment"
+                                      >
+                                        /* 查询语句中有对students表的create_at字段的范围查询，需要对该字段添加索引以提高查询效率。 */
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        2
+                                      </span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        CREATE
+                                      </span>
+                                       INDEX idx_students_create_at 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        ON
+                                      </span>
+                                       students(create_at);
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        3
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        4
+                                      </span>
+                                      <span
+                                        class="hljs-comment"
+                                      >
+                                        /* 查询语句中需要在enrollments表中根据student_id进行匹配，给enrollments表的student_id字段添加索引可以加快子查询的执行。 */
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="code-line wrapped-line with-line-number"
+                                    >
+                                      <span
+                                        class="code-line-number"
+                                      >
+                                        5
+                                      </span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        CREATE
+                                      </span>
+                                       INDEX idx_enrollments_student_id 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        ON
+                                      </span>
+                                       enrollments(student_id);
+                                    </div>
+                                  </code>
+                                </pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-card ant-card-small sql-optimization-card css-arvsbo"
+                          >
+                            <div
+                              class="ant-card-head"
+                            >
+                              <div
+                                class="ant-card-head-wrapper"
+                              >
+                                <div
+                                  class="ant-card-head-title"
+                                >
+                                  优化后的执行计划
+                                </div>
+                                <div
+                                  class="ant-card-extra"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            class="TransferFilled_svg__icon"
+                                            height="16"
+                                            viewBox="0 0 1024 1024"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M789.333 586.667c1.558 0 3.094.106 4.587.32l2.39.426 2.517.683 3.541 1.344 2.987 1.493 2.346 1.494 2.347 1.856 1.92 1.749a33 33 0 0 1 2.453 2.773l1.878 2.603 1.514 2.645a31.9 31.9 0 0 1 0 29.227l-1.536 2.645-.725 1.088-1.835 2.39-1.749 1.898-170.667 170.667a32 32 0 0 1-47.466-42.837l2.197-2.432 116.032-116.032H234.667a32 32 0 0 1-3.072-63.851l3.072-.15zm0-170.667H234.667l-2.134-.064-2.858-.32-2.198-.427-2.474-.682-1.558-.534-2.986-1.301-1.067-.533a31.8 31.8 0 0 1-7.467-5.611l-1.344-1.45-1.386-1.707-1.622-2.347-1.514-2.688-1.238-2.773-.917-2.774-.427-1.621-.512-2.795-.277-3.2v-2.133l.043-1.195.32-2.837.426-2.197.32-1.28.79-2.454 1.408-3.306.533-1.024a32.6 32.6 0 0 1 4.693-6.55l1.856-1.813 171.179-149.803a32 32 0 0 1 44.501 45.888l-2.346 2.283-106.582 93.227 469.504.021a32 32 0 0 1 3.072 63.85z"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          查看差异
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            class="FullScreenOutlined_svg__icon"
+                                            height="16"
+                                            viewBox="0 0 1024 1024"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M213.333 213.333h213.334V128h-256A42.667 42.667 0 0 0 128 170.667v256h85.333zM170.667 896h256v-85.333H213.333V597.333H128v256A42.667 42.667 0 0 0 170.667 896M896 853.333v-256h-85.333v213.334H597.333V896h256A42.667 42.667 0 0 0 896 853.333m-298.667-640h213.334v213.334H896v-256A42.667 42.667 0 0 0 853.333 128h-256z"
+                                              fill="#C3C6CD"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          展开
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-card-body"
+                            >
+                              <div
+                                class="css-8xvjlf"
+                                style="height: 300px;"
+                              >
+                                <div
+                                  class="react-flow light"
+                                  data-testid="rf__wrapper"
+                                  style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+                                >
+                                  <div
+                                    class="react-flow__renderer"
+                                    style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                  >
+                                    <div
+                                      class="react-flow__pane draggable"
+                                      style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                    >
+                                      <div
+                                        class="react-flow__viewport xyflow__viewport react-flow__container"
+                                        style="transform: translate(0px,0px) scale(1);"
+                                      >
+                                        <div
+                                          class="react-flow__edges"
+                                        />
+                                        <div
+                                          class="react-flow__edgelabel-renderer"
+                                        />
+                                        <div
+                                          class="react-flow__nodes"
+                                          style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                        >
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-0"
+                                            data-testid="rf__node-node-0"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(0px,0px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Projection
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        1
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        s.student_id
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                                data-handlepos="bottom"
+                                                data-id="1-node-0-null-source"
+                                                data-nodeid="node-0"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-1"
+                                            data-testid="rf__node-node-1"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(0px,120px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-1-null-target"
+                                                data-nodeid="node-1"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Filter
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        2
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        2 conditions
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                                data-handlepos="bottom"
+                                                data-id="1-node-1-null-source"
+                                                data-nodeid="node-1"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-2"
+                                            data-testid="rf__node-node-2"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(-190px,240px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-2-null-target"
+                                                data-nodeid="node-2"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Table Scan
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        3
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        students s
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-3"
+                                            data-testid="rf__node-node-3"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(190px,240px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-3-null-target"
+                                                data-nodeid="node-3"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Subquery
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        4
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        (subquery1)
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                                data-handlepos="bottom"
+                                                data-id="1-node-3-null-source"
+                                                data-nodeid="node-3"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-4"
+                                            data-testid="rf__node-node-4"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(190px,360px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-4-null-target"
+                                                data-nodeid="node-4"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Projection
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        5
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        student_id
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                                data-handlepos="bottom"
+                                                data-id="1-node-4-null-source"
+                                                data-nodeid="node-4"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-5"
+                                            data-testid="rf__node-node-5"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(190px,480px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-5-null-target"
+                                                data-nodeid="node-5"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Filter
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        6
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        s.student_id = enrollments.student_id
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="react-flow__handle react-flow__handle-bottom nodrag nopan source connectablestart connectableend"
+                                                data-handlepos="bottom"
+                                                data-id="1-node-5-null-source"
+                                                data-nodeid="node-5"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div
+                                            aria-describedby="react-flow__node-desc-1"
+                                            class="react-flow__node react-flow__node-queryPlanNode"
+                                            data-id="node-6"
+                                            data-testid="rf__node-node-6"
+                                            role="button"
+                                            style="z-index: 0; transform: translate(190px,600px); pointer-events: none; visibility: hidden;"
+                                            tabindex="0"
+                                          >
+                                            <div
+                                              class="css-1wqoq18"
+                                            >
+                                              <div
+                                                class="react-flow__handle react-flow__handle-top nodrag nopan target connectablestart connectableend"
+                                                data-handlepos="top"
+                                                data-id="1-node-6-null-target"
+                                                data-nodeid="node-6"
+                                              />
+                                              <div
+                                                class="query-plan-node-card"
+                                              >
+                                                <div
+                                                  class="ant-space ant-space-vertical"
+                                                  style="width: 100%;"
+                                                >
+                                                  <div
+                                                    class="ant-space-item"
+                                                    style="margin-bottom: 8px;"
+                                                  >
+                                                    <div
+                                                      class="operator-row"
+                                                    >
+                                                      <div
+                                                        class="operator-left"
+                                                      >
+                                                        <span
+                                                          class="collapse-icon"
+                                                        >
+                                                          <span
+                                                            aria-label="down"
+                                                            class="anticon anticon-down"
+                                                            role="img"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              data-icon="down"
+                                                              fill="currentColor"
+                                                              focusable="false"
+                                                              height="1em"
+                                                              viewBox="64 64 896 896"
+                                                              width="1em"
+                                                            >
+                                                              <path
+                                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                              />
+                                                            </svg>
+                                                          </span>
+                                                        </span>
+                                                        <h5
+                                                          class="ant-typography operator-title"
+                                                        >
+                                                          Table Scan
+                                                        </h5>
+                                                      </div>
+                                                      <span
+                                                        class="node-index"
+                                                      >
+                                                        #
+                                                        7
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="ant-space-item"
+                                                  >
+                                                    <div
+                                                      class="content-text"
+                                                    >
+                                                      <span
+                                                        class="ant-typography"
+                                                      >
+                                                        enrollments
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="react-flow__viewport-portal"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <svg
+                                    class="react-flow__background"
+                                    data-testid="rf__background"
+                                    style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                  >
+                                    <pattern
+                                      height="20"
+                                      id="pattern-1"
+                                      patternTransform="translate(-11,-11)"
+                                      patternUnits="userSpaceOnUse"
+                                      width="20"
+                                      x="0"
+                                      y="0"
+                                    >
+                                      <circle
+                                        class="react-flow__background-pattern dots"
+                                        cx="0.5"
+                                        cy="0.5"
+                                        r="0.5"
+                                      />
+                                    </pattern>
+                                    <rect
+                                      fill="url(#pattern-1)"
+                                      height="100%"
+                                      width="100%"
+                                      x="0"
+                                      y="0"
+                                    />
+                                  </svg>
+                                  <div
+                                    class="react-flow__panel react-flow__attribution bottom left"
+                                    data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+                                    style="pointer-events: all;"
+                                  >
+                                    <a
+                                      aria-label="React Flow attribution"
+                                      href="https://reactflow.dev"
+                                      rel="noopener noreferrer"
+                                      target="_blank"
+                                    >
+                                      React Flow
+                                    </a>
+                                  </div>
+                                  <div
+                                    id="react-flow__node-desc-1"
+                                    style="display: none;"
+                                  >
+                                    Press enter or space to select a node.
+                                    You can then use the arrow keys to move the node around.
+                                     Press delete to remove it and escape to cancel.
+                                     
+                                  </div>
+                                  <div
+                                    id="react-flow__edge-desc-1"
+                                    style="display: none;"
+                                  >
+                                    Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+                                  </div>
+                                  <div
+                                    aria-atomic="true"
+                                    aria-live="assertive"
+                                    id="react-flow__aria-live-1"
+                                    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-col ant-col-24 css-1ax1exx"
+                      style="padding-left: 12px; padding-right: 12px; background: rgba(255, 255, 255, 0.7);"
+                    >
+                      <div
+                        class="ant-space ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="ant-space ant-space-vertical"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="css-19v9tj3"
+                              >
+                                <div
+                                  class="probability-number"
+                                  style="background-clip: text;"
+                                >
+                                  238.5
+                                  <span>
+                                    %
+                                  </span>
+                                </div>
+                                <svg
+                                  height="30"
+                                  version="1.1"
+                                  width="30"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 0 C3.61477175 1.49801352 5.68620463 3.57537417 8.25 6.5 C8.95640625 7.2940625 9.6628125 8.088125 10.390625 8.90625 C12 11 12 11 12 13 C10.8553125 13.0309375 10.8553125 13.0309375 9.6875 13.0625 C8.800625 13.371875 7.91375 13.68125 7 14 C5.95281202 16.31254012 4.95653635 18.6485148 4 21 C0.03489054 25.30497599 -3.40593489 25.62074135 -9 26 C-9 21.52386206 -8.51156813 21.31526994 -6 18 C-5.28566879 15.35065178 -5.28566879 15.35065178 -5 13 C-6.65 13 -8.3 13 -10 13 C-8.56501627 9.79111679 -6.78256013 7.42193016 -4.4375 4.8125 C-3.81746094 4.11769531 -3.19742187 3.42289062 -2.55859375 2.70703125 C-1.72141231 1.79011824 -0.8779528 0.8779528 0 0 Z "
+                                    fill="#FCAF19"
+                                    transform="translate(14,2)"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary"
+                              >
+                                性能提升
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="analysis-chart"
+                          >
+                            <div
+                              class="css-1anu5"
+                            >
+                              <div
+                                class="chart-wrapper css-1hgbe7b"
+                              >
+                                <div
+                                  class="chart-box"
+                                >
+                                  <div
+                                    data-custom-params="{"data":[{"name":"执行计划","score":1,"type":"原文"},{"name":"执行计划","score":4,"type":"最终优化后"},{"name":"扫描预估","score":1,"type":"原文"},{"name":"扫描预估","score":1,"type":"最终优化后"},{"name":"索引使用","score":1,"type":"原文"},{"name":"索引使用","score":1,"type":"最终优化后"},{"name":"SQL复杂度","score":1,"type":"原文"},{"name":"SQL复杂度","score":7,"type":"最终优化后"},{"name":"网络传输","score":4,"type":"原文"},{"name":"网络传输","score":4,"type":"最终优化后"},{"name":"其他","score":4,"type":"原文"},{"name":"其他","score":6,"type":"最终优化后"}],"xField":"name","yField":"score","seriesField":"type","meta":{"score":{"range":[0,1.1]}},"xAxis":{"line":null,"tickLine":null,"grid":{"line":{"style":{"lineWidth":1,"lineDash":null}}},"label":{"labelLineWidth":0,"labelDirection":"negative"}},"yAxis":{"line":null,"label":null},"area":{"style":{"fillOpacity":0.15}},"tooltip":{},"legend":false,"smooth":true}"
+                                    data-testid="mock-antd-plots"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="css-1xremcl"
+                          >
+                            <div
+                              class="steps-header"
+                            >
+                              <h5
+                                class="ant-typography"
+                              >
+                                使用了哪些优化规则？
+                              </h5>
+                              <span
+                                class="ant-typography ant-typography-secondary"
+                              >
+                                点击查看每个规则对 SQL 语句的影响
+                              </span>
+                            </div>
+                            <div
+                              class="steps-list"
+                            >
+                              <div
+                                class="step-item "
+                              >
+                                <div
+                                  class="step-number"
+                                >
+                                  01
+                                </div>
+                                <div
+                                  class="step-content"
+                                >
+                                  <h4
+                                    class="step-title"
+                                  >
+                                    外连接表消除
+                                  </h4>
+                                  <div
+                                    aria-label="可以消除LEFT JOIN，从而优化查询性能。"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line"
+                                  >
+                                    可以消除LEFT JOIN，从而优化查询性能。
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                    >
+                                      lg
+                                    </span>
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                      >
+                                        ...
+                                      </span>
+                                      <a
+                                        aria-label="展开"
+                                        class="ant-typography-expand"
+                                      >
+                                        展开
+                                      </a>
+                                    </span>
+                                  </div>
+                                  <span
+                                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                                  >
+                                    <svg
+                                      class="RocketFilled_svg__icon"
+                                      height="14"
+                                      viewBox="0 0 1024 1024"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M673.45 675.968s121.814-121.813 163.457-163.37c130.688-130.689 65.322-392.15 65.322-392.15S640.768 55.083 510.08 185.813c-97.707 97.707-162.816 164.992-162.816 164.992S183.296 316.501 85.248 414.55l522.88 522.88c98.048-98.048 65.323-261.461 65.323-261.461m-64.085-383.36a85.25 85.25 0 0 1 120.662 0 85.333 85.333 0 1 1-120.662 0m-482.688 602.07s128 0 213.334-85.334l-128-128c-85.334 42.667-85.334 213.333-85.334 213.333"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                    <span>
+                                      自动优化
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="step-item "
+                              >
+                                <div
+                                  class="step-number"
+                                >
+                                  02
+                                </div>
+                                <div
+                                  class="step-content"
+                                >
+                                  <h4
+                                    class="step-title"
+                                  >
+                                    隐式转换
+                                  </h4>
+                                  <div
+                                    aria-label="将条件\`DATE(s.create_at) >= '2024-01-01'\`改写为\`s.create_at >= '2024-01-01 00:00:00'\`，消除了对字段的函数操作，避免了隐式转换，提高了查询性能。"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line"
+                                  >
+                                    将条件\`DATE(s.create_at) &gt;= '2024-01-01'\`改写为\`s.create_at &gt;= '2024-01-01 00:00:00'\`，消除了对字段的函数操作，避免了隐式转换，提高了查询性能。
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                    >
+                                      lg
+                                    </span>
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                      >
+                                        ...
+                                      </span>
+                                      <a
+                                        aria-label="展开"
+                                        class="ant-typography-expand"
+                                      >
+                                        展开
+                                      </a>
+                                    </span>
+                                  </div>
+                                  <span
+                                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                                  >
+                                    <svg
+                                      class="RocketFilled_svg__icon"
+                                      height="14"
+                                      viewBox="0 0 1024 1024"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M673.45 675.968s121.814-121.813 163.457-163.37c130.688-130.689 65.322-392.15 65.322-392.15S640.768 55.083 510.08 185.813c-97.707 97.707-162.816 164.992-162.816 164.992S183.296 316.501 85.248 414.55l522.88 522.88c98.048-98.048 65.323-261.461 65.323-261.461m-64.085-383.36a85.25 85.25 0 0 1 120.662 0 85.333 85.333 0 1 1-120.662 0m-482.688 602.07s128 0 213.334-85.334l-128-128c-85.334 42.667-85.334 213.333-85.334 213.333"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                    <span>
+                                      自动优化
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="step-item last-item"
+                              >
+                                <div
+                                  class="step-number"
+                                >
+                                  03
+                                </div>
+                                <div
+                                  class="step-content"
+                                >
+                                  <h4
+                                    class="step-title"
+                                  >
+                                    关联子查询优化
+                                  </h4>
+                                  <div
+                                    aria-label="将非关联的子查询改写为关联子查询，通过在子查询中添加关联条件 s.student_id = enrollments.student_id，减少了不必要的全表扫描，提升了查询性能。"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line"
+                                  >
+                                    将非关联的子查询改写为关联子查询，通过在子查询中添加关联条件 s.student_id = enrollments.student_id，减少了不必要的全表扫描，提升了查询性能。
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                    >
+                                      lg
+                                    </span>
+                                    <span
+                                      aria-hidden="true"
+                                      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                      >
+                                        ...
+                                      </span>
+                                      <a
+                                        aria-label="展开"
+                                        class="ant-typography-expand"
+                                      >
+                                        展开
+                                      </a>
+                                    </span>
+                                  </div>
+                                  <span
+                                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                                  >
+                                    <svg
+                                      class="RocketFilled_svg__icon"
+                                      height="14"
+                                      viewBox="0 0 1024 1024"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M673.45 675.968s121.814-121.813 163.457-163.37c130.688-130.689 65.322-392.15 65.322-392.15S640.768 55.083 510.08 185.813c-97.707 97.707-162.816 164.992-162.816 164.992S183.296 316.501 85.248 414.55l522.88 522.88c98.048-98.048 65.323-261.461 65.323-261.461m-64.085-383.36a85.25 85.25 0 0 1 120.662 0 85.333 85.333 0 1 1-120.662 0m-482.688 602.07s128 0 213.334-85.334l-128-128c-85.334 42.667-85.334 213.333-85.334 213.333"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                    <span>
+                                      自动优化
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicModal, BasicTag } from '@actiontech/shared';
+import { ResponseCode } from '@actiontech/dms-kit';
+import { BasicButton, BasicModal, BasicTag } from '@actiontech/dms-kit';
 import { IReduxState } from '../../../../store';
 import {
   updateMemberModalStatus,
@@ -18,19 +18,16 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import formatMemberRole from '../../Common/formatMemberRole';
 import { ManageMemberGroupContainer, MemberGroupCard } from './style';
-import { BasicEmpty } from '@actiontech/shared';
-
+import { BasicEmpty } from '@actiontech/dms-kit';
 const ManageMemberGroup: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [messageApi, contextHolder] = message.useMessage();
   const { projectID } = useCurrentProject();
-
   const { visible, selectMember } = useSelector((state: IReduxState) => ({
     visible: state.member.modalStatus[ModalName.DMS_Manage_Member_Group],
     selectMember: state.member.selectMember
   }));
-
   const {
     data: memberGroups,
     loading,
@@ -52,13 +49,11 @@ const ManageMemberGroup: React.FC = () => {
       manual: true
     }
   );
-
   useEffect(() => {
     if (visible && selectMember?.user?.uid) {
       fetchMemberGroups();
     }
   }, [visible, selectMember?.user?.uid, fetchMemberGroups]);
-
   const onClose = useCallback(() => {
     dispatch(
       updateMemberModalStatus({
@@ -67,7 +62,6 @@ const ManageMemberGroup: React.FC = () => {
       })
     );
   }, [dispatch]);
-
   const handleEditPermissions = useCallback(
     (memberGroup: IListMemberGroup) => {
       dispatch(
@@ -85,15 +79,12 @@ const ManageMemberGroup: React.FC = () => {
     },
     [dispatch, onClose]
   );
-
   const handleExitGroup = useCallback(
     (memberGroup: IListMemberGroup) => {
       if (!selectMember?.user?.uid || !memberGroup.uid) return;
-
       const updatedUserUids = (memberGroup.users || [])
         .filter((user) => user.uid !== selectMember.user?.uid)
         .map((user) => user.uid!);
-
       MemberGroup.UpdateMemberGroup({
         member_group_uid: memberGroup.uid,
         project_uid: projectID,
@@ -118,19 +109,16 @@ const ManageMemberGroup: React.FC = () => {
     },
     [selectMember?.user?.uid, projectID, messageApi, fetchMemberGroups, t]
   );
-
   const renderPermissions = useCallback((roleWithOpRanges: any[] = []) => {
     if (!roleWithOpRanges || roleWithOpRanges.length === 0) {
       return '-';
     }
-
     return roleWithOpRanges.map((item, index) => (
       <BasicTag size="small" key={index} color="gray">
         {item.role_uid?.name}
       </BasicTag>
     ));
   }, []);
-
   const renderMemberGroup = useCallback(
     (group: IListMemberGroup) => (
       <MemberGroupCard key={group.uid}>
@@ -166,7 +154,6 @@ const ManageMemberGroup: React.FC = () => {
     ),
     [handleEditPermissions, handleExitGroup, renderPermissions, t]
   );
-
   return (
     <BasicModal
       open={visible}
@@ -190,5 +177,4 @@ const ManageMemberGroup: React.FC = () => {
     </BasicModal>
   );
 };
-
 export default ManageMemberGroup;

@@ -1,19 +1,13 @@
 import { Popconfirm, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
-import {
-  BasicSwitch,
-  BasicToolTip,
-  ConfigItem,
-  EditInput,
-  LabelContent
-} from '@actiontech/shared';
+import { BasicSwitch, BasicToolTip, ConfigItem } from '@actiontech/dms-kit';
+import { EditInput, LabelContent } from '@actiontech/dms-kit';
 import { useState } from 'react';
 import { useLoginConnectionContext } from '../context';
 import { useBoolean, useRequest } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { ILoginConfiguration } from '@actiontech/shared/lib/api/base/service/common';
-
 const LoginBasicSetting: React.FC = () => {
   const { t } = useTranslation();
   const { isLDAPEnabled, isOAuthEnabled } = useLoginConnectionContext();
@@ -23,7 +17,6 @@ const LoginBasicSetting: React.FC = () => {
     isLoginButtonEditing,
     { setTrue: startEditing, setFalse: finishEditing }
   ] = useBoolean();
-
   const updateLoginConfig = async (
     value: string | boolean,
     configKey: keyof ILoginConfiguration
@@ -40,7 +33,6 @@ const LoginBasicSetting: React.FC = () => {
       }
     }
   };
-
   const { loading, refresh } = useRequest(() =>
     DmsApi.ConfigurationService.GetLoginTips().then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
@@ -49,7 +41,6 @@ const LoginBasicSetting: React.FC = () => {
       }
     })
   );
-
   const renderPasswordLoginSwitch = () => {
     if (!isOAuthEnabled) {
       return (
@@ -61,13 +52,11 @@ const LoginBasicSetting: React.FC = () => {
         </BasicToolTip>
       );
     }
-
     const confirmTitle = isPasswordLoginDisabled
       ? t('dmsSystem.loginBasic.confirmDisable')
       : isLDAPEnabled
       ? t('dmsSystem.loginBasic.confirmEnableWithLDAP')
       : t('dmsSystem.loginBasic.confirmEnable');
-
     return (
       <Popconfirm
         title={confirmTitle}
@@ -86,7 +75,6 @@ const LoginBasicSetting: React.FC = () => {
       </Popconfirm>
     );
   };
-
   return (
     <Spin spinning={loading} delay={300}>
       <ConfigItem
@@ -122,5 +110,4 @@ const LoginBasicSetting: React.FC = () => {
     </Spin>
   );
 };
-
 export default LoginBasicSetting;

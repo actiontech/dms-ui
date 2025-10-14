@@ -1,9 +1,9 @@
 import React from 'react';
-import { EmptyBox } from '@actiontech/shared/lib/components/EmptyBox';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { Alert } from 'antd';
 import { Space } from 'antd';
 import { TypedLink } from '@actiontech/shared/lib/components/TypedRouter';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { AbnormalAuditPlanTipsStyleWrapper } from '../style';
 import { IAbnormalAuditPlanInstance } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/features';

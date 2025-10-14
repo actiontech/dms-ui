@@ -2,7 +2,10 @@ import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter'
 import { userList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
 import {
   createSpyErrorResponse,
@@ -15,7 +18,7 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { UserCenterListEnum } from '../../../index.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {
@@ -202,5 +205,35 @@ describe('base/UserCenter/UserList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
     expect(container).toMatchSnapshot();
+  });
+
+  it('render table list when action filter', async () => {
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+    const searchInputEle = getBySelector(
+      '.basic-input-wrapper #actiontech-table-search-input'
+    );
+    await act(async () => {
+      fireEvent.input(searchInputEle, {
+        target: { value: 'test' }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => {
+      fireEvent.keyDown(searchInputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await act(() => jest.advanceTimersByTime(300));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalled();
+    expect(userListSpy).toHaveBeenCalledWith({
+      fuzzy_keyword: 'test',
+      page_index: 1,
+      page_size: 20
+    });
   });
 });

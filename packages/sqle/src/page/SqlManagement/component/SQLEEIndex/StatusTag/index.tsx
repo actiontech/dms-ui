@@ -1,16 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/dms-kit';
 import { useMemo } from 'react';
-import { BasicTagColor } from '@actiontech/shared/lib/theme/theme.type';
-
+import { BasicTagColor } from '@actiontech/dms-kit/es/theme/theme.type';
 export interface IStatusTag {
   status: SqlManageStatusEnum;
 }
-
 const StatusTag = ({ status }: IStatusTag) => {
   const { t } = useTranslation();
-
   const statusText = {
     [SqlManageStatusEnum.ignored]: t(
       'sqlManagement.table.filter.status.ignored'
@@ -24,7 +21,6 @@ const StatusTag = ({ status }: IStatusTag) => {
     ),
     [SqlManageStatusEnum.sent]: t('sqlManagement.table.filter.status.sent')
   };
-
   const color = useMemo(() => {
     const allColor = {
       unhandled: 'red',
@@ -35,7 +31,6 @@ const StatusTag = ({ status }: IStatusTag) => {
     };
     return allColor[status];
   }, [status]);
-
   return (
     <>
       <BasicTag size="small" color={color as BasicTagColor}>
@@ -44,5 +39,4 @@ const StatusTag = ({ status }: IStatusTag) => {
     </>
   );
 };
-
 export default StatusTag;

@@ -1,7 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Space } from 'antd';
-import { BasicDrawer } from '@actiontech/shared';
-
+import { BasicDrawer } from '@actiontech/dms-kit';
 export const PipelineConfigurationDefaultPromptsWrapper = styled(Space)`
   width: 100%;
   margin-top: 32px;
@@ -18,7 +17,6 @@ export const PipelineConfigurationDefaultPromptsWrapper = styled(Space)`
     align-items: center;
   }
 `;
-
 export const PipelineNodeListStyleWrapper = styled('section')`
   & .ant-table-wrapper.actiontech-table-namespace {
     padding-bottom: 0 !important;
@@ -29,7 +27,6 @@ export const PipelineNodeListStyleWrapper = styled('section')`
     justify-content: space-between;
   }
 `;
-
 export const PipelineNodeModalStyleWrapper = styled(BasicDrawer)`
   &
     .ant-form

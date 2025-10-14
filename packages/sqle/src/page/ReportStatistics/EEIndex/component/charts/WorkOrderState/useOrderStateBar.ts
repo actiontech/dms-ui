@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { typeItem } from '../../../../../../components/ChartCom/OrderStateBar';
 import { rectColorName } from '../../../../../../theme/light/statistics';
 import { IWorkflowStatusCountV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToNumberPercent } from '@actiontech/dms-kit';
 
 type typeData = null | IWorkflowStatusCountV1;
 

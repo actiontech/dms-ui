@@ -9,11 +9,7 @@ export const mockSystemConfigData = {
 export const mockUseRecentlySelectedZoneData = {
   availabilityZone: undefined,
   updateRecentlySelectedZone: jest.fn(),
-  recentlySelectedZoneRecord: [],
   setAvailabilityZone: jest.fn(),
-  setRecentlySelectedZoneRecord: jest.fn(),
-  initializeAvailabilityZone: jest.fn(),
   verifyRecentlySelectedZoneRecord: jest.fn(),
-  availabilityZoneOptions: [],
   clearRecentlySelectedZone: jest.fn()
 };

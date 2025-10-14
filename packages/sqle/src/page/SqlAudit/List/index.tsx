@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { message } from 'antd';
-import { PageHeader, useTypedQuery } from '@actiontech/shared';
+import { useTypedQuery } from '@actiontech/shared';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -12,8 +12,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import SqlAuditStatusFilter from './component/SqlAuditStatusFilter';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '../../../data/common';
 import useInstance from '../../../hooks/useInstance';
@@ -23,14 +22,15 @@ import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_
 import { IGetSQLAuditRecordsV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
 import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import SqlAuditListColumn, {
-  ExtraFilterMeta,
   type SqlAuditListTableFilterParamType
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { useBoolean } from 'ahooks';
-import { SqlAuditPageHeaderActions } from './actions';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ISQLAuditRecordExtraParams } from './index.type';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import { sqlAuditStatusOptions } from './index.data';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -38,10 +38,8 @@ const SqlAuditList = () => {
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
   const extractQueries = useTypedQuery();
-
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -58,16 +56,11 @@ const SqlAuditList = () => {
   >();
   const filterDataFromUrl = useMemo(() => {
     const searchStr = extractQueries(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
-    if (searchStr?.SQLAuditRecordID) {
-      return searchStr.SQLAuditRecordID ?? undefined;
+    if (searchStr?.sql_audit_record_id) {
+      return searchStr.sql_audit_record_id ?? undefined;
     }
   }, [extractQueries]);
-  const [filterStatus, setFilterStatus] = useState<
-    getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
-  >('all');
-
   const { instanceIDOptions, updateInstanceList } = useInstance();
-
   const {
     data: dataList,
     loading,
@@ -78,24 +71,16 @@ const SqlAuditList = () => {
       const params: IGetSQLAuditRecordsV1Params = {
         ...tableFilterInfo,
         ...pagination,
-        filter_sql_audit_status:
-          filterStatus === 'all' ? undefined : filterStatus,
         project_name: projectName,
         fuzzy_search_tags: searchKeyword,
         filter_sql_audit_record_ids: filterDataFromUrl
       };
-
       return handleTableRequestError(
         sql_audit_record.getSQLAuditRecordsV1(params)
       );
     },
     {
-      refreshDeps: [
-        tableFilterInfo,
-        pagination,
-        filterStatus,
-        filterDataFromUrl
-      ],
+      refreshDeps: [tableFilterInfo, pagination, filterDataFromUrl],
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onSuccess: (res) => {
@@ -114,7 +99,6 @@ const SqlAuditList = () => {
       }
     }
   );
-
   const updateTags = useCallback(
     async (tags: string[], id: string) => {
       sql_audit_record
@@ -135,7 +119,6 @@ const SqlAuditList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [projectName]
   );
-
   const columns = useMemo(
     () => SqlAuditListColumn(projectID, projectName, updateTags),
     [projectID, projectName, updateTags]
@@ -152,45 +135,44 @@ const SqlAuditList = () => {
       ISQLAuditRecordExtraParams,
       SqlAuditListTableFilterParamType,
       'instance' | 'score' | 'audit_pass_rate'
-    >(columns, updateTableFilterInfo, ExtraFilterMeta());
+    >(columns, updateTableFilterInfo);
+
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof ISQLAuditRecordExtraParams, FilterCustomProps>([
-      ['instance_name', { options: instanceIDOptions }],
+    return new Map<keyof ISQLAuditRecord, FilterCustomProps>([
+      ['instance', { options: instanceIDOptions }],
       [
-        'auditTime',
+        'created_at',
         {
           showTime: true
         }
-      ]
+      ],
+      ['sql_audit_status', { options: sqlAuditStatusOptions }]
     ]);
   }, [instanceIDOptions]);
-
   useEffect(() => {
     updateInstanceList({
       project_name: projectName
     });
   }, [projectName, updateInstanceList]);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Refresh_Sql_Audit_List,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
+
   const pageLoading = useMemo(
     () => (polling ? false : loading),
     [polling, loading]
   );
-
-  const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
-
   return (
     <>
       {messageContextHolder}
-      <PageHeader
-        title={t('sqlAudit.list.pageTitle')}
-        fixed
-        extra={pageHeaderActions['create-audit']}
-      />
-      <div className="margin-top-60" />
       {/* table */}
       <ActiontechTableWrapper loading={pageLoading} setting={tableSetting}>
         <TableToolbar
-          refreshButton={{ refresh, disabled: pageLoading }}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -202,12 +184,7 @@ const SqlAuditList = () => {
             },
             placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
           }}
-        >
-          <SqlAuditStatusFilter
-            status={filterStatus}
-            onChange={setFilterStatus}
-          />
-        </TableToolbar>
+        />
         <TableFilterContainer
           filterContainerMeta={filterContainerMeta}
           updateTableFilterInfo={updateTableFilterInfo}
@@ -231,5 +208,4 @@ const SqlAuditList = () => {
     </>
   );
 };
-
 export default SqlAuditList;

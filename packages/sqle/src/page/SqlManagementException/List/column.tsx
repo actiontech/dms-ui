@@ -1,10 +1,10 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';

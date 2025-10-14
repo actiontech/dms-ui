@@ -1,25 +1,21 @@
-import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
+import { BasicModal, BasicButton, BasicSelect } from '@actiontech/dms-kit';
 import { Form, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BackupStrategyOptions } from './index.data';
 import { SwitchSqlBackupStrategyModalProps } from './index.type';
 import { useMemo } from 'react';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 const SwitchSqlBackupStrategyModal: React.FC<
   SwitchSqlBackupStrategyModalProps
 > = ({ open, onCancel, taskID, sqlID, refresh, supportedBackupPolicies }) => {
   const { t } = useTranslation();
-
   const [messageApi, contextHolder] = message.useMessage();
-
   const [form] = Form.useForm<{
     strategy: UpdateSqlBackupStrategyReqStrategyEnum;
   }>();
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     workflow
@@ -38,12 +34,10 @@ const SwitchSqlBackupStrategyModal: React.FC<
         }
       });
   };
-
   const onClose = () => {
     form.resetFields();
     onCancel();
   };
-
   const options = useMemo(() => {
     return BackupStrategyOptions.filter((i) =>
       supportedBackupPolicies?.includes(
@@ -51,7 +45,6 @@ const SwitchSqlBackupStrategyModal: React.FC<
       )
     );
   }, [supportedBackupPolicies]);
-
   return (
     <BasicModal
       open={open}
@@ -69,12 +62,18 @@ const SwitchSqlBackupStrategyModal: React.FC<
     >
       {contextHolder}
       <Form form={form} layout="vertical">
-        <Form.Item name="strategy" rules={[{ required: true }]}>
+        <Form.Item
+          name="strategy"
+          rules={[
+            {
+              required: true
+            }
+          ]}
+        >
           <BasicSelect options={options} />
         </Form.Item>
       </Form>
     </BasicModal>
   );
 };
-
 export default SwitchSqlBackupStrategyModal;

@@ -1,6 +1,6 @@
 {
   "name": "@actiontech/icons",
-  "version": "1.0.0",
+  "version": "0.0.1-rc.7",
   "description": "",
   "main": "src/index.ts",
   "type": "module",
@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
     "@svgr/cli": "^8.1.0",
     "dumi": "^2.3.8",
     "father": "^4.1.0"

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import CardWrapper from '../../../../components/CardWrapper';
 import { ScanTaskStyleWrapper } from './style';
 import TaskDetail from './charts/TaskDetail';
@@ -11,7 +11,6 @@ import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { defaultItemKey } from './index.data';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
-
 export type typeChartChildrenProps = {
   apiLoading: boolean;
   errorInfo: string;
@@ -26,16 +25,17 @@ const ScanTask = () => {
   const { projectName, projectID } = useCurrentProject();
   const [data, setData] = useState<IDBTypeAuditPlan[]>([]);
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
-    () => statistic.statisticAuditPlanV1({ project_name: projectName }),
+    () =>
+      statistic.statisticAuditPlanV1({
+        project_name: projectName
+      }),
     {
       onSuccess: (res) => {
         setData(res.data.data ?? []);
       }
     }
   );
-
   const [detailData, setDetailData] = useState<IDBTypeAuditPlan>({});
-
   const handleChartEleCallBack = (sourceData: any) => {
     const { data: clickData } = sourceData;
     // {type: 'default-custom-bar0', value: 0} 默认空数据
@@ -47,7 +47,6 @@ const ScanTask = () => {
           )?.[0] ?? {}
     );
   };
-
   const chartChildrenProps = useMemo(() => {
     const dataLength = data.length;
     setDetailData(!dataLength ? {} : data[0]);
@@ -59,11 +58,9 @@ const ScanTask = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, loading, errorMessage]);
-
   const onCreatedOrder = () => {
     navigate(`/sqle/project/${projectID}/audit-plan/create`);
   };
-
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.auditPlanClassification.title')}
@@ -100,5 +97,4 @@ const ScanTask = () => {
     </CardWrapper>
   );
 };
-
 export default ScanTask;

@@ -1,26 +1,21 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import {
-  CustomAvatar,
-  SQLRenderer,
-  BasicTypographyEllipsis
-} from '@actiontech/shared';
-
+import { CustomAvatar } from '@actiontech/dms-kit';
+import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 export type CBOperationListFilterParamType = PageInfoWithoutIndexAndSize<
   IListCBOperationLogsParams & {
     page_index: number;
   },
   'project_uid'
 >;
-
 export const CBOperationListColumns = (
   onOpenDrawer: (record: ICBOperationLog) => void
 ): ActiontechTableColumn<ICBOperationLog, CBOperationListFilterParamType> => {

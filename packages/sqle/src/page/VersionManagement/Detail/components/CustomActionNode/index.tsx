@@ -1,17 +1,14 @@
-import { BasicButton, EmptyBox, BasicToolTip } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTip } from '@actiontech/dms-kit';
 import type { Node, NodeProps } from '@xyflow/react';
 import { CustomActionNodeStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { StageNodeData } from '../../index.type';
 import { DoubleArrowOutlined } from '@actiontech/icons';
-
 const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   data
 }) => {
   const { onExecute, allowExecute } = data;
-
   const { t } = useTranslation();
-
   return (
     <CustomActionNodeStyleWrapper>
       <EmptyBox if={!!onExecute}>
@@ -36,5 +33,4 @@ const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
     </CustomActionNodeStyleWrapper>
   );
 };
-
 export default CustomActionNode;

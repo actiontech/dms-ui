@@ -10,7 +10,7 @@ import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configur
 import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import ConfirmationSettingForm from '../components/ConfirmationSettingForm';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SupportLanguage } from '@actiontech/dms-kit';
 
 describe('test ConfirmationSettingForm', () => {
   let getWechatAuditConfigSpy: jest.SpyInstance;

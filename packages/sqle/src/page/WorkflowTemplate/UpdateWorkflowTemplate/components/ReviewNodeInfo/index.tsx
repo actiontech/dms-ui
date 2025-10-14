@@ -5,12 +5,8 @@ import {
 } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { Divider, Form, Typography } from 'antd';
-import {
-  BasicInput,
-  BasicSelect,
-  BasicSwitch,
-  filterOptionByLabel
-} from '@actiontech/shared';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/dms-kit';
+import { filterOptionByLabel } from '@actiontech/dms-kit/es/components/BasicSelect/utils';
 import {
   ReviewAndExecUserTypeEnum,
   NodeTypeEnum,
@@ -20,15 +16,15 @@ import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/serv
 import StepButton from '../StepButton';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
+const MAX_USER_COUNT = 10;
+
 const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const { t } = useTranslation();
-
   const [authorizedParam, setAuthorizedParam] = useState(
     props.type === NodeTypeEnum.review
       ? 'approved_by_authorized'
       : 'execute_by_authorized'
   );
-
   useEffect(() => {
     setAuthorizedParam(
       props.type === NodeTypeEnum.review
@@ -36,19 +32,16 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
         : 'execute_by_authorized'
     );
   }, [props.type]);
-
   const [userType, setUserType] = useState<ReviewAndExecUserTypeEnum>(
     ReviewAndExecUserTypeEnum.matchAuth
   );
-
   const updateNodeUsername = (value: string[]) => {
-    if (value.length > 3) return;
+    if (value.length > MAX_USER_COUNT) return;
     props.updateReviewAndExecNodeInfo({
       ...props?.defaultData,
       assignee_user_id_list: value
     });
   };
-
   const updateNodeType = (value: boolean) => {
     setUserType(
       value
@@ -63,14 +56,12 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
         : props?.defaultData?.assignee_user_id_list ?? []
     });
   };
-
   const updateNodeDesc = (event: ChangeEvent<HTMLTextAreaElement>) => {
     props.updateReviewAndExecNodeInfo({
       ...props?.defaultData,
       desc: event.target.value
     });
   };
-
   React.useEffect(() => {
     if (!!props.defaultData) {
       const auth =
@@ -89,15 +80,12 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
       });
     }
   }, [props.defaultData, props.form, authorizedParam]);
-
   const prevStep = async () => {
     props.form.validateFields().then(() => props?.prevStep?.());
   };
-
   const nextStep = async () => {
     props.form.validateFields().then(() => props?.nextStep?.());
   };
-
   return (
     <UpdateWorkflowTemplateStyleWrapper>
       <div className="step-title-wrapper">
@@ -151,7 +139,11 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
             }
             name={[authorizedParam]}
             valuePropName="checked"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true
+              }
+            ]}
             className="authorized-item-switch"
           >
             <BasicSwitch onChange={updateNodeType} />
@@ -172,7 +164,10 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
                     },
                     {
                       validator(_, value) {
-                        if (Array.isArray(value) && value.length <= 3) {
+                        if (
+                          Array.isArray(value) &&
+                          value.length <= MAX_USER_COUNT
+                        ) {
                           return Promise.resolve();
                         }
                         return Promise.reject(
@@ -223,5 +218,4 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
     </UpdateWorkflowTemplateStyleWrapper>
   );
 };
-
 export default ReviewAndExecNodeInfo;

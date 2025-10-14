@@ -1,4 +1,4 @@
-import { BasicTableProps } from '@actiontech/shared';
+import { BasicTableProps } from '@actiontech/dms-kit/es/components/BasicTable/BasicTable.types';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export type SqlStatementResultTableProps = Pick<
@@ -11,4 +11,4 @@ export type SqlStatementResultTableProps = Pick<
   | 'loading'
   | 'isPaginationFixed'
   | 'className'
-> & { taskId?: string };
+> & { taskId?: string; instanceName?: string; schema?: string };

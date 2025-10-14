@@ -10,7 +10,7 @@ import CardWrapper from '../../../../../../components/CardWrapper';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { AxiosResponse } from 'axios';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { formatParamsBySeparator } from '@actiontech/dms-kit';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
@@ -20,41 +20,35 @@ import {
   OrderQuantityTrendAreaChartStyleWrapper,
   OrderQuantityTrendExtraStyleWrapper
 } from './style';
-import { BasicRangePicker } from '@actiontech/shared';
+import { BasicRangePicker } from '@actiontech/dms-kit';
 import { IWorkflowCreatedCountsEachDayItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   IGetWorkflowCreatedCountEachDayV1Params,
   IGetWorkflowCreatedCountEachDayV1Return
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SharedTheme } from '@actiontech/dms-kit';
 import { ArrowRightOutlined } from '@actiontech/icons';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
-
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;
-
 const renderAreaStyle = (sharedTheme: SharedTheme) => {
   return {
     fill: `l(90) 0:${sharedTheme.uiToken.colorPrimary}  1:#4583ff00`
   };
 };
-
 const renderAnnotationsContent = (value: number) => {
   return value;
 };
-
 const renderAnnotationsPosition = (maxVal: { date: string; value: number }) => {
   return [maxVal.date, maxVal.value];
 };
-
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.date,
     value: item.value
   };
 };
-
 const renderTooltipCustomContent = (
   dataSource: any[],
   sharedTheme: SharedTheme
@@ -79,7 +73,6 @@ const renderTooltipCustomContent = (
     />
   );
 };
-
 const OrderQuantityTrend = () => {
   const { t } = useTranslation();
   const { currentTheme } = useChangeTheme();
@@ -89,9 +82,7 @@ const OrderQuantityTrend = () => {
     dayjs()
   ];
   const [range, setRange] = useState<RangeValue>(defaultRangeValue);
-
   const [data, setData] = useState<IWorkflowCreatedCountsEachDayItem[]>([]);
-
   const maxVal = useMemo(() => {
     if (!data.length) {
       return {
@@ -113,13 +104,11 @@ const OrderQuantityTrend = () => {
     });
     return valueFlag;
   }, [data]);
-
   const onSuccess = (
     res: AxiosResponse<IGetWorkflowCreatedCountEachDayV1Return>
   ) => {
     setData(res.data.data?.samples ?? []);
   };
-
   const { loading, errorMessage, getApiData } = usePanelCommonRequest(
     () => {
       const param: IGetWorkflowCreatedCountEachDayV1Params = {
@@ -132,10 +121,11 @@ const OrderQuantityTrend = () => {
       };
       return statistic.getWorkflowCreatedCountEachDayV1(param);
     },
-    { onSuccess },
+    {
+      onSuccess
+    },
     true
   );
-
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
       EmitterKey.Refresh_Report_Statistics,
@@ -147,12 +137,10 @@ const OrderQuantityTrend = () => {
     return unsubscribe;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   useEffect(() => {
     getApiData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [range]);
-
   const disabledDate: RangePickerProps['disabledDate'] = (current: Dayjs) => {
     if (!range) {
       return false;
@@ -164,11 +152,9 @@ const OrderQuantityTrend = () => {
       range[1] && range[1].diff(current, 'days') > exceedLimitDay;
     return noAfterToday || !!tooEarly || !!tooLate;
   };
-
   const onChange = (values: RangeValue) => {
     setRange(values);
   };
-
   const config: AreaConfig = {
     data,
     xField: 'date',
@@ -187,7 +173,8 @@ const OrderQuantityTrend = () => {
       size: 3,
       color: sharedTheme.uiToken.colorPrimary
     },
-    smooth: true, // 是否配置平滑
+    smooth: true,
+    // 是否配置平滑
     annotations: [
       {
         type: 'text',
@@ -242,7 +229,6 @@ const OrderQuantityTrend = () => {
       }
     ]
   };
-
   return (
     <CardWrapper
       title={t('reportStatistics.orderQuantityTrend.title')}
@@ -281,9 +267,7 @@ const OrderQuantityTrend = () => {
     </CardWrapper>
   );
 };
-
 export default OrderQuantityTrend;
-
 export {
   renderAreaStyle,
   renderAnnotationsContent,

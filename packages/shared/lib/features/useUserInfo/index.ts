@@ -10,19 +10,27 @@ import {
   updateUser,
   updateUserInfoFetchStatus,
   updateUserUid,
-  updateLanguage
+  updateLanguage,
+  updateSystemPreference
 } from '../../../../base/src/store/user';
-import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
+import {
+  ResponseCode,
+  SupportLanguage,
+  SystemRole,
+  DEFAULT_LANGUAGE,
+  ROUTE_PATHS
+} from '@actiontech/dms-kit';
 import User from '../../api/base/service/User';
-import { DEFAULT_LANGUAGE } from '../../locale';
 import { useTypedNavigate } from '../../components/TypedRouter';
-import { ROUTE_PATHS } from '../../data/routePaths';
 
 const useUserInfo = () => {
   const dispatch = useDispatch();
   const navigate = useTypedNavigate();
   const location = useLocation();
-  const userId = useSelector((state: IReduxState) => state.user.uid);
+  const { userId, systemPreference } = useSelector((state: IReduxState) => ({
+    userId: state.user.uid,
+    systemPreference: state.user.systemPreference
+  }));
 
   const clearUserInfo = useCallback(() => {
     dispatch(
@@ -52,12 +60,14 @@ const useUserInfo = () => {
         managementPermissions: []
       })
     );
+
     dispatch(updateUserInfoFetchStatus(false));
   }, [dispatch]);
 
   const {
     loading: getUserInfoLoading,
     run: getUserInfo,
+    refreshAsync: refreshProjectListAsync,
     refresh: updateUserInfo,
     data: userInfo
   } = useRequest(
@@ -100,6 +110,14 @@ const useUserInfo = () => {
             })
           );
 
+          if (!systemPreference) {
+            dispatch(
+              updateSystemPreference({
+                systemPreference: data?.system
+              })
+            );
+          }
+
           dispatch(updateUserInfoFetchStatus(true));
         } else {
           clearUserInfo();
@@ -124,6 +142,7 @@ const useUserInfo = () => {
     getUserInfo,
     updateUserInfo,
     clearUserInfo,
+    refreshProjectListAsync,
     userInfo: userInfo?.data.data
   };
 };

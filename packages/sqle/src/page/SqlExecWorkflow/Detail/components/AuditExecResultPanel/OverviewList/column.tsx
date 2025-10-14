@@ -10,15 +10,14 @@ import {
 import {
   ActiontechTableColumn,
   ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
-import { CustomAvatar } from '@actiontech/shared';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { formatTime } from '@actiontech/dms-kit';
+import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
+import { CustomAvatar } from '@actiontech/dms-kit';
 import InstanceTasksStatus from './InstanceTasksStatus';
 import dayjs from 'dayjs';
 import { checkTimeInWithMaintenanceTime } from '../../../../Common/utils';
 import { t } from '../../../../../../locale';
-
 export const auditResultOverviewActions: (params: {
   currentUsername: string;
   sqlTerminateHandle: (taskId: string) => void;
@@ -46,7 +45,6 @@ export const auditResultOverviewActions: (params: {
     WorkflowRecordResV2StatusEnum.canceled,
     WorkflowRecordResV2StatusEnum.finished
   ];
-
   const enableSqlExecute = (
     currentStepAssigneeUsernameList: string[] = [],
     status?: GetWorkflowTasksItemV2StatusEnum,
@@ -61,17 +59,14 @@ export const auditResultOverviewActions: (params: {
     ) {
       return false;
     }
-
     if (maintenanceTime.length) {
       return (
         checkTimeInWithMaintenanceTime(dayjs(), maintenanceTime) &&
         status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution
       );
     }
-
     return status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution;
   };
-
   const enableSqlScheduleTime = (
     currentStepAssigneeUsernameList: string[] = [],
     status?: GetWorkflowTasksItemV2StatusEnum
@@ -85,10 +80,8 @@ export const auditResultOverviewActions: (params: {
     ) {
       return false;
     }
-
     return status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution;
   };
-
   const enableCancelSqlScheduleTime = (
     currentStepAssigneeUsernameList: string[] = [],
     status?: GetWorkflowTasksItemV2StatusEnum
@@ -104,7 +97,6 @@ export const auditResultOverviewActions: (params: {
     }
     return status === GetWorkflowTasksItemV2StatusEnum.exec_scheduled;
   };
-
   return {
     width: 180,
     buttons: [
@@ -215,7 +207,6 @@ export const auditResultOverviewActions: (params: {
     ]
   };
 };
-
 export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflowTasksItemV2> =
   () => {
     return [

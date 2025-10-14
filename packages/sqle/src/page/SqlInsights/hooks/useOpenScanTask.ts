@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { SqleApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { GetSqlPerformanceInsightsMetricNameEnum } from '@actiontech/shared/lib/api/sqle/service/SqlInsight/index.enum';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useScanTypeVerify from '../../SqlManagementConf/Common/ConfForm/useScanTypeVerify';
 
 const useOpenScanTask = (

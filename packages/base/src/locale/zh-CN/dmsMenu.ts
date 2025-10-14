@@ -15,7 +15,7 @@ export default {
   whitelist: '审核SQL例外',
   sqlManagementExcept: '管控SQL例外',
   workflowTemplate: '审批流程模板',
-  sqlAudit: '快捷审核',
+  sqlAudit: '快捷诊断',
   pluginAudit: 'IDE审核',
   sqlOptimization: '智能调优',
   sqlManagement: 'SQL管控',
@@ -79,5 +79,19 @@ export default {
     switchAvailabilityZone: '切换可用区将重新加载数据，是否确认？',
     pleaseSelect: '请选择'
   },
-  sqlPerformanceInsights: '性能洞察'
+  sqlPerformanceInsights: '性能洞察',
+
+  userGuide: {
+    title: '请选择默认进入的页面',
+    description: '您可以随时在「个人中心」-「登录设置」中修改此配置。',
+    sqlWorkbench: {
+      label: 'SQL工作台',
+      description: '为数据分析师和开发者提供，用于数据查询与操作。'
+    },
+    adminPanel: {
+      label: '管理后台',
+      description: '为系统管理员提供，用于用户授权与系统配置。'
+    },
+    confirmButton: '确认并进入'
+  }
 };

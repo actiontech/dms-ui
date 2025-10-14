@@ -285,6 +285,20 @@ exports[`base/router-base-ce render base route data snap 1`] = `
             "key": "sqlAuditDetail",
             "path": "detail/:sql_audit_record_id",
           },
+          {
+            "element": <div>
+              sqlAuditCreateOptimization
+            </div>,
+            "key": "sqlAuditCreateOptimization",
+            "path": "create-optimization",
+          },
+          {
+            "element": <div>
+              sqlOptimizationResult
+            </div>,
+            "key": "sqlOptimizationResult",
+            "path": "optimization-result/:optimizationId",
+          },
         ],
         "element": <div
           data-test-parent-id="sqlAudit"
@@ -484,13 +498,6 @@ exports[`base/router-base-ce render base route data snap 1`] = `
       },
       {
         "element": <div>
-          sqlOptimization
-        </div>,
-        "key": "sqlOptimization",
-        "path": ":projectID/sql-optimization",
-      },
-      {
-        "element": <div>
           pushRuleConfiguration
         </div>,
         "key": "pushRuleConfiguration",
@@ -507,16 +514,16 @@ exports[`base/router-base-ce render base route data snap 1`] = `
           },
           {
             "element": <div>
-              sqlOptimizationCreate
+              createPipelineConfiguration
             </div>,
-            "key": "sqlOptimizationCreate",
+            "key": "createPipelineConfiguration",
             "path": "create",
           },
           {
             "element": <div>
-              sqlOptimizationCreate
+              updatePipelineConfiguration
             </div>,
-            "key": "sqlOptimizationCreate",
+            "key": "updatePipelineConfiguration",
             "path": "update/:id",
           },
         ],
@@ -571,9 +578,9 @@ exports[`base/router-base-ce render base route data snap 1`] = `
   },
   {
     "element": <div>
-      null
+      notFound
     </div>,
-    "key": "null",
+    "key": "notFound",
     "path": "*",
   },
 ]

@@ -15,18 +15,17 @@ import { usePrompt } from '@actiontech/shared/lib/hooks';
 import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   ICreateWorkflowV2Params,
   ICreateRollbackWorkflowParams
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import useCheckTaskAuditSqlCount from './hooks/useCheckTaskAuditSqlCount';
-import { LazyLoadComponent } from '@actiontech/shared';
+import { LazyLoadComponent } from '@actiontech/dms-kit';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import useCreationMode from './hooks/useCreationMode';
 import useCheckTaskAuditRuleExceptionStatus from './hooks/useCheckTaskAuditRuleExceptionStatus';
-
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
   const [baseInfoForm] = useForm<WorkflowBaseInfoFormFields>();
@@ -38,7 +37,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
     useCheckTaskAuditSqlCount();
   const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
     useCheckTaskAuditRuleExceptionStatus();
-
   const {
     isCloneMode,
     isAssociationVersionMode,
@@ -46,7 +44,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
     isRollbackMode,
     rollbackWorkflowId
   } = useCreationMode();
-
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
       clonedExecWorkflowSqlAuditInfo:
@@ -56,7 +53,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
       workflowRollbackSqlIds: state.sqlExecWorkflow.workflowRollbackSqlIds
     };
   });
-
   useEffect(() => {
     if (isCloneMode || isRollbackMode) {
       baseInfoForm.setFieldsValue({
@@ -78,7 +74,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const {
     isAtFormStep,
     isAtAuditResultStep,
@@ -86,9 +81,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
     goToAuditResultStep,
     goToCreateResultStep
   } = useCreateWorkflowSteps();
-
   const sharedStepDetail = useSharedStepDetail();
-
   const {
     taskInfos,
     auditWorkflowWithSameSql,
@@ -96,7 +89,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
     isConfirmationRequiredForSubmission,
     submitWorkflowConfirmationMessage
   } = useAuditWorkflow();
-
   const auditAction = useCallback(
     async (
       values: SqlAuditInfoFormFields,
@@ -105,7 +97,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
       const finallyFunc = () => {
         sharedStepDetail.isAuditing.set(false);
       };
-
       const onSuccess = () => {
         if (baseInfo) {
           baseInfoForm.setFieldsValue(baseInfo);
@@ -113,12 +104,10 @@ const CreateSqlExecWorkflow: React.FC = () => {
           goToAuditResultStep();
         }
       };
-
       try {
         //虽然审核不需要 baseInfo 数据，但还是需要进行校验
         await baseInfoForm.validateFields();
         sharedStepDetail.isAuditing.set(true);
-
         if (values.isSameSqlForAll) {
           auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
         } else {
@@ -148,27 +137,22 @@ const CreateSqlExecWorkflow: React.FC = () => {
       sharedStepDetail.isAuditing
     ]
   );
-
   const createAction = useCallback(async () => {
     const baseInfo = await baseInfoForm.validateFields();
-
     if (!taskInfos?.length || taskInfos.some((v) => !v.task_id)) {
       messageApi.error(t('execWorkflow.create.mustAuditTips'));
       return;
     }
-
     if (checkTaskCountIsEmpty(taskInfos)) {
       messageApi.error(t('execWorkflow.create.mustHaveAuditResultTips'));
       return;
     }
-
     const commonParams = {
       task_ids: taskInfos.map((v) => v.task_id!),
       desc: baseInfo?.desc,
       workflow_subject: baseInfo?.workflow_subject,
       project_name: projectName
     };
-
     if (isRollbackMode) {
       const params: ICreateRollbackWorkflowParams = {
         ...commonParams,
@@ -183,7 +167,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
         }
       });
     }
-
     const createWorkflowParam: ICreateWorkflowV2Params = {
       ...commonParams,
       sql_version_id: isAssociationVersionMode ? Number(versionId) : undefined
@@ -208,7 +191,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
     rollbackWorkflowId,
     sqlExecWorkflowReduxState
   ]);
-
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);
   return (
     <Spin
@@ -223,7 +205,10 @@ const CreateSqlExecWorkflow: React.FC = () => {
           baseInfoForm={baseInfoForm}
           sqlAuditInfoForm={sqlAuditInfoForm}
           auditAction={auditAction}
-          {...{ ...sharedStepDetail, isAtFormStep }}
+          {...{
+            ...sharedStepDetail,
+            isAtFormStep
+          }}
         />
       </LazyLoadComponent>
 
@@ -260,5 +245,4 @@ const CreateSqlExecWorkflow: React.FC = () => {
     </Spin>
   );
 };
-
 export default CreateSqlExecWorkflow;

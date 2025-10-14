@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useMemo, useState, useCallback } from 'react';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { RuleSelectProps } from './index.type';
 import { Space, Spin } from 'antd';
 import {
@@ -17,21 +17,17 @@ import {
 import useRuleList from '../../../../components/RuleList/useRuleList';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import EditRuleTemplate from '../../EditRuleTemplate';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-
+import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
 const RuleSelect = (props: RuleSelectProps) => {
   const { t } = useTranslation();
-
   const { ruleStatus, setRuleStatus } = useRuleList();
   const [editVisible, { setTrue: setEditVisible, setFalse: setEditHidden }] =
     useBoolean();
   const [ruleData, setRuleData] = useState<IRuleResV1 | undefined>(undefined);
-
   const disabledRuleStatus = useMemo(
     () => ruleStatus === RuleStatusEnum.disabled,
     [ruleStatus]
   );
-
   const disableRule = useMemo(() => {
     return (
       props.allRules?.filter(
@@ -39,7 +35,6 @@ const RuleSelect = (props: RuleSelectProps) => {
       ) ?? []
     );
   }, [props.activeRule, props.allRules]);
-
   const updateRule = useCallback(
     (ruleItem: IRuleResV1, isDelete = false) => {
       let temp: IRuleResV1[] = [];
@@ -62,7 +57,6 @@ const RuleSelect = (props: RuleSelectProps) => {
     },
     [props]
   );
-
   const updateAllRule = useCallback(
     (active: boolean) => {
       if (active) {
@@ -75,7 +69,6 @@ const RuleSelect = (props: RuleSelectProps) => {
     },
     [props]
   );
-
   const renderBatchAction = useCallback(() => {
     if (!disabledRuleStatus) {
       return (
@@ -106,11 +99,9 @@ const RuleSelect = (props: RuleSelectProps) => {
     props.activeRule,
     props.formSubmitLoading
   ]);
-
   const rulesData = useMemo(() => {
     return disabledRuleStatus ? disableRule : props.filteredRule;
   }, [disabledRuleStatus, disableRule, props.filteredRule]);
-
   const onAction = (data: IRuleResV1, type: typeActionType) => {
     if (type === EnumActionType.disabled) {
       updateRule(data, true);
@@ -123,7 +114,6 @@ const RuleSelect = (props: RuleSelectProps) => {
     setRuleData(data);
     setEditVisible();
   };
-
   const onEditRule = useCallback(
     (values: IRuleResV1) => {
       let temp: IRuleResV1[] = [];
@@ -149,7 +139,6 @@ const RuleSelect = (props: RuleSelectProps) => {
     },
     [props, setEditHidden]
   );
-
   return (
     <>
       <SegmentedRowStyleWrapper className="flex-space-between">
@@ -200,5 +189,4 @@ const RuleSelect = (props: RuleSelectProps) => {
     </>
   );
 };
-
 export default RuleSelect;

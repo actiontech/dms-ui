@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../../locale';
 import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
-import { ModeSwitcherOptionsType } from '@actiontech/shared';
+import { ModeSwitcherOptionsType } from '@actiontech/dms-kit/es/components/ModeSwitcher/ModeSwitcher.types';
 
 export const SAME_SQL_MODE_DEFAULT_FIELD_KEY = '0';
 
