@@ -76,7 +76,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
                       style="padding: 0px 6px 0px 10px;"
                       type="button"
                     >
@@ -121,7 +121,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-active basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-active basic-button-wrapper css-1uxy5k6"
                       type="button"
                     >
                       <div
@@ -425,7 +425,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                      class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                     >
                                       <span
                                         class="ant-avatar-string"
@@ -450,7 +450,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                     type="button"
                                   >
                                     <span>
@@ -540,7 +540,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                     type="button"
                                   >
                                     <span>
@@ -624,7 +624,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                      class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                     >
                                       <span
                                         class="ant-avatar-string"
@@ -649,7 +649,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                     type="button"
                                   >
                                     <span>

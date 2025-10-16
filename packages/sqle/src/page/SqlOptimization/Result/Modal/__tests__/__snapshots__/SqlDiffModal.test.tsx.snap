@@ -74,7 +74,7 @@ exports[`sqle/SqlOptimization/Result/Modal/SqlDiffModal should render modal when
                   >
                     原文
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       title="复制"
                       type="button"
                     >
@@ -100,7 +100,7 @@ exports[`sqle/SqlOptimization/Result/Modal/SqlDiffModal should render modal when
                   >
                     最终优化后
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
                       title="复制"
                       type="button"
                     >

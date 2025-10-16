@@ -83,7 +83,7 @@ exports[`sqle/SqlOptimization/Result/Modal/QueryPlanDiffModal should render moda
                       class="plan-actions"
                     >
                       <button
-                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                         title="全屏显示"
                         type="button"
                       >
@@ -967,7 +967,7 @@ exports[`sqle/SqlOptimization/Result/Modal/QueryPlanDiffModal should render moda
                       class="plan-actions"
                     >
                       <button
-                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
                         title="全屏显示"
                         type="button"
                       >

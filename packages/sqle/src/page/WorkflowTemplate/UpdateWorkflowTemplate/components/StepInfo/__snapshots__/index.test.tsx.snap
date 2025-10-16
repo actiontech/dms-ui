@@ -298,7 +298,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1wr7bbo"
+                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1kuwm0s"
                   type="button"
                 >
                   <span
@@ -335,7 +335,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         class="ant-row add-review-node-icon workflow-step-container"
       >
         <button
-          class="ant-btn ant-btn-dashed basic-button-wrapper css-qmtglo"
+          class="ant-btn ant-btn-dashed basic-button-wrapper css-1o7grex"
           type="button"
         >
           <span

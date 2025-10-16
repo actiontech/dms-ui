@@ -1138,7 +1138,7 @@ exports[`test TaskResultList/SQLStatementResultTable should render exec result t
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+                                class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-tg454x"
                               >
                                 执行失败
                               </span>
