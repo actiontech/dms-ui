@@ -175,7 +175,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             disabled=""
                             type="button"
                           >
@@ -451,7 +451,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-geipcv"
                                 disabled=""
                                 type="button"
                               >
@@ -504,7 +504,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             disabled=""
                             type="button"
                           >
@@ -755,7 +755,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             disabled=""
                             type="button"
                           >
@@ -921,7 +921,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                 class="ant-col ant-col-3"
               >
                 <button
-                  class="ant-btn ant-btn-default add-stage-btn basic-button-wrapper css-snii23"
+                  class="ant-btn ant-btn-default add-stage-btn basic-button-wrapper css-1719g3l"
                   disabled=""
                   type="button"
                 >

@@ -230,18 +230,13 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
-                                <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
-                                  type="button"
-                                >
-                                  <span>
-                                    编 辑
-                                  </span>
-                                </button>
-                              </a>
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"
@@ -345,7 +340,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -830,7 +825,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>
@@ -940,7 +935,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
                                 type="button"
                               >
                                 <span>

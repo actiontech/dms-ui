@@ -21,7 +21,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
             href="/sqle/project/700300/progress/update/700300-WorkflowTemplate"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -600,7 +600,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
             href="/sqle/project/700300/progress/update/700300-WorkflowTemplate"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span

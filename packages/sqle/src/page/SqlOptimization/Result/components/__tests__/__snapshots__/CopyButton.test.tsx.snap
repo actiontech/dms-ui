@@ -4,7 +4,7 @@ exports[`CopyButton should render with default onlyIcon value 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       title="复制"
       type="button"
     >
@@ -35,7 +35,7 @@ exports[`CopyButton should render with empty content 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       title="复制"
       type="button"
     >
@@ -66,7 +66,7 @@ exports[`CopyButton should render with only icon when onlyIcon is true 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       title="复制"
       type="button"
     >
@@ -94,7 +94,7 @@ exports[`CopyButton should render with text when onlyIcon is false 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       title="复制"
       type="button"
     >
@@ -125,7 +125,7 @@ exports[`CopyButton should render with undefined content 1`] = `
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
       title="复制"
       type="button"
     >
