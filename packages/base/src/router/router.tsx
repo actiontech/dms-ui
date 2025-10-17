@@ -16,6 +16,7 @@ import {
 // #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
+const NotFoundPage = lazy(() => import('../page/NotFoundPage'));
 // #if [ee]
 const AvailabilityZoneWrapper = lazy(
   () => import('../page/AvailabilityZone/AvailabilityZoneWrapper')
@@ -55,8 +56,8 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   // #endif
   {
     path: '*',
-    key: 'null',
-    element: <Navigate to={ROUTE_PATHS.BASE.HOME} />
+    key: 'notFound',
+    element: <NotFoundPage />
   }
 ];
 

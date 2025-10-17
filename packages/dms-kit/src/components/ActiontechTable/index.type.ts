@@ -1,10 +1,18 @@
-import { InputProps } from 'antd';
+import { TableProps, ButtonProps, PopconfirmProps, InputProps } from 'antd';
 import { RangePickerProps } from 'antd/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
-import { CustomSelectProps } from '../CustomSelect';
-import { BasicButtonProps } from '../BasicButton';
+import { CSSProperties, Key, ReactNode } from 'react';
 import { ExcludeSymbol } from '../../types/common.type';
 import { CustomInputProps } from '../CustomInput';
+import { BasicButtonProps } from '../BasicButton';
+import { CustomSelectProps } from '../CustomSelect';
+
+//======================================= utils
+
+type ComponentBaseType = {
+  className?: string;
+  style?: CSSProperties;
+};
 
 /**
  * 用于移除后端提供的表格筛选类型中的 page_size 以及 page_index, 同时可以传入第二个泛型, 来移除自己不需要的类型
@@ -46,6 +54,26 @@ export type ActiontechTableFilterButtonMeta<T = Record<string, any>> = Map<
 >;
 
 /**
+ * 筛选按钮组件的 props
+ */
+export type TableFilterButtonProps<T = Record<string, any>> = {
+  /**
+   *  toolbar 中筛选按钮的数据源
+   */
+  filterButtonMeta?: ActiontechTableFilterButtonMeta<T>;
+
+  /**
+   * 同时勾选上所有的筛选项, 一般为 useTableRequestParams 导出的 updateAllSelectedFilterItem
+   */
+  updateAllSelectedFilterItem: (checked: boolean) => void;
+
+  /**
+   * 筛选按钮的 disabled
+   */
+  disabled?: boolean;
+} & ComponentBaseType;
+
+/**
  * 数据一般为 useTableRequestParams 导出的 filterContainerMeta
  */
 export type ActiontechTableFilterContainerMeta<
@@ -56,6 +84,35 @@ export type ActiontechTableFilterContainerMeta<
     dataIndex: keyof T;
   }
 >;
+
+/**
+ * FilterContainer 组件的 props
+ */
+export type TableFilterContainerProps<
+  T = Record<string, any>,
+  F = Record<string, any>,
+  C = TypeFilterElement
+> = {
+  /**
+   * FilterContainer 中筛选项的数据源
+   */
+  filterContainerMeta?: ActiontechTableFilterContainerMeta<T, F>;
+
+  /**
+   * 更新表格筛选数据
+   */
+  updateTableFilterInfo: UpdateTableFilterInfoType<F>;
+
+  /**
+   * 表格筛选项的输入组件类型的 props, 目前只有 select 以及 date-range, 可以处理一些 onChange 等事件.
+   */
+  filterCustomProps?: Map<keyof T, FilterCustomProps<C>>;
+
+  /**
+   * 用于禁用筛选组件的输入, 一般在表格 loading 时禁用
+   */
+  disabled?: boolean;
+} & ComponentBaseType;
 
 export type FilterCustomProps<C = TypeFilterElement> = C extends 'select'
   ? CustomSelectProps
@@ -192,6 +249,99 @@ export type ColumnsSettingProps = {
 };
 
 /**
+ * toolbar 中操作按钮的数据格式
+ */
+export type ActiontechTableToolbarActionMeta = {
+  key: Key;
+  text: ReactNode;
+  buttonProps?: Omit<ButtonProps, 'children'>;
+  confirm?: PopconfirmProps | false;
+  permissions?: boolean;
+};
+
+/**
+ * 表格 toolbar props
+ */
+export type TableToolbarProps<T = Record<string, any>> = {
+  /**
+   * toolbar 左侧部分
+   */
+  children?: ReactNode;
+  /**
+   * 控制 toolbar 中筛选按钮, 用于展开表格的筛选信息
+   */
+  filterButton?: TableFilterButtonProps<T> | false;
+  /**
+   * 控制 toolbar 右侧的表格设置按钮, 需要配合表格的 setting props 使用
+   */
+  setting?: ColumnsSettingProps | false;
+  /**
+   * 刷新表格数据, 仅作为按钮样式组件, 需要传入刷新表格方法
+   */
+  refreshButton?: TableRefreshButtonProps;
+  /**
+   * toolbar 中右方的按钮元数据
+   */
+  actions?: ActiontechTableToolbarActionMeta[] | false;
+  /**
+   * 表格快速筛选组件, 需要传入查询方法
+   */
+  searchInput?: TableSearchInputProps | false;
+  /**
+   * 是否需要自己重写 toolbar 样式
+   */
+  noStyle?: boolean;
+  /**
+   * 表格 loading, 防止表格在刷新时再次操作toolbar 进行请求
+   */
+  loading?: boolean;
+} & ComponentBaseType;
+
+//=======================================
+
+/**
+ * 表格操作列中按钮的数据格式
+ */
+export type ActiontechTableActionMeta<T = Record<string, any>> = {
+  key: Key;
+  text: ReactNode;
+  buttonProps?: (record?: T) => Omit<ButtonProps, 'children'>;
+  confirm?: ((record?: T) => PopconfirmProps) | false;
+  permissions?: (record?: T) => boolean;
+};
+
+/**
+ * 表格操作列中更多按钮的数据格式
+ */
+export type InlineActiontechTableMoreActionsButtonMeta<
+  T = Record<string, any>
+> = {
+  icon?: ReactNode;
+  disabled?: boolean | ((record?: T) => boolean);
+  onClick?: (record?: T) => void;
+} & Pick<
+  ActiontechTableActionMeta<T>,
+  'key' | 'text' | 'confirm' | 'permissions'
+>;
+
+/**
+ * 表格操作集合类型
+ */
+export type ActiontechTableActionsConfig<
+  T = Record<string, any>,
+  F = Record<string, any>,
+  OtherColumnKeys extends string = never
+> = {
+  title?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['title'];
+  moreButtons?:
+    | InlineActiontechTableMoreActionsButtonMeta<T>[]
+    | ((record: T) => InlineActiontechTableMoreActionsButtonMeta<T>[]);
+  buttons: ActiontechTableActionMeta<T>[];
+  fixed?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['fixed'];
+  width?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['width'];
+};
+
+/**
  * todo: 如何控制 筛选项的顺序
  * 表格 columns props, 当配置 filterCustomType 和 filterKey 启用该列的筛选功能, 通过 useTableFilterContainer 来生成 筛选项的元数据
  * 当需要添加表格列以外的筛选列时, 可以使用 useTableFilterContainer 的第三个参数: extraFilterMeta
@@ -230,3 +380,39 @@ export type ActiontechTableColumn<
         }[OtherColumnKeys]
     )
 >;
+
+export interface ActiontechTableProps<
+  T = Record<string, any>,
+  F = Record<string, any>,
+  OtherColumnKeys extends string = never
+> extends Omit<TableProps<T>, 'columns'> {
+  setting?: ColumnsSettingProps | false;
+  /**
+   * 生成表格操作列
+   */
+  actions?:
+    | ActiontechTableActionsConfig<T, F, OtherColumnKeys>
+    | ActiontechTableActionMeta<T>[];
+
+  /**
+   * 表格的 toolbar, 和组件 TableToolbar 的 props 相同, 使用该 props 时, toolbar 会默认在表格上方
+   */
+  toolbar?: TableToolbarProps<T> | false;
+
+  /**
+   * 表格的 筛选项, 和组件 TableFilterContainer 的 props 相同, 使用该 props 时, filterContainer 会默认在表格上方
+   */
+  filterContainerProps?: TableFilterContainerProps<T>;
+
+  /**
+   * 表格的错误消息, 一般用于表格数据请求出现错误时, 一般使用 useTableRequestError 来获取
+   */
+  errorMessage?: string;
+
+  columns?: ActiontechTableColumn<T, F, OtherColumnKeys>;
+
+  /**
+   * 控制表格的分页器是否固定于页面底部，默认为true，固定在页面底部，注意：只有在表格有pagination时，设置isPaginationFixed才有意义
+   */
+  isPaginationFixed?: boolean;
+}

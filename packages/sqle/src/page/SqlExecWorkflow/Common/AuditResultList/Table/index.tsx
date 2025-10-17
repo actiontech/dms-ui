@@ -7,7 +7,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
 import { AuditResultForCreateWorkflowColumn } from './column';
 import AuditResultDrawer from './AuditResultDrawer';
@@ -30,6 +30,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   projectID,
   updateTaskRecordCount,
   dbType,
+  instanceName,
+  schema,
   allowSwitchBackupPolicy = false,
   supportedBackupPolicies,
   updateTaskAuditRuleExceptionStatus
@@ -72,11 +74,15 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
             projectID,
             taskId: taskID ?? '',
             sqlNum: sqlNum.toString()
+          },
+          queries: {
+            instance_name: instanceName ?? '',
+            schema: schema ?? ''
           }
         })
       );
     },
-    [projectID, taskID]
+    [projectID, taskID, instanceName, schema]
   );
   const updateSqlDescribeProtect = useRef(false);
   const { data, loading, refresh } = useRequest(
@@ -149,10 +155,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       handleOpenSqlRewrittenDrawer();
       handleChangeOriginInfo({
         sql: record.exec_sql ?? '',
-        number: record.number ?? 0
+        number: record.number ?? 0,
+        instanceName: instanceName ?? '',
+        schema: schema ?? ''
       });
     },
-    [handleOpenSqlRewrittenDrawer, handleChangeOriginInfo]
+    [handleOpenSqlRewrittenDrawer, handleChangeOriginInfo, instanceName, schema]
   );
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
@@ -176,12 +184,14 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     [openSwitchBackupPolicyModal]
   );
   const columns = useMemo(() => {
-    return AuditResultForCreateWorkflowColumn(
+    const columnList = AuditResultForCreateWorkflowColumn(
       updateSqlDescribe,
       onClickAuditResult,
-      onSwitchSqlBackupPolicy,
-      allowSwitchBackupPolicy
+      onSwitchSqlBackupPolicy
     );
+    return allowSwitchBackupPolicy
+      ? columnList
+      : columnList.filter((column) => column.dataIndex !== 'backup_strategy');
   }, [
     onSwitchSqlBackupPolicy,
     updateSqlDescribe,

@@ -17,7 +17,7 @@ import {
   TableToolbar,
   TableFilterContainer,
   useTableFilterContainer
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { message } from 'antd';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';

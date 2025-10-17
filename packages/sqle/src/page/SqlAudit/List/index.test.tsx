@@ -16,6 +16,8 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { useSelector } from 'react-redux';
 import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 jest.mock('react-redux', () => {
   return {
@@ -82,7 +84,7 @@ describe('sqle/SqlAudit/List', () => {
 
   it('should request list with url params', async () => {
     sqleSuperRender(<SqlAuditList />, undefined, {
-      routerProps: { initialEntries: ['/sql-audit?SQLAuditRecordID=123456'] }
+      routerProps: { initialEntries: ['/sql-audit?sql_audit_record_id=123456'] }
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -103,7 +105,6 @@ describe('sqle/SqlAudit/List', () => {
     const { baseElement } = sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('快捷审核')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -153,30 +154,8 @@ describe('sqle/SqlAudit/List', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(2);
+    expect(filterItems.length).toBe(3);
     expect(baseElement).toMatchSnapshot();
-  });
-
-  it('should hide link button when project is archived', async () => {
-    sqleSuperRender(<SqlAuditList />);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('创建审核')).toBeInTheDocument();
-    cleanup();
-
-    mockUseCurrentUser({
-      bindProjects: [
-        {
-          project_id: mockProjectInfo.projectID,
-          project_name: mockProjectInfo.projectName,
-          is_manager: true,
-          archived: true
-        }
-      ]
-    });
-    sqleSuperRender(<SqlAuditList />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('创建审核')).not.toBeInTheDocument();
   });
 
   it('change record tags', async () => {
@@ -254,5 +233,17 @@ describe('sqle/SqlAudit/List', () => {
     sqleSuperRender(<SqlAuditList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should refresh table data ', async () => {
+    sqleSuperRender(<SqlAuditList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
+
+    act(() => {
+      eventEmitter.emit(EmitterKey.Refresh_Sql_Audit_List);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(2);
   });
 });

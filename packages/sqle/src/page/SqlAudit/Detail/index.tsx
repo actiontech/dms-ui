@@ -9,8 +9,9 @@ import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_
 import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { SqlAuditPageHeaderActions } from '../List/actions';
+import { sqlAuditPageHeaderActions } from '../actions';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
+
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
   const { sql_audit_record_id } =
@@ -37,7 +38,9 @@ const SqlAuditDetail = () => {
   const auditResultData = useMemo(() => {
     return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
   }, [pluginAuditRecord]);
-  const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
+
+  const pageHeaderActions = sqlAuditPageHeaderActions(projectID);
+
   return (
     <>
       <Spin spinning={dataLoading}>

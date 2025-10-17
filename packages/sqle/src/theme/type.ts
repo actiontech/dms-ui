@@ -415,3 +415,8 @@ export type SqlInsight = {
   dataMarkerColor: string;
   regionFillColor: string;
 };
+
+export type SqlOptimization = {
+  rateNumberBackground: string;
+  rightContentBackground: string;
+};

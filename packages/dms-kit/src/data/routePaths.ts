@@ -1,5 +1,7 @@
 export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
 export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';
+export const SQL_WORKBENCH_FROM_PARAM_NAME = 'from';
+export const ODC_WORKBENCH_NAME = 'odc';
 
 export const ROUTE_PATHS = {
   BASE: {
@@ -103,7 +105,8 @@ export const ROUTE_PATHS = {
       },
       create: {
         prefix: '/project/:projectID/data/export',
-        path: 'create'
+        path: 'create',
+        query: 'from&compression_data'
       },
       detail: {
         prefix: '/project/:projectID/data/export',
@@ -191,7 +194,7 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project/:projectID/exec-workflow',
         path: 'create',
         query:
-          'sourceWorkflowId&versionId&versionName&compression_data&from&gen_modified_sql_params&rollbackWorkflowId'
+          'source_workflow_id&version_id&version_name&compression_data&from&gen_modified_sql_params&rollback_workflow_id'
       },
       detail: {
         prefix: '/sqle/project/:projectID/exec-workflow',
@@ -199,18 +202,20 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: ':taskId/:sqlNum/analyze'
+        path: ':taskId/:sqlNum/analyze',
+        query: 'instance_name&schema'
       },
       sql_files_overview: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: ':taskId/files/:fileId/sqls'
+        path: ':taskId/files/:fileId/sqls',
+        query: 'instance_name&schema'
       }
     },
     SQL_AUDIT: {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-audit',
-        query: 'SQLAuditRecordID'
+        query: 'sql_audit_record_id&active'
       },
       create: {
         prefix: '/sqle/project/:projectID/sql-audit',
@@ -219,6 +224,16 @@ export const ROUTE_PATHS = {
       detail: {
         prefix: '/sqle/project/:projectID/sql-audit',
         path: 'detail/:sql_audit_record_id'
+      },
+      create_optimization: {
+        prefix: '/sqle/project/:projectID/sql-audit',
+        path: 'create-optimization',
+        query: 'active'
+      },
+      optimization_result: {
+        prefix: '/sqle/project/:projectID/sql-audit',
+        path: 'optimization-result/:optimizationId',
+        query: 'active'
       }
     },
     SQL_MANAGEMENT_CONF: {
@@ -242,7 +257,8 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
-        path: ':instanceAuditPlanId/analyze/:id'
+        path: ':instanceAuditPlanId/analyze/:id',
+        query: 'instance_name&schema'
       }
     },
     SQL_MANAGEMENT: {
@@ -253,7 +269,8 @@ export const ROUTE_PATHS = {
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',
-        path: ':sqlManageId/analyze'
+        path: ':sqlManageId/analyze',
+        query: 'instance_name&schema'
       }
     },
     SQL_INSIGHTS: {

@@ -155,6 +155,8 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
             sqlNumber={originSqlNumber}
             originalSql={originalSql}
             dataSource={optimizedSuggestions}
+            instanceName={originSqlInfo?.instanceName}
+            schema={originSqlInfo?.schema}
           />
         )
       },
@@ -223,7 +225,9 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     isRewriteTaskRunning,
     taskID,
     originSqlNumber,
-    toggleEnableStructureOptimizeAction
+    toggleEnableStructureOptimizeAction,
+    originSqlInfo?.instanceName,
+    originSqlInfo?.schema
   ]);
   useEffect(() => {
     if (open) {

@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks';
 import { Spin, message, Space, Popconfirm } from 'antd';
 import { BasicButton } from '@actiontech/dms-kit';
 import { useTypedNavigate } from '@actiontech/shared';
-import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableToolbar } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/dms-kit';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';

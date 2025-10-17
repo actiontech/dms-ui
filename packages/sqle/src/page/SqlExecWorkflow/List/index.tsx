@@ -8,7 +8,7 @@ import {
   ActiontechTableWrapper,
   TableFilterContainer,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
 import { PageHeader, CustomSegmentedFilter } from '@actiontech/dms-kit';
 import { useTypedNavigate } from '@actiontech/shared';

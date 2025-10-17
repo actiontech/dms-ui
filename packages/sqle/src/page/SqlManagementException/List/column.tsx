@@ -1,7 +1,7 @@
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/dms-kit';

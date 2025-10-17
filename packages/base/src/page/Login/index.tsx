@@ -80,6 +80,8 @@ const Login = () => {
             } else {
               navigate(path);
             }
+          } else {
+            navigate(ROUTE_PATHS.BASE.HOME);
           }
         }
         // #if [ee]

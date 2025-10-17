@@ -1,5 +1,5 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { EditText } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';
@@ -12,8 +12,7 @@ import { BackupStrategyDictionary } from './index.data';
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
-  onSwitchSqlBackupPolicy: (sqlID?: number) => void,
-  showBackupStrategy?: boolean
+  onSwitchSqlBackupPolicy: (sqlID?: number) => void
 ): ActiontechTableColumn<IAuditTaskSQLResV2> => {
   return [
     {
@@ -83,8 +82,7 @@ export const AuditResultForCreateWorkflowColumn = (
             />
           </AuditResultBackupPolicyColumnStyleWrapper>
         );
-      },
-      show: showBackupStrategy
+      }
     },
     // #endif
     {

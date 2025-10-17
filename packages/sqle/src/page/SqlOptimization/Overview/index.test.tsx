@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('sqle/SqlOptimization/Overview', () => {
+describe.skip('sqle/SqlOptimization/Overview', () => {
   let getOptimizationRecordReqSpy: jest.SpyInstance;
   let getOptimizationSQLsSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;

@@ -7,7 +7,7 @@ import {
   TableFilterContainer,
   useTableFilterContainer,
   FilterCustomProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqleApi } from '@actiontech/shared/lib/api/';

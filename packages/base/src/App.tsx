@@ -50,8 +50,9 @@ import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
 import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
-import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
+import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { debounce } from 'lodash';
+import ErrorBoundary from './page/ErrorBoundary';
 import './index.less';
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -212,8 +213,7 @@ function App() {
   }, [currentLanguage]);
 
   // #if [ee]
-  const { initializeAvailabilityZone, clearRecentlySelectedZone } =
-    useRecentlySelectedZone();
+  const { clearRecentlySelectedZone } = useRecentlySelectedZone();
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Reload_Initial_Data,
@@ -231,9 +231,6 @@ function App() {
     );
     return unsubscribe;
   }, [getInitialData, clearRecentlySelectedZone]);
-  useEffect(() => {
-    initializeAvailabilityZone();
-  }, [initializeAvailabilityZone]);
   // #endif
   useSyncDmsCloudBeaverChannel();
   return (
@@ -318,7 +315,7 @@ function App() {
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
+                <ErrorBoundary>{body}</ErrorBoundary>
               </EmptyBox>
             </ThemeProvider>
           </StyledEngineProvider>

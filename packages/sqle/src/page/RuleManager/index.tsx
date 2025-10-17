@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
 import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import CustomRuleList from '../CustomRule/CustomRuleList';

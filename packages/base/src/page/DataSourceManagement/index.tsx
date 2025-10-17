@@ -8,7 +8,7 @@ import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
 import { Space } from 'antd';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import GlobalDataSource from '../GlobalDataSource';

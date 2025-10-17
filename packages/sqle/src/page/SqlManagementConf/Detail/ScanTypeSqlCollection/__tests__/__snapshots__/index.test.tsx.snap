@@ -4747,7 +4747,7 @@ LIMIT
                 class="ant-drawer-extra"
               >
                 <a
-                  href="/sqle/project/700300/sql-management-conf/1/analyze/1"
+                  href="/sqle/project/700300/sql-management-conf/1/analyze/1?instance_name=test&schema=test123"
                   target="_blank"
                 >
                   <button

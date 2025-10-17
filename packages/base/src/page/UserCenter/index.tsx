@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
 import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
 import { SegmentedTabsProps } from '@actiontech/dms-kit';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
 import UserManageDrawer from './Drawer';

@@ -1,8 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../testUtils/superRender';
 import AvailabilityZoneSelector from '../index';
-import { mockUseRecentlySelectedZone } from '../../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
-import { mockUseRecentlySelectedZoneData } from '../../../../../testUtils/mockHooks/data';
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../../utils/EventEmitter';
@@ -24,11 +22,9 @@ describe('AvailabilityZoneSelector', () => {
 
   const navigateSpy = jest.fn();
   const emitSpy = jest.spyOn(EventEmitter, 'emit');
+  const updateRecentlySelectedZoneSpy = jest.fn();
 
   beforeEach(() => {
-    mockUseRecentlySelectedZone({
-      availabilityZone: mockZoneTips[0]
-    });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
   });
@@ -41,7 +37,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('renders with current availability zone', () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     expect(screen.getByText('Zone 1')).toBeInTheDocument();
@@ -49,17 +49,22 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('renders placeholder when no zone is selected', () => {
-    mockUseRecentlySelectedZone({
-      availabilityZone: undefined
-    });
-
-    baseSuperRender(<AvailabilityZoneSelector zoneTips={mockZoneTips} />);
+    baseSuperRender(
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
+    );
     expect(screen.getByText('请选择')).toBeInTheDocument();
   });
 
   it('opens dropdown when clicked and displays zones', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -72,7 +77,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('filters zones based on search input', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -90,7 +99,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('displays empty state when no zones match search', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -109,7 +122,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('handles empty zoneTips array', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={[]} />
+      <AvailabilityZoneSelector
+        zoneTips={[]}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -123,7 +140,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('selects a different zone and calls updateRecentlySelectedZone', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -145,9 +166,7 @@ describe('AvailabilityZoneSelector', () => {
 
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(
-      mockUseRecentlySelectedZoneData.updateRecentlySelectedZone
-    ).toHaveBeenCalledWith(mockZoneTips[1]);
+    expect(updateRecentlySelectedZoneSpy).toHaveBeenCalledWith(mockZoneTips[1]);
     expect(emitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Sync_Project_Archived_Status
     );
@@ -157,7 +176,11 @@ describe('AvailabilityZoneSelector', () => {
 
   it('does not trigger popconfirm for currently selected zone', async () => {
     const { baseElement } = baseSuperRender(
-      <AvailabilityZoneSelector zoneTips={mockZoneTips} />
+      <AvailabilityZoneSelector
+        zoneTips={mockZoneTips}
+        availabilityZone={mockZoneTips[0]}
+        updateRecentlySelectedZone={updateRecentlySelectedZoneSpy}
+      />
     );
 
     const selector = getBySelector('.text', baseElement);
@@ -175,9 +198,7 @@ describe('AvailabilityZoneSelector', () => {
     ).not.toBeInTheDocument();
     expect(screen.queryByText('确 定')).not.toBeInTheDocument();
 
-    expect(
-      mockUseRecentlySelectedZoneData.updateRecentlySelectedZone
-    ).not.toHaveBeenCalled();
+    expect(updateRecentlySelectedZoneSpy).not.toHaveBeenCalled();
     expect(emitSpy).not.toHaveBeenCalled();
     expect(navigateSpy).not.toHaveBeenCalled();
   });

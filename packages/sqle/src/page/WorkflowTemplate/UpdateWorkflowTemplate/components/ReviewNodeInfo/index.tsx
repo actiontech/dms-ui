@@ -15,6 +15,9 @@ import {
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import StepButton from '../StepButton';
 import { InfoCircleOutlined } from '@ant-design/icons';
+
+const MAX_USER_COUNT = 10;
+
 const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const { t } = useTranslation();
   const [authorizedParam, setAuthorizedParam] = useState(
@@ -33,7 +36,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
     ReviewAndExecUserTypeEnum.matchAuth
   );
   const updateNodeUsername = (value: string[]) => {
-    if (value.length > 3) return;
+    if (value.length > MAX_USER_COUNT) return;
     props.updateReviewAndExecNodeInfo({
       ...props?.defaultData,
       assignee_user_id_list: value
@@ -161,7 +164,10 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
                     },
                     {
                       validator(_, value) {
-                        if (Array.isArray(value) && value.length <= 3) {
+                        if (
+                          Array.isArray(value) &&
+                          value.length <= MAX_USER_COUNT
+                        ) {
                           return Promise.resolve();
                         }
                         return Promise.reject(

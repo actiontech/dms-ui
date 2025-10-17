@@ -4,7 +4,7 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV3Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -180,11 +180,9 @@ const SqlManagementColumn: (
               <TypedLink
                 target="_blank"
                 to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
-                params={{
-                  projectID
-                }}
+                params={{ projectID }}
                 queries={{
-                  SQLAuditRecordID: source.sql_source_ids.join(',')
+                  sql_audit_record_id: source.sql_source_ids.join(',')
                 }}
               >
                 {source.sql_source_desc}

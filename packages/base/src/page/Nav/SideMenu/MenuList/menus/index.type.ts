@@ -61,7 +61,6 @@ type SqleMenuStructTreeKey =
   | 'project-overview'
   | 'sql-audit'
   | 'plugin-audit'
-  | 'sql-optimization'
   | 'exec-workflow'
   | 'sql-management'
   | 'rule-template'

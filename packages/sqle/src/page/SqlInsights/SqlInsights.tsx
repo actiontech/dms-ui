@@ -2,7 +2,7 @@ import { PageHeader, CustomSelect } from '@actiontech/dms-kit';
 import { BasicRangePickerProps } from '@actiontech/dms-kit/es/components/BasicRangePicker/BasicRangePicker.types';
 import { useTranslation } from 'react-i18next';
 import { Space, Spin } from 'antd';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {

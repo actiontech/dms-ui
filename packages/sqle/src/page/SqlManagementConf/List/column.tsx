@@ -2,7 +2,7 @@ import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../locale';
 import { DatabaseTypeLogo, BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';

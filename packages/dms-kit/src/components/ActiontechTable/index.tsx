@@ -1,12 +1,23 @@
-/**
- * TODO: ActiontechTable 组件迁移说明
- *
- * 这个 ActiontechTable 文件夹内容是从 packages/shared/lib/components/ActiontechTable 复制过来的，
- * 因为kit 中其他文件需要引用这些内容。
- *
- * 在未来的迁移ActiontechTable时，可直接移除这些重复文件
- *
- * 相关文件：
- * - packages/shared/lib/components/ActiontechTable/ (原始位置)
- * - packages/dms-kit/src/components/ActiontechTable/ (当前重复位置，需要移除)
- */
+//type
+export type * from './index.type';
+
+//components
+export { default as ActiontechTable } from './Table';
+export { default as TableFilterButton } from './components/FilterButton';
+export { default as ColumnsSetting } from './components/ColumnsSetting';
+export { default as TableFilterContainer } from './components/FilterContainer';
+export { default as TableRefreshButton } from './components/RefreshButton';
+export { default as TableToolbar } from './components/Toolbar';
+export { default as SearchInput } from './components/SearchInput';
+export { default as ActiontechTableWrapper } from './components/TableWrapper';
+
+//hooks
+export { default as useTableFilterContainer } from './hooks/useTableFilterContainer';
+export { default as useTableRequestError } from './hooks/useTableRequestError';
+export { default as useTableRequestParams } from './hooks/useTableRequestParams';
+
+//context
+export {
+  ActiontechTableContext,
+  ActiontechTableContextProvide
+} from './context';

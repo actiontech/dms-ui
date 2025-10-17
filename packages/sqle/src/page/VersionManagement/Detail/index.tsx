@@ -1,6 +1,6 @@
 import { PageHeader, EmptyBox } from '@actiontech/dms-kit';
 import { useTypedNavigate, useTypedParams } from '@actiontech/shared';
-import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
+import RefreshButton from '@actiontech/dms-kit/es/components/ActiontechTable/components/RefreshButton';
 import BackToList from '../Common/BackToList';
 import { useState, useEffect } from 'react';
 import {
@@ -186,8 +186,8 @@ const VersionDetail = () => {
         projectID
       },
       queries: {
-        versionId: id?.toString() ?? '',
-        versionName: encodeURIComponent(name ?? '')
+        version_id: id?.toString() ?? '',
+        version_name: encodeURIComponent(name ?? '')
       }
     });
   };
