@@ -4,7 +4,7 @@ import {
   EditInput,
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
-import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/base/service/common';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 
 export interface UrlAddressPrefixTipsProps {
