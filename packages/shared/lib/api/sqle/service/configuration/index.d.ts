@@ -17,8 +17,6 @@ import {
   IGetLicenseResV1,
   ICheckLicenseResV1,
   ISSHPublicKeyInfoV1Rsp,
-  IGetSystemVariablesResV1,
-  IUpdateSystemVariablesReqV1,
   IGetWechatAuditConfigurationResV1,
   IUpdateWechatConfigurationReqV1,
   ITestWechatConfigurationReqV1,
@@ -86,13 +84,6 @@ export interface ICheckSQLELicenseV1Return extends ICheckLicenseResV1 {}
 export interface IGetSSHPublicKeyReturn extends ISSHPublicKeyInfoV1Rsp {}
 
 export interface IGenSSHPublicKeyReturn extends IBaseRes {}
-
-export interface IGetSystemVariablesV1Return extends IGetSystemVariablesResV1 {}
-
-export interface IUpdateSystemVariablesV1Params
-  extends IUpdateSystemVariablesReqV1 {}
-
-export interface IUpdateSystemVariablesV1Return extends IBaseRes {}
 
 export interface IGetWechatAuditConfigurationV1Return
   extends IGetWechatAuditConfigurationResV1 {}
