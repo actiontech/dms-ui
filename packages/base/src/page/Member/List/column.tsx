@@ -1,5 +1,5 @@
 import { Typography, Space, Popover } from 'antd';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
   IListMember,

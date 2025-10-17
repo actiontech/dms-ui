@@ -5,7 +5,7 @@ import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { formatTime } from '@actiontech/dms-kit';
 import { t } from '../../../locale';

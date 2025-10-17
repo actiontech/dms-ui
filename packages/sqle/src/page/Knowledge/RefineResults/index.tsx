@@ -2,10 +2,10 @@ import { LeftArrowOutlined } from '@actiontech/icons';
 import { PageHeader } from '@actiontech/dms-kit';
 import {
   parse2ReactRouterPath,
-  TablePagination,
   useTypedQuery,
   ActionButton
 } from '@actiontech/shared';
+import { TablePagination } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { paramsSerializer } from '@actiontech/dms-kit';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';

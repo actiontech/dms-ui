@@ -1,7 +1,7 @@
+import { ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS } from './hooks/useTableAction';
 import { styled } from '@mui/material/styles';
 import { Table } from 'antd';
-export const ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS =
-  'actiontech-table-actions-column';
+
 export const ActiontechTableStyleWrapper = styled(Table)`
   &.ant-table-wrapper.table-row-cursor {
     .ant-table-tbody {

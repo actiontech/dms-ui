@@ -8,6 +8,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '../../testUtil/mockApi';
+import { GetUserSystemEnum } from '../../api/base/service/common.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -52,7 +53,7 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
 
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
@@ -80,8 +81,35 @@ describe('useUserInfo', () => {
       type: 'user/updateManagementPermissions'
     });
     expect(mockDispatch).toHaveBeenCalledWith({
+      payload: {
+        systemPreference: GetUserSystemEnum.MANAGEMENT
+      },
+      type: 'user/updateSystemPreference'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: true,
       type: 'user/updateUserInfoFetchStatus'
+    });
+  });
+
+  it('should skip update systemPreference when systemPreference is not undefined', async () => {
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: { uid: '111', systemPreference: GetUserSystemEnum.MANAGEMENT }
+      });
+    });
+    const { result } = renderHook(() => useUserInfo());
+    expect(result.current.userInfo).not.toBeDefined();
+    expect(result.current.getUserInfoLoading).toBeFalsy();
+    await act(() => result.current.getUserInfo());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+
+    expect(mockDispatch).not.toHaveBeenCalledWith({
+      payload: {
+        systemPreference: GetUserSystemEnum.MANAGEMENT
+      },
+      type: 'user/updateSystemPreference'
     });
   });
 

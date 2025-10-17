@@ -5,7 +5,7 @@ import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListGlobalDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';

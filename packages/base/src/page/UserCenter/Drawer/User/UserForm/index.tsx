@@ -31,6 +31,10 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
             message: t('common.form.rule.require', {
               name: t('dmsUserCenter.user.userForm.username')
             })
+          },
+          {
+            pattern: /^\S*$/,
+            message: t('dmsUserCenter.user.userForm.usernameNoSpaces')
           }
         ]}
       >

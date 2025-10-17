@@ -19,7 +19,7 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {

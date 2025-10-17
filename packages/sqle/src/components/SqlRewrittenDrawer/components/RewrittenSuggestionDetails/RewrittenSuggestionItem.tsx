@@ -21,12 +21,16 @@ type Props = {
   originalSql: string;
   taskID: string;
   sqlNumber: number;
+  instanceName?: string;
+  schema?: string;
 };
 const RewrittenSuggestionItem: React.FC<Props> = ({
   dataSource,
   originalSql,
   taskID,
-  sqlNumber
+  sqlNumber,
+  instanceName,
+  schema
 }) => {
   const { t } = useTranslation();
   const { rule_name, desc, rewritten_sql, audit_level, ddl_dcl } = dataSource;
@@ -92,6 +96,10 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
                     projectID,
                     taskId: taskID,
                     sqlNum: sqlNumber.toString()
+                  }}
+                  queries={{
+                    instance_name: instanceName ?? '',
+                    schema: schema ?? ''
                   }}
                 >
                   {t('sqlRewrite.viewCurrentTableStructureInSqlAnalysis')}

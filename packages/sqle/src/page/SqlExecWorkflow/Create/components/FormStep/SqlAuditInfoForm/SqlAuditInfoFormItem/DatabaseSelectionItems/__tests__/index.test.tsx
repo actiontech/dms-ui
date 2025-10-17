@@ -102,7 +102,7 @@ describe('test DatabaseSelectionItems', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
+            `/sqle/project/700300/exec-workflow/create?version_name=v1-test&version_id=1`
           ]
         }
       }

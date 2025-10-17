@@ -196,7 +196,7 @@ const useCloneExecWorkflowInfo = (
     );
     navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
       params: { projectID },
-      queries: { sourceWorkflowId: workflowInfo?.workflow_id ?? '' }
+      queries: { source_workflow_id: workflowInfo?.workflow_id ?? '' }
     });
   }, [
     taskInfos,

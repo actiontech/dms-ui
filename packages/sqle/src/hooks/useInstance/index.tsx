@@ -101,7 +101,6 @@ const useInstance = () => {
     });
   }, [getLogoUrlByDbType, instanceList]);
 
-  //todo: 筛选项 val 为 id
   const instanceIDOptions = useMemo(() => {
     const instanceTypeList: string[] = Array.from(
       new Set(instanceList.map((v) => v.instance_type ?? ''))
@@ -120,13 +119,25 @@ const useInstance = () => {
       };
     });
   }, [getLogoUrlByDbType, instanceList]);
+
+  const getInstanceDbType = useCallback(
+    (instanceName: string) => {
+      return (
+        instanceList.find((v) => v.instance_name === instanceName)
+          ?.instance_type ?? ''
+      );
+    },
+    [instanceList]
+  );
+
   return {
     instanceList,
     loading,
     updateInstanceList,
     generateInstanceSelectOption,
     instanceOptions,
-    instanceIDOptions
+    instanceIDOptions,
+    getInstanceDbType
   };
 };
 export default useInstance;

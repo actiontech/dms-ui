@@ -21,7 +21,6 @@ const menuStruct: MenuTreeTranslated[] = [
       'data-export',
       'sql-audit',
       'plugin-audit',
-      'sql-optimization',
       'data-source-comparison'
     ]
   },

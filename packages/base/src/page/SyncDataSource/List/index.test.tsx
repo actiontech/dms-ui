@@ -95,6 +95,15 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     expect(requestTableList).toHaveBeenCalledTimes(2);
   });
 
+  it('render edit button action', async () => {
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getAllByText('编 辑')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+  });
+
   it('should not render action column when user no operation permissions', async () => {
     mockUseCurrentUser({
       userRoles: {

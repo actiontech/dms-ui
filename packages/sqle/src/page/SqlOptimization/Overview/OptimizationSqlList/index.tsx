@@ -4,7 +4,7 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import {
   SqlOptimizationListColumns,
   SqlOptimizationListActions,

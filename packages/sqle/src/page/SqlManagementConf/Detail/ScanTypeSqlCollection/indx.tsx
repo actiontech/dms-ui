@@ -5,7 +5,7 @@ import {
   useTableRequestParams,
   ColumnsSettingProps,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -36,7 +36,7 @@ import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
-import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
+import { mergeFilterButtonMeta } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { message } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
@@ -49,7 +49,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   activeTabKey,
   instanceType,
   exportDone,
-  exportPending
+  exportPending,
+  instanceName
 }) => {
   const { t } = useTranslation();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
@@ -382,6 +383,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                 projectID,
                 instanceAuditPlanId,
                 id: currentAuditResultRecord?.id ?? ''
+              },
+              queries: {
+                instance_name: instanceName,
+                schema: currentAuditResultRecord?.schema_name ?? ''
               }
             }}
           />

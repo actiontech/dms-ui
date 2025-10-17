@@ -166,4 +166,107 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenCalledTimes(3);
   });
+
+  it('should show performance statistics data when isPerformanceInfoLoaded is true', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        isPerformanceInfoLoaded: true
+      })
+    );
+
+    const { baseElement } = superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 1500,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('1,500')).toBeInTheDocument();
+  });
+
+  it('should call getPerformanceStatistics when button is clicked', async () => {
+    const getPerformanceStatisticsSpy = jest.fn();
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        isPerformanceInfoLoaded: false,
+        getPerformanceStatistics: getPerformanceStatisticsSpy
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    fireEvent.click(screen.getByText('获 取'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('确 认'));
+
+    expect(getPerformanceStatisticsSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render sql optimization button', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onCreateSqlOptimizationOrview: jest.fn(),
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(screen.getByText('SQL优化')).toBeInTheDocument();
+  });
+
+  it('should hide sql optimization button when execution plan is not exist', async () => {
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onCreateSqlOptimizationOrview: jest.fn(),
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: undefined,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(screen.queryByText('SQL优化')).not.toBeInTheDocument();
+  });
 });

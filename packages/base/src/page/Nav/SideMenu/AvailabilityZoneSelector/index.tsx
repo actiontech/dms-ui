@@ -8,21 +8,24 @@ import {
 import { BasicEmpty } from '@actiontech/dms-kit';
 import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import useRecentlySelectedZone from '../../../../hooks/useRecentlySelectedZone';
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
+
 type AvailabilityZoneSelectorProps = {
   zoneTips?: IUidWithName[];
+  availabilityZone?: IUidWithName;
+  updateRecentlySelectedZone: (zone: IUidWithName) => void;
 };
+
 const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
-  zoneTips
+  zoneTips,
+  availabilityZone,
+  updateRecentlySelectedZone
 }) => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
-  const { availabilityZone, updateRecentlySelectedZone } =
-    useRecentlySelectedZone();
   const [searchText, setSearchText] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const filteredZones = useCallback(() => {

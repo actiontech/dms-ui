@@ -18,12 +18,12 @@ const useCreationMode = () => {
     );
     return {
       isAssociationVersionMode:
-        !!searchParams?.versionId && !!searchParams?.versionName,
-      versionId: searchParams?.versionId,
-      versionName: searchParams?.versionName,
-      isCloneMode: !!searchParams?.sourceWorkflowId,
-      isRollbackMode: !!searchParams?.rollbackWorkflowId,
-      rollbackWorkflowId: searchParams?.rollbackWorkflowId
+        !!searchParams?.version_id && !!searchParams?.version_name,
+      versionId: searchParams?.version_id,
+      versionName: searchParams?.version_name,
+      isCloneMode: !!searchParams?.source_workflow_id,
+      isRollbackMode: !!searchParams?.rollback_workflow_id,
+      rollbackWorkflowId: searchParams?.rollback_workflow_id
     };
   }, [extractQueries]);
 

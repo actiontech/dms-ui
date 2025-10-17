@@ -11,6 +11,8 @@ import sqlManagementException from './sqlManagementException';
 import pipeline from './pipeline';
 import versionManagement from './versionManagement';
 import sqlInsights from './sqlInsights';
+import sqlOptimization from './sqlOptimization';
+import sqlAnalyze from './sqlAnalyze';
 
 export const SQLEStoreData = {
   whitelist,
@@ -24,7 +26,9 @@ export const SQLEStoreData = {
   sqlManagementException,
   pipeline,
   versionManagement,
-  sqlInsights
+  sqlInsights,
+  sqlOptimization,
+  sqlAnalyze
 };
 
 const store = configureStore({

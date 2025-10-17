@@ -1,6 +1,6 @@
 import { useMemo, useEffect } from 'react';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
+import { FilterCustomProps } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import useGlobalDataSourceType from '../../../../GlobalDataSource/hooks/useGlobalDataSourceType';
 import useProjectTips from '../../../../../hooks/useProjectTips';
 import useBusinessTag from '../../../../../hooks/useBusinessTag';

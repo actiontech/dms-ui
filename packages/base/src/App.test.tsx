@@ -48,6 +48,12 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-error-boundary', () => ({
+  ErrorBoundary: ({ children }: { children: React.ReactNode }) => {
+    return children;
+  }
+}));
+
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
@@ -93,6 +99,9 @@ describe('App', () => {
           modalStatus: {
             [ModalName.Company_Notice]: false
           }
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
         }
       });
     });
@@ -289,13 +298,6 @@ describe('App', () => {
     baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
-  });
-
-  it('should initialize the availability zone', () => {
-    baseSuperRender(<App />);
-    expect(
-      mockUseRecentlySelectedZoneData.initializeAvailabilityZone
-    ).toHaveBeenCalledTimes(1);
   });
 
   it('should reload the initial data when the event is triggered', async () => {

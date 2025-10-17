@@ -73,6 +73,7 @@ export type BasicSelectTheme = {
     placeholder: {
       color: string;
     };
+    boxShadow: string;
   };
   hover: {
     border: string;

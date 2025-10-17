@@ -2,7 +2,7 @@ import { t } from '../../../../../locale';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { EditText, BasicTag } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';

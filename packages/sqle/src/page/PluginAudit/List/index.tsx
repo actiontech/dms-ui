@@ -31,7 +31,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams,
   ActiontechTableWrapper
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';

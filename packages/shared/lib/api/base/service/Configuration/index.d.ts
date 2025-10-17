@@ -21,6 +21,8 @@ import {
   IUpdateSMTPConfigurationReq,
   ITestSMTPConfigurationReq,
   ITestSMTPConfigurationReply,
+  IGetSystemVariablesReply,
+  IUpdateSystemVariablesReqV1,
   IGetWebHookConfigurationReply,
   IUpdateWebHookConfigurationReq,
   ITestWebHookConfigurationReply,
@@ -108,6 +110,13 @@ export interface ITestSMTPConfigurationParams
 
 export interface ITestSMTPConfigurationReturn
   extends ITestSMTPConfigurationReply {}
+
+export interface IGetSystemVariablesReturn extends IGetSystemVariablesReply {}
+
+export interface IUpdateSystemVariablesParams
+  extends IUpdateSystemVariablesReqV1 {}
+
+export interface IUpdateSystemVariablesReturn extends IGenericResp {}
 
 export interface IGetWebHookConfigurationReturn
   extends IGetWebHookConfigurationReply {}

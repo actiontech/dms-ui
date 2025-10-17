@@ -19,6 +19,8 @@ import {
   RollbackWorkflowAction,
   RetryWorkflowAction
 } from './action';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 const WorkflowDetailPageHeaderExtra: React.FC<
   WorkflowDetailPageHeaderExtraProps
 > = (props) => {
@@ -41,10 +43,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     retryWorkflowButtonMeta,
     executable,
     executable_reason
-  } = useWorkflowDetailAction({
-    projectName,
-    ...props
-  });
+  } = useWorkflowDetailAction({ projectName, ...props });
+
   return (
     <WorkflowPageHeaderExtraStyleWrapper>
       {messageContextHolder}
@@ -71,7 +71,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       )}
       {MarkManuallyExecWorkflowAction(
         manualExecuteWorkflowButtonMeta,
-        executable,
+        props.workflowInfo?.record?.status ===
+          WorkflowRecordResV2StatusEnum.exec_failed || executable,
         executable_reason
       )}
 

@@ -190,7 +190,7 @@ export const RetryWorkflowAction = (
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY}
     >
       <ActionButton
-        text={t('execWorkflow.detail.operator.retry')}
+        text={t('execWorkflow.create.auditResult.updateInfo')}
         hidden={retryWorkflowButtonMeta.hidden}
         onClick={() => retryWorkflowButtonMeta.action()}
         loading={retryWorkflowButtonMeta.loading}

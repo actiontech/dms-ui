@@ -23,7 +23,9 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   currentListLayout,
   workflowStatus,
   auditResultActiveKey,
-  assigneeUserNames
+  assigneeUserNames,
+  instanceName,
+  schema
 }) => {
   const { t } = useTranslation();
 
@@ -89,6 +91,8 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
                 projectID={projectID}
                 taskId={auditResultActiveKey}
                 executeMode={WorkflowResV2ExecModeEnum.sql_file}
+                instanceName={instanceName}
+                schema={schema}
               />
             </List.Item>
           );
