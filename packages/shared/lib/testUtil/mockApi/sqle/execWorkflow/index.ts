@@ -47,6 +47,7 @@ class MockWorkflowApi implements MockSpyApy {
     this.createRollbackWorkflow();
     this.updateTaskBackupStrategy();
     this.getBackupSqlList();
+    this.reExecuteTaskOnWorkflow();
   }
 
   public getWorkflows() {
@@ -347,6 +348,12 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockRollbackSqlData })
     );
+    return spy;
+  }
+
+  public reExecuteTaskOnWorkflow() {
+    const spy = jest.spyOn(workflow, 'reExecuteTaskOnWorkflowV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

@@ -41,7 +41,9 @@ enum EmitterKey {
   Refresh_Sql_Exec_workflow_Audit_Result_List = 'Refresh_Sql_Exec_workflow_Audit_Result_List',
 
   Refresh_Sql_Audit_List = 'Refresh_Sql_Audit_List',
-  Refresh_Sql_Optimization_List = 'Refresh_Sql_Optimization_List'
+  Refresh_Sql_Optimization_List = 'Refresh_Sql_Optimization_List',
+
+  Sql_Retry_Execute_Done = 'Sql_Retry_Execute_Done'
 }
 
 export default EmitterKey;

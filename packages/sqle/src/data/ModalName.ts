@@ -45,5 +45,8 @@ export enum ModalName {
   Sql_Optimization_Result_Modal = 'SQL_OPTIMIZATION_RESULT_MODAL',
   Sql_Optimization_Query_Plan_Flow_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_FLOW_MODAL',
   Sql_Optimization_Query_Plan_Diff_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_DIFF_MODAL',
-  Sql_Optimization_Result_Drawer = 'SQL_OPTIMIZATION_RESULT_DRAWER'
+  Sql_Optimization_Result_Drawer = 'SQL_OPTIMIZATION_RESULT_DRAWER',
+
+  // sql exec workflow
+  Sql_Exec_Workflow_Retry_Execute_Modal = 'SQL_EXEC_WORKFLOW_RETRY_EXECUTE_MODAL'
 }
