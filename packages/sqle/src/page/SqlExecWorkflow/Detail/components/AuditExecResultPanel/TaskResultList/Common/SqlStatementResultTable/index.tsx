@@ -1,4 +1,4 @@
-import { BasicTable } from '@actiontech/dms-kit';
+import { ActiontechTable } from '@actiontech/dms-kit';
 import { SqlStatementResultTableProps } from './index.type';
 import { SQLStatementResultColumns } from './columns';
 import { useBoolean } from 'ahooks';
@@ -9,6 +9,13 @@ import AuditResultDrawer from '../../../../../../Common/AuditResultList/Table/Au
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { SQLStatementResultActions } from './actions';
+import { usePermission } from '@actiontech/shared/lib/features';
+import { useDispatch } from 'react-redux';
+import { updateRetryExecuteData } from '../../../../../../../../store/sqlExecWorkflow';
+import { updateSqlExecWorkflowModalStatus } from '../../../../../../../../store/sqlExecWorkflow';
+import { ModalName } from '../../../../../../../../data/ModalName';
+
 const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
   props
 ) => {
@@ -16,9 +23,11 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
     auditResultDrawerVisibility,
     { setFalse: closeAuditResultDrawer, setTrue: openAuditResultDrawer }
   ] = useBoolean();
+  const dispatch = useDispatch();
   const { projectID } = useCurrentProject();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
+  const { parse2TableActionPermissions } = usePermission();
   const onClickAuditResult = (record: IAuditTaskSQLResV2) => {
     openAuditResultDrawer();
     setCurrentAuditResultRecord(record);
@@ -42,12 +51,33 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
       })
     );
   };
+
+  const onRetryExecute = () => {
+    dispatch(
+      updateRetryExecuteData({
+        taskId: props.taskId ?? ''
+      })
+    );
+    dispatch(
+      updateSqlExecWorkflowModalStatus({
+        modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
+        status: true
+      })
+    );
+  };
+
   return (
     <SQLStatementResultTableStyleWrapper>
-      <BasicTable
+      <ActiontechTable
         rowKey="number"
         className="table-row-cursor"
         columns={SQLStatementResultColumns(onClickAuditResult)}
+        actions={parse2TableActionPermissions(
+          SQLStatementResultActions({
+            enableSqlRetryExecute: props.enableSqlRetryExecute,
+            onRetryExecute
+          })
+        )}
         {...props}
       />
       <AuditResultDrawer

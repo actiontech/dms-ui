@@ -4,7 +4,7 @@ import { useBoolean, useRequest } from 'ahooks';
 import useHideConfigInputNode from '@actiontech/dms-kit/es/components/ConfigItem/hooks/useHideConfigInputNode';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode, ConfigFieldMapMeta } from '@actiontech/dms-kit';
-import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/base/service/common';
 import { Spin } from 'antd';
 import SystemBasicTitle from '../components/BasicTitle';
 import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';

@@ -17,7 +17,8 @@ describe('test ExecWorkflow/TaskResultList/PaginationList', () => {
       tableFilterInfo: {},
       pagination: { page_index: 1, page_size: 10 },
       assigneeUserNames: [mockCurrentUserReturn.username],
-      execStatusFilterValue: null
+      execStatusFilterValue: null,
+      enableRetryExecute: true
     };
 
     expect(

@@ -24,7 +24,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   enableBackup,
   taskStatus,
   instanceName,
-  schema
+  schema,
+  enableRetryExecute
 }) => {
   const { t } = useTranslation();
 
@@ -91,6 +92,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
               taskStatus={taskStatus}
               instanceName={instanceName}
               schema={schema}
+              pagination={pagination}
+              enableRetryExecute={enableRetryExecute}
             />
           </List.Item>
         );
