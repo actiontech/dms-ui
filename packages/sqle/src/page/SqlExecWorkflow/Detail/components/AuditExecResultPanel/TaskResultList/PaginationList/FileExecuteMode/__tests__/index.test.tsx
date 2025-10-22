@@ -22,6 +22,7 @@ describe('test PaginationList/FileExecuteMode', () => {
       tableChange: jest.fn(),
       assigneeUserNames: [mockCurrentUserReturn.username],
       workflowStatus: WorkflowRecordResV2StatusEnum.wait_for_execution,
+      enableRetryExecute: true,
       ...params
     };
     return sqleSuperRender(<FileExecuteMode {..._params} />);

@@ -15,7 +15,8 @@ describe('test ExecWorkflow/TaskResultList/WaterfallList', () => {
       noDuplicate: false,
       tableFilterInfo: {},
       assigneeUserNames: [mockCurrentUserReturn.username],
-      execStatusFilterValue: null
+      execStatusFilterValue: null,
+      enableRetryExecute: true
     };
 
     expect(
