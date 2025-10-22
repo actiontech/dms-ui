@@ -25,12 +25,13 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../../data/ModalName';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -89,9 +90,23 @@ describe('sqle/ExecWorkflow/Detail', () => {
     );
     getAuditTaskSpy = task.getAuditTask();
     useParamsMock.mockReturnValue({ workflowId: 'workflowId' });
-    mockUsePermission(undefined, {
-      mockSelector: true
-    });
+    (useSelector as jest.Mock).mockImplementation((selector) =>
+      selector({
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false,
+            knowledge: false
+          },
+          userOperationPermissions: null
+        },
+        sqlExecWorkflow: {
+          retryExecuteData: {},
+          modalStatus: {
+            [ModalName.Sql_Exec_Workflow_Retry_Execute_Modal]: false
+          }
+        }
+      })
+    );
   });
 
   afterEach(() => {

@@ -7,6 +7,12 @@ import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import { TaskFileListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test TaskResultList/Result/FileMode', () => {
   let getTaskSQLsSpy: jest.SpyInstance;
@@ -15,6 +21,9 @@ describe('test TaskResultList/Result/FileMode', () => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     getTaskSQLsSpy = task.getAuditTaskSQLs();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -26,6 +35,7 @@ describe('test TaskResultList/Result/FileMode', () => {
         taskId="123"
         projectID="300200"
         {...(TaskFileListMockData[0] as unknown as IAuditFileStatistic)}
+        enableRetryExecute
       />
     );
 

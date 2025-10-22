@@ -10,7 +10,9 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { fireEvent, screen } from '@testing-library/dom';
 import {
   GetWorkflowTasksItemV2StatusEnum,
-  WorkflowRecordResV2StatusEnum
+  WorkflowRecordResV2StatusEnum,
+  WorkflowStepResV2TypeEnum,
+  WorkflowStepResV2StateEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -22,10 +24,13 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { useDispatch } from 'react-redux';
+import { ModalName } from '../../../../../../../data/ModalName';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useSelector: jest.fn()
+  useSelector: jest.fn(),
+  useDispatch: jest.fn()
 }));
 
 describe('test OverviewList', () => {
@@ -35,6 +40,7 @@ describe('test OverviewList', () => {
   let executeOneTaskOnWorkflowSpy: jest.SpyInstance;
   let terminateSingleTaskByWorkflowSpy: jest.SpyInstance;
   let updateWorkflowScheduleSpy: jest.SpyInstance;
+  const dispatchSpy = jest.fn();
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
@@ -71,6 +77,7 @@ describe('test OverviewList', () => {
     mockUsePermission(undefined, {
       mockSelector: true
     });
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
 
   afterEach(() => {
@@ -636,5 +643,157 @@ describe('test OverviewList', () => {
     });
     expect(screen.queryByText('定时上线')).not.toBeVisible();
     expect(screen.queryByText('取消定时上线')).not.toBeVisible();
+  });
+
+  it('render the retry execute button and allows retry execute when the task status is exec_failed, the current user is authorized, and outside maintenance window', async () => {
+    mockUseCurrentUser({ username: 'test_user' });
+    customRender({
+      workflowInfo: {
+        ...WorkflowsOverviewListData,
+        record: {
+          ...WorkflowsOverviewListData.record,
+          workflow_step_list: [
+            {
+              workflow_step_id: 24,
+              number: 3,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
+              assignee_user_name_list: ['test_user'],
+              state: WorkflowStepResV2StateEnum.approved
+            }
+          ]
+        }
+      },
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            status: GetWorkflowTasksItemV2StatusEnum.exec_failed,
+            instance_maintenance_times: [
+              {
+                maintenance_start_time: { hour: 9, minute: 0 },
+                maintenance_stop_time: { hour: 20, minute: 0 }
+              }
+            ]
+          }
+        ],
+        total: 1
+      }
+    });
+
+    expect(screen.getByText('再次执行').closest('button')).not.toBeDisabled();
+    fireEvent.click(screen.getByText('再次执行'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'sqlExecWorkflow/updateRetryExecuteData',
+      payload: {
+        taskId: WorkflowTasksItemData[0].task_id?.toString()
+      }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'sqlExecWorkflow/updateModalStatus',
+      payload: {
+        modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
+        status: true
+      }
+    });
+  });
+
+  it('render the retry execute button but disabled when the task status is exec_failed but the current user is not authorized or during maintenance window', async () => {
+    mockUseCurrentUser({ username: 'test_user' });
+    customRender({
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            current_step_assignee_user_name_list: [''],
+            status: GetWorkflowTasksItemV2StatusEnum.wait_for_execution,
+            instance_maintenance_times: [
+              {
+                maintenance_start_time: { hour: 9, minute: 0 },
+                maintenance_stop_time: { hour: 20, minute: 0 }
+              }
+            ]
+          }
+        ],
+        total: 1
+      }
+    });
+    expect(screen.getByText('再次执行').closest('button')).not.toBeVisible();
+
+    cleanup();
+
+    // user not in the assignee_user_name_list
+    customRender({
+      workflowInfo: {
+        ...WorkflowsOverviewListData,
+        record: {
+          ...WorkflowsOverviewListData.record,
+          workflow_step_list: [
+            {
+              workflow_step_id: 24,
+              number: 3,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
+              assignee_user_name_list: ['admin'],
+              state: WorkflowStepResV2StateEnum.approved
+            }
+          ]
+        }
+      },
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            status: GetWorkflowTasksItemV2StatusEnum.exec_failed,
+            instance_maintenance_times: [
+              {
+                maintenance_start_time: { hour: 9, minute: 0 },
+                maintenance_stop_time: { hour: 20, minute: 0 }
+              }
+            ]
+          }
+        ],
+        total: 1
+      }
+    });
+    expect(screen.getByText('再次执行').closest('button')).toBeDisabled();
+
+    cleanup();
+
+    // current time not allow execute workflow
+    customRender({
+      workflowInfo: {
+        ...WorkflowsOverviewListData,
+        record: {
+          ...WorkflowsOverviewListData.record,
+          workflow_step_list: [
+            {
+              workflow_step_id: 24,
+              number: 3,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
+              assignee_user_name_list: ['test_user'],
+              state: WorkflowStepResV2StateEnum.approved
+            }
+          ]
+        }
+      },
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            status: GetWorkflowTasksItemV2StatusEnum.wait_for_audit,
+            instance_maintenance_times: [
+              {
+                maintenance_start_time: { hour: 1, minute: 0 },
+                maintenance_stop_time: { hour: 3, minute: 0 }
+              }
+            ]
+          }
+        ],
+        total: 1
+      }
+    });
+    expect(screen.getByText('再次执行').closest('button')).toBeDisabled();
   });
 });
