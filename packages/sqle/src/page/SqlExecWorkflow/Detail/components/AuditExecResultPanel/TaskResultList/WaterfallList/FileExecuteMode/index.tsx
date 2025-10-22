@@ -23,7 +23,10 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   currentListLayout,
   workflowStatus,
   auditResultActiveKey,
-  assigneeUserNames
+  assigneeUserNames,
+  instanceName,
+  schema,
+  enableRetryExecute
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -115,6 +118,9 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
                   executeMode={WorkflowResV2ExecModeEnum.sql_file}
                   projectID={projectID}
                   taskId={taskId}
+                  instanceName={instanceName}
+                  schema={schema}
+                  enableRetryExecute={enableRetryExecute}
                 />
               </List.Item>
             );

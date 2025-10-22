@@ -259,7 +259,12 @@ export default {
         cancelExecScheduled: '取消定时上线',
         cancelExecScheduledTips: '取消定时上线成功',
         sqlExecuteConfirmTips:
-          '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线'
+          '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线',
+        retryExecute: '再次执行',
+        retryExecuteSuccess: '再次执行成功',
+        pleaseSelectSql: '请选择需要再次执行的SQL',
+        selectRetryExecuteSqlDesc: '已执行成功的SQL无法再次执行',
+        selectRetryExecuteSql: '选择再次执行的SQL'
       }
     },
     taskResult: {},

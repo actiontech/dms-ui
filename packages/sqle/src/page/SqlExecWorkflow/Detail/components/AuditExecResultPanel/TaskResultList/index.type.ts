@@ -21,4 +21,7 @@ export type TasksResultListBaseProps = {
   dbType?: string;
   enableBackup?: boolean;
   taskStatus?: AuditTaskResV1StatusEnum;
+  instanceName?: string;
+  schema?: string;
+  enableRetryExecute: boolean;
 };
