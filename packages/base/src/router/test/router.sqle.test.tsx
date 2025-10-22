@@ -194,7 +194,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render SQLFileStatementOverview', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/exec-workflow/123/files/434/sqls`
+            `/sqle/project/${projectID}/exec-workflow/789/task/123/files/434/sqls`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));

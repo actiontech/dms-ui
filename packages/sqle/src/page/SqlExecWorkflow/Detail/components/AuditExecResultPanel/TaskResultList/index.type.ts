@@ -23,4 +23,5 @@ export type TasksResultListBaseProps = {
   taskStatus?: AuditTaskResV1StatusEnum;
   instanceName?: string;
   schema?: string;
+  enableRetryExecute: boolean;
 };

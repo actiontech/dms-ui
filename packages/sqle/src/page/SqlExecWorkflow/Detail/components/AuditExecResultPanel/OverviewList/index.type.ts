@@ -2,7 +2,7 @@ import { AuditExecResultPanelProps } from '../index.type';
 
 export type WorkflowOverviewListProps = Omit<
   AuditExecResultPanelProps,
-  'taskInfos' | 'activeTabKey'
+  'taskInfos' | 'activeTabKey' | 'refreshTaskWithTaskId'
 >;
 
 export type WorkflowOverviewListActionsParams = {

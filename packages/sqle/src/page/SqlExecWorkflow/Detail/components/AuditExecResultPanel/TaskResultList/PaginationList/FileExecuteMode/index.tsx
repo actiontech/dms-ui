@@ -25,7 +25,8 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   auditResultActiveKey,
   assigneeUserNames,
   instanceName,
-  schema
+  schema,
+  enableRetryExecute
 }) => {
   const { t } = useTranslation();
 
@@ -93,6 +94,7 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
                 executeMode={WorkflowResV2ExecModeEnum.sql_file}
                 instanceName={instanceName}
                 schema={schema}
+                enableRetryExecute={enableRetryExecute}
               />
             </List.Item>
           );
