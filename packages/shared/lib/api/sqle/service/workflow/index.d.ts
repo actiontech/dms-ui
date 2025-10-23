@@ -11,6 +11,7 @@ import {
   IBackupSqlListRes,
   ICreateRollbackWorkflowReq,
   ICreateRollbackWorkflowRes,
+  IReExecuteTaskOnWorkflowReq,
   IGetWorkflowResV1,
   IUpdateWorkflowReqV1,
   IRejectWorkflowReqV1,
@@ -214,6 +215,17 @@ export interface IGetWorkflowAttachmentParams {
 
   task_id: string;
 }
+
+export interface IReExecuteTaskOnWorkflowV1Params
+  extends IReExecuteTaskOnWorkflowReq {
+  project_name: string;
+
+  workflow_id: string;
+
+  task_id: string;
+}
+
+export interface IReExecuteTaskOnWorkflowV1Return extends IBaseRes {}
 
 export interface ITerminateSingleTaskByWorkflowV1Params {
   workflow_id: string;

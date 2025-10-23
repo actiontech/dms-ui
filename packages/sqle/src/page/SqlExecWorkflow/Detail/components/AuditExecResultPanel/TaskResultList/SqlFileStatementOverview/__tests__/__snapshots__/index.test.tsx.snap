@@ -271,7 +271,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <div
-              class="ant-table ant-table-empty ant-table-scroll-horizontal"
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -284,6 +284,12 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
+                      <col
+                        style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
                       <col
                         style="width: 100px;"
                       />
@@ -315,6 +321,13 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
                           scope="col"
                         >
                           执行结果
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
                         </th>
                       </tr>
                     </thead>
@@ -362,13 +375,22 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="4"
+                          colspan="5"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -637,7 +659,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-scroll-horizontal"
+              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -650,6 +672,12 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
+                      <col
+                        style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
                       <col
                         style="width: 100px;"
                       />
@@ -682,6 +710,13 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                         >
                           执行结果
                         </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
                       </tr>
                     </thead>
                     <tbody
@@ -692,6 +727,15 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -822,6 +866,23 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                           >
                             准备执行
                           </span>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                再次执行
+                              </span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     </tbody>

@@ -4,19 +4,30 @@ import {
   WorkflowBaseInfoFormFields
 } from '../../page/SqlExecWorkflow/Create/index.type';
 import { IVersionStageInstance } from '@actiontech/shared/lib/api/sqle/service/common';
+import { commonModalReducer } from '../common';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 type SqlExecWorkflowReduxState = {
   clonedExecWorkflowSqlAuditInfo: SqlAuditInfoFormFields | null;
   clonedExecWorkflowBaseInfo: WorkflowBaseInfoFormFields | null;
   versionFirstStageInstances: IVersionStageInstance[] | null;
   workflowRollbackSqlIds: number[] | null;
+  retryExecuteData: {
+    taskId: string;
+    execSqlId?: number;
+    pageIndex?: number;
+    pageSize?: number;
+  } | null;
+  modalStatus: ModalStatus;
 };
 
 const initialState: SqlExecWorkflowReduxState = {
   clonedExecWorkflowSqlAuditInfo: null,
   clonedExecWorkflowBaseInfo: null,
   versionFirstStageInstances: null,
-  workflowRollbackSqlIds: null
+  workflowRollbackSqlIds: null,
+  retryExecuteData: null,
+  modalStatus: {}
 };
 const sqlExecWorkflow = createSlice({
   name: 'sqlExecWorkflow',
@@ -53,14 +64,26 @@ const sqlExecWorkflow = createSlice({
       }>
     ) => {
       state.workflowRollbackSqlIds = workflowRollbackSqlIds;
-    }
+    },
+    updateRetryExecuteData: (
+      state,
+      {
+        payload: data
+      }: PayloadAction<SqlExecWorkflowReduxState['retryExecuteData']>
+    ) => {
+      state.retryExecuteData = data;
+    },
+    ...commonModalReducer()
   }
 });
 export const {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo,
   updateVersionFirstStageInstances,
-  updateWorkflowRollbackSqlIds
+  updateWorkflowRollbackSqlIds,
+  updateRetryExecuteData,
+  initModalStatus: initSqlExecWorkflowModalStatus,
+  updateModalStatus: updateSqlExecWorkflowModalStatus
 } = sqlExecWorkflow.actions;
 
 export default sqlExecWorkflow.reducer;
