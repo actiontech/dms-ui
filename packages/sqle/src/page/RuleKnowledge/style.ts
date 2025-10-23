@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import MDEditor from '@uiw/react-md-editor';
+import { BasicMDEditor } from '@actiontech/shared';
 
 export const RuleKnowledgeStyleWrapper = styled('div')`
   display: flex;
@@ -44,7 +44,7 @@ export const RuleKnowledgeContentStyleWrapper = styled('div')`
   }
 `;
 
-export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
+export const RuleKnowledgeEditorStyleWrapper = styled(BasicMDEditor)`
   .code-line {
     font-family: inherit !important;
 
@@ -74,7 +74,7 @@ export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
   }
 `;
 
-export const RuleKnowledgeMarkDownStyleWrapper = styled(MDEditor.Markdown)`
+export const RuleKnowledgeMarkDownStyleWrapper = styled(BasicMDEditor.Markdown)`
   &.wmde-markdown {
     background-color: transparent;
   }

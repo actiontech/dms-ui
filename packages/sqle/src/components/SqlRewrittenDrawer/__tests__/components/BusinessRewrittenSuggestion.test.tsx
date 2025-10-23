@@ -10,9 +10,17 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('BusinessRewrittenSuggestion', () => {
   describe('BusinessRewrittenSuggestion and BusinessRewrittenDetails', () => {
+    beforeEach(() => {
+      mockUseCurrentUser();
+    });
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
     ignoreConsoleErrors([
       UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE
     ]);
