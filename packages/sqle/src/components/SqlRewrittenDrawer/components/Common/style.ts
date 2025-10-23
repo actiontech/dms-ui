@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import MDEditor from '@uiw/react-md-editor';
+import { BasicMDEditor } from '@actiontech/shared';
 
 export const RewrittenSuggestionDetailsStyleWrapper = styled('div')`
   border: 1px solid
@@ -67,7 +67,7 @@ export const OptimizationSummaryStyleWrapper = styled('ul')`
   }
 `;
 
-export const MarkdownPreviewModeStyleWrapper = styled(MDEditor.Markdown)`
+export const MarkdownPreviewModeStyleWrapper = styled(BasicMDEditor.Markdown)`
   &.wmde-markdown {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase} !important;
     background-color: transparent;

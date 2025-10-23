@@ -53,10 +53,15 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
           </li>
           <li>
             <div
-              class="css-2p8eea"
-              rehypeplugins="() => jest.fn()"
+              class="full-width-element"
+              data-color-mode="light"
             >
-              原始SQL语句的目的是查询2023年创建的用户，这些用户有已完成的订单，订单金额大于100，支付状态不为空，订单描述包含'test'，或者用户邮箱包含'example'。查询结果随机排序，然后按照支付创建时间降序排序，最终返回第501到1500条记录。
+              <div
+                class="css-2p8eea"
+                rehypeplugins="() => jest.fn()"
+              >
+                原始SQL语句的目的是查询2023年创建的用户，这些用户有已完成的订单，订单金额大于100，支付状态不为空，订单描述包含'test'，或者用户邮箱包含'example'。查询结果随机排序，然后按照支付创建时间降序排序，最终返回第501到1500条记录。
+              </div>
             </div>
           </li>
         </ul>
@@ -278,10 +283,14 @@ LIMIT 1000 OFFSET 500;
             class="execute-item-content css-14chl4v"
           >
             <div
-              class="description-content css-2p8eea"
-              rehypeplugins="() => jest.fn()"
+              class="full-width-element"
+              data-color-mode="light"
             >
-              1. 基础表选择：
+              <div
+                class="description-content css-2p8eea"
+                rehypeplugins="() => jest.fn()"
+              >
+                1. 基础表选择：
    - 从users表开始，作为主表
    - 通过JOIN连接orders表获取订单信息
    - 通过JOIN连接payments表获取支付信息
@@ -304,6 +313,7 @@ LIMIT 1000 OFFSET 500;
 5. 结果限制：
    - LIMIT 1000 OFFSET 500：跳过前500条记录，返回接下来的1000条记录
 
+              </div>
             </div>
           </div>
         </div>
@@ -326,10 +336,14 @@ LIMIT 1000 OFFSET 500;
             class="execute-item-content css-14chl4v"
           >
             <div
-              class="description-content css-2p8eea"
-              rehypeplugins="() => jest.fn()"
+              class="full-width-element"
+              data-color-mode="light"
             >
-              1. 基础表选择：
+              <div
+                class="description-content css-2p8eea"
+                rehypeplugins="() => jest.fn()"
+              >
+                1. 基础表选择：
    - 从users表开始，作为主表
    - 通过JOIN连接orders表获取订单信息
    - 通过JOIN连接payments表获取支付信息
@@ -352,6 +366,7 @@ LIMIT 1000 OFFSET 500;
 5. 结果限制：
    - LIMIT 1000 OFFSET 500：返回第501到第1500条记录
 
+              </div>
             </div>
           </div>
         </div>
@@ -397,10 +412,15 @@ LIMIT 1000 OFFSET 500;
             class="ant-alert-message"
           >
             <div
-              class="css-2p8eea"
-              rehypeplugins="() => jest.fn()"
+              class="full-width-element"
+              data-color-mode="light"
             >
-              - **数据顺序**: 原SQL使用了\`ORDER BY RAND(), p.created_at DESC\`，而优化后的SQL使用了\`ORDER BY p.payment_created_at, u.id\`。这种差异可能导致结果集的顺序不同，尽管最终选择的数据范围和过滤条件是一致的。
+              <div
+                class="css-2p8eea"
+                rehypeplugins="() => jest.fn()"
+              >
+                - **数据顺序**: 原SQL使用了\`ORDER BY RAND(), p.created_at DESC\`，而优化后的SQL使用了\`ORDER BY p.payment_created_at, u.id\`。这种差异可能导致结果集的顺序不同，尽管最终选择的数据范围和过滤条件是一致的。
+              </div>
             </div>
           </div>
         </div>
