@@ -8,6 +8,12 @@ import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test PaginationList/SQLExecuteMode', () => {
   const customRender = (params?: Partial<SqlExecuteModeProps>) => {
@@ -20,7 +26,8 @@ describe('test PaginationList/SQLExecuteMode', () => {
       pagination: { page_index: 1, page_size: 20 },
       tableChange: jest.fn(),
       assigneeUserNames: [mockCurrentUserReturn.username],
-      execStatusFilterValue: null
+      execStatusFilterValue: null,
+      enableRetryExecute: true
     };
     return sqleSuperRender(<SQLExecuteMode {...{ ..._params, ...params }} />);
   };
@@ -29,6 +36,9 @@ describe('test PaginationList/SQLExecuteMode', () => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
   afterEach(() => {
     jest.useRealTimers();

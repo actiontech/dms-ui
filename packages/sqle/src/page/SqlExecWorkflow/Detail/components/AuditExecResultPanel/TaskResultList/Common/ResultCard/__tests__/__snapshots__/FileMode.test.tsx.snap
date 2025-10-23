@@ -84,7 +84,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                     </svg>
                     <a
                       class="file-info-name"
-                      href="/sqle/project/300200/exec-workflow/123/files/538/sqls"
+                      href="/sqle/project/300200/exec-workflow//task/123/files/538/sqls"
                     >
                       create_table_if_not_exist.sql
                     </a>
@@ -247,7 +247,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                     </svg>
                     <a
                       class="file-info-name"
-                      href="/sqle/project/300200/exec-workflow/123/files/538/sqls"
+                      href="/sqle/project/300200/exec-workflow//task/123/files/538/sqls"
                     >
                       create_table_if_not_exist.sql
                     </a>
@@ -410,7 +410,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     </svg>
                     <a
                       class="file-info-name"
-                      href="/sqle/project/300200/exec-workflow/123/files/538/sqls"
+                      href="/sqle/project/300200/exec-workflow//task/123/files/538/sqls"
                     >
                       create_table_if_not_exist.sql
                     </a>
@@ -597,7 +597,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                     </svg>
                     <a
                       class="file-info-name"
-                      href="/sqle/project/300200/exec-workflow/123/files/538/sqls"
+                      href="/sqle/project/300200/exec-workflow//task/123/files/538/sqls"
                     >
                       create_table_if_not_exist.sql
                     </a>
@@ -689,7 +689,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-scroll-horizontal"
+                      class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                     >
                       <div
                         class="ant-table-container"
@@ -709,13 +709,19 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                               >
                                 当前仅展示前5条数据，
                                 <a
-                                  href="/sqle/project/300200/exec-workflow/123/files/538/sqls"
+                                  href="/sqle/project/300200/exec-workflow//task/123/files/538/sqls"
                                 >
                                   查看更多
                                 </a>
                               </div>
                             </caption>
                             <colgroup>
+                              <col
+                                style="width: 100px;"
+                              />
+                              <col />
+                              <col />
+                              <col />
                               <col
                                 style="width: 100px;"
                               />
@@ -748,6 +754,13 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                 >
                                   执行结果
                                 </th>
+                                <th
+                                  class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                  scope="col"
+                                  style="position: sticky; right: 0px;"
+                                >
+                                  操作
+                                </th>
                               </tr>
                             </thead>
                             <tbody
@@ -758,6 +771,15 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                 class="ant-table-measure-row"
                                 style="height: 0px; font-size: 0px;"
                               >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
                                 <td
                                   style="padding: 0px; border: 0px; height: 0px;"
                                 >
@@ -888,6 +910,24 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                   >
                                     准备执行
                                   </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                  style="position: sticky; right: 0px;"
+                                >
+                                  <div
+                                    class="css-new95e"
+                                  >
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        再次执行
+                                      </span>
+                                    </button>
+                                  </div>
                                 </td>
                               </tr>
                             </tbody>

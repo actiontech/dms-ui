@@ -321,7 +321,21 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              hidden=""
+                              type="button"
+                            >
+                              <span>
+                                再次执行
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -468,7 +482,21 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              hidden=""
+                              type="button"
+                            >
+                              <span>
+                                再次执行
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -1062,7 +1090,21 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              hidden=""
+                              type="button"
+                            >
+                              <span>
+                                再次执行
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -1209,7 +1251,21 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              hidden=""
+                              type="button"
+                            >
+                              <span>
+                                再次执行
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
