@@ -8,6 +8,10 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetScheduledTaskDefaultOptionV1Return,
+  IGetGlobalDataExportWorkflowsV1Params,
+  IGetGlobalDataExportWorkflowsV1Return,
+  IGetGlobalDataExportWorkflowStatisticsV1Params,
+  IGetGlobalDataExportWorkflowStatisticsV1Return,
   IGetGlobalWorkflowsV1Params,
   IGetGlobalWorkflowsV1Return,
   IGetGlobalWorkflowStatisticsParams,
@@ -93,6 +97,30 @@ class WorkflowService extends ServiceBase {
     return this.get<IGetScheduledTaskDefaultOptionV1Return>(
       '/v1/configurations/workflows/schedule/default_option',
       undefined,
+      options
+    );
+  }
+
+  public getGlobalDataExportWorkflowsV1(
+    params: IGetGlobalDataExportWorkflowsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalDataExportWorkflowsV1Return>(
+      '/v1/dashboard/data_export_workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public getGlobalDataExportWorkflowStatisticsV1(
+    params: IGetGlobalDataExportWorkflowStatisticsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalDataExportWorkflowStatisticsV1Return>(
+      '/v1/dashboard/data_export_workflows/statistics',
+      paramsData,
       options
     );
   }

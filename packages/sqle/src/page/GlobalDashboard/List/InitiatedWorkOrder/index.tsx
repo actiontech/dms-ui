@@ -15,7 +15,7 @@ import {
   getGlobalWorkflowsV1FilterStatusListEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { GlobalDashboardListProps } from '../../index.type';
-import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkOrder/column';
+import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkflowTabs/ExecuteWorkflow/column';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { paramsSerializer } from '@actiontech/dms-kit';
 
