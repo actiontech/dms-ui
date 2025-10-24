@@ -23,7 +23,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -966,7 +966,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -992,7 +992,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -1019,7 +1019,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
             </span>
           </button>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >
@@ -1391,7 +1391,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1403,7 +1403,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1494,7 +1494,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1506,7 +1506,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1667,7 +1667,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1679,7 +1679,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       disabled=""
                                       type="button"
                                     >
@@ -1786,7 +1786,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1798,7 +1798,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1904,7 +1904,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -1916,7 +1916,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2116,7 +2116,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -2142,7 +2142,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >
@@ -2170,7 +2170,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
             </span>
           </button>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >
@@ -2542,7 +2542,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2554,7 +2554,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2645,7 +2645,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2657,7 +2657,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2818,7 +2818,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2830,7 +2830,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       disabled=""
                                       type="button"
                                     >
@@ -2937,7 +2937,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -2949,7 +2949,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -3055,7 +3055,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -3067,7 +3067,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -3572,7 +3572,7 @@ exports[`base/UserCenter switch to role list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -3598,7 +3598,7 @@ exports[`base/UserCenter switch to role list 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >
@@ -3626,7 +3626,7 @@ exports[`base/UserCenter switch to role list 1`] = `
             </span>
           </button>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -3997,7 +3997,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4009,7 +4009,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4100,7 +4100,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4112,7 +4112,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4273,7 +4273,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4285,7 +4285,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       disabled=""
                                       type="button"
                                     >
@@ -4392,7 +4392,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4404,7 +4404,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4510,7 +4510,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -4522,7 +4522,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5051,7 +5051,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5064,7 +5064,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5076,7 +5076,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5241,7 +5241,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5254,7 +5254,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5266,7 +5266,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5417,7 +5417,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5430,7 +5430,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -5442,7 +5442,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>

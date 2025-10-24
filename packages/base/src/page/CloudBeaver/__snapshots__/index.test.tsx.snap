@@ -268,7 +268,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -314,7 +314,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -327,7 +327,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -380,7 +380,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -916,7 +916,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -962,7 +962,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -975,7 +975,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1028,7 +1028,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -1490,7 +1490,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -1720,7 +1720,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -1884,7 +1884,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="button"
                               >
@@ -1964,7 +1964,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="button"
                               >
@@ -2153,7 +2153,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
       class="extra"
     >
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span>
@@ -2352,7 +2352,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -2398,7 +2398,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -2411,7 +2411,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -2464,7 +2464,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -2926,7 +2926,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -3156,7 +3156,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -3320,7 +3320,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="button"
                               >
@@ -3400,7 +3400,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="button"
                               >

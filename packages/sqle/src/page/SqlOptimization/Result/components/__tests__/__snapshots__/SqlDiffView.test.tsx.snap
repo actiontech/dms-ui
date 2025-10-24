@@ -14,7 +14,7 @@ exports[`SqlDiffView should render with custom titles 1`] = `
         >
           Original Query
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >
@@ -40,7 +40,7 @@ exports[`SqlDiffView should render with custom titles 1`] = `
         >
           Optimized Query
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >
@@ -98,7 +98,7 @@ exports[`SqlDiffView should render with different length SQLs 1`] = `
         >
           优化前
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >
@@ -124,7 +124,7 @@ exports[`SqlDiffView should render with different length SQLs 1`] = `
         >
           优化后
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >
@@ -192,7 +192,7 @@ exports[`SqlDiffView should render with empty SQL strings 1`] = `
         >
           优化前
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >
@@ -218,7 +218,7 @@ exports[`SqlDiffView should render with empty SQL strings 1`] = `
         >
           优化后
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
             title="复制"
             type="button"
           >

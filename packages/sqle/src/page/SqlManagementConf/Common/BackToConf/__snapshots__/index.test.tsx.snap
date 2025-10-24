@@ -6,7 +6,7 @@ exports[`test SqlManagementConf/common/BackToConf should match snapshot 1`] = `
     href="/sqle/project/700300/sql-management-conf"
   >
     <button
-      class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <span

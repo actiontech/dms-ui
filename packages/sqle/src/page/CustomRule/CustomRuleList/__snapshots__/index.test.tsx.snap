@@ -438,7 +438,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span
@@ -465,7 +465,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -1533,7 +1533,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span
@@ -1560,7 +1560,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -1732,7 +1732,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span
@@ -1759,7 +1759,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span

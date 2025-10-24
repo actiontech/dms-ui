@@ -212,7 +212,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                 class="ant-drawer-extra"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>

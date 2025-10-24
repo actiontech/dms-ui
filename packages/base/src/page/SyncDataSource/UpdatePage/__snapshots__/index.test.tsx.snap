@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -60,7 +60,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -889,7 +889,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                               value="0 0 * * *"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -937,7 +937,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -972,7 +972,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -984,7 +984,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1077,7 +1077,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -1104,7 +1104,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -1139,7 +1139,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1151,7 +1151,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1980,7 +1980,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                               value="0 0 * * *"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -2028,7 +2028,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -2063,7 +2063,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -2075,7 +2075,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -3306,7 +3306,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               value="1 1 * 1 2"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -3354,7 +3354,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -3389,7 +3389,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -3401,7 +3401,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -4632,7 +4632,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                               value="1 1 * 1 2"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -4680,7 +4680,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -4715,7 +4715,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -4727,7 +4727,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -4820,7 +4820,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -4847,7 +4847,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -4882,7 +4882,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -4894,7 +4894,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -4987,7 +4987,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -5013,7 +5013,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
           type="button"
         >
           <span
@@ -5048,7 +5048,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -5060,7 +5060,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -6291,7 +6291,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                             value="1 1 * 1 2"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span

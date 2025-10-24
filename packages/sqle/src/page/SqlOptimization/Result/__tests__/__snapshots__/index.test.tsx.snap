@@ -13,7 +13,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
           href="/sqle/project/700300/sql-audit?active=sql_optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -90,7 +90,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -118,7 +118,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 title="复制"
                                 type="button"
                               >
@@ -340,7 +340,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -371,7 +371,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 title="复制"
                                 type="button"
                               >
@@ -520,7 +520,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -548,7 +548,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span

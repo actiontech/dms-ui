@@ -13,7 +13,7 @@ exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is f
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             disabled=""
             type="button"
           >
@@ -79,7 +79,7 @@ exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is t
       class="css-1diyz6t"
     >
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span

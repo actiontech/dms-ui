@@ -22,7 +22,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -37,7 +37,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
               href="/project/700300/db-services/create"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -131,7 +131,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -176,7 +176,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
               disabled=""
               type="button"
             >

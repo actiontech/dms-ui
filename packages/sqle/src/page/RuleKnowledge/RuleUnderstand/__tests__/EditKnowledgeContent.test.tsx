@@ -10,6 +10,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('rehype-rewrite', () => {
   return {
@@ -24,6 +25,7 @@ describe('page/RuleKnowledge/EditKnowledgeContent', () => {
   const mockSetHasDirtyData = jest.fn();
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

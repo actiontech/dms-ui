@@ -606,7 +606,7 @@ exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap when api return
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -773,7 +773,7 @@ exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap when api return
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>

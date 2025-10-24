@@ -104,7 +104,7 @@ exports[`page/Home render Home page 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -465,7 +465,7 @@ exports[`page/Home render Home page 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span

@@ -268,7 +268,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -824,7 +824,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -12333,7 +12333,7 @@ exports[`SqlAnalyze/Workflow should render error result of type "info" when resp
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>

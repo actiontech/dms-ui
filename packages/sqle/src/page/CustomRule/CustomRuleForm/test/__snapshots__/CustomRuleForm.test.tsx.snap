@@ -801,7 +801,7 @@ exports[`sqle/CustomRule/Form should match snap 1`] = `
             </div>
           </div>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -1768,7 +1768,7 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 1`] = `
             </div>
           </div>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -2735,7 +2735,7 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 2`] = `
             </div>
           </div>
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>

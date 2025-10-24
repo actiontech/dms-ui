@@ -10,7 +10,7 @@ exports[`base/System/components/ConfigModifyBtn render snap 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
+          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
           type="button"
         >
           <span

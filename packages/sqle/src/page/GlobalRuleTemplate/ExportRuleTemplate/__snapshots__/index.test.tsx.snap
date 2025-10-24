@@ -149,7 +149,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -157,7 +157,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>

@@ -311,7 +311,7 @@ exports[`lib/BasicEmpty render has refresh icon 1`] = `
       class="ant-empty-footer"
     >
       <button
-        class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
+        class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span>

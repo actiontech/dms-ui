@@ -291,7 +291,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -581,7 +581,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -869,7 +869,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -1511,7 +1511,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1529,7 +1529,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1606,7 +1606,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>

@@ -3,30 +3,35 @@
 exports[`page/RuleKnowledge/EditKnowledgeContent input text for edit knowledge content 1`] = `
 <body>
   <div>
-    <div>
-      <input
-        class="css-ldyx34"
-        height="500px"
-        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
-        textareaprops="{"placeholder":"在此处输入.."}"
-        value="123"
-      />
-      <button
-        aria-label="Insert help"
-      >
-        label
-        <span>
-          Label
-        </span>
-      </button>
-      <button
-        aria-label="Insert help"
-      >
-        Diff
-        <span>
+    <div
+      class="full-width-element"
+      data-color-mode="light"
+    >
+      <div>
+        <input
+          class="css-ldyx34"
+          height="500px"
+          previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+          textareaprops="{"placeholder":"在此处输入.."}"
+          value="123"
+        />
+        <button
+          aria-label="Insert help"
+        >
+          label
+          <span>
+            Label
+          </span>
+        </button>
+        <button
+          aria-label="Insert help"
+        >
           Diff
-        </span>
-      </button>
+          <span>
+            Diff
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </body>
@@ -35,30 +40,35 @@ exports[`page/RuleKnowledge/EditKnowledgeContent input text for edit knowledge c
 exports[`page/RuleKnowledge/EditKnowledgeContent render default content 1`] = `
 <body>
   <div>
-    <div>
-      <input
-        class="css-ldyx34"
-        height="500px"
-        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
-        textareaprops="{"placeholder":"在此处输入.."}"
-        value="edit text"
-      />
-      <button
-        aria-label="Insert help"
-      >
-        label
-        <span>
-          Label
-        </span>
-      </button>
-      <button
-        aria-label="Insert help"
-      >
-        Diff
-        <span>
+    <div
+      class="full-width-element"
+      data-color-mode="light"
+    >
+      <div>
+        <input
+          class="css-ldyx34"
+          height="500px"
+          previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+          textareaprops="{"placeholder":"在此处输入.."}"
+          value="edit text"
+        />
+        <button
+          aria-label="Insert help"
+        >
+          label
+          <span>
+            Label
+          </span>
+        </button>
+        <button
+          aria-label="Insert help"
+        >
           Diff
-        </span>
-      </button>
+          <span>
+            Diff
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </body>
@@ -67,30 +77,35 @@ exports[`page/RuleKnowledge/EditKnowledgeContent render default content 1`] = `
 exports[`page/RuleKnowledge/EditKnowledgeContent render empty content 1`] = `
 <body>
   <div>
-    <div>
-      <input
-        class="css-ldyx34"
-        height="500px"
-        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
-        textareaprops="{"placeholder":"在此处输入.."}"
-        value=""
-      />
-      <button
-        aria-label="Insert help"
-      >
-        label
-        <span>
-          Label
-        </span>
-      </button>
-      <button
-        aria-label="Insert help"
-      >
-        Diff
-        <span>
+    <div
+      class="full-width-element"
+      data-color-mode="light"
+    >
+      <div>
+        <input
+          class="css-ldyx34"
+          height="500px"
+          previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+          textareaprops="{"placeholder":"在此处输入.."}"
+          value=""
+        />
+        <button
+          aria-label="Insert help"
+        >
+          label
+          <span>
+            Label
+          </span>
+        </button>
+        <button
+          aria-label="Insert help"
+        >
           Diff
-        </span>
-      </button>
+          <span>
+            Diff
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </body>

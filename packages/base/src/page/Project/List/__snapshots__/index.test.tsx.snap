@@ -687,7 +687,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               disabled=""
                               type="button"
                             >
@@ -701,7 +701,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               disabled=""
                               type="button"
                             >
@@ -714,7 +714,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -882,7 +882,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -895,7 +895,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -907,7 +907,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1074,7 +1074,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               disabled=""
                               type="button"
                             >
@@ -1088,7 +1088,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               disabled=""
                               type="button"
                             >
@@ -1101,7 +1101,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>

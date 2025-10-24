@@ -449,7 +449,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-snii23"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
                                 type="button"
                               >
                                 <span
@@ -491,7 +491,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -503,7 +503,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -976,7 +976,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-snii23"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
                                 type="button"
                               >
                                 <span
@@ -1018,7 +1018,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1030,7 +1030,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1814,7 +1814,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                   class="ant-form-item-control-input-content"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-j8nm0d"
+                                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-g7qceb"
                                     type="button"
                                   >
                                     <span
@@ -1856,7 +1856,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-snii23"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
                                 type="button"
                               >
                                 <span
@@ -1898,7 +1898,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1910,7 +1910,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

@@ -56,7 +56,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
                 class="action-items-wrapper"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -217,7 +217,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
         class="action-items-wrapper"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
           type="button"
         >
           <span>
@@ -383,7 +383,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
         class="action-items-wrapper"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
           type="button"
         >
           <span>

@@ -107,7 +107,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -671,7 +671,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -683,7 +683,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -790,7 +790,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                   target="_blank"
                                 >
@@ -1080,7 +1080,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://www.actionsky.com/sqle?question=true"
                                   target="_blank"
                                 >
@@ -1368,7 +1368,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                   target="_blank"
                                 >
@@ -2010,7 +2010,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                               target="_blank"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -2028,7 +2028,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                               target="_blank"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -2105,7 +2105,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -2211,7 +2211,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -2775,7 +2775,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -2787,7 +2787,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -2894,7 +2894,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                   target="_blank"
                                 >
@@ -3184,7 +3184,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://www.actionsky.com/sqle?question=true"
                                   target="_blank"
                                 >
@@ -3472,7 +3472,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                 style="margin-bottom: 16px;"
                               >
                                 <a
-                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                   href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                   target="_blank"
                                 >
@@ -4114,7 +4114,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                               target="_blank"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -4132,7 +4132,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                               target="_blank"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -4209,7 +4209,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>

@@ -825,7 +825,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -1673,7 +1673,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -2521,7 +2521,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -3356,7 +3356,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                             value="0 0 * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -4202,7 +4202,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1uxy5k6"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span

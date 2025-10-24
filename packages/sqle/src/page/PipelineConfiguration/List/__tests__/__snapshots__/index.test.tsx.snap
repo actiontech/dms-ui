@@ -18,7 +18,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
           href="/sqle/project/700300/pipeline-configuration/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span
@@ -118,7 +118,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -525,7 +525,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -537,7 +537,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -621,7 +621,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -633,7 +633,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -693,7 +693,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -705,7 +705,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -765,7 +765,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -777,7 +777,7 @@ exports[`sqle/PipelineConfiguration/List render pipeline list 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -972,7 +972,7 @@ exports[`sqle/PipelineConfiguration/List render prompt when no pipeline 1`] = `
           href="/sqle/project/700300/pipeline-configuration/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span

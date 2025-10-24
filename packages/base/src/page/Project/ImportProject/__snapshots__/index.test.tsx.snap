@@ -16,7 +16,7 @@ exports[`base/Project/Import render delete file 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -44,7 +44,7 @@ exports[`base/Project/Import render delete file 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -138,7 +138,7 @@ exports[`base/Project/Import render delete file 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -260,7 +260,7 @@ exports[`base/Project/Import render return to list page 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -288,7 +288,7 @@ exports[`base/Project/Import render return to list page 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -382,7 +382,7 @@ exports[`base/Project/Import render return to list page 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -432,7 +432,7 @@ exports[`base/Project/Import render upload file 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -460,7 +460,7 @@ exports[`base/Project/Import render upload file 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -554,7 +554,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -934,7 +934,7 @@ exports[`base/Project/Import render upload file 2`] = `
             href="/project"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -1383,7 +1383,7 @@ exports[`base/Project/Import render upload file 2`] = `
             class="ant-result-extra"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
