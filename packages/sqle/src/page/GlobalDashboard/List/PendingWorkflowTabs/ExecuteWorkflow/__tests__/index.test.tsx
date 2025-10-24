@@ -3,13 +3,13 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
-import { sqleSuperRender } from '../../../../../testUtils/superRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import PendingWorkOrder from '../index';
-import { GlobalDashboardFilterType } from '../../../index.type';
+import { GlobalDashboardFilterType } from '../../../../index.type';
 import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import eventEmitter from '../../../../../utils/EventEmitter';
-import EmitterKey from '../../../../../data/EmitterKey';
+import eventEmitter from '../../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../../data/EmitterKey';
 import { paramsSerializer } from '@actiontech/dms-kit/es/utils/Common';
 
 describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
@@ -117,7 +117,7 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Work_Order);
+      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Execute_Work_Order);
       jest.advanceTimersByTime(0);
     });
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(2);

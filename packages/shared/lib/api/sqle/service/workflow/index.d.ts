@@ -33,6 +33,10 @@ import {
 } from '../common.d';
 
 import {
+  getGlobalDataExportWorkflowsV1FilterStatusListEnum,
+  getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum,
+  getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum,
+  getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum,
   getGlobalWorkflowsV1FilterStatusListEnum,
   getGlobalWorkflowsV1FilterProjectPriorityEnum,
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
@@ -44,6 +48,40 @@ import {
 
 export interface IGetScheduledTaskDefaultOptionV1Return
   extends IScheduledTaskDefaultOptionV1Rsp {}
+
+export interface IGetGlobalDataExportWorkflowsV1Params {
+  filter_create_user_id?: string;
+
+  filter_status_list?: getGlobalDataExportWorkflowsV1FilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum;
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetGlobalDataExportWorkflowsV1Return
+  extends IGetWorkflowsResV1 {}
+
+export interface IGetGlobalDataExportWorkflowStatisticsV1Params {
+  filter_create_user_id?: string;
+
+  filter_status_list?: getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum;
+}
+
+export interface IGetGlobalDataExportWorkflowStatisticsV1Return
+  extends IGlobalWorkflowStatisticsResV1 {}
 
 export interface IGetGlobalWorkflowsV1Params {
   filter_create_user_id?: string;

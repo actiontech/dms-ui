@@ -6,12 +6,13 @@ import { useState, useMemo } from 'react';
 import { GlobalDashBoardSegmentedEnum } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import PendingWorkOrder from './List/PendingWorkOrder';
+import PendingWorkflowTabs from './List/PendingWorkflowTabs';
 import PendingSql from './List/PendingSql';
 import InitiatedWorkOrder from './List/InitiatedWorkOrder';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
+
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
   const {
@@ -24,14 +25,16 @@ const GlobalDashBoard = () => {
     refreshStatistics,
     pendingSqlStatistics,
     pendingWorkflowOrderStatistics,
-    initiatedWorkflowOrderStatistics
+    initiatedWorkflowOrderStatistics,
+    pendingExportWorkflowOrderStatistics
   } = useDashboardFilter();
   const [activeKey, setActiveKey] = useState(
     GlobalDashBoardSegmentedEnum.PendingWorkOrder
   );
   const onRefresh = () => {
     if (activeKey === GlobalDashBoardSegmentedEnum.PendingWorkOrder) {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Work_Order);
+      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Execute_Work_Order);
+      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Export_Work_Order);
     } else if (activeKey === GlobalDashBoardSegmentedEnum.PendingSqlRecord) {
       eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Sql);
     } else if (activeKey === GlobalDashBoardSegmentedEnum.InitiatedWorkOrder) {
@@ -47,14 +50,19 @@ const GlobalDashBoard = () => {
         label: (
           <Space>
             {t('globalDashboard.pendingWorkOrder')}
-            {pendingWorkflowOrderStatistics}
+            {(pendingWorkflowOrderStatistics ?? 0) +
+              (pendingExportWorkflowOrderStatistics ?? 0)}
           </Space>
         ),
         value: GlobalDashBoardSegmentedEnum.PendingWorkOrder,
         children: (
-          <PendingWorkOrder
+          <PendingWorkflowTabs
             filterValues={filterValues}
             updateFilterValue={updateFilterValue}
+            pendingWorkflowOrderStatistics={pendingWorkflowOrderStatistics ?? 0}
+            pendingExportWorkflowOrderStatistics={
+              pendingExportWorkflowOrderStatistics ?? 0
+            }
           />
         ),
         destroyInactivePane: true
@@ -94,10 +102,11 @@ const GlobalDashBoard = () => {
     ];
   }, [
     t,
+    pendingWorkflowOrderStatistics,
+    pendingExportWorkflowOrderStatistics,
     filterValues,
     updateFilterValue,
     pendingSqlStatistics,
-    pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics
   ]);
   return (
