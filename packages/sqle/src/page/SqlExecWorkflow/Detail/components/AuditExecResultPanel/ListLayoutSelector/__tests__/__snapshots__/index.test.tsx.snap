@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div
@@ -126,7 +126,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div
@@ -247,7 +247,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div
@@ -369,7 +369,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div
@@ -490,7 +490,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div
@@ -552,7 +552,7 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1uxy5k6"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
       type="button"
     >
       <div

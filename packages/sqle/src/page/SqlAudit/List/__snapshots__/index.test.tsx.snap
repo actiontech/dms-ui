@@ -72,7 +72,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -118,7 +118,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1096,7 +1096,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1141,7 +1141,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1934,7 +1934,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1979,7 +1979,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >

@@ -108,7 +108,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -139,7 +139,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -571,7 +571,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -583,7 +583,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -692,7 +692,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -723,7 +723,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -1074,7 +1074,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -1086,7 +1086,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -1195,7 +1195,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -1226,7 +1226,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -1448,7 +1448,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -1460,7 +1460,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -1586,7 +1586,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -1617,7 +1617,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -2024,7 +2024,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -2036,7 +2036,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -2145,7 +2145,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -2176,7 +2176,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -2608,7 +2608,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -2620,7 +2620,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -2834,7 +2834,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -2865,7 +2865,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -3216,7 +3216,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -3228,7 +3228,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -3313,7 +3313,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -3344,7 +3344,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -3566,7 +3566,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -3578,7 +3578,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>
@@ -3719,7 +3719,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1uxy5k6"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                           type="button"
                                         >
                                           <span
@@ -3750,7 +3750,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-1or4o1w"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                           type="button"
                                         >
                                           <span
@@ -4157,7 +4157,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                   type="button"
                                 >
                                   <span>
@@ -4169,7 +4169,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                   type="submit"
                                 >
                                   <span>

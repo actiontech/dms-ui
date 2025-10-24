@@ -209,7 +209,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <a
@@ -225,7 +225,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -451,7 +451,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <a
@@ -467,7 +467,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

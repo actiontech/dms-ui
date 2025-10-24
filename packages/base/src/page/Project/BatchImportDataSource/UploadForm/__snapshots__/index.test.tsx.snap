@@ -96,7 +96,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                                 type="file"
                               />
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1uxy5k6"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>

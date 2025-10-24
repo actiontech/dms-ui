@@ -420,7 +420,7 @@ exports[`test base/DataExport/Create/SubmitResult should match snapshot 1`] = `
           href="/project/700300/data/export/123"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>

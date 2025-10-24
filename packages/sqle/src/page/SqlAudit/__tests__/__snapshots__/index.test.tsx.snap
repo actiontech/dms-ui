@@ -23,7 +23,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1uxy5k6"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -59,7 +59,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 href="/sqle/project//sql-audit/create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -94,7 +94,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 href="/sqle/project//sql-audit/create-optimization"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1uxy5k6"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -265,7 +265,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1uxy5k6"
+                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                         style="padding: 0px 6px 0px 10px;"
                         type="button"
                       >
@@ -310,7 +310,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1uxy5k6"
+                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                         style="padding: 0px 6px 0px 8px;"
                         type="button"
                       >

@@ -86,6 +86,14 @@ exports[`ReportStatistics/LicenseStatistics/LicenseColumn render tooltip customC
               "background": "#F7F6F4",
             },
           },
+          "link": {
+            "default": {
+              "color": "#4583ff",
+            },
+            "hover": {
+              "color": "#69b1ff",
+            },
+          },
           "primary": {
             "active": {
               "background": "#3B6FD9",

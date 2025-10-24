@@ -134,7 +134,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap when api return em
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1uxy5k6"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -234,6 +234,14 @@ exports[`ReportStatistics/DatabaseTypeOrder render tooltip customContent 1`] = `
             },
             "hover": {
               "background": "#F7F6F4",
+            },
+          },
+          "link": {
+            "default": {
+              "color": "#4583ff",
+            },
+            "hover": {
+              "color": "#69b1ff",
             },
           },
           "primary": {
