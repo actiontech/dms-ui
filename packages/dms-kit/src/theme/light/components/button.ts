@@ -48,6 +48,14 @@ const basicButtonTheme: BasicButtonTheme = {
     default: {
       border: `1px dashed ${lightThemeUI.uiToken.colorBorder}`
     }
+  },
+  link: {
+    default: {
+      color: lightThemeUI.uiToken.colorPrimary
+    },
+    hover: {
+      color: '#69b1ff'
+    }
   }
 };
 
