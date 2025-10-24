@@ -94,8 +94,7 @@ const useDashboardFilter = () => {
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.wait_for_export,
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.failed,
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.rejected
-          ],
-          filter_create_user_id: userId
+          ]
         },
         {
           paramsSerializer
@@ -112,8 +111,7 @@ const useDashboardFilter = () => {
     setPendingExportWorkflowOrderStatisticsPending,
     instanceId,
     projectId,
-    projectPriority,
-    userId
+    projectPriority
   ]);
   // #endif
 
