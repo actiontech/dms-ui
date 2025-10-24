@@ -29,8 +29,29 @@ export const BasicButtonStyleWrapper = styled(Button)`
     margin-inline-end: 5px;
   }
 
+  &.basic-button-wrapper.ant-btn.ant-btn-text,
+  &.basic-button-wrapper.ant-btn.ant-btn-link {
+    background: none;
+    box-shadow: none;
+
+    &:disabled {
+      background: none;
+    }
+  }
+
+  &.basic-button-wrapper.ant-btn.ant-btn-link {
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.basicButton.link.default.color};
+
+    &:hover:not(:disabled) {
+      color: ${({ theme }) =>
+        theme.sharedTheme.components.basicButton.link.hover.color};
+      background: none;
+    }
+  }
+
   /* default */
-  &.basic-button-wrapper.ant-btn:not(.ant-btn-text):not(.ant-btn-link) {
+  &.basic-button-wrapper.ant-btn {
     padding: 0 12px;
     background: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.default.default.background};
@@ -58,7 +79,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* primary */
-  &.basic-button-wrapper.ant-btn-primary:not(.ant-btn-text):not(.ant-btn-link) {
+  &.basic-button-wrapper.ant-btn-primary {
     color: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.primary.default.color};
     background: ${({ theme }) =>
