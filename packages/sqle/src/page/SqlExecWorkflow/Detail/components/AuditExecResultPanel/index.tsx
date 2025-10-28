@@ -18,7 +18,7 @@ import {
 import { ToggleButtonStyleWrapper } from '../../../Common/style';
 import DownloadRecord from '../../../Common/DownloadRecord';
 import AuditResultFilterContainer from '../../../Common/AuditResultFilterContainer';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
   execStatusDictionary,
@@ -28,6 +28,13 @@ import TaskResultList from './TaskResultList';
 import useTaskResultSetup from './hooks/useTaskResultSetup';
 import ListLayoutSelector from './ListLayoutSelector';
 import WorkflowOverviewList from './OverviewList';
+import RetryExecuteModal from './RetryExecuteModal';
+import { useDispatch } from 'react-redux';
+import { initSqlExecWorkflowModalStatus } from '../../../../../store/sqlExecWorkflow/index';
+import { ModalName } from '../../../../../data/ModalName';
+import EmitterKey from '../../../../../data/EmitterKey';
+import EventEmitter from '../../../../../utils/EventEmitter';
+import useRetryExecute from './hooks/useRetryExecute';
 
 const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
   activeTabKey,
@@ -35,6 +42,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
   ...resetProps
 }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const { getAuditLevelStatusSelectOptionValues } = useStaticStatus();
   const {
     noDuplicate,
@@ -84,6 +92,34 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     resetProps.workflowInfo?.record?.workflow_step_list
   ]);
 
+  const { enableRetryExecute } = useRetryExecute({
+    currentTask: resetProps.overviewList?.list?.find(
+      (v) => v.task_id?.toString() === activeTabKey
+    ),
+    workflowInfo: resetProps.workflowInfo
+  });
+
+  useEffect(() => {
+    dispatch(
+      initSqlExecWorkflowModalStatus({
+        modalStatus: {
+          [ModalName.Sql_Exec_Workflow_Retry_Execute_Modal]: false
+        }
+      })
+    );
+  }, [dispatch]);
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Sql_Retry_Execute_Done,
+      () => {
+        resetProps.refreshWorkflow();
+        resetProps.refreshOverviewAction();
+      }
+    );
+    return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [resetProps.refreshWorkflow, resetProps.refreshOverviewAction]);
   return (
     <AuditExecResultPanelStyleWrapper>
       <div className="audit-result-title">{t('audit.result')}</div>
@@ -202,8 +238,12 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           dbType={currentTask?.instance_db_type}
           enableBackup={currentTask?.enable_backup}
           taskStatus={currentTask?.status}
+          instanceName={currentTask?.instance_name}
+          schema={currentTask?.instance_schema}
+          enableRetryExecute={enableRetryExecute}
         />
       </EmptyBox>
+      <RetryExecuteModal />
     </AuditExecResultPanelStyleWrapper>
   );
 };

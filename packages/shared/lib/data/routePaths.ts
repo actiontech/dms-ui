@@ -203,7 +203,8 @@ export const ROUTE_PATHS = {
       },
       sql_files_overview: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: ':taskId/files/:fileId/sqls'
+        path: ':workflowId/task/:taskId/files/:fileId/sqls',
+        query: 'instance_name&schema'
       }
     },
     SQL_AUDIT: {

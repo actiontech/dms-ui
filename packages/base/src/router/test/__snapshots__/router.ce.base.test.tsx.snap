@@ -258,7 +258,7 @@ exports[`base/router-base-ce render base route data snap 1`] = `
               workflowSqlFileStatementOverview
             </div>,
             "key": "workflowSqlFileStatementOverview",
-            "path": ":taskId/files/:fileId/sqls",
+            "path": ":workflowId/task/:taskId/files/:fileId/sqls",
           },
         ],
         "element": <div

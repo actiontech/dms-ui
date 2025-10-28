@@ -21,7 +21,8 @@ import {
   CustomSegmentedFilter,
   PageHeader,
   useTypedNavigate,
-  useTypedParams
+  useTypedParams,
+  useTypedQuery
 } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
@@ -35,13 +36,28 @@ import DownloadRecord from '../../../../../Common/DownloadRecord';
 import { AuditResultFilterContainerStyleWrapper } from '../../../../../Common/AuditResultFilterContainer/style';
 import { LeftArrowOutlined, SqlFileOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ModalName } from '../../../../../../../data/ModalName';
+import EmitterKey from '../../../../../../../data/EmitterKey';
+import EventEmitter from '../../../../../../../utils/EventEmitter';
+import { initSqlExecWorkflowModalStatus } from '../../../../../../../store/sqlExecWorkflow';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import RetryExecuteModal from '../../RetryExecuteModal';
+import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
+import useRetryExecute from '../../hooks/useRetryExecute';
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
-  const { taskId, fileId } =
+  const dispatch = useDispatch();
+  const { taskId, fileId, workflowId } =
     useTypedParams<
       typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
     >();
+
+  const { projectName } = useCurrentProject();
+
+  const extractQuery = useTypedQuery();
 
   const navigate = useTypedNavigate();
   const { requestErrorMessage, handleTableRequestError } =
@@ -63,6 +79,36 @@ const SqlFileStatementOverview: React.FC = () => {
       AuditTaskExtraFilterMeta()
     );
 
+  const { data: workflowInfo, loading: getWorkflowLoading } = useRequest(
+    () =>
+      workflow
+        .getWorkflowV2({
+          project_name: projectName,
+          workflow_id: workflowId ?? ''
+        })
+        .then((res) => res.data.data),
+    {
+      ready: !!workflowId
+    }
+  );
+
+  const { loading: taskListLoading, data: currentTask } = useRequest(
+    () =>
+      workflow
+        .getSummaryOfInstanceTasksV2({
+          workflow_id: workflowId ?? '',
+          project_name: projectName
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            return res.data.data?.find((i) => i.task_id?.toString() === taskId);
+          }
+        }),
+    {
+      ready: !!workflowId
+    }
+  );
+
   const { data: currentFileOverview } = useRequest(() =>
     task
       .getAuditFileExecStatistic({
@@ -75,8 +121,7 @@ const SqlFileStatementOverview: React.FC = () => {
         }
       })
   );
-
-  const { data, loading } = useRequest(
+  const { data, loading, refresh } = useRequest(
     () =>
       handleTableRequestError(
         task.getAuditTaskSQLsV2({
@@ -98,6 +143,33 @@ const SqlFileStatementOverview: React.FC = () => {
       ]
     }
   );
+
+  const searchParams = extractQuery(
+    ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
+  );
+
+  useEffect(() => {
+    dispatch(
+      initSqlExecWorkflowModalStatus({
+        modalStatus: {
+          [ModalName.Sql_Exec_Workflow_Retry_Execute_Modal]: false
+        }
+      })
+    );
+  }, [dispatch]);
+
+  const { enableRetryExecute } = useRetryExecute({
+    currentTask,
+    workflowInfo
+  });
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Sql_Retry_Execute_Done,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
 
   return (
     <SqlFileStatementOverviewStyleWrapper>
@@ -163,7 +235,7 @@ const SqlFileStatementOverview: React.FC = () => {
 
       <SqlStatementResultTable
         dataSource={data?.list ?? []}
-        loading={loading}
+        loading={loading || taskListLoading || getWorkflowLoading}
         errorMessage={requestErrorMessage}
         pagination={{
           total: data?.total ?? 0,
@@ -172,7 +244,11 @@ const SqlFileStatementOverview: React.FC = () => {
         onChange={tableChange}
         taskId={taskId}
         isPaginationFixed
+        instanceName={searchParams?.instance_name ?? ''}
+        schema={searchParams?.schema ?? ''}
+        enableSqlRetryExecute={enableRetryExecute}
       />
+      <RetryExecuteModal />
     </SqlFileStatementOverviewStyleWrapper>
   );
 };
