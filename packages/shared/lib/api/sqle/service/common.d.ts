@@ -683,6 +683,8 @@ export interface ICreateAuditTaskReqV1 {
 
   instance_schema?: string;
 
+  rule_template_name?: string;
+
   sql?: string;
 }
 
@@ -1948,14 +1950,6 @@ export interface IGetSystemModuleRedDotsRes {
   message?: string;
 }
 
-export interface IGetSystemVariablesResV1 {
-  code?: number;
-
-  data?: ISystemVariablesResV1;
-
-  message?: string;
-}
-
 export interface IGetTableMetadataResV1 {
   code?: number;
 
@@ -2666,6 +2660,10 @@ export interface IProjectScore {
   score?: number;
 }
 
+export interface IReExecuteTaskOnWorkflowReq {
+  exec_sql_ids?: number[];
+}
+
 export interface IRecordSource {
   name?: RecordSourceNameEnum;
 
@@ -3230,14 +3228,6 @@ export interface IStatisticsAuditedSQLResV1 {
   risk_rate?: number;
 }
 
-export interface ISystemVariablesResV1 {
-  cb_operation_logs_expired_hours?: number;
-
-  operation_record_expired_hours?: number;
-
-  url?: string;
-}
-
 export interface ITable {
   name?: string;
 }
@@ -3594,14 +3584,6 @@ export interface IUpdateStagesInstanceDep {
   next_stage_instance_id?: string;
 
   stage_instance_id?: string;
-}
-
-export interface IUpdateSystemVariablesReqV1 {
-  cb_operation_logs_expired_hours?: number;
-
-  operation_record_expired_hours?: number;
-
-  url?: string;
 }
 
 export interface IUpdateTaskBackupStrategyReq {

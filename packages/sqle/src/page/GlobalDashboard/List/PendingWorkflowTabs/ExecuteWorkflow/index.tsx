@@ -1,30 +1,27 @@
 import React, { useEffect, useCallback } from 'react';
-import eventEmitter from '../../../../utils/EventEmitter';
-import EmitterKey from '../../../../data/EmitterKey';
+import eventEmitter from '../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../data/EmitterKey';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';
-import {
-  ActiontechTable,
-  useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetGlobalWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   getGlobalWorkflowsV1FilterProjectPriorityEnum,
   getGlobalWorkflowsV1FilterStatusListEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
-import { GlobalDashboardListProps } from '../../index.type';
-import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkOrder/column';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
-import { paramsSerializer } from '@actiontech/shared';
+import { GlobalDashboardListProps } from '../../../index.type';
+import { GlobalDashboardPendingWorkflowListColumn } from './column';
+import {
+  ActiontechTable,
+  paramsSerializer,
+  useTableRequestError,
+  useTableRequestParams
+} from '@actiontech/shared';
 
-const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
+const PendingExecuteWorkflow: React.FC<GlobalDashboardListProps> = ({
   filterValues,
   updateFilterValue
 }) => {
-  const { userId } = useCurrentUser();
-
   const { pagination, tableChange } =
     useTableRequestParams<IWorkflowDetailResV1>();
 
@@ -44,7 +41,6 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
         filter_project_priority:
           filterValues.projectPriority as unknown as getGlobalWorkflowsV1FilterProjectPriorityEnum,
         filter_project_uid: filterValues.projectId,
-        filter_create_user_id: userId,
         filter_status_list: [
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_audit,
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,
@@ -74,7 +70,7 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
-      EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order,
+      EmitterKey.Refresh_Global_Dashboard_Execute_Work_Order,
       refresh
     );
 
@@ -82,23 +78,21 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
   });
 
   return (
-    <div>
-      <ActiontechTable
-        className="table-row-cursor"
-        dataSource={workflowList?.list}
-        rowKey={(record: IWorkflowDetailResV1) => {
-          return `${record?.workflow_id}`;
-        }}
-        pagination={{
-          total: workflowList?.total ?? 0
-        }}
-        columns={GlobalDashboardPendingWorkflowListColumn(onUpdateFilterValue)}
-        loading={loading}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-      />
-    </div>
+    <ActiontechTable
+      className="table-row-cursor"
+      dataSource={workflowList?.list}
+      rowKey={(record: IWorkflowDetailResV1) => {
+        return `${record?.workflow_id}`;
+      }}
+      pagination={{
+        total: workflowList?.total ?? 0
+      }}
+      columns={GlobalDashboardPendingWorkflowListColumn(onUpdateFilterValue)}
+      loading={loading}
+      errorMessage={requestErrorMessage}
+      onChange={tableChange}
+    />
   );
 };
 
-export default InitiatedWorkOrder;
+export default PendingExecuteWorkflow;

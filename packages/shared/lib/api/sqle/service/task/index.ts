@@ -95,6 +95,10 @@ class TaskService extends ServiceBase {
       paramsData.append('sql', params.sql as any);
     }
 
+    if (params.rule_template_name != undefined) {
+      paramsData.append('rule_template_name', params.rule_template_name as any);
+    }
+
     if (params.input_sql_file != undefined) {
       paramsData.append('input_sql_file', params.input_sql_file as any);
     }

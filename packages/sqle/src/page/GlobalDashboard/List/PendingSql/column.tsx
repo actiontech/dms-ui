@@ -1,34 +1,23 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   SQLRenderer,
   BasicTypographyEllipsis,
-  TypedLink
+  TypedLink,
+  ActiontechTableActionMeta,
+  ActiontechTableColumn
 } from '@actiontech/shared';
 import StatusTag from '../../../SqlManagement/component/SQLEEIndex/StatusTag';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/shared';
 import { ProjectPriorityDictionary } from '../../index.data';
 import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { Typography } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import {
-  CheckPagePermissionOtherValues,
-  PERMISSIONS,
-  PermissionsConstantType
-} from '@actiontech/shared/lib/features';
 
-export const pendingSqlListColumn: (
-  onUpdateFilterValue: (projectId?: string, instanceId?: string) => void,
-  checkPagePermission: (
-    requiredPermission: PermissionsConstantType,
-    otherValues?: CheckPagePermissionOtherValues
-  ) => boolean
-) => ActiontechTableColumn<IGlobalSqlManage> = (
-  onUpdateFilterValue,
-  checkPagePermission
-) => {
+export const PendingSqlListColumn: (
+  onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
+) => ActiontechTableColumn<IGlobalSqlManage> = (onUpdateFilterValue) => {
   return [
     {
       dataIndex: 'sql',
@@ -83,28 +72,26 @@ export const pendingSqlListColumn: (
                 target="_blank"
                 to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
                 params={{ projectID: record.project_uid ?? '' }}
-                queries={{ SQLAuditRecordID: source.sql_source_ids.join(',') }}
+                queries={{
+                  SQLAuditRecordID: source.sql_source_ids.join(',')
+                }}
               >
                 {source.sql_source_desc}
               </TypedLink>
             );
           }
-
-          if (checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_CONF)) {
-            return (
-              <TypedLink
-                target="_blank"
-                to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-                params={{
-                  projectID: record.project_uid ?? '',
-                  id: source.sql_source_ids[0]
-                }}
-              >
-                {source.sql_source_desc ?? source.sql_source_type}
-              </TypedLink>
-            );
-          }
-          return source.sql_source_desc ?? source.sql_source_type;
+          return (
+            <TypedLink
+              target="_blank"
+              to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+              params={{
+                projectID: record.project_uid ?? '',
+                id: source.sql_source_ids[0]
+              }}
+            >
+              {source.sql_source_desc ?? source.sql_source_type}
+            </TypedLink>
+          );
         }
         return '-';
       }
@@ -156,4 +143,22 @@ export const pendingSqlListColumn: (
       }
     }
   ];
+};
+
+export const PendingSqlListAction: (
+  onCheckDetail: (record?: IGlobalSqlManage) => void
+) => {
+  buttons: ActiontechTableActionMeta<IGlobalSqlManage>[];
+} = (onCheckDetail) => {
+  return {
+    buttons: [
+      {
+        key: 'check-detail-button',
+        text: t('globalDashboard.pendingSql.column.detail'),
+        buttonProps: (record) => ({
+          onClick: () => onCheckDetail(record)
+        })
+      }
+    ]
+  };
 };
