@@ -371,6 +371,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
         total_nums: 10
       })
     );
+    return spy;
   }
 
   public reExecuteTaskOnWorkflow() {
