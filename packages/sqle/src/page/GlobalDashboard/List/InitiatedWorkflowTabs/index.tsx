@@ -7,12 +7,12 @@ import { GlobalDashboardWorkflowTabsProps } from '../../index.type';
 import ExecuteWorkflow from './ExecuteWorkflow';
 import ExportWorkflow from './ExportWorkflow';
 
-enum PendingWorkflowTabEnum {
+enum InitiatedWorkOrderTabEnum {
   Execute = 'execute',
   Export = 'export'
 }
 
-const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
+const InitiatedWorkflowTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
   filterValues,
   updateFilterValue,
   workflowOrderStatistics,
@@ -20,7 +20,7 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
 }) => {
   const { t } = useTranslation();
   const [innerActiveKey, setInnerActiveKey] = useState(
-    PendingWorkflowTabEnum.Execute
+    InitiatedWorkOrderTabEnum.Execute
   );
 
   const innerTabItems = useMemo<SegmentedTabsProps['items']>(() => {
@@ -32,7 +32,7 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
             {workflowOrderStatistics}
           </Space>
         ),
-        value: PendingWorkflowTabEnum.Execute,
+        value: InitiatedWorkOrderTabEnum.Execute,
         children: (
           <ExecuteWorkflow
             filterValues={filterValues}
@@ -48,7 +48,7 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
             {exportWorkflowOrderStatistics}
           </Space>
         ),
-        value: PendingWorkflowTabEnum.Export,
+        value: InitiatedWorkOrderTabEnum.Export,
         children: (
           <ExportWorkflow
             filterValues={filterValues}
@@ -70,11 +70,11 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
     <SegmentedTabs
       activeKey={innerActiveKey}
       onChange={(key) => {
-        setInnerActiveKey(key as PendingWorkflowTabEnum);
+        setInnerActiveKey(key as InitiatedWorkOrderTabEnum);
       }}
       items={innerTabItems}
     />
   );
 };
 
-export default PendingWorkOrderTabs;
+export default InitiatedWorkflowTabs;

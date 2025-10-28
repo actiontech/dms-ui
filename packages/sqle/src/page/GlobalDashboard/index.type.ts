@@ -28,7 +28,7 @@ export type GlobalDashboardListProps = {
   ) => void;
 };
 
-export type GlobalDashboardPendingWorkflowTabsProps = {
-  pendingWorkflowOrderStatistics: number;
-  pendingExportWorkflowOrderStatistics: number;
+export type GlobalDashboardWorkflowTabsProps = {
+  workflowOrderStatistics: number;
+  exportWorkflowOrderStatistics: number;
 } & GlobalDashboardListProps;
