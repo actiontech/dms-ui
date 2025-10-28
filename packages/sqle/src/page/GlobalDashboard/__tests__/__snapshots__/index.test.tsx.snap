@@ -294,12 +294,12 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
-                    待解决SQL
+                    发起的工单
                   </div>
                   <div
                     class="ant-space-item"
                   >
-                    10
+                    20
                   </div>
                 </div>
               </div>
@@ -321,7 +321,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
-                    发起的工单
+                    待解决SQL
                   </div>
                   <div
                     class="ant-space-item"

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import PendingWorkflowTabs from './List/PendingWorkflowTabs';
 import PendingSql from './List/PendingSql';
-import InitiatedWorkOrder from './List/InitiatedWorkOrder';
+import InitiatedWorkflowTabs from './List/InitiatedWorkflowTabs';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
@@ -26,7 +26,8 @@ const GlobalDashBoard = () => {
     pendingSqlStatistics,
     pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics,
-    pendingExportWorkflowOrderStatistics
+    pendingExportWorkflowOrderStatistics,
+    initiatedExportWorkflowOrderStatistics
   } = useDashboardFilter();
   const [activeKey, setActiveKey] = useState(
     GlobalDashBoardSegmentedEnum.PendingWorkOrder
@@ -40,6 +41,9 @@ const GlobalDashBoard = () => {
     } else if (activeKey === GlobalDashBoardSegmentedEnum.InitiatedWorkOrder) {
       eventEmitter.emit(
         EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order
+      );
+      eventEmitter.emit(
+        EmitterKey.Refresh_Global_Dashboard_Initiated_Export_Work_Order
       );
     }
     refreshStatistics();
@@ -59,9 +63,30 @@ const GlobalDashBoard = () => {
           <PendingWorkflowTabs
             filterValues={filterValues}
             updateFilterValue={updateFilterValue}
-            pendingWorkflowOrderStatistics={pendingWorkflowOrderStatistics ?? 0}
-            pendingExportWorkflowOrderStatistics={
+            workflowOrderStatistics={pendingWorkflowOrderStatistics ?? 0}
+            exportWorkflowOrderStatistics={
               pendingExportWorkflowOrderStatistics ?? 0
+            }
+          />
+        ),
+        destroyInactivePane: true
+      },
+      {
+        label: (
+          <Space>
+            {t('globalDashboard.initiatedWorkOrder')}
+            {(initiatedWorkflowOrderStatistics ?? 0) +
+              (initiatedExportWorkflowOrderStatistics ?? 0)}
+          </Space>
+        ),
+        value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
+        children: (
+          <InitiatedWorkflowTabs
+            filterValues={filterValues}
+            updateFilterValue={updateFilterValue}
+            workflowOrderStatistics={initiatedWorkflowOrderStatistics ?? 0}
+            exportWorkflowOrderStatistics={
+              initiatedExportWorkflowOrderStatistics ?? 0
             }
           />
         ),
@@ -82,22 +107,6 @@ const GlobalDashBoard = () => {
           />
         ),
         destroyInactivePane: true
-      },
-      {
-        label: (
-          <Space>
-            {t('globalDashboard.initiatedWorkOrder')}
-            {initiatedWorkflowOrderStatistics}
-          </Space>
-        ),
-        value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
-        children: (
-          <InitiatedWorkOrder
-            filterValues={filterValues}
-            updateFilterValue={updateFilterValue}
-          />
-        ),
-        destroyInactivePane: true
       }
     ];
   }, [
@@ -106,8 +115,9 @@ const GlobalDashBoard = () => {
     pendingExportWorkflowOrderStatistics,
     filterValues,
     updateFilterValue,
-    pendingSqlStatistics,
-    initiatedWorkflowOrderStatistics
+    initiatedWorkflowOrderStatistics,
+    initiatedExportWorkflowOrderStatistics,
+    pendingSqlStatistics
   ]);
   return (
     <>
