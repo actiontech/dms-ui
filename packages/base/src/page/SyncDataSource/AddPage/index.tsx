@@ -20,7 +20,7 @@ import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 import { IAddDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask/index.d';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { useAsyncParams } from '@actiontech/shared';
 import useTaskSource from '../../../hooks/useTaskSource';
 import { SyncTaskFormFields } from '../Form/index.type';
 const AddSyncTask: React.FC = () => {

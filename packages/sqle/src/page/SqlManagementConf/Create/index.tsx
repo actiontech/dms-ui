@@ -15,13 +15,12 @@ import ConfForm from '../Common/ConfForm';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { ScanTypeParams } from '../Common/ConfForm/index.type';
 import { SqleApi } from '@actiontech/shared/lib/api';
-import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
+import { useAsyncParams, BackendFormValues } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
-import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {

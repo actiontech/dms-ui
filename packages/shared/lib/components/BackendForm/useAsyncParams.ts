@@ -1,5 +1,9 @@
-import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BackendFormRequestParams, BackendFormValues, FormItem } from '.';
+import { AuditPlanParamResV1TypeEnum } from '../../api/sqle/service/common.enum';
+import {
+  BackendFormRequestParams,
+  BackendFormValues,
+  FormItem
+} from './index.type';
 import { useCallback } from 'react';
 
 const useAsyncParams = () => {

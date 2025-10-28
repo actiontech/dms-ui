@@ -1,7 +1,7 @@
 import { FormInstance } from 'antd';
 import SyncTaskForm from '.';
 import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
-import { BackendFormValues } from 'sqle/src/components/BackendForm';
+import { BackendFormValues } from '@actiontech/shared';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import useTaskSource from '../../../hooks/useTaskSource';
 

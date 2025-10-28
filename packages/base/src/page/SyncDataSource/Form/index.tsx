@@ -27,8 +27,7 @@ import { nameRule } from '@actiontech/dms-kit';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
-import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { AutoCreatedFormItemByApi, useAsyncParams } from '@actiontech/shared';
 import { SyncTaskFormProps } from './index.type';
 import SqlAuditFields from '../../DataSource/components/Form/SqlAuditFields';
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({

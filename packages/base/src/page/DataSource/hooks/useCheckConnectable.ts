@@ -1,11 +1,10 @@
 import { useCallback, useState } from 'react';
 import { Form, FormInstance } from 'antd';
 import { DataSourceFormField } from '../components/Form/index.type';
-import { FormItem } from 'sqle/src/components/BackendForm';
 import { useBoolean } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api/';
 import { ResponseCode } from '@actiontech/dms-kit';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { useAsyncParams, FormItem } from '@actiontech/shared';
 import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale

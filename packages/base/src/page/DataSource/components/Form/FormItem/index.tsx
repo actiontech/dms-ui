@@ -14,8 +14,7 @@ import {
 } from '@actiontech/dms-kit';
 import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { validatorPort } from '@actiontech/dms-kit';
-import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
-import { FormItem } from 'sqle/src/components/BackendForm';
+import { AutoCreatedFormItemByApi, FormItem } from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;

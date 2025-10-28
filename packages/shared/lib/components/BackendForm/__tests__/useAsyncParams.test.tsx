@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { BackendFormRequestParams, BackendFormValues, FormItem } from '..';
 import useAsyncParams from '../useAsyncParams';
-import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IAuditPlanParamResV1 } from '../../../api/sqle/service/common';
+import { AuditPlanParamResV1TypeEnum } from '../../../api/sqle/service/common.enum';
 
 describe('useAsyncParams', () => {
   it('should merge form values into async params array', () => {

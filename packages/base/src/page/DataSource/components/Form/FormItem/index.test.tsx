@@ -2,7 +2,7 @@ import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 
 import { Form, Select } from 'antd';
-import { FormItem } from 'sqle/src/components/BackendForm';
+import { FormItem } from '@actiontech/shared';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import DatabaseFormItem from '.';
