@@ -247,7 +247,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/538/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/538/sqls"
                                   >
                                     create_table_if_not_exist.sql
                                   </a>
@@ -409,7 +409,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/539/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/539/sqls"
                                   >
                                     create_table_roll_back.sql
                                   </a>
@@ -547,7 +547,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/540/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/540/sqls"
                                   >
                                     new_folder/create_table_if_not_exist.sql
                                   </a>
@@ -709,7 +709,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/541/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/541/sqls"
                                   >
                                     new_folder/create_table_roll_back.sql
                                   </a>
@@ -847,7 +847,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/542/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/542/sqls"
                                   >
                                     new_folder/in_folder/create_table_if_not_exist.sql
                                   </a>
@@ -1009,7 +1009,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
                                   </svg>
                                   <a
                                     class="file-info-name"
-                                    href="/sqle/project/700300/exec-workflow/123/files/543/sqls"
+                                    href="/sqle/project/700300/exec-workflow//task/123/files/543/sqls"
                                   >
                                     new_folder/in_folder/create_table_roll_back.sql
                                   </a>

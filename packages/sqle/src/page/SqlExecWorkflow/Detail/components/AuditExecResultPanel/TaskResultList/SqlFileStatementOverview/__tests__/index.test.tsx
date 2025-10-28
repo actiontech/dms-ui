@@ -8,6 +8,12 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { useDispatch, useSelector } from 'react-redux';
+import { ModalName } from '../../../../../../../../data/ModalName';
+import EmitterKey from '../../../../../../../../data/EmitterKey';
+import EventEmitter from '../../../../../../../../utils/EventEmitter';
+import * as useRetryExecuteHook from '../../../hooks/useRetryExecute';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -17,11 +23,21 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(),
+  useSelector: jest.fn()
+}));
+
 describe('test AuditDetail/SqlFileStatementOverview', () => {
   let getTaskSQLsSpy: jest.SpyInstance;
   let getAuditFileExecStatistic: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   const navigateSpy = jest.fn();
+  const dispatchSpy = jest.fn();
+
+  let getWorkflowSpy: jest.SpyInstance;
+  let getSummaryOfInstanceTasksSpy: jest.SpyInstance;
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
@@ -30,8 +46,34 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
     jest.useFakeTimers();
     getTaskSQLsSpy = task.getAuditTaskSQLs();
     getAuditFileExecStatistic = task.getAuditFileExecStatistic();
-    useParamsMock.mockReturnValue({ taskId: '15', fileId: '434' });
+    useParamsMock.mockReturnValue({
+      taskId: '15',
+      fileId: '434',
+      workflowId: '123'
+    });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    getWorkflowSpy = execWorkflow.getWorkflow();
+    getSummaryOfInstanceTasksSpy = execWorkflow.getSummaryOfInstanceTasks();
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    (useSelector as jest.Mock).mockImplementation((selector) =>
+      selector({
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false,
+            knowledge: false
+          },
+          userOperationPermissions: null
+        },
+        sqlExecWorkflow: {
+          retryExecuteData: {},
+          modalStatus: {
+            [ModalName.Sql_Exec_Workflow_Retry_Execute_Modal]: false
+          }
+        }
+      })
+    );
+    const spy = jest.spyOn(useRetryExecuteHook, 'default');
+    spy.mockImplementation(() => ({ enableRetryExecute: true }));
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -55,6 +97,10 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
       filter_exec_status: undefined,
       no_duplicate: false
     });
+
+    expect(getWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+
     expect(container).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -97,6 +143,29 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
       filter_audit_level: undefined,
       filter_exec_status: 'initialized',
       no_duplicate: true
+    });
+  });
+
+  it('should refresh file sql when emit Sql_Retry_Execute_Done event', async () => {
+    sqleSuperRender(<SqlFileStatementOverview />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    act(() => {
+      EventEmitter.emit(EmitterKey.Sql_Retry_Execute_Done);
+    });
+    expect(getTaskSQLsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should init modal status', async () => {
+    sqleSuperRender(<SqlFileStatementOverview />);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'sqlExecWorkflow/initModalStatus',
+      payload: {
+        modalStatus: {
+          [ModalName.Sql_Exec_Workflow_Retry_Execute_Modal]: false
+        }
+      }
     });
   });
 });

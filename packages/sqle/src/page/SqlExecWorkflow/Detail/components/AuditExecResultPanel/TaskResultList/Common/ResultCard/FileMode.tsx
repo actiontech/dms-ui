@@ -125,6 +125,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
             loading={loading}
             errorMessage={requestErrorMessage}
             pagination={false}
+            taskId={taskId}
             caption={
               <div className="flex-display flex-end-horizontal">
                 <Trans i18nKey={'audit.fileModeExecute.sqlsTips'}>
