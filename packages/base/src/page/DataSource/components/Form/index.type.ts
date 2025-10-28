@@ -2,7 +2,7 @@ import { FormInstance } from 'antd';
 import {
   BackendFormRequestParams,
   BackendFormValues
-} from 'sqle/src/components/BackendForm';
+} from '@actiontech/shared';
 import { MaintenanceTimeValue } from './MaintenanceTimePicker';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';

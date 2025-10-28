@@ -1,4 +1,4 @@
-import { FormItem } from './index';
+import { FormItem } from './index.type';
 import { useMemo } from 'react';
 
 const useRuleParams = (params: FormItem[]) => {

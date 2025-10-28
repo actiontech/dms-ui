@@ -6,9 +6,7 @@ import {
 } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { useTranslation } from 'react-i18next';
 import { FormItemSubTitle } from '@actiontech/dms-kit';
-import AutoCreatedFormItemByApi, {
-  FormItem
-} from '../../../../../components/BackendForm';
+import { AutoCreatedFormItemByApi, FormItem } from '@actiontech/shared';
 import { EmptyBox } from '@actiontech/dms-kit';
 import AuditTemplate from './AuditTemplate';
 import useGlobalRuleTemplate from '../../../../../hooks/useGlobalRuleTemplate';
