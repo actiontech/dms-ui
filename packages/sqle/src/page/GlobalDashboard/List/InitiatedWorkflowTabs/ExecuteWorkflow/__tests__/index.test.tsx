@@ -1,37 +1,30 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
-import { sqleSuperRender } from '../../../../../testUtils/superRender';
-import PendingWorkOrder from '../index';
-import { GlobalDashboardFilterType } from '../../../index.type';
-import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import ExecuteWorkflow from '../index';
+import { GlobalDashboardFilterType } from '../../../../index.type';
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import eventEmitter from '../../../../../utils/EventEmitter';
-import EmitterKey from '../../../../../data/EmitterKey';
-import { paramsSerializer } from '@actiontech/dms-kit/es/utils/Common';
+import eventEmitter from '../../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../../data/EmitterKey';
+import { paramsSerializer } from '@actiontech/dms-kit';
 
-describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
+describe('sqle/GlobalDashboard/InitiatedWorkflowTabs/ExecuteWorkflow', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;
   const updateFilterValueFn = jest.fn();
 
   const commonParams = {
     page_index: 1,
     page_size: 20,
-    filter_status_list: [
-      getGlobalWorkflowsV1FilterStatusListEnum.wait_for_audit,
-      getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,
-      getGlobalWorkflowsV1FilterStatusListEnum.rejected,
-      getGlobalWorkflowsV1FilterStatusListEnum.exec_failed
-    ]
+    filter_create_user_id: mockCurrentUserReturn.userId
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseDbServiceDriver();
     getGlobalWorkflowsSpy = workflow.getGlobalWorkflows();
   });
 
@@ -42,7 +35,7 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
 
   const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
     return sqleSuperRender(
-      <PendingWorkOrder
+      <ExecuteWorkflow
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}
       />
@@ -74,7 +67,9 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
         filter_project_priority: 'low',
         filter_project_uid: '1'
       },
-      { paramsSerializer }
+      {
+        paramsSerializer
+      }
     );
   });
 
@@ -117,7 +112,9 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Work_Order);
+      eventEmitter.emit(
+        EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order
+      );
       jest.advanceTimersByTime(0);
     });
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(2);
