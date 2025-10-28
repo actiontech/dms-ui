@@ -5,9 +5,8 @@ import {
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
 import useValidatorNumber from './useValidatorNumber';
-
-import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/base/service/common';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 
 export interface CBOperationLogsExpiredHoursProps {
   expiredHours: number | undefined;

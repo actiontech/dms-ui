@@ -50,6 +50,7 @@ class MockWorkflowApi implements MockSpyApy {
     this.getBackupSqlList();
     this.getGlobalDataExportWorkflows();
     this.getGlobalDataExportWorkflowStatistics();
+    this.reExecuteTaskOnWorkflow();
   }
 
   public getWorkflows() {
@@ -370,6 +371,11 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
         total_nums: 10
       })
     );
+  }
+
+  public reExecuteTaskOnWorkflow() {
+    const spy = jest.spyOn(workflow, 'reExecuteTaskOnWorkflowV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

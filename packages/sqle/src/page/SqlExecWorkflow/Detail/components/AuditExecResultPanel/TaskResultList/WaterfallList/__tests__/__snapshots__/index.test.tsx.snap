@@ -15,6 +15,7 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 1`
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        enableRetryExecute={true}
         execStatusFilterValue={null}
         noDuplicate={false}
         tableFilterInfo={{}}
@@ -30,6 +31,7 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 1`
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        enableRetryExecute={true}
         execStatusFilterValue={null}
         noDuplicate={false}
         tableFilterInfo={{}}
@@ -55,6 +57,7 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 2`
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        enableRetryExecute={true}
         execStatusFilterValue={null}
         noDuplicate={false}
         tableFilterInfo={{}}
@@ -70,6 +73,7 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 2`
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        enableRetryExecute={true}
         execStatusFilterValue={null}
         noDuplicate={false}
         tableFilterInfo={{}}

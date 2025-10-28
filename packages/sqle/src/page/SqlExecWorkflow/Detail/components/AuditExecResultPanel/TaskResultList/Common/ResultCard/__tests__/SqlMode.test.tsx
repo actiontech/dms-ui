@@ -14,13 +14,23 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditTaskResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditTaskSQLsMockDataWithExceptionRule } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
+import { useDispatch } from 'react-redux';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+import { ModalName } from '../../../../../../../../../data/ModalName';
 
 const projectID = '700300';
 const taskId = 'task_id_1234';
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(),
+  useSelector: jest.fn()
+}));
+
 describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
   let requestUpdateSqlDesc: jest.SpyInstance;
   const onUpdateDescriptionFn = jest.fn();
+  const dispatchSpy = jest.fn();
 
   const customRender = (
     params: Omit<
@@ -46,6 +56,10 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     jest.useFakeTimers();
     requestUpdateSqlDesc = task.updateAuditTaskSQLs();
     rule_template.getRuleList();
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {
@@ -310,5 +324,65 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     });
 
     expect(screen.getByText('审核异常')).toBeInTheDocument();
+  });
+
+  it('should render retry execute action when exec status is failed or initialized', async () => {
+    const { container } = customRender({
+      number: 1,
+      exec_status: getAuditTaskSQLsV2FilterExecStatusEnum.failed,
+      enableRetryExecute: true,
+      exec_sql: 'select 1;'
+    });
+    expect(container).toMatchSnapshot();
+    expect(screen.getByText('再次执行')).toBeInTheDocument();
+
+    cleanup();
+
+    customRender({
+      number: 1,
+      exec_status: getAuditTaskSQLsV2FilterExecStatusEnum.initialized,
+      enableRetryExecute: true,
+      exec_sql: 'select 1;'
+    });
+    expect(container).toMatchSnapshot();
+    expect(screen.getByText('再次执行')).toBeInTheDocument();
+  });
+
+  it('should dispatch action when click retry execute button', async () => {
+    const mockData = {
+      taskId: 'testId',
+      pagination: {
+        page_index: 2,
+        page_size: 20
+      },
+      exec_sql_id: 0
+    };
+    customRender({
+      number: 1,
+      exec_status: getAuditTaskSQLsV2FilterExecStatusEnum.failed,
+      enableRetryExecute: true,
+      exec_sql: 'select 1;',
+      ...mockData
+    });
+    expect(screen.getByText('再次执行')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('再次执行'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'sqlExecWorkflow/updateModalStatus',
+      payload: {
+        modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
+        status: true
+      }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'sqlExecWorkflow/updateRetryExecuteData',
+      payload: {
+        taskId: mockData.taskId,
+        execSqlId: mockData.exec_sql_id,
+        pageIndex: mockData.pagination.page_index,
+        pageSize: mockData.pagination.page_size
+      }
+    });
   });
 });

@@ -34,5 +34,19 @@ export enum ModalName {
 
   Version_Management_Associate_Workflow_Modal = 'Version_Management_Associate_Workflow_Modal',
 
-  Version_Management_Offline_Execute_Modal = 'Version_Management_Offline_Execute_Modal'
+  Version_Management_Offline_Execute_Modal = 'Version_Management_Offline_Execute_Modal',
+
+  // sql insights
+  Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer = 'SQL_INSIGHTS_RELATED_SQL_ITEM_RELATE_TRANSACTION_DRAWER',
+
+  // sql optimization
+  Sql_Optimization_Diff_Modal = 'SQL_OPTIMIZATION_DIFF_MODAL',
+  Sql_Optimization_Table_Structure_Modal = 'SQL_OPTIMIZATION_TABLE_STRUCTURE_MODAL',
+  Sql_Optimization_Result_Modal = 'SQL_OPTIMIZATION_RESULT_MODAL',
+  Sql_Optimization_Query_Plan_Flow_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_FLOW_MODAL',
+  Sql_Optimization_Query_Plan_Diff_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_DIFF_MODAL',
+  Sql_Optimization_Result_Drawer = 'SQL_OPTIMIZATION_RESULT_DRAWER',
+
+  // sql exec workflow
+  Sql_Exec_Workflow_Retry_Execute_Modal = 'SQL_EXEC_WORKFLOW_RETRY_EXECUTE_MODAL'
 }
