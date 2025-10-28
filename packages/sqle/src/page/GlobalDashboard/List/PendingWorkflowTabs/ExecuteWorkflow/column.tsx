@@ -1,20 +1,16 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { t } from '../../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { t } from '../../../../../locale';
+import { ActiontechTableColumn, formatTime } from '@actiontech/shared';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  BasicTypographyEllipsis,
-  BasicToolTip,
-  TypedLink
-} from '@actiontech/shared';
-import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
+import { BasicToolTip } from '@actiontech/shared';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
+import WorkflowStatus from '../../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { Space, Typography } from 'antd';
-import { ProjectPriorityDictionary } from '../../index.data';
+import { ProjectPriorityDictionary } from '../../../index.data';
 import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const GlobalDashboardPendingWorkflowListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void

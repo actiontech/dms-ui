@@ -1,7 +1,8 @@
 import {
   PageHeader,
   SegmentedTabs,
-  SegmentedTabsProps
+  SegmentedTabsProps,
+  TableRefreshButton
 } from '@actiontech/shared';
 import useDashboardFilter from './hooks/useDashboardFilter';
 import GlobalDashboardTableFilter from './components/TableFilter';
@@ -9,16 +10,14 @@ import { useState, useMemo } from 'react';
 import { GlobalDashBoardSegmentedEnum } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import PendingWorkOrder from './List/PendingWorkOrder';
+import PendingWorkflowTabs from './List/PendingWorkflowTabs';
 import PendingSql from './List/PendingSql';
-import InitiatedWorkOrder from './List/InitiatedWorkOrder';
+import InitiatedWorkflowTabs from './List/InitiatedWorkflowTabs';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
-
   const {
     projectOptions,
     instanceIDOptions,
@@ -29,40 +28,69 @@ const GlobalDashBoard = () => {
     refreshStatistics,
     pendingSqlStatistics,
     pendingWorkflowOrderStatistics,
-    initiatedWorkflowOrderStatistics
+    initiatedWorkflowOrderStatistics,
+    pendingExportWorkflowOrderStatistics,
+    initiatedExportWorkflowOrderStatistics
   } = useDashboardFilter();
-
   const [activeKey, setActiveKey] = useState(
     GlobalDashBoardSegmentedEnum.PendingWorkOrder
   );
-
   const onRefresh = () => {
     if (activeKey === GlobalDashBoardSegmentedEnum.PendingWorkOrder) {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Work_Order);
+      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Execute_Work_Order);
+      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Export_Work_Order);
     } else if (activeKey === GlobalDashBoardSegmentedEnum.PendingSqlRecord) {
       eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Sql);
     } else if (activeKey === GlobalDashBoardSegmentedEnum.InitiatedWorkOrder) {
       eventEmitter.emit(
         EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order
       );
+      eventEmitter.emit(
+        EmitterKey.Refresh_Global_Dashboard_Initiated_Export_Work_Order
+      );
     }
     refreshStatistics();
   };
-
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
     return [
       {
         label: (
           <Space>
             {t('globalDashboard.pendingWorkOrder')}
-            {pendingWorkflowOrderStatistics}
+            {(pendingWorkflowOrderStatistics ?? 0) +
+              (pendingExportWorkflowOrderStatistics ?? 0)}
           </Space>
         ),
         value: GlobalDashBoardSegmentedEnum.PendingWorkOrder,
         children: (
-          <PendingWorkOrder
+          <PendingWorkflowTabs
             filterValues={filterValues}
             updateFilterValue={updateFilterValue}
+            workflowOrderStatistics={pendingWorkflowOrderStatistics ?? 0}
+            exportWorkflowOrderStatistics={
+              pendingExportWorkflowOrderStatistics ?? 0
+            }
+          />
+        ),
+        destroyInactivePane: true
+      },
+      {
+        label: (
+          <Space>
+            {t('globalDashboard.initiatedWorkOrder')}
+            {(initiatedWorkflowOrderStatistics ?? 0) +
+              (initiatedExportWorkflowOrderStatistics ?? 0)}
+          </Space>
+        ),
+        value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
+        children: (
+          <InitiatedWorkflowTabs
+            filterValues={filterValues}
+            updateFilterValue={updateFilterValue}
+            workflowOrderStatistics={initiatedWorkflowOrderStatistics ?? 0}
+            exportWorkflowOrderStatistics={
+              initiatedExportWorkflowOrderStatistics ?? 0
+            }
           />
         ),
         destroyInactivePane: true
@@ -82,33 +110,18 @@ const GlobalDashBoard = () => {
           />
         ),
         destroyInactivePane: true
-      },
-      {
-        label: (
-          <Space>
-            {t('globalDashboard.initiatedWorkOrder')}
-            {initiatedWorkflowOrderStatistics}
-          </Space>
-        ),
-        value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
-        children: (
-          <InitiatedWorkOrder
-            filterValues={filterValues}
-            updateFilterValue={updateFilterValue}
-          />
-        ),
-        destroyInactivePane: true
       }
     ];
   }, [
     t,
+    pendingWorkflowOrderStatistics,
+    pendingExportWorkflowOrderStatistics,
     filterValues,
     updateFilterValue,
-    pendingSqlStatistics,
-    pendingWorkflowOrderStatistics,
-    initiatedWorkflowOrderStatistics
+    initiatedWorkflowOrderStatistics,
+    initiatedExportWorkflowOrderStatistics,
+    pendingSqlStatistics
   ]);
-
   return (
     <>
       <PageHeader
@@ -135,5 +148,4 @@ const GlobalDashBoard = () => {
     </>
   );
 };
-
 export default GlobalDashBoard;

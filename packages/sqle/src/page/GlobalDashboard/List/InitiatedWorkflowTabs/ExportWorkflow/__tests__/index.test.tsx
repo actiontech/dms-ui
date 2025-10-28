@@ -1,28 +1,31 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { sqleSuperRender } from '../../../../../testUtils/superRender';
-import PendingSqlList from '../index';
-import { GlobalDashboardFilterType } from '../../../index.type';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import ExportWorkflowList from '../List';
+import { GlobalDashboardFilterType } from '../../../../index.type';
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import eventEmitter from '../../../../../utils/EventEmitter';
-import EmitterKey from '../../../../../data/EmitterKey';
-import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import eventEmitter from '../../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../../data/EmitterKey';
+import { paramsSerializer } from '@actiontech/shared';
 
-describe('sqle/GlobalDashboard/PendingSqlList', () => {
-  let getGlobalSqlManageList: jest.SpyInstance;
+describe('sqle/GlobalDashboard/InitiatedWorkflowTabs/ExportWorkflow', () => {
+  let getGlobalDataExportWorkflowsSpy: jest.SpyInstance;
   const updateFilterValueFn = jest.fn();
 
   const commonParams = {
     page_index: 1,
-    page_size: 20
+    page_size: 20,
+    filter_create_user_id: mockCurrentUserReturn.userId
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
-    getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
+    getGlobalDataExportWorkflowsSpy = workflow.getGlobalDataExportWorkflows();
   });
 
   afterEach(() => {
@@ -32,7 +35,7 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
 
   const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
     return sqleSuperRender(
-      <PendingSqlList
+      <ExportWorkflowList
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}
       />
@@ -43,8 +46,10 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
-    expect(getGlobalSqlManageList).toHaveBeenCalledWith(commonParams);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledWith(commonParams, {
+      paramsSerializer
+    });
   });
 
   it('render request data with filter value', async () => {
@@ -54,39 +59,36 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
       projectPriority: ListProjectV2ProjectPriorityEnum.low
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
-    expect(getGlobalSqlManageList).toHaveBeenCalledWith({
-      ...commonParams,
-      filter_instance_id: '2',
-      filter_project_priority: 'low',
-      filter_project_uid: '1'
-    });
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledWith(
+      {
+        ...commonParams,
+        filter_instance_id: '2',
+        filter_project_priority: 'low',
+        filter_project_uid: '1'
+      },
+      {
+        paramsSerializer
+      }
+    );
   });
 
-  it('render update filter value when click project name', async () => {
+  it('render update filter value', async () => {
     customRender({});
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getAllByText('default')[0]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateFilterValueFn).toHaveBeenCalledTimes(2);
-    expect(updateFilterValueFn).toHaveBeenNthCalledWith(
-      1,
-      'projectId',
-      '700300'
-    );
-    expect(updateFilterValueFn).toHaveBeenNthCalledWith(
-      2,
-      'instanceId',
-      undefined
-    );
+    expect(updateFilterValueFn).toHaveBeenCalledWith('projectId', '700300');
+    expect(updateFilterValueFn).toHaveBeenCalledWith('instanceId', undefined);
   });
 
   it('render update filter value when click instance name', async () => {
     customRender({});
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getAllByText('mysql-1')[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -107,12 +109,14 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
   it('render refresh list', async () => {
     customRender({});
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Sql);
+      eventEmitter.emit(
+        EmitterKey.Refresh_Global_Dashboard_Initiated_Export_Work_Order
+      );
       jest.advanceTimersByTime(0);
     });
-    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(2);
+    expect(getGlobalDataExportWorkflowsSpy).toHaveBeenCalledTimes(2);
   });
 });

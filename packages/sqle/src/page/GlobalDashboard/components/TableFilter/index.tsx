@@ -1,5 +1,5 @@
 import { Form, Space } from 'antd';
-import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelect } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { GlobalDashboardFilterStyleWrapper } from '../../style';
 import { GlobalDashboardTableFilterProps } from '../../index.type';

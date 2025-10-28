@@ -7,13 +7,15 @@ import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { GetGlobalSqlManageStatisticsFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import {
+  getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum,
+  getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
   GetGlobalWorkflowStatisticsFilterStatusListEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { paramsSerializer } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useDashboardFilter = () => {
   const { bindProjects, userId } = useCurrentUser();
@@ -27,12 +29,36 @@ const useDashboardFilter = () => {
   const projectPriority = Form.useWatch('projectPriority', form);
 
   const [pendingSqlStatistics, setPendingSqlStatistics] = useState<number>();
+  const [
+    pendingExportWorkflowOrderStatistics,
+    setPendingExportWorkflowOrderStatistics
+  ] = useState<number>();
+  const [
+    initiatedExportWorkflowOrderStatistics,
+    setInitiatedExportWorkflowOrderStatistics
+  ] = useState<number>();
 
   const [
     getPendingSqlStatisticsLoading,
     {
       setTrue: getPendingSqlStatisticsPending,
       setFalse: getPendingSqlStatisticsDone
+    }
+  ] = useBoolean();
+
+  const [
+    getPendingExportWorkflowOrderStatisticsPending,
+    {
+      setTrue: setPendingExportWorkflowOrderStatisticsPending,
+      setFalse: setPendingExportWorkflowOrderStatisticsDone
+    }
+  ] = useBoolean();
+
+  const [
+    getInitiatedExportWorkflowOrderStatisticsPending,
+    {
+      setTrue: setInitiatedExportWorkflowOrderStatisticsPending,
+      setFalse: setInitiatedExportWorkflowOrderStatisticsDone
     }
   ] = useBoolean();
 
@@ -64,6 +90,70 @@ const useDashboardFilter = () => {
     projectPriority,
     getPendingSqlStatisticsPending,
     getPendingSqlStatisticsDone
+  ]);
+
+  const refreshPendingExportWorkflowOrderStatistics = useCallback(() => {
+    setPendingExportWorkflowOrderStatisticsPending();
+    workflow
+      .getGlobalDataExportWorkflowStatisticsV1(
+        {
+          filter_instance_id: instanceId,
+          filter_project_priority:
+            projectPriority as unknown as getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum,
+          filter_project_uid: projectId,
+          filter_status_list: [
+            getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.wait_for_approve,
+            getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.wait_for_export,
+            getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.failed,
+            getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.rejected
+          ]
+        },
+        {
+          paramsSerializer
+        }
+      )
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setPendingExportWorkflowOrderStatistics(res.data.total_nums);
+        }
+      })
+      .finally(() => setPendingExportWorkflowOrderStatisticsDone());
+  }, [
+    setPendingExportWorkflowOrderStatisticsDone,
+    setPendingExportWorkflowOrderStatisticsPending,
+    instanceId,
+    projectId,
+    projectPriority
+  ]);
+
+  const refreshInitiatedExportWorkflowOrderStatistics = useCallback(() => {
+    setInitiatedExportWorkflowOrderStatisticsPending();
+    workflow
+      .getGlobalDataExportWorkflowStatisticsV1(
+        {
+          filter_create_user_id: userId,
+          filter_instance_id: instanceId,
+          filter_project_priority:
+            projectPriority as unknown as getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum,
+          filter_project_uid: projectId
+        },
+        {
+          paramsSerializer
+        }
+      )
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setInitiatedExportWorkflowOrderStatistics(res.data.total_nums);
+        }
+      })
+      .finally(() => setInitiatedExportWorkflowOrderStatisticsDone());
+  }, [
+    setInitiatedExportWorkflowOrderStatisticsDone,
+    setInitiatedExportWorkflowOrderStatisticsPending,
+    instanceId,
+    projectId,
+    projectPriority,
+    userId
   ]);
   // #endif
 
@@ -114,12 +204,6 @@ const useDashboardFilter = () => {
             filter_project_priority:
               projectPriority as unknown as GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
             filter_project_uid: projectId,
-            filter_status_list: [
-              GetGlobalWorkflowStatisticsFilterStatusListEnum.wait_for_audit,
-              GetGlobalWorkflowStatisticsFilterStatusListEnum.wait_for_execution,
-              GetGlobalWorkflowStatisticsFilterStatusListEnum.rejected,
-              GetGlobalWorkflowStatisticsFilterStatusListEnum.exec_failed
-            ],
             filter_create_user_id: userId
           },
           {
@@ -173,23 +257,31 @@ const useDashboardFilter = () => {
     return (
       getPendingWorkflowOrderStatisticsLoading ||
       getInitiatedWorkflowOrderStatisticsLoading ||
-      getPendingSqlStatisticsLoading
+      getPendingSqlStatisticsLoading ||
+      getPendingExportWorkflowOrderStatisticsPending ||
+      getInitiatedExportWorkflowOrderStatisticsPending
     );
   }, [
+    getPendingExportWorkflowOrderStatisticsPending,
     getInitiatedWorkflowOrderStatisticsLoading,
     getPendingSqlStatisticsLoading,
-    getPendingWorkflowOrderStatisticsLoading
+    getPendingWorkflowOrderStatisticsLoading,
+    getInitiatedExportWorkflowOrderStatisticsPending
   ]);
 
   const refreshStatistics = useCallback(() => {
     // #if [ee]
     refreshPendingSqlStatistics();
+    refreshPendingExportWorkflowOrderStatistics();
+    refreshInitiatedExportWorkflowOrderStatistics();
     // #endif
     refreshPendingWorkflowOrderStatistics();
     refreshInitiatedWorkflowOrderStatistics();
   }, [
     // #if [ee]
     refreshPendingSqlStatistics,
+    refreshPendingExportWorkflowOrderStatistics,
+    refreshInitiatedExportWorkflowOrderStatistics,
     // #endif
     refreshPendingWorkflowOrderStatistics,
     refreshInitiatedWorkflowOrderStatistics
@@ -198,6 +290,8 @@ const useDashboardFilter = () => {
   // #if [ee]
   useEffect(() => {
     refreshPendingSqlStatistics();
+    refreshPendingExportWorkflowOrderStatistics();
+    refreshInitiatedExportWorkflowOrderStatistics();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId, instanceId, projectPriority]);
   // #endif
@@ -217,7 +311,9 @@ const useDashboardFilter = () => {
     pendingSqlStatistics,
     pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics,
-    getStatisticsLoading
+    getStatisticsLoading,
+    pendingExportWorkflowOrderStatistics,
+    initiatedExportWorkflowOrderStatistics
   };
 };
 

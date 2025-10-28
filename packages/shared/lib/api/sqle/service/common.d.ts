@@ -683,6 +683,8 @@ export interface ICreateAuditTaskReqV1 {
 
   instance_schema?: string;
 
+  rule_template_name?: string;
+
   sql?: string;
 }
 

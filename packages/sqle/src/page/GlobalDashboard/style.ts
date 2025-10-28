@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
 import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+import { styled } from '@mui/material/styles';
 
 export const GlobalDashboardFilterStyleWrapper = styled(
   FilterContainerStyleWrapper

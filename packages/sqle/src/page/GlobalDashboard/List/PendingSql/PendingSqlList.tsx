@@ -3,21 +3,20 @@ import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { useRequest } from 'ahooks';
-import {
-  ActiontechTable,
-  useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+
 import { IGetGlobalSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GetGlobalSqlManageListFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { pendingSqlListColumn } from './column';
+import { PendingSqlListColumn, PendingSqlListAction } from './column';
 import { GlobalDashboardListProps } from '../../index.type';
 import { PendingSqlTableStyleWrapper } from '../../style';
-import { useTypedNavigate } from '@actiontech/shared';
+import {
+  ActiontechTable,
+  useTableRequestError,
+  useTableRequestParams,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
-import { pendingSqlListAction } from './actions';
 
 const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
   filterValues,
@@ -29,8 +28,6 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
-  const { checkActionPermission, checkPagePermission } = usePermission();
 
   const {
     data: sqlManageList,
@@ -92,15 +89,8 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
         pagination={{
           total: sqlManageList?.total ?? 0
         }}
-        columns={pendingSqlListColumn(onUpdateFilterValue, checkPagePermission)}
-        actions={
-          checkActionPermission(
-            PERMISSIONS.ACTIONS.BASE.GLOBAL_DASHBOARD
-              .PENDING_SQL_NAVIGATE_TO_SQL_MANAGEMENT
-          )
-            ? pendingSqlListAction(onCheckDetail)
-            : []
-        }
+        columns={PendingSqlListColumn(onUpdateFilterValue)}
+        actions={PendingSqlListAction(onCheckDetail)}
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}

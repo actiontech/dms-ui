@@ -5,7 +5,6 @@ import {
   BasicTable,
   BasicResult,
   SQLRenderer,
-  BasicButton,
   ActionButton
 } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
