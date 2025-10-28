@@ -2,7 +2,8 @@ import {
   IAuditTaskResV1,
   IGetWorkflowTasksItemV2,
   IWorkflowResV2,
-  IBackupSqlData
+  IBackupSqlData,
+  IWorkflowDetailResV1
 } from '../../../../api/sqle/service/common';
 import {
   AuditTaskResV1AuditLevelEnum,
@@ -563,5 +564,44 @@ export const mockRollbackSqlData: IBackupSqlData[] = [
     instance_id: '2',
     instance_name: 'mysql-2',
     origin_sql: 'SELECT 2;'
+  }
+];
+
+export const mockGlobalDataExportWorkflowListData: IWorkflowDetailResV1[] = [
+  {
+    create_time: '2023-12-25 15:04:11',
+    create_user_name: 'admin',
+    current_step_assignee_user_name_list: ['test_user'],
+    desc: 'test desc',
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      }
+    ],
+    project_name: 'default',
+    project_uid: '700300',
+    sql_version_name: ['v1'],
+    status: WorkflowDetailResV1StatusEnum.rejected,
+    workflow_id: '1739531854064652288',
+    workflow_name: 'test'
+  },
+  {
+    create_time: '2023-12-25 15:04:11',
+    create_user_name: 'admin',
+    current_step_assignee_user_name_list: ['test_user'],
+    desc: 'test desc',
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      }
+    ],
+    project_name: 'test_project',
+    project_uid: '700301',
+    sql_version_name: ['v1'],
+    status: WorkflowDetailResV1StatusEnum.exporting,
+    workflow_id: '1739531854064652289',
+    workflow_name: 'test2'
   }
 ];

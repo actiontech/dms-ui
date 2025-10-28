@@ -1,39 +1,40 @@
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import { formatTime } from '@actiontech/dms-kit';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BasicToolTip } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
-import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { Space, Typography } from 'antd';
-import { ProjectPriorityDictionary } from '../../index.data';
+import { ProjectPriorityDictionary } from '../../../index.data';
 import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
-export const GlobalDashboardPendingWorkflowListColumn: (
+import WorkflowStatus from './WorkflowStatus';
+
+export const GlobalDashboardExportWorkflowListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
 ) => ActiontechTableColumn<IWorkflowDetailResV1> = (onUpdateFilterValue) => {
   return [
     {
       dataIndex: 'status',
-      title: t('globalDashboard.workflow.status'),
+      title: t('globalDashboard.pendingExportWorkflow.column.status'),
       render: (status) => {
         return <WorkflowStatus status={status} />;
       }
     },
     {
       dataIndex: 'workflow_name',
-      title: t('globalDashboard.workflow.name'),
+      title: t('globalDashboard.pendingExportWorkflow.column.name'),
       render: (name, record) => (
         <TableColumnWithIconStyleWrapper>
           <BriefcaseFilled width={14} height={14} />
           <TypedLink
-            to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+            to={ROUTE_PATHS.BASE.DATA_EXPORT.detail}
             params={{
               projectID: record.project_uid ?? '',
-              workflowId: record.workflow_id ?? ''
+              workflowID: record.workflow_id ?? ''
             }}
           >
             {name}
@@ -43,7 +44,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
     },
     {
       dataIndex: 'desc',
-      title: t('globalDashboard.workflow.desc'),
+      title: t('globalDashboard.pendingExportWorkflow.column.desc'),
       className: 'workflow-list-table-desc-column',
       render: (desc, record: IWorkflowDetailResV1) =>
         desc ? (
@@ -51,11 +52,11 @@ export const GlobalDashboardPendingWorkflowListColumn: (
             textCont={desc}
             linkData={{
               route: parse2ReactRouterPath(
-                ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+                ROUTE_PATHS.BASE.DATA_EXPORT.detail,
                 {
                   params: {
                     projectID: record.project_uid ?? '',
-                    workflowId: record.workflow_id ?? ''
+                    workflowID: record.workflow_id ?? ''
                   }
                 }
               ),
@@ -68,14 +69,14 @@ export const GlobalDashboardPendingWorkflowListColumn: (
     },
     {
       dataIndex: 'create_time',
-      title: t('globalDashboard.workflow.createTime'),
+      title: t('globalDashboard.pendingExportWorkflow.column.createTime'),
       render: (time) => {
         return formatTime(time, '-');
       }
     },
     {
       dataIndex: 'instance_info',
-      title: t('globalDashboard.pendingSql.column.instance'),
+      title: t('globalDashboard.pendingExportWorkflow.column.instance'),
       render: (instances, record) => {
         if (!instances || !instances.length) {
           return '-';
@@ -118,7 +119,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
     },
     {
       dataIndex: 'project_name',
-      title: t('globalDashboard.pendingSql.column.project'),
+      title: t('globalDashboard.pendingExportWorkflow.column.project'),
       render: (project_name, record) => {
         return (
           <Typography.Link
@@ -131,7 +132,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
     },
     {
       dataIndex: 'project_priority',
-      title: t('globalDashboard.pendingSql.column.projectPriority'),
+      title: t('globalDashboard.pendingExportWorkflow.column.projectPriority'),
       render: (priority) => {
         return priority
           ? ProjectPriorityDictionary[priority as ProjectV2ProjectPriorityEnum]
