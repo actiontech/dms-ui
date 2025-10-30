@@ -105,7 +105,8 @@ export const ROUTE_PATHS = {
       },
       create: {
         prefix: '/project/:projectID/data/export',
-        path: 'create'
+        path: 'create',
+        query: 'from&compression_data'
       },
       detail: {
         prefix: '/project/:projectID/data/export',

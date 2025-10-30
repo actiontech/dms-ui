@@ -38,7 +38,11 @@ const CreateExportTask: React.FC = () => {
           }
         />
         <BaseInfoForm baseForm={baseForm} />
-        <ExportSourceForm sourceForm={sourceForm} baseForm={baseForm} />
+        <ExportSourceForm
+          sourceForm={sourceForm}
+          baseForm={baseForm}
+          methodForm={methodForm}
+        />
         <ExportMethodForm methodForm={methodForm} />
 
         <FormAreaBlockStyleWrapper style={{ paddingBottom: 80 }}>
