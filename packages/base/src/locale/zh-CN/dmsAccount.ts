@@ -44,5 +44,9 @@ export default {
     verificationCode: '验证码',
     noPhoneNumbersTips: '请先完成手机号绑定后开启双因素认证',
     updateSuccessTips: '双因素认证更新成功'
+  },
+
+  loginConfiguration: {
+    title: '登录设置'
   }
 };

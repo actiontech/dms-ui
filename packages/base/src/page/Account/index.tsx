@@ -15,6 +15,7 @@ import UserPhone from './components/UserPhone';
 import UserEmail from './components/UserEmail';
 import AccessToken from './components/AccessToken';
 import PersonalSMS from './PersonalSMS';
+import LoginConfiguration from './components/LoginConfiguration';
 
 const Account: React.FC = () => {
   const { t } = useTranslation();
@@ -88,6 +89,11 @@ const Account: React.FC = () => {
             loading={getUserInfoLoading}
           />
           {/* #endif */}
+
+          <LoginConfiguration
+            userBaseInfo={userInfo}
+            updateUserInfo={updateUserInfo}
+          />
         </Spin>
       </AccountContentStyleWrapper>
     </div>

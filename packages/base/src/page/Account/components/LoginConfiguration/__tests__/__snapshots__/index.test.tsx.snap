@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginConfiguration should render correctly with snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
+    >
+      <div
+        class="ant-col ant-col-11 config-item-label"
+      >
+        <div
+          class="config-item-label"
+        >
+          <div
+            class="title"
+          >
+            登录设置
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          SQL工作台
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            hidden=""
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

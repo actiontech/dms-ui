@@ -23,7 +23,10 @@ const useUserInfo = () => {
   const dispatch = useDispatch();
   const navigate = useTypedNavigate();
   const location = useLocation();
-  const userId = useSelector((state: IReduxState) => state.user.uid);
+  const { userId, systemPreference } = useSelector((state: IReduxState) => ({
+    userId: state.user.uid,
+    systemPreference: state.user.systemPreference
+  }));
 
   const clearUserInfo = useCallback(() => {
     dispatch(
@@ -102,11 +105,13 @@ const useUserInfo = () => {
             })
           );
 
-          dispatch(
-            updateSystemPreference({
-              systemPreference: data?.system
-            })
-          );
+          if (!systemPreference) {
+            dispatch(
+              updateSystemPreference({
+                systemPreference: data?.system
+              })
+            );
+          }
 
           dispatch(updateUserInfoFetchStatus(true));
         } else {

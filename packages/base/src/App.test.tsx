@@ -99,6 +99,9 @@ describe('App', () => {
           modalStatus: {
             [ModalName.Company_Notice]: false
           }
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
         }
       });
     });

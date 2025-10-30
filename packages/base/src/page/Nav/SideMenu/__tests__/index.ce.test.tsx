@@ -13,6 +13,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
   let getSystemModuleRedDotsSpy: jest.SpyInstance;
@@ -21,6 +22,7 @@ describe('test base/Nav/SideMenu/index.ce', () => {
   beforeEach(() => {
     mockSystemConfig();
     mockUseCurrentUser();
+    mockUseUserInfo();
     mockUsePermission(
       { checkPagePermission: checkPagePermissionSpy },
       {

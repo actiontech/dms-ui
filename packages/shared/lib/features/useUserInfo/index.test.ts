@@ -8,6 +8,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '../../testUtil/mockApi';
+import { GetUserSystemEnum } from '../../api/base/service/common.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -120,6 +121,27 @@ describe('useUserInfo', () => {
     });
     // expect(navigateSpy).toHaveBeenCalledTimes(1);
     // expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
+  });
+
+  it('should skip update systemPreference when systemPreference is not undefined', async () => {
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: { uid: '111', systemPreference: GetUserSystemEnum.MANAGEMENT }
+      });
+    });
+    const { result } = renderHook(() => useUserInfo());
+    expect(result.current.userInfo).not.toBeDefined();
+    expect(result.current.getUserInfoLoading).toBeFalsy();
+    await act(() => result.current.getUserInfo());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+
+    expect(mockDispatch).not.toHaveBeenCalledWith({
+      payload: {
+        systemPreference: GetUserSystemEnum.MANAGEMENT
+      },
+      type: 'user/updateSystemPreference'
+    });
   });
 
   it('should clear userInfo and navigate to login request error', async () => {
