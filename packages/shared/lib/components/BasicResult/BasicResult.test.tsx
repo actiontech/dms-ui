@@ -68,6 +68,16 @@ describe('lib/BasicResult', () => {
         '警告标题'
       );
     });
+
+    it('should render with 404 status', () => {
+      const { container } = customRender({
+        status: '404',
+        title: '404标题'
+      });
+      expect(container.querySelector('.ant-result-title')).toHaveTextContent(
+        '404标题'
+      );
+    });
   });
 
   describe('render with custom props', () => {

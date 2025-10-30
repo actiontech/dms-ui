@@ -1127,6 +1127,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_RESULT 1`] =
         </a>
       </div>
     </div>
+     
   </section>
 </div>
 `;

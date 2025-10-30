@@ -4,7 +4,7 @@ exports[`base/router-sqle-ce render route sqle index page 1`] = `
 <body>
   <div>
     <div>
-      null
+      notFound
     </div>
   </div>
 </body>

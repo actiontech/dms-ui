@@ -17,6 +17,8 @@ import dmsGlobalDataSource from './dmsGlobalDataSource';
 import resourceOverview from './resourceOverview';
 import provisionMember from './provisionMember';
 import availabilityZone from './availabilityZone';
+import dmsNotFound from './dmsNotFound';
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
@@ -37,6 +39,7 @@ export default {
     dmsGlobalDataSource,
     resourceOverview,
     provisionMember,
-    availabilityZone
+    availabilityZone,
+    dmsNotFound
   }
 };

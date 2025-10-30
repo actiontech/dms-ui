@@ -64,6 +64,7 @@ import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
 import { debounce } from 'lodash';
 import './index.less';
 import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
+import ErrorBoundary from './page/ErrorBoundary';
 
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -378,7 +379,7 @@ function App() {
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
               <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
+                <ErrorBoundary>{body}</ErrorBoundary>
               </EmptyBox>
             </ThemeProvider>
           </StyledEngineProvider>
