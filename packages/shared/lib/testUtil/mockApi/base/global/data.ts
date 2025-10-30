@@ -7,6 +7,7 @@ import {
 } from '../../../../api/base/service/common';
 import {
   GetUserAuthenticationTypeEnum,
+  GetUserSystemEnum,
   ListDBServiceV2LastConnectionTestStatusEnum
 } from '../../../../api/base/service/common.enum';
 import { SupportLanguage } from '../../../../enum';
@@ -30,7 +31,8 @@ export const GetUserPayload: IGetUser = {
       project_id: '700300',
       project_name: 'default'
     }
-  ]
+  ],
+  system: GetUserSystemEnum.MANAGEMENT
 };
 
 export const oauth2Tips: IGetOauth2TipsResData = {

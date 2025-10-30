@@ -1032,6 +1032,8 @@ export interface IGetUser {
 
   stat?: GetUserStatEnum;
 
+  system?: GetUserSystemEnum;
+
   third_party_user_info?: string;
 
   two_factor_enabled?: boolean;
@@ -2517,6 +2519,8 @@ export interface IUpdateCurrentUser {
   password?: string;
 
   phone?: string;
+
+  system?: UpdateCurrentUserSystemEnum;
 
   two_factor_enabled?: boolean;
 
