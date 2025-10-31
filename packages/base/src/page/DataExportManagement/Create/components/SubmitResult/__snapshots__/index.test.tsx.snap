@@ -430,6 +430,7 @@ exports[`test base/DataExport/Create/SubmitResult should match snapshot 1`] = `
         </a>
       </div>
     </div>
+     
   </section>
 </div>
 `;

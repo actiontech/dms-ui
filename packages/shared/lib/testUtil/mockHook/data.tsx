@@ -1,6 +1,7 @@
 import {
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
+  GetUserSystemEnum,
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum
 } from '../../api/base/service/common.enum';
@@ -49,7 +50,8 @@ export const mockCurrentUserReturn = {
     [SystemRole.auditAdministrator]: true,
     [SystemRole.projectDirector]: true
   },
-  hasGlobalViewingPermission: true
+  hasGlobalViewingPermission: true,
+  systemPreference: GetUserSystemEnum.MANAGEMENT
 };
 
 export const mockProjectInfo = {

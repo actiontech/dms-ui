@@ -1,3 +1,4 @@
+import { LocalStorageWrapper } from '@actiontech/shared';
 import reducers, {
   updateToken,
   updateTheme,
@@ -6,16 +7,18 @@ import reducers, {
   updateUserInfoFetchStatus,
   updateBindProjects,
   updateManagementPermissions,
-  updateLanguage
+  updateLanguage,
+  updateSystemPreference
 } from '.';
 import { IReduxState } from '..';
-import { LocalStorageWrapper } from '@actiontech/shared';
+
+import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   StorageKey,
   SupportLanguage,
-  SupportTheme,
   SystemRole
 } from '@actiontech/shared/lib/enum';
+import { SupportTheme } from '../../theme';
 
 describe('store user', () => {
   const state: IReduxState['user'] = {
@@ -30,7 +33,8 @@ describe('store user', () => {
     managementPermissions: [],
     role: '',
     isUserInfoFetched: false,
-    language: SupportLanguage.zhCN
+    language: SupportLanguage.zhCN,
+    systemPreference: undefined
   };
 
   it('should update token when dispatch updateToken action', () => {
@@ -50,7 +54,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -71,7 +76,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -93,7 +99,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -115,7 +122,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -136,7 +144,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -152,7 +161,8 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: true
+      isUserInfoFetched: true,
+      systemPreference: undefined
     });
   });
 
@@ -181,7 +191,8 @@ describe('store user', () => {
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
     });
   });
 
@@ -203,7 +214,30 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',
-      isUserInfoFetched: false
+      isUserInfoFetched: false,
+      systemPreference: undefined
+    });
+  });
+
+  it('should update systemPreference when dispatch updateSystemPreference action', () => {
+    const newState = reducers(
+      state,
+      updateSystemPreference({
+        systemPreference: GetUserSystemEnum.MANAGEMENT
+      })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
+      bindProjects: [],
+      managementPermissions: [],
+      role: '',
+      isUserInfoFetched: false,
+      systemPreference: GetUserSystemEnum.MANAGEMENT
     });
   });
 });

@@ -265,5 +265,7 @@ export default {
     sendCode: '发送验证码',
     secondsLater: '{{number}}秒后重试'
   },
-  deleteConfirmTitle: '确认要删除么?'
+  deleteConfirmTitle: '确认要删除么?',
+  somethingWentWrong: '出错了',
+  backToHome: '返回首页'
 };

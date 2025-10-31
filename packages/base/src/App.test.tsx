@@ -48,6 +48,12 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-error-boundary', () => ({
+  ErrorBoundary: ({ children }: { children: React.ReactNode }) => {
+    return children;
+  }
+}));
+
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
@@ -93,6 +99,9 @@ describe('App', () => {
           modalStatus: {
             [ModalName.Company_Notice]: false
           }
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
         }
       });
     });

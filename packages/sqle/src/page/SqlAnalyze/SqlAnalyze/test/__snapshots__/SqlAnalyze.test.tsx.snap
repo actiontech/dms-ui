@@ -648,6 +648,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when errorType is error 1`] = 
                   mock error info
                 </div>
               </div>
+               
             </section>
           </section>
         </div>
@@ -1091,6 +1092,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when errorType is info 1`] = `
                   mock error info
                 </div>
               </div>
+               
             </section>
           </section>
         </div>

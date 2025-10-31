@@ -87,8 +87,12 @@ const UpdateInfoDrawer: React.FC = () => {
           <UpdateTaskInfoFormTitleStyleWrapper>
             {t('dmsDataExport.create.update.sourceTitle')}
           </UpdateTaskInfoFormTitleStyleWrapper>
-
-          <ExportSourceFormItem sourceForm={sourceForm} baseForm={baseForm} />
+          <ExportSourceFormItem
+            sourceForm={sourceForm}
+            baseForm={baseForm}
+            methodForm={methodForm}
+            mode="update"
+          />
         </UpdateSourceInfoFormStyleWrapper>
 
         <Divider style={{ marginTop: 0 }} />

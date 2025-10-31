@@ -1450,6 +1450,7 @@ exports[`sqle/CustomRule/UpdateCustomRule return to custom list page 1`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -2981,6 +2982,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -5299,6 +5301,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>

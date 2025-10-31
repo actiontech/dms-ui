@@ -1,5 +1,7 @@
 export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
 export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';
+export const SQL_WORKBENCH_FROM_PARAM_NAME = 'from';
+export const ODC_WORKBENCH_NAME = 'odc';
 
 export const ROUTE_PATHS = {
   BASE: {
@@ -103,7 +105,8 @@ export const ROUTE_PATHS = {
       },
       create: {
         prefix: '/project/:projectID/data/export',
-        path: 'create'
+        path: 'create',
+        query: 'from&compression_data'
       },
       detail: {
         prefix: '/project/:projectID/data/export',

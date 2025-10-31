@@ -2,16 +2,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 import { IReduxState } from '../../../../base/src/store';
 import {
-  OpPermissionTypeUid,
-  SupportLanguage,
-  SupportTheme,
-  SystemRole,
-  UserRolesType
-} from '../../enum';
-import {
   updateTheme as updateReduxTheme,
   updateLanguage as updateReduxLanguage
 } from '../../../../base/src/store/user';
+import {
+  SystemRole,
+  SupportTheme,
+  SupportLanguage,
+  UserRolesType,
+  OpPermissionTypeUid
+} from '../../enum';
 
 const useCurrentUser = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,8 @@ const useCurrentUser = () => {
     theme,
     isUserInfoFetched,
     userId,
-    language
+    language,
+    systemPreference
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -33,7 +34,8 @@ const useCurrentUser = () => {
       theme: state.user.theme,
       isUserInfoFetched: state.user.isUserInfoFetched,
       userId: state.user.uid,
-      language: state.user.language
+      language: state.user.language,
+      systemPreference: state.user.systemPreference
     };
   });
 
@@ -95,7 +97,8 @@ const useCurrentUser = () => {
     isCertainProjectManager,
     userRoles,
     language,
-    updateLanguage
+    updateLanguage,
+    systemPreference
   };
 };
 export default useCurrentUser;

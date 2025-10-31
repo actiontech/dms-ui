@@ -1,5 +1,5 @@
-import { MessageInstance } from 'antd/es/message/interface';
 import { IGetUser } from '@actiontech/shared/lib/api/base/service/common';
+import { MessageInstance } from 'antd/es/message/interface';
 
 export type PasswordFormFields = {
   oldPassword: string;
@@ -27,5 +27,10 @@ export type AccessTokenProps = {
   token?: string;
   expiration?: string;
   hasExpired?: boolean;
+  updateUserInfo: () => void;
+};
+
+export type DefaultLoginPageProps = {
+  userBaseInfo?: IGetUser;
   updateUserInfo: () => void;
 };

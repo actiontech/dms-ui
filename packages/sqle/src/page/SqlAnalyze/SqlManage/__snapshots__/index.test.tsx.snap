@@ -19436,6 +19436,7 @@ exports[`SqlAnalyze/SQLManage should render error result of type "error" when re
                 error
               </div>
             </div>
+             
           </section>
         </section>
       </div>

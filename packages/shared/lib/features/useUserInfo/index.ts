@@ -10,7 +10,8 @@ import {
   updateUser,
   updateUserInfoFetchStatus,
   updateUserUid,
-  updateLanguage
+  updateLanguage,
+  updateSystemPreference
 } from '../../../../base/src/store/user';
 import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
 import User from '../../api/base/service/User';
@@ -22,7 +23,10 @@ const useUserInfo = () => {
   const dispatch = useDispatch();
   const navigate = useTypedNavigate();
   const location = useLocation();
-  const userId = useSelector((state: IReduxState) => state.user.uid);
+  const { userId, systemPreference } = useSelector((state: IReduxState) => ({
+    userId: state.user.uid,
+    systemPreference: state.user.systemPreference
+  }));
 
   const clearUserInfo = useCallback(() => {
     dispatch(
@@ -100,6 +104,14 @@ const useUserInfo = () => {
               managementPermissions: data?.op_permissions ?? []
             })
           );
+
+          if (!systemPreference) {
+            dispatch(
+              updateSystemPreference({
+                systemPreference: data?.system
+              })
+            );
+          }
 
           dispatch(updateUserInfoFetchStatus(true));
         } else {

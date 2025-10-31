@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
+import UserGuideModal from './UserGuideModal';
 
 // #if [ee]
 import EESideMenu from './SideMenu';
@@ -29,6 +30,8 @@ const Nav: React.FC<{ children?: ReactNode }> = (props) => {
         <CopyrightInformation />
         {/* #endif */}
       </div>
+
+      <UserGuideModal />
     </LayoutStyleWrapper>
   );
 };

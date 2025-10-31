@@ -414,6 +414,7 @@ exports[`lib/BasicResult should match snapshot 1`] = `
         成功副标题
       </div>
     </div>
+     
   </section>
 </div>
 `;

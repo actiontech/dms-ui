@@ -4,6 +4,7 @@ import {
   GetDataExportTaskStatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
+  GetUserSystemEnum,
   ListDBServiceLastConnectionTestStatusEnum,
   ListDBServiceV2LastConnectionTestStatusEnum,
   ListDataExportWorkflowStatusEnum,
@@ -1031,6 +1032,8 @@ export interface IGetUser {
   phone?: string;
 
   stat?: GetUserStatEnum;
+
+  system?: GetUserSystemEnum;
 
   third_party_user_info?: string;
 
@@ -2517,6 +2520,8 @@ export interface IUpdateCurrentUser {
   password?: string;
 
   phone?: string;
+
+  system?: UpdateCurrentUserSystemEnum;
 
   two_factor_enabled?: boolean;
 

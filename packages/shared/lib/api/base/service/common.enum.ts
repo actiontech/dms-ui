@@ -46,6 +46,12 @@ export enum GetUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum GetUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
+}
+
 export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_success' = 'connect_success',
 
@@ -278,6 +284,12 @@ export enum TestFeishuConfigurationAccountTypeEnum {
   'email' = 'email',
 
   'phone' = 'phone'
+}
+
+export enum UpdateCurrentUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
 }
 
 export enum UpdateProjectProjectPriorityEnum {

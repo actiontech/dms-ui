@@ -30,6 +30,12 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-error-boundary', () => ({
+  ErrorBoundary: ({ children }: { children: React.ReactNode }) => {
+    return children;
+  }
+}));
+
 describe('test App ce', () => {
   const scopeDispatch = jest.fn();
   beforeEach(() => {
