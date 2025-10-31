@@ -1601,6 +1601,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -3861,6 +3862,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -5693,6 +5695,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>

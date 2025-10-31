@@ -1598,6 +1598,7 @@ exports[`sqle/GlobalRuleTemplate/ImportRuleTemplate import global rule template 
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -2290,6 +2291,7 @@ exports[`sqle/GlobalRuleTemplate/ImportRuleTemplate reset form values 1`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -3089,6 +3091,7 @@ exports[`sqle/GlobalRuleTemplate/ImportRuleTemplate reset form values 2`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>
@@ -4694,6 +4697,7 @@ exports[`sqle/GlobalRuleTemplate/ImportRuleTemplate rule list action 1`] = `
               </button>
             </div>
           </div>
+           
         </section>
       </div>
     </section>

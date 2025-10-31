@@ -12077,6 +12077,7 @@ exports[`SqlAnalyze/Workflow should render error result of type "error" when res
                 error
               </div>
             </div>
+             
           </section>
         </section>
       </div>

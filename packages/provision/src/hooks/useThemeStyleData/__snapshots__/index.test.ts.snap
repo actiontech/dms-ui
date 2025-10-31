@@ -2,6 +2,7 @@
 
 exports[`provision/hooks/useThemeStyleData should match snapshot 1`] = `
 {
+  "applyStyles": [Function],
   "breakpoints": {
     "between": [Function],
     "down": [Function],
@@ -520,5 +521,277 @@ exports[`provision/hooks/useThemeStyleData should match snapshot 1`] = `
     },
   },
   "spacing": [Function],
+  "unstable_sx": [Function],
+  "unstable_sxConfig": {
+    "alignContent": {},
+    "alignItems": {},
+    "alignSelf": {},
+    "backgroundColor": {
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "bgcolor": {
+      "cssProperty": "backgroundColor",
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "border": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderBottom": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderBottomColor": {
+      "themeKey": "palette",
+    },
+    "borderColor": {
+      "themeKey": "palette",
+    },
+    "borderLeft": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderLeftColor": {
+      "themeKey": "palette",
+    },
+    "borderRadius": {
+      "style": [Function],
+      "themeKey": "shape.borderRadius",
+    },
+    "borderRight": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderRightColor": {
+      "themeKey": "palette",
+    },
+    "borderTop": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderTopColor": {
+      "themeKey": "palette",
+    },
+    "bottom": {},
+    "boxShadow": {
+      "themeKey": "shadows",
+    },
+    "boxSizing": {},
+    "color": {
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "columnGap": {
+      "style": [Function],
+    },
+    "display": {},
+    "displayPrint": {
+      "cssProperty": false,
+      "transform": [Function],
+    },
+    "flex": {},
+    "flexBasis": {},
+    "flexDirection": {},
+    "flexGrow": {},
+    "flexShrink": {},
+    "flexWrap": {},
+    "fontFamily": {
+      "themeKey": "typography",
+    },
+    "fontSize": {
+      "themeKey": "typography",
+    },
+    "fontStyle": {
+      "themeKey": "typography",
+    },
+    "fontWeight": {
+      "themeKey": "typography",
+    },
+    "gap": {
+      "style": [Function],
+    },
+    "gridArea": {},
+    "gridAutoColumns": {},
+    "gridAutoFlow": {},
+    "gridAutoRows": {},
+    "gridColumn": {},
+    "gridRow": {},
+    "gridTemplateAreas": {},
+    "gridTemplateColumns": {},
+    "gridTemplateRows": {},
+    "height": {
+      "transform": [Function],
+    },
+    "justifyContent": {},
+    "justifyItems": {},
+    "justifySelf": {},
+    "left": {},
+    "letterSpacing": {},
+    "lineHeight": {},
+    "m": {
+      "style": [Function],
+    },
+    "margin": {
+      "style": [Function],
+    },
+    "marginBlock": {
+      "style": [Function],
+    },
+    "marginBlockEnd": {
+      "style": [Function],
+    },
+    "marginBlockStart": {
+      "style": [Function],
+    },
+    "marginBottom": {
+      "style": [Function],
+    },
+    "marginInline": {
+      "style": [Function],
+    },
+    "marginInlineEnd": {
+      "style": [Function],
+    },
+    "marginInlineStart": {
+      "style": [Function],
+    },
+    "marginLeft": {
+      "style": [Function],
+    },
+    "marginRight": {
+      "style": [Function],
+    },
+    "marginTop": {
+      "style": [Function],
+    },
+    "marginX": {
+      "style": [Function],
+    },
+    "marginY": {
+      "style": [Function],
+    },
+    "maxHeight": {
+      "transform": [Function],
+    },
+    "maxWidth": {
+      "style": [Function],
+    },
+    "mb": {
+      "style": [Function],
+    },
+    "minHeight": {
+      "transform": [Function],
+    },
+    "minWidth": {
+      "transform": [Function],
+    },
+    "ml": {
+      "style": [Function],
+    },
+    "mr": {
+      "style": [Function],
+    },
+    "mt": {
+      "style": [Function],
+    },
+    "mx": {
+      "style": [Function],
+    },
+    "my": {
+      "style": [Function],
+    },
+    "order": {},
+    "outline": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "outlineColor": {
+      "themeKey": "palette",
+    },
+    "overflow": {},
+    "p": {
+      "style": [Function],
+    },
+    "padding": {
+      "style": [Function],
+    },
+    "paddingBlock": {
+      "style": [Function],
+    },
+    "paddingBlockEnd": {
+      "style": [Function],
+    },
+    "paddingBlockStart": {
+      "style": [Function],
+    },
+    "paddingBottom": {
+      "style": [Function],
+    },
+    "paddingInline": {
+      "style": [Function],
+    },
+    "paddingInlineEnd": {
+      "style": [Function],
+    },
+    "paddingInlineStart": {
+      "style": [Function],
+    },
+    "paddingLeft": {
+      "style": [Function],
+    },
+    "paddingRight": {
+      "style": [Function],
+    },
+    "paddingTop": {
+      "style": [Function],
+    },
+    "paddingX": {
+      "style": [Function],
+    },
+    "paddingY": {
+      "style": [Function],
+    },
+    "pb": {
+      "style": [Function],
+    },
+    "pl": {
+      "style": [Function],
+    },
+    "position": {},
+    "pr": {
+      "style": [Function],
+    },
+    "pt": {
+      "style": [Function],
+    },
+    "px": {
+      "style": [Function],
+    },
+    "py": {
+      "style": [Function],
+    },
+    "right": {},
+    "rowGap": {
+      "style": [Function],
+    },
+    "textAlign": {},
+    "textOverflow": {},
+    "textTransform": {},
+    "top": {},
+    "typography": {
+      "cssProperty": false,
+      "themeKey": "typography",
+    },
+    "visibility": {},
+    "whiteSpace": {},
+    "width": {
+      "transform": [Function],
+    },
+    "zIndex": {
+      "themeKey": "zIndex",
+    },
+  },
 }
 `;

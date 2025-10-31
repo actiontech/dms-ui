@@ -53,7 +53,7 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
 
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
