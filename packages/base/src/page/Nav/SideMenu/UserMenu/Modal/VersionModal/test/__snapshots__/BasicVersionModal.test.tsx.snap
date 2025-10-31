@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            feature/csvw-support-odc   4279250f3
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
@@ -349,7 +349,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            feature/csvw-support-odc   4279250f3
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
