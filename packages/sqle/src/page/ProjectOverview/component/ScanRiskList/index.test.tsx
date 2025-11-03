@@ -103,8 +103,8 @@ describe('page/ProjectOverview/ScanRiskList', () => {
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.Refresh_Project_Overview
