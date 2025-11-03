@@ -112,11 +112,11 @@ exports[`sqle/components/ChartCom/TableTopList render snap when has error 1`] = 
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>

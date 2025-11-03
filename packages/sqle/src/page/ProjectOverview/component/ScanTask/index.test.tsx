@@ -105,8 +105,8 @@ describe('page/ProjectOverview/ScanTask', () => {
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getAllByText('刷新')?.[0]).toBeInTheDocument();
-    fireEvent.click(screen.getAllByText('刷新')?.[0]);
+    expect(screen.getAllByText('刷 新')?.[0]).toBeInTheDocument();
+    fireEvent.click(screen.getAllByText('刷 新')?.[0]);
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.Refresh_Project_Overview
