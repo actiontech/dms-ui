@@ -13,7 +13,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@actiontech/robot-server-sdk": "latest",
     "archiver": "^7.0.1",
     "basic-ftp": "^5.0.5",
     "chalk": "^4.1.2",

@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import { ServerSDK } from '@actiontech/robot-server-sdk';
 import 'dotenv/config';
 import type { EnvironmentConfig } from '../types/index';
 
@@ -93,9 +92,6 @@ if (!environments[ENV]) {
 
 // 导出当前环境配置
 export const config = environments[ENV];
-
-// 初始化并导出 Robot SDK
-export const robotSDK = new ServerSDK({ baseUrl: config.robotSDK.baseUrl });
 
 // 输出当前环境信息
 console.log(chalk.blue(`\n当前部署环境: ${ENV}\n`));
