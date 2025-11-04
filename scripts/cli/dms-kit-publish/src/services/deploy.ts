@@ -3,7 +3,7 @@ import * as path from 'path';
 import { Client as ftpClient } from 'basic-ftp';
 import { execa } from 'execa';
 import chalk from 'chalk';
-import { config, robotSDK, ENV, RETRY_DEPLOY_TRIGGER } from '../config/index';
+import { config, ENV, RETRY_DEPLOY_TRIGGER } from '../config/index';
 import { packages, projectRoot } from '../constants/packages';
 import {
   ErrorCode,
@@ -16,6 +16,7 @@ import { getChangelogForVersion } from '../utils/changelog';
 import { compressFolder } from '../utils/compress';
 import { VersionValidator } from './validator';
 import { NotificationService } from './notification';
+import axios from 'axios';
 
 /**
  * DMS UI 部署主类
@@ -589,12 +590,18 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
 
     stepLog('发送文档部署请求');
     try {
-      await robotSDK.docManagement.dmpKitDeploy({
-        body: {
+      await axios.post(
+        `${config.robotSDK.baseUrl}/v1/doc-management/dmp-kit-deploy`,
+        {
           package_list: packageList,
           project_id: config.githubApi.projectId
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
         }
-      });
+      );
       successLog('文档部署请求发送成功');
     } catch (error: any) {
       if (RETRY_DEPLOY_TRIGGER) {
