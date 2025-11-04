@@ -5,7 +5,8 @@ import {
 import {
   WorkflowRecordResV2StatusEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
-  GetWorkflowTasksItemV2StatusEnum
+  GetWorkflowTasksItemV2StatusEnum,
+  WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   ActiontechTableActionsWithPermissions,
@@ -14,6 +15,7 @@ import {
 import dayjs from 'dayjs';
 import { checkTimeInWithMaintenanceTime } from '../../../../Common/utils';
 import { t } from '../../../../../../locale';
+import { IWorkflowRecordResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 type Params = {
   currentUsername: string;
@@ -28,6 +30,8 @@ type Params = {
     taskId?: string
   ) => Promise<void>;
   executable: boolean;
+  onRetryExecute: (record: IGetWorkflowTasksItemV2) => void;
+  workflowInfoRecord?: IWorkflowRecordResV2;
 };
 
 export const AuditResultOverviewListAction = (
@@ -40,7 +44,8 @@ export const AuditResultOverviewListAction = (
     workflowStatus,
     openScheduleModalAndSetCurrentTask,
     scheduleTimeHandle,
-    executable
+    executable,
+    workflowInfoRecord
   } = params;
 
   const unusableStatus = [
@@ -72,6 +77,24 @@ export const AuditResultOverviewListAction = (
     }
 
     return status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution;
+  };
+
+  const enableSqlRetryExecute = (
+    maintenanceTime: IMaintenanceTimeResV1[] = []
+  ) => {
+    if (
+      !workflowInfoRecord?.workflow_step_list
+        ?.find((v) => v.type === WorkflowStepResV2TypeEnum.sql_execute)
+        ?.assignee_user_name_list?.includes(currentUsername)
+    ) {
+      return false;
+    }
+
+    if (maintenanceTime.length) {
+      return checkTimeInWithMaintenanceTime(dayjs(), maintenanceTime);
+    }
+
+    return true;
   };
 
   const enableSqlScheduleTime = (
@@ -110,6 +133,21 @@ export const AuditResultOverviewListAction = (
   return {
     width: 180,
     buttons: [
+      {
+        key: 'retryExecute',
+        text: t('execWorkflow.detail.overview.table.retryExecute'),
+        buttonProps(record) {
+          return {
+            disabled: !enableSqlRetryExecute(
+              record?.instance_maintenance_times
+            ),
+            hidden:
+              record?.status !== GetWorkflowTasksItemV2StatusEnum.exec_failed,
+            onClick: () => params.onRetryExecute(record!)
+          };
+        },
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK
+      },
       {
         key: 'terminate',
         text: t('execWorkflow.detail.operator.terminate'),

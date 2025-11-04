@@ -10,6 +10,7 @@ import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 const mockListData: IAuditTaskSQLResV2[] = [];
 for (let i = 0; i < 50; i++) {
@@ -30,6 +31,11 @@ for (let i = 0; i < 50; i++) {
   });
 }
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
+
 describe('test WaterfallList/SQLExecuteMode', () => {
   const customRender = (params?: Partial<SqlExecuteModeProps>) => {
     const _params: SqlExecuteModeProps = {
@@ -39,7 +45,8 @@ describe('test WaterfallList/SQLExecuteMode', () => {
       noDuplicate: false,
       tableFilterInfo: {},
       assigneeUserNames: [mockCurrentUserReturn.username],
-      execStatusFilterValue: null
+      execStatusFilterValue: null,
+      enableRetryExecute: true
     };
     return sqleSuperRender(<SqlExecuteMode {...{ ..._params, ...params }} />);
   };
@@ -48,6 +55,9 @@ describe('test WaterfallList/SQLExecuteMode', () => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
   afterEach(() => {
     jest.useRealTimers();

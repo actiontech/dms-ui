@@ -7,9 +7,11 @@ import {
   WorkflowResV2ExecModeEnum,
   AuditTaskResV1StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { TablePagination } from '@actiontech/dms-kit/es/components/ActiontechTable';
 
 type BaseProps = {
   taskId: string;
+  enableRetryExecute?: boolean;
 };
 
 export type SqlExecuteResultCardProps = BaseProps &
@@ -22,6 +24,7 @@ export type SqlExecuteResultCardProps = BaseProps &
     taskStatus?: AuditTaskResV1StatusEnum;
     instanceName?: string;
     schema?: string;
+    pagination?: TablePagination;
   };
 
 export type FileExecuteResultCardProps = BaseProps &

@@ -34,15 +34,29 @@ import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
 import { formatterSQL } from '@actiontech/dms-kit';
 import AuditExceptionTree from './components/AuditExceptionTree';
 import { IAuditResultItem } from '../../../../../../../../components/ReportDrawer/index.type';
+import { useDispatch } from 'react-redux';
+import {
+  updateRetryExecuteData,
+  updateSqlExecWorkflowModalStatus
+} from '../../../../../../../../store/sqlExecWorkflow/index';
+import { ModalName } from '../../../../../../../../data/ModalName';
+import {
+  PermissionControl,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
+
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
   taskId,
   onUpdateDescription,
+  pagination,
+  enableRetryExecute,
   ...props
 }) => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
   const { sqleTheme } = useThemeStyleData();
+  const dispatch = useDispatch();
   const [loading, { setTrue: updateDescPending, setFalse: updateDescDone }] =
     useBoolean();
   const [currentContentKey, setCurrentContentKey] =
@@ -82,6 +96,24 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       })
     );
   };
+
+  const onRetryExecute = () => {
+    dispatch(
+      updateSqlExecWorkflowModalStatus({
+        modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
+        status: true
+      })
+    );
+    dispatch(
+      updateRetryExecuteData({
+        taskId: taskId ?? '',
+        execSqlId: props.exec_sql_id ?? 0,
+        pageIndex: pagination?.page_index,
+        pageSize: pagination?.page_size
+      })
+    );
+  };
+
   const updateSqlDescribe = (sqlDescribe: string) => {
     updateDescPending();
     task
@@ -152,6 +184,24 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
             />
           </EmptyBox>
           {/* #endif */}
+          <EmptyBox
+            if={
+              [
+                getAuditTaskSQLsV2FilterExecStatusEnum.failed,
+                getAuditTaskSQLsV2FilterExecStatusEnum.initialized
+              ].includes(
+                props.exec_status as getAuditTaskSQLsV2FilterExecStatusEnum
+              ) && !!enableRetryExecute
+            }
+          >
+            <PermissionControl
+              permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK}
+            >
+              <BasicButton size="small" onClick={onRetryExecute}>
+                {t('execWorkflow.detail.overview.table.retryExecute')}
+              </BasicButton>
+            </PermissionControl>
+          </EmptyBox>
           <BasicButton size="small" onClick={onCopyExecSql}>
             {t('execWorkflow.audit.copyExecSql')}
           </BasicButton>
