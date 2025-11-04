@@ -8,6 +8,10 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetScheduledTaskDefaultOptionV1Return,
+  IGetGlobalDataExportWorkflowsV1Params,
+  IGetGlobalDataExportWorkflowsV1Return,
+  IGetGlobalDataExportWorkflowStatisticsV1Params,
+  IGetGlobalDataExportWorkflowStatisticsV1Return,
   IGetGlobalWorkflowsV1Params,
   IGetGlobalWorkflowsV1Return,
   IGetGlobalWorkflowStatisticsParams,
@@ -32,6 +36,8 @@ import {
   ITerminateMultipleTaskByWorkflowV1Params,
   ITerminateMultipleTaskByWorkflowV1Return,
   IGetWorkflowAttachmentParams,
+  IReExecuteTaskOnWorkflowV1Params,
+  IReExecuteTaskOnWorkflowV1Return,
   ITerminateSingleTaskByWorkflowV1Params,
   ITerminateSingleTaskByWorkflowV1Return,
   IGetWorkflowV1Params,
@@ -91,6 +97,30 @@ class WorkflowService extends ServiceBase {
     return this.get<IGetScheduledTaskDefaultOptionV1Return>(
       '/v1/configurations/workflows/schedule/default_option',
       undefined,
+      options
+    );
+  }
+
+  public getGlobalDataExportWorkflowsV1(
+    params: IGetGlobalDataExportWorkflowsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalDataExportWorkflowsV1Return>(
+      '/v1/dashboard/data_export_workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public getGlobalDataExportWorkflowStatisticsV1(
+    params: IGetGlobalDataExportWorkflowStatisticsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalDataExportWorkflowStatisticsV1Return>(
+      '/v1/dashboard/data_export_workflows/statistics',
+      paramsData,
       options
     );
   }
@@ -294,6 +324,27 @@ class WorkflowService extends ServiceBase {
 
     return this.get<any>(
       `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/attachment`,
+      paramsData,
+      options
+    );
+  }
+
+  public reExecuteTaskOnWorkflowV1(
+    params: IReExecuteTaskOnWorkflowV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.post<IReExecuteTaskOnWorkflowV1Return>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/re_execute`,
       paramsData,
       options
     );

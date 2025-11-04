@@ -31,9 +31,6 @@ import {
   ICheckSQLELicenseV1Return,
   IGetSSHPublicKeyReturn,
   IGenSSHPublicKeyReturn,
-  IGetSystemVariablesV1Return,
-  IUpdateSystemVariablesV1Params,
-  IUpdateSystemVariablesV1Return,
   IGetWechatAuditConfigurationV1Return,
   IUpdateWechatAuditConfigurationV1Params,
   IUpdateWechatAuditConfigurationV1Return,
@@ -229,26 +226,6 @@ class ConfigurationService extends ServiceBase {
     return this.post<IGenSSHPublicKeyReturn>(
       '/v1/configurations/ssh_key',
       undefined,
-      options
-    );
-  }
-
-  public getSystemVariablesV1(options?: AxiosRequestConfig) {
-    return this.get<IGetSystemVariablesV1Return>(
-      '/v1/configurations/system_variables',
-      undefined,
-      options
-    );
-  }
-
-  public updateSystemVariablesV1(
-    params: IUpdateSystemVariablesV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.patch<IUpdateSystemVariablesV1Return>(
-      '/v1/configurations/system_variables',
-      paramsData,
       options
     );
   }

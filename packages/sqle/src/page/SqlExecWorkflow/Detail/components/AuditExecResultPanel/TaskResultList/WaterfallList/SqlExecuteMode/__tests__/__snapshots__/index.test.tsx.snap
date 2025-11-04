@@ -124,6 +124,19 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                           type="button"
                         >
                           <span>
+                            再次执行
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <button
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
                             复制执行语句
                           </span>
                         </button>
@@ -613,6 +626,19 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                               fill="currentColor"
                             />
                           </svg>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <button
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            再次执行
+                          </span>
                         </button>
                       </div>
                       <div

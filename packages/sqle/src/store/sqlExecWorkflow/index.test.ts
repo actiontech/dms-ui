@@ -2,7 +2,8 @@ import reducers, {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo,
   updateVersionFirstStageInstances,
-  updateWorkflowRollbackSqlIds
+  updateWorkflowRollbackSqlIds,
+  updateRetryExecuteData
 } from '.';
 import {
   AuditTaskResV1SqlSourceEnum,
@@ -50,7 +51,9 @@ describe('store/sqlExecWorkflow', () => {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
         versionFirstStageInstances: null,
-        workflowRollbackSqlIds: null
+        workflowRollbackSqlIds: null,
+        retryExecuteData: null,
+        modalStatus: {}
       },
       updateClonedExecWorkflowSqlAuditInfo(mockWorkflowSqlAuditInfo)
     );
@@ -58,7 +61,9 @@ describe('store/sqlExecWorkflow', () => {
       clonedExecWorkflowSqlAuditInfo: mockWorkflowSqlAuditInfo,
       clonedExecWorkflowBaseInfo: null,
       versionFirstStageInstances: null,
-      workflowRollbackSqlIds: null
+      workflowRollbackSqlIds: null,
+      retryExecuteData: null,
+      modalStatus: {}
     });
   });
 
@@ -77,7 +82,9 @@ describe('store/sqlExecWorkflow', () => {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
         versionFirstStageInstances: null,
-        workflowRollbackSqlIds: null
+        workflowRollbackSqlIds: null,
+        retryExecuteData: null,
+        modalStatus: {}
       },
       updateClonedExecWorkflowBaseInfo(mockWorkflowBaseInfo)
     );
@@ -85,7 +92,9 @@ describe('store/sqlExecWorkflow', () => {
       clonedExecWorkflowSqlAuditInfo: null,
       clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo,
       versionFirstStageInstances: null,
-      workflowRollbackSqlIds: null
+      workflowRollbackSqlIds: null,
+      retryExecuteData: null,
+      modalStatus: {}
     });
   });
 
@@ -108,7 +117,9 @@ describe('store/sqlExecWorkflow', () => {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
         versionFirstStageInstances: null,
-        workflowRollbackSqlIds: null
+        workflowRollbackSqlIds: null,
+        retryExecuteData: null,
+        modalStatus: {}
       },
       updateVersionFirstStageInstances({ versionFirstStageInstances })
     );
@@ -116,7 +127,9 @@ describe('store/sqlExecWorkflow', () => {
       clonedExecWorkflowSqlAuditInfo: null,
       clonedExecWorkflowBaseInfo: null,
       versionFirstStageInstances: versionFirstStageInstances,
-      workflowRollbackSqlIds: null
+      workflowRollbackSqlIds: null,
+      retryExecuteData: null,
+      modalStatus: {}
     });
   });
 
@@ -132,7 +145,9 @@ describe('store/sqlExecWorkflow', () => {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
         versionFirstStageInstances: null,
-        workflowRollbackSqlIds: null
+        workflowRollbackSqlIds: null,
+        retryExecuteData: null,
+        modalStatus: {}
       },
       updateWorkflowRollbackSqlIds({ workflowRollbackSqlIds })
     );
@@ -140,7 +155,42 @@ describe('store/sqlExecWorkflow', () => {
       clonedExecWorkflowSqlAuditInfo: null,
       clonedExecWorkflowBaseInfo: null,
       versionFirstStageInstances: null,
-      workflowRollbackSqlIds: workflowRollbackSqlIds
+      workflowRollbackSqlIds: workflowRollbackSqlIds,
+      retryExecuteData: null,
+      modalStatus: {}
+    });
+  });
+
+  test('should create action when call updateRetryExecuteData', () => {
+    const retryExecuteData = {
+      taskId: '1',
+      execSqlId: 1,
+      pageIndex: 1,
+      pageSize: 10
+    };
+    expect(updateRetryExecuteData({ ...retryExecuteData })).toEqual({
+      payload: { ...retryExecuteData },
+      type: 'sqlExecWorkflow/updateRetryExecuteData'
+    });
+
+    const state = reducers(
+      {
+        clonedExecWorkflowSqlAuditInfo: null,
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null,
+        workflowRollbackSqlIds: null,
+        retryExecuteData: null,
+        modalStatus: {}
+      },
+      updateRetryExecuteData({ ...retryExecuteData })
+    );
+    expect(state).toEqual({
+      clonedExecWorkflowSqlAuditInfo: null,
+      clonedExecWorkflowBaseInfo: null,
+      versionFirstStageInstances: null,
+      workflowRollbackSqlIds: null,
+      retryExecuteData: retryExecuteData,
+      modalStatus: {}
     });
   });
 });

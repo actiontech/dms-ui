@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { ConfigItem } from '@actiontech/dms-kit';
 import { EditInputNumber, LabelContent } from '@actiontech/dms-kit';
 import useValidatorNumber from './useValidatorNumber';
-import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/base/service/common';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 export interface OperationRecordExpiredHoursProps {
   expiredHours: number | undefined;

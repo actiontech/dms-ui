@@ -315,6 +315,19 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                       type="button"
                     >
                       <span>
+                        再次执行
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span>
                         复制执行语句
                       </span>
                     </button>
