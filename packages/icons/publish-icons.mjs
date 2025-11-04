@@ -5,8 +5,12 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import readline from 'node:readline';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const iconsDir = __dirname;
+
 function parseArgs(argv) {
-  const args = { version: '', skipConfirm: false };
+  const args = { version: '', skipConfirm: false, registry: '' };
   for (let i = 2; i < argv.length; i += 1) {
     const key = argv[i];
     const val = argv[i + 1];
@@ -15,6 +19,10 @@ function parseArgs(argv) {
       i += 1;
     } else if (key === '--skip-confirm' || key === '-y') {
       args.skipConfirm = true;
+    } else if (key === '--registry' || key === '-r') {
+      args.registry = val || '';
+    } else if (key === '--auth' || key === '-a') {
+      args.auth = val || '';
     }
   }
   return args;
@@ -125,13 +133,9 @@ async function confirmPublish() {
 }
 
 async function main() {
-  const { skipConfirm } = parseArgs(process.argv);
+  const { skipConfirm, registry, auth } = parseArgs(process.argv);
 
   const version = readJson(path.join(iconsDir, 'package.json')).version;
-
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  const iconsDir = __dirname;
 
   const pubPkg = path.join(iconsDir, 'package_publish.json');
   ensureFileExists(pubPkg, '发布用 package_publish.json');
@@ -141,12 +145,11 @@ async function main() {
   const originalVersion = originalPubPkgContent.version;
 
   const tmpBase = path.join(__dirname, '..');
-  const tmpDir = fs.mkdtempSync(
-    path.join(tmpBase, 'actiontech-icons-publish-')
-  );
+  const tmpDir = path.join(tmpBase, 'actiontech-icons-publish');
 
   try {
     console.log(`[1/7] 创建临时目录: ${tmpDir}`);
+    fs.mkdirSync(tmpDir, { recursive: true });
 
     console.log('[2/7] 复制整个 icons 包到临时目录');
     // 复制整个包目录，但排除一些不需要的文件
@@ -209,9 +212,9 @@ async function main() {
         return;
       }
     }
-
-    console.log('[6/7] 执行发布: npm publish');
-    runCmd('npm', ['publish'], tmpDir);
+    runCmd(`pnpm 'set', auth ${auth}`, tmpDir);
+    console.log('[6/7] 执行发布: pnpm publish');
+    runCmd('pnpm', ['publish', '--registry', registry], tmpDir);
 
     console.log('✅ 发布完成');
   } catch (err) {

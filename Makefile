@@ -46,5 +46,5 @@ docker_build_ee: pull_image docker_install_node_modules
 docker_build_demo: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:demo"
 
-docker_publish_and_docs_deploy: docker_install_node_modules
-	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "git config --global --add safe.directory /usr/src/app && pnpm publishAndDocsDeploy"
+docker_dms_kit_publish: docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm dms-kit:publish"

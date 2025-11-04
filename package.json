@@ -35,13 +35,13 @@
     "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y",
     "ai-doc": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli ai-doc",
     "postinstall": "pnpm --filter @actiontech/dms-kit build",
-    "publish_and_docs_deploy": "pnpm install && pnpm -C scripts/publishAndDocsDeploy install --ignore-workspace && tsx scripts/publishAndDocsDeploy/index.ts",
-    "publish_and_docs_deploy1": "tsx scripts/publishAndDocsDeploy/index.ts"
+    "dms-kit:publish": "pnpm --filter @actiontech/cli-dms-kit-publish build && dms-kit-publish"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
     "@actiontech/cli-create-dms-page": "workspace:^",
+    "@actiontech/cli-dms-kit-publish": "workspace:^",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@eslint/js": "^9.23.0",
     "@testing-library/dom": "9.3.4",
