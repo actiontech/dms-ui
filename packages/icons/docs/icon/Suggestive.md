@@ -53,6 +53,13 @@ import { RingPieFilled } from '@actiontech/icons';
 export default () => <RingPieFilled width={32} height={32} />
 ```
 
+## RocketFilled
+```jsx
+import { RocketFilled } from '@actiontech/icons';
+
+export default () => <RocketFilled width={32} height={32} />
+```
+
 ## ThunderBulbFilled
 ```jsx
 import { ThunderBulbFilled } from '@actiontech/icons';
