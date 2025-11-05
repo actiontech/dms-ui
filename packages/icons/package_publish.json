@@ -1,6 +1,7 @@
 {
   "name": "@actiontech/icons",
   "description": "",
+  "version": "0.0.1-rc.7",
   "main": "./dist/index.js",
   "module": "./es/index.js",
   "types": "./es/index.d.ts",

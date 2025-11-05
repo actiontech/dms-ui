@@ -18,6 +18,7 @@ export interface EnvironmentConfig {
     repo: string;
     baseUrl: string;
     projectId: number;
+    token: string;
   };
   email?: {
     host: string;

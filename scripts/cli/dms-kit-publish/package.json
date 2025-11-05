@@ -10,9 +10,11 @@
   ],
   "scripts": {
     "build:watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
   },
   "dependencies": {
+    "@octokit/rest": "^20.1.2",
     "archiver": "^7.0.1",
     "basic-ftp": "^5.0.5",
     "chalk": "^4.1.2",

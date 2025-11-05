@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const iconsDir = __dirname;
 
 function parseArgs(argv) {
-  const args = { version: '', skipConfirm: false, registry: '' };
+  const args = { version: '', skipConfirm: false, registry: '', auth: '' };
   for (let i = 2; i < argv.length; i += 1) {
     const key = argv[i];
     const val = argv[i + 1];
@@ -212,9 +212,14 @@ async function main() {
         return;
       }
     }
-    runCmd(`pnpm 'set', auth ${auth}`, tmpDir);
-    console.log('[6/7] 执行发布: pnpm publish');
-    runCmd('pnpm', ['publish', '--registry', registry], tmpDir);
+    console.log('[6/7] 配置认证');
+    runCmd('pnpm', ['config', 'set', auth], tmpDir);
+    console.log('[7/7] 执行发布: pnpm publish');
+    runCmd(
+      'pnpm',
+      ['publish', '--registry', registry, '--no-git-checks'],
+      tmpDir
+    );
 
     console.log('✅ 发布完成');
   } catch (err) {
@@ -233,7 +238,7 @@ async function main() {
       console.warn(`⚠️  还原版本号失败: ${restoreErr.message}`);
     }
   } finally {
-    console.log('[8/7] 清理临时目录');
+    console.log('[7/7] 清理临时目录');
     try {
       if (fs.existsSync(tmpDir)) {
         fs.rmSync(tmpDir, { recursive: true, force: true });

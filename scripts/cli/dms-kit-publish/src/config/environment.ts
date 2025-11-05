@@ -29,7 +29,8 @@ const environments: Record<string, EnvironmentConfig> = {
       owner: process.env.GITHUB_OWNER || 'actiontech',
       repo: process.env.GITHUB_REPO || 'dms-ui',
       baseUrl: process.env.GITHUB_API_BASE_URL || 'https://api.github.com',
-      projectId: parseInt(process.env.GITHUB_PROJECT_ID || '706476902')
+      projectId: parseInt(process.env.GITHUB_PROJECT_ID || '706476902'),
+      token: process.env.GITHUB_TOKEN || ''
     },
     email: process.env.EMAIL_HOST
       ? {
@@ -63,7 +64,8 @@ const environments: Record<string, EnvironmentConfig> = {
       owner: process.env.GITHUB_OWNER || 'actiontech',
       repo: process.env.GITHUB_REPO || 'dms-ui',
       baseUrl: process.env.GITHUB_API_BASE_URL || 'https://api.github.com',
-      projectId: parseInt(process.env.GITHUB_PROJECT_ID || '706476902')
+      projectId: parseInt(process.env.GITHUB_PROJECT_ID || '706476902'),
+      token: process.env.GITHUB_TOKEN || ''
     },
     email: process.env.EMAIL_HOST
       ? {
