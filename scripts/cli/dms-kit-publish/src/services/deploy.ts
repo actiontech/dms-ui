@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Client as ftpClient } from 'basic-ftp';
 import { execa } from 'execa';
-import chalk from 'chalk';
+import { Octokit } from '@octokit/rest';
 import { config, ENV, RETRY_DEPLOY_TRIGGER } from '../config/index';
 import { packages, projectRoot } from '../constants/packages';
 import {
@@ -11,7 +11,13 @@ import {
   PackageInfo,
   ZipFileInfo
 } from '../types/index';
-import { stepLog, successLog, errorLog, warnLog } from '../utils/logger';
+import {
+  stepLog,
+  successLog,
+  errorLog,
+  warnLog,
+  infoLog
+} from '../utils/logger';
 import { getChangelogForVersion } from '../utils/changelog';
 import { compressFolder } from '../utils/compress';
 import { VersionValidator } from './validator';
@@ -38,9 +44,9 @@ export class DmsKitPublish {
     try {
       // 如果是重试部署触发模式
       if (RETRY_DEPLOY_TRIGGER) {
-        console.log(chalk.cyan('\n========================================'));
-        console.log(chalk.cyan('         重试部署触发模式'));
-        console.log(chalk.cyan('========================================\n'));
+        infoLog('\n========================================');
+        infoLog('         重试部署触发模式');
+        infoLog('========================================\n');
 
         await this.retryDeployTrigger();
 
@@ -49,9 +55,9 @@ export class DmsKitPublish {
         process.exit(0);
       }
 
-      console.log(chalk.cyan('\n========================================'));
-      console.log(chalk.cyan('         准备阶段'));
-      console.log(chalk.cyan('========================================\n'));
+      infoLog('\n========================================');
+      infoLog('         准备阶段');
+      infoLog('========================================\n');
 
       // 验证必需的环境变量
       this.validateEnvironmentVariables();
@@ -60,7 +66,7 @@ export class DmsKitPublish {
       await this.loadPkgInfo();
 
       if (!this.pkgs.length) {
-        console.log('未找到有效的包信息');
+        infoLog('未找到有效的包信息');
         return;
       }
 
@@ -73,15 +79,18 @@ export class DmsKitPublish {
       // 压缩文档
       zipFiles = await this.compressDocs();
 
-      console.log(chalk.cyan('\n========================================'));
-      console.log(chalk.cyan('         发布阶段'));
-      console.log(chalk.cyan('========================================\n'));
+      infoLog('\n========================================');
+      infoLog('         发布阶段');
+      infoLog('========================================\n');
 
       // 进入发布阶段
       this.currentPhase = 'publishing';
 
       // 发布包
       await this.publishPkg();
+
+      // 创建并推送 Git tags
+      await this.createGitTags();
 
       // 上传文档
       await this.uploadDocs(zipFiles);
@@ -109,11 +118,15 @@ export class DmsKitPublish {
   4. ✓ 构建文档 (准备阶段)
   5. ✓ 压缩文档 (准备阶段)
   6. ✓ 发布包 (发布阶段)
-  7. ✓ 上传文档 (发布阶段)
-  8. ✓ 触发文档部署 (发布阶段)
+  7. ✓ 创建 Git Tags (发布阶段)
+  8. ✓ 上传文档 (发布阶段)
+  9. ✓ 触发文档部署 (发布阶段)
 
 包列表:
 ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
+
+Git Tags:
+${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
 
 总耗时: ${duration}s`;
 
@@ -155,7 +168,8 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
         name: 'FTP_PASSWORD',
         value: config.ftpServer.password,
         env: ['production']
-      }
+      },
+      { name: 'GITHUB_TOKEN', value: config.githubApi.token, env: ['all'] }
     ];
 
     const missing: string[] = [];
@@ -207,7 +221,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
           version
         });
 
-        console.log(`  读取包信息: ${name}@${version}`);
+        infoLog(`  读取包信息: ${name}@${version}`);
       } catch (error: any) {
         warnLog(`跳过包 ${pkg.dir}: ${error.message}`);
       }
@@ -335,7 +349,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
       }
 
       if (isPublished) {
-        console.log(`包 ${pkg.name}@${pkg.version} 已发布，跳过发布步骤`);
+        infoLog(`包 ${pkg.name}@${pkg.version} 已发布，跳过发布步骤`);
         continue;
       }
 
@@ -353,8 +367,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
               config.pnpm.auth
             ],
             {
-              cwd: path.join(this.cwd, 'packages', 'icons'),
-              stdio: 'inherit'
+              cwd: path.join(this.cwd, 'packages', 'icons')
             }
           );
           continue;
@@ -362,14 +375,18 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
         const pkgPath = path.join(this.cwd, 'packages', pkg.dir);
 
         // 设置 npm 认证
-        await execa(`pnpm config set ${config.pnpm.auth}`, {
+        await execa('pnpm', ['config', 'set', config.pnpm.auth], {
           cwd: pkgPath
         });
 
         // 发布包
-        await execa('pnpm', ['publish', '--registry', config.pnpm.registry], {
-          cwd: pkgPath
-        });
+        await execa(
+          'pnpm',
+          ['publish', '--registry', config.pnpm.registry, '--no-git-checks'],
+          {
+            cwd: pkgPath
+          }
+        );
 
         successLog(`包 ${pkg.name}@${pkg.version} 发布成功`);
       } catch (error: any) {
@@ -379,6 +396,92 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
           { originalError: error.message }
         );
       }
+    }
+  }
+
+  /**
+   * 创建并推送 Git Tags
+   */
+  private async createGitTags() {
+    stepLog('创建并推送 Git Tags');
+
+    // 初始化 Octokit 实例
+    const octokit = new Octokit({
+      auth: config.githubApi.token
+    });
+
+    try {
+      // 1. 获取当前分支的最新 commit SHA
+      const { data: refData } = await octokit.git.getRef({
+        owner: config.githubApi.owner,
+        repo: config.githubApi.repo,
+        ref: 'heads/main'
+      });
+
+      const commitSha = refData.object.sha;
+      infoLog(`  当前 commit SHA: ${commitSha}`);
+
+      // 2. 为每个包创建 tag
+      for (const pkg of this.pkgs) {
+        const tagName = `${pkg.dir}-v${pkg.version}`;
+
+        try {
+          // 检查 tag 是否已存在
+          try {
+            await octokit.git.getRef({
+              owner: config.githubApi.owner,
+              repo: config.githubApi.repo,
+              ref: `tags/${tagName}`
+            });
+            infoLog(`  Tag ${tagName} 已存在，跳过创建`);
+            continue;
+          } catch (error: any) {
+            // tag 不存在，继续创建
+            if (error.status !== 404) {
+              throw error;
+            }
+          }
+
+          // 3. 创建 tag 对象
+          const { data: tagData } = await octokit.git.createTag({
+            owner: config.githubApi.owner,
+            repo: config.githubApi.repo,
+            tag: tagName,
+            message: `Release ${pkg.name}@${pkg.version}`,
+            object: commitSha,
+            type: 'commit'
+          });
+
+          // 4. 创建 tag 引用
+          await octokit.git.createRef({
+            owner: config.githubApi.owner,
+            repo: config.githubApi.repo,
+            ref: `refs/tags/${tagName}`,
+            sha: tagData.sha
+          });
+
+          successLog(`  Tag ${tagName} 创建成功`);
+        } catch (error: any) {
+          throw new DeployError(
+            ErrorCode.TAG_PUSH_FAILED,
+            `创建 tag ${tagName} 失败`,
+            {
+              originalError: error.message,
+              status: error.status
+            }
+          );
+        }
+      }
+
+      successLog('Git Tags 创建完成');
+    } catch (error: any) {
+      if (error instanceof DeployError) {
+        throw error;
+      }
+      throw new DeployError(ErrorCode.TAG_PUSH_FAILED, '获取 commit SHA 失败', {
+        originalError: error.message,
+        status: error.status
+      });
     }
   }
 
@@ -461,7 +564,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
 
       // 验证压缩文件
       const stats = fs.statSync(zipPath);
-      console.log(`  ${pkg.dir}: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
+      infoLog(`  ${pkg.dir}: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
 
       zipFiles.push({ pkg, zipPath });
     }
@@ -474,12 +577,12 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
    * 确保 FTP 目录存在（递归创建）
    */
   private async ensureFtpDir(ftp: ftpClient, dirPath: string): Promise<void> {
-    console.log(`  正在确保 FTP 目录存在: ${dirPath}`);
+    infoLog(`  正在确保 FTP 目录存在: ${dirPath}`);
 
     try {
       // 尝试使用 basic-ftp 的 ensureDir 方法，它会自动递归创建目录
       await ftp.ensureDir(dirPath);
-      console.log(`  FTP 目录已准备就绪: ${dirPath}`);
+      infoLog(`  FTP 目录已准备就绪: ${dirPath}`);
     } catch (error: any) {
       throw new Error(`确保 FTP 目录失败 ${dirPath}: ${error.message}`);
     }
@@ -551,7 +654,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
         }
 
         if (isDeployed) {
-          console.log(`  ${zipFileName} 已存在，跳过上传`);
+          infoLog(`  ${zipFileName} 已存在，跳过上传`);
           continue;
         }
 
@@ -584,7 +687,7 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
     }));
 
     if (packageList.length === 0) {
-      console.log('没有需要部署的文档');
+      infoLog('没有需要部署的文档');
       return;
     }
 
@@ -614,11 +717,9 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
       } else {
         // 在正常流程中，只警告不中断
         warnLog('文档部署请求发送失败，但不影响主流程');
-        console.error(error.message);
-        console.log(
-          chalk.yellow('\n💡 提示: 如需重试文档部署触发，可使用参数:')
-        );
-        console.log(chalk.cyan('--retry-deploy-trigger\n'));
+        errorLog(error.message);
+        warnLog('\n💡 提示: 如需重试文档部署触发，可使用参数:');
+        infoLog('--retry-deploy-trigger\n');
       }
     }
   }
@@ -632,27 +733,25 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
         fs.unlinkSync(zipPath);
       }
     }
-    console.log('临时文件清理完成');
+    infoLog('临时文件清理完成');
   }
 
   /**
    * 错误处理
    */
   private handleError(error: any) {
-    console.log('\n');
+    infoLog('\n');
     errorLog('========================================');
     errorLog('           部署失败');
     errorLog('========================================\n');
 
     // 根据阶段显示不同的提示
     if (this.currentPhase === 'preparation') {
-      console.log(chalk.yellow('⚠️  当前处于准备阶段，未发布任何包'));
-      console.log(chalk.yellow('   可以修复问题后直接重新运行脚本\n'));
+      warnLog('⚠️  当前处于准备阶段，未发布任何包');
+      warnLog('   可以修复问题后直接重新运行脚本\n');
     } else {
-      console.log(chalk.yellow('⚠️  当前处于发布阶段'));
-      console.log(
-        chalk.yellow('   部分包可能已发布，可重新运行脚本继续未完成的步骤\n')
-      );
+      warnLog('⚠️  当前处于发布阶段');
+      warnLog('   部分包可能已发布，可重新运行脚本继续未完成的步骤\n');
     }
 
     if (error instanceof DeployError) {
@@ -662,76 +761,83 @@ ${this.pkgs.map((p) => `  - ${p.name}@${p.version}`).join('\n')}
       // 根据错误类型提供解决方案
       switch (error.code) {
         case ErrorCode.ENV_VAR_MISSING:
-          console.log('\n解决方案:');
-          console.log('  1. 检查 .env 文件配置');
-          console.log('  2. 确认 GoCD 中的环境变量配置');
-          console.log('  3. 参考 .env.example 文件');
+          infoLog('\n解决方案:');
+          infoLog('  1. 检查 .env 文件配置');
+          infoLog('  2. 确认 GoCD 中的环境变量配置');
+          infoLog('  3. 参考 .env.example 文件');
           break;
 
         case ErrorCode.VERSION_INVALID:
-          console.log('\n解决方案:');
-          console.log('  1. 检查 package.json 中的版本号格式');
-          console.log('  2. 确保版本号大于当前已发布版本');
-          console.log('  3. 遵循语义化版本规范 (semver)');
+          infoLog('\n解决方案:');
+          infoLog('  1. 检查 package.json 中的版本号格式');
+          infoLog('  2. 确保版本号大于当前已发布版本');
+          infoLog('  3. 遵循语义化版本规范 (semver)');
           break;
 
         case ErrorCode.CHANGELOG_MISSING:
-          console.log('\n解决方案:');
-          console.log('  1. 在 CHANGELOG.md 中添加对应版本的更新说明');
-          console.log('  2. 格式: ## 版本号');
+          infoLog('\n解决方案:');
+          infoLog('  1. 在 CHANGELOG.md 中添加对应版本的更新说明');
+          infoLog('  2. 格式: ## 版本号');
           break;
 
         case ErrorCode.NPM_PUBLISH_FAILED:
-          console.log('\n可能的原因:');
-          console.log('  1. npm 认证信息过期');
-          console.log('  2. 版本号已存在');
-          console.log('  3. 网络连接问题');
-          console.log('\n解决方案:');
-          console.log('  - 检查 NPM_AUTH 环境变量');
-          console.log('  - 确认版本号是否已更新');
+          infoLog('\n可能的原因:');
+          infoLog('  1. npm 认证信息过期');
+          infoLog('  2. 版本号已存在');
+          infoLog('  3. 网络连接问题');
+          infoLog('\n解决方案:');
+          infoLog('  - 检查 NPM_AUTH 环境变量');
+          infoLog('  - 确认版本号是否已更新');
           break;
 
         case ErrorCode.DOCS_BUILD_FAILED:
-          console.log('\n可能的原因:');
-          console.log('  1. 依赖未安装');
-          console.log('  2. 文档配置错误');
-          console.log('  3. 文档源文件有语法错误');
-          console.log('\n解决方案:');
-          console.log('  - 运行 pnpm install');
-          console.log('  - 检查 .dumirc.ts 配置');
-          console.log('  - 本地运行 pnpm docs:build 测试');
+          infoLog('\n可能的原因:');
+          infoLog('  1. 依赖未安装');
+          infoLog('  2. 文档配置错误');
+          infoLog('  3. 文档源文件有语法错误');
+          infoLog('\n解决方案:');
+          infoLog('  - 运行 pnpm install');
+          infoLog('  - 检查 .dumirc.ts 配置');
+          infoLog('  - 本地运行 pnpm docs:build 测试');
           break;
 
         case ErrorCode.FTP_UPLOAD_FAILED:
-          console.log('\n可能的原因:');
-          console.log('  1. FTP 服务器连接失败');
-          console.log('  2. 认证失败');
-          console.log('  3. 磁盘空间不足');
-          console.log('\n解决方案:');
-          console.log('  - 检查 FTP 服务器状态');
-          console.log('  - 验证 FTP 账号密码');
-          console.log('  - 测试 FTP 连接: ftp ' + config.ftpServer.host);
+          infoLog('\n可能的原因:');
+          infoLog('  1. FTP 服务器连接失败');
+          infoLog('  2. 认证失败');
+          infoLog('  3. 磁盘空间不足');
+          infoLog('\n解决方案:');
+          infoLog('  - 检查 FTP 服务器状态');
+          infoLog('  - 验证 FTP 账号密码');
+          infoLog('  - 测试 FTP 连接: ftp ' + config.ftpServer.host);
           break;
 
         case ErrorCode.TAG_PUSH_FAILED:
-          console.log('\n可能的原因:');
-          console.log('  1. GitHub Token 无效');
-          console.log('  2. 网络问题');
-          console.log('  3. 权限不足');
-          console.log('\n解决方案:');
-          console.log('  - 检查 GitHub Token');
-          console.log('  - 确认 Token 有推送权限');
+          infoLog('\n可能的原因:');
+          infoLog('  1. GITHUB_TOKEN 环境变量未设置或无效');
+          infoLog('  2. Token 权限不足（需要 repo 或 public_repo 权限）');
+          infoLog('  3. 网络连接问题');
+          infoLog('  4. Tag 已存在（可能是并发创建导致）');
+          infoLog('  5. 指定的分支不存在（默认为 main）');
+          infoLog('\n解决方案:');
+          infoLog('  - 检查 GITHUB_TOKEN 环境变量是否正确设置');
+          infoLog(
+            '  - 确认 Token 具有 repo 权限（Settings > Developer settings > Personal access tokens）'
+          );
+          infoLog('  - 验证仓库地址和分支名称是否正确');
+          infoLog('  - 检查网络连接是否正常');
+          infoLog('  - 如果 Tag 已存在，可以忽略此错误');
           break;
       }
 
       if (error.details) {
-        console.log('\n详细信息:');
-        console.log(JSON.stringify(error.details, null, 2));
+        infoLog('\n详细信息:');
+        infoLog(JSON.stringify(error.details, null, 2));
       }
     } else {
       errorLog(`未知错误: ${error.message || String(error)}`);
       if (error.stack) {
-        console.error(error.stack);
+        errorLog(error.stack);
       }
     }
 
