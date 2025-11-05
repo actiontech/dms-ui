@@ -25,7 +25,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   enableBackup,
   taskStatus,
   instanceName,
-  schema
+  schema,
+  enableRetryExecute
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -177,6 +178,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
                 taskStatus={taskStatus}
                 instanceName={instanceName}
                 schema={schema}
+                enableRetryExecute={enableRetryExecute}
               />
             </List.Item>
           );

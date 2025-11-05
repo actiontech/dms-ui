@@ -25,7 +25,8 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   auditResultActiveKey,
   assigneeUserNames,
   instanceName,
-  schema
+  schema,
+  enableRetryExecute
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -119,6 +120,7 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
                   taskId={taskId}
                   instanceName={instanceName}
                   schema={schema}
+                  enableRetryExecute={enableRetryExecute}
                 />
               </List.Item>
             );
