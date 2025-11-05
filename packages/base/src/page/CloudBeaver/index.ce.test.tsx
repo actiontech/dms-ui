@@ -54,7 +54,8 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      enableSqlQueryUrlData.sql_query_root_uri,
+      '_blank'
     );
   });
 

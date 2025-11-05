@@ -5,6 +5,7 @@ import {
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
   GetUserSystemEnum,
+  GlobalDataExportWorkflowStatusEnum,
   ListDBServiceLastConnectionTestStatusEnum,
   ListDBServiceV2LastConnectionTestStatusEnum,
   ListDataExportWorkflowStatusEnum,
@@ -17,17 +18,21 @@ import {
   ListRoleStatEnum,
   ListUserAuthenticationTypeEnum,
   ListUserStatEnum,
+  ListUserSystemEnum,
   ListUserGroupStatEnum,
   MemberRoleWithOpRangeOpRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   OperationOperationTypeEnum,
+  ProjectInfoProjectPriorityEnum,
   ProjectV1ProjectPriorityEnum,
   ProjectV2ProjectPriorityEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   TestFeishuConfigurationAccountTypeEnum,
+  UpdateCurrentUserSystemEnum,
   UpdateProjectProjectPriorityEnum,
   UpdateProjectV2ProjectPriorityEnum,
+  UpdateUserSystemEnum,
   WorkflowRecordStatusEnum,
   WorkflowStepStateEnum
 } from './common.enum';
@@ -556,6 +561,12 @@ export interface IDBServiceSyncTaskTip {
   service_source_name?: string;
 }
 
+export interface IDBServiceUidWithNameInfo {
+  DBServiceName?: string;
+
+  DBServiceUid?: string;
+}
+
 export interface IDBServiceV2 {
   additional_params?: IAdditionalParam[];
 
@@ -846,6 +857,16 @@ export interface IGetGatewayTipsReply {
   message?: string;
 }
 
+export interface IGetGlobalDataExportWorkflowsReply {
+  code?: number;
+
+  data?: IGlobalDataExportWorkflow[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetLDAPConfigurationResDataReply {
   code?: number;
 
@@ -978,7 +999,11 @@ export interface IGetSQLQueryConfigurationReply {
   code?: number;
 
   data?: {
+    enable_odc_query?: boolean;
+
     enable_sql_query?: boolean;
+
+    odc_query_root_uri?: string;
 
     sql_query_root_uri?: string;
   };
@@ -1106,6 +1131,26 @@ export interface IGetWebHookConfigurationReplyItem {
   token?: string;
 
   url?: string;
+}
+
+export interface IGlobalDataExportWorkflow {
+  created_at?: string;
+
+  creater?: IUidWithName;
+
+  current_step_assignee_user_list?: IUidWithName[];
+
+  db_service_info?: IDBServiceUidWithNameInfo[];
+
+  desc?: string;
+
+  project_info?: IProjectInfo;
+
+  status?: GlobalDataExportWorkflowStatusEnum;
+
+  workflow_name?: string;
+
+  workflow_uid?: string;
 }
 
 export interface II18nStr {
@@ -1529,11 +1574,15 @@ export interface IListDataExportWorkflow {
 
   current_step_assignee_user_list?: IUidWithName[];
 
-  current_step_type?: string;
+  db_service_info?: IDBServiceUidWithNameInfo[];
 
   desc?: string;
 
   exported_at?: string;
+
+  project_info?: IProjectInfo;
+
+  project_name?: string;
 
   project_uid?: string;
 
@@ -1907,6 +1956,8 @@ export interface IListUser {
 
   stat?: ListUserStatEnum;
 
+  system?: ListUserSystemEnum;
+
   third_party_user_info?: string;
 
   uid?: string;
@@ -2130,6 +2181,14 @@ export interface IPreviewImportProjectsV2 {
   desc?: string;
 
   name?: string;
+}
+
+export interface IProjectInfo {
+  project_name?: string;
+
+  project_priority?: ProjectInfoProjectPriorityEnum;
+
+  project_uid?: string;
 }
 
 export interface IProjectTips {
@@ -2772,6 +2831,8 @@ export interface IUpdateUser {
   password?: string;
 
   phone?: string;
+
+  system?: UpdateUserSystemEnum;
 
   third_party_user_id?: string;
 

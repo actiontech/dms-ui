@@ -52,6 +52,22 @@ export enum GetUserSystemEnum {
   'MANAGEMENT' = 'MANAGEMENT'
 }
 
+export enum GlobalDataExportWorkflowStatusEnum {
+  'wait_for_approve' = 'wait_for_approve',
+
+  'wait_for_export' = 'wait_for_export',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancel' = 'cancel',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
 export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_success' = 'connect_success',
 
@@ -170,6 +186,12 @@ export enum ListUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum ListUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
+}
+
 export enum ListUserGroupStatEnum {
   '正常' = '正常',
 
@@ -217,8 +239,6 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_other_audit_plan' = 'view_other_audit_plan',
 
-  'view_sql_insight' = 'view_sql_insight',
-
   'save_audit_plan' = 'save_audit_plan',
 
   'sql_query' = 'sql_query',
@@ -248,6 +268,16 @@ export enum OpPermissionItemRangeTypeEnum {
 
 export enum OperationOperationTypeEnum {
   'SQL' = 'SQL'
+}
+
+export enum ProjectInfoProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
 }
 
 export enum ProjectV1ProjectPriorityEnum {
@@ -310,6 +340,12 @@ export enum UpdateProjectV2ProjectPriorityEnum {
   'low' = 'low',
 
   'unknown' = 'unknown'
+}
+
+export enum UpdateUserSystemEnum {
+  'WORKBENCH' = 'WORKBENCH',
+
+  'MANAGEMENT' = 'MANAGEMENT'
 }
 
 export enum WorkflowRecordStatusEnum {
