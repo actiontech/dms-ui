@@ -1,0 +1,32 @@
+{
+  "name": "@actiontech/cli-dms-kit-publish",
+  "version": "1.0.0",
+  "description": "DMS Kit 包发布和文档部署工具",
+  "bin": {
+    "dms-kit-publish": "./bin/core.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:watch": "tsc -w",
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.1.2",
+    "archiver": "^7.0.1",
+    "basic-ftp": "^5.0.5",
+    "chalk": "^4.1.2",
+    "dotenv": "^17.2.3",
+    "execa": "^8.0.1",
+    "nodemailer": "^7.0.10",
+    "semver": "^7.7.3"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^18.0.4",
+    "@types/nodemailer": "^7.0.3",
+    "@types/semver": "^7.7.1"
+  }
+}
