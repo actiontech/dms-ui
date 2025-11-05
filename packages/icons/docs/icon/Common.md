@@ -361,6 +361,20 @@ import { EyeClosedOutlined } from '@actiontech/icons';
 export default () => <EyeClosedOutlined width={32} height={32} />
 ```
 
+## FaLessThanEqualOutlined
+```jsx
+import { FaLessThanEqualOutlined } from '@actiontech/icons';
+
+export default () => <FaLessThanEqualOutlined width={32} height={32} />
+```
+
+## FilterOutlined
+```jsx
+import { FilterOutlined } from '@actiontech/icons';
+
+export default () => <FilterOutlined width={32} height={32} />
+```
+
 ## HexagonOutlined
 ```jsx
 import { HexagonOutlined } from '@actiontech/icons';

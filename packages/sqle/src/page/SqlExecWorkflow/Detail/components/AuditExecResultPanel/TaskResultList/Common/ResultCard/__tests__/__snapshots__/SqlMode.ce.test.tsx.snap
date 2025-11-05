@@ -63,6 +63,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"

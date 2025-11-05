@@ -138,7 +138,7 @@ export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
 
   schema_name?: string;
 
-  db_type?: string;
+  db_type: string;
 
   optimization_name: string;
 

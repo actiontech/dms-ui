@@ -19,6 +19,7 @@ describe('test ExecWorkflow/TaskResultList', () => {
         pagination={{ page_index: 1, page_size: 10 }}
         assigneeUserNames={[mockCurrentUserReturn.username]}
         execStatusFilterValue={null}
+        enableRetryExecute
       />
     );
 
@@ -38,6 +39,7 @@ describe('test ExecWorkflow/TaskResultList', () => {
         pagination={{ page_index: 1, page_size: 10 }}
         assigneeUserNames={[mockCurrentUserReturn.username]}
         execStatusFilterValue={null}
+        enableRetryExecute
       />
     );
 

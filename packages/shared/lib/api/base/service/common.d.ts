@@ -1549,6 +1549,8 @@ export interface IListDataExportWorkflow {
 
   exported_at?: string;
 
+  project_name?: string;
+
   project_uid?: string;
 
   status?: ListDataExportWorkflowStatusEnum;
@@ -1787,6 +1789,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
