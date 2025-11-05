@@ -88,19 +88,27 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(container).toMatchSnapshot();
     expect(screen.getByText('打开SQL工作台')).toBeInTheDocument();
+    // 初始渲染时 API 被调用 1 次
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('打开SQL工作台'));
-    expect(global.open).toHaveBeenCalledTimes(0);
 
+    // 点击后立即调用 refreshAsync 重新请求数据
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // API 应该被调用 2 次（初始加载 1 次 + 点击刷新 1 次）
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      enableSqlQueryUrlData.sql_query_root_uri,
+      '_blank'
     );
   });
 
   it('should auto replace to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
+    // First render with disabled SQL query - should not auto redirect
     superRender(<CloudBeaver />, undefined, {
       routerProps: {
         initialEntries: [
@@ -111,8 +119,14 @@ describe('test base/page/CloudBeaver', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
 
+    // No redirect should happen when SQL query is disabled
+    expect(window.location.href).not.toBe(
+      enableSqlQueryUrlData.sql_query_root_uri
+    );
+
     cleanup();
 
+    // Second render with enabled SQL query - should auto redirect
     getSqlQueryUrlSpy.mockImplementation(() =>
       createSpySuccessResponse({
         data: enableSqlQueryUrlData
@@ -125,8 +139,10 @@ describe('test base/page/CloudBeaver', () => {
         ]
       }
     });
+
     await act(async () => jest.advanceTimersByTime(3000));
 
+    // Auto redirect should happen when SQL query is enabled
     expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
   });
 });
