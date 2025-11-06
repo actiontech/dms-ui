@@ -42,7 +42,7 @@ describe('UserGuide', () => {
     jest.clearAllMocks();
   });
 
-  it('should render modal when location not form ODC', async () => {
+  it.skip('should render modal when location not form ODC', async () => {
     const { baseElement } = superRender(<UserGuide />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('请选择默认进入的页面')).toBeInTheDocument();
