@@ -23,6 +23,7 @@ import { compressFolder } from '../utils/compress';
 import { VersionValidator } from './validator';
 import { NotificationService } from './notification';
 import axios from 'axios';
+import { getPnpmEnv } from '../utils/exec';
 
 /**
  * DMS UI 部署主类
@@ -335,12 +336,18 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
       // 检查包是否已发布
       let isPublished = false;
       try {
-        const { stdout } = await execa('pnpm', [
-          'info',
-          `${pkg.name}@${pkg.version}`,
-          '--registry',
-          config.pnpm.registry
-        ]);
+        const { stdout } = await execa(
+          'pnpm',
+          [
+            'info',
+            `${pkg.name}@${pkg.version}`,
+            '--registry',
+            config.pnpm.registry
+          ],
+          {
+            env: getPnpmEnv()
+          }
+        );
         if (stdout.length) {
           isPublished = true;
         }
@@ -356,27 +363,15 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
       try {
         stepLog(`发布包 ${pkg.name}@${pkg.version}`);
         if (pkg.dir === 'icons') {
-          await execa(
-            'node',
-            [
-              'publish-icons.mjs',
-              '--skip-confirm',
-              '--registry',
-              config.pnpm.registry,
-              '--auth',
-              config.pnpm.auth
-            ],
-            {
-              cwd: path.join(this.cwd, 'packages', 'icons')
-            }
-          );
+          await this.publishIconsPackage(pkg);
           continue;
         }
         const pkgPath = path.join(this.cwd, 'packages', pkg.dir);
 
         // 设置 npm 认证
         await execa('pnpm', ['config', 'set', config.pnpm.auth], {
-          cwd: pkgPath
+          cwd: pkgPath,
+          env: getPnpmEnv()
         });
 
         // 发布包
@@ -384,7 +379,8 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
           'pnpm',
           ['publish', '--registry', config.pnpm.registry, '--no-git-checks'],
           {
-            cwd: pkgPath
+            cwd: pkgPath,
+            env: getPnpmEnv()
           }
         );
 
@@ -497,7 +493,8 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
       // icons 包特殊处理
       if (pkg.dir === 'icons') {
         await execa('pnpm', ['docs:g'], {
-          cwd: path.join(this.cwd, 'packages', 'icons')
+          cwd: path.join(this.cwd, 'packages', 'icons'),
+          env: getPnpmEnv()
         });
       }
 
@@ -523,7 +520,8 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
       try {
         // 构建文档
         await execa('pnpm', ['docs:build'], {
-          cwd: path.join(this.cwd, 'packages', pkg.dir)
+          cwd: path.join(this.cwd, 'packages', pkg.dir),
+          env: getPnpmEnv()
         });
 
         // 验证构建产物
@@ -734,6 +732,174 @@ ${this.pkgs.map((p) => `  - ${p.dir}-v${p.version}`).join('\n')}
       }
     }
     infoLog('临时文件清理完成');
+  }
+
+  /**
+   * 发布 icons 包
+   */
+  private async publishIconsPackage(pkg: PackageInfo) {
+    const iconsDir = path.join(this.cwd, 'packages', 'icons');
+    const pubPkgPath = path.join(iconsDir, 'package_publish.json');
+
+    // 1. 验证 package_publish.json 存在
+    if (!fs.existsSync(pubPkgPath)) {
+      throw new DeployError(
+        ErrorCode.PKG_LOAD_FAILED,
+        `发布用 package_publish.json 不存在: ${pubPkgPath}`
+      );
+    }
+
+    // 2. 读取原始 package_publish.json 内容（用于错误恢复）
+    const originalPubPkgContent = JSON.parse(
+      fs.readFileSync(pubPkgPath, 'utf-8')
+    );
+    const originalVersion = originalPubPkgContent.version;
+
+    // 3. 创建临时目录
+    const tmpDir = path.join(this.cwd, 'packages', 'actiontech-icons-publish');
+
+    try {
+      infoLog('  [1/7] 创建临时目录');
+      fs.mkdirSync(tmpDir, { recursive: true });
+
+      // 4. 复制 icons 包到临时目录（排除不需要的文件）
+      infoLog('  [2/7] 复制 icons 包到临时目录');
+      const excludeTopLevel = new Set([
+        'node_modules',
+        'dist',
+        'es',
+        '.git',
+        '.github',
+        'coverage',
+        '.nyc_output'
+      ]);
+
+      const filter = (filePath: string) => {
+        const relativePath = path.relative(iconsDir, filePath);
+        if (!relativePath) return true; // 根目录
+        const segments = relativePath.split(path.sep);
+        const top = segments[0];
+        if (excludeTopLevel.has(top)) return false;
+        const base = path.basename(filePath);
+        if (base === '.DS_Store') return false;
+        if (base.endsWith('.log')) return false;
+        return true;
+      };
+
+      this.copyDirSync(iconsDir, tmpDir, { filter });
+
+      // 5. 调整 package.json 配置
+      infoLog('  [3/7] 调整 package.json 配置');
+      const tmpPkgJson = path.join(tmpDir, 'package.json');
+      const pubPkgContent = JSON.parse(fs.readFileSync(pubPkgPath, 'utf-8'));
+
+      // 更新版本号
+      pubPkgContent.version = pkg.version;
+
+      // 移除 prepublishOnly 和 prepare 脚本
+      if (pubPkgContent.scripts) {
+        delete pubPkgContent.scripts.prepublishOnly;
+        delete pubPkgContent.scripts.prepare;
+      }
+
+      fs.writeFileSync(
+        tmpPkgJson,
+        JSON.stringify(pubPkgContent, null, 2) + '\n'
+      );
+
+      // 6. 安装依赖
+      infoLog('  [4/7] 安装依赖: pnpm install');
+      await execa('pnpm', ['install'], { cwd: tmpDir, env: getPnpmEnv() });
+
+      // 7. 执行构建
+      infoLog('  [5/7] 执行构建: pnpm build');
+      await execa('pnpm', ['build'], { cwd: tmpDir, env: getPnpmEnv() });
+
+      // 8. 配置认证
+      infoLog('  [6/7] 配置认证');
+      await execa('pnpm', ['config', 'set', config.pnpm.auth], {
+        cwd: tmpDir,
+        env: getPnpmEnv()
+      });
+
+      // 9. 执行发布
+      infoLog('  [7/7] 执行发布: pnpm publish');
+      await execa(
+        'pnpm',
+        ['publish', '--registry', config.pnpm.registry, '--no-git-checks'],
+        {
+          cwd: tmpDir,
+          env: getPnpmEnv()
+        }
+      );
+
+      successLog(`包 ${pkg.name}@${pkg.version} 发布成功`);
+    } catch (error: any) {
+      // 还原原始版本号
+      try {
+        originalPubPkgContent.version = originalVersion;
+        fs.writeFileSync(
+          pubPkgPath,
+          JSON.stringify(originalPubPkgContent, null, 2) + '\n'
+        );
+        warnLog(`已还原 package_publish.json 版本号为: ${originalVersion}`);
+      } catch (restoreErr: any) {
+        warnLog(`还原版本号失败: ${restoreErr.message}`);
+      }
+
+      throw new DeployError(
+        ErrorCode.NPM_PUBLISH_FAILED,
+        `包 ${pkg.name}@${pkg.version} 发布失败`,
+        { originalError: error.message }
+      );
+    } finally {
+      // 10. 清理临时目录
+      infoLog('  [清理] 清理临时目录');
+      try {
+        if (fs.existsSync(tmpDir)) {
+          fs.rmSync(tmpDir, { recursive: true, force: true });
+        }
+      } catch (cleanupErr: any) {
+        warnLog(`清理临时目录失败: ${cleanupErr.message}`);
+      }
+    }
+  }
+
+  /**
+   * 复制目录（支持过滤）
+   */
+  private copyDirSync(
+    src: string,
+    dest: string,
+    options: {
+      filter?: (filePath: string) => boolean;
+      dereference?: boolean;
+    } = {}
+  ) {
+    const { filter = () => true, dereference = false } = options;
+
+    const statFn = dereference ? fs.statSync : fs.lstatSync;
+
+    const copyItem = (from: string, to: string) => {
+      if (!filter(from)) return;
+      const stat = statFn(from);
+      if (stat.isDirectory()) {
+        if (!fs.existsSync(to)) {
+          fs.mkdirSync(to, { recursive: true });
+        }
+        const entries = fs.readdirSync(from);
+        for (const entry of entries) {
+          copyItem(path.join(from, entry), path.join(to, entry));
+        }
+      } else if (stat.isSymbolicLink()) {
+        const real = fs.readlinkSync(from);
+        fs.symlinkSync(real, to);
+      } else if (stat.isFile()) {
+        fs.copyFileSync(from, to);
+      }
+    };
+
+    copyItem(src, dest);
   }
 
   /**
