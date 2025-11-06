@@ -10,6 +10,7 @@ import 'jest-canvas-mock';
 
 jest.mock('rehype-sanitize', () => () => jest.fn());
 Enzyme.configure({ adapter: new Adapter() });
+
 Object.defineProperty(global, 'matchMedia', {
   writable: true,
   value: (query: any) => {
@@ -25,6 +26,7 @@ Object.defineProperty(global, 'matchMedia', {
     };
   }
 });
+
 i18n.use(initReactI18next).init({
   resources: {
     'zh-CN': {
