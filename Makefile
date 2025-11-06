@@ -47,4 +47,25 @@ docker_build_demo: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:demo"
 
 docker_dms_kit_publish: docker_install_node_modules
-	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm dms-kit:publish"
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm \
+		--env NPM_REGISTRY \
+		--env NPM_AUTH \
+		--env FTP_HOST \
+		--env FTP_USER \
+		--env FTP_PASSWORD \
+		--env FTP_DIR \
+		--env ROBOT_SDK_BASE_URL \
+		--env GITHUB_OWNER \
+		--env GITHUB_REPO \
+		--env GITHUB_API_BASE_URL \
+		--env GITHUB_PROJECT_ID \
+		--env GITHUB_TOKEN \
+		--env DEPLOY_ENV \
+		--env EMAIL_HOST \
+		--env EMAIL_PORT \
+		--env EMAIL_SECURE \
+		--env EMAIL_USER \
+		--env EMAIL_PASS \
+		--env EMAIL_FROM \
+		--env EMAIL_TO \
+		$(DOCKER_IMAGE) sh -c "pnpm dms-kit:publish"
