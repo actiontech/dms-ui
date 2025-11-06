@@ -50,12 +50,13 @@ const CloudBeaver = () => {
       !loading &&
       data
     ) {
-      const url =
-        data.enable_sql_query && data.sql_query_root_uri
-          ? data.sql_query_root_uri
-          : data.enable_odc_query && data.odc_query_root_uri
-          ? data.odc_query_root_uri
-          : null;
+      let url = '';
+
+      if (data?.enable_sql_query && data.sql_query_root_uri) {
+        url = data.sql_query_root_uri;
+      } else if (data?.enable_odc_query && data.odc_query_root_uri) {
+        url = data.odc_query_root_uri;
+      }
 
       if (url) {
         window.location.href = url;

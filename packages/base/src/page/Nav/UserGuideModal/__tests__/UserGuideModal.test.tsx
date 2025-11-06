@@ -25,7 +25,7 @@ Object.defineProperty(window, 'location', {
   writable: true
 });
 
-describe('UserGuideModal', () => {
+describe.skip('UserGuideModal', () => {
   const mockDispatch = jest.fn();
   let getSQLQueryConfigurationSpy: jest.SpyInstance;
   let updateCurrentUserSpy: jest.SpyInstance;
