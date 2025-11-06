@@ -10,7 +10,7 @@ on:
 jobs:
   checker:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
 
   test-ee:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     strategy:
       matrix:
         shard: [1, 2, 3, 4]
@@ -44,7 +44,7 @@ jobs:
 
   test-ce:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
 
   report:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     needs: [test-ee, test-ce]
     steps:
       - name: Checkout repository
