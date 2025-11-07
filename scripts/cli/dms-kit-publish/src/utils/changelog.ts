@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { errorLog, infoLog } from './logger';
 
 /**
  * 从 CHANGELOG.md 中提取指定版本的更新内容
@@ -33,10 +34,10 @@ export function getChangelogForVersion(
       return content;
     }
 
-    console.log(`未找到版本 ${version} 的 changelog`);
+    infoLog(`未找到版本 ${version} 的 changelog`);
     return `未找到版本 ${version} 的 changelog`;
-  } catch (error) {
-    console.error('读取 changelog.md 文件失败:', error);
-    return `读取 changelog.md 文件失败: ${error}`;
+  } catch (error: any) {
+    errorLog(`读取 changelog.md 文件失败: ${error.message}`);
+    return `读取 changelog.md 文件失败: ${error.message}`;
   }
 }

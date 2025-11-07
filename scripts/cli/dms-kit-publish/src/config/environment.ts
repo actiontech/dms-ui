@@ -1,6 +1,6 @@
-import chalk from 'chalk';
-import 'dotenv/config';
 import type { EnvironmentConfig } from '../types/index';
+import { errorLog, infoLog } from '../utils/logger';
+import 'dotenv/config';
 
 // 获取当前环境
 export const ENV = process.env.DEPLOY_ENV || 'production';
@@ -85,10 +85,8 @@ const environments: Record<string, EnvironmentConfig> = {
 
 // 验证环境并获取配置
 if (!environments[ENV]) {
-  console.error(chalk.red(`不支持的环境: ${ENV}`));
-  console.error(
-    chalk.red(`支持的环境: ${Object.keys(environments).join(', ')}`)
-  );
+  errorLog(`不支持的环境: ${ENV}`);
+  errorLog(`支持的环境: ${Object.keys(environments).join(', ')}`);
   process.exit(1);
 }
 
@@ -96,4 +94,4 @@ if (!environments[ENV]) {
 export const config = environments[ENV];
 
 // 输出当前环境信息
-console.log(chalk.blue(`\n当前部署环境: ${ENV}\n`));
+infoLog(`\n当前部署环境: ${ENV}\n`);

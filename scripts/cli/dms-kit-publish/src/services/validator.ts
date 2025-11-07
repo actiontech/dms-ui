@@ -3,7 +3,7 @@ import { execa } from 'execa';
 import semver from 'semver';
 import { config } from '../config/index';
 import { ErrorCode, DeployError } from '../types/index';
-import { successLog, warnLog } from '../utils/logger';
+import { infoLog, successLog, warnLog } from '../utils/logger';
 
 /**
  * 版本校验器
@@ -30,7 +30,6 @@ export class VersionValidator {
     newVersion: string
   ): Promise<boolean> {
     try {
-      console.log(config.pnpm.registry, 'config.pnpm.registry');
       const { stdout } = await execa('pnpm', [
         'view',
         pkgName,
@@ -68,7 +67,7 @@ export class VersionValidator {
     } catch (error: any) {
       // 如果包还未发布，跳过检查
       if (error.message && error.message.includes('404')) {
-        console.log(`包 ${pkgName} 首次发布`);
+        infoLog(`包 ${pkgName} 首次发布`);
         return true;
       }
       throw error;
