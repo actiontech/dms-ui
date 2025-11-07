@@ -75,6 +75,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     executeTasksOnWorkflow = execWorkflow.executeTasksOnWorkflow();
     batchCompleteWorkflowsSpy = execWorkflow.batchCompleteWorkflows();
     instance.getInstanceTipList();
+    instance.getInstance();
     terminateMultipleTaskByWorkflowSpy =
       execWorkflow.terminateMultipleTaskByWorkflow();
     getSummaryOfInstanceTasksSpy.mockClear();

@@ -7,7 +7,8 @@ export const mockUseCreateExportTaskFormReturn = {
   auditLoading: false,
   formatSQLAction: jest.fn(),
   auditAction: jest.fn(),
-  resetAllForms: jest.fn()
+  resetAllForms: jest.fn(),
+  formatted: false
 };
 
 export const mockUseCreateExportTaskForm = (

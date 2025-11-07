@@ -9,8 +9,8 @@ import { FormItemSubTitle } from '@actiontech/dms-kit';
 import ExportMethodFormItem from './ExportMethodFormItem';
 
 const ExportMethodForm: React.FC<
-  Pick<CreateExportTaskFormEntryProps, 'methodForm'>
-> = ({ methodForm }) => {
+  Pick<CreateExportTaskFormEntryProps, 'methodForm' | 'sourceForm'>
+> = ({ methodForm, sourceForm }) => {
   const { t } = useTranslation();
 
   return (
@@ -25,7 +25,7 @@ const ExportMethodForm: React.FC<
           {t('dmsDataExport.create.form.method.title')}
         </FormItemSubTitle>
 
-        <ExportMethodFormItem methodForm={methodForm} />
+        <ExportMethodFormItem methodForm={methodForm} sourceForm={sourceForm} />
       </FormAreaBlockStyleWrapper>
     </FormStyleWrapper>
   );

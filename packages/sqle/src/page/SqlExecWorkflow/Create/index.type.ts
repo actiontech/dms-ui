@@ -28,6 +28,8 @@ export type SqlStatementFields = Record<
   currentUploadType: AuditTaskResV1SqlSourceEnum;
   backup?: boolean;
   backupMaxRows?: number;
+  originSql?: string; // 用户输入的原始sql
+  formatted?: boolean; // 当前sql是否已经格式化
 };
 
 export type CreateWorkflowDatabaseInfo = Array<{
@@ -70,6 +72,7 @@ export type DataSourceSchemaCollection = Record<
     enableBackup?: boolean;
     backupMaxRows?: number;
     allowBackup?: boolean;
+    isSupportFormatSql?: boolean;
   }
 >;
 

@@ -25,6 +25,17 @@ exports[`useDataSourceSelectorTree should initialize data correctly 1`] = `
     "value": "PostgreSQL",
   },
   {
+    "dbType": "TiDB",
+    "disabled": true,
+    "id": "TiDB",
+    "label": "TiDB",
+    "pId": "TREE_DATA_PARENT_NODE_ID",
+    "title": <DatabaseTypeLogo
+      dbType="TiDB"
+    />,
+    "value": "TiDB",
+  },
+  {
     "dbType": "MySQL",
     "id": "1739531854064652288",
     "label": "mysql-1",
@@ -118,6 +129,25 @@ exports[`useDataSourceSelectorTree should initialize data correctly 1`] = `
       </span>
     </Styled(Styled(span))>,
     "value": "1743145219550875648",
+  },
+  {
+    "dbType": "TiDB",
+    "id": "1743145219550875649",
+    "label": "tidb-1",
+    "pId": "TiDB",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        tidb-1(10.186.62.17:4000)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1743145219550875649",
   },
 ]
 `;
