@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import { config, ENV } from '../config/index';
+import { errorLog, infoLog } from '../utils/logger';
 
 /**
  * 通知服务
@@ -32,7 +33,7 @@ export class NotificationService {
     isError = false
   ): Promise<void> {
     if (!this.transporter || !config.email) {
-      console.log('邮件通知未配置，跳过发送');
+      infoLog('邮件通知未配置，跳过发送');
       return;
     }
 
@@ -75,10 +76,9 @@ export class NotificationService {
         html
       });
 
-      console.log('邮件通知发送成功');
+      infoLog('邮件通知发送成功');
     } catch (error: any) {
-      console.error('邮件通知发送失败:', error.message);
-      // 不抛出错误，避免影响主流程
+      errorLog(`邮件通知发送失败: ${error.message}`);
     }
   }
 }
