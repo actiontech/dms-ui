@@ -133,4 +133,21 @@ describe('useDbService', () => {
     await screen.findAllByText('123123');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
+
+  it('should return correct db_type when service id exists', async () => {
+    const { result } = superRenderHook(() => useDbService(), {});
+
+    act(() => {
+      result.current.updateDbServiceList({ project_uid: projectID });
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // Test with first service id
+    const dbType1 = result.current.getServiceDbType('123123');
+    expect(dbType1).toBe('MySQL');
+
+    // Test with second service id
+    const dbType2 = result.current.getServiceDbType('300123');
+    expect(dbType2).toBe('MySQL');
+  });
 });
