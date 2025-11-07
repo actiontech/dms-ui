@@ -41,12 +41,22 @@ describe('test SqlFormatterAndSubmitter', () => {
           ]}
           currentSqlUploadType={AuditTaskResV1SqlSourceEnum.form_data}
           isSameSqlForAll
+          dbSourceInfoCollection={{ value: {}, set: jest.fn() }}
           {...params}
         />
         <Form.Item
           label="sql语句"
           name={[params.fieldPrefixPath ?? '1', 'form_data']}
         >
+          <Input.TextArea />
+        </Form.Item>
+        <Form.Item
+          name={[params.fieldPrefixPath ?? '1', 'formatted']}
+          valuePropName="checked"
+        >
+          <Input.TextArea />
+        </Form.Item>
+        <Form.Item name={[params.fieldPrefixPath ?? '1', 'originSql']}>
           <Input.TextArea />
         </Form.Item>
       </Form>
@@ -195,5 +205,193 @@ describe('test SqlFormatterAndSubmitter', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(setActiveKeySpy).toHaveBeenCalledTimes(1);
     expect(setActiveKeySpy).toHaveBeenCalledWith('1');
+  });
+
+  it('formats SQL with unsupported database type should toggle between formatted and original SQL', async () => {
+    getInstanceSpy.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          code: 0,
+          data: {
+            db_type: 'TiDB'
+          }
+        }
+      })
+    );
+
+    const dbSourceInfoCollection = {
+      value: {
+        '1': {
+          isSupportFormatSql: false
+        }
+      },
+      set: jest.fn()
+    };
+
+    customRender({
+      isSameSqlForAll: true,
+      dbSourceInfoCollection
+    });
+
+    const originalSql = 'SELECT * FROM users WHERE id=1';
+    fireEvent.change(screen.getByLabelText('sql语句'), {
+      target: { value: originalSql }
+    });
+
+    const formatButton = screen.getByText('SQL美化');
+
+    // 第一次点击美化 - 应该执行通用格式化
+    fireEvent.click(formatButton);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      formatterSQL(originalSql)
+    );
+
+    // 第二次点击美化 - 应该回滚到原始 SQL
+    fireEvent.click(formatButton);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByLabelText('sql语句')).toHaveValue(originalSql);
+
+    // 第三次点击美化 - 应该再次执行通用格式化
+    fireEvent.click(formatButton);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      formatterSQL(originalSql)
+    );
+  });
+
+  it('formats SQL with supported database type should always format SQL', async () => {
+    getInstanceSpy.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          code: 0,
+          data: {
+            db_type: 'MySQL'
+          }
+        }
+      })
+    );
+
+    const dbSourceInfoCollection = {
+      value: {
+        '1': {
+          isSupportFormatSql: true
+        }
+      },
+      set: jest.fn()
+    };
+
+    customRender({
+      isSameSqlForAll: true,
+      dbSourceInfoCollection
+    });
+
+    const originalSql = 'select   *   from   users   where   id=1';
+    fireEvent.change(screen.getByLabelText('sql语句'), {
+      target: { value: originalSql }
+    });
+
+    const formatButton = screen.getByText('SQL美化');
+
+    // 第一次点击美化 - 应该格式化 SQL
+    fireEvent.click(formatButton);
+    await act(async () => jest.advanceTimersByTime(3000));
+    const formattedSql = formatterSQL(originalSql, 'MySQL');
+    expect(screen.getByLabelText('sql语句')).toHaveValue(formattedSql);
+
+    // 修改 SQL 再次格式化
+    const newSql = 'select id,name from users';
+    fireEvent.change(screen.getByLabelText('sql语句'), {
+      target: { value: newSql }
+    });
+
+    // 第二次点击美化 - 应该再次格式化 SQL（不会回滚）
+    fireEvent.click(formatButton);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      formatterSQL(newSql, 'MySQL')
+    );
+  });
+
+  it('formats SQL when dbSourceInfoCollection is undefined', async () => {
+    getInstanceSpy.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          code: 0,
+          data: {
+            db_type: 'MySQL'
+          }
+        }
+      })
+    );
+
+    customRender({
+      isSameSqlForAll: true,
+      dbSourceInfoCollection: { value: {}, set: jest.fn() }
+    });
+
+    const originalSql = 'select * from users';
+    fireEvent.change(screen.getByLabelText('sql语句'), {
+      target: { value: originalSql }
+    });
+
+    const formatButton = screen.getByText('SQL美化');
+    fireEvent.click(formatButton);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    // 当 dbSourceInfoCollection 为 undefined 时，应该执行通用格式化
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      formatterSQL(originalSql)
+    );
+  });
+
+  it('formats SQL for specific database when isSameSqlForAll is false', async () => {
+    getInstanceSpy.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          code: 0,
+          data: {
+            db_type: 'PostgreSQL'
+          }
+        }
+      })
+    );
+
+    const dbSourceInfoCollection = {
+      value: {
+        '2': {
+          isSupportFormatSql: true
+        }
+      },
+      set: jest.fn()
+    };
+
+    customRender({
+      isSameSqlForAll: false,
+      fieldPrefixPath: '2',
+      databaseInfo: [
+        { key: '1', instanceName: 'mysql-1', schemaName: 'test' },
+        { key: '2', instanceName: 'postgres-1', schemaName: 'test' }
+      ],
+      dbSourceInfoCollection
+    });
+
+    const originalSql = 'select   *   from   users';
+    fireEvent.change(screen.getByLabelText('sql语句'), {
+      target: { value: originalSql }
+    });
+
+    const formatButton = screen.getByText('SQL美化');
+    fireEvent.click(formatButton);
+
+    expect(getInstanceSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      instance_name: 'postgres-1'
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      formatterSQL(originalSql, 'PostgreSQL')
+    );
   });
 });

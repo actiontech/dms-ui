@@ -1157,4 +1157,149 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       workflow_id: '1'
     });
   });
+
+  it('should use original SQL when database type does not support formatting in same SQL mode', async () => {
+    requestInstance.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          db_type: 'TiDB'
+        }
+      })
+    );
+
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // workflow_subject
+    const workflowName = getBySelector('#workflow_subject', baseElement);
+    fireEvent.change(workflowName, {
+      target: {
+        value: 'workflow_name_unsupported_db'
+      }
+    });
+
+    // data source
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    const instanceNameLabel = `${instanceTipsMockData[5].instance_name}(${instanceTipsMockData[5].host}:${instanceTipsMockData[5].port})`;
+    fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const SchemaNameEle = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector(`div[title="test123"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 输入原始 SQL
+    const originalSql = 'SELECT   *   FROM   users   WHERE   id=1';
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: {
+        value: originalSql
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // 点击 SQL 美化按钮
+    fireEvent.click(screen.getByText('SQL美化'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 执行审核 - 应该使用原始 SQL
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      enable_backup: undefined,
+      backup_max_rows: undefined,
+      sql: originalSql
+    });
+  });
+
+  it('should use original SQL when database type does not support formatting in different SQL mode', async () => {
+    requestInstance.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          db_type: 'TiDB'
+        }
+      })
+    );
+
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // workflow_subject
+    const workflowName = getBySelector('#workflow_subject', baseElement);
+    fireEvent.change(workflowName, {
+      target: {
+        value: 'workflow_name_different_sql'
+      }
+    });
+
+    // isSameSqlForAll false
+    const isSameSqlForAll = getBySelector('#isSameSqlForAll', baseElement);
+    fireEvent.click(isSameSqlForAll);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // data source 1
+    const instanceNameEle1 = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle1);
+    await act(async () => jest.advanceTimersByTime(0));
+    const instanceNameLabel1 = `${instanceTipsMockData[5].instance_name}(${instanceTipsMockData[5].host}:${instanceTipsMockData[5].port})`;
+    fireEvent.click(getAllBySelector(`div[title="${instanceNameLabel1}"]`)[0]);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const SchemaNameEle1 = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle1);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector(`div[title="test123"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const originalSql1 = 'SELECT   *   FROM   table1   WHERE   id=1';
+    const monacoEditors = getAllBySelector(
+      '.custom-monaco-editor',
+      baseElement
+    );
+    fireEvent.change(monacoEditors[0], {
+      target: {
+        value: originalSql1
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // 点击第一个 SQL 美化按钮
+    const formatButtons = screen.getAllByText('SQL美化');
+    fireEvent.click(formatButtons[0]);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestAudit).toHaveBeenCalledTimes(1);
+    expect(requestAudit).toHaveBeenCalledWith({
+      exec_mode: undefined,
+      file_order_method: undefined,
+      project_name: projectName,
+      sql: originalSql1,
+      instance_name: instanceTipsMockData[5].instance_name,
+      instance_schema: 'test123'
+    });
+  });
 });

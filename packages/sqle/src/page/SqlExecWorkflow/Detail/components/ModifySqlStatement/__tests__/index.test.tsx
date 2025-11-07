@@ -37,6 +37,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
 
   let requestUpdateWorkflow: jest.SpyInstance;
   let requestInstanceTipSpy: jest.SpyInstance;
+  let requestInstanceSpy: jest.SpyInstance;
 
   const customRender = (
     customParams: Partial<ModifySqlStatementProps> = {}
@@ -75,6 +76,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     requestUpdateWorkflow = execWorkflow.updateWorkflow();
     instance.getInstance();
     requestInstanceTipSpy = instance.getInstanceTipList();
+    requestInstanceSpy = instance.getInstance();
     requestInstanceTipSpy.mockImplementation(() =>
       createSpySuccessResponse({
         data: [
@@ -169,7 +171,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
 
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestInstanceTipSpy).toHaveBeenCalledTimes(1);
-
+    expect(requestInstanceSpy).toHaveBeenCalled();
     fireEvent.input(getBySelector('.custom-monaco-editor'), {
       target: { value: 'SELECT 1;' }
     });
