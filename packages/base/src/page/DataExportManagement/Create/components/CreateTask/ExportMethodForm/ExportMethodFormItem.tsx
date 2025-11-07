@@ -1,8 +1,10 @@
-import { FormItemNoLabel } from '@actiontech/dms-kit';
 import {
-  MonacoEditor,
-  useMonacoEditor
-} from '@actiontech/shared/lib/components/MonacoEditor';
+  BasicInput,
+  BasicSwitch,
+  FormItemNoLabel,
+  isSupportLanguage
+} from '@actiontech/dms-kit';
+import { useMonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { whiteSpaceSql } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { CreateExportTaskFormEntryProps } from '../index.type';
@@ -10,13 +12,23 @@ import { ExportMethodEnum } from './index.enum';
 import { ModeSwitcher } from '@actiontech/dms-kit';
 import { PanelCardOutlined } from '@actiontech/icons';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
+import CustomMonacoEditor from 'sqle/src/components/CustomMonacoEditor';
+import { useMemo } from 'react';
+import { Form } from 'antd';
+
 const ExportMethodFormItem: React.FC<
-  Pick<CreateExportTaskFormEntryProps, 'methodForm'>
-> = ({ methodForm }) => {
+  Pick<CreateExportTaskFormEntryProps, 'methodForm' | 'sourceForm'>
+> = ({ methodForm, sourceForm }) => {
   const { t } = useTranslation();
   const { editorDidMount } = useMonacoEditor(methodForm, {
     formName: 'sql'
   });
+  const formatted = Form.useWatch('formatted', methodForm);
+  const dbType = Form.useWatch('dbType', sourceForm);
+
+  const isReadOnlyMode = useMemo(() => {
+    return formatted && !isSupportLanguage(dbType);
+  }, [formatted, dbType]);
   return (
     <>
       <FormItemNoLabel name="exportMethod" initialValue={ExportMethodEnum.sql}>
@@ -47,15 +59,23 @@ const ExportMethodFormItem: React.FC<
           ...whiteSpaceSql()
         ]}
       >
-        <MonacoEditor
+        <CustomMonacoEditor
           width="100%"
           height="400px"
           language="sql"
           onMount={editorDidMount}
           options={{
-            automaticLayout: true
+            automaticLayout: true,
+            readOnly: isReadOnlyMode
           }}
+          showAlert={isReadOnlyMode}
         />
+      </FormItemNoLabel>
+      <FormItemNoLabel name="formatted" hidden valuePropName="checked">
+        <BasicSwitch />
+      </FormItemNoLabel>
+      <FormItemNoLabel name="originSql" hidden>
+        <BasicInput />
       </FormItemNoLabel>
     </>
   );

@@ -137,6 +137,7 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
           isAuditing={sharedStepDetail.isAuditing}
           isSupportFileModeExecuteSqlRecord={isSupportFileModeExecuteSqlRecord}
           isAtFormStep={sharedStepDetail.isAtFormStep}
+          dbSourceInfoCollection={sharedStepDetail.dbSourceInfoCollection}
         />
       </>
     );

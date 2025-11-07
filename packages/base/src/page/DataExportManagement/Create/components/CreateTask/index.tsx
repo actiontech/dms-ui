@@ -22,7 +22,8 @@ const CreateExportTask: React.FC = () => {
     auditAction,
     formatSQLAction,
     auditLoading,
-    resetAllForms
+    resetAllForms,
+    formatted
   } = useCreateExportTaskForm();
 
   return (
@@ -43,7 +44,7 @@ const CreateExportTask: React.FC = () => {
           baseForm={baseForm}
           methodForm={methodForm}
         />
-        <ExportMethodForm methodForm={methodForm} />
+        <ExportMethodForm methodForm={methodForm} sourceForm={sourceForm} />
 
         <FormAreaBlockStyleWrapper
           style={{
@@ -61,6 +62,7 @@ const CreateExportTask: React.FC = () => {
             }}
             auditLoading={auditLoading}
             formatSQLAction={formatSQLAction}
+            formatted={formatted}
           />
         </FormAreaBlockStyleWrapper>
       </PageLayoutHasFixedHeaderStyleWrapper>

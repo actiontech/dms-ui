@@ -15,7 +15,7 @@ import { useEffect, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { ResponseCode } from '@actiontech/dms-kit';
+import { isSupportLanguage, ResponseCode } from '@actiontech/dms-kit';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
@@ -36,6 +36,8 @@ import { BriefcaseFilled, LeftArrowOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import useCheckTaskAuditRuleExceptionStatus from '../../../Create/hooks/useCheckTaskAuditRuleExceptionStatus';
+import instance from '@actiontech/shared/lib/api/sqle/service/instance';
+
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
   modifiedTasks,
@@ -61,8 +63,12 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { isAuditing, sqlStatementTabActiveKey, resetAllSharedData } =
-    useSharedStepDetail();
+  const {
+    isAuditing,
+    sqlStatementTabActiveKey,
+    resetAllSharedData,
+    dbSourceInfoCollection
+  } = useSharedStepDetail();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const [
@@ -101,19 +107,45 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const databaseInfo = useMemo<CreateWorkflowDatabaseInfo>(() => {
     return (currentTasks ?? [])
       .map((item, index) => {
+        const instanceInfo = instanceList.find(
+          (i) => i.instance_name === item.instance_name
+        );
         return {
           key: isSameSqlForAll ? `${index}` : item.task_id?.toString() ?? '',
           instanceName: item.instance_name,
           schemaName: item.instance_schema,
           enableBackup: item.enable_backup,
           backupMaxRows: item.backup_max_rows,
-          allowBackup: !!instanceList.find(
-            (i) => i.instance_name === item.instance_name
-          )?.supported_backup_strategy?.length
+          allowBackup: !!instanceInfo?.supported_backup_strategy?.length
         };
       })
       .filter((v) => !!v.instanceName);
   }, [currentTasks, instanceList, isSameSqlForAll]);
+
+  useEffect(() => {
+    if (databaseInfo.length) {
+      const taskList = isSameSqlForAll ? [databaseInfo[0]] : databaseInfo;
+      taskList.forEach((i) => {
+        instance
+          .getInstanceV2({
+            project_name: projectName,
+            instance_name: i.instanceName ?? ''
+          })
+          .then(async (res) => {
+            if (res.data.code === ResponseCode.SUCCESS) {
+              const dbType = res.data.data?.db_type ?? '';
+              dbSourceInfoCollection.set(i.key, {
+                dbType,
+                ruleTemplate: res.data.data?.rule_template,
+                isSupportFormatSql: isSupportLanguage(dbType)
+              });
+            }
+          });
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [databaseInfo]);
+
   const innerAuditAction = async (values: SqlAuditInfoFormFields) => {
     isAuditing.set(true);
     try {
@@ -289,6 +321,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
                 auditAction={innerAuditAction}
                 disabledUploadType
                 isAtRejectStep
+                dbSourceInfoCollection={dbSourceInfoCollection}
               />
             </FormAreaBlockStyleWrapper>
           </FormAreaLineStyleWrapper>

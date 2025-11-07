@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
   SqlInfoFormProps,
   OptimizationTypeEnum,
@@ -12,9 +12,13 @@ import {
   BasicToolTip,
   BasicInput,
   EmptyBox,
-  BasicSelect
+  BasicSelect,
+  isSupportLanguage,
+  FormItemNoLabel,
+  BasicSwitch,
+  SQL_EDITOR_PLACEHOLDER_VALUE
 } from '@actiontech/dms-kit';
-import { MonacoEditor, useMonacoEditor } from '@actiontech/shared';
+import { useMonacoEditor } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
 
@@ -27,6 +31,9 @@ import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/sty
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
+import { SqlFormatterButtonStyleWrapper } from '../../../SqlExecWorkflow/Common/style';
+import classNames from 'classnames';
+import CustomMonacoEditor from '../../../../components/CustomMonacoEditor';
 
 const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
   const { t } = useTranslation();
@@ -37,6 +44,9 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
 
   const optimizationType = Form.useWatch('optimizationType', form);
   const uploadType = Form.useWatch('uploadType', form);
+  const dbType = Form.useWatch('dbType', form);
+  const formatted = Form.useWatch('formatted', form);
+  const originSql = Form.useWatch('originSql', form);
 
   const { editorDidMount } = useMonacoEditor(form, {
     formName: 'sql'
@@ -71,21 +81,41 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
     form.setFieldsValue({
       instanceName: undefined,
       instanceSchema: undefined,
-      dbType: undefined
+      dbType: undefined,
+      formatted: undefined,
+      originSql: undefined
     });
   };
 
+  const isReadOnlyMode = useMemo(() => {
+    return formatted && !isSupportLanguage(dbType);
+  }, [formatted, dbType]);
+
   const formatSql = async () => {
     const values = await form.getFieldsValue();
-    if (values.optimizationType === OptimizationTypeEnum.online) {
-      const sql = formatterSQL(values.sql, values.dbType);
+    const sqlNotDefaultValue =
+      !!values.sql && values.sql !== SQL_EDITOR_PLACEHOLDER_VALUE;
+    const offlineSqlNotDefaultValue =
+      !!values.offlineSql && values.offlineSql !== SQL_EDITOR_PLACEHOLDER_VALUE;
+    const sqlContentNotNull = sqlNotDefaultValue || offlineSqlNotDefaultValue;
+
+    if (sqlContentNotNull && dbType) {
+      const sqlKey =
+        values.optimizationType === OptimizationTypeEnum.online
+          ? 'sql'
+          : 'offlineSql';
+      if (formatted && !isSupportLanguage(dbType)) {
+        form.setFieldsValue({
+          formatted: false,
+          [sqlKey]: originSql
+        });
+        return;
+      }
+      const formattedSql = formatterSQL(values[sqlKey] ?? '', values.dbType);
       form.setFieldsValue({
-        sql
-      });
-    } else {
-      const sql = formatterSQL(values?.offlineSql ?? '', values.dbType);
-      form.setFieldsValue({
-        offlineSql: sql
+        [sqlKey]: formattedSql,
+        originSql: values[sqlKey],
+        formatted: true
       });
     }
   };
@@ -156,15 +186,16 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
                 }
               ]}
             >
-              <MonacoEditor
+              <CustomMonacoEditor
                 width="100%"
                 height="400px"
                 language="sql"
                 onMount={editorDidMount}
                 options={{
                   automaticLayout: true,
-                  readOnly: submitLoading
+                  readOnly: submitLoading || isReadOnlyMode
                 }}
+                showAlert={isReadOnlyMode}
               />
             </FormItemLabel>
             <FormItemLabel
@@ -210,9 +241,14 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
           getInstanceDbType={getInstanceDbType}
         />
 
-        <SQLStatementForm form={form} />
+        <SQLStatementForm form={form} isReadOnlyMode={isReadOnlyMode} />
       </EmptyBox>
-
+      <FormItemNoLabel name="formatted" hidden valuePropName="checked">
+        <BasicSwitch />
+      </FormItemNoLabel>
+      <FormItemNoLabel name="originSql" hidden>
+        <BasicInput />
+      </FormItemNoLabel>
       <Space size={12}>
         <BasicButton
           className="create-optimization-button"
@@ -229,9 +265,15 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
           }
         >
           <Space>
-            <BasicButton onClick={formatSql} loading={submitLoading}>
+            <SqlFormatterButtonStyleWrapper
+              className={classNames({
+                'active-formatter-button': formatted
+              })}
+              onClick={formatSql}
+              loading={submitLoading}
+            >
               {t('sqlOptimization.create.sqlInfo.format')}
-            </BasicButton>
+            </SqlFormatterButtonStyleWrapper>
             <BasicToolTip
               prefixIcon={<InfoCircleOutlined />}
               title={t('sqlOptimization.create.sqlInfo.formatTips', {
