@@ -2,7 +2,8 @@ import {
   BasicSelect,
   jsonParse,
   ROUTE_PATHS,
-  TRANSIT_FROM_CONSTANT
+  TRANSIT_FROM_CONSTANT,
+  BasicInput
 } from '@actiontech/dms-kit';
 import { FormItemLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
@@ -32,8 +33,10 @@ const ExportSourceFormItem: React.FC<
     updateDbServiceList,
     generateDbServiceIDSelectOptions,
     dbServiceList,
-    loading: getDbServiceListLoading
+    loading: getDbServiceListLoading,
+    getServiceDbType
   } = useDbService();
+
   const dbServiceID = Form.useWatch('dbService', sourceForm);
   const dbServiceName = useMemo(() => {
     const name = dbServiceList.find((v) => v.id === dbServiceID)?.name;
@@ -53,6 +56,7 @@ const ExportSourceFormItem: React.FC<
         `${name}_${dayjs().format('YYYYMMDDhhmmss')}`
       );
     }
+    sourceForm.setFieldValue('dbType', getServiceDbType(id));
   };
   useEffect(() => {
     updateDbServiceList({
@@ -100,7 +104,10 @@ const ExportSourceFormItem: React.FC<
         )?.id;
 
         if (serviceId) {
-          sourceForm.setFieldValue('dbService', serviceId);
+          sourceForm.setFieldsValue({
+            dbService: serviceId,
+            dbType: getServiceDbType(serviceId)
+          });
         }
 
         if (databaseName) {
@@ -111,7 +118,15 @@ const ExportSourceFormItem: React.FC<
         console.error(`${error}`);
       }
     }
-  }, [baseForm, dbServiceList, extractQueries, methodForm, mode, sourceForm]);
+  }, [
+    baseForm,
+    dbServiceList,
+    extractQueries,
+    methodForm,
+    mode,
+    sourceForm,
+    getServiceDbType
+  ]);
 
   return (
     <>
@@ -161,6 +176,9 @@ const ExportSourceFormItem: React.FC<
         >
           {generateDbServiceIDSelectOptions()}
         </BasicSelect>
+      </FormItemLabel>
+      <FormItemLabel name="dbType" hidden>
+        <BasicInput />
       </FormItemLabel>
       <FormItemLabel
         label={

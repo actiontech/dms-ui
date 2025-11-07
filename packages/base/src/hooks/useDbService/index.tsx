@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
@@ -112,6 +112,14 @@ const useDbService = () => {
   const dbServiceIDOptions = useMemo(() => {
     return generateCommonDbServiceOptions('id');
   }, [generateCommonDbServiceOptions]);
+
+  const getServiceDbType = useCallback(
+    (id: string) => {
+      return dbServiceList.find((i) => i.id === id)?.db_type ?? '';
+    },
+    [dbServiceList]
+  );
+
   return {
     dbServiceList,
     dbServiceOptions,
@@ -119,7 +127,8 @@ const useDbService = () => {
     updateDbServiceList,
     generateDbServiceSelectOptions,
     generateDbServiceIDSelectOptions,
-    dbServiceIDOptions
+    dbServiceIDOptions,
+    getServiceDbType
   };
 };
 export default useDbService;

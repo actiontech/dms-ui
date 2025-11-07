@@ -23,7 +23,8 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   isSupportFileModeExecuteSql,
   isAtRejectStep,
   isAtFormStep,
-  setActiveKey
+  setActiveKey,
+  dbSourceInfoCollection
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();
@@ -72,6 +73,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
       <SqlUploadContent
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
+        dbSourceInfoCollection={dbSourceInfoCollection}
       />
 
       <SqlExecModeSelector
@@ -98,6 +100,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         databaseInfo={databaseInfo}
         isSameSqlForAll={isSameSqlForAll}
         setActiveKey={setActiveKey}
+        dbSourceInfoCollection={dbSourceInfoCollection}
       />
     </>
   );

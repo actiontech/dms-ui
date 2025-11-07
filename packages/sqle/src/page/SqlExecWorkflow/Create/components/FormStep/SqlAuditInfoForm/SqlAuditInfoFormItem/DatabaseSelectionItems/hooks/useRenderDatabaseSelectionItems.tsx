@@ -2,7 +2,11 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { DatabaseSelectionItemProps } from '../../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/dms-kit';
-import { BasicButton, BasicToolTip } from '@actiontech/dms-kit';
+import {
+  BasicButton,
+  BasicToolTip,
+  isSupportLanguage
+} from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
@@ -95,11 +99,13 @@ const useRenderDatabaseSelectionItems = ({
       })
       .then(async (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
+          const dbType = res.data.data?.db_type ?? '';
           dbSourceInfoCollection.set(key, {
-            dbType: res.data.data?.db_type,
-            ruleTemplate: res.data.data?.rule_template
+            dbType,
+            ruleTemplate: res.data.data?.rule_template,
+            isSupportFormatSql: isSupportLanguage(dbType)
           });
-          getSupportedFileModeByInstanceType(key, res.data.data?.db_type ?? '');
+          getSupportedFileModeByInstanceType(key, dbType);
         }
       });
   };

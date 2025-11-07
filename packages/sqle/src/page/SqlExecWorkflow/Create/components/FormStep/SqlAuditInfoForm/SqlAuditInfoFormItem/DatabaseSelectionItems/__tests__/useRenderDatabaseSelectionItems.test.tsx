@@ -140,7 +140,8 @@ describe('test useRenderDatabaseSelectionItems', () => {
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
       dbType: instanceInfoMockData.db_type,
-      ruleTemplate: instanceInfoMockData.rule_template
+      ruleTemplate: instanceInfoMockData.rule_template,
+      isSupportFormatSql: true
     });
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set

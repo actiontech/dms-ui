@@ -38,6 +38,7 @@ describe('test SqlStatementFormItem', () => {
           ]}
           setActiveKey={jest.fn()}
           isAtFormStep
+          dbSourceInfoCollection={{ value: {}, set: jest.fn() }}
           {...params}
         />
       </Form>

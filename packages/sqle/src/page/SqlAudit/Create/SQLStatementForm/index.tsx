@@ -26,7 +26,9 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       'gitUserName',
       'gitUserPassword',
       'gitBranch',
-      'gitProtocol'
+      'gitProtocol',
+      'formatted',
+      'originSql'
     ]);
   };
   return (

@@ -1,4 +1,15 @@
 import { styled } from '@mui/material';
+import { BasicButton } from '@actiontech/dms-kit';
+
+export const SqlFormatterButtonStyleWrapper = styled(BasicButton)`
+  &.ant-btn.basic-button-wrapper.active-formatter-button {
+    color: ${({ theme }) =>
+      theme.sqleTheme.execWorkflow.create.auditResult.toggleButton.activeColor};
+    background: ${({ theme }) =>
+      theme.sqleTheme.execWorkflow.create.auditResult.toggleButton
+        .activeBgColor};
+  }
+`;
 
 export const ToggleButtonStyleWrapper = styled('div')<{
   active: boolean;

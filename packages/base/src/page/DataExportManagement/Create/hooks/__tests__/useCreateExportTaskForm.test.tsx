@@ -7,7 +7,7 @@ import {
   screen
 } from '@testing-library/react';
 import useCreateExportTaskForm from '../useCreateExportTaskForm';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Switch } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCreateDataExportReduxManage } from '../../testUtils/mockUseCreateDataExportReduxManage';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
@@ -17,7 +17,13 @@ import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport'
 import { AddDataExportTaskResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { useState } from 'react';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { formatterSQL } from '@actiontech/dms-kit';
+import { formatterSQL, FormatLanguageSupport } from '@actiontech/dms-kit';
+import { isSupportLanguage } from '@actiontech/dms-kit';
+
+jest.mock('@actiontech/dms-kit', () => ({
+  ...jest.requireActual('@actiontech/dms-kit'),
+  isSupportLanguage: jest.fn()
+}));
 
 describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   const CustomCom = ({
@@ -27,8 +33,11 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     auditAction,
     auditLoading,
     formatSQLAction,
-    resetAllForms
-  }: ReturnType<typeof useCreateExportTaskForm>) => {
+    resetAllForms,
+    dbType = FormatLanguageSupport.MySQL
+  }: ReturnType<typeof useCreateExportTaskForm> & {
+    dbType?: string;
+  }) => {
     const [auditResultValue, setAuditResultValue] = useState('');
     return (
       <>
@@ -44,9 +53,18 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
           <Form.Item name="schema" label="schema">
             <Input />
           </Form.Item>
+          <Form.Item name="dbType" initialValue={dbType} label="dbType">
+            <Input />
+          </Form.Item>
         </Form>
         <Form form={methodForm}>
           <Form.Item name="sql" label="sql">
+            <Input.TextArea />
+          </Form.Item>
+          <Form.Item name="formatted" label="formatted" valuePropName="checked">
+            <Switch />
+          </Form.Item>
+          <Form.Item name="originSql" label="originSql">
             <Input.TextArea />
           </Form.Item>
         </Form>
@@ -90,8 +108,6 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   });
 
   it('should format sql when executed "formatSQLAction"', async () => {
-    const listDbServiceSpy = dbServices.ListDBServices();
-
     const { result } = renderHook(() => useCreateExportTaskForm());
 
     render(<CustomCom {...result.current} />);
@@ -99,22 +115,18 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     fireEvent.change(screen.getByLabelText('sql'), {
       target: { value: 'select 1;' }
     });
-
-    fireEvent.click(screen.getByText('formatSQLAction'));
-    expect(listDbServiceSpy).toHaveBeenCalledTimes(0);
-    expect(screen.getByLabelText('sql')).toHaveValue(formatterSQL('select 1;'));
+    await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.change(screen.getByLabelText('dbService'), {
       target: { value: '100' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.change(screen.getByLabelText('sql'), {
       target: { value: 'select 2;' }
     });
-
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('formatSQLAction'));
-    expect(listDbServiceSpy).toHaveBeenCalledTimes(1);
-
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
 
     expect(screen.getByLabelText('sql')).toHaveValue(
       formatterSQL('select 2;', DBServicesList[0].db_type)
@@ -122,6 +134,7 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   });
 
   it('should execute "auditAction" when clicked audit button', async () => {
+    (isSupportLanguage as jest.Mock).mockImplementation(() => true);
     const addDataExportTaskSpy = dataExport.AddDataExportTask();
     const updateAuditLoadingSpy = jest.fn();
     const updateFormValuesSpy = jest.fn();
@@ -179,7 +192,8 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
       },
       sourceValues: {
         dbService: '100',
-        schema: 'schema'
+        schema: 'schema',
+        dbType: 'mysql'
       }
     });
     expect(updateTaskIDsSpy).toHaveBeenCalledTimes(1);
