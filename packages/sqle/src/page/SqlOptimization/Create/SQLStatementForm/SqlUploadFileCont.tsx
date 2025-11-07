@@ -6,10 +6,7 @@ import {
   UploadTypeEnum
 } from '../../index.type';
 import { Form } from 'antd';
-import {
-  MonacoEditor,
-  useMonacoEditor
-} from '@actiontech/shared/lib/components/MonacoEditor';
+import { useMonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import {
   CustomDraggerUpload,
   EmptyBox,
@@ -22,8 +19,9 @@ import {
 } from '@actiontech/dms-kit';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
+import CustomMonacoEditor from '../../../../components/CustomMonacoEditor';
 
-const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
+const SqlUploadFileCont = ({ form, isReadOnlyMode }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useSelector(
     (state: IReduxState) => state.sqlOptimization.submitLoading
@@ -58,15 +56,16 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
           ]}
           initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
         >
-          <MonacoEditor
+          <CustomMonacoEditor
             width="100%"
             height="400px"
             language="sql"
             onMount={editorDidMount}
             options={{
               automaticLayout: true,
-              readOnly: submitLoading
+              readOnly: submitLoading || isReadOnlyMode
             }}
+            showAlert={isReadOnlyMode}
           />
         </FormItemNoLabel>
       </EmptyBox>

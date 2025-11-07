@@ -29,7 +29,8 @@ const UpdateInfoDrawer: React.FC = () => {
     methodForm,
     auditAction,
     formatSQLAction,
-    auditLoading
+    auditLoading,
+    formatted
   } = useCreateExportTaskForm();
   const closeHandle = () => {
     if (auditLoading) {
@@ -115,7 +116,10 @@ const UpdateInfoDrawer: React.FC = () => {
           <UpdateTaskInfoFormTitleStyleWrapper>
             {t('dmsDataExport.create.update.methodTitle')}
           </UpdateTaskInfoFormTitleStyleWrapper>
-          <ExportMethodFormItem methodForm={methodForm} />
+          <ExportMethodFormItem
+            methodForm={methodForm}
+            sourceForm={sourceForm}
+          />
         </UpdateMethodInfoFormStyleWrapper>
 
         <UpdateInfoActionStyleWrapper>
@@ -129,6 +133,7 @@ const UpdateInfoDrawer: React.FC = () => {
             }}
             auditLoading={auditLoading}
             formatSQLAction={formatSQLAction}
+            formatted={formatted}
           />
         </UpdateInfoActionStyleWrapper>
       </Spin>

@@ -10,11 +10,14 @@ export type SourceFormFieldsType = {
   business?: string;
   dbService: string;
   schema?: string;
+  dbType?: string;
 };
 
 export type MethodFormFieldsType = {
   sql: string;
   exportMethod: ExportMethodEnum;
+  formatted?: boolean;
+  originSql?: string;
 };
 
 export type CreateExportTaskFormEntryProps = {

@@ -1,24 +1,46 @@
 import { Form } from 'antd';
 import { SqlUploadContentProps } from './index.type';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
-import { CustomDraggerUpload, LazyLoadComponent } from '@actiontech/dms-kit';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormItemNoLabel } from '@actiontech/dms-kit';
-import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
-import { useTranslation } from 'react-i18next';
-import { whiteSpaceSql } from '@actiontech/dms-kit';
 import {
-  MonacoEditor,
-  useMonacoEditor
-} from '@actiontech/shared/lib/components/MonacoEditor';
+  getFileFromUploadChangeEvent,
+  whiteSpaceSql,
+  FormItemNoLabel,
+  SQL_EDITOR_PLACEHOLDER_VALUE,
+  CustomDraggerUpload,
+  LazyLoadComponent,
+  BasicSwitch,
+  BasicInput
+} from '@actiontech/dms-kit';
+import { useTranslation } from 'react-i18next';
+import { useMonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { NamePath } from 'antd/es/form/interface';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
+import { useMemo } from 'react';
+import CustomMonacoEditor from '../../../../../../components/CustomMonacoEditor';
+
 const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
   fieldPrefixPath,
-  currentSqlUploadType
+  currentSqlUploadType,
+  dbSourceInfoCollection
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
+  const currentFieldSqlIsFormatted = Form.useWatch(
+    [fieldPrefixPath, 'formatted'],
+    form
+  );
+
+  const isReadOnlyMode = useMemo(() => {
+    return (
+      currentFieldSqlIsFormatted &&
+      !dbSourceInfoCollection.value?.[fieldPrefixPath]?.isSupportFormatSql
+    );
+  }, [
+    currentFieldSqlIsFormatted,
+    dbSourceInfoCollection.value,
+    fieldPrefixPath
+  ]);
+
   const generateFieldName = (name: string) => {
     return [fieldPrefixPath, name];
   };
@@ -50,15 +72,27 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
             )
           ]}
         >
-          <MonacoEditor
+          <CustomMonacoEditor
             width="100%"
             height="400px"
             language="sql"
             onMount={editorDidMount}
             options={{
-              automaticLayout: true
+              automaticLayout: true,
+              readOnly: isReadOnlyMode
             }}
+            showAlert={isReadOnlyMode}
           />
+        </FormItemNoLabel>
+        <FormItemNoLabel
+          name={generateFieldName('formatted')}
+          hidden
+          valuePropName="checked"
+        >
+          <BasicSwitch />
+        </FormItemNoLabel>
+        <FormItemNoLabel name={generateFieldName('originSql')} hidden>
+          <BasicInput />
         </FormItemNoLabel>
       </LazyLoadComponent>
       <LazyLoadComponent

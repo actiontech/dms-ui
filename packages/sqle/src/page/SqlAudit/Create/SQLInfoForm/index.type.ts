@@ -37,6 +37,8 @@ export type SQLInfoFormFields = {
   gitUserPassword: string;
   gitBranch: string;
   gitProtocol: GitProtocolType;
+  formatted?: boolean;
+  originSql?: string;
 };
 
 export type SQLInfoFormProps = {

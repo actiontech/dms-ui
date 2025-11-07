@@ -15,7 +15,10 @@ import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/sty
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../store';
 
-const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
+const SQLStatementFormWrapper = ({
+  form,
+  isReadOnlyMode
+}: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useSelector(
     (state: IReduxState) => state.sqlOptimization.submitLoading
@@ -67,7 +70,9 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       </FormItemLabel>
       <EmptyBox
         if={uploadType === UploadTypeEnum.git}
-        defaultNode={<SqlUploadFileCont form={form} />}
+        defaultNode={
+          <SqlUploadFileCont form={form} isReadOnlyMode={isReadOnlyMode} />
+        }
       >
         {/* git form info */}
         <FormItemLabel

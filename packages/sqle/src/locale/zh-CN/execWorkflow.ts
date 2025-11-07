@@ -114,7 +114,9 @@ export default {
         cancelSwitchSqlBackupTips:
           '当前应用的数据源已开启备份需求，是否确认关闭备份？',
         cancelSwitchSqlBackupTipsWithInstanceName:
-          '{{instanceName}}已开启备份需求，是否确认关闭备份？'
+          '{{instanceName}}已开启备份需求，是否确认关闭备份？',
+        unsupportedSqlFormatAlert:
+          '当前数据源类型不支持编辑美化后的SQL，如需编辑，请取消美化'
       },
       tour: {
         modifyName: '修改工单名称',

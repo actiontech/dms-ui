@@ -6,7 +6,11 @@ import {
   UploadTypeEnum
 } from './index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { FormItemLabel, CustomLabelContent } from '@actiontech/dms-kit';
+import {
+  FormItemLabel,
+  CustomLabelContent,
+  isSupportLanguage
+} from '@actiontech/dms-kit';
 import { Form, Radio, RadioGroupProps, SelectProps, Space } from 'antd';
 import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { BasicButton, BasicSelect, BasicToolTip } from '@actiontech/dms-kit';
@@ -20,6 +24,9 @@ import { FormatLanguageSupport, formatterSQL } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useGlobalRuleTemplate from '../../../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../../../hooks/useRuleTemplate';
+import { SqlFormatterButtonStyleWrapper } from '../../../SqlExecWorkflow/Common/style';
+import classNames from 'classnames';
+
 const SQLInfoFormItem = ({
   form,
   submit,
@@ -31,6 +38,8 @@ const SQLInfoFormItem = ({
   const auditType = Form.useWatch('auditType', form);
   const uploadType = Form.useWatch('uploadType', form);
   const selectedDbType = Form.useWatch('dbType', form);
+  const formatted = Form.useWatch('formatted', form);
+  const originSql = Form.useWatch('originSql', form);
   const {
     loading: getDriverMetaLoading,
     updateDriverNameList,
@@ -39,7 +48,6 @@ const SQLInfoFormItem = ({
   const {
     instanceOptions,
     updateInstanceList,
-    instanceList,
     loading: instanceLoading
   } = useInstance();
   const {
@@ -76,20 +84,28 @@ const SQLInfoFormItem = ({
   ]);
   const auditTypeChange: RadioGroupProps['onChange'] = () => {
     form.setFieldsValue({
-      instanceName: undefined
+      instanceName: undefined,
+      dbType: undefined
     });
   };
+
   const formatSql = async () => {
-    const values = await form.getFieldsValue();
-    const dbType =
-      auditType === AuditTypeEnum.dynamic
-        ? instanceList.find((v) => v.instance_name === values.instanceName)
-            ?.instance_type
-        : values.dbType;
-    const sql = formatterSQL(values.sql, dbType);
-    form.setFieldsValue({
-      sql
-    });
+    const values = form.getFieldsValue();
+    if (values.sql && selectedDbType) {
+      const sql = formatterSQL(values.sql, selectedDbType);
+      if (formatted && !isSupportLanguage(selectedDbType)) {
+        form.setFieldsValue({
+          formatted: false,
+          sql: originSql
+        });
+        return;
+      }
+      form.setFieldsValue({
+        sql,
+        originSql: values.sql,
+        formatted: true
+      });
+    }
   };
   const internalSubmit = async () => {
     const params = await form.validateFields();
@@ -191,9 +207,15 @@ const SQLInfoFormItem = ({
           {t('sqlAudit.create.sqlInfo.audit')}
         </BasicButton>
         <Space hidden={uploadType !== UploadTypeEnum.sql}>
-          <BasicButton onClick={formatSql} loading={submitLoading}>
+          <SqlFormatterButtonStyleWrapper
+            className={classNames({
+              'active-formatter-button': formatted
+            })}
+            onClick={formatSql}
+            loading={submitLoading}
+          >
             {t('sqlAudit.create.sqlInfo.format')}
-          </BasicButton>
+          </SqlFormatterButtonStyleWrapper>
           <BasicToolTip
             prefixIcon={<InfoCircleOutlined />}
             title={t('sqlAudit.create.sqlInfo.formatTips', {
