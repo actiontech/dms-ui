@@ -99,6 +99,7 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
     getWorkflowTemplateSpy = workflowTemplate.getWorkflowTemplate();
     updateWorkflowSpy = execWorkflow.updateWorkflow();
     instance.getInstanceTipList();
+    instance.getInstance();
   });
 
   afterEach(() => {

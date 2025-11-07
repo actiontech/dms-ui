@@ -3407,6 +3407,40 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     unselectable="on"
                   />
                 </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="TiDB"
+                    >
+                      TiDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="tidb-1(10.186.62.17:4000)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    tidb-1(10.186.62.17:4000)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -6036,6 +6070,40 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     class="ant-select-item-option-content"
                   >
                     progres-1(10.186.62.16:5432)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="TiDB"
+                    >
+                      TiDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="tidb-1(10.186.62.17:4000)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    tidb-1(10.186.62.17:4000)
                   </div>
                   <span
                     aria-hidden="true"
@@ -9744,6 +9812,40 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     unselectable="on"
                   />
                 </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="TiDB"
+                    >
+                      TiDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="tidb-1(10.186.62.17:4000)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    tidb-1(10.186.62.17:4000)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -11107,6 +11209,40 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     class="ant-select-item-option-content"
                   >
                     progres-1(10.186.62.16:5432)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="TiDB"
+                    >
+                      TiDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="tidb-1(10.186.62.17:4000)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    tidb-1(10.186.62.17:4000)
                   </div>
                   <span
                     aria-hidden="true"
@@ -12686,6 +12822,40 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     class="ant-select-item-option-content"
                   >
                     progres-1(10.186.62.16:5432)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="TiDB"
+                    >
+                      TiDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="tidb-1(10.186.62.17:4000)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    tidb-1(10.186.62.17:4000)
                   </div>
                   <span
                     aria-hidden="true"
