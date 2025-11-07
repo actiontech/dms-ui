@@ -10,6 +10,7 @@ const mockEditor = (props) => {
       getLayoutInfo: () => ({ height: 500, width: 600 }),
       getScrollTop: () => 0,
       getScrollLeft: () => 0,
+      getContribution: () => undefined,
       setScrollTop: () => undefined,
       setScrollLeft: () => undefined,
       onDidChangeModelContent: () => undefined,

@@ -441,6 +441,109 @@ describe('sqle/SqlOptimization/Create', () => {
   //   expect(navigateSpy).toHaveBeenCalledTimes(1);
   // });
 
+  it('create sql optimization with unsupported database type', async () => {
+    const { baseElement } = sqleSuperRender(customRender());
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
+
+    const dataSourcesSelectors = getAllBySelector(
+      '.data-source-row-select',
+      baseElement
+    );
+    expect(dataSourcesSelectors).toHaveLength(2);
+    expect(dataSourcesSelectors[1]).toHaveClass('ant-select-disabled');
+
+    // 选择 TiDB 数据源（不支持的类型）
+    fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('div[title="tidb-1(10.186.62.17:4000)"]', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(dataSourcesSelectors[1]).not.toHaveClass('ant-select-disabled');
+    expect(getInstanceSchemaSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.mouseDown(getBySelector('#instanceSchema', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('div[title="testSchema"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const sqlEditor = queryBySelector('.custom-monaco-editor', baseElement)!;
+    const sqlValue = 'SELECT 1;';
+    await act(async () => {
+      fireEvent.input(sqlEditor, {
+        target: { value: sqlValue }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+
+    // 点击 SQL 美化按钮
+    const formatBtn = screen.getByText('SQL美化');
+    fireEvent.click(formatBtn);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(sqlEditor).toHaveAttribute('value', formatterSQL(sqlValue));
+    expect(
+      screen.getByText(
+        '当前数据源类型不支持编辑美化后的SQL，如需编辑，请取消美化'
+      )
+    ).toBeInTheDocument();
+    // 取消美化
+    fireEvent.click(formatBtn);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(sqlEditor).toHaveAttribute('value', sqlValue);
+    expect(
+      screen.queryByText(
+        '当前数据源类型不支持编辑美化后的SQL，如需编辑，请取消美化'
+      )
+    ).not.toBeInTheDocument();
+    fireEvent.click(formatBtn);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // 创建优化任务
+    fireEvent.click(getBySelector('.create-optimization-button'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(optimizeSQLReqSpy).toHaveBeenCalledTimes(1);
+
+    // 验证：不支持的数据库类型应该使用原始 SQL，而不是格式化后的 SQL
+    expect(optimizeSQLReqSpy).toHaveBeenCalledWith({
+      optimization_name: 'UI20240101120000000',
+      git_http_url: undefined,
+      git_user_name: undefined,
+      git_user_password: undefined,
+      input_mybatis_xml_file: undefined,
+      input_sql_file: undefined,
+      input_zip_file: undefined,
+      instance_name: 'tidb-1',
+      schema_name: 'testSchema',
+      project_name: mockProjectInfo.projectName,
+      sql_content: sqlValue, // 应该使用原始 SQL，不是格式化后的
+      db_type: 'TiDB',
+      metadata: undefined,
+      explain_info: undefined
+    });
+
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlOptimization/updateSubmitLoading',
+      payload: {
+        loading: true
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlOptimization/updateSubmitLoading',
+      payload: {
+        loading: false
+      }
+    });
+    expect(
+      screen.getByText('优化进行中，预计5-10分钟后完成。感谢您的耐心等待。')
+    ).toBeInTheDocument();
+  });
+
   it('reset form values', async () => {
     const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
