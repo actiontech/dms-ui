@@ -16,23 +16,12 @@ const menuStruct: MenuTreeTranslated[] = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLDev'),
-    groups: [
-      'cloud-beaver',
-      'data-export',
-      'sql-audit',
-      'plugin-audit',
-      'data-source-comparison'
-    ]
+    groups: ['cloud-beaver', 'data-export', 'sql-audit', 'plugin-audit']
   },
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLExecute'),
-    groups: ['exec-workflow', 'version-management']
-  },
-  {
-    type: 'group',
-    label: t('dmsMenu.groupLabel.CICDIntegration'),
-    groups: ['pipeline-configuration']
+    groups: ['exec-workflow']
   },
   {
     type: 'group',

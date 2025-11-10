@@ -119,17 +119,6 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
-const VersionManagementCreation = React.lazy(
-  () => import('../page/VersionManagement/Create')
-);
-
-const VersionManagementUpdate = React.lazy(
-  () => import('../page/VersionManagement/Update')
-);
-
-const VersionManagementDetail = React.lazy(
-  () => import('../page/VersionManagement/Detail')
-);
 
 // #endif
 
@@ -168,11 +157,6 @@ const SqlManagementConfAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/ManagementConf')
 );
 
-//data source comparison
-const DataSourceComparison = React.lazy(
-  () => import('../page/DataSourceComparison')
-);
-
 //sqle global page
 const Rule = React.lazy(() => import('../page/Rule'));
 const RuleManager = React.lazy(() => import('../page/RuleManager'));
@@ -199,20 +183,6 @@ const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
 const PushRuleConfiguration = React.lazy(
   () => import('../page/PushRuleConfiguration')
 );
-
-const PipelineConfigurationList = React.lazy(
-  () => import('../page/PipelineConfiguration/List')
-);
-
-const PipelineConfigurationCreation = React.lazy(
-  () => import('../page/PipelineConfiguration/Create')
-);
-
-const PipelineConfigurationUpdate = React.lazy(
-  () => import('../page/PipelineConfiguration/Update')
-);
-
-const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
 
 const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
 const SqlInsights = React.lazy(() => import('../page/SqlInsights'));
@@ -435,60 +405,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'pushRuleConfiguration',
     element: <PushRuleConfiguration />,
     permission: PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION
-  },
-  {
-    path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index.path,
-    key: 'pipelineConfiguration',
-    children: [
-      {
-        index: true,
-        element: <PipelineConfigurationList />,
-        key: 'pipelineConfigurationList'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create.path,
-        element: <PipelineConfigurationCreation />,
-        key: 'createPipelineConfiguration'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update.path,
-        element: <PipelineConfigurationUpdate />,
-        key: 'updatePipelineConfiguration'
-      }
-    ]
-  },
-  {
-    path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.index.path,
-    key: 'versionManagement',
-    children: [
-      {
-        index: true,
-        element: <VersionManagement />,
-        key: 'VersionManagementList'
-      },
-      // #if [ee]
-      {
-        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.create.path,
-        element: <VersionManagementCreation />,
-        key: 'versionManagementCreation'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update.path,
-        element: <VersionManagementUpdate />,
-        key: 'versionManagementUpdate'
-      },
-      {
-        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail.path,
-        element: <VersionManagementDetail />,
-        key: 'versionManagementDetail'
-      }
-      // #endif
-    ]
-  },
-  {
-    path: ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index.path,
-    key: 'dataSourceComparison',
-    element: <DataSourceComparison />
   },
   {
     path: '*',

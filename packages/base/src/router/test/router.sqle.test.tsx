@@ -458,15 +458,6 @@ describe('base/router-sqle-ee', () => {
           expect(baseElement).toMatchSnapshot();
         });
       });
-
-      it('render DataSourceComparison', () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/data-source-comparison`
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('dataSourceComparison')).toBeInTheDocument();
-      });
     });
 
     describe('render sqle project detail router when version is ee', () => {

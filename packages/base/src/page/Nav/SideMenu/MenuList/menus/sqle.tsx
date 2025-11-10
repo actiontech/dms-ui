@@ -15,9 +15,6 @@ import {
   BriefcaseFilled,
   PlanFilled,
   GearFilled,
-  PipelineOutlined,
-  FileVersionOutlined,
-  ComparisonOutlined,
   DashboardOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/features';
@@ -154,36 +151,6 @@ const pushRuleConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({
   permission: PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION
 });
 
-const pipelineConfiguration: GenerateMenuItemI18nConfig = (projectID) => ({
-  label: 'dmsMenu.pipelineConfiguration',
-  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index, {
-    params: { projectID }
-  }),
-  icon: <PipelineOutlined width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/pipeline-configuration`,
-  structKey: 'pipeline-configuration'
-});
-
-const versionManagement: GenerateMenuItemI18nConfig = (projectID) => ({
-  label: 'dmsMenu.versionManagement',
-  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.index, {
-    params: { projectID }
-  }),
-  icon: <FileVersionOutlined width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/version-management`,
-  structKey: 'version-management'
-});
-
-const dataSourceComparison: GenerateMenuItemI18nConfig = (projectID) => ({
-  label: 'dmsMenu.dataSourceComparison',
-  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index, {
-    params: { projectID }
-  }),
-  icon: <ComparisonOutlined width={18} height={18} />,
-  // todo 后续调整当前选中菜单与 key 绑定的逻辑
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-source-comparison`,
-  structKey: 'data-source-comparison'
-});
 const sqlPerformanceInsights: GenerateMenuItemI18nConfig = (projectID) => ({
   label: 'dmsMenu.sqlPerformanceInsights',
   to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_INSIGHTS.index, {
@@ -208,9 +175,6 @@ const sqleMenusCollection = [
   sqlManagementConf,
   pushRuleConfiguration,
   sqlManagementException,
-  pipelineConfiguration,
-  versionManagement,
-  dataSourceComparison,
   sqlPerformanceInsights
 ];
 

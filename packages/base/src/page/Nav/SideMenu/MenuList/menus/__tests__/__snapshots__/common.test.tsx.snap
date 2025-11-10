@@ -42,13 +42,11 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `
       },
       null,
       null,
-      null,
     ],
     "label": "SQL开发",
     "permission": undefined,
     "type": "group",
   },
-  null,
   null,
   null,
   {
@@ -180,20 +178,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "plugin-audit",
         "to": "/sqle/project/600300/plugin-audit",
       },
-      {
-        "icon": <ComparisonOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/data-source-comparison",
-        "label": <ForwardRef(TypedLink)
-          to="/sqle/project/600300/data-source-comparison"
-        >
-          结构对比
-        </ForwardRef(TypedLink)>,
-        "structKey": "data-source-comparison",
-        "to": "/sqle/project/600300/data-source-comparison",
-      },
     ],
     "label": "SQL开发",
     "permission": undefined,
@@ -215,43 +199,8 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "exec-workflow",
         "to": "/sqle/project/600300/exec-workflow",
       },
-      {
-        "icon": <FileVersionOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/version-management",
-        "label": <ForwardRef(TypedLink)
-          to="/sqle/project/600300/version-management"
-        >
-          版本管理
-        </ForwardRef(TypedLink)>,
-        "structKey": "version-management",
-        "to": "/sqle/project/600300/version-management",
-      },
     ],
     "label": "SQL上线",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "children": [
-      {
-        "icon": <PipelineOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/pipeline-configuration",
-        "label": <ForwardRef(TypedLink)
-          to="/sqle/project/600300/pipeline-configuration"
-        >
-          流水线配置
-        </ForwardRef(TypedLink)>,
-        "structKey": "pipeline-configuration",
-        "to": "/sqle/project/600300/pipeline-configuration",
-      },
-    ],
-    "label": "CI/CD集成",
     "permission": undefined,
     "type": "group",
   },

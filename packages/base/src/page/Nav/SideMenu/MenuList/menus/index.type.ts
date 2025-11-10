@@ -70,7 +70,4 @@ type SqleMenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
-  | 'pipeline-configuration'
-  | 'version-management'
-  | 'data-source-comparison'
   | 'sql-insights';

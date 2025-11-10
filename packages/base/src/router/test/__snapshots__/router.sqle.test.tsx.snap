@@ -210,24 +210,6 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render DataSourceComparison 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div>
-          dataSourceComparison
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
 <body>
   <div>
