@@ -1,6 +1,6 @@
 {
   "name": "@actiontech/dms-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DMS Kit - React UI Components Library",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -22,10 +22,6 @@
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
-  },
-  "publishConfig": {
-    "registry": "http://10.186.18.19:4873/",
-    "access": "restricted"
   },
   "dependencies": {
     "ahooks": "^3.7.0",

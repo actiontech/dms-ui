@@ -24,12 +24,14 @@ export type SqlInfoFormFields = {
   optimizationType: OptimizationTypeEnum;
   uploadType: UploadTypeEnum;
   sql: string;
+  originSql: string;
   sqlFile: File[];
   mybatisFile: File[];
   zipFile: File[];
   instanceName: string;
   instanceSchema: string;
   dbType: string;
+  formatted?: boolean;
   gitHttpUrl: string;
   gitUserName: string;
   gitUserPassword: string;
@@ -53,7 +55,9 @@ export type DatabaseInfoProps = {
   getInstanceDbType: (instanceName: string) => string;
 };
 
-export type SQLStatementFormProps = Pick<SqlInfoFormProps, 'form'>;
+export type SQLStatementFormProps = Pick<SqlInfoFormProps, 'form'> & {
+  isReadOnlyMode?: boolean;
+};
 
 export type SQLStatementFields = {
   sql: string;

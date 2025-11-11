@@ -11,6 +11,9 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 import { FormValidateError } from '@actiontech/dms-kit/es/types/common.type';
+import { SqlFormatterButtonStyleWrapper } from '../../../style';
+import classNames from 'classnames';
+
 const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   fieldPrefixPath,
   isAuditing,
@@ -18,11 +21,18 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   databaseInfo,
   isSameSqlForAll,
   currentSqlUploadType,
-  setActiveKey
+  setActiveKey,
+  dbSourceInfoCollection
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
+
+  const currentFieldSqlIsFormatted = Form.useWatch(
+    [fieldPrefixPath, 'formatted'],
+    form
+  );
+
   const [
     formatterLoading,
     { setFalse: finishFormatter, setTrue: startFormatter }
@@ -44,6 +54,7 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
         }
       });
   };
+
   const formatSql = async () => {
     const getInstanceType = (name: string) => {
       startFormatter();
@@ -62,12 +73,37 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
       ? databaseInfo?.[0]?.instanceName
       : databaseInfo.find((v) => v.key === fieldPrefixPath)?.instanceName;
     if (originSql && originSql !== SQL_EDITOR_PLACEHOLDER_VALUE) {
+      if (!currentFieldSqlIsFormatted) {
+        form.setFieldValue([fieldPrefixPath, 'originSql'], originSql);
+        form.setFieldValue([fieldPrefixPath, 'formatted'], true);
+      }
       if (instanceName) {
         const dbType = (await getInstanceType(instanceName))?.db_type;
-        form.setFieldValue(
-          [fieldPrefixPath, 'form_data'],
-          formatterSQL(originSql, dbType)
-        );
+        // 判断当前数据库类型是否支持美化
+        if (
+          dbType &&
+          dbSourceInfoCollection.value?.[fieldPrefixPath]?.isSupportFormatSql
+        ) {
+          // 如果是支持美化的数据库，则每次都进行美化
+          form.setFieldValue(
+            [fieldPrefixPath, 'form_data'],
+            formatterSQL(originSql, dbType)
+          );
+        } else {
+          // 如果是不支持美化的数据库，则美化过后再次美化，需要回滚回之前的原始sql
+          if (currentFieldSqlIsFormatted) {
+            form.setFieldValue(
+              [fieldPrefixPath, 'form_data'],
+              form.getFieldValue([fieldPrefixPath, 'originSql'])
+            );
+            form.setFieldValue([fieldPrefixPath, 'formatted'], false);
+          } else {
+            form.setFieldValue(
+              [fieldPrefixPath, 'form_data'],
+              formatterSQL(originSql)
+            );
+          }
+        }
       } else {
         form.setFieldValue(
           [fieldPrefixPath, 'form_data'],
@@ -94,12 +130,15 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
               supportType: Object.keys(FormatLanguageSupport).join('、')
             })}
           >
-            <BasicButton
+            <SqlFormatterButtonStyleWrapper
               onClick={formatSql}
               loading={isAuditing.value || formatterLoading}
+              className={classNames({
+                'active-formatter-button': currentFieldSqlIsFormatted
+              })}
             >
               {t('execWorkflow.create.form.sqlInfo.format')}
-            </BasicButton>
+            </SqlFormatterButtonStyleWrapper>
           </BasicToolTip>
         )}
       </Space>

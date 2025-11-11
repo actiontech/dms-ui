@@ -14,7 +14,9 @@ import { ICreateSQLAuditRecordV1Params } from '@actiontech/shared/lib/api/sqle/s
 import { ResponseCode } from '@actiontech/dms-kit';
 import { ISQLAuditRecordResData } from '@actiontech/shared/lib/api/sqle/service/common';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { ROUTE_PATHS, isSupportLanguage } from '@actiontech/dms-kit';
+import { AuditTypeEnum } from './SQLInfoForm/index.type';
+
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 const SqlAuditCreate = () => {
   const { t } = useTranslation();
@@ -27,16 +29,21 @@ const SqlAuditCreate = () => {
   const [auditLoading, setAuditLoading] = useState(false);
   const auditSQL: SQLInfoFormProps['submit'] = async (values) => {
     const baseValues = await baseForm.validateFields();
+    const sql = isSupportLanguage(values.dbType)
+      ? values.sql
+      : values.originSql;
+
     const params: ICreateSQLAuditRecordV1Params = {
       project_name: projectName,
-      sqls: values.sql,
+      sqls: sql,
       input_sql_file: values.sqlFile?.[0],
       input_mybatis_xml_file: values.mybatisFile?.[0],
       input_zip_file: values.zipFile?.[0],
       instance_name: values.instanceName,
       instance_schema: values.instanceSchema,
       rule_template_name: values.ruleTemplate,
-      db_type: values.dbType,
+      db_type:
+        values.auditType === AuditTypeEnum.static ? values.dbType : undefined,
       git_http_url: values.gitHttpUrl ? values.gitHttpUrl.trim() : undefined,
       git_user_name: values.gitUserName ? values.gitUserName.trim() : undefined,
       git_user_password: values.gitUserPassword

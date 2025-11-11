@@ -1,7 +1,7 @@
 {
   "name": "@actiontech/icons",
-  "version": "0.0.1-rc.7",
   "description": "",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./es/index.js",
   "types": "./es/index.d.ts",
@@ -21,10 +21,6 @@
     "es",
     "dist"
   ],
-  "publishConfig": {
-    "registry": "http://10.186.18.19:4873/",
-    "access": "restricted"
-  },
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",

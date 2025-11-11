@@ -23,7 +23,7 @@ import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { ROUTE_PATHS, isSupportLanguage } from '@actiontech/dms-kit';
 import { SqlAuditSegmentedKey } from '../../SqlAudit/index.type';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSubmitLoading } from '../../../store/sqlOptimization';
@@ -52,6 +52,13 @@ const SqlOptimizationCreate = () => {
     const baseValue = await baseForm.validateFields();
     const sqlInfoValue = await sqlInfoForm.validateFields();
     dispatch(updateSubmitLoading({ loading: true }));
+    const formattedSql =
+      sqlInfoValue.optimizationType === OptimizationTypeEnum.online
+        ? sqlInfoValue.sql
+        : sqlInfoValue.offlineSql;
+    const sql = isSupportLanguage(sqlInfoValue.dbType)
+      ? formattedSql
+      : sqlInfoValue.originSql;
     sqlOptimization
       .SQLOptimizeV2({
         optimization_name: baseValue.optimizationName,
@@ -59,10 +66,7 @@ const SqlOptimizationCreate = () => {
         instance_name: sqlInfoValue.instanceName,
         schema_name: sqlInfoValue.instanceSchema,
         db_type: sqlInfoValue.dbType,
-        sql_content:
-          sqlInfoValue.optimizationType === OptimizationTypeEnum.online
-            ? sqlInfoValue.sql
-            : sqlInfoValue.offlineSql,
+        sql_content: sql,
         metadata: sqlInfoValue.tableStructure,
         explain_info: sqlInfoValue.executionPlan,
         input_sql_file: sqlInfoValue.sqlFile?.[0],

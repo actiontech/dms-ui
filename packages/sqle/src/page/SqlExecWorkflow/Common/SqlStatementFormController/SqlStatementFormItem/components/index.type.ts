@@ -3,7 +3,10 @@ import { SqlStatementFormItemProps } from '../index.type';
 
 export type SqlUploadContentProps = {
   currentSqlUploadType: AuditTaskResV1SqlSourceEnum;
-} & Pick<SqlStatementFormItemProps, 'fieldPrefixPath'>;
+} & Pick<
+  SqlStatementFormItemProps,
+  'fieldPrefixPath' | 'dbSourceInfoCollection'
+>;
 
 export type SqlExecModeSelectorProps = {
   currentSqlUploadType: AuditTaskResV1SqlSourceEnum;
@@ -22,6 +25,7 @@ export type SqlFormatterAndSubmitterProps = {
   | 'databaseInfo'
   | 'isSameSqlForAll'
   | 'setActiveKey'
+  | 'dbSourceInfoCollection'
 >;
 
 export type SqlBackupSwitcherProps = Pick<

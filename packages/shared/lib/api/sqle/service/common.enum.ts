@@ -727,17 +727,29 @@ export enum WorkflowDetailResV1CurrentStepTypeEnum {
 export enum WorkflowDetailResV1StatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
+  'wait_for_approve' = 'wait_for_approve',
+
   'wait_for_execution' = 'wait_for_execution',
+
+  'wait_for_export' = 'wait_for_export',
 
   'rejected' = 'rejected',
 
   'canceled' = 'canceled',
 
+  'cancel' = 'cancel',
+
   'exec_failed' = 'exec_failed',
+
+  'failed' = 'failed',
 
   'executing' = 'executing',
 
-  'finished' = 'finished'
+  'exporting' = 'exporting',
+
+  'finished' = 'finished',
+
+  'finish' = 'finish'
 }
 
 export enum WorkflowDetailWithInstanceStatusEnum {

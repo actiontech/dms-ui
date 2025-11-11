@@ -27,3 +27,8 @@ export type GlobalDashboardListProps = {
     value?: string
   ) => void;
 };
+
+export type GlobalDashboardWorkflowTabsProps = {
+  workflowOrderStatistics: number;
+  exportWorkflowOrderStatistics: number;
+} & GlobalDashboardListProps;

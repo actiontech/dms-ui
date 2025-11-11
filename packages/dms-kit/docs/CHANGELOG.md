@@ -6,5 +6,9 @@ nav:
 
 # changelog
 
-## 0.0.2
-- 该版本主要为版本号更新，无代码变更。
+## 1.0.0
+- 正式发布 @actiontech/dms-kit
+
+## 1.0.1
+
+- [修复 可用区相关 hooks（useRecentlySelectedZone）逻辑错误](https://github.com/actiontech/dms-ui/pull/749)

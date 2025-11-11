@@ -49,6 +49,14 @@ export const instanceTipsMockData: IInstanceTipResV2[] = [
     workflow_template_id: 5,
     host: '139.196.241.182',
     port: '33061'
+  },
+  {
+    instance_id: '1743145219550875649',
+    instance_name: 'tidb-1',
+    instance_type: 'TiDB',
+    workflow_template_id: 6,
+    host: '10.186.62.17',
+    port: '4000'
   }
 ];
 

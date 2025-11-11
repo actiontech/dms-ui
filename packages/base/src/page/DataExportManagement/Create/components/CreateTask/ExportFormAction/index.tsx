@@ -5,10 +5,14 @@ import { Space } from 'antd';
 import { FormatLanguageSupport } from '@actiontech/dms-kit';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
+import { SqlFormatterButtonStyleWrapper } from 'sqle/src/page/SqlExecWorkflow/Common/style';
+import classNames from 'classnames';
+
 const ExportFormAction: React.FC<ExportFormActionProps> = ({
   auditAction,
   auditLoading,
-  formatSQLAction
+  formatSQLAction,
+  formatted
 }) => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();
@@ -17,9 +21,15 @@ const ExportFormAction: React.FC<ExportFormActionProps> = ({
       <BasicButton onClick={auditAction} type="primary" loading={auditLoading}>
         {t('dmsDataExport.create.form.action.audit')}
       </BasicButton>
-      <BasicButton onClick={formatSQLAction} loading={auditLoading}>
+      <SqlFormatterButtonStyleWrapper
+        className={classNames({
+          'active-formatter-button': formatted
+        })}
+        onClick={formatSQLAction}
+        loading={auditLoading}
+      >
         {t('dmsDataExport.create.form.action.format')}
-      </BasicButton>
+      </SqlFormatterButtonStyleWrapper>
       <BasicToolTip
         prefixIcon={
           <InfoCircleOutlined

@@ -34,12 +34,14 @@
     "api_client:g": "cross-env npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-client -y",
     "api_mocks:g": "cross-env npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y",
     "ai-doc": "cross-env npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli ai-doc",
-    "postinstall": "pnpm --filter @actiontech/dms-kit build"
+    "postinstall": "pnpm --filter @actiontech/dms-kit build",
+    "dms-kit:publish": "pnpm --filter @actiontech/cli-dms-kit-publish build && dms-kit-publish"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
     "@actiontech/cli-create-dms-page": "workspace:^",
+    "@actiontech/cli-dms-kit-publish": "workspace:^",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@eslint/js": "^9.23.0",
     "@testing-library/dom": "9.3.4",
@@ -92,6 +94,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-prettier": "^4.0.2",
     "ts-jest": "27.1.5",
+    "tsx": "^4.20.5",
     "typescript": "^5.0.2",
     "typescript-eslint": "^8.28.0",
     "vite": "^5.2.6",

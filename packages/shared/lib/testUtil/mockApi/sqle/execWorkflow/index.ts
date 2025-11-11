@@ -9,7 +9,8 @@ import {
   WorkflowsOverviewListData,
   AuditTaskResData,
   mockGlobalWorkflowListData,
-  mockRollbackSqlData
+  mockRollbackSqlData,
+  mockGlobalDataExportWorkflowListData
 } from './data';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { AxiosResponse } from 'axios';
@@ -48,6 +49,8 @@ class MockWorkflowApi implements MockSpyApy {
     this.updateTaskBackupStrategy();
     this.getBackupSqlList();
     this.reExecuteTaskOnWorkflow();
+    this.getGlobalDataExportWorkflows();
+    this.getGlobalDataExportWorkflowStatistics();
   }
 
   public getWorkflows() {
@@ -354,6 +357,26 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
   public reExecuteTaskOnWorkflow() {
     const spy = jest.spyOn(workflow, 'reExecuteTaskOnWorkflowV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getGlobalDataExportWorkflows() {
+    const spy = jest.spyOn(workflow, 'getGlobalDataExportWorkflowsV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockGlobalDataExportWorkflowListData
+      })
+    );
+    return spy;
+  }
+
+  public getGlobalDataExportWorkflowStatistics() {
+    const spy = jest.spyOn(workflow, 'getGlobalDataExportWorkflowStatisticsV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        total_nums: 10
+      })
+    );
     return spy;
   }
 }

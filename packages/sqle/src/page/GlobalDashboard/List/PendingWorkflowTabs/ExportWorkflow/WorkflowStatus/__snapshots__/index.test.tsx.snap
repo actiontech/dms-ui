@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 1`] = `
+<div>
+  unknown
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 2`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#7D8CA8"
+        stroke-width="1.5"
+      />
+      <path
+        d="m5.917 5.917 4.166 4.166M5.917 10.083l4.166-4.166"
+        stroke="#7D8CA8"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+    <span>
+      已关闭
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 3`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#6094FC"
+        stroke-width="1.5"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M8 3.155V8l-4.207 2.404a1 1 0 0 0 .377.385L7.5 12.71a1 1 0 0 0 1 0l3.33-1.922a1 1 0 0 0 .5-.866V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+        fill="#6094FC"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <span>
+      正在导出
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 4`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#41BF9A"
+        stroke-width="1.5"
+      />
+      <path
+        d="m5.083 8 2.084 2.083 4.166-4.166"
+        stroke="#41BF9A"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+    <span>
+      导出成功
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 5`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#7470ED"
+      />
+      <path
+        d="M8 3.155V8l4.207 2.404a1 1 0 0 0 .123-.481V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+        fill="#7470ED"
+      />
+    </svg>
+    <span>
+      待导出
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 6`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+        stroke="#F59957"
+        stroke-width="1.5"
+      />
+    </svg>
+    <span>
+      导出失败
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 7`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#7453DA"
+        stroke-width="1.5"
+      />
+    </svg>
+    <span>
+      待审核
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/WOrkflowStatus should match snapshot 8`] = `
+<div>
+  <div
+    class="css-3q8fl"
+  >
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM5 8h6"
+        stroke="#EBAD1C"
+        stroke-width="1.5"
+      />
+    </svg>
+    <span>
+      已驳回
+    </span>
+  </div>
+</div>
+`;
