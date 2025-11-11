@@ -599,12 +599,8 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
       <div
         data-test-parent-id="sqleProjectDetail"
       >
-        <div
-          data-test-parent-id="sqlManagement"
-        >
-          <div>
-            SqlManagement
-          </div>
+        <div>
+          projectRedirect
         </div>
       </div>
     </div>
@@ -839,28 +835,6 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
       >
         <div>
           Whitelist
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render SqlManagementAnalyze 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="availabilityZoneWrapper"
-    >
-      <div
-        data-test-parent-id="sqleProjectDetail"
-      >
-        <div
-          data-test-parent-id="sqlManagement"
-        >
-          <div>
-            SqlManagementAnalyze
-          </div>
         </div>
       </div>
     </div>

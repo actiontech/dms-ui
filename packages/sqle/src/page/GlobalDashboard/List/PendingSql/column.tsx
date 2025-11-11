@@ -1,7 +1,4 @@
-import {
-  ActiontechTableColumn,
-  ActiontechTableActionMeta
-} from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -145,22 +142,4 @@ export const PendingSqlListColumn: (
       }
     }
   ];
-};
-
-export const PendingSqlListAction: (
-  onCheckDetail: (record?: IGlobalSqlManage) => void
-) => {
-  buttons: ActiontechTableActionMeta<IGlobalSqlManage>[];
-} = (onCheckDetail) => {
-  return {
-    buttons: [
-      {
-        key: 'check-detail-button',
-        text: t('globalDashboard.pendingSql.column.detail'),
-        buttonProps: (record) => ({
-          onClick: () => onCheckDetail(record)
-        })
-      }
-    ]
-  };
 };

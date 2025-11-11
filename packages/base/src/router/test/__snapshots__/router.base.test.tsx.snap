@@ -498,31 +498,6 @@ exports[`base/router-base-ee render base route data snap 1`] = `
             "path": ":projectID/sql-insights",
           },
           {
-            "children": [
-              {
-                "element": <div>
-                  SqlManagement
-                </div>,
-                "key": "SqlManagement",
-                "path": "",
-              },
-              {
-                "element": <div>
-                  SqlManagementAnalyze
-                </div>,
-                "key": "SqlManagementAnalyze",
-                "path": ":sqlManageId/analyze",
-              },
-            ],
-            "element": <div
-              data-test-parent-id="sqlManagement"
-            >
-              <Outlet />
-            </div>,
-            "key": "sqlManagement",
-            "path": ":projectID/sql-management",
-          },
-          {
             "element": <div>
               dashboard
             </div>,

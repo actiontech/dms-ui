@@ -207,20 +207,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
   {
     "children": [
       {
-        "icon": <ManagementFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-management",
-        "label": <ForwardRef(TypedLink)
-          to="/sqle/project/600300/sql-management"
-        >
-          SQL管控
-        </ForwardRef(TypedLink)>,
-        "structKey": "sql-management",
-        "to": "/sqle/project/600300/sql-management",
-      },
-      {
         "icon": <PlanFilled
           height={18}
           width={18}

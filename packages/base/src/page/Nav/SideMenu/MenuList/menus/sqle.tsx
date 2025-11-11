@@ -3,7 +3,6 @@
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { GenerateMenuItemI18nConfig } from './index.type';
 import {
-  ManagementFilled,
   WorkflowFilled,
   OverviewOutlined,
   ResolveFileFilled,
@@ -59,16 +58,6 @@ const sqlExecWorkflowMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
   icon: <BriefcaseFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/exec-workflow`,
   structKey: 'exec-workflow'
-});
-
-const sqlManagementMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
-  label: 'dmsMenu.sqlManagement',
-  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index, {
-    params: { projectID }
-  }),
-  icon: <ManagementFilled width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management`,
-  structKey: 'sql-management'
 });
 
 const projectRuleTemplateMenuItem: GenerateMenuItemI18nConfig = (
@@ -166,7 +155,6 @@ const sqleMenusCollection = [
   sqlAuditMenuItem,
   pluginAuditMenuItem,
   sqlExecWorkflowMenuItem,
-  sqlManagementMenuItem,
   projectRuleTemplateMenuItem,
   whiteListMenuItem,
   workflowTemplateMenuItem,

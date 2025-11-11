@@ -62,7 +62,6 @@ type SqleMenuStructTreeKey =
   | 'sql-audit'
   | 'plugin-audit'
   | 'exec-workflow'
-  | 'sql-management'
   | 'rule-template'
   | 'whitelist'
   | 'sql-management-exception'

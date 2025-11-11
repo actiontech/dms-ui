@@ -20,7 +20,7 @@ export const SQLE_MENU_STRUCT: MenuTreeI18n[] = [
   {
     type: 'group',
     groupLabelKey: 'dmsMenu.groupLabel.SQLManagement',
-    groups: ['sql-management', 'sql-insights', 'sql-management-conf']
+    groups: ['sql-insights', 'sql-management-conf']
   },
   { type: 'divider' },
   {

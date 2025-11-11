@@ -11,18 +11,14 @@ import {
 import { IGetGlobalSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GetGlobalSqlManageListFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { PendingSqlListColumn, PendingSqlListAction } from './column';
+import { PendingSqlListColumn } from './column';
 import { GlobalDashboardListProps } from '../../index.type';
 import { PendingSqlTableStyleWrapper } from '../../style';
-import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
   filterValues,
   updateFilterValue
 }) => {
-  const navigate = useTypedNavigate();
-
   const { pagination, tableChange } = useTableRequestParams<IGlobalSqlManage>();
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -58,16 +54,6 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
     [updateFilterValue]
   );
 
-  const onCheckDetail = (record?: IGlobalSqlManage) => {
-    navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index, {
-      params: { projectID: record?.project_uid ?? '' },
-      queries: {
-        source: record?.source?.sql_source_type ?? '',
-        instance_id: record?.instance_id ?? ''
-      }
-    });
-  };
-
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
       EmitterKey.Refresh_Global_Dashboard_Pending_Sql,
@@ -89,7 +75,6 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
           total: sqlManageList?.total ?? 0
         }}
         columns={PendingSqlListColumn(onUpdateFilterValue)}
-        actions={PendingSqlListAction(onCheckDetail)}
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}

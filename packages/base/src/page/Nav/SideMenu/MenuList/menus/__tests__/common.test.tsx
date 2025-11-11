@@ -26,7 +26,7 @@ const menuStruct: MenuTreeTranslated[] = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLManagement'),
-    groups: ['sql-management', 'sql-management-conf', 'sql-insights']
+    groups: ['sql-management-conf', 'sql-insights']
   },
   { type: 'divider' },
   {

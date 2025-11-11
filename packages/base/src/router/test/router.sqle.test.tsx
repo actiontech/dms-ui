@@ -469,16 +469,6 @@ describe('base/router-sqle-ee', () => {
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('workflowAnalyze')).toBeInTheDocument();
       });
-
-      it('render SqlManagementAnalyze', async () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/sql-management/sqlManageId/analyze`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(300));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('SqlManagementAnalyze')).toBeInTheDocument();
-      });
     });
   });
 });

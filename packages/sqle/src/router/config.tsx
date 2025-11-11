@@ -76,9 +76,6 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-const SqlManagement = React.lazy(
-  () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
-);
 
 const SqlAudit = React.lazy(() => import('../page/SqlAudit'));
 
@@ -107,10 +104,6 @@ const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 
 const KnowledgeRefineResults = React.lazy(
   () => import('../page/Knowledge/RefineResults')
-);
-
-const SqlManagementAnalyze = React.lazy(
-  () => import('../page/SqlAnalyze/SqlManage')
 );
 
 const UpdateWorkflowTemplate = React.lazy(
@@ -290,24 +283,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.SQLE.SQL_INSIGHTS.index.path,
     key: 'sqlInsights',
     element: <SqlInsights />
-  },
-  {
-    path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index.path,
-    key: 'sqlManagement',
-    children: [
-      {
-        index: true,
-        element: <SqlManagement />,
-        key: 'SqlManagement'
-      },
-      // #if [ee]
-      {
-        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze.path,
-        element: <SqlManagementAnalyze />,
-        key: 'SqlManagementAnalyze'
-      }
-      // #endif
-    ]
   },
   {
     path: ROUTE_PATHS.SQLE.PROJECT_DASHBOARD.index.path,

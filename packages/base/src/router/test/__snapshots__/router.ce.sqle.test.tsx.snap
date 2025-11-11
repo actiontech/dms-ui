@@ -478,12 +478,8 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
     <div
       data-test-parent-id="sqleProjectDetail"
     >
-      <div
-        data-test-parent-id="sqlManagement"
-      >
-        <div>
-          SqlManagement
-        </div>
+      <div>
+        projectRedirect
       </div>
     </div>
   </div>
