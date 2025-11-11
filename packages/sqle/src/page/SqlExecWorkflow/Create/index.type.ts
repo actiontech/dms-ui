@@ -23,8 +23,6 @@ export type SqlStatementFields = Record<
   keyof typeof AuditTaskResV1SqlSourceEnum,
   string | any
 > & {
-  exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum;
-  file_sort_method: string;
   currentUploadType: AuditTaskResV1SqlSourceEnum;
 };
 
@@ -59,7 +57,6 @@ export type DataSourceSchemaCollection = Record<
     dbType?: string;
     ruleTemplate?: IRuleTemplateV2;
     testConnectResult?: IInstanceConnectionResV1;
-    isSupportFileModeExecuteSql?: boolean;
   }
 >;
 

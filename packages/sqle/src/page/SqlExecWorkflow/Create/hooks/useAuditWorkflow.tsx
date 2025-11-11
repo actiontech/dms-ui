@@ -5,7 +5,6 @@ import { useAllowAuditLevel } from './useAllowAuditLevel';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   AuditTaskResV1SqlSourceEnum,
-  CreateAuditTaskReqV1ExecModeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
@@ -120,10 +119,6 @@ const useAuditWorkflow = () => {
       ] as SqlStatementFields;
 
       const createAuditTasksParams: ICreateAuditTasksV1Params = {
-        exec_mode: sqlStatementInfo.exec_mode,
-        // #if [ee]
-        file_order_method: sqlStatementInfo.file_sort_method,
-        // #endif
         project_name: projectName,
         instances:
           values.databaseInfo.map((v) => ({
@@ -188,12 +183,7 @@ const useAuditWorkflow = () => {
           project_name: projectName,
           instance_name: item.instanceName!,
           instance_schema: item.schemaName,
-          ...getSqlSourceWithUploadType(sqlStatementInfo),
-          exec_mode:
-            sqlStatementInfo.exec_mode as unknown as CreateAuditTaskReqV1ExecModeEnum,
-          // #if [ee]
-          file_order_method: sqlStatementInfo.file_sort_method
-          // #endif
+          ...getSqlSourceWithUploadType(sqlStatementInfo)
         };
       });
 

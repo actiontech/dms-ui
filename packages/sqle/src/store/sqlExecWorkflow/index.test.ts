@@ -28,14 +28,11 @@ describe('store/sqlExecWorkflow', () => {
       isSameSqlForAll: false,
       '0': {
         currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
-        exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
         sql_file: [testSqlFile]
       } as SqlStatementFields,
       '1': {
         currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-        exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
-        zip_file: [testZipFile],
-        file_sort_method: 'file_order_method_suffix_num_asc'
+        zip_file: [testZipFile]
       } as SqlStatementFields
     };
     expect(

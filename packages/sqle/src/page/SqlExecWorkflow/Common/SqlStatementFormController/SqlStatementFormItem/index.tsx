@@ -8,7 +8,6 @@ import { useMemo } from 'react';
 import SqlUploadContent from './components/SqlUploadContent';
 import { Form } from 'antd';
 import { SqlAuditInfoFormProps } from '../../../Create/components/FormStep/SqlAuditInfoForm/index.type';
-import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
 import { RingPieFilled } from '@actiontech/icons';
 const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
@@ -19,8 +18,6 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   disabledUploadType,
   databaseInfo,
   isSameSqlForAll,
-  isSupportFileModeExecuteSql,
-  isAtRejectStep,
   setActiveKey
 }) => {
   const { t } = useTranslation();
@@ -72,12 +69,6 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         fieldPrefixPath={fieldPrefixPath}
       />
 
-      <SqlExecModeSelector
-        currentSqlUploadType={currentUploadType}
-        fieldPrefixPath={fieldPrefixPath}
-        isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
-        isAtRejectStep={isAtRejectStep}
-      />
       <SqlFormatterAndSubmitter
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}

@@ -53,10 +53,8 @@ describe('test useAuditWorkflow', () => {
       [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
         currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
         form_data: 'SELECT * FROM table',
-        exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
         sql_file: [sqlFile],
-        zip_file: [zipFile],
-        file_sort_method: 'desc'
+        zip_file: [zipFile]
       } as SqlStatementFields,
       databaseInfo: [{ instanceName: 'instance1', instanceSchema: 'schema1' }]
     };
@@ -67,8 +65,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(1);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(1, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
-      file_order_method: 'desc',
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -91,7 +87,6 @@ describe('test useAuditWorkflow', () => {
           [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
             currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
             form_data: 'SELECT * FROM table',
-            exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
             sql_file: [sqlFile],
             zip_file: [zipFile]
           } as SqlStatementFields
@@ -102,7 +97,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(2);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(2, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -122,7 +116,6 @@ describe('test useAuditWorkflow', () => {
           [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
             currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
             form_data: 'SELECT * FROM table',
-            exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
             sql_file: [sqlFile],
             zip_file: [zipFile]
           } as SqlStatementFields
@@ -133,7 +126,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(3);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(3, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -175,18 +167,14 @@ describe('test useAuditWorkflow', () => {
     const values: SqlAuditInfoFormFields = {
       isSameSqlForAll: true,
       0: {
-        exec_mode: 'sql_file',
         zip_file: [zipFile],
-        currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-        file_sort_method: 'desc'
+        currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file
       } as SqlStatementFields,
       1: {
-        exec_mode: 'sql_file',
         sql_file: [sqlFile],
         currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file
       } as SqlStatementFields,
       2: {
-        exec_mode: 'sqls',
         form_data: 'SELECT * FROM table',
         currentUploadType: AuditTaskResV1SqlSourceEnum.form_data
       } as SqlStatementFields,
@@ -216,23 +204,19 @@ describe('test useAuditWorkflow', () => {
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance1',
       instance_schema: 'schema1',
-      input_zip_file: zipFile,
-      exec_mode: 'sql_file',
-      file_order_method: 'desc'
+      input_zip_file: zipFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance2',
       instance_schema: 'schema2',
-      input_sql_file: sqlFile,
-      exec_mode: 'sql_file'
+      input_sql_file: sqlFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance3',
       instance_schema: 'schema3',
-      sql: 'SELECT * FROM table',
-      exec_mode: 'sqls'
+      sql: 'SELECT * FROM table'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 

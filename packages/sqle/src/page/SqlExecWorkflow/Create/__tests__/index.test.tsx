@@ -14,7 +14,6 @@ import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseTy
 import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
-import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -23,12 +22,8 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { formatterSQL } from '@actiontech/dms-kit';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  AuditTaskResV1SqlSourceEnum,
-  CreateAuditTasksGroupReqV1ExecModeEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
 import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
@@ -49,9 +44,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let requestInstance: jest.SpyInstance;
   let getAuditTaskSQLsSpy: jest.SpyInstance;
   let auditTaskGroupId: jest.SpyInstance;
-  let requestGetModalStatus: jest.SpyInstance;
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
-  let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
   let requestGetWorkflowTemplateSpy: jest.SpyInstance;
   let createRollbackWorkflowSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
@@ -82,8 +75,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     requestAuditTask = execWorkflow.createAuditTasks();
     getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
     auditTaskGroupId = execWorkflow.auditTaskGroupId();
-    requestGetModalStatus = system.getSystemModuleStatus();
-    getSqlFileOrderMethodV1Spy = task.getSqlFileOrderMethod();
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
     requestGetWorkflowTemplateSpy = execWorkflow.getWorkflowTemplate();
@@ -116,14 +107,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
             },
             '1': {
               currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
-              sql_file: [new File(['test file content'], 'test.sql')],
-              exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls
+              sql_file: [new File(['test file content'], 'test.sql')]
             },
             '2': {
               currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-              zip_file: [new File(['test file content'], 'test.zip')],
-              exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
-              file_sort_method: 'file_order_method_suffix_num_asc'
+              zip_file: [new File(['test file content'], 'test.zip')]
             }
           },
           clonedExecWorkflowBaseInfo: {
@@ -189,8 +177,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     );
     expect(requestInstanceSchemas).toHaveBeenCalledTimes(3);
     expect(requestInstance).toHaveBeenCalledTimes(3);
-    expect(requestGetModalStatus).toHaveBeenCalledTimes(3);
-    expect(getSqlFileOrderMethodV1Spy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -339,8 +325,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).toHaveBeenCalledTimes(1);
     expect(requestAuditTask).toHaveBeenCalledWith({
-      exec_mode: undefined,
-      file_order_method: undefined,
       instances: [{ instance_name: 'mysql-1', instance_schema: 'test123' }],
       project_name: projectName
     });
@@ -420,7 +404,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalledTimes(1);
     expect(requestAudit).toHaveBeenNthCalledWith(1, {
-      exec_mode: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
@@ -458,7 +441,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
 
     expect(requestAudit).toHaveBeenCalledTimes(2);
     expect(requestAudit).toHaveBeenNthCalledWith(2, {
-      exec_mode: 'sqls',
       input_sql_file: sqlFile,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
@@ -551,7 +533,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
-      exec_mode: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
@@ -627,8 +608,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(screen.queryByText('文件模式')).not.toBeInTheDocument();
-
     // audit btn
     await act(async () => {
       fireEvent.click(screen.getByText('审 核'));
@@ -640,7 +619,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
-      exec_mode: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
@@ -713,7 +691,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       }
     );
     await act(async () => jest.advanceTimersByTime(2000));
-    fireEvent.click(screen.getByText('文件模式'));
 
     // audit btn
     await act(async () => {
@@ -722,7 +699,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     expect(requestAuditTask).toHaveBeenCalled();
     expect(requestAuditTask).toHaveBeenCalledWith({
-      exec_mode: 'sql_file',
       instances: [
         { instance_name: 'xin-test-database', instance_schema: 'test' }
       ],
@@ -800,67 +776,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should clear exec_mode data when disabled execute mode selector', async () => {
-    const { baseElement } = customRender();
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    fireEvent.change(getBySelector('#workflow_subject', baseElement), {
-      target: {
-        value: 'workflow_name_3'
-      }
-    });
-
-    const instanceNameEle = getBySelector(
-      '#databaseInfo_0_instanceName',
-      baseElement
-    );
-    fireEvent.mouseDown(instanceNameEle);
-    await act(async () => jest.advanceTimersByTime(0));
-    const instanceNameLabel = `${instanceTipsMockData[2].instance_name}(${instanceTipsMockData[2].host}:${instanceTipsMockData[2].port})`;
-    expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
-      await act(async () => jest.advanceTimersByTime(3000));
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    // 上传SQL文件
-    fireEvent.click(screen.getByText('上传SQL文件'));
-    await act(async () => jest.advanceTimersByTime(300));
-
-    expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
-    expect(
-      queryBySelector('.actiontech-mode-switcher-item-disabled')
-    ).not.toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('文件模式'));
-
-    fireEvent.click(screen.getByText('输入SQL语句'));
-    await act(async () => jest.advanceTimersByTime(0));
-    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
-    fireEvent.change(monacoEditor, {
-      target: { value: 'select * from user' }
-    });
-
-    // audit btn
-    await act(async () => {
-      fireEvent.click(screen.getByText('审 核'));
-      await act(async () => jest.advanceTimersByTime(0));
-    });
-    expect(requestAuditTask).toHaveBeenCalled();
-    expect(requestAuditTask).toHaveBeenCalledWith({
-      instances: [{ instance_name: 'xin-test-database' }],
-      project_name: projectName
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
-    expect(auditTaskGroupId).toHaveBeenCalledWith({
-      task_group_id: 99,
-      sql: 'select * from user'
-    });
-  });
-
   it('render associated version when create workflow', async () => {
     const { baseElement } = sqleSuperRender(
       <CreateSqlExecWorkflow />,
@@ -933,8 +848,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).toHaveBeenCalledTimes(1);
     expect(requestAuditTask).toHaveBeenCalledWith({
-      exec_mode: undefined,
-      file_order_method: undefined,
       instances: [{ instance_name: 'mysql-1', instance_schema: 'test123' }],
       project_name: projectName
     });
@@ -1117,7 +1030,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAudit).toHaveBeenCalledTimes(1);
     expect(requestAudit).toHaveBeenNthCalledWith(1, {
-      exec_mode: undefined,
       instance_name: 'mysql-1',
       instance_schema: 'test',
       project_name: 'default',

@@ -102,17 +102,14 @@ const useCloneExecWorkflowInfo = (
         await getSqlUploadFileContent(defaultTask.task_id).then((res) => {
           sqlStatement['0'] = {
             currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
-            sql_file: res ? [new File([res], fileName)] : undefined,
-            exec_mode: defaultTask.exec_mode
+            sql_file: res ? [new File([res], fileName)] : undefined
           } as SqlStatementFields;
         });
       } else if (isZipFileUploadType) {
         await getSqlUploadFileContent(defaultTask.task_id).then((res) => {
           sqlStatement['0'] = {
             currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-            zip_file: res ? [new File([res], fileName)] : undefined,
-            exec_mode: defaultTask.exec_mode,
-            file_sort_method: defaultTask.file_order_method
+            zip_file: res ? [new File([res], fileName)] : undefined
           } as SqlStatementFields;
         });
       }
@@ -138,17 +135,14 @@ const useCloneExecWorkflowInfo = (
           return getSqlUploadFileContent(taskInfo.task_id).then((res) => {
             return {
               currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
-              sql_file: res ? [new File([res], fileName)] : undefined,
-              exec_mode: taskInfo.exec_mode
+              sql_file: res ? [new File([res], fileName)] : undefined
             } as SqlStatementFields;
           });
         } else if (isZipFileUploadType) {
           return getSqlUploadFileContent(taskInfo.task_id).then((res) => {
             return {
               currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-              zip_file: res ? [new File([res], fileName)] : undefined,
-              exec_mode: taskInfo.exec_mode,
-              file_sort_method: taskInfo.file_order_method
+              zip_file: res ? [new File([res], fileName)] : undefined
             } as SqlStatementFields;
           });
         }

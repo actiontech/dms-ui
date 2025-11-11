@@ -7,11 +7,6 @@ import { TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
-import system from '@actiontech/shared/lib/api/sqle/service/system';
-import {
-  getSystemModuleStatusDbTypeEnum,
-  getSystemModuleStatusModuleNameEnum
-} from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import useThemeStyleData from '../../../../../../../../../hooks/useThemeStyleData';
 import useCreationMode from '../../../../../../hooks/useCreationMode';
 import { useEffect } from 'react';
@@ -69,20 +64,6 @@ const useRenderDatabaseSelectionItems = ({
         });
       });
   };
-  const getSupportedFileModeByInstanceType = (key: string, dbType: string) => {
-    system
-      .getSystemModuleStatus({
-        db_type: dbType as getSystemModuleStatusDbTypeEnum,
-        module_name: getSystemModuleStatusModuleNameEnum.execute_sql_file_mode
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          dbSourceInfoCollection.set(key, {
-            isSupportFileModeExecuteSql: !!res.data.data?.is_supported
-          });
-        }
-      });
-  };
   const updateRuleTemplateNameAndDbType = (
     key: string,
     instanceName: string
@@ -98,7 +79,6 @@ const useRenderDatabaseSelectionItems = ({
             dbType: res.data.data?.db_type,
             ruleTemplate: res.data.data?.rule_template
           });
-          getSupportedFileModeByInstanceType(key, res.data.data?.db_type ?? '');
         }
       });
   };
@@ -111,8 +91,7 @@ const useRenderDatabaseSelectionItems = ({
         schemaList: [],
         ruleTemplate: undefined,
         dbType: undefined,
-        testConnectResult: undefined,
-        isSupportFileModeExecuteSql: true
+        testConnectResult: undefined
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);

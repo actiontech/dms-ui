@@ -9,7 +9,6 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
   activeKey: key,
   onChange: changeHandle,
   defaultActiveKey: defaultKey,
-  isSupportFileModeExecuteSqlRecord,
   ...props
 }) => {
   // #if [ee]
@@ -31,11 +30,6 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
       return (
         <SqlStatementFormItem
           fieldPrefixPath={SAME_SQL_MODE_DEFAULT_FIELD_KEY}
-          isSupportFileModeExecuteSql={
-            !!isSupportFileModeExecuteSqlRecord?.[
-              SAME_SQL_MODE_DEFAULT_FIELD_KEY
-            ]
-          }
           {...props}
         />
       );
@@ -73,9 +67,6 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
             <div key={v.key} hidden={v.key !== activeKey}>
               <SqlStatementFormItem
                 fieldPrefixPath={v.key}
-                isSupportFileModeExecuteSql={
-                  !!isSupportFileModeExecuteSqlRecord?.[v.key]
-                }
                 setActiveKey={setActiveKey}
                 {...props}
               />
@@ -90,9 +81,6 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
     return (
       <SqlStatementFormItem
         fieldPrefixPath={SAME_SQL_MODE_DEFAULT_FIELD_KEY}
-        isSupportFileModeExecuteSql={
-          !!isSupportFileModeExecuteSqlRecord?.[SAME_SQL_MODE_DEFAULT_FIELD_KEY]
-        }
         {...props}
       />
     );

@@ -8,14 +8,11 @@ import {
   instanceInfoMockData,
   instanceSchemasMockData
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
-import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
-import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
 import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
-import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -69,7 +66,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
   it('should handle instance change and update states correctly', async () => {
     const mockGetInstanceSchemas = instance.getInstanceSchemas();
     const mockGetInstance = instance.getInstance();
-    const mockGetSystemModuleStatus = system.getSystemModuleStatus();
 
     const { result } = renderHook(() =>
       useRenderDatabaseSelectionItems({
@@ -111,8 +107,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       schemaList: [],
       ruleTemplate: undefined,
       dbType: undefined,
-      testConnectResult: undefined,
-      isSupportFileModeExecuteSql: true
+      testConnectResult: undefined
     });
 
     await act(() => jest.advanceTimersByTime(3000));
@@ -143,23 +138,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(
       MockSharedStepDetail.sqlStatementTabActiveKey.set
     ).toHaveBeenCalledWith('key1');
-
-    expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(1);
-    expect(mockGetSystemModuleStatus).toHaveBeenCalledWith({
-      db_type: instanceInfoMockData.db_type,
-      module_name: getSystemModuleStatusModuleNameEnum.execute_sql_file_mode
-    });
-
-    await act(() => jest.advanceTimersByTime(3000));
-    expect(
-      MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(5);
-
-    expect(
-      MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledWith('key1', {
-      isSupportFileModeExecuteSql: true
-    });
   });
 
   it('should handle instance schema change and update states correctly', () => {
@@ -357,7 +335,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
   it('should get instance info when isCloneMode is true', async () => {
     const mockGetInstanceSchemas = instance.getInstanceSchemas();
     const mockGetInstance = instance.getInstance();
-    const mockGetSystemModuleStatus = system.getSystemModuleStatus();
     const spy = jest.spyOn(useCreationMode, 'default');
     spy.mockImplementation(() => ({
       isCloneMode: true,
@@ -376,7 +353,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(2);
     expect(mockGetInstance).toHaveBeenCalledTimes(2);
-    expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(2);
   });
 
   it('should get instance info when isRollbackMode is true and instanceList not undefined', async () => {
@@ -396,7 +372,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
     );
     const mockGetInstanceSchemas = instance.getInstanceSchemas();
     const mockGetInstance = instance.getInstance();
-    const mockGetSystemModuleStatus = system.getSystemModuleStatus();
     const spy = jest.spyOn(useCreationMode, 'default');
     spy.mockImplementation(() => ({
       isCloneMode: false,
@@ -429,12 +404,10 @@ describe('test useRenderDatabaseSelectionItems', () => {
       schemaList: [],
       ruleTemplate: undefined,
       dbType: undefined,
-      testConnectResult: undefined,
-      isSupportFileModeExecuteSql: true
+      testConnectResult: undefined
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(1);
     expect(mockGetInstance).toHaveBeenCalledTimes(1);
-    expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(1);
   });
 });

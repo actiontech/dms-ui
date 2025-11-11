@@ -10,7 +10,6 @@ import {
   SqlAuditInfoFormFields
 } from '../../../../index.type';
 import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
-import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { RingPieFilled } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { forwardRef } from 'react';
@@ -33,31 +32,6 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
         })
         .filter((v) => !!v.instanceName);
     }, [sharedStepDetail.dbSourceInfoCollection]);
-    const isSupportFileModeExecuteSqlRecord: Record<string, boolean> =
-      useMemo(() => {
-        if (isSameSqlForAll) {
-          // 相同 SQL 模式下，判断所有数据源是否都支持。虽然 相同 SQL 模式下所有数据源类型会相同，但还是做下校验
-          return {
-            [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: Object.keys(
-              sharedStepDetail.dbSourceInfoCollection.value
-            ).every((key) => {
-              return !!sharedStepDetail.dbSourceInfoCollection?.value?.[key]
-                ?.isSupportFileModeExecuteSql;
-            })
-          };
-        }
-        //不同 SQL 模式下，每个数据源对应各自当前数据源类型是否支持文件上线模式
-        return Object.keys(
-          sharedStepDetail.dbSourceInfoCollection.value
-        ).reduce((acc, key) => {
-          return {
-            ...acc,
-            [key]:
-              !!sharedStepDetail.dbSourceInfoCollection?.value?.[key]
-                ?.isSupportFileModeExecuteSql
-          };
-        }, {});
-      }, [isSameSqlForAll, sharedStepDetail.dbSourceInfoCollection.value]);
     useEffect(() => {
       const dbTypeSet = new Set(
         Object.keys(sharedStepDetail.dbSourceInfoCollection.value)
@@ -127,7 +101,6 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
           isSameSqlForAll={isSameSqlForAll}
           databaseInfo={databaseInfo}
           isAuditing={sharedStepDetail.isAuditing}
-          isSupportFileModeExecuteSqlRecord={isSupportFileModeExecuteSqlRecord}
           isAtFormStep={sharedStepDetail.isAtFormStep}
         />
       </>
