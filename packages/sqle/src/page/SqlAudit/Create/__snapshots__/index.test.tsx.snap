@@ -1316,7 +1316,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
@@ -2850,7 +2850,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
@@ -4223,7 +4223,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
@@ -5722,7 +5722,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
@@ -7241,7 +7241,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
@@ -8983,7 +8983,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                       type="button"
                     >
                       <span>
