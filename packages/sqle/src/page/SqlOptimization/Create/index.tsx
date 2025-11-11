@@ -74,7 +74,8 @@ const SqlOptimizationCreate = () => {
         input_zip_file: sqlInfoValue.zipFile?.[0],
         git_http_url: sqlInfoValue.gitHttpUrl,
         git_user_name: sqlInfoValue.gitUserName,
-        git_user_password: sqlInfoValue.gitUserPassword
+        git_user_password: sqlInfoValue.gitUserPassword,
+        enable_high_analysis: sqlInfoValue.enableHighAnalysis
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

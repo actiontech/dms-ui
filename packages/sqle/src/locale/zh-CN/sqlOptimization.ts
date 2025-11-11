@@ -45,6 +45,8 @@ export default {
       format: 'SQL美化',
       formatTips:
         '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。',
+      enableHighAnalysis:
+        ' 启用高精度索引推荐（将统计SQL中列的区分度，可能会产生较大的数据库性能开销 ）',
       form: {
         optimizationType: '调优类型',
         optimizationTypeDesc:
@@ -132,7 +134,13 @@ export default {
   result: {
     viewOptimizationResult: '返回SQL调优列表',
     newOptimizedQuery: '新的优化查询为',
+    originalQuery: '原始的SQL查询为',
+    bestPerformanceSqlTips:
+      '当前 SQL 已经达到最优性能，系统未进行任何修改，以下展示原始SQL！',
     indexOptimizationAdvice: '索引优化建议',
+    indexOptimizationAdviceTips:
+      '在执行上述最终优化的SQL前，请先创建下面这些索引',
+    indexOriginalAdviceTips: '在执行原始SQL前，请先创建下面这些索引',
     optimizedExecutionPlan: '优化后的执行计划',
     viewDifference: '查看差异',
     viewTableStructure: '查看表结构',
@@ -156,6 +164,14 @@ export default {
     exitFullscreen: '退出全屏',
     fullscreenDisplay: '全屏显示',
     drawerTitle: 'SQL调优结果详情',
-    optimizing: '优化进行中'
+    optimizing: '优化进行中',
+    bestIndexUsedForOriginalSql:
+      '恭喜，您的原始SQL已使用了最佳索引，暂无进一步的优化！',
+    bestIndexUsedForOptimizedSql:
+      '恭喜，您的上述最终优化的SQL已使用了最佳索引，暂无进一步的优化！',
+    cannotOptimizeByIndexTips:
+      '注意！您的SQL暂无法通过索引解决性能问题，可参考如下方式调整：',
+    sqlQueryAlreadyOptimal:
+      '恭喜！ 您的SQL查询配置已经非常优秀，无需进一步优化。'
   }
 };
