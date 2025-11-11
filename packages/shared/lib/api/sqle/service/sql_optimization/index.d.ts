@@ -148,6 +148,8 @@ export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
 
   metadata?: string;
 
+  enable_high_analysis?: boolean;
+
   input_sql_file?: any;
 
   input_zip_file?: any;
