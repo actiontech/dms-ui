@@ -232,12 +232,13 @@ describe('sqle/SqlOptimization/ResultContent', () => {
 
       const expandButton = getBySelector('.view-query-plan-diff-button');
       fireEvent.click(expandButton);
-
+      const optimizationSteps = optimizationDetailMockData.optimize?.steps;
       expect(mockDispatch).toHaveBeenCalledWith({
         type: 'sqlOptimization/updateQueryPlanFlowModalData',
         payload: {
           queryPlanData:
-            optimizationDetailMockData.origin_query_plan?.query_plan_desc ?? []
+            optimizationSteps?.[optimizationSteps?.length - 1]?.query_plan
+              ?.query_plan_desc ?? []
         }
       });
       expect(mockDispatch).toHaveBeenCalledWith({
