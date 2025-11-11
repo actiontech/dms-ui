@@ -31,6 +31,12 @@ exports[`test SqlUploadContent renders SQL upload content based on the current u
 >
   <SqlUploadContent
     currentSqlUploadType="form_data"
+    dbSourceInfoCollection={
+      {
+        "set": [MockFunction],
+        "value": {},
+      }
+    }
     fieldPrefixPath="1"
   />
 </Form>
@@ -67,6 +73,12 @@ exports[`test SqlUploadContent renders SQL upload content based on the current u
 >
   <SqlUploadContent
     currentSqlUploadType="zip_file"
+    dbSourceInfoCollection={
+      {
+        "set": [MockFunction],
+        "value": {},
+      }
+    }
     fieldPrefixPath="1"
   />
 </Form>
@@ -103,6 +115,12 @@ exports[`test SqlUploadContent renders SQL upload content based on the current u
 >
   <SqlUploadContent
     currentSqlUploadType="audit_plan"
+    dbSourceInfoCollection={
+      {
+        "set": [MockFunction],
+        "value": {},
+      }
+    }
     fieldPrefixPath="1"
   />
 </Form>

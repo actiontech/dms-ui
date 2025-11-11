@@ -385,6 +385,33 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                 </div>
               </div>
               <div
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
+              >
+                <div
+                  class="ant-row ant-form-item-row"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
+                          id="dbType"
+                          placeholder="请输入{{name}}"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
                 class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
@@ -637,19 +664,109 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="custom-monaco-editor-wrapper css-1esok7i"
+                        class="css-1sm8xw8"
                       >
-                        <input
-                          aria-required="true"
-                          class="custom-monaco-editor"
-                          height="400px"
-                          id="sql"
-                          language="sql"
-                          options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                          value="/* input your sql */"
-                          width="100%"
-                        />
+                        <div
+                          class="custom-monaco-editor-wrapper css-1esok7i"
+                        >
+                          <input
+                            aria-required="true"
+                            class="custom-monaco-editor"
+                            height="400px"
+                            id="sql"
+                            language="sql"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                            value="/* input your sql */"
+                            width="100%"
+                          />
+                        </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-hidden"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="formatted"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <button
+                        aria-checked="false"
+                        class="ant-switch basic-switch-wrapper css-g6dhbn"
+                        id="formatted"
+                        role="switch"
+                        type="button"
+                      >
+                        <div
+                          class="ant-switch-handle"
+                        />
+                        <span
+                          class="ant-switch-inner"
+                        >
+                          <span
+                            class="ant-switch-inner-checked"
+                          />
+                          <span
+                            class="ant-switch-inner-unchecked"
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-hidden"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="originSql"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <input
+                        class="ant-input basic-input-wrapper css-1pd1cd5"
+                        id="originSql"
+                        placeholder="请输入{{name}}"
+                        type="text"
+                        value=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -1128,6 +1245,33 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                 </div>
               </div>
               <div
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
+              >
+                <div
+                  class="ant-row ant-form-item-row"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
+                          id="dbType"
+                          placeholder="请输入{{name}}"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
                 class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
@@ -1380,19 +1524,109 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="custom-monaco-editor-wrapper css-1esok7i"
+                        class="css-1sm8xw8"
                       >
-                        <input
-                          aria-required="true"
-                          class="custom-monaco-editor"
-                          height="400px"
-                          id="sql"
-                          language="sql"
-                          options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                          value="/* input your sql */"
-                          width="100%"
-                        />
+                        <div
+                          class="custom-monaco-editor-wrapper css-1esok7i"
+                        >
+                          <input
+                            aria-required="true"
+                            class="custom-monaco-editor"
+                            height="400px"
+                            id="sql"
+                            language="sql"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                            value="/* input your sql */"
+                            width="100%"
+                          />
+                        </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-hidden"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="formatted"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <button
+                        aria-checked="false"
+                        class="ant-switch basic-switch-wrapper css-g6dhbn"
+                        id="formatted"
+                        role="switch"
+                        type="button"
+                      >
+                        <div
+                          class="ant-switch-handle"
+                        />
+                        <span
+                          class="ant-switch-inner"
+                        >
+                          <span
+                            class="ant-switch-inner-checked"
+                          />
+                          <span
+                            class="ant-switch-inner-unchecked"
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-hidden"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    for="originSql"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <input
+                        class="ant-input basic-input-wrapper css-1pd1cd5"
+                        id="originSql"
+                        placeholder="请输入{{name}}"
+                        type="text"
+                        value=""
+                      />
                     </div>
                   </div>
                 </div>

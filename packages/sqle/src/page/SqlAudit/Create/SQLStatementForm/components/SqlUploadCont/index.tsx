@@ -1,25 +1,33 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useContext } from 'react';
+import { useCallback, useContext, useMemo } from 'react';
 import {
   SQLStatementFields,
   SqlUploadFileContProps,
   UploadTypeEnum
 } from '../../../SQLInfoForm/index.type';
-import { FormItemNoLabel } from '@actiontech/dms-kit';
-import { Form } from 'antd';
 import {
-  MonacoEditor,
-  useMonacoEditor
-} from '@actiontech/shared/lib/components/MonacoEditor';
-import { CustomDraggerUpload, EmptyBox } from '@actiontech/dms-kit';
-import { getFileFromUploadChangeEvent } from '@actiontech/dms-kit';
+  BasicInput,
+  BasicSwitch,
+  FormItemNoLabel,
+  isSupportLanguage,
+  CustomDraggerUpload,
+  EmptyBox,
+  whiteSpaceSql,
+  SQL_EDITOR_PLACEHOLDER_VALUE,
+  getFileFromUploadChangeEvent
+} from '@actiontech/dms-kit';
+import { Form } from 'antd';
+import { useMonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { FormSubmitStatusContext } from '../../..';
-import { whiteSpaceSql } from '@actiontech/dms-kit';
-import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
+import CustomMonacoEditor from '../../../../../../components/CustomMonacoEditor';
+
 const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
   const uploadType = Form.useWatch('uploadType', form);
+  const selectedDbType = Form.useWatch('dbType', form);
+  const formatted = Form.useWatch('formatted', form);
+
   const { editorDidMount } = useMonacoEditor(form, {
     formName: 'sql'
   });
@@ -31,6 +39,11 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
     },
     [form]
   );
+
+  const isReadOnlyMode = useMemo(() => {
+    return formatted && !isSupportLanguage(selectedDbType);
+  }, [formatted, selectedDbType]);
+
   return (
     <>
       {/* sql */}
@@ -48,16 +61,23 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           ]}
           initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
         >
-          <MonacoEditor
+          <CustomMonacoEditor
             width="100%"
             height="400px"
             language="sql"
             onMount={editorDidMount}
             options={{
               automaticLayout: true,
-              readOnly: submitLoading
+              readOnly: submitLoading || isReadOnlyMode
             }}
+            showAlert={isReadOnlyMode}
           />
+        </FormItemNoLabel>
+        <FormItemNoLabel name="formatted" hidden valuePropName="checked">
+          <BasicSwitch />
+        </FormItemNoLabel>
+        <FormItemNoLabel name="originSql" hidden>
+          <BasicInput />
         </FormItemNoLabel>
       </EmptyBox>
       {/* sqlFile */}

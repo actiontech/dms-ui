@@ -2,6 +2,7 @@ import { Spin, message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import {
   SqlAuditInfoFormFields,
+  SqlStatementFields,
   WorkflowBaseInfoFormFields
 } from './index.type';
 import useCreateWorkflowSteps from './hooks/useCreateWorkflowSteps';
@@ -26,6 +27,10 @@ import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import useCreationMode from './hooks/useCreationMode';
 import useCheckTaskAuditRuleExceptionStatus from './hooks/useCheckTaskAuditRuleExceptionStatus';
+import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
+import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { cloneDeep } from 'lodash';
+
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
   const [baseInfoForm] = useForm<WorkflowBaseInfoFormFields>();
@@ -82,6 +87,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
     goToCreateResultStep
   } = useCreateWorkflowSteps();
   const sharedStepDetail = useSharedStepDetail();
+
   const {
     taskInfos,
     auditWorkflowWithSameSql,
@@ -89,6 +95,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
     isConfirmationRequiredForSubmission,
     submitWorkflowConfirmationMessage
   } = useAuditWorkflow();
+
   const auditAction = useCallback(
     async (
       values: SqlAuditInfoFormFields,
@@ -104,25 +111,60 @@ const CreateSqlExecWorkflow: React.FC = () => {
           goToAuditResultStep();
         }
       };
+
       try {
         //虽然审核不需要 baseInfo 数据，但还是需要进行校验
         await baseInfoForm.validateFields();
         sharedStepDetail.isAuditing.set(true);
         if (values.isSameSqlForAll) {
+          // 如果是不支持美化的数据源，则提交原始sql
+          const sqlStatementInfo = values[
+            SAME_SQL_MODE_DEFAULT_FIELD_KEY
+          ] as SqlStatementFields;
+
+          const isFormDataUploadType =
+            sqlStatementInfo.currentUploadType ===
+            AuditTaskResV1SqlSourceEnum.form_data;
+          const { isSupportFormatSql } =
+            sharedStepDetail.dbSourceInfoCollection.value[
+              SAME_SQL_MODE_DEFAULT_FIELD_KEY
+            ];
+          const noFormattedSql = sqlStatementInfo.originSql;
+
+          if (isFormDataUploadType && !isSupportFormatSql && !!noFormattedSql) {
+            sqlStatementInfo.form_data = noFormattedSql;
+          }
           auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
         } else {
+          const convertValues = cloneDeep(values);
+          const dataSourceInfo = Object.keys(
+            sharedStepDetail.dbSourceInfoCollection.value
+          ).map((key) => ({
+            key,
+            instanceName:
+              sharedStepDetail.dbSourceInfoCollection.value[key].instanceName,
+            schemaName:
+              sharedStepDetail.dbSourceInfoCollection.value[key].schemaName
+          }));
+          dataSourceInfo.map((i) => {
+            const sqlStatementInfo = convertValues[i.key] as SqlStatementFields;
+            const isFormDataUploadType =
+              sqlStatementInfo.currentUploadType ===
+              AuditTaskResV1SqlSourceEnum.form_data;
+            const { isSupportFormatSql } =
+              sharedStepDetail.dbSourceInfoCollection.value[i.key];
+            const noFormattedSql = sqlStatementInfo.originSql;
+            if (
+              isFormDataUploadType &&
+              !isSupportFormatSql &&
+              !!noFormattedSql
+            ) {
+              sqlStatementInfo.form_data = noFormattedSql;
+            }
+          });
           auditWorkflowWthDifferenceSql(
-            values,
-            Object.keys(sharedStepDetail.dbSourceInfoCollection.value).map(
-              (key) => ({
-                key,
-                instanceName:
-                  sharedStepDetail.dbSourceInfoCollection.value[key]
-                    .instanceName,
-                schemaName:
-                  sharedStepDetail.dbSourceInfoCollection.value[key].schemaName
-              })
-            ),
+            convertValues,
+            dataSourceInfo,
             onSuccess
           ).finally(finallyFunc);
         }
@@ -133,7 +175,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
       auditWorkflowWthDifferenceSql,
       baseInfoForm,
       goToAuditResultStep,
-      sharedStepDetail.dbSourceInfoCollection.value,
+      sharedStepDetail.dbSourceInfoCollection,
       sharedStepDetail.isAuditing
     ]
   );

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test sqle/CustomMonacoEditor should render correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1sm8xw8"
+    >
+      <div
+        class="custom-monaco-editor-wrapper css-1esok7i"
+      >
+        <input
+          class="custom-monaco-editor"
+          options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`test sqle/CustomMonacoEditor should render correctly with showAlert 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1sm8xw8"
+    >
+      <div
+        class="custom-monaco-editor-wrapper css-1esok7i"
+      >
+        <input
+          class="custom-monaco-editor"
+          options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+          value=""
+        />
+      </div>
+      <div
+        class="ant-alert ant-alert-warning"
+        data-show="true"
+        role="alert"
+      >
+        <span
+          aria-label="exclamation-circle"
+          class="anticon anticon-exclamation-circle ant-alert-icon"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="exclamation-circle"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+            />
+          </svg>
+        </span>
+        <div
+          class="ant-alert-content"
+        >
+          <div
+            class="ant-alert-message"
+          >
+            当前数据源类型不支持编辑美化后的SQL，如需编辑，请取消美化
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

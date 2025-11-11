@@ -46,12 +46,20 @@ describe('useDataSourceSelectorTree', () => {
     expect(result.current.getTreeDataPending).toBeFalsy();
 
     expect(result.current.treeData).toHaveLength(
-      instanceTipsMockData.length + 2
-    ); // 2 db type +  instance
+      instanceTipsMockData.length + 3
+    ); // 3 db type +  instance
     expect(result.current.treeData).toMatchSnapshot();
 
-    expect(result.current.treeExpandedKeys).toEqual(['MySQL', 'PostgreSQL']);
-    expect(result.current.treeLoadedKeys).toEqual(['MySQL', 'PostgreSQL']);
+    expect(result.current.treeExpandedKeys).toEqual([
+      'MySQL',
+      'PostgreSQL',
+      'TiDB'
+    ]);
+    expect(result.current.treeLoadedKeys).toEqual([
+      'MySQL',
+      'PostgreSQL',
+      'TiDB'
+    ]);
     expect(result.current.selectedBaselineInstanceValue).toBeUndefined();
     expect(result.current.selectedComparisonInstanceValue).toBeUndefined();
   });
@@ -138,7 +146,7 @@ describe('useDataSourceSelectorTree', () => {
     expect(
       result.current.disableTreeNodesBasedOnSelection(
         result.current.treeData[5].value
-      )?.[4].disabled
+      )?.[5].disabled
     ).toBeTruthy();
   });
 });

@@ -109,7 +109,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
           'filter_instance_id'
         ) as CustomSelectProps
       )?.options?.length
-    ).toBe(2);
+    ).toBe(3);
     expect(
       (
         result.current.filterCustomProps.get(

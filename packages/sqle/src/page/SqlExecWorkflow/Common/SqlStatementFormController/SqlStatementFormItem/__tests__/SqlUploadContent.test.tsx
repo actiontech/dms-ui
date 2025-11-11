@@ -19,21 +19,24 @@ describe('test SqlUploadContent', () => {
     expect(
       customRender({
         currentSqlUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-        fieldPrefixPath: '1'
+        fieldPrefixPath: '1',
+        dbSourceInfoCollection: { value: {}, set: jest.fn() }
       })
     ).toMatchSnapshot();
 
     expect(
       customRender({
         currentSqlUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
-        fieldPrefixPath: '1'
+        fieldPrefixPath: '1',
+        dbSourceInfoCollection: { value: {}, set: jest.fn() }
       })
     ).toMatchSnapshot();
 
     expect(
       customRender({
         currentSqlUploadType: AuditTaskResV1SqlSourceEnum.audit_plan,
-        fieldPrefixPath: '1'
+        fieldPrefixPath: '1',
+        dbSourceInfoCollection: { value: {}, set: jest.fn() }
       })
     ).toMatchSnapshot();
   });

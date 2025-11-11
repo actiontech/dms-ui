@@ -50,6 +50,9 @@ const DatabaseInfo = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setInstanceInfo(res.data.data);
+          form.setFieldsValue({
+            dbType: res.data.data?.db_type
+          });
         }
       });
   };

@@ -235,6 +235,13 @@ import { TokenFilled } from '@actiontech/icons';
 export default () => <TokenFilled width={32} height={32} />
 ```
 
+## TransferFilled
+```jsx
+import { TransferFilled } from '@actiontech/icons';
+
+export default () => <TransferFilled width={32} height={32} />
+```
+
 ## UserCircleFilled
 ```jsx
 import { UserCircleFilled } from '@actiontech/icons';
@@ -359,6 +366,27 @@ export default () => <EmptyHexagonOutlined width={32} height={32} />
 import { EyeClosedOutlined } from '@actiontech/icons';
 
 export default () => <EyeClosedOutlined width={32} height={32} />
+```
+
+## FaLessThanEqualOutlined
+```jsx
+import { FaLessThanEqualOutlined } from '@actiontech/icons';
+
+export default () => <FaLessThanEqualOutlined width={32} height={32} />
+```
+
+## FilterOutlined
+```jsx
+import { FilterOutlined } from '@actiontech/icons';
+
+export default () => <FilterOutlined width={32} height={32} />
+```
+
+## FullScreenOutlined
+```jsx
+import { FullScreenOutlined } from '@actiontech/icons';
+
+export default () => <FullScreenOutlined width={32} height={32} />
 ```
 
 ## HexagonOutlined
