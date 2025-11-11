@@ -697,7 +697,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
                         style="margin-right: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                           type="button"
                         >
                           <span>
@@ -1187,7 +1187,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
                         style="margin-right: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                           type="button"
                         >
                           <span>
@@ -1739,7 +1739,7 @@ exports[`test SqlStatementFormController matches snapshot with same SQL mode ena
                       style="margin-right: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                         type="button"
                       >
                         <span>

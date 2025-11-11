@@ -1431,7 +1431,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -3193,7 +3193,7 @@ from
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default active-formatter-button basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -4955,7 +4955,7 @@ from
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default active-formatter-button basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -7303,7 +7303,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>
@@ -9338,7 +9338,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>
@@ -11540,7 +11540,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>
@@ -14150,7 +14150,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>
@@ -16772,7 +16772,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                          class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                           type="button"
                                         >
                                           <span>
@@ -18086,7 +18086,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>
@@ -22854,7 +22854,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -24337,7 +24337,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -26232,7 +26232,7 @@ from
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default active-formatter-button basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -28211,7 +28211,7 @@ from
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default active-formatter-button basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -30501,7 +30501,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                     type="button"
                                   >
                                     <span>
@@ -32609,7 +32609,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                       type="button"
                                     >
                                       <span>

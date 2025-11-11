@@ -598,7 +598,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                         type="button"
                                       >
                                         <span>
@@ -1258,7 +1258,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                                         type="button"
                                       >
                                         <span>
