@@ -17,10 +17,6 @@ import { AuditResultForCreateWorkflowActions } from './actions';
 import { usePermission } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import SwitchSqlBackupStrategyModal from './SwitchSqlBackupStrategyModal';
-import { EmptyBox } from '@actiontech/dms-kit';
-import EventEmitter from '../../../../../utils/EventEmitter';
-import EmitterKey from '../../../../../data/EmitterKey';
 import SqlRewrittenDrawer from '../../../../../components/SqlRewrittenDrawer/index';
 import useSqlRewrittenDrawerState from '../../../../../components/SqlRewrittenDrawer/hooks/useSqlRewrittenDrawerState';
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
@@ -32,8 +28,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   dbType,
   instanceName,
   schema,
-  allowSwitchBackupPolicy = false,
-  supportedBackupPolicies,
   updateTaskAuditRuleExceptionStatus
 }) => {
   const {
@@ -49,20 +43,13 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     auditResultDrawerVisibility,
     { setFalse: closeAuditResultDrawer, setTrue: openAuditResultDrawer }
   ] = useBoolean();
-  const [execSqlID, setExecSqlID] = useState<number>();
   const { pagination, tableChange, setPagination } = useTableRequestParams();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const { parse2TableActionPermissions } = usePermission();
   const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
     useWhitelistRedux();
-  const [
-    switchBackupPolicyOpen,
-    {
-      setTrue: openSwitchBackupPolicyModal,
-      setFalse: closeSwitchBackupPolicyModal
-    }
-  ] = useBoolean();
+
   const handleClickAnalyze = useCallback(
     (sqlNum?: number) => {
       if (typeof sqlNum === 'undefined') {
@@ -176,28 +163,13 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     onCreateWhitelist,
     handleClickSqlRewritten
   ]);
-  const onSwitchSqlBackupPolicy = useCallback(
-    (sqlId?: number) => {
-      openSwitchBackupPolicyModal();
-      setExecSqlID(sqlId);
-    },
-    [openSwitchBackupPolicyModal]
-  );
+
   const columns = useMemo(() => {
-    const columnList = AuditResultForCreateWorkflowColumn(
+    return AuditResultForCreateWorkflowColumn(
       updateSqlDescribe,
-      onClickAuditResult,
-      onSwitchSqlBackupPolicy
+      onClickAuditResult
     );
-    return allowSwitchBackupPolicy
-      ? columnList
-      : columnList.filter((column) => column.dataIndex !== 'backup_strategy');
-  }, [
-    onSwitchSqlBackupPolicy,
-    updateSqlDescribe,
-    onClickAuditResult,
-    allowSwitchBackupPolicy
-  ]);
+  }, [updateSqlDescribe, onClickAuditResult]);
 
   // @feature: useTableRequestParams 整合自定义filter info
   useEffect(() => {
@@ -207,15 +179,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditLevelFilterValue, noDuplicate]);
-  useEffect(() => {
-    if (allowSwitchBackupPolicy) {
-      const { unsubscribe } = EventEmitter.subscribe(
-        EmitterKey.Refresh_Sql_Exec_workflow_Audit_Result_List,
-        refresh
-      );
-      return unsubscribe;
-    }
-  }, [allowSwitchBackupPolicy, refresh]);
+
   return (
     <>
       <ActiontechTable
@@ -246,18 +210,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         onClose={handleCloseSqlRewrittenDrawer}
         originSqlInfo={originSqlInfo}
       />
-      {/* #if [ee] */}
-      <EmptyBox if={allowSwitchBackupPolicy}>
-        <SwitchSqlBackupStrategyModal
-          open={switchBackupPolicyOpen}
-          sqlID={execSqlID}
-          onCancel={closeSwitchBackupPolicyModal}
-          taskID={taskID}
-          refresh={refresh}
-          supportedBackupPolicies={supportedBackupPolicies}
-        />
-      </EmptyBox>
-      {/* #endif */}
     </>
   );
 };

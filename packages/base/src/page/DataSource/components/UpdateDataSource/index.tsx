@@ -81,10 +81,6 @@ const UpdateDataSource = () => {
       params.db_service.sqle_config.data_export_rule_template_name =
         values.dataExportRuleTemplateName;
     }
-    if (params.db_service) {
-      params.db_service.enable_backup = values.enableBackup;
-      params.db_service.backup_max_rows = values.backupMaxRows;
-    }
     // #endif
 
     if (!!values.needUpdatePassword && !!values.password && params.db_service) {

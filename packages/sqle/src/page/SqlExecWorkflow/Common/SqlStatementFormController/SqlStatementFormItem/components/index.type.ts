@@ -24,16 +24,6 @@ export type SqlFormatterAndSubmitterProps = {
   | 'setActiveKey'
 >;
 
-export type SqlBackupSwitcherProps = Pick<
-  SqlStatementFormItemProps,
-  | 'fieldPrefixPath'
-  | 'databaseInfo'
-  | 'isSameSqlForAll'
-  | 'isAtRejectStep'
-  | 'isAtFormStep'
-  | 'isAuditing'
->;
-
 export type SwitcherFieldProps = {
   checked?: boolean;
   onChange?: (v: boolean) => void;

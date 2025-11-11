@@ -134,15 +134,6 @@ export const DataSourceColumns = (
       }
     },
     // #endif
-    // #if [sqle&&ee]
-    {
-      dataIndex: 'enable_backup',
-      title: () => t('dmsDataSource.databaseList.backup'),
-      render: (value) => {
-        return value ? t('common.enabled') : t('common.notEnabled');
-      }
-    },
-    // #endif
     {
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),

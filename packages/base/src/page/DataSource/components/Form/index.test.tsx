@@ -24,7 +24,6 @@ describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
   let listEnvironmentTagsSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
-  let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate?: boolean;
     defaultData?: IListDBServiceV2;
@@ -47,7 +46,6 @@ describe('page/DataSource/DataSourceForm', () => {
     jest.useFakeTimers();
     getProjectListSpy = project.getProjectList();
     listEnvironmentTagsSpy = project.listEnvironmentTags();
-    getSystemModuleStatusSpy = system.getSystemModuleStatus();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
@@ -145,9 +143,7 @@ describe('page/DataSource/DataSourceForm', () => {
     const ruleTemplateId = getBySelector('#ruleTemplateId');
     expect(ruleTemplateName).toHaveAttribute('value', undefined);
     expect(ruleTemplateId).toHaveAttribute('value', undefined);
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(2700));
-    expect(screen.getByText('SQL备份配置')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -216,7 +212,7 @@ describe('page/DataSource/DataSourceForm', () => {
     );
 
     const switchEle = getAllBySelector('.ant-switch', baseElement);
-    expect(switchEle.length).toBe(5);
+    expect(switchEle.length).toBe(4);
     expect(switchEle[1]).toHaveAttribute('aria-checked', 'true');
     fireEvent.click(switchEle[1]);
     await act(async () => jest.advanceTimersByTime(300));

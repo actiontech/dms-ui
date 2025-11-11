@@ -49,21 +49,8 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode ce', () => {
   it('render init snap', async () => {
     const { baseElement } = customRender({
       number: 1,
-      exec_sql: 'exec_sql cont',
-      rollback_sqls: ['rollback_sql cont'],
-      backup_strategy_tip: 'test tips',
-      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
-      associated_rollback_workflows: [
-        {
-          workflow_name: 'test_workflow_name',
-          workflow_id: '1'
-        }
-      ]
+      exec_sql: 'exec_sql cont'
     });
-    fireEvent.click(screen.getByText('回滚语句'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.queryByText('基于反向SQL回滚')).not.toBeInTheDocument();
-    expect(screen.queryByText('test tips')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 });

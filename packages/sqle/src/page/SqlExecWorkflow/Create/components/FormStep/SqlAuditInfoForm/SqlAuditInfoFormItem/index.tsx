@@ -28,15 +28,7 @@ const SqlAuditInfoFormItem = forwardRef<HTMLElement, SqlAuditInfoFormItemProps>(
               sharedStepDetail.dbSourceInfoCollection.value?.[key]
                 ?.instanceName,
             schemaName:
-              sharedStepDetail.dbSourceInfoCollection.value?.[key]?.schemaName,
-            enableBackup:
-              sharedStepDetail.dbSourceInfoCollection.value?.[key]
-                ?.enableBackup,
-            allowBackup:
-              sharedStepDetail.dbSourceInfoCollection.value?.[key]?.allowBackup,
-            backupMaxRows:
-              sharedStepDetail.dbSourceInfoCollection.value?.[key]
-                ?.backupMaxRows
+              sharedStepDetail.dbSourceInfoCollection.value?.[key]?.schemaName
           };
         })
         .filter((v) => !!v.instanceName);

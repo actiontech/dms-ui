@@ -1,4 +1,4 @@
-import { BasicSegmented, EmptyBox, BasicButton } from '@actiontech/dms-kit';
+import { BasicSegmented, EmptyBox } from '@actiontech/dms-kit';
 import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -22,9 +22,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
   showTaskTab = true,
-  allowSwitchBackupPolicy = false,
-  onBatchSwitchBackupPolicy,
-  tasksSupportedBackupPolicies,
   updateTaskAuditRuleExceptionStatus
 }) => {
   const { t } = useTranslation();
@@ -40,9 +37,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
-  const currentTaskSupportedBackupPolicies = useMemo(() => {
-    return tasksSupportedBackupPolicies?.[currentTask?.task_id ?? 0];
-  }, [tasksSupportedBackupPolicies, currentTask?.task_id]);
+
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
   };
@@ -85,26 +80,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         )}
 
         <Space size={4}>
-          {/* #if [ee] */}
-          <EmptyBox if={allowSwitchBackupPolicy && currentTask?.enable_backup}>
-            <BasicButton
-              onClick={() => {
-                onBatchSwitchBackupPolicy?.(
-                  currentTaskID,
-                  currentTaskSupportedBackupPolicies
-                );
-              }}
-            >
-              {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicy')}
-            </BasicButton>
-            <Divider
-              type="vertical"
-              style={{
-                height: 28
-              }}
-            />
-          </EmptyBox>
-          {/* #endif */}
           <ToggleButtonStyleWrapper
             active={noDuplicate}
             onClick={() => {
@@ -149,8 +124,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         dbType={currentTask?.instance_db_type}
         instanceName={currentTask?.instance_name}
         schema={currentTask?.instance_schema}
-        allowSwitchBackupPolicy={allowSwitchBackupPolicy}
-        supportedBackupPolicies={currentTaskSupportedBackupPolicies}
         updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
       />
     </AuditResultForCreateWorkflowStyleWrapper>

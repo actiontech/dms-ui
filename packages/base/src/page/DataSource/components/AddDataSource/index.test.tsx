@@ -28,7 +28,6 @@ describe('page/DataSource/AddDataSource', () => {
   const projectID = mockProjectInfo.projectID;
   let getProjectListSpy: jest.SpyInstance;
   let requestAddDBServiceSpy: jest.SpyInstance;
-  let getSystemModuleStatusSpy: jest.SpyInstance;
   let checkDbServiceIsConnectableSpy: jest.SpyInstance;
 
   const customRender = () => {
@@ -43,7 +42,6 @@ describe('page/DataSource/AddDataSource', () => {
     baseMockApi.project.listEnvironmentTags();
 
     requestAddDBServiceSpy = baseMockApi.global.AddDBService();
-    getSystemModuleStatusSpy = sqleMockApi.system.getSystemModuleStatus();
 
     checkDbServiceIsConnectableSpy =
       baseMockApi.dbServices.checkDbServiceIsConnectable();
@@ -96,7 +94,6 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(2700));
     // - ip
     await act(async () => {
@@ -258,7 +255,6 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(2700));
     // - ip
     await act(async () => {
@@ -340,7 +336,6 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(2700));
     // - ip
     await act(async () => {
@@ -388,15 +383,6 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('#enableBackup'));
-    await act(async () => jest.advanceTimersByTime(300));
-
-    fireEvent.change(getBySelector('#backupMaxRows', baseElement), {
-      target: {
-        value: '2000'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
 
     // submit
     expect(screen.getByText('提 交')).toBeInTheDocument();
@@ -438,9 +424,7 @@ describe('page/DataSource/AddDataSource', () => {
             audit_enabled: undefined
           }
         },
-        user: 'root',
-        enable_backup: true,
-        backup_max_rows: 2000
+        user: 'root'
       },
       project_uid: mockProjectList[0].uid
     });

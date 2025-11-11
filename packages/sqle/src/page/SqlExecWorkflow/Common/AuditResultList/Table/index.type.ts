@@ -1,14 +1,11 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditResultListProps } from '../index.type';
 
 export interface AuditResultTableProps
   extends Pick<
     AuditResultListProps,
-    | 'updateTaskRecordCount'
-    | 'allowSwitchBackupPolicy'
-    | 'updateTaskAuditRuleExceptionStatus'
+    'updateTaskRecordCount' | 'updateTaskAuditRuleExceptionStatus'
   > {
   noDuplicate: boolean;
   taskID?: string;
@@ -17,7 +14,6 @@ export interface AuditResultTableProps
   dbType?: string;
   instanceName?: string;
   schema?: string;
-  supportedBackupPolicies?: InstanceTipResV2SupportedBackupStrategyEnum[];
 }
 
 export type AuditResultDrawerProps = {
@@ -27,13 +23,4 @@ export type AuditResultDrawerProps = {
   dbType?: string;
   clickAnalyze: (sqlNum?: number) => void;
   handleClickSqlRewritten?: (record: IAuditTaskSQLResV2) => void;
-};
-
-export type SwitchSqlBackupStrategyModalProps = {
-  sqlID?: number;
-  open: boolean;
-  onCancel: () => void;
-  taskID?: string;
-  refresh: () => void;
-  supportedBackupPolicies?: InstanceTipResV2SupportedBackupStrategyEnum[];
 };

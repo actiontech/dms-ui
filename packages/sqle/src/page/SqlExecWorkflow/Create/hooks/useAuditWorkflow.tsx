@@ -140,10 +140,6 @@ const useAuditWorkflow = () => {
       ) {
         const auditTaskPrams: IAuditTaskGroupIdV1Params = {
           task_group_id: taskGroupInfo.data.data?.task_group_id,
-          // #if [ee]
-          enable_backup: sqlStatementInfo.backup,
-          backup_max_rows: sqlStatementInfo.backupMaxRows,
-          // #endif
           ...getSqlSourceWithUploadType(sqlStatementInfo)
         };
         const res = await task.auditTaskGroupIdV1(auditTaskPrams);
@@ -196,9 +192,7 @@ const useAuditWorkflow = () => {
           exec_mode:
             sqlStatementInfo.exec_mode as unknown as CreateAuditTaskReqV1ExecModeEnum,
           // #if [ee]
-          file_order_method: sqlStatementInfo.file_sort_method,
-          enable_backup: sqlStatementInfo.backup,
-          backup_max_rows: sqlStatementInfo.backupMaxRows
+          file_order_method: sqlStatementInfo.file_sort_method
           // #endif
         };
       });

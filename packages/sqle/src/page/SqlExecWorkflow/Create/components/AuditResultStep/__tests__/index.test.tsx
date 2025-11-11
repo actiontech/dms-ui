@@ -52,14 +52,12 @@ describe('test AuditResultStep', () => {
     UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE
   ]);
 
-  let updateTaskBackupStrategySpy: jest.SpyInstance;
   let requestInstanceTip: jest.SpyInstance;
 
   beforeEach(() => {
     mockUseCurrentUser();
     mockUseCurrentProject();
     jest.useFakeTimers();
-    updateTaskBackupStrategySpy = execWorkflow.updateTaskBackupStrategy();
     execWorkflow.mockAllApi();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -81,15 +79,7 @@ describe('test AuditResultStep', () => {
             instance_type: 'MySQL',
             workflow_template_id: 1,
             host: '10.186.62.13',
-            port: '33061',
-            enable_backup: true,
-            supported_backup_strategy: [
-              InstanceTipResV2SupportedBackupStrategyEnum.manual,
-              InstanceTipResV2SupportedBackupStrategyEnum.none,
-              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
-            ],
-            backup_max_rows: 1000
+            port: '33061'
           }
         ]
       })
@@ -110,47 +100,5 @@ describe('test AuditResultStep', () => {
 
     fireEvent.click(getByText('提交工单'));
     expect(createActionSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('render switch data source backup policy', async () => {
-    const emitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = customRender(jest.fn());
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstanceTip).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('切换数据源备份策略')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('切换数据源备份策略'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(
-      screen.getByText('统一变更当前数据源上SQL的备份回滚策略为')
-    ).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.mouseDown(getBySelector('#strategy'));
-    await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(screen.getByText('基于行级备份回滚'));
-    await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(updateTaskBackupStrategySpy).toHaveBeenCalledTimes(1);
-    expect(updateTaskBackupStrategySpy).toHaveBeenCalledWith({
-      task_id: '1',
-      strategy: 'original_row'
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('切换数据源备份策略成功')).toBeInTheDocument();
-    expect(emitSpy).toHaveBeenCalledTimes(1);
-    expect(emitSpy).toHaveBeenCalledWith(
-      EmitterKey.Refresh_Sql_Exec_workflow_Audit_Result_List
-    );
-  });
-
-  it('render switch backup policy button', async () => {
-    const { baseElement } = customRender(jest.fn());
-
-    expect(screen.getByText('切换数据源备份策略')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('instance_name a'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.queryByText('切换数据源备份策略')).not.toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
   });
 });

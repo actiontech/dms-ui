@@ -326,11 +326,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('.backup-switcher'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('回滚行数限制')).toBeInTheDocument();
-    expect(getBySelector('.ant-input-number-input')).toBeDisabled();
-    expect(getBySelector('.ant-input-number-input')).toHaveValue('1000');
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstance).toHaveBeenCalledTimes(2);
@@ -353,8 +348,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
-      enable_backup: true,
-      backup_max_rows: 1000,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -949,8 +942,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
-      enable_backup: true,
-      backup_max_rows: 1000,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -1081,8 +1072,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
             ],
             '0': {
               currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-              form_data: 'SELECT * ',
-              backup: true
+              form_data: 'SELECT * '
             }
           },
           clonedExecWorkflowBaseInfo: {
@@ -1131,9 +1121,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-1',
       instance_schema: 'test',
       project_name: 'default',
-      sql: 'SELECT * ',
-      enable_backup: true,
-      backup_max_rows: 1000
+      sql: 'SELECT * '
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);

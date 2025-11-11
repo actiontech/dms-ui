@@ -27,7 +27,6 @@ describe('page/DataSource/UpdateDataSource', () => {
   const projectID = mockProjectInfo.projectID;
   const uId = '1739531854064652288';
   let listEnvironmentTagsSpy: jest.SpyInstance;
-  let getSystemModuleStatusSpy: jest.SpyInstance;
   let checkDbServiceIsConnectableSpy: jest.SpyInstance;
   let updateDBServiceSpy: jest.SpyInstance;
   let getListDBServicesSpy: jest.SpyInstance;
@@ -51,7 +50,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     mockUseCurrentProject();
     listEnvironmentTagsSpy = baseMockApi.project.listEnvironmentTags();
     baseMockApi.project.getProjectList();
-    getSystemModuleStatusSpy = sqleMockApi.system.getSystemModuleStatus();
     updateDBServiceSpy = baseMockApi.global.UpdateDBService();
     checkDbServiceIsConnectableSpy =
       baseMockApi.dbServices.checkDbServiceIsConnectable();
@@ -117,9 +115,7 @@ describe('page/DataSource/UpdateDataSource', () => {
             type: 'string',
             value: 'test'
           }
-        ],
-        enable_backup: true,
-        backup_max_rows: 2000
+        ]
       }
     ]
   };
@@ -166,7 +162,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
     const needUpdatePassword = getBySelector('#needUpdatePassword');
@@ -212,7 +207,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     // environment
     fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
@@ -237,7 +231,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
     const needUpdatePassword = getBySelector('#needUpdatePassword');

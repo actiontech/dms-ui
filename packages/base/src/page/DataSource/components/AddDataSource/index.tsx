@@ -72,8 +72,6 @@ const AddDataSource = () => {
       dbService.sqle_config.data_export_rule_template_name =
         values.dataExportRuleTemplateName;
     }
-    dbService.enable_backup = values.enableBackup;
-    dbService.backup_max_rows = values.backupMaxRows;
     // #endif
     return DmsApi.DBServiceService.AddDBServiceV2({
       db_service: dbService,

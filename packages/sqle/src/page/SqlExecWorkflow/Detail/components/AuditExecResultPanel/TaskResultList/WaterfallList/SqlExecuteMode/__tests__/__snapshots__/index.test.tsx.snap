@@ -184,20 +184,6 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                                 />
                                 <div
                                   class="ant-segmented-item-label"
-                                  title="回滚语句"
-                                >
-                                  回滚语句
-                                </div>
-                              </label>
-                              <label
-                                class="ant-segmented-item"
-                              >
-                                <input
-                                  class="ant-segmented-item-input"
-                                  type="radio"
-                                />
-                                <div
-                                  class="ant-segmented-item-label"
                                   title="执行结果"
                                 >
                                   执行结果
@@ -673,20 +659,6 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                                   title="执行语句"
                                 >
                                   执行语句
-                                </div>
-                              </label>
-                              <label
-                                class="ant-segmented-item"
-                              >
-                                <input
-                                  class="ant-segmented-item-input"
-                                  type="radio"
-                                />
-                                <div
-                                  class="ant-segmented-item-label"
-                                  title="回滚语句"
-                                >
-                                  回滚语句
                                 </div>
                               </label>
                               <label

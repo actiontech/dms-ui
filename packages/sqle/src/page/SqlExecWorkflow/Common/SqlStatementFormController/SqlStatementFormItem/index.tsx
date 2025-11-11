@@ -11,7 +11,6 @@ import { SqlAuditInfoFormProps } from '../../../Create/components/FormStep/SqlAu
 import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
 import { RingPieFilled } from '@actiontech/icons';
-import SqlBackupSwitcher from './components/SqlBackupSwitcher';
 const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   fieldPrefixPath,
   clearSqlContentFormWhenChangeUploadType = true,
@@ -22,7 +21,6 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   isSameSqlForAll,
   isSupportFileModeExecuteSql,
   isAtRejectStep,
-  isAtFormStep,
   setActiveKey
 }) => {
   const { t } = useTranslation();
@@ -80,16 +78,6 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
         isAtRejectStep={isAtRejectStep}
       />
-      {/* #if [ee] */}
-      <SqlBackupSwitcher
-        fieldPrefixPath={fieldPrefixPath}
-        databaseInfo={databaseInfo}
-        isSameSqlForAll={isSameSqlForAll}
-        isAtRejectStep={isAtRejectStep}
-        isAtFormStep={isAtFormStep}
-        isAuditing={isAuditing}
-      />
-      {/* #endif */}
       <SqlFormatterAndSubmitter
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}

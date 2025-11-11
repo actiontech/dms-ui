@@ -375,20 +375,6 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                             />
                             <div
                               class="ant-segmented-item-label"
-                              title="回滚语句"
-                            >
-                              回滚语句
-                            </div>
-                          </label>
-                          <label
-                            class="ant-segmented-item"
-                          >
-                            <input
-                              class="ant-segmented-item-input"
-                              type="radio"
-                            />
-                            <div
-                              class="ant-segmented-item-label"
                               title="执行结果"
                             >
                               执行结果

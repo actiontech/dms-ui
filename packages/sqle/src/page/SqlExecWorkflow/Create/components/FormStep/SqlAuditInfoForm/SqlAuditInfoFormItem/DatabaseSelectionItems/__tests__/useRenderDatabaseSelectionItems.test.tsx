@@ -77,15 +77,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
         sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey,
         instanceList: [
           {
-            instance_name: 'instance1',
-            enable_backup: true,
-            supported_backup_strategy: [
-              InstanceTipResV2SupportedBackupStrategyEnum.manual,
-              InstanceTipResV2SupportedBackupStrategyEnum.none,
-              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
-            ],
-            backup_max_rows: 2000
+            instance_name: 'instance1'
           }
         ]
       })
@@ -109,10 +101,10 @@ describe('test useRenderDatabaseSelectionItems', () => {
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(2);
+    ).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenNthCalledWith(2, 'key1', {
+    ).toHaveBeenNthCalledWith(1, 'key1', {
       instanceName: 'instance1',
       schemaName: undefined,
       getSchemaLoading: true,
@@ -120,17 +112,14 @@ describe('test useRenderDatabaseSelectionItems', () => {
       ruleTemplate: undefined,
       dbType: undefined,
       testConnectResult: undefined,
-      isSupportFileModeExecuteSql: true,
-      enableBackup: true,
-      allowBackup: true,
-      backupMaxRows: 2000
+      isSupportFileModeExecuteSql: true
     });
 
     await act(() => jest.advanceTimersByTime(3000));
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(5);
+    ).toHaveBeenCalledTimes(4);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
@@ -164,7 +153,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     await act(() => jest.advanceTimersByTime(3000));
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(6);
+    ).toHaveBeenCalledTimes(5);
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
@@ -185,7 +174,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(2);
+    ).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
@@ -281,12 +270,6 @@ describe('test useRenderDatabaseSelectionItems', () => {
 
     fireEvent.click(container.querySelector('.data-source-col-delete-button')!);
     expect(handleClickSpy).not.toHaveBeenCalled();
-    expect(
-      MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(1);
-    expect(
-      MockSharedStepDetail.sqlStatementTabActiveKey.set
-    ).not.toHaveBeenCalled();
   });
 
   it('should render delete item button correctly with fields length is more than 1', () => {
@@ -314,7 +297,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(handleClickSpy).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(2);
+    ).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('1', undefined);
@@ -429,22 +412,14 @@ describe('test useRenderDatabaseSelectionItems', () => {
         sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey,
         instanceList: [
           {
-            instance_name: 'mysql-1',
-            enable_backup: true,
-            supported_backup_strategy: [
-              InstanceTipResV2SupportedBackupStrategyEnum.manual,
-              InstanceTipResV2SupportedBackupStrategyEnum.none,
-              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
-            ],
-            backup_max_rows: 2000
+            instance_name: 'mysql-1'
           }
         ]
       })
     );
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(3);
+    ).toHaveBeenCalledTimes(2);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('0', {
@@ -455,10 +430,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       ruleTemplate: undefined,
       dbType: undefined,
       testConnectResult: undefined,
-      isSupportFileModeExecuteSql: true,
-      enableBackup: true,
-      allowBackup: true,
-      backupMaxRows: 2000
+      isSupportFileModeExecuteSql: true
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(1);

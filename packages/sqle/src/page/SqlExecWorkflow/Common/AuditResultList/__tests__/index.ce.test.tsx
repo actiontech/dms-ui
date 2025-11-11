@@ -63,8 +63,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList ce', () => {
 
   it('render init snap', async () => {
     const { baseElement } = customRender({
-      tasks: mockSqlExecWorkflowTasksData,
-      allowSwitchBackupPolicy: true
+      tasks: mockSqlExecWorkflowTasksData
     });
     expect(baseElement).toMatchSnapshot();
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(1);

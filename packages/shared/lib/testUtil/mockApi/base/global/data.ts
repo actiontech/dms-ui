@@ -86,8 +86,7 @@ export const DBServicesList: IListDBServiceV2[] = [
     last_connection_test_error_message: '',
     last_connection_test_status:
       ListDBServiceV2LastConnectionTestStatusEnum.connect_success,
-    last_connection_test_time: '2024-11-15T15:05:10.175+08:00',
-    enable_backup: true
+    last_connection_test_time: '2024-11-15T15:05:10.175+08:00'
   },
   {
     uid: '1739531942258282496',
@@ -118,8 +117,7 @@ export const DBServicesList: IListDBServiceV2[] = [
     last_connection_test_error_message: 'error message',
     last_connection_test_status:
       ListDBServiceV2LastConnectionTestStatusEnum.connect_failed,
-    last_connection_test_time: '2024-11-15T15:05:10.175+08:00',
-    enable_backup: false
+    last_connection_test_time: '2024-11-15T15:05:10.175+08:00'
   }
 ];
 

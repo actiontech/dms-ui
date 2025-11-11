@@ -8,11 +8,9 @@ import { useBoolean } from 'ahooks';
 import AuditResultList from '../../../Common/AuditResultList';
 import UpdateFormDrawer from './UpdateFormDrawer';
 import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
-import BatchSwitchBackupStrategyModal from './BatchSwitchBackupStrategyModal';
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
   baseFormValues,
@@ -36,46 +34,14 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
       setTrue: openUpdateSqlAuditInfoDrawer
     }
   ] = useBoolean(false);
-  const [
-    switchBackupPolicyOpen,
-    {
-      setTrue: openSwitchBackupPolicyModal,
-      setFalse: closeSwitchBackupPolicyModal
-    }
-  ] = useBoolean();
-  const [taskID, setTaskID] = useState<string>();
-  const [
-    currentTaskSupportedBackupPolicies,
-    setCurrentTaskSupportedBackupPolicies
-  ] = useState<InstanceTipResV2SupportedBackupStrategyEnum[]>();
-  const { instanceList, updateInstanceList } = useInstance();
+
+  const { updateInstanceList } = useInstance();
   const { projectName } = useCurrentProject();
   const internalCreateWorkflow = () => {
     startCreate();
     createAction().finally(() => {
       finishCreate();
     });
-  };
-  const tasksSupportedBackupPolicies = useMemo(() => {
-    const policies: {
-      [key: number]: InstanceTipResV2SupportedBackupStrategyEnum[] | undefined;
-    } = {};
-    tasks.forEach((task) => {
-      if (task.task_id) {
-        policies[task?.task_id] = instanceList.find(
-          (i) => i.instance_name === task.instance_name
-        )?.supported_backup_strategy;
-      }
-    });
-    return policies;
-  }, [instanceList, tasks]);
-  const onBatchSwitchBackupPolicy = (
-    currentTaskID?: string,
-    supportedBackupStrategy?: InstanceTipResV2SupportedBackupStrategyEnum[]
-  ) => {
-    openSwitchBackupPolicyModal();
-    setTaskID(currentTaskID);
-    setCurrentTaskSupportedBackupPolicies(supportedBackupStrategy);
   };
 
   // #if [ee]
@@ -119,9 +85,6 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
       <AuditResultList
         tasks={tasks}
         updateTaskRecordCount={updateTaskRecordCount}
-        allowSwitchBackupPolicy
-        onBatchSwitchBackupPolicy={onBatchSwitchBackupPolicy}
-        tasksSupportedBackupPolicies={tasksSupportedBackupPolicies}
         updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
       />
 
@@ -133,15 +96,6 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         auditAction={auditAction}
         {...sharedStepDetail}
       />
-
-      {/* #if [ee] */}
-      <BatchSwitchBackupStrategyModal
-        open={switchBackupPolicyOpen}
-        taskID={taskID}
-        onCancel={closeSwitchBackupPolicyModal}
-        currentTaskSupportedBackupPolicies={currentTaskSupportedBackupPolicies}
-      />
-      {/* #endif */}
     </>
   );
 };

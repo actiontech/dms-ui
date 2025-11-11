@@ -26,19 +26,12 @@ export type SqlStatementFields = Record<
   exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum;
   file_sort_method: string;
   currentUploadType: AuditTaskResV1SqlSourceEnum;
-  backup?: boolean;
-  backupMaxRows?: number;
 };
 
 export type CreateWorkflowDatabaseInfo = Array<{
   key: string;
   instanceName?: string;
   schemaName?: string;
-  // 当前数据源有没有开启备份回滚
-  enableBackup?: boolean;
-  backupMaxRows?: number;
-  // 当前数据源类型是否支持备份回滚 例如： Mysql支持 sqlserver不支持
-  allowBackup?: boolean;
 }>;
 
 export type SqlAuditInfoFormFields = {
@@ -67,9 +60,6 @@ export type DataSourceSchemaCollection = Record<
     ruleTemplate?: IRuleTemplateV2;
     testConnectResult?: IInstanceConnectionResV1;
     isSupportFileModeExecuteSql?: boolean;
-    enableBackup?: boolean;
-    backupMaxRows?: number;
-    allowBackup?: boolean;
   }
 >;
 

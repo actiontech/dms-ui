@@ -54,7 +54,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const { updateInstanceList, instanceList } = useInstance();
+  const { updateInstanceList } = useInstance();
   const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
     useCheckTaskAuditRuleExceptionStatus();
   const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
@@ -104,16 +104,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         return {
           key: isSameSqlForAll ? `${index}` : item.task_id?.toString() ?? '',
           instanceName: item.instance_name,
-          schemaName: item.instance_schema,
-          enableBackup: item.enable_backup,
-          backupMaxRows: item.backup_max_rows,
-          allowBackup: !!instanceList.find(
-            (i) => i.instance_name === item.instance_name
-          )?.supported_backup_strategy?.length
+          schemaName: item.instance_schema
         };
       })
       .filter((v) => !!v.instanceName);
-  }, [currentTasks, instanceList, isSameSqlForAll]);
+  }, [currentTasks, isSameSqlForAll]);
   const innerAuditAction = async (values: SqlAuditInfoFormFields) => {
     isAuditing.set(true);
     try {
@@ -189,9 +184,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         form.setFieldValue(SAME_SQL_MODE_DEFAULT_FIELD_KEY, {
           currentUploadType: currentTasks?.[0]?.sql_source,
           exec_mode: currentTasks?.[0]?.exec_mode,
-          file_sort_method: currentTasks?.[0]?.file_order_method,
-          backup: currentTasks?.[0]?.enable_backup,
-          backupMaxRows: currentTasks?.[0]?.backup_max_rows
+          file_sort_method: currentTasks?.[0]?.file_order_method
         });
       } else {
         sqlStatementTabActiveKey.set(
@@ -201,9 +194,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           form.setFieldValue(item.task_id?.toString() ?? '', {
             currentUploadType: item.sql_source,
             exec_mode: item.exec_mode,
-            file_sort_method: item.file_order_method,
-            backup: item.enable_backup,
-            backupMaxRows: item.backup_max_rows
+            file_sort_method: item.file_order_method
           });
         });
       }

@@ -24,14 +24,7 @@ import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { TaskResultContentTypeEnum } from './index.data';
-import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
-import {
-  UpdateSqlBackupStrategyReqStrategyEnum,
-  AuditTaskResV1StatusEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
-import { formatterSQL } from '@actiontech/dms-kit';
 import AuditExceptionTree from './components/AuditExceptionTree';
 import { IAuditResultItem } from '../../../../../../../../components/ReportDrawer/index.type';
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
@@ -99,32 +92,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
         updateDescDone();
       });
   };
-  const formattedRollbackSql = useMemo(() => {
-    try {
-      return props.rollback_sqls
-        ?.map((v) => formatterSQL(v, props.dbType))
-        ?.join('\n');
-    } catch {
-      // 当切换task时 当新的task sql请求未完成时 这时rollback_sqls还是老的数据 这时如果dbType不同 可能会导致解析sql失败报错
-      return props.rollback_sqls?.join('\n');
-    }
-  }, [props.rollback_sqls, props.dbType]);
-  const sqlBackupResult = useMemo(() => {
-    if (props.backup_result) {
-      return props.backup_result;
-    }
-    // todo 目前接口定义的AuditTaskResV1StatusEnum.exec_success枚举值和接口实际返回的不一致，接口返回的是exec_succeeded 属于后端历史遗留问题 后端需要考虑影响面再去决定是否统一
-    const taskNotExecuted = props?.taskStatus
-      ? ![
-          'exec_succeeded',
-          AuditTaskResV1StatusEnum.exec_failed,
-          AuditTaskResV1StatusEnum.manually_executed
-        ].includes(props.taskStatus)
-      : true;
-    return taskNotExecuted
-      ? t('execWorkflow.audit.table.backupExecuteBeforeTips')
-      : '';
-  }, [props.taskStatus, props.backup_result, t]);
+
   return (
     <TasksResultCardStyleWrapper>
       {contextHolder}
@@ -173,58 +141,6 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                 label: t('execWorkflow.audit.table.execSql'),
                 children: (
                   <SQLRenderer sql={props.exec_sql} showLineNumbers wordWrap />
-                )
-              },
-              {
-                value: TaskResultContentTypeEnum.rollback_sql,
-                label: t('execWorkflow.audit.table.rollback'),
-                children: (
-                  <Space
-                    direction="vertical"
-                    className="rollback-sql-container"
-                  >
-                    {/* #if [ee] */}
-                    <EmptyBox if={!!props.backup_strategy_tip}>
-                      <Space className="backup-conflict-tips">
-                        <WarningFilled width={16} height={16} />
-                        {props.backup_strategy_tip}
-                      </Space>
-                    </EmptyBox>
-                    <Space>
-                      <EmptyBox
-                        if={props.backupConflict}
-                        defaultNode={
-                          <EmptyBox if={!!props.backup_strategy}>
-                            <BasicTag>
-                              {
-                                BackupStrategyDictionary[
-                                  props.backup_strategy as unknown as UpdateSqlBackupStrategyReqStrategyEnum
-                                ]
-                              }
-                            </BasicTag>
-                          </EmptyBox>
-                        }
-                      >
-                        <Space className="backup-conflict-tips">
-                          <WarningFilled width={16} height={16} />
-                          {t('execWorkflow.audit.table.backupConflictTips')}
-                        </Space>
-                      </EmptyBox>
-                      <EmptyBox if={props.enableBackup}>
-                        <Divider
-                          type="vertical"
-                          className="result-card-status-divider"
-                        />
-                        {sqlBackupResult}
-                      </EmptyBox>
-                    </Space>
-                    {/* #endif */}
-                    <SQLRenderer
-                      sql={formattedRollbackSql}
-                      showLineNumbers
-                      wordWrap
-                    />
-                  </Space>
                 )
               },
               {

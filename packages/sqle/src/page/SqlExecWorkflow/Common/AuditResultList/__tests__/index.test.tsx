@@ -156,20 +156,4 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
       task_id: '1'
     });
   });
-
-  it('render allowSwitchBackupPolicy is true', async () => {
-    const onBatchSwitchBackupPolicySpy = jest.fn();
-    const { baseElement } = customRender({
-      tasks: mockSqlExecWorkflowTasksData,
-      allowSwitchBackupPolicy: true,
-      onBatchSwitchBackupPolicy: onBatchSwitchBackupPolicySpy
-    });
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('切换数据源备份策略')).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('切换数据源备份策略'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(onBatchSwitchBackupPolicySpy).toHaveBeenCalledTimes(1);
-  });
 });

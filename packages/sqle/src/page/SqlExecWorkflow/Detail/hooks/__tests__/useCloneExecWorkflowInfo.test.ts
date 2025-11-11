@@ -59,9 +59,7 @@ describe('test useCloneExecWorkflowInfo', () => {
     status: AuditTaskResV1StatusEnum.audited,
     sql_source: AuditTaskResV1SqlSourceEnum.form_data,
     exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
-    file_order_method: 'value1',
-    enable_backup: true,
-    backup_conflict_with_instance: false
+    file_order_method: 'value1'
   };
 
   describe('workflow mode is same_sqls', () => {
@@ -101,8 +99,7 @@ describe('test useCloneExecWorkflowInfo', () => {
           ],
           '0': {
             currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-            form_data: 'SELECT * ',
-            backup: true
+            form_data: 'SELECT * '
           }
         },
         type: 'sqlExecWorkflow/updateClonedExecWorkflowSqlAuditInfo'
@@ -163,8 +160,7 @@ describe('test useCloneExecWorkflowInfo', () => {
           '0': {
             currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
             exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
-            sql_file: [new File([new Blob(['test file content'])], 'test.sql')],
-            backup: true
+            sql_file: [new File([new Blob(['test file content'])], 'test.sql')]
           }
         },
         type: 'sqlExecWorkflow/updateClonedExecWorkflowSqlAuditInfo'
@@ -181,8 +177,7 @@ describe('test useCloneExecWorkflowInfo', () => {
               // 目前接口返回的sql_source是错的，待后端修改统一
               sql_source: AuditTaskResV1SqlSourceEnum.zip_file,
               exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
-              audit_files: [{ file_name: 'test.zip' }],
-              enable_backup: undefined
+              audit_files: [{ file_name: 'test.zip' }]
             }
           ],
           {
@@ -262,8 +257,7 @@ describe('test useCloneExecWorkflowInfo', () => {
               // 目前接口返回的sql_source是错的，待后端修改统一
               sql_source: AuditTaskResV1SqlSourceEnum.zip_file,
               exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
-              audit_files: [{ file_name: 'test.zip' }],
-              enable_backup: undefined
+              audit_files: [{ file_name: 'test.zip' }]
             }
           ],
           {
@@ -340,8 +334,7 @@ describe('test useCloneExecWorkflowInfo', () => {
             task_id: 52,
             audit_files: [{ file_name: 'test.zip' }],
             exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
-            file_order_method: 'value1',
-            enable_backup: undefined
+            file_order_method: 'value1'
           }
         ],
         {
@@ -409,14 +402,12 @@ describe('test useCloneExecWorkflowInfo', () => {
         ],
         '0': {
           currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-          form_data: 'SELECT * ',
-          backup: true
+          form_data: 'SELECT * '
         },
         '1': {
           currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
           exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
-          sql_file: [new File([new Blob(['test file content'])], 'test.sql')],
-          backup: true
+          sql_file: [new File([new Blob(['test file content'])], 'test.sql')]
         },
         '2': {
           currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,

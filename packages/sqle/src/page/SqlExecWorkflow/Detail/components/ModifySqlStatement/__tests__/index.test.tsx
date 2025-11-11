@@ -85,11 +85,9 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
             workflow_template_id: 1,
             host: '10.186.62.13',
             port: '33061',
-            enable_backup: true,
             supported_backup_strategy: [
               InstanceTipResV2SupportedBackupStrategyEnum.manual
-            ],
-            backup_max_rows: 1000
+            ]
           }
         ]
       })
@@ -182,9 +180,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       {
         '0': {
           currentUploadType: 'form_data',
-          form_data: 'SELECT 1;',
-          backup: true,
-          backupMaxRows: 2000
+          form_data: 'SELECT 1;'
         },
         databaseInfo: [
           {
@@ -199,10 +195,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
         {
           instanceName: 'instance_name b',
           key: '0',
-          schemaName: 'instance_schema',
-          allowBackup: true,
-          backupMaxRows: 2000,
-          enableBackup: true
+          schemaName: 'instance_schema'
         }
       ]
     );

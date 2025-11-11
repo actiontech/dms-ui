@@ -1177,20 +1177,6 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                 />
                                 <div
                                   class="ant-segmented-item-label"
-                                  title="回滚语句"
-                                >
-                                  回滚语句
-                                </div>
-                              </label>
-                              <label
-                                class="ant-segmented-item"
-                              >
-                                <input
-                                  class="ant-segmented-item-input"
-                                  type="radio"
-                                />
-                                <div
-                                  class="ant-segmented-item-label"
                                   title="执行结果"
                                 >
                                   执行结果
@@ -2963,20 +2949,6 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       title="执行语句"
                                     >
                                       执行语句
-                                    </div>
-                                  </label>
-                                  <label
-                                    class="ant-segmented-item"
-                                  >
-                                    <input
-                                      class="ant-segmented-item-input"
-                                      type="radio"
-                                    />
-                                    <div
-                                      class="ant-segmented-item-label"
-                                      title="回滚语句"
-                                    >
-                                      回滚语句
                                     </div>
                                   </label>
                                   <label

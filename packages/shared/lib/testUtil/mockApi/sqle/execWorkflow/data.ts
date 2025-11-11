@@ -103,9 +103,7 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     sql_source: AuditTaskResV1SqlSourceEnum.form_data,
     status: AuditTaskResV1StatusEnum.exec_failed,
     task_id: 1,
-    exec_mode: 'sqls',
-    enable_backup: true,
-    backup_max_rows: 2000
+    exec_mode: 'sqls'
   },
   {
     audit_level: AuditTaskResV1AuditLevelEnum.warn,

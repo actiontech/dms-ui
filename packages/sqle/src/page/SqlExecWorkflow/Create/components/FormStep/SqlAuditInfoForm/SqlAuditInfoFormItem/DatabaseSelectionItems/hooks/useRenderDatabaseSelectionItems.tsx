@@ -21,8 +21,7 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
-  sqlStatementTabActiveKey,
-  instanceList
+  sqlStatementTabActiveKey
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
@@ -105,9 +104,6 @@ const useRenderDatabaseSelectionItems = ({
   };
   const handleInstanceChange = (key: string, instanceName?: string) => {
     if (instanceName) {
-      const targetInstance = instanceList?.find(
-        (i) => i.instance_name === instanceName
-      );
       dbSourceInfoCollection.set(key, {
         instanceName,
         schemaName: undefined,
@@ -116,32 +112,14 @@ const useRenderDatabaseSelectionItems = ({
         ruleTemplate: undefined,
         dbType: undefined,
         testConnectResult: undefined,
-        isSupportFileModeExecuteSql: true,
-        enableBackup: targetInstance?.enable_backup ?? false,
-        backupMaxRows: targetInstance?.backup_max_rows,
-        allowBackup: !!targetInstance?.supported_backup_strategy?.length
+        isSupportFileModeExecuteSql: true
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);
       sqlStatementTabActiveKey.set(key);
     }
   };
-  useEffect(() => {
-    // 克隆或者回滚时，因为是从store中取instanceName ，此时可能instance list接口还未结束
-    // 导致enableBackup被赋予了默认值false，所以需要在instance list接口完成后，重新设置enableBackup
-    Object.keys(dbSourceInfoCollection.value).forEach((key) => {
-      const targetInstance = instanceList?.find(
-        (i) =>
-          i.instance_name === dbSourceInfoCollection.value[key].instanceName
-      );
-      dbSourceInfoCollection.set(key, {
-        enableBackup: targetInstance?.enable_backup ?? false,
-        backupMaxRows: targetInstance?.backup_max_rows,
-        allowBackup: !!targetInstance?.supported_backup_strategy?.length
-      });
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [instanceList]);
+
   const handleInstanceSchemaChange = (key: string, schemaName?: string) => {
     dbSourceInfoCollection.set(key, {
       schemaName

@@ -5,14 +5,9 @@ import { SQLRenderer } from '@actiontech/shared';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';
 import { t } from '../../../../../locale';
 import ResultIconRender from '../../../../../components/AuditResultMessage/ResultIconRender';
-import { BasicToolTip, BasicTag } from '@actiontech/dms-kit';
-import { AuditResultBackupPolicyColumnStyleWrapper } from './style';
-import { EditFilled } from '@actiontech/icons';
-import { BackupStrategyDictionary } from './index.data';
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
-  onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
-  onSwitchSqlBackupPolicy: (sqlID?: number) => void
+  onClickAuditResult: (record: IAuditTaskSQLResV2) => void
 ): ActiontechTableColumn<IAuditTaskSQLResV2> => {
   return [
     {
@@ -54,37 +49,6 @@ export const AuditResultForCreateWorkflowColumn = (
         );
       }
     },
-    // #if [ee]
-    {
-      dataIndex: 'backup_strategy',
-      title: () => (
-        <BasicToolTip
-          suffixIcon
-          title={t('execWorkflow.audit.table.backupPolicyTips')}
-        >
-          {t('execWorkflow.audit.table.backupPolicy')}
-        </BasicToolTip>
-      ),
-      className: 'backup-policy-column',
-      render: (backupStrategy, record) => {
-        if (!backupStrategy) {
-          return '-';
-        }
-        return (
-          <AuditResultBackupPolicyColumnStyleWrapper>
-            <BasicTag>{BackupStrategyDictionary[backupStrategy]}</BasicTag>
-            <EditFilled
-              className="backup-policy-editor"
-              color="currentColor"
-              onClick={() => {
-                onSwitchSqlBackupPolicy(record.exec_sql_id);
-              }}
-            />
-          </AuditResultBackupPolicyColumnStyleWrapper>
-        );
-      }
-    },
-    // #endif
     {
       dataIndex: 'description',
       title: () => t('execWorkflow.audit.table.describe'),

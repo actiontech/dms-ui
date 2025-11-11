@@ -95,9 +95,7 @@ const useCloneExecWorkflowInfo = (
         await getTaskAllSql(defaultTask.task_id).then((res) => {
           sqlStatement['0'] = {
             currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-            form_data: res,
-            backup: defaultTask.enable_backup,
-            backupMaxRows: defaultTask.backup_max_rows
+            form_data: res
           } as SqlStatementFields;
         });
       } else if (isSqlFileUploadType) {
@@ -105,9 +103,7 @@ const useCloneExecWorkflowInfo = (
           sqlStatement['0'] = {
             currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
             sql_file: res ? [new File([res], fileName)] : undefined,
-            exec_mode: defaultTask.exec_mode,
-            backup: defaultTask.enable_backup,
-            backupMaxRows: defaultTask.backup_max_rows
+            exec_mode: defaultTask.exec_mode
           } as SqlStatementFields;
         });
       } else if (isZipFileUploadType) {
@@ -116,9 +112,7 @@ const useCloneExecWorkflowInfo = (
             currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
             zip_file: res ? [new File([res], fileName)] : undefined,
             exec_mode: defaultTask.exec_mode,
-            file_sort_method: defaultTask.file_order_method,
-            backup: defaultTask.enable_backup,
-            backupMaxRows: defaultTask.backup_max_rows
+            file_sort_method: defaultTask.file_order_method
           } as SqlStatementFields;
         });
       }
@@ -137,9 +131,7 @@ const useCloneExecWorkflowInfo = (
           return getTaskAllSql(taskInfo.task_id).then((res) => {
             return {
               currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-              form_data: res,
-              backup: taskInfo.enable_backup,
-              backupMaxRows: taskInfo.backup_max_rows
+              form_data: res
             } as SqlStatementFields;
           });
         } else if (isSqlFileUploadType) {
@@ -147,9 +139,7 @@ const useCloneExecWorkflowInfo = (
             return {
               currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
               sql_file: res ? [new File([res], fileName)] : undefined,
-              exec_mode: taskInfo.exec_mode,
-              backup: taskInfo.enable_backup,
-              backupMaxRows: taskInfo.backup_max_rows
+              exec_mode: taskInfo.exec_mode
             } as SqlStatementFields;
           });
         } else if (isZipFileUploadType) {
@@ -158,9 +148,7 @@ const useCloneExecWorkflowInfo = (
               currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
               zip_file: res ? [new File([res], fileName)] : undefined,
               exec_mode: taskInfo.exec_mode,
-              file_sort_method: taskInfo.file_order_method,
-              backup: taskInfo.enable_backup,
-              backupMaxRows: taskInfo.backup_max_rows
+              file_sort_method: taskInfo.file_order_method
             } as SqlStatementFields;
           });
         }

@@ -134,9 +134,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     });
 
     expect(screen.getByText('执行语句')).toBeInTheDocument();
-    expect(screen.getByText('回滚语句')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
-    fireEvent.click(screen.getByText('回滚语句'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('执行语句'));
@@ -178,32 +176,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     expect(screen.getByText('复制成功')).toBeInTheDocument();
   });
 
-  it('render has backup conflict', async () => {
-    const { baseElement } = customRender({
-      number: 1,
-      exec_sql: 'exec_sql cont',
-      rollback_sqls: ['rollback_sql cont'],
-      backupConflict: true
-    });
-    fireEvent.click(screen.getByText('回滚语句'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(screen.getByText('当前SQL未按预期开启备份')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render backup strategy tip', async () => {
-    const { baseElement } = customRender({
-      number: 1,
-      exec_sql: 'exec_sql cont',
-      rollback_sqls: ['rollback_sql cont'],
-      backup_strategy_tip: 'test tips'
-    });
-    fireEvent.click(screen.getByText('回滚语句'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(screen.getByText('test tips')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it('render associated rollback workflows', async () => {
     const { baseElement } = customRender({
       number: 1,
@@ -238,8 +210,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       backup_result: '备份成功',
       enableBackup: true
     });
-    fireEvent.click(screen.getByText('回滚语句'));
-    expect(screen.getByText('备份成功')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -259,10 +229,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       backup_result: '',
       enableBackup: true
     });
-    fireEvent.click(screen.getByText('回滚语句'));
-    expect(
-      screen.getByText('回滚语句将在上线阶段自动生成')
-    ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -283,10 +249,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       enableBackup: true,
       taskStatus: AuditTaskResV1StatusEnum.exec_failed
     });
-    fireEvent.click(screen.getByText('回滚语句'));
-    expect(
-      screen.queryByText('回滚语句将在上线阶段自动生成')
-    ).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -294,17 +256,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     customRender({
       number: 1,
       exec_sql: 'exec_sql cont',
-      rollback_sqls: ['rollback_sql cont'],
-      backup_strategy_tip: 'test tips',
-      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
-      associated_rollback_workflows: [
-        {
-          workflow_name: 'test_workflow_name',
-          workflow_id: '1'
-        }
-      ],
-      backup_result: '',
-      enableBackup: true,
       taskStatus: AuditTaskResV1StatusEnum.exec_failed,
       audit_result: AuditTaskSQLsMockDataWithExceptionRule[0].audit_result
     });

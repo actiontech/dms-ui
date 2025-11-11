@@ -65,10 +65,7 @@ describe('test SqlStatementFormController', () => {
         {
           key: '1',
           instanceName: 'mysql-1',
-          schemaName: 'test',
-          enableBackup: true,
-          allowBackup: true,
-          backupMaxRows: 2000
+          schemaName: 'test'
         },
         { key: '2', instanceName: 'mysql-2' }
       ],

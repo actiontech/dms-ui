@@ -9,14 +9,12 @@ export const instanceTipsMockData: IInstanceTipResV2[] = [
     workflow_template_id: 1,
     host: '10.186.62.13',
     port: '33061',
-    enable_backup: true,
     supported_backup_strategy: [
       InstanceTipResV2SupportedBackupStrategyEnum.manual,
       InstanceTipResV2SupportedBackupStrategyEnum.none,
       InstanceTipResV2SupportedBackupStrategyEnum.original_row,
       InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
-    ],
-    backup_max_rows: 1000
+    ]
   },
   {
     instance_id: '1739531942258282496',

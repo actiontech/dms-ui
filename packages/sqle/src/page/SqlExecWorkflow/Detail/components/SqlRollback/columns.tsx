@@ -3,16 +3,14 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
-import { EditText, BasicTag } from '@actiontech/dms-kit';
+import { EditText } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';
 import { ExpandedBackupSqlType } from './index.type';
 import { IGetBackupSqlListV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import ExecStatusTag from '../AuditExecResultPanel/TaskResultList/Common/ResultCard/components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { BackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
-import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SqlBackupStatusDictionary } from './index.data';
+
 export type WorkflowRollbackSqlTableFilterParamType =
   PageInfoWithoutIndexAndSize<
     IGetBackupSqlListV1Params & {
@@ -45,24 +43,6 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
       }
     },
     {
-      dataIndex: 'backup_strategy',
-      title: t('execWorkflow.detail.rollback.backupStrategy'),
-      width: 150,
-      render: (strategy) => {
-        return strategy ? (
-          <BasicTag>
-            {
-              BackupStrategyDictionary[
-                strategy as unknown as UpdateSqlBackupStrategyReqStrategyEnum
-              ]
-            }
-          </BasicTag>
-        ) : (
-          '-'
-        );
-      }
-    },
-    {
       dataIndex: 'instance_name',
       title: t('execWorkflow.detail.rollback.instance'),
       filterCustomType: 'select',
@@ -81,14 +61,6 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
             status={status as getAuditTaskSQLsV2FilterExecStatusEnum}
           />
         );
-      }
-    },
-    {
-      dataIndex: 'backup_status',
-      title: t('execWorkflow.detail.rollback.backupStatus'),
-      width: 100,
-      render: (status) => {
-        return status ? SqlBackupStatusDictionary[status] : '-';
       }
     }
   ];
