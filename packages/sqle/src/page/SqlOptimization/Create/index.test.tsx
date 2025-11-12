@@ -119,6 +119,8 @@ describe('sqle/SqlOptimization/Create', () => {
       });
       await jest.advanceTimersByTime(100);
     });
+    fireEvent.click(getBySelector('#enableHighAnalysis'));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('SQL美化'));
     fireEvent.click(getBySelector('.create-optimization-button'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -140,7 +142,8 @@ describe('sqle/SqlOptimization/Create', () => {
       ),
       db_type: 'MySQL',
       metadata: undefined,
-      explain_info: undefined
+      explain_info: undefined,
+      enable_high_analysis: true
     });
     expect(mockDispatch).toHaveBeenCalledTimes(1);
     expect(mockDispatch).toHaveBeenCalledWith({

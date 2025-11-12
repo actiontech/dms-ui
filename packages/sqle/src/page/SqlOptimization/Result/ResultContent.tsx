@@ -26,20 +26,25 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
 
   const [advisedIndex, setAdvisedIndex] = useState('');
 
-  const { optimizedSql, optimizedQueryPlan } = useMemo(() => {
-    const steps = optimizationResult?.optimize?.steps;
-    if (!!steps && steps?.length > 0) {
-      const lastStep = steps[steps.length - 1];
+  const { optimizedSql, optimizedQueryPlan, isBestPerformance } =
+    useMemo(() => {
+      // 如果steps.length为0  代表不需要优化
+      const steps = optimizationResult?.optimize?.steps;
+      if (!!steps && steps?.length > 0) {
+        const lastStep = steps[steps.length - 1];
+        return {
+          optimizedSql: lastStep.optimized_sql,
+          optimizedQueryPlan: lastStep.query_plan?.query_plan_desc,
+          isBestPerformance: false
+        };
+      }
       return {
-        optimizedSql: lastStep.optimized_sql,
-        optimizedQueryPlan: lastStep.query_plan?.query_plan_desc
+        optimizedSql: optimizationResult?.origin_sql,
+        optimizedQueryPlan:
+          optimizationResult?.origin_query_plan?.query_plan_desc,
+        isBestPerformance: true
       };
-    }
-    return {
-      optimizedSql: optimizationResult?.origin_sql,
-      optimizedQueryPlan: optimizationResult?.origin_query_plan?.query_plan_desc
-    };
-  }, [optimizationResult]);
+    }, [optimizationResult]);
 
   const onViewOverallDiff = () => {
     dispatch(
@@ -101,8 +106,7 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
   const onExpandQueryPlan = () => {
     dispatch(
       updateQueryPlanFlowModalData({
-        queryPlanData:
-          optimizationResult?.origin_query_plan?.query_plan_desc ?? []
+        queryPlanData: optimizedQueryPlan ?? []
       })
     );
     dispatch(
@@ -159,6 +163,10 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           onExpandQueryPlan={onExpandQueryPlan}
           isVerticalLayout={isVerticalLayout}
           optimizationStatus={optimizationResult?.status}
+          isBestPerformance={isBestPerformance}
+          hasAdvice={optimizationResult?.advised_index?.has_advice}
+          otherAdvice={optimizationResult?.advised_index?.other_advice}
+          originalSql={optimizationResult?.origin_sql}
         />
 
         <RightContent

@@ -6,7 +6,7 @@ import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle
 import { useTranslation } from 'react-i18next';
 
 export interface SqlOptimizationCardProps {
-  title: string;
+  title: React.ReactNode;
   extra?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
