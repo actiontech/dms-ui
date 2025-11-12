@@ -469,7 +469,8 @@ export const optimizationDetailMockData: IOptimizationSQLDetail = {
   },
   advised_index: {
     state: 'done',
-    message: '',
+    has_advice: true,
+    other_advice: undefined,
     indexes: [
       {
         create_index_statement:

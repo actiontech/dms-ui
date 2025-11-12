@@ -138,9 +138,11 @@ export interface IRuleCategoryStatistic {
 }
 
 export interface IAdvisedIndex {
+  has_advice?: boolean;
+
   indexes?: IIndexInfo[];
 
-  message?: string;
+  other_advice?: string;
 
   state?: string;
 }
@@ -2733,6 +2735,8 @@ export interface IOptimizationsummary {
 
 export interface IOptimizeSQLReq {
   db_type?: string;
+
+  enable_high_analysis?: boolean;
 
   explain_info?: string;
 
