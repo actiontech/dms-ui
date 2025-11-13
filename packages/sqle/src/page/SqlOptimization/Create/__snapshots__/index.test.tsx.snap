@@ -127,7 +127,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-hpr9p4"
+      class="ant-form ant-form-horizontal css-fx8owy"
     >
       <section
         class="css-bspaai"
@@ -896,7 +896,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-form-item-control-input-content"
                 >
                   <label
-                    class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
+                    class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item high-analysis-checkbox"
                   >
                     <span
                       class="ant-checkbox"
