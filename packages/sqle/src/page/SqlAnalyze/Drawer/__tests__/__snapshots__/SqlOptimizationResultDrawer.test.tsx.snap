@@ -90,6 +90,10 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 16px;"
+                        />
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
                         >
                           <div
                             class="ant-card ant-card-small sql-optimization-card css-arvsbo"
@@ -113,7 +117,6 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                                   >
                                     <div
                                       class="ant-space-item"
-                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
@@ -140,34 +143,6 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                                         </span>
                                       </button>
                                     </div>
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      <button
-                                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
-                                        title="复制"
-                                        type="button"
-                                      >
-                                        <span
-                                          class="ant-btn-icon"
-                                        >
-                                          <svg
-                                            height="16"
-                                            viewBox="0 0 16 16"
-                                            width="16"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                          >
-                                            <path
-                                              d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
-                                              fill="#C3C6CD"
-                                            />
-                                          </svg>
-                                        </span>
-                                        <span>
-                                          复制
-                                        </span>
-                                      </button>
-                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -176,163 +151,101 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                               class="ant-card-body"
                             >
                               <div
-                                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                                class="css-15dvtve"
                               >
-                                <pre>
-                                  <code>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
+                                <div
+                                  class="diff-header"
+                                >
+                                  <div
+                                    class="diff-label original"
+                                  >
+                                    原文
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      title="复制"
+                                      type="button"
                                     >
                                       <span
-                                        class="code-line-number"
+                                        class="ant-btn-icon"
                                       >
-                                        1
+                                        <svg
+                                          height="16"
+                                          viewBox="0 0 16 16"
+                                          width="16"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                                            fill="#C3C6CD"
+                                          />
+                                        </svg>
                                       </span>
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        SELECT
-                                      </span>
-                                       
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="diff-label optimized"
+                                  >
+                                    最终优化后
+                                    <button
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      title="复制"
+                                      type="button"
                                     >
                                       <span
-                                        class="code-line-number"
+                                        class="ant-btn-icon"
                                       >
-                                        2
+                                        <svg
+                                          height="16"
+                                          viewBox="0 0 16 16"
+                                          width="16"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                                            fill="#C3C6CD"
+                                          />
+                                        </svg>
                                       </span>
-                                          s.student_id
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        3
-                                      </span>
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        FROM
-                                      </span>
-                                       
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        4
-                                      </span>
-                                          students s
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        5
-                                      </span>
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        WHERE
-                                      </span>
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        6
-                                      </span>
-                                          s.student_id 
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        IN
-                                      </span>
-                                       (
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        7
-                                      </span>
-                                              
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        SELECT
-                                      </span>
-                                       student_id 
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        FROM
-                                      </span>
-                                       enrollments 
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        WHERE
-                                      </span>
-                                       s.student_id 
-                                      <span
-                                        class="hljs-operator"
-                                      >
-                                        =
-                                      </span>
-                                       enrollments.student_id
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        8
-                                      </span>
-                                          )
-                                    </div>
-                                    <div
-                                      class="code-line wrapped-line with-line-number"
-                                    >
-                                      <span
-                                        class="code-line-number"
-                                      >
-                                        9
-                                      </span>
-                                          
-                                      <span
-                                        class="hljs-keyword"
-                                      >
-                                        AND
-                                      </span>
-                                       s.create_at 
-                                      <span
-                                        class="hljs-operator"
-                                      >
-                                        &gt;=
-                                      </span>
-                                       
-                                      <span
-                                        class="hljs-string"
-                                      >
-                                        '2024-01-01 00:00:00'
-                                      </span>
-                                    </div>
-                                  </code>
-                                </pre>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="diff-content"
+                                >
+                                  <div
+                                    class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+                                  >
+                                    <input
+                                      height="352"
+                                      language="sql"
+                                      modified="SELECT 
+    s.student_id
+FROM 
+    students s
+WHERE
+    s.student_id IN (
+        SELECT student_id FROM enrollments WHERE s.student_id = enrollments.student_id
+    )
+    AND s.create_at >= '2024-01-01 00:00:00'"
+                                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+                                      original="SELECT 
+    s.student_id
+FROM 
+    students s
+LEFT JOIN
+    student_classes sc
+ON 
+    s.student_id = sc.student_id
+WHERE
+    s.student_id IN (
+        SELECT student_id FROM enrollments
+    )
+    AND DATE(s.create_at) >= '2024-01-01'"
+                                      theme="editorCustomTheme"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -353,7 +266,25 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                                 <div
                                   class="ant-card-head-title"
                                 >
-                                  索引优化建议
+                                  <div
+                                    class="ant-space ant-space-vertical"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-bottom: 2px;"
+                                    >
+                                      索引优化建议
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class="ant-typography ant-typography-secondary css-1tn1fen"
+                                      >
+                                        在执行上述最终优化的SQL前，请先创建下面这些索引
+                                      </span>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div
                                   class="ant-card-extra"
@@ -1362,7 +1293,7 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-24 css-1ax1exx"
+                      class="ant-col ant-col-24 css-18hn8eo"
                       style="padding-left: 12px; padding-right: 12px; background: rgba(255, 255, 255, 0.7);"
                     >
                       <div

@@ -127,7 +127,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-hpr9p4"
+      class="ant-form ant-form-horizontal css-fx8owy"
     >
       <section
         class="css-bspaai"
@@ -866,6 +866,54 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                     type="text"
                     value=""
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-15d6abf"
+        >
+          <div
+            class="ant-row ant-form-item-row"
+          >
+            <div
+              class="ant-col ant-form-item-label ant-form-item-label-left"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                for="enableHighAnalysis"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-form-item-control"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <label
+                    class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item high-analysis-checkbox"
+                  >
+                    <span
+                      class="ant-checkbox"
+                    >
+                      <input
+                        class="ant-checkbox-input"
+                        id="enableHighAnalysis"
+                        type="checkbox"
+                      />
+                      <span
+                        class="ant-checkbox-inner"
+                      />
+                    </span>
+                    <span>
+                       启用高精度索引推荐（将统计SQL中列的区分度，可能会产生较大的数据库性能开销 ）
+                    </span>
+                  </label>
                 </div>
               </div>
             </div>

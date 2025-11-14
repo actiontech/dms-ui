@@ -39,6 +39,7 @@ export type SqlInfoFormFields = {
   offlineSql?: string;
   executionPlan?: string;
   tableStructure?: string;
+  enableHighAnalysis?: boolean;
 };
 
 export type SqlInfoForm = FormInstance<SqlInfoFormFields>;

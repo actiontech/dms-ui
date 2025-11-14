@@ -259,6 +259,13 @@ class SqlOptimizationService extends ServiceBase {
       paramsData.append('metadata', params.metadata as any);
     }
 
+    if (params.enable_high_analysis != undefined) {
+      paramsData.append(
+        'enable_high_analysis',
+        params.enable_high_analysis as any
+      );
+    }
+
     if (params.input_sql_file != undefined) {
       paramsData.append('input_sql_file', params.input_sql_file as any);
     }
