@@ -1,6 +1,19 @@
 import { styled } from '@mui/material/styles';
 import { ExecutionPlanType } from '../index.type';
-import { Col, Card } from 'antd';
+import { Col, Card, Typography, Space } from 'antd';
+
+export const SqlOptimizationCardSubTitleStyleWrapper = styled(Typography.Text)`
+  &.ant-typography.ant-typography-secondary {
+    font-size: 12px;
+    font-weight: 100;
+  }
+`;
+
+export const SqlOptimizationOtherAdviceTitleStyleWrapper = styled(Space)`
+  .advice-title {
+    font-weight: 600 !important;
+  }
+`;
 
 export const SqlOptimizationRightContentWrapper = styled(Col)`
   padding: 20px;
@@ -13,6 +26,10 @@ export const SqlOptimizationRightContentWrapper = styled(Col)`
     border-radius: 12px;
     border: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 

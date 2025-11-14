@@ -32,4 +32,8 @@ export const SqlInfoFormStyleWrapper = styled(FormStyleWrapper)`
     height: 36px !important;
     width: 36px !important;
   }
+
+  .high-analysis-checkbox.ant-checkbox-wrapper {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+  }
 `;

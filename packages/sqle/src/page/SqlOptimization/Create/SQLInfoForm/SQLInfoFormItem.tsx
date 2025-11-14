@@ -6,7 +6,7 @@ import {
   UploadTypeEnum
 } from '../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { Form, Space, Radio, RadioGroupProps } from 'antd';
+import { Form, Space, Radio, RadioGroupProps, Checkbox } from 'antd';
 import {
   BasicButton,
   BasicToolTip,
@@ -249,6 +249,13 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
       <FormItemNoLabel name="originSql" hidden>
         <BasicInput />
       </FormItemNoLabel>
+      <EmptyBox if={optimizationType === OptimizationTypeEnum.online}>
+        <FormItemNoLabel name="enableHighAnalysis" valuePropName="checked">
+          <Checkbox className="high-analysis-checkbox">
+            {t('sqlOptimization.create.sqlInfo.enableHighAnalysis')}
+          </Checkbox>
+        </FormItemNoLabel>
+      </EmptyBox>
       <Space size={12}>
         <BasicButton
           className="create-optimization-button"
