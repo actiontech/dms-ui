@@ -88,15 +88,19 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(container).toMatchSnapshot();
     expect(screen.getByText('打开SQL工作台')).toBeInTheDocument();
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('打开SQL工作台'));
-    expect(global.open).toHaveBeenCalledTimes(0);
 
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      enableSqlQueryUrlData.sql_query_root_uri,
+      '_blank'
     );
   });
 
@@ -110,6 +114,10 @@ describe('test base/page/CloudBeaver', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(window.location.href).not.toBe(
+      enableSqlQueryUrlData.sql_query_root_uri
+    );
 
     cleanup();
 
@@ -125,6 +133,7 @@ describe('test base/page/CloudBeaver', () => {
         ]
       }
     });
+
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
