@@ -5,6 +5,10 @@ export default {
   eeErrorTips: '该环境未配置SQL查询，请设置后再使用',
   eeErrorTips2: '配置方式及使用说明请查看使用文档',
   jumpToCloudBeaver: '打开SQL工作台',
+  noInstanceAvailable: '暂无可用SQL工作台',
+  loading: '加载中...',
+  sqlQuery: 'SQL工作台（旧）',
+  odcQuery: 'SQL工作台（新）',
   ceTips:
     '当您需要对SQL工作台产生的数据操作进行细粒度的审计和记录时，可以使用SQL工作台审计功能，确保数据操作的可追溯性和责任明晰。',
   statistic: {

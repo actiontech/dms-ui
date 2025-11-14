@@ -52,6 +52,22 @@ export enum GetUserSystemEnum {
   'MANAGEMENT' = 'MANAGEMENT'
 }
 
+export enum GlobalDataExportWorkflowStatusEnum {
+  'wait_for_approve' = 'wait_for_approve',
+
+  'wait_for_export' = 'wait_for_export',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancel' = 'cancel',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
 export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_success' = 'connect_success',
 
@@ -294,6 +310,16 @@ export enum OpPermissionItemRangeTypeEnum {
 
 export enum OperationOperationTypeEnum {
   'SQL' = 'SQL'
+}
+
+export enum ProjectInfoProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
 }
 
 export enum ProjectV1ProjectPriorityEnum {

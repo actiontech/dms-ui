@@ -7,6 +7,7 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetGlobalDataExportWorkflowsReturn,
   IListAllDataExportWorkflowsParams,
   IListAllDataExportWorkflowsReturn,
   IListDataExportWorkflowsParams,
@@ -26,6 +27,14 @@ import {
 } from './index.d';
 
 class DataExportWorkflowsService extends ServiceBase {
+  public GetGlobalDataExportWorkflows(options?: AxiosRequestConfig) {
+    return this.get<IGetGlobalDataExportWorkflowsReturn>(
+      '/v1/dms/dashboard/data_export_workflows',
+      undefined,
+      options
+    );
+  }
+
   public ListAllDataExportWorkflows(
     params: IListAllDataExportWorkflowsParams,
     options?: AxiosRequestConfig
