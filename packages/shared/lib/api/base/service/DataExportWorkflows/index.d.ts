@@ -1,9 +1,5 @@
 import {
-  ListAllDataExportWorkflowsFilterByStatusEnum,
-  ListDataExportWorkflowsFilterByStatusEnum
-} from './index.enum';
-
-import {
+  IGetGlobalDataExportWorkflowsReply,
   IListDataExportWorkflowsReply,
   IAddDataExportWorkflowReq,
   IAddDataExportWorkflowReply,
@@ -12,6 +8,14 @@ import {
   IGetDataExportWorkflowReply,
   IRejectDataExportWorkflowReq
 } from '../common.d';
+
+import {
+  ListAllDataExportWorkflowsFilterByStatusEnum,
+  ListDataExportWorkflowsFilterByStatusEnum
+} from './index.enum';
+
+export interface IGetGlobalDataExportWorkflowsReturn
+  extends IGetGlobalDataExportWorkflowsReply {}
 
 export interface IListAllDataExportWorkflowsParams {
   project_uid: string;
