@@ -178,7 +178,7 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                 }
                 name="needAuditForSqlQuery"
                 valuePropName="checked"
-                className="has-label-tip top-switch no-margin-field"
+                className="has-label-tip last-switch no-margin-field"
               >
                 <BasicSwitch onChange={onNeedAuditForSqlQueryChange} />
               </FormItemLabel>
