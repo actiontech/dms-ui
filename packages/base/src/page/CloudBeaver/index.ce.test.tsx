@@ -6,8 +6,8 @@ import cloudBeaver from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeave
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { enableSqlQueryUrlData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
 import { baseSuperRender } from '../../testUtils/superRender';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
 
 describe('test base/page/CloudBeaver', () => {
   let getSqlQueryUrlSpy: jest.SpyInstance;
@@ -54,7 +54,8 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(global.open).toHaveBeenCalledTimes(1);
     expect(global.open).toHaveBeenCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      enableSqlQueryUrlData.sql_query_root_uri,
+      '_blank'
     );
   });
 
