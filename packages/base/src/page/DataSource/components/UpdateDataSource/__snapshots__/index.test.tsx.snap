@@ -801,7 +801,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-uxdxum"
+                  class="css-1ejd3ne"
                 >
                   <div
                     class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -1132,7 +1132,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                       class="workbench-audit-fields"
                     >
                       <div
-                        class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy"
+                        class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy"
                       >
                         <div
                           class="ant-row ant-form-item-row"
@@ -2414,7 +2414,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-uxdxum"
+                  class="css-1ejd3ne"
                 >
                   <div
                     class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -2764,7 +2764,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                       class="workbench-audit-fields"
                     >
                       <div
-                        class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
+                        class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
                       >
                         <div
                           class="ant-row ant-form-item-row"
@@ -3735,7 +3735,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                   </div>
                 </div>
                 <div
-                  class="css-uxdxum"
+                  class="css-1ejd3ne"
                 >
                   <div
                     class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -4066,7 +4066,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                       class="workbench-audit-fields"
                     >
                       <div
-                        class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy"
+                        class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy"
                       >
                         <div
                           class="ant-row ant-form-item-row"

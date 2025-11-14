@@ -16,10 +16,16 @@ export const SqlAuditFieldsSubTitleWrapper = styled(Space)`
 `;
 
 export const DataSourceSqlAuditConfigurationStyleWrapper = styled('div')`
-  border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
-  border-radius: 4px;
-
   & .ant-form-item.top-switch {
+    padding-right: 12px;
+
+    .ant-form-item-control-input-content {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  & .ant-form-item.last-switch {
     padding: 12px;
 
     .ant-form-item-control-input-content {
@@ -29,9 +35,8 @@ export const DataSourceSqlAuditConfigurationStyleWrapper = styled('div')`
   }
 
   .audit-configuration-wrapper {
-    padding: 12px;
+    padding: 12px 0;
     overflow: hidden;
-    background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgLayout};
   }
 
   .audit-fields-wrapper {
@@ -39,6 +44,7 @@ export const DataSourceSqlAuditConfigurationStyleWrapper = styled('div')`
     padding: 12px;
     margin-bottom: 12px;
     border-radius: 4px;
+    border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
     .ant-form-item:last-child {
       margin-bottom: 0;
@@ -48,6 +54,7 @@ export const DataSourceSqlAuditConfigurationStyleWrapper = styled('div')`
   .workbench-audit-fields {
     background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
     border-radius: 4px;
+    border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
     .workbench-audit-content {
       padding: 12px 12px 12px 24px;
