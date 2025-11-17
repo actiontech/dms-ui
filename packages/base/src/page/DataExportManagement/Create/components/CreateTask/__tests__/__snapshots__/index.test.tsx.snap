@@ -822,7 +822,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-1s5ld2m"
                 type="button"
               >
                 <span
@@ -1659,7 +1659,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                 type="button"
               >
                 <span>

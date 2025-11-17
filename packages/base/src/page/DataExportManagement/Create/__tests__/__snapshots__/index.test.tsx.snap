@@ -774,7 +774,7 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                 type="button"
               >
                 <span>
