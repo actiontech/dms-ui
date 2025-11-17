@@ -161,7 +161,7 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                                   >
                                     原文
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                       title="复制"
                                       type="button"
                                     >
@@ -187,7 +187,7 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                                   >
                                     最终优化后
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                       title="复制"
                                       type="button"
                                     >
