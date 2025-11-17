@@ -569,7 +569,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                     </div>
                   </div>
                   <div
-                    class="css-uxdxum"
+                    class="css-1ejd3ne"
                   >
                     <div
                       class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -938,7 +938,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                         class="workbench-audit-fields"
                       >
                         <div
-                          class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
+                          class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
                         >
                           <div
                             class="ant-row ant-form-item-row"
@@ -2767,7 +2767,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                     </div>
                   </div>
                   <div
-                    class="css-uxdxum"
+                    class="css-1ejd3ne"
                   >
                     <div
                       class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -3098,7 +3098,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                         class="workbench-audit-fields"
                       >
                         <div
-                          class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy"
+                          class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy"
                         >
                           <div
                             class="ant-row ant-form-item-row"
@@ -3858,7 +3858,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                     </div>
                   </div>
                   <div
-                    class="css-uxdxum"
+                    class="css-1ejd3ne"
                   >
                     <div
                       class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy ant-form-item-has-success"
@@ -4189,7 +4189,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                         class="workbench-audit-fields"
                       >
                         <div
-                          class="ant-form-item has-label-tip top-switch no-margin-field css-1jlm9cy"
+                          class="ant-form-item has-label-tip last-switch no-margin-field css-1jlm9cy"
                         >
                           <div
                             class="ant-row ant-form-item-row"
