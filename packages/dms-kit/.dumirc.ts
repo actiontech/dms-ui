@@ -34,6 +34,11 @@ export default defineConfig({
     `html, body {
       background: transparent;
     }`,
+    // 在base中引入了less文件，其他包括antd reset.css包含box-sizing: border-box，这里需要再重置一下
+    // 不然组件在demo中会有一些样式问题
+    `*, *::before, *::after {
+       box-sizing: border-box;
+     }`,
     `.dumi-default-toc {
       display: none !important;
     }

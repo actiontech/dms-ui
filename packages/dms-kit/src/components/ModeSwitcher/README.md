@@ -22,7 +22,7 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 图标模式
+### 配合图标
 
 <code src="./demo/iconMode.tsx"></code>
 
@@ -30,11 +30,13 @@ group:
 
 <code src="./demo/customLayout.tsx"></code>
 
+通过配置 `rowProps` 和 `colProps` 实现自定义布局效果：
 
+- **rowProps**: 配置 Row 组件属性，如 `gutter`（栅格间距）、`align`（垂直对齐）、`justify`（水平排列）等。详见 [Ant Design Row API](https://ant.design/components/grid-cn#row)
+- **colProps**: 配置每个选项的 Col 组件属性，如 `span`（栅格占位）、`offset`（左侧间隔）、`flex`（flex 布局）等。详见 [Ant Design Col API](https://ant.design/components/grid-cn#col)
 
-### 集成使用
-
-<code src="./demo/integration.tsx"></code>
+### 禁用
+<code src="./demo/disabled.tsx"></code>
 
 ## API
 
@@ -47,7 +49,7 @@ group:
 | onChange | 模式切换的回调函数 | `(val: V) => void` | - | - |
 | defaultValue | 默认选中的模式值 | `V` | - | - |
 | className | 自定义类名 | `string` | - | - |
-| rowProps | Row 组件的属性 | `RowProps` | - | - |
+| rowProps | Row 组件的prop | [RowProps](https://ant.design/components/grid-cn#row) | - | - |
 | disabled | 是否禁用 | `boolean` | `false` | - |
 
 ### ModeSwitcherOptionsType
@@ -57,7 +59,7 @@ group:
 | label | 模式选项的标签文本 | `ReactNode` | - | - |
 | value | 模式选项的值 | `string \| number` | - | - |
 | icon | 模式选项的图标 | `ReactNode` | - | - |
-| colProps | Col 组件的属性 | `ColProps` | - | - |
+| colProps | Col 组件的属性 | [ColProps](https://ant.design/components/grid-cn#col) | - | - |
 
 ### 类型定义
 
@@ -143,24 +145,6 @@ theme.sharedTheme.components.modeSwitcher = {
 - 平滑的切换动画
 - 支持禁用状态
 - 鼠标悬停效果
-
-## 使用场景
-
-### 视图模式切换
-
-在应用的不同视图模式之间切换，如列表视图、网格视图、卡片视图等。
-
-### 功能模式选择
-
-选择不同的功能模式，如编辑模式、预览模式、只读模式等。
-
-### 主题模式切换
-
-在明暗主题、色彩主题等不同主题模式之间切换。
-
-### 布局模式调整
-
-调整页面的布局模式，如紧凑模式、宽松模式、自定义模式等。
 
 ## 注意事项
 
