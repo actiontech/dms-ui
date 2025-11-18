@@ -72,8 +72,8 @@ describe('page/ProjectOverview/TaskList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     expect(mockRefresh).toHaveBeenCalled();
   });
 
@@ -86,8 +86,8 @@ describe('page/ProjectOverview/TaskList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText(errorInfo)).toBeInTheDocument();
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     expect(mockRefresh).toHaveBeenCalled();
   });
 

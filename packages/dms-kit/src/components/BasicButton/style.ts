@@ -29,6 +29,27 @@ export const BasicButtonStyleWrapper = styled(Button)`
     margin-inline-end: 5px;
   }
 
+  &.basic-button-wrapper.ant-btn.ant-btn-text,
+  &.basic-button-wrapper.ant-btn.ant-btn-link {
+    background: none;
+    box-shadow: none;
+
+    &:disabled {
+      background: none;
+    }
+  }
+
+  &.basic-button-wrapper.ant-btn.ant-btn-link {
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.basicButton.link.default.color};
+
+    &:hover:not(:disabled) {
+      color: ${({ theme }) =>
+        theme.sharedTheme.components.basicButton.link.hover.color};
+      background: none;
+    }
+  }
+
   /* default */
   &.basic-button-wrapper.ant-btn {
     padding: 0 12px;

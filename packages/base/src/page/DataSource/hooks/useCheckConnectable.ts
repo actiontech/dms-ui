@@ -1,11 +1,10 @@
 import { useCallback, useState } from 'react';
 import { Form, FormInstance } from 'antd';
 import { DataSourceFormField } from '../components/Form/index.type';
-import { FormItem } from 'sqle/src/components/BackendForm';
 import { useBoolean } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api/';
 import { ResponseCode } from '@actiontech/dms-kit';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { useAsyncParams, BackendFormItemParams } from '@actiontech/shared';
 import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
@@ -22,7 +21,7 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
   const { mergeFromValueIntoParams } = useAsyncParams();
 
   const onCheckConnectable = useCallback(
-    async (currentAsyncParams?: FormItem[]) => {
+    async (currentAsyncParams?: BackendFormItemParams[]) => {
       const values = await form.validateFields([
         'ip',
         'password',

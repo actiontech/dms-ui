@@ -180,7 +180,7 @@ exports[`base/System/GlobalSetting/CBOperationLogsExpiredHours render snap when 
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >
@@ -239,7 +239,7 @@ exports[`base/System/GlobalSetting/CBOperationLogsExpiredHours render snap when 
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
             hidden=""
             type="button"
           >

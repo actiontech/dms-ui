@@ -37,7 +37,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce', () => {
   });
 
   it('render rollback button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     const { baseElement } = sqleSuperRender(
       <WorkflowDetailPageHeaderExtra
         refreshWorkflow={jest.fn(() => Promise.resolve())}

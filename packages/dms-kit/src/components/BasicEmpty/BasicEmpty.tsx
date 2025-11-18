@@ -156,7 +156,7 @@ const BasicEmpty: React.FC<BasicEmptyProps> = (props) => {
       })}
     >
       {onRefresh && !loading && (
-        <BasicButton onClick={onRefresh} type="text" size="small">
+        <BasicButton onClick={onRefresh} size="small">
           {t('common.refresh')}
         </BasicButton>
       )}

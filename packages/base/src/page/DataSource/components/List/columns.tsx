@@ -4,11 +4,10 @@ import { t } from '../../../../locale';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { DatabaseTypeLogo, BasicTag } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
-import { ServiceEnvironmentTagStyleWrapper } from './style';
 
 /*
  *PS：
@@ -114,11 +113,7 @@ export const DataSourceColumns = (
         if (!environment?.name) {
           return '-';
         }
-        return (
-          <ServiceEnvironmentTagStyleWrapper>
-            {environment?.name}
-          </ServiceEnvironmentTagStyleWrapper>
-        );
+        return <BasicTag>{environment?.name}</BasicTag>;
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'

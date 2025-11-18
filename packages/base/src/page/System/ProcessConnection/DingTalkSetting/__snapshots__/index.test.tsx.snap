@@ -103,7 +103,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -134,14 +134,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -356,7 +356,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -368,7 +368,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -471,7 +471,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -502,14 +502,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -724,7 +724,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 2`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -736,7 +736,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -839,7 +839,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap when user is 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -870,14 +870,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap when user is 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1092,7 +1092,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap when user is 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -1104,7 +1104,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render snap when user is 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -1207,7 +1207,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -1238,14 +1238,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1459,7 +1459,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -1471,7 +1471,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -1574,7 +1574,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -1605,14 +1605,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -1827,7 +1827,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -1839,7 +1839,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -1942,7 +1942,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -1973,14 +1973,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2194,7 +2194,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -2206,7 +2206,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -2417,7 +2417,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -2448,14 +2448,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -2670,7 +2670,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -2682,7 +2682,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                                 type="submit"
                               >
                                 <span>
@@ -2869,7 +2869,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
                                         type="button"
                                       >
                                         <span
@@ -2900,14 +2900,14 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
                                         type="button"
                                       >
                                         <span
                                           class="ant-btn-icon"
                                         >
                                           <svg
-                                            color="#292c33"
+                                            color="currentColor"
                                             height="16"
                                             viewBox="0 0 16 16"
                                             width="16"
@@ -3124,7 +3124,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="button"
                               >
@@ -3137,7 +3137,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting render switch cancel btn 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1vnelmv"
                                 disabled=""
                                 type="submit"
                               >

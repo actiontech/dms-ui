@@ -152,6 +152,11 @@ export type ActiontechTableFilterMetaValue<
    * 筛选项的 label
    */
   filterLabel?: string;
+
+  /**
+   * 筛选项的顺序 正序排序 默认为0
+   */
+  filterOrder?: number;
 };
 
 /**
@@ -342,7 +347,6 @@ export type ActiontechTableActionsConfig<
 };
 
 /**
- * todo: 如何控制 筛选项的顺序
  * 表格 columns props, 当配置 filterCustomType 和 filterKey 启用该列的筛选功能, 通过 useTableFilterContainer 来生成 筛选项的元数据
  * 当需要添加表格列以外的筛选列时, 可以使用 useTableFilterContainer 的第三个参数: extraFilterMeta
  */
@@ -362,7 +366,7 @@ type BaseColumnType<T, K extends string | keyof T, F = Record<string, any>> = {
     : React.ReactNode;
 } & Pick<
   ActiontechTableFilterMetaValue<F>,
-  'filterCustomType' | 'filterKey' | 'filterLabel'
+  'filterCustomType' | 'filterKey' | 'filterLabel' | 'filterOrder'
 >;
 
 export type ActiontechTableColumn<

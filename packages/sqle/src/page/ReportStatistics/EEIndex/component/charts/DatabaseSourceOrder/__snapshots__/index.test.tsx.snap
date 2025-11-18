@@ -183,11 +183,11 @@ exports[`ReportStatistics/DatabaseSourceOrder render chart snap when api return 
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
-                刷新
+                刷 新
               </span>
             </button>
           </div>
@@ -264,6 +264,14 @@ exports[`ReportStatistics/DatabaseSourceOrder render tooltip customContent 1`] =
             },
             "hover": {
               "background": "#F7F6F4",
+            },
+          },
+          "link": {
+            "default": {
+              "color": "#4583ff",
+            },
+            "hover": {
+              "color": "#69b1ff",
             },
           },
           "primary": {
@@ -445,7 +453,7 @@ exports[`ReportStatistics/DatabaseSourceOrder render tooltip customContent 1`] =
             "color": "#15C7D4",
           },
           "default": {
-            "backgroundColor": "#f7f6f4",
+            "backgroundColor": "#FFFFFF",
             "color": "#575C66",
           },
           "geekblue": {
@@ -498,6 +506,10 @@ exports[`ReportStatistics/DatabaseSourceOrder render tooltip customContent 1`] =
         },
         "configItem": {
           "maskBg": "rgba(0, 0, 0, 0.6)",
+        },
+        "customAvatar": {
+          "backgroundColor": "#fde3cf",
+          "color": "#f56a00",
         },
         "customDraggerUpload": {
           "backgroundColor": "#f7f6f4",

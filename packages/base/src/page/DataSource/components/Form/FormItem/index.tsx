@@ -14,8 +14,10 @@ import {
 } from '@actiontech/dms-kit';
 import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { validatorPort } from '@actiontech/dms-kit';
-import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
-import { FormItem } from 'sqle/src/components/BackendForm';
+import {
+  AutoCreatedFormItemByApi,
+  BackendFormItemParams
+} from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
@@ -23,7 +25,7 @@ const DatabaseFormItem: React.FC<{
   databaseTypeChange?: (values: string) => void;
   generateDriverSelectOptions?: () => JSX.Element[];
   updateDriverListLoading: boolean;
-  currentAsyncParams?: FormItem[];
+  currentAsyncParams?: BackendFormItemParams[];
   isExternalInstance?: boolean;
 }> = (props) => {
   const { t } = useTranslation();

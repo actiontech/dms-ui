@@ -148,7 +148,7 @@ exports[`page/SqlManagement/ChangePriority change priority and submit data 1`] =
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -160,7 +160,7 @@ exports[`page/SqlManagement/ChangePriority change priority and submit data 1`] =
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

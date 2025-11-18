@@ -1,6 +1,6 @@
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
-import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
+import { useAsyncParams, BackendFormValues } from '@actiontech/shared';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
@@ -17,7 +17,6 @@ import { ResponseCode } from '@actiontech/dms-kit';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
-import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';

@@ -12,7 +12,7 @@ import classNames from 'classnames';
 import { useRequest } from 'ahooks';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import useAsyncParams from '../../../../../components/BackendForm/useAsyncParams';
+import { useAsyncParams } from '@actiontech/shared';
 import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ResponseCode,

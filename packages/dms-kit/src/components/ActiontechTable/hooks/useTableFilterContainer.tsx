@@ -8,6 +8,7 @@ import {
   TypeFilterElement
 } from '../index.type';
 import { getColumnsLabel } from '../utils';
+import { isNumber } from 'lodash';
 
 export const mergeFilterButtonMeta = <
   T extends Record<string, any>,
@@ -94,7 +95,8 @@ const useTableFilterContainer = <
           filterCustomType:
             column?.filterCustomType ?? extraMeta?.filterCustomType,
           filterKey: column?.filterKey ?? extraMeta?.filterKey,
-          filterLabel: value.filterLabel
+          filterLabel: value.filterLabel,
+          filterOrder: column?.filterOrder ?? extraMeta?.filterOrder
         });
       }
     });
@@ -104,6 +106,9 @@ const useTableFilterContainer = <
       throw new Error('Filter key cannot be empty');
     }
     // #endif
+    if (meta.some((i) => isNumber(i.filterOrder))) {
+      return meta.sort((a, b) => (a.filterOrder ?? 0) - (b.filterOrder ?? 0));
+    }
     return meta;
   }, [columns, extraFilterMeta, filterButtonMeta]);
 

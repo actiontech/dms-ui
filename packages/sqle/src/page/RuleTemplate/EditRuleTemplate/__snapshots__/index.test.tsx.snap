@@ -686,7 +686,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -698,7 +698,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1082,7 +1082,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when dataSource is empty object 1`] 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1094,7 +1094,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when dataSource is empty object 1`] 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1818,7 +1818,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -1830,7 +1830,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

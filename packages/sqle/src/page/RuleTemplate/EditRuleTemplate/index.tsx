@@ -10,8 +10,7 @@ import {
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Form, Space } from 'antd';
 import useStaticStatus from '../../../hooks/useStaticStatus';
-import AutoCreatedFormItemByApi from '../../../components/BackendForm/AutoCreatedFormItemByApi';
-import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
+import { AutoCreatedFormItemByApi, useAsyncParams } from '@actiontech/shared';
 import { IRuleTemplateForm } from './index.type';
 import { IRuleParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import RuleBaseInfo from '../../../components/RuleList/RuleDetailModal/RuleBaseInfo';

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicMDEditorMarkdown render custom theme 1`] = `
+<div>
+  <div
+    class="full-width-element"
+    data-color-mode="dark"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`BasicMDEditorMarkdown render init snap 1`] = `
+<div>
+  <div
+    class="full-width-element"
+    data-color-mode="light"
+  >
+    <div />
+  </div>
+</div>
+`;

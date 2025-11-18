@@ -32,7 +32,7 @@ exports[`base/System/components/ConfigTestPopoverForm render snap 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -44,7 +44,7 @@ exports[`base/System/components/ConfigTestPopoverForm render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>

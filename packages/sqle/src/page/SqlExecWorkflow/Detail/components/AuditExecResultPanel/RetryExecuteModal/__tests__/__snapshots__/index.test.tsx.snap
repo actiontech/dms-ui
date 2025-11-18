@@ -278,7 +278,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                                   >
                                     准备执行
                                   </span>
@@ -459,7 +459,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -471,7 +471,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

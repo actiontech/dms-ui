@@ -294,7 +294,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
           style="margin-top: 16px;"
           type="button"
         >
@@ -522,7 +522,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -1855,7 +1855,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
           style="margin-top: 16px;"
           type="button"
         >
@@ -2083,7 +2083,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -3547,7 +3547,7 @@ exports[`EnvironmentSelector should render the baseline and comparison environme
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
           style="margin-top: 16px;"
           type="button"
         >

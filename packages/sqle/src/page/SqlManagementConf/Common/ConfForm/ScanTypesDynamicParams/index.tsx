@@ -6,9 +6,10 @@ import {
 } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { useTranslation } from 'react-i18next';
 import { FormItemSubTitle } from '@actiontech/dms-kit';
-import AutoCreatedFormItemByApi, {
-  FormItem
-} from '../../../../../components/BackendForm';
+import {
+  AutoCreatedFormItemByApi,
+  BackendFormItemParams
+} from '@actiontech/shared';
 import { EmptyBox } from '@actiontech/dms-kit';
 import AuditTemplate from './AuditTemplate';
 import useGlobalRuleTemplate from '../../../../../hooks/useGlobalRuleTemplate';
@@ -70,7 +71,7 @@ const ScanTypesDynamicParams: React.FC = () => {
       const isPerformanceCollectType = isPerformanceCollectScanType(
         currentScanTypeMeta?.audit_plan_type
       );
-      const params: FormItem[] = item[key].map((v) => {
+      const params: BackendFormItemParams[] = item[key].map((v) => {
         //特殊处理慢日志动态表单的条件渲染。暂时没确定好使用更合理的方案来处理
         if (key === 'mysql_slow_log') {
           if (

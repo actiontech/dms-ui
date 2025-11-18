@@ -57,7 +57,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -71,7 +71,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -264,7 +264,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -278,7 +278,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -471,7 +471,7 @@ exports[`base/System/License click collect btn when request return error message
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -485,7 +485,7 @@ exports[`base/System/License click collect btn when request return error message
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -646,7 +646,7 @@ exports[`base/System/License render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -660,7 +660,7 @@ exports[`base/System/License render snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -845,7 +845,7 @@ exports[`base/System/License render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -859,7 +859,7 @@ exports[`base/System/License render snap 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -1020,7 +1020,7 @@ exports[`base/System/License render snap when click import btn 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -1034,7 +1034,7 @@ exports[`base/System/License render snap when click import btn 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>
@@ -1195,7 +1195,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -1209,7 +1209,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span>

@@ -21,7 +21,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -261,7 +261,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -315,7 +315,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -328,7 +328,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -341,7 +341,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -355,7 +355,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -369,7 +369,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -382,7 +382,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -398,7 +398,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -451,7 +451,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -1237,7 +1237,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1260,7 +1260,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -1277,7 +1277,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -1365,7 +1365,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1377,7 +1377,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1387,7 +1387,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1877,7 +1877,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -2117,7 +2117,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -2170,7 +2170,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -2183,7 +2183,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -2196,7 +2196,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -2210,7 +2210,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -2224,7 +2224,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -2237,7 +2237,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -2253,7 +2253,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -2306,7 +2306,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   disabled=""
                   type="button"
                 >
@@ -2688,7 +2688,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -2928,7 +2928,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -2981,7 +2981,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -2994,7 +2994,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -3007,7 +3007,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -3021,7 +3021,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -3035,7 +3035,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -3048,7 +3048,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -3064,7 +3064,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -3117,7 +3117,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -3536,7 +3536,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -3559,7 +3559,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -3576,7 +3576,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -3664,7 +3664,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -3676,7 +3676,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -3686,7 +3686,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -3899,7 +3899,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -3917,7 +3917,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -3944,7 +3944,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -3981,7 +3981,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -3993,7 +3993,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4003,7 +4003,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -4276,7 +4276,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -4285,7 +4285,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -4322,7 +4322,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4334,7 +4334,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4344,7 +4344,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -4612,7 +4612,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                               style="margin-right: 0px;"
                             >
                               34
@@ -4622,7 +4622,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -4631,7 +4631,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -4668,7 +4668,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4680,7 +4680,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4690,7 +4690,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -4894,7 +4894,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -4912,7 +4912,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -4934,7 +4934,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -4943,7 +4943,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -4980,7 +4980,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -4992,7 +4992,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -5002,7 +5002,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -5158,7 +5158,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
                               >
                                 审核中
                               </span>
@@ -5192,7 +5192,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -5210,7 +5210,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -5232,7 +5232,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -5241,7 +5241,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -5278,7 +5278,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -5290,7 +5290,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -5300,7 +5300,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -5508,7 +5508,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -5748,7 +5748,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -5801,7 +5801,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -5814,7 +5814,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -5827,7 +5827,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -5841,7 +5841,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -5855,7 +5855,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -5868,7 +5868,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -5884,7 +5884,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -5937,7 +5937,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -6356,7 +6356,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -6379,7 +6379,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -6396,7 +6396,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -6484,7 +6484,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -6496,7 +6496,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -6506,7 +6506,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -6719,7 +6719,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -6737,7 +6737,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -6764,7 +6764,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -6801,7 +6801,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -6813,7 +6813,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -6823,7 +6823,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -7096,7 +7096,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -7105,7 +7105,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -7142,7 +7142,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7154,7 +7154,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7164,7 +7164,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -7432,7 +7432,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                               style="margin-right: 0px;"
                             >
                               34
@@ -7442,7 +7442,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -7451,7 +7451,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -7488,7 +7488,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7500,7 +7500,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7510,7 +7510,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -7714,7 +7714,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -7732,7 +7732,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -7754,7 +7754,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -7763,7 +7763,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -7800,7 +7800,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7812,7 +7812,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -7822,7 +7822,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -7978,7 +7978,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
                               >
                                 审核中
                               </span>
@@ -8012,7 +8012,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -8030,7 +8030,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -8052,7 +8052,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -8061,7 +8061,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -8098,7 +8098,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -8110,7 +8110,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -8120,7 +8120,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -8328,7 +8328,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -8568,7 +8568,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -8621,7 +8621,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -8634,7 +8634,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -8647,7 +8647,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -8661,7 +8661,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -8675,7 +8675,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -8688,7 +8688,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -8704,7 +8704,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -8757,7 +8757,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -9176,7 +9176,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -9199,7 +9199,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -9216,7 +9216,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -9304,7 +9304,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9316,7 +9316,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9326,7 +9326,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -9539,7 +9539,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -9557,7 +9557,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -9584,7 +9584,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -9621,7 +9621,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9633,7 +9633,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9643,7 +9643,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -9916,7 +9916,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -9925,7 +9925,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -9962,7 +9962,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9974,7 +9974,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -9984,7 +9984,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -10252,7 +10252,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                               style="margin-right: 0px;"
                             >
                               34
@@ -10262,7 +10262,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -10271,7 +10271,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -10308,7 +10308,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10320,7 +10320,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10330,7 +10330,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -10534,7 +10534,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -10552,7 +10552,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -10574,7 +10574,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -10583,7 +10583,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -10620,7 +10620,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10632,7 +10632,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10642,7 +10642,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -10798,7 +10798,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                               class="audit-result-wrapper"
                             >
                               <span
-                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-12m8k79"
                               >
                                 审核中
                               </span>
@@ -10832,7 +10832,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -10850,7 +10850,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                    class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -10872,7 +10872,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -10881,7 +10881,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only has-icon-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -10918,7 +10918,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10930,7 +10930,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -10940,7 +10940,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -11164,7 +11164,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -11404,7 +11404,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -11457,7 +11457,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -11470,7 +11470,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -11483,7 +11483,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -11497,7 +11497,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -11511,7 +11511,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -11524,7 +11524,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                       disabled=""
                       type="button"
                     >
@@ -11540,7 +11540,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -11593,7 +11593,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -12012,7 +12012,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -12035,7 +12035,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -12052,7 +12052,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -12140,7 +12140,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -12152,7 +12152,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -12162,7 +12162,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -12386,7 +12386,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -12626,7 +12626,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -12679,7 +12679,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -12691,7 +12691,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -12706,7 +12706,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -12759,7 +12759,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -13178,7 +13178,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -13201,7 +13201,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -13218,7 +13218,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -13311,7 +13311,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
@@ -13522,7 +13522,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -13762,7 +13762,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -13815,7 +13815,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -13827,7 +13827,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -13842,7 +13842,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -13895,7 +13895,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -14314,7 +14314,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -14337,7 +14337,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                                 style="margin-right: 8px;"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                   style="margin-right: 0px;"
                                 >
                                   12
@@ -14354,7 +14354,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                             class="ant-table-cell audit-status"
                           >
                             <span
-                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme"
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-tg454x"
                             >
                               未处理
                             </span>
@@ -14447,7 +14447,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>

@@ -285,7 +285,7 @@ exports[`test TaskResultList/SQLStatementResultTable render retry execute action
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                           >
                             准备执行
                           </span>
@@ -298,7 +298,7 @@ exports[`test TaskResultList/SQLStatementResultTable render retry execute action
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -606,7 +606,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 1`] =
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                           >
                             准备执行
                           </span>
@@ -619,7 +619,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 1`] =
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -927,7 +927,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-d31ub5"
                           >
                             准备执行
                           </span>
@@ -940,7 +940,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1016,7 +1016,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -1237,7 +1237,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                                 >
                                   <svg
                                     color="#4583FF"
@@ -1270,7 +1270,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             height="18"
@@ -1559,7 +1559,7 @@ exports[`test TaskResultList/SQLStatementResultTable should render exec result t
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
+                                class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-tg454x"
                               >
                                 执行失败
                               </span>
@@ -1574,7 +1574,7 @@ exports[`test TaskResultList/SQLStatementResultTable should render exec result t
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                               disabled=""
                               type="button"
                             >

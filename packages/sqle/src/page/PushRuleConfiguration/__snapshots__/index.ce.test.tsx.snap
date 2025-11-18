@@ -257,7 +257,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
                               >
                                 社区版
                               </span>
@@ -291,7 +291,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -547,7 +547,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-161r05n"
                               >
                                 专业版
                               </span>
@@ -581,7 +581,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -837,7 +837,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
+                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                               >
                                 企业版
                               </span>
@@ -869,7 +869,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -1511,7 +1511,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1529,7 +1529,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span>
@@ -1606,7 +1606,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>

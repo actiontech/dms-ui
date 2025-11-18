@@ -2,7 +2,7 @@ import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/Actiont
 import { IPreviewImportProjectsV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { t } from '../../../locale';
-import { ProjectListBusinessTagStyleWrapper } from '../List/style';
+import { BasicTag } from '@actiontech/dms-kit';
 
 export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjectsV2> =
   [
@@ -29,11 +29,7 @@ export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjec
           return '-';
         }
 
-        return (
-          <ProjectListBusinessTagStyleWrapper>
-            {business.name}
-          </ProjectListBusinessTagStyleWrapper>
-        );
+        return <BasicTag>{business.name}</BasicTag>;
       }
     }
   ];

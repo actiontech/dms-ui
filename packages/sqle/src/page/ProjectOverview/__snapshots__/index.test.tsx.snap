@@ -281,7 +281,7 @@ exports[`page/ProjectOverview render over view and refresh page 1`] = `
                         class="extra"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -699,7 +699,7 @@ exports[`page/ProjectOverview render over view and refresh page 1`] = `
                         class="extra"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -924,11 +924,11 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>
@@ -1036,11 +1036,11 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>
@@ -1105,7 +1105,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                         class="extra"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -1178,11 +1178,11 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>
@@ -1290,11 +1290,11 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>
@@ -1345,7 +1345,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                         class="extra"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -1418,11 +1418,11 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span>
-                                  刷新
+                                  刷 新
                                 </span>
                               </button>
                             </div>

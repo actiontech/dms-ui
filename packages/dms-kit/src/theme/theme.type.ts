@@ -39,9 +39,21 @@ export interface IBasicButtonDashed {
   };
 }
 
+export interface IBasicButtonLink {
+  link: {
+    default: {
+      color: string;
+    };
+    hover: {
+      color: string;
+    };
+  };
+}
+
 export type BasicButtonTheme = BasicButtonDefaultType &
   IBasicButtonDangerous &
-  IBasicButtonDashed;
+  IBasicButtonDashed &
+  IBasicButtonLink;
 
 export type BasicInputTheme = {
   default: {
@@ -467,4 +479,9 @@ export type NavTheme = {
       };
     };
   };
+};
+
+export type CustomAvatarTheme = {
+  backgroundColor: string;
+  color: string;
 };

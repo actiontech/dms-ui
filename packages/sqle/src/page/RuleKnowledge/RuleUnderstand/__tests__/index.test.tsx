@@ -11,6 +11,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-redux', () => {
   return {
@@ -40,6 +41,7 @@ describe('page/RuleUnderstand', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     getKnowledgeGraphSpy = knowledgeBase.getKnowledgeGraph();
   });

@@ -17,7 +17,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-1vnelmv"
               disabled=""
               type="button"
             >
@@ -58,14 +58,14 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
               type="button"
             >
               <span
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -172,7 +172,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -184,7 +184,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -261,7 +261,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -292,14 +292,14 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
               type="button"
             >
               <span
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -406,7 +406,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -418,7 +418,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -457,7 +457,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -488,14 +488,14 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
               type="button"
             >
               <span
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
@@ -534,7 +534,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -565,14 +565,14 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
               type="button"
             >
               <span
                 class="ant-btn-icon"
               >
                 <svg
-                  color="#292c33"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"

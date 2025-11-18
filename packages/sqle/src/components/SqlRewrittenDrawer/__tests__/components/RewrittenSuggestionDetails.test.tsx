@@ -19,6 +19,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { Copy } from '@actiontech/dms-kit';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('RewrittenSuggestionDetails and RewrittenSuggestionItem', () => {
   const originalSql = `
@@ -35,14 +36,15 @@ ORDER BY RAND(), p.created_at DESC
 LIMIT 1000 OFFSET 500;
   `;
 
-  describe('RewrittenSuggestionDetails', () => {
-    beforeEach(() => {
-      mockUseCurrentProject();
-    });
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
+  beforeEach(() => {
+    mockUseCurrentProject();
+    mockUseCurrentUser();
+  });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
+  describe('RewrittenSuggestionDetails', () => {
     it('should render empty content when dataSource is empty', () => {
       const props = {
         dataSource: [],
@@ -78,13 +80,6 @@ LIMIT 1000 OFFSET 500;
   });
 
   describe('RewrittenSuggestionItem', () => {
-    beforeEach(() => {
-      mockUseCurrentProject();
-    });
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
     ignoreConsoleErrors([
       UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
       UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER

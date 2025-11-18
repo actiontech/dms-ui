@@ -19,7 +19,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -50,7 +50,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit/create"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -102,7 +102,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               审核状态
               ：
               <span
-                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
               >
                 审核成功
               </span>
@@ -113,7 +113,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               业务标签
               ：
               <span
-                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7"
+                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
               >
                 test
               </span>
@@ -158,7 +158,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span
@@ -593,7 +593,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -606,7 +606,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span>
@@ -618,7 +618,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                       type="button"
                                     >
                                       <span

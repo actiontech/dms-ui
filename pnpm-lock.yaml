@@ -56,6 +56,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^1.9.3
         version: 1.9.3(react-redux@8.0.5(@types/react-dom@18.3.5(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
+      '@uiw/react-md-editor':
+        specifier: ^3.23.5
+        version: 3.25.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@xyflow/react':
         specifier: ^12.3.0
         version: 12.5.1(@types/react@18.3.23)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -473,9 +476,6 @@ importers:
       '@react-sigma/layout-forceatlas2':
         specifier: ^5.0.2
         version: 5.0.2(graphology-layout-forceatlas2@0.10.1(graphology-types@0.24.8))(graphology@0.25.4(graphology-types@0.24.8))(react@18.3.1)(sigma@3.0.1(graphology-types@0.24.8))
-      '@uiw/react-md-editor':
-        specifier: ^3.23.5
-        version: 3.25.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       graphology:
         specifier: ^0.25.4
         version: 0.25.4(graphology-types@0.24.8)
@@ -596,10 +596,6 @@ importers:
       '@types/semver':
         specifier: ^7.7.1
         version: 7.7.1
-
-  scripts/cli/dms-kit-publish/verdaccio/storage/data/@actiontech/dms-kit: {}
-
-  scripts/cli/dms-kit-publish/verdaccio/storage/data/@actiontech/icons: {}
 
 packages:
 
@@ -15924,7 +15920,7 @@ snapshots:
 
   '@uiw/react-md-editor@3.25.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
       '@uiw/react-markdown-preview': 4.2.2(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)

@@ -2,12 +2,11 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/dms-kit';
 import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
+import { TableColumnWithIconStyleWrapper, BasicTag } from '@actiontech/dms-kit';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { ProjectListBusinessTagStyleWrapper } from './style';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProjectV2> => {
@@ -33,11 +32,7 @@ export const ProjectListTableColumnFactory =
           if (!business) {
             return '-';
           }
-          return (
-            <ProjectListBusinessTagStyleWrapper>
-              {business.name}
-            </ProjectListBusinessTagStyleWrapper>
-          );
+          return <BasicTag>{business.name}</BasicTag>;
         }
       },
       {

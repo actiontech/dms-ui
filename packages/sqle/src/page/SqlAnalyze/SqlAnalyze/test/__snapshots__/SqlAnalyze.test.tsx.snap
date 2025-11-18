@@ -245,7 +245,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>
@@ -536,7 +536,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>
@@ -1640,7 +1640,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>
@@ -7459,7 +7459,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>
@@ -13399,7 +13399,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>
@@ -20040,7 +20040,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span>

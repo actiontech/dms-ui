@@ -146,7 +146,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorMo
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -158,7 +158,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorMo
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

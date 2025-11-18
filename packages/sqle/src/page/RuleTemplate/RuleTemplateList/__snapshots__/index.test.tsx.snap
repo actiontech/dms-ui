@@ -22,7 +22,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -361,7 +361,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span
@@ -388,7 +388,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span
@@ -602,7 +602,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -638,7 +638,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
               href="/sqle/project/700300/rule/template/import"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -669,7 +669,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
               href="/sqle/project/700300/rule/template/create"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span
@@ -1001,7 +1001,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1013,7 +1013,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1023,7 +1023,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1119,7 +1119,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1131,7 +1131,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1141,7 +1141,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1196,7 +1196,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1208,7 +1208,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1218,7 +1218,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1427,7 +1427,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
               type="button"
             >
               <span
@@ -1754,7 +1754,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1766,7 +1766,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1776,7 +1776,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1872,7 +1872,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1884,7 +1884,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1894,7 +1894,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span
@@ -1949,7 +1949,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1961,7 +1961,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
@@ -1971,7 +1971,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                                 </div>
                               </div>
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
                                 type="button"
                               >
                                 <span

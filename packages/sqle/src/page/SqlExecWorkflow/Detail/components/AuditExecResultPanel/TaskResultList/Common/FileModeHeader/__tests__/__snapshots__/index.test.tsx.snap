@@ -39,7 +39,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
         </span>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span>
@@ -90,7 +90,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
         </span>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span>
@@ -329,7 +329,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -342,7 +342,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -354,7 +354,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

@@ -78,7 +78,7 @@ exports[`sqle/SqlOptimization/Result/Modal/TableStructureModal should render mod
                       该查询的表结构
                     </div>
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                       title="复制"
                       type="button"
                     >
@@ -142,7 +142,7 @@ CREATE TABLE enrollments (
                       该查询的最佳索引
                     </div>
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                       title="复制"
                       type="button"
                     >

@@ -1,6 +1,6 @@
 import { BackendFormProps } from '..';
 import AutoCreatedFormItemByApi from '../AutoCreatedFormItemByApi';
-import { sqleSuperRender } from '../../../testUtils/superRender';
+import { sqleSuperRender } from '../../../../../sqle/src/testUtils/superRender';
 import Form from 'antd/es/form/Form';
 
 describe('sqle/components/BackendForm', () => {

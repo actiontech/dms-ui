@@ -2,8 +2,8 @@ import { fireEvent } from '@testing-library/react';
 import FormPasswordWithPlaceholder, {
   PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE
 } from '../FormPasswordWithPlaceholder';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { sqleSuperRender } from '../../../testUtils/superRender';
+import { getBySelector } from '../../../testUtil/customQuery';
+import { sqleSuperRender } from '../../../../../sqle/src/testUtils/superRender';
 
 describe('FormPasswordWithPlaceholder', () => {
   const defaultProps = {
