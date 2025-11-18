@@ -6,5 +6,5 @@ export type {
   BackendFormProps,
   BackendFormRequestParams,
   BackendFormValues,
-  FormItem
+  BackendFormItemParams
 } from './index.type';

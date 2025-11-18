@@ -2,7 +2,7 @@ import { AuditPlanParamResV1TypeEnum } from '../../api/sqle/service/common.enum'
 import {
   BackendFormRequestParams,
   BackendFormValues,
-  FormItem
+  BackendFormItemParams
 } from './index.type';
 import { useCallback } from 'react';
 
@@ -10,7 +10,7 @@ const useAsyncParams = () => {
   const mergeFromValueIntoParams = useCallback(
     (
       value: BackendFormValues,
-      params: FormItem[]
+      params: BackendFormItemParams[]
     ): BackendFormRequestParams[] => {
       return params.map((item) => {
         const temp = {

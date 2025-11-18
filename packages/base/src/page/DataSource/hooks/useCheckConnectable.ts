@@ -4,7 +4,7 @@ import { DataSourceFormField } from '../components/Form/index.type';
 import { useBoolean } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api/';
 import { ResponseCode } from '@actiontech/dms-kit';
-import { useAsyncParams, FormItem } from '@actiontech/shared';
+import { useAsyncParams, BackendFormItemParams } from '@actiontech/shared';
 import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
@@ -21,7 +21,7 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
   const { mergeFromValueIntoParams } = useAsyncParams();
 
   const onCheckConnectable = useCallback(
-    async (currentAsyncParams?: FormItem[]) => {
+    async (currentAsyncParams?: BackendFormItemParams[]) => {
       const values = await form.validateFields([
         'ip',
         'password',
