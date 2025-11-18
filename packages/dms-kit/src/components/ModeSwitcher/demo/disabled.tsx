@@ -43,6 +43,7 @@ const IconModeDemo: React.FC = () => {
         defaultValue="grid"
         value={viewMode}
         onChange={setViewMode}
+        disabled
       />
     </ConfigProvider>
   );
