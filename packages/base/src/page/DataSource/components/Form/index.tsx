@@ -37,7 +37,7 @@ import { nameRule } from '@actiontech/dms-kit';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
 import { turnDataSourceAsyncFormToCommon } from '../../tool';
-import { useAsyncParams, FormItem } from '@actiontech/shared';
+import { useAsyncParams, BackendFormItemParams } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import classNames from 'classnames';
@@ -164,7 +164,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   };
   // #endif
 
-  const params = useMemo<FormItem[]>(() => {
+  const params = useMemo<BackendFormItemParams[]>(() => {
     if (!driverMeta || !databaseType) {
       return [];
     }

@@ -1,7 +1,7 @@
-import { FormItem } from './index.type';
+import { BackendFormItemParams } from './index.type';
 import { useMemo } from 'react';
 
-const useRuleParams = (params: FormItem[]) => {
+const useRuleParams = (params: BackendFormItemParams[]) => {
   /**
     ep-扫描任务:
     采集周期（分钟，仅对 mysql.slow_log 有效）

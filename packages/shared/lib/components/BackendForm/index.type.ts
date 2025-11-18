@@ -1,6 +1,6 @@
 import { IEnumsValueResV1 } from '../../api/sqle/service/common';
 
-export type FormItem = {
+export type BackendFormItemParams = {
   desc?: string;
   key?: string;
   type?: string;
@@ -19,7 +19,7 @@ export type BackendFormValues = {
 };
 
 export type BackendFormProps = {
-  params: FormItem[];
+  params: BackendFormItemParams[];
   paramsKey?: string;
   disabled?: boolean;
   isFullLine?: boolean;
