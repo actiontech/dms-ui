@@ -71,8 +71,8 @@ describe('base/page/ResourceOverview/Statictis/DistributionChart', () => {
     expect(
       getResourceOverviewResourceTypeDistributionV1Spy
     ).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
       getResourceOverviewResourceTypeDistributionV1Spy

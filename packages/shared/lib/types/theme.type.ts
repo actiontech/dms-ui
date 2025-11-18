@@ -25,7 +25,8 @@ import {
   BasicChartTheme,
   BasicInfoListTheme,
   BasicTagTheme,
-  NavTheme
+  NavTheme,
+  CustomAvatarTheme
 } from '@actiontech/dms-kit';
 
 export interface SharedTheme {
@@ -59,6 +60,7 @@ export interface SharedTheme {
     basicChart: BasicChartTheme;
     basicInfoList: BasicInfoListTheme;
     basicTag: BasicTagTheme;
+    customAvatar: CustomAvatarTheme;
   };
 }
 

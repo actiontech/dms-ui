@@ -18,7 +18,6 @@ import {
   RewrittenSqlCollapseStyleWrapper
 } from './style';
 import { CollapseItemKeyEnum } from './index.enum';
-import { useChangeTheme } from '@actiontech/shared/lib/features';
 import { hasSqlBeenRewritten } from './utils/sqlRewriteCache';
 const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   open,
@@ -28,7 +27,6 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
 }) => {
   const { t } = useTranslation();
   const [modal, modalContextHolder] = Modal.useModal();
-  const { currentTheme } = useChangeTheme();
   const originSqlNumber = originSqlInfo?.number ?? 0;
   const originalSql = originSqlInfo?.sql ?? '';
 
@@ -267,9 +265,7 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         </EmptyBox>
       }
     >
-      {/* https://github.com/uiwjs/react-md-editor/tree/master?tab=readme-ov-file#support-dark-modenight-mode */}
-      {/* TODO 后续需要统一处理下 MDEditor 的主题 */}
-      <section data-color-mode={currentTheme}>
+      <section>
         {modalContextHolder}
 
         <EmptyBox

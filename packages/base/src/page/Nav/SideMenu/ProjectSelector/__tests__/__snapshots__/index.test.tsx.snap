@@ -234,7 +234,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -484,7 +484,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -861,7 +861,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1162,7 +1162,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1463,7 +1463,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -1723,7 +1723,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>

@@ -21,7 +21,7 @@ import { DataSourceManagerSegmentedKey } from '../../DataSourceManagement/index.
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 import { IUpdateDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask/index.d';
 import useTaskSource from '../../../hooks/useTaskSource';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { useAsyncParams } from '@actiontech/shared';
 import { SyncTaskFormFields } from '../Form/index.type';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 const UpdateSyncTask: React.FC = () => {

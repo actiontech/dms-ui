@@ -85,8 +85,8 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(requestPlotsData).toHaveBeenCalled();
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestPlotsData).toHaveBeenCalled();
   });

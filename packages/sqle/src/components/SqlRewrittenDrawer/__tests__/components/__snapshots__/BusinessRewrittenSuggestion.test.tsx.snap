@@ -81,14 +81,19 @@ exports[`BusinessRewrittenSuggestion BusinessRewrittenSuggestion and BusinessRew
         class="css-14chl4v"
       >
         <div
-          class="description-content css-2p8eea"
-          rehypeplugins="() => jest.fn()"
+          class="full-width-element"
+          data-color-mode="light"
         >
-          我们将使用WITH表表达式来先获取主键ID，然后再联接获取完整数据。具体步骤如下：
+          <div
+            class="description-content css-2p8eea"
+            rehypeplugins="() => jest.fn()"
+          >
+            我们将使用WITH表表达式来先获取主键ID，然后再联接获取完整数据。具体步骤如下：
 1. 使用WITH表表达式来查询满足条件的用户ID。
 2. 通过这些用户ID来获取完整的用户、订单和支付信息。
 3. 确保结果集保持与原始SQL相同，包括结果集的顺序。
 
+          </div>
         </div>
       </div>
     </div>

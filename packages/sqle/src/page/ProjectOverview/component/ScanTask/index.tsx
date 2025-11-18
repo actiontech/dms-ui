@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BasicButton, EmptyBox } from '@actiontech/dms-kit';
+import { BasicButton } from '@actiontech/dms-kit';
 import CardWrapper from '../../../../components/CardWrapper';
 import { ScanTaskStyleWrapper } from './style';
 import TaskDetail from './charts/TaskDetail';
@@ -18,11 +18,11 @@ export type typeChartChildrenProps = {
   refreshFuc: () => void;
 };
 
-//todo 智能扫描重构后 处于废弃状态，不进行 useNavigate 调整。
+//todo 智能扫描重构后 处于废弃状态，不进行 useNavigate 以及创建扫描任务权限控制 调整。
 const ScanTask = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const [data, setData] = useState<IDBTypeAuditPlan[]>([]);
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
     () =>
@@ -65,11 +65,9 @@ const ScanTask = () => {
     <CardWrapper
       title={t('projectManage.projectOverview.auditPlanClassification.title')}
       extraNode={
-        <EmptyBox if={!projectArchive}>
-          <BasicButton size="small" onClick={onCreatedOrder}>
-            {t('projectManage.projectOverview.auditPlanClassification.button')}
-          </BasicButton>
-        </EmptyBox>
+        <BasicButton size="small" onClick={onCreatedOrder}>
+          {t('projectManage.projectOverview.auditPlanClassification.button')}
+        </BasicButton>
       }
     >
       <ScanTaskStyleWrapper>

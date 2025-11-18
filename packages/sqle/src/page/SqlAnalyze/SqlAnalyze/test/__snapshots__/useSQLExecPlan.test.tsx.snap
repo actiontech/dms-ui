@@ -436,7 +436,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -2408,7 +2408,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -2860,7 +2860,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>

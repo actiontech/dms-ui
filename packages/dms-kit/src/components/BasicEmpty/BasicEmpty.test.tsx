@@ -102,7 +102,7 @@ describe('lib/BasicEmpty', () => {
     expect(container).toMatchSnapshot();
 
     const refreshBtn = getBySelector('.ant-empty-footer .ant-btn', baseElement);
-    expect(refreshBtn.textContent).toBe('刷新');
+    expect(refreshBtn.textContent).toBe('刷 新');
     await act(async () => {
       fireEvent.click(refreshBtn);
       await jest.advanceTimersByTime(300);

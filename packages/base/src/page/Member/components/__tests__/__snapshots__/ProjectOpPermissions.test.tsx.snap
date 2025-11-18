@@ -35,7 +35,7 @@ exports[`base/Member/components/ProjectPermissions should handle complex nested 
                 style="margin-right: 4px; padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   超级管理员
@@ -46,7 +46,7 @@ exports[`base/Member/components/ProjectPermissions should handle complex nested 
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   只读用户
@@ -97,7 +97,7 @@ exports[`base/Member/components/ProjectPermissions should handle multiple permis
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -136,7 +136,7 @@ exports[`base/Member/components/ProjectPermissions should handle multiple permis
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   开发者
@@ -218,7 +218,7 @@ exports[`base/Member/components/ProjectPermissions should handle permissions wit
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -268,7 +268,7 @@ exports[`base/Member/components/ProjectPermissions should handle roles with empt
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 />
               </div>
@@ -316,7 +316,7 @@ exports[`base/Member/components/ProjectPermissions should handle roles with unde
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -366,7 +366,7 @@ exports[`base/Member/components/ProjectPermissions should handle roles without m
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -417,7 +417,7 @@ exports[`base/Member/components/ProjectPermissions should render permissions wit
                 style="margin-right: 4px; padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -428,7 +428,7 @@ exports[`base/Member/components/ProjectPermissions should render permissions wit
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   开发者
@@ -467,7 +467,7 @@ exports[`base/Member/components/ProjectPermissions should render permissions wit
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   测试员
@@ -517,7 +517,7 @@ exports[`base/Member/components/ProjectPermissions should render role tags with 
                 style="margin-right: 4px; padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员
@@ -528,7 +528,7 @@ exports[`base/Member/components/ProjectPermissions should render role tags with 
                 style="padding-bottom: 4px;"
               >
                 <span
-                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
                   style="height: 28px;"
                 >
                   管理员

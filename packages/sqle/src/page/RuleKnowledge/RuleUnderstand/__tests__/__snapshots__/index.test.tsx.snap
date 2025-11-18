@@ -16,11 +16,15 @@ exports[`page/RuleUnderstand render content data 1`] = `
             class="markdown-container"
           >
             <div
-              class="css-1pkzawh"
-              components="[object Object]"
-              rehypeplugins="() => jest.fn()"
+              class="full-width-element"
+              data-color-mode="light"
             >
-              
+              <div
+                class="css-1pkzawh"
+                components="[object Object]"
+                rehypeplugins="() => jest.fn()"
+              >
+                
   ## 标签
   \`\`\`label [数据库版本:MySQL 5.7.25,检查方式:不连库审核]\`\`\`
   ### 示例
@@ -40,6 +44,7 @@ exports[`page/RuleUnderstand render content data 1`] = `
       AND status = 'active'
   \`\`\`
 
+              </div>
             </div>
             <h2
               class="ant-typography graph-title"

@@ -426,7 +426,7 @@ exports[`base/Member/Drawer/AddMember should render add member form with all fie
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
                                 type="button"
                               >
                                 <span
@@ -468,7 +468,7 @@ exports[`base/Member/Drawer/AddMember should render add member form with all fie
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>
@@ -480,7 +480,7 @@ exports[`base/Member/Drawer/AddMember should render add member form with all fie
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                     type="button"
                   >
                     <span>

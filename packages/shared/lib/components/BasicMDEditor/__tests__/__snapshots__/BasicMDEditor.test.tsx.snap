@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicMDEditor render custom theme 1`] = `
+<div>
+  <div
+    class="full-width-element"
+    data-color-mode="dark"
+  >
+    <input
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`BasicMDEditor render init snap 1`] = `
+<div>
+  <div
+    class="full-width-element"
+    data-color-mode="light"
+  >
+    <input
+      value=""
+    />
+  </div>
+</div>
+`;

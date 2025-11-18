@@ -7,11 +7,11 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListGlobalDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { DatabaseTypeLogo, BasicTag } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import ConnectionResultColumn from '../../DataSource/components/List/ConnectionResultColumn';
 import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { ServiceEnvironmentTagStyleWrapper } from '../../DataSource/components/List/style';
+
 export type GLobalDataSourceListParamType = PageInfoWithoutIndexAndSize<
   IListGlobalDBServicesV2Params & {
     page_index: number;
@@ -42,11 +42,7 @@ export const GlobalDataSourceColumns = (
         if (!environment?.name) {
           return '-';
         }
-        return (
-          <ServiceEnvironmentTagStyleWrapper>
-            {environment?.name}
-          </ServiceEnvironmentTagStyleWrapper>
-        );
+        return <BasicTag>{environment?.name}</BasicTag>;
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'

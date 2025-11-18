@@ -60,8 +60,7 @@ export const mockCurrentUserReturn = {
 
 export const mockProjectInfo = {
   projectID: '700300',
-  projectName: 'default',
-  projectArchive: false
+  projectName: 'default'
 };
 
 export const mockUserInfo = {

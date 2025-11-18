@@ -119,12 +119,6 @@ describe('test OverviewList', () => {
     );
   });
 
-  it('does not render table actions for archived projects', () => {
-    mockUseCurrentProject({ projectArchive: true });
-
-    customRender();
-  });
-
   it('render the terminate button and allows termination when the task is executing and the current user is authorized', async () => {
     mockUseCurrentUser({ username: 'test_user' });
     customRender({

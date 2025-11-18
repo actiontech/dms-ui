@@ -153,7 +153,6 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                 <Space>
                   <EmptyBox if={updatable}>
                     <BasicButton
-                      type="text"
                       size="small"
                       icon={<EditFilled />}
                       onClick={(e) => {
@@ -178,7 +177,6 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                       }}
                     >
                       <BasicButton
-                        type="text"
                         size="small"
                         danger
                         icon={<MinusCircleFilled width={14} height={14} />}

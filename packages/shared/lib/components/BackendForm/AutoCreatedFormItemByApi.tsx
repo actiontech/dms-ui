@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { CustomLabelContent, FormItemLabel } from '@actiontech/dms-kit';
-import { BackendFormProps } from '.';
+import { BackendFormProps } from './index.type';
 import { formItemLayout } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/dms-kit';
 import useRuleParams from './useRuleParams';

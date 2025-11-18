@@ -1,6 +1,6 @@
-import { IEnumsValueResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IEnumsValueResV1 } from '../../api/sqle/service/common';
 
-export type FormItem = {
+export type BackendFormItemParams = {
   desc?: string;
   key?: string;
   type?: string;
@@ -19,11 +19,9 @@ export type BackendFormValues = {
 };
 
 export type BackendFormProps = {
-  params: FormItem[];
+  params: BackendFormItemParams[];
   paramsKey?: string;
   disabled?: boolean;
   isFullLine?: boolean;
   formMode?: 'update' | 'create';
 };
-
-export { default } from './AutoCreatedFormItemByApi';

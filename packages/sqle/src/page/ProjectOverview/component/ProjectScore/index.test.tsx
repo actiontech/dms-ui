@@ -130,8 +130,8 @@ describe('page/ProjectOverview/ProjectScore', () => {
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('error')).toBeInTheDocument();
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.Refresh_Project_Overview

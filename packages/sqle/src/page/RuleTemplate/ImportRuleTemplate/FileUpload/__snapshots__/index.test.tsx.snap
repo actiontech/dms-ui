@@ -54,7 +54,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -172,7 +172,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -290,7 +290,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -513,7 +513,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -521,7 +521,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 type="button"
               >
                 <span>
@@ -596,7 +596,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                   type="button"
                 >
                   <span>
@@ -817,7 +817,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                 disabled=""
                 type="button"
               >
@@ -826,7 +826,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                 disabled=""
                 type="button"
               >

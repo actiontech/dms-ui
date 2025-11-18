@@ -54,6 +54,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     jest.useFakeTimers();
     MockDate.set('2024-01-30 10:00:00');
     mockUseCurrentUser();
+    mockUseCurrentProject();
     mockUsePermission(undefined, {
       mockSelector: true
     });
@@ -68,7 +69,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render snap', () => {
-    mockUseCurrentProject({ projectArchive: false });
     const { baseElement } = customRender({
       workflowStepsVisibility: true
     });
@@ -76,8 +76,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render snap when btn is hidden', () => {
-    mockUseCurrentProject({ projectArchive: true });
-
     const { baseElement } = customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -91,7 +89,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
 
   it('render close button', async () => {
     const cancelWorkflowSpy = workflow.cancelWorkflow();
-    mockUseCurrentProject({ projectArchive: false });
 
     customRender({
       workflowStepsVisibility: true,
@@ -127,7 +124,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render close button when status is executing', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -152,7 +148,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render reject button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -191,8 +186,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render reject button when current status is executing', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -231,7 +224,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render pass button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -257,7 +249,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render pass button when current status is executing', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -283,7 +274,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render batch executing button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     const { baseElement } = customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -335,8 +325,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render manual execute button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -376,8 +364,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render manual execute button when status is exec_failed and executable is false', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -416,7 +402,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render batch executing button and manual execute button when executable is false', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     const executableReason =
       '当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线';
     const { baseElement } = customRender({
@@ -450,8 +435,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render terminate button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
-
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -487,7 +470,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render execute in other instance button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     mockUseCurrentUser({
       isProjectManager: jest.fn(() => true)
     });
@@ -498,7 +480,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     expect(screen.getByText('上线到其他实例')).toBeVisible();
 
     cleanup();
-    mockUseCurrentProject({ projectArchive: false });
     mockUseCurrentUser({
       managementPermissions: [
         {
@@ -519,7 +500,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render rollback button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -542,7 +522,6 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   it('render retry button', async () => {
-    mockUseCurrentProject({ projectArchive: false });
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {

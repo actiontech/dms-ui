@@ -5,7 +5,6 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
   <div>
     <div
       class="css-bwb9yf"
-      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -19,7 +18,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -83,11 +82,15 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
                 class="markdown-container"
               >
                 <div
-                  class="css-1pkzawh"
-                  components="[object Object]"
-                  rehypeplugins="() => jest.fn()"
+                  class="full-width-element"
+                  data-color-mode="light"
                 >
-                  
+                  <div
+                    class="css-1pkzawh"
+                    components="[object Object]"
+                    rehypeplugins="() => jest.fn()"
+                  >
+                    
   ## 标签
   \`\`\`label [数据库版本:MySQL 5.7.25,检查方式:不连库审核]\`\`\`
   ### 示例
@@ -107,6 +110,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
       AND status = 'active'
   \`\`\`
 
+                  </div>
                 </div>
                 <h2
                   class="ant-typography graph-title"
@@ -199,7 +203,6 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
   <div>
     <div
       class="css-bwb9yf"
-      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -213,7 +216,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -277,11 +280,16 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                 class="markdown-container"
               >
                 <div
-                  class="css-1pkzawh"
-                  components="[object Object]"
-                  rehypeplugins="() => jest.fn()"
+                  class="full-width-element"
+                  data-color-mode="light"
                 >
-                  123
+                  <div
+                    class="css-1pkzawh"
+                    components="[object Object]"
+                    rehypeplugins="() => jest.fn()"
+                  >
+                    123
+                  </div>
                 </div>
                 <h2
                   class="ant-typography graph-title"
@@ -374,7 +382,6 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
   <div>
     <div
       class="css-bwb9yf"
-      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -388,7 +395,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -452,11 +459,16 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                 class="markdown-container"
               >
                 <div
-                  class="css-1pkzawh"
-                  components="[object Object]"
-                  rehypeplugins="() => jest.fn()"
+                  class="full-width-element"
+                  data-color-mode="light"
                 >
-                  123
+                  <div
+                    class="css-1pkzawh"
+                    components="[object Object]"
+                    rehypeplugins="() => jest.fn()"
+                  >
+                    123
+                  </div>
                 </div>
                 <h2
                   class="ant-typography graph-title"
@@ -549,7 +561,6 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
   <div>
     <div
       class="css-bwb9yf"
-      data-color-mode="light"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -563,7 +574,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
             type="button"
           >
             <span>
@@ -627,11 +638,16 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
                 class="markdown-container"
               >
                 <div
-                  class="css-1pkzawh"
-                  components="[object Object]"
-                  rehypeplugins="() => jest.fn()"
+                  class="full-width-element"
+                  data-color-mode="light"
                 >
-                  123
+                  <div
+                    class="css-1pkzawh"
+                    components="[object Object]"
+                    rehypeplugins="() => jest.fn()"
+                  >
+                    123
+                  </div>
                 </div>
                 <h2
                   class="ant-typography graph-title"

@@ -46,8 +46,8 @@ describe('sqle/components/ChartCom/ChartWrapper', () => {
     });
     expect(baseElement).toMatchSnapshot();
 
-    expect(screen.getByText('刷新')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('刷新'));
+    expect(screen.getByText('刷 新')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('刷 新'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(onRefreshFn).toHaveBeenCalled();
     onRefreshFn.mockRestore();

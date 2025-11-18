@@ -215,7 +215,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-1vnelmv"
               type="submit"
             >
               <span>
@@ -420,7 +420,7 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-1vnelmv"
               type="submit"
             >
               <span>
@@ -625,7 +625,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-1vnelmv"
               type="submit"
             >
               <span>

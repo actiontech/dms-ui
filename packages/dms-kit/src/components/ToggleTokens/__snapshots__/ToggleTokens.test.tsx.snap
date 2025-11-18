@@ -10,7 +10,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -27,7 +27,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -43,7 +43,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -69,7 +69,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -86,7 +86,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -102,7 +102,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -128,7 +128,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -145,7 +145,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -161,7 +161,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -188,7 +188,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -205,7 +205,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -221,7 +221,7 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -247,7 +247,7 @@ exports[`test ToggleTokens/multiple should render and interact correctly with Ar
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -264,7 +264,7 @@ exports[`test ToggleTokens/multiple should render and interact correctly with Ar
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -280,7 +280,7 @@ exports[`test ToggleTokens/multiple should render and interact correctly with Ar
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -306,7 +306,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -323,7 +323,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -339,7 +339,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -365,7 +365,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -382,7 +382,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -398,7 +398,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -424,7 +424,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -441,7 +441,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -457,7 +457,7 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -487,7 +487,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
           style="margin-right: 8px;"
         >
           <button
-            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
             disabled=""
             type="button"
           >
@@ -505,7 +505,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
           style="margin-right: 8px;"
         >
           <button
-            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
             disabled=""
             type="button"
           >
@@ -522,7 +522,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
             disabled=""
             type="button"
           >
@@ -547,7 +547,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
         style="margin-right: 8px;"
       >
         <button
-          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
           disabled=""
           type="button"
         >
@@ -565,7 +565,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
         style="margin-right: 8px;"
       >
         <button
-          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
           disabled=""
           type="button"
         >
@@ -582,7 +582,7 @@ exports[`test ToggleTokens/single render snapshot with disabled props is equal t
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-1vnelmv"
           disabled=""
           type="button"
         >
@@ -826,7 +826,7 @@ exports[`test ToggleTokens/single should render and interact correctly with Arra
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -843,7 +843,7 @@ exports[`test ToggleTokens/single should render and interact correctly with Arra
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span
@@ -859,7 +859,7 @@ exports[`test ToggleTokens/single should render and interact correctly with Arra
       class="ant-space-item"
     >
       <button
-        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
         type="button"
       >
         <span

@@ -52,7 +52,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -94,7 +94,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                         >
                           原文
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                             title="复制"
                             type="button"
                           >
@@ -120,7 +120,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                         >
                           最终优化后
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                             title="复制"
                             type="button"
                           >
@@ -230,7 +230,7 @@ WHERE
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -261,7 +261,7 @@ WHERE
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                               title="复制"
                               type="button"
                             >
@@ -410,7 +410,7 @@ WHERE
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -438,7 +438,7 @@ WHERE
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-1vnelmv"
                               type="button"
                             >
                               <span
@@ -1373,7 +1373,7 @@ WHERE
                           </span>
                         </div>
                         <span
-                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                         >
                           <svg
                             class="RocketFilled_svg__icon"
@@ -1438,7 +1438,7 @@ WHERE
                           </span>
                         </div>
                         <span
-                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                         >
                           <svg
                             class="RocketFilled_svg__icon"
@@ -1503,7 +1503,7 @@ WHERE
                           </span>
                         </div>
                         <span
-                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                          class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                         >
                           <svg
                             class="RocketFilled_svg__icon"

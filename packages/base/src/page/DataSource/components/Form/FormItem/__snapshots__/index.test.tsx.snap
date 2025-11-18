@@ -376,7 +376,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -712,7 +712,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -1100,7 +1100,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -1488,7 +1488,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -1836,7 +1836,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -2184,7 +2184,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>
@@ -2532,7 +2532,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
                       type="button"
                     >
                       <span>

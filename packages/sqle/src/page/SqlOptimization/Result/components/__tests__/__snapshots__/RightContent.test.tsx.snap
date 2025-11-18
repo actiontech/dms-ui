@@ -346,7 +346,7 @@ exports[`RightContent should render with error message 1`] = `
                     </span>
                   </div>
                   <span
-                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                   >
                     <svg
                       class="RocketFilled_svg__icon"
@@ -523,7 +523,7 @@ exports[`RightContent should render with horizontal layout by default 1`] = `
                     </span>
                   </div>
                   <span
-                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                   >
                     <svg
                       class="RocketFilled_svg__icon"
@@ -700,7 +700,7 @@ exports[`RightContent should render with horizontal layout when isVerticalLayout
                     </span>
                   </div>
                   <span
-                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                   >
                     <svg
                       class="RocketFilled_svg__icon"
@@ -1013,7 +1013,7 @@ exports[`RightContent should render with totalAnalysis detail is empty 1`] = `
                     </span>
                   </div>
                   <span
-                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                   >
                     <svg
                       class="RocketFilled_svg__icon"
@@ -1190,7 +1190,7 @@ exports[`RightContent should render with vertical layout when isVerticalLayout i
                     </span>
                   </div>
                   <span
-                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
+                    class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
                   >
                     <svg
                       class="RocketFilled_svg__icon"

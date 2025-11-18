@@ -347,7 +347,7 @@ exports[`EditableSelect should render select with options 2`] = `
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -371,7 +371,7 @@ exports[`EditableSelect should render select with options 2`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -420,7 +420,7 @@ exports[`EditableSelect should render select with options 2`] = `
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span
@@ -444,7 +444,7 @@ exports[`EditableSelect should render select with options 2`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1vnelmv"
                             type="button"
                           >
                             <span

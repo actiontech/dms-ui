@@ -1094,7 +1094,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -6937,11 +6937,11 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                                   class="ant-empty-footer"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
                                     type="button"
                                   >
                                     <span>
-                                      刷新
+                                      刷 新
                                     </span>
                                   </button>
                                 </div>
@@ -7022,7 +7022,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -13289,7 +13289,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should render error result of type "in
                         class="number-cont"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>

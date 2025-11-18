@@ -120,7 +120,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             height="12"
@@ -143,7 +143,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             color="#6094FC"
@@ -183,7 +183,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             height="12"
@@ -798,7 +798,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span>
@@ -811,7 +811,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-1h90et6"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
                           type="button"
                         >
                           <span>
@@ -1038,7 +1038,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             height="12"
@@ -1061,7 +1061,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             color="#6094FC"
@@ -1101,7 +1101,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
                         >
                           <svg
                             height="12"
@@ -1716,7 +1716,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1vnelmv"
                           type="button"
                         >
                           <span
@@ -1752,7 +1752,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-1h90et6"
+                          class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-1s5ld2m"
                           type="button"
                         >
                           <span
