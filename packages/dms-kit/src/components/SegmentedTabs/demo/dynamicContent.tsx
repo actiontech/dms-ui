@@ -196,59 +196,19 @@ const DynamicContentDemo: React.FC = () => {
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <h3>动态内容切换</h3>
-
-        <Card title="动态内容管理" style={{ marginBottom: '20px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <p>
-              当前选中的标签页: <strong>{activeKey}</strong>
-            </p>
-            <p>每个标签页都有独立的内容和状态，支持动态更新和交互操作。</p>
-          </div>
-
-          <SegmentedTabs
-            items={items}
-            activeKey={activeKey}
-            onChange={setActiveKey}
-            defaultActiveKey="user"
-          />
-        </Card>
-
-        <Card title="功能说明">
-          <div style={{ marginBottom: '16px' }}>
-            <h4>动态内容特性:</h4>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li>
-                <strong>独立状态</strong>: 每个标签页维护独立的状态和数据
-              </li>
-              <li>
-                <strong>交互操作</strong>: 支持按钮点击、输入框编辑等交互
-              </li>
-              <li>
-                <strong>数据更新</strong>:
-                内容可以动态更新，如添加用户、搜索过滤
-              </li>
-              <li>
-                <strong>复杂组件</strong>: 支持表格、表单、卡片等复杂组件
-              </li>
-              <li>
-                <strong>实时反馈</strong>: 操作结果实时反映在界面上
-              </li>
-            </ul>
-          </div>
-
-          <div style={{ marginTop: '16px' }}>
-            <h4>使用场景:</h4>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li>管理后台的多功能页面</li>
-              <li>数据展示和编辑的集成界面</li>
-              <li>配置管理和实时预览</li>
-              <li>统计信息和操作面板</li>
-            </ul>
-          </div>
-        </Card>
+      <div style={{ marginBottom: '16px' }}>
+        <p>
+          当前选中的标签页: <strong>{activeKey}</strong>
+        </p>
+        <p>每个标签页都有独立的内容和状态，支持动态更新和交互操作。</p>
       </div>
+
+      <SegmentedTabs
+        items={items}
+        activeKey={activeKey}
+        onChange={setActiveKey}
+        defaultActiveKey="user"
+      />
     </ConfigProvider>
   );
 };
