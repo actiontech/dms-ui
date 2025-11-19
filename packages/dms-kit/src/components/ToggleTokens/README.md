@@ -6,15 +6,17 @@ group:
 
 # ToggleTokens 令牌切换
 
-基于 Ant Design Space 组件封装的令牌切换组件，提供了统一的样式规范和增强的功能特性，支持单选和多选模式，可配置复选框样式和无样式模式。
+基于 Ant Design Space 组件封装的令牌切换组件，提供了统一的样式规范和增强的功能特性。支持单选/多选模式、复选框样式、无样式模式和标签字典，适用于多种数据筛选和选择场景。
 
 ## 何时使用
 
-- 需要令牌式选择器进行数据过滤时
-- 需要支持单选和多选模式时
-- 需要复选框样式的令牌时
-- 需要自定义样式的令牌时
-- 需要保持与设计系统一致的令牌组件样式时
+- **数据筛选场景**：需要对列表数据进行多条件筛选（如状态筛选、类型筛选等）
+- **单一选择场景**：需要在互斥选项中进行选择（如状态切换、分类选择等）
+- **多项选择场景**：需要同时选择多个选项（如权限配置、功能开关等）
+- **复选框反馈**：需要更直观的选中状态视觉反馈
+- **自定义样式**：需要完全自定义令牌样式以匹配设计系统
+- **国际化支持**：需要通过标签字典实现多语言切换
+- **统一设计**：需要保持与设计系统一致的令牌组件样式
 
 ## 代码演示
 
@@ -22,11 +24,10 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 单选模式
-
-<code src="./demo/singleMode.tsx"></code>
-
 ### 多选模式
+
+
+默认为单选模式，可使用multiple设置为多选模式
 
 <code src="./demo/multipleMode.tsx"></code>
 
@@ -48,16 +49,16 @@ group:
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| options | 选项配置数组 | `ToggleTokensOptionsType \| string[]` | - | - |
-| value | 当前选中的值 | `V \| V[]` | - | - |
+| options | 选项配置数组，支持对象数组或字符串数组 | `ToggleTokensOptionsType \| string[]` | - | - |
+| value | 当前选中的值（受控） | `V \| V[]` | - | - |
 | onChange | 值变化时的回调函数 | `(val: V \| V[]) => void` | - | - |
-| defaultValue | 默认选中的值 | `V \| V[]` | - | - |
-| multiple | 是否支持多选 | `boolean` | `false` | - |
-| withCheckbox | 是否显示复选框样式 | `boolean` | `false` | - |
-| noStyle | 是否使用无样式模式 | `boolean` | `false` | - |
-| labelDictionary | 标签字典，用于字符串选项的标签转换 | `Record<string, string>` | - | - |
-| disabled | 是否禁用 | `boolean` | `false` | - |
-| className | 自定义类名 | `string` | - | - |
+| defaultValue | 默认选中的值（非受控） | `V \| V[]` | - | - |
+| multiple | 是否支持多选模式 | `boolean` | `false` | - |
+| withCheckbox | 是否显示复选框图标（仅多选模式有效） | `boolean` | `false` | - |
+| noStyle | 是否使用无样式模式，清空所有默认样式 | `boolean` | `false` | - |
+| labelDictionary | 标签字典，用于字符串选项的标签转换（国际化） | `Record<string, string>` | - | - |
+| disabled | 是否禁用所有选项 | `boolean` | `false` | - |
+| className | 自定义容器类名 | `string` | - | - |
 
 ### 类型定义
 
@@ -114,58 +115,6 @@ theme.sharedTheme.components.toggleTokens = {
 }
 ```
 
-## 功能特性
-
-### 单选和多选模式
-
-- **单选模式**: `multiple={false}` 或不设置，只能选择一个选项
-- **多选模式**: `multiple={true}`，可以选择多个选项，值类型为数组
-
-### 复选框样式
-
-当 `withCheckbox={true}` 时：
-- 选中的令牌会显示复选框图标
-- 提供更直观的选中状态反馈
-- 适合需要明确选中状态的场景
-
-### 无样式模式
-
-当 `noStyle={true}` 时：
-- 清空所有默认样式
-- 用户可以通过 CSS 类进行完全自定义
-- 提供最大的样式自定义自由度
-
-### 标签字典支持
-
-当 `options` 为字符串数组时，可以通过 `labelDictionary` 自动转换标签：
-
-```typescript
-const options = ['pending', 'approved', 'rejected'];
-const labelDictionary = {
-  pending: '待审核',
-  approved: '已通过',
-  rejected: '已拒绝'
-};
-```
-
-### 自定义点击事件
-
-每个选项可以配置独立的 `onClick` 回调函数：
-
-```typescript
-const options = [
-  { label: '选项A', value: 'a', onClick: (checked) => console.log('选项A:', checked) },
-  { label: '选项B', value: 'b', onClick: (checked) => console.log('选项B:', checked) }
-];
-```
-
-## 注意事项
-
-1. 组件需要包裹在 `ConfigProvider` 中以确保主题正常工作
-2. 多选模式下，`value` 和 `onChange` 的类型必须为数组
-3. `labelDictionary` 主要用于国际化场景，建议提供完整的字典映射
-4. 当使用 `noStyle` 模式时，需要自行处理样式和交互逻辑
-5. 组件会自动处理受控和非受控状态
 
 ## 最佳实践
 
