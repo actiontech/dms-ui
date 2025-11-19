@@ -6,15 +6,15 @@ group:
 
 # CustomSelect 自定义选择器
 
-基于 Ant Design Select 组件封装的自定义选择器组件，提供了统一的样式规范、内置搜索功能、自定义前缀显示和增强的标签模式。
+基于 Ant Design Select 封装，提供内置搜索、自定义前缀显示和增强标签模式的选择器组件。
 
 ## 何时使用
 
-- 需要内置搜索功能的选择器时
-- 需要自定义前缀显示的选择器时
-- 需要增强标签模式的选择器时
-- 需要保持与设计系统一致的选择器样式时
-- 需要分组选项和复杂选项结构时
+- 需要带图标或文本前缀的选择器
+- 需要内置搜索过滤功能
+- 需要多选或标签模式
+- 需要分组显示选项
+- 需要与表单集成的选择器
 
 ## 代码演示
 
@@ -26,7 +26,7 @@ group:
 
 <code src="./demo/withPrefix.tsx"></code>
 
-### 标签模式
+### 多选模式
 
 <code src="./demo/tagsMode.tsx"></code>
 
@@ -34,120 +34,96 @@ group:
 
 <code src="./demo/groupedOptions.tsx"></code>
 
-### 搜索功能
-
-<code src="./demo/searchFunction.tsx"></code>
-
-### 表单集成
-
-<code src="./demo/formIntegration.tsx"></code>
-
 ## API
 
 ### CustomSelect
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| prefix | 选择器前缀图标或文本 | `ReactNode` | - | - |
-| valuePrefix | 选项值的前缀显示 | `ReactNode` | `prefix` | - |
-| searchInputRef | 搜索输入框的引用 | `RefObject<InputRef>` | - | - |
-
-### 继承属性
-
-CustomSelect 组件继承了 Ant Design Select 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| options | 选项数据 | `OptionType[]` | - | - |
-| mode | 选择模式 | `'multiple' \| 'tags' \| undefined` | - | - |
-| placeholder | 占位符文本 | `string \| ReactNode` | - | - |
+| prefix | 选择器前缀 | `ReactNode` | - | - |
+| valuePrefix | 选项值前缀 | `ReactNode` | `prefix` | - |
+| searchInputRef | 搜索框引用 | `RefObject<InputRef>` | - | - |
+| options | 选项数据 | `OptionType[]` | - | ✅ |
+| mode | 选择模式 | `'multiple' \| 'tags'` | - | - |
+| placeholder | 占位符 | `string \| ReactNode` | - | - |
 | disabled | 是否禁用 | `boolean` | `false` | - |
-| size | 选择器大小 | `'large' \| 'middle' \| 'small'` | `'small'` | - |
-| value | 当前选中的值 | `string \| string[]` | - | - |
-| defaultValue | 默认选中的值 | `string \| string[]` | - | - |
-| onChange | 选择变化时的回调 | `(value, option) => void` | - | - |
-| onSearch | 搜索时的回调 | `(value: string) => void` | - | - |
-| onDropdownVisibleChange | 下拉框显示状态变化时的回调 | `(open: boolean) => void` | - | - |
-| className | 选择器类名 | `string` | - | - |
-| style | 选择器样式 | `CSSProperties` | - | - |
+| size | 选择器大小 | `'small' \| 'middle' \| 'large'` | `'small'` | - |
+| allowClear | 支持清除 | `boolean` | `false` | - |
+| onChange | 值变化回调 | `(value, option) => void` | - | - |
+| onSearch | 搜索回调 | `(value: string) => void` | - | - |
 
-## 设计规范
+继承 Ant Design Select 的所有其他属性，详见 [Select API](https://ant.design/components/select-cn#api)
 
-### 样式特性
+## 组件特点
 
-- 基于 Ant Design Select 组件的样式系统
-- 统一的圆角设计 (`border-radius: 4px`)
-- 自定义前缀样式，支持图标和文本
-- 内置搜索输入框，自动聚焦
-- 响应式的悬停和聚焦效果
-- 支持清除图标功能
+1. **内置搜索** → 自动显示搜索框，支持实时过滤，搜索框自动聚焦
+2. **前缀显示** → 支持图标和文本前缀，可独立设置选项值前缀
+3. **标签模式增强** → 多选模式下第一个标签显示前缀，后续标签使用分隔符
+4. **分组支持** → 支持选项分组，搜索时自动在所有分组中过滤
+5. **表单集成** → 与 Ant Design Form 完全兼容，支持所有验证规则
 
-### 主题配置
+## 核心功能详解
 
-组件样式通过主题系统进行配置，支持以下主题变量：
+### prefix 和 valuePrefix
+
+- `prefix`: 显示在选择器输入框左侧的前缀
+- `valuePrefix`: 显示在下拉选项中每个选项前的前缀
+- 默认情况下 `valuePrefix` 等于 `prefix`，可独立设置
 
 ```typescript
-theme.sharedTheme.components.customSelect = {
-  border: string;
-  content: {
-    prefixColor: string;
-  };
-  focusBackGroundColor: string;
-  hoverBackgroundColor: string;
-}
+// 前缀和选项值前缀相同
+<CustomSelect prefix={<UserOutlined />} options={userOptions} />
+
+// 前缀和选项值前缀不同
+<CustomSelect 
+  prefix={<UserOutlined />} 
+  valuePrefix={<TeamOutlined />}
+  options={userOptions} 
+/>
 ```
 
-### 尺寸规范
+### 分组选项
 
-- **小尺寸 (small)**: 默认尺寸，适合大多数场景
-- **中尺寸 (middle)**: 通过 size 属性设置
-- **大尺寸 (large)**: 通过 size 属性设置
+支持多级分组结构，搜索功能会在所有分组中查找匹配项：
 
-## 功能特性
+```typescript
+const groupedOptions = [
+  {
+    label: '用户管理',
+    options: [
+      { label: '张三', value: 'zhangsan' },
+      { label: '李四', value: 'lisi' }
+    ]
+  },
+  {
+    label: '数据库管理',
+    options: [
+      { label: 'MySQL', value: 'mysql' },
+      { label: 'PostgreSQL', value: 'postgresql' }
+    ]
+  }
+];
+```
 
-### 内置搜索
+### 多选模式
 
-- 自动显示搜索输入框
-- 支持实时过滤选项
-- 搜索输入框自动聚焦
-- 支持自定义搜索逻辑
+支持 `multiple` 和 `tags` 两种多选模式：
 
-### 前缀显示
-
-- 支持图标和文本前缀
-- 选项标签中显示前缀
-- 标签模式下的前缀处理
-- 可自定义值前缀显示
-
-### 标签模式增强
-
-- 优化的标签渲染
-- 支持分隔符显示
-- 第一个标签显示前缀
-- 后续标签使用分隔符
-
-### 分组选项支持
-
-- 支持选项组结构
-- 组标签自定义样式
-- 组内选项搜索过滤
-- 保持分组层次结构
+- `multiple`: 只能选择已有选项
+- `tags`: 可以输入自定义标签
 
 ## 注意事项
 
-1. 组件需要包裹在 `ConfigProvider` 中以确保主题正常工作
-2. 组件默认使用 `small` 尺寸，可以通过 `size` 属性覆盖
-3. 搜索功能默认启用，无需额外配置
-4. 所有 Ant Design Select 的属性和事件都可以正常使用
-5. 组件会自动应用统一的样式类名 `custom-select-namespace`
-6. 下拉框弹出层使用 `custom-select-popup-wrapper` 类名
+1. 组件需要包裹在 `ConfigProvider` 中使用
+2. 搜索功能默认启用，无需额外配置
+3. 继承所有 Ant Design Select 属性和事件
+4. 默认尺寸为 `small`，可通过 `size` 属性修改
+5. 分组选项时，`options` 数组中的每项包含 `label` 和 `options` 字段
 
-## 更新日志
+## 最佳实践
 
-- **1.0.0**: 初始版本，基于 Ant Design Select 封装
-- 支持所有 Select 组件的属性和事件
-- 新增内置搜索功能
-- 新增前缀显示功能
-- 增强标签模式支持
-- 统一的样式规范和主题系统集成
-- 支持分组选项和复杂选项结构
+1. **图标前缀**：使用语义化图标提升用户体验（如用户选择用 UserOutlined）
+2. **搜索优化**：选项较多时（>10 项），搜索功能能显著提升效率
+3. **分组使用**：相关选项较多时使用分组，保持结构清晰
+4. **多选提示**：多选模式下建议设置清晰的 placeholder 提示用户
+5. **表单验证**：与 Form 集成时使用 `rules` 属性设置验证规则
