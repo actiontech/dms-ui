@@ -22,18 +22,6 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 状态类型
-
-<code src="./demo/statusTypes.tsx"></code>
-
-### 消息内容
-
-<code src="./demo/messageContent.tsx"></code>
-
-### 集成使用
-
-<code src="./demo/integration.tsx"></code>
-
 ## API
 
 ### ReminderInformation
@@ -77,27 +65,6 @@ theme.sharedTheme.components.reminderInformation = {
 组件支持两种状态类型：
 - **success**: 成功状态，显示绿色主题和成功图标
 - **error**: 错误状态，显示红色主题和错误图标
-
-### 图标显示
-
-- 自动根据状态显示对应的图标
-- 成功状态：CheckCircleOutlined 图标
-- 错误状态：CloseCircleOutlined 图标
-- 图标大小和颜色与主题保持一致
-
-### 文本渲染
-
-- 使用 Typography.Text 组件渲染文本
-- 自动继承状态对应的主题色彩
-- 支持长文本自动换行
-- 使用 pre 标签保持文本格式
-
-### 布局对齐
-
-- 图标和文字垂直居中对齐
-- 使用 Flexbox 布局实现对齐
-- 统一的间距和边距设置
-- 响应式适配不同屏幕尺寸
 
 ## 使用场景
 
