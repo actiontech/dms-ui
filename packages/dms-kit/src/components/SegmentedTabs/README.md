@@ -26,6 +26,10 @@ group:
 
 <code src="./demo/dynamicContent.tsx"></code>
 
+### 懒加载配置
+
+<code src="./demo/lazyLoad.tsx"></code>
+
 ### 额外内容区域
 
 <code src="./demo/extraContent.tsx"></code>
@@ -34,9 +38,15 @@ group:
 
 <code src="./demo/animation.tsx"></code>
 
-### 复杂配置
+**动画配置说明：**
 
-<code src="./demo/complexConfig.tsx"></code>
+`animated` 属性用于控制标签页切换时的动画效果。支持任何标准的 CSS animation 属性值或设置为 `false` 禁用动画。
+
+详细说明和动画示例请参考 [LazyLoadComponent 动画效果文档](/components/lazy-load-component#动画效果)
+
+<!-- ### 复杂配置
+
+<code src="./demo/complexConfig.tsx"></code> -->
 
 ## API
 
@@ -48,7 +58,7 @@ group:
 | activeKey | 当前选中的标签页 | `T` | - | - |
 | onChange | 切换标签页的回调函数 | `(key: T) => void` | - | - |
 | defaultActiveKey | 默认选中的标签页 | `T` | `items[0]?.value` | - |
-| animated | 标签页内容出现、隐藏的动画效果 | `boolean` | `false` | - |
+| animated | 标签页内容切换的动画效果（对应 LazyLoadComponent.animation） | `string \| false` | `false` | - |
 | rootClassName | 最外层自定义类名 | `string` | - | - |
 | segmentedRowClassName | segmented row 自定义类名 | `string` | - | - |
 | segmentedRowExtraContent | segmented row 额外内容 | `ReactNode` | - | - |
@@ -62,8 +72,8 @@ group:
 | icon | segmented option 图标 | `ReactNode` | - | - |
 | className | segmented option 自定义类名 | `string` | - | - |
 | children | 当前标签页对应的内容 | `ReactNode` | - | - |
-| forceRender | 被隐藏时是否渲染 DOM 结构 | `boolean` | `false` | - |
-| destroyInactivePane | 被隐藏时是否销毁 DOM 结构 | `boolean` | `false` | - |
+| forceRender | 被隐藏时是否渲染 DOM 结构（对应 LazyLoadComponent.forceRender） | `boolean` | `false` | - |
+| destroyInactivePane | 切换到其他标签时是否销毁 DOM 结构（对应 LazyLoadComponent.destroyOnClose） | `boolean` | `false` | - |
 
 ### 类型定义
 
@@ -74,7 +84,7 @@ type SegmentedTabsProps<T extends string | number = string> = {
   activeKey?: T;
   onChange?: (key: T) => void;
   defaultActiveKey?: T;
-  animated?: boolean;
+  animated?: string | false;  // CSS animation 属性值或 false
   rootClassName?: string;
   segmentedRowClassName?: string;
   segmentedRowExtraContent?: ReactNode;
@@ -135,10 +145,16 @@ theme.sharedTheme.components.segmentedTabs = {
 
 ### 懒加载优化
 
-- 集成 LazyLoadComponent 组件
-- 支持强制渲染和销毁策略
-- 可配置的动画效果
-- 性能优化的内容管理
+SegmentedTabs 基于 LazyLoadComponent 组件实现懒加载功能，每个 tab 项支持独立配置：
+
+- **forceRender**：通过 CSS `display` 控制显隐，提前渲染内容（对应 LazyLoadComponent 的 `forceRender`）
+- **destroyInactivePane**：切换时自动销毁，释放资源（对应 LazyLoadComponent 的 `destroyOnClose`）
+
+animated配置是统一配置所有tab动画效果：
+- **animated**：可配置的动画效果（对应 LazyLoadComponent 的 `animation`）
+
+
+**详细说明**：关于这些属性的完整功能说明、使用场景和最佳实践，请参考 [LazyLoadComponent 文档](/components/lazy-load-component)
 
 ### 动态内容切换
 
@@ -176,17 +192,87 @@ theme.sharedTheme.components.segmentedTabs = {
 
 1. 组件需要包裹在 `ConfigProvider` 中以确保主题正常工作
 2. `items` 数组必须包含有效的 `value` 和 `children` 属性
-3. 懒加载功能会影响组件的性能表现，建议根据实际需求配置
-4. 动画效果会增加渲染开销，在性能敏感的场景下建议关闭
+3. `destroyInactivePane` 对应 LazyLoadComponent 的 `destroyOnClose` 属性，使用时请注意两者功能相同但命名不同
+4. 关于 `forceRender`、`destroyInactivePane` 和 `animated` 的详细注意事项，请参考 [LazyLoadComponent 文档](/components/lazy-load-component)
 5. 额外内容区域会影响分段控制器的布局，注意内容宽度控制
 
 ## 最佳实践
 
-1. **性能优化**: 合理使用 `forceRender` 和 `destroyInactivePane` 属性
-2. **内容管理**: 避免在标签页内容中放置过于复杂的组件
-3. **状态管理**: 利用 `onChange` 回调管理标签页状态
-4. **样式定制**: 通过类名属性进行样式定制，保持主题一致性
-5. **响应式设计**: 考虑在不同屏幕尺寸下的显示效果
+### 1. 性能优化
+
+**合理使用 `forceRender`**：
+```typescript
+// ✅ 推荐：首屏关键内容使用 forceRender
+{ label: '概览', value: 'overview', forceRender: true, children: <Overview /> }
+
+// ❌ 避免：所有标签都使用 forceRender
+items.map(item => ({ ...item, forceRender: true }))
+```
+
+**合理使用 `destroyInactivePane`**：
+```typescript
+// ✅ 推荐：重型组件使用 destroyInactivePane
+{ 
+  label: '实时监控', 
+  value: 'monitor', 
+  destroyInactivePane: true,  // 释放视频/图表资源
+  children: <RealtimeMonitor /> 
+}
+
+// ✅ 推荐：需要重置的表单
+{ 
+  label: '新建表单', 
+  value: 'form', 
+  destroyInactivePane: true,  // 每次打开都是全新表单
+  children: <CreateForm /> 
+}
+
+// ❌ 避免：需要保持状态的组件
+{ 
+  label: '编辑器', 
+  value: 'editor', 
+  destroyInactivePane: false,  // 保留用户编辑内容
+  children: <Editor /> 
+}
+```
+
+### 2. 典型配置场景
+
+**场景 1：数据展示页面**
+```typescript
+const items = [
+  { label: '列表', value: 'list', children: <List /> },  // 默认配置
+  { label: '图表', value: 'chart', destroyInactivePane: true, children: <Chart /> }  // 释放图表资源
+];
+```
+
+**场景 2：设置页面**
+```typescript
+const items = [
+  { label: '基础设置', value: 'basic', forceRender: true, children: <BasicSettings /> },  // 预加载
+  { label: '高级设置', value: 'advanced', children: <AdvancedSettings /> }  // 按需加载
+];
+```
+
+**场景 3：表单页面**
+```typescript
+const items = [
+  { label: '新建', value: 'create', destroyInactivePane: true, children: <CreateForm /> },  // 每次重置
+  { label: '编辑', value: 'edit', children: <EditForm /> }  // 保持状态
+];
+```
+
+### 3. 其他最佳实践
+
+**内容管理**: 避免在标签页内容中放置过于复杂的组件
+
+**状态管理**: 利用 `onChange` 回调管理标签页状态
+
+**样式定制**: 通过类名属性进行样式定制，保持主题一致性
+
+**响应式设计**: 考虑在不同屏幕尺寸下的显示效果
+
+**更多最佳实践**: 关于懒加载和动画的更多最佳实践，请参考 [LazyLoadComponent 文档](/components/lazy-load-component#最佳实践)
 
 ## 更新日志
 
