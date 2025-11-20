@@ -6,14 +6,14 @@ group:
 
 # VerificationCodeInput 验证码输入
 
-基于 BasicInput 和 BasicButton 组件封装的验证码输入组件，集成了发送验证码、倒计时等功能，适用于用户注册、登录、密码重置等需要验证码的场景。
+集成验证码发送、倒计时功能的输入组件，基于 BasicInput 和 BasicButton 封装。
 
 ## 何时使用
 
-- 用户注册时需要发送邮箱/手机验证码
-- 用户登录时需要验证码验证
-- 密码重置时需要验证码确认
-- 其他需要验证码验证的业务场景
+- 用户注册/登录需要验证码验证
+- 密码重置需要验证码确认
+- 敏感操作需要二次验证
+- 其他需要验证码的业务场景
 
 ## 代码演示
 
@@ -21,115 +21,72 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 自定义倒计时间隔
-
-<code src="./demo/customInterval.tsx"></code>
-
-### 自定义发送逻辑
+### 表单集成
 
 <code src="./demo/customSendLogic.tsx"></code>
-
 
 ## API
 
 ### VerificationCodeInput
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| onSendCode | 发送验证码的回调函数 | `() => Promise<AxiosResponse<unknown, any>>` | - | - |
+| onSendCode | 发送验证码的回调函数 | `() => Promise<AxiosResponse>` | - | ✅ |
 | interval | 倒计时间隔（秒） | `number` | `60` | - |
-
-### 继承属性
-
-VerificationCodeInput 组件继承了 Ant Design Input 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
 | placeholder | 输入框提示文字 | `string` | `请输入验证码` | - |
 | disabled | 是否禁用 | `boolean` | `false` | - |
 | size | 输入框大小 | `'large' \| 'middle' \| 'small'` | `'middle'` | - |
-| className | 输入框类名 | `string` | - | - |
-| style | 输入框样式 | `CSSProperties` | - | - |
-| onChange | 输入内容变化时的回调 | `(e: ChangeEvent<HTMLInputElement>) => void` | - | - |
-| onPressEnter | 按下回车键时的回调 | `(e: KeyboardEvent<HTMLInputElement>) => void` | - | - |
 
-## 设计规范
+继承 Ant Design Input 的所有其他属性，详见 [Input API](https://ant.design/components/input-cn#api)
 
-### 布局规范
+## 组件特点
 
-- **输入框**: 占据主要空间，支持输入验证码
-- **发送按钮**: 右侧固定宽度，包含发送状态和倒计时
-- **整体布局**: 使用 Space 组件实现水平布局，输入框自适应宽度
+1. **自动倒计时** → 发送验证码后自动开始倒计时，倒计时期间按钮禁用
+2. **状态管理** → 自动处理 loading 状态和按钮禁用状态
+3. **灵活配置** → 支持自定义倒计时间隔，适应不同业务场景
+4. **表单集成** → 完全兼容 Ant Design Form 组件
+5. **国际化支持** → 内置中英文国际化
 
-### 交互规范
+## 核心功能详解
 
-- **发送状态**: 点击发送按钮后显示 loading 状态
-- **倒计时**: 发送成功后开始倒计时，倒计时期间按钮禁用
-- **重试机制**: 倒计时结束后可重新发送验证码
+### 发送验证码
 
-### 样式特性
-
-- 响应式布局，输入框自适应容器宽度
-- 统一的按钮样式和状态管理
-- 支持主题系统配置
-- 良好的无障碍访问支持
-
-### 主题配置
-
-组件样式通过主题系统进行配置，支持以下主题变量：
-
-```typescript
-theme.sharedTheme.components.verificationCodeInput = {
-  input: {
-    default: { border, borderRadius, padding },
-    focus: { borderColor, boxShadow },
-    disabled: { background, color }
-  },
-  button: {
-    default: { background, color, border },
-    hover: { background, color },
-    disabled: { background, color, cursor }
-  }
-}
-```
-
-## 注意事项
-
-1. **必需的回调函数**: `onSendCode` 属性是必需的，用于处理验证码发送逻辑
-2. **异步处理**: `onSendCode` 必须返回 Promise，组件会自动处理 loading 状态
-3. **倒计时管理**: 组件内部使用 `useCountDown` hook 管理倒计时状态
-4. **国际化支持**: 组件支持中英文国际化，通过 `useTranslation` hook 实现
-5. **错误处理**: 建议在 `onSendCode` 回调中添加适当的错误处理逻辑
-6. **表单验证**: 可以结合 Form 组件使用，支持表单验证规则
-
-## 最佳实践
-
-### 发送验证码逻辑
+通过 `onSendCode` 回调函数处理验证码发送逻辑：
 
 ```typescript
 const handleSendCode = async () => {
-  try {
-    // 验证手机号/邮箱格式
-    if (!isValidPhone(phone)) {
-      message.error('请输入正确的手机号');
-      return;
-    }
-    
-    // 调用发送验证码 API
-    const response = await sendVerificationCode(phone);
-    
-    if (response.success) {
-      message.success('验证码已发送');
-    } else {
-      message.error(response.message || '发送失败');
-    }
-  } catch (error) {
-    message.error('发送失败，请重试');
-  }
+  // 调用发送验证码 API
+  const response = await sendVerificationCode(phone);
+  message.success('验证码已发送');
+  return response;
 };
+
+<VerificationCodeInput onSendCode={handleSendCode} />
+```
+
+**注意**：
+- `onSendCode` 必须返回 Promise
+- 组件会自动处理 loading 状态
+- 发送成功后自动开始倒计时
+
+### 自定义倒计时间隔
+
+根据业务场景选择合适的倒计时间隔：
+
+```typescript
+// 30 秒 - 适用于测试环境或安全要求不高的场景
+<VerificationCodeInput onSendCode={handleSendCode} interval={30} />
+
+// 60 秒（默认）- 适用于大多数生产环境
+<VerificationCodeInput onSendCode={handleSendCode} />
+
+// 120 秒 - 适用于安全要求较高的场景（如支付验证）
+<VerificationCodeInput onSendCode={handleSendCode} interval={120} />
 ```
 
 ### 表单集成
+
+与 Ant Design Form 无缝集成：
 
 ```typescript
 <Form.Item
@@ -147,11 +104,43 @@ const handleSendCode = async () => {
 </Form.Item>
 ```
 
-## 更新日志
+### 发送前验证
 
-- **1.0.0**: 初始版本
-  - 基于 BasicInput 和 BasicButton 组件封装
-  - 集成验证码发送和倒计时功能
-  - 支持自定义倒计时间隔
-  - 完整的国际化支持
-  - 响应式布局设计
+在发送验证码前进行业务验证：
+
+```typescript
+const handleSendCode = async () => {
+  // 验证手机号是否已输入
+  if (!phone) {
+    message.error('请先输入手机号');
+    throw new Error('手机号为空');
+  }
+
+  // 验证手机号格式
+  if (!isValidPhone(phone)) {
+    message.error('请输入正确的手机号格式');
+    throw new Error('手机号格式错误');
+  }
+
+  // 发送验证码
+  const response = await sendVerificationCode(phone);
+  message.success('验证码已发送');
+  return response;
+};
+```
+
+## 注意事项
+
+1. `onSendCode` 是必填属性，必须返回 Promise
+2. 组件使用 `useCountDown` hook 管理倒计时状态
+3. 发送失败时需要在 `onSendCode` 中抛出错误，组件会停止倒计时
+4. 支持中英文国际化，自动根据系统语言切换
+5. 组件需要包裹在 `ConfigProvider` 中使用
+
+## 最佳实践
+
+1. **前置验证**：在 `onSendCode` 中验证手机号/邮箱格式，避免无效请求
+2. **错误处理**：添加完整的错误处理逻辑，提供清晰的用户提示
+3. **安全限制**：根据场景选择合适的倒计时间隔（60-120 秒）
+4. **表单验证**：结合 Form 使用时添加验证码长度和格式验证
+5. **用户反馈**：使用 message 提示发送成功或失败，提升用户体验
