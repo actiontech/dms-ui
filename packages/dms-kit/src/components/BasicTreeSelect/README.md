@@ -6,13 +6,13 @@ group:
 
 # BasicTreeSelect 基础树形选择器
 
-基于 Ant Design TreeSelect 组件封装的基础树形选择器组件，提供了统一的样式规范和额外的功能特性。
+基于 Ant Design TreeSelect 封装的树形选择器，提供统一的样式和图标，支持加载状态。
 
 ## 何时使用
 
-- 需要从树形结构中选择一个或多个节点时
-- 需要展示层级数据的选择器时
-- 需要保持与设计系统一致的树形选择器组件时
+- 需要从树形结构中选择节点
+- 需要展示层级数据的选择器
+- 需要统一的选择器样式和交互
 
 ## 代码演示
 
@@ -28,101 +28,48 @@ group:
 
 <code src="./demo/search.tsx"></code>
 
-### 自定义图标
-
-<code src="./demo/customIcon.tsx"></code>
-
 ### 加载状态
 
 <code src="./demo/loading.tsx"></code>
 
-### 表单集成
-
-<code src="./demo/form.tsx"></code>
-
 ## API
 
-### BasicTreeSelect
+BasicTreeSelect 继承 Ant Design TreeSelect 的所有属性，完整 API 请参考 [TreeSelect 文档](https://ant.design/components/tree-select-cn)。
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| allowClear | 是否显示清除按钮 | `boolean` | `true` | - |
-| loading | 是否显示加载状态 | `boolean` | `false` | - |
-| placeholder | 选择框默认文字 | `string` | `'请选择'` | - |
+### 扩展属性
 
-### 继承属性
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| loading | 是否显示加载状态 | `boolean` | `false` |
 
-BasicTreeSelect 组件继承了 Ant Design TreeSelect 组件的所有属性，包括但不限于：
+### 常用属性
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 指定当前选中的条目 | `string \| string[] \| number \| number[]` | - | - |
-| defaultValue | 指定默认选中的条目 | `string \| string[] \| number \| number[]` | - | - |
-| treeData | 树形数据 | `TreeNode[]` | `[]` | - |
-| multiple | 是否支持多选 | `boolean` | `false` | - |
-| treeCheckable | 显示 checkbox | `boolean` | `false` | - |
-| showSearch | 是否支持搜索 | `boolean` | `false` | - |
-| disabled | 是否禁用 | `boolean` | `false` | - |
-| size | 选择框大小 | `'large' \| 'middle' \| 'small'` | `'middle'` | - |
-| className | 选择框类名 | `string` | - | - |
-| style | 选择框样式 | `CSSProperties` | - | - |
-| onChange | 选择变化时触发 | `(value, labelList, extra) => void` | - | - |
-| onSearch | 搜索时触发 | `(value: string) => void` | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| treeData | 树形数据 | `TreeNode[]` | `[]` |
+| value | 当前选中的值 | `string \| string[] \| number \| number[]` | - |
+| onChange | 选择变化时触发 | `(value) => void` | - |
+| placeholder | 选择框默认文字 | `string` | `'请选择'` |
+| allowClear | 是否显示清除按钮 | `boolean` | `true` |
+| showSearch | 是否支持搜索 | `boolean` | `false` |
+| multiple | 是否支持多选 | `boolean` | `false` |
+| treeCheckable | 显示 checkbox | `boolean` | `false` |
+| disabled | 是否禁用 | `boolean` | `false` |
 
-## 设计规范
+## 组件特点
 
-### 尺寸规范
-
-- **大尺寸 (lg)**: `height: 40px`
-- **默认尺寸**: `height: 32px`  
-- **小尺寸 (sm)**: `height: 24px`
-
-### 样式特性
-
-- 统一的圆角设计 (`border-radius: 4px`)
-- 基于主题的色彩系统
-- 自定义的展开/收起图标
-- 支持悬停、聚焦、禁用等状态样式
-- 统一的清除按钮样式
-
-### 主题配置
-
-组件样式通过主题系统进行配置，支持以下主题变量：
-
-```typescript
-theme.sharedTheme.components.basicTreeSelect = {
-  default: {
-    borderColor,
-    backgroundColor,
-    color
-  },
-  hover: {
-    borderColor
-  },
-  focus: {
-    borderColor,
-    boxShadow
-  },
-  disabled: {
-    backgroundColor,
-    color,
-    borderColor
-  }
-}
-```
+- **统一图标**：自定义展开/收起图标和清除图标
+- **加载状态**：支持 loading 属性显示加载中状态
+- **空状态**：集成 BasicEmpty 组件显示空数据
+- **国际化**：placeholder 自动支持多语言
 
 ## 注意事项
 
-1. 组件需要包裹在 `ConfigProvider` 中以确保主题正常工作
-2. 组件会自动应用统一的样式类名 `basic-tree-select-wrapper`
-3. 所有 Ant Design TreeSelect 的属性和事件都可以正常使用
-4. 组件集成了国际化支持，placeholder 会自动使用当前语言
-5. 当 `loading` 为 true 时，会显示加载状态的空状态组件
+- 组件会自动应用 `basic-tree-select-wrapper` 样式类名
+- `loading` 为 true 时会在下拉框中显示加载状态
 
-## 更新日志
+## 最佳实践
 
-- **1.0.0**: 初始版本，基于 Ant Design TreeSelect 封装
-- 支持所有 TreeSelect 组件的属性和事件
-- 新增自定义展开/收起图标
-- 集成 BasicEmpty 组件支持加载状态
-- 统一的样式规范和主题系统集成
+- 使用 `treeDefaultExpandAll` 默认展开所有节点以提升用户体验
+- 对于大数据量场景，配合 `showSearch` 和 `filterTreeNode` 实现搜索功能
+- 多选场景建议使用 `treeCheckable` 配合 `multiple` 以获得更好的交互体验
