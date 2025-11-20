@@ -1,9 +1,11 @@
+/**
+ * 多种预设颜色
+ * - 提供 12 种颜色主题
+ * - 统一的视觉风格
+ */
 import React from 'react';
-import { BasicTag } from '@actiontech/dms-kit';
-import { ConfigProvider } from '@actiontech/dms-kit';
-import { Space, Typography } from 'antd';
-
-const { Title } = Typography;
+import { BasicTag, ConfigProvider } from '@actiontech/dms-kit';
+import { Space } from 'antd';
 
 const BasicTagColorDemo = () => {
   const colorTags = [
@@ -23,16 +25,13 @@ const BasicTagColorDemo = () => {
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <Title level={4}>预设颜色标签</Title>
-        <Space size={[0, 8]} wrap>
-          {colorTags.map((tag) => (
-            <BasicTag key={tag.color} color={tag.color as any}>
-              {tag.text}
-            </BasicTag>
-          ))}
-        </Space>
-      </div>
+      <Space size={[0, 8]} wrap>
+        {colorTags.map((tag) => (
+          <BasicTag key={tag.color} color={tag.color as any}>
+            {tag.text}
+          </BasicTag>
+        ))}
+      </Space>
     </ConfigProvider>
   );
 };
