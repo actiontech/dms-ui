@@ -515,7 +515,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                             >
                               <div
                                 aria-label="test"
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-jp7qmp"
                               >
                                 test
                                 <div
