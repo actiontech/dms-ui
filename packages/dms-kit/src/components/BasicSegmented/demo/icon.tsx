@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { Space } from 'antd';
+import { Space, Typography } from 'antd';
 import {
   TableOutlined,
   AppstoreOutlined,
-  BarsOutlined,
-  FileTextOutlined,
-  PictureOutlined
+  BarsOutlined
 } from '@ant-design/icons';
 import { ConfigProvider, BasicSegmented } from '@actiontech/dms-kit';
 
+const { Text } = Typography;
+
+/**
+ * 图标模式
+ * - 图标 + 文字组合
+ * - 纯图标模式（节省空间）
+ */
 const BasicSegmentedIconDemo: React.FC = () => {
   const [value, setValue] = useState<string | number>('table');
 
-  const iconOptions = [
+  const iconWithTextOptions = [
     {
       label: '表格视图',
       value: 'table',
@@ -27,40 +32,43 @@ const BasicSegmentedIconDemo: React.FC = () => {
       label: '列表视图',
       value: 'list',
       icon: <BarsOutlined />
-    },
-    {
-      label: '文档视图',
-      value: 'document',
-      icon: <FileTextOutlined />
-    },
-    {
-      label: '图片视图',
-      value: 'picture',
-      icon: <PictureOutlined />
     }
+  ];
+
+  const iconOnlyOptions = [
+    { label: <TableOutlined />, value: 'table' },
+    { label: <AppstoreOutlined />, value: 'card' },
+    { label: <BarsOutlined />, value: 'list' }
   ];
 
   return (
     <ConfigProvider>
       <Space direction="vertical" size="large">
-        <BasicSegmented
-          options={iconOptions}
-          value={value}
-          onChange={setValue}
-        />
-
-        <div>
-          当前选择: <strong>{value}</strong>
-        </div>
-
-        <div>
-          <h4>仅图标模式</h4>
+        <Space>
+          <Text>图标 + 文字：</Text>
           <BasicSegmented
-            options={[
-              { label: <TableOutlined />, value: 'table' },
-              { label: <AppstoreOutlined />, value: 'card' },
-              { label: <BarsOutlined />, value: 'list' }
-            ]}
+            options={iconWithTextOptions}
+            value={value}
+            onChange={setValue}
+          />
+        </Space>
+
+        <Space>
+          <Text>纯图标模式：</Text>
+          <BasicSegmented
+            options={iconOnlyOptions}
+            value={value}
+            onChange={setValue}
+          />
+        </Space>
+
+        <div style={{ width: 400 }}>
+          <div style={{ marginBottom: 8 }}>
+            <Text>Block 模式：</Text>
+          </div>
+          <BasicSegmented
+            block
+            options={iconWithTextOptions}
             value={value}
             onChange={setValue}
           />
