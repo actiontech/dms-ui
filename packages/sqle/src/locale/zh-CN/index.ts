@@ -19,6 +19,7 @@ import ruleManager from './ruleManager';
 import ruleKnowledge from './ruleKnowledge';
 import sqlManagement from './sqlManagement';
 import sqlAudit from './sqlAudit';
+import sqlOptimization from './sqlOptimization';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -43,6 +44,7 @@ export default {
     ruleManager,
     ruleKnowledge,
     sqlManagement,
-    sqlAudit
+    sqlAudit,
+    sqlOptimization
   }
 };

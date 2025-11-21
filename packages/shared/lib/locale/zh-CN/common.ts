@@ -12,6 +12,7 @@ export default {
   enabled: '已启用',
   disabled: '已禁用',
 
+  copy: '复制',
   copied: '复制成功',
   true: '是',
   false: '否',

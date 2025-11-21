@@ -292,3 +292,8 @@ export type WorkflowTemplateTheme = {
     authInfoColor: string;
   };
 };
+
+export type SqlOptimization = {
+  rateNumberBackground: string;
+  rightContentBackground: string;
+};

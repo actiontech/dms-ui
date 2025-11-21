@@ -22,7 +22,11 @@ enum EmitterKey {
   Refresh_Report_Statistics = 'Refresh_Report_Statistics',
   Refresh_Project_Overview = 'Refresh_Project_Overview',
 
-  Refresh_SQL_Management = 'Refresh_SQL_Management'
+  Refresh_SQL_Management = 'Refresh_SQL_Management',
+
+  Refresh_Sql_Optimization_List = 'Refresh_Sql_Optimization_List',
+
+  Refresh_Sql_Audit_List = 'Refresh_Sql_Audit_List'
 }
 
 export default EmitterKey;

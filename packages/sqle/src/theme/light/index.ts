@@ -6,6 +6,7 @@ import { reportStatisticsTheme } from './reportStatistics';
 import { projectOverviewTheme } from './projectOverview';
 import { auditPlanTheme } from './auditPlan';
 import { workflowTemplateTheme } from './workflowTemplate';
+import { sqlOptimizationTheme } from './sqlOptimization';
 
 export const sqleLightTheme: SqleTheme = {
   statistics: statisticsTheme,
@@ -13,7 +14,8 @@ export const sqleLightTheme: SqleTheme = {
   order: orderTheme,
   projectOverview: projectOverviewTheme,
   auditPlan: auditPlanTheme,
-  workflowTemplate: workflowTemplateTheme
+  workflowTemplate: workflowTemplateTheme,
+  sqlOptimization: sqlOptimizationTheme
 };
 
 const lightTheme = createTheme({

@@ -26,6 +26,12 @@ export { default as BasicTag } from './components/BasicTag';
 export { default as BasicDatePicker } from './components/BasicDatePicker';
 export { default as AvatarCom } from './components/AvatarCom';
 export { default as DatabaseTypeLogo } from './components/DatabaseTypeLogo';
+export { default as BasicEmpty } from './components/BasicEmpty';
+export * from './components/ModeSwitcher';
+export * from './components/FormCom';
+export * from './data/common';
+export * from './components/SQLRenderer';
+export * from './components/SegmentedTabs';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';

@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
 import SqlAnalyze from '../SqlAnalyze';
@@ -12,9 +12,12 @@ import {
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
+import useSqlOptimization from '../hooks/useSqlOptimization';
+import SqlOptimizationResultDrawer from '../Drawer/SqlOptimizationResultDrawer';
 
 const OrderSqlAnalyze = () => {
   const urlParams = useParams<OrderSqlAnalyzeUrlParams>();
+  const [searchParams] = useSearchParams();
 
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -28,6 +31,13 @@ const OrderSqlAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
+  const {
+    setOptimizationCreationParams,
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  } = useSqlOptimization();
+
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
@@ -40,6 +50,11 @@ const OrderSqlAnalyze = () => {
         setSqlExplain(res.data.data?.sql_explain);
         setTableMetas(res.data.data?.table_metas);
         setPerformancesStatistics(res.data.data?.performance_statistics);
+        setOptimizationCreationParams({
+          instance_name: searchParams?.get('instance_name') ?? '',
+          schema_name: searchParams?.get('schema') ?? '',
+          sql_content: res.data.data?.sql_explain?.sql
+        });
       } else {
         if (res.data.code === ResponseCode.NotSupportDML) {
           setErrorType('info');
@@ -55,7 +70,9 @@ const OrderSqlAnalyze = () => {
     getSqlAnalyzeFinish,
     startGetSqlAnalyze,
     urlParams.sqlNum,
-    urlParams.taskId
+    urlParams.taskId,
+    searchParams,
+    setOptimizationCreationParams
   ]);
 
   useEffect(() => {
@@ -63,14 +80,20 @@ const OrderSqlAnalyze = () => {
   }, [getSqlAnalyze]);
 
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
+        createSqlOptimizationLoading={createSqlOptimizationLoading}
+        allowSqlOptimization={allowSqlOptimization}
+      />
+      <SqlOptimizationResultDrawer />
+    </>
   );
 };
 

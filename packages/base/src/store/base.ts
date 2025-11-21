@@ -5,6 +5,7 @@ import project from './project';
 import system from './system';
 import database from './database';
 import nav from './nav';
+import permission from './permission';
 
 export const baseStoreData = {
   user,
@@ -13,5 +14,6 @@ export const baseStoreData = {
   project,
   system,
   database,
-  nav
+  nav,
+  permission
 };
