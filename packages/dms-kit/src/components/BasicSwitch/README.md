@@ -4,132 +4,66 @@ group:
   order: 1
 ---
 
-# BasicSwitch 开关组件
+# BasicSwitch 开关
 
-## 组件介绍
-
-BasicSwitch 是一个基于 Ant Design Switch 组件的封装，提供了统一的样式主题和交互体验。该组件主要用于状态切换场景，如开启/关闭功能、启用/禁用设置等。
+基于 Ant Design Switch 封装，提供统一的样式主题和交互体验，用于状态切换场景。
 
 ## 何时使用
 
-- **功能开关**：需要快速切换某个功能或设置的开启/关闭状态
-- **权限控制**：控制用户权限、系统功能的启用状态
-- **设置面板**：在配置页面中切换各种选项
-- **表单控件**：作为表单中的布尔值输入控件
+- 快速切换功能或设置的开启/关闭状态
+- 控制用户权限、系统功能的启用状态
+- 在配置页面中切换各种选项
+- 作为表单中的布尔值输入控件
 
 ## 代码演示
 
 ### 基础用法
 
-最简单的开关组件，支持点击切换状态。
-
 <code src="./demos/basic.tsx"></code>
 
-### 带标签的开关
-
-为开关添加描述文字，让用户更清楚了解开关的作用。
-
-<code src="./demos/with-label.tsx"></code>
-
-### 不同尺寸
-
-支持三种尺寸：small、default、large。
+### 不同尺寸和状态
 
 <code src="./demos/size.tsx"></code>
 
-### 加载状态
-
-在异步操作时显示加载状态，防止用户重复操作。
-
-<code src="./demos/loading.tsx"></code>
-
-### 禁用状态
-
-在特定条件下禁用开关，防止用户操作。
-
-<code src="./demos/disabled.tsx"></code>
-
-### 自定义样式
-
-通过 className 和 style 属性自定义开关的外观。
-
-<code src="./demos/custom.tsx"></code>
-
 ### 表单集成
-
-在表单中使用开关组件，支持表单验证和提交。
 
 <code src="./demos/form.tsx"></code>
 
-## API 文档
+## API
 
-### BasicSwitchProps
+BasicSwitch 继承 Ant Design Switch 的所有属性，完整 API 请参考 [Switch 文档](https://ant.design/components/switch-cn)。
 
-继承自 Ant Design 的 `SwitchProps`，包含以下属性：
+### 常用属性
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| autoFocus | 自动获取焦点 | boolean | false | - |
-| checked | 指定当前是否选中 | boolean | false | - |
-| checkedChildren | 选中时的内容 | ReactNode | - | - |
-| className | 额外的 CSS 类名 | string | - | - |
-| defaultChecked | 默认是否选中 | boolean | false | - |
-| disabled | 是否禁用 | boolean | false | - |
-| loading | 加载中的开关 | boolean | false | - |
-| size | 开关大小，可选值：default、small | 'default' \| 'small' | 'default' | - |
-| unCheckedChildren | 非选中时的内容 | ReactNode | - | - |
-| onChange | 变化时回调函数 | function(checked: boolean, event: Event) | - | - |
-| onClick | 点击时回调函数 | function(checked: boolean, event: Event) | - | - |
+| checked | 指定当前是否选中 | `boolean` | `false` | - |
+| defaultChecked | 默认是否选中 | `boolean` | `false` | - |
+| disabled | 是否禁用 | `boolean` | `false` | - |
+| loading | 加载中的开关 | `boolean` | `false` | - |
+| size | 开关大小 | `'default' \| 'small'` | `'default'` | - |
+| checkedChildren | 选中时的内容 | `ReactNode` | - | - |
+| unCheckedChildren | 非选中时的内容 | `ReactNode` | - | - |
+| onChange | 变化时回调函数 | `(checked: boolean, event: Event) => void` | - | - |
+| onClick | 点击时回调函数 | `(checked: boolean, event: Event) => void` | - | - |
 
-## 设计规范
+## 组件特点
 
-### 主题配置
-
-BasicSwitch 组件支持通过主题系统进行样式定制：
-
-```
-// 主题配置示例
-const theme = {
-  sharedTheme: {
-    uiToken: {
-      colorFill: '#f0f0f0',           // 未选中状态背景色
-      colorFillSecondary: '#d9d9d9'   // 禁用状态背景色
-    }
-  }
-};
-```
-
-### 尺寸规范
-
-- **small**: 高度 16px，适合紧凑布局
-- **default**: 高度 20px，标准尺寸
-- **large**: 高度 24px，适合重要操作
-
-### 颜色规范
-
-- **未选中状态**: 使用主题的 `colorFill` 颜色
-- **选中状态**: 使用 Ant Design 默认的成功色 `#52c41a`
-- **禁用状态**: 使用主题的 `colorFillSecondary` 颜色
-
-### 交互规范
-
-- **点击区域**: 整个开关区域都可点击
-- **状态切换**: 支持键盘操作（Space 键）
-- **焦点样式**: 提供清晰的焦点指示器
-- **加载状态**: 显示旋转动画，防止重复操作
+1. **统一样式主题** → 自动应用 ActiontechTable 主题系统的样式规范
+2. **完整状态支持** → 支持加载、禁用、不同尺寸等多种状态
+3. **无障碍支持** → 内置 ARIA 属性和键盘导航（Space 键切换）
+4. **表单友好** → 可与 Form 组件无缝集成
 
 ## 注意事项
 
-1. **无障碍支持**: 组件内置了完整的无障碍支持，包括 ARIA 属性和键盘导航
-2. **表单集成**: 在 Form 组件中使用时，记得设置 `valuePropName="checked"`
-3. **异步操作**: 在异步操作期间建议使用 `loading` 状态
-4. **主题定制**: 可以通过 CSS 变量或主题配置自定义样式
-5. **性能优化**: 避免在 `onChange` 回调中执行复杂操作
+1. 在 Form 组件中使用时，必须设置 `valuePropName="checked"`
+2. 异步操作期间建议使用 `loading` 状态防止重复操作
+3. 避免在 `onChange` 回调中执行耗时操作，影响交互响应
+4. 组件支持键盘操作，Space 键可切换状态
 
-## 更新日志
+## 最佳实践
 
-### 1.0.0
-- 初始版本发布
-- 基于 Ant Design Switch 组件封装
-- 支持主题系统集成
-- 提供统一的样式规范
+1. **异步切换**：配合 `loading` 状态展示操作进度，提升用户体验
+2. **表单使用**：在 Form.Item 中设置 `valuePropName="checked"` 确保值正确绑定
+3. **状态标签**：使用 `checkedChildren` 和 `unCheckedChildren` 让开关含义更清晰
+4. **尺寸选择**：紧凑布局使用 `small`，标准场景使用 `default`
