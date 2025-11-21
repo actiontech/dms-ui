@@ -1,4 +1,4 @@
 *.snap
 *.md
-**/demo/**
-**/demos/**
+# **/demo/**
+# **/demos/**
