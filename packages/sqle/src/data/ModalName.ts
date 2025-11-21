@@ -17,5 +17,12 @@ export enum ModalName {
   View_Audit_Result_Drawer = 'View_Audit_Result_Drawer',
 
   // IDE plugin audit
-  View_Plugin_Audit_Result_Drawer = 'View_Plugin_Audit_Result_Drawer'
+  View_Plugin_Audit_Result_Drawer = 'View_Plugin_Audit_Result_Drawer',
+  // sql optimization
+  Sql_Optimization_Diff_Modal = 'SQL_OPTIMIZATION_DIFF_MODAL',
+  Sql_Optimization_Table_Structure_Modal = 'SQL_OPTIMIZATION_TABLE_STRUCTURE_MODAL',
+  Sql_Optimization_Result_Modal = 'SQL_OPTIMIZATION_RESULT_MODAL',
+  Sql_Optimization_Query_Plan_Flow_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_FLOW_MODAL',
+  Sql_Optimization_Query_Plan_Diff_Modal = 'SQL_OPTIMIZATION_QUERY_PLAN_DIFF_MODAL',
+  Sql_Optimization_Result_Drawer = 'SQL_OPTIMIZATION_RESULT_DRAWER'
 }

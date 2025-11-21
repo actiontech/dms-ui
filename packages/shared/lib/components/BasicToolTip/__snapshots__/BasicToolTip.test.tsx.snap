@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicToolTip should render with custom class name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open custom-tool-tip-name basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="custom-children-name"
+        >
+          tool tip
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-19kgj31"
+          >
+            this is a tip
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/BasicToolTip should render with title width 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="custom-children-name"
+        >
+          tool tip
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-1fhqh23"
+            width="300"
+          >
+            this is a tip
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

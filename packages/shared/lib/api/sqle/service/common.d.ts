@@ -43,7 +43,8 @@ import {
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ModeEnum,
   WorkflowStepResV2StateEnum,
-  WorkflowStepResV2TypeEnum
+  WorkflowStepResV2TypeEnum,
+  OptimizationSQLDetailStatusEnum
 } from './common.enum';
 
 export interface IBaseRes {
@@ -2764,4 +2765,166 @@ export interface IWorkflowStepResV2 {
   type?: WorkflowStepResV2TypeEnum;
 
   workflow_step_id?: number;
+}
+
+export interface IOptimizationRecord {
+  created_time?: string;
+
+  created_user?: string;
+
+  db_type?: string;
+
+  instance_name?: string;
+
+  number_of_index?: number;
+
+  number_of_rule?: number;
+
+  optimization_id?: string;
+
+  optimization_name?: string;
+
+  performance_improve?: number;
+
+  status?: OptimizationRecordStatusEnum;
+
+  status_detail?: string;
+}
+
+export interface IGetOptimizationRecordsRes {
+  code?: number;
+
+  data?: IOptimizationRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetOptimizationDetailRes {
+  code?: number;
+
+  data?: IOptimizationSQLDetail;
+
+  message?: string;
+}
+
+export interface IOptimizationSQLDetail {
+  advised_index?: IAdvisedIndex;
+
+  id?: number;
+
+  metadata?: string;
+
+  optimization_id?: string;
+
+  optimize?: IOptimizeDetail;
+
+  origin_query_plan?: IQueryPlan;
+
+  origin_sql?: string;
+
+  status?: OptimizationSQLDetailStatusEnum;
+
+  status_detail?: string;
+
+  total_analysis?: ITotalAnalysis;
+
+  total_state?: string;
+}
+
+export interface ITotalAnalysis {
+  detail?: IAnalysisDetail[];
+
+  improvement_desc?: string;
+
+  improvement_rate?: number;
+
+  state?: string;
+
+  total_score?: number;
+}
+
+export interface IAnalysisDetail {
+  category?: string;
+
+  optimized_score?: number;
+
+  original_score?: number;
+}
+
+export interface IAdvisedIndex {
+  has_advice?: boolean;
+
+  indexes?: IIndexInfo[];
+
+  other_advice?: string;
+
+  state?: string;
+}
+
+export interface IIndexInfo {
+  create_index_statement?: string;
+
+  reason?: string;
+}
+
+export interface IOptimizeDetail {
+  state?: string;
+
+  steps?: IOptimizeStep[];
+}
+
+export interface IOptimizeStep {
+  analysis?: IAnalysis;
+
+  chat_id?: string;
+
+  optimized_sql?: string;
+
+  query_plan?: IQueryPlan;
+
+  rule_desc?: string;
+
+  rule_id?: string;
+
+  rule_name?: string;
+}
+
+export interface IQueryPlan {
+  query_plan_desc?: IQueryPlanNode[];
+
+  state?: string;
+}
+
+export interface IQueryPlanNode {
+  children?: IQueryPlanNode[];
+
+  operator?: string;
+
+  summary?: string[];
+}
+
+export interface IOptimizeSQLRes {
+  code?: number;
+
+  data?: IOptimizeSQLResData;
+
+  message?: string;
+}
+
+export interface IOptimizeSQLResData {
+  sql_optimization_record_id?: string;
+}
+
+export interface IGetModuleStatusResV1 {
+  code?: number;
+
+  data?: IModuleStatusRes;
+
+  message?: string;
+}
+
+export interface IModuleStatusRes {
+  is_supported?: boolean;
 }

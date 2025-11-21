@@ -346,6 +346,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
             next={loadMore}
             scrollPage={scrollPageNumber.current}
             refreshScrollList={onRefreshScrollList}
+            currentTaskInfo={currentTaskInfo}
           ></DataSourceWaterfallList>
         ) : (
           <DataSourceResultList
@@ -356,6 +357,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
             loading={loading}
             taskId={auditResultActiveKey}
             refresh={refresh}
+            currentTaskInfo={currentTaskInfo}
           />
         )}
       </EmptyBox>

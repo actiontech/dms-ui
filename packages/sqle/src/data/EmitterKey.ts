@@ -23,7 +23,11 @@ enum EmitterKey {
   Refresh_SQL_Management = 'Refresh_SQL_Management',
 
   Search_Rule_Template_Rule_Select_List = 'Search_Rule_Template_Rule_Select_List',
-  Search_Rule_Template_Rule_Clear_Value = 'Search_Rule_Template_Rule_Clear_Value'
+  Search_Rule_Template_Rule_Clear_Value = 'Search_Rule_Template_Rule_Clear_Value',
+
+  Refresh_Sql_Optimization_List = 'Refresh_Sql_Optimization_List',
+
+  Refresh_Sql_Audit_List = 'Refresh_Sql_Audit_List'
 }
 
 export default EmitterKey;

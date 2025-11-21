@@ -1,14 +1,25 @@
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicTable, BasicResult } from '@actiontech/shared';
+import {
+  EmptyBox,
+  BasicTable,
+  BasicResult,
+  BasicButton
+} from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { IconSqlLine } from '@actiontech/shared/lib/Icon/common';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import RenderSQL from '../../../components/RenderSQL';
+import { ExecPlanParams } from '.';
 
-const useSQLExecPlan = () => {
+const useSQLExecPlan = (params: ExecPlanParams) => {
+  const {
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
 
@@ -23,7 +34,26 @@ const useSQLExecPlan = () => {
     const renderSQL = () => {
       return (
         <>
-          <h3 className="header-title">{t('sqlQuery.executePlan.sql')}</h3>
+          {/* <h3 className="header-title">{t('sqlQuery.executePlan.sql')}</h3> */}
+          <div className="sql-title-wrapper">
+            <h3>{t('sqlAnalyze.sqlContent')}</h3>
+            <EmptyBox
+              if={
+                !!explain &&
+                !!explain.head &&
+                !!explain.rows &&
+                allowSqlOptimization
+              }
+            >
+              <BasicButton
+                type="primary"
+                onClick={onCreateSqlOptimizationOrview}
+                loading={createSqlOptimizationLoading}
+              >
+                {t('sqlAnalyze.optimize')}
+              </BasicButton>
+            </EmptyBox>
+          </div>
           <section className="basic-cont-wrapper sql-cont">
             <RenderSQL sql={sql ?? ''} />
           </section>
