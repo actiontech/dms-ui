@@ -17,14 +17,22 @@ import ExecStatusTag from './ExecStatusTag';
 import ResultDescribe from './ResultDescribe';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const ResultCard: React.FC<
   IAuditTaskSQLResV2 & {
     projectName: string;
     taskId: string;
     onUpdateDescription?: () => void;
+    currentTaskInfo?: IAuditTaskResV1;
   }
-> = ({ projectName, taskId, onUpdateDescription, ...props }) => {
+> = ({
+  projectName,
+  taskId,
+  onUpdateDescription,
+  currentTaskInfo,
+  ...props
+}) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -40,7 +48,7 @@ const ResultCard: React.FC<
 
   const onClickAnalyze = () => {
     window.open(
-      `/sqle/project/${projectName}/order/${taskId}/${props.number}/analyze`
+      `/sqle/project/${projectName}/order/${taskId}/${props.number}/analyze?instance_name=${currentTaskInfo?.instance_name}&schema=${currentTaskInfo?.instance_schema}`
     );
   };
 

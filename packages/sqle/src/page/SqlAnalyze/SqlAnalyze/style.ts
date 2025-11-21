@@ -27,6 +27,23 @@ export const SqlContStyleWrapper = styled('section')`
       ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
   }
 
+  .sql-title-wrapper {
+    padding: 24px 40px 12px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+    border-bottom: 2px solid
+      ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
   .basic-cont-wrapper {
     min-height: 100px;
   }

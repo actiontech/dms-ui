@@ -21,7 +21,9 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
   auditLevelFilterValue,
   projectID,
   updateTaskRecordTotalNum,
-  dbType
+  dbType,
+  instanceName,
+  schema
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
@@ -37,7 +39,9 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
     if (typeof sqlNum === 'undefined') {
       return;
     }
-    window.open(`/sqle/project/${projectID}/order/${taskID}/${sqlNum}/analyze`);
+    window.open(
+      `/sqle/project/${projectID}/order/${taskID}/${sqlNum}/analyze?instance_name=${instanceName}&schema=${schema}`
+    );
   };
   const updateSqlDescribeProtect = useRef(false);
   const updateSqlDescribe = (sqlNum: number, sqlDescribe: string) => {

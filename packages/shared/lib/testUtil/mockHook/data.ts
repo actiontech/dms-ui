@@ -25,7 +25,11 @@ export const mockCurrentUserReturn = {
   projectID: '1',
   projectName: 'default',
   theme: SupportTheme.LIGHT,
-  role: SystemRole.admin
+  role: SystemRole.admin,
+  updateTheme: jest.fn(),
+  useInfoFetched: true,
+  uid: '500300',
+  isSqlOptimizationSupported: true
 };
 
 export const mockProjectInfo = {

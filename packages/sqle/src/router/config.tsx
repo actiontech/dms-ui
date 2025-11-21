@@ -143,11 +143,19 @@ const SQLManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
-const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
+const SqlAudit = React.lazy(() => import('../page/SqlAudit'));
 
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
+
+const SqlOptimizationCreate = React.lazy(
+  () => import('../page/SqlOptimization/Create')
+);
+
+const SqlOptimizationResult = React.lazy(
+  () => import('../page/SqlOptimization/Result')
+);
 
 // #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
@@ -241,6 +249,16 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: 'detail/:sql_audit_record_id',
         element: <SqlAuditDetail />,
         key: 'sqlAuditDetail'
+      },
+      {
+        path: 'create-optimization',
+        element: <SqlOptimizationCreate />,
+        key: 'sqlAuditCreateOptimization'
+      },
+      {
+        path: 'optimization-result/:optimizationId',
+        element: <SqlOptimizationResult />,
+        key: 'sqlOptimizationResult'
       }
     ] as RouterConfigItem[]
   },

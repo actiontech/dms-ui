@@ -1,9 +1,13 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+  pageTitle: '快捷诊断',
+  sqlAudit: 'SQL审核',
+  sqlOptimization: 'SQL调优',
+  createOptimization: '创建SQL调优',
   list: {
     pageTitle: 'SQL审核',
     action: {
-      create: '创建审核',
+      create: '创建快捷审核',
       updateTags: {
         successTips: '更新业务标签成功',
         addTag: {

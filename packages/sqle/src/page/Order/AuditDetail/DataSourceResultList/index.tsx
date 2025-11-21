@@ -12,7 +12,8 @@ const DataSourceResultList: React.FC<DataSourceResultListProps> = ({
   pagination,
   list,
   taskId,
-  refresh
+  refresh,
+  currentTaskInfo
 }) => {
   const { t } = useTranslation();
 
@@ -34,6 +35,7 @@ const DataSourceResultList: React.FC<DataSourceResultListProps> = ({
                 projectName={projectName}
                 taskId={taskId}
                 onUpdateDescription={refresh}
+                currentTaskInfo={currentTaskInfo}
               />
             </List.Item>
           );

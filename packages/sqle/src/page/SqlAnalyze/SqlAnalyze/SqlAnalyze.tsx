@@ -24,11 +24,18 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     errorMessage,
     loading = false,
     performanceStatistics,
-    errorType = 'error'
+    errorType = 'error',
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
   } = props;
 
   const { generateTableSchemaContent } = useTableSchema();
-  const { generateSQLExecPlanContent } = useSQLExecPlan();
+  const { generateSQLExecPlanContent } = useSQLExecPlan({
+    onCreateSqlOptimizationOrview,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  });
 
   const [tabStatus, setTabStatus] = useState<string>('sql');
 
