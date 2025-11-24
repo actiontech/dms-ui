@@ -53,7 +53,7 @@ BasicModal 继承 Ant Design Modal 的所有属性，完整 API 请参考 [Modal
 
 ## 组件特点
 
-1. **统一样式规范** → 自动应用 ActiontechTable 主题系统的样式
+1. **统一样式规范** → 自动应用项目主题系统的样式
 2. **尺寸预设** → 提供 small（480px）和 large（960px）两种预设尺寸
 3. **自定义关闭图标** → 使用统一的关闭图标样式
 4. **完整功能** → 继承 Ant Design Modal 所有功能

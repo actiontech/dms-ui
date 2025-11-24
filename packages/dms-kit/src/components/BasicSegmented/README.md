@@ -43,7 +43,7 @@ BasicSegmented 继承 Ant Design Segmented 的所有属性，完整 API 请参�
 
 ## 组件特点
 
-1. **统一样式规范** → 自动应用 ActiontechTable 主题系统的样式
+1. **统一样式规范** → 自动应用项目主题系统的样式
 2. **多种尺寸** → 支持 small、middle、large 三种尺寸
 3. **图标支持** → 选项可包含图标，增强视觉效果
 4. **完整功能** → 继承 Ant Design Segmented 所有功能
