@@ -41,7 +41,7 @@ BasicResult 继承 Ant Design Result 的所有属性，完整 API 请参考 [Res
 
 ## 组件特点
 
-1. **统一样式规范** → 自动应用 ActiontechTable 主题系统的样式
+1. **统一样式规范** → 自动应用项目主题系统的样式
 2. **多种状态** → 支持 success、error、info、warning、404、403、500 等状态
 3. **操作按钮** → 通过 `extra` 属性添加操作按钮
 4. **完整功能** → 继承 Ant Design Result 所有功能
