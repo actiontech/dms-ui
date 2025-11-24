@@ -6,7 +6,7 @@ import { sqlExecPlans } from '../../__testData__';
 
 describe('SqlAnalyze/useSQLExecPlan', () => {
   it('render generateSQLExecPlanContent when have err_message', async () => {
-    const { result } = renderHooksWithTheme(() => useSQLExecPlan());
+    const { result } = renderHooksWithTheme(() => useSQLExecPlan({}));
 
     await act(async () => {
       const elementEmpty = result.current.generateSQLExecPlanContent({});
@@ -22,7 +22,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
   });
 
   it('render generateSQLExecPlanContent when have data', async () => {
-    const { result } = renderHooksWithTheme(() => useSQLExecPlan());
+    const { result } = renderHooksWithTheme(() => useSQLExecPlan({}));
 
     await act(async () => {
       const elementSQL = result.current.generateSQLExecPlanContent({

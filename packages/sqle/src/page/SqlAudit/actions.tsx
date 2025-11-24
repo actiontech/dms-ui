@@ -22,7 +22,7 @@ export const sqlAuditPageHeaderActions = (
       //     }}
       //   />
       // </PermissionControl>
-      <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+      <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
         <BasicButton icon={<IconAdd />} type="primary">
           {t('sqlAudit.list.action.create')}
         </BasicButton>
@@ -39,7 +39,7 @@ export const sqlAuditPageHeaderActions = (
       //     params: { projectID }
       //   }}
       // />
-      <Link to={`/sqle/project/${projectID}/sqlAudit/create-optimization`}>
+      <Link to={`/sqle/project/${projectID}/sql-audit/create-optimization`}>
         <BasicButton icon={<IconAdd />} type="primary">
           {t('sqlAudit.createOptimization')}
         </BasicButton>

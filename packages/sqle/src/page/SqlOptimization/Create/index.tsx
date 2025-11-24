@@ -106,7 +106,7 @@ const SqlOptimizationCreate = () => {
         fixed
         title={
           <Link
-            to={`/sqle/project/${projectID}/sqlAudit?active=${SqlAuditSegmentedKey.SqlOptimization}`}
+            to={`/sqle/project/${projectID}/sql-audit?active=${SqlAuditSegmentedKey.SqlOptimization}`}
           >
             <BasicButton icon={<IconLeftArrow />}>
               {t('sqlOptimization.create.returnButton')}
