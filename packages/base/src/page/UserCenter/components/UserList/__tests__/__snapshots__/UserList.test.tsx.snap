@@ -167,7 +167,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         ID
@@ -231,7 +231,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="11132422"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="11132422"
@@ -455,7 +455,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="1647895752866795520"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795520"
@@ -638,7 +638,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="700200"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="700200"
@@ -892,7 +892,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="7002001"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="7002001"
@@ -1090,7 +1090,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="7002002"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="7002002"
@@ -1611,7 +1611,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                       scope="col"
                     >
                       ID
@@ -1675,7 +1675,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     data-row-key="11132422"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="11132422"
@@ -1869,7 +1869,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     data-row-key="1647895752866795520"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="1647895752866795520"
@@ -2022,7 +2022,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     data-row-key="700200"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="700200"
@@ -2245,7 +2245,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     data-row-key="7002001"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="7002001"
@@ -2413,7 +2413,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     data-row-key="7002002"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="7002002"
@@ -2903,7 +2903,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                       scope="col"
                     >
                       ID
@@ -2967,7 +2967,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     data-row-key="11132422"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="11132422"
@@ -3191,7 +3191,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     data-row-key="1647895752866795520"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="1647895752866795520"
@@ -3374,7 +3374,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     data-row-key="700200"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="700200"
@@ -3628,7 +3628,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     data-row-key="7002001"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="7002001"
@@ -3826,7 +3826,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     data-row-key="7002002"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell ellipsis-column-width"
                     >
                       <div
                         aria-label="7002002"
@@ -4347,7 +4347,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         ID
@@ -4411,7 +4411,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679550"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679550"
@@ -4605,7 +4605,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679551"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679551"
@@ -4799,7 +4799,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679552"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679552"
@@ -4993,7 +4993,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679553"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679553"
@@ -5187,7 +5187,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679554"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679554"
@@ -5381,7 +5381,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679555"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679555"
@@ -5575,7 +5575,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679556"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679556"
@@ -5769,7 +5769,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679557"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679557"
@@ -5963,7 +5963,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679558"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679558"
@@ -6157,7 +6157,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679559"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="164789575286679559"
@@ -6351,7 +6351,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795510"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795510"
@@ -6545,7 +6545,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795511"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795511"
@@ -6739,7 +6739,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795512"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795512"
@@ -6933,7 +6933,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795513"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795513"
@@ -7127,7 +7127,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795514"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795514"
@@ -7321,7 +7321,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795515"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795515"
@@ -7515,7 +7515,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795516"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795516"
@@ -7709,7 +7709,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795517"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795517"
@@ -7903,7 +7903,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795518"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795518"
@@ -8097,7 +8097,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795519"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795519"
@@ -8626,7 +8626,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         ID
@@ -8690,7 +8690,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795520"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795520"
@@ -8884,7 +8884,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795521"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795521"
@@ -9078,7 +9078,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795522"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795522"
@@ -9272,7 +9272,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795523"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795523"
@@ -9466,7 +9466,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795524"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795524"
@@ -9660,7 +9660,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795525"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795525"
@@ -9854,7 +9854,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795526"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795526"
@@ -10048,7 +10048,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795527"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795527"
@@ -10242,7 +10242,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795528"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795528"
@@ -10436,7 +10436,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795529"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795529"
@@ -10630,7 +10630,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795530"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795530"
@@ -10824,7 +10824,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795531"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795531"
@@ -11018,7 +11018,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795532"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795532"
@@ -11212,7 +11212,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795533"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795533"
@@ -11406,7 +11406,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795534"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795534"
@@ -11600,7 +11600,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795535"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795535"
@@ -11794,7 +11794,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795536"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795536"
@@ -11988,7 +11988,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795537"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795537"
@@ -12182,7 +12182,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795538"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795538"
@@ -12376,7 +12376,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795539"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
                           aria-label="1647895752866795539"
@@ -12905,7 +12905,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         ID

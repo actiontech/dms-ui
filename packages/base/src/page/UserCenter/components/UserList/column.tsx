@@ -16,6 +16,7 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
     dataIndex: 'uid',
     title: 'ID',
+    className: 'ellipsis-column-width',
     render: (uid) => {
       return <BasicTypographyEllipsis textCont={uid ?? ''} />;
     }
