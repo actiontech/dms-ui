@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
@@ -12,11 +12,13 @@ import {
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-
 import SqlAnalyze from '../SqlAnalyze';
+import useSqlOptimization from '../hooks/useSqlOptimization';
+import SqlOptimizationResultDrawer from '../Drawer/SqlOptimizationResultDrawer';
 
 const SQLManageAnalyze = () => {
   const urlParams = useParams<SQLManageAnalyzeUrlParams>();
+  const [searchParams] = useSearchParams();
   const { projectName } = useCurrentProject();
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -30,6 +32,15 @@ const SQLManageAnalyze = () => {
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
+  const {
+    setOptimizationCreationParams,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
+    optimizationRecordId,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  } = useSqlOptimization();
+
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
@@ -42,6 +53,11 @@ const SQLManageAnalyze = () => {
         setSqlExplain(res.data.data?.sql_explain);
         setTableMetas(res.data.data?.table_metas);
         setPerformancesStatistics(res.data.data?.performance_statistics);
+        setOptimizationCreationParams({
+          instance_name: searchParams?.get('instance_name') ?? '',
+          schema_name: searchParams?.get('schema') ?? '',
+          sql_content: res.data.data?.sql_explain?.sql
+        });
       } else {
         if (res.data.code === ResponseCode.NotSupportDML) {
           setErrorType('info');
@@ -57,7 +73,9 @@ const SQLManageAnalyze = () => {
     getSqlAnalyzeFinish,
     projectName,
     startGetSqlAnalyze,
-    urlParams.sqlManageId
+    urlParams.sqlManageId,
+    searchParams,
+    setOptimizationCreationParams
   ]);
 
   useEffect(() => {
@@ -65,14 +83,22 @@ const SQLManageAnalyze = () => {
   }, [getSqlAnalyze]);
 
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        onCreateSqlOptimizationOrView={onCreateSqlOptimizationOrView}
+        onViewOptimizationResult={onViewOptimizationResult}
+        optimizationRecordId={optimizationRecordId}
+        createSqlOptimizationLoading={createSqlOptimizationLoading}
+        allowSqlOptimization={allowSqlOptimization}
+      />
+      <SqlOptimizationResultDrawer />
+    </>
   );
 };
 

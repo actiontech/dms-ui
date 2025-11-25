@@ -14,14 +14,18 @@ export type SqlAnalyzeProps = {
   sqlExplain?: ISQLExplain;
   performanceStatistics?: IPerformanceStatistics;
   loading?: boolean;
-  onCreateSqlOptimizationOrview?: () => void;
+  onCreateSqlOptimizationOrView?: (enable_high_analysis?: boolean) => void;
+  onViewOptimizationResult?: () => void;
+  optimizationRecordId?: string;
   createSqlOptimizationLoading?: boolean;
   allowSqlOptimization?: boolean;
 };
 
 export type ExecPlanParams = Pick<
   SqlAnalyzeProps,
-  | 'onCreateSqlOptimizationOrview'
+  | 'onCreateSqlOptimizationOrView'
+  | 'onViewOptimizationResult'
+  | 'optimizationRecordId'
   | 'createSqlOptimizationLoading'
   | 'allowSqlOptimization'
 >;

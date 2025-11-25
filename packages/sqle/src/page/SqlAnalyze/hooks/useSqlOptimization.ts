@@ -49,7 +49,7 @@ const useSqlOptimization = () => {
     loading: createSqlOptimizationLoading,
     runAsync: createSqlOptimizationSync
   } = useRequest(
-    () =>
+    (enable_high_analysis?: boolean) =>
       OptimizationService.SQLOptimizeV2({
         optimization_name: `UI${dayjs().format('YYYYMMDDhhmmssSSS')}`,
         project_name: projectName,
@@ -58,7 +58,8 @@ const useSqlOptimization = () => {
         sql_content: optimizationCreationParams.sql_content,
         db_type: getInstanceDbType(
           optimizationCreationParams.instance_name ?? ''
-        )
+        ),
+        enable_high_analysis
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           return res.data.data?.sql_optimization_record_id;
@@ -74,12 +75,8 @@ const useSqlOptimization = () => {
     }
   );
 
-  const onCreateSqlOptimizationOrview = () => {
-    if (!optimizationRecordId) {
-      createSqlOptimizationSync();
-    } else {
-      openOptimizationResultDrawer(optimizationRecordId ?? '');
-    }
+  const onCreateSqlOptimizationOrView = (enable_high_analysis?: boolean) => {
+    createSqlOptimizationSync(enable_high_analysis);
   };
 
   useEffect(() => {
@@ -110,11 +107,18 @@ const useSqlOptimization = () => {
     });
   }, [projectName, updateInstanceList]);
 
+  const onViewOptimizationResult = () => {
+    if (optimizationRecordId) {
+      openOptimizationResultDrawer(optimizationRecordId);
+    }
+  };
+
   return {
     optimizationRecordId,
     createSqlOptimizationLoading,
     createSqlOptimizationSync,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
     setOptimizationCreationParams,
     allowSqlOptimization
   };

@@ -116,7 +116,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
-  jumpToAnalyze: (sqlManageID: string) => void,
+  jumpToAnalyze: (record?: ISqlManage) => void,
   operationPermission: boolean
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   return {
@@ -154,7 +154,7 @@ export const SqlManagementRowAction = (
         buttonProps: (record) => {
           return {
             onClick: () => {
-              jumpToAnalyze(record?.id?.toString() ?? '');
+              jumpToAnalyze(record);
             }
           };
         }

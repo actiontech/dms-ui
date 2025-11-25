@@ -113,7 +113,7 @@ const SqlOptimizationList = () => {
 
   const onView = (record?: IOptimizationRecord) => {
     navigate(
-      `/sqle/project/${projectID}/sqlAudit/optimization-result/${record?.optimization_id}`
+      `/sqle/project/${projectID}/sql-audit/optimization-result/${record?.optimization_id}`
     );
   };
 

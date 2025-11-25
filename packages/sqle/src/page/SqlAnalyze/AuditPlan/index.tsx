@@ -34,7 +34,9 @@ const AuditPlanSqlAnalyze = () => {
 
   const {
     setOptimizationCreationParams,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization
   } = useSqlOptimization();
@@ -93,7 +95,9 @@ const AuditPlanSqlAnalyze = () => {
         errorMessage={errorMessage}
         performanceStatistics={performanceStatistics}
         loading={loading}
-        onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
+        onCreateSqlOptimizationOrView={onCreateSqlOptimizationOrView}
+        onViewOptimizationResult={onViewOptimizationResult}
+        optimizationRecordId={optimizationRecordId}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
       />
