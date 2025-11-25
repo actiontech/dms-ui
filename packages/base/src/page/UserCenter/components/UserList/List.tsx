@@ -7,7 +7,8 @@ import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams,
-  TableToolbar
+  TableToolbar,
+  ColumnsSettingProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
@@ -105,6 +106,14 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     );
   }, [parse2TableActionPermissions, onEditUser, onDeleteUser, username]);
 
+  const tableSetting = useMemo<ColumnsSettingProps>(
+    () => ({
+      tableName: 'user_list',
+      username: username
+    }),
+    [username]
+  );
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Refresh_User_Center_List,
@@ -124,9 +133,11 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
             refreshBySearchKeyword();
           }
         }}
+        setting={tableSetting}
       />
       <ActiontechTable
         rowKey="uid"
+        setting={tableSetting}
         dataSource={userList?.list}
         pagination={{
           total: userList?.total ?? 0
