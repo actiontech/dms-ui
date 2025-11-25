@@ -10,8 +10,17 @@ import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import SystemRoleTagList from '../../../../components/SystemRoleTagList';
 import ProjectTagList from '../../../../components/ProjectTagList';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
+  {
+    dataIndex: 'uid',
+    title: 'ID',
+    className: 'ellipsis-column-width',
+    render: (uid) => {
+      return <BasicTypographyEllipsis textCont={uid ?? ''} />;
+    }
+  },
   {
     dataIndex: 'name',
     title: () => t('common.username')
