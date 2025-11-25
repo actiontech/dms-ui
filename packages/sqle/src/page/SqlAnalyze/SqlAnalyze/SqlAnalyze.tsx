@@ -25,14 +25,18 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     loading = false,
     performanceStatistics,
     errorType = 'error',
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization
   } = props;
 
   const { generateTableSchemaContent } = useTableSchema();
   const { generateSQLExecPlanContent } = useSQLExecPlan({
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization
   });

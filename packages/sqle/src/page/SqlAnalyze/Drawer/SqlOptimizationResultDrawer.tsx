@@ -53,8 +53,10 @@ const SqlOptimizationResultDrawer = () => {
       open &&
       optimizationId &&
       (!optimizationResult?.status ||
-        optimizationResult?.status ===
-          OptimizationSQLDetailStatusEnum.optimizing)
+        ![
+          OptimizationSQLDetailStatusEnum.finish,
+          OptimizationSQLDetailStatusEnum.failed
+        ].includes(optimizationResult.status))
     ) {
       getOptimizationResult(optimizationId);
     }
