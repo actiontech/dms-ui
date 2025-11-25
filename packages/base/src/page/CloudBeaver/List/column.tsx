@@ -71,8 +71,14 @@ export const CBOperationListColumns = (
       dataIndex: 'session_id',
       title: t('dmsCloudBeaver.operationList.column.sessionId'),
       render: (value: ICBOperationLog['session_id']) => {
-        return value ?? '-';
-      }
+        return (
+          <BasicTypographyEllipsis
+            tooltipsMaxWidth={500}
+            textCont={value ?? '-'}
+          />
+        );
+      },
+      className: 'ellipsis-column-width'
     },
     {
       dataIndex: 'operation_ip',
