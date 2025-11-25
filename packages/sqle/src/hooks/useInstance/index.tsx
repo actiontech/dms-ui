@@ -121,13 +121,24 @@ const useInstance = () => {
     });
   }, [getLogoUrlByDbType, instanceList]);
 
+  const getInstanceDbType = useCallback(
+    (instanceName: string) => {
+      return (
+        instanceList.find((v) => v.instance_name === instanceName)
+          ?.instance_type ?? ''
+      );
+    },
+    [instanceList]
+  );
+
   return {
     instanceList,
     loading,
     updateInstanceList,
     generateInstanceSelectOption,
     instanceOptions,
-    instanceIDOptions
+    instanceIDOptions,
+    getInstanceDbType
   };
 };
 

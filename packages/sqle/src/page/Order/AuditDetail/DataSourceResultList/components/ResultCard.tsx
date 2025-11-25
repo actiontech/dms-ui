@@ -3,7 +3,10 @@ import {
   DataSourceResultSqlOptionsStyleWrapper,
   DataSourceAuditResultTreeStyleWrapper
 } from '../../style';
-import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditTaskResV1,
+  IAuditTaskSQLResV2
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { useTranslation } from 'react-i18next';
 import { Space, message, Divider, Spin } from 'antd';
@@ -34,12 +37,14 @@ export type ResultCardProps = IAuditTaskSQLResV2 & {
   projectName: string;
   taskId: string;
   onUpdateDescription?: () => void;
+  currentTaskInfo?: IAuditTaskResV1;
 };
 
 const ResultCard: React.FC<ResultCardProps> = ({
   projectName,
   taskId,
   onUpdateDescription,
+  currentTaskInfo,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -57,7 +62,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
 
   const onClickAnalyze = () => {
     window.open(
-      `/sqle/project/${projectName}/order/${taskId}/${props.number}/analyze`
+      `/sqle/project/${projectName}/order/${taskId}/${props.number}/analyze?instance_name=${currentTaskInfo?.instance_name}&schema=${currentTaskInfo?.instance_schema}`
     );
   };
 

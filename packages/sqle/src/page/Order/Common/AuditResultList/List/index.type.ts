@@ -7,4 +7,6 @@ export type AuditResultForCreateListProps = {
   projectID: string;
   updateTaskRecordTotalNum?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;
+  instanceName?: string;
+  schema?: string;
 };

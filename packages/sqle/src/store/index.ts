@@ -6,6 +6,9 @@ import reportStatistics from './reportStatistics';
 import globalRuleTemplate from './globalRuleTemplate';
 import sqlManagement from './sqlManagement';
 import pluginAudit from './pluginAudit';
+import sqleManagement from './sqlManagement';
+import sqlOptimization from './sqlOptimization';
+import sqlAnalyze from './sqlAnalyze';
 
 export const SQLEStoreData = {
   whitelist,
@@ -14,7 +17,10 @@ export const SQLEStoreData = {
   reportStatistics,
   globalRuleTemplate,
   sqlManagement,
-  pluginAudit
+  pluginAudit,
+  sqleManagement,
+  sqlOptimization,
+  sqlAnalyze
 };
 
 const store = configureStore({

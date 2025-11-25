@@ -425,3 +425,19 @@ export enum WorkflowStepResV2TypeEnum {
 
   'sql_execute' = 'sql_execute'
 }
+
+export enum OptimizationRecordStatusEnum {
+  'optimizing' = 'optimizing',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
+export enum OptimizationSQLDetailStatusEnum {
+  'optimizing' = 'optimizing',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
