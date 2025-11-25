@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { message } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -31,12 +29,14 @@ import SqlAuditListColumn, {
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -156,23 +156,17 @@ const SqlAuditList = () => {
     });
   }, [projectName, updateInstanceList]);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Refresh_Sql_Audit_List,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
+
   return (
     <>
       {messageContextHolder}
-      <PageHeader
-        title={t('sqlAudit.list.pageTitle')}
-        fixed
-        extra={
-          !projectArchive ? (
-            <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
-                {t('sqlAudit.list.action.create')}
-              </BasicButton>
-            </Link>
-          ) : null
-        }
-      />
-      <div className="margin-top-60" />
       {/* table */}
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}

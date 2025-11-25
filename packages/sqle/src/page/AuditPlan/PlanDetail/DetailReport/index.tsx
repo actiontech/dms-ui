@@ -217,11 +217,11 @@ const DetailReport = () => {
       const sqlNumber = data.number ?? undefined;
       if (typeof sqlNumber === 'undefined') return;
       window.open(
-        `/sqle/project/${projectID}/audit-plan/${urlParams.reportId}/${sqlNumber}/${urlParams.auditPlanName}/analyze`,
+        `/sqle/project/${projectID}/audit-plan/${urlParams.reportId}/${sqlNumber}/${urlParams.auditPlanName}/analyze?instance_name=${auditTask?.data?.audit_plan_instance_name}&schema=${auditTask?.data?.audit_plan_instance_database}`,
         '_blank'
       );
     },
-    [projectID, urlParams]
+    [projectID, urlParams, auditTask]
   );
 
   const actions = useMemo(() => {

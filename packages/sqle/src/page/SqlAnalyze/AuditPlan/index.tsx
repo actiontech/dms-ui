@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/es/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { ResponseCode } from '../../../data/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import SqlAnalyze from '../SqlAnalyze';
@@ -12,10 +12,14 @@ import {
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
+import useSqlOptimization from '../hooks/useSqlOptimization';
+import SqlOptimizationResultDrawer from '../Drawer/SqlOptimizationResultDrawer';
 
 const AuditPlanSqlAnalyze = () => {
   const urlParams = useParams<AuditPlanReportSqlAnalyzeUrlParams>();
   const { projectName } = useCurrentProject();
+  const [searchParams] = useSearchParams();
+
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const [sqlExplain, setSqlExplain] = useState<ISQLExplain>();
@@ -26,8 +30,16 @@ const AuditPlanSqlAnalyze = () => {
     loading,
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
   ] = useBoolean();
-
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
+
+  const {
+    setOptimizationCreationParams,
+    onCreateSqlOptimizationOrView,
+    onViewOptimizationResult,
+    optimizationRecordId,
+    createSqlOptimizationLoading,
+    allowSqlOptimization
+  } = useSqlOptimization();
 
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
@@ -43,6 +55,11 @@ const AuditPlanSqlAnalyze = () => {
         setSqlExplain(res.data.data?.sql_explain);
         setTableMetas(res.data.data?.table_metas);
         setPerformancesStatistics(res.data.data?.performance_statistics);
+        setOptimizationCreationParams({
+          instance_name: searchParams?.get('instance_name') ?? '',
+          schema_name: searchParams?.get('schema') ?? '',
+          sql_content: res.data.data?.sql_explain?.sql
+        });
       } else {
         if (res.data.code === ResponseCode.NotSupportDML) {
           setErrorType('info');
@@ -60,7 +77,9 @@ const AuditPlanSqlAnalyze = () => {
     urlParams.reportId,
     urlParams.sqlNum,
     urlParams.auditPlanName,
-    getSqlAnalyzeFinish
+    getSqlAnalyzeFinish,
+    searchParams,
+    setOptimizationCreationParams
   ]);
 
   useEffect(() => {
@@ -68,14 +87,22 @@ const AuditPlanSqlAnalyze = () => {
   }, [getSqlAnalyze]);
 
   return (
-    <SqlAnalyze
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorType={errorType}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        loading={loading}
+        onCreateSqlOptimizationOrView={onCreateSqlOptimizationOrView}
+        onViewOptimizationResult={onViewOptimizationResult}
+        optimizationRecordId={optimizationRecordId}
+        createSqlOptimizationLoading={createSqlOptimizationLoading}
+        allowSqlOptimization={allowSqlOptimization}
+      />
+      <SqlOptimizationResultDrawer />
+    </>
   );
 };
 

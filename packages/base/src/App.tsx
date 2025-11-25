@@ -32,6 +32,10 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
+import useFetchPermissionData from './hooks/useFetchPermissionData';
+import { useDispatch } from 'react-redux';
+import { updateModuleFeatureSupport } from './store/permission';
+import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 
 import './index.less';
 
@@ -67,7 +71,12 @@ function App() {
     token: state.user.token
   }));
 
+  const dispatch = useDispatch();
+
   const { notificationContextHolder } = useNotificationContext();
+
+  const { isFeatureSupportFetched, fetchModuleSupportStatus } =
+    useFetchPermissionData();
 
   const { getUserBySession } = useSessionUser();
 
@@ -137,7 +146,7 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched || !driverInfoFetched) {
+    if (!useInfoFetched || !driverInfoFetched || !isFeatureSupportFetched) {
       return <HeaderProgress />;
     }
 
@@ -146,14 +155,32 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, driverInfoFetched, elements]);
+  }, [useInfoFetched, driverInfoFetched, elements, isFeatureSupportFetched]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
       updateDriverList();
+      fetchModuleSupportStatus().then((response) => {
+        if (response) {
+          dispatch(
+            updateModuleFeatureSupport({
+              sqlOptimization:
+                !!response?.[
+                  getSystemModuleStatusModuleNameEnum.sql_optimization
+                ]
+            })
+          );
+        }
+      });
     }
-  }, [getUserBySession, token, updateDriverList]);
+  }, [
+    getUserBySession,
+    token,
+    updateDriverList,
+    fetchModuleSupportStatus,
+    dispatch
+  ]);
 
   return (
     <Wrapper>

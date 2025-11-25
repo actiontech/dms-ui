@@ -13,7 +13,8 @@ const useCurrentUser = () => {
     username,
     theme,
     useInfoFetched,
-    uid
+    uid,
+    moduleFeatureSupport
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -22,7 +23,8 @@ const useCurrentUser = () => {
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
       useInfoFetched: state.user.useInfoFetched,
-      uid: state.user.uid
+      uid: state.user.uid,
+      moduleFeatureSupport: state.permission.moduleFeatureSupport
     };
   });
 
@@ -41,6 +43,8 @@ const useCurrentUser = () => {
     [dispatch]
   );
 
+  const isSqlOptimizationSupported = moduleFeatureSupport.sqlOptimization;
+
   return {
     isAdmin,
     isProjectManager,
@@ -51,7 +55,8 @@ const useCurrentUser = () => {
     theme,
     updateTheme,
     useInfoFetched,
-    uid
+    uid,
+    isSqlOptimizationSupported
   };
 };
 export default useCurrentUser;

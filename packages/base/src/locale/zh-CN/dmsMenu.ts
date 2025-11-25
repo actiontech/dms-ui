@@ -15,7 +15,7 @@ export default {
   ruleTemplate: '审核规则模板',
   whitelist: '白名单',
   workflowTemplate: '审批流程模板',
-  sqlAudit: '快捷审核',
+  sqlAudit: '快捷诊断',
   pluginAudit: 'IDE审核',
   sqlManagement: 'SQL管控',
   SQLOrder: 'SQL工单',

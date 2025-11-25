@@ -39,6 +39,7 @@ export type DataSourceResultListProps = {
   loading: boolean;
   taskId: string;
   refresh: () => void;
+  currentTaskInfo?: IAuditTaskResV1;
 };
 
 export type DataSourceResultWaterfallListProps = {
@@ -49,4 +50,5 @@ export type DataSourceResultWaterfallListProps = {
   taskId: string;
   scrollPage: number;
   refreshScrollList: (number: number, page: number) => void;
+  currentTaskInfo?: IAuditTaskResV1;
 };

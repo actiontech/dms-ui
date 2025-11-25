@@ -16,6 +16,7 @@ export default {
   opened: '已开启',
   notOpen: '未开启',
 
+  copy: '复制',
   copied: '复制成功',
   true: '是',
   false: '否',

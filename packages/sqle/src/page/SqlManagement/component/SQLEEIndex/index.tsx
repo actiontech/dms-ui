@@ -156,9 +156,9 @@ const SQLEEIndex = () => {
   }, []);
 
   const jumpToAnalyze = useCallback(
-    (sqlManageID: string) => {
+    (record?: ISqlManage) => {
       window.open(
-        `/sqle/project/${projectID}/sql-management/${sqlManageID}/analyze`,
+        `/sqle/project/${projectID}/sql-management/${record?.id}/analyze?instance_name=${record?.instance_name}&schema=${record?.schema_name}`,
         '_blank'
       );
     },

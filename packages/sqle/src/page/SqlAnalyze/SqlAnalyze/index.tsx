@@ -14,7 +14,21 @@ export type SqlAnalyzeProps = {
   sqlExplain?: ISQLExplain;
   performanceStatistics?: IPerformanceStatistics;
   loading?: boolean;
+  onCreateSqlOptimizationOrView?: (enable_high_analysis?: boolean) => void;
+  onViewOptimizationResult?: () => void;
+  optimizationRecordId?: string;
+  createSqlOptimizationLoading?: boolean;
+  allowSqlOptimization?: boolean;
 };
+
+export type ExecPlanParams = Pick<
+  SqlAnalyzeProps,
+  | 'onCreateSqlOptimizationOrView'
+  | 'onViewOptimizationResult'
+  | 'optimizationRecordId'
+  | 'createSqlOptimizationLoading'
+  | 'allowSqlOptimization'
+>;
 
 export type UseTableSchemaOption = {
   schemaName?: string;
