@@ -60,6 +60,10 @@ export default {
       'If you do not enable the SQL audit service, the DB instance cannot be used in SQL audit related services, are you sure to close it?',
     needAuditForSqlQuery: 'Whether SQL query needs audit',
     allowQueryWhenLessThanAuditLevel: 'Highest audit level for running queries',
+    allowExecuteNonDqlInWorkflow:
+      'Allow executing non-DQL SQL via workflow in SQL workbench',
+    allowExecuteNonDqlInWorkflowTips:
+      'When enabled, allows executing non-DQL SQL statements via workflow in SQL workbench',
     passwordTips:
       'The current DB instance password you have configured will not be displayed here. if you do not fill in the password when submitting, the DB instance password will not be changed.',
     needUpdatePassword: 'Update password',

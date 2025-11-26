@@ -1716,6 +1716,8 @@ export interface IListGlobalDBServiceV2 {
   uid?: string;
 
   unfinished_workflow_num?: number;
+
+  workflow_exec_enabled?: boolean;
 }
 
 export interface IListGlobalDBServicesReply {
@@ -2468,6 +2470,8 @@ export interface ISQLQueryConfig {
   rule_template_id?: string;
 
   rule_template_name?: string;
+
+  workflow_exec_enabled?: boolean;
 }
 
 export interface ISendSmsCodeReply {

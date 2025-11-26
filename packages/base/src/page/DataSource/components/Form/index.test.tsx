@@ -182,6 +182,9 @@ describe('page/DataSource/DataSourceForm', () => {
     );
     expect(getBySelector('#workbenchTemplateName')).toBeInTheDocument();
     expect(allowQueryLevel).toBeInTheDocument();
+    expect(
+      getBySelector('#allowExecuteNonDqlInWorkflow', baseElement)
+    ).toBeInTheDocument();
     fireEvent.mouseDown(allowQueryLevel);
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
