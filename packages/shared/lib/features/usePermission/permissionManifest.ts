@@ -1288,6 +1288,17 @@ export const PERMISSION_MANIFEST: Record<
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     }
   },
+  // 快捷审核
+  [PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_optimization
+    }
+  },
 
   // 流水线配置
   [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.CREATE]: {

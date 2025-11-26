@@ -28,16 +28,20 @@ export const sqlAuditPageHeaderActions = (
       </PermissionControl>
     ),
     'create-optimization': (
-      <ActionButton
-        type="primary"
-        actionType="navigate-link"
-        text={t('sqlAudit.createOptimization')}
-        icon={<PlusOutlined width={10} height={10} color="currentColor" />}
-        link={{
-          to: ROUTE_PATHS.SQLE.SQL_AUDIT.create_optimization,
-          params: { projectID }
-        }}
-      />
+      <PermissionControl
+        permission={PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE}
+      >
+        <ActionButton
+          type="primary"
+          actionType="navigate-link"
+          text={t('sqlAudit.createOptimization')}
+          icon={<PlusOutlined width={10} height={10} color="currentColor" />}
+          link={{
+            to: ROUTE_PATHS.SQLE.SQL_AUDIT.create_optimization,
+            params: { projectID }
+          }}
+        />
+      </PermissionControl>
     )
   };
 };

@@ -468,11 +468,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       <EmptyBox
         if={false}
       >
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
@@ -601,11 +621,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
         SQL语句
       </h3>
       <EmptyBox>
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
@@ -816,11 +856,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       <EmptyBox
         if={false}
       >
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
@@ -951,11 +1011,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       <EmptyBox
         if={false}
       >
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
@@ -1086,11 +1166,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
       <EmptyBox
         if={false}
       >
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
@@ -1221,11 +1321,31 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
       <EmptyBox
         if={false}
       >
-        <BasicButton
-          type="primary"
+        <EmptyBox
+          defaultNode={
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          }
+          if={true}
         >
-          SQL优化
-        </BasicButton>
+          <Popconfirm
+            cancelText="否，使用常规推荐"
+            description="高精度索引推荐将统计SQL中列的区分度，提供更准确的索引优化建议，但可能会产生较大的数据库性能开销。"
+            okText="是，启用高精度推荐"
+            onCancel={[Function]}
+            onConfirm={[Function]}
+            title="是否启用高精度索引推荐？"
+          >
+            <BasicButton
+              type="primary"
+            >
+              SQL优化
+            </BasicButton>
+          </Popconfirm>
+        </EmptyBox>
       </EmptyBox>
     </div>
     <section
