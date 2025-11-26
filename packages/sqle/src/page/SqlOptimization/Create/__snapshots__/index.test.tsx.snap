@@ -127,7 +127,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-fx8owy"
+      class="ant-form ant-form-horizontal css-lmus7t"
     >
       <section
         class="css-bspaai"
@@ -911,7 +911,16 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       />
                     </span>
                     <span>
-                       启用高精度索引推荐（将统计SQL中列的区分度，可能会产生较大的数据库性能开销 ）
+                      <span
+                        class="high-analysis-checkbox-label"
+                      >
+                        启用高精度索引推荐
+                      </span>
+                      <span
+                        class="high-analysis-checkbox-tips"
+                      >
+                        将统计SQL中列的区分度，可能会产生较大的数据库性能开销
+                      </span>
                     </span>
                   </label>
                 </div>

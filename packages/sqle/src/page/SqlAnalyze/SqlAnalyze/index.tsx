@@ -28,7 +28,9 @@ export type SqlAnalyzeProps = {
   initTime?: Dayjs;
   selectedPoint?: Array<IChartPoint | undefined>;
   setSelectedPoint?: Dispatch<SetStateAction<(IChartPoint | undefined)[]>>;
-  onCreateSqlOptimizationOrview?: () => void;
+  onCreateSqlOptimization?: (enable_high_analysis?: boolean) => void;
+  onViewOptimizationResult?: () => void;
+  optimizationRecordId?: string;
   createSqlOptimizationLoading?: boolean;
   allowSqlOptimization?: boolean;
   getPerformanceStatistics?: () => void;
@@ -45,7 +47,9 @@ export type ExecPlanParams = Pick<
   | 'initTime'
   | 'selectedPoint'
   | 'setSelectedPoint'
-  | 'onCreateSqlOptimizationOrview'
+  | 'onCreateSqlOptimization'
+  | 'onViewOptimizationResult'
+  | 'optimizationRecordId'
   | 'createSqlOptimizationLoading'
   | 'allowSqlOptimization'
   | 'getPerformanceStatistics'

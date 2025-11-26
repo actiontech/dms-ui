@@ -252,7 +252,12 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
       <EmptyBox if={optimizationType === OptimizationTypeEnum.online}>
         <FormItemNoLabel name="enableHighAnalysis" valuePropName="checked">
           <Checkbox className="high-analysis-checkbox">
-            {t('sqlOptimization.create.sqlInfo.enableHighAnalysis')}
+            <span className="high-analysis-checkbox-label">
+              {t('sqlOptimization.create.sqlInfo.enableHighAnalysis')}
+            </span>
+            <span className="high-analysis-checkbox-tips">
+              {t('sqlOptimization.create.sqlInfo.enableHighAnalysisTips')}
+            </span>
           </Checkbox>
         </FormItemNoLabel>
       </EmptyBox>

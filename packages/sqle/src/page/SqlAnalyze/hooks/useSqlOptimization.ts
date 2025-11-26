@@ -19,11 +19,11 @@ import useInstance from '../../../hooks/useInstance';
 const useSqlOptimization = () => {
   const { projectName } = useCurrentProject();
   const dispatch = useDispatch();
-  const { checkPagePermission } = usePermission();
+  const { checkPagePermission, checkActionPermission } = usePermission();
   const {
     getInstanceDbType,
     updateInstanceList,
-    loading: updateInstanceListloading
+    loading: updateInstanceListLoading
   } = useInstance();
   const [optimizationCreationParams, setOptimizationCreationParams] = useState<
     Pick<ISQLOptimizeV2Params, 'instance_name' | 'schema_name' | 'sql_content'>
@@ -46,9 +46,9 @@ const useSqlOptimization = () => {
   const {
     data: optimizationRecordId,
     loading: createSqlOptimizationLoading,
-    runAsync: createSqlOptimiationSync
+    runAsync: onCreateSqlOptimization
   } = useRequest(
-    () =>
+    (enable_high_analysis?: boolean) =>
       SqleApi.SqlOptimizationService.SQLOptimizeV2({
         optimization_name: `UI${dayjs().format('YYYYMMDDhhmmssSSS')}`,
         project_name: projectName,
@@ -57,7 +57,8 @@ const useSqlOptimization = () => {
         sql_content: optimizationCreationParams.sql_content,
         db_type: getInstanceDbType(
           optimizationCreationParams.instance_name ?? ''
-        )
+        ),
+        enable_high_analysis
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           return res.data.data?.sql_optimization_record_id;
@@ -73,14 +74,6 @@ const useSqlOptimization = () => {
     }
   );
 
-  const onCreateSqlOptimizationOrview = () => {
-    if (!optimizationRecordId) {
-      createSqlOptimiationSync();
-    } else {
-      openOptimizationResultDrawer(optimizationRecordId ?? '');
-    }
-  };
-
   useEffect(() => {
     dispatch(
       initSqlAnalyzeModalStatus({
@@ -91,16 +84,24 @@ const useSqlOptimization = () => {
     );
   }, [dispatch]);
 
+  const onViewOptimizationResult = () => {
+    if (optimizationRecordId) {
+      openOptimizationResultDrawer(optimizationRecordId);
+    }
+  };
+
   const allowSqlOptimization = useMemo(() => {
     return (
       !!optimizationCreationParams.instance_name &&
       checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION) &&
-      !updateInstanceListloading
+      checkActionPermission(PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE) &&
+      !updateInstanceListLoading
     );
   }, [
     optimizationCreationParams.instance_name,
     checkPagePermission,
-    updateInstanceListloading
+    updateInstanceListLoading,
+    checkActionPermission
   ]);
 
   useEffect(() => {
@@ -112,10 +113,10 @@ const useSqlOptimization = () => {
   return {
     optimizationRecordId,
     createSqlOptimizationLoading,
-    createSqlOptimiationSync,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimization,
     setOptimizationCreationParams,
-    allowSqlOptimization
+    allowSqlOptimization,
+    onViewOptimizationResult
   };
 };
 

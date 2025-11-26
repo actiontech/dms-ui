@@ -218,6 +218,9 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE": "action:delete_sql_management_exception",
         "EDIT": "action:edit_sql_management_exception",
       },
+      "SQL_OPTIMIZATION": {
+        "CREATE": "action:create_sql_optimization",
+      },
       "VERSION_MANAGEMENT": {
         "ADD": "action:version_management_add_operator",
         "DELETE": "action:version_management_delete_operator",
@@ -625,6 +628,19 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "projectManager": true,
     "projectPermission": "manage_sql_mange_white_list",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:create_sql_optimization": {
+    "dbServicePermission": {
+      "opType": "create_optimization",
+    },
+    "id": "action:create_sql_optimization",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "systemAdministrator",

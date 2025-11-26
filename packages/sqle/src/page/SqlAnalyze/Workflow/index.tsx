@@ -38,7 +38,9 @@ const WorkflowSqlAnalyze = () => {
 
   const {
     setOptimizationCreationParams,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimization,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization
   } = useSqlOptimization();
@@ -113,7 +115,9 @@ const WorkflowSqlAnalyze = () => {
         errorMessage={errorMessage}
         performanceStatistics={performanceStatistics}
         loading={loading}
-        onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
+        onCreateSqlOptimization={onCreateSqlOptimization}
+        onViewOptimizationResult={onViewOptimizationResult}
+        optimizationRecordId={optimizationRecordId}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
         getPerformanceStatistics={getPerformanceStatistics}

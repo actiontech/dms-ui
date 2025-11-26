@@ -33,7 +33,13 @@ const useOptimizationResult = (params?: UseOptimizationResultParams) => {
       }),
     {
       onSuccess: (res) => {
-        if (res?.status !== OptimizationSQLDetailStatusEnum.optimizing) {
+        if (
+          res?.status &&
+          [
+            OptimizationSQLDetailStatusEnum.failed,
+            OptimizationSQLDetailStatusEnum.finish
+          ].includes(res.status)
+        ) {
           cancelOptimizationRequestPolling();
         }
       },
