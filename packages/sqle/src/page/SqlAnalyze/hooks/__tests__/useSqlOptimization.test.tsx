@@ -38,7 +38,8 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     mockUseDbServiceDriver();
     mockUsePermission(
       {
-        checkPagePermission: jest.fn().mockReturnValue(true)
+        checkPagePermission: jest.fn().mockReturnValue(true),
+        checkActionPermission: jest.fn().mockReturnValue(true)
       },
       {
         useSpyOnMockHooks: true
@@ -74,10 +75,8 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     expect(result.current.optimizationRecordId).toBeUndefined();
     expect(result.current.createSqlOptimizationLoading).toBe(false);
     expect(result.current.allowSqlOptimization).toBe(false);
-    expect(typeof result.current.createSqlOptimiationSync).toBe('function');
-    expect(typeof result.current.onCreateSqlOptimizationOrview).toBe(
-      'function'
-    );
+    expect(typeof result.current.onCreateSqlOptimization).toBe('function');
+    expect(typeof result.current.onViewOptimizationResult).toBe('function');
     expect(typeof result.current.setOptimizationCreationParams).toBe(
       'function'
     );
@@ -140,7 +139,7 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     expect(result.current.allowSqlOptimization).toBe(false);
   });
 
-  it('should create SQL optimization successfully', async () => {
+  it('should create SQL optimization successfully with enable_high_analysis', async () => {
     const { result } = renderHook(() => useSqlOptimization());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -163,7 +162,7 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     });
 
     await act(async () => {
-      result.current.createSqlOptimiationSync();
+      result.current.onCreateSqlOptimization(true);
       await jest.advanceTimersByTime(100);
     });
 
@@ -182,7 +181,8 @@ describe('SqlAnalyze/useSqlOptimization', () => {
       project_name: 'default',
       instance_name: 'mysql-1',
       schema_name: 'test-schema',
-      sql_content: 'SELECT * FROM users'
+      sql_content: 'SELECT * FROM users',
+      enable_high_analysis: true
     });
 
     // 验证成功后打开了结果抽屉
@@ -198,6 +198,45 @@ describe('SqlAnalyze/useSqlOptimization', () => {
         resultDrawerData: { optimizationId: mockOptimizationId }
       })
     );
+  });
+
+  it('should create SQL optimization successfully without enable_high_analysis', async () => {
+    const { result } = renderHook(() => useSqlOptimization());
+    await act(async () => jest.advanceTimersByTime(3000));
+    const mockOptimizationId = 'test-optimization-id-2';
+
+    sqlOptimizeSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          sql_optimization_record_id: mockOptimizationId
+        }
+      })
+    );
+
+    act(() => {
+      result.current.setOptimizationCreationParams({
+        instance_name: 'mysql-1',
+        schema_name: 'test-schema',
+        sql_content: 'SELECT * FROM users'
+      });
+    });
+
+    await act(async () => {
+      result.current.onCreateSqlOptimization(false);
+      await jest.advanceTimersByTime(3000);
+    });
+
+    expect(result.current.optimizationRecordId).toBe(mockOptimizationId);
+
+    expect(sqlOptimizeSpy).toHaveBeenCalledWith({
+      db_type: 'MySQL',
+      optimization_name: `UI${currentTime.format('YYYYMMDDhhmmssSSS')}`,
+      project_name: 'default',
+      instance_name: 'mysql-1',
+      schema_name: 'test-schema',
+      sql_content: 'SELECT * FROM users',
+      enable_high_analysis: false
+    });
   });
 
   it('should handle API error when creating SQL optimization', async () => {
@@ -218,7 +257,7 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     });
 
     await act(async () => {
-      result.current.createSqlOptimiationSync();
+      result.current.onCreateSqlOptimization();
       await jest.advanceTimersByTime(3000);
     });
 
@@ -253,14 +292,14 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     });
 
     await act(async () => {
-      result.current.createSqlOptimiationSync();
+      result.current.onCreateSqlOptimization();
       await jest.advanceTimersByTime(3000);
     });
 
     expect(result.current.optimizationRecordId).toBeUndefined();
   });
 
-  it('should open result drawer when onCreateSqlOptimizationOrview is called with existing record', async () => {
+  it('should open result drawer when onViewOptimizationResult is called with existing record', async () => {
     const { result } = renderHook(() => useSqlOptimization());
     const existingOptimizationId = 'existing-optimization-id';
 
@@ -282,16 +321,16 @@ describe('SqlAnalyze/useSqlOptimization', () => {
     });
 
     await act(async () => {
-      result.current.createSqlOptimiationSync();
+      result.current.onCreateSqlOptimization();
       await jest.advanceTimersByTime(3000);
     });
 
     // 清除之前的dispatch调用
     mockDispatch.mockClear();
 
-    // 再次调用onCreateSqlOptimizationOrview，应该直接打开抽屉
+    // 再次调用onViewOptimizationResult，应该直接打开抽屉
     act(() => {
-      result.current.onCreateSqlOptimizationOrview();
+      result.current.onViewOptimizationResult();
     });
 
     expect(mockDispatch).toHaveBeenCalledWith(

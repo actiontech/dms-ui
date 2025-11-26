@@ -144,4 +144,36 @@ describe('SqlOptimizationResultDrawer', () => {
 
     expect(getOptimizationResultSpy).not.toHaveBeenCalled();
   });
+
+  it('should not call getOptimizationResult when optimization is failed', () => {
+    const getOptimizationResultSpy = jest.fn();
+    mockUseOptimizationResult.mockReturnValue({
+      ...defaultOptimizationResult,
+      getOptimizationResult: getOptimizationResultSpy,
+      optimizationResult: {
+        status: OptimizationSQLDetailStatusEnum.failed
+      }
+    });
+
+    superRender(<SqlOptimizationResultDrawer />);
+
+    expect(getOptimizationResultSpy).not.toHaveBeenCalled();
+  });
+
+  it('should call getOptimizationResult when optimization is optimizing', () => {
+    const getOptimizationResultSpy = jest.fn();
+    mockUseOptimizationResult.mockReturnValue({
+      ...defaultOptimizationResult,
+      getOptimizationResult: getOptimizationResultSpy,
+      optimizationResult: {
+        status: OptimizationSQLDetailStatusEnum.optimizing
+      }
+    });
+
+    superRender(<SqlOptimizationResultDrawer />);
+
+    expect(getOptimizationResultSpy).toHaveBeenCalledWith(
+      'test-optimization-id'
+    );
+  });
 });

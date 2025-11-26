@@ -133,10 +133,37 @@ describe('useOptimizationResult', () => {
     expect(getOptimizationSQLDetailV2Spy).toHaveBeenCalledTimes(2);
   });
 
-  it('should stop polling when status is not optimizing', async () => {
+  it('should stop polling when status is finish', async () => {
     const mockData = {
       status: OptimizationSQLDetailStatusEnum.finish,
       origin_sql: 'SELECT * FROM test'
+    };
+
+    getOptimizationSQLDetailV2Spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockData })
+    );
+
+    const { result } = superRenderHook(() =>
+      useOptimizationResult({ pollingInterval: 1000 })
+    );
+
+    await act(async () => {
+      result.current.getOptimizationResult('test-id');
+      await jest.advanceTimersByTime(3000);
+    });
+
+    expect(result.current.optimizationResult).toEqual(mockData);
+
+    await act(async () => jest.advanceTimersByTime(1000));
+
+    expect(getOptimizationSQLDetailV2Spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should stop polling when status is failed', async () => {
+    const mockData = {
+      status: OptimizationSQLDetailStatusEnum.failed,
+      origin_sql: 'SELECT * FROM test',
+      error_message: 'Optimization failed'
     };
 
     getOptimizationSQLDetailV2Spy.mockImplementation(() =>
