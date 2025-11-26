@@ -34,6 +34,20 @@ export const SqlInfoFormStyleWrapper = styled(FormStyleWrapper)`
   }
 
   .high-analysis-checkbox.ant-checkbox-wrapper {
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+    .ant-checkbox {
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    .high-analysis-checkbox-tips,
+    .high-analysis-checkbox-label {
+      display: block;
+    }
+
+    .high-analysis-checkbox-tips {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      font-size: 12px;
+      margin-top: 6px;
+    }
   }
 `;
