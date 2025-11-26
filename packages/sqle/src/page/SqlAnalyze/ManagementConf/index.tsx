@@ -42,7 +42,9 @@ const ManagementConfAnalyze = () => {
 
   const {
     setOptimizationCreationParams,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimization,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization
   } = useSqlOptimization();
@@ -143,7 +145,9 @@ const ManagementConfAnalyze = () => {
         initTime={initTime}
         selectedPoint={selectedPoint}
         setSelectedPoint={setSelectedPoint}
-        onCreateSqlOptimizationOrview={onCreateSqlOptimizationOrview}
+        onCreateSqlOptimization={onCreateSqlOptimization}
+        onViewOptimizationResult={onViewOptimizationResult}
+        optimizationRecordId={optimizationRecordId}
         createSqlOptimizationLoading={createSqlOptimizationLoading}
         allowSqlOptimization={allowSqlOptimization}
         getPerformanceStatistics={getPerformanceStatistics}
