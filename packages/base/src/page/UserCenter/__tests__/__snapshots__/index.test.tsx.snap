@@ -176,7 +176,61 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center"
-              />
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -207,6 +261,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 35%;"
                           />
@@ -218,6 +273,12 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                           class="ant-table-thead"
                         >
                           <tr>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              ID
+                            </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
@@ -276,6 +337,86 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="11132422"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="11132422"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                11132422
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -391,6 +532,86 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             data-row-key="1647895752866795520"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="1647895752866795520"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                1647895752866795520
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               test666
@@ -463,6 +684,86 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="700200"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="700200"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                700200
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -607,6 +908,86 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             data-row-key="7002001"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002001"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002001
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               global-view
@@ -694,6 +1075,86 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="7002002"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002002"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002002
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -1175,7 +1636,61 @@ exports[`base/UserCenter should render user list when it first entered the user 
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center"
-              />
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -1206,6 +1721,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 35%;"
                           />
@@ -1217,6 +1733,12 @@ exports[`base/UserCenter should render user list when it first entered the user 
                           class="ant-table-thead"
                         >
                           <tr>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              ID
+                            </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
@@ -1275,6 +1797,86 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="11132422"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="11132422"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                11132422
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -1420,6 +2022,86 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             data-row-key="1647895752866795520"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="1647895752866795520"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                1647895752866795520
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               test666
@@ -1522,6 +2204,86 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="700200"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="700200"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                700200
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -1697,6 +2459,86 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             data-row-key="7002001"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002001"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002001
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               global-view
@@ -1814,6 +2656,86 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="7002002"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002002"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002002
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -2326,7 +3248,61 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center"
-              />
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -2357,6 +3333,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 35%;"
                           />
@@ -2368,6 +3345,12 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                           class="ant-table-thead"
                         >
                           <tr>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              ID
+                            </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
@@ -2426,6 +3409,86 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="11132422"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="11132422"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                11132422
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -2571,6 +3634,86 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             data-row-key="1647895752866795520"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="1647895752866795520"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                1647895752866795520
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               test666
@@ -2673,6 +3816,86 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="700200"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="700200"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                700200
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -2848,6 +4071,86 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             data-row-key="7002001"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002001"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002001
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               global-view
@@ -2965,6 +4268,86 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="7002002"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002002"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002002
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -3781,7 +5164,61 @@ exports[`base/UserCenter switch to role list 1`] = `
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center"
-              />
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -3812,6 +5249,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 35%;"
                           />
@@ -3823,6 +5261,12 @@ exports[`base/UserCenter switch to role list 1`] = `
                           class="ant-table-thead"
                         >
                           <tr>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              ID
+                            </th>
                             <th
                               class="ant-table-cell"
                               scope="col"
@@ -3881,6 +5325,86 @@ exports[`base/UserCenter switch to role list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="11132422"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="11132422"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                11132422
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -4026,6 +5550,86 @@ exports[`base/UserCenter switch to role list 1`] = `
                             data-row-key="1647895752866795520"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="1647895752866795520"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                1647895752866795520
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               test666
@@ -4128,6 +5732,86 @@ exports[`base/UserCenter switch to role list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="700200"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="700200"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                700200
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
@@ -4303,6 +5987,86 @@ exports[`base/UserCenter switch to role list 1`] = `
                             data-row-key="7002001"
                           >
                             <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002001"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002001
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               global-view
@@ -4420,6 +6184,86 @@ exports[`base/UserCenter switch to role list 1`] = `
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="7002002"
                           >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                aria-label="7002002"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                7002002
+                                <div
+                                  aria-label="复制"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="复制"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
                             <td
                               class="ant-table-cell"
                             >
