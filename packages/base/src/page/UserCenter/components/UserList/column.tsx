@@ -5,13 +5,24 @@ import {
 } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { t } from '../../../../locale';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
+import {
+  BasicTypographyEllipsis,
+  TableColumnWithIconStyleWrapper
+} from '@actiontech/dms-kit';
 import { OpPermissionTypeUid, SystemRole } from '@actiontech/dms-kit';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import SystemRoleTagList from '../../../../components/SystemRoleTagList';
 import ProjectTagList from '../../../../components/ProjectTagList';
 
-export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
+export const UserListColumns: () => ActiontechTableColumn = () => [
+  {
+    dataIndex: 'uid',
+    title: 'ID',
+    className: 'ellipsis-column-width',
+    render: (uid) => {
+      return <BasicTypographyEllipsis textCont={uid ?? ''} />;
+    }
+  },
   {
     dataIndex: 'name',
     title: () => t('common.username')
