@@ -1,4 +1,4 @@
-import { Space, Typography } from 'antd';
+import { Popconfirm, Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   EmptyBox,
@@ -28,7 +28,9 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     initTime,
     selectedPoint,
     setSelectedPoint,
-    onCreateSqlOptimizationOrview,
+    onCreateSqlOptimization,
+    onViewOptimizationResult,
+    optimizationRecordId,
     createSqlOptimizationLoading,
     allowSqlOptimization,
     getPerformanceStatistics,
@@ -75,13 +77,34 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                 allowSqlOptimization
               }
             >
-              <BasicButton
-                type="primary"
-                onClick={onCreateSqlOptimizationOrview}
-                loading={createSqlOptimizationLoading}
+              <EmptyBox
+                if={!optimizationRecordId}
+                defaultNode={
+                  <BasicButton
+                    type="primary"
+                    onClick={onViewOptimizationResult}
+                    loading={createSqlOptimizationLoading}
+                  >
+                    {t('sqlAnalyze.optimize')}
+                  </BasicButton>
+                }
               >
-                {t('sqlQuery.executePlan.optimize')}
-              </BasicButton>
+                <Popconfirm
+                  title={t('sqlAnalyze.optimization.confirmTitle')}
+                  description={t('sqlAnalyze.optimization.confirmContent')}
+                  okText={t('sqlAnalyze.optimization.enableHighAnalysis')}
+                  cancelText={t('sqlAnalyze.optimization.useRegularAnalysis')}
+                  onConfirm={() => onCreateSqlOptimization?.(true)}
+                  onCancel={() => onCreateSqlOptimization?.(false)}
+                >
+                  <BasicButton
+                    type="primary"
+                    loading={createSqlOptimizationLoading}
+                  >
+                    {t('sqlAnalyze.optimize')}
+                  </BasicButton>
+                </Popconfirm>
+              </EmptyBox>
             </EmptyBox>
           </div>
           <section className="basic-cont-wrapper sql-cont">

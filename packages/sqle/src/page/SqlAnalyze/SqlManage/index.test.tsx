@@ -65,7 +65,8 @@ describe('SqlAnalyze/SQLManage', () => {
     });
     mockUsePermission(
       {
-        checkPagePermission: jest.fn().mockReturnValue(true)
+        checkPagePermission: jest.fn().mockReturnValue(true),
+        checkActionPermission: jest.fn().mockReturnValue(true)
       },
       { useSpyOnMockHooks: true }
     );
@@ -222,7 +223,7 @@ describe('SqlAnalyze/SQLManage', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should create sql optimization task', async () => {
+  it('should create sql optimization task with enable_high_analysis', async () => {
     const spy = mockGetAnalyzeData(true);
     superRender(<SQLManageAnalyze />, undefined, {
       routerProps: {
@@ -237,9 +238,48 @@ describe('SqlAnalyze/SQLManage', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
+
     fireEvent.click(screen.getByText('SQL优化'));
     await act(async () => jest.advanceTimersByTime(0));
+
+    expect(screen.getByText('是，启用高精度推荐')).toBeInTheDocument();
+    expect(screen.getByText('否，使用常规推荐')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('是，启用高精度推荐'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(sqlOptimizeSpy).toHaveBeenCalledTimes(1);
+    expect(sqlOptimizeSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        enable_high_analysis: true,
+        instance_name: 'Mysql1',
+        schema_name: 'sqle'
+      })
+    );
+  });
+
+  it('should create sql optimization task without enable_high_analysis', async () => {
+    mockGetAnalyzeData(true);
+    superRender(<SQLManageAnalyze />, undefined, {
+      routerProps: {
+        initialEntries: ['/analyze?instance_name=Mysql1&schema=sqle']
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('否，使用常规推荐'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(sqlOptimizeSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        enable_high_analysis: false,
+        instance_name: 'Mysql1',
+        schema_name: 'sqle'
+      })
+    );
   });
 
   it('should render error result of type "error" when response code is not 8001', async () => {

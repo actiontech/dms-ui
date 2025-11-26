@@ -220,11 +220,12 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
     expect(getPerformanceStatisticsSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should render sql optimization button', async () => {
+  it('should render sql optimization button with popconfirm when optimizationRecordId is not exist', async () => {
+    const onCreateSqlOptimizationSpy = jest.fn();
     const { result } = sqleSuperRenderHook(() =>
       useSQLExecPlan({
         allowSqlOptimization: true,
-        onCreateSqlOptimizationOrview: jest.fn(),
+        onCreateSqlOptimization: onCreateSqlOptimizationSpy,
         createSqlOptimizationLoading: false
       })
     );
@@ -243,13 +244,22 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
     );
 
     expect(screen.getByText('SQL优化')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(screen.getByText('是，启用高精度推荐')).toBeInTheDocument();
+    expect(screen.getByText('否，使用常规推荐')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('是，启用高精度推荐'));
+    expect(onCreateSqlOptimizationSpy).toHaveBeenCalledWith(true);
   });
 
   it('should hide sql optimization button when execution plan is not exist', async () => {
     const { result } = sqleSuperRenderHook(() =>
       useSQLExecPlan({
         allowSqlOptimization: true,
-        onCreateSqlOptimizationOrview: jest.fn(),
+        onCreateSqlOptimization: jest.fn(),
         createSqlOptimizationLoading: false
       })
     );
@@ -268,5 +278,65 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
     );
 
     expect(screen.queryByText('SQL优化')).not.toBeInTheDocument();
+  });
+
+  it('should render view optimization result button when optimizationRecordId exists', async () => {
+    const onViewOptimizationResultSpy = jest.fn();
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onViewOptimizationResult: onViewOptimizationResultSpy,
+        optimizationRecordId: 'test-record-id',
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    expect(screen.getByText('SQL优化')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('SQL优化'));
+    expect(onViewOptimizationResultSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call onCreateSqlOptimization with false', async () => {
+    const onCreateSqlOptimizationOrViewSpy = jest.fn();
+    const { result } = sqleSuperRenderHook(() =>
+      useSQLExecPlan({
+        allowSqlOptimization: true,
+        onCreateSqlOptimization: onCreateSqlOptimizationOrViewSpy,
+        createSqlOptimizationLoading: false
+      })
+    );
+
+    superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: 'SELECT * FROM users;',
+          classic_result: sqlExecPlans[1].classic_result,
+          affect_rows: {
+            count: 0,
+            err_message: ''
+          }
+        })}
+      </>
+    );
+
+    fireEvent.click(screen.getByText('SQL优化'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('否，使用常规推荐'));
+    expect(onCreateSqlOptimizationOrViewSpy).toHaveBeenCalledWith(false);
   });
 });
