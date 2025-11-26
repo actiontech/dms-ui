@@ -546,7 +546,7 @@ exports[`SqlAuditFields should match snapshot when needSqlAuditService and needA
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip no-margin-field css-1jlm9cy"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
                   class="ant-row ant-form-item-row"
@@ -664,6 +664,69 @@ exports[`SqlAuditFields should match snapshot when needSqlAuditService and needA
                             </span>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip no-margin-field css-1jlm9cy"
+              >
+                <div
+                  class="ant-row ant-form-item-row"
+                >
+                  <div
+                    class="ant-col ant-form-item-label"
+                  >
+                    <label
+                      class=""
+                      for="allowExecuteNonDqlInWorkflow"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          通过工单上线执行工作台非DQL类型SQL
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          开启后，允许通过工单上线执行工作台非DQL类型的SQL语句
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-form-item-control"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
+                          id="allowExecuteNonDqlInWorkflow"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>

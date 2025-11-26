@@ -102,7 +102,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         'dataExportRuleTemplateName',
         'dataExportRuleTemplateId',
         'workbenchTemplateName',
-        'workbenchTemplateId'
+        'workbenchTemplateId',
+        'allowExecuteNonDqlInWorkflow'
       ]);
       // #endif
       // #if [sqle && ee]
@@ -150,14 +151,18 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const changeAuditEnabled = (check: boolean) => {
     if (!check) {
       props.form.setFieldsValue({
-        allowQueryWhenLessThanAuditLevel: undefined
+        allowQueryWhenLessThanAuditLevel: undefined,
+        allowExecuteNonDqlInWorkflow: undefined
       });
     } else {
       if (props.defaultData) {
         props.form.setFieldsValue({
           allowQueryWhenLessThanAuditLevel:
             props.defaultData.sqle_config?.sql_query_config
-              ?.allow_query_when_less_than_audit_level
+              ?.allow_query_when_less_than_audit_level,
+          allowExecuteNonDqlInWorkflow:
+            !!props.defaultData.sqle_config?.sql_query_config
+              ?.workflow_exec_enabled
         });
       }
     }
@@ -205,6 +210,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         allowQueryWhenLessThanAuditLevel:
           props.defaultData.sqle_config?.sql_query_config
             ?.allow_query_when_less_than_audit_level,
+        allowExecuteNonDqlInWorkflow:
+          !!props.defaultData.sqle_config?.sql_query_config
+            ?.workflow_exec_enabled,
         // #endif
         needUpdatePassword: false,
         environmentTagId: props.defaultData.environment_tag?.uid ?? '',

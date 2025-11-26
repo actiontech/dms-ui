@@ -25,6 +25,7 @@ export type DataSourceFormField = {
   needAuditForSqlQuery?: boolean;
   workbenchTemplateId?: string;
   workbenchTemplateName?: string;
+  allowExecuteNonDqlInWorkflow?: boolean;
   dataExportRuleTemplateId?: string;
   dataExportRuleTemplateName?: string;
   params?: BackendFormValues;

@@ -30,6 +30,7 @@ type SqlAuditFieldsValue = {
   workbenchTemplateId: string;
   workbenchTemplateName: string;
   allowQueryWhenLessThanAuditLevel: string;
+  allowExecuteNonDqlInWorkflow: boolean;
 };
 type SqlAuditFieldsProps = {
   getTemplateOptionsLoading: boolean;
@@ -236,7 +237,7 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                         })
                       }
                     ]}
-                    className="has-required-style has-label-tip no-margin-field"
+                    className="has-required-style has-label-tip"
                   >
                     <BasicSelect prefix={<FaLessThanEqualOutlined />}>
                       {Object.values(
@@ -249,6 +250,23 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                         );
                       })}
                     </BasicSelect>
+                  </FormItemLabel>
+                  <FormItemLabel
+                    label={
+                      <CustomLabelContent
+                        title={t(
+                          'dmsDataSource.dataSourceForm.allowExecuteNonDqlInWorkflow'
+                        )}
+                        tips={t(
+                          'dmsDataSource.dataSourceForm.allowExecuteNonDqlInWorkflowTips'
+                        )}
+                      />
+                    }
+                    name="allowExecuteNonDqlInWorkflow"
+                    valuePropName="checked"
+                    className="has-label-tip no-margin-field"
+                  >
+                    <BasicSwitch />
                   </FormItemLabel>
                 </div>
               </EmptyBox>
