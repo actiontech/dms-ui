@@ -179,8 +179,8 @@ const CBOperationLogsList: React.FC<CBOperationLogsListProps> = ({
       dispatch(updateCBSqlOperationRecord({ cbSqlOperationRecord }));
     };
 
-    return CBOperationListColumns(onOpenDrawer);
-  }, [dispatch]);
+    return CBOperationListColumns(projectID, onOpenDrawer);
+  }, [dispatch, projectID]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);

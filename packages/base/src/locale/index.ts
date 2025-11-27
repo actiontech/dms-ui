@@ -61,9 +61,6 @@ const initReactI18n = () => {
       [SupportLanguage.zhCN]: allZhCN,
       [SupportLanguage.enUS]: allEnUS
     },
-    // #if [DEV]
-    debug: true,
-    // #endif
     lng: LocalStorageWrapper.getOrDefault(
       StorageKey.Language,
       DEFAULT_LANGUAGE
