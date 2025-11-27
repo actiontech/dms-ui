@@ -107,7 +107,8 @@ describe('page/DataSource/UpdateDataSource', () => {
             audit_enabled: true,
             rule_template_name: 'default_MySQL',
             rule_template_id: '1',
-            allow_query_when_less_than_audit_level: 'warn'
+            allow_query_when_less_than_audit_level: 'warn',
+            workflow_exec_enabled: true
           }
         },
         additional_params: [
@@ -197,6 +198,11 @@ describe('page/DataSource/UpdateDataSource', () => {
     expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
+    const firstCallParams = updateDBServiceSpy.mock.calls[0][0];
+    expect(
+      firstCallParams.db_service.sqle_config.sql_query_config
+        .workflow_exec_enabled
+    ).toBeUndefined();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
 
@@ -222,6 +228,10 @@ describe('page/DataSource/UpdateDataSource', () => {
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
+    const params = updateDBServiceSpy.mock.calls[0][0];
+    expect(
+      params.db_service.sqle_config.sql_query_config.workflow_exec_enabled
+    ).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
 

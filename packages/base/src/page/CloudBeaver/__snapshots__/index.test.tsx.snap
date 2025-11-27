@@ -396,6 +396,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         <col />
                         <col />
                         <col />
+                        <col />
                         <col
                           style="width: 82px;"
                         />
@@ -427,6 +428,12 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             scope="col"
                           >
                             操作详情
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            关联工单
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -580,13 +587,22 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-placeholder"
                         >
                           <td
                             class="ant-table-cell"
-                            colspan="11"
+                            colspan="12"
                           >
                             <div
                               class="ant-table-expanded-row-fixed"
@@ -1054,6 +1070,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         <col />
                         <col />
                         <col />
+                        <col />
                         <col
                           style="width: 82px;"
                         />
@@ -1085,6 +1102,12 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             scope="col"
                           >
                             操作详情
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            关联工单
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -1139,6 +1162,15 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -1323,6 +1355,11 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                 </span>
                               </div>
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -1631,6 +1668,11 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             </div>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
@@ -1892,6 +1934,11 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             success
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
@@ -2118,6 +2165,11 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
                           >
                             -
                           </td>
@@ -2790,6 +2842,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                         <col />
                         <col />
                         <col />
+                        <col />
                         <col
                           style="width: 82px;"
                         />
@@ -2821,6 +2874,12 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             scope="col"
                           >
                             操作详情
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            关联工单
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -2875,6 +2934,15 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -3059,6 +3127,11 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                 </span>
                               </div>
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -3367,6 +3440,11 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             </div>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
@@ -3628,6 +3706,11 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             success
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
@@ -3854,6 +3937,11 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
                           >
                             -
                           </td>

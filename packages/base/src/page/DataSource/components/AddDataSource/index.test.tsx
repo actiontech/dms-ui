@@ -161,6 +161,12 @@ describe('page/DataSource/AddDataSource', () => {
     fireEvent.click(getBySelector('div[title="warn"]', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
 
+    // allowExecuteNonDqlInWorkflow
+    fireEvent.click(
+      getBySelector('#allowExecuteNonDqlInWorkflow', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
     // submit
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
@@ -212,7 +218,8 @@ describe('page/DataSource/AddDataSource', () => {
             allow_query_when_less_than_audit_level: 'warn',
             audit_enabled: true,
             rule_template_id: '3',
-            rule_template_name: 'default_MySQL1'
+            rule_template_name: 'default_MySQL1',
+            workflow_exec_enabled: true
           }
         },
         user: 'root'
@@ -435,7 +442,8 @@ describe('page/DataSource/AddDataSource', () => {
           data_export_rule_template_name: 'default_MySQL1',
           sql_query_config: {
             allow_query_when_less_than_audit_level: undefined,
-            audit_enabled: undefined
+            audit_enabled: undefined,
+            workflow_exec_enabled: undefined
           }
         },
         user: 'root',

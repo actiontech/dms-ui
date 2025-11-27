@@ -22,7 +22,7 @@ export const ROUTE_PATHS = {
     TRANSIT: {
       index: {
         path: '/transit',
-        query: 'from&to&compression_data&project_name'
+        query: 'from&to&compression_data&project_name&workflow_id'
       }
     },
     SYSTEM: {
