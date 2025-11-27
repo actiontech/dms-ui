@@ -17,7 +17,13 @@ group:
 
 ## 代码演示
 
+### 基础用法
+
 <code src="./demo/basic.tsx"></code>
+
+### 表单抽屉
+
+<code src="./demo/form.tsx"></code>
 
 ## API
 
