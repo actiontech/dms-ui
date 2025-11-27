@@ -599,6 +599,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 82px;"
                       />
@@ -630,6 +631,12 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                           scope="col"
                         >
                           操作详情
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          关联工单
                         </th>
                         <th
                           class="ant-table-cell ellipsis-column-width"
@@ -684,6 +691,15 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -868,6 +884,16 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               </span>
                             </div>
                           </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732672"
+                            target="_blank"
+                          >
+                            1993947455816732672
+                          </a>
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"
@@ -1176,6 +1202,16 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                           </div>
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732674"
+                            target="_blank"
+                          >
+                            1993947455816732674
+                          </a>
+                        </td>
+                        <td
                           class="ant-table-cell ellipsis-column-width"
                         >
                           <div
@@ -1437,6 +1473,16 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                           success
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732675"
+                            target="_blank"
+                          >
+                            1993947455816732675
+                          </a>
+                        </td>
+                        <td
                           class="ant-table-cell ellipsis-column-width"
                         >
                           <div
@@ -1663,6 +1709,11 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
                         >
                           -
                         </td>
@@ -2308,6 +2359,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 82px;"
                       />
@@ -2339,6 +2391,12 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                           scope="col"
                         >
                           操作详情
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          关联工单
                         </th>
                         <th
                           class="ant-table-cell ellipsis-column-width"
@@ -2393,6 +2451,15 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -2577,6 +2644,16 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               </span>
                             </div>
                           </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732672"
+                            target="_blank"
+                          >
+                            1993947455816732672
+                          </a>
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"
@@ -2885,6 +2962,16 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                           </div>
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732674"
+                            target="_blank"
+                          >
+                            1993947455816732674
+                          </a>
+                        </td>
+                        <td
                           class="ant-table-cell ellipsis-column-width"
                         >
                           <div
@@ -3146,6 +3233,16 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                           success
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            href="/sqle/project/700300/exec-workflow/1993947455816732675"
+                            target="_blank"
+                          >
+                            1993947455816732675
+                          </a>
+                        </td>
+                        <td
                           class="ant-table-cell ellipsis-column-width"
                         >
                           <div
@@ -3372,6 +3469,11 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
                         >
                           -
                         </td>
@@ -4017,6 +4119,7 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 82px;"
                       />
@@ -4048,6 +4151,12 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                           scope="col"
                         >
                           操作详情
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          关联工单
                         </th>
                         <th
                           class="ant-table-cell ellipsis-column-width"
@@ -4201,13 +4310,22 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="11"
+                          colspan="12"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"

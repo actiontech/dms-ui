@@ -7,13 +7,25 @@ import { TRANSIT_FROM_CONSTANT } from '@actiontech/dms-kit';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
-const TARGET_DATA = (projectID: string): Record<string, string> => {
+const TARGET_DATA = (
+  projectID: string,
+  options?: { workflowId?: string }
+): Record<string, string> => {
   return {
     create_workflow: parse2ReactRouterPath(
       ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
       {
         params: {
           projectID
+        }
+      }
+    ),
+    workflow_detail: parse2ReactRouterPath(
+      ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+      {
+        params: {
+          projectID,
+          workflowId: options?.workflowId ?? ''
         }
       }
     ),
@@ -38,10 +50,9 @@ const Transit: React.FC = () => {
     const to = searchParams?.to;
     const compressionData = searchParams?.compression_data;
     const projectName = searchParams?.project_name;
-    if (!from || !to || !compressionData) {
-      console.error(
-        `Missing required parameters!\n from=${from}\n to=${to}\n compression_data=${compressionData}`
-      );
+    const workflowId = searchParams?.workflow_id;
+    if (!from || !to) {
+      console.error(`Missing required parameters!\n from=${from}\n to=${to}\n`);
       navigate(ROUTE_PATHS.BASE.HOME, {
         replace: true
       });
@@ -65,7 +76,7 @@ const Transit: React.FC = () => {
         });
         return;
       }
-      const path = TARGET_DATA(projectID)[to!];
+      const path = TARGET_DATA(projectID, { workflowId })[to!];
       if (!path) {
         console.error(`Not found target path: ${to}`);
         navigate(ROUTE_PATHS.BASE.HOME, {
@@ -73,9 +84,15 @@ const Transit: React.FC = () => {
         });
         return;
       }
-      navigate(`${path}?from=${from}&compression_data=${compressionData}`, {
-        replace: true
-      });
+      if (compressionData) {
+        navigate(`${path}?from=${from}&compression_data=${compressionData}`, {
+          replace: true
+        });
+      } else {
+        navigate(path, {
+          replace: true
+        });
+      }
     } else {
       console.error(`project name is undefined`);
       navigate(ROUTE_PATHS.BASE.HOME, {

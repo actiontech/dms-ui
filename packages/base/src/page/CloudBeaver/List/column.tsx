@@ -5,11 +5,15 @@ import {
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../locale';
-import { formatTime } from '@actiontech/dms-kit';
+import { formatTime, ROUTE_PATHS } from '@actiontech/dms-kit';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { CustomAvatar } from '@actiontech/dms-kit';
-import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
+import {
+  SQLRenderer,
+  BasicTypographyEllipsis,
+  TypedLink
+} from '@actiontech/shared';
 export type CBOperationListFilterParamType = PageInfoWithoutIndexAndSize<
   IListCBOperationLogsParams & {
     page_index: number;
@@ -17,6 +21,7 @@ export type CBOperationListFilterParamType = PageInfoWithoutIndexAndSize<
   'project_uid'
 >;
 export const CBOperationListColumns = (
+  projectID: string,
   onOpenDrawer: (record: ICBOperationLog) => void
 ): ActiontechTableColumn<ICBOperationLog, CBOperationListFilterParamType> => {
   return [
@@ -65,6 +70,27 @@ export const CBOperationListColumns = (
           );
         }
         return operation?.operation_detail ?? '-';
+      }
+    },
+    {
+      dataIndex: 'workflow_id',
+      title: t('dmsCloudBeaver.operationList.column.relatedWorkflow'),
+      render: (value: ICBOperationLog['workflow_id']) => {
+        if (!value) {
+          return '-';
+        }
+        return (
+          <TypedLink
+            target="_blank"
+            to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+            params={{
+              projectID,
+              workflowId: value
+            }}
+          >
+            {value}
+          </TypedLink>
+        );
       }
     },
     {

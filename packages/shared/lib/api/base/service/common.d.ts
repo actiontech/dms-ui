@@ -364,6 +364,8 @@ export interface ICBOperationLog {
   session_id?: string;
 
   uid?: string;
+
+  workflow_id?: string;
 }
 
 export interface ICBOperationLogTips {
@@ -1835,6 +1837,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
