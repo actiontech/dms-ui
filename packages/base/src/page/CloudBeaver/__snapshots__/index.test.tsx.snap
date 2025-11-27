@@ -1359,12 +1359,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732672"
-                              target="_blank"
-                            >
-                              1993947455816732672
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -1675,12 +1670,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732674"
-                              target="_blank"
-                            >
-                              1993947455816732674
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -1946,12 +1936,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732675"
-                              target="_blank"
-                            >
-                              1993947455816732675
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -3146,12 +3131,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732672"
-                              target="_blank"
-                            >
-                              1993947455816732672
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -3462,12 +3442,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732674"
-                              target="_blank"
-                            >
-                              1993947455816732674
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -3733,12 +3708,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           <td
                             class="ant-table-cell"
                           >
-                            <a
-                              href="/sqle/project/700300/exec-workflow/1993947455816732675"
-                              target="_blank"
-                            >
-                              1993947455816732675
-                            </a>
+                            -
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
