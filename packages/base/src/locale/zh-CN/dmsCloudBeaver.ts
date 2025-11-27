@@ -26,6 +26,7 @@ export default {
       operationTime: '操作时间',
       service: '数据源',
       operationDetail: '操作详情',
+      relatedWorkflow: '关联工单',
       sessionId: '会话ID',
       operationIP: '操作IP',
       auditResult: '审核结果',

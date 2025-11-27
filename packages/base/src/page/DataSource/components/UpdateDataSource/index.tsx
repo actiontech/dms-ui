@@ -61,7 +61,8 @@ const UpdateDataSource = () => {
               values.allowQueryWhenLessThanAuditLevel,
             audit_enabled: values.needAuditForSqlQuery,
             rule_template_id: values.workbenchTemplateId,
-            rule_template_name: values.workbenchTemplateName
+            rule_template_name: values.workbenchTemplateName,
+            workflow_exec_enabled: values.allowExecuteNonDqlInWorkflow
           }
         },
         // #endif

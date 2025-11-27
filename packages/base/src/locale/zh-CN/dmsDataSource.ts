@@ -81,6 +81,9 @@ export default {
     allowQueryWhenLessThanAuditLevel: '自动放行的最高审核等级',
     allowQueryWhenLessThanAuditLevelTips:
       '低于或等于此等级的审核结果将自动放行',
+    allowExecuteNonDqlInWorkflow: '通过工单上线执行工作台非DQL类型SQL',
+    allowExecuteNonDqlInWorkflowTips:
+      '开启后，允许通过工单上线执行工作台非DQL类型的SQL语句',
     dataExportAuditRuleTemplate: '数据导出审核规则模板',
     dataExportAuditRuleTemplateTips:
       '此功能强制开启审核，请为数据导出选择规则模板',

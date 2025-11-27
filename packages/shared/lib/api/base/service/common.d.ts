@@ -364,6 +364,8 @@ export interface ICBOperationLog {
   session_id?: string;
 
   uid?: string;
+
+  workflow_id?: string;
 }
 
 export interface ICBOperationLogTips {
@@ -1716,6 +1718,8 @@ export interface IListGlobalDBServiceV2 {
   uid?: string;
 
   unfinished_workflow_num?: number;
+
+  workflow_exec_enabled?: boolean;
 }
 
 export interface IListGlobalDBServicesReply {
@@ -1833,6 +1837,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -2468,6 +2476,8 @@ export interface ISQLQueryConfig {
   rule_template_id?: string;
 
   rule_template_name?: string;
+
+  workflow_exec_enabled?: boolean;
 }
 
 export interface ISendSmsCodeReply {
