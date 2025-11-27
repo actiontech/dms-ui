@@ -10,7 +10,6 @@ export const EditTextStyleWrapper = styled(Typography.Paragraph)`
     margin-bottom: 0 !important;
     max-width: 100% !important;
     position: relative;
-    position: relative;
 
     span:not(.custom-icon-edit):first-of-type {
       display: inline-flex;
