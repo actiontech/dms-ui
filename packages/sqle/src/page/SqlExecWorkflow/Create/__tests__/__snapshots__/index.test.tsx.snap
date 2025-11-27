@@ -9991,7 +9991,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                               >
                                 <div
                                   aria-label="test"
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-jp7qmp"
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                                 >
                                   test
                                   <div
@@ -12193,7 +12193,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   aria-label="test"
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-jp7qmp"
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                                 >
                                   test
                                   <div
@@ -14803,7 +14803,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   aria-label="test"
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-jp7qmp"
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                                 >
                                   test
                                   <div
@@ -18739,7 +18739,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   aria-label="test"
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-jp7qmp"
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                                 >
                                   test
                                   <div
