@@ -41,37 +41,32 @@ const LabelDictionaryDemo: React.FC = () => {
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '24px' }}>
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
         {/* 语言切换控制 */}
         <div
           style={{
-            marginBottom: '24px',
-            padding: '16px',
+            padding: '12px 16px',
             backgroundColor: '#f0f5ff',
-            borderRadius: '4px',
-            border: '1px solid #adc6ff'
+            borderRadius: '4px'
           }}
         >
-          <Space size="large">
-            <span style={{ fontSize: '14px', fontWeight: 500 }}>
-              🌐 当前语言:
-            </span>
+          <Space>
+            <span>🌐 当前语言:</span>
             <Switch
               checked={useEnglish}
               onChange={setUseEnglish}
               checkedChildren="English"
               unCheckedChildren="中文"
             />
-            <span style={{ fontSize: '13px', color: '#666' }}>
-              切换语言查看标签字典的国际化效果
-            </span>
           </Space>
         </div>
 
-        {/* 单选 - 字符串选项 */}
-        <div style={{ marginBottom: '32px' }}>
-          <h4 style={{ marginBottom: '12px' }}>审核状态 (单选 + 字符串选项)</h4>
-          <div style={{ marginBottom: '12px' }}>
+        {/* 单选 */}
+        <div>
+          <div style={{ marginBottom: 8, fontWeight: 500 }}>
+            审核状态（单选）：
+          </div>
+          <div style={{ marginBottom: 12 }}>
             <Space>
               <span>当前状态:</span>
               <Tag color="blue">
@@ -88,19 +83,19 @@ const LabelDictionaryDemo: React.FC = () => {
           />
         </div>
 
-        <Divider />
+        <Divider style={{ margin: '8px 0' }} />
 
-        {/* 多选 - 字符串选项 */}
+        {/* 多选 */}
         <div>
-          <h4 style={{ marginBottom: '12px' }}>
-            数据库类型 (多选 + 字符串选项)
-          </h4>
-          <div style={{ marginBottom: '12px' }}>
+          <div style={{ marginBottom: 8, fontWeight: 500 }}>
+            数据库类型（多选）：
+          </div>
+          <div style={{ marginBottom: 12 }}>
             <Space wrap>
               <span>已选中 {selectedTypes.length} 项:</span>
               {selectedTypes.length > 0 ? (
                 selectedTypes.map((type) => (
-                  <Tag key={type} color="green">
+                  <Tag key={type} color="blue">
                     {currentLabels[type as keyof typeof currentLabels]}
                   </Tag>
                 ))
@@ -116,33 +111,8 @@ const LabelDictionaryDemo: React.FC = () => {
             labelDictionary={currentLabels}
             multiple={true}
           />
-
-          <div
-            style={{
-              marginTop: '20px',
-              padding: '16px',
-              borderRadius: '4px',
-              border: '1px solid #ffe58f'
-            }}
-          >
-            <h4 style={{ marginTop: 0, marginBottom: '12px' }}>标签字典特点</h4>
-            <ul
-              style={{
-                margin: 0,
-                marginBottom: '16px',
-                paddingLeft: '20px',
-                fontSize: '13px'
-              }}
-            >
-              <li>支持字符串选项的自动标签转换</li>
-              <li>支持对象选项的 label 属性转换</li>
-              <li>主要用于国际化（i18n）场景</li>
-              <li>提供统一的标签管理，避免硬编码</li>
-              <li>支持动态切换语言</li>
-            </ul>
-          </div>
         </div>
-      </div>
+      </Space>
     </ConfigProvider>
   );
 };
