@@ -173,15 +173,6 @@ const FormIntegrationDemo = () => {
             </Form.Item>
           </Form>
         </Card>
-
-        <Card title="使用说明" size="small">
-          <ul style={{ margin: 0, color: '#666' }}>
-            <li>在"部署环境"字段中，你可以添加、编辑和删除环境配置</li>
-            <li>在"项目标签"字段中，只允许添加新标签，不能修改或删除</li>
-            <li>表单验证会确保必填字段已填写</li>
-            <li>提交时会显示完整的表单数据，包括选择的标签名称</li>
-          </ul>
-        </Card>
       </div>
     </ConfigProvider>
   );
