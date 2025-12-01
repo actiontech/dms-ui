@@ -6,14 +6,14 @@ group:
 
 # BasicInput 基础输入框
 
-基于 Ant Design Input 组件封装的基础输入框组件，提供了统一的样式规范、国际化支持和增强的功能特性。
+基于 Ant Design Input 封装，提供统一的样式规范和国际化支持，用于文本输入场景。
 
 ## 何时使用
 
-- 需要统一输入框样式规范时
-- 需要支持国际化占位符文本时
-- 需要自定义清除图标样式时
-- 需要保持与设计系统一致的输入框组件时
+- 需要用户输入文本信息
+- 需要统一的输入框样式
+- 需要国际化占位符支持
+- 需要与设计系统保持一致
 
 ## 代码演示
 
@@ -21,76 +21,46 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 输入框类型
-
-<code src="./demo/types.tsx"></code>
-
-### 输入框尺寸
-
-<code src="./demo/sizes.tsx"></code>
-
-### 带前缀和后缀
-
-<code src="./demo/affix.tsx"></code>
-
-### 文本域
+### 文本域和密码框
 
 <code src="./demo/textarea.tsx"></code>
 
-### 密码输入框
-
-<code src="./demo/password.tsx"></code>
-
-### 带清除功能
-
-<code src="./demo/allowClear.tsx"></code>
-
-### 禁用状态
-
-<code src="./demo/disabled.tsx"></code>
-
 ## API
 
-### BasicInput
+BasicInput 继承 Ant Design Input 的所有属性，完整 API 请参考 [Input 文档](https://ant.design/components/input-cn)。
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### BasicInput 常用属性
+
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| className | 输入框类名 | `string` | - | - |
-| allowClear | 是否显示清除按钮 | `boolean \| { clearIcon: ReactNode }` | `false` | - |
-
-### BasicInput.TextArea
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| className | 文本域类名 | `string` | - | - |
-| rows | 文本域行数 | `number` | `4` | - |
-| autoSize | 自适应内容高度 | `boolean \| { minRows: number, maxRows: number }` | `false` | - |
-
-### BasicInput.Password
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| className | 密码输入框类名 | `string` | - | - |
-| visibilityToggle | 是否显示切换密码可见性的按钮 | `boolean` | `true` | - |
-
-### 继承属性
-
-BasicInput 组件继承了 Ant Design Input 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| type | 输入框类型 | `'text' \| 'password' \| 'number' \| 'email' \| 'url' \| 'tel'` | `'text'` | - |
+| value | 输入框的值 | `string` | - | - |
+| defaultValue | 默认值 | `string` | - | - |
+| placeholder | 占位符 | `string` | `'请输入'` | - |
 | size | 输入框大小 | `'large' \| 'middle' \| 'small'` | `'middle'` | - |
 | disabled | 是否禁用 | `boolean` | `false` | - |
-| placeholder | 输入框占位符 | `string` | `'请输入'` | - |
-| value | 输入框的值 | `string` | - | - |
-| defaultValue | 输入框的默认值 | `string` | - | - |
-| prefix | 输入框前缀图标 | `ReactNode` | - | - |
-| suffix | 输入框后缀图标 | `ReactNode` | - | - |
-| addonBefore | 输入框前置标签 | `ReactNode` | - | - |
-| addonAfter | 输入框后置标签 | `ReactNode` | - | - |
-| onChange | 输入框内容变化时的回调 | `(e: ChangeEvent<HTMLInputElement>) => void` | - | - |
-| onPressEnter | 按下回车键时的回调 | `(e: KeyboardEvent<HTMLInputElement>) => void` | - | - |
+| allowClear | 是否显示清除按钮 | `boolean` | `false` | - |
+| prefix | 前缀图标 | `ReactNode` | - | - |
+| suffix | 后缀图标 | `ReactNode` | - | - |
+| addonBefore | 前置标签 | `ReactNode` | - | - |
+| addonAfter | 后置标签 | `ReactNode` | - | - |
+| onChange | 值变化回调 | `(e) => void` | - | - |
+| onPressEnter | 按下回车回调 | `(e) => void` | - | - |
+
+### BasicInput.TextArea 常用属性
+
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
+| --- | --- | --- | --- | --- |
+| rows | 文本域行数 | `number` | `4` | - |
+| autoSize | 自适应内容高度 | `boolean \| { minRows, maxRows }` | `false` | - |
+| showCount | 是否展示字数 | `boolean` | `false` | - |
+| maxLength | 最大长度 | `number` | - | - |
+
+### BasicInput.Password 常用属性
+
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
+| --- | --- | --- | --- | --- |
+| visibilityToggle | 是否显示切换按钮 | `boolean` | `true` | - |
+| iconRender | 自定义切换图标 | `(visible) => ReactNode` | - | - |
 
 ## 设计规范
 

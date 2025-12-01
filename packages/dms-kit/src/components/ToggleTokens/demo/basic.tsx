@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import { Card, Space, Tag } from 'antd';
+import { Space, Tag, Divider, Typography } from 'antd';
 import { ToggleTokens, ConfigProvider } from '@actiontech/dms-kit';
+
+const { Text } = Typography;
 
 const BasicDemo: React.FC = () => {
   const [status, setStatus] = useState<string>('processing');
-  const [type, setType] = useState<string>('document');
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <h3>基础用法</h3>
-        
-        <Card title="状态过滤" style={{ marginBottom: '20px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            <Tag color="blue">{status}</Tag>
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+        {/* 对象选项 */}
+        <div>
+          <Text strong style={{ display: 'block', marginBottom: 8 }}>
+            对象选项（自定义标签和值）：
+          </Text>
+          <div style={{ marginBottom: 12 }}>
+            <Space>
+              <span>当前选中:</span>
+              <Tag color="blue">{status}</Tag>
+            </Space>
           </div>
           <ToggleTokens
             value={status}
@@ -26,37 +31,28 @@ const BasicDemo: React.FC = () => {
               { label: '已取消', value: 'cancelled' }
             ]}
           />
-        </Card>
+        </div>
 
-        <Card title="类型过滤" style={{ marginBottom: '20px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            <Tag color="green">{type}</Tag>
-          </div>
-          <ToggleTokens
-            value={type}
-            onChange={setType}
-            options={[
-              { label: '📄 文档', value: 'document' },
-              { label: '🖼️ 图片', value: 'image' },
-              { label: '🎥 视频', value: 'video' },
-              { label: '🎵 音频', value: 'audio' }
-            ]}
-          />
-        </Card>
+        <Divider style={{ margin: '8px 0' }} />
 
-        <Card title="字符串选项">
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            <Tag color="orange">{status}</Tag>
+        {/* 字符串选项 */}
+        <div>
+          <Text strong style={{ display: 'block', marginBottom: 8 }}>
+            字符串选项（值即标签）：
+          </Text>
+          <div style={{ marginBottom: 12 }}>
+            <Space>
+              <span>当前选中:</span>
+              <Tag color="blue">{status}</Tag>
+            </Space>
           </div>
           <ToggleTokens
             value={status}
             onChange={setStatus}
             options={['processing', 'finished', 'failed', 'cancelled']}
           />
-        </Card>
-      </div>
+        </div>
+      </Space>
     </ConfigProvider>
   );
 };

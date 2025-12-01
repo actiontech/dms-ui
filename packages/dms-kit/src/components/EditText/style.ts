@@ -9,6 +9,7 @@ export const EditTextStyleWrapper = styled(Typography.Paragraph)`
     align-items: center;
     margin-bottom: 0 !important;
     max-width: 100% !important;
+    position: relative;
 
     span:not(.custom-icon-edit):first-of-type {
       display: inline-flex;

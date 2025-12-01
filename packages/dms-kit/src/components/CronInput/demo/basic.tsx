@@ -1,62 +1,78 @@
 import React, { useState } from 'react';
-import { ConfigProvider } from '@actiontech/dms-kit';
-import { Space, Typography, Card } from 'antd';
-import { CronInput } from '@actiontech/dms-kit';
+import { ConfigProvider, CronInput } from '@actiontech/dms-kit';
+import { Space, Typography, Form, Alert } from 'antd';
 
-const { Text, Title } = Typography;
+const { Title, Text } = Typography;
 
+/**
+ * 基础用法
+ * - 支持手动输入 Cron 表达式
+ * - 点击日历图标切换到可视化选择模式
+ * - 自动验证表达式格式
+ * - 禁用状态
+ */
 const BasicDemo: React.FC = () => {
-  const [cronValue, setCronValue] = useState('0 0 * * *');
+  const [cronValue1, setCronValue1] = useState('0 0 * * *');
+  const [cronValue2, setCronValue2] = useState('0 0 * * 1');
   const [error, setError] = useState('');
-
-  const handleChange = (value: string) => {
-    setCronValue(value);
-    console.log('Cron 表达式变化:', value);
-  };
-
-  const handleError = (errorMessage: string) => {
-    setError(errorMessage);
-    console.log('Cron 表达式错误:', errorMessage);
-  };
 
   return (
     <ConfigProvider>
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card size="small">
-          <Title level={5}>基础 Cron 表达式输入</Title>
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <div>
-              <Text>当前值：</Text>
-              <Text code>{cronValue}</Text>
-            </div>
-
-            <CronInput
-              value={cronValue}
-              onChange={handleChange}
-              onError={handleError}
+        <div>
+          <Title level={5}>基础用法（支持手动输入和可视化选择）</Title>
+          <Form layout="vertical">
+            <Form.Item
+              label="Cron 表达式"
+              validateStatus={error ? 'error' : ''}
+              help={error}
+            >
+              <CronInput
+                value={cronValue1}
+                onChange={setCronValue1}
+                onError={setError}
+              />
+            </Form.Item>
+            <Alert
+              message={`当前值：${cronValue1} | 提示：点击输入框右侧的日历图标可切换到可视化选择模式`}
+              type="info"
+              showIcon
             />
+          </Form>
+        </div>
 
-            {error && <Text type="danger">错误信息：{error}</Text>}
-          </Space>
-        </Card>
+        <div>
+          <Title level={5}>错误验证</Title>
+          <Form layout="vertical">
+            <Form.Item label="Cron 表达式">
+              <CronInput value={cronValue2} onChange={setCronValue2} />
+            </Form.Item>
+            <Alert message={`当前值：${cronValue2}`} type="info" showIcon />
+          </Form>
+        </div>
 
-        <Card size="small">
-          <Title level={5}>预设 Cron 表达式</Title>
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <div>
-              <Text>每日执行：</Text>
-              <Text code>0 0 * * *</Text>
-            </div>
-            <div>
-              <Text>每小时执行：</Text>
-              <Text code>0 * * * *</Text>
-            </div>
-            <div>
-              <Text>每周一执行：</Text>
-              <Text code>0 0 * * 1</Text>
-            </div>
+        <div>
+          <Title level={5}>禁用状态</Title>
+          <CronInput value="0 0 * * *" onChange={() => {}} disabled />
+        </div>
+
+        <div>
+          <Title level={5}>常用 Cron 表达式</Title>
+          <Space direction="vertical">
+            <Text>
+              • <Text code>0 0 * * *</Text> - 每天午夜执行
+            </Text>
+            <Text>
+              • <Text code>0 * * * *</Text> - 每小时执行
+            </Text>
+            <Text>
+              • <Text code>0 0 * * 1</Text> - 每周一午夜执行
+            </Text>
+            <Text>
+              • <Text code>0 0 1 * *</Text> - 每月 1 号午夜执行
+            </Text>
           </Space>
-        </Card>
+        </div>
       </Space>
     </ConfigProvider>
   );

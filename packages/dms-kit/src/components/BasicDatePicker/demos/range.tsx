@@ -1,34 +1,66 @@
 import React from 'react';
 import { BasicDatePicker, ConfigProvider } from '@actiontech/dms-kit';
+import { Space, Typography } from 'antd';
 import dayjs from 'dayjs';
 
-const BasicDatePickerRangeDemo: React.FC = () => (
-  <ConfigProvider>
-    <div style={{ display: 'flex', gap: '16px', flexDirection: 'column' }}>
-      <BasicDatePicker
-        placeholder="只能选择今天之后的日期"
-        disabledDate={(current) => {
-          // 禁用今天之前的日期
-          return current && current < dayjs().startOf('day');
-        }}
-      />
-      <BasicDatePicker
-        placeholder="只能选择最近30天的日期"
-        disabledDate={(current) => {
-          const today = dayjs().startOf('day');
-          const thirtyDaysAgo = today.subtract(30, 'day');
-          return current && (current < thirtyDaysAgo || current > today);
-        }}
-      />
-      <BasicDatePicker
-        placeholder="只能选择工作日（周一到周五）"
-        disabledDate={(current) => {
-          // 禁用周末
-          return (current && current.day() === 0) || current.day() === 6;
-        }}
-      />
-    </div>
-  </ConfigProvider>
-);
+const { Title } = Typography;
+
+/**
+ * 日期范围限制
+ * - 禁用今天之前的日期
+ * - 禁用今天之后的日期
+ * - 禁用指定日期范围
+ */
+const BasicDatePickerRangeDemo: React.FC = () => {
+  // 禁用今天之前的日期
+  const disabledBeforeToday = (current: dayjs.Dayjs) => {
+    return current && current < dayjs().startOf('day');
+  };
+
+  // 禁用今天之后的日期
+  const disabledAfterToday = (current: dayjs.Dayjs) => {
+    return current && current > dayjs().endOf('day');
+  };
+
+  // 禁用指定日期范围（只能选择最近 7 天）
+  const disabledOutOfRange = (current: dayjs.Dayjs) => {
+    const start = dayjs().subtract(7, 'days').startOf('day');
+    const end = dayjs().endOf('day');
+    return current && (current < start || current > end);
+  };
+
+  return (
+    <ConfigProvider>
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+        <div>
+          <Title level={5}>禁用今天之前的日期</Title>
+          <BasicDatePicker
+            disabledDate={disabledBeforeToday}
+            placeholder="只能选择今天及以后"
+            style={{ width: 200 }}
+          />
+        </div>
+
+        <div>
+          <Title level={5}>禁用今天之后的日期</Title>
+          <BasicDatePicker
+            disabledDate={disabledAfterToday}
+            placeholder="只能选择今天及以前"
+            style={{ width: 200 }}
+          />
+        </div>
+
+        <div>
+          <Title level={5}>只能选择最近 7 天</Title>
+          <BasicDatePicker
+            disabledDate={disabledOutOfRange}
+            placeholder="最近 7 天"
+            style={{ width: 200 }}
+          />
+        </div>
+      </Space>
+    </ConfigProvider>
+  );
+};
 
 export default BasicDatePickerRangeDemo;

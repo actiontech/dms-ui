@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
-import { BasicTag } from '@actiontech/dms-kit';
-import { ConfigProvider } from '@actiontech/dms-kit';
+/**
+ * 最简单的标签
+ * - 默认样式和颜色
+ * - 支持 closable 属性
+ */
+import React from 'react';
+import { BasicTag, ConfigProvider } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 
 const BasicTagDemo = () => {
-  const [tags, setTags] = useState(['标签1', '标签2', '标签3']);
-
-  const handleClose = (removedTag: string) => {
-    const newTags = tags.filter((tag) => tag !== removedTag);
-    setTags(newTags);
-  };
-
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <Space size={[0, 8]} wrap>
-          {tags.map((tag) => (
-            <BasicTag key={tag} closable onClose={() => handleClose(tag)}>
-              {tag}
-            </BasicTag>
-          ))}
-        </Space>
-      </div>
+      <Space size={[0, 8]} wrap>
+        <BasicTag>默认标签</BasicTag>
+        <BasicTag color="blue">蓝色标签</BasicTag>
+        <BasicTag color="green">绿色标签</BasicTag>
+        <BasicTag color="red" closable>
+          可关闭
+        </BasicTag>
+      </Space>
     </ConfigProvider>
   );
 };

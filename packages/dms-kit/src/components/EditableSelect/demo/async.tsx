@@ -101,9 +101,6 @@ const EditableSelectAsyncDemo = () => {
     <ConfigProvider>
       <div style={{ maxWidth: 500, margin: '0 auto', padding: 24 }}>
         <h3>异步操作演示</h3>
-        <p style={{ color: '#666', marginBottom: 24 }}>
-          演示与后端API交互的场景，包括异步的添加、更新和删除操作
-        </p>
 
         <EditableSelect
           value={value}
@@ -117,32 +114,6 @@ const EditableSelectAsyncDemo = () => {
           addButtonText="添加技能标签"
           deletionConfirmTitle="确定要删除这个技能标签吗？"
         />
-
-        <div
-          style={{
-            marginTop: 20,
-            padding: 16,
-            background: '#f6f8fa',
-            borderRadius: 6,
-            fontSize: 14
-          }}
-        >
-          <h4 style={{ margin: '0 0 8px 0' }}>操作说明：</h4>
-          <ul style={{ margin: 0, paddingLeft: 20 }}>
-            <li>添加操作会验证名称重复，有 1.5 秒延迟</li>
-            <li>更新操作有 1 秒延迟模拟网络请求</li>
-            <li>删除操作有 0.8 秒延迟，"前端开发"标签无法删除</li>
-            <li>所有操作都有加载状态和错误处理</li>
-          </ul>
-        </div>
-
-        <div style={{ marginTop: 16, color: '#666' }}>
-          <p>
-            当前选择:{' '}
-            {value ? options.find((opt) => opt.value === value)?.label : '无'}
-          </p>
-          <p>可用标签: {options.map((opt) => opt.label).join(', ')}</p>
-        </div>
       </div>
     </ConfigProvider>
   );

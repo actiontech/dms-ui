@@ -214,7 +214,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
+                          class="ant-typography ant-typography-edit-content css-1ya3u5l ant-typography-div"
                         >
                           <textarea
                             class="ant-input"
@@ -690,7 +690,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
+                          class="ant-typography ant-typography-edit-content css-1ya3u5l ant-typography-div"
                         >
                           <textarea
                             class="ant-input"

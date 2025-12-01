@@ -4,137 +4,67 @@ group:
   order: 1
 ---
 
-# BasicDatePicker 基础日期选择器组件
+# BasicDatePicker 日期选择器
 
-## 组件介绍
-
-BasicDatePicker 是一个基于 Ant Design DatePicker 组件封装的基础日期选择器，提供了统一的样式风格、时钟图标前缀、自定义导航按钮等功能。它是 dms-kit 中常用的日期输入组件。
+基于 Ant Design DatePicker 封装，提供统一的日期选择器样式和时钟图标前缀。
 
 ## 何时使用
 
-- 需要选择单个日期时
-- 需要统一的日期选择器样式风格
+- 需要选择单个日期
 - 需要时钟图标前缀的日期输入框
-- 需要自定义导航按钮的日期选择器
+- 需要统一的日期选择器样式
+- 需要与设计系统保持一致
 
 ## 代码演示
 
 ### 基础用法
 
-最简单的日期选择器用法，支持基本的日期选择功能。
-
 <code src="./demos/basic.tsx"></code>
 
-### 不同尺寸
-
-支持三种尺寸：small、middle、large。
-
-<code src="./demos/size.tsx"></code>
-
-### 自定义格式
-
-支持自定义日期显示格式和输入格式。
-
-<code src="./demos/format.tsx"></code>
-
-### 禁用状态
-
-当不需要用户输入时，可以禁用日期选择器。
-
-<code src="./demos/disabled.tsx"></code>
-
-### 范围限制
-
-可以设置日期的选择范围，限制用户只能选择特定时间段的日期。
+### 日期范围限制
 
 <code src="./demos/range.tsx"></code>
 
-### 显示超级图标
+## API
 
-控制是否显示年份和月份的快速跳转按钮。
+BasicDatePicker 继承 Ant Design DatePicker 的所有属性，完整 API 请参考 [DatePicker 文档](https://ant.design/components/date-picker-cn)。
 
-<code src="./demos/super-icon.tsx"></code>
+### 扩展属性
 
-### 自定义样式
-
-通过 className 属性添加自定义样式类。
-
-## API 文档
-
-### BasicDatePickerProps
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| hideSuperIcon | 是否隐藏年份和月份的快速跳转按钮 | boolean | true | - |
-| className | 自定义 CSS 类名 | string | - | - |
+| hideSuperIcon | 是否隐藏年份/月份快速跳转按钮 | `boolean` | `true` | - |
 
-### 继承属性
+### 常用属性
 
-BasicDatePicker 继承了 Ant Design DatePicker 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| value | 当前选中的日期 | Dayjs | - | - |
-| defaultValue | 默认选中的日期 | Dayjs | - | - |
-| onChange | 日期变化回调 | (date: Dayjs \| null, dateString: string) => void | - | - |
-| placeholder | 输入框提示文字 | string | - | - |
-| format | 日期格式 | string | 'YYYY-MM-DD' | - |
-| size | 输入框大小 | 'large' \| 'middle' \| 'small' | 'middle' | - |
-| disabled | 是否禁用 | boolean | false | - |
-| allowClear | 是否显示清除按钮 | boolean | true | - |
-| showTime | 是否显示时间选择 | boolean \| object | false | - |
-| disabledDate | 不可选择的日期 | (current: Dayjs) => boolean | - | - |
-| onOpenChange | 弹出层展开/收起回调 | (open: boolean) => void | - | - |
+| value | 当前选中的日期 | `Dayjs` | - | - |
+| defaultValue | 默认选中的日期 | `Dayjs` | - | - |
+| onChange | 日期变化回调 | `(date: Dayjs \| null, dateString: string) => void` | - | - |
+| placeholder | 输入框提示文字 | `string` | - | - |
+| format | 日期格式 | `string` | `'YYYY-MM-DD'` | - |
+| size | 输入框大小 | `'large' \| 'middle' \| 'small'` | `'middle'` | - |
+| disabled | 是否禁用 | `boolean` | `false` | - |
+| disabledDate | 不可选择的日期 | `(current: Dayjs) => boolean` | - | - |
 
-## 设计规范
+## 组件特点
 
-### 样式特点
-
-- **时钟图标**: 左侧显示时钟图标，颜色为主题的四级文本色
-- **统一边框**: 使用主题的二级边框色，hover 和 focus 状态有相应的边框变化
-- **自定义导航**: 左右箭头按钮使用自定义图标，支持主题色配置
-- **圆角设计**: 输入框和下拉面板都使用 4px 圆角
-
-### 主题配置
-
-BasicDatePicker 支持以下主题变量：
-
-```less
-// 日期选择器样式变量
-@color-text-quaternary: #8c8c8c;
-@color-border-secondary: #d9d9d9;
-@color-bg-layout: #fafafa;
-@color-white: #ffffff;
-@color-primary: #1890ff;
-
-// 下拉面板样式
-@basic-range-picker-dropdown-icon-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-@basic-range-picker-hover-border: 1px solid #40a9ff;
-@basic-range-picker-active-border: 1px solid #1890ff;
-@basic-range-picker-error-border: 1px solid #ff4d4f;
-@basic-range-picker-disabled-border: 1px solid #d9d9d9;
-```
-
-### 交互状态
-
-- **默认状态**: 二级边框色，时钟图标为四级文本色
-- **悬停状态**: 边框色变为主题色，有平滑的过渡动画
-- **聚焦状态**: 边框色为主题色，显示聚焦轮廓
-- **禁用状态**: 边框色为禁用色，背景色为禁用背景色
+1. **统一样式规范** → 自动应用项目主题系统的样式
+2. **时钟图标前缀** → 左侧显示时钟图标，提升视觉识别度
+3. **自定义导航按钮** → 左右箭头按钮使用自定义图标
+4. **快速跳转控制** → 通过 `hideSuperIcon` 控制年份/月份快速跳转按钮
 
 ## 注意事项
 
-1. **图标依赖**: 组件依赖 `@actiontech/icons` 包中的图标组件
-2. **日期格式**: 默认使用 dayjs 处理日期，确保项目中已安装 dayjs
-3. **主题系统**: 组件使用 MUI 的 styled 系统，需要正确的主题上下文
-4. **弹出层定位**: 下拉面板的定位容器为组件本身，避免定位问题
-5. **国际化**: 日期格式和文本支持国际化配置
+1. 组件需要包裹在 `ConfigProvider` 中确保主题正常工作
+2. 默认使用 dayjs 处理日期，确保项目中已安装 dayjs
+3. `hideSuperIcon` 默认为 `true`，隐藏年份/月份快速跳转按钮
+4. 日期格式和文本支持国际化配置
 
-## 更新日志
+## 最佳实践
 
-### 1.0.0
-- 初始版本发布
-- 支持基础日期选择功能
-- 集成时钟图标前缀
-- 自定义导航按钮样式
-- 支持超级图标显示控制
+1. **日期格式**：根据业务需求选择合适的日期格式，如 `YYYY-MM-DD`、`YYYY/MM/DD`
+2. **范围限制**：使用 `disabledDate` 限制可选日期范围，避免用户选择无效日期
+3. **默认值**：使用 `defaultValue` 设置默认日期，提升用户体验
+4. **清除按钮**：表单场景建议保留 `allowClear`，方便用户清除已选日期

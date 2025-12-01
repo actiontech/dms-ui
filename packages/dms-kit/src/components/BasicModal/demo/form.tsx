@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { BasicModal, BasicButton, ConfigProvider } from '@actiontech/dms-kit';
-import { Form, Input, Select } from 'antd';
+import { Form, Input, Select, message } from 'antd';
 
+/**
+ * 表单弹窗
+ * - 表单验证和提交
+ * - 关闭时销毁表单数据
+ * - 提交状态展示
+ */
 const BasicModalFormDemo = () => {
   const [visible, setVisible] = useState(false);
+  const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
 
   const showModal = () => {
@@ -12,9 +19,15 @@ const BasicModalFormDemo = () => {
 
   const handleOk = () => {
     form.validateFields().then((values) => {
-      console.log('Form values:', values);
-      setVisible(false);
-      form.resetFields();
+      setConfirmLoading(true);
+      // 模拟提交操作
+      setTimeout(() => {
+        console.log('Form values:', values);
+        message.success('保存成功');
+        setConfirmLoading(false);
+        setVisible(false);
+        form.resetFields();
+      }, 1500);
     });
   };
 
@@ -26,15 +39,17 @@ const BasicModalFormDemo = () => {
   return (
     <ConfigProvider>
       <BasicButton type="primary" onClick={showModal}>
-        表单弹窗
+        打开表单弹窗
       </BasicButton>
 
       <BasicModal
         title="用户信息编辑"
-        visible={visible}
+        open={visible}
         size="large"
         onOk={handleOk}
         onCancel={handleCancel}
+        confirmLoading={confirmLoading}
+        destroyOnClose
         okText="保存"
         cancelText="取消"
       >
@@ -46,7 +61,7 @@ const BasicModalFormDemo = () => {
           >
             <Input placeholder="请输入姓名" />
           </Form.Item>
-          
+
           <Form.Item
             name="email"
             label="邮箱"
@@ -57,7 +72,7 @@ const BasicModalFormDemo = () => {
           >
             <Input placeholder="请输入邮箱" />
           </Form.Item>
-          
+
           <Form.Item
             name="role"
             label="角色"
@@ -68,6 +83,10 @@ const BasicModalFormDemo = () => {
               <Select.Option value="user">普通用户</Select.Option>
               <Select.Option value="guest">访客</Select.Option>
             </Select>
+          </Form.Item>
+
+          <Form.Item name="description" label="个人简介">
+            <Input.TextArea rows={4} placeholder="请输入个人简介" />
           </Form.Item>
         </Form>
       </BasicModal>
