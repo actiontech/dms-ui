@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BasicTreeSelect, ConfigProvider } from '@actiontech/dms-kit';
 import { Button, Space } from 'antd';
 
@@ -57,4 +57,3 @@ const LoadingTreeSelectDemo = () => {
 };
 
 export default LoadingTreeSelectDemo;
-
