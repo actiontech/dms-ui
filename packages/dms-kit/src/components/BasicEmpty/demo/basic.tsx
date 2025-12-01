@@ -1,56 +1,88 @@
 import React, { useState } from 'react';
 import { BasicEmpty, ConfigProvider } from '@actiontech/dms-kit';
-import { Button, Space, Card } from 'antd';
+import { Space, Typography } from 'antd';
 
+const { Title } = Typography;
+
+/**
+ * 展示不同状态
+ * - 加载状态：loading = true
+ * - 错误状态：errorInfo 存在
+ * - 空状态：dataLength = 0
+ */
 const BasicEmptyDemo = () => {
-  const [dataLength, setDataLength] = useState(0);
+  const [refreshCount, setRefreshCount] = useState(0);
 
-  const addData = () => {
-    setDataLength(dataLength + 1);
-  };
-
-  const removeData = () => {
-    setDataLength(Math.max(0, dataLength - 1));
+  const handleRefresh = () => {
+    setRefreshCount(refreshCount + 1);
   };
 
   return (
     <ConfigProvider>
-      <Card title="基础空状态组件" style={{ width: '100%' }}>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <div>
-            <Space>
-              <Button onClick={addData} type="primary">
-                添加数据
-              </Button>
-              <Button onClick={removeData} disabled={dataLength === 0}>
-                减少数据
-              </Button>
-            </Space>
-            <span style={{ marginLeft: 16 }}>
-              当前数据量: <strong>{dataLength}</strong>
-            </span>
-          </div>
-
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+        <div>
+          <Title level={5}>加载状态</Title>
           <div
             style={{
-              minHeight: 200,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              minHeight: 150,
+              border: '1px solid #f0f0f0',
+              borderRadius: 4,
+              padding: 16
             }}
           >
-            <BasicEmpty dataLength={dataLength}>
-              <div style={{ textAlign: 'center' }}>
-                <h3>有数据时的内容</h3>
-                <p>这里可以显示实际的数据内容</p>
-              </div>
-            </BasicEmpty>
+            <BasicEmpty loading dataLength={0} />
           </div>
-        </Space>
-      </Card>
+        </div>
+
+        <div>
+          <Title level={5}>错误状态（带刷新按钮）</Title>
+          <div
+            style={{
+              minHeight: 150,
+              border: '1px solid #f0f0f0',
+              borderRadius: 4,
+              padding: 16
+            }}
+          >
+            <BasicEmpty
+              errorTitle="网络连接失败"
+              errorInfo="请检查网络连接后重试"
+              dataLength={0}
+              onRefresh={handleRefresh}
+            />
+          </div>
+        </div>
+
+        <div>
+          <Title level={5}>空状态</Title>
+          <div
+            style={{
+              minHeight: 150,
+              border: '1px solid #f0f0f0',
+              borderRadius: 4,
+              padding: 16
+            }}
+          >
+            <BasicEmpty dataLength={0} />
+          </div>
+        </div>
+
+        <div>
+          <Title level={5}>自定义空状态内容</Title>
+          <div
+            style={{
+              minHeight: 150,
+              border: '1px solid #f0f0f0',
+              borderRadius: 4,
+              padding: 16
+            }}
+          >
+            <BasicEmpty emptyCont="暂无用户数据，请添加用户" dataLength={0} />
+          </div>
+        </div>
+      </Space>
     </ConfigProvider>
   );
 };
 
 export default BasicEmptyDemo;
-

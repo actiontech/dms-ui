@@ -4,109 +4,65 @@ group:
   order: 1
 ---
 
-# BasicTable 基础表格组件
+# BasicTable 基础表格
 
-## 组件介绍
-
-BasicTable 是一个基于 Ant Design Table 组件封装的基础表格组件，提供了统一的样式风格、错误处理、分页配置等功能。它是 dms-kit 中最常用的数据展示组件之一。
+基于 Ant Design Table 封装，提供统一的样式风格、错误处理和分页配置。
 
 ## 何时使用
 
-- 需要展示结构化数据时
-- 需要分页、排序、筛选等功能的表格
-- 需要统一错误处理和空状态展示
-- 需要固定分页栏的表格布局
+- 展示结构化数据
+- 需要统一的错误状态展示
+- 需要固定分页栏布局
+- 需要默认分页配置的表格
 
 ## 代码演示
 
 ### 基础用法
 
-最简单的表格用法，只需要提供列定义和数据源。
-
 <code src="./demos/basic.tsx"></code>
 
-### 带分页的表格
-
-默认启用分页功能，支持页码切换和每页条数调整。
-
-<code src="./demos/pagination.tsx"></code>
-
-### 错误状态表格
-
-当数据加载失败时，显示错误信息和重试提示。
+### 错误状态
 
 <code src="./demos/error.tsx"></code>
 
-## API 文档
+## API
 
-### BasicTableProps
+BasicTable 继承 Ant Design Table 的所有属性，完整 API 请参考 [Table 文档](https://ant.design/components/table-cn)。
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### 扩展属性
+
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| errorMessage | 错误信息，显示在表格空状态区域 | string | - | - |
-| isPaginationFixed | 是否固定分页栏在底部 | boolean | false | - |
-| className | 自定义 CSS 类名 | string | - | - |
+| errorMessage | 错误信息，显示在表格空状态 | `string` | - | - |
+| isPaginationFixed | 是否固定分页栏在底部 | `boolean` | `false` | - |
 
-### 继承属性
+### 常用属性
 
-BasicTable 继承了 Ant Design Table 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| columns | 表格列配置 | ColumnsType | - | - |
-| dataSource | 数据源 | T[] | - | - |
-| rowKey | 行数据的 key | string \| (record) => string | 'key' | - |
-| loading | 加载状态 | boolean \| SpinProps | false | - |
-| pagination | 分页配置 | false \| TablePaginationConfig | - | - |
-| scroll | 表格滚动配置 | { x?: number \| string \| true, y?: number \| string } | - | - |
-| size | 表格大小 | 'small' \| 'middle' \| 'default' | 'default' | - |
-| bordered | 是否显示边框 | boolean | false | - |
-| rowSelection | 行选择配置 | object | - | - |
-| onRow | 设置行属性 | (record, index) => object | - | - |
-| onChange | 分页、筛选、排序变化时触发 | (pagination, filters, sorter, extra) => void | - | - |
+| columns | 表格列配置 | `ColumnsType<T>` | - | ✅ |
+| dataSource | 数据源 | `T[]` | - | - |
+| rowKey | 行数据的 key | `string \| (record) => string` | `'key'` | ✅ |
+| loading | 加载状态 | `boolean \| SpinProps` | `false` | - |
+| pagination | 分页配置 | `false \| TablePaginationConfig` | 默认分页 | - |
 
-## 设计规范
+## 组件特点
 
-### 样式特点
-
-- **统一间距**: 表格单元格内边距为 16px，表头单元格内边距为 0 16px
-- **边框样式**: 表头底部边框和行底部边框使用主题色
-- **分页样式**: 分页栏固定在底部，支持固定定位模式
-- **错误状态**: 错误信息使用 Result 组件展示，提供友好的错误提示
-
-### 主题配置
-
-BasicTable 使用 ActiontechTable 的样式系统，支持以下主题变量：
-
-```less
-// 表格样式变量
-@table-thead-color: @color-text;
-@table-thead-border: 1px solid @color-border;
-@table-row-color: @color-text;
-@table-row-border: 1px solid @color-border-secondary;
-@table-pagination-background-color: @color-bg-layout;
-@table-pagination-border: 1px solid @color-border;
-@table-pagination-total-color: @color-text-secondary;
-```
-
-### 响应式设计
-
-- 表格支持水平滚动，当列数较多时自动启用
-- 分页栏在小屏幕设备上自适应布局
-- 固定分页栏模式在侧边栏收起时自动调整宽度
+1. **自动错误处理** → 通过 `errorMessage` 自动展示 Result 错误状态
+2. **默认分页配置** → 自动配置每页 20 条、显示总数、支持切换页大小
+3. **自动横向滚动** → 默认设置 `scroll.x` 为 `'max-content'`
+4. **固定分页栏** → 通过 `isPaginationFixed` 固定分页栏在底部
 
 ## 注意事项
 
-1. **数据源要求**: 每条数据必须有唯一的 `rowKey` 值，用于 React 的 key 属性
-2. **分页配置**: 默认每页显示 20 条数据，支持自定义分页配置
-3. **错误处理**: 当提供 `errorMessage` 时，会覆盖默认的空状态显示
-4. **样式继承**: 组件继承了 ActiontechTable 的所有样式特性
-5. **国际化**: 分页文本支持国际化配置，默认使用中文
+1. 每条数据必须有唯一的 `rowKey` 值
+2. `errorMessage` 存在时会覆盖默认空状态
+3. 分页默认每页显示 20 条，可通过 `pagination` 自定义
+4. 使用 ActiontechTable 的样式系统，会自动应用统一样式
 
-## 更新日志
+## 最佳实践
 
-### 1.0.0
-- 初始版本发布
-- 支持基础表格功能
-- 集成错误处理和分页配置
-- 支持固定分页栏模式
+1. **rowKey 设置**：优先使用数据的唯一 ID 字段作为 `rowKey`
+2. **错误处理**：数据加载失败时使用 `errorMessage` 展示友好提示
+3. **分页配置**：大数据量时建议开启 `pagination.showQuickJumper` 快速跳转
+4. **固定分页**：长表格建议使用 `isPaginationFixed` 提升用户体验

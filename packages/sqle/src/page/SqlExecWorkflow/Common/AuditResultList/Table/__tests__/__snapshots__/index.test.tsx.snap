@@ -1476,7 +1476,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
+                          class="ant-typography ant-typography-edit-content css-1ya3u5l ant-typography-div"
                         >
                           <textarea
                             class="ant-input"
@@ -1965,7 +1965,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
+                          class="ant-typography ant-typography-edit-content css-1ya3u5l ant-typography-div"
                         >
                           <textarea
                             class="ant-input"

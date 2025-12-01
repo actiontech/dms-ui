@@ -4,15 +4,15 @@ group:
   order: 1
 ---
 
-# BasicButton 基础按钮
+# BasicButton 按钮
 
-基于 Ant Design Button 组件封装的基础按钮组件，提供了统一的样式规范和额外的功能特性。
+基于 Ant Design Button 封装，提供统一的按钮样式和无边框图标按钮支持。
 
 ## 何时使用
 
-- 需要统一按钮样式规范时
-- 需要无边框图标按钮时
-- 需要保持与设计系统一致的按钮组件时
+- 需要统一按钮样式
+- 需要无边框图标按钮
+- 需要与设计系统保持一致
 
 ## 代码演示
 
@@ -20,104 +20,49 @@ group:
 
 <code src="./demo/basic.tsx"></code>
 
-### 按钮类型
-
-<code src="./demo/types.tsx"></code>
-
-### 按钮尺寸
-
-<code src="./demo/sizes.tsx"></code>
-
 ### 图标按钮
 
 <code src="./demo/icon.tsx"></code>
 
-### 无边框图标按钮
-
-<code src="./demo/noBorderIcon.tsx"></code>
-
-### 按钮状态
-
-<code src="./demo/states.tsx"></code>
-
 ## API
 
-### BasicButton
+BasicButton 继承 Ant Design Button 的所有属性，完整 API 请参考 [Button 文档](https://ant.design/components/button-cn)。
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### 扩展属性
+
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
 | noBorderIcon | 是否为无边框图标按钮 | `boolean` | `false` | - |
 
-### 继承属性
+### 常用属性
 
-BasicButton 组件继承了 Ant Design Button 组件的所有属性，包括但不限于：
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
-| type | 按钮类型 | `'primary' \| 'ghost' \| 'dashed' \| 'link' \| 'text' \| 'default'` | `'default'` | - |
+| type | 按钮类型 | `'primary' \| 'default' \| 'dashed' \| 'text' \| 'link'` | `'default'` | - |
 | size | 按钮大小 | `'large' \| 'middle' \| 'small'` | `'middle'` | - |
 | disabled | 是否禁用 | `boolean` | `false` | - |
-| loading | 是否加载中 | `boolean \| { delay: number }` | `false` | - |
-| icon | 设置按钮的图标组件 | `ReactNode` | - | - |
-| children | 按钮内容 | `ReactNode` | - | - |
-| className | 按钮类名 | `string` | - | - |
-| style | 按钮样式 | `CSSProperties` | - | - |
-| onClick | 点击按钮时的回调 | `(event) => void` | - | - |
+| loading | 是否加载中 | `boolean` | `false` | - |
+| icon | 按钮图标 | `ReactNode` | - | - |
+| danger | 是否危险按钮 | `boolean` | `false` | - |
+| onClick | 点击回调 | `(event) => void` | - | - |
 
-## 设计规范
+## 组件特点
 
-### 尺寸规范
-
-- **大尺寸 (lg)**: `padding: 0 16px`
-- **默认尺寸**: `padding: 0 12px`  
-- **小尺寸 (sm)**: `padding: 0 8px`
-
-### 样式特性
-
-- 统一的圆角设计 (`border-radius: 4px`)
-- 无边框设计 (`border: 0`)
-- 居中对齐的图标和文字
-- 基于主题的色彩系统
-- 支持悬停、激活、禁用等状态样式
-
-### 主题配置
-
-组件样式通过主题系统进行配置，支持以下主题变量：
-
-```typescript
-theme.sharedTheme.components.basicButton = {
-  default: {
-    default: { background, color, boxShadow },
-    hover: { background },
-    active: { background },
-    disabled: { background, color }
-  },
-  primary: {
-    default: { background, color, boxShadow },
-    hover: { background },
-    active: { background },
-    disabled: { background, color }
-  },
-  dashed: {
-    default: { border }
-  },
-  dangerous: {
-    default: { color },
-    disabled: { color }
-  }
-}
-```
+1. **统一样式规范** → 自动应用项目主题系统的样式
+2. **无边框图标按钮** → 通过 `noBorderIcon` 创建无边框图标按钮
+3. **完整类型支持** → 支持 primary、default、dashed、text、link 等类型
+4. **多种尺寸** → 提供 large、middle、small 三种尺寸
 
 ## 注意事项
 
-1. 组件需要包裹在 `ConfigProvider` 中以确保主题正常工作
-2. `noBorderIcon` 属性主要用于创建无边框的图标按钮
-3. 所有 Ant Design Button 的属性和事件都可以正常使用
-4. 组件会自动应用统一的样式类名 `basic-button-wrapper`
+1. 组件需要包裹在 `ConfigProvider` 中确保主题正常工作
+2. `noBorderIcon` 属性仅适用于图标按钮，不包含文本内容
+3. 危险按钮使用 `danger` 属性，而非 `type="danger"`
+4. 加载状态下按钮自动禁用，无需同时设置 `disabled`
 
-## 更新日志
+## 最佳实践
 
-- **1.0.0**: 初始版本，基于 Ant Design Button 封装
-- 支持所有 Button 组件的属性和事件
-- 新增 `noBorderIcon` 属性支持无边框图标按钮
-- 统一的样式规范和主题系统集成
+1. **按钮类型**：主要操作用 `primary`，次要操作用 `default`，危险操作用 `danger`
+2. **图标按钮**：纯图标按钮建议使用 `noBorderIcon`，避免视觉干扰
+3. **加载状态**：异步操作时使用 `loading` 状态，提升用户体验
+4. **禁用状态**：不可用时使用 `disabled`，建议配合 Tooltip 说明原因

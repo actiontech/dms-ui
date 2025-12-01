@@ -1,3 +1,9 @@
+/**
+ * 最简单的表格用法
+ * - 提供列定义和数据源
+ * - 自动应用默认分页配置
+ * - 自动设置横向滚动
+ */
 import React from 'react';
 import { BasicTable, ConfigProvider } from '@actiontech/dms-kit';
 import { ColumnsType } from 'antd/es/table';

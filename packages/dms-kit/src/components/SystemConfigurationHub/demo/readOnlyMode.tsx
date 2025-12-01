@@ -119,16 +119,6 @@ const ReadOnlyModeDemo = () => {
             modifyFlag: false // 强制只读模式
           })}
         </div>
-
-        <div style={{ marginTop: 24 }}>
-          <h4>使用说明</h4>
-          <ul style={{ color: '#666', fontSize: 14 }}>
-            <li>只读模式适用于系统信息展示、统计数据等不可编辑的配置项</li>
-            <li>支持自定义渲染函数，可以显示标签、进度条等复杂内容</li>
-            <li>列配置支持 hidden 属性来控制字段的显示/隐藏</li>
-            <li>当 modifyFlag 为 false 时，组件将始终显示为只读模式</li>
-          </ul>
-        </div>
       </div>
     </ConfigProvider>
   );

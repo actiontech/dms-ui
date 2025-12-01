@@ -12,61 +12,39 @@ dms-kit 是一个基于 Ant Design 封装的业务组件库，提供统一的样
 
 ```bash
 npm install @actiontech/dms-kit
+# 或
+yarn add @actiontech/dms-kit
+# 或
+pnpm add @actiontech/dms-kit
 ```
 
-### 基础用法
+## 组件特点
 
-```tsx
-import React from 'react';
-import { ConfigProvider, BasicButton, BasicInput, BasicSelect } from '@actiontech/dms-kit';
+1. **统一样式**: 基于 Ant Design 封装，保持设计一致性
+2. **TypeScript**: 完整的类型定义，提供良好的开发体验
+3. **主题系统**: 支持亮色/暗色主题切换和自定义
+4. **国际化**: 内置中英文语言包，支持扩展
+5. **业务封装**: 针对常见业务场景提供开箱即用的解决方案
 
-const App = () => (
-  <ConfigProvider>
-    <BasicButton type="primary">按钮</BasicButton>
-    <BasicInput placeholder="请输入内容" />
-    <BasicSelect
-      placeholder="请选择"
-      options={[
-        { label: '选项1', value: '1' },
-        { label: '选项2', value: '2' }
-      ]}
-    />
-  </ConfigProvider>
-);
+## 使用注意事项
 
-export default App;
-```
+1. **必须使用 ConfigProvider**：所有组件都需要包裹在 ConfigProvider 中才能正常工作
+2. **版本兼容**：确保 React 版本 >= 17，Ant Design 版本与组件库匹配
+3. **按需引入**：建议使用按需引入方式，减少打包体积
+4. **类型支持**：使用 TypeScript 开发时，组件会提供完整的类型提示
+5. **样式覆盖**：如需自定义样式，建议通过主题系统或 CSS Modules 实现
 
-## 定制主题
+## 最佳实践
 
-所有组件都支持主题系统，可通过 `ConfigProvider` 的 `theme` 和 `themeData` 属性进行配置。例如切换深色主题：
+1. **统一封装**：在项目入口统一配置 ConfigProvider，包括主题、语言等
+2. **类型安全**：充分利用 TypeScript 类型定义，避免运行时错误
+3. **样式隔离**：避免直接修改组件样式，优先使用主题系统
+4. **组件复用**：对于重复使用的业务场景，基于基础组件二次封装
+5. **性能优化**：合理使用懒加载组件，避免不必要的渲染
 
-```
-import React from 'react';
-import { ConfigProvider, SupportTheme } from '@actiontech/dms-kit';
+## 相关资源
 
-const App = () => (
-  <ConfigProvider theme={SupportTheme.DARK}>
-    {/* 你的应用 */}
-  </ConfigProvider>
-);
+- [Ant Design 官方文档](https://ant.design/components/overview-cn)
+- [React 官方文档](https://react.dev/)
+- [TypeScript 官方文档](https://www.typescriptlang.org/)
 
-export default App;
-```
-
-## 国际化
-
-组件库内置中英文语言包，可通过 `ConfigProvider` 的 `language` 和 `resources` 属性进行切换和扩展。例如切换英文：
-
-```
-import React from 'react';
-import { ConfigProvider, SupportLanguage } from '@actiontech/dms-kit';
-
-const App = () => (
-  <ConfigProvider language={SupportLanguage.enUS}>
-    {/* 你的应用 */}
-  </ConfigProvider>
-);
-
-export default App;
-```

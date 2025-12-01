@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
 import { CustomInput, ConfigProvider } from '@actiontech/dms-kit';
-import { message, Button, Space, Card } from 'antd';
+import { message, Space, Divider } from 'antd';
 
+/**
+ * 自定义回车处理
+ * - 搜索场景：按回车触发搜索
+ * - SQL执行场景：按回车执行SQL
+ * - 命令执行场景：按回车执行命令
+ * - 带验证的回车处理
+ */
 const CustomEnterDemo: React.FC = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [sqlValue, setSqlValue] = useState('');
-  const [commandValue, setCommandValue] = useState('');
+  const [searchResult, setSearchResult] = useState('');
+  const [sqlResult, setSqlResult] = useState('');
 
+  // 搜索场景
   const handleSearch = (value: string) => {
     if (!value.trim()) {
       message.warning('请输入搜索内容');
       return;
     }
-    message.success(`执行搜索: ${value}`);
-    setSearchValue(value);
+    setSearchResult(value);
+    message.success(`搜索: ${value}`);
   };
 
+  // SQL执行场景（带验证）
   const handleSqlExecute = (value: string) => {
     if (!value.trim()) {
       message.warning('请输入SQL语句');
@@ -25,82 +33,69 @@ const CustomEnterDemo: React.FC = () => {
       message.error('请输入有效的SELECT语句');
       return;
     }
-    message.success(`执行SQL: ${value}`);
-    setSqlValue(value);
+    setSqlResult(value);
+    message.success('SQL执行成功');
   };
 
+  // 命令执行场景
   const handleCommandExecute = (value: string) => {
     if (!value.trim()) {
       message.warning('请输入命令');
       return;
     }
     message.success(`执行命令: ${value}`);
-    setCommandValue(value);
-  };
-
-  const clearAll = () => {
-    setSearchValue('');
-    setSqlValue('');
-    setCommandValue('');
-    message.info('已清空所有输入');
   };
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <h3>自定义回车处理示例</h3>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        {/* 搜索场景 */}
+        <div style={{ color: '#666', marginBottom: '8px' }}>
+          搜索场景（按回车触发搜索）：
+        </div>
+        <CustomInput
+          prefix="🔍"
+          placeholder="输入关键词后按回车搜索"
+          onCustomPressEnter={handleSearch}
+          style={{ width: '400px' }}
+        />
+        {searchResult && (
+          <div style={{ color: '#52c41a', fontSize: '14px', marginTop: '4px' }}>
+            当前搜索: {searchResult}
+          </div>
+        )}
 
-        <Card title="搜索功能" style={{ marginBottom: '16px' }}>
-          <CustomInput
-            prefix="🔍"
-            placeholder="输入关键词后按回车搜索"
-            onCustomPressEnter={handleSearch}
-            style={{ width: '100%', marginBottom: '8px' }}
-          />
-          {searchValue && (
-            <div style={{ color: '#52c41a', fontSize: '14px' }}>
-              当前搜索: {searchValue}
-            </div>
-          )}
-        </Card>
+        <Divider />
 
-        <Card title="SQL执行" style={{ marginBottom: '16px' }}>
-          <CustomInput
-            prefix="SQL"
-            placeholder="输入SELECT语句后按回车执行"
-            onCustomPressEnter={handleSqlExecute}
-            style={{ width: '100%', marginBottom: '8px' }}
-          />
-          {sqlValue && (
-            <div style={{ color: '#1890ff', fontSize: '14px' }}>
-              当前SQL: {sqlValue}
-            </div>
-          )}
-        </Card>
+        {/* SQL执行场景（带验证） */}
+        <div style={{ color: '#666', marginBottom: '8px' }}>
+          SQL执行场景（带验证，只允许SELECT语句）：
+        </div>
+        <CustomInput
+          prefix="SQL"
+          placeholder="输入SELECT语句后按回车执行"
+          onCustomPressEnter={handleSqlExecute}
+          style={{ width: '400px' }}
+        />
+        {sqlResult && (
+          <div style={{ color: '#1890ff', fontSize: '14px', marginTop: '4px' }}>
+            已执行: {sqlResult}
+          </div>
+        )}
 
-        <Card title="命令执行" style={{ marginBottom: '16px' }}>
-          <CustomInput
-            prefix=">"
-            placeholder="输入命令后按回车执行"
-            onCustomPressEnter={handleCommandExecute}
-            style={{ width: '100%', marginBottom: '8px' }}
-          />
-          {commandValue && (
-            <div style={{ color: '#722ed1', fontSize: '14px' }}>
-              当前命令: {commandValue}
-            </div>
-          )}
-        </Card>
+        <Divider />
 
-        <Space>
-          <Button type="primary" onClick={clearAll}>
-            清空所有
-          </Button>
-          <Button onClick={() => message.info('按回车键可以快速提交输入内容')}>
-            查看说明
-          </Button>
-        </Space>
-      </div>
+        {/* 命令执行场景 */}
+        <div style={{ color: '#666', marginBottom: '8px' }}>
+          命令执行场景（按回车执行命令）：
+        </div>
+        <CustomInput
+          prefix=">"
+          placeholder="输入命令后按回车执行"
+          onCustomPressEnter={handleCommandExecute}
+          style={{ width: '400px' }}
+        />
+      </Space>
     </ConfigProvider>
   );
 };

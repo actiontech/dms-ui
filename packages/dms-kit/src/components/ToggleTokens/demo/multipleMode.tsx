@@ -1,34 +1,40 @@
 import React, { useState } from 'react';
-import { Card, Space, Tag, Divider } from 'antd';
+import { Space, Tag, Divider, Typography } from 'antd';
 import { ToggleTokens, ConfigProvider } from '@actiontech/dms-kit';
+
+const { Text } = Typography;
 
 const MultipleModeDemo: React.FC = () => {
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>([
-    'processing'
+    'processing',
+    'finished'
   ]);
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([
-    'document',
-    'image'
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([
+    'search',
+    'filter'
   ]);
-  const [selectedPriorities, setSelectedPriorities] = useState<string[]>([]);
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <h3>多选模式</h3>
-
-        <Card title="状态多选" style={{ marginBottom: '20px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            {selectedStatuses.length > 0 ? (
-              selectedStatuses.map((status) => (
-                <Tag key={status} color="blue" style={{ marginBottom: '4px' }}>
-                  {status}
-                </Tag>
-              ))
-            ) : (
-              <Tag color="default">无选择</Tag>
-            )}
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+        {/* 基础多选 */}
+        <div>
+          <Text strong style={{ display: 'block', marginBottom: 8 }}>
+            基础多选：
+          </Text>
+          <div style={{ marginBottom: 12 }}>
+            <Space wrap>
+              <span>已选中 {selectedStatuses.length} 项:</span>
+              {selectedStatuses.length > 0 ? (
+                selectedStatuses.map((status) => (
+                  <Tag key={status} color="blue">
+                    {status}
+                  </Tag>
+                ))
+              ) : (
+                <Tag>未选择</Tag>
+              )}
+            </Space>
           </div>
           <ToggleTokens
             value={selectedStatuses}
@@ -41,97 +47,44 @@ const MultipleModeDemo: React.FC = () => {
             ]}
             multiple={true}
           />
+        </div>
 
-          <Divider />
+        <Divider style={{ margin: '8px 0' }} />
 
-          <div>
-            <h4>配置说明:</h4>
-            <pre
-              style={{
-                backgroundColor: '#f5f5f5',
-                padding: '12px',
-                borderRadius: '4px'
-              }}
-            >
-              {`multiple={true} // 多选模式
-
-// 可以选择多个选项
-// value 类型为 string[] | number[]
-// onChange 回调参数类型为 string[] | number[]`}
-            </pre>
-          </div>
-        </Card>
-
-        <Card title="类型多选" style={{ marginBottom: '20px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            {selectedTypes.length > 0 ? (
-              selectedTypes.map((type) => (
-                <Tag key={type} color="green" style={{ marginBottom: '4px' }}>
-                  {type}
-                </Tag>
-              ))
-            ) : (
-              <Tag color="default">无选择</Tag>
-            )}
+        {/* 带复选框的多选 */}
+        <div>
+          <Text strong style={{ display: 'block', marginBottom: 8 }}>
+            带复选框图标（更清晰的视觉反馈）：
+          </Text>
+          <div style={{ marginBottom: 12 }}>
+            <Space wrap>
+              <span>已选中 {selectedFeatures.length} 项:</span>
+              {selectedFeatures.length > 0 ? (
+                selectedFeatures.map((feature) => (
+                  <Tag key={feature} color="blue">
+                    {feature}
+                  </Tag>
+                ))
+              ) : (
+                <Tag>未选择</Tag>
+              )}
+            </Space>
           </div>
           <ToggleTokens
-            value={selectedTypes}
-            onChange={setSelectedTypes}
+            value={selectedFeatures}
+            onChange={setSelectedFeatures}
             options={[
-              { label: '📄 文档', value: 'document' },
-              { label: '🖼️ 图片', value: 'image' },
-              { label: '🎥 视频', value: 'video' },
-              { label: '🎵 音频', value: 'audio' },
-              { label: '📊 数据', value: 'data' }
+              { label: '搜索功能', value: 'search' },
+              { label: '筛选功能', value: 'filter' },
+              { label: '排序功能', value: 'sort' },
+              { label: '导出功能', value: 'export' },
+              { label: '批量操作', value: 'batch' }
             ]}
             multiple={true}
+            withCheckbox={true}
           />
-        </Card>
-
-        <Card title="优先级多选">
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{ marginRight: '8px' }}>当前选中:</span>
-            {selectedPriorities.length > 0 ? (
-              selectedPriorities.map((priority) => (
-                <Tag
-                  key={priority}
-                  color="orange"
-                  style={{ marginBottom: '4px' }}
-                >
-                  {priority}
-                </Tag>
-              ))
-            ) : (
-              <Tag color="default">无选择</Tag>
-            )}
-          </div>
-          <ToggleTokens
-            value={selectedPriorities}
-            onChange={setSelectedPriorities}
-            options={[
-              { label: '🔵 低优先级', value: 'low' },
-              { label: '🟡 普通优先级', value: 'normal' },
-              { label: '🟠 高优先级', value: 'high' },
-              { label: '🔴 紧急优先级', value: 'urgent' }
-            ]}
-            multiple={true}
-          />
-
-          <Divider />
-
-          <div>
-            <h4>多选模式特点:</h4>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li>可以选择多个选项</li>
-              <li>点击已选中的选项会取消选择</li>
-              <li>适合多条件筛选的场景</li>
-              <li>值类型为数组</li>
-              <li>支持全选和全不选</li>
-            </ul>
-          </div>
-        </Card>
-      </div>
+        </div>
+      </Space>
     </ConfigProvider>
   );
 };

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { message, UploadFile } from 'antd';
+import { message, UploadFile, Space, Divider } from 'antd';
 import { CustomDraggerUpload, ConfigProvider } from '@actiontech/dms-kit';
-import { InboxOutlined } from '@ant-design/icons';
 
+/**
+ * 基础用法
+ * - 拖拽上传文件
+ * - 文件大小限制
+ * - 上传状态处理
+ * - 文件列表管理
+ */
 const BasicDemo: React.FC = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
 
@@ -29,8 +35,11 @@ const BasicDemo: React.FC = () => {
 
   return (
     <ConfigProvider>
-      <div style={{ padding: '20px' }}>
-        <h3>基础拖拽上传</h3>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        {/* 基础拖拽上传 */}
+        <div style={{ color: '#666', marginBottom: '8px' }}>
+          基础拖拽上传（支持多文件，限制 2MB）：
+        </div>
         <CustomDraggerUpload
           name="file"
           multiple={true}
@@ -39,7 +48,20 @@ const BasicDemo: React.FC = () => {
           beforeUpload={beforeUpload}
           action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6e2188"
         />
-      </div>
+
+        <Divider />
+
+        {/* 单文件上传 */}
+        <div style={{ color: '#666', marginBottom: '8px' }}>
+          单文件上传（maxCount: 1）：
+        </div>
+        <CustomDraggerUpload
+          name="file"
+          maxCount={1}
+          beforeUpload={beforeUpload}
+          action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6e2188"
+        />
+      </Space>
     </ConfigProvider>
   );
 };

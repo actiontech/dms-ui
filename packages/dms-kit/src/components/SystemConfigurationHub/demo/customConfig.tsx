@@ -205,10 +205,6 @@ const CustomConfigDemo = () => {
     <ConfigProvider>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}>
         <h3>自定义配置 (不使用开关)</h3>
-        <p style={{ color: '#666', marginBottom: 24 }}>
-          此示例展示了如何使用 SystemConfigurationHub
-          构建不需要开关控制的配置界面
-        </p>
 
         {renderConfigForm({
           data: initialData,

@@ -68,13 +68,6 @@ const EditableSelectBasicDemo = () => {
 
         <div style={{ marginTop: 16, color: '#666' }}>
           <p>当前选择的值: {value || '无'}</p>
-          <p>支持的操作:</p>
-          <ul>
-            <li>点击选择选项</li>
-            <li>点击 + 号添加新选项</li>
-            <li>点击编辑图标修改选项名称</li>
-            <li>点击删除图标移除选项</li>
-          </ul>
         </div>
       </div>
     </ConfigProvider>

@@ -1287,7 +1287,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           >
                             <div
                               aria-label="this is remark text"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                             >
                               this is remark text
                               <div
@@ -3586,7 +3586,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           >
                             <div
                               aria-label="this is remark text"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                             >
                               this is remark text
                               <div
@@ -6406,7 +6406,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           >
                             <div
                               aria-label="this is remark text"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                             >
                               this is remark text
                               <div
@@ -9226,7 +9226,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           >
                             <div
                               aria-label="this is remark text"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                             >
                               this is remark text
                               <div
@@ -12062,7 +12062,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           >
                             <div
                               aria-label="this is remark text"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1ya3u5l"
                             >
                               this is remark text
                               <div
