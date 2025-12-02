@@ -1,4 +1,4 @@
-import { message, Form } from 'antd';
+import { message, Form, Tabs } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../store/user';
@@ -6,7 +6,7 @@ import LoginLayout from './components/LoginLayout';
 import { EmptyBox } from '@actiontech/dms-kit';
 import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
-import { useBoolean } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import {
@@ -20,8 +20,9 @@ import {
 } from '@actiontech/dms-kit';
 import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
+import OAuth2LoginForm from './components/OAuth2LoginForm';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 const Login = () => {
   const { t } = useTranslation();
   useBrowserVersionTips();
@@ -42,6 +43,24 @@ const Login = () => {
   ] = useBoolean();
   const navigate = useTypedNavigate();
   const extractQueries = useTypedQuery();
+
+  const { data: oauthConfig, run: getOauth2Tips } = useRequest(
+    () => {
+      return DmsApi.OAuth2Service.GetOauth2Tips().then(
+        (res) => res.data?.data ?? {}
+      );
+    },
+    {
+      manual: true
+    }
+  );
+
+  const isOAuth2Enabled = useMemo(() => {
+    return !!oauthConfig?.enable_oauth2;
+  }, [oauthConfig]);
+
+  const [activeTab, setActiveTab] = useState<string>('oauth2');
+
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
     const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
@@ -136,29 +155,60 @@ const Login = () => {
     verifyCodePending();
     addSession();
   };
+
+  useEffect(() => {
+    getOauth2Tips();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // #endif
+
+  const LoginFormWrapper = () => {
+    return (
+      <>
+        <LoginForm
+          hidden={allowVerificationCode}
+          form={loginForm}
+          onSubmit={login}
+          loading={loading}
+        />
+        {/* #if [ee] */}
+        <EmptyBox if={allowVerificationCode}>
+          <VerificationCodeForm
+            form={verificationCodeForm}
+            loading={verifyCodeLoading}
+            onVerify={onVerify}
+            hideVerificationForm={hideVerificationForm}
+            username={username}
+            phone={phone}
+          />
+        </EmptyBox>
+        {/* #endif */}
+      </>
+    );
+  };
 
   return (
     <LoginLayout>
       {contextHolder}
-      <LoginForm
-        hidden={allowVerificationCode}
-        form={loginForm}
-        onSubmit={login}
-        loading={loading}
-      />
-      {/* #if [ee] */}
-      <EmptyBox if={allowVerificationCode}>
-        <VerificationCodeForm
-          form={verificationCodeForm}
-          loading={verifyCodeLoading}
-          onVerify={onVerify}
-          hideVerificationForm={hideVerificationForm}
-          username={username}
-          phone={phone}
+      <EmptyBox if={isOAuth2Enabled} defaultNode={LoginFormWrapper()}>
+        <Tabs
+          activeKey={activeTab}
+          onChange={setActiveTab}
+          className="login-tabs"
+          items={[
+            {
+              key: 'oauth2',
+              label: t('dmsLogin.thirdPartyLogin'),
+              children: <OAuth2LoginForm loginTip={oauthConfig?.login_tip} />
+            },
+            {
+              key: 'local',
+              label: t('dmsLogin.localLogin'),
+              children: LoginFormWrapper()
+            }
+          ]}
         />
       </EmptyBox>
-      {/* #endif */}
     </LoginLayout>
   );
 };

@@ -84,17 +84,28 @@ describe('page/Login-ee', () => {
 
   it('render login snap', async () => {
     const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
     expect(requestGetLoginBasicConfig).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3300));
+
+    // Should show tabs when OAuth2 is enabled
+    expect(screen.queryByText('第三方登录')).toBeInTheDocument();
+    expect(screen.queryByText('本地登录')).toBeInTheDocument();
+
+    // Should show OAuth2 login form by default
+    expect(screen.queryByText(oauth2Tips.login_tip!)).toBeInTheDocument();
+    const oauth2LoginBtn = getBySelector('.oauth2-login-btn', baseElement);
+    expect(oauth2LoginBtn).toHaveAttribute('href', '/v1/dms/oauth2/link');
+
+    // Switch to local login tab
+    fireEvent.click(screen.getByText('本地登录'));
+    await act(async () => jest.advanceTimersByTime(100));
+
     expect(screen.queryByText('已阅读并同意')).toBeInTheDocument();
     expect(screen.queryByText('用户协议')).toBeInTheDocument();
-    expect(screen.queryByText(oauth2Tips.login_tip!)).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
-
-    const otherLoginBtn = getBySelector('.other-login-btn', baseElement);
-    expect(otherLoginBtn).toHaveAttribute('href', '/v1/dms/oauth2/link');
   });
 
   it('render login when return no auth', async () => {
@@ -117,8 +128,16 @@ describe('page/Login-ee', () => {
     );
 
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    // Should not show tabs when OAuth2 is disabled
+    expect(screen.queryByText('第三方登录')).not.toBeInTheDocument();
+    expect(screen.queryByText('本地登录')).not.toBeInTheDocument();
+
+    // Should show login form directly
+    expect(requestGetLoginBasicConfig).toHaveBeenCalledTimes(1);
 
     fireEvent.change(getBySelector('#username', baseElement), {
       target: {
@@ -159,8 +178,13 @@ describe('page/Login-ee', () => {
       })
     );
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    // Switch to local login tab
+    fireEvent.click(screen.getByText('本地登录'));
+    await act(async () => jest.advanceTimersByTime(100));
 
     fireEvent.change(getBySelector('#username', baseElement), {
       target: {
@@ -248,8 +272,13 @@ describe('page/Login-ee', () => {
       ]);
 
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      // Switch to local login tab
+      fireEvent.click(screen.getByText('本地登录'));
+      await act(async () => jest.advanceTimersByTime(100));
 
       fireEvent.change(getBySelector('#username', baseElement), {
         target: {
@@ -302,8 +331,13 @@ describe('page/Login-ee', () => {
       ]);
 
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      // Switch to local login tab
+      fireEvent.click(screen.getByText('本地登录'));
+      await act(async () => jest.advanceTimersByTime(100));
 
       fireEvent.change(getBySelector('#username', baseElement), {
         target: {
@@ -358,8 +392,13 @@ describe('page/Login-ee', () => {
       ]);
 
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      // Switch to local login tab
+      fireEvent.click(screen.getByText('本地登录'));
+      await act(async () => jest.advanceTimersByTime(100));
 
       fireEvent.change(getBySelector('#username', baseElement), {
         target: {
@@ -418,6 +457,10 @@ describe('page/Login-ee', () => {
     baseSuperRender(<Login />);
     await act(async () => jest.advanceTimersByTime(3000));
 
+    fireEvent.click(screen.getByText('本地登录'));
+    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(screen.getByText('登 录').closest('button')).toBeDisabled();
 
     fireEvent.mouseEnter(screen.getByText('登 录'));
@@ -439,8 +482,9 @@ describe('page/Login-ee', () => {
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
     );
     customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3300));
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
   });
 
@@ -451,8 +495,9 @@ describe('page/Login-ee', () => {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
     );
     customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3300));
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
   });
 
@@ -463,8 +508,9 @@ describe('page/Login-ee', () => {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
     );
     customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3300));
     expect(eventEmitSpy).not.toHaveBeenCalled();
   });
 });

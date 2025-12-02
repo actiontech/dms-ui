@@ -20,7 +20,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -250,7 +250,7 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -455,7 +455,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
