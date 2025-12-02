@@ -39,6 +39,46 @@ export const LoginPageRightStyleWrapper = styled('div')`
   .login-page-right-content {
     width: 400px;
 
+    .login-tabs {
+      .ant-tabs-nav {
+        margin-bottom: 32px;
+      }
+
+      .ant-tabs-tab {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 12px 0;
+      }
+
+      .ant-tabs-ink-bar {
+        height: 3px;
+      }
+    }
+
+    .oauth2-login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .oauth2-tips {
+        margin-bottom: 32px;
+        text-align: center;
+        font-size: 14px;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+        line-height: 22px;
+      }
+
+      .oauth2-login-btn {
+        width: 100%;
+        height: 56px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600 !important;
+        border-radius: 6px !important;
+        overflow: hidden;
+      }
+    }
+
     .content-header {
       width: 100%;
       height: 56px;
@@ -103,20 +143,6 @@ export const LoginPageRightStyleWrapper = styled('div')`
     font-style: normal;
     font-weight: 600 !important;
     border-radius: 6px !important;
-  }
-
-  & .ant-btn.other-login-btn {
-    width: 100%;
-    height: 56px;
-    font-size: 14px;
-    margin-top: 24px;
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.basic.colorPrimaryBgHover} !important;
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
-    font-style: normal;
-    font-weight: 600 !important;
-    border-radius: 6px !important;
-    overflow: hidden;
   }
 
   .login-form-field {
