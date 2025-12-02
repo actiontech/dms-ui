@@ -20,7 +20,7 @@ exports[`page/Login-ee render login snap 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -51,216 +51,338 @@ exports[`page/Login-ee render login snap 1`] = `
               </span>
             </div>
           </div>
-          <form
-            class="ant-form ant-form-horizontal"
+          <div
+            class="ant-tabs ant-tabs-top login-tabs"
           >
             <div
-              class="ant-form-item"
+              class="ant-tabs-nav"
+              role="tablist"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-nav-wrap"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="ant-tabs-tab"
+                    data-node-key="oauth2"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      aria-controls="rc-tabs-test-panel-oauth2"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-oauth2"
+                      role="tab"
+                      tabindex="0"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="19"
-                            viewBox="0 0 12 12"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              fill="currentColor"
-                            >
-                              <path
-                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="username"
-                          placeholder="用户名"
-                          type="text"
-                          value=""
-                        />
-                      </span>
+                      第三方登录
                     </div>
                   </div>
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                    data-node-key="local"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-local"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-local"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      本地登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                    style="left: 0px; width: 0px;"
+                  />
                 </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <div
-              class="ant-form-item"
+              class="ant-tabs-content-holder"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-content ant-tabs-content-top"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-oauth2"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-hidden"
+                  id="rc-tabs-test-panel-oauth2"
+                  role="tabpanel"
+                  tabindex="-1"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="oauth2-login-form"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="oauth2-tips"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="password"
-                          placeholder="密码"
-                          type="password"
-                        />
-                        <span
-                          class="ant-input-suffix"
-                        >
-                          <span
-                            aria-label="eye-invisible"
-                            class="anticon anticon-eye-invisible ant-input-password-icon"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="eye-invisible"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
-                              />
-                              <path
-                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
+                      点击下方按钮跳转到授权页面进行登录：
                     </div>
+                    <a
+                      class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
+                      href="/v1/dms/oauth2/link"
+                    >
+                      <span>
+                        Login With Oauth2
+                      </span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-local"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-local"
+                  role="tabpanel"
+                  tabindex="0"
                 >
-                  <div
-                    class="ant-form-item-control-input"
+                  <form
+                    class="ant-form ant-form-horizontal"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item"
                     >
-                      <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                      <div
+                        class="ant-row ant-form-item-row"
                       >
-                        <span
-                          class="ant-checkbox ant-checkbox-checked"
+                        <div
+                          class="ant-col ant-form-item-control"
                         >
-                          <input
-                            checked=""
-                            class="ant-checkbox-input"
-                            id="userAgreement"
-                            type="checkbox"
-                          />
-                          <span
-                            class="ant-checkbox-inner"
-                          />
-                        </span>
-                        <span>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-form-item-control-input"
                           >
                             <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                              class="ant-form-item-control-input-content"
                             >
-                              已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                              <span
+                                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
                               >
-                                用户协议
-                              </a>
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="19"
+                                    viewBox="0 0 12 12"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      fill="currentColor"
+                                    >
+                                      <path
+                                        d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="username"
+                                  placeholder="用户名"
+                                  type="text"
+                                  value=""
+                                />
+                              </span>
                             </div>
                           </div>
-                        </span>
-                      </label>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                                      fill="currentColor"
+                                    />
+                                    <path
+                                      d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="password"
+                                  placeholder="密码"
+                                  type="password"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <label
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                              >
+                                <span
+                                  class="ant-checkbox ant-checkbox-checked"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-checkbox-input"
+                                    id="userAgreement"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                                <span>
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      已阅读并同意
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <a
+                                        class="ant-typography"
+                                        href="/user-agreement.html"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                      >
+                                        用户协议
+                                      </a>
+                                    </div>
+                                  </div>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
+                      type="submit"
+                    >
+                      <span>
+                        登 录
+                      </span>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
-            <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
-              type="submit"
-            >
-              <span>
-                Login
-              </span>
-            </button>
-            <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1vnelmv"
-              href="/v1/dms/oauth2/link"
-            >
-              <span>
-                Login With Oauth2
-              </span>
-            </a>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -288,7 +410,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -319,240 +441,362 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </div>
           </div>
-          <form
-            class="ant-form ant-form-horizontal"
+          <div
+            class="ant-tabs ant-tabs-top login-tabs"
           >
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-nav"
+              role="tablist"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-nav-wrap"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="ant-tabs-tab"
+                    data-node-key="oauth2"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      aria-controls="rc-tabs-test-panel-oauth2"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-oauth2"
+                      role="tab"
+                      tabindex="0"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="19"
-                            viewBox="0 0 12 12"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              fill="currentColor"
-                            >
-                              <path
-                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="username"
-                          placeholder="用户名"
-                          type="text"
-                          value="admin1"
-                        />
-                      </span>
+                      第三方登录
                     </div>
                   </div>
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                    data-node-key="local"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-local"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-local"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      本地登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                    style="left: 0px; width: 0px;"
+                  />
                 </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-content-holder"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-content ant-tabs-content-top"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-oauth2"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-hidden"
+                  id="rc-tabs-test-panel-oauth2"
+                  role="tabpanel"
+                  tabindex="-1"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="oauth2-login-form"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="oauth2-tips"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="password"
-                          placeholder="密码"
-                          type="password"
-                          value="admin1"
-                        />
-                        <span
-                          class="ant-input-suffix"
-                        >
-                          <span
-                            aria-label="eye-invisible"
-                            class="anticon anticon-eye-invisible ant-input-password-icon"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="eye-invisible"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
-                              />
-                              <path
-                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
+                      点击下方按钮跳转到授权页面进行登录：
                     </div>
+                    <a
+                      class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
+                      href="/v1/dms/oauth2/link?target=%252Ftransit%253Ffrom%253Dcloudbeaver"
+                    >
+                      <span>
+                        Login With Oauth2
+                      </span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-local"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-local"
+                  role="tabpanel"
+                  tabindex="0"
                 >
-                  <div
-                    class="ant-form-item-control-input"
+                  <form
+                    class="ant-form ant-form-horizontal"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item ant-form-item-has-success"
                     >
-                      <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                      <div
+                        class="ant-row ant-form-item-row"
                       >
-                        <span
-                          class="ant-checkbox ant-checkbox-checked"
+                        <div
+                          class="ant-col ant-form-item-control"
                         >
-                          <input
-                            checked=""
-                            class="ant-checkbox-input"
-                            id="userAgreement"
-                            type="checkbox"
-                          />
-                          <span
-                            class="ant-checkbox-inner"
-                          />
-                        </span>
-                        <span>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-form-item-control-input"
                           >
                             <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                              class="ant-form-item-control-input-content"
                             >
-                              已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                              <span
+                                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                               >
-                                用户协议
-                              </a>
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="19"
+                                    viewBox="0 0 12 12"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      fill="currentColor"
+                                    >
+                                      <path
+                                        d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="username"
+                                  placeholder="用户名"
+                                  type="text"
+                                  value="admin1"
+                                />
+                              </span>
                             </div>
                           </div>
-                        </span>
-                      </label>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                                      fill="currentColor"
+                                    />
+                                    <path
+                                      d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="password"
+                                  placeholder="密码"
+                                  type="password"
+                                  value="admin1"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <label
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                              >
+                                <span
+                                  class="ant-checkbox ant-checkbox-checked"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-checkbox-input"
+                                    id="userAgreement"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                                <span>
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      已阅读并同意
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <a
+                                        class="ant-typography"
+                                        href="/user-agreement.html"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                      >
+                                        用户协议
+                                      </a>
+                                    </div>
+                                  </div>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
+                      type="submit"
+                    >
+                      <span
+                        class="ant-btn-icon ant-btn-loading-icon"
+                      >
+                        <span
+                          aria-label="loading"
+                          class="anticon anticon-loading anticon-spin"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="loading"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="0 0 1024 1024"
+                            width="1em"
+                          >
+                            <path
+                              d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        登 录
+                      </span>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
-            <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
-              type="submit"
-            >
-              <span
-                class="ant-btn-icon ant-btn-loading-icon"
-              >
-                <span
-                  aria-label="loading"
-                  class="anticon anticon-loading anticon-spin"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="loading"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <span>
-                登 录
-              </span>
-            </button>
-            <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1vnelmv"
-              href="/v1/dms/oauth2/link?target=%252Ftransit%253Ffrom%253Dcloudbeaver"
-            >
-              <span>
-                Login With Oauth2
-              </span>
-            </a>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -580,7 +824,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -611,240 +855,362 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </div>
           </div>
-          <form
-            class="ant-form ant-form-horizontal"
+          <div
+            class="ant-tabs ant-tabs-top login-tabs"
           >
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-nav"
+              role="tablist"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-nav-wrap"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="ant-tabs-tab"
+                    data-node-key="oauth2"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      aria-controls="rc-tabs-test-panel-oauth2"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-oauth2"
+                      role="tab"
+                      tabindex="0"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="19"
-                            viewBox="0 0 12 12"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              fill="currentColor"
-                            >
-                              <path
-                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="username"
-                          placeholder="用户名"
-                          type="text"
-                          value="admin1"
-                        />
-                      </span>
+                      第三方登录
                     </div>
                   </div>
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                    data-node-key="local"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-local"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-local"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      本地登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                    style="left: 0px; width: 0px;"
+                  />
                 </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-content-holder"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-content ant-tabs-content-top"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-oauth2"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-hidden"
+                  id="rc-tabs-test-panel-oauth2"
+                  role="tabpanel"
+                  tabindex="-1"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="oauth2-login-form"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="oauth2-tips"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="password"
-                          placeholder="密码"
-                          type="password"
-                          value="admin1"
-                        />
-                        <span
-                          class="ant-input-suffix"
-                        >
-                          <span
-                            aria-label="eye-invisible"
-                            class="anticon anticon-eye-invisible ant-input-password-icon"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="eye-invisible"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
-                              />
-                              <path
-                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
+                      点击下方按钮跳转到授权页面进行登录：
                     </div>
+                    <a
+                      class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
+                      href="/v1/dms/oauth2/link?target=%252Findex1"
+                    >
+                      <span>
+                        Login With Oauth2
+                      </span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-local"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-local"
+                  role="tabpanel"
+                  tabindex="0"
                 >
-                  <div
-                    class="ant-form-item-control-input"
+                  <form
+                    class="ant-form ant-form-horizontal"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item ant-form-item-has-success"
                     >
-                      <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                      <div
+                        class="ant-row ant-form-item-row"
                       >
-                        <span
-                          class="ant-checkbox ant-checkbox-checked"
+                        <div
+                          class="ant-col ant-form-item-control"
                         >
-                          <input
-                            checked=""
-                            class="ant-checkbox-input"
-                            id="userAgreement"
-                            type="checkbox"
-                          />
-                          <span
-                            class="ant-checkbox-inner"
-                          />
-                        </span>
-                        <span>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-form-item-control-input"
                           >
                             <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                              class="ant-form-item-control-input-content"
                             >
-                              已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                              <span
+                                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                               >
-                                用户协议
-                              </a>
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="19"
+                                    viewBox="0 0 12 12"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      fill="currentColor"
+                                    >
+                                      <path
+                                        d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="username"
+                                  placeholder="用户名"
+                                  type="text"
+                                  value="admin1"
+                                />
+                              </span>
                             </div>
                           </div>
-                        </span>
-                      </label>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                                      fill="currentColor"
+                                    />
+                                    <path
+                                      d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="password"
+                                  placeholder="密码"
+                                  type="password"
+                                  value="admin1"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <label
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                              >
+                                <span
+                                  class="ant-checkbox ant-checkbox-checked"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-checkbox-input"
+                                    id="userAgreement"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                                <span>
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      已阅读并同意
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <a
+                                        class="ant-typography"
+                                        href="/user-agreement.html"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                      >
+                                        用户协议
+                                      </a>
+                                    </div>
+                                  </div>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
+                      type="submit"
+                    >
+                      <span
+                        class="ant-btn-icon ant-btn-loading-icon"
+                      >
+                        <span
+                          aria-label="loading"
+                          class="anticon anticon-loading anticon-spin"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="loading"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="0 0 1024 1024"
+                            width="1em"
+                          >
+                            <path
+                              d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        登 录
+                      </span>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
-            <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
-              type="submit"
-            >
-              <span
-                class="ant-btn-icon ant-btn-loading-icon"
-              >
-                <span
-                  aria-label="loading"
-                  class="anticon anticon-loading anticon-spin"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="loading"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <span>
-                登 录
-              </span>
-            </button>
-            <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1vnelmv"
-              href="/v1/dms/oauth2/link?target=%252Findex1"
-            >
-              <span>
-                Login With Oauth2
-              </span>
-            </a>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -872,7 +1238,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -903,240 +1269,362 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </div>
           </div>
-          <form
-            class="ant-form ant-form-horizontal"
+          <div
+            class="ant-tabs ant-tabs-top login-tabs"
           >
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-nav"
+              role="tablist"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-nav-wrap"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="ant-tabs-tab"
+                    data-node-key="oauth2"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      aria-controls="rc-tabs-test-panel-oauth2"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-oauth2"
+                      role="tab"
+                      tabindex="0"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="19"
-                            viewBox="0 0 12 12"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              fill="currentColor"
-                            >
-                              <path
-                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="username"
-                          placeholder="用户名"
-                          type="text"
-                          value="admin1"
-                        />
-                      </span>
+                      第三方登录
                     </div>
                   </div>
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                    data-node-key="local"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-local"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-local"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      本地登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                    style="left: 0px; width: 0px;"
+                  />
                 </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-content-holder"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-content ant-tabs-content-top"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-oauth2"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-hidden"
+                  id="rc-tabs-test-panel-oauth2"
+                  role="tabpanel"
+                  tabindex="-1"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="oauth2-login-form"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="oauth2-tips"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="password"
-                          placeholder="密码"
-                          type="password"
-                          value="admin1"
-                        />
-                        <span
-                          class="ant-input-suffix"
-                        >
-                          <span
-                            aria-label="eye-invisible"
-                            class="anticon anticon-eye-invisible ant-input-password-icon"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="eye-invisible"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
-                              />
-                              <path
-                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
+                      点击下方按钮跳转到授权页面进行登录：
                     </div>
+                    <a
+                      class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
+                      href="/v1/dms/oauth2/link?target=%252Fproject%252F700300%252Fcloud-beaver"
+                    >
+                      <span>
+                        Login With Oauth2
+                      </span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-local"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-local"
+                  role="tabpanel"
+                  tabindex="0"
                 >
-                  <div
-                    class="ant-form-item-control-input"
+                  <form
+                    class="ant-form ant-form-horizontal"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item ant-form-item-has-success"
                     >
-                      <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                      <div
+                        class="ant-row ant-form-item-row"
                       >
-                        <span
-                          class="ant-checkbox ant-checkbox-checked"
+                        <div
+                          class="ant-col ant-form-item-control"
                         >
-                          <input
-                            checked=""
-                            class="ant-checkbox-input"
-                            id="userAgreement"
-                            type="checkbox"
-                          />
-                          <span
-                            class="ant-checkbox-inner"
-                          />
-                        </span>
-                        <span>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-form-item-control-input"
                           >
                             <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                              class="ant-form-item-control-input-content"
                             >
-                              已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                              <span
+                                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                               >
-                                用户协议
-                              </a>
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="19"
+                                    viewBox="0 0 12 12"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      fill="currentColor"
+                                    >
+                                      <path
+                                        d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="username"
+                                  placeholder="用户名"
+                                  type="text"
+                                  value="admin1"
+                                />
+                              </span>
                             </div>
                           </div>
-                        </span>
-                      </label>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                                      fill="currentColor"
+                                    />
+                                    <path
+                                      d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="password"
+                                  placeholder="密码"
+                                  type="password"
+                                  value="admin1"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <label
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                              >
+                                <span
+                                  class="ant-checkbox ant-checkbox-checked"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-checkbox-input"
+                                    id="userAgreement"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                                <span>
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      已阅读并同意
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <a
+                                        class="ant-typography"
+                                        href="/user-agreement.html"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                      >
+                                        用户协议
+                                      </a>
+                                    </div>
+                                  </div>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
+                      type="submit"
+                    >
+                      <span
+                        class="ant-btn-icon ant-btn-loading-icon"
+                      >
+                        <span
+                          aria-label="loading"
+                          class="anticon anticon-loading anticon-spin"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="loading"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="0 0 1024 1024"
+                            width="1em"
+                          >
+                            <path
+                              d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        登 录
+                      </span>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
-            <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
-              type="submit"
-            >
-              <span
-                class="ant-btn-icon ant-btn-loading-icon"
-              >
-                <span
-                  aria-label="loading"
-                  class="anticon anticon-loading anticon-spin"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="loading"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <span>
-                登 录
-              </span>
-            </button>
-            <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1vnelmv"
-              href="/v1/dms/oauth2/link?target=%252Fproject%252F700300%252Fcloud-beaver"
-            >
-              <span>
-                Login With Oauth2
-              </span>
-            </a>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -1164,7 +1652,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -1465,7 +1953,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
         </div>
       </div>
       <div
-        class="css-zhd3kf"
+        class="css-1gefj4"
       >
         <div
           class="login-page-right-content"
@@ -1496,347 +1984,469 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </span>
             </div>
           </div>
-          <form
-            class="ant-form ant-form-horizontal"
-            hidden=""
+          <div
+            class="ant-tabs ant-tabs-top login-tabs"
           >
             <div
-              class="ant-form-item ant-form-item-has-success"
+              class="ant-tabs-nav"
+              role="tablist"
             >
               <div
-                class="ant-row ant-form-item-row"
+                class="ant-tabs-nav-wrap"
               >
                 <div
-                  class="ant-col ant-form-item-control"
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
                 >
                   <div
-                    class="ant-form-item-control-input"
+                    class="ant-tabs-tab"
+                    data-node-key="oauth2"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      aria-controls="rc-tabs-test-panel-oauth2"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-oauth2"
+                      role="tab"
+                      tabindex="0"
                     >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="19"
-                            viewBox="0 0 12 12"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              fill="currentColor"
-                            >
-                              <path
-                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="username"
-                          placeholder="用户名"
-                          type="text"
-                          value="admin"
-                        />
+                      第三方登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                    data-node-key="local"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-local"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-local"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      本地登录
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                    style="left: 0px; width: 0px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div
+              class="ant-tabs-content-holder"
+            >
+              <div
+                class="ant-tabs-content ant-tabs-content-top"
+              >
+                <div
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-oauth2"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-hidden"
+                  id="rc-tabs-test-panel-oauth2"
+                  role="tabpanel"
+                  tabindex="-1"
+                >
+                  <div
+                    class="oauth2-login-form"
+                  >
+                    <div
+                      class="oauth2-tips"
+                    >
+                      点击下方按钮跳转到授权页面进行登录：
+                    </div>
+                    <a
+                      class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
+                      href="/v1/dms/oauth2/link"
+                    >
+                      <span>
+                        Login With Oauth2
                       </span>
-                    </div>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item ant-form-item-has-success"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
                 <div
-                  class="ant-col ant-form-item-control"
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-local"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-local"
+                  role="tabpanel"
+                  tabindex="0"
                 >
-                  <div
-                    class="ant-form-item-control-input"
+                  <form
+                    class="ant-form ant-form-horizontal"
+                    hidden=""
                   >
                     <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
-                      >
-                        <span
-                          class="ant-input-prefix"
-                        >
-                          <svg
-                            color="#C3C6CD"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                        <input
-                          aria-required="true"
-                          class="ant-input"
-                          id="password"
-                          placeholder="密码"
-                          type="password"
-                          value="admin"
-                        />
-                        <span
-                          class="ant-input-suffix"
-                        >
-                          <span
-                            aria-label="eye-invisible"
-                            class="anticon anticon-eye-invisible ant-input-password-icon"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="eye-invisible"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
-                              />
-                              <path
-                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
-                      >
-                        <span
-                          class="ant-checkbox ant-checkbox-checked"
-                        >
-                          <input
-                            checked=""
-                            class="ant-checkbox-input"
-                            id="userAgreement"
-                            type="checkbox"
-                          />
-                          <span
-                            class="ant-checkbox-inner"
-                          />
-                        </span>
-                        <span>
-                          <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                用户协议
-                              </a>
-                            </div>
-                          </div>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
-              type="submit"
-            >
-              <span>
-                登 录
-              </span>
-            </button>
-            <a
-              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-1vnelmv"
-              href="/v1/dms/oauth2/link"
-            >
-              <span>
-                Login With Oauth2
-              </span>
-            </a>
-          </form>
-          <form
-            class="ant-form ant-form-horizontal"
-          >
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary"
-                      >
-                        <div
-                          class="ant-space ant-space-horizontal ant-space-align-center"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
-                          >
-                            手机号:
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            123****8901
-                          </div>
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
-                  >
-                    <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item ant-form-item-has-success"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-space-item"
-                          style="margin-right: 8px;"
+                          class="ant-col ant-form-item-control"
                         >
-                          <input
-                            aria-required="true"
-                            class="ant-input basic-input-wrapper css-1pd1cd5"
-                            id="verificationCode"
-                            placeholder="请输入验证码"
-                            type="text"
-                            value=""
-                          />
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
-                            type="button"
+                          <div
+                            class="ant-form-item-control-input"
                           >
-                            <span>
-                              发送验证码
-                            </span>
-                          </button>
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="19"
+                                    viewBox="0 0 12 12"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      fill="currentColor"
+                                    >
+                                      <path
+                                        d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="username"
+                                  placeholder="用户名"
+                                  type="text"
+                                  value="admin"
+                                />
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-form-item"
-            >
-              <div
-                class="ant-row ant-form-item-row"
-              >
-                <div
-                  class="ant-col ant-form-item-control"
-                >
-                  <div
-                    class="ant-form-item-control-input"
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
+                              >
+                                <span
+                                  class="ant-input-prefix"
+                                >
+                                  <svg
+                                    color="#C3C6CD"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                                      fill="currentColor"
+                                    />
+                                    <path
+                                      d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                </span>
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="password"
+                                  placeholder="密码"
+                                  type="password"
+                                  value="admin"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <label
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
+                              >
+                                <span
+                                  class="ant-checkbox ant-checkbox-checked"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-checkbox-input"
+                                    id="userAgreement"
+                                    type="checkbox"
+                                  />
+                                  <span
+                                    class="ant-checkbox-inner"
+                                  />
+                                </span>
+                                <span>
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      已阅读并同意
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <a
+                                        class="ant-typography"
+                                        href="/user-agreement.html"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                      >
+                                        用户协议
+                                      </a>
+                                    </div>
+                                  </div>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
+                      type="submit"
+                    >
+                      <span>
+                        登 录
+                      </span>
+                    </button>
+                  </form>
+                  <form
+                    class="ant-form ant-form-horizontal"
                   >
                     <div
-                      class="ant-form-item-control-input-content"
+                      class="ant-form-item"
                     >
-                      <button
-                        class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
-                        type="submit"
+                      <div
+                        class="ant-row ant-form-item-row"
                       >
-                        <span>
-                          验 证
-                        </span>
-                      </button>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    手机号:
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    123****8901
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <input
+                                    aria-required="true"
+                                    class="ant-input basic-input-wrapper css-1pd1cd5"
+                                    id="verificationCode"
+                                    placeholder="请输入验证码"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      发送验证码
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <button
+                                class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
+                                type="submit"
+                              >
+                                <span>
+                                  验 证
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1q2lbmy"
+                    >
+                      <a
+                        class="ant-typography"
+                      >
+                        返回登录
+                      </a>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <div
-              class="css-1q2lbmy"
-            >
-              <a
-                class="ant-typography"
-              >
-                返回登录
-              </a>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>

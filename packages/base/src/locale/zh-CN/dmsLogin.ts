@@ -2,6 +2,10 @@
 export default {
   login: '登录',
   otherMethod: '其他登录方式',
+  thirdPartyLogin: '第三方登录',
+  localLogin: '本地登录',
+  oauth2Tips: '点击下方按钮跳转到授权页面进行登录：',
+  useOAuth2Login: '使用第三方账户登录',
   loginButtonDisabledTips: '当前已禁用账密登录',
   userAgreementTips: '已阅读并同意',
   userAgreement: '用户协议',
