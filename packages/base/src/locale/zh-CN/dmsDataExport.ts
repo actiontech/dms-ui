@@ -60,7 +60,11 @@ export default {
     },
     result: {
       success: '工单创建成功',
-      guide: '查看刚刚创建的工单'
+      guide: '查看刚刚创建的工单',
+      retentionNotice: '审批通过后，系统会为您保留导出任务',
+      retentionHours: '24 小时',
+      retentionNoticeSuffix: '。',
+      reminderNotice: '为确保您顺利获取文件，请及时查看审批结果并完成导出操作。'
     }
   },
   batchClose: {
