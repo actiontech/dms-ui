@@ -1113,18 +1113,55 @@ exports[`first should match snapshot when pageState is equal SUBMIT_RESULT 1`] =
       <div
         class="ant-result-extra"
       >
-        <a
-          href="/project/700300/data/export/123"
+        <div
+          class="ant-space ant-space-vertical"
         >
-          <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 12px;"
           >
-            <span>
-              查看刚刚创建的工单
+            <span
+              class="ant-typography"
+            >
+              审批通过后，系统会为您保留导出任务
+               
+              <span
+                class="ant-typography"
+              >
+                <strong>
+                  24 小时
+                </strong>
+              </span>
+              。
             </span>
-          </button>
-        </a>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 12px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              为确保您顺利获取文件，请及时查看审批结果并完成导出操作。
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/data/export/123"
+            >
+              <button
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  查看刚刚创建的工单
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
      
