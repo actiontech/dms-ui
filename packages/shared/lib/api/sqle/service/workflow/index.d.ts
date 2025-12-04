@@ -60,6 +60,8 @@ export interface IGetGlobalDataExportWorkflowsV1Params {
 
   filter_project_priority?: getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum;
 
+  filter_current_step_assignee_user_id?: string;
+
   page_index: number;
 
   page_size: number;
@@ -78,6 +80,8 @@ export interface IGetGlobalDataExportWorkflowStatisticsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 }
 
 export interface IGetGlobalDataExportWorkflowStatisticsV1Return
@@ -93,6 +97,8 @@ export interface IGetGlobalWorkflowsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalWorkflowsV1FilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 
   page_index: number;
 
@@ -111,6 +117,8 @@ export interface IGetGlobalWorkflowStatisticsParams {
   filter_instance_id?: string;
 
   filter_project_priority?: GetGlobalWorkflowStatisticsFilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 }
 
 export interface IGetGlobalWorkflowStatisticsReturn

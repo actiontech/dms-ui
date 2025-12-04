@@ -26,9 +26,11 @@ export type GlobalDashboardListProps = {
     key: keyof GlobalDashboardFilterType,
     value?: string
   ) => void;
+  filterAssignedToMe?: boolean;
 };
 
 export type GlobalDashboardWorkflowTabsProps = {
   workflowOrderStatistics: number;
   exportWorkflowOrderStatistics: number;
+  toggleFilterAssignedToMe?: () => void;
 } & GlobalDashboardListProps;

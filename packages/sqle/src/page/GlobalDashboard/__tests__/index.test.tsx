@@ -116,4 +116,17 @@ describe('sqle/GlobalDashboard', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(4);
   });
+
+  it('test filter assigned to me button', async () => {
+    sqleSuperRender(<GlobalDashboard />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+
+    const filterBtn = screen.getByText('仅看待我操作');
+    expect(filterBtn).toBeInTheDocument();
+
+    fireEvent.click(filterBtn);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(2);
+  });
 });

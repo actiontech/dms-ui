@@ -2591,8 +2591,6 @@ export interface IOptimizationsummary {
 export interface IOptimizeSQLReq {
   db_type?: string;
 
-  explain_info?: string;
-
   instance_name?: string;
 
   optimization_name?: string;

@@ -30,7 +30,9 @@ const GlobalDashBoard = () => {
     pendingWorkflowOrderStatistics,
     initiatedWorkflowOrderStatistics,
     pendingExportWorkflowOrderStatistics,
-    initiatedExportWorkflowOrderStatistics
+    initiatedExportWorkflowOrderStatistics,
+    filterAssignedToMe,
+    toggleFilterAssignedToMe
   } = useDashboardFilter();
   const [activeKey, setActiveKey] = useState(
     GlobalDashBoardSegmentedEnum.PendingWorkOrder
@@ -70,6 +72,8 @@ const GlobalDashBoard = () => {
             exportWorkflowOrderStatistics={
               pendingExportWorkflowOrderStatistics ?? 0
             }
+            filterAssignedToMe={filterAssignedToMe}
+            toggleFilterAssignedToMe={toggleFilterAssignedToMe}
           />
         ),
         destroyInactivePane: true
@@ -120,7 +124,9 @@ const GlobalDashBoard = () => {
     updateFilterValue,
     initiatedWorkflowOrderStatistics,
     initiatedExportWorkflowOrderStatistics,
-    pendingSqlStatistics
+    pendingSqlStatistics,
+    filterAssignedToMe,
+    toggleFilterAssignedToMe
   ]);
   return (
     <>
