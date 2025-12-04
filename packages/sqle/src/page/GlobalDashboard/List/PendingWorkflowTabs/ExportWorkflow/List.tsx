@@ -18,14 +18,16 @@ import {
   getGlobalDataExportWorkflowsV1FilterStatusListEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { IGetGlobalDataExportWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 
 const PendingExportWorkflowList: React.FC<GlobalDashboardListProps> = ({
   filterValues,
-  updateFilterValue
+  updateFilterValue,
+  filterAssignedToMe
 }) => {
   const { pagination, tableChange } =
     useTableRequestParams<IWorkflowDetailResV1>();
-
+  const { userId } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -47,7 +49,10 @@ const PendingExportWorkflowList: React.FC<GlobalDashboardListProps> = ({
         filter_instance_id: filterValues.instanceId,
         filter_project_priority:
           filterValues.projectPriority as unknown as getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum,
-        filter_project_uid: filterValues.projectId
+        filter_project_uid: filterValues.projectId,
+        filter_current_step_assignee_user_id: filterAssignedToMe
+          ? userId
+          : undefined
       };
 
       return handleTableRequestError(
@@ -57,7 +62,7 @@ const PendingExportWorkflowList: React.FC<GlobalDashboardListProps> = ({
       );
     },
     {
-      refreshDeps: [pagination, filterValues]
+      refreshDeps: [pagination, filterValues, filterAssignedToMe]
     }
   );
 

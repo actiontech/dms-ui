@@ -11,6 +11,7 @@ import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/bas
 import eventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import { paramsSerializer } from '@actiontech/shared';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil';
 
 describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;
@@ -40,11 +41,15 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
     cleanup();
   });
 
-  const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
+  const customRender = (
+    filterValues: GlobalDashboardFilterType = {},
+    filterAssignedToMe?: boolean
+  ) => {
     return sqleSuperRender(
       <PendingWorkOrder
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}
+        filterAssignedToMe={filterAssignedToMe}
       />
     );
   };
@@ -121,5 +126,18 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
       jest.advanceTimersByTime(0);
     });
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render request data with filterAssignedToMe', async () => {
+    customRender({}, true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalWorkflowsSpy).toHaveBeenCalledWith(
+      {
+        ...commonParams,
+        filter_current_step_assignee_user_id: mockCurrentUserReturn.userId
+      },
+      { paramsSerializer }
+    );
   });
 });

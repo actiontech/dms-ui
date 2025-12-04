@@ -28,6 +28,8 @@ const useDashboardFilter = () => {
 
   const projectPriority = Form.useWatch('projectPriority', form);
 
+  const [filterAssignedToMe, setFilterAssignedToMe] = useState(true);
+
   const [pendingSqlStatistics, setPendingSqlStatistics] = useState<number>();
   const [
     pendingExportWorkflowOrderStatistics,
@@ -106,7 +108,10 @@ const useDashboardFilter = () => {
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.wait_for_export,
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.failed,
             getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum.rejected
-          ]
+          ],
+          filter_current_step_assignee_user_id: filterAssignedToMe
+            ? userId
+            : undefined
         },
         {
           paramsSerializer
@@ -123,8 +128,14 @@ const useDashboardFilter = () => {
     setPendingExportWorkflowOrderStatisticsPending,
     instanceId,
     projectId,
-    projectPriority
+    projectPriority,
+    filterAssignedToMe,
+    userId
   ]);
+
+  useEffect(() => {
+    refreshPendingExportWorkflowOrderStatistics();
+  }, [filterAssignedToMe, refreshPendingExportWorkflowOrderStatistics]);
 
   const refreshInitiatedExportWorkflowOrderStatistics = useCallback(() => {
     setInitiatedExportWorkflowOrderStatisticsPending();
@@ -175,7 +186,10 @@ const useDashboardFilter = () => {
               GetGlobalWorkflowStatisticsFilterStatusListEnum.wait_for_execution,
               GetGlobalWorkflowStatisticsFilterStatusListEnum.rejected,
               GetGlobalWorkflowStatisticsFilterStatusListEnum.exec_failed
-            ]
+            ],
+            filter_current_step_assignee_user_id: filterAssignedToMe
+              ? userId
+              : undefined
           },
           {
             paramsSerializer
@@ -187,7 +201,7 @@ const useDashboardFilter = () => {
           }
         }),
     {
-      refreshDeps: [projectId, instanceId, projectPriority]
+      refreshDeps: [projectId, instanceId, projectPriority, filterAssignedToMe]
     }
   );
 
@@ -296,6 +310,10 @@ const useDashboardFilter = () => {
   }, [projectId, instanceId, projectPriority]);
   // #endif
 
+  const toggleFilterAssignedToMe = useCallback(() => {
+    setFilterAssignedToMe((prev) => !prev);
+  }, []);
+
   return {
     projectOptions,
     updateInstanceList,
@@ -313,7 +331,9 @@ const useDashboardFilter = () => {
     initiatedWorkflowOrderStatistics,
     getStatisticsLoading,
     pendingExportWorkflowOrderStatistics,
-    initiatedExportWorkflowOrderStatistics
+    initiatedExportWorkflowOrderStatistics,
+    filterAssignedToMe,
+    toggleFilterAssignedToMe
   };
 };
 

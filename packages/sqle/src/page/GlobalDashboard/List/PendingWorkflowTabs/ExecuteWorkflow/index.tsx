@@ -17,14 +17,16 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 
 const PendingExecuteWorkflow: React.FC<GlobalDashboardListProps> = ({
   filterValues,
-  updateFilterValue
+  updateFilterValue,
+  filterAssignedToMe
 }) => {
   const { pagination, tableChange } =
     useTableRequestParams<IWorkflowDetailResV1>();
-
+  const { userId } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -46,7 +48,10 @@ const PendingExecuteWorkflow: React.FC<GlobalDashboardListProps> = ({
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,
           getGlobalWorkflowsV1FilterStatusListEnum.rejected,
           getGlobalWorkflowsV1FilterStatusListEnum.exec_failed
-        ]
+        ],
+        filter_current_step_assignee_user_id: filterAssignedToMe
+          ? userId
+          : undefined
       };
 
       return handleTableRequestError(
@@ -56,7 +61,7 @@ const PendingExecuteWorkflow: React.FC<GlobalDashboardListProps> = ({
       );
     },
     {
-      refreshDeps: [pagination, filterValues]
+      refreshDeps: [pagination, filterValues, filterAssignedToMe]
     }
   );
 
