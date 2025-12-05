@@ -591,6 +591,20 @@ export interface IAuditedSQLCount {
   total_sql_count?: number;
 }
 
+export interface IAutoCreateAndExecuteWorkflowResV1 {
+  code?: number;
+
+  data?: IAutoCreateAndExecuteWorkflowResV1Data;
+
+  message?: string;
+}
+
+export interface IAutoCreateAndExecuteWorkflowResV1Data {
+  workflow_id?: string;
+
+  workflow_status?: string;
+}
+
 export interface IBackupSqlData {
   backup_result?: string;
 
@@ -4339,6 +4353,8 @@ export interface IAuditSQLResV2 {
   exec_sql?: string;
 
   number?: number;
+
+  sql_type?: string;
 }
 
 export interface IAuditTaskSQLResV2 {
@@ -4424,11 +4440,15 @@ export interface IDirectAuditFileReqV2 {
 }
 
 export interface IDirectAuditReqV2 {
+  instance_name?: string;
+
   instance_type?: string;
 
   project_id?: string;
 
   rule_template_name?: string;
+
+  schema_name?: string;
 
   sql_content?: string;
 
