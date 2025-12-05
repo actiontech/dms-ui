@@ -341,7 +341,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
           class="segmented-tabs-wrapper"
         >
           <div
-            class="ant-row segmented-row-wrapper css-156vlto"
+            class="ant-row segmented-row-wrapper flex-space-between css-156vlto"
           >
             <div
               class="ant-segmented basic-segmented-wrapper css-192b3m1"
@@ -406,6 +406,14 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                 </label>
               </div>
             </div>
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm switch-btn-active basic-button-wrapper css-1vnelmv"
+              type="button"
+            >
+              <span>
+                仅看待我操作
+              </span>
+            </button>
           </div>
           <div
             class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"

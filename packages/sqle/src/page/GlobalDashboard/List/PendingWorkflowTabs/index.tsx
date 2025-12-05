@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { SegmentedTabs } from '@actiontech/dms-kit';
+import { SegmentedTabs, BasicButton } from '@actiontech/dms-kit';
 import { SegmentedTabsProps } from '@actiontech/dms-kit/es/components/SegmentedTabs/SegmentedTabs.types';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
@@ -16,7 +16,9 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
   filterValues,
   updateFilterValue,
   workflowOrderStatistics,
-  exportWorkflowOrderStatistics
+  exportWorkflowOrderStatistics,
+  filterAssignedToMe,
+  toggleFilterAssignedToMe
 }) => {
   const { t } = useTranslation();
   const [innerActiveKey, setInnerActiveKey] = useState(
@@ -37,6 +39,7 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
           <ExecuteWorkflow
             filterValues={filterValues}
             updateFilterValue={updateFilterValue}
+            filterAssignedToMe={filterAssignedToMe}
           />
         ),
         destroyInactivePane: true
@@ -53,6 +56,7 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
           <ExportWorkflow
             filterValues={filterValues}
             updateFilterValue={updateFilterValue}
+            filterAssignedToMe={filterAssignedToMe}
           />
         ),
         destroyInactivePane: true
@@ -63,8 +67,28 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
     workflowOrderStatistics,
     filterValues,
     updateFilterValue,
-    exportWorkflowOrderStatistics
+    exportWorkflowOrderStatistics,
+    filterAssignedToMe
   ]);
+
+  const renderSegmentedRowExtraContent = () => {
+    // #if [ce]
+    if (innerActiveKey === PendingWorkflowTabEnum.Export) {
+      return null;
+    }
+    // #endif
+    return (
+      <BasicButton
+        className={
+          filterAssignedToMe ? 'switch-btn-active' : 'switch-btn-default'
+        }
+        size="small"
+        onClick={toggleFilterAssignedToMe}
+      >
+        {t('globalDashboard.pendingMyAction')}
+      </BasicButton>
+    );
+  };
 
   return (
     <SegmentedTabs
@@ -73,6 +97,8 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
         setInnerActiveKey(key as PendingWorkflowTabEnum);
       }}
       items={innerTabItems}
+      segmentedRowClassName="flex-space-between"
+      segmentedRowExtraContent={renderSegmentedRowExtraContent()}
     />
   );
 };
