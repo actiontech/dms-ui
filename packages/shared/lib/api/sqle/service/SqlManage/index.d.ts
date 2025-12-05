@@ -67,6 +67,8 @@ export interface IGetGlobalSqlManageStatisticsParams {
   filter_instance_id?: string;
 
   filter_project_priority?: GetGlobalSqlManageStatisticsFilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 }
 
 export interface IGetGlobalSqlManageStatisticsReturn
