@@ -24,6 +24,8 @@ import {
   IGetWorkflowsV1Return,
   ICreateWorkflowV1Params,
   ICreateWorkflowV1Return,
+  IAutoCreateAndExecuteWorkflowV1Params,
+  IAutoCreateAndExecuteWorkflowV1Return,
   IBatchCancelWorkflowsV1Params,
   IBatchCancelWorkflowsV1Return,
   IBatchCompleteWorkflowsV1Params,
@@ -206,6 +208,68 @@ class WorkflowService extends ServiceBase {
       `/v1/projects/${project_name}/workflows`,
       paramsData,
       options
+    );
+  }
+
+  public autoCreateAndExecuteWorkflowV1(
+    params: IAutoCreateAndExecuteWorkflowV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.instances != undefined) {
+      paramsData.append('instances', params.instances as any);
+    }
+
+    if (params.exec_mode != undefined) {
+      paramsData.append('exec_mode', params.exec_mode as any);
+    }
+
+    if (params.file_order_method != undefined) {
+      paramsData.append('file_order_method', params.file_order_method as any);
+    }
+
+    if (params.sql != undefined) {
+      paramsData.append('sql', params.sql as any);
+    }
+
+    if (params.workflow_subject != undefined) {
+      paramsData.append('workflow_subject', params.workflow_subject as any);
+    }
+
+    if (params.desc != undefined) {
+      paramsData.append('desc', params.desc as any);
+    }
+
+    if (params.input_sql_file != undefined) {
+      paramsData.append('input_sql_file', params.input_sql_file as any);
+    }
+
+    if (params.input_mybatis_xml_file != undefined) {
+      paramsData.append(
+        'input_mybatis_xml_file',
+        params.input_mybatis_xml_file as any
+      );
+    }
+
+    if (params.input_zip_file != undefined) {
+      paramsData.append('input_zip_file', params.input_zip_file as any);
+    }
+
+    const project_name = params.project_name;
+
+    return this.post<IAutoCreateAndExecuteWorkflowV1Return>(
+      `/v1/projects/${project_name}/workflows/auto_create_and_execute`,
+      paramsData,
+      config
     );
   }
 
