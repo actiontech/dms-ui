@@ -38,9 +38,7 @@ const useOverviewActions = ({
     };
     workflow.executeOneTaskOnWorkflowV2(param).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(
-          t('execWorkflow.common.workflowStatus.execSucceeded')
-        );
+        messageApi.success(t('execWorkflow.detail.operator.executingTips'));
         refreshOverview();
         refreshWorkflow?.();
       }
