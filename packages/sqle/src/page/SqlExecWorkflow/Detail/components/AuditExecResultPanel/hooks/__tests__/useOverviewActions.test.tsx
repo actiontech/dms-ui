@@ -60,7 +60,7 @@ describe('test useOverviewActions', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(mockMessageSuccess).toHaveBeenCalledTimes(1);
-    expect(mockMessageSuccess).toHaveBeenCalledWith('上线成功');
+    expect(mockMessageSuccess).toHaveBeenCalledWith('立即上线操作已提交');
     expect(mockRefreshOverview).toHaveBeenCalledTimes(1);
     expect(mockRefreshWorkflow).toHaveBeenCalledTimes(1);
   });

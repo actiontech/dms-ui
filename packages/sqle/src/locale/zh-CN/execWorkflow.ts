@@ -226,7 +226,8 @@ export default {
       execScheduledBeforeNow: '定时上线时间必须在当前时间之后',
       execScheduleTips: '定时上线设置成功',
       status: '上线状态',
-      executingTips: '立即上线设置成功',
+      batchExecutingTips: '批量立即上线操作已提交',
+      executingTips: '立即上线操作已提交',
       createWorkflowStep: '创建工单',
       updateWorkflowStep: '更新工单',
       reviewWorkflowStep: '审核工单',
@@ -263,7 +264,7 @@ export default {
         sqlExecuteConfirmTips:
           '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线',
         retryExecute: '再次执行',
-        retryExecuteSuccess: '再次执行成功',
+        retryExecuteSuccess: '再次执行操作已提交',
         pleaseSelectSql: '请选择需要再次执行的SQL',
         selectRetryExecuteSqlDesc: '已执行成功的SQL无法再次执行',
         selectRetryExecuteSql: '选择再次执行的SQL'
