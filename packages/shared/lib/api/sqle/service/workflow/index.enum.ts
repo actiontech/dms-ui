@@ -112,6 +112,12 @@ export enum getWorkflowsV1FilterStatusEnum {
   'finished' = 'finished'
 }
 
+export enum autoCreateAndExecuteWorkflowV1ExecModeEnum {
+  'sql_file' = 'sql_file',
+
+  'sqls' = 'sqls'
+}
+
 export enum exportWorkflowV1FilterStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

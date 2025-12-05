@@ -6,6 +6,7 @@ import {
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
   ICreateWorkflowReqV1,
+  IAutoCreateAndExecuteWorkflowResV1,
   IBatchCancelWorkflowsReqV1,
   IBatchCompleteWorkflowsReqV1,
   IBackupSqlListRes,
@@ -42,6 +43,7 @@ import {
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
   getWorkflowsV1FilterStatusEnum,
+  autoCreateAndExecuteWorkflowV1ExecModeEnum,
   exportWorkflowV1FilterStatusEnum,
   GetBackupSqlListV1FilterExecStatusEnum
 } from './index.enum';
@@ -59,6 +61,8 @@ export interface IGetGlobalDataExportWorkflowsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 
   page_index: number;
 
@@ -78,6 +82,8 @@ export interface IGetGlobalDataExportWorkflowStatisticsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 }
 
 export interface IGetGlobalDataExportWorkflowStatisticsV1Return
@@ -93,6 +99,8 @@ export interface IGetGlobalWorkflowsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalWorkflowsV1FilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 
   page_index: number;
 
@@ -111,6 +119,8 @@ export interface IGetGlobalWorkflowStatisticsParams {
   filter_instance_id?: string;
 
   filter_project_priority?: GetGlobalWorkflowStatisticsFilterProjectPriorityEnum;
+
+  filter_current_step_assignee_user_id?: string;
 }
 
 export interface IGetGlobalWorkflowStatisticsReturn
@@ -171,6 +181,31 @@ export interface ICreateWorkflowV1Params extends ICreateWorkflowReqV1 {
 }
 
 export interface ICreateWorkflowV1Return extends IBaseRes {}
+
+export interface IAutoCreateAndExecuteWorkflowV1Params {
+  project_name: string;
+
+  instances: string;
+
+  exec_mode?: autoCreateAndExecuteWorkflowV1ExecModeEnum;
+
+  file_order_method?: string;
+
+  sql?: string;
+
+  workflow_subject: string;
+
+  desc?: string;
+
+  input_sql_file?: any;
+
+  input_mybatis_xml_file?: any;
+
+  input_zip_file?: any;
+}
+
+export interface IAutoCreateAndExecuteWorkflowV1Return
+  extends IAutoCreateAndExecuteWorkflowResV1 {}
 
 export interface IBatchCancelWorkflowsV1Params
   extends IBatchCancelWorkflowsReqV1 {

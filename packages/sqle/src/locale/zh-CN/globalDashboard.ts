@@ -46,6 +46,7 @@ export default {
     }
   },
   initiatedWorkOrder: '发起的工单',
+  pendingMyAction: '仅看待我操作',
   filter: {
     project: '项目',
     instance: '数据源',
