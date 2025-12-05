@@ -163,7 +163,7 @@ export default {
       },
       execute: {
         text: '执行导出',
-        successTips: '工单执行导出成功！',
+        successTips: '执行导出操作已提交',
         confirmTips:
           '当前操作将立即执行导出工单下的所有任务，是否确认立即执行导出?'
       }

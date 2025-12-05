@@ -114,7 +114,7 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.executeExportLoading).toBeFalsy();
     expect(messageApiSpy.success).toHaveBeenCalledTimes(1);
-    expect(messageApiSpy.success).toHaveBeenCalledWith('工单执行导出成功！');
+    expect(messageApiSpy.success).toHaveBeenCalledWith('执行导出操作已提交');
     expect(emitSpy).toHaveBeenCalledTimes(1);
     expect(emitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_Export_Data_Workflow

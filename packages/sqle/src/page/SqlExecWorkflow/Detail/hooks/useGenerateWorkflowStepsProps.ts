@@ -70,7 +70,9 @@ const useGenerateWorkflowStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('execWorkflow.detail.operator.executingTips'));
+          messageApi.success(
+            t('execWorkflow.detail.operator.batchExecutingTips')
+          );
           refreshWorkflowInfo();
           refreshOverviewAction();
         }
