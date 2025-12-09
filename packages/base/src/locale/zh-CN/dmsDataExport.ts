@@ -61,10 +61,13 @@ export default {
     result: {
       success: '工单创建成功',
       guide: '查看刚刚创建的工单',
-      retentionNotice: '审批通过后，系统会为您保留导出任务',
-      retentionHours: '24 小时',
-      retentionNoticeSuffix: '。',
-      reminderNotice: '为确保您顺利获取文件，请及时查看审批结果并完成导出操作。'
+      alertTitle: '审批通过后，请留意两件事：',
+      exportTimeLimitTitle: '1. 导出操作时限：',
+      exportTimeLimitDesc: '系统将为您保留此次导出任务24小时。',
+      fileDownloadLimitTitle: '2. 文件下载时限：',
+      fileDownloadLimitDesc: '导出文件生成后，文件本身也仅保留 24小时。',
+      reminder:
+        '为确保您能顺利获取文件，请及时查看审批结果，并立即完成导出和文件下载操作。'
     }
   },
   batchClose: {
