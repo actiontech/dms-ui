@@ -320,7 +320,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -627,7 +627,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -844,7 +844,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"

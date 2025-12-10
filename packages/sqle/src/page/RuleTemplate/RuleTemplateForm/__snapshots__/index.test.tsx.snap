@@ -159,7 +159,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -252,7 +252,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -485,7 +485,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                   >
                     <div
                       class="ant-select-selector"
@@ -543,7 +543,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                   >
                     <div
                       class="ant-select-selector"
@@ -601,7 +601,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                   >
                     <div
                       class="ant-select-selector"
@@ -659,7 +659,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                   >
                     <div
                       class="ant-select-selector"
@@ -723,7 +723,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                       style="margin-right: 4px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                       >
                         <div
                           class="ant-select-selector"

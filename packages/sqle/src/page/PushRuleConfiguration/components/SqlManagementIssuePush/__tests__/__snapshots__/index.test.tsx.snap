@@ -227,7 +227,7 @@ exports[`test SqlManagementIssuePush should call onSubmit function correctly whe
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -718,7 +718,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                 >
                   <div
                     aria-required="true"
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -1244,7 +1244,7 @@ exports[`test SqlManagementIssuePush should set the form to edit state and fill 
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"

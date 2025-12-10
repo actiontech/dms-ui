@@ -177,7 +177,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                         >
                           test1、test2
                         </span>
@@ -244,7 +244,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                         >
                           test3、test4
                         </span>
@@ -311,7 +311,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                         >
                           test、test666
                         </span>

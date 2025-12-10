@@ -144,7 +144,7 @@ exports[`base/Member should render member list when it first entered the member 
                         >
                           <tr>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -225,7 +225,7 @@ exports[`base/Member should render member list when it first entered the member 
                             data-row-key="700501"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               admin
                             </td>
@@ -267,7 +267,7 @@ exports[`base/Member should render member list when it first entered the member 
                             data-row-key="700502"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test
                             </td>
@@ -350,7 +350,7 @@ exports[`base/Member should render member list when it first entered the member 
                             data-row-key="700503"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test-2
                             </td>
@@ -799,7 +799,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                         >
                           <tr>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -1115,7 +1115,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
                                 test1、test2
                               </span>
@@ -1152,7 +1152,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
                                 test3、test4
                               </span>
@@ -1189,7 +1189,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
                                 test、test666
                               </span>

@@ -280,7 +280,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               ID
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -418,7 +418,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test
                             </td>
@@ -612,7 +612,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test666
                             </td>
@@ -765,7 +765,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               admin
                             </td>
@@ -988,7 +988,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-view
                             </td>
@@ -1156,7 +1156,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-management
                             </td>
@@ -1740,7 +1740,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               ID
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -1878,7 +1878,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test
                             </td>
@@ -2102,7 +2102,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test666
                             </td>
@@ -2285,7 +2285,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               admin
                             </td>
@@ -2539,7 +2539,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-view
                             </td>
@@ -2737,7 +2737,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-management
                             </td>
@@ -3352,7 +3352,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               ID
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -3490,7 +3490,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test
                             </td>
@@ -3714,7 +3714,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test666
                             </td>
@@ -3897,7 +3897,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               admin
                             </td>
@@ -4151,7 +4151,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-view
                             </td>
@@ -4349,7 +4349,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-management
                             </td>
@@ -5268,7 +5268,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               ID
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                               scope="col"
                             >
                               用户名
@@ -5406,7 +5406,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test
                             </td>
@@ -5630,7 +5630,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               test666
                             </td>
@@ -5813,7 +5813,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               admin
                             </td>
@@ -6067,7 +6067,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-view
                             </td>
@@ -6265,7 +6265,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell whitespace-pre"
                             >
                               global-management
                             </td>

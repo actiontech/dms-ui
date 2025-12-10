@@ -276,7 +276,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -334,7 +334,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -392,7 +392,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -450,7 +450,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -514,7 +514,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -966,7 +966,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1024,7 +1024,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1082,7 +1082,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1140,7 +1140,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1204,7 +1204,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -1632,7 +1632,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1690,7 +1690,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1748,7 +1748,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1806,7 +1806,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1870,7 +1870,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2428,7 +2428,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2486,7 +2486,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2544,7 +2544,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2602,7 +2602,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2666,7 +2666,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"

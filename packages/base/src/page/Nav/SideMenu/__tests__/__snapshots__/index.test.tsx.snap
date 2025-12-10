@@ -132,7 +132,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -163,7 +163,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   class="ant-select-selection-item"
                 >
                   <span
-                    class="custom-select-option-content css-vgjuov"
+                    class="custom-select-option-content css-17mg133"
                   >
                     <span
                       class="custom-select-option-content-prefix"
@@ -392,7 +392,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -423,7 +423,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   class="ant-select-selection-item"
                 >
                   <span
-                    class="custom-select-option-content css-vgjuov"
+                    class="custom-select-option-content css-17mg133"
                   >
                     <span
                       class="custom-select-option-content-prefix"
@@ -651,7 +651,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow ant-select-open"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow ant-select-open"
               searchinputref="[object Object]"
             >
               <div
@@ -682,7 +682,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   class="ant-select-selection-item"
                 >
                   <span
-                    class="custom-select-option-content css-vgjuov"
+                    class="custom-select-option-content css-17mg133"
                   >
                     <span
                       class="custom-select-option-content-prefix"

@@ -253,7 +253,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
           style="margin-right: 12px; padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -311,7 +311,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
           style="padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -415,7 +415,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                           操作时间
                         </th>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                           scope="col"
                         >
                           操作人
@@ -504,7 +504,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                           2024-01-03 11:28:34
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.31
                         </td>
@@ -559,7 +559,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                           2024-01-03 11:27:27
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.33
                         </td>
@@ -990,7 +990,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                           操作时间
                         </th>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                           scope="col"
                         >
                           操作人
@@ -1079,7 +1079,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                           2024-01-03 11:28:34
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.31
                         </td>
@@ -1134,7 +1134,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                           2024-01-03 11:27:27
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.33
                         </td>
@@ -1565,7 +1565,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                           操作时间
                         </th>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                           scope="col"
                         >
                           操作人
@@ -1654,7 +1654,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                           2024-01-03 11:28:34
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.31
                         </td>
@@ -1709,7 +1709,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                           2024-01-03 11:27:27
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell whitespace-pre"
                         >
                           admin  192.168.22.33
                         </td>
