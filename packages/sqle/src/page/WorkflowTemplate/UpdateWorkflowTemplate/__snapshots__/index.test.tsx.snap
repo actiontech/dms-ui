@@ -602,7 +602,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1111,7 +1111,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1787,7 +1787,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -2463,7 +2463,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3139,7 +3139,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"

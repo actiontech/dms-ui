@@ -37,7 +37,11 @@ const useUsername = () => {
   const generateUsernameSelectOption = React.useCallback(() => {
     return usernameList.map((item) => {
       return (
-        <Select.Option key={item.user_id} value={item.user_id ?? ''}>
+        <Select.Option
+          key={item.user_id}
+          value={item.user_id ?? ''}
+          className="select-option-whitespace-pre"
+        >
           {item.user_name}
         </Select.Option>
       );
@@ -51,7 +55,9 @@ const useUsername = () => {
       label: (
         <CustomAvatarStyleWrapper>
           <CustomAvatar size="small" name={v.user_name} />
-          <Typography.Text>{v.user_name}</Typography.Text>
+          <Typography.Text className="whitespace-pre">
+            {v.user_name}
+          </Typography.Text>
         </CustomAvatarStyleWrapper>
       )
     }));

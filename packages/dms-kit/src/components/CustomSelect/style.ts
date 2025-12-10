@@ -94,7 +94,7 @@ export const CustomSelectOptionLabelStyleWrapper = styled('span')`
   .custom-select-option-content-label {
     font-weight: 500;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: pre;
     overflow: hidden;
     color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.content.labelColor};

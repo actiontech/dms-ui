@@ -160,7 +160,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal exec node info 1`] =
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -466,7 +466,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal review node info 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -803,7 +803,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node and update revi
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -1127,7 +1127,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -1486,7 +1486,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] 
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div

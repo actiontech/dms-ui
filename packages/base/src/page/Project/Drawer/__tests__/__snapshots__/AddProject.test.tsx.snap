@@ -177,7 +177,7 @@ exports[`test base/page/project/drawer/add should match snapshot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -555,7 +555,7 @@ exports[`test base/page/project/drawer/add should match snapshot when getPreferr
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"

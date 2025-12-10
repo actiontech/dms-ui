@@ -45,13 +45,13 @@ describe('base/UserCenter/Drawer/UserForm', () => {
 
     const usernameInput = screen.getByPlaceholderText('请输入用户名');
 
-    fireEvent.change(usernameInput, { target: { value: 'user name' } });
+    fireEvent.change(usernameInput, { target: { value: ' user name' } });
 
     await act(async () => {
       const error = await form.validateFields(['username']).catch((err) => err);
 
       expect(error.errorFields).toHaveLength(1);
-      expect(error.errorFields[0].errors).toContain('用户名不支持空格');
+      expect(error.errorFields[0].errors).toContain('用户名不支持首尾空格');
     });
   });
 });

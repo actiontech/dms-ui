@@ -99,7 +99,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow ant-select-loading"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-show-arrow ant-select-loading"
                       >
                         <div
                           class="ant-select-selector"
@@ -195,7 +195,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -508,7 +508,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -630,7 +630,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -953,7 +953,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1075,7 +1075,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"

@@ -25,7 +25,8 @@ export const UserListColumns: () => ActiontechTableColumn = () => [
   },
   {
     dataIndex: 'name',
-    title: () => t('common.username')
+    title: () => t('common.username'),
+    className: 'whitespace-pre'
   },
   {
     dataIndex: 'email',

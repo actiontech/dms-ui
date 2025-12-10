@@ -42,7 +42,7 @@ exports[`RelatedSqlList should render component with date range selected 1`] = `
           style="padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -72,7 +72,7 @@ exports[`RelatedSqlList should render component with date range selected 1`] = `
                 class="ant-select-selection-item"
               >
                 <span
-                  class="custom-select-option-content css-vgjuov"
+                  class="custom-select-option-content css-17mg133"
                 >
                   <span
                     class="custom-select-option-content-prefix"

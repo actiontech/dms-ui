@@ -32,7 +32,12 @@ const useUsername = () => {
   const generateUsernameSelectOption = React.useCallback(() => {
     return usernameList.map((user) => {
       return (
-        <Select.Option key={user.uid} value={user.uid ?? ''} label={user.name}>
+        <Select.Option
+          key={user.uid}
+          value={user.uid ?? ''}
+          label={user.name}
+          className="select-option-whitespace-pre"
+        >
           {user.name}
         </Select.Option>
       );

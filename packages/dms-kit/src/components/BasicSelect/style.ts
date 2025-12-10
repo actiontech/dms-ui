@@ -16,6 +16,10 @@ export const BasicSelectStyleWrapper = styled(Select<any>)`
         color: ${({ theme }) => theme.sharedTheme.basic.colorDefaultIcon};
       }
     }
+
+    .ant-select-selection-item {
+      white-space: pre;
+    }
   }
 
   &.basic-select-wrapper.ant-select:not(.ant-select-customize-input) {

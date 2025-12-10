@@ -2144,14 +2144,22 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              <span
-                                class="ant-avatar-string"
-                                style="transform: scale(1) translateX(-50%);"
-                              />
-                            </span>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
+                                >
+                                  <span
+                                    class="ant-avatar-string"
+                                    style="transform: scale(1) translateX(-50%);"
+                                  />
+                                </span>
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell"
@@ -3916,14 +3924,22 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              <span
-                                class="ant-avatar-string"
-                                style="transform: scale(1) translateX(-50%);"
-                              />
-                            </span>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-6ssfc7"
+                                >
+                                  <span
+                                    class="ant-avatar-string"
+                                    style="transform: scale(1) translateX(-50%);"
+                                  />
+                                </span>
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell"

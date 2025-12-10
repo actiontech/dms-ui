@@ -297,7 +297,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                                   >
                                     <div
                                       aria-required="true"
-                                      class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow ant-select-loading"
+                                      class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-show-arrow ant-select-loading"
                                     >
                                       <div
                                         class="ant-select-selector"
@@ -419,7 +419,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                                     class="ant-form-item-control-input-content"
                                   >
                                     <div
-                                      class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                                      class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                                     >
                                       <div
                                         class="ant-select-selector"

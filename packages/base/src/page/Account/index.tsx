@@ -47,7 +47,11 @@ const Account: React.FC = () => {
                 {t('dmsUserCenter.user.userForm.username')}
               </LabelContent>
             }
-            descNode={!!userInfo?.name ? userInfo?.name : '-'}
+            descNode={
+              <span className="whitespace-pre">
+                {!!userInfo?.name ? userInfo?.name : '-'}
+              </span>
+            }
             fieldVisible={false}
             needEditButton={false}
           />

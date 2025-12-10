@@ -483,7 +483,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -541,7 +541,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -603,7 +603,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -665,7 +665,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -787,7 +787,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             style="padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-open"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-open"
             >
               <div
                 class="ant-select-selector"

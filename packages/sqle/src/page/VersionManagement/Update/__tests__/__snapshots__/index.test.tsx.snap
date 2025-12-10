@@ -395,7 +395,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -529,7 +529,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -837,7 +837,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -960,7 +960,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1178,7 +1178,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1267,7 +1267,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"

@@ -15,6 +15,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     dataIndex: 'user',
     title: t('common.username'),
     width: '10%',
+    className: 'whitespace-pre',
     render: (user) => {
       return user?.name ?? '-';
     }
@@ -116,7 +117,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         return null;
       }
       return (
-        <Typography.Text ellipsis={true}>
+        <Typography.Text ellipsis={true} className="whitespace-pre">
           {users.map((v) => v.name).join('、')}
         </Typography.Text>
       );

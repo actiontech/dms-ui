@@ -127,3 +127,16 @@
 .margin-top-60 {
   margin-top: 60px;
 }
+
+// 保留文本中的所有空格和换行符，但不自动换行
+// 使用场景：当文本内容包含多个连续空格时，需要完整保留显示（如用户名中间可能包含多个空格）
+// 注意：HTML默认会将连续空格合并为一个，使用此类可以避免空格被合并
+.whitespace-pre {
+  white-space: pre !important;
+}
+
+.select-option-whitespace-pre {
+  .ant-select-item-option-content {
+    white-space: pre !important;
+  }
+}

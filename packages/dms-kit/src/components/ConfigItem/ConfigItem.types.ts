@@ -3,7 +3,7 @@ import { UploadProps } from 'antd';
 export interface ConfigItemProps {
   label: string | React.ReactNode;
   inputNode?: React.ReactNode;
-  descNode?: string;
+  descNode?: React.ReactNode;
   fieldVisible?: boolean;
   showField?: () => void;
   hideField?: () => void;

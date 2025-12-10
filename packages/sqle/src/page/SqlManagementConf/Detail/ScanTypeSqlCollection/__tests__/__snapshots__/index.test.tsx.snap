@@ -226,7 +226,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                 style="margin-right: 12px; padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -284,7 +284,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                 style="margin-right: 12px; padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -342,7 +342,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                 style="margin-right: 12px; padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -2491,7 +2491,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                   style="margin-right: 12px; padding-bottom: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -2549,7 +2549,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                   style="margin-right: 12px; padding-bottom: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -2607,7 +2607,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                   style="margin-right: 12px; padding-bottom: 12px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"

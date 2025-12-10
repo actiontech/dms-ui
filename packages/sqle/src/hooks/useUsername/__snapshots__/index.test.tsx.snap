@@ -235,7 +235,7 @@ exports[`useUsername should get username data from request 3`] = `
               >
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre ant-select-item-option-active"
                   title="user_name1"
                 >
                   <div
