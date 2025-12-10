@@ -56,9 +56,13 @@ const SqlOptimizationCreate = () => {
       sqlInfoValue.optimizationType === OptimizationTypeEnum.online
         ? sqlInfoValue.sql
         : sqlInfoValue.offlineSql;
-    const sql = isSupportLanguage(sqlInfoValue.dbType)
-      ? formattedSql
-      : sqlInfoValue.originSql;
+
+    const getSql = () => {
+      if (isSupportLanguage(sqlInfoValue.dbType)) {
+        return formattedSql;
+      }
+      return sqlInfoValue.originSql || formattedSql;
+    };
     sqlOptimization
       .SQLOptimizeV2({
         optimization_name: baseValue.optimizationName,
@@ -66,7 +70,7 @@ const SqlOptimizationCreate = () => {
         instance_name: sqlInfoValue.instanceName,
         schema_name: sqlInfoValue.instanceSchema,
         db_type: sqlInfoValue.dbType,
-        sql_content: sql,
+        sql_content: getSql(),
         metadata: sqlInfoValue.tableStructure,
         explain_info: sqlInfoValue.executionPlan,
         input_sql_file: sqlInfoValue.sqlFile?.[0],

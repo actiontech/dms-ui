@@ -29,13 +29,15 @@ const SqlAuditCreate = () => {
   const [auditLoading, setAuditLoading] = useState(false);
   const auditSQL: SQLInfoFormProps['submit'] = async (values) => {
     const baseValues = await baseForm.validateFields();
-    const sql = isSupportLanguage(values.dbType)
-      ? values.sql
-      : values.originSql;
-
+    const getSql = () => {
+      if (isSupportLanguage(values.dbType)) {
+        return values.sql;
+      }
+      return values.originSql || values.sql;
+    };
     const params: ICreateSQLAuditRecordV1Params = {
       project_name: projectName,
-      sqls: sql,
+      sqls: getSql(),
       input_sql_file: values.sqlFile?.[0],
       input_mybatis_xml_file: values.mybatisFile?.[0],
       input_zip_file: values.zipFile?.[0],
