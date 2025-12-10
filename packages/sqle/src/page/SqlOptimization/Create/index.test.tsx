@@ -547,6 +547,63 @@ describe('sqle/SqlOptimization/Create', () => {
     ).toBeInTheDocument();
   });
 
+  it('should use sql when language is not supported and originSql is empty', async () => {
+    const { baseElement } = sqleSuperRender(customRender());
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('div[title="tidb-1(10.186.62.17:4000)"]', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceSchema', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('div[title="testSchema"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const sqlEditor = queryBySelector('.custom-monaco-editor', baseElement)!;
+    const sqlValue = 'SELECT * FROM test;';
+    await act(async () => {
+      fireEvent.input(sqlEditor, {
+        target: { value: sqlValue }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+
+    fireEvent.click(getBySelector('.create-optimization-button'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(optimizeSQLReqSpy).toHaveBeenCalledWith({
+      optimization_name: 'UI20240101120000000',
+      git_http_url: undefined,
+      git_user_name: undefined,
+      git_user_password: undefined,
+      input_mybatis_xml_file: undefined,
+      input_sql_file: undefined,
+      input_zip_file: undefined,
+      instance_name: 'tidb-1',
+      schema_name: 'testSchema',
+      project_name: mockProjectInfo.projectName,
+      sql_content: sqlValue,
+      db_type: 'TiDB',
+      metadata: undefined,
+      explain_info: undefined
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlOptimization/updateSubmitLoading',
+      payload: {
+        loading: false
+      }
+    });
+    expect(
+      screen.getByText('优化进行中，预计5-10分钟后完成。感谢您的耐心等待。')
+    ).toBeInTheDocument();
+  });
+
   it('reset form values', async () => {
     const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));

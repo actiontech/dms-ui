@@ -218,6 +218,52 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     );
   });
 
+  it('should use sql when language is not supported and originSql is empty in auditAction', async () => {
+    (isSupportLanguage as jest.Mock).mockImplementation(() => false);
+    const addDataExportTaskSpy = dataExport.AddDataExportTask();
+    const updateAuditLoadingSpy = jest.fn();
+    const updateFormValuesSpy = jest.fn();
+    const updateTaskIDsSpy = jest.fn();
+
+    mockUseCreateDataExportReduxManage({
+      auditLoading: false,
+      updateAuditLoading: updateAuditLoadingSpy,
+      updateFormValues: updateFormValuesSpy,
+      updateTaskIDs: updateTaskIDsSpy
+    });
+
+    const { result } = renderHook(() => useCreateExportTaskForm());
+
+    render(<CustomCom {...result.current} dbType="unsupported_db" />);
+    fireEvent.change(screen.getByLabelText('name'), {
+      target: { value: 'name' }
+    });
+    fireEvent.change(screen.getByLabelText('dbService'), {
+      target: { value: '100' }
+    });
+    fireEvent.change(screen.getByLabelText('schema'), {
+      target: { value: 'schema' }
+    });
+    fireEvent.change(screen.getByLabelText('sql'), {
+      target: { value: 'select 1;' }
+    });
+
+    fireEvent.click(screen.getByText('auditAction'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(addDataExportTaskSpy).toHaveBeenCalledWith({
+      project_uid: mockProjectInfo.projectID,
+      data_export_tasks: [
+        {
+          database_name: 'schema',
+          db_service_uid: '100',
+          export_sql: 'select 1;'
+        }
+      ]
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+  });
+
   it('should rest all forms when executed "resetAllForm"', async () => {
     const { result } = renderHook(() => useCreateExportTaskForm());
 
