@@ -30,6 +30,7 @@ export const OperationRecordListColumn: ActiontechTableColumn<
   {
     dataIndex: 'operation_user',
     title: () => t('operationRecord.list.column.operator'),
+    className: 'whitespace-pre',
     render: (userInfo) => {
       if (!userInfo) {
         return '-';

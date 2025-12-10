@@ -61,7 +61,11 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
-                  admin
+                  <span
+                    class="whitespace-pre"
+                  >
+                    admin
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
@@ -738,7 +742,11 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
-                  admin
+                  <span
+                    class="whitespace-pre"
+                  >
+                    admin
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
@@ -1765,7 +1773,11 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
-                  admin
+                  <span
+                    class="whitespace-pre"
+                  >
+                    admin
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"

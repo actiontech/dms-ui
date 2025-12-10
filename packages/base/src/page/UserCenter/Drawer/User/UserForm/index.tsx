@@ -1,5 +1,6 @@
 import { IUserFormProps } from './index.type';
 import { Form, Switch } from 'antd';
+import type { Rule } from 'antd/es/form';
 import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/dms-kit';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +15,27 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
+
+  const getUsernameRules = (): Rule[] => {
+    const rules: Rule[] = [
+      {
+        required: true,
+        message: t('common.form.rule.require', {
+          name: t('dmsUserCenter.user.userForm.username')
+        })
+      }
+    ];
+
+    if (!props.isUpdate) {
+      rules.push({
+        pattern: /^\S(.*\S)?$/,
+        message: t('dmsUserCenter.user.userForm.usernameNoSpaces')
+      });
+    }
+
+    return rules;
+  };
+
   useEffect(() => {
     if (props.visible) {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
@@ -25,18 +47,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         name="username"
         label={t('dmsUserCenter.user.userForm.username')}
         validateFirst={true}
-        rules={[
-          {
-            required: true,
-            message: t('common.form.rule.require', {
-              name: t('dmsUserCenter.user.userForm.username')
-            })
-          },
-          {
-            pattern: /^\S*$/,
-            message: t('dmsUserCenter.user.userForm.usernameNoSpaces')
-          }
-        ]}
+        rules={getUsernameRules()}
       >
         <BasicInput
           disabled={props.isUpdate}

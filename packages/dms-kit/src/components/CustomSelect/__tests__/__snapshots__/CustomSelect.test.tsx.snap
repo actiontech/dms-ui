@@ -3,7 +3,7 @@
 exports[`lib/CustomSelect should handle tags mode and render custom tags 1`] = `
 <div>
   <div
-    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace custom-select-class css-pti5z8 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-open"
+    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace custom-select-class css-wd6pz6 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-open"
   >
     <div
       class="ant-select-selector"
@@ -17,7 +17,7 @@ exports[`lib/CustomSelect should handle tags mode and render custom tags 1`] = `
         >
           <span>
             <span
-              class="custom-select-option-content css-vgjuov"
+              class="custom-select-option-content css-17mg133"
             >
               <span
                 class="custom-select-option-content-prefix"
@@ -115,7 +115,7 @@ exports[`lib/CustomSelect should handle tags mode and render custom tags 1`] = `
 exports[`lib/CustomSelect should render default select and handle search 1`] = `
 <div>
   <div
-    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+    class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
     style="width: 200px;"
   >
     <div

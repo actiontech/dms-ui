@@ -173,7 +173,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         ID
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名
@@ -311,7 +311,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test
                       </td>
@@ -535,7 +535,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test666
                       </td>
@@ -718,7 +718,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         admin
                       </td>
@@ -972,7 +972,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         global-view
                       </td>
@@ -1170,7 +1170,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         global-management
                       </td>
@@ -1617,7 +1617,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       ID
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                       scope="col"
                     >
                       用户名
@@ -1755,7 +1755,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       test
                     </td>
@@ -1949,7 +1949,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       test666
                     </td>
@@ -2102,7 +2102,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       admin
                     </td>
@@ -2325,7 +2325,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       global-view
                     </td>
@@ -2493,7 +2493,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       global-management
                     </td>
@@ -2909,7 +2909,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       ID
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                       scope="col"
                     >
                       用户名
@@ -3047,7 +3047,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       test
                     </td>
@@ -3271,7 +3271,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       test666
                     </td>
@@ -3454,7 +3454,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       admin
                     </td>
@@ -3708,7 +3708,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       global-view
                     </td>
@@ -3906,7 +3906,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       </div>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="ant-table-cell whitespace-pre"
                     >
                       global-management
                     </td>
@@ -4353,7 +4353,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         ID
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名
@@ -4491,7 +4491,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6660
                       </td>
@@ -4685,7 +4685,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6661
                       </td>
@@ -4879,7 +4879,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6662
                       </td>
@@ -5073,7 +5073,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6663
                       </td>
@@ -5267,7 +5267,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6664
                       </td>
@@ -5461,7 +5461,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6665
                       </td>
@@ -5655,7 +5655,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6666
                       </td>
@@ -5849,7 +5849,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6667
                       </td>
@@ -6043,7 +6043,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6668
                       </td>
@@ -6237,7 +6237,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test6669
                       </td>
@@ -6431,7 +6431,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66610
                       </td>
@@ -6625,7 +6625,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66611
                       </td>
@@ -6819,7 +6819,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66612
                       </td>
@@ -7013,7 +7013,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66613
                       </td>
@@ -7207,7 +7207,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66614
                       </td>
@@ -7401,7 +7401,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66615
                       </td>
@@ -7595,7 +7595,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66616
                       </td>
@@ -7789,7 +7789,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66617
                       </td>
@@ -7983,7 +7983,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66618
                       </td>
@@ -8177,7 +8177,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66619
                       </td>
@@ -8632,7 +8632,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         ID
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名
@@ -8770,7 +8770,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66620
                       </td>
@@ -8964,7 +8964,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66621
                       </td>
@@ -9158,7 +9158,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66622
                       </td>
@@ -9352,7 +9352,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66623
                       </td>
@@ -9546,7 +9546,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66624
                       </td>
@@ -9740,7 +9740,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66625
                       </td>
@@ -9934,7 +9934,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66626
                       </td>
@@ -10128,7 +10128,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66627
                       </td>
@@ -10322,7 +10322,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66628
                       </td>
@@ -10516,7 +10516,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66629
                       </td>
@@ -10710,7 +10710,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66630
                       </td>
@@ -10904,7 +10904,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66631
                       </td>
@@ -11098,7 +11098,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66632
                       </td>
@@ -11292,7 +11292,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66633
                       </td>
@@ -11486,7 +11486,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66634
                       </td>
@@ -11680,7 +11680,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66635
                       </td>
@@ -11874,7 +11874,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66636
                       </td>
@@ -12068,7 +12068,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66637
                       </td>
@@ -12262,7 +12262,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66638
                       </td>
@@ -12456,7 +12456,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         </div>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test66639
                       </td>
@@ -12911,7 +12911,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                         ID
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名

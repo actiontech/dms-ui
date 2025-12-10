@@ -21,7 +21,7 @@ const CustomAvatar: React.FC<CustomAvatarProps> = (props) => {
 
   return (
     <BasicToolTip
-      title={noTips ? '' : name}
+      title={noTips ? '' : <span className="whitespace-pre">{name}</span>}
       placement="top"
       className={classNames(toolTipsWrapperClassName)}
     >

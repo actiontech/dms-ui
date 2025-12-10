@@ -332,7 +332,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -485,7 +485,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1250,7 +1250,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1403,7 +1403,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"

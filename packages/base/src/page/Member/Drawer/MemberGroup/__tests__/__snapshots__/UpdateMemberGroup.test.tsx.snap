@@ -141,7 +141,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should render update member group 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -549,7 +549,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should render update member group 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -717,7 +717,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should render update member group 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1085,7 +1085,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should send update member group re
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1493,7 +1493,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should send update member group re
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1661,7 +1661,7 @@ exports[`base/Member/Drawer/UpdateMemberGroup should send update member group re
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"

@@ -26,3 +26,10 @@ nav:
 - **Demo 示例规范化**
   - 添加必要的注释说明，特别是复杂配置和特殊处理
   - 代码保持简洁，移除冗余配置
+
+## 1.0.3
+
+- ConfigItem组件descNode类型由string改为React.ReactNode
+- CustomAvatar中Tooltip title改动，用于适配用户名的空格展示
+- CustomSelect样式变更，用于适配用户名的空格展示
+- BasicSelect样式变更，用于适配用户名的空格展示

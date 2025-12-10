@@ -180,7 +180,7 @@ exports[`useUsername should render options when use generateUsernameSelectOption
               >
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre ant-select-item-option-active"
                   label="a1"
                   title="a1"
                 >
@@ -198,7 +198,7 @@ exports[`useUsername should render options when use generateUsernameSelectOption
                 </div>
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre"
                   label="a2"
                   title="a2"
                 >

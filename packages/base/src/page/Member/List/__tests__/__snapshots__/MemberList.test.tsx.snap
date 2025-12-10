@@ -49,7 +49,7 @@ exports[`base/MemberList should render empty tips when request not success 1`] =
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名
@@ -233,7 +233,7 @@ exports[`base/MemberList should render member table 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                         scope="col"
                       >
                         用户名
@@ -314,7 +314,7 @@ exports[`base/MemberList should render member table 1`] = `
                       data-row-key="700501"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         admin
                       </td>
@@ -401,7 +401,7 @@ exports[`base/MemberList should render member table 1`] = `
                       data-row-key="700502"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test
                       </td>
@@ -527,7 +527,7 @@ exports[`base/MemberList should render member table 1`] = `
                       data-row-key="700503"
                     >
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell whitespace-pre"
                       >
                         test-2
                       </td>

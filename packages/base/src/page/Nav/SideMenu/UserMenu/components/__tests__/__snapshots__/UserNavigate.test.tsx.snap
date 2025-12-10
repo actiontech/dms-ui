@@ -52,9 +52,12 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 2`] = `
             >
               <div
                 class="header"
-                title="Test name"
               >
-                Test name
+                <span
+                  class="whitespace-pre"
+                >
+                  Test name
+                </span>
               </div>
               <div
                 class="content"
@@ -234,9 +237,12 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 3`] = `
             >
               <div
                 class="header"
-                title="Test name"
               >
-                Test name
+                <span
+                  class="whitespace-pre"
+                >
+                  Test name
+                </span>
               </div>
               <div
                 class="content"
@@ -416,9 +422,12 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
             >
               <div
                 class="header"
-                title="Test name"
               >
-                Test name
+                <span
+                  class="whitespace-pre"
+                >
+                  Test name
+                </span>
               </div>
               <div
                 class="content"

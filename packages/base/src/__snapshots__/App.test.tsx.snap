@@ -229,7 +229,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -1382,7 +1382,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div

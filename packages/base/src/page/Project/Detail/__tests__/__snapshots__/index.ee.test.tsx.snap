@@ -78,7 +78,7 @@ exports[`test base/page/project/detail/ee should match snapshot when the current
                    暂无最近打开的项目, 请选择一个项目!
                 </span>
                 <div
-                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
                   searchinputref="[object Object]"
                 >
                   <div
