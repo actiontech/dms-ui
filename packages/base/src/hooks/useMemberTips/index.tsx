@@ -35,6 +35,7 @@ const useMemberTips = () => {
           key={member.user_id}
           value={member.user_id ?? ''}
           label={member.user_name}
+          className="select-option-whitespace-pre"
         >
           {member.user_name}
         </Select.Option>
@@ -47,7 +48,9 @@ const useMemberTips = () => {
       label: (
         <Space>
           <CustomAvatar noTips size="small" name={member.user_name} />
-          <Typography.Text>{member.user_name}</Typography.Text>
+          <Typography.Text className="whitespace-pre">
+            {member.user_name}
+          </Typography.Text>
         </Space>
       ),
       value: member.user_id
