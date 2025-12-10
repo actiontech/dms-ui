@@ -562,6 +562,56 @@ describe('sqle/SqlAudit/Create', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('should use sql when language is not supported and originSql is empty', async () => {
+    getInstanceSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          db_type: 'TiDB'
+        }
+      })
+    );
+    const { baseElement } = sqleSuperRender(customRender());
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('div[title="tidb-1(10.186.62.17:4000)"]', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#instanceSchema', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="testSchema"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    const sqlEditor = queryBySelector('.custom-monaco-editor', baseElement)!;
+    const sqlValue = 'SELECT * FROM test;';
+    await act(async () => {
+      fireEvent.input(sqlEditor, {
+        target: { value: sqlValue }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
+      db_type: undefined,
+      git_http_url: undefined,
+      git_user_name: undefined,
+      git_user_password: undefined,
+      input_mybatis_xml_file: undefined,
+      input_sql_file: undefined,
+      input_zip_file: undefined,
+      instance_name: 'tidb-1',
+      instance_schema: 'testSchema',
+      project_name: 'default',
+      sqls: sqlValue
+    });
+  });
+
   it('create business tags', async () => {
     const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
