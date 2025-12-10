@@ -219,7 +219,7 @@ const UserNavigate: React.FC<Props> = ({
         placement: 'topRight'
       }}
       items={menus}
-      header={username}
+      header={<span className="whitespace-pre">{username}</span>}
     >
       <CustomAvatarStyleWrapper className="action-avatar">
         {username?.[0]?.toUpperCase()}
