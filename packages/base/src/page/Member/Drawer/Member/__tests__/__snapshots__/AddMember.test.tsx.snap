@@ -136,7 +136,7 @@ exports[`base/Member/Drawer/AddMember should render add member form with all fie
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"

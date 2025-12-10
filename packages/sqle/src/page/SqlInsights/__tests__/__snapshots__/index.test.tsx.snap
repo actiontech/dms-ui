@@ -21,7 +21,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-iy4o4x ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -2198,7 +2198,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -2229,7 +2229,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -2599,7 +2599,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -2629,7 +2629,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -2903,7 +2903,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-iy4o4x ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -3070,7 +3070,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -3101,7 +3101,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -3345,7 +3345,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -3375,7 +3375,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -3866,7 +3866,7 @@ exports[`SqlInsights should render component correctly 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-iy4o4x ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -4033,7 +4033,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -4064,7 +4064,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -4306,7 +4306,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -4336,7 +4336,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-vgjuov"
+                        class="custom-select-option-content css-17mg133"
                       >
                         <span
                           class="custom-select-option-content-prefix"

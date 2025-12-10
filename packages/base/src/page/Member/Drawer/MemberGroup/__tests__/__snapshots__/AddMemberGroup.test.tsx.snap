@@ -140,7 +140,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -667,7 +667,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1194,7 +1194,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1598,7 +1598,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1711,7 +1711,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1974,7 +1974,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
               >
                 <div
                   aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre ant-select-item-option-active ant-select-item-option-selected"
                   label="test"
                   title="test"
                 >
@@ -2012,7 +2012,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                 </div>
                 <div
                   aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre ant-select-item-option-selected"
                   label="test666"
                   title="test666"
                 >
@@ -2050,7 +2050,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                 </div>
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre"
                   label="admin"
                   title="admin"
                 >
@@ -2062,7 +2062,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                 </div>
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre"
                   label="global-view"
                   title="global-view"
                 >
@@ -2074,7 +2074,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                 </div>
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
+                  class="ant-select-item ant-select-item-option select-option-whitespace-pre"
                   label="global-management"
                   title="global-management"
                 >

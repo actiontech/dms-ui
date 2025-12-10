@@ -3,7 +3,7 @@
 exports[`lib/CustomOptionLabel render ui when no prefix 1`] = `
 <div>
   <span
-    class="custom-select-option-content css-vgjuov"
+    class="custom-select-option-content css-17mg133"
   >
     <span
       class="custom-select-option-content-label"
