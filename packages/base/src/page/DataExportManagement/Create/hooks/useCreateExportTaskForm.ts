@@ -59,16 +59,19 @@ const useCreateExportTaskForm = () => {
 
     updateAuditLoading(true);
 
-    const sql = isSupportLanguage(sourceValues.dbType)
-      ? methodValues.sql
-      : methodValues.originSql;
+    const getSql = () => {
+      if (isSupportLanguage(sourceValues.dbType)) {
+        return methodValues.sql;
+      }
+      return methodValues.originSql || methodValues.sql;
+    };
     return DataExportTask.AddDataExportTask({
       project_uid: projectID,
       data_export_tasks: [
         {
           database_name: sourceValues.schema,
           db_service_uid: sourceValues.dbService,
-          export_sql: sql
+          export_sql: getSql()
         }
       ]
     })
