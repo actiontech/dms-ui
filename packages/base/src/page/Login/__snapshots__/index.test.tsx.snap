@@ -804,7 +804,7 @@ exports[`page/Login-ee render login success when has location search val render 
 </body>
 `;
 
-exports[`page/Login-ee render login success when has location search val render with other search val 1`] = `
+exports[`page/Login-ee render login success when has location search val render with cloud-beaver path 1`] = `
 <body>
   <div>
     <section
@@ -965,7 +965,7 @@ exports[`page/Login-ee render login success when has location search val render 
                     </div>
                     <a
                       class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
-                      href="/v1/dms/oauth2/link?target=%252Findex1"
+                      href="/v1/dms/oauth2/link?target=%252Fproject%252F700300%252Fcloud-beaver"
                     >
                       <span>
                         Login With Oauth2
@@ -1218,7 +1218,7 @@ exports[`page/Login-ee render login success when has location search val render 
 </body>
 `;
 
-exports[`page/Login-ee render login success when has location search val render with other search val 2`] = `
+exports[`page/Login-ee render login success when has location search val render with other search val 1`] = `
 <body>
   <div>
     <section
@@ -1379,7 +1379,7 @@ exports[`page/Login-ee render login success when has location search val render 
                     </div>
                     <a
                       class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-1vnelmv"
-                      href="/v1/dms/oauth2/link?target=%252Fproject%252F700300%252Fcloud-beaver"
+                      href="/v1/dms/oauth2/link?target=%252Findex1"
                     >
                       <span>
                         Login With Oauth2

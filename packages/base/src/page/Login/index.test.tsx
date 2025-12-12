@@ -29,6 +29,8 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import sms from '@actiontech/shared/lib/testUtil/mockApi/base/sms';
+import { mockUseSessionUser } from '../../testUtils/mockHooks/mockUseSessionUser';
+import { mockUseNavigateToWorkbench } from '../../testUtils/mockHooks/mockUseNavigateToWorkbench';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,6 +39,7 @@ jest.mock('react-router-dom', () => {
     useSearchParams: jest.fn()
   };
 });
+
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn()
@@ -47,6 +50,9 @@ describe('page/Login-ee', () => {
   const navigateSpy = jest.fn();
   const assignMock = jest.fn();
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
+  const getSessionUserInfoAsyncSpy = jest.fn(() => Promise.resolve(false));
+  const navigateToWorkbenchAsyncSpy = jest.fn(() => Promise.resolve(undefined));
+  const getAvailabilityZoneTipsAsyncSpy = jest.fn(() => Promise.resolve([]));
   let requestGetOauth2Tip: jest.SpyInstance;
   let requestGetLoginBasicConfig: jest.SpyInstance;
   let verifyUserLoginSpy: jest.SpyInstance;
@@ -71,6 +77,24 @@ describe('page/Login-ee', () => {
     verifyUserLoginSpy = dms.verifyUserLogin();
     sendSmsCodeSpy = sms.sendSmsCode();
     dms.mockAllApi();
+
+    getSessionUserInfoAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve(false));
+    getAvailabilityZoneTipsAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve([]));
+    navigateToWorkbenchAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve(undefined));
+
+    mockUseSessionUser({
+      getSessionUserInfoAsync: getSessionUserInfoAsyncSpy
+    });
+    mockUseNavigateToWorkbench({
+      navigateToWorkbenchAsync: navigateToWorkbenchAsyncSpy,
+      getAvailabilityZoneTipsAsync: getAvailabilityZoneTipsAsyncSpy
+    });
   });
 
   afterEach(() => {
@@ -231,13 +255,22 @@ describe('page/Login-ee', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'user/updateIsLoggingIn',
+      payload: true
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       type: 'user/updateToken',
       payload: {
         token: `Bearer ${UserInfo.token}`
       }
     });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      type: 'user/updateIsLoggingIn',
+      payload: false
+    });
+    expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(ROUTE_PATHS.BASE.HOME);
   });
 
@@ -305,13 +338,22 @@ describe('page/Login-ee', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      expect(dispatchSpy).toHaveBeenCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
         type: 'user/updateToken',
         payload: {
           token: `Bearer ${UserInfo.token}`
         }
       });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/index1');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
@@ -321,7 +363,7 @@ describe('page/Login-ee', () => {
       );
     });
 
-    it('render with other search val', async () => {
+    it('render with cloud-beaver path', async () => {
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
@@ -364,13 +406,22 @@ describe('page/Login-ee', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      expect(dispatchSpy).toHaveBeenCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
         type: 'user/updateToken',
         payload: {
           token: `Bearer ${UserInfo.token}`
         }
       });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith(
         `/project/700300/cloud-beaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
@@ -425,6 +476,22 @@ describe('page/Login-ee', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateToken',
+        payload: {
+          token: `Bearer ${UserInfo.token}`
+        }
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/transit?from=cloudbeaver');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
@@ -433,6 +500,50 @@ describe('page/Login-ee', () => {
         CompanyNoticeDisplayStatusEnum.NotDisplayed
       );
     });
+  });
+
+  it('should navigate to workbench when shouldNavigateToWorkbench is true', async () => {
+    const requestLogin = dms.addSession();
+    getSessionUserInfoAsyncSpy.mockImplementation(() => Promise.resolve(true));
+
+    requestGetOauth2Tip.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          enable_oauth2: false,
+          login_tip: 'Login no Oauth2'
+        }
+      })
+    );
+
+    requestGetLoginBasicConfig.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
+          disable_user_pwd_login: false
+        }
+      })
+    );
+
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    fireEvent.change(getBySelector('#username', baseElement), {
+      target: { value: 'admin' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: { value: 'admin' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('登 录'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestLogin).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAvailabilityZoneTipsAsyncSpy).toHaveBeenCalledTimes(1);
+    expect(navigateToWorkbenchAsyncSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should enable login button when user is admin regardless of disable_user_pwd_login setting', async () => {

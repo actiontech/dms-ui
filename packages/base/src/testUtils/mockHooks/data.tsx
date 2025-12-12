@@ -13,3 +13,19 @@ export const mockUseRecentlySelectedZoneData = {
   verifyRecentlySelectedZoneRecord: jest.fn(),
   clearRecentlySelectedZone: jest.fn()
 };
+
+export const mockUseSessionUserData = {
+  sessionUser: undefined,
+  getSessionUserLoading: false,
+  getUserBySession: jest.fn(),
+  getSessionUserInfoAsync: jest.fn(() => Promise.resolve(false)),
+  shouldNavigateToWorkbench: false,
+  getSessionUserSystemLoading: false
+};
+
+export const mockUseNavigateToWorkbenchData = {
+  navigateToWorkbenchAsync: jest.fn(() => Promise.resolve(undefined)),
+  getAvailabilityZoneTipsAsync: jest.fn(() => Promise.resolve([])),
+  navigateToWorkbenchLoading: false,
+  getAvailabilityZoneTipsLoading: false
+};
