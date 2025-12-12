@@ -7,7 +7,8 @@ import reducers, {
   updateBindProjects,
   updateManagementPermissions,
   updateLanguage,
-  updateSystemPreference
+  updateSystemPreference,
+  updateIsLoggingIn
 } from '.';
 import { IReduxState } from '..';
 import { LocalStorageWrapper } from '@actiontech/dms-kit';
@@ -33,7 +34,8 @@ describe('store user', () => {
     role: '',
     isUserInfoFetched: false,
     language: SupportLanguage.zhCN,
-    systemPreference: undefined
+    systemPreference: undefined,
+    isLoggingIn: false
   };
 
   it('should update token when dispatch updateToken action', () => {
@@ -54,7 +56,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -76,7 +79,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -99,7 +103,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -122,7 +127,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: SystemRole.admin,
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -144,7 +150,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -161,7 +168,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: true,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -191,7 +199,8 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -214,7 +223,8 @@ describe('store user', () => {
       managementPermissions: mockManagementPermissions,
       role: '',
       isUserInfoFetched: false,
-      systemPreference: undefined
+      systemPreference: undefined,
+      isLoggingIn: false
     });
   });
 
@@ -236,7 +246,26 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       isUserInfoFetched: false,
-      systemPreference: GetUserSystemEnum.MANAGEMENT
+      systemPreference: GetUserSystemEnum.MANAGEMENT,
+      isLoggingIn: false
+    });
+  });
+
+  it('should update systemPreference when dispatch updateIsLoggingIn action', () => {
+    const newState = reducers(state, updateIsLoggingIn(true));
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
+      bindProjects: [],
+      managementPermissions: [],
+      role: '',
+      isUserInfoFetched: false,
+      systemPreference: undefined,
+      isLoggingIn: true
     });
   });
 });

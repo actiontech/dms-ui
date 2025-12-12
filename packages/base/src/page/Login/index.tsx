@@ -1,7 +1,7 @@
 import { message, Form, Tabs } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { updateToken } from '../../store/user';
+import { updateToken, updateIsLoggingIn } from '../../store/user';
 import LoginLayout from './components/LoginLayout';
 import { EmptyBox } from '@actiontech/dms-kit';
 import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
@@ -23,6 +23,9 @@ import VerificationCodeForm from './components/VerificationCodeForm';
 import OAuth2LoginForm from './components/OAuth2LoginForm';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useState, useMemo, useEffect } from 'react';
+import useSessionUser from '../../hooks/useSessionUser';
+import useNavigateToWorkbench from '../../hooks/useNavigateToWorkbench';
+
 const Login = () => {
   const { t } = useTranslation();
   useBrowserVersionTips();
@@ -44,6 +47,16 @@ const Login = () => {
   const navigate = useTypedNavigate();
   const extractQueries = useTypedQuery();
 
+  const { getSessionUserInfoAsync, getSessionUserSystemLoading } =
+    useSessionUser();
+
+  const {
+    navigateToWorkbenchAsync,
+    getAvailabilityZoneTipsAsync,
+    navigateToWorkbenchLoading,
+    getAvailabilityZoneTipsLoading
+  } = useNavigateToWorkbench();
+
   const { data: oauthConfig, run: getOauth2Tips } = useRequest(
     () => {
       return DmsApi.OAuth2Service.GetOauth2Tips().then(
@@ -64,6 +77,7 @@ const Login = () => {
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
     const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
+    dispatch(updateIsLoggingIn(true));
     DmsApi.SessionService.AddSession({
       session: {
         username: loginFormValues.username,
@@ -86,22 +100,39 @@ const Login = () => {
               token
             })
           );
-          const encodedTarget = extractQueries(
-            ROUTE_PATHS.BASE.LOGIN.index
-          )?.target;
-          if (encodedTarget) {
-            const decoded = decodeURIComponent(encodedTarget);
-            const [path, targetParams] = decoded.split('?');
-            if (targetParams) {
-              navigate(`${path}?${targetParams}`);
-            } else if (path.endsWith('cloud-beaver')) {
-              navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+          getSessionUserInfoAsync().then((shouldNavigateToWorkbench) => {
+            if (shouldNavigateToWorkbench) {
+              // #if [ee]
+              getAvailabilityZoneTipsAsync().then(() => {
+                navigateToWorkbenchAsync().then(() => {
+                  dispatch(updateIsLoggingIn(false));
+                });
+              });
+              // #else
+              navigateToWorkbenchAsync().then(() => {
+                dispatch(updateIsLoggingIn(false));
+              });
+              // #endif
             } else {
-              navigate(path);
+              const encodedTarget = extractQueries(
+                ROUTE_PATHS.BASE.LOGIN.index
+              )?.target;
+              if (encodedTarget) {
+                const decoded = decodeURIComponent(encodedTarget);
+                const [path, targetParams] = decoded.split('?');
+                if (targetParams) {
+                  navigate(`${path}?${targetParams}`);
+                } else if (path.endsWith('cloud-beaver')) {
+                  navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+                } else {
+                  navigate(path);
+                }
+              } else {
+                navigate(ROUTE_PATHS.BASE.HOME);
+              }
+              dispatch(updateIsLoggingIn(false));
             }
-          } else {
-            navigate(ROUTE_PATHS.BASE.HOME);
-          }
+          });
         }
         // #if [ee]
         LocalStorageWrapper.set(
@@ -169,7 +200,12 @@ const Login = () => {
           hidden={allowVerificationCode}
           form={loginForm}
           onSubmit={login}
-          loading={loading}
+          loading={
+            loading ||
+            getSessionUserSystemLoading ||
+            getAvailabilityZoneTipsLoading ||
+            navigateToWorkbenchLoading
+          }
         />
         {/* #if [ee] */}
         <EmptyBox if={allowVerificationCode}>

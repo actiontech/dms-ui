@@ -14,6 +14,8 @@ import {
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 import BindUser from '.';
+import { mockUseSessionUser } from '../../testUtils/mockHooks/mockUseSessionUser';
+import { mockUseNavigateToWorkbench } from '../../testUtils/mockHooks/mockUseNavigateToWorkbench';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -30,6 +32,10 @@ jest.mock('react-redux', () => ({
 describe('page/BindUser-ee', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
+  const getSessionUserInfoAsyncSpy = jest.fn(() => Promise.resolve(false));
+  const navigateToWorkbenchAsyncSpy = jest.fn(() => Promise.resolve(undefined));
+  const getAvailabilityZoneTipsAsyncSpy = jest.fn(() => Promise.resolve([]));
+
   const customRender = (path = '/user/bind') => {
     return baseSuperRender(<BindUser />, undefined, {
       routerProps: { initialEntries: [path] }
@@ -41,6 +47,24 @@ describe('page/BindUser-ee', () => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     jest.useFakeTimers();
     dms.mockAllApi();
+
+    getSessionUserInfoAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve(false));
+    getAvailabilityZoneTipsAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve([]));
+    navigateToWorkbenchAsyncSpy
+      .mockClear()
+      .mockImplementation(() => Promise.resolve(undefined));
+
+    mockUseSessionUser({
+      getSessionUserInfoAsync: getSessionUserInfoAsyncSpy
+    });
+    mockUseNavigateToWorkbench({
+      navigateToWorkbenchAsync: navigateToWorkbenchAsyncSpy,
+      getAvailabilityZoneTipsAsync: getAvailabilityZoneTipsAsyncSpy
+    });
   });
 
   afterEach(() => {
@@ -142,13 +166,22 @@ describe('page/BindUser-ee', () => {
         pwd: 'oauth2_admin'
       });
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      expect(dispatchSpy).toHaveBeenCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
         type: 'user/updateToken',
         payload: {
           token: 'Bearer token'
         }
       });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
@@ -187,7 +220,22 @@ describe('page/BindUser-ee', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestFn).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateToken',
+        payload: {
+          token: 'Bearer token'
+        }
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/project/test');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
@@ -222,7 +270,22 @@ describe('page/BindUser-ee', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestFn).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateToken',
+        payload: {
+          token: 'Bearer token'
+        }
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/project/test?active=overview');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
@@ -257,7 +320,22 @@ describe('page/BindUser-ee', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestFn).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateToken',
+        payload: {
+          token: 'Bearer token'
+        }
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith(
         '/cloud-beaver?open_cloud_beaver=true'
@@ -321,13 +399,22 @@ describe('page/BindUser-ee', () => {
       const search = `user_exist=true&dms_token=111111`;
       customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      expect(dispatchSpy).toHaveBeenCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
         type: 'user/updateToken',
         payload: {
           token: 'Bearer 111111'
         }
       });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/');
     });
@@ -339,6 +426,22 @@ describe('page/BindUser-ee', () => {
     )}`;
     customRender(`/user/bind?${search}`);
     await act(async () => jest.advanceTimersByTime(300));
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      type: 'user/updateToken',
+      payload: {
+        token: 'Bearer oauth2_token_val'
+      }
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      type: 'user/updateIsLoggingIn',
+      payload: true
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      type: 'user/updateIsLoggingIn',
+      payload: false
+    });
+    expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith('/project/test');
   });

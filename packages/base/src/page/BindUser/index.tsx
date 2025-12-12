@@ -1,9 +1,15 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  startTransition
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Typography, Form } from 'antd';
 import { OauthLoginFormFields } from './index.type';
-import { updateToken } from '../../store/user';
+import { updateToken, updateIsLoggingIn } from '../../store/user';
 import { ResponseCode } from '@actiontech/dms-kit';
 import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from '../Login/components/LoginLayout';
@@ -24,6 +30,8 @@ import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/dms-kit';
+import useSessionUser from '../../hooks/useSessionUser';
+import useNavigateToWorkbench from '../../hooks/useNavigateToWorkbench';
 const BindUser = () => {
   const navigate = useTypedNavigate();
   const { baseTheme } = useThemeStyleData();
@@ -35,28 +43,65 @@ const BindUser = () => {
   }, [extractQueries]);
   useBrowserVersionTips();
   const loginLock = useRef(false);
+
+  const { getSessionUserInfoAsync, getSessionUserSystemLoading } =
+    useSessionUser();
+
+  const {
+    navigateToWorkbenchAsync,
+    getAvailabilityZoneTipsAsync,
+    navigateToWorkbenchLoading,
+    getAvailabilityZoneTipsLoading
+  } = useNavigateToWorkbench();
+
   const concatToken = (token = '') => {
     if (!token) {
       return '';
     }
     return `Bearer ${token}`;
   };
+
   const navigateToTarget = useCallback(() => {
-    const encodedTarget = urlParams?.target;
-    if (encodedTarget) {
-      const decoded = decodeURIComponent(encodedTarget);
-      const [path, targetParams] = decoded.split('?');
-      if (targetParams) {
-        navigate(`${path}?${targetParams}`);
-      } else if (path.endsWith('cloud-beaver')) {
-        navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+    dispatch(updateIsLoggingIn(true));
+    getSessionUserInfoAsync().then((shouldNavigateToWorkbench) => {
+      if (shouldNavigateToWorkbench) {
+        // #if [ee]
+        getAvailabilityZoneTipsAsync().then(() => {
+          navigateToWorkbenchAsync().then(() => {
+            dispatch(updateIsLoggingIn(false));
+          });
+        });
+        // #else
+        navigateToWorkbenchAsync().then(() => {
+          dispatch(updateIsLoggingIn(false));
+        });
+        // #endif
       } else {
-        navigate(path);
+        const encodedTarget = urlParams?.target;
+        if (encodedTarget) {
+          const decoded = decodeURIComponent(encodedTarget);
+          const [path, targetParams] = decoded.split('?');
+          if (targetParams) {
+            navigate(`${path}?${targetParams}`);
+          } else if (path.endsWith('cloud-beaver')) {
+            navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+          } else {
+            navigate(path);
+          }
+        } else {
+          navigate(ROUTE_PATHS.BASE.HOME);
+        }
+        dispatch(updateIsLoggingIn(false));
       }
-    } else {
-      navigate(ROUTE_PATHS.BASE.HOME);
-    }
-  }, [navigate, urlParams]);
+    });
+  }, [
+    dispatch,
+    getSessionUserInfoAsync,
+    getAvailabilityZoneTipsAsync,
+    navigateToWorkbenchAsync,
+    urlParams,
+    navigate
+  ]);
   const login = (values: OauthLoginFormFields) => {
     const oauth2Token = urlParams?.oauth2_token;
     loginLock.current = true;
@@ -67,7 +112,13 @@ const BindUser = () => {
         duration: 0
       });
       loginLock.current = false;
-      navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
+      // 使用startTransition的原因如下：
+      // login 函数是表单的 onFinish 回调，属于同步用户交互事件
+      // navigate 可能会触发懒加载组件（Suspense）
+      // React 18 不允许在同步事件中直接触发 Suspense，否则会抛出错误
+      startTransition(() => {
+        navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
+      });
       return;
     }
     OAuth2.BindOauth2User({
@@ -134,9 +185,15 @@ const BindUser = () => {
     urlParams?.error,
     urlParams?.user_exist
   ]);
+  const isLoading =
+    loginLock.current ||
+    getSessionUserSystemLoading ||
+    getAvailabilityZoneTipsLoading ||
+    navigateToWorkbenchLoading;
+
   return (
     <LoginLayout>
-      <Form onFinish={login} disabled={loginLock.current}>
+      <Form onFinish={login} disabled={isLoading}>
         <Form.Item
           name="username"
           rules={[
@@ -196,7 +253,7 @@ const BindUser = () => {
           block
           htmlType="submit"
           className="login-btn"
-          loading={loginLock.current}
+          loading={isLoading}
         >
           {t('dmsLogin.oauth.submitButton')}
         </BasicButton>
