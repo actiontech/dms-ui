@@ -26,6 +26,7 @@ type UserReduxState = {
   isUserInfoFetched: boolean;
   language: SupportLanguage;
   systemPreference?: GetUserSystemEnum;
+  isLoggingIn: boolean;
 };
 
 const initialState: UserReduxState = {
@@ -44,7 +45,8 @@ const initialState: UserReduxState = {
     StorageKey.Language,
     DEFAULT_LANGUAGE
   ) as SupportLanguage,
-  systemPreference: undefined
+  systemPreference: undefined,
+  isLoggingIn: false
 };
 
 const user = createSlice({
@@ -118,6 +120,9 @@ const user = createSlice({
       }: PayloadAction<{ systemPreference?: GetUserSystemEnum }>
     ) => {
       state.systemPreference = systemPreference;
+    },
+    updateIsLoggingIn: (state, { payload }: PayloadAction<boolean>) => {
+      state.isLoggingIn = payload;
     }
   }
 });
@@ -131,7 +136,8 @@ export const {
   updateManagementPermissions,
   updateUserUid,
   updateUserInfoFetchStatus,
-  updateSystemPreference
+  updateSystemPreference,
+  updateIsLoggingIn
 } = user.actions;
 
 export default user.reducer;
