@@ -96,8 +96,8 @@ export const Wrapper: React.FC<{
   return <>{!initRenderApp && children}</>;
 };
 function App() {
-  const { token } = useSelector((state: IReduxState) => ({
-    token: state.user.token
+  const { isAfterLoggingIn } = useSelector((state: IReduxState) => ({
+    isAfterLoggingIn: !state.user.isLoggingIn && !!state.user.token
   }));
   const dispatch = useDispatch();
   const { notificationContextHolder } = useNotificationContext();
@@ -160,7 +160,9 @@ function App() {
     userOperationPermissions
   ]);
   const elements = useRoutes(
-    token ? (AuthRouterConfigData as RouteObject[]) : unAuthRouterConfig
+    isAfterLoggingIn
+      ? (AuthRouterConfigData as RouteObject[])
+      : unAuthRouterConfig
   );
   useChangeTheme();
   const themeData = useMemo(() => {
@@ -204,10 +206,10 @@ function App() {
     });
   }, [dispatch, fetchModuleSupportStatus, getUserBySession, updateDriverList]);
   useEffect(() => {
-    if (token) {
+    if (isAfterLoggingIn) {
       getInitialData();
     }
-  }, [token, getInitialData]);
+  }, [getInitialData, isAfterLoggingIn]);
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
@@ -314,7 +316,7 @@ function App() {
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}
-              <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
+              <EmptyBox if={isAfterLoggingIn} defaultNode={<>{elements}</>}>
                 <ErrorBoundary>{body}</ErrorBoundary>
               </EmptyBox>
             </ThemeProvider>

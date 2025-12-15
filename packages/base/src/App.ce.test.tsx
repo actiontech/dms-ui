@@ -59,7 +59,8 @@ describe('test App ce', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
-          token: 'AAh32ffdswt'
+          token: 'AAh32ffdswt',
+          isLoggingIn: false
         },
         nav: {
           modalStatus: {

@@ -55,4 +55,24 @@ describe('useSessionUser', () => {
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
   });
+
+  it('should get user system data', async () => {
+    const { result } = superRenderHook(() => useSessionUser(), undefined, {
+      initStore: {
+        user: { uid: 'test' }
+      }
+    });
+    expect(result.current.getSessionUserSystemLoading).toBeFalsy();
+    expect(result.current.shouldNavigateToWorkbench).toEqual(undefined);
+
+    await act(async () => {
+      result.current.getSessionUserInfoAsync();
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(getCurrentUserSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.getSessionUserSystemLoading).toBeFalsy();
+    expect(result.current.shouldNavigateToWorkbench).toBeFalsy();
+  });
 });
