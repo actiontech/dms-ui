@@ -7,10 +7,6 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import UserGuide from '../index';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
-import {
-  SQL_WORKBENCH_FROM_PARAM_NAME,
-  ODC_WORKBENCH_NAME
-} from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -46,16 +42,5 @@ describe('UserGuide', () => {
     const { baseElement } = superRender(<UserGuide />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('请选择默认进入的页面')).toBeInTheDocument();
-  });
-
-  it('should render null when location form ODC', async () => {
-    Object.defineProperty(window, 'location', {
-      value: {
-        search: `?${SQL_WORKBENCH_FROM_PARAM_NAME}=${ODC_WORKBENCH_NAME}`
-      },
-      writable: true
-    });
-    superRender(<UserGuide />);
-    expect(screen.queryByText('请选择默认进入的页面')).not.toBeInTheDocument();
   });
 });

@@ -93,7 +93,8 @@ describe('App', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
-          token: 'AAh32ffdswt'
+          token: 'AAh32ffdswt',
+          isLoggingIn: false
         },
         nav: {
           modalStatus: {
@@ -137,7 +138,8 @@ describe('App', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
-          token: ''
+          token: '',
+          isLoggingIn: false
         }
       });
     });
@@ -210,12 +212,16 @@ describe('App', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
-          token: ''
+          token: '',
+          isLoggingIn: false
         },
         nav: {
           modalStatus: {
             [ModalName.Company_Notice]: false
           }
+        },
+        availabilityZone: {
+          availabilityZoneTips: []
         }
       });
     });

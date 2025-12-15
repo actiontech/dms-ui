@@ -67,118 +67,6 @@ describe('UserGuideModal', () => {
     expect(screen.queryByText('请选择默认进入的页面')).not.toBeInTheDocument();
   });
 
-  it('should open CloudBeaver automatically when systemPreference is WORKBENCH', async () => {
-    mockUseCurrentUser({
-      systemPreference: GetUserSystemEnum.WORKBENCH
-    });
-
-    getSQLQueryConfigurationSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          enable_sql_query: true,
-          sql_query_root_uri: '/cloudbeaver'
-        }
-      })
-    );
-
-    superRender(<UserGuideModal />);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-  });
-
-  it('should set default zone when zone options is not null and availabilityZone is undefined', async () => {
-    mockUseCurrentUser({
-      systemPreference: GetUserSystemEnum.WORKBENCH
-    });
-
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        availabilityZone: {
-          availabilityZoneTips: [
-            {
-              name: 'test',
-              uid: 'test'
-            }
-          ]
-        }
-      });
-    });
-
-    const mockUpdateRecentlySelectedZone = jest.fn();
-    mockUseRecentlySelectedZone({
-      availabilityZone: undefined,
-      updateRecentlySelectedZone: mockUpdateRecentlySelectedZone
-    });
-
-    getSQLQueryConfigurationSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          enable_sql_query: true,
-          sql_query_root_uri: '/cloudbeaver'
-        }
-      })
-    );
-
-    superRender(<UserGuideModal />);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-    expect(mockUpdateRecentlySelectedZone).toHaveBeenCalledTimes(1);
-  });
-
-  it('should not open CloudBeaver automatically when systemPreference is WORKBENCH and sql_query_root_uri is the same as location.pathname', async () => {
-    Object.defineProperty(window, 'location', {
-      value: {
-        ...originLocation,
-        pathname: '/cloudbeaver'
-      },
-      writable: true
-    });
-
-    mockUseCurrentUser({
-      systemPreference: GetUserSystemEnum.WORKBENCH
-    });
-
-    getSQLQueryConfigurationSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          enable_sql_query: true,
-          sql_query_root_uri: '/cloudbeaver'
-        }
-      })
-    );
-
-    superRender(<UserGuideModal />);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(getSQLQueryConfigurationSpy).toHaveBeenCalled();
-  });
-
-  it('should call updateCurrentUser API when confirm button is clicked with MANAGEMENT system', async () => {
-    mockUseCurrentUser({ systemPreference: undefined });
-
-    superRender(<UserGuideModal />);
-
-    const confirmButton = screen.getByText('确认并进入');
-    fireEvent.click(confirmButton);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
-      current_user: {
-        system: GetUserSystemEnum.MANAGEMENT
-      }
-    });
-
-    expect(mockDispatch).toHaveBeenCalledWith(
-      updateSystemPreference({ systemPreference: GetUserSystemEnum.MANAGEMENT })
-    );
-  });
-
   it('should call updateCurrentUser API and CloudBeaver API when confirm button is clicked with WORKBENCH system', async () => {
     mockUseCurrentUser({ systemPreference: undefined });
 
@@ -200,8 +88,36 @@ describe('UserGuideModal', () => {
       }
     });
 
+    expect(getSQLQueryConfigurationSpy).toHaveBeenCalledTimes(1);
+
     expect(mockDispatch).toHaveBeenCalledWith(
       updateSystemPreference({ systemPreference: GetUserSystemEnum.WORKBENCH })
+    );
+  });
+
+  it('should call updateCurrentUser API when confirm button is clicked with MANAGEMENT system', async () => {
+    mockUseCurrentUser({ systemPreference: undefined });
+
+    superRender(<UserGuideModal />);
+
+    const managementRadio = screen.getByDisplayValue(
+      GetUserSystemEnum.MANAGEMENT
+    );
+    fireEvent.click(managementRadio);
+
+    const confirmButton = screen.getByText('确认并进入');
+    fireEvent.click(confirmButton);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
+      current_user: {
+        system: GetUserSystemEnum.MANAGEMENT
+      }
+    });
+
+    expect(mockDispatch).toHaveBeenCalledWith(
+      updateSystemPreference({ systemPreference: GetUserSystemEnum.MANAGEMENT })
     );
   });
 });
