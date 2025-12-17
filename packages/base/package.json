@@ -10,6 +10,10 @@
     "build:ee": "node ../../scripts/getGitVersion.mjs ee && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ee,SQLE vite build",
     "build:demo": "node ../../scripts/getGitVersion.mjs trial && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE,DEMO vite build",
     "preview": "vite preview",
+    "ts-check": "pnpm -w ts-check",
+    "eslint": "pnpm -w eslint",
+    "stylelint": "pnpm -w stylelint",
+    "prettier:c": "pnpm -w prettier:c",
     "test": "jest --watchAll=true",
     "test:c": "jest --coverage",
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"

@@ -20,7 +20,7 @@
     "eslint": "eslint packages/*/src/ packages/shared/lib/ scripts/cli/*/src",
     "stylelint": "stylelint packages/*/{src,lib}/**/{*.less,style.ts,element.ts}",
     "ts-check": "tsc --noEmit",
-    "checker": "concurrently \"pnpm ts-check\" \"pnpm eslint\" \"pnpm stylelint\" \"pnpm prettier:c\"",
+    "checker": "turbo run ts-check eslint stylelint prettier:c --filter=base",
     "test": "sh ./scripts/jest/run.sh",
     "test:c": "sh ./scripts/jest/run-coverage.sh",
     "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",

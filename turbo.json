@@ -38,6 +38,30 @@
         "lib/**"
       ]
     },
+    "ts-check": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ],
+      "outputs": []
+    },
+    "eslint": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ],
+      "outputs": []
+    },
+    "stylelint": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ],
+      "outputs": []
+    },
+    "prettier:c": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ],
+      "outputs": []
+    },
     "checker": {
       "outputs": []
     },

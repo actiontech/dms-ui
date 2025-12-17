@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-turbo-
 
       - name: Code lint checker
-        run: pnpm turbo run checker
+        run: pnpm run checker
 
   test-ee:
     runs-on: ubuntu-latest
@@ -49,6 +49,9 @@ jobs:
           key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-turbo-
+
+      - name: Build dms-kit (required for tests)
+        run: pnpm turbo run build --filter=@actiontech/dms-kit
 
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
@@ -75,6 +78,9 @@ jobs:
           key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-turbo-
+
+      - name: Build dms-kit (required for tests)
+        run: pnpm turbo run build --filter=@actiontech/dms-kit
 
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
