@@ -1,0 +1,60 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ce": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ee": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:demo": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "build:ee": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "build:demo": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "checker": {
+      "outputs": []
+    },
+    "base#build": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ]
+    },
+    "base#build:ee": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ]
+    },
+    "base#build:demo": {
+      "dependsOn": [
+        "@actiontech/dms-kit#build"
+      ]
+    }
+  }
+}

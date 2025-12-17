@@ -18,10 +18,7 @@
     "dev": "father dev --incremental",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
-    "docs:preview": "dumi preview",
-    "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "docs:preview": "dumi preview"
   },
   "dependencies": {
     "ahooks": "^3.7.0",

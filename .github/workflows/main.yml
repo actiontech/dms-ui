@@ -18,8 +18,16 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
       - name: Code lint checker
-        run: pnpm checker
+        run: pnpm turbo run checker
 
   test-ee:
     runs-on: ubuntu-latest
@@ -33,6 +41,14 @@ jobs:
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
@@ -51,6 +67,14 @@ jobs:
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
@@ -100,6 +124,14 @@ jobs:
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       - name: Merge coverage reports
         run: node ./scripts/jest/merge-report-json.js

@@ -3,17 +3,8 @@
   "version": "1.0.0",
   "main": "lib/index.ts",
   "license": "MIT",
-  "scripts": {
-    "build": "tsup",
-    "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
-  },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/dms-kit": "workspace:^"
-  },
-  "devDependencies": {
-    "tsup": "^8.5.0"
   }
 }
