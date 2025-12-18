@@ -38,6 +38,7 @@ describe('utils', () => {
     });
 
     it('should format path values with queries only', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const path = { path: '/', query: 'sort&page' } as const;
       const result = getFormatPathValues<typeof path>({
         queries: { sort: 'asc', page: '1' }
@@ -49,6 +50,7 @@ describe('utils', () => {
     });
 
     it('should format path values with both params and queries', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const path = { path: '/home/:id', query: 'view' } as const;
 
       const result = getFormatPathValues<typeof path>({

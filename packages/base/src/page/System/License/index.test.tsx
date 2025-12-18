@@ -7,7 +7,6 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { AxiosResponse } from 'axios';
 import 'blob-polyfill';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({

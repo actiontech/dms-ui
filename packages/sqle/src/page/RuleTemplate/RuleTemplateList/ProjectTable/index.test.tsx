@@ -39,10 +39,9 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   const dispatchSpy = jest.fn();
   const templateName = projectRuleTemplateListMockData[0].rule_template_name;
   let getProjectRuleTemplateListSpy: jest.SpyInstance;
-  let mockUseCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
-    mockUseCurrentProjectSpy = mockUseCurrentProject();
+    mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -68,15 +67,14 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     cleanup();
   });
 
-  const customRender = (actionPermission?: boolean) =>
-    superRender(<ProjectTable />);
+  const customRender = () => superRender(<ProjectTable />);
 
   it('should render empty tips when request not success', async () => {
     getProjectRuleTemplateListSpy.mockClear();
     getProjectRuleTemplateListSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { baseElement } = customRender(true);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     const element = queryBySelector('.ant-table-placeholder', baseElement);
@@ -84,7 +82,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   });
 
   it('should refresh table when emit "Refresh_Rule_Template_List" event', async () => {
-    customRender(true);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
@@ -99,7 +97,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     getProjectRuleTemplateListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
     );
-    customRender(true);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -113,7 +111,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     );
     const deleteProjectRuleTemplateSpy =
       rule_template.deleteProjectRuleTemplate();
-    customRender(true);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -144,7 +142,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     getProjectRuleTemplateListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
     );
-    const { baseElement } = customRender(true);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
@@ -184,7 +182,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     getProjectRuleTemplateListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
     );
-    const { baseElement } = customRender(true);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {

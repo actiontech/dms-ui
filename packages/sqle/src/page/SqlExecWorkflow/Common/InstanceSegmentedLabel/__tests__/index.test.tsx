@@ -1,5 +1,5 @@
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import InstanceSegmentedLabel, { InstanceSegmentedLabelProps } from '..';
+import InstanceSegmentedLabel from '..';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/Common/InstanceSegmentedLabel', () => {

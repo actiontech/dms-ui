@@ -10,12 +10,14 @@ describe('useTypedParams', () => {
   it('should handle params correctly', () => {
     (useParams as jest.Mock).mockReturnValue({ id: '1', postId: '2' });
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const pathConfig = {
       prefix: '/app',
       path: 'user/:id/posts/:postId',
       query: 'view&filter'
     } as const;
-    const { result } = renderHook(() => useTypedParams<typeof pathConfig>());
+    type PathConfig = typeof pathConfig;
+    const { result } = renderHook(() => useTypedParams<PathConfig>());
 
     expect(result.current.id).toBe('1');
     expect(result.current.postId).toBe('2');

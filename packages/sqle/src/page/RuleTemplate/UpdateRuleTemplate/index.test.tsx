@@ -39,7 +39,6 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
   let updateProjectRuleTemplateSpy: jest.SpyInstance;
   let getProjectRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
-  let getRuleVersionTipsSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -58,7 +57,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       useSpyOnMockHooks: true
     });
     getAllRuleSpy = rule_template.getRuleList();
-    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
+    rule_template.mockGetDriverRuleVersionTips();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     updateProjectRuleTemplateSpy = rule_template.updateProjectRuleTemplate();
     getProjectRuleTemplateSpy = rule_template.getProjectRuleTemplate();

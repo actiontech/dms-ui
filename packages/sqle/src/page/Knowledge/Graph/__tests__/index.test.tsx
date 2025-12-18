@@ -8,8 +8,6 @@ describe('KnowledgeGraph', () => {
     edges: []
   };
 
-  beforeEach(() => {});
-
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();

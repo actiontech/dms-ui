@@ -1,5 +1,5 @@
 import { superRender } from '../../testUtil/superRender';
-import { fireEvent, act, cleanup, screen } from '@testing-library/react';
+import { fireEvent, act, cleanup } from '@testing-library/react';
 import EditText from './EditText';
 import { EditTypeProps } from './EditText.types';
 import { getBySelector } from '../../testUtil/customQuery';

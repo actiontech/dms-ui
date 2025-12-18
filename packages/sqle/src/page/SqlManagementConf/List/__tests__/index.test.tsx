@@ -3,10 +3,7 @@ import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import {
-  mockProjectInfo,
-  mockUseUserOperationPermissionData
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import { mockInstanceAuditPlanListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';

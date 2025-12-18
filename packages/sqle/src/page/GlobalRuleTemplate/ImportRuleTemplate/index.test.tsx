@@ -14,7 +14,6 @@ import {
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   ruleType,
-  ruleListData,
   importRuleTemplateMockData
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
@@ -45,7 +44,6 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   let createRuleTemplateSpy: jest.SpyInstance;
   let importProjectRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
-  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -67,7 +65,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       }
     );
     mockUseDbServiceDriver();
-    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
+    rule_template.mockGetDriverRuleVersionTips();
     getAllRuleSpy = rule_template.getRuleList();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createRuleTemplateSpy = rule_template.createRuleTemplate();

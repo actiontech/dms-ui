@@ -5,7 +5,7 @@
 import { useParams } from 'react-router-dom';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import FileModeHeader from '..';
-import { fireEvent, screen } from '@testing-library/dom';
+import { screen } from '@testing-library/dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 jest.mock('react-router-dom', () => ({

@@ -51,7 +51,7 @@ describe('SqlAnalyze/SQLManage', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
-  let currentTime = dayjs('2025-01-09 12:00:00');
+  const currentTime = dayjs('2025-01-09 12:00:00');
   beforeEach(() => {
     MockDate.set(currentTime.valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });

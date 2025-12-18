@@ -21,7 +21,6 @@ describe('base/DataSource/BatchImportDataSource', () => {
   let importDBServicesOfOneProjectSpy: jest.SpyInstance;
   let getImportDBServicesTemplateSpy: jest.SpyInstance;
   let importDBServicesOfOneProjectCheckSpy: jest.SpyInstance;
-  let dbServicesConnectionSpy: jest.SpyInstance;
   let checkDBServicesPrivilegesSpy: jest.SpyInstance;
 
   beforeEach(() => {
@@ -30,7 +29,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
     getImportDBServicesTemplateSpy = project.getImportDBServicesTemplate();
     importDBServicesOfOneProjectCheckSpy =
       project.importDBServicesOfOneProjectCheck();
-    dbServicesConnectionSpy = project.dbServicesConnection();
+    project.dbServicesConnection();
     checkDBServicesPrivilegesSpy = project.checkDBServicesPrivileges();
     mockUseCurrentProject();
   });

@@ -3,7 +3,6 @@ import reducers, {
   updatePipelineNodeTourStatus
 } from '.';
 import { IReduxState } from '..';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('store/pipeline', () => {
   test('should create action', () => {

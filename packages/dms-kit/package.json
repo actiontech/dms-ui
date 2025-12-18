@@ -19,7 +19,9 @@
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "dependencies": {
     "ahooks": "^3.7.0",

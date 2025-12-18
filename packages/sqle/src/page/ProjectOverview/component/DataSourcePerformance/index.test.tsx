@@ -1,4 +1,4 @@
-import { cleanup, act, fireEvent, screen } from '@testing-library/react';
+import { cleanup, act } from '@testing-library/react';
 import {
   sqleSuperRenderHook,
   sqleSuperRender

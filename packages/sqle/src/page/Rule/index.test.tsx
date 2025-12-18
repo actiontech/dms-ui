@@ -4,7 +4,6 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import Rule from '.';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
-  getAllBySelector,
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';

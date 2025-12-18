@@ -10,7 +10,6 @@ import { customRuleMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle
 import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { useSelector } from 'react-redux';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

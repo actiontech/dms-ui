@@ -4,7 +4,9 @@
   "private": true,
   "main": "src/App.tsx",
   "scripts": {
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^",

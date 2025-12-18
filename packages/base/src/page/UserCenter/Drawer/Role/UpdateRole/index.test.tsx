@@ -6,10 +6,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import UpdateRole from '.';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import {
-  getAllBySelector,
-  queryBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

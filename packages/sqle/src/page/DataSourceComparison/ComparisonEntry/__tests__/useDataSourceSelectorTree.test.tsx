@@ -11,12 +11,11 @@ import { act } from '@testing-library/react';
 
 describe('useDataSourceSelectorTree', () => {
   let getInstanceTipsSpy: jest.SpyInstance;
-  let getInstanceSchemaTipsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.clearAllMocks();
     getInstanceTipsSpy = instance.getInstanceTipList();
-    getInstanceSchemaTipsSpy = instance.getInstanceSchemas();
+    instance.getInstanceSchemas();
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockDatabaseType();

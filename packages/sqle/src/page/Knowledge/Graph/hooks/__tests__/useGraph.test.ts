@@ -1,4 +1,4 @@
-import Graph, { MultiDirectedGraph } from 'graphology';
+import Graph from 'graphology';
 import louvain from 'graphology-communities-louvain';
 import iwanthue from 'iwanthue';
 import useGraph from '../useGraph';
@@ -11,18 +11,6 @@ jest.mock('graphology-communities-louvain', () => ({
 jest.mock('iwanthue', () => jest.fn());
 
 describe('useGraph', () => {
-  const mockTheme = {
-    sqleTheme: {
-      knowledgeTheme: {
-        graph: {
-          edge: {
-            color: '#666666'
-          }
-        }
-      }
-    }
-  };
-
   beforeEach(() => {
     (iwanthue as jest.Mock).mockReturnValue(['#FF0000', '#00FF00']);
   });

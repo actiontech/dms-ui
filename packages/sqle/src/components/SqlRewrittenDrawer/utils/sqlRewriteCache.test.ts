@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   saveSqlRewriteCache,
   getSqlRewriteCache,
@@ -77,7 +78,7 @@ describe('sqlRewriteCache', () => {
 
       // 保存第一次
       saveSqlRewriteCache(taskId, sqlNumber, firstResult, false);
-      const firstCached = getSqlRewriteCache(taskId, sqlNumber);
+      getSqlRewriteCache(taskId, sqlNumber);
 
       // 推进时间
       MockDate.set(dayjs('2023-12-18 12:00:10').valueOf());

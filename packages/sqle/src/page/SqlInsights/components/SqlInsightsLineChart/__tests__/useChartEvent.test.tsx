@@ -148,7 +148,7 @@ describe('useChartEvent', () => {
     beforeEach(() => {
       mockChart = {
         chart: {
-          getXY: jest.fn((data) => ({ x: 100, y: 50 }))
+          getXY: jest.fn(() => ({ x: 100, y: 50 }))
         }
       } as unknown as LineEventParams[0];
       hookResult = renderHook(() => useChartEvent(defaultParams));

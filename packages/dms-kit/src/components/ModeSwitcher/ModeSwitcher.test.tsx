@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import ModeSwitcher from './ModeSwitcher';
 import { superRender } from '../../testUtil/superRender';
-import { useState } from 'react';
 
 const list_1 = ['key1', 'key2', 'key3'];
 const list_2 = [

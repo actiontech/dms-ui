@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import BusinessRewrittenSuggestion from '../../components/BusinessRewrittenSuggestion';
-import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlRewrittenMockDataNoDDL } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import BusinessRewrittenDetails from '../../components/BusinessRewrittenSuggestion/BusinessRewrittenDetails';

@@ -1,7 +1,7 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import CreateSqlOptimization from '.';
 import { sqleSuperRender } from '../../../testUtils/superRender';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -12,10 +12,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
-import {
-  instanceInfoMockData,
-  instanceTipsMockData
-} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
@@ -47,7 +44,6 @@ describe('sqle/SqlOptimization/Create', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
   let getInstanceSchemaSpy: jest.SpyInstance;
   let optimizeSQLReqSpy: jest.SpyInstance;
-  let getDriversSpy: jest.SpyInstance;
 
   const mockDispatch = jest.fn();
 
@@ -64,7 +60,7 @@ describe('sqle/SqlOptimization/Create', () => {
     optimizeSQLReqSpy = sqlOptimization.optimizeSQLReq();
     getInstanceTipListSpy = instance.getInstanceTipList();
     getInstanceSchemaSpy = instance.getInstanceSchemas();
-    getDriversSpy = sqleMockApi.configuration.getDrivers();
+    sqleMockApi.configuration.getDrivers();
   });
 
   afterEach(() => {

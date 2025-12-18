@@ -351,7 +351,7 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     const file = new File([''], 'test.xml');
-    let uploader = getBySelector('#mybatisFile', baseElement);
+    const uploader = getBySelector('#mybatisFile', baseElement);
     fireEvent.change(uploader, {
       target: { files: [file] }
     });
@@ -395,7 +395,7 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     const file = new File([''], 'test.xml');
-    let uploader = getBySelector('#zipFile', baseElement);
+    const uploader = getBySelector('#zipFile', baseElement);
     fireEvent.change(uploader, {
       target: { files: [file] }
     });
@@ -723,7 +723,7 @@ describe('sqle/SqlAudit/Create', () => {
     };
 
     it('should switch between different git protocols', async () => {
-      const { baseElement } = await setupGitRepositoryTest();
+      await setupGitRepositoryTest();
 
       // 默认为 HTTP 协议
       expect(screen.getByLabelText('用户名')).toBeInTheDocument();

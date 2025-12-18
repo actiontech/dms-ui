@@ -5,7 +5,7 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import { MockSharedStepDetail } from '../../../../../hooks/mockData';
 import { SharedStepDetails } from '../../../../../index.type';
 import { Form } from 'antd';
-import { act, renderHook } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { useSelector } from 'react-redux';

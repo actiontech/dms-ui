@@ -11,7 +11,9 @@
   "scripts": {
     "build:watch": "tsc -w",
     "build": "tsc",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "keywords": [],
   "license": "ISC",

@@ -4,7 +4,7 @@ import node from '@actiontech/dms-eslint-config/node';
 export default [
   ...node,
   {
-    files: ['src/**/*.{ts,js}']
+    files: ['src/**/*.{ts}']
     // 可以在此处添加本包特有的覆盖规则
   }
 ];

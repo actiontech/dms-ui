@@ -135,7 +135,7 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
   });
 
   it('render navigate to create workflow', async () => {
-    const { baseElement } = customRender();
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     const createWorkflowBtn = screen.getByText('创建工单').closest('button');
     expect(createWorkflowBtn).toBeDisabled();

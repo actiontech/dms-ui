@@ -28,12 +28,11 @@ jest.mock('react-redux', () => {
 
 describe('sqle/SqlAudit/List', () => {
   let sqlAuditRecordsSpy: jest.SpyInstance;
-  let mockUseCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     instance.mockAllApi();
     sqlAuditRecordsSpy = sqlAuditRecord.getSQLAuditRecords();
-    mockUseCurrentProjectSpy = mockUseCurrentProject();
+    mockUseCurrentProject();
     mockUseCurrentUser();
 
     (useSelector as jest.Mock).mockImplementation((selector) => {

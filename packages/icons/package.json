@@ -11,7 +11,9 @@
     "build": "father build",
     "icon:g": "svgr --template template/template.cjs -d src svg/ ",
     "docs:g": "node scripts/generate.js",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",

@@ -22,7 +22,6 @@ jest.mock('react-redux', () => {
 });
 
 describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
-  let requestUpdateAuditTaskSQLs: jest.SpyInstance;
   let requestGetAuditTaskSQLs: jest.SpyInstance;
 
   const customRender = (params: AuditResultTableProps) => {
@@ -32,7 +31,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   beforeEach(() => {
     mockUseCurrentUser();
     jest.useFakeTimers();
-    requestUpdateAuditTaskSQLs = execWorkflow.updateAuditTaskSQLs();
+    execWorkflow.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     execWorkflow.mockAllApi();
     (useSelector as jest.Mock).mockImplementation((e) =>

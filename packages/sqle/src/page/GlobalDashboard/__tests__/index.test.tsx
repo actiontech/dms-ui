@@ -16,8 +16,6 @@ describe('sqle/GlobalDashboard', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
   let getGlobalSqlManageStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
-  let getGlobalDataExportWorkflowsSpy: jest.SpyInstance;
-  let getGlobalDataExportWorkflowStatisticsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -29,9 +27,8 @@ describe('sqle/GlobalDashboard', () => {
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
     getGlobalSqlManageStatisticsSpy = sqlManage.getGlobalSqlManageStatistics();
     getInstanceTipListSpy = instance.getInstanceTipList();
-    getGlobalDataExportWorkflowsSpy = workflow.getGlobalDataExportWorkflows();
-    getGlobalDataExportWorkflowStatisticsSpy =
-      workflow.getGlobalDataExportWorkflowStatistics();
+    workflow.getGlobalDataExportWorkflows();
+    workflow.getGlobalDataExportWorkflowStatistics();
   });
 
   afterEach(() => {

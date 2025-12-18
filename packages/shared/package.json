@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "lib/index.ts",
   "license": "MIT",
+  "scripts": {
+    "eslint": "eslint lib",
+    "eslint:fix": "eslint lib --fix",
+    "ts-check": "tsc --noEmit"
+  },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/dms-kit": "workspace:^"

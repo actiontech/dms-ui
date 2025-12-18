@@ -25,7 +25,6 @@ jest.mock('react-redux', () => ({
 describe('sqle/RuleTemplate/RuleTemplateForm', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
-  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     mockUseCurrentProject();
@@ -34,7 +33,7 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });
-    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
+    rule_template.mockGetDriverRuleVersionTips();
     getDriversSpy = configuration.getDrivers();
     jest.useFakeTimers();
   });

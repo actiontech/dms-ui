@@ -1,9 +1,6 @@
 import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import useStaticStatus from '../useStaticStatus';
-import {
-  GetSqlManageListV2FilterAuditLevelEnum,
-  GetSqlManageListV2FilterSourceEnum
-} from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlManageListV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 describe('SqlManagement/useStaticStatus', () => {
   it('render select options', async () => {

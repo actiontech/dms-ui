@@ -2,8 +2,6 @@ import { cleanup, act } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useUpdateRuleTemplateForm from '../useUpdateRuleTemplateForm';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
-import EventEmitter from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
 
 describe('sqle/hooks/useRuleTemplateForm/useUpdateRuleTemplateForm', () => {
   let getRulesSpy: jest.SpyInstance;

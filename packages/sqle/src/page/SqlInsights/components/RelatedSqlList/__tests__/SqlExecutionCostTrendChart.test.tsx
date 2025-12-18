@@ -3,7 +3,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import SqlExecutionCostTrendChart from '../SqlExecutionCostTrendChart';
 import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RelatedSQLInfoSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { Scatter, ScatterConfig } from '@ant-design/plots';
+import { ScatterConfig } from '@ant-design/plots';
 
 const mockRecordWithData: IRelatedSQLInfo = {
   sql_fingerprint: 'SELECT * FROM users WHERE id = ?',

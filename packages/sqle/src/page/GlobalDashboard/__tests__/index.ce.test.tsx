@@ -7,7 +7,6 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
-import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import GlobalDashboard from '../index';
 

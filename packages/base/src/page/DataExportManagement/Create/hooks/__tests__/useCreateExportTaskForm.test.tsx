@@ -10,7 +10,6 @@ import useCreateExportTaskForm from '../useCreateExportTaskForm';
 import { Button, Form, Input, Switch } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCreateDataExportReduxManage } from '../../testUtils/mockUseCreateDataExportReduxManage';
-import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';

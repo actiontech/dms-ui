@@ -22,22 +22,6 @@ describe('useOpenScanTask', () => {
 
   let getInstanceAuditPlansSpy: jest.SpyInstance;
 
-  const mockAuditPlanWithPerformanceCollect: IInstanceAuditPlanResV1 = {
-    instance_audit_plan_id: 1,
-    instance_name: 'test-instance',
-    environment: 'test-env',
-    instance_type: 'MySQL',
-    audit_plan_types: [
-      {
-        audit_plan_id: 1,
-        type: 'performance_collect_mysql',
-        desc: 'Performance collect'
-      }
-    ],
-    create_time: '2024-01-01T00:00:00Z',
-    creator: 'admin'
-  };
-
   const mockAuditPlanWithProcesslist: IInstanceAuditPlanResV1 = {
     instance_audit_plan_id: 2,
     instance_name: 'test-instance',

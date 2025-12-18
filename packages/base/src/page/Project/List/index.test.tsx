@@ -1,4 +1,3 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
@@ -234,7 +233,7 @@ describe('test base/project/list', () => {
     cleanup();
     jest.clearAllMocks();
 
-    let mockIsProjectManager = jest.fn();
+    const mockIsProjectManager = jest.fn();
     mockUseCurrentUser({
       isAdmin: false,
       isProjectManager: mockIsProjectManager

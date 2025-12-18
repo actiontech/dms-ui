@@ -111,7 +111,7 @@ describe('lib/BasicEmpty', () => {
   });
 
   it('should render custom children content', () => {
-    const { container } = customRender({
+    customRender({
       loading: false,
       dataLength: 0,
       children: <div data-testid="custom-content">自定义内容</div>

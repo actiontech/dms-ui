@@ -6,7 +6,7 @@ import { Form } from 'antd';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import SqlExecModeSelector from '../components/SqlExecModeSelector';
-import { act, fireEvent, renderHook, screen } from '@testing-library/react';
+import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlExecModeSelectorProps } from '../components/index.type';
 

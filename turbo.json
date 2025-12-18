@@ -39,25 +39,18 @@
       ]
     },
     "ts-check": {
-      "dependsOn": [
-        "@actiontech/dms-kit#build"
-      ],
       "outputs": []
     },
     "eslint": {
-      "dependsOn": [],
       "outputs": []
     },
+    "eslint:fix": {
+      "cache": false
+    },
     "stylelint": {
-      "dependsOn": [
-        "@actiontech/dms-kit#build"
-      ],
       "outputs": []
     },
     "prettier:c": {
-      "dependsOn": [
-        "@actiontech/dms-kit#build"
-      ],
       "outputs": []
     },
     "base#build": {

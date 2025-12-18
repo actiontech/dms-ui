@@ -7,5 +7,5 @@ export default [
   {
     files: ['src/**/*.{ts,tsx,js,jsx}']
   },
-  globalIgnores(['src/**/demo/**'])
+  globalIgnores(['src/**/demo/**', 'src/**/demos/**'])
 ];

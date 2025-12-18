@@ -12,7 +12,9 @@
     "build:watch": "tsc -w",
     "build": "tsc",
     "start": "tsc && node dist/index.js",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "dependencies": {
     "@octokit/rest": "^20.1.2",

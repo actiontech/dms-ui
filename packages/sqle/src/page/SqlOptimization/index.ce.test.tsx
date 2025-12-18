@@ -2,7 +2,6 @@
  * @test_version ce
  */
 
-import { screen } from '@testing-library/react';
 import SqlOptimization from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
