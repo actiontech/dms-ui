@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "main": "src/App.tsx",
+  "scripts": {
+    "eslint": "eslint src"
+  },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/shared": "workspace:^1.0.0",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "graphology-types": "^0.24.8",
-    "jest-canvas-mock": "^2.2.0"
+    "jest-canvas-mock": "^2.2.0",
+    "@actiontech/dms-eslint-config": "workspace:^"
   }
 }

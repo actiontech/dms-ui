@@ -17,7 +17,7 @@
     "build:demo": "turbo run build:demo --filter=base",
     "prettier:w": "prettier -w packages/*/src/ packages/shared/lib/ scripts/cli/*/src",
     "prettier:c": "prettier -c packages/*/src/ packages/shared/lib/ scripts/cli/*/src",
-    "eslint": "eslint packages/*/src/ packages/shared/lib/ scripts/cli/*/src",
+    "eslint": "turbo run eslint",
     "stylelint": "stylelint packages/*/{src,lib}/**/{*.less,style.ts,element.ts}",
     "ts-check": "tsc --noEmit",
     "checker": "turbo run ts-check eslint stylelint prettier:c --filter=base",

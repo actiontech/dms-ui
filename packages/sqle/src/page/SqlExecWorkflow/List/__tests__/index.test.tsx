@@ -104,17 +104,17 @@ describe('sqle/Workflow/List', () => {
       page_size: 9999
     });
 
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render btn batchCancel when is not Admin', async () => {
@@ -123,21 +123,21 @@ describe('sqle/Workflow/List', () => {
     });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render snap when list is empty', async () => {
     RequestWorkflowList.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render snap when list api return error', async () => {
     RequestWorkflowList.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render list column diff data', async () => {
@@ -163,7 +163,7 @@ describe('sqle/Workflow/List', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot;
+    expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(screen.getByText(workflowName));
     await act(async () => jest.advanceTimersByTime(0));

@@ -45,9 +45,7 @@
       "outputs": []
     },
     "eslint": {
-      "dependsOn": [
-        "@actiontech/dms-kit#build"
-      ],
+      "dependsOn": [],
       "outputs": []
     },
     "stylelint": {
@@ -60,9 +58,6 @@
       "dependsOn": [
         "@actiontech/dms-kit#build"
       ],
-      "outputs": []
-    },
-    "checker": {
       "outputs": []
     },
     "base#build": {

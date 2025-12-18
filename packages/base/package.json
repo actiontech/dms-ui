@@ -11,18 +11,16 @@
     "build:demo": "node ../../scripts/getGitVersion.mjs trial && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE,DEMO vite build",
     "preview": "vite preview",
     "ts-check": "pnpm -w ts-check",
-    "eslint": "pnpm -w eslint",
     "stylelint": "pnpm -w stylelint",
     "prettier:c": "pnpm -w prettier:c",
-    "test": "jest --watchAll=true",
-    "test:c": "jest --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "eslint": "eslint src"
   },
   "dependencies": {
     "@actiontech/shared": "workspace:^",
     "@actiontech/dms-kit": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
     "sqle": "workspace:^",
-    "@actiontech/icons": "workspace:^"
+    "@actiontech/icons": "workspace:^",
+    "@actiontech/dms-eslint-config": "workspace:^"
   }
 }

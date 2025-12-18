@@ -11,7 +11,8 @@
   "scripts": {
     "build:watch": "tsc -w",
     "build": "tsc",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/index.js",
+    "eslint": "eslint src"
   },
   "dependencies": {
     "@octokit/rest": "^20.1.2",
@@ -27,6 +28,7 @@
     "@types/archiver": "^6.0.3",
     "@types/node": "^18.0.4",
     "@types/nodemailer": "^7.0.3",
-    "@types/semver": "^7.7.1"
+    "@types/semver": "^7.7.1",
+    "@actiontech/dms-eslint-config": "workspace:^"
   }
 }

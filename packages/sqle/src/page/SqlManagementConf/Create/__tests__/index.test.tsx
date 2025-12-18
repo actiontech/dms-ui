@@ -122,10 +122,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
 
     fireEvent.mouseDown(getBySelector('#instanceId'));
     await act(async () => jest.advanceTimersByTime(0));
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     fireEvent.click(
       getBySelector(
-        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+        `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
       )
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -134,8 +134,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(3);
     expect(getAuditPlanMetaSpy).toHaveBeenCalledTimes(2);
     expect(getAuditPlanMetaSpy).toHaveBeenNthCalledWith(2, {
-      filter_instance_type: instance.instance_type,
-      filter_instance_id: instance.instance_id
+      filter_instance_type: instanceInfo.instance_type,
+      filter_instance_id: instanceInfo.instance_id
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceSpy).toHaveBeenCalledTimes(1);
@@ -222,7 +222,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(createInstanceAuditPlanSpy).toHaveBeenCalledTimes(1);
     expect(createInstanceAuditPlanSpy).toHaveBeenNthCalledWith(1, {
-      instance_id: instance.instance_id,
+      instance_id: instanceInfo.instance_id,
       project_name: mockProjectInfo.projectName,
       audit_plans: [
         {
@@ -496,10 +496,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
 
     fireEvent.mouseDown(getBySelector('#instanceId'));
     await act(async () => jest.advanceTimersByTime(0));
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     fireEvent.click(
       getBySelector(
-        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+        `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
       )
     );
     await act(async () => jest.advanceTimersByTime(3000));

@@ -134,10 +134,10 @@ importers:
     devDependencies:
       '@actiontech/cli-create-dms-page':
         specifier: workspace:^
-        version: link:scripts/cli/create-dms-page
+        version: link:cli/create-dms-page
       '@actiontech/cli-dms-kit-publish':
         specifier: workspace:^
-        version: link:scripts/cli/dms-kit-publish
+        version: link:cli/dms-kit-publish
       '@cfaester/enzyme-adapter-react-18':
         specifier: ^0.7.0
         version: 0.7.1(enzyme@3.11.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -319,8 +319,97 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(vite@7.3.0(@types/node@18.19.84)(less@4.2.2)(lightningcss@1.22.1)(sass@1.86.0)(terser@5.39.0)(tsx@4.20.5))
 
+  cli/create-dms-page:
+    dependencies:
+      '@babel/generator':
+        specifier: ^7.25.0
+        version: 7.27.0
+      '@babel/parser':
+        specifier: ^7.24.8
+        version: 7.27.0
+      '@babel/traverse':
+        specifier: ^7.24.8
+        version: 7.27.0
+      '@babel/types':
+        specifier: ^7.24.9
+        version: 7.27.0
+      '@inquirer/prompts':
+        specifier: ^5.1.2
+        version: 5.5.0
+      chalk:
+        specifier: ^4.1.2
+        version: 4.1.2
+      commander:
+        specifier: ^12.1.0
+        version: 12.1.0
+      node-clipboardy:
+        specifier: ^1.0.3
+        version: 1.0.3
+      prettier:
+        specifier: ^3.3.3
+        version: 3.5.3
+      zod:
+        specifier: ^3.23.8
+        version: 3.24.2
+    devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config
+      '@types/babel__generator':
+        specifier: ^7.6.8
+        version: 7.6.8
+      '@types/babel__traverse':
+        specifier: ^7.20.6
+        version: 7.20.7
+
+  cli/dms-kit-publish:
+    dependencies:
+      '@octokit/rest':
+        specifier: ^20.1.2
+        version: 20.1.2
+      archiver:
+        specifier: ^7.0.1
+        version: 7.0.1
+      basic-ftp:
+        specifier: ^5.0.5
+        version: 5.0.5
+      chalk:
+        specifier: ^4.1.2
+        version: 4.1.2
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.2.3
+      execa:
+        specifier: ^8.0.1
+        version: 8.0.1
+      nodemailer:
+        specifier: ^7.0.10
+        version: 7.0.10
+      semver:
+        specifier: ^7.7.3
+        version: 7.7.3
+    devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config
+      '@types/archiver':
+        specifier: ^6.0.3
+        version: 6.0.4
+      '@types/node':
+        specifier: ^18.0.4
+        version: 18.19.84
+      '@types/nodemailer':
+        specifier: ^7.0.3
+        version: 7.0.3
+      '@types/semver':
+        specifier: ^7.7.1
+        version: 7.7.1
+
   packages/base:
     dependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
       '@actiontech/dms-kit':
         specifier: workspace:^
         version: link:../dms-kit
@@ -418,6 +507,9 @@ importers:
         specifier: ^5.0.2
         version: 5.8.2
     devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
       babel-plugin-import:
         specifier: ^1.13.8
         version: 1.13.8
@@ -428,8 +520,13 @@ importers:
         specifier: ^4.5.2
         version: 4.5.2(@babel/core@7.26.10)(@types/node@22.13.14)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(type-fest@1.4.0)(webpack@5.101.3(@swc/core@1.9.2(@swc/helpers@0.5.1)))
 
+  packages/eslint-config: {}
+
   packages/icons:
     devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
       '@babel/preset-react':
         specifier: ^7.24.7
         version: 7.26.3(@babel/core@7.26.10)
@@ -451,6 +548,10 @@ importers:
       '@actiontech/icons':
         specifier: workspace:^
         version: link:../icons
+    devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
 
   packages/sqle:
     dependencies:
@@ -503,92 +604,15 @@ importers:
         specifier: ^0.2.4
         version: 0.2.4
     devDependencies:
+      '@actiontech/dms-eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
       graphology-types:
         specifier: ^0.24.8
         version: 0.24.8
       jest-canvas-mock:
         specifier: ^2.2.0
         version: 2.5.2
-
-  scripts/cli/create-dms-page:
-    dependencies:
-      '@babel/generator':
-        specifier: ^7.25.0
-        version: 7.27.0
-      '@babel/parser':
-        specifier: ^7.24.8
-        version: 7.27.0
-      '@babel/traverse':
-        specifier: ^7.24.8
-        version: 7.27.0
-      '@babel/types':
-        specifier: ^7.24.9
-        version: 7.27.0
-      '@inquirer/prompts':
-        specifier: ^5.1.2
-        version: 5.5.0
-      chalk:
-        specifier: ^4.1.2
-        version: 4.1.2
-      commander:
-        specifier: ^12.1.0
-        version: 12.1.0
-      node-clipboardy:
-        specifier: ^1.0.3
-        version: 1.0.3
-      prettier:
-        specifier: ^3.3.3
-        version: 3.5.3
-      zod:
-        specifier: ^3.23.8
-        version: 3.24.2
-    devDependencies:
-      '@types/babel__generator':
-        specifier: ^7.6.8
-        version: 7.6.8
-      '@types/babel__traverse':
-        specifier: ^7.20.6
-        version: 7.20.7
-
-  scripts/cli/dms-kit-publish:
-    dependencies:
-      '@octokit/rest':
-        specifier: ^20.1.2
-        version: 20.1.2
-      archiver:
-        specifier: ^7.0.1
-        version: 7.0.1
-      basic-ftp:
-        specifier: ^5.0.5
-        version: 5.0.5
-      chalk:
-        specifier: ^4.1.2
-        version: 4.1.2
-      dotenv:
-        specifier: ^17.2.3
-        version: 17.2.3
-      execa:
-        specifier: ^8.0.1
-        version: 8.0.1
-      nodemailer:
-        specifier: ^7.0.10
-        version: 7.0.10
-      semver:
-        specifier: ^7.7.3
-        version: 7.7.3
-    devDependencies:
-      '@types/archiver':
-        specifier: ^6.0.3
-        version: 6.0.4
-      '@types/node':
-        specifier: ^18.0.4
-        version: 18.19.84
-      '@types/nodemailer':
-        specifier: ^7.0.3
-        version: 7.0.3
-      '@types/semver':
-        specifier: ^7.7.1
-        version: 7.7.1
 
 packages:
 

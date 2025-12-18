@@ -6,5 +6,8 @@
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/dms-kit": "workspace:^"
+  },
+  "devDependencies": {
+    "@actiontech/dms-eslint-config": "workspace:^"
   }
 }

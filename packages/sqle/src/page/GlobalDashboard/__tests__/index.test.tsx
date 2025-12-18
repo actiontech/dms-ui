@@ -70,10 +70,10 @@ describe('sqle/GlobalDashboard', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('div[title="default"]'));
 
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     fireEvent.click(
       getBySelector(
-        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+        `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
       )
     );
     await act(async () => jest.advanceTimersByTime(0));

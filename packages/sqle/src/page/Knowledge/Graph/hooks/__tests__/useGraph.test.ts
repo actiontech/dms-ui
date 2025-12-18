@@ -112,7 +112,7 @@ describe('useGraph', () => {
         edges: [{ from_id: '1', to_id: '2' }]
       };
 
-      // @ts-ignore
+      // @ts-expect-error(This is a mock implementation)
       louvain.assign.mockImplementation((graph) => {
         graph.forEachNode((node: string) => {
           graph.setNodeAttribute(node, 'community', '0');
