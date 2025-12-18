@@ -37,7 +37,9 @@
     "@svgr/cli": "8.1.0",
     "@babel/preset-react": "^7.24.7",
     "dumi": "2.3.8",
-    "father": "4.1.0"
+    "father": "4.1.0",
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   },
   "peerDependencies": {
     "react": ">=17"

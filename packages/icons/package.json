@@ -23,6 +23,7 @@
     "@svgr/cli": "^8.1.0",
     "dumi": "^2.3.8",
     "father": "^4.1.0",
-    "@actiontech/dms-eslint-config": "workspace:^"
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   }
 }

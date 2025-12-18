@@ -1,17 +1,13 @@
 {
+  "extends": "@actiontech/dms-typescript-config/react-lib",
+  "include": [".dumirc.ts", "src/**/*"],
   "compilerOptions": {
-    "strict": true,
     "declaration": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "@actiontech/icons": ["src"],
       "@actiontech/icons/*": ["src/*", "*"]
     }
-  },
-  "include": [".dumirc.ts", "src/**/*"]
+  }
 }

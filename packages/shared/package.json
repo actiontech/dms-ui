@@ -13,6 +13,7 @@
     "@actiontech/dms-kit": "workspace:^"
   },
   "devDependencies": {
-    "@actiontech/dms-eslint-config": "workspace:^"
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   }
 }

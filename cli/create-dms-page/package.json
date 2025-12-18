@@ -20,7 +20,8 @@
   "devDependencies": {
     "@types/babel__generator": "^7.6.8",
     "@types/babel__traverse": "^7.20.6",
-    "@actiontech/dms-eslint-config": "workspace:^"
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   },
   "dependencies": {
     "@babel/generator": "^7.25.0",

@@ -355,6 +355,9 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../../packages/eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../../packages/typescript-config
       '@types/babel__generator':
         specifier: ^7.6.8
         version: 7.6.8
@@ -392,6 +395,9 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../../packages/eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../../packages/typescript-config
       '@types/archiver':
         specifier: ^6.0.3
         version: 6.0.4
@@ -413,6 +419,9 @@ importers:
       '@actiontech/dms-kit':
         specifier: workspace:^
         version: link:../dms-kit
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
       '@actiontech/icons':
         specifier: workspace:^
         version: link:../icons
@@ -510,6 +519,9 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
       babel-plugin-import:
         specifier: ^1.13.8
         version: 1.13.8
@@ -527,6 +539,9 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
       '@babel/preset-react':
         specifier: ^7.24.7
         version: 7.26.3(@babel/core@7.26.10)
@@ -552,6 +567,9 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/sqle:
     dependencies:
@@ -607,12 +625,17 @@ importers:
       '@actiontech/dms-eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
+      '@actiontech/dms-typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
       graphology-types:
         specifier: ^0.24.8
         version: 0.24.8
       jest-canvas-mock:
         specifier: ^2.2.0
         version: 2.5.2
+
+  packages/typescript-config: {}
 
 packages:
 

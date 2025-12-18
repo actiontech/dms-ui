@@ -1,9 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "paths": {
-      "~/*": ["./src/*"]
-    }
-  }
+  "extends": "@actiontech/dms-typescript-config/react-lib",
+  "include": ["src"]
 }

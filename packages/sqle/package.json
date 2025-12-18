@@ -29,6 +29,7 @@
   "devDependencies": {
     "graphology-types": "^0.24.8",
     "jest-canvas-mock": "^2.2.0",
-    "@actiontech/dms-eslint-config": "workspace:^"
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   }
 }
