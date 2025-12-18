@@ -1,5 +1,15 @@
 {
   "extends": "@actiontech/dms-typescript-config/react-lib",
   "include": ["./src"],
-  "exclude": ["**/demo/**", "**/demos/**"]
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"],
+      "@actiontech/dms-kit": ["./src"]
+    },
+    "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "noEmit": false
+  },
+  "exclude": ["node_modules", "es", "lib", "**/demo/**", "**/demos/**"]
 }
