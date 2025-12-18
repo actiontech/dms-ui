@@ -10,6 +10,9 @@ on:
 jobs:
   checker:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     steps:
       - name: Checkout repository
@@ -18,13 +21,15 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Cache Turbo
-        uses: actions/cache@v4
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+      # - name: Cache Turbo
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .turbo
+      #     key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-turbo-
+      - name: Build dms-kit (required for checker)
+        run: pnpm turbo run build --filter=@actiontech/dms-kit
 
       - name: Code lint checker
         run: pnpm run checker
@@ -42,13 +47,13 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Cache Turbo
-        uses: actions/cache@v4
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+      # - name: Cache Turbo
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .turbo
+      #     key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-turbo-
 
       - name: Build dms-kit (required for tests)
         run: pnpm turbo run build --filter=@actiontech/dms-kit
@@ -71,13 +76,13 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Cache Turbo
-        uses: actions/cache@v4
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+      # - name: Cache Turbo
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .turbo
+      #     key: ${{ runner.os }}-turbo-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-turbo-
 
       - name: Build dms-kit (required for tests)
         run: pnpm turbo run build --filter=@actiontech/dms-kit

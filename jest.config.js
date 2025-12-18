@@ -2,7 +2,9 @@ process.env.TZ = 'Asia/Shanghai';
 
 const path = require('path');
 
-const { compilerOptions } = require('./tsconfig.json');
+const {
+  compilerOptions
+} = require('./packages/typescript-config/react-lib.json');
 const { pathsToModuleNameMapper } = require('ts-jest');
 
 compilerOptions.paths['~/*'][0] = path.resolve(compilerOptions.paths['~/*'][0]);
