@@ -29,6 +29,9 @@ jobs:
 
   test-ee:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     strategy:
       matrix:
@@ -53,6 +56,9 @@ jobs:
 
   test-ce:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     steps:
       - name: Checkout repository
