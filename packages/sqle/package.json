@@ -4,9 +4,14 @@
   "private": true,
   "main": "src/App.tsx",
   "scripts": {
+    "build": "echo 'sqle has no build output'",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
-    "ts-check": "tsc --noEmit"
+    "ts-check": "tsc --noEmit",
+    "test": "sh ../../scripts/jest/run.sh",
+    "test:coverage": "sh ../../scripts/jest/run-coverage.sh",
+    "test:coverage:ci": "sh ../../scripts/jest/run-coverage-ci.sh",
+    "test:clean": "jest --clearCache"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
@@ -30,6 +35,7 @@
     "graphology-types": "^0.24.8",
     "jest-canvas-mock": "^2.2.0",
     "@actiontech/dms-eslint-config": "workspace:^",
-    "@actiontech/dms-typescript-config": "workspace:^"
+    "@actiontech/dms-typescript-config": "workspace:^",
+    "@actiontech/dms-jest-config": "workspace:^"
   }
 }

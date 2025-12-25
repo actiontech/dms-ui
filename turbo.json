@@ -53,19 +53,36 @@
     "prettier:c": {
       "outputs": []
     },
+    "test": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:coverage": {
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "test:coverage:ci": {
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "test:clean": {
+      "cache": false
+    },
     "base#build": {
       "dependsOn": [
-        "@actiontech/dms-kit#build"
+        "^build"
       ]
     },
     "base#build:ee": {
       "dependsOn": [
-        "@actiontech/dms-kit#build"
+        "^build"
       ]
     },
     "base#build:demo": {
       "dependsOn": [
-        "@actiontech/dms-kit#build"
+        "^build"
       ]
     }
   }

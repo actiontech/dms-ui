@@ -6,7 +6,7 @@ import editorWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 import { loader } from '@monaco-editor/react';
 
-(self as any).MonacoEnvironment = {
+self.MonacoEnvironment = {
   getWorker(_: unknown, label: string) {
     if (label === 'json') {
       return new jsonWorker();

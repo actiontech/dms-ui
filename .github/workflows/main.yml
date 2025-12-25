@@ -32,10 +32,11 @@ jobs:
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      JEST_TEST_VERSION_ENV: ee
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     strategy:
       matrix:
-        shard: [1, 2, 3, 4]
+        package: [base, '@actiontech/dms-kit', '@actiontech/shared', sqle]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,20 +47,68 @@ jobs:
       - name: Build dms-kit (required for tests)
         run: pnpm turbo run build --filter=@actiontech/dms-kit
 
-      - name: Coverage test report ee
-        run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
+      - name: Coverage test report ee - ${{ matrix.package }}
+        run: pnpm turbo run test:coverage:ci --filter=${{ matrix.package }}
+
+      - name: Collect coverage artifacts
+        if: always()
+        run: |
+          mkdir -p coverage-artifacts
+          # Map package names to directory names
+          PACKAGE_DIR=""
+          case "${{ matrix.package }}" in
+            "base")
+              PACKAGE_DIR="base"
+              ;;
+            "@actiontech/dms-kit")
+              PACKAGE_DIR="dms-kit"
+              ;;
+            "@actiontech/shared")
+              PACKAGE_DIR="shared"
+              ;;
+            "sqle")
+              PACKAGE_DIR="sqle"
+              ;;
+          esac
+          # Copy coverage files from package directory or root coverage directory
+          if [ -n "$PACKAGE_DIR" ] && [ -d "packages/$PACKAGE_DIR/coverage" ]; then
+            cp -r packages/$PACKAGE_DIR/coverage/* coverage-artifacts/ 2>/dev/null || true
+          fi
+          if [ -d "coverage" ]; then
+            find coverage -maxdepth 1 -type f -name "*.json" -exec cp {} coverage-artifacts/ \; 2>/dev/null || true
+          fi
+          # Rename files to include package name (sanitize for filename)
+          PACKAGE_NAME_SANITIZED=$(echo "${{ matrix.package }}" | tr '/' '-' | tr '@' '')
+          if [ -f "coverage-artifacts/report.json" ]; then
+            mv coverage-artifacts/report.json coverage-artifacts/report-${PACKAGE_NAME_SANITIZED}-ee.json
+          fi
+          if [ -f "coverage-artifacts/coverage-final.json" ]; then
+            mv coverage-artifacts/coverage-final.json coverage-artifacts/coverage-final-${PACKAGE_NAME_SANITIZED}-ee.json
+          fi
+
+      - name: Set artifact name
+        if: always()
+        id: set-artifact-name
+        run: |
+          PACKAGE_NAME_SANITIZED=$(echo "${{ matrix.package }}" | tr '/' '-' | tr '@' '')
+          echo "name=coverage-artifacts-${PACKAGE_NAME_SANITIZED}-ee" >> $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: coverage-artifacts-${{ matrix.shard }}
-          path: coverage/
+          name: ${{ steps.set-artifact-name.outputs.name }}
+          path: coverage-artifacts/
 
   test-ce:
     runs-on: ubuntu-latest
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      JEST_TEST_VERSION_ENV: ce
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
+    strategy:
+      matrix:
+        package: [base, '@actiontech/dms-kit', '@actiontech/shared', sqle]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -70,13 +119,60 @@ jobs:
       - name: Build dms-kit (required for tests)
         run: pnpm turbo run build --filter=@actiontech/dms-kit
 
-      - name: Coverage test report ce
-        run: sh ./scripts/jest/run-ci-ce.sh
+      - name: Coverage test report ce - ${{ matrix.package }}
+        run: pnpm turbo run test:coverage:ci --filter=${{ matrix.package }}
+
+      - name: Collect coverage artifacts
+        if: always()
+        run: |
+          mkdir -p coverage-artifacts
+          # Map package names to directory names
+          PACKAGE_DIR=""
+          case "${{ matrix.package }}" in
+            "base")
+              PACKAGE_DIR="base"
+              ;;
+            "@actiontech/dms-kit")
+              PACKAGE_DIR="dms-kit"
+              ;;
+            "@actiontech/shared")
+              PACKAGE_DIR="shared"
+              ;;
+            "sqle")
+              PACKAGE_DIR="sqle"
+              ;;
+          esac
+          # Copy coverage files from package directory or root coverage directory
+          if [ -n "$PACKAGE_DIR" ] && [ -d "packages/$PACKAGE_DIR/coverage" ]; then
+            cp -r packages/$PACKAGE_DIR/coverage/* coverage-artifacts/ 2>/dev/null || true
+          fi
+          if [ -d "coverage" ]; then
+            find coverage -maxdepth 1 -type f -name "*.json" -exec cp {} coverage-artifacts/ \; 2>/dev/null || true
+          fi
+          if [ -d "ce_coverage" ]; then
+            find ce_coverage -maxdepth 1 -type f -name "*.json" -exec cp {} coverage-artifacts/ \; 2>/dev/null || true
+          fi
+          # Rename files to include package name (sanitize for filename)
+          PACKAGE_NAME_SANITIZED=$(echo "${{ matrix.package }}" | tr '/' '-' | tr '@' '')
+          if [ -f "coverage-artifacts/report.json" ]; then
+            mv coverage-artifacts/report.json coverage-artifacts/report-${PACKAGE_NAME_SANITIZED}-ce.json
+          fi
+          if [ -f "coverage-artifacts/coverage-final.json" ]; then
+            mv coverage-artifacts/coverage-final.json coverage-artifacts/coverage-final-${PACKAGE_NAME_SANITIZED}-ce.json
+          fi
+
+      - name: Set artifact name
+        if: always()
+        id: set-artifact-name
+        run: |
+          PACKAGE_NAME_SANITIZED=$(echo "${{ matrix.package }}" | tr '/' '-' | tr '@' '')
+          echo "name=coverage-artifacts-${PACKAGE_NAME_SANITIZED}-ce" >> $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: ce-coverage-artifacts
-          path: ce_coverage/
+          name: ${{ steps.set-artifact-name.outputs.name }}
+          path: coverage-artifacts/
 
   report:
     runs-on: ubuntu-latest
@@ -89,35 +185,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get CE Coverage
+      - name: Download all coverage artifacts
         uses: actions/download-artifact@v4
         with:
-          name: ce-coverage-artifacts
-          path: ce_coverage
-
-      - name: Get EE Coverage 1
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-1
-          path: coverage
-
-      - name: Get EE Coverage 2
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-2
-          path: coverage
-
-      - name: Get EE Coverage 3
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-3
-          path: coverage
-
-      - name: Get EE Coverage 4
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-4
-          path: coverage
+          pattern: coverage-artifacts-*
+          path: coverage-all
+          merge-multiple: false
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
@@ -132,12 +205,16 @@ jobs:
           base-coverage-file: coverage-merged.json
           coverage-file: coverage-merged.json
 
-      - name: Delete artifact
+      - name: Delete artifacts
         uses: geekyeggo/delete-artifact@v5
+        continue-on-error: true
         with:
           name: |
-            ce-coverage-artifacts
-            coverage-artifacts-1
-            coverage-artifacts-2
-            coverage-artifacts-3
-            coverage-artifacts-4
+            coverage-artifacts-base-ce
+            coverage-artifacts-base-ee
+            coverage-artifacts-actiontech-dms-kit-ce
+            coverage-artifacts-actiontech-dms-kit-ee
+            coverage-artifacts-actiontech-shared-ce
+            coverage-artifacts-actiontech-shared-ee
+            coverage-artifacts-sqle-ce
+            coverage-artifacts-sqle-ee

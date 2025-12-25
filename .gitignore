@@ -15,7 +15,7 @@ dist
 
 # testing
 /ce_coverage
-/coverage
+**/coverage/*
 /report.json
 /coverage-merged
 /coverage-merged.json

@@ -4,9 +4,14 @@
   "main": "lib/index.ts",
   "license": "MIT",
   "scripts": {
+    "build": "echo 'shared has no build output'",
     "eslint": "eslint lib",
     "eslint:fix": "eslint lib --fix",
-    "ts-check": "tsc --noEmit"
+    "ts-check": "tsc --noEmit",
+    "test": "sh ../../scripts/jest/run.sh",
+    "test:coverage": "sh ../../scripts/jest/run-coverage.sh",
+    "test:coverage:ci": "sh ../../scripts/jest/run-coverage-ci.sh",
+    "test:clean": "jest --clearCache"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
@@ -14,6 +19,7 @@
   },
   "devDependencies": {
     "@actiontech/dms-eslint-config": "workspace:^",
-    "@actiontech/dms-typescript-config": "workspace:^"
+    "@actiontech/dms-typescript-config": "workspace:^",
+    "@actiontech/dms-jest-config": "workspace:^"
   }
 }
