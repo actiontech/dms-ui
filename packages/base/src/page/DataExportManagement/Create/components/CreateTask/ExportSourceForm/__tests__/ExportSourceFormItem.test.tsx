@@ -2,13 +2,7 @@ import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import ExportSourceFormItem from '../ExportSourceFormItem';
-import {
-  act,
-  cleanup,
-  fireEvent,
-  renderHook,
-  screen
-} from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { useForm } from 'antd/es/form/Form';
 import { Form } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';

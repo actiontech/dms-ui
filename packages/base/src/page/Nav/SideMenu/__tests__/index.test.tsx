@@ -21,8 +21,6 @@ import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/moc
 import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
-import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
-import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 
 jest.mock('react-redux', () => {
   return {

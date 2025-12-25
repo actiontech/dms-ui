@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import WorkflowList from '..';
-
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
@@ -35,10 +34,6 @@ jest.mock('react-redux', () => {
 
 describe('sqle/Workflow/List', () => {
   const navigateSpy = jest.fn();
-  let RequestUserTipList: jest.SpyInstance;
-  let RequestInstanceTipList: jest.SpyInstance;
-  let RequestWorkflowList: jest.SpyInstance;
-  let RequestBatchCancel: jest.SpyInstance;
 
   const customRender = () => {
     return sqleSuperRender(<WorkflowList />);
@@ -49,10 +44,10 @@ describe('sqle/Workflow/List', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     mockDatabaseType();
-    RequestUserTipList = user.getUserTipList();
-    RequestInstanceTipList = instance.getInstanceTipList();
-    RequestWorkflowList = execWorkflow.getWorkflows();
-    RequestBatchCancel = execWorkflow.batchCancelWorkflows();
+    user.getUserTipList();
+    instance.getInstanceTipList();
+    execWorkflow.getWorkflows();
+    execWorkflow.batchCancelWorkflows();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUsePermission(undefined, { mockSelector: true });

@@ -7,8 +7,7 @@ import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import {
   AuditTaskResData,
   WorkflowTasksItemData,
-  WorkflowsOverviewListData,
-  workflowsDetailData
+  WorkflowsOverviewListData
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../hooks/useAuditExecResultPanelSetup';

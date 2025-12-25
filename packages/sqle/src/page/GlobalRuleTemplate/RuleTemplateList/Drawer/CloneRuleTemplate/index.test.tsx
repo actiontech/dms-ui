@@ -85,7 +85,7 @@ describe('sqle/GlobalRuleTemplate/CloneRuleTemplate', () => {
 
   it('should send clone project rule template request when click submit button with desc', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = customRender();
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('正在克隆审核规则模板')).toBeInTheDocument();
     fireEvent.input(screen.getByLabelText('模板名称'), {

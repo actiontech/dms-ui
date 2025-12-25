@@ -10,13 +10,18 @@
   ],
   "scripts": {
     "build:watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
     "@types/babel__generator": "^7.6.8",
-    "@types/babel__traverse": "^7.20.6"
+    "@types/babel__traverse": "^7.20.6",
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   },
   "dependencies": {
     "@babel/generator": "^7.25.0",

@@ -4,12 +4,10 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import { DownloadRecordProps } from '../index.type';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
   let requestDownloadFile: jest.SpyInstance;
   let requestDownloadReport: jest.SpyInstance;
-  let downloadBackupFileSpy: jest.SpyInstance;
   const customRender = (params: DownloadRecordProps) => {
     return sqleSuperRender(<DownloadRecord {...params} />);
   };
@@ -18,7 +16,7 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
     jest.useFakeTimers();
     requestDownloadFile = execWorkflow.downloadAuditTaskSQLFile();
     requestDownloadReport = execWorkflow.downloadAuditTaskSQLReport();
-    downloadBackupFileSpy = execWorkflow.downloadBackupFile();
+    execWorkflow.downloadBackupFile();
     mockUseCurrentProject();
   });
 

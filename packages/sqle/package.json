@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "main": "src/App.tsx",
+  "scripts": {
+    "build": "echo 'sqle has no build output'",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit",
+    "test": "sh ../../scripts/jest/run.sh",
+    "test:coverage": "sh ../../scripts/jest/run-coverage.sh",
+    "test:coverage:ci": "sh ../../scripts/jest/run-coverage-ci.sh",
+    "test:clean": "jest --clearCache"
+  },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/shared": "workspace:^1.0.0",
@@ -14,7 +24,6 @@
     "graphology": "^0.25.4",
     "graphology-communities-louvain": "^2.0.2",
     "iwanthue": "^2.0.0",
-    "react-grid-layout": "^1.3.4",
     "react-infinite-scroll-component": "^6.1.0",
     "rehype-rewrite": "^4.0.2",
     "rehype-sanitize": "^6.0.0",
@@ -23,32 +32,10 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "@types/react-grid-layout": "^1.3.2",
     "graphology-types": "^0.24.8",
-    "jest-canvas-mock": "^2.2.0"
-  },
-  "scripts": {
-    "start": "PORT=3030 craco start",
-    "build": "craco build",
-    "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "proxy": "http://10.186.62.5:10000"
+    "jest-canvas-mock": "^2.2.0",
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^",
+    "@actiontech/dms-jest-config": "workspace:^"
+  }
 }

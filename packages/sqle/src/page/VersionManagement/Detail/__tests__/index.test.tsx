@@ -289,6 +289,7 @@ describe('sqle/VersionManagement/Detail', () => {
     expect(getSqlVersionDetailSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       EventEmitter.emit(EmitterKey.Refresh_Version_Management_Detail);
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       async () => jest.advanceTimersByTime(0);
     });
     expect(getSqlVersionDetailSpy).toHaveBeenCalledTimes(2);

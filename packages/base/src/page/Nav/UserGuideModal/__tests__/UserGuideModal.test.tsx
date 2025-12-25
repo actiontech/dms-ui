@@ -2,8 +2,7 @@ import { fireEvent, screen, act } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   mockUseCurrentUser,
-  baseMockApi,
-  createSpySuccessResponse
+  baseMockApi
 } from '@actiontech/shared/lib/testUtil';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';

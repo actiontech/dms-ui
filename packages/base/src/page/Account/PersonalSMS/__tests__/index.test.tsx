@@ -12,7 +12,7 @@ describe('base/System/GlobalSetting/PersonalSMS', () => {
   let updateCurrentUserSpy: jest.SpyInstance;
   let sendSmsCodeSpy: jest.SpyInstance;
   let verifySmsCodeSpy: jest.SpyInstance;
-  let getUserInfoSpy = jest.fn();
+  const getUserInfoSpy = jest.fn();
   const customRender = ({
     phone = mockUserInfo.userInfo.phone,
     enabled = true

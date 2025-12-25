@@ -9,7 +9,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { publicRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
@@ -34,12 +34,11 @@ describe('sqle/RuleManager', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   let getRuleTemplateListSpy: jest.SpyInstance;
-  let mockUseCurrentUserSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
 
-    mockUseCurrentUserSpy = mockUseCurrentUser();
+    mockUseCurrentUser();
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);

@@ -2,7 +2,7 @@ import CreatePipelineConfiguration from '../';
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -169,11 +169,11 @@ describe('sqle//PipelineConfiguration/Create', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.mouseDown(getBySelector('#instance_name'));
     await act(async () => jest.advanceTimersByTime(0));
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     await act(async () => {
       fireEvent.click(
         getBySelector(
-          `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+          `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
         )
       );
       await act(async () => jest.advanceTimersByTime(0));

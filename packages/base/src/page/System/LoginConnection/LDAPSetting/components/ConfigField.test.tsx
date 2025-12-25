@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, act, screen } from '@testing-library/react';
+import { cleanup, fireEvent, act } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getBySelector,

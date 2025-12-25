@@ -5,10 +5,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { useParams } from 'react-router-dom';

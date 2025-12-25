@@ -44,7 +44,6 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
   let createProjectRuleTemplateSpy: jest.SpyInstance;
   let importProjectRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
-  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -61,7 +60,7 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });
-    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
+    rule_template.mockGetDriverRuleVersionTips();
     getAllRuleSpy = rule_template.getRuleList();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createProjectRuleTemplateSpy = rule_template.createProjectRuleTemplate();

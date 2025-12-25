@@ -6,7 +6,6 @@ import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { BatchImportDataSourceFormValueType } from '../index.type';
 import { Form } from 'antd';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { mockBatchImportDBCheckData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { FileUploadCheckStatusType } from '../index.type';
 
 describe('base/Project/BatchImportDataSourceForm', () => {

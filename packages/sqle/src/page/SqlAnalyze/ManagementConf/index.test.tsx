@@ -16,7 +16,6 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { translateTimeForRequest } from '@actiontech/dms-kit';
 import {
   mockUsePermission,
@@ -51,7 +50,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
 
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
-  let currentTime = dayjs('2025-01-09 12:00:00');
+  const currentTime = dayjs('2025-01-09 12:00:00');
   beforeEach(() => {
     MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });

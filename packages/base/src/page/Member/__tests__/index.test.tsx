@@ -77,7 +77,7 @@ describe('base/Member', () => {
 
   it('should render add button when current user is admin or project manager', async () => {
     const mockUseCurrentUserSpy = mockUseCurrentUser();
-    const { baseElement } = superRender(<Member />);
+    superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加成员')).toHaveLength(1);
     fireEvent.click(screen.getByText('添加成员'));

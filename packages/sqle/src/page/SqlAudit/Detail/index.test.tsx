@@ -21,8 +21,6 @@ jest.mock('react-redux', () => {
 });
 
 describe('sqle/SqlAudit/Detail', () => {
-  let mockUseCurrentProjectSpy: jest.SpyInstance;
-
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum['UNIQUE_KEY_REQUIRED']]);
 
   beforeEach(() => {
@@ -37,7 +35,7 @@ describe('sqle/SqlAudit/Detail', () => {
         }
       })
     );
-    mockUseCurrentProjectSpy = mockUseCurrentProject();
+    mockUseCurrentProject();
   });
 
   beforeAll(() => {

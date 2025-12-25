@@ -8,8 +8,8 @@ import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/ser
 describe('test SqlManagementConf/common/ConfForm/hooks', () => {
   let getAuditPlanMetasSpy: jest.SpyInstance;
 
-  let resetFieldsSpy = jest.fn();
-  let getFieldsValueSpy = jest.fn();
+  const resetFieldsSpy = jest.fn();
+  const getFieldsValueSpy = jest.fn();
   beforeEach(() => {
     getAuditPlanMetasSpy = instanceAuditPlan.getAuditPlanMeta();
     jest.spyOn(Form, 'useForm').mockReturnValue([

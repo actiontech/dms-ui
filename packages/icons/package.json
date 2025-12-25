@@ -10,7 +10,10 @@
     "docs:preview": "dumi preview",
     "build": "father build",
     "icon:g": "svgr --template template/template.cjs -d src svg/ ",
-    "docs:g": "node scripts/generate.js"
+    "docs:g": "node scripts/generate.js",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,8 @@
     "@babel/preset-react": "^7.24.7",
     "@svgr/cli": "^8.1.0",
     "dumi": "^2.3.8",
-    "father": "^4.1.0"
+    "father": "^4.1.0",
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   }
 }

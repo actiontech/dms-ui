@@ -1,0 +1,11 @@
+{
+  "name": "@actiontech/dms-eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./base": "./base.mjs",
+    "./react": "./react.mjs",
+    "./node": "./node.mjs"
+  }
+}

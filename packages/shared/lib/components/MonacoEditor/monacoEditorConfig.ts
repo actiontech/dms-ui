@@ -1,10 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="../../types/client.d.ts" />
+
 import * as monaco from 'monaco-editor';
 import editorWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 import { loader } from '@monaco-editor/react';
 
 self.MonacoEnvironment = {
-  getWorker(_, label) {
+  getWorker(_: unknown, label: string) {
     if (label === 'json') {
       return new jsonWorker();
     }

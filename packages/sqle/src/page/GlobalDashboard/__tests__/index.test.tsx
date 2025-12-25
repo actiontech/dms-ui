@@ -16,8 +16,6 @@ describe('sqle/GlobalDashboard', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
   let getGlobalSqlManageStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
-  let getGlobalDataExportWorkflowsSpy: jest.SpyInstance;
-  let getGlobalDataExportWorkflowStatisticsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -29,9 +27,8 @@ describe('sqle/GlobalDashboard', () => {
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
     getGlobalSqlManageStatisticsSpy = sqlManage.getGlobalSqlManageStatistics();
     getInstanceTipListSpy = instance.getInstanceTipList();
-    getGlobalDataExportWorkflowsSpy = workflow.getGlobalDataExportWorkflows();
-    getGlobalDataExportWorkflowStatisticsSpy =
-      workflow.getGlobalDataExportWorkflowStatistics();
+    workflow.getGlobalDataExportWorkflows();
+    workflow.getGlobalDataExportWorkflowStatistics();
   });
 
   afterEach(() => {
@@ -70,10 +67,10 @@ describe('sqle/GlobalDashboard', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('div[title="default"]'));
 
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     fireEvent.click(
       getBySelector(
-        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+        `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
       )
     );
     await act(async () => jest.advanceTimersByTime(0));

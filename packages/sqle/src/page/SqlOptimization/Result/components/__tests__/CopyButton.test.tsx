@@ -18,6 +18,7 @@ describe('CopyButton', () => {
 
     copyTextByTextareaSpy = jest
       .spyOn(Copy, 'copyTextByTextarea')
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       .mockImplementation(() => {});
   });
 

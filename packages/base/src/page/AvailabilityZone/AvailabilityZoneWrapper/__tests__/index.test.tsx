@@ -7,7 +7,6 @@ import { mockUseRecentlySelectedZoneData } from '../../../../testUtils/mockHooks
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
 import { baseMockApi } from '@actiontech/shared/lib/testUtil';
 import { useSelector } from 'react-redux';
-import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-redux', () => {
   return {
@@ -31,11 +30,6 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
 
   let getCurrentUserSpy: jest.SpyInstance;
   const useParamsSpy: jest.Mock = useParams as jest.Mock;
-
-  const mockAvailabilityZoneOptions = [
-    { value: 'zone-123', label: 'Test Zone' },
-    { value: 'zone-456', label: 'Another Zone' }
-  ];
 
   beforeEach(() => {
     jest.useFakeTimers();

@@ -2,7 +2,7 @@
 
 # dependencies
 /packages/*/node_modules
-/scripts/**/node_modules
+/cli/**/node_modules
 /node_modules
 /.pnpm-store
 /.pnp
@@ -15,7 +15,7 @@ dist
 
 # testing
 /ce_coverage
-/coverage
+**/coverage/*
 /report.json
 /coverage-merged
 /coverage-merged.json
@@ -54,3 +54,4 @@ ftp-data
 
 
 /scripts/cli/dms-kit-publish/docs
+.turbo

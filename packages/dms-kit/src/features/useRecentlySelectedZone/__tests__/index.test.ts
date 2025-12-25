@@ -1,4 +1,4 @@
-import { act, cleanup } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import { superRenderHook } from '../../../testUtil/superRender';
 import useRecentlySelectedZone, {
   DEFAULT_MAX_SELECTED_ZONE_NUMBER

@@ -5,16 +5,10 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
-import {
-  mockAuditPlanMetaData,
-  mockAuditPlanDetailData
-} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
+import { mockAuditPlanMetaData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
-import {
-  instanceInfoMockData,
-  instanceTipsMockData
-} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import { instanceInfoMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { projectRuleTemplateList } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';

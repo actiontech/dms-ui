@@ -1,0 +1,89 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ce": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ee": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:demo": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "build:ee": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "build:demo": {
+      "outputs": [
+        "dist/**",
+        "es/**",
+        "lib/**"
+      ]
+    },
+    "ts-check": {
+      "outputs": []
+    },
+    "eslint": {
+      "outputs": []
+    },
+    "eslint:fix": {
+      "cache": false
+    },
+    "stylelint": {
+      "outputs": []
+    },
+    "prettier:c": {
+      "outputs": []
+    },
+    "test": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:coverage": {
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "test:coverage:ci": {
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "test:clean": {
+      "cache": false
+    },
+    "base#build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "base#build:ee": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "base#build:demo": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  }
+}

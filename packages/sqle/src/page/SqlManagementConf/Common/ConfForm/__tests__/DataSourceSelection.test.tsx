@@ -5,13 +5,7 @@ import DataSourceSelection from '../DataSourceSelection';
 import { ConfFormContextProvide, ConfFormContextType } from '../context';
 import { URLSearchParams } from 'url';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
-import {
-  act,
-  cleanup,
-  fireEvent,
-  renderHook,
-  screen
-} from '@testing-library/react';
+import { act, cleanup, fireEvent, renderHook } from '@testing-library/react';
 import { Form } from 'antd';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

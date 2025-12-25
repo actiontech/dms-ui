@@ -47,7 +47,7 @@ describe('sqle/useAllowAuditLevel', () => {
       );
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestGetWorkflowTemplate).toHaveBeenCalled;
+    expect(requestGetWorkflowTemplate).toHaveBeenCalled();
     expect(resetBtnDisabledFn).toHaveBeenCalled();
     expect(result.current.submitWorkflowConfirmationMessage).toBe('');
   });

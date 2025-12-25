@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@actiontech/dms-typescript-config/react-lib",
   "include": ["./src"],
   "compilerOptions": {
     "paths": {
@@ -11,5 +11,5 @@
     "emitDeclarationOnly": false,
     "noEmit": false
   },
-  "exclude": ["node_modules", "es", "lib"]
+  "exclude": ["node_modules", "es", "lib", "**/demo/**", "**/demos/**"]
 }

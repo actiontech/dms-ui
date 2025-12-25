@@ -1,0 +1,16 @@
+{
+  "extends": "@actiontech/dms-typescript-config/base",
+  "include": ["./src"],
+  "exclude": ["node_modules", "dist", "./bin"],
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": [],
+    "allowJs": true,
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "noEmit": false
+  }
+}

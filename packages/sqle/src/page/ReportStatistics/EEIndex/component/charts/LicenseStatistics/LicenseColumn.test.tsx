@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { cleanup } from '@testing-library/react';
 import {
   sqleSuperRenderHook,

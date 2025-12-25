@@ -3,16 +3,20 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "cross-env buildType=ce,SQLE vite --port=3020",
-    "start:ee": "cross-env buildType=ee,SQLE vite --port=3020",
-    "start:demo": "cross-env buildType=ce,SQLE,DEMO vite --port=3020",
-    "build": "node ../../scripts/getGitVersion.mjs ce && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE vite build",
-    "build:ee": "node ../../scripts/getGitVersion.mjs ee && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ee,SQLE vite build",
-    "build:demo": "node ../../scripts/getGitVersion.mjs trial && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE,DEMO vite build",
+    "dev:ce": "cross-env buildType=ce,SQLE vite --port=3020",
+    "dev:ee": "cross-env buildType=ee,SQLE vite --port=3020",
+    "dev:demo": "cross-env buildType=ce,SQLE,DEMO vite --port=3020",
+    "build": "tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE vite build",
+    "build:ee": "tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ee,SQLE vite build",
+    "build:demo": "tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE,DEMO vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll=true",
-    "test:c": "jest --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "ts-check": "tsc --noEmit",
+    "test": "sh ../../scripts/jest/run.sh",
+    "test:coverage": "sh ../../scripts/jest/run-coverage.sh",
+    "test:coverage:ci": "sh ../../scripts/jest/run-coverage-ci.sh",
+    "test:clean": "jest --clearCache"
   },
   "dependencies": {
     "@actiontech/shared": "workspace:^",
@@ -20,5 +24,10 @@
     "babel-preset-react-app": "^10.0.1",
     "sqle": "workspace:^",
     "@actiontech/icons": "workspace:^"
+  },
+  "devDependencies": {
+    "@actiontech/dms-jest-config": "workspace:^",
+    "@actiontech/dms-eslint-config": "workspace:^",
+    "@actiontech/dms-typescript-config": "workspace:^"
   }
 }

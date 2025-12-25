@@ -17,7 +17,7 @@ describe('SqlAnalyze/useSqlExecPlanCost', () => {
     ...i,
     x: formatTime(i.x)
   }));
-  let currentTime = dayjs('2025-01-09 12:00:00');
+  const currentTime = dayjs('2025-01-09 12:00:00');
   beforeEach(() => {
     MockDate.set(currentTime.valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });

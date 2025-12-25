@@ -2,7 +2,6 @@ import { cleanup, act } from '@testing-library/react';
 import MenuList from '.';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
-import { SystemRole } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -22,7 +21,7 @@ jest.mock('react-router-dom', () => ({
 
 describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   const navigateSpy = jest.fn();
-  const customRender = (role: SystemRole | '' = '') => {
+  const customRender = () => {
     return baseSuperRender(<MenuList projectID={projectID} />);
   };
 
@@ -46,7 +45,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   });
 
   it('render snap when is admin', async () => {
-    const { baseElement } = customRender(SystemRole.admin);
+    const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();

@@ -60,8 +60,7 @@ describe('test SqlManagementIssuePush', () => {
       push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
       push_user_list: ['1739544663515205632', '1739544663515205633'],
       last_push_time: '0001-01-01T00:00:00Z'
-    },
-    permission = true
+    }
   ) => {
     return sqleSuperRender(
       <SqlManagementIssuePush config={config} refetch={refetchSpy} />
@@ -79,19 +78,16 @@ describe('test SqlManagementIssuePush', () => {
   });
 
   it('should call onSubmit function correctly when enabling/disabling the configuration switch', async () => {
-    const { baseElement } = customRender(
-      {
-        report_push_config_id: '2',
-        type: 'sql_manage',
-        enabled: false,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
-        push_frequency_cron: '1 * * * *',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
-        push_user_list: ['1739544663515205632', '1739544663515205633'],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      true
-    );
+    const { baseElement } = customRender({
+      report_push_config_id: '2',
+      type: 'sql_manage',
+      enabled: false,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
+      push_frequency_cron: '1 * * * *',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
+      push_user_list: ['1739544663515205632', '1739544663515205633'],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
 
     expect(getBySelector('.config-field-wrapper', baseElement)).toHaveAttribute(
       'hidden'
@@ -136,19 +132,16 @@ describe('test SqlManagementIssuePush', () => {
   });
 
   it('should set the form to edit state and fill in default values when the modify button is clicked', async () => {
-    const { baseElement } = customRender(
-      {
-        report_push_config_id: '2',
-        type: 'sql_manage',
-        enabled: false,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
-        push_frequency_cron: '1 * 2 * *',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
-        push_user_list: ['1739544663515205632', '1739544663515205633'],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      true
-    );
+    const { baseElement } = customRender({
+      report_push_config_id: '2',
+      type: 'sql_manage',
+      enabled: false,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
+      push_frequency_cron: '1 * 2 * *',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
+      push_user_list: ['1739544663515205632', '1739544663515205633'],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
 
     fireEvent.click(getBySelector('.system-config-switch'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -156,19 +149,16 @@ describe('test SqlManagementIssuePush', () => {
   });
 
   it('should restore the form to its initial state when the cancel button is clicked', async () => {
-    const { baseElement } = customRender(
-      {
-        report_push_config_id: '2',
-        type: 'sql_manage',
-        enabled: false,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
-        push_frequency_cron: '1 * * * *',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
-        push_user_list: ['1739544663515205632', '1739544663515205633'],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      true
-    );
+    const { baseElement } = customRender({
+      report_push_config_id: '2',
+      type: 'sql_manage',
+      enabled: false,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
+      push_frequency_cron: '1 * * * *',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
+      push_user_list: ['1739544663515205632', '1739544663515205633'],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
 
     fireEvent.click(getBySelector('.system-config-switch'));
     await act(async () => jest.advanceTimersByTime(0));

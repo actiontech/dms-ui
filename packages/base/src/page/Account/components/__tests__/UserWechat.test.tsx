@@ -1,4 +1,3 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import UserWechat from '../UserWechat';
 import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

@@ -27,7 +27,6 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
   let getBlacklistSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   let useCurrentUserSpy: jest.SpyInstance;
-  let useCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     getBlacklistSpy = blacklist.getBlacklist();
@@ -41,7 +40,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    useCurrentProjectSpy = mockUseCurrentProject();
+    mockUseCurrentProject();
     useCurrentUserSpy = mockUseCurrentUser();
   });
 

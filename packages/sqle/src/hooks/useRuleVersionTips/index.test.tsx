@@ -21,7 +21,6 @@ describe('useRuleVersionTips', () => {
   });
 
   it('should get rule version tips when call updateRuleVersionTips', async () => {
-    const requestSpy = rule_template.mockGetDriverRuleVersionTips();
     const { result } = renderHook(() => useRuleVersionTips());
     expect(result.current.ruleVersionTips).toEqual([]);
     expect(result.current.loading).toBeFalsy();

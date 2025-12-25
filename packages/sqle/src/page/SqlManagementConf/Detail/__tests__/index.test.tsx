@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   useLocation,
   useNavigate,
@@ -10,10 +11,7 @@ import ConfDetail from '..';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import {
-  mockProjectInfo,
-  mockUseUserOperationPermissionData
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockAuditPlanDetailData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import {
   createSpyErrorResponse,

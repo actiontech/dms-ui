@@ -25,7 +25,7 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
       <SqlAuditTags
         projectName={mockProjectInfo.projectName}
         defaultTags={[sqlAuditRecordTagTipsMockData[0]]}
-        updateTags={(tags: string[]) => Promise.resolve().then(updateTagsSpy)}
+        updateTags={() => Promise.resolve().then(updateTagsSpy)}
       />
     );
   };

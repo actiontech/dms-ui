@@ -6,7 +6,6 @@ import { Form } from 'antd';
 import SqlStatementFormController from '..';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { renderHook } from '@testing-library/react';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   UtilsConsoleErrorStringsEnum,

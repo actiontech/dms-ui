@@ -3,7 +3,7 @@ import OAuth2LoginForm from './OAuth2LoginForm';
 import { screen } from '@testing-library/react';
 import { useSearchParams } from 'react-router-dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { DMS_REDIRECT_KEY_PARAMS_NAME, ROUTE_PATHS } from '@actiontech/dms-kit';
+import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/dms-kit';
 
 jest.mock('react-router-dom', () => {
   return {

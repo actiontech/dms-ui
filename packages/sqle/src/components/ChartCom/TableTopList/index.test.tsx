@@ -1,6 +1,5 @@
 import TableTopList, { ITableTopList } from '.';
-
-import { act, cleanup, fireEvent } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleData';
 

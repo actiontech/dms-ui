@@ -8,8 +8,7 @@ import {
   mockUseCurrentProject,
   mockProjectInfo,
   getAllBySelector,
-  getBySelector,
-  selectOptionByIndex
+  getBySelector
 } from '@actiontech/shared/lib/testUtil';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';

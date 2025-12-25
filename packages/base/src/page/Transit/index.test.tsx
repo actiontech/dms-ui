@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import Transit from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';

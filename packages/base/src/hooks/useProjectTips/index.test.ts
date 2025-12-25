@@ -33,9 +33,9 @@ describe('useProjectTips', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.projectList).toEqual(mockProjectList);
     expect(result.current.projectIDOptions).toEqual(
-      mockProjectList.map((project) => ({
-        label: project.name,
-        value: project.uid
+      mockProjectList.map((p) => ({
+        label: p.name,
+        value: p.uid
       }))
     );
     expect(result.current.loading).toBeFalsy();

@@ -194,11 +194,11 @@ describe('sqle/PipelineConfiguration/PipelineNodeField', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.mouseDown(getBySelector('#instance_name'));
     await act(async () => jest.advanceTimersByTime(0));
-    const instance = instanceTipsMockData[0];
+    const instanceInfo = instanceTipsMockData[0];
     await act(async () => {
       fireEvent.click(
         getBySelector(
-          `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+          `div[title="${instanceInfo.instance_name}(${instanceInfo.host}:${instanceInfo.port})"]`
         )
       );
       await act(async () => jest.advanceTimersByTime(0));

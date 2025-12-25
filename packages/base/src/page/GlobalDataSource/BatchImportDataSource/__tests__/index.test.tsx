@@ -19,7 +19,6 @@ describe('base/GlobalDataSource/BatchImportDataSource', () => {
   let importDBServicesOfProjectsSpy: jest.SpyInstance;
   let getImportDBServicesTemplateSpy: jest.SpyInstance;
   let importDBServicesOfProjectsCheckSpy: jest.SpyInstance;
-  let dbServicesConnectionSpy: jest.SpyInstance;
   let checkDBServicesPrivilegesSpy: jest.SpyInstance;
 
   beforeEach(() => {
@@ -28,7 +27,7 @@ describe('base/GlobalDataSource/BatchImportDataSource', () => {
     getImportDBServicesTemplateSpy = project.getImportDBServicesTemplate();
     importDBServicesOfProjectsCheckSpy =
       project.importDBServicesOfProjectsCheck();
-    dbServicesConnectionSpy = project.dbServicesConnection();
+    project.dbServicesConnection();
     checkDBServicesPrivilegesSpy = project.checkDBServicesPrivileges();
   });
 

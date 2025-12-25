@@ -15,10 +15,12 @@ describe('ReportStatistics/usePanelCommonRequest', () => {
   const successFn = jest.fn();
 
   const mockPromiseAPI = (url: string) => {
-    return new Promise<AxiosResponse<any>>((resolve, reject) => {
-      url.includes('success')
-        ? resolve(createSpySuccessResponse({ data: {} }))
-        : resolve(createSpyFailResponse({ message: 'error-info' }));
+    return new Promise<AxiosResponse<any>>((resolve) => {
+      if (url.includes('success')) {
+        resolve(createSpySuccessResponse({ data: {} }));
+      } else {
+        resolve(createSpyFailResponse({ message: 'error-info' }));
+      }
     });
   };
 

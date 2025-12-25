@@ -15,10 +15,9 @@ jest.mock('react-redux', () => {
 
 describe('test base/page/Account', () => {
   const scopeDispatch = jest.fn();
-  let updateCurrentUserSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => scopeDispatch);
-    updateCurrentUserSpy = account.updateCurrentUser();
+    account.updateCurrentUser();
     jest.useFakeTimers();
   });
   afterEach(() => {

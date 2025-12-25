@@ -10,10 +10,7 @@ import {
   useAsyncRewriteProgress,
   buildRewriteTaskResult
 } from '../../components/RewriteProgressDisplay/hooks';
-import {
-  getSqlRewriteCache,
-  saveSqlRewriteCache
-} from '../../utils/sqlRewriteCache';
+import { getSqlRewriteCache } from '../../utils/sqlRewriteCache';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil';
 
 // Mock 缓存模块
@@ -889,11 +886,9 @@ describe('useAsyncRewriteProgress', () => {
 
   describe('Cache Functionality', () => {
     let mockGetSqlRewriteCache: jest.Mock;
-    let mockSaveSqlRewriteCache: jest.Mock;
 
     beforeEach(() => {
       mockGetSqlRewriteCache = getSqlRewriteCache as jest.Mock;
-      mockSaveSqlRewriteCache = saveSqlRewriteCache as jest.Mock;
     });
 
     afterEach(() => {
@@ -1344,7 +1339,7 @@ describe('useAsyncRewriteProgress', () => {
 
   describe('Reset Functionality', () => {
     it('should reset all states when resetAllState is called', async () => {
-      const mockRewriteSQL = taskMockApi.getTaskSQLRewritten();
+      taskMockApi.getTaskSQLRewritten();
 
       const { result } = renderHook(() => useAsyncRewriteProgress());
 

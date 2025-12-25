@@ -54,7 +54,7 @@ describe('DependDatabaseStructure', () => {
     sqleSuperRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
-        toggleEnableStructureOptimizeAction={() => {}}
+        toggleEnableStructureOptimizeAction={jest.fn()}
       />
     );
 
@@ -67,7 +67,7 @@ describe('DependDatabaseStructure', () => {
     sqleSuperRender(
       <DependDatabaseStructure
         dataSource={[]}
-        toggleEnableStructureOptimizeAction={() => {}}
+        toggleEnableStructureOptimizeAction={jest.fn()}
       />
     );
 

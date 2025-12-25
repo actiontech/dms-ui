@@ -188,7 +188,6 @@ describe('lib/CronInputCom', () => {
   });
 
   it('should handle and display error states correctly', async () => {
-    const updateErrorMessageSpy = jest.fn();
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Manual,
       value: '0 0 0 0 0',

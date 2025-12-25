@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { act, renderHook } from '@testing-library/react';
 import useRecentlyOpenedProjects from '../useRecentlyOpenedProjects';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { StorageKey } from '@actiontech/dms-kit';
-import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';

@@ -114,19 +114,19 @@ LIMIT 1000 OFFSET 500;
     });
 
     it('should display combined SQL for subsequent items', () => {
-      const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
+      const mockDataSourceParam = SqlRewrittenMockDataNoDDL.suggestions?.filter(
         (v) => v.type === RewriteSuggestionTypeEnum.statement
       )!;
       const { container } = sqleSuperRender(
         <RewrittenSuggestionDetails
-          dataSource={[mockDataSource[0], mockDataSource[1]]}
+          dataSource={[mockDataSourceParam[0], mockDataSourceParam[1]]}
           originalSql={mockProps.originalSql}
           taskID={mockProps.taskID}
           sqlNumber={mockProps.sqlNumber}
         />
       );
 
-      fireEvent.click(screen.getByText(mockDataSource[0].rule_name!));
+      fireEvent.click(screen.getByText(mockDataSourceParam[0].rule_name!));
       expect(container).toMatchSnapshot();
     });
 

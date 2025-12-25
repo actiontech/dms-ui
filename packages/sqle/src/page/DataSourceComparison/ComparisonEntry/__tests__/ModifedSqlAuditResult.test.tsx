@@ -155,10 +155,10 @@ describe('ModifiedSqlAuditResult', () => {
   ];
 
   describe('index', () => {
-    const customRender = (dataSource?: IDatabaseDiffModifySQL[]) => {
+    const customRender = (dataSourceParam?: IDatabaseDiffModifySQL[]) => {
       return sqleSuperRender(
         <ModifiedSqlAuditResult
-          dataSource={dataSource}
+          dataSource={dataSourceParam}
           instanceName={instanceName}
           instanceType="MySQL"
           auditResultCollapseActiveKeys={auditResultCollapseActiveKeys}
@@ -219,12 +219,12 @@ describe('ModifiedSqlAuditResult', () => {
 
   describe('list', () => {
     const customRender = (
-      dataSource?: ISQLStatementWithAuditResult[],
+      dataSourceParam?: ISQLStatementWithAuditResult[],
       auditError?: string
     ) => {
       return sqleSuperRender(
         <ModifiedSqlAuditResultList
-          dataSource={dataSource}
+          dataSource={dataSourceParam}
           instanceType={instanceType}
           auditResultCollapseActiveKeys={auditResultCollapseActiveKeys}
           auditResultCollapseActiveKeysOnChange={

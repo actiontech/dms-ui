@@ -1,4 +1,4 @@
-import { act, fireEvent, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import ExportDetail from '..';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
