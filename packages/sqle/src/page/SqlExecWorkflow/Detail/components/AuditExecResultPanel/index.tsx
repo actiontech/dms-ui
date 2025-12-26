@@ -35,10 +35,12 @@ import { ModalName } from '../../../../../data/ModalName';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import useRetryExecute from './hooks/useRetryExecute';
+import classNames from 'classnames';
 
 const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
   activeTabKey,
   taskInfos,
+  isMobile,
   ...resetProps
 }) => {
   const { t } = useTranslation();
@@ -117,10 +119,16 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resetProps.refreshWorkflow, resetProps.refreshOverviewAction]);
   return (
-    <AuditExecResultPanelStyleWrapper>
+    <AuditExecResultPanelStyleWrapper
+      className={classNames({ 'mobile-audit-result-panel': isMobile })}
+    >
       <div className="audit-result-title">{t('audit.result')}</div>
-      <SegmentedRowStyleWrapper justify="space-between">
+      <SegmentedRowStyleWrapper
+        justify="space-between"
+        className="audit-result-segmented-row"
+      >
         <BasicSegmented
+          className="mobile-audit-result-segmented"
           value={activeTabKey}
           onChange={(value) => {
             if (value === WORKFLOW_OVERVIEW_TAB_KEY) {
@@ -140,22 +148,30 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           ]}
         />
 
-        <div hidden={activeTabKey === WORKFLOW_OVERVIEW_TAB_KEY}>
+        <div
+          hidden={activeTabKey === WORKFLOW_OVERVIEW_TAB_KEY}
+          className="audit-result-segmented-row-actions"
+        >
           <EmptyBox
             if={
               resetProps.workflowInfo?.exec_mode ===
               WorkflowResV2ExecModeEnum.sqls
             }
           >
-            <Space size={12} className="audit-result-actions-wrap">
+            <Space
+              size={isMobile ? 4 : 12}
+              className="audit-result-actions-wrap"
+            >
               <TableFilterButton
                 updateAllSelectedFilterItem={updateAllSelectedFilterItem}
                 filterButtonMeta={filterButtonMeta}
               />
-              <Divider
-                type="vertical"
-                className="audit-result-actions-divider"
-              />
+              <EmptyBox if={!isMobile}>
+                <Divider
+                  type="vertical"
+                  className="audit-result-actions-divider"
+                />
+              </EmptyBox>
               <ToggleButtonStyleWrapper
                 active={noDuplicate}
                 onClick={() => setNoDuplicate(!noDuplicate)}

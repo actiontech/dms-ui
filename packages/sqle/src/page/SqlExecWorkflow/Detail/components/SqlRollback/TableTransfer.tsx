@@ -1,10 +1,12 @@
 import { BasicTable } from '@actiontech/dms-kit';
-import { Transfer } from 'antd';
 import {
   TableTransferProps,
   TableRowSelection,
   ExpandedBackupSqlType
 } from './index.type';
+import { useMedia } from '@actiontech/shared';
+import classNames from 'classnames';
+import { MobileTableTransferStyleWrapper } from './style';
 const TableTransfer: React.FC<TableTransferProps> = (props) => {
   const {
     leftColumns,
@@ -16,8 +18,14 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
     onTableChange,
     ...restProps
   } = props;
+  const { isMobile } = useMedia();
   return (
-    <Transfer className="full-width-element" {...restProps}>
+    <MobileTableTransferStyleWrapper
+      className={classNames('full-width-element', {
+        'mobile-table-transfer': isMobile
+      })}
+      {...restProps}
+    >
       {({
         direction,
         onItemSelect,
@@ -58,13 +66,13 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
             onChange={isLeftTable ? onTableChange : undefined}
             scroll={{
               y: '700px',
-              x: true
+              x: isMobile ? '100%' : true // todo 待验证移动端适配情况
             }}
             className={isLeftTable ? 'left-table' : 'right-table'}
           />
         );
       }}
-    </Transfer>
+    </MobileTableTransferStyleWrapper>
   );
 };
 export default TableTransfer;

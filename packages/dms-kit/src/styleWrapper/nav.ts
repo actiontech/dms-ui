@@ -390,6 +390,12 @@ export const LayoutStyleWrapper = styled('section')`
     display: flex;
     flex-direction: column;
 
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
     .copyright-information {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
       font-size: 13px;

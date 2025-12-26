@@ -12,6 +12,23 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
   background: ${({ theme }) =>
     theme.sqleTheme.execWorkflow.common.auditResultFilter.bgColor};
 
+  &.audit-result-filter-container-mobile-wrapper {
+    padding: 1rem;
+    flex-direction: column;
+
+    .custom-segmented-filter-wrapper {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      .custom-segmented-filter-item {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
   &.audit-result-filter-container-borderless {
     border-bottom: 0;
   }

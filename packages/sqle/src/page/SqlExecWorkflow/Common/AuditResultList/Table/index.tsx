@@ -23,6 +23,8 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import SqlRewrittenDrawer from '../../../../../components/SqlRewrittenDrawer/index';
 import useSqlRewrittenDrawerState from '../../../../../components/SqlRewrittenDrawer/hooks/useSqlRewrittenDrawerState';
+import { useMedia } from '@actiontech/shared';
+
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
   taskID,
@@ -36,6 +38,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   supportedBackupPolicies,
   updateTaskAuditRuleExceptionStatus
 }) => {
+  const { isMobile } = useMedia();
   const {
     sqlRewrittenOpen,
     handleCloseSqlRewrittenDrawer,
@@ -167,14 +170,16 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       AuditResultForCreateWorkflowActions(
         handleClickAnalyze,
         onCreateWhitelist,
-        handleClickSqlRewritten
+        handleClickSqlRewritten,
+        isMobile
       )
     );
   }, [
     parse2TableActionPermissions,
     handleClickAnalyze,
     onCreateWhitelist,
-    handleClickSqlRewritten
+    handleClickSqlRewritten,
+    isMobile
   ]);
   const onSwitchSqlBackupPolicy = useCallback(
     (sqlId?: number) => {
@@ -230,6 +235,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           current: pagination.page_index ?? 1
         }}
         actions={actions}
+        enableOnlyRenderMoreButtons={isMobile}
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}

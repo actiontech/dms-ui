@@ -15,6 +15,8 @@ import { TasksResultCardStyleWrapper } from './style';
 import { SqlFileOutlined } from '@actiontech/icons';
 import { TypedLink, useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { useMedia } from '@actiontech/shared';
+import classNames from 'classnames';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,
@@ -22,6 +24,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
   enableRetryExecute,
   ...props
 }) => {
+  const { isMobile } = useMedia();
   const { workflowId } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail>();
   const auditResult = useMemo<IAuditResult[]>(() => {
@@ -170,7 +173,9 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
   ]);
 
   return (
-    <TasksResultCardStyleWrapper>
+    <TasksResultCardStyleWrapper
+      className={classNames({ 'mobile-task-result-card': isMobile })}
+    >
       <Collapse
         onChange={(keys) => {
           if (keys.length > 0) {

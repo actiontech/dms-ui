@@ -10,4 +10,14 @@ export const WorkflowDetailStyleWrapper = styled('section')<{
       workflowStepsVisibility ? 'calc(100% - 360px)' : '100%'} !important;
     transition: width 0.3s ease;
   }
+
+  &.mobile-workflow-detail-style-wrapper {
+    .workflow-detail-content {
+      width: 100% !important;
+
+      .actiontech-page-header-namespace {
+        padding: 0 1rem;
+      }
+    }
+  }
 `;

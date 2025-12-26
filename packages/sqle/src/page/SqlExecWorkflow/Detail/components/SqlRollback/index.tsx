@@ -38,6 +38,10 @@ import {
 } from '../../../../../store/sqlExecWorkflow';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { Space, SelectProps } from 'antd';
+import { useMedia } from '@actiontech/shared';
+import { SqlRollbackPageStyleWrapper } from './style';
+import classNames from 'classnames';
+
 const SqlRollback: React.FC<SqlRollbackProps> = ({
   isAtRollbackStep,
   backToWorkflowDetail,
@@ -47,6 +51,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useTypedNavigate();
+  const { isMobile } = useMedia();
   const [targetKeys, setTargetKeys] = useState<string[]>([]);
   const [selectedList, setSelectedList] = useState<ExpandedBackupSqlType[]>([]);
   const { pagination, tableChange, updateTableFilterInfo, tableFilterInfo } =
@@ -279,54 +284,60 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
   }, []);
   return (
     <EmptyBox if={isAtRollbackStep}>
-      <PageHeader
-        title={
-          <BasicButton icon={<LeftArrowOutlined />} onClick={onBack}>
-            {t('execWorkflow.detail.operator.backToDetail')}
-          </BasicButton>
-        }
-        extra={
-          <BasicButton
-            type="primary"
-            disabled={!selectedList.length}
-            onClick={onCreateWorkflow}
-          >
-            {t('execWorkflow.list.createButtonText')}
-          </BasicButton>
-        }
-      />
-
-      <SqlRollbackTableStyleWrapper>
-        <TableTransfer
-          dataSource={data?.list ?? []}
-          targetKeys={targetKeys}
-          showSelectAll={false}
-          onChange={onChange}
-          leftColumns={WorkflowRollbackSqlTableColumn()}
-          rightColumns={WorkflowRollbackSelectedSqlTableColumn(
-            onUpdateSqlRemake
-          )}
-          titles={[
-            <Space key="left-table">
-              {t('execWorkflow.detail.rollback.allSql')}
-              <TableFilterContainer
-                filterContainerMeta={filterContainerMeta}
-                updateTableFilterInfo={updateTableFilterInfo}
-                filterCustomProps={filterCustomProps}
-              />
-            </Space>,
-            t('execWorkflow.detail.rollback.selectedRollbackSql')
-          ]}
-          loading={loading}
-          leftDataSource={data?.list ?? []}
-          rightDataSource={selectedList}
-          leftPagination={{
-            total: data?.total || 0,
-            current: pagination.page_index
-          }}
-          onTableChange={tableChange}
+      <SqlRollbackPageStyleWrapper
+        className={classNames({
+          'sql-rollback-page-style-wrapper': isMobile
+        })}
+      >
+        <PageHeader
+          title={
+            <BasicButton icon={<LeftArrowOutlined />} onClick={onBack}>
+              {t('execWorkflow.detail.operator.backToDetail')}
+            </BasicButton>
+          }
+          extra={
+            <BasicButton
+              type="primary"
+              disabled={!selectedList.length}
+              onClick={onCreateWorkflow}
+            >
+              {t('execWorkflow.list.createButtonText')}
+            </BasicButton>
+          }
         />
-      </SqlRollbackTableStyleWrapper>
+
+        <SqlRollbackTableStyleWrapper>
+          <TableTransfer
+            dataSource={data?.list ?? []}
+            targetKeys={targetKeys}
+            showSelectAll={false}
+            onChange={onChange}
+            leftColumns={WorkflowRollbackSqlTableColumn()}
+            rightColumns={WorkflowRollbackSelectedSqlTableColumn(
+              onUpdateSqlRemake
+            )}
+            titles={[
+              <Space key="left-table">
+                {t('execWorkflow.detail.rollback.allSql')}
+                <TableFilterContainer
+                  filterContainerMeta={filterContainerMeta}
+                  updateTableFilterInfo={updateTableFilterInfo}
+                  filterCustomProps={filterCustomProps}
+                />
+              </Space>,
+              t('execWorkflow.detail.rollback.selectedRollbackSql')
+            ]}
+            loading={loading}
+            leftDataSource={data?.list ?? []}
+            rightDataSource={selectedList}
+            leftPagination={{
+              total: data?.total || 0,
+              current: pagination.page_index
+            }}
+            onTableChange={tableChange}
+          />
+        </SqlRollbackTableStyleWrapper>
+      </SqlRollbackPageStyleWrapper>
     </EmptyBox>
   );
 };

@@ -21,6 +21,7 @@ const ActiontechTable = <
   isPaginationFixed = true,
   toolbar,
   filterContainerProps,
+  enableOnlyRenderMoreButtons = false,
   ...props
 }: ActiontechTableProps<T, F, OtherColumnKeys>) => {
   const { t } = useTranslation();
@@ -40,12 +41,20 @@ const ActiontechTable = <
   >(tableName, username);
 
   const mergerColumns = useMemo(() => {
-    const operatorColumn = renderActionInTable<T>(props.actions);
+    const operatorColumn = renderActionInTable<T>(
+      props.actions,
+      enableOnlyRenderMoreButtons
+    );
 
     return (
       operatorColumn ? [...columns, operatorColumn] : columns
     ) as ActiontechTableColumn<T, F, OtherColumnKeys>;
-  }, [columns, props.actions, renderActionInTable]);
+  }, [
+    columns,
+    props.actions,
+    renderActionInTable,
+    enableOnlyRenderMoreButtons
+  ]);
 
   const innerColumns = useMemo(() => {
     if (!tableSetting) {

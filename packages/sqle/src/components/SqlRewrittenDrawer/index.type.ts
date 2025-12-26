@@ -12,7 +12,7 @@ export type SqlRewrittenDrawerProps = {
 
 interface SqlRewrittenDrawerBaseProps {
   maskClosable: boolean;
-  width: number;
+  width: number | string;
   title: string;
 }
 

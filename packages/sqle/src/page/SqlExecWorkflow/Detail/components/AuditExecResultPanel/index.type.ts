@@ -19,6 +19,7 @@ export type AuditExecResultPanelProps = {
   refreshOverviewAction: () => void;
   getOverviewLoading: boolean;
   overviewTableErrorMessage: string;
+  isMobile?: boolean;
 };
 
 export type GetAuditTaskSQLsPrams = Pick<
