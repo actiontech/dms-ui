@@ -34,6 +34,6 @@ nav:
 - CustomSelect样式变更，用于适配用户名的空格展示
 - BasicSelect样式变更，用于适配用户名的空格展示
 
-## 1.0.3
+## 1.0.4
 
 - ActiontechTable新增prop:enableOnlyRenderMoreButtons
