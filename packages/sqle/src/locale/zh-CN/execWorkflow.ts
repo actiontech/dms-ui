@@ -159,6 +159,7 @@ export default {
     operator: {
       buttonText: '工单详情',
       title: '工单信息',
+      moreActions: '更多操作',
       baseInfo: {
         title: '基本信息',
         createUser: '创建人',

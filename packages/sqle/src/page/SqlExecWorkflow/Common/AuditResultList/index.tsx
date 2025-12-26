@@ -18,6 +18,9 @@ import {
   auditLevelDictionary,
   translateDictionaryI18nLabel
 } from '../../../../hooks/useStaticStatus/index.data';
+import classNames from 'classnames';
+import useMedia from '@actiontech/shared/lib/hooks/useMedia';
+
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
@@ -29,6 +32,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { isMobile } = useMedia();
   const {
     noDuplicate,
     setNoDuplicate,
@@ -66,8 +70,15 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     }
   }, [tasks]);
   return (
-    <AuditResultForCreateWorkflowStyleWrapper>
-      <SegmentedRowStyleWrapper justify={'space-between'}>
+    <AuditResultForCreateWorkflowStyleWrapper
+      className={classNames({
+        'mobile-audit-result-list': isMobile
+      })}
+    >
+      <SegmentedRowStyleWrapper
+        justify={'space-between'}
+        className="audit-result-segmented-row"
+      >
         {showTaskTab ? (
           <BasicSegmented
             value={currentTaskID}

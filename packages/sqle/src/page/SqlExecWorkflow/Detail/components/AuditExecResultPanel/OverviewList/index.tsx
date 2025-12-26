@@ -16,6 +16,10 @@ import {
 import { ModalName } from '../../../../../../data/ModalName';
 import { useDispatch } from 'react-redux';
 import { IGetWorkflowTasksItemV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import MobileCardList from './MobileCardList';
+import { useCallback, useMemo } from 'react';
+import { useMedia } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 
 const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
   workflowInfo,
@@ -26,6 +30,7 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
   overviewList,
   overviewTableErrorMessage
 }) => {
+  const { isMobile } = useMedia();
   const { username } = useCurrentUser();
   const { projectName } = useCurrentProject();
   const { parse2TableActionPermissions } = usePermission();
@@ -46,19 +51,51 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
     refreshOverview: refreshOverviewAction
   });
 
-  const onRetryExecute = (record: IGetWorkflowTasksItemV2) => {
-    dispatch(
-      updateRetryExecuteData({
-        taskId: record.task_id?.toString() ?? ''
-      })
-    );
-    dispatch(
-      updateSqlExecWorkflowModalStatus({
-        modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
-        status: true
-      })
-    );
-  };
+  const onRetryExecute = useCallback(
+    (record: IGetWorkflowTasksItemV2) => {
+      dispatch(
+        updateRetryExecuteData({
+          taskId: record.task_id?.toString() ?? ''
+        })
+      );
+      dispatch(
+        updateSqlExecWorkflowModalStatus({
+          modalName: ModalName.Sql_Exec_Workflow_Retry_Execute_Modal,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
+  const actions = useMemo(
+    () =>
+      parse2TableActionPermissions(
+        AuditResultOverviewListAction({
+          scheduleTimeHandle,
+          sqlExecuteHandle,
+          sqlTerminateHandle,
+          openScheduleModalAndSetCurrentTask,
+          currentUsername: username,
+          workflowStatus: workflowInfo?.record?.status,
+          executable: !!workflowInfo?.record?.executable,
+          onRetryExecute,
+          workflowInfoRecord: workflowInfo?.record
+        })
+      ),
+    [
+      scheduleTimeHandle,
+      sqlExecuteHandle,
+      sqlTerminateHandle,
+      openScheduleModalAndSetCurrentTask,
+      username,
+      workflowInfo?.record,
+      onRetryExecute,
+      parse2TableActionPermissions
+    ]
+  );
+
+  const columns = useMemo(() => auditResultOverviewColumn(), []);
 
   return (
     <>
@@ -69,35 +106,37 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
         submit={scheduleTimeHandle}
         maintenanceTime={currentTask?.instance_maintenance_times ?? []}
       />
-      <ActiontechTable
-        rowKey="task_id"
-        className="table-row-cursor"
-        loading={getOverviewLoading}
-        columns={auditResultOverviewColumn()}
-        errorMessage={overviewTableErrorMessage}
-        dataSource={overviewList?.list}
-        pagination={false}
-        actions={parse2TableActionPermissions(
-          AuditResultOverviewListAction({
-            scheduleTimeHandle,
-            sqlExecuteHandle,
-            sqlTerminateHandle,
-            openScheduleModalAndSetCurrentTask,
-            currentUsername: username,
-            workflowStatus: workflowInfo?.record?.status,
-            executable: !!workflowInfo?.record?.executable,
-            onRetryExecute,
-            workflowInfoRecord: workflowInfo?.record
-          })
-        )}
-        onRow={(record) => {
-          return {
-            onClick: () => {
-              activeTabChangeEvent(`${record.task_id}`);
-            }
-          };
-        }}
-      />
+
+      <EmptyBox
+        if={isMobile}
+        defaultNode={
+          <ActiontechTable
+            rowKey="task_id"
+            className="table-row-cursor"
+            loading={getOverviewLoading}
+            columns={columns}
+            errorMessage={overviewTableErrorMessage}
+            dataSource={overviewList?.list}
+            pagination={false}
+            actions={actions}
+            onRow={(record) => {
+              return {
+                onClick: () => {
+                  activeTabChangeEvent(`${record.task_id}`);
+                }
+              };
+            }}
+          />
+        }
+      >
+        <MobileCardList
+          dataSource={overviewList?.list}
+          loading={getOverviewLoading}
+          actions={actions}
+          columns={columns}
+          onCardClick={(record) => activeTabChangeEvent(`${record.task_id}`)}
+        />
+      </EmptyBox>
     </>
   );
 };

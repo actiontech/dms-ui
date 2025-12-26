@@ -48,9 +48,14 @@ import RetryExecuteModal from '../../RetryExecuteModal';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useRetryExecute from '../../hooks/useRetryExecute';
+import { useMedia } from '@actiontech/shared';
+import classNames from 'classnames';
+import { useViewport } from '@actiontech/shared/lib/hooks';
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
+  useViewport(isMobile);
   const dispatch = useDispatch();
   const { taskId, fileId, workflowId } =
     useTypedParams<
@@ -173,7 +178,11 @@ const SqlFileStatementOverview: React.FC = () => {
   }, [refresh]);
 
   return (
-    <SqlFileStatementOverviewStyleWrapper>
+    <SqlFileStatementOverviewStyleWrapper
+      className={classNames({
+        'mobile-sql-file-statement-overview-style-wrapper': isMobile
+      })}
+    >
       <PageHeader
         title={
           <div className="page-title-wrapper">
@@ -193,7 +202,10 @@ const SqlFileStatementOverview: React.FC = () => {
         }
       />
 
-      <SegmentedRowStyleWrapper justify="space-between">
+      <SegmentedRowStyleWrapper
+        justify="space-between"
+        className="segmented-row-style-wrapper"
+      >
         <AuditResultFilterContainerStyleWrapper className="audit-result-filter-container-borderless clear-padding">
           <CustomSegmentedFilter
             noStyle

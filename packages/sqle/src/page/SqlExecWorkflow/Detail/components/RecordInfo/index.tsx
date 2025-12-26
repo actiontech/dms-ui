@@ -1,68 +1,32 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowRecordInfoProps } from './index.type';
-import { WorkflowStepsStyleWrapper } from './style';
-import WorkflowBasicInfo from './components/WorkflowBasicInfo';
-import { formatTime } from '@actiontech/dms-kit';
-import WorkflowSteps from './components/WorkflowSteps';
-import { EmptyBox, LazyLoadComponent } from '@actiontech/dms-kit';
-import WorkflowHistorySteps from './components/WorkflowHistorySteps';
-import { CloseOutlined } from '@actiontech/icons';
-import AssociatedWorkflows from './components/AssociatedWorkflows';
-import AssociatedRollbackWorkflows from './components/AssociatedRollbackWorkflows';
+import { LazyLoadComponent, BasicDrawer } from '@actiontech/dms-kit';
+import RecordInfo from './RecordInfo';
+import { useMedia } from '@actiontech/shared';
+
 const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   visibility,
-  workflowInfo,
-  tasksStatusCount,
-  onClose
+  ...restProps
 }) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
+  if (isMobile) {
+    return (
+      <BasicDrawer
+        size="default"
+        width="23rem"
+        title={t('execWorkflow.detail.operator.title')}
+        open={visibility}
+        onClose={restProps.onClose}
+      >
+        <RecordInfo {...restProps} />
+      </BasicDrawer>
+    );
+  }
+
   return (
     <LazyLoadComponent open={visibility}>
-      <WorkflowStepsStyleWrapper>
-        <div className="workflow-record-info-header">
-          <span className="workflow-record-info-header-text">
-            {t('execWorkflow.detail.operator.title')}
-          </span>
-          <CloseOutlined className="custom-icon-close" onClick={onClose} />
-        </div>
-
-        <WorkflowBasicInfo
-          createTime={formatTime(workflowInfo?.create_time, '-')}
-          createUserName={workflowInfo?.create_user_name ?? '-'}
-          workflowStatus={workflowInfo?.record?.status}
-        />
-
-        <WorkflowSteps
-          workflowSteps={workflowInfo?.record?.workflow_step_list}
-          currentStepNumber={workflowInfo?.record?.current_step_number}
-          workflowStatus={workflowInfo?.record?.status}
-          tasksStatusCount={tasksStatusCount}
-        />
-
-        <EmptyBox
-          if={
-            !!workflowInfo?.associated_stage_workflows &&
-            workflowInfo?.associated_stage_workflows?.length > 1
-          }
-        >
-          <AssociatedWorkflows
-            workflowId={workflowInfo?.workflow_id}
-            associatedWorkflows={workflowInfo?.associated_stage_workflows}
-          />
-        </EmptyBox>
-        {/* #if [ee] */}
-        <EmptyBox if={!!workflowInfo?.associated_rollback_workflows?.length}>
-          <AssociatedRollbackWorkflows
-            associatedWorkflows={workflowInfo?.associated_rollback_workflows}
-          />
-        </EmptyBox>
-        {/* #endif */}
-        <EmptyBox if={!!workflowInfo?.record_history_list}>
-          <WorkflowHistorySteps
-            recordHistoryList={workflowInfo?.record_history_list}
-          />
-        </EmptyBox>
-      </WorkflowStepsStyleWrapper>
+      <RecordInfo {...restProps} />
     </LazyLoadComponent>
   );
 };

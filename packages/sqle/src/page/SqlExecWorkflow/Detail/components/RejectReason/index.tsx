@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { RejectReasonProps } from './index.type';
 import { Col, Row } from 'antd';
 import { RejectFileFilled } from '@actiontech/icons';
+import { useMedia } from '@actiontech/shared';
+
 const RejectReason: React.FC<RejectReasonProps> = ({
   stepInfo,
   currentUsername,
@@ -12,8 +14,11 @@ const RejectReason: React.FC<RejectReasonProps> = ({
   createWorkflowUserName
 }) => {
   const { t } = useTranslation();
+
+  const { isMobile } = useMedia();
+
   return (
-    <RejectReasonStyleWrapper>
+    <RejectReasonStyleWrapper isMobile={isMobile}>
       <RejectFileFilled width={24} height={24} />
       <Row wrap={false} align="middle" className="full-width-element">
         <Col

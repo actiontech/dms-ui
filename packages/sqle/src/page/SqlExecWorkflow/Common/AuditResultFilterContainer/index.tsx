@@ -9,12 +9,14 @@ import classNames from 'classnames';
 import { floatToPercent } from '@actiontech/dms-kit';
 import { floatRound } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
+import { useMedia } from '@actiontech/shared';
 const AuditResultFilterContainer = <
   T extends CustomSegmentedFilterBaseValue = string
 >(
   props: AuditResultFilterContainerProps<T>
 ) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
   const {
     score,
     passRate,
@@ -34,7 +36,13 @@ const AuditResultFilterContainer = <
   }, [auditLevel]);
   return (
     <AuditResultFilterContainerStyleWrapper
-      className={classNames('audit-result-filter-container-wrapper', className)}
+      className={classNames(
+        'audit-result-filter-container-wrapper',
+        className,
+        {
+          'audit-result-filter-container-mobile-wrapper': isMobile
+        }
+      )}
     >
       <CustomSegmentedFilter
         {...filterProps}

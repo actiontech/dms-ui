@@ -17,6 +17,11 @@ export type WorkflowRecordInfoProps = {
   tasksStatusCount?: TasksStatusCount;
 };
 
+export type WorkflowRecordInfoContentProps = Pick<
+  WorkflowRecordInfoProps,
+  'onClose' | 'workflowInfo' | 'tasksStatusCount'
+>;
+
 export type WorkflowBasicInfoProps = {
   createUserName: string;
   createTime: string;

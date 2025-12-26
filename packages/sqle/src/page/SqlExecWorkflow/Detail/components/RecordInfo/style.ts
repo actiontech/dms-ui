@@ -10,6 +10,13 @@ export const WorkflowStepsStyleWrapper = styled('div')`
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillQuaternary};
 
+  &.mobile-workflow-record-info-style-wrapper {
+    width: 100%;
+    min-width: 100%;
+    border-left: none;
+    padding: 0;
+  }
+
   .workflow-record-info-header {
     display: flex;
     height: 60px;

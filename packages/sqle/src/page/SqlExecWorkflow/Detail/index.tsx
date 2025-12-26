@@ -21,8 +21,15 @@ import ModifySqlStatement from './components/ModifySqlStatement';
 import useAuditExecResultPanelSetup from './hooks/useAuditExecResultPanelSetup';
 import AuditExecResultPanel from './components/AuditExecResultPanel';
 import SqlRollback from './components/SqlRollback';
+import { useViewport } from '@actiontech/shared/lib/hooks';
+import { useMedia } from '@actiontech/shared';
+import classNames from 'classnames';
 
 const SqlWorkflowDetail: React.FC = () => {
+  const { isMobile } = useMedia();
+
+  useViewport(isMobile);
+
   const { username } = useCurrentUser();
   const [
     workflowStepsVisibility,
@@ -78,6 +85,9 @@ const SqlWorkflowDetail: React.FC = () => {
       <WorkflowDetailStyleWrapper
         workflowStepsVisibility={workflowStepsVisibility}
         hidden={isAtModifySqlStatementStep || isAtRollbackStep}
+        className={classNames({
+          'mobile-workflow-detail-style-wrapper': isMobile
+        })}
       >
         <div className="workflow-detail-content">
           <PageHeader
@@ -111,6 +121,7 @@ const SqlWorkflowDetail: React.FC = () => {
             className="clearPaddingTop"
             gap={24}
             sqlVersion={workflowInfo?.sql_version}
+            isMobile={isMobile}
           />
 
           <EmptyBox
@@ -137,6 +148,7 @@ const SqlWorkflowDetail: React.FC = () => {
             refreshOverviewAction={refreshOverviewAction}
             getOverviewLoading={getOverviewLoading}
             overviewTableErrorMessage={overviewTableErrorMessage}
+            isMobile={isMobile}
           />
         </div>
         <WorkflowRecordInfo
