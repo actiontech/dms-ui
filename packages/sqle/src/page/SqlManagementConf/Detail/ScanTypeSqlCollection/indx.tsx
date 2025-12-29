@@ -1,5 +1,4 @@
 import {
-  ActiontechTable,
   TableFilterContainer,
   useTableFilterContainer,
   useTableRequestParams,
@@ -10,7 +9,10 @@ import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
-import { ScanTypeSqlCollectionStyleWrapper } from './style';
+import {
+  ScanTypeSqlCollectionStyleWrapper,
+  ScanTypeSqlCollectionTableStyleWrapper
+} from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import {
   useCurrentProject,
@@ -41,6 +43,7 @@ import { ResponseCode } from '@actiontech/dms-kit';
 import { message } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ResultIconRenderProps } from '../../../../components/AuditResultMessage/index.type';
+
 const BEING_AUDITED = 'being_audited';
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -299,7 +302,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       </TableToolbar>
 
       {messageContextHolder}
-      <ActiontechTable
+      <ScanTypeSqlCollectionTableStyleWrapper
+        isMultiLineFiltering={
+          !!tableMetas?.filter_meta_list?.length &&
+          tableMetas?.filter_meta_list?.length > 6
+        }
         rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
@@ -357,6 +364,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         onChange={tableChange}
         pagination={{
           total: tableRows?.total
+        }}
+        scroll={{
+          y: '500px' // scroll 中的y 只支持string | number 所以这里的 500px 只是为了开启antd的固定列功能随便写的高度 具体高度在styled中动态计算
         }}
       />
       <ReportDrawer
