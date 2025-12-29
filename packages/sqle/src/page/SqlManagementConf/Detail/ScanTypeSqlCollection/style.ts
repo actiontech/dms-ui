@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { ActiontechTable } from '@actiontech/dms-kit/es/components/ActiontechTable';
 
 export const ScanTypeSqlCollectionStyleWrapper = styled('section')`
   .table-describe-column {
@@ -18,5 +19,14 @@ export const ScanTypeSqlCollectionStyleWrapper = styled('section')`
 
   .audit-tag {
     width: fit-content;
+  }
+`;
+
+export const ScanTypeSqlCollectionTableStyleWrapper = styled(ActiontechTable)<{
+  isMultiLineFiltering: boolean;
+}>`
+  .ant-table-body {
+    max-height: ${(isMultiLineFiltering) =>
+      `calc(100vh - ${isMultiLineFiltering ? '278px' : '240px'}) !important`};
   }
 `;
