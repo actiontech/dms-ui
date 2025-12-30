@@ -13,7 +13,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -60,7 +60,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -177,7 +177,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -308,7 +308,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -588,7 +588,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           style="margin-bottom: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -718,7 +718,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -900,7 +900,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                             >
                               <div
                                 class="ant-select-selector"
@@ -1028,7 +1028,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                             >
                               <div
                                 class="ant-select-selector"
@@ -1276,7 +1276,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1311,7 +1311,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1323,7 +1323,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1440,7 +1440,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -1571,7 +1571,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -1929,7 +1929,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-bottom: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -2057,7 +2057,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -2491,7 +2491,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2515,7 +2515,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2564,7 +2564,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           style="margin-right: 8px;"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2588,7 +2588,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2830,7 +2830,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -2842,7 +2842,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -2878,7 +2878,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -2914,7 +2914,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2926,7 +2926,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -3358,7 +3358,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
             class="ant-result-extra"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>

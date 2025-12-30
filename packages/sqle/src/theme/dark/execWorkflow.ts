@@ -26,7 +26,7 @@ export const execWorkflowTheme: ExecWorkflowTheme = {
       download: {
         borderColor: darkThemeUI.uiToken.colorBorderSecondary,
         bgColor: darkThemeUI.uiToken.colorFillQuaternary,
-        boxShadow: '0px 3px 12px 0px rgba(51, 44, 31, 0.1)',
+        boxShadow: '0px 3px 12px 0px rgba(0, 0, 0, 0.4)',
         itemColor: darkThemeUI.uiToken.colorText,
         itemHoverColor: darkThemeUI.uiToken.colorFillTertiary,
         itemIconColor: darkThemeUI.uiToken.colorTextTertiary
@@ -37,11 +37,11 @@ export const execWorkflowTheme: ExecWorkflowTheme = {
     },
     editForm: {
       titleColor: darkThemeUI.uiToken.colorTextTertiary,
-      projectFlagIconColor: '#ebad1c'
+      projectFlagIconColor: darkThemeUI.uiToken.colorWarning
     }
   },
   steps: {
-    boxShadow: '0px 1px 4px 0px rgba(51, 44, 31, 0.12'
+    boxShadow: '0px 1px 4px 0px rgba(0, 0, 0, 0.5)'
   },
   common: {
     basicInfo: {
@@ -56,7 +56,7 @@ export const execWorkflowTheme: ExecWorkflowTheme = {
       auditResultInfo: {
         itemBgColor: darkThemeUI.uiToken.colorFillQuaternary,
         textColor: darkThemeUI.uiToken.colorTextTertiary,
-        schemaValueColor: '#7d8ca8'
+        schemaValueColor: darkThemeUI.uiToken.colorTextTertiary
       },
       options: {
         bgColor: darkThemeUI.uiToken.colorFillTertiary,

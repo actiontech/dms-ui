@@ -23,7 +23,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -38,6 +38,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -59,7 +60,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 href="/sqle/project//sql-audit/create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -94,7 +95,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 href="/sqle/project//sql-audit/create-optimization"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -132,7 +133,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
           class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1"
+            class="ant-segmented basic-segmented-wrapper css-18p941p"
           >
             <div
               class="ant-segmented-group"
@@ -256,6 +257,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                           >
                             <path
                               d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -265,7 +267,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                         style="padding: 0px 6px 0px 10px;"
                         type="button"
                       >
@@ -310,7 +312,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
                         style="padding: 0px 6px 0px 8px;"
                         type="button"
                       >
@@ -330,6 +332,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                             >
                               <path
                                 d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                                fill="currentColor"
                               />
                             </svg>
                           </div>

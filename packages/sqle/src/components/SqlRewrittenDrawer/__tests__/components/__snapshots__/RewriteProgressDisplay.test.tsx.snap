@@ -324,7 +324,7 @@ exports[`RewriteProgressDisplay Component Rendering should render rewrite failed
       Test error message
     </div>
     <button
-      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span>

@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap download btn 1`] = 
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span
@@ -18,6 +18,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap download btn 1`] = 
         >
           <path
             d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+            fill="currentColor"
           />
         </svg>
       </span>
@@ -60,7 +61,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span
@@ -74,6 +75,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
         >
           <path
             d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+            fill="currentColor"
           />
         </svg>
       </span>
@@ -176,7 +178,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span
@@ -190,6 +192,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
         >
           <path
             d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+            fill="currentColor"
           />
         </svg>
       </span>
@@ -292,7 +295,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span
@@ -306,6 +309,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
         >
           <path
             d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+            fill="currentColor"
           />
         </svg>
       </span>

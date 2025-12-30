@@ -291,7 +291,7 @@ exports[`base/UserCenter/Drawer/Role/AddRole should send add role request when c
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -303,7 +303,7 @@ exports[`base/UserCenter/Drawer/Role/AddRole should send add role request when c
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

@@ -54,7 +54,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render init snap
                       style="margin-right: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -66,7 +66,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render init snap
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -420,7 +420,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render init snap
                                                         class="css-new95e"
                                                       >
                                                         <button
-                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                                           type="button"
                                                         >
                                                           <span>
@@ -517,7 +517,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render show tour
                       style="margin-right: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -529,7 +529,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render show tour
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -883,7 +883,7 @@ exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render show tour
                                                         class="css-new95e"
                                                       >
                                                         <button
-                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                                           type="button"
                                                         >
                                                           <span>

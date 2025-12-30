@@ -53,11 +53,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             数据源管理
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -110,11 +110,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             外部数据源
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -222,11 +222,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             成员与权限管理
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -315,11 +315,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             审核管理
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -410,11 +410,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             审批流程
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -504,11 +504,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             SQL窗口
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -542,11 +542,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             数据变更
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -580,11 +580,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             数据导出
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -672,11 +672,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             操作审计
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -771,11 +771,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             SQL窗口
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -809,11 +809,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             数据变更
-          </div>
+          </span>
           <div
             class="desc"
           >
@@ -847,11 +847,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         <div
           class="ant-col ant-col-8 content-wrapper"
         >
-          <div
-            class="sub-title"
+          <span
+            class="ant-typography sub-title"
           >
             数据导出
-          </div>
+          </span>
           <div
             class="desc"
           >

@@ -29,19 +29,19 @@ export const statisticsTheme: StatisticsTheme = {
   auditRateStatus: {
     success: {
       color: rectColorName.color12,
-      bg: '#e9f7f0'
+      bg: 'rgba(28, 184, 137, 0.2)'
     },
     warning: {
       color: rectColorName.color10,
-      bg: '#ebad1c1a'
+      bg: 'rgba(235, 173, 28, 0.2)'
     },
     error: {
       color: rectColorName.color11,
-      bg: '#fff0f0'
+      bg: 'rgba(246, 96, 116, 0.2)'
     },
     tip: {
       color: rectColorName.color2,
-      bg: '#6094fc1a'
+      bg: 'rgba(96, 148, 252, 0.2)'
     }
   },
   auditResultStatusColor: {

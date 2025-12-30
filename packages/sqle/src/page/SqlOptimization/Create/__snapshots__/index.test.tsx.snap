@@ -13,7 +13,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           href="/sqle/project/700300/sql-audit?active=sql_optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span>
@@ -251,7 +251,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -379,7 +379,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -501,7 +501,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                         >
                           <div
                             class="ant-select-selector"
@@ -936,7 +936,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -955,7 +955,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-oaiflc"
                   type="button"
                 >
                   <span>

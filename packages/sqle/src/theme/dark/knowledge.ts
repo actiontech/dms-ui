@@ -4,13 +4,13 @@ import { KnowledgeTheme } from '../type';
 export const knowledgeTheme: KnowledgeTheme = {
   highlight: {
     color: '#ff4d4f',
-    background: '#ffebeb'
+    background: 'rgba(255, 77, 79, 0.2)'
   },
   result: {
     list: {
-      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.3)',
       hoverBoxShadow:
-        '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)'
+        '0 3px 6px -4px rgba(0, 0, 0, 0.5), 0 6px 16px 0 rgba(0, 0, 0, 0.4), 0 9px 28px 8px rgba(0, 0, 0, 0.3)'
     },
     description: {
       borderLeftColor: darkThemeUI.uiToken.colorSuccess
@@ -18,7 +18,7 @@ export const knowledgeTheme: KnowledgeTheme = {
   },
   graph: {
     wrapper: {
-      dotColor: '#f0f0f0',
+      dotColor: darkThemeUI.uiToken.colorTextTertiary,
       backgroundColor: 'transparent',
       borderColor: darkThemeUI.uiToken.colorBorderSecondary
     },
@@ -29,7 +29,7 @@ export const knowledgeTheme: KnowledgeTheme = {
       borderColor: darkThemeUI.uiToken.colorBorderSecondary
     },
     edge: {
-      color: 'rgba(96, 96, 96, 0.6)'
+      color: darkThemeUI.uiToken.colorTextTertiary
     }
   }
 };

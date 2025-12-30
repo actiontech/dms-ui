@@ -54,7 +54,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -172,7 +172,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -290,7 +290,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -442,7 +442,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -513,7 +513,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -521,7 +521,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -596,7 +596,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -746,7 +746,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -817,7 +817,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 disabled=""
                 type="button"
               >
@@ -826,7 +826,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 disabled=""
                 type="button"
               >

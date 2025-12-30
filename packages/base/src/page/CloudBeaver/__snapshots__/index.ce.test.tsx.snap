@@ -124,7 +124,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                               target="_blank"
                             >
@@ -414,7 +414,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://www.actionsky.com/sqle?question=true"
                               target="_blank"
                             >
@@ -702,7 +702,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                               target="_blank"
                             >
@@ -1353,7 +1353,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -1371,7 +1371,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -1448,7 +1448,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         target="_blank"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>
@@ -1483,7 +1483,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
       class="extra"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
         disabled=""
         type="button"
       >
@@ -1643,7 +1643,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                               target="_blank"
                             >
@@ -1933,7 +1933,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://www.actionsky.com/sqle?question=true"
                               target="_blank"
                             >
@@ -2221,7 +2221,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                               target="_blank"
                             >
@@ -2872,7 +2872,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -2890,7 +2890,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -2967,7 +2967,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         target="_blank"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>
@@ -3002,7 +3002,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
       class="extra"
     >
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
         type="button"
       >
         <span>
@@ -3097,7 +3097,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                               target="_blank"
                             >
@@ -3387,7 +3387,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://www.actionsky.com/sqle?question=true"
                               target="_blank"
                             >
@@ -3675,7 +3675,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                               href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                               target="_blank"
                             >
@@ -4326,7 +4326,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -4344,7 +4344,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -4421,7 +4421,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                         target="_blank"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>

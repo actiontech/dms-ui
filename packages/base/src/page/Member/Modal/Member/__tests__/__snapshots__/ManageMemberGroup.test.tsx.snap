@@ -105,7 +105,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -117,7 +117,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -136,7 +136,7 @@ exports[`base/Member/Modal/ManageMemberGroup should render manage member group m
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>

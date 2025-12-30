@@ -8,6 +8,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
   popoverProps,
   header,
   items,
+  footer,
   children
 }) => {
   const [open, onOpenChange] = useControllableValue(
@@ -65,6 +66,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
               );
             })}
           </div>
+          {footer && <div className="footer">{footer}</div>}
         </PopoverInnerStyleWrapper>
       }
     >

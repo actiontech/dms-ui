@@ -14,5 +14,6 @@ export type ContextMenuProps = {
   items: ContextMenuItem[];
   children: ReactNode;
   header?: ReactNode;
+  footer?: ReactNode;
   popoverProps?: Omit<PopoverProps, 'content'>;
 };

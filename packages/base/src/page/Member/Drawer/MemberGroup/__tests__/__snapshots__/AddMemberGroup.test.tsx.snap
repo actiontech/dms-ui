@@ -140,7 +140,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -449,7 +449,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
                                 type="button"
                               >
                                 <span
@@ -491,7 +491,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -503,7 +503,7 @@ exports[`base/Member/Drawer/AddMemberGroup should render add member group form w
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -667,7 +667,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -976,7 +976,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
                                 type="button"
                               >
                                 <span
@@ -1018,7 +1018,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1030,7 +1030,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1194,7 +1194,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1598,7 +1598,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1711,7 +1711,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1814,7 +1814,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                                   class="ant-form-item-control-input-content"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-g7qceb"
+                                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-4gfult"
                                     type="button"
                                   >
                                     <span
@@ -1856,7 +1856,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
+                                class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
                                 type="button"
                               >
                                 <span
@@ -1898,7 +1898,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1910,7 +1910,7 @@ exports[`base/Member/Drawer/AddMemberGroup should send add member group request 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

@@ -225,7 +225,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render snap when open i
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -233,7 +233,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render snap when open i
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 data-testid="confirm-button"
                 type="button"
               >
@@ -474,7 +474,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render snap when open i
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -482,7 +482,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render snap when open i
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 data-testid="confirm-button"
                 type="button"
               >
@@ -771,7 +771,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render submit btn 1`] =
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -779,7 +779,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal render submit btn 1`] =
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 data-testid="confirm-button"
                 disabled=""
                 type="button"
@@ -1049,6 +1049,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                               >
                                                 <path
                                                   d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                                  fill="#C3C6CD"
                                                 />
                                               </svg>
                                             </span>
@@ -3022,7 +3023,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                   style="margin-bottom: 8px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span
@@ -3038,7 +3039,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span
@@ -3064,7 +3065,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -3072,7 +3073,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 data-testid="confirm-button"
                 type="button"
               >

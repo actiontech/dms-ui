@@ -249,7 +249,7 @@ exports[`NotFoundPage should render CloudBeaver error page when is CloudBeaver p
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -579,7 +579,7 @@ exports[`NotFoundPage should render correctly with loading state 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -885,7 +885,7 @@ exports[`NotFoundPage should render normal 404 page when not CloudBeaver page 1`
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>

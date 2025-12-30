@@ -9,7 +9,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { LocalStorageWrapper, SupportTheme } from '@actiontech/dms-kit';
 import {
   CompanyNoticeDisplayStatusEnum,
   SupportLanguage
@@ -35,6 +35,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
   const navigateSpy = jest.fn();
   const scopeDispatch = jest.fn();
   let requestDelSession: jest.SpyInstance;
+  const changeThemeFn = jest.fn();
 
   const customRender = () => {
     return baseSuperRender(
@@ -42,6 +43,8 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
         language={SupportLanguage.zhCN}
         username="Test name"
         onOpenVersionModal={versionModalOpenFn}
+        currentTheme={SupportTheme.LIGHT}
+        changeTheme={changeThemeFn}
       />
     );
   };

@@ -1,11 +1,11 @@
-import React from 'react';
 import { SupportTheme } from '@actiontech/dms-kit';
 import useCurrentUser from '../useCurrentUser';
+import { useCallback, useEffect, useMemo } from 'react';
 
 const useChangeTheme = () => {
   const { theme, updateTheme } = useCurrentUser();
 
-  const currentEditorTheme = React.useMemo(() => {
+  const currentEditorTheme = useMemo(() => {
     switch (theme) {
       case SupportTheme.DARK:
         return 'vs-dark';
@@ -15,7 +15,7 @@ const useChangeTheme = () => {
     }
   }, [theme]);
 
-  const changeTheme = React.useCallback(
+  const changeTheme = useCallback(
     (_theme: SupportTheme) => {
       updateTheme(_theme);
     },
@@ -23,12 +23,22 @@ const useChangeTheme = () => {
   );
 
   //TODO: implements in backend
-  React.useEffect(() => {
+  useEffect(() => {
     if (theme === SupportTheme.DARK) {
       changeTheme(SupportTheme.DARK);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // 根据主题设置 data-theme 属性，用于 CSS 变量切换
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === SupportTheme.DARK) {
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.setAttribute('data-theme', 'light');
+    }
+  }, [theme]);
 
   return {
     currentTheme: theme,

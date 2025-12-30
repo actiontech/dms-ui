@@ -18,7 +18,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           href="/sqle/project/700300/version-management/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -107,6 +107,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -116,7 +117,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -162,7 +163,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -177,6 +178,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -199,7 +201,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           class="css-1y8q0oh"
         >
           <div
-            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1l8vu1j"
             style="min-width: 320px;"
           >
             <div
@@ -225,6 +227,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
               >
                 <path
                   d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </div>
@@ -263,7 +266,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           class="css-1y8q0oh"
         >
           <div
-            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1l8vu1j"
             style="min-width: 320px;"
           >
             <div
@@ -289,6 +292,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
               >
                 <path
                   d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </div>
@@ -520,7 +524,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -533,7 +537,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -545,7 +549,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -673,7 +677,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -1097,7 +1101,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
           href="/sqle/project/700300/version-management/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1186,6 +1190,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1195,7 +1200,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1240,7 +1245,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -1255,6 +1260,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1465,7 +1471,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1478,7 +1484,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1490,7 +1496,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1618,7 +1624,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>

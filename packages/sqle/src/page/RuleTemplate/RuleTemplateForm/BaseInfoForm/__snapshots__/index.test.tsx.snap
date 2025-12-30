@@ -125,7 +125,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -218,7 +218,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                 >
                   <div
                     class="ant-select-selector"
@@ -285,7 +285,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
         type="button"
       >
         <span>

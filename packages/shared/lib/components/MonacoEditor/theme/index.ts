@@ -1,6 +1,5 @@
 import * as monaco from 'monaco-editor';
 
-// TODO theme
 export const editorDefaultThemeData: monaco.editor.IStandaloneThemeData = {
   base: 'vs',
   inherit: true,
@@ -43,4 +42,38 @@ export const editorDefaultThemeData: monaco.editor.IStandaloneThemeData = {
   }
 };
 
+export const editorDarkThemeData: monaco.editor.IStandaloneThemeData = {
+  base: 'vs-dark',
+  inherit: true,
+  rules: [
+    // 暗色主题的代码语法高亮
+    { token: '', foreground: 'E5E5E5' },
+    { token: 'keyword', foreground: 'F66074', fontStyle: 'bold' },
+    { token: 'string', foreground: '1CB889' },
+    { token: 'number', foreground: 'EDB054' },
+    { token: 'comment', foreground: '999999', fontStyle: 'italic' }
+  ],
+  colors: {
+    'editor.background': '#141414',
+    'editor.foreground': '#E5E5E5',
+    'editorLineNumber.foreground': '#666666',
+    'editorLineNumber.activeForeground': '#BFBFBF',
+    'editorGutter.background': '#1D1D1D',
+    'editor.lineHighlightBackground': '#1F1F1F',
+    'editor.lineHighlightBorder': '#00000000',
+    // 暗色主题的差异对比颜色
+    'diffEditor.insertedTextBackground': '#1A3A1FAA',
+    'diffEditor.removedTextBackground': '#4A1F1FAA',
+    'diffEditor.insertedLineBackground': '#1A3A1FBB',
+    'diffEditor.removedLineBackground': '#4A1F1F99',
+    'scrollbar.shadow': '#00000000',
+    'scrollbarSlider.background': '#404040',
+    'scrollbarSlider.hoverBackground': '#525252',
+    'scrollbarSlider.activeBackground': '#666666',
+    'editorCursor.foreground': '#4583FF',
+    'editorCursor.background': '#FFFFFF00'
+  }
+};
+
 export const CUSTOM_DIFF_EDITOR_THEME_NAME = 'editorCustomTheme';
+export const CUSTOM_DARK_EDITOR_THEME_NAME = 'editorCustomDarkTheme';

@@ -24,7 +24,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
         >
           账户基本信息
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -71,7 +71,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -123,7 +123,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -175,7 +175,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -227,7 +227,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -271,7 +271,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -542,7 +542,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -589,7 +589,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -601,7 +601,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                         type="submit"
                                       >
                                         <span>
@@ -650,7 +650,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -705,7 +705,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
         >
           账户基本信息
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -752,7 +752,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -804,7 +804,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -856,7 +856,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -908,7 +908,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -952,7 +952,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -1223,7 +1223,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -1270,7 +1270,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -1282,7 +1282,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                         type="submit"
                                       >
                                         <span>
@@ -1331,7 +1331,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -1652,7 +1652,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1664,7 +1664,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1712,7 +1712,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
         >
           账户基本信息
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1783,7 +1783,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -1835,7 +1835,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -1887,7 +1887,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -1939,7 +1939,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >
@@ -1983,7 +1983,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -2278,7 +2278,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -2325,7 +2325,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span>
@@ -2337,7 +2337,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                         type="submit"
                                       >
                                         <span>
@@ -2386,7 +2386,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                     hidden=""
                     type="button"
                   >

@@ -10,7 +10,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
         class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -118,7 +118,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -132,6 +132,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
                 >
                   <path
                     d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>

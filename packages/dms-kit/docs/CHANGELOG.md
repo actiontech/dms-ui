@@ -33,3 +33,7 @@ nav:
 - CustomAvatar中Tooltip title改动，用于适配用户名的空格展示
 - CustomSelect样式变更，用于适配用户名的空格展示
 - BasicSelect样式变更，用于适配用户名的空格展示
+
+## 1.0.4
+
+- 修改部分组件样式适配暗色模式

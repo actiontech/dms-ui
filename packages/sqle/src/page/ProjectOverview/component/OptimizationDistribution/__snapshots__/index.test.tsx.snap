@@ -61,6 +61,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -202,6 +203,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -343,6 +345,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -484,6 +487,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -574,7 +578,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -804,7 +808,7 @@ exports[`ProjectOverview/OptimizationDistribution render tooltip customContent 1
           },
           "backgroundColor": "#f2f1ef",
           "color": "#575c66",
-          "hoverBackgroundColor": "#E8EAE7",
+          "hoverBackgroundColor": "#ebeae7",
           "noticeCountColor": "#f66074",
         },
         "basicSelect": {
@@ -1173,6 +1177,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -1313,6 +1318,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -1431,6 +1437,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                                         >
                                           <path
                                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                            fill="#C3C6CD"
                                           />
                                         </svg>
                                       </span>
@@ -1991,6 +1998,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                                         >
                                           <path
                                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                            fill="#C3C6CD"
                                           />
                                         </svg>
                                       </span>
