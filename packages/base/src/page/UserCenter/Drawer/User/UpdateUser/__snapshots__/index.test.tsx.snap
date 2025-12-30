@@ -307,7 +307,7 @@ exports[`base/UserCenter/Drawer/UpdateUser should send update user request when 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -474,7 +474,7 @@ exports[`base/UserCenter/Drawer/UpdateUser should send update user request when 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -486,7 +486,7 @@ exports[`base/UserCenter/Drawer/UpdateUser should send update user request when 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

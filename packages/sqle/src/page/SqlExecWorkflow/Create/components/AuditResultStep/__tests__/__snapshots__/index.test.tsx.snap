@@ -13,7 +13,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -60,7 +60,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -100,7 +100,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
         class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -212,7 +212,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -226,6 +226,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
                 >
                   <path
                     d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -595,7 +596,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -630,7 +631,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -642,7 +643,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -682,7 +683,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
         class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -771,7 +772,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             style="margin-right: 4px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -808,7 +809,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -822,6 +823,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                 >
                   <path
                     d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -1220,7 +1222,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                           class="ant-table-cell audit-result-describe-column"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -1243,7 +1245,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -1256,7 +1258,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -1268,7 +1270,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -1530,7 +1532,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1603,7 +1605,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1611,7 +1613,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1644,7 +1646,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -1679,7 +1681,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           style="margin-right: 8px;"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1691,7 +1693,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1731,7 +1733,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
       class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper css-18p941p"
       >
         <div
           class="ant-segmented-group"
@@ -1820,7 +1822,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           style="margin-right: 4px;"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1857,7 +1859,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1871,6 +1873,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
               >
                 <path
                   d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  fill="currentColor"
                 />
               </svg>
             </span>

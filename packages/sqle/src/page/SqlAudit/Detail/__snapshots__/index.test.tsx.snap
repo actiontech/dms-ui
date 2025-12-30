@@ -19,7 +19,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -50,7 +50,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit/create"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -158,7 +158,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -172,6 +172,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                     >
                       <path
                         d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -593,7 +594,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -606,7 +607,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -618,7 +619,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span

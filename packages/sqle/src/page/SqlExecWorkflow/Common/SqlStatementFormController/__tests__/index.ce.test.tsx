@@ -17,6 +17,7 @@ describe('test SqlStatementFormController ce', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
   it('should match snapshot', () => {
     mockUseCurrentProject();
+    mockUseCurrentUser();
     const { result } = renderHook(() => Form.useForm());
     const { container } = sqleSuperRender(
       <Form form={result.current[0]}>

@@ -61,6 +61,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -202,6 +203,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -343,6 +345,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -456,6 +459,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -546,7 +550,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -776,7 +780,7 @@ exports[`ReportStatistics/OrderQuantityTrend render tooltip customContent 1`] = 
           },
           "backgroundColor": "#f2f1ef",
           "color": "#575c66",
-          "hoverBackgroundColor": "#E8EAE7",
+          "hoverBackgroundColor": "#ebeae7",
           "noticeCountColor": "#f66074",
         },
         "basicSelect": {
@@ -1145,6 +1149,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -1285,6 +1290,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                     >
                       <path
                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </div>
@@ -1403,6 +1409,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                         >
                                           <path
                                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                            fill="#C3C6CD"
                                           />
                                         </svg>
                                       </span>
@@ -1963,6 +1970,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                         >
                                           <path
                                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                            fill="#C3C6CD"
                                           />
                                         </svg>
                                       </span>

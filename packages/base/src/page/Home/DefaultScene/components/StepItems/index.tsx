@@ -1,4 +1,4 @@
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Typography } from 'antd';
 import { UserDevopsStepsFactory } from '../../index.type';
 import GuidanceButton from '../GuidanceButton';
 
@@ -25,7 +25,9 @@ const StepItems: React.FC<{ steps: UserDevopsStepsFactory }> = ({ steps }) => {
             <Row wrap={false}>
               {step.children.map((stepChild) => (
                 <Col className="content-wrapper" key={stepChild.key} span={8}>
-                  <div className="sub-title">{stepChild.title}</div>
+                  <Typography.Text className="sub-title">
+                    {stepChild.title}
+                  </Typography.Text>
                   <div className="desc">{stepChild.content}</div>
                   <Space className="actions" size={[8, 8]} wrap>
                     {(stepChild?.buttons ?? []).map((button) => (

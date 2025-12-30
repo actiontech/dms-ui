@@ -143,7 +143,7 @@ export const WorkflowStepsItemStyleWrapper = styled('div')`
   align-items: flex-start;
   align-self: stretch;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
+  background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorFill};
   box-shadow: ${({ theme }) => theme.sqleTheme.execWorkflow.steps.boxShadow};
   width: 100%;
 
@@ -222,6 +222,8 @@ export const CustomSteps = styled(Steps)`
 
           .ant-steps-item-title {
             padding-right: 0 !important;
+            background-color: ${({ theme }) =>
+              theme.sharedTheme.uiToken.colorFillTertiary};
             width: 100%;
           }
         }

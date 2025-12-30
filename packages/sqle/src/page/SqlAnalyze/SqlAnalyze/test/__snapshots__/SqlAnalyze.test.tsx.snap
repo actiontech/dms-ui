@@ -31,7 +31,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -245,7 +245,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -322,7 +322,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -536,7 +536,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -1135,7 +1135,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -1640,7 +1640,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -7217,7 +7217,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -7459,7 +7459,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -13036,7 +13036,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -13197,7 +13197,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                               style="margin-right: 8px;"
                             >
                               <div
-                                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                                class="ant-segmented basic-segmented-wrapper css-18p941p"
                               >
                                 <div
                                   class="ant-segmented-group"
@@ -13280,6 +13280,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                                     >
                                       <path
                                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                        fill="#C3C6CD"
                                       />
                                     </svg>
                                   </div>
@@ -13399,7 +13400,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -18976,7 +18977,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
               class="tab-wrapper"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                class="ant-segmented basic-segmented-wrapper css-18p941p"
               >
                 <div
                   class="ant-segmented-group"
@@ -19137,7 +19138,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                               style="margin-right: 8px;"
                             >
                               <div
-                                class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                                class="ant-segmented basic-segmented-wrapper css-18p941p"
                               >
                                 <div
                                   class="ant-segmented-group"
@@ -19220,6 +19221,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                                     >
                                       <path
                                         d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                        fill="#C3C6CD"
                                       />
                                     </svg>
                                   </div>
@@ -20040,7 +20042,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
                           class="number-cont"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>

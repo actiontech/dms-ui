@@ -110,17 +110,12 @@ export type SQLSnippetRendererProps = Omit<
 
 export type SQLViewOnlyEditorRendererProps = {
   sql?: string;
-} & Omit<EditorProps, 'theme' | 'language'>;
+} & Omit<EditorProps, 'language'>;
 
 export type SQLDiffViewOnlyEditorRendererProps = {
   originalSql?: string;
   modifiedSql?: string;
 } & Omit<
   DiffEditorProps,
-  | 'theme'
-  | 'language'
-  | 'original'
-  | 'modified'
-  | 'originalLanguage'
-  | 'modifiedLanguage'
+  'language' | 'original' | 'modified' | 'originalLanguage' | 'modifiedLanguage'
 >;

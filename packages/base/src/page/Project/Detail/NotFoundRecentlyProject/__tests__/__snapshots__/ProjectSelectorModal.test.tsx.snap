@@ -72,7 +72,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorMo
                    暂无最近打开的项目, 请选择一个项目!
                 </span>
                 <div
-                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow ant-select-open"
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow ant-select-open"
                   searchinputref="[object Object]"
                 >
                   <div
@@ -146,7 +146,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorMo
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -158,7 +158,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorMo
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

@@ -266,7 +266,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   disabled=""
                                   type="button"
                                 >
@@ -279,7 +279,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -289,7 +289,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                               </div>
                             </div>
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -451,7 +451,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   disabled=""
                                   type="button"
                                 >
@@ -464,7 +464,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   disabled=""
                                   type="button"
                                 >
@@ -475,7 +475,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                               </div>
                             </div>
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span

@@ -86,6 +86,8 @@ export const SideMenuStyleWrapper = styled('div')`
             ${({ theme }) => theme.sharedTheme.nav.padding * 2}px
         );
         border-inline-end: 0;
+        background-color: ${({ theme }) =>
+          theme.sharedTheme.uiToken.colorBgBase};
 
         .ant-menu-item {
           display: flex;

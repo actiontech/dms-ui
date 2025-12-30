@@ -96,7 +96,7 @@ export const WorkflowStepsItemStyleWrapper = styled('div')`
   align-items: flex-start;
   align-self: stretch;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
+  background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorFill};
   box-shadow: ${({ theme }) => theme.sqleTheme.execWorkflow.steps.boxShadow};
   width: 100%;
 
@@ -105,7 +105,6 @@ export const WorkflowStepsItemStyleWrapper = styled('div')`
     font-size: 14px;
     font-weight: 600;
     line-height: 22px;
-    /* color: red; */
   }
 
   .step-info {

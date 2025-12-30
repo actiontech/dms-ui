@@ -3,7 +3,7 @@
 exports[`ActionButton should match snapshot 1`] = `
 <div>
   <button
-    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
     type="button"
   >
     <span>

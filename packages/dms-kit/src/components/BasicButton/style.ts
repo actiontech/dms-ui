@@ -41,12 +41,12 @@ export const BasicButtonStyleWrapper = styled(Button)`
 
   &.basic-button-wrapper.ant-btn.ant-btn-link {
     color: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.link.default.color};
+      theme.sharedTheme.components.basicButton.link.default.color} !important;
 
     &:hover:not(:disabled) {
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.link.hover.color};
-      background: none;
+        theme.sharedTheme.components.basicButton.link.hover.color} !important;
+      background: none !important;
     }
   }
 
@@ -54,92 +54,135 @@ export const BasicButtonStyleWrapper = styled(Button)`
   &.basic-button-wrapper.ant-btn {
     padding: 0 12px;
     background: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.default.default.background};
+      theme.sharedTheme.components.basicButton.default.default
+        .background} !important;
     color: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.default.default.color};
+      theme.sharedTheme.components.basicButton.default.default
+        .color} !important;
     box-shadow: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.default.default.boxShadow};
+      theme.sharedTheme.components.basicButton.default.default
+        .boxShadow} !important;
+    border-color: transparent !important;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.hover.background};
+        theme.sharedTheme.components.basicButton.default.hover
+          .background} !important;
+      border-color: transparent !important;
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.active.background};
+        theme.sharedTheme.components.basicButton.default.active
+          .background} !important;
+      border-color: transparent !important;
     }
 
-    &:disabled {
+    &:disabled,
+    &.ant-btn-disabled {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.disabled.background};
+        theme.sharedTheme.components.basicButton.default.disabled
+          .background} !important;
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.disabled.color};
+        theme.sharedTheme.components.basicButton.default.disabled
+          .color} !important;
+      border-color: transparent !important;
+      opacity: 1 !important;
     }
   }
 
   /* primary */
   &.basic-button-wrapper.ant-btn-primary {
     color: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.primary.default.color};
+      theme.sharedTheme.components.basicButton.primary.default
+        .color} !important;
     background: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.primary.default.background};
+      theme.sharedTheme.components.basicButton.primary.default
+        .background} !important;
     box-shadow: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.primary.default.boxShadow};
+      theme.sharedTheme.components.basicButton.primary.default
+        .boxShadow} !important;
+    border-color: transparent !important;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.primary.hover.background};
+        theme.sharedTheme.components.basicButton.primary.hover
+          .background} !important;
+      border-color: transparent !important;
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.primary.active.background};
+        theme.sharedTheme.components.basicButton.primary.active
+          .background} !important;
+      border-color: transparent !important;
     }
 
-    &:disabled {
+    &:disabled,
+    &.ant-btn-disabled {
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.primary.disabled.background};
+        theme.sharedTheme.components.basicButton.primary.disabled
+          .background} !important;
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.primary.disabled.color};
+        theme.sharedTheme.components.basicButton.primary.disabled
+          .color} !important;
+      border-color: transparent !important;
+      opacity: 1 !important;
     }
   }
 
   /* dashed */
   &.basic-button-wrapper.ant-btn-dashed:not(:disabled):not(.ant-btn-disabled) {
-    background: none;
+    background: none !important;
     border: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.dashed.default.border};
+      theme.sharedTheme.components.basicButton.dashed.default
+        .border} !important;
 
     &:hover {
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.default.color};
+        theme.sharedTheme.components.basicButton.default.default
+          .color} !important;
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.hover.background};
+        theme.sharedTheme.components.basicButton.default.hover
+          .background} !important;
+      border-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicButton.dashed.default
+          .border} !important;
     }
 
     &:active {
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.default.color};
+        theme.sharedTheme.components.basicButton.default.default
+          .color} !important;
       background: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.default.active.background};
+        theme.sharedTheme.components.basicButton.default.active
+          .background} !important;
+      border-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicButton.dashed.default
+          .border} !important;
     }
   }
 
-  &.basic-button-wrapper.ant-btn-dashed:disabled {
-    background: none;
+  &.basic-button-wrapper.ant-btn-dashed:disabled,
+  &.basic-button-wrapper.ant-btn-dashed.ant-btn-disabled {
+    background: none !important;
     border: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.dashed.default.border};
+      theme.sharedTheme.components.basicButton.dashed.default
+        .border} !important;
+    opacity: 1 !important;
   }
 
   /* dangerous */
   &.basic-button-wrapper.ant-btn-dangerous {
     color: ${({ theme }) =>
-      theme.sharedTheme.components.basicButton.dangerous.default.color};
+      theme.sharedTheme.components.basicButton.dangerous.default
+        .color} !important;
 
-    &:disabled {
+    &:disabled,
+    &.ant-btn-disabled {
       color: ${({ theme }) =>
-        theme.sharedTheme.components.basicButton.dangerous.disabled.color};
+        theme.sharedTheme.components.basicButton.dangerous.disabled
+          .color} !important;
     }
   }
 

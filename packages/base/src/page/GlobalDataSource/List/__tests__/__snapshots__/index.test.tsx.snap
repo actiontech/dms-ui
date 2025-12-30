@@ -57,6 +57,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -66,7 +67,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -530,7 +531,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -542,7 +543,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -552,7 +553,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -675,7 +676,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -687,7 +688,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -697,7 +698,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -807,7 +808,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -819,7 +820,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -829,7 +830,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -1071,6 +1072,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -1080,7 +1082,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -1544,7 +1546,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1556,7 +1558,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1566,7 +1568,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -1689,7 +1691,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1701,7 +1703,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1711,7 +1713,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -1821,7 +1823,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1833,7 +1835,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1843,7 +1845,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2085,6 +2087,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -2094,7 +2097,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -2147,7 +2150,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2205,7 +2208,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2263,7 +2266,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2321,7 +2324,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2796,7 +2799,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -2808,7 +2811,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -2818,7 +2821,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2941,7 +2944,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -2953,7 +2956,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -2963,7 +2966,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -3073,7 +3076,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -3085,7 +3088,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -3095,7 +3098,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -3337,6 +3340,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -3346,7 +3350,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -3810,7 +3814,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -3822,7 +3826,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -3832,7 +3836,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -4204,6 +4208,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -4213,7 +4218,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -4677,7 +4682,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -4689,7 +4694,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -4699,7 +4704,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                             </div>
                           </div>
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -5071,6 +5076,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -5080,7 +5086,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -5537,7 +5543,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -5640,7 +5646,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -5730,7 +5736,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>
@@ -5959,6 +5965,7 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
                 >
                   <path
                     d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -5968,7 +5975,7 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >

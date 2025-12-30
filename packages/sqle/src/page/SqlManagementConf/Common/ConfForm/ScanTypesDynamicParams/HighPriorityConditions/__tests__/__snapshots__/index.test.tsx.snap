@@ -192,7 +192,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                     data-testid="audit_level_operator"
                   >
                     <div
@@ -281,7 +281,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                     data-testid="audit_level_value"
                   >
                     <div

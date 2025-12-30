@@ -162,7 +162,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
             工单进度
           </div>
           <div
-            class="ant-steps ant-steps-vertical css-1epey7k"
+            class="ant-steps ant-steps-vertical css-1lx4uct"
           >
             <div
               class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
@@ -201,7 +201,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-8yx2by"
+                      class="css-1jmll3s"
                     >
                       <div
                         class="step-title"
@@ -280,7 +280,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-8yx2by"
+                      class="css-1jmll3s"
                     >
                       <div
                         class="step-title"
@@ -361,7 +361,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-8yx2by"
+                      class="css-1jmll3s"
                     >
                       <div
                         class="step-title"

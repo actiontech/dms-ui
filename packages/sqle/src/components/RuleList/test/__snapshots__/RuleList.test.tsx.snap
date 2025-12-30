@@ -1123,7 +1123,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is disa
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -1311,7 +1311,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is disa
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -1499,7 +1499,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is disa
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -1678,7 +1678,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is disa
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2035,7 +2035,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2068,7 +2068,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2254,7 +2254,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2287,7 +2287,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2473,7 +2473,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2506,7 +2506,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2683,7 +2683,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -2716,7 +2716,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -3069,7 +3069,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -3257,7 +3257,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -3445,7 +3445,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -3624,7 +3624,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -3980,7 +3980,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -4168,7 +4168,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -4356,7 +4356,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -4535,7 +4535,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn enabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -6284,7 +6284,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -6477,7 +6477,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -6670,7 +6670,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -6854,7 +6854,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -7526,7 +7526,7 @@ exports[`sqle/components/RuleList should match snap shot when isAction is true 1
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -7711,7 +7711,7 @@ exports[`sqle/components/RuleList should match snap shot when isAction is true 1
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -7896,7 +7896,7 @@ exports[`sqle/components/RuleList should match snap shot when isAction is true 1
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span
@@ -8072,7 +8072,7 @@ exports[`sqle/components/RuleList should match snap shot when isAction is true 1
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span

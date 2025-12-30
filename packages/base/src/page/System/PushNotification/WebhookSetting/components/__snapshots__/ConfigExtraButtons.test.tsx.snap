@@ -17,7 +17,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -48,7 +48,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
               type="button"
             >
               <span
@@ -116,7 +116,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -147,7 +147,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
               type="button"
             >
               <span
@@ -254,7 +254,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -285,7 +285,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
               type="button"
             >
               <span
@@ -371,7 +371,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -402,7 +402,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
               type="button"
             >
               <span
@@ -448,7 +448,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -479,7 +479,7 @@ exports[`base/System/PushNotification/WebhookSetting/ConfigExtraButtons render s
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+              class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
               type="button"
             >
               <span

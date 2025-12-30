@@ -17,6 +17,19 @@
   --scrollbar-thumb-background-color: #c3c6cd;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-background-color: #2a2a2a;
+    --scrollbar-thumb-background-color: #666666;
+  }
+}
+
+// 支持通过 data-theme 属性切换暗色模式
+:root[data-theme='dark'] {
+  --scrollbar-background-color: #2a2a2a;
+  --scrollbar-thumb-background-color: #666666;
+}
+
 @border-radius: var(--global-border-radius);
 @padding: var(--global-padding);
 @padding-small: var(--global-padding-small);

@@ -1,19 +1,23 @@
 import { IconTheme } from '../type';
+import {
+  darkThemeUI,
+  darkThemeBasic
+} from '@actiontech/dms-kit/es/theme/dark/basic';
 
 export const iconTheme: IconTheme = {
   bindUser: {
-    user: '#C3C6CD',
-    password: '#C3C6CD'
+    user: darkThemeUI.uiToken.colorTextQuaternary,
+    password: darkThemeUI.uiToken.colorTextQuaternary
   },
   dataExport: {
-    infoCircle: '#8A8F99',
+    infoCircle: darkThemeUI.uiToken.colorTextTertiary,
     clock: '#6094FC'
   },
   home: {
-    common: '#ffffff'
+    common: darkThemeBasic.basic.colorWhite
   },
   system: {
-    basicTitleTips: '#8A8F99',
-    modify: '#292C33'
+    basicTitleTips: darkThemeUI.uiToken.colorTextTertiary,
+    modify: darkThemeUI.uiToken.colorText
   }
 };

@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -60,7 +60,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -183,7 +183,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -326,7 +326,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -585,7 +585,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -713,7 +713,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -905,7 +905,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                               value="0 0 * * *"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -953,7 +953,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -988,7 +988,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1000,7 +1000,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1093,7 +1093,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1120,7 +1120,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1155,7 +1155,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1167,7 +1167,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1290,7 +1290,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -1433,7 +1433,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -1692,7 +1692,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -1820,7 +1820,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -2012,7 +2012,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                               value="0 0 * * *"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -2060,7 +2060,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -2095,7 +2095,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2107,7 +2107,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2231,7 +2231,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -2474,7 +2474,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -2735,7 +2735,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -2882,7 +2882,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -3088,7 +3088,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -3227,7 +3227,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                     </span>
                                     <div
                                       aria-required="true"
-                                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                                     >
                                       <div
                                         class="ant-select-selector"
@@ -3421,7 +3421,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               value="1 1 * 1 2"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -3469,7 +3469,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -3504,7 +3504,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -3516,7 +3516,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -3640,7 +3640,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -3883,7 +3883,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -4144,7 +4144,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -4291,7 +4291,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -4497,7 +4497,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -4636,7 +4636,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                     </span>
                                     <div
                                       aria-required="true"
-                                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                                     >
                                       <div
                                         class="ant-select-selector"
@@ -4830,7 +4830,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                               value="1 1 * 1 2"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -4878,7 +4878,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -4913,7 +4913,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -4925,7 +4925,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -5018,7 +5018,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -5045,7 +5045,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -5080,7 +5080,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -5092,7 +5092,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -5185,7 +5185,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
           class="ant-empty-footer"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -5211,7 +5211,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -5246,7 +5246,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -5258,7 +5258,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -5382,7 +5382,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                         >
                           <div
                             class="ant-select-selector"
@@ -5625,7 +5625,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                         >
                           <div
                             class="ant-select-selector"
@@ -5886,7 +5886,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -6033,7 +6033,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -6239,7 +6239,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -6378,7 +6378,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                                   </span>
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -6572,7 +6572,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                             value="1 1 * 1 2"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span

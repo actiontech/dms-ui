@@ -110,7 +110,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -241,7 +241,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -520,7 +520,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>
@@ -650,7 +650,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>
@@ -832,7 +832,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"

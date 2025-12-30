@@ -185,7 +185,7 @@ exports[`page/Login-ce render login page snap 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-lfzis8"
               type="submit"
             >
               <span>
@@ -385,7 +385,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-lfzis8"
               type="submit"
             >
               <span
@@ -608,7 +608,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-lfzis8"
               type="submit"
             >
               <span
@@ -831,7 +831,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-lfzis8"
               type="submit"
             >
               <span>

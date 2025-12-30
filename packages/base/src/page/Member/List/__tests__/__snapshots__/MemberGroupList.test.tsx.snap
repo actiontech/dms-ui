@@ -207,7 +207,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -219,7 +219,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -274,7 +274,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -286,7 +286,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -460,7 +460,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -472,7 +472,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -521,7 +521,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -533,7 +533,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>

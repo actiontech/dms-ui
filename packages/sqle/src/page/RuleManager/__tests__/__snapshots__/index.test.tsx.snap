@@ -23,7 +23,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -38,6 +38,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -68,7 +69,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
           class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1"
+            class="ant-segmented basic-segmented-wrapper css-18p941p"
           >
             <div
               class="ant-segmented-group"
@@ -356,7 +357,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -447,7 +448,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -499,7 +500,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -713,7 +714,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -728,6 +729,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -749,7 +751,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                 href="/sqle/rule-manager/global-import"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   hidden=""
                   type="button"
                 >
@@ -781,7 +783,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                 href="/sqle/rule-manager/global-create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   hidden=""
                   type="button"
                 >
@@ -815,7 +817,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
             href="/sqle/rule-manager/custom-create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -832,7 +834,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
           class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1"
+            class="ant-segmented basic-segmented-wrapper css-18p941p"
           >
             <div
               class="ant-segmented-group"
@@ -901,7 +903,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             style="width: 200px;"
                           >
                             <div
@@ -1018,6 +1020,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                               >
                                 <path
                                   d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -1307,7 +1310,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -1334,7 +1337,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span
@@ -1506,7 +1509,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -1533,7 +1536,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span
@@ -1600,7 +1603,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -1615,6 +1618,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -1636,7 +1640,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                 href="/sqle/rule-manager/global-import"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -1667,7 +1671,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                 href="/sqle/rule-manager/global-create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -1700,7 +1704,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
             href="/sqle/rule-manager/custom-create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               hidden=""
               type="button"
             >
@@ -1718,7 +1722,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
           class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1"
+            class="ant-segmented basic-segmented-wrapper css-18p941p"
           >
             <div
               class="ant-segmented-group"
@@ -2013,7 +2017,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2025,7 +2029,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2035,7 +2039,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -2130,7 +2134,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2142,7 +2146,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2152,7 +2156,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span
@@ -2208,7 +2212,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2220,7 +2224,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2230,7 +2234,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span

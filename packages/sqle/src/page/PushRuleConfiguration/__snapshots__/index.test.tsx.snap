@@ -385,7 +385,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                               value="* * * * *"
                             />
                             <button
-                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span
@@ -438,7 +438,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -552,7 +552,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -564,7 +564,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>

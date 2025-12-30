@@ -53,6 +53,7 @@ export default {
     viewVersion: '查看版本号',
     logout: '退出登录',
     notice: '系统公告',
+    theme: '主题',
     language: {
       text: '语言',
       zhCN: '中文',

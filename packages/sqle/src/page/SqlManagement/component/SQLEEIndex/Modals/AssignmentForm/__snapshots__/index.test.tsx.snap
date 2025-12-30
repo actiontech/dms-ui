@@ -24,7 +24,7 @@ exports[`page/SqlManagement/AssignmentForm disable select 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -135,7 +135,7 @@ exports[`page/SqlManagement/AssignmentForm render form when init 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -245,7 +245,7 @@ exports[`page/SqlManagement/AssignmentForm render form when not init 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"

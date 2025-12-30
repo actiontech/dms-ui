@@ -4,7 +4,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -234,7 +234,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -254,7 +254,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -484,7 +484,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -504,7 +504,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -580,7 +580,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -861,7 +861,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -881,7 +881,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -1162,7 +1162,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1182,7 +1182,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -1463,7 +1463,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1483,7 +1483,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -1723,7 +1723,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1743,7 +1743,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when no data 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1be09ba ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div

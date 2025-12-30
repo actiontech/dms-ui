@@ -145,3 +145,9 @@ export const mockUseUserOperationPermissionData = {
   updateUserOperationPermission: jest.fn(),
   isHaveServicePermission: jest.fn()
 };
+
+export const mockUseChangeThemeReturn = {
+  currentTheme: SupportTheme.LIGHT,
+  currentEditorTheme: 'vs',
+  changeTheme: jest.fn()
+};

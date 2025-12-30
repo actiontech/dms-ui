@@ -13,7 +13,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
           href="/sqle/project/700300/pipeline-configuration"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -48,7 +48,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -60,7 +60,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -284,7 +284,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -592,7 +592,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -697,7 +697,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -850,7 +850,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -943,7 +943,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1047,7 +1047,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1125,7 +1125,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1137,7 +1137,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -1174,7 +1174,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 2`] = `
           href="/sqle/project/700300/pipeline-configuration"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1617,7 +1617,7 @@ exports[`sqle//PipelineConfiguration/Create render create pipeline 2`] = `
           class="ant-result-extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span>
@@ -1644,7 +1644,7 @@ exports[`sqle//PipelineConfiguration/Create render init snap 1`] = `
           href="/sqle/project/700300/pipeline-configuration"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1679,7 +1679,7 @@ exports[`sqle//PipelineConfiguration/Create render init snap 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1691,7 +1691,7 @@ exports[`sqle//PipelineConfiguration/Create render init snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1913,7 +1913,7 @@ exports[`sqle//PipelineConfiguration/Create render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>

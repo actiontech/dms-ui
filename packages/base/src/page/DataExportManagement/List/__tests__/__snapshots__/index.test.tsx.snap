@@ -37,7 +37,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -201,6 +201,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -210,7 +211,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -256,7 +257,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -276,6 +277,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                       >
                         <path
                           d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          fill="currentColor"
                         />
                       </svg>
                     </div>
@@ -309,7 +311,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -324,6 +326,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -993,7 +996,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1068,7 +1071,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -1232,6 +1235,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1241,7 +1245,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1287,7 +1291,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                   disabled=""
                   type="button"
                 >
@@ -1316,7 +1320,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1336,6 +1340,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                       >
                         <path
                           d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          fill="currentColor"
                         />
                       </svg>
                     </div>
@@ -1369,7 +1374,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   disabled=""
                   type="button"
                 >
@@ -1385,6 +1390,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1622,7 +1628,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -1673,7 +1679,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -1837,6 +1843,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1846,7 +1853,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1892,7 +1899,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                   disabled=""
                   type="button"
                 >
@@ -1921,7 +1928,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1941,6 +1948,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                       >
                         <path
                           d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          fill="currentColor"
                         />
                       </svg>
                     </div>
@@ -1974,7 +1982,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   disabled=""
                   type="button"
                 >
@@ -1990,6 +1998,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2738,7 +2747,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -2789,7 +2798,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -2953,6 +2962,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2962,7 +2972,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -3009,7 +3019,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                   disabled=""
                   type="button"
                 >
@@ -3038,7 +3048,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -3058,6 +3068,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                       >
                         <path
                           d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          fill="currentColor"
                         />
                       </svg>
                     </div>
@@ -3091,7 +3102,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -3106,6 +3117,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -3126,7 +3138,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
               class="css-1y8q0oh"
             >
               <div
-                class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+                class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1l8vu1j"
                 style="min-width: 320px;"
               >
                 <div
@@ -3152,6 +3164,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                   >
                     <path
                       d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      fill="#C3C6CD"
                     />
                   </svg>
                 </div>
@@ -3187,7 +3200,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -3245,7 +3258,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -3303,7 +3316,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"

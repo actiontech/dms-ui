@@ -146,6 +146,7 @@ export const ToolbarStyleWrapper = styled(Space)`
 
 export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
   &.ant-picker.ant-picker.basic-range-picker-wrapper {
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
     border: 1px solid
       ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker

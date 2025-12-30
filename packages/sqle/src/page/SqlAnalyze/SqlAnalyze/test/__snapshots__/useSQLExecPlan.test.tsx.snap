@@ -234,7 +234,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                    class="ant-segmented basic-segmented-wrapper css-18p941p"
                   >
                     <div
                       class="ant-segmented-group"
@@ -317,6 +317,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                         >
                           <path
                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                            fill="#C3C6CD"
                           />
                         </svg>
                       </div>
@@ -436,7 +437,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -1625,7 +1626,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                    class="ant-segmented basic-segmented-wrapper css-18p941p"
                   >
                     <div
                       class="ant-segmented-group"
@@ -1708,6 +1709,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                         >
                           <path
                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                            fill="#C3C6CD"
                           />
                         </svg>
                       </div>
@@ -2528,7 +2530,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2778,7 +2780,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                    class="ant-segmented basic-segmented-wrapper css-18p941p"
                   >
                     <div
                       class="ant-segmented-group"
@@ -2861,6 +2863,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                         >
                           <path
                             d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                            fill="#C3C6CD"
                           />
                         </svg>
                       </div>
@@ -2980,7 +2983,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
               class="number-cont"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
