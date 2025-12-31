@@ -136,7 +136,7 @@ const RetryExecuteModal = () => {
   };
 
   useEffect(() => {
-    if (pageIndex && pageSize && visible) {
+    if (visible && pageIndex && pageSize) {
       tableChange(
         {
           current: pageIndex,
@@ -150,12 +150,15 @@ const RetryExecuteModal = () => {
         }
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible, pageIndex, pageSize]);
 
+  useEffect(() => {
     if (execSqlId && !allSelectedKeys.length && visible) {
       setAllSelectedKeys([execSqlId]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pageIndex, pageSize, visible, tableChange, execSqlId]);
+  }, [visible, execSqlId]);
 
   const handleRetryExecute = () => {
     if (!allSelectedKeys.length) {
