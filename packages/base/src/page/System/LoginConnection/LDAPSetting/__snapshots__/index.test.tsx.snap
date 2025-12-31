@@ -91,7 +91,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -655,7 +655,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 1`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -667,7 +667,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -758,7 +758,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -1322,7 +1322,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 2`] = `
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -1334,7 +1334,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -1425,7 +1425,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap when user is not ad
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -1989,7 +1989,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap when user is not ad
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -2001,7 +2001,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap when user is not ad
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -2092,7 +2092,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -2656,7 +2656,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 disabled=""
                                 type="button"
                               >
@@ -2669,7 +2669,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-lfzis8"
                                 disabled=""
                                 type="submit"
                               >
@@ -2784,7 +2784,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -3350,7 +3350,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 disabled=""
                                 type="button"
                               >
@@ -3363,7 +3363,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-lfzis8"
                                 disabled=""
                                 type="submit"
                               >
@@ -3478,7 +3478,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -4041,7 +4041,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -4053,7 +4053,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -4144,7 +4144,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -4708,7 +4708,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -4720,7 +4720,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -4811,7 +4811,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -5374,7 +5374,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -5386,7 +5386,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>
@@ -5585,7 +5585,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                         type="button"
                                       >
                                         <span
@@ -6149,7 +6149,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                 type="button"
                               >
                                 <span>
@@ -6161,7 +6161,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                 type="submit"
                               >
                                 <span>

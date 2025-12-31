@@ -168,7 +168,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -650,7 +650,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -851,7 +851,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -1052,7 +1052,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -1140,7 +1140,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -1295,7 +1295,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1535,7 +1535,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2077,7 +2077,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -2278,7 +2278,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -2479,7 +2479,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -2567,7 +2567,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -2722,7 +2722,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -3083,7 +3083,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -3633,7 +3633,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -3835,7 +3835,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -4037,7 +4037,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -4125,7 +4125,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -4281,7 +4281,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"

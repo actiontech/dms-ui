@@ -4,19 +4,19 @@ import { darkThemeBasic, darkThemeUI } from '../basic';
 const basicButtonTheme: BasicButtonTheme = {
   default: {
     default: {
-      background: darkThemeBasic.basic.colorWhite,
+      background: darkThemeUI.uiToken.colorFillTertiary,
       color: darkThemeUI.uiToken.colorText,
       boxShadow: `0 1px 4px 0 ${darkThemeBasic.basic.colorShadowByWhite}`
     },
     hover: {
-      background: '#F7F6F4'
+      background: darkThemeUI.uiToken.colorFillSecondary
     },
     active: {
-      background: '#F2F1EF'
+      background: darkThemeUI.uiToken.colorFill
     },
     disabled: {
-      background: darkThemeBasic.basic.colorWhite,
-      color: darkThemeBasic.basic.colorFontGrayByWhite
+      background: darkThemeUI.uiToken.colorFillTertiary,
+      color: darkThemeUI.uiToken.colorTextQuaternary
     }
   },
   primary: {
@@ -54,7 +54,7 @@ const basicButtonTheme: BasicButtonTheme = {
       color: darkThemeUI.uiToken.colorPrimary
     },
     hover: {
-      color: '#69b1ff'
+      color: '#6A9CFF'
     }
   }
 };

@@ -12,11 +12,13 @@ import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { Form } from 'antd';
 import SqlStatementFormItem from '..';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test SqlStatementFormItem', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
   beforeEach(() => {
     mockUseCurrentProject();
+    mockUseCurrentUser();
   });
 
   afterEach(() => {

@@ -286,7 +286,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-lfzis8"
                       type="button"
                     >
                       <span>
@@ -311,7 +311,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                       type="button"
                     >
                       <span>
@@ -324,7 +324,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     style="margin-right: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                       type="button"
                     >
                       <span>
@@ -336,7 +336,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                       type="button"
                     >
                       <span>
@@ -359,7 +359,7 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                       class="ant-row segmented-row-wrapper css-156vlto"
                     >
                       <div
-                        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                        class="ant-segmented basic-segmented-wrapper css-18p941p"
                       >
                         <div
                           class="ant-segmented-group"

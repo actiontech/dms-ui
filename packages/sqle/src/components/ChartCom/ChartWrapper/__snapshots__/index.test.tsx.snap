@@ -145,7 +145,7 @@ exports[`sqle/components/ChartCom/ChartWrapper render error snap when has error 
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>

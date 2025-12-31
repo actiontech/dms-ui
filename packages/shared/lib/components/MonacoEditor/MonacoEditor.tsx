@@ -3,14 +3,21 @@ import { MonacoEditorContainerStyleWrapper } from './style';
 import classNames from 'classnames';
 import MonacoEditor from '@monaco-editor/react';
 import { editorDefaultOptions } from './config';
-import { CUSTOM_DIFF_EDITOR_THEME_NAME, editorDefaultThemeData } from './theme';
+import {
+  CUSTOM_DIFF_EDITOR_THEME_NAME,
+  editorDefaultThemeData,
+  editorDarkThemeData,
+  CUSTOM_DARK_EDITOR_THEME_NAME
+} from './theme';
 import { CustomMonacoEditorProps } from './MonacoEditor.types';
 import useMonacoScrollbarHandler from './hooks/useMonacoScrollbarHandler';
+import { SupportTheme } from '@actiontech/dms-kit';
 import './monacoEditorConfig';
 
 const CustomMonacoEditor: React.FC<CustomMonacoEditorProps> = ({
   options,
   className,
+  theme,
   ...props
 }) => {
   const { containerRef, setupScrollbarHandler } = useMonacoScrollbarHandler();
@@ -19,11 +26,19 @@ const CustomMonacoEditor: React.FC<CustomMonacoEditorProps> = ({
     setupScrollbarHandler(editor, monaco);
 
     props.onMount?.(editor, monaco);
-    monaco.editor.defineTheme(
-      CUSTOM_DIFF_EDITOR_THEME_NAME,
-      editorDefaultThemeData
-    );
-    monaco.editor.setTheme(CUSTOM_DIFF_EDITOR_THEME_NAME);
+    if (theme === SupportTheme.DARK) {
+      monaco.editor.defineTheme(
+        CUSTOM_DARK_EDITOR_THEME_NAME,
+        editorDarkThemeData
+      );
+      monaco.editor.setTheme(CUSTOM_DARK_EDITOR_THEME_NAME);
+    } else {
+      monaco.editor.defineTheme(
+        CUSTOM_DIFF_EDITOR_THEME_NAME,
+        editorDefaultThemeData
+      );
+      monaco.editor.setTheme(CUSTOM_DIFF_EDITOR_THEME_NAME);
+    }
   };
 
   return (

@@ -22,7 +22,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -37,6 +37,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                   >
                     <path
                       d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -102,6 +103,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                   >
                     <path
                       d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -111,7 +113,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                 style="padding: 0px 6px 0px 10px;"
                 type="button"
               >
@@ -157,7 +159,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -172,6 +174,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -192,7 +195,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
             class="css-1y8q0oh"
           >
             <div
-              class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+              class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1l8vu1j"
               style="min-width: 320px;"
             >
               <div
@@ -218,6 +221,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                 >
                   <path
                     d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                    fill="#C3C6CD"
                   />
                 </svg>
               </div>
@@ -253,7 +257,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
           style="margin-right: 12px; padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -311,7 +315,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
           style="padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -783,7 +787,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -798,6 +802,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                   >
                     <path
                       d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -863,6 +868,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                   >
                     <path
                       d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -872,7 +878,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                 style="padding: 0px 6px 0px 10px;"
                 type="button"
               >
@@ -917,7 +923,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -932,6 +938,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -1358,7 +1365,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -1373,6 +1380,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                   >
                     <path
                       d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -1438,6 +1446,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                   >
                     <path
                       d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -1447,7 +1456,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
                 style="padding: 0px 6px 0px 10px;"
                 type="button"
               >
@@ -1492,7 +1501,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span
@@ -1507,6 +1516,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>

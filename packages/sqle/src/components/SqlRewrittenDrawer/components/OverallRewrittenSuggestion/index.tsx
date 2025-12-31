@@ -26,6 +26,7 @@ import {
 import RewrittenSqlCommonEditor from '../Common/RewrittenSqlCommonEditor';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { Typography } from 'antd';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 type Props = {
   originalSql: string;
   rewrittenSql?: string;
@@ -54,6 +55,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
+  const { theme } = useCurrentUser();
   const TitleCommonIcon = (
     <RingOutlined
       color={sharedTheme.uiToken.colorPrimary}
@@ -121,6 +123,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
           action={<CopySqlAction sql={overallDDL} />}
         >
           <SQLRenderer.ViewOnlyEditor
+            theme={theme}
             sql={overallDDL}
             height={readonlyEditorHeight}
           />

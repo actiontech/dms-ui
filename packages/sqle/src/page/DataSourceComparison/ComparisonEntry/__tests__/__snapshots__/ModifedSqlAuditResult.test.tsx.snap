@@ -3,7 +3,7 @@
 exports[`ModifiedSqlAuditResult index should render without crashing when no dataSource is provided 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
+    class="ant-segmented basic-segmented-wrapper css-18p941p ant-segmented-block"
   >
     <div
       class="ant-segmented-group"
@@ -76,7 +76,7 @@ exports[`ModifiedSqlAuditResult index should render without crashing when no dat
 exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first schema_name in dataSource on initial render if dataSource is provided 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
+    class="ant-segmented basic-segmented-wrapper css-18p941p ant-segmented-block"
   >
     <div
       class="ant-segmented-group"
@@ -634,7 +634,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
 exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-render the component when a new tab is selected 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
+    class="ant-segmented basic-segmented-wrapper css-18p941p ant-segmented-block"
   >
     <div
       class="ant-segmented-group"

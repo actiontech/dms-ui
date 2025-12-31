@@ -17,13 +17,13 @@ export const reportStatisticsTheme: ReportStatisticsTheme = {
     contentFontWeight: 700
   },
   CardWrapper: {
-    titleColor: '#575C66',
+    titleColor: darkThemeUI.uiToken.colorTextSecondary,
     titleBorderColor: darkThemeUI.uiToken.colorBorderSecondary
   },
   TableTopList: {
     titleColor: darkThemeUI.uiToken.colorTextTertiary,
     noteTipColor: darkThemeBasic.basic.colorFontGrayByWhite,
-    colorFillQuaternary: '#F2F1F0',
+    colorFillQuaternary: darkThemeUI.uiToken.colorFillSecondary,
     bgColor: {
       toColor: '#ffffff00',
       line1: '#f54e7810',
@@ -33,7 +33,7 @@ export const reportStatisticsTheme: ReportStatisticsTheme = {
   },
   ChartContTitle: {
     mainColor: darkThemeUI.uiToken.colorTextBase,
-    mainSubColor: '#C4C6C9',
+    mainSubColor: darkThemeUI.uiToken.colorTextSecondary,
     subContColor: darkThemeUI.uiToken.colorTextTertiary
   },
   DatabaseTypeOrder: {
@@ -41,9 +41,9 @@ export const reportStatisticsTheme: ReportStatisticsTheme = {
       fontSize: 16
     },
     tooltip: {
-      background: '#fcfbf9',
-      border: '1px solid #ebe9e8',
-      boxShadow: '0 3px 12px 0 #332c1f1a'
+      background: darkThemeUI.uiToken.colorBgBase,
+      border: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`,
+      boxShadow: '0 3px 12px 0 rgba(0, 0, 0, 0.4)'
     }
   },
   DatabaseSourceOrder: {
@@ -60,7 +60,7 @@ export const reportStatisticsTheme: ReportStatisticsTheme = {
       defaultColor: rectColorName.color2,
       fillColor: {
         column: rectColorName.color2,
-        columnBackground: '#F7F6F4',
+        columnBackground: darkThemeUI.uiToken.colorFillTertiary,
         xAxis: darkThemeUI.uiToken.colorTextTertiary,
         yAxis: darkThemeBasic.basic.colorWhite,
         state: {

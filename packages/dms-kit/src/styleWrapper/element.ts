@@ -263,7 +263,7 @@ export const ToggleButtonStyleWrapper = styled('div')<{
   background: ${({ active, theme }) =>
     !!active
       ? theme.sharedTheme.basic.colorPrimaryBgActive
-      : theme.sharedTheme.basic.colorWhite};
+      : theme.sharedTheme.uiToken.colorFillTertiary};
   transition: all 0.3s;
 
   &::before {

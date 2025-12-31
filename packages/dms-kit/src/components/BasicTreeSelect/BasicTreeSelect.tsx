@@ -40,7 +40,7 @@ const BasicTreeSelect = <V extends string | number>(
         if (expanded) {
           return <DownOutlined color="currentColor" />;
         }
-        return <RightOutlined />;
+        return <RightOutlined color="currentColor" />;
       }}
       {...otherParams}
       clearIcon={<CloseOutlined width={14} height={14} />}

@@ -326,7 +326,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
       },
       "backgroundColor": "#f2f1ef",
       "color": "#575c66",
-      "hoverBackgroundColor": "#E8EAE7",
+      "hoverBackgroundColor": "#ebeae7",
       "noticeCountColor": "#f66074",
     },
     "basicSelect": {

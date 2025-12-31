@@ -492,6 +492,7 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                             >
                               <path
                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                fill="#C3C6CD"
                               />
                             </svg>
                           </div>

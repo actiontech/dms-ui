@@ -432,7 +432,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -451,7 +451,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                       style="margin-right: 8px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default basic-button-wrapper css-1s5ld2m"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-oaiflc"
                         type="button"
                       >
                         <span>
@@ -1224,7 +1224,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

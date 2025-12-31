@@ -25,7 +25,7 @@ const ruleComponentTheme: RuleComponentTheme = {
     levelContent: {
       annotationColor: darkThemeUI.uiToken.colorTextTertiary,
       paramsColor: '#9F6BE9',
-      paramsBackgroundColor: '#9F6BE91A'
+      paramsBackgroundColor: 'rgba(159, 107, 233, 0.2)'
     }
   }
 };

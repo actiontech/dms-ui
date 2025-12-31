@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { SegmentedTabs, BasicButton } from '@actiontech/dms-kit';
+import { SegmentedTabs, ToggleButtonStyleWrapper } from '@actiontech/dms-kit';
 import { SegmentedTabsProps } from '@actiontech/dms-kit/es/components/SegmentedTabs/SegmentedTabs.types';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
@@ -78,15 +78,12 @@ const PendingWorkOrderTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
     }
     // #endif
     return (
-      <BasicButton
-        className={
-          filterAssignedToMe ? 'switch-btn-active' : 'switch-btn-default'
-        }
-        size="small"
+      <ToggleButtonStyleWrapper
+        active={!!filterAssignedToMe}
         onClick={toggleFilterAssignedToMe}
       >
         {t('globalDashboard.pendingMyAction')}
-      </BasicButton>
+      </ToggleButtonStyleWrapper>
     );
   };
 

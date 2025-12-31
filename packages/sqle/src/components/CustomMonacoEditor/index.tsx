@@ -6,6 +6,7 @@ import { Alert } from 'antd';
 import { CustomMonacoEditorStyleWrapper } from './style';
 import { EmptyBox } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 
 type MonacoEditorProps = CustomMonacoEditorProps & {
   showAlert?: boolean;
@@ -16,10 +17,12 @@ const CustomMonacoEditor: React.FC<MonacoEditorProps> = ({
   ...props
 }) => {
   const { t } = useTranslation();
+  const { theme } = useCurrentUser();
   return (
     <CustomMonacoEditorStyleWrapper>
       <MonacoEditor
         {...props}
+        theme={theme}
         onMount={(editor, monaco) => {
           props.onMount?.(editor, monaco);
           // 目前版本的monaco-editor不支持修改只读模式下的提示信息 所以暂时隐藏掉此提示信息

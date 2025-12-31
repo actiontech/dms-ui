@@ -1,8 +1,12 @@
 import { IconTheme } from '../type';
+import {
+  darkThemeUI,
+  darkThemeBasic
+} from '@actiontech/dms-kit/es/theme/dark/basic';
 
 export const iconTheme: IconTheme = {
   execWorkFlow: {
-    minusCircleFilledDisabled: '#C3C6CD',
+    minusCircleFilledDisabled: darkThemeUI.uiToken.colorTextQuaternary,
     profileSquareFilled: '#4583FF',
     databaseFilled: '#4583FF',
     schemaFilled: '#15C7D4',
@@ -10,7 +14,7 @@ export const iconTheme: IconTheme = {
     clock: '#6094FC'
   },
   workflowTemplate: {
-    common: 'white',
+    common: darkThemeBasic.basic.colorWhite,
     userCircleFilled: '#1CB889'
   }
 };

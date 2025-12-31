@@ -4,37 +4,37 @@ import { darkThemeBasic, darkThemeUI } from '../basic';
 const tableTheme: TableTheme = {
   thead: {
     color: darkThemeUI.uiToken.colorTextTertiary,
-    border: '1px solid #F2F1F0'
+    border: `1px solid ${darkThemeBasic.basic.colorGrayLine}`
   },
   row: {
     color: darkThemeUI.uiToken.colorTextBase,
-    border: `1px solid #F2F1F0`,
+    border: `1px solid ${darkThemeBasic.basic.colorGrayLine}`,
     moreButtonInActions: {
       backgroundColor: darkThemeUI.uiToken.colorBgBase,
       color: darkThemeUI.uiToken.colorTextBase,
       border: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`,
-      boxShadow: `0px 3px 12px 0px rgba(51, 44, 31, 0.10)`,
+      boxShadow: `0px 3px 12px 0px rgba(0, 0, 0, 0.4)`,
       hoverItemBackgroundColor: darkThemeUI.uiToken.colorFillSecondary
     }
   },
   pagination: {
     backgroundColor: darkThemeUI.uiToken.colorBgBase,
-    border: `1px solid #F2F1F0`,
+    border: `1px solid ${darkThemeBasic.basic.colorGrayLine}`,
     total: {
       color: darkThemeUI.uiToken.colorTextSecondary
     },
     item: {
       color: darkThemeUI.uiToken.colorTextTertiary,
       hoverBackgroundColor: darkThemeUI.uiToken.colorFillSecondary,
-      activeBackgroundColor: darkThemeBasic.basic.colorWhite,
+      activeBackgroundColor: darkThemeUI.uiToken.colorFillTertiary,
       activeBorder: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`,
       activeColor: darkThemeUI.uiToken.colorText
     },
     options: {
-      backgroundColor: darkThemeBasic.basic.colorWhite,
-      border: `1px solid #F2F1F0`,
-      boxShadow: `0px 1px 4px 0px #332C1F1F`,
-      hoverBorder: `1px solid #F2F1F0`,
+      backgroundColor: darkThemeUI.uiToken.colorFillTertiary,
+      border: `1px solid ${darkThemeBasic.basic.colorGrayLine}`,
+      boxShadow: `0px 1px 4px 0px rgba(0, 0, 0, 0.5)`,
+      hoverBorder: `1px solid ${darkThemeBasic.basic.colorGrayLine}`,
       itemColor: darkThemeUI.uiToken.colorTextTertiary
     }
   }

@@ -5,7 +5,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { LocalStorageWrapper, SupportTheme } from '@actiontech/dms-kit';
 import { ModalName } from '../../../../../../data/ModalName';
 import {
   CompanyNoticeDisplayStatusEnum,
@@ -46,6 +46,8 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
         language={SupportLanguage.zhCN}
         username="Test name"
         onOpenVersionModal={versionModalOpenFn}
+        currentTheme={SupportTheme.LIGHT}
+        changeTheme={jest.fn()}
       />
     );
   };

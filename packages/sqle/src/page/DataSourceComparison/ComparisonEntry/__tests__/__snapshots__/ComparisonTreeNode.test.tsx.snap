@@ -212,7 +212,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                 class="ant-drawer-extra"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -487,6 +487,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       >
                         <path
                           d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </span>
@@ -615,6 +616,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       >
                         <path
                           d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </span>

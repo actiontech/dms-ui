@@ -21,7 +21,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -131,7 +131,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -227,6 +227,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                       >
                         <path
                           d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </div>
@@ -344,6 +345,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                                             >
                                               <path
                                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                                fill="#C3C6CD"
                                               />
                                             </svg>
                                           </span>
@@ -2198,7 +2200,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -2276,7 +2278,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -2291,6 +2293,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2599,7 +2602,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -2903,7 +2906,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -2989,7 +2992,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -3070,7 +3073,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -3148,7 +3151,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -3163,6 +3166,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -3345,7 +3349,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -3866,7 +3870,7 @@ exports[`SqlInsights should render component correctly 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-1gowd4m ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -3952,7 +3956,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
+                  class="ant-segmented basic-segmented-wrapper css-18p941p"
                 >
                   <div
                     class="ant-segmented-group"
@@ -4033,7 +4037,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -4111,7 +4115,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span
@@ -4126,6 +4130,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                     >
                       <path
                         d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -4306,7 +4311,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"

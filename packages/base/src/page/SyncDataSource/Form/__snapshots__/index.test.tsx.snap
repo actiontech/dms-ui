@@ -119,7 +119,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -262,7 +262,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -521,7 +521,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -649,7 +649,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -841,7 +841,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -983,7 +983,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1126,7 +1126,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1385,7 +1385,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1513,7 +1513,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1705,7 +1705,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -1847,7 +1847,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1990,7 +1990,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2249,7 +2249,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -2377,7 +2377,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -2569,7 +2569,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -2698,7 +2698,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2841,7 +2841,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3100,7 +3100,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3228,7 +3228,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3420,7 +3420,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                             value="0 0 * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span
@@ -3560,7 +3560,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3703,7 +3703,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3962,7 +3962,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -4090,7 +4090,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -4282,7 +4282,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span

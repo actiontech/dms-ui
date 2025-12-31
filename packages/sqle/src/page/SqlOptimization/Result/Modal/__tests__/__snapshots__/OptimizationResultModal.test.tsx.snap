@@ -222,7 +222,7 @@ exports[`sqle/SqlOptimization/Result/Modal/OptimizationResultModal should render
                       >
                         优化前
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                           title="复制"
                           type="button"
                         >
@@ -248,7 +248,7 @@ exports[`sqle/SqlOptimization/Result/Modal/OptimizationResultModal should render
                       >
                         优化后
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                           title="复制"
                           type="button"
                         >

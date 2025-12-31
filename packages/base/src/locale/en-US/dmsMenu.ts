@@ -51,6 +51,7 @@ export default {
     viewVersion: 'Version',
     logout: 'Logout',
     notice: 'Notice',
+    theme: 'Theme',
     language: {
       text: 'Language',
       zhCN: '中文',

@@ -8,6 +8,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test SqlStatementFormController', () => {
   const onChange = jest.fn();
@@ -36,6 +37,7 @@ describe('test SqlStatementFormController', () => {
 
   beforeEach(() => {
     mockUseCurrentProject();
+    mockUseCurrentUser();
   });
 
   afterEach(() => {

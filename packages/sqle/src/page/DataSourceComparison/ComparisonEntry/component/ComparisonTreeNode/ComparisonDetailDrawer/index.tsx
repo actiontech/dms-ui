@@ -27,7 +27,10 @@ import { useMemo, useState } from 'react';
 import { SelectedInstanceInfo } from '../../../index.type';
 import dayjs from 'dayjs';
 import { CreateWorkflowForModifiedSqlAction } from '../../../actions';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/features';
 import {
   filterSchemasInDatabase,
   getComparisonResultByNodeKey,
@@ -65,6 +68,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const { sharedTheme } = useThemeStyleData();
+  const { theme } = useCurrentUser();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading: getDetailPending, data: comparisonDetail } = useRequest(
     () =>
@@ -281,6 +285,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
           </DiffSQLEditorSubTitleStyleWrapper>
 
           <SQLRenderer.DiffViewOnlyEditor
+            theme={theme}
             originalSql={
               comparisonDetail?.base_sql?.sql_statement_with_audit
                 ?.sql_statement

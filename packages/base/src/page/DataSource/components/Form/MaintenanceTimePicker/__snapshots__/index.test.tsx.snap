@@ -24,7 +24,7 @@ exports[`page/DataSource/MaintenanceTimePicker render add time 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span>
@@ -92,6 +92,7 @@ exports[`page/DataSource/MaintenanceTimePicker render add time 1`] = `
                       >
                         <path
                           d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </div>
@@ -959,7 +960,7 @@ exports[`page/DataSource/MaintenanceTimePicker render add time 1`] = `
                 class="ant-col ant-col-24 maintenance-time-picker-btn-wrapper"
               >
                 <button
-                  class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -1027,7 +1028,7 @@ exports[`page/DataSource/MaintenanceTimePicker render has value 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span>

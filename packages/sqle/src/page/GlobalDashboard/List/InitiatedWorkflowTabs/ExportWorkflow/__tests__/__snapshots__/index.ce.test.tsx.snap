@@ -82,7 +82,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                         style="margin-bottom: 16px;"
                       >
                         <a
-                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                           href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                           target="_blank"
                         >
@@ -372,7 +372,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                         style="margin-bottom: 16px;"
                       >
                         <a
-                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                           href="https://www.actionsky.com/sqle?question=true"
                           target="_blank"
                         >
@@ -660,7 +660,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                         style="margin-bottom: 16px;"
                       >
                         <a
-                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                           href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                           target="_blank"
                         >
@@ -1311,7 +1311,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                       target="_blank"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -1329,7 +1329,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                       target="_blank"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>
@@ -1406,7 +1406,7 @@ exports[`sqle/GlobalDashboard/PendingExportWorkOrder should match snapshot 1`] =
                     target="_blank"
                   >
                     <button
-                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                       type="button"
                     >
                       <span>

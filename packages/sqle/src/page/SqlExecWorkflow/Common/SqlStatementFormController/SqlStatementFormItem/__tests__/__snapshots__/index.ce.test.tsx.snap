@@ -727,7 +727,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>

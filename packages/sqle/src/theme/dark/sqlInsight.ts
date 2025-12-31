@@ -2,5 +2,5 @@ import { SqlInsight } from '../type';
 
 export const sqlInsightTheme: SqlInsight = {
   dataMarkerColor: '#ff4d4f',
-  regionFillColor: 'rgba(197, 212, 235, 0.6)'
+  regionFillColor: 'rgba(69, 131, 255, 0.2)'
 };

@@ -23,7 +23,7 @@ const basicRangePickerTheme: BasicRangePickerTheme = {
   },
   dropdown: {
     icon: {
-      boxShadow: '0 1px 4px 0 rgba(51, 44, 31, 0.12)'
+      boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.5)'
     }
   }
 };

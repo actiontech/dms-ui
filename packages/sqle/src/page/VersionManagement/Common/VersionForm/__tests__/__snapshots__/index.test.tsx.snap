@@ -175,7 +175,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-lfzis8"
                             disabled=""
                             type="button"
                           >
@@ -320,7 +320,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -451,7 +451,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-lfzis8"
                                 disabled=""
                                 type="button"
                               >
@@ -504,7 +504,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-lfzis8"
                             disabled=""
                             type="button"
                           >
@@ -627,7 +627,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -755,7 +755,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-lfzis8"
                             disabled=""
                             type="button"
                           >
@@ -844,7 +844,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -921,7 +921,7 @@ exports[`sqle/VersionManagement/VersionForm render init snap shot 1`] = `
                 class="ant-col ant-col-3"
               >
                 <button
-                  class="ant-btn ant-btn-default add-stage-btn basic-button-wrapper css-rku4td"
+                  class="ant-btn ant-btn-default add-stage-btn basic-button-wrapper css-1yv6nou"
                   disabled=""
                   type="button"
                 >

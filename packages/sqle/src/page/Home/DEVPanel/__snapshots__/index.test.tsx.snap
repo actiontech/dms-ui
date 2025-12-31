@@ -37,7 +37,7 @@ exports[`page/Home/DEVPanel render filter status with statics number id not 0 1`
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+              class="ant-segmented basic-segmented-wrapper css-18p941p"
             >
               <div
                 class="ant-segmented-group"
@@ -163,7 +163,7 @@ exports[`page/Home/DEVPanel render filter status with statics number id not 0 1`
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-lfzis8"
               disabled=""
               type="button"
             >
@@ -179,6 +179,7 @@ exports[`page/Home/DEVPanel render filter status with statics number id not 0 1`
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -366,7 +367,7 @@ exports[`page/Home/DEVPanel render normal table 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+              class="ant-segmented basic-segmented-wrapper css-18p941p"
             >
               <div
                 class="ant-segmented-group"
@@ -435,7 +436,7 @@ exports[`page/Home/DEVPanel render normal table 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-lfzis8"
               disabled=""
               type="button"
             >
@@ -451,6 +452,7 @@ exports[`page/Home/DEVPanel render normal table 1`] = `
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -638,7 +640,7 @@ exports[`page/Home/DEVPanel render table with return error 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+              class="ant-segmented basic-segmented-wrapper css-18p941p"
             >
               <div
                 class="ant-segmented-group"
@@ -707,7 +709,7 @@ exports[`page/Home/DEVPanel render table with return error 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-lfzis8"
               disabled=""
               type="button"
             >
@@ -723,6 +725,7 @@ exports[`page/Home/DEVPanel render table with return error 1`] = `
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -910,7 +913,7 @@ exports[`page/Home/DEVPanel send request when click diff filter status 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+              class="ant-segmented basic-segmented-wrapper css-18p941p"
             >
               <div
                 class="ant-segmented-group"
@@ -979,7 +982,7 @@ exports[`page/Home/DEVPanel send request when click diff filter status 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-lfzis8"
               disabled=""
               type="button"
             >
@@ -995,6 +998,7 @@ exports[`page/Home/DEVPanel send request when click diff filter status 1`] = `
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
