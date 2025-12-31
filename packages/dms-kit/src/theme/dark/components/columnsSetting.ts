@@ -4,7 +4,7 @@ import { darkThemeBasic, darkThemeUI } from '../basic';
 const columnsSettingTheme: ColumnsSettingTheme = {
   dropdown: {
     backgroundColor: darkThemeUI.uiToken.colorBgBase,
-    boxShadow: `0px 3px 12px 0px #332C1F1A`,
+    boxShadow: `0px 3px 12px 0px rgba(0, 0, 0, 0.4)`,
     border: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`,
     title: {
       color: darkThemeUI.uiToken.colorTextTertiary

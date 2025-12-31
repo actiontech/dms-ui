@@ -6,6 +6,8 @@ exports[`base/Nav/SideMenu/UserMenu should match snapshot 1`] = `
     className="dms-layout-side-end"
   >
     <UserNavigate
+      changeTheme={[Function]}
+      currentTheme="light"
       language="zh-CN"
       onOpenVersionModal={[Function]}
       username="Admin"

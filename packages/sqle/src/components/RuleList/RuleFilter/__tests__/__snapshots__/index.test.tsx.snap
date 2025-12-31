@@ -60,6 +60,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
                   >
                     <path
                       d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -70,7 +71,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -128,7 +129,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -186,7 +187,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -244,7 +245,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -308,7 +309,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"

@@ -10,7 +10,7 @@ exports[`base/System/components/ConfigTestBtn render snap when btn hover 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -67,7 +67,7 @@ exports[`base/System/components/ConfigTestBtn render snap when btn is default 1`
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -101,7 +101,7 @@ exports[`base/System/components/ConfigTestBtn render snap when btn is loading 1`
         class="ant-space-item"
       >
         <button
-          class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-lfzis8"
           disabled=""
           type="button"
         >

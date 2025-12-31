@@ -22,7 +22,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -37,6 +37,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -65,7 +66,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -123,7 +124,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -180,7 +181,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -244,7 +245,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
         class="ant-row segmented-row-wrapper css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -344,7 +345,7 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
             class="ant-row segmented-row-wrapper flex-space-between css-156vlto"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+              class="ant-segmented basic-segmented-wrapper css-18p941p"
             >
               <div
                 class="ant-segmented-group"
@@ -406,14 +407,11 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                 </label>
               </div>
             </div>
-            <button
-              class="ant-btn ant-btn-default ant-btn-sm switch-btn-active basic-button-wrapper css-1vnelmv"
-              type="button"
+            <div
+              class="css-14po76i"
             >
-              <span>
-                仅看待我操作
-              </span>
-            </button>
+              仅看待我操作
+            </div>
           </div>
           <div
             class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"

@@ -42,12 +42,12 @@ export const guidanceTheme: GuidanceTheme = {
   },
   guidanceButton: {
     default: {
-      background: 'rgba(125, 140, 168, 0.10)',
-      color: '#7D8CA8'
+      background: darkThemeUI.uiToken.colorFillTertiary,
+      color: darkThemeUI.uiToken.colorTextTertiary
     },
     hover: {
       background: darkThemeBasic.basic.colorPrimaryBgActive,
-      color: '#6094FC'
+      color: darkThemeUI.uiToken.colorPrimary
     }
   }
 };

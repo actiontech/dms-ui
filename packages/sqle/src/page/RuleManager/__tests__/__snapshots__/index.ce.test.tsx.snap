@@ -22,7 +22,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span
@@ -37,6 +37,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                 >
                   <path
                     d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -67,7 +68,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
         class="ant-row segmented-row-wrapper css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -187,7 +188,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -477,7 +478,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -765,7 +766,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -1416,7 +1417,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -1434,7 +1435,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -1511,7 +1512,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>

@@ -1,8 +1,9 @@
 import { CustomAvatarTheme } from '../../theme.type';
+import { darkThemeUI } from '../basic';
 
 const customAvatarTheme: CustomAvatarTheme = {
-  backgroundColor: '#fde3cf',
-  color: '#f56a00'
+  backgroundColor: darkThemeUI.uiToken.colorFillSecondary,
+  color: darkThemeUI.uiToken.colorWarning
 };
 
 export default customAvatarTheme;

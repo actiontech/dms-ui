@@ -107,7 +107,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -671,7 +671,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -683,7 +683,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -791,7 +791,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -1850,7 +1850,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -1862,7 +1862,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -1990,7 +1990,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
                                           type="button"
                                         >
                                           <span
@@ -2021,7 +2021,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -2265,7 +2265,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -2277,7 +2277,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -2361,7 +2361,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                   hidden=""
                   type="button"
                 >
@@ -2534,7 +2534,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -3098,7 +3098,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -3110,7 +3110,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -3194,7 +3194,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -4253,7 +4253,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -4265,7 +4265,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -4369,7 +4369,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-1vnelmv"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-lfzis8"
                                           type="button"
                                         >
                                           <span
@@ -4400,7 +4400,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-10a4m"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-112325q"
                                           type="button"
                                         >
                                           <span
@@ -4644,7 +4644,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                   type="button"
                                 >
                                   <span>
@@ -4656,7 +4656,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                   type="submit"
                                 >
                                   <span>
@@ -4782,7 +4782,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-lfzis8"
                   hidden=""
                   type="button"
                 >

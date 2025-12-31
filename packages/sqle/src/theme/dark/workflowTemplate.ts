@@ -21,9 +21,9 @@ export const workflowTemplateTheme: WorkflowTemplateTheme = {
     sendPlane: rectColorName.color13
   },
   stepCard: {
-    userAvatarBorder: '2px solid #ffffff',
-    boxShadow: '0px 1px 4px 0px rgba(51, 44, 31, 0.12)',
-    hoverBoxShadow: '0px 3px 12px 0px rgba(51, 44, 31, 0.1)',
+    userAvatarBorder: `2px solid ${darkThemeBasic.basic.colorWhite}`,
+    boxShadow: '0px 1px 4px 0px rgba(0, 0, 0, 0.5)',
+    hoverBoxShadow: '0px 3px 12px 0px rgba(0, 0, 0, 0.4)',
     backgroundColor: darkThemeBasic.basic.colorWhite,
     disableBorder: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`,
     disabledBackgroundColor: darkThemeUI.uiToken.colorFillQuaternary,

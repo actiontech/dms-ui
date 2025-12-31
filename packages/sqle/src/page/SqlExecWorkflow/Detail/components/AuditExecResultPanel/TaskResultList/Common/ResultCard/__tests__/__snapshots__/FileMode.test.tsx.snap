@@ -919,7 +919,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                     class="css-new95e"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                                       disabled=""
                                       type="button"
                                     >

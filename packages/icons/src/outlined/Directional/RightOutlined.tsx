@@ -8,7 +8,10 @@ const RightOutlined = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z" />
+      <path
+        fill={props.color ? 'currentColor' : '#C3C6CD'}
+        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+      />
     </svg>
   );
 };

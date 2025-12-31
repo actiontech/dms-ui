@@ -55,7 +55,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   <svg
                     fill="currentColor"
@@ -78,7 +78,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
+                  class="ant-segmented basic-segmented-wrapper css-75kxow"
                 >
                   <div
                     class="ant-segmented-group"
@@ -158,6 +158,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -181,7 +182,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow ant-select-disabled"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow ant-select-disabled"
                   >
                     <div
                       class="ant-select-selector"
@@ -240,7 +241,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow ant-select-disabled"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow ant-select-disabled"
                   >
                     <div
                       class="ant-select-selector"
@@ -299,7 +300,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <span
                       aria-live="polite"
@@ -381,7 +382,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -464,7 +465,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -522,7 +523,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -580,7 +581,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -638,7 +639,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -702,7 +703,7 @@ exports[`sqle/Rule should filter list based on project name correctly 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1126,7 +1127,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   <svg
                     fill="currentColor"
@@ -1187,6 +1188,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1210,7 +1212,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -1268,7 +1270,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -1326,7 +1328,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <span
                       aria-live="polite"
@@ -1408,7 +1410,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -1473,7 +1475,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1531,7 +1533,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1589,7 +1591,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1647,7 +1649,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1711,7 +1713,7 @@ exports[`sqle/Rule should filter list based on project name correctly 2`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2007,7 +2009,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   <svg
                     fill="currentColor"
@@ -2068,6 +2070,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2091,7 +2094,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -2149,7 +2152,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -2207,7 +2210,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <span
                       aria-live="polite"
@@ -2289,7 +2292,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -2354,7 +2357,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2412,7 +2415,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2470,7 +2473,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2528,7 +2531,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2592,7 +2595,7 @@ exports[`sqle/Rule should hide empty list tips for archived projects 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2880,7 +2883,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   <svg
                     fill="currentColor"
@@ -2941,6 +2944,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2964,7 +2968,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -3022,7 +3026,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -3080,7 +3084,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -3138,7 +3142,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -3203,7 +3207,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3261,7 +3265,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3319,7 +3323,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3377,7 +3381,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3441,7 +3445,7 @@ exports[`sqle/Rule should render Rule component correctly and match snapshot 1`]
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3956,7 +3960,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   <svg
                     fill="currentColor"
@@ -4017,6 +4021,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                     >
                       <path
                         d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -4040,7 +4045,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -4098,7 +4103,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -4156,7 +4161,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -4214,7 +4219,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                   style="margin-right: 12px; padding-bottom: 8px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -4279,7 +4284,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4337,7 +4342,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4395,7 +4400,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4453,7 +4458,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4517,7 +4522,7 @@ exports[`sqle/Rule should show empty state when request returns no data 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"

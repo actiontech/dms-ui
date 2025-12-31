@@ -38,7 +38,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -131,7 +131,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -212,7 +212,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -315,7 +315,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -419,7 +419,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -513,7 +513,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -595,7 +595,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -698,7 +698,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should match
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -803,7 +803,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled"
+                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
               >
                 <div
                   class="ant-select-selector"
@@ -898,7 +898,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
               >
                 <div
                   class="ant-select-selector"
@@ -981,7 +981,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -1085,7 +1085,7 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
             >
               <div
                 aria-required="true"
-                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"

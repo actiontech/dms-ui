@@ -9,7 +9,7 @@ export const BasicSelectStyleWrapper = styled(Select<any>)`
       font-size: 14px;
       margin: auto 0;
       margin-top: -7px;
-      background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+      background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorFill};
       opacity: 1;
 
       .custom-icon-close {

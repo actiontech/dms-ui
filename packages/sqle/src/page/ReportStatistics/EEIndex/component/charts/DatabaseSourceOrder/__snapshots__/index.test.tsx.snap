@@ -183,7 +183,7 @@ exports[`ReportStatistics/DatabaseSourceOrder render chart snap when api return 
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -414,7 +414,7 @@ exports[`ReportStatistics/DatabaseSourceOrder render tooltip customContent 1`] =
           },
           "backgroundColor": "#f2f1ef",
           "color": "#575c66",
-          "hoverBackgroundColor": "#E8EAE7",
+          "hoverBackgroundColor": "#ebeae7",
           "noticeCountColor": "#f66074",
         },
         "basicSelect": {

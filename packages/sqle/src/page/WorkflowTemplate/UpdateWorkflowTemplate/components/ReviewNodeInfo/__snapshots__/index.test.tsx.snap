@@ -160,7 +160,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal exec node info 1`] =
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -246,7 +246,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal exec node info 1`] =
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -254,7 +254,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal exec node info 1`] =
               </span>
             </button>
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -466,7 +466,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal review node info 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -552,7 +552,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal review node info 1`]
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -560,7 +560,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal review node info 1`]
               </span>
             </button>
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -803,7 +803,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node and update revi
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -889,7 +889,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node and update revi
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -897,7 +897,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node and update revi
               </span>
             </button>
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1127,7 +1127,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -1250,7 +1250,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1258,7 +1258,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
               </span>
             </button>
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1486,7 +1486,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] 
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                       data-testid="exec-user-select"
                     >
                       <div
@@ -1777,7 +1777,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] 
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>
@@ -1785,7 +1785,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] 
               </span>
             </button>
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
               type="button"
             >
               <span>

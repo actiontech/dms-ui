@@ -12,7 +12,11 @@ import { useState } from 'react';
 import { useUserInfo } from '@actiontech/shared/lib/features';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
-import { LocalStorageWrapper, ResponseCode } from '@actiontech/dms-kit';
+import {
+  LocalStorageWrapper,
+  ResponseCode,
+  SupportTheme
+} from '@actiontech/dms-kit';
 import { SupportLanguage } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../../store/nav';
@@ -31,17 +35,22 @@ import { Radio } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { updateUserOperationPermissions } from '../../../../../store/permission';
+// import { MoonOutlined, SunOutlined } from '@actiontech/icons';
 
 type Props = {
   username: string;
   language: SupportLanguage;
   onOpenVersionModal: () => void;
+  currentTheme: SupportTheme;
+  changeTheme: (theme: SupportTheme) => void;
 };
 
 const UserNavigate: React.FC<Props> = ({
   username,
   language: currentLanguage,
   onOpenVersionModal
+  // currentTheme,
+  // changeTheme
 }) => {
   const { t } = useTranslation();
   const { clearUserInfo } = useUserInfo();
@@ -211,6 +220,31 @@ const UserNavigate: React.FC<Props> = ({
   );
   // #endif
 
+  // TODO 暂时不放开切换主题功能
+  // const footer = (
+  //   <>
+  //     <div className="footer-text">{t('dmsMenu.userNavigate.theme')}</div>
+  //     <div className="footer-icon">
+  //       <div
+  //         className={`footer-icon-wrapper ${
+  //           currentTheme === SupportTheme.LIGHT ? 'footer-icon-active' : ''
+  //         }`}
+  //         onClick={() => changeTheme(SupportTheme.LIGHT)}
+  //       >
+  //         <SunOutlined />
+  //       </div>
+  //       <div
+  //         className={`footer-icon-wrapper ${
+  //           currentTheme === SupportTheme.DARK ? 'footer-icon-active' : ''
+  //         }`}
+  //         onClick={() => changeTheme(SupportTheme.DARK)}
+  //       >
+  //         <MoonOutlined />
+  //       </div>
+  //     </div>
+  //   </>
+  // );
+
   return (
     <ContextMenu
       popoverProps={{
@@ -220,6 +254,7 @@ const UserNavigate: React.FC<Props> = ({
       }}
       items={menus}
       header={<span className="whitespace-pre">{username}</span>}
+      // footer={footer}
     >
       <CustomAvatarStyleWrapper className="action-avatar">
         {username?.[0]?.toUpperCase()}

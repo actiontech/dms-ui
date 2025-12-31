@@ -46,7 +46,7 @@ const GitSSHConfig: React.FC = () => {
         <GitSSHConfigStyleWrapper>
           <Space direction="vertical" size={16} className="full-width-element">
             <BasicToolTip suffixIcon title={t('dmsSystem.gitSSH.description')}>
-              {t('dmsSystem.gitSSH.title')}
+              <Typography.Text>{t('dmsSystem.gitSSH.title')}</Typography.Text>
             </BasicToolTip>
             {publicKey ? (
               <Space

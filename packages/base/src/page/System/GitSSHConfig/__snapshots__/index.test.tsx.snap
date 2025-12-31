@@ -42,7 +42,11 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
-                    Git SSH密钥配置
+                    <span
+                      class="ant-typography"
+                    >
+                      Git SSH密钥配置
+                    </span>
                   </div>
                   <div
                     class="ant-space-item"
@@ -93,7 +97,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                         </strong>
                       </span>
                       <button
-                        class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                         type="button"
                       >
                         <span>

@@ -4,7 +4,7 @@ exports[`sqle/components/RuleStatus should match snap shot when disabled 1`] = `
 <body>
   <div>
     <div
-      class="ant-segmented basic-segmented-wrapper css-15kylv5"
+      class="ant-segmented basic-segmented-wrapper css-75kxow"
     >
       <div
         class="ant-segmented-group"
@@ -48,7 +48,7 @@ exports[`sqle/components/RuleStatus should match snap shot when enabled 1`] = `
 <body>
   <div>
     <div
-      class="ant-segmented basic-segmented-wrapper css-15kylv5"
+      class="ant-segmented basic-segmented-wrapper css-75kxow"
     >
       <div
         class="ant-segmented-group"
@@ -92,7 +92,7 @@ exports[`sqle/components/RuleStatus should match snap shot when has ruleStatusCh
 <body>
   <div>
     <div
-      class="ant-segmented basic-segmented-wrapper css-15kylv5"
+      class="ant-segmented basic-segmented-wrapper css-75kxow"
     >
       <div
         class="ant-segmented-group"
@@ -136,7 +136,7 @@ exports[`sqle/components/RuleStatus should render custom label when options.rend
 <body>
   <div>
     <div
-      class="ant-segmented basic-segmented-wrapper css-15kylv5"
+      class="ant-segmented basic-segmented-wrapper css-75kxow"
     >
       <div
         class="ant-segmented-group"

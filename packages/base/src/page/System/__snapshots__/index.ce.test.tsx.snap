@@ -22,7 +22,7 @@ exports[`base/System-ee render snap 1`] = `
         class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -559,7 +559,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -571,7 +571,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -949,7 +949,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -961,7 +961,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -1210,7 +1210,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -1222,7 +1222,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -1673,7 +1673,7 @@ exports[`base/System-ee render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -1685,7 +1685,7 @@ exports[`base/System-ee render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -1734,7 +1734,7 @@ exports[`base/System-ee render snap 2`] = `
         class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -2247,7 +2247,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2259,7 +2259,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -2742,7 +2742,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2754,7 +2754,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -2979,7 +2979,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -2991,7 +2991,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -3457,7 +3457,7 @@ exports[`base/System-ee render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                                       type="button"
                                     >
                                       <span>
@@ -3469,7 +3469,7 @@ exports[`base/System-ee render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                                      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                                       type="submit"
                                     >
                                       <span>
@@ -3518,7 +3518,7 @@ exports[`base/System-ee render snap 3`] = `
         class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1"
+          class="ant-segmented basic-segmented-wrapper css-18p941p"
         >
           <div
             class="ant-segmented-group"
@@ -3694,7 +3694,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -3984,7 +3984,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -4272,7 +4272,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-1vnelmv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -4914,7 +4914,7 @@ exports[`base/System-ee render snap 3`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -4932,7 +4932,7 @@ exports[`base/System-ee render snap 3`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -5009,7 +5009,7 @@ exports[`base/System-ee render snap 3`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                             type="button"
                           >
                             <span>

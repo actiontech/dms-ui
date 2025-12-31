@@ -415,7 +415,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>
@@ -558,7 +558,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                             class="css-new95e"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                               type="button"
                             >
                               <span>

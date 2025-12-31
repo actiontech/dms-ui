@@ -54,7 +54,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -193,7 +193,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -294,7 +294,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-lfzis8"
           style="margin-top: 16px;"
           type="button"
         >
@@ -507,7 +507,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   只看差异
                 </div>
@@ -522,7 +522,7 @@ exports[`EnvironmentSelector should handle card click correctly 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                       disabled=""
                       type="button"
                     >
@@ -1615,7 +1615,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -1754,7 +1754,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -1855,7 +1855,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-lfzis8"
           style="margin-top: 16px;"
           type="button"
         >
@@ -2068,7 +2068,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="css-1f8xqgy"
+                  class="css-1la9g0j"
                 >
                   只看差异
                 </div>
@@ -2083,7 +2083,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                       disabled=""
                       type="button"
                     >
@@ -2500,6 +2500,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                             >
                               <path
                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                fill="#C3C6CD"
                               />
                             </svg>
                           </span>
@@ -2622,6 +2623,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                             >
                               <path
                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                fill="#C3C6CD"
                               />
                             </svg>
                           </span>
@@ -3128,6 +3130,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                             >
                               <path
                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                fill="#C3C6CD"
                               />
                             </svg>
                           </span>
@@ -3270,6 +3273,7 @@ exports[`EnvironmentSelector should handle card click correctly 2`] = `
                             >
                               <path
                                 d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                fill="#C3C6CD"
                               />
                             </svg>
                           </span>
@@ -3381,7 +3385,7 @@ exports[`EnvironmentSelector should render the baseline and comparison environme
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -3483,7 +3487,7 @@ exports[`EnvironmentSelector should render the baseline and comparison environme
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ynrv42 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -3547,7 +3551,7 @@ exports[`EnvironmentSelector should render the baseline and comparison environme
           </div>
         </form>
         <button
-          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-lfzis8"
           style="margin-top: 16px;"
           type="button"
         >

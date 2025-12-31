@@ -4,7 +4,7 @@ import { lightThemeUI } from '../basic';
 const basicSegmentedTheme: BasicSegmentedTheme = {
   color: lightThemeUI.uiToken.colorTextSecondary,
   backgroundColor: lightThemeUI.uiToken.colorFillSecondary,
-  hoverBackgroundColor: '#E8EAE7',
+  hoverBackgroundColor: lightThemeUI.uiToken.colorFill,
   active: {
     color: lightThemeUI.uiToken.colorPrimary,
     border: lightThemeUI.uiToken.colorFillTertiary,

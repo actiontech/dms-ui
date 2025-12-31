@@ -74,7 +74,7 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -269,7 +269,7 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
+                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
                       type="button"
                     >
                       <span
@@ -378,7 +378,7 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-1gowd4m ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -573,7 +573,7 @@ exports[`base/Member/Drawer/MemberGroupForm should match snapshot when isUpdate 
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-rku4td"
+                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
                       type="button"
                     >
                       <span

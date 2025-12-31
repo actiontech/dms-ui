@@ -13,7 +13,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -47,7 +47,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -59,7 +59,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -237,7 +237,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -343,7 +343,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -411,7 +411,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                     </div>
                   </div>
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -428,7 +428,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                 class="ant-row flex-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
+                  class="ant-segmented basic-segmented-wrapper css-75kxow"
                 >
                   <div
                     class="ant-segmented-group"
@@ -499,7 +499,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -566,6 +566,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                               >
                                 <path
                                   d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -576,7 +577,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -634,7 +635,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -692,7 +693,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -750,7 +751,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -814,7 +815,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1105,7 +1106,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -1138,7 +1139,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -1592,7 +1593,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2089,7 +2090,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2216,7 +2217,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -2228,7 +2229,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -2265,7 +2266,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -2298,7 +2299,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -2473,7 +2474,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2579,7 +2580,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2647,7 +2648,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                     </div>
                   </div>
                   <button
-                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span
@@ -2688,7 +2689,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                 class="ant-row flex-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
+                  class="ant-segmented basic-segmented-wrapper css-75kxow"
                 >
                   <div
                     class="ant-segmented-group"
@@ -2759,7 +2760,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -2826,6 +2827,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                               >
                                 <path
                                   d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -2836,7 +2838,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2894,7 +2896,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2952,7 +2954,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3010,7 +3012,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3074,7 +3076,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3365,7 +3367,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -3398,7 +3400,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -3852,7 +3854,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>
@@ -3881,7 +3883,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
             type="button"
           >
             <span
@@ -4080,7 +4082,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -4186,7 +4188,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-1gowd4m ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -4254,7 +4256,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                     </div>
                   </div>
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                     type="button"
                   >
                     <span>
@@ -4272,7 +4274,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                 class="ant-row flex-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
+                  class="ant-segmented basic-segmented-wrapper css-75kxow"
                 >
                   <div
                     class="ant-segmented-group"
@@ -4343,7 +4345,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                   </div>
                 </div>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-1vnelmv"
+                  class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
                   type="button"
                 >
                   <span>
@@ -4410,6 +4412,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               >
                                 <path
                                   d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -4420,7 +4423,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4478,7 +4481,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4536,7 +4539,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4594,7 +4597,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4658,7 +4661,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -4949,7 +4952,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -4982,7 +4985,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -5199,7 +5202,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -5232,7 +5235,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-1vnelmv"
+                                        class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
                                         type="button"
                                       >
                                         <span
@@ -5684,7 +5687,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
                 type="button"
               >
                 <span>

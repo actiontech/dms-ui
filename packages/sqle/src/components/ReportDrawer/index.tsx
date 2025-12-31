@@ -23,6 +23,8 @@ import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import AuditExceptionItem from '../AuditResultMessage/AuditExceptionItem';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
+
 const ReportDrawer = ({
   open,
   title,
@@ -35,6 +37,7 @@ const ReportDrawer = ({
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+  const { theme } = useCurrentUser();
   const closeModal = () => {
     onClose();
   };
@@ -228,6 +231,7 @@ const ReportDrawer = ({
             </div>
             <div className="wrapper-cont">
               <SQLRenderer.ViewOnlyEditor
+                theme={theme}
                 value={data?.sql}
                 width="100%"
                 height="100%"

@@ -247,7 +247,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                           type="button"
                         >
                           <span>
@@ -324,7 +324,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                           disabled=""
                           type="button"
                         >
@@ -396,7 +396,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-1vnelmv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
                           disabled=""
                           type="button"
                         >

@@ -8,7 +8,7 @@ import { ProjectOverviewTheme } from '../type';
 export const projectOverviewTheme: ProjectOverviewTheme = {
   SqlCount: {
     baseColor: rectColorName.color10,
-    grayColor: '#f2f1f0'
+    grayColor: darkThemeBasic.basic.colorGrayLine
   },
   DataSourceCount: {
     health: rectColorName.color1,
@@ -35,7 +35,7 @@ export const projectOverviewTheme: ProjectOverviewTheme = {
       bg: darkThemeUI.uiToken.colorFillTertiary,
       activeColor: darkThemeBasic.basic.colorPrimaryActive,
       label: {
-        fill: '#dad9d9'
+        fill: darkThemeUI.uiToken.colorTextTertiary
       },
       toolTip: {
         dotColor: rectColorName.color2
@@ -48,7 +48,7 @@ export const projectOverviewTheme: ProjectOverviewTheme = {
   DataSourcePerformance: {
     bar: {
       fill: rectColorName.color5,
-      bg: 'rgba(0,0,0,0.1)'
+      bg: darkThemeUI.uiToken.colorFillTertiary
     },
     toolTip: {
       dotColor: rectColorName.color5

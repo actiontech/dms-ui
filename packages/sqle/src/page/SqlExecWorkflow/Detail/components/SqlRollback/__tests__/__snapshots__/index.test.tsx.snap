@@ -16,7 +16,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -43,7 +43,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
           disabled=""
           type="button"
         >
@@ -96,7 +96,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -154,7 +154,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1089,7 +1089,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span
@@ -1116,7 +1116,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
           type="button"
         >
           <span>
@@ -1168,7 +1168,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1226,7 +1226,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-wd6pz6 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2227,7 +2227,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span>
@@ -2340,7 +2340,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
                                     type="button"
                                   >
                                     <span>

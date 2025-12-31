@@ -38,7 +38,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 1`] = `
       </span>
     </div>
     <button
-      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span>
@@ -135,7 +135,7 @@ exports[`test WaterfallList/FileExecuteMode should match snapshot 2`] = `
       </span>
     </div>
     <button
-      class="ant-btn ant-btn-primary basic-button-wrapper css-1vnelmv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
       type="button"
     >
       <span>
