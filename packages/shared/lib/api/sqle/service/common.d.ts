@@ -29,6 +29,7 @@ import {
   DirectAuditReqV1SqlTypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
+  GetAuditPlanSQLExportReqV1ExportFormatEnum,
   GetWorkflowTasksItemV1StatusEnum,
   GlobalSqlManageProjectPriorityEnum,
   GlobalSqlManageStatusEnum,
@@ -1352,6 +1353,8 @@ export interface IGetAuditPlanSQLDataResV1 {
 }
 
 export interface IGetAuditPlanSQLExportReqV1 {
+  export_format?: GetAuditPlanSQLExportReqV1ExportFormatEnum;
+
   filter_list?: IFilter[];
 
   is_asc?: boolean;
