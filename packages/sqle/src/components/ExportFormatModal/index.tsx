@@ -1,6 +1,7 @@
 import { BasicButton, BasicModal } from '@actiontech/dms-kit';
 import { Radio, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export interface ExportFormatModalProps<T extends string = string> {
   open: boolean;
@@ -39,8 +40,12 @@ const ExportFormatModal = <T extends string = string>({
         onChange={(e) => onFormatChange(e.target.value)}
       >
         <Space direction="vertical">
-          <Radio value="csv">CSV</Radio>
-          <Radio value="excel">Excel</Radio>
+          <Radio value={GetAuditPlanSQLExportReqV1ExportFormatEnum.csv}>
+            CSV
+          </Radio>
+          <Radio value={GetAuditPlanSQLExportReqV1ExportFormatEnum.excel}>
+            Excel
+          </Radio>
         </Space>
       </Radio.Group>
     </BasicModal>
