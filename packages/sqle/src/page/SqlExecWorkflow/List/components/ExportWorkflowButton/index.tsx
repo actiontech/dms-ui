@@ -10,6 +10,7 @@ import { SqlExecWorkflowExportAction } from '../../action';
 import { exportWorkflowV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { useExportFormatModal } from '../../../../../hooks/useExportFormatModal';
 import ExportFormatModal from '../../../../../components/ExportFormatModal';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   tableFilterInfo,
@@ -30,9 +31,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
     hideExportFormatModal,
     selectedExportFormat,
     setSelectedExportFormat
-  } = useExportFormatModal<exportWorkflowV1ExportFormatEnum>(
-    exportWorkflowV1ExportFormatEnum.csv
-  );
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
 
   const exportWorkflow = () => {
     hideExportFormatModal();
@@ -65,7 +64,8 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_task_execute_start_time_from,
       filter_task_execute_start_time_to,
       fuzzy_keyword: searchKeyword,
-      export_format: selectedExportFormat
+      export_format:
+        selectedExportFormat as unknown as exportWorkflowV1ExportFormatEnum
     };
 
     workflow

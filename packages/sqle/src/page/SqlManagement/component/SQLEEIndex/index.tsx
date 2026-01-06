@@ -5,6 +5,7 @@ import { BasicButton, PageHeader } from '@actiontech/dms-kit';
 import { useTypedQuery } from '@actiontech/shared';
 import { useExportFormatModal } from '../../../../hooks/useExportFormatModal';
 import ExportFormatModal from '../../../../components/ExportFormatModal';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -372,9 +373,7 @@ const SQLEEIndex = () => {
     hideExportFormatModal,
     selectedExportFormat,
     setSelectedExportFormat
-  } = useExportFormatModal<exportSqlManageV2ExportFormatEnum>(
-    exportSqlManageV2ExportFormatEnum.csv
-  );
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
   const handleExport = () => {
     hideExportFormatModal();
     startExport();
@@ -398,7 +397,8 @@ const SQLEEIndex = () => {
       filter_rule_name: filter_rule_name?.split(
         DB_TYPE_RULE_NAME_SEPARATOR
       )?.[1],
-      export_format: selectedExportFormat
+      export_format:
+        selectedExportFormat as unknown as exportSqlManageV2ExportFormatEnum
     } as IExportSqlManageV2Params;
     SqleApi.SqlManageService.exportSqlManageV2(params, {
       responseType: 'blob'

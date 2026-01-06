@@ -3,21 +3,21 @@ import { Radio, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-export interface ExportFormatModalProps<T extends string = string> {
+export interface ExportFormatModalProps {
   open: boolean;
-  selectedFormat: T;
-  onFormatChange: (format: T) => void;
+  selectedFormat: GetAuditPlanSQLExportReqV1ExportFormatEnum;
+  onFormatChange: (format: GetAuditPlanSQLExportReqV1ExportFormatEnum) => void;
   onConfirm: () => void;
   onCancel: () => void;
 }
 
-const ExportFormatModal = <T extends string = string>({
+const ExportFormatModal = ({
   open,
   selectedFormat,
   onFormatChange,
   onConfirm,
   onCancel
-}: ExportFormatModalProps<T>) => {
+}: ExportFormatModalProps) => {
   const { t } = useTranslation();
 
   return (

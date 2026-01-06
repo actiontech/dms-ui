@@ -59,9 +59,7 @@ const ConfDetail: React.FC = () => {
     hideExportFormatModal,
     selectedExportFormat,
     setSelectedExportFormat
-  } = useExportFormatModal<GetAuditPlanSQLExportReqV1ExportFormatEnum>(
-    GetAuditPlanSQLExportReqV1ExportFormatEnum.csv
-  );
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
   const {
     data,
     error,
