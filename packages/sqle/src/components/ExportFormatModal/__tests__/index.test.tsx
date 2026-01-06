@@ -1,6 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import ExportFormatModal from '../index';
 import { sqleSuperRender } from '../../../testUtils/superRender';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('ExportFormatModal', () => {
   const mockOnFormatChange = jest.fn();
@@ -9,7 +10,7 @@ describe('ExportFormatModal', () => {
 
   const defaultProps = {
     open: true,
-    selectedFormat: 'csv' as const,
+    selectedFormat: GetAuditPlanSQLExportReqV1ExportFormatEnum.csv,
     onFormatChange: mockOnFormatChange,
     onConfirm: mockOnConfirm,
     onCancel: mockOnCancel
