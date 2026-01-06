@@ -7,6 +7,9 @@ import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportWorkflowButtonProps } from './index.type';
 import { SqlExecWorkflowExportAction } from '../../action';
+import { exportWorkflowV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { useExportFormatModal } from '../../../../../hooks/useExportFormatModal';
+import ExportFormatModal from '../../../../../components/ExportFormatModal';
 
 const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   tableFilterInfo,
@@ -21,7 +24,18 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
+  const {
+    exportFormatModalVisible,
+    showExportFormatModal,
+    hideExportFormatModal,
+    selectedExportFormat,
+    setSelectedExportFormat
+  } = useExportFormatModal<exportWorkflowV1ExportFormatEnum>(
+    exportWorkflowV1ExportFormatEnum.csv
+  );
+
   const exportWorkflow = () => {
+    hideExportFormatModal();
     startExport();
     const hideLoading = messageApi.loading(
       t('execWorkflow.list.exportWorkflow.exporting')
@@ -50,7 +64,8 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_create_time_to,
       filter_task_execute_start_time_from,
       filter_task_execute_start_time_to,
-      fuzzy_keyword: searchKeyword
+      fuzzy_keyword: searchKeyword,
+      export_format: selectedExportFormat
     };
 
     workflow
@@ -71,7 +86,14 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   return (
     <>
       {messageContextHolder}
-      {SqlExecWorkflowExportAction(exportWorkflow, exportButtonDisabled)}
+      {SqlExecWorkflowExportAction(showExportFormatModal, exportButtonDisabled)}
+      <ExportFormatModal
+        open={exportFormatModalVisible}
+        selectedFormat={selectedExportFormat}
+        onFormatChange={setSelectedExportFormat}
+        onConfirm={exportWorkflow}
+        onCancel={hideExportFormatModal}
+      />
     </>
   );
 };

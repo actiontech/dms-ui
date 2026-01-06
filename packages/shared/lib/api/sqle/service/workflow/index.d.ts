@@ -45,6 +45,7 @@ import {
   getWorkflowsV1FilterStatusEnum,
   autoCreateAndExecuteWorkflowV1ExecModeEnum,
   exportWorkflowV1FilterStatusEnum,
+  exportWorkflowV1ExportFormatEnum,
   GetBackupSqlListV1FilterExecStatusEnum
 } from './index.enum';
 
@@ -245,6 +246,8 @@ export interface IExportWorkflowV1Params {
   project_name: string;
 
   fuzzy_keyword?: string;
+
+  export_format?: exportWorkflowV1ExportFormatEnum;
 }
 
 export interface IGetBackupSqlListV1Params {

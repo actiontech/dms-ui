@@ -23,7 +23,8 @@ import { ModalName } from '../../../../data/ModalName';
 import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
 import {
   GetSqlManageListV2FilterPriorityEnum,
-  exportSqlManageV1FilterPriorityEnum
+  exportSqlManageV1FilterPriorityEnum,
+  exportSqlManageV2ExportFormatEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { SupportLanguage } from '@actiontech/dms-kit';
 import { SystemRole } from '@actiontech/dms-kit';
@@ -285,11 +286,20 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
     expect(screen.getByText('导出')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出'));
+
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('选择导出文件格式')).toBeInTheDocument();
+    expect(screen.getByText('CSV')).toBeInTheDocument();
+    expect(screen.getByText('Excel')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('确 认'));
+
     expect(exportRequest).toHaveBeenCalledWith(
       {
         ...exportParams,
         filter_assignee: mockCurrentUserReturn.userId,
-        filter_priority: exportSqlManageV1FilterPriorityEnum.high
+        filter_priority: exportSqlManageV1FilterPriorityEnum.high,
+        export_format: exportSqlManageV2ExportFormatEnum.csv
       },
       {
         responseType: 'blob'

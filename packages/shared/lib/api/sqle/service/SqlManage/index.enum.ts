@@ -196,6 +196,12 @@ export enum exportSqlManageV2SortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum exportSqlManageV2ExportFormatEnum {
+  'csv' = 'csv',
+
+  'excel' = 'excel'
+}
+
 export enum GetSqlManageListV3FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 

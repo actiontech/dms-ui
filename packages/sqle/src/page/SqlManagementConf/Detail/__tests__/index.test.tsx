@@ -85,16 +85,15 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render extra action buttons in the page header', async () => {
+  it('should render extra action buttons in the page header and export with CSV format', async () => {
     mockUsePermission(
       { checkActionPermission: jest.fn(() => true) },
       { useSpyOnMockHooks: true }
     );
     const getInstanceAuditPlanSQLExportSpy =
       instanceAuditPlan.getInstanceAuditPlanSQLExport();
-    const { getByText, queryByText, getAllByText } = sqleSuperRender(
-      <ConfDetail />
-    );
+    const { getByText, queryByText, getAllByText, baseElement } =
+      sqleSuperRender(<ConfDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(queryByText('导出')).not.toBeInTheDocument();
@@ -106,6 +105,15 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
 
     fireEvent.click(getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(0));
+
+    expect(getByText('选择导出文件格式')).toBeInTheDocument();
+    expect(getByText('CSV')).toBeInTheDocument();
+    expect(getByText('Excel')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenNthCalledWith(
       1,
@@ -114,7 +122,8 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
         instance_audit_plan_id: instanceAuditPlanId,
         audit_plan_id:
           mockAuditPlanDetailData?.audit_plans?.[0]?.audit_plan_type?.audit_plan_id?.toString(),
-        filter_list: []
+        filter_list: [],
+        export_format: 'csv'
       },
       { responseType: 'blob' }
     );
