@@ -15,7 +15,10 @@ export default {
         platformRoles: '平台角色',
         projects: '所属项目',
         projectsCount: '+{{count}}个项目'
-      }
+      },
+      normal: '正常',
+      disabled: '被禁用',
+      searchPlaceholder: '输入ID/用户名/邮箱/手机号关键字搜索'
     },
     userForm: {
       username: '用户名',

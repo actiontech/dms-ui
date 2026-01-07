@@ -16,14 +16,16 @@ exports[`base/UserCenter/UserList render user table 1`] = `
         >
           <div
             class="ant-space-item"
+            style="margin-right: 12px;"
           >
             <span
               class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+              style="width: 300px;"
             >
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
                 type="text"
                 value=""
               />
@@ -61,6 +63,42 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                 </svg>
               </span>
             </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              style="padding: 0px 6px 0px 10px;"
+              type="button"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 2px;"
+                >
+                  筛选
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <svg
+                    color="currentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -1462,14 +1500,16 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
       >
         <div
           class="ant-space-item"
+          style="margin-right: 12px;"
         >
           <span
             class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            style="width: 300px;"
           >
             <input
               class="ant-input ant-input-sm"
               id="actiontech-table-search-input"
-              placeholder="输入关键字搜索"
+              placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
               type="text"
               value=""
             />
@@ -1507,6 +1547,42 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
               </svg>
             </span>
           </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+            style="padding: 0px 6px 0px 10px;"
+            type="button"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 2px;"
+              >
+                筛选
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <svg
+                  color="currentColor"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -2756,14 +2832,16 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
       >
         <div
           class="ant-space-item"
+          style="margin-right: 12px;"
         >
           <span
             class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+            style="width: 300px;"
           >
             <input
               class="ant-input ant-input-sm"
               id="actiontech-table-search-input"
-              placeholder="输入关键字搜索"
+              placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
               type="text"
               value=""
             />
@@ -2801,6 +2879,42 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
               </svg>
             </span>
           </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+            style="padding: 0px 6px 0px 10px;"
+            type="button"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 2px;"
+              >
+                筛选
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <svg
+                  color="currentColor"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -4202,14 +4316,16 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
         >
           <div
             class="ant-space-item"
+            style="margin-right: 12px;"
           >
             <span
               class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+              style="width: 300px;"
             >
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
                 type="text"
                 value=""
               />
@@ -4247,6 +4363,42 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                 </svg>
               </span>
             </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              style="padding: 0px 6px 0px 10px;"
+              type="button"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 2px;"
+                >
+                  筛选
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <svg
+                    color="currentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -8483,14 +8635,16 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
         >
           <div
             class="ant-space-item"
+            style="margin-right: 12px;"
           >
             <span
               class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+              style="width: 300px;"
             >
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
                 type="text"
                 value=""
               />
@@ -8528,6 +8682,42 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                 </svg>
               </span>
             </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              style="padding: 0px 6px 0px 10px;"
+              type="button"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 2px;"
+                >
+                  筛选
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <svg
+                    color="currentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -12764,14 +12954,16 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
         >
           <div
             class="ant-space-item"
+            style="margin-right: 12px;"
           >
             <span
               class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+              style="width: 300px;"
             >
               <input
                 class="ant-input ant-input-sm"
                 id="actiontech-table-search-input"
-                placeholder="输入关键字搜索"
+                placeholder="输入ID/用户名/邮箱/手机号关键字搜索"
                 type="text"
                 value=""
               />
@@ -12809,6 +13001,42 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                 </svg>
               </span>
             </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              style="padding: 0px 6px 0px 10px;"
+              type="button"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 2px;"
+                >
+                  筛选
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <svg
+                    color="currentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
