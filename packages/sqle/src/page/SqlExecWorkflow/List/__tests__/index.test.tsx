@@ -259,6 +259,15 @@ describe('sqle/Workflow/List', () => {
 
     expect(screen.getByText('导出工单')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出工单'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('选择导出文件格式')).toBeInTheDocument();
+    expect(screen.getByText('CSV')).toBeInTheDocument();
+    expect(screen.getByText('Excel')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('确 认'));
+
+    await act(async () => jest.advanceTimersByTime(0));
     expect(RequestExportWorkflowList).toHaveBeenCalled();
     expect(RequestExportWorkflowList).toHaveBeenCalledWith(
       {
@@ -272,7 +281,8 @@ describe('sqle/Workflow/List', () => {
         filter_task_execute_start_time_to: undefined,
         filter_task_instance_name: undefined,
         fuzzy_keyword: '',
-        project_name: projectName
+        project_name: projectName,
+        export_format: 'csv'
       },
       { responseType: 'blob' }
     );

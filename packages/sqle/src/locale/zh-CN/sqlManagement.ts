@@ -5,7 +5,10 @@ export default {
     action: {
       export: '导出',
       exporting: '正在导出文件',
-      exportSuccessTips: '导出文件成功'
+      exportSuccessTips: '导出文件成功',
+      exportFormatModal: {
+        title: '选择导出文件格式'
+      }
     }
   },
   statistics: {

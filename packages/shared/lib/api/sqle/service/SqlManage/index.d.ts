@@ -24,6 +24,7 @@ import {
   exportSqlManageV2FilterStatusEnum,
   exportSqlManageV2SortFieldEnum,
   exportSqlManageV2SortOrderEnum,
+  exportSqlManageV2ExportFormatEnum,
   GetSqlManageListV3FilterSourceEnum,
   GetSqlManageListV3FilterAuditLevelEnum,
   GetSqlManageListV3FilterStatusEnum,
@@ -280,6 +281,8 @@ export interface IExportSqlManageV2Params {
   sort_field?: exportSqlManageV2SortFieldEnum;
 
   sort_order?: exportSqlManageV2SortOrderEnum;
+
+  export_format?: exportSqlManageV2ExportFormatEnum;
 }
 
 export interface IGetSqlManageListV3Params {
