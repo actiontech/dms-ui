@@ -8,7 +8,10 @@ import {
   useTableRequestError,
   useTableRequestParams,
   TableToolbar,
-  ColumnsSettingProps
+  ColumnsSettingProps,
+  FilterCustomProps,
+  useTableFilterContainer,
+  TableFilterContainer
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
@@ -25,6 +28,10 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
 import { UserListActions } from './action';
+import {
+  ListUsersFilterByStatEnum,
+  ListUsersFilterByAuthenticationTypeEnum
+} from '@actiontech/shared/lib/api/base/service/User/index.enum';
 
 const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage
@@ -44,7 +51,9 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     tableChange,
     searchKeyword,
     setSearchKeyword,
-    refreshBySearchKeyword
+    refreshBySearchKeyword,
+    updateTableFilterInfo,
+    tableFilterInfo
   } = useTableRequestParams<IListUser, IListUsersParams>();
 
   const { username } = useCurrentUser();
@@ -57,12 +66,13 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     () => {
       const params: IListUsersParams = {
         ...pagination,
+        ...tableFilterInfo,
         fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(User.ListUsers(params));
     },
     {
-      refreshDeps: [pagination, activePage],
+      refreshDeps: [pagination, activePage, tableFilterInfo],
       ready: UserCenterListEnum.user_list === activePage
     }
   );
@@ -114,6 +124,47 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     [username]
   );
 
+  const columns = useMemo(() => {
+    return UserListColumns();
+  }, []);
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListUser, FilterCustomProps>([
+      [
+        'stat',
+        {
+          options: [
+            {
+              label: t('dmsUserCenter.user.userList.normal'),
+              value: ListUsersFilterByStatEnum.Normal
+            },
+            {
+              label: t('dmsUserCenter.user.userList.disabled'),
+              value: ListUsersFilterByStatEnum.Disabled
+            }
+          ]
+        }
+      ],
+      [
+        'authentication_type',
+        {
+          options: Object.keys(ListUsersFilterByAuthenticationTypeEnum).map(
+            (key) => ({
+              label: key,
+              value: key
+            })
+          )
+        }
+      ]
+    ]);
+  }, [t]);
+
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer<IListUser, IListUsersParams>(
+      columns,
+      updateTableFilterInfo
+    );
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Refresh_User_Center_List,
@@ -131,9 +182,23 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
           onChange: setSearchKeyword,
           onSearch: () => {
             refreshBySearchKeyword();
+          },
+          placeholder: t('dmsUserCenter.user.userList.searchPlaceholder'),
+          style: {
+            width: '300px'
           }
         }}
         setting={tableSetting}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
         rowKey="uid"
@@ -143,7 +208,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
           total: userList?.total ?? 0
         }}
         loading={loading}
-        columns={UserListColumns()}
+        columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
