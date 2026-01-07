@@ -4,7 +4,8 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import {
   getBySelector,
-  queryBySelector
+  queryBySelector,
+  getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
 import {
@@ -19,6 +20,10 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import { UserCenterListEnum } from '../../../index.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import {
+  ListUsersFilterByAuthenticationTypeEnum,
+  ListUsersFilterByStatEnum
+} from '@actiontech/shared/lib/api/base/service/User/index.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -234,6 +239,39 @@ describe('base/UserCenter/UserList', () => {
       fuzzy_keyword: 'test',
       page_index: 1,
       page_size: 20
+    });
+
+    fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const filterItems = getAllBySelector(
+      '.actiontech-table-filter-container-namespace .ant-space-item'
+    );
+    expect(filterItems.length).toBe(2);
+    const statFilter = getBySelector('input', filterItems[0]);
+    fireEvent.mouseDown(statFilter);
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    fireEvent.click(selectOptions[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(userListSpy).toHaveBeenCalledTimes(3);
+    expect(userListSpy).toHaveBeenNthCalledWith(3, {
+      fuzzy_keyword: 'test',
+      page_index: 1,
+      page_size: 20,
+      filter_by_stat: ListUsersFilterByStatEnum.Normal
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    const authTypeFilter = getBySelector('input', filterItems[1]);
+    fireEvent.mouseDown(authTypeFilter);
+    fireEvent.click(screen.getByText('oauth2'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(userListSpy).toHaveBeenCalledTimes(4);
+    expect(userListSpy).toHaveBeenNthCalledWith(4, {
+      fuzzy_keyword: 'test',
+      page_index: 1,
+      page_size: 20,
+      filter_by_stat: ListUsersFilterByStatEnum.Normal,
+      filter_by_authentication_type:
+        ListUsersFilterByAuthenticationTypeEnum.oauth2
     });
   });
 });
