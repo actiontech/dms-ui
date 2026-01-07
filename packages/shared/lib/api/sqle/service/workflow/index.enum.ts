@@ -134,6 +134,12 @@ export enum exportWorkflowV1FilterStatusEnum {
   'finished' = 'finished'
 }
 
+export enum exportWorkflowV1ExportFormatEnum {
+  'csv' = 'csv',
+
+  'excel' = 'excel'
+}
+
 export enum GetBackupSqlListV1FilterExecStatusEnum {
   'initialized' = 'initialized',
 

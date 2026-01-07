@@ -29,6 +29,9 @@ import { ResponseCode } from '@actiontech/dms-kit';
 import { SqlManagementConfDetailPageHeaderActions } from './action';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useScanTypeVerify from '../Common/ConfForm/useScanTypeVerify';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useExportFormatModal } from '../../../hooks/useExportFormatModal';
+import ExportFormatModal from '../../../components/ExportFormatModal';
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -50,6 +53,13 @@ const ConfDetail: React.FC = () => {
     useBoolean();
   const [messageApi, contextMessageHolder] = message.useMessage();
   const { isPerformanceCollectScanType } = useScanTypeVerify();
+  const {
+    exportFormatModalVisible,
+    showExportFormatModal,
+    hideExportFormatModal,
+    selectedExportFormat,
+    setSelectedExportFormat
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
   const {
     data,
     error,
@@ -135,8 +145,12 @@ const ConfDetail: React.FC = () => {
       eventEmitter.emit(EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List);
     }
   };
-  const exportScanTypeSqlDetail = () => {
-    eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List);
+  const handleExportFormatConfirm = () => {
+    hideExportFormatModal();
+    eventEmitter.emit(
+      EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List,
+      selectedExportFormat
+    );
   };
   const onAuditImmediately = () => {
     auditPending();
@@ -162,7 +176,7 @@ const ConfDetail: React.FC = () => {
   const pageHeaderActions = SqlManagementConfDetailPageHeaderActions({
     onAuditImmediately,
     auditPending: auditing,
-    onExport: exportScanTypeSqlDetail,
+    onExport: showExportFormatModal,
     exportPending: exporting
   });
   return (
@@ -200,6 +214,13 @@ const ConfDetail: React.FC = () => {
           }
         />
       )}
+      <ExportFormatModal
+        open={exportFormatModalVisible}
+        selectedFormat={selectedExportFormat}
+        onFormatChange={setSelectedExportFormat}
+        onConfirm={handleExportFormatConfirm}
+        onCancel={hideExportFormatModal}
+      />
     </>
   );
 };

@@ -38,6 +38,7 @@ import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mergeFilterButtonMeta } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { message } from 'antd';
@@ -220,7 +221,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [refreshFilterMetaList, refreshTableRows]);
   useEffect(() => {
-    const exportScanTypeSqlDetail = () => {
+    const exportScanTypeSqlDetail = (
+      exportFormat?: GetAuditPlanSQLExportReqV1ExportFormatEnum
+    ) => {
       exportPending();
       const hideLoading = messageApi.loading(
         t('managementConf.detail.exportTips'),
@@ -230,7 +233,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         project_name: projectName,
         instance_audit_plan_id: instanceAuditPlanId ?? '',
         audit_plan_id: auditPlanId,
-        filter_list: getFilterListByTableFilterInfo()
+        filter_list: getFilterListByTableFilterInfo(),
+        export_format: exportFormat
       };
       createSortParams(params);
       instance_audit_plan

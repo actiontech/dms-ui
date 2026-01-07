@@ -1,7 +1,10 @@
-import { exportWorkflowV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import {
+  exportWorkflowV1FilterStatusEnum,
+  exportWorkflowV1ExportFormatEnum
+} from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ExportWorkflowButton from '../ExportWorkflowButton';
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent, screen } from '@testing-library/dom';
 import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -31,8 +34,8 @@ describe('test ExportWorkflowButton', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
-  it('should be called request with params when the button is clicked', async () => {
-    const { getByText } = sqleSuperRender(
+  it('should export with CSV format by default when clicking OK', async () => {
+    const { getByText, baseElement } = sqleSuperRender(
       <ExportWorkflowButton
         tableFilterInfo={{
           filter_task_execute_start_time_from: '2024-05-01T17:02:21+08:00',
@@ -49,6 +52,15 @@ describe('test ExportWorkflowButton', () => {
     );
 
     fireEvent.click(getByText('导出工单'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('选择导出文件格式')).toBeInTheDocument();
+
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('确 认'));
+
+    await act(async () => jest.advanceTimersByTime(0));
     expect(RequestExportWorkflowList).toHaveBeenCalledTimes(1);
     expect(RequestExportWorkflowList).toHaveBeenCalledWith(
       {
@@ -61,7 +73,8 @@ describe('test ExportWorkflowButton', () => {
         filter_task_instance_id: '1739531942258282496',
         filter_status: exportWorkflowV1FilterStatusEnum.exec_failed,
         fuzzy_keyword: 'filter value',
-        project_name: mockProjectInfo.projectName
+        project_name: mockProjectInfo.projectName,
+        export_format: exportWorkflowV1ExportFormatEnum.csv
       },
       { responseType: 'blob' }
     );

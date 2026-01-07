@@ -3,6 +3,9 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BasicButton, PageHeader } from '@actiontech/dms-kit';
 import { useTypedQuery } from '@actiontech/shared';
+import { useExportFormatModal } from '../../../../hooks/useExportFormatModal';
+import ExportFormatModal from '../../../../components/ExportFormatModal';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -30,7 +33,8 @@ import {
   GetSqlManageListV3SortFieldEnum,
   GetSqlManageListV3SortOrderEnum,
   exportSqlManageV2FilterPriorityEnum,
-  exportSqlManageV2FilterStatusEnum
+  exportSqlManageV2FilterStatusEnum,
+  exportSqlManageV2ExportFormatEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
@@ -363,7 +367,15 @@ const SQLEEIndex = () => {
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
+  const {
+    exportFormatModalVisible,
+    showExportFormatModal,
+    hideExportFormatModal,
+    selectedExportFormat,
+    setSelectedExportFormat
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
   const handleExport = () => {
+    hideExportFormatModal();
     startExport();
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
@@ -384,7 +396,9 @@ const SQLEEIndex = () => {
       filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
       filter_rule_name: filter_rule_name?.split(
         DB_TYPE_RULE_NAME_SEPARATOR
-      )?.[1]
+      )?.[1],
+      export_format:
+        selectedExportFormat as unknown as exportSqlManageV2ExportFormatEnum
     } as IExportSqlManageV2Params;
     SqleApi.SqlManageService.exportSqlManageV2(params, {
       responseType: 'blob'
@@ -481,13 +495,20 @@ const SQLEEIndex = () => {
         title={t('sqlManagement.pageTitle')}
         extra={
           <BasicButton
-            onClick={handleExport}
+            onClick={showExportFormatModal}
             icon={<DownArrowLineOutlined />}
             disabled={exportButtonDisabled}
           >
             {t('sqlManagement.pageHeader.action.export')}
           </BasicButton>
         }
+      />
+      <ExportFormatModal
+        open={exportFormatModalVisible}
+        selectedFormat={selectedExportFormat}
+        onFormatChange={setSelectedExportFormat}
+        onConfirm={handleExport}
+        onCancel={hideExportFormatModal}
       />
       {/* page */}
       {/* page - total */}

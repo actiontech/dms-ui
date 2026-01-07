@@ -294,6 +294,12 @@ export enum FilterMetaFilterOpTypeEnum {
   'between' = 'between'
 }
 
+export enum GetAuditPlanSQLExportReqV1ExportFormatEnum {
+  'csv' = 'csv',
+
+  'excel' = 'excel'
+}
+
 export enum GetWorkflowTasksItemV1StatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
