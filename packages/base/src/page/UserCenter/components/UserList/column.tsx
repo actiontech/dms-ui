@@ -13,8 +13,12 @@ import { OpPermissionTypeUid, SystemRole } from '@actiontech/dms-kit';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 import SystemRoleTagList from '../../../../components/SystemRoleTagList';
 import ProjectTagList from '../../../../components/ProjectTagList';
+import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/User/index.d';
 
-export const UserListColumns: () => ActiontechTableColumn = () => [
+export const UserListColumns: () => ActiontechTableColumn<
+  IListUser,
+  IListUsersParams
+> = () => [
   {
     dataIndex: 'uid',
     title: 'ID',
@@ -56,11 +60,15 @@ export const UserListColumns: () => ActiontechTableColumn = () => [
           <span>{status}</span>
         </TableColumnWithIconStyleWrapper>
       );
-    }
+    },
+    filterCustomType: 'select',
+    filterKey: 'filter_by_stat'
   },
   {
     dataIndex: 'authentication_type',
-    title: () => t('dmsUserCenter.user.userList.columns.authenticationType')
+    title: () => t('dmsUserCenter.user.userList.columns.authenticationType'),
+    filterCustomType: 'select',
+    filterKey: 'filter_by_authentication_type'
   },
   {
     dataIndex: 'op_permissions',
