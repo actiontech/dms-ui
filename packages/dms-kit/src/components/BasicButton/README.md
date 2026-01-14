@@ -24,6 +24,10 @@ group:
 
 <code src="./demo/icon.tsx"></code>
 
+### 特殊类名
+
+<code src="./demo/switch.tsx"></code>
+
 ## API
 
 BasicButton 继承 Ant Design Button 的所有属性，完整 API 请参考 [Button 文档](https://ant.design/components/button-cn)。
@@ -33,6 +37,16 @@ BasicButton 继承 Ant Design Button 的所有属性，完整 API 请参考 [But
 | 参数 | 说明 | 类型 | 默认值 | 必填 |
 | --- | --- | --- | --- | --- |
 | noBorderIcon | 是否为无边框图标按钮 | `boolean` | `false` | - |
+
+### 特殊样式类名
+
+通过 `className` 属性可以使用以下特殊样式类名：
+
+| 类名 | 说明 | 使用场景 |
+| --- | --- | --- |
+| `switch-btn-default` | 切换按钮默认状态 | 用于选项卡、筛选器等需要显示未选中状态的按钮 |
+| `switch-btn-active` | 切换按钮激活状态 | 用于选项卡、筛选器等需要显示选中状态的按钮 |
+| `has-icon-primary` | 图标主题色样式 | 使按钮内的 `.custom-icon` 元素应用主题色 |
 
 ### 常用属性
 
@@ -52,6 +66,7 @@ BasicButton 继承 Ant Design Button 的所有属性，完整 API 请参考 [But
 2. **无边框图标按钮** → 通过 `noBorderIcon` 创建无边框图标按钮
 3. **完整类型支持** → 支持 primary、default、dashed、text、link 等类型
 4. **多种尺寸** → 提供 large、middle、small 三种尺寸
+5. **切换按钮样式** → 提供 `switch-btn-default` 和 `switch-btn-active` 用于实现选项卡和筛选器等切换场景
 
 ## 注意事项
 
@@ -66,3 +81,4 @@ BasicButton 继承 Ant Design Button 的所有属性，完整 API 请参考 [But
 2. **图标按钮**：纯图标按钮建议使用 `noBorderIcon`，避免视觉干扰
 3. **加载状态**：异步操作时使用 `loading` 状态，提升用户体验
 4. **禁用状态**：不可用时使用 `disabled`，建议配合 Tooltip 说明原因
+5. **切换按钮**：需要实现选项卡或筛选器等切换效果时，根据状态动态设置 `switch-btn-default` 或 `switch-btn-active` 类名
