@@ -17,7 +17,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -100,7 +100,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -165,7 +165,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -412,7 +412,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -519,7 +519,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -801,7 +801,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       disabled=""
                                       type="button"
                                     >
@@ -814,7 +814,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span>
@@ -824,7 +824,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -992,7 +992,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span>
@@ -1004,7 +1004,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       disabled=""
                                       type="button"
                                     >
@@ -1015,7 +1015,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -1118,7 +1118,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       disabled=""
                                       type="button"
                                     >
@@ -1131,7 +1131,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span>
@@ -1141,7 +1141,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -1244,7 +1244,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       disabled=""
                                       type="button"
                                     >
@@ -1257,7 +1257,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span>
@@ -1267,7 +1267,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   </div>
                                 </div>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -1323,7 +1323,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
           href="/sqle/project/700300/sql-management-conf"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -1434,7 +1434,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span>
@@ -1446,7 +1446,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span>
@@ -1460,7 +1460,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span
@@ -2004,7 +2004,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -2334,7 +2334,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -2346,7 +2346,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

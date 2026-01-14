@@ -9,7 +9,7 @@ exports[`test BackToList render snapshot when isAuditing is falsy 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -39,7 +39,7 @@ exports[`test BackToList render snapshot when isAuditing is falsy 1`] = `
       href="/sqle/project/700300/exec-workflow"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         type="button"
       >
         <span
@@ -126,7 +126,7 @@ exports[`test BackToList render snapshot when isAuditing is truthy 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           disabled=""
           type="button"
         >
@@ -157,7 +157,7 @@ exports[`test BackToList render snapshot when isAuditing is truthy 1`] = `
       href="/sqle/project/700300/exec-workflow"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         disabled=""
         type="button"
       >

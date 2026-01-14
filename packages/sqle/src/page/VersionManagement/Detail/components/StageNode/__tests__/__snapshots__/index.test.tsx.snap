@@ -98,7 +98,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -110,7 +110,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -134,7 +134,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -146,7 +146,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -261,7 +261,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -273,7 +273,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -296,7 +296,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -308,7 +308,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -423,7 +423,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -435,7 +435,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -458,7 +458,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 disabled=""
                 type="button"
               >
@@ -471,7 +471,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 disabled=""
                 type="button"
               >
@@ -592,7 +592,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastSt
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -604,7 +604,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastSt
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -628,7 +628,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastSt
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -640,7 +640,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastSt
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -694,7 +694,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -706,7 +706,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -808,7 +808,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -820,7 +820,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -843,7 +843,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -855,7 +855,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>

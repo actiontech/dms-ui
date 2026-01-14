@@ -156,7 +156,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -168,7 +168,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -353,7 +353,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -365,7 +365,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

@@ -13,7 +13,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -47,7 +47,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -59,7 +59,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -944,7 +944,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -1426,7 +1426,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -2291,7 +2291,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -3197,7 +3197,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -3678,7 +3678,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -4543,7 +4543,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -4576,7 +4576,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -5387,7 +5387,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -5870,7 +5870,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>

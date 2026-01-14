@@ -634,7 +634,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -762,7 +762,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -2239,7 +2239,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -2367,7 +2367,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -3435,7 +3435,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -3565,7 +3565,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -5150,7 +5150,7 @@ exports[`page/DataSource/DataSourceForm render database type 1`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -5280,7 +5280,7 @@ exports[`page/DataSource/DataSourceForm render database type 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -6500,7 +6500,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -6630,7 +6630,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -7707,7 +7707,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -7837,7 +7837,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -8955,7 +8955,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -9085,7 +9085,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>

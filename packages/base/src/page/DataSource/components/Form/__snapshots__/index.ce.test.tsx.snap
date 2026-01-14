@@ -520,7 +520,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -650,7 +650,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>

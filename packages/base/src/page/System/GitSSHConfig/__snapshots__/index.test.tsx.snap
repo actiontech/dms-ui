@@ -97,7 +97,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                         </strong>
                       </span>
                       <button
-                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                         type="button"
                       >
                         <span>
