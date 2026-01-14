@@ -174,7 +174,7 @@ exports[`test SqlManagementIssuePush should call onSubmit function correctly whe
                         value="1 * * * *"
                       />
                       <button
-                        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-10ae2zl"
                         type="button"
                       >
                         <span
@@ -420,7 +420,7 @@ exports[`test SqlManagementIssuePush should call onSubmit function correctly whe
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -432,7 +432,7 @@ exports[`test SqlManagementIssuePush should call onSubmit function correctly whe
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                           type="submit"
                         >
                           <span>
@@ -665,7 +665,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                       value="* * * * *"
                     />
                     <button
-                      class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
+                      class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-10ae2zl"
                       type="button"
                     >
                       <span
@@ -832,7 +832,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                       style="margin-right: 12px;"
                     >
                       <button
-                        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                         type="button"
                       >
                         <span>
@@ -844,7 +844,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                         type="submit"
                       >
                         <span>
@@ -1191,7 +1191,7 @@ exports[`test SqlManagementIssuePush should set the form to edit state and fill 
                         value="1 * 2 * *"
                       />
                       <button
-                        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-10ae2zl"
                         type="button"
                       >
                         <span
@@ -1437,7 +1437,7 @@ exports[`test SqlManagementIssuePush should set the form to edit state and fill 
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>
@@ -1449,7 +1449,7 @@ exports[`test SqlManagementIssuePush should set the form to edit state and fill 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                           type="submit"
                         >
                           <span>

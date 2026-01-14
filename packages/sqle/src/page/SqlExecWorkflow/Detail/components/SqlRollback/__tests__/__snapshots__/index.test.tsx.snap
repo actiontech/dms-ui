@@ -16,7 +16,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -43,7 +43,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
           disabled=""
           type="button"
         >
@@ -1089,7 +1089,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="title"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span
@@ -1116,7 +1116,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span>
@@ -2227,7 +2227,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>
@@ -2340,7 +2340,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>

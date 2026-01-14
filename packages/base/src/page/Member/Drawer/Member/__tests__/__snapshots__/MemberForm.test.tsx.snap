@@ -246,7 +246,7 @@ exports[`base/Member/Drawer/MemberForm should match snapshot when isUpdate is fa
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
+                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-9l31jd"
                       type="button"
                     >
                       <span
@@ -527,7 +527,7 @@ exports[`base/Member/Drawer/MemberForm should match snapshot when isUpdate is tr
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1yv6nou"
+                      class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-9l31jd"
                       type="button"
                     >
                       <span

@@ -21,7 +21,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -101,7 +101,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -147,7 +147,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <div
@@ -202,7 +202,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -256,7 +256,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -295,7 +295,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -303,7 +303,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -311,7 +311,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -319,7 +319,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -336,7 +336,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -344,7 +344,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -352,7 +352,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -360,7 +360,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -368,7 +368,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -376,7 +376,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -384,7 +384,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -392,7 +392,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -400,7 +400,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -683,7 +683,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -691,7 +691,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -780,7 +780,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span
@@ -851,7 +851,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -859,7 +859,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -968,7 +968,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -976,7 +976,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -1252,7 +1252,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -1298,7 +1298,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <div
@@ -1354,7 +1354,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -1408,7 +1408,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     disabled=""
                     type="button"
                   >
@@ -1678,7 +1678,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -1758,7 +1758,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -1805,7 +1805,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <div
@@ -1861,7 +1861,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -1915,7 +1915,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -2133,7 +2133,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2141,7 +2141,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2149,7 +2149,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2157,7 +2157,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2174,7 +2174,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2182,7 +2182,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2190,7 +2190,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2198,7 +2198,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2206,7 +2206,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2214,7 +2214,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2222,7 +2222,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2230,7 +2230,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2238,7 +2238,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2467,7 +2467,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -2547,7 +2547,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -2593,7 +2593,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <div
@@ -2649,7 +2649,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -2703,7 +2703,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -2742,7 +2742,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2750,7 +2750,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2758,7 +2758,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2766,7 +2766,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2783,7 +2783,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2791,7 +2791,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2799,7 +2799,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2807,7 +2807,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2815,7 +2815,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2823,7 +2823,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2831,7 +2831,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2839,7 +2839,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -2847,7 +2847,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3130,7 +3130,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -3138,7 +3138,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -3227,7 +3227,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span
@@ -3298,7 +3298,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -3306,7 +3306,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -3415,7 +3415,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -3423,7 +3423,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span
@@ -3632,7 +3632,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -3712,7 +3712,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -3758,7 +3758,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <div
@@ -3814,7 +3814,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -3868,7 +3868,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -3907,7 +3907,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3915,7 +3915,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3923,7 +3923,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3931,7 +3931,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3948,7 +3948,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3956,7 +3956,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3964,7 +3964,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3972,7 +3972,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3980,7 +3980,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3988,7 +3988,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -3996,7 +3996,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -4004,7 +4004,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -4012,7 +4012,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-2jpoxy"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-52wd1x"
                   type="button"
                 >
                   <span>
@@ -4315,7 +4315,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span>
@@ -4323,7 +4323,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-lfzis8"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-10ae2zl"
                                   type="button"
                                 >
                                   <span

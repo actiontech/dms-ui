@@ -168,7 +168,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -298,7 +298,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -438,7 +438,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -450,7 +450,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -703,7 +703,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -715,7 +715,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -953,7 +953,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-10ae2zl"
                     disabled=""
                     type="button"
                   >
@@ -989,7 +989,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-10ae2zl"
                     disabled=""
                     type="button"
                   >
@@ -1188,7 +1188,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -1200,7 +1200,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -1311,7 +1311,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -1323,7 +1323,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

@@ -4,7 +4,7 @@ exports[`test ExportWorkflowButton should export with CSV format by default when
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+      class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
       type="button"
     >
       <span
@@ -155,7 +155,7 @@ exports[`test ExportWorkflowButton should export with CSV format by default when
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -167,7 +167,7 @@ exports[`test ExportWorkflowButton should export with CSV format by default when
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

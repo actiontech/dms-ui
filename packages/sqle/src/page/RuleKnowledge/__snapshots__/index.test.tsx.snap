@@ -18,7 +18,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>
@@ -216,7 +216,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>
@@ -395,7 +395,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>
@@ -574,7 +574,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>

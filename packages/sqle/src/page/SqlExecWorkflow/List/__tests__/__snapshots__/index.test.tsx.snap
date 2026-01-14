@@ -25,7 +25,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span
@@ -55,7 +55,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                 href="/sqle/project/700300/exec-workflow/create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span
@@ -282,7 +282,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -328,7 +328,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -356,7 +356,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -410,7 +410,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -1692,7 +1692,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span
@@ -1722,7 +1722,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                 href="/sqle/project/700300/exec-workflow/create"
               >
                 <button
-                  class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span
@@ -1949,7 +1949,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 10px;"
                     type="button"
                   >
@@ -1995,7 +1995,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-loading actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-loading actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -2031,7 +2031,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                     style="padding: 0px 6px 0px 8px;"
                     type="button"
                   >
@@ -2085,7 +2085,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -2756,7 +2756,7 @@ exports[`sqle/Workflow/List render click create btn 1`] = `
       style="margin-right: 12px;"
     >
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         type="button"
       >
         <span
@@ -2786,7 +2786,7 @@ exports[`sqle/Workflow/List render click create btn 1`] = `
         href="/sqle/project/700300/exec-workflow/create"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span

@@ -12,7 +12,7 @@ exports[`page/Login/OAuth2LoginForm should render OAuth2 login form with custom 
         点击下方按钮跳转到授权页面进行登录：
       </div>
       <a
-        class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-10ae2zl"
         href="/v1/dms/oauth2/link"
       >
         <span>
@@ -36,7 +36,7 @@ exports[`page/Login/OAuth2LoginForm should render OAuth2 login form with default
         点击下方按钮跳转到授权页面进行登录：
       </div>
       <a
-        class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-primary oauth2-login-btn basic-button-wrapper css-10ae2zl"
         href="/v1/dms/oauth2/link"
       >
         <span>

@@ -68,7 +68,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -113,7 +113,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -466,7 +466,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -478,7 +478,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -649,7 +649,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -661,7 +661,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -902,7 +902,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -914,7 +914,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 disabled=""
                                 type="button"
                               >
@@ -1101,7 +1101,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1113,7 +1113,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1299,7 +1299,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1311,7 +1311,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1552,7 +1552,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
@@ -1597,7 +1597,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
             style="padding: 0px 6px 0px 8px;"
             type="button"
           >
@@ -2884,7 +2884,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
@@ -2929,7 +2929,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
             style="padding: 0px 6px 0px 8px;"
             type="button"
           >
@@ -3282,7 +3282,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3294,7 +3294,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3465,7 +3465,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3477,7 +3477,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3718,7 +3718,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3730,7 +3730,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               disabled=""
                               type="button"
                             >
@@ -3917,7 +3917,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -3929,7 +3929,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -4115,7 +4115,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -4127,7 +4127,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span>
@@ -4368,7 +4368,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -4413,7 +4413,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -4736,7 +4736,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -4748,7 +4748,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -4930,7 +4930,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -4942,7 +4942,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5124,7 +5124,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5136,7 +5136,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5318,7 +5318,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5330,7 +5330,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5512,7 +5512,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5524,7 +5524,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5706,7 +5706,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5718,7 +5718,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5900,7 +5900,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -5912,7 +5912,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6094,7 +6094,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6106,7 +6106,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6288,7 +6288,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6300,7 +6300,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6482,7 +6482,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6494,7 +6494,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6676,7 +6676,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6688,7 +6688,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6870,7 +6870,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -6882,7 +6882,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7064,7 +7064,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7076,7 +7076,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7258,7 +7258,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7270,7 +7270,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7452,7 +7452,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7464,7 +7464,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7646,7 +7646,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7658,7 +7658,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7840,7 +7840,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -7852,7 +7852,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8034,7 +8034,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8046,7 +8046,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8228,7 +8228,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8240,7 +8240,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8422,7 +8422,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8434,7 +8434,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -8687,7 +8687,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -8732,7 +8732,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -9055,7 +9055,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9067,7 +9067,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9249,7 +9249,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9261,7 +9261,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9443,7 +9443,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9455,7 +9455,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9637,7 +9637,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9649,7 +9649,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9831,7 +9831,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -9843,7 +9843,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10025,7 +10025,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10037,7 +10037,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10219,7 +10219,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10231,7 +10231,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10413,7 +10413,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10425,7 +10425,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10607,7 +10607,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10619,7 +10619,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10801,7 +10801,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10813,7 +10813,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -10995,7 +10995,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11007,7 +11007,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11189,7 +11189,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11201,7 +11201,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11383,7 +11383,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11395,7 +11395,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11577,7 +11577,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11589,7 +11589,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11771,7 +11771,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11783,7 +11783,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11965,7 +11965,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -11977,7 +11977,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12159,7 +12159,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12171,7 +12171,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12353,7 +12353,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12365,7 +12365,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12547,7 +12547,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12559,7 +12559,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12741,7 +12741,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -12753,7 +12753,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -13006,7 +13006,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
@@ -13051,7 +13051,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
