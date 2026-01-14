@@ -31,11 +31,11 @@ export const BasicButtonStyleWrapper = styled(Button)`
 
   &.basic-button-wrapper.ant-btn.ant-btn-text,
   &.basic-button-wrapper.ant-btn.ant-btn-link {
-    background: none;
-    box-shadow: none;
+    background: none !important;
+    box-shadow: none !important;
 
     &:disabled {
-      background: none;
+      background: none !important;
     }
   }
 
@@ -188,11 +188,11 @@ export const BasicButtonStyleWrapper = styled(Button)`
 
   /* btn-icon-no-border */
   &.basic-button-wrapper.ant-btn-default.btn-icon-no-border {
-    background: none;
-    box-shadow: none;
+    background: none !important;
+    box-shadow: none !important;
 
     &:disabled {
-      background: none;
+      background: none !important;
     }
 
     &:not(:disabled) {
@@ -214,13 +214,16 @@ export const BasicButtonStyleWrapper = styled(Button)`
 
   /* switch button */
   &.basic-button-wrapper.ant-btn-default.switch-btn-default {
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
-    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+    color: ${({ theme }) =>
+      theme.sharedTheme.uiToken.colorTextSecondary} !important;
+    background: ${({ theme }) =>
+      theme.sharedTheme.uiToken.colorFillTertiary} !important;
   }
 
   &.basic-button-wrapper.ant-btn-default.switch-btn-active {
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
-    background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+    background: ${({ theme }) =>
+      theme.sharedTheme.basic.colorPrimaryBgActive} !important;
   }
 
   &.basic-button-wrapper.ant-btn-default.has-icon-primary {
