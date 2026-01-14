@@ -53,7 +53,7 @@ exports[`page/WorkflowTemplate/DraggableCard render draggable card with desc and
                 test desc
               </div>
               <button
-                class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-19ox3vh"
+                class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1wveqc1"
                 type="button"
               >
                 <span

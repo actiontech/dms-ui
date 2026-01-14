@@ -98,7 +98,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                               href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                               target="_blank"
                             >
@@ -388,7 +388,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                               href="https://www.actionsky.com/sqle?question=true"
                               target="_blank"
                             >
@@ -676,7 +676,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                               href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                               target="_blank"
                             >
@@ -1327,7 +1327,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                             type="button"
                           >
                             <span>
@@ -1345,7 +1345,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                             type="button"
                           >
                             <span>
@@ -1422,7 +1422,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                         target="_blank"
                       >
                         <button
-                          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                           type="button"
                         >
                           <span>

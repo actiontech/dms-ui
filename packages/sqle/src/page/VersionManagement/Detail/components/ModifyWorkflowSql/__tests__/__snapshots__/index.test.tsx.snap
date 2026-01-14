@@ -25,7 +25,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render init snap shot 1
                   class="title"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -579,7 +579,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>
@@ -598,7 +598,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-oaiflc"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-rz9yfl"
                                         type="button"
                                       >
                                         <span>
@@ -677,7 +677,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                   class="title"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span
@@ -704,7 +704,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                   class="extra"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -1239,7 +1239,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>
@@ -1258,7 +1258,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn ant-btn-default basic-button-wrapper css-oaiflc"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-rz9yfl"
                                         type="button"
                                       >
                                         <span>
@@ -1386,7 +1386,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                         type="button"
                       >
                         <span
@@ -1743,7 +1743,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                     class="ant-table-cell audit-result-describe-column"
                                   >
                                     <button
-                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                                       type="button"
                                     >
                                       <span>
@@ -1766,7 +1766,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                           style="margin-right: 8px;"
                                         >
                                           <button
-                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                             type="button"
                                           >
                                             <span>
@@ -1779,7 +1779,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                           style="margin-right: 8px;"
                                         >
                                           <button
-                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                             type="button"
                                           >
                                             <span>
@@ -1791,7 +1791,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                           class="ant-space-item"
                                         >
                                           <button
-                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                            class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                             type="button"
                                           >
                                             <span

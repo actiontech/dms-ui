@@ -77,7 +77,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                       style="padding: 0px 6px 0px 10px;"
                       type="button"
                     >
@@ -122,7 +122,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-active basic-button-wrapper css-lfzis8"
+                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-active basic-button-wrapper css-10ae2zl"
                       type="button"
                     >
                       <div
@@ -451,7 +451,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>
@@ -541,7 +541,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>
@@ -650,7 +650,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                   class="css-new95e"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span>

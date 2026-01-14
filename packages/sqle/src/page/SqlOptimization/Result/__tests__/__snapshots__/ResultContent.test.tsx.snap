@@ -52,7 +52,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span
@@ -94,7 +94,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                         >
                           原文
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                             title="复制"
                             type="button"
                           >
@@ -120,7 +120,7 @@ exports[`sqle/SqlOptimization/ResultContent render snap 1`] = `
                         >
                           最终优化后
                           <button
-                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                             title="复制"
                             type="button"
                           >
@@ -230,7 +230,7 @@ WHERE
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span
@@ -261,7 +261,7 @@ WHERE
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                               title="复制"
                               type="button"
                             >
@@ -410,7 +410,7 @@ WHERE
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span
@@ -438,7 +438,7 @@ WHERE
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-lfzis8"
+                              class="ant-btn ant-btn-default ant-btn-sm view-query-plan-diff-button basic-button-wrapper css-10ae2zl"
                               type="button"
                             >
                               <span

@@ -3,7 +3,7 @@
 exports[`lib/EditText 基础渲染 should render with default value and edit button 1`] = `
 <div>
   <button
-    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
     type="button"
   >
     <span>

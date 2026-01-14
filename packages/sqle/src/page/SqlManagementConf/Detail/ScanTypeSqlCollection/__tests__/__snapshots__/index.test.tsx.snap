@@ -28,7 +28,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -587,7 +587,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
               style="padding: 0px 6px 0px 8px;"
               type="button"
             >
@@ -2864,7 +2864,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                 style="padding: 0px 6px 0px 8px;"
                 type="button"
               >
@@ -4827,7 +4827,7 @@ LIMIT
                   target="_blank"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

@@ -13,7 +13,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -47,7 +47,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -59,7 +59,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -438,7 +438,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -526,7 +526,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -1133,7 +1133,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span
@@ -1166,7 +1166,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span
@@ -1618,7 +1618,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -1626,7 +1626,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -1821,7 +1821,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -1855,7 +1855,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
               style="margin-right: 12px;"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -1867,7 +1867,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -2246,7 +2246,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -2334,7 +2334,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -2941,7 +2941,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span
@@ -2974,7 +2974,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-lfzis8"
+                                    class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-10ae2zl"
                                     type="button"
                                   >
                                     <span
@@ -3426,7 +3426,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -3434,7 +3434,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -4224,7 +4224,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -4236,7 +4236,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -4273,7 +4273,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -4306,7 +4306,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -4634,7 +4634,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
                 </div>
               </div>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -4723,7 +4723,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
               </div>
             </div>
             <button
-              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-10ae2zl"
               disabled=""
               type="button"
             >
@@ -5609,7 +5609,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
               class="ant-result-extra"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -5617,7 +5617,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>

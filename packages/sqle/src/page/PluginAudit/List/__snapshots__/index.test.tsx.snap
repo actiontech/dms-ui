@@ -73,7 +73,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -119,7 +119,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -173,7 +173,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span
@@ -489,7 +489,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -736,7 +736,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -782,7 +782,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -836,7 +836,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span
@@ -1135,7 +1135,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request return empty 1`]
             target="_blank"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -1223,7 +1223,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
@@ -1269,7 +1269,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
@@ -1323,7 +1323,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
                   type="button"
                 >
                   <span
@@ -1639,7 +1639,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1833,7 +1833,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -1916,7 +1916,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>

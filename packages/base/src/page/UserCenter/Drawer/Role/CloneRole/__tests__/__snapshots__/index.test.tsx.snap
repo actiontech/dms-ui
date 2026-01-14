@@ -329,7 +329,7 @@ exports[`base/UserCenter/Drawer/Role/CloneRole should send clone role request wh
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -341,7 +341,7 @@ exports[`base/UserCenter/Drawer/Role/CloneRole should send clone role request wh
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

@@ -13,7 +13,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           href="/sqle/project/700300/sql-audit?active=sql_optimization"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span>
@@ -936,7 +936,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -955,7 +955,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn ant-btn-default basic-button-wrapper css-oaiflc"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-rz9yfl"
                   type="button"
                 >
                   <span>

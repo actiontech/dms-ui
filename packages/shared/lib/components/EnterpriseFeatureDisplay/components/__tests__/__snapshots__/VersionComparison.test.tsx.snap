@@ -60,7 +60,7 @@ exports[`shared/EnterpriseFeatureDisplay/VersionComparison should match snapshot
                 style="margin-bottom: 16px;"
               >
                 <a
-                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                   href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                   target="_blank"
                 >
@@ -350,7 +350,7 @@ exports[`shared/EnterpriseFeatureDisplay/VersionComparison should match snapshot
                 style="margin-bottom: 16px;"
               >
                 <a
-                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                   href="https://www.actionsky.com/sqle?question=true"
                   target="_blank"
                 >
@@ -638,7 +638,7 @@ exports[`shared/EnterpriseFeatureDisplay/VersionComparison should match snapshot
                 style="margin-bottom: 16px;"
               >
                 <a
-                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-lfzis8"
+                  class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-10ae2zl"
                   href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                   target="_blank"
                 >
