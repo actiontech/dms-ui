@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap download btn 1`] = 
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
       type="button"
     >
       <span
@@ -61,7 +61,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
       type="button"
     >
       <span
@@ -178,7 +178,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
       type="button"
     >
       <span
@@ -295,7 +295,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
 <body>
   <div>
     <button
-      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-lfzis8"
+      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-10ae2zl"
       type="button"
     >
       <span

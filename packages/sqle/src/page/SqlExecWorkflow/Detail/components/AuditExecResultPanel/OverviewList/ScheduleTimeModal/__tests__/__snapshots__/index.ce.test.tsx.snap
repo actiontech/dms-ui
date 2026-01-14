@@ -2104,7 +2104,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>
@@ -2112,7 +2112,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                 </span>
               </button>
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 data-testid="confirm-button"
                 type="button"
               >

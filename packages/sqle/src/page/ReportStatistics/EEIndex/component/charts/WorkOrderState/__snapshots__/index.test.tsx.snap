@@ -423,7 +423,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap when api return empty
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>

@@ -459,7 +459,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>
@@ -471,7 +471,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

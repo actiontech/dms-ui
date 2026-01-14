@@ -13,7 +13,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -459,7 +459,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
             href="/sqle/project/700300/exec-workflow/1234"
           >
             <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>

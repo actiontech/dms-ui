@@ -22,7 +22,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span
@@ -49,7 +49,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span>
@@ -177,7 +177,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -189,7 +189,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -230,7 +230,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -242,7 +242,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-lfzis8"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
                                 type="button"
                               >
                                 <span>
@@ -438,7 +438,7 @@ exports[`base/AvailabilityZoneList should render empty tips when request not suc
             class="ant-space-item"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span
@@ -465,7 +465,7 @@ exports[`base/AvailabilityZoneList should render empty tips when request not suc
         class="extra"
       >
         <button
-          class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span>

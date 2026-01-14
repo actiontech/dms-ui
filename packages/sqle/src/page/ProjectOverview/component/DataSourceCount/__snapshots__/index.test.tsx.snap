@@ -41,7 +41,7 @@ exports[`page/ProjectOverview/DataSourceCount render data source count and check
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -113,7 +113,7 @@ exports[`page/ProjectOverview/DataSourceCount render no data and refresh data so
             class="extra"
           >
             <button
-              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
               type="button"
             >
               <span>
@@ -186,7 +186,7 @@ exports[`page/ProjectOverview/DataSourceCount render no data and refresh data so
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-lfzis8"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
                     <span>

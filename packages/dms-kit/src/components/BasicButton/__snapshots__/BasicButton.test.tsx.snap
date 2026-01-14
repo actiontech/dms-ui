@@ -3,7 +3,7 @@
 exports[`lib/BasicButton should match snapshot 1`] = `
 <div>
   <button
-    class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
     type="button"
   />
 </div>

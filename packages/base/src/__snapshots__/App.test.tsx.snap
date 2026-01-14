@@ -2492,7 +2492,7 @@ exports[`App render App when token is not existed 1`] = `
             </div>
           </div>
           <button
-            class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-10ae2zl"
             type="submit"
           >
             <span>

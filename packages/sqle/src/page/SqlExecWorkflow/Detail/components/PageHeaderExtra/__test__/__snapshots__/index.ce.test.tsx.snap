@@ -10,7 +10,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         hidden=""
       >
         <button
-          class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
+          class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-10ae2zl"
           type="button"
         >
           <span>
@@ -23,7 +23,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         />
       </div>
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         hidden=""
         type="button"
       >
@@ -32,7 +32,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         type="button"
       >
         <span>
@@ -40,7 +40,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
         hidden=""
         type="button"
       >
@@ -49,7 +49,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
         hidden=""
         type="button"
       >
@@ -58,7 +58,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
         confirm="[object Object]"
         disabled=""
         hidden=""
@@ -69,7 +69,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
         confirm="[object Object]"
         disabled=""
         hidden=""
@@ -88,7 +88,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           style="margin-right: 0px;"
         >
           <button
-            class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>
@@ -109,7 +109,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           class="ant-space-item"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span>

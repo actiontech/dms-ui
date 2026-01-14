@@ -968,7 +968,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               href="/project"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-lfzis8"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                 type="button"
               >
                 <span>

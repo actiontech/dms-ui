@@ -13,7 +13,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -680,7 +680,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -1371,7 +1371,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
@@ -2170,7 +2170,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
           class="title"
         >
           <button
-            class="ant-btn ant-btn-default basic-button-wrapper css-lfzis8"
+            class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
             type="button"
           >
             <span
