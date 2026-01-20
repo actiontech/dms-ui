@@ -6,7 +6,8 @@ import {
   UserShieldFilled,
   CenterCircleHexagonFilled,
   DatabaseFilled,
-  ProfileEditFilled
+  ProfileEditFilled,
+  OperateAuditFilled
 } from '@actiontech/icons';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
@@ -16,6 +17,7 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const GlobalSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -37,14 +39,15 @@ const GlobalSetting: React.FC = () => {
         key: 'user-center',
         icon: <UserShieldFilled />,
         text: t('menu.userCenter'),
-        onClick: () => handleClickItem('/user-center'),
+        onClick: () => handleClickItem(ROUTE_PATHS.BASE.USER_CENTER),
         permission: PERMISSIONS.PAGES.BASE.USER_CENTER
       },
       {
         key: 'data-source-management',
         icon: <DatabaseFilled />,
         text: t('dmsMenu.globalSettings.instanceManager'),
-        onClick: () => handleClickItem(`/data-source-management`),
+        onClick: () =>
+          handleClickItem(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index.path),
         permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT
       },
       // #if [sqle]
@@ -52,15 +55,24 @@ const GlobalSetting: React.FC = () => {
         key: 'rule-manager',
         icon: <ProfileEditFilled />,
         text: t('dmsMenu.globalSettings.ruleManage'),
-        onClick: () => handleClickItem('/sqle/rule-manager'),
+        onClick: () =>
+          handleClickItem(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index.path),
         permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT
       },
       // #endif
       {
+        key: 'operationRecord',
+        icon: <OperateAuditFilled />,
+        text: t('dmsMenu.globalSettings.globalOperationRecord'),
+        onClick: () =>
+          handleClickItem(ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index),
+        permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
+      },
+      {
         key: 'system',
         icon: <GearFilled />,
         text: t('dmsMenu.globalSettings.system'),
-        onClick: () => handleClickItem('/system'),
+        onClick: () => handleClickItem(ROUTE_PATHS.BASE.SYSTEM.index.path),
         permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
       }
     ];

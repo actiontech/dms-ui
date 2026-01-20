@@ -229,14 +229,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                   <table
                     style="min-width: 100%; table-layout: auto;"
                   >
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col
-                        style="width: 600px;"
-                      />
-                    </colgroup>
+                    <colgroup />
                     <thead
                       class="ant-table-thead"
                     >
@@ -270,12 +263,6 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                           scope="col"
                         >
                           UserAgent
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          项目
                         </th>
                         <th
                           class="ant-table-cell"
@@ -347,22 +334,13 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                              
                           </div>
                         </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="7"
+                          colspan="6"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"

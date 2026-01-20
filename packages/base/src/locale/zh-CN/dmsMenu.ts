@@ -68,6 +68,7 @@ export default {
     viewRule: '查看规则',
     ruleManage: '规则管理',
     system: '系统设置',
+    globalOperationRecord: '全局操作记录',
     changeTheme: '模式切换',
     instanceManager: '数据源管理',
     knowledge: '知识库'

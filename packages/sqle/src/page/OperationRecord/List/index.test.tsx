@@ -9,12 +9,15 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('sqle/OperationRecord/List', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     operationRecord.mockAllApi();
-    mockUseCurrentProject();
+    mockUseCurrentProject({
+      projectName: undefined
+    });
   });
 
   beforeAll(() => {
@@ -30,11 +33,33 @@ describe('sqle/OperationRecord/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenNthCalledWith(1, {
+      page_index: 1,
+      page_size: 20,
+      fuzzy_search_operate_user_name: ''
+    });
     // expect(actionSpy).toHaveBeenCalledTimes(1);
     // expect(typeNameSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${operationRecordListMockData.length} 条数据`)
     ).toBeInTheDocument();
+  });
+
+  it('render operation record table when project name is exited', async () => {
+    mockUseCurrentProject({
+      projectName: mockProjectInfo.projectName
+    });
+    const operationRecordListSpy = operationRecord.getOperationRecordList();
+    const { baseElement } = superRender(<OperationRecordList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenNthCalledWith(1, {
+      page_index: 1,
+      page_size: 20,
+      filter_operate_project_name: mockProjectInfo.projectName,
+      fuzzy_search_operate_user_name: ''
+    });
   });
 
   it('render table when request return error', async () => {
@@ -44,7 +69,7 @@ describe('sqle/OperationRecord/List', () => {
     );
     const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('操作记录')).toBeInTheDocument();
+    expect(screen.getByText('全局操作记录')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -107,6 +132,30 @@ describe('sqle/OperationRecord/List', () => {
     expect(exportListSpy).toHaveBeenCalledWith(
       {
         fuzzy_search_operate_user_name: ''
+      },
+      {
+        responseType: 'blob'
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(screen.getByText('操作记录列表导出成功')).toBeInTheDocument();
+  });
+
+  it('should export data file when click export button and project name is exited', async () => {
+    mockUseCurrentProject({
+      projectName: mockProjectInfo.projectName
+    });
+    const exportListSpy = operationRecord.exportOperationRecordList();
+    superRender(<OperationRecordList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导出'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('正在导出操作记录列表...')).toBeInTheDocument();
+    expect(exportListSpy).toHaveBeenCalledTimes(1);
+    expect(exportListSpy).toHaveBeenCalledWith(
+      {
+        fuzzy_search_operate_user_name: '',
+        filter_operate_project_name: mockProjectInfo.projectName
       },
       {
         responseType: 'blob'

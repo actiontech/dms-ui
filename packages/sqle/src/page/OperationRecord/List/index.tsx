@@ -18,7 +18,10 @@ import {
   FilterCustomProps,
   TableToolbar
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType
@@ -30,6 +33,7 @@ import { DownArrowLineOutlined } from '@actiontech/icons';
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
+  const { projectName } = useCurrentProject();
   const { bindProjects } = useCurrentUser();
   // const [currentOperationTypeName, setCurrentOperationTypeName] =
   //   useState<string>();
@@ -66,6 +70,9 @@ const OperationRecordList: React.FC = () => {
         ...tableFilterInfo,
         fuzzy_search_operate_user_name: searchKeyword
       };
+      if (!!projectName) {
+        params.filter_operate_project_name = projectName;
+      }
       return handleTableRequestError(
         operationRecord.GetOperationRecordList(params)
       );
@@ -108,8 +115,18 @@ const OperationRecordList: React.FC = () => {
       // ]
     ]);
   }, [bindProjects]);
+
+  const columns = useMemo(() => {
+    if (!!projectName) {
+      return OperationRecordListColumn.filter(
+        (column) => column.dataIndex !== 'project_name'
+      );
+    }
+    return OperationRecordListColumn;
+  }, [projectName]);
+
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
+    useTableFilterContainer(columns, updateTableFilterInfo);
   // useEffect(() => {
   //   updateOperationTypeNameList();
   //   updateOperationActions();
@@ -124,6 +141,9 @@ const OperationRecordList: React.FC = () => {
       ...tableFilterInfo,
       fuzzy_search_operate_user_name: searchKeyword
     };
+    if (!!projectName) {
+      param.filter_operate_project_name = projectName;
+    }
     operationRecord
       .ExportOperationRecordList(param, {
         responseType: 'blob'
@@ -142,7 +162,11 @@ const OperationRecordList: React.FC = () => {
     <article>
       {contextHolder}
       <PageHeader
-        title={t('menu.operationRecord')}
+        title={
+          projectName
+            ? t('operationRecord.pageTitle')
+            : t('operationRecord.globalPageTitle')
+        }
         extra={
           <Space size={12}>
             <BasicButton
@@ -189,7 +213,7 @@ const OperationRecordList: React.FC = () => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={OperationRecordListColumn}
+        columns={columns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
       />

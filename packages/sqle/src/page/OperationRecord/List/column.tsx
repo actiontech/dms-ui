@@ -45,10 +45,9 @@ export const OperationRecordListColumn: ActiontechTableColumn<
   },
   {
     dataIndex: 'operation_content',
-    title: () => t('operationRecord.list.column.operationAction'),
+    title: () => t('operationRecord.list.column.operationAction')
     // filterCustomType: 'select',
     // filterKey: 'filter_operate_action',
-    width: 600
   },
 
   {
