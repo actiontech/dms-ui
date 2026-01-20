@@ -689,7 +689,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                     <div
                       class="ant-space-item"
                     >
-                      SQLE操作记录
+                      操作记录
                     </div>
                   </div>
                 </button>
