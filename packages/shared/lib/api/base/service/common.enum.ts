@@ -312,6 +312,12 @@ export enum OperationOperationTypeEnum {
   'SQL' = 'SQL'
 }
 
+export enum OperationRecordListItemStatusEnum {
+  'succeeded' = 'succeeded',
+
+  'failed' = 'failed'
+}
+
 export enum ProjectInfoProjectPriorityEnum {
   'high' = 'high',
 

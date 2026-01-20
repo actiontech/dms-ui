@@ -4,7 +4,6 @@ import OperationRecordList from '.';
 import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
 import { operationRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   getAllBySelector,
@@ -24,28 +23,28 @@ describe('sqle/OperationRecord/List', () => {
   });
 
   it('render operation record table when request return data', async () => {
-    const operationRecordListSpy = operationRecord.getOperationActionList();
-    const actionSpy = operationRecord.getOperationActionList();
-    const typeNameSpy = operationRecord.getOperationTypeNameList();
+    const operationRecordListSpy = operationRecord.getOperationRecordList();
+    // const actionSpy = operationRecord.getOperationActionList();
+    // const typeNameSpy = operationRecord.getOperationTypeNameList();
     const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
-    expect(actionSpy).toHaveBeenCalledTimes(1);
-    expect(typeNameSpy).toHaveBeenCalledTimes(1);
+    // expect(actionSpy).toHaveBeenCalledTimes(1);
+    // expect(typeNameSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${operationRecordListMockData.length} 条数据`)
     ).toBeInTheDocument();
   });
 
   it('render table when request return error', async () => {
-    const operationRecordListSpy = operationRecord.getOperationActionList();
+    const operationRecordListSpy = operationRecord.getOperationRecordList();
     operationRecordListSpy.mockImplementationOnce(() =>
       createSpyErrorResponse({ message: 'error info' })
     );
     const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('SQLE操作记录')).toBeInTheDocument();
+    expect(screen.getByText('操作记录')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -75,7 +74,6 @@ describe('sqle/OperationRecord/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(operationRecordListSpy).toHaveBeenCalled();
     expect(operationRecordListSpy).toHaveBeenCalledWith({
-      filter_operate_project_name: mockProjectInfo.projectName,
       fuzzy_search_operate_user_name: 'test',
       page_index: 1,
       page_size: 20
@@ -83,7 +81,7 @@ describe('sqle/OperationRecord/List', () => {
   });
 
   it('render action when filter item show', async () => {
-    const operationRecordListSpy = operationRecord.getOperationActionList();
+    const operationRecordListSpy = operationRecord.getOperationRecordList();
     const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
@@ -94,7 +92,7 @@ describe('sqle/OperationRecord/List', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(3);
+    expect(filterItems.length).toBe(2);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -108,7 +106,6 @@ describe('sqle/OperationRecord/List', () => {
     expect(exportListSpy).toHaveBeenCalledTimes(1);
     expect(exportListSpy).toHaveBeenCalledWith(
       {
-        filter_operate_project_name: mockProjectInfo.projectName,
         fuzzy_search_operate_user_name: ''
       },
       {

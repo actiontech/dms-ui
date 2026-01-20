@@ -69,7 +69,7 @@ export default {
           action_1_0: '授权审计',
           action_1_1: '权限模板审计',
           action_1_2: '数据源操作审计',
-          action_1_3: 'SQLE操作记录'
+          action_1_3: '操作记录'
         }
       }
     }
