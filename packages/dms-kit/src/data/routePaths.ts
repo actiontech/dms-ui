@@ -335,6 +335,9 @@ export const ROUTE_PATHS = {
         path: ':projectID/operation-record'
       }
     },
+    GLOBAL_OPERATION_LOG: {
+      index: '/operation-record'
+    },
     PLUGIN_AUDIT: {
       index: {
         prefix: '/sqle/project',

@@ -583,5 +583,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD,
     key: 'globalDashboard',
     element: <GlobalDashboard />
+  },
+  {
+    path: ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index,
+    key: 'operationRecord',
+    element: <OperationRecord />,
+    permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
   }
 ];
