@@ -92,10 +92,16 @@ const OperationRecordList: React.FC = () => {
       [
         'project_name',
         {
-          options: bindProjects.map((v) => ({
-            label: v.project_name,
-            value: v.project_name
-          }))
+          options: [
+            {
+              label: t('operationRecord.list.filterForm.globalOperation'),
+              value: ''
+            },
+            ...bindProjects.map((v) => ({
+              label: v.project_name,
+              value: v.project_name
+            }))
+          ]
         }
       ]
       // [
@@ -114,7 +120,7 @@ const OperationRecordList: React.FC = () => {
       //   }
       // ]
     ]);
-  }, [bindProjects]);
+  }, [bindProjects, t]);
 
   const columns = useMemo(() => {
     if (!!projectName) {
