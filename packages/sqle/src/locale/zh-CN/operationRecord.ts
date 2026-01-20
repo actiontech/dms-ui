@@ -14,7 +14,8 @@ export default {
       operator: '操作人',
       operationType: '操作类型',
       operationAction: '操作内容',
-      platformOperation: '-- (平台操作)'
+      platformOperation: '-- (平台操作)',
+      globalOperation: '全局操作'
     },
     column: {
       operatingTime: '操作时间',
