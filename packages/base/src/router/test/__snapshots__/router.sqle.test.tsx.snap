@@ -235,7 +235,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
       data-test-parent-id="availabilityZoneWrapper"
     >
       <div>
-        operationRecord
+        globalOperationRecord
       </div>
     </div>
   </div>

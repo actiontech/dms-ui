@@ -250,6 +250,7 @@ exports[`usePermission should match snapshot 1`] = `
       "USER_CENTER": "page:user_center",
     },
     "SQLE": {
+      "GLOBAL_OPERATION_RECORD": "page:global_operation_record",
       "KNOWLEDGE": "page:knowledge",
       "OPERATION_RECORD": "page:operation_record",
       "PROJECT_RULE_TEMPLATE": "page:project_rule_template",
@@ -1714,6 +1715,16 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "page",
   },
+  "page:global_operation_record": {
+    "id": "page:global_operation_record",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+      "certainProjectManager",
+    ],
+    "type": "page",
+  },
   "page:knowledge": {
     "id": "page:knowledge",
     "moduleSupport": [
@@ -1733,6 +1744,7 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "page:operation_record": {
     "id": "page:operation_record",
+    "projectPermission": "project_admin",
     "role": [
       "admin",
       "systemAdministrator",
