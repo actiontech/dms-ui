@@ -10,6 +10,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil';
 
 describe('sqle/OperationRecord/List', () => {
   beforeEach(() => {
@@ -18,6 +19,7 @@ describe('sqle/OperationRecord/List', () => {
     mockUseCurrentProject({
       projectName: undefined
     });
+    mockUseCurrentUser();
   });
 
   beforeAll(() => {
@@ -112,13 +114,61 @@ describe('sqle/OperationRecord/List', () => {
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('筛选'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
     const filterItems = getAllBySelector(
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
     expect(filterItems.length).toBe(2);
     expect(baseElement).toMatchSnapshot();
+
+    fireEvent.mouseDown(getBySelector('.ant-select-selector', filterItems[1]));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      getAllBySelector('.ant-select-item-option', baseElement).length
+    ).toBe(3);
+  });
+
+  it('render project filter options when user is project manager', async () => {
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: 'default',
+          project_id: '1',
+          archived: false
+        },
+        {
+          is_manager: false,
+          project_name: 'test',
+          project_id: '2',
+          archived: false
+        }
+      ],
+      userRoles: {
+        admin: false,
+        certainProjectManager: true,
+        systemAdministrator: false,
+        auditAdministrator: false,
+        projectDirector: false
+      }
+    });
+    const operationRecordListSpy = operationRecord.getOperationRecordList();
+    const { baseElement } = superRender(<OperationRecordList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const filterItems = getAllBySelector(
+      '.actiontech-table-filter-container-namespace .ant-space-item',
+      baseElement
+    );
+    fireEvent.mouseDown(getBySelector('.ant-select-selector', filterItems[1]));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      getAllBySelector('.ant-select-item-option', baseElement).length
+    ).toBe(1);
   });
 
   it('should export data file when click export button', async () => {
