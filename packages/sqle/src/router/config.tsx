@@ -586,8 +586,8 @@ export const globalRouterConfig: RouterConfigItem[] = [
   },
   {
     path: ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index,
-    key: 'operationRecord',
+    key: 'globalOperationRecord',
     element: <OperationRecord />,
-    permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
+    permission: PERMISSIONS.PAGES.SQLE.GLOBAL_OPERATION_RECORD
   }
 ];

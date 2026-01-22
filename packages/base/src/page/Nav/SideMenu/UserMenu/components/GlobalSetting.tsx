@@ -66,7 +66,7 @@ const GlobalSetting: React.FC = () => {
         text: t('dmsMenu.globalSettings.globalOperationRecord'),
         onClick: () =>
           handleClickItem(ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index),
-        permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
+        permission: PERMISSIONS.PAGES.SQLE.GLOBAL_OPERATION_RECORD
       },
       {
         key: 'system',

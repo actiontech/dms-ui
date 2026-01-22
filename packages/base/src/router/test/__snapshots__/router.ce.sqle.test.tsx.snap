@@ -160,7 +160,7 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div>
-      operationRecord
+      globalOperationRecord
     </div>
   </div>
 </body>

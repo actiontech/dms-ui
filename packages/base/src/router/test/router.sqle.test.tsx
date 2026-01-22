@@ -452,7 +452,7 @@ describe('base/router-sqle-ee', () => {
         const { baseElement } = customRender([`/operation-record`]);
 
         expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('operationRecord')).toBeInTheDocument();
+        expect(screen.getByText('globalOperationRecord')).toBeInTheDocument();
       });
 
       describe('render route sqlManagement', () => {

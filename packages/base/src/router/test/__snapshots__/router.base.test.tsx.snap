@@ -345,9 +345,9 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       },
       {
         "element": <div>
-          operationRecord
+          globalOperationRecord
         </div>,
-        "key": "operationRecord",
+        "key": "globalOperationRecord",
         "path": "/operation-record",
       },
       {
