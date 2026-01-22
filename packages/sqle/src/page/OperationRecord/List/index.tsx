@@ -34,7 +34,7 @@ const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
-  const { bindProjects } = useCurrentUser();
+  const { bindProjects, userRoles } = useCurrentUser();
   // const [currentOperationTypeName, setCurrentOperationTypeName] =
   //   useState<string>();
   const [
@@ -82,6 +82,30 @@ const OperationRecordList: React.FC = () => {
     }
   );
   const filterCustomProps = useMemo(() => {
+    let operationOptions;
+    if (
+      userRoles.admin ||
+      userRoles.auditAdministrator ||
+      userRoles.systemAdministrator
+    ) {
+      operationOptions = [
+        {
+          label: t('operationRecord.list.filterForm.globalOperation'),
+          value: ''
+        },
+        ...bindProjects.map((v) => ({
+          label: v.project_name,
+          value: v.project_name
+        }))
+      ];
+    } else {
+      operationOptions = bindProjects
+        .filter((i) => i.is_manager)
+        .map((v) => ({
+          label: v.project_name,
+          value: v.project_name
+        }));
+    }
     return new Map<keyof IOperationRecordListItem, FilterCustomProps>([
       [
         'operation_time',
@@ -92,16 +116,7 @@ const OperationRecordList: React.FC = () => {
       [
         'project_name',
         {
-          options: [
-            {
-              label: t('operationRecord.list.filterForm.globalOperation'),
-              value: ''
-            },
-            ...bindProjects.map((v) => ({
-              label: v.project_name,
-              value: v.project_name
-            }))
-          ]
+          options: operationOptions
         }
       ]
       // [
@@ -120,7 +135,7 @@ const OperationRecordList: React.FC = () => {
       //   }
       // ]
     ]);
-  }, [bindProjects, t]);
+  }, [bindProjects, t, userRoles]);
 
   const columns = useMemo(() => {
     if (!!projectName) {
