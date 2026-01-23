@@ -55,7 +55,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
-    expect(getAllBySelector('.content-item-text').length).toBe(4);
+    expect(getAllBySelector('.content-item-text').length).toBe(5);
 
     fireEvent.click(screen.getByText('用户中心'));
     expect(navigateSpy).toHaveBeenNthCalledWith(1, '/user-center');
@@ -68,5 +68,8 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
 
     fireEvent.click(screen.getByText('系统设置'));
     expect(navigateSpy).toHaveBeenNthCalledWith(4, '/system');
+
+    fireEvent.click(screen.getByText('全局操作记录'));
+    expect(navigateSpy).toHaveBeenNthCalledWith(5, '/operation-record');
   });
 });

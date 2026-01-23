@@ -382,6 +382,13 @@ describe('base/router-sqle-ce', () => {
         expect(screen.getByText('operationRecord')).toBeInTheDocument();
       });
 
+      it('render operationRecord', () => {
+        const { baseElement } = customRender([`/operation-record`]);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('globalOperationRecord')).toBeInTheDocument();
+      });
+
       describe('render route sqlManagement', () => {
         it('render sqlManagement', async () => {
           const { baseElement } = customRender([

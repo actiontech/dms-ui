@@ -1,14 +1,14 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
 import { BasicButton, PageHeader } from '@actiontech/dms-kit';
-import operationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
+import operationRecord from '@actiontech/shared/lib/api/base/service/OperationRecord';
 import {
   IGetOperationRecordListV1Params,
   IGetExportOperationRecordListV1Params
 } from '@actiontech/shared/lib/api/sqle/service/OperationRecord/index.d';
-import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IOperationRecordListItem } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTable,
   useTableRequestParams,
@@ -18,29 +18,33 @@ import {
   FilterCustomProps,
   TableToolbar
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType
 } from './column';
-import useOperationTypeName from '../../../hooks/useOperationTypeName';
-import useOperationActions from '../../../hooks/useOperationActions';
+// import useOperationTypeName from '../../../hooks/useOperationTypeName';
+// import useOperationActions from '../../../hooks/useOperationActions';
 import { ResponseCode } from '../../../data/common';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
-  const [currentOperationTypeName, setCurrentOperationTypeName] =
-    useState<string>();
+  const { bindProjects, userRoles } = useCurrentUser();
+  // const [currentOperationTypeName, setCurrentOperationTypeName] =
+  //   useState<string>();
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
-  const { updateOperationTypeNameList, operationTypeNameOptions } =
-    useOperationTypeName();
-  const { updateOperationActions, operationActionOptions } =
-    useOperationActions();
+  // const { updateOperationTypeNameList, operationTypeNameOptions } =
+  //   useOperationTypeName();
+  // const { updateOperationActions, operationActionOptions } =
+  //   useOperationActions();
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -50,7 +54,7 @@ const OperationRecordList: React.FC = () => {
     setSearchKeyword,
     refreshBySearchKeyword
   } = useTableRequestParams<
-    IOperationRecordList,
+    IOperationRecordListItem,
     OperationRecordListFilterParamType
   >();
   const { requestErrorMessage, handleTableRequestError } =
@@ -64,11 +68,13 @@ const OperationRecordList: React.FC = () => {
       const params: IGetOperationRecordListV1Params = {
         ...pagination,
         ...tableFilterInfo,
-        filter_operate_project_name: projectName,
         fuzzy_search_operate_user_name: searchKeyword
       };
+      if (!!projectName) {
+        params.filter_operate_project_name = projectName;
+      }
       return handleTableRequestError(
-        operationRecord.getOperationRecordListV1(params)
+        operationRecord.GetOperationRecordList(params)
       );
     },
     {
@@ -76,7 +82,31 @@ const OperationRecordList: React.FC = () => {
     }
   );
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof IOperationRecordList, FilterCustomProps>([
+    let operationOptions;
+    if (
+      userRoles.admin ||
+      userRoles.auditAdministrator ||
+      userRoles.systemAdministrator
+    ) {
+      operationOptions = [
+        {
+          label: t('operationRecord.list.filterForm.globalOperation'),
+          value: ''
+        },
+        ...bindProjects.map((v) => ({
+          label: v.project_name,
+          value: v.project_name
+        }))
+      ];
+    } else {
+      operationOptions = bindProjects
+        .filter((i) => i.is_manager)
+        .map((v) => ({
+          label: v.project_name,
+          value: v.project_name
+        }));
+    }
+    return new Map<keyof IOperationRecordListItem, FilterCustomProps>([
       [
         'operation_time',
         {
@@ -84,32 +114,44 @@ const OperationRecordList: React.FC = () => {
         }
       ],
       [
-        'operation_type_name',
+        'project_name',
         {
-          options: operationTypeNameOptions,
-          onChange: (value: unknown) => {
-            setCurrentOperationTypeName(value as string);
-          }
-        }
-      ],
-      [
-        'operation_content',
-        {
-          options: operationActionOptions(currentOperationTypeName)
+          options: operationOptions
         }
       ]
+      // [
+      //   'operation_type_name',
+      //   {
+      //     options: operationTypeNameOptions,
+      //     onChange: (value: unknown) => {
+      //       setCurrentOperationTypeName(value as string);
+      //     }
+      //   }
+      // ],
+      // [
+      //   'operation_content',
+      //   {
+      //     options: operationActionOptions(currentOperationTypeName)
+      //   }
+      // ]
     ]);
-  }, [
-    operationTypeNameOptions,
-    operationActionOptions,
-    currentOperationTypeName
-  ]);
+  }, [bindProjects, t, userRoles]);
+
+  const columns = useMemo(() => {
+    if (!!projectName) {
+      return OperationRecordListColumn.filter(
+        (column) => column.dataIndex !== 'project_name'
+      );
+    }
+    return OperationRecordListColumn;
+  }, [projectName]);
+
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
-  useEffect(() => {
-    updateOperationTypeNameList();
-    updateOperationActions();
-  }, [updateOperationActions, updateOperationTypeNameList]);
+    useTableFilterContainer(columns, updateTableFilterInfo);
+  // useEffect(() => {
+  //   updateOperationTypeNameList();
+  //   updateOperationActions();
+  // }, [updateOperationActions, updateOperationTypeNameList]);
   const onExport = () => {
     startExport();
     const hideLoading = messageApi.loading(
@@ -118,11 +160,13 @@ const OperationRecordList: React.FC = () => {
     );
     const param: IGetExportOperationRecordListV1Params = {
       ...tableFilterInfo,
-      filter_operate_project_name: projectName,
       fuzzy_search_operate_user_name: searchKeyword
     };
+    if (!!projectName) {
+      param.filter_operate_project_name = projectName;
+    }
     operationRecord
-      .getExportOperationRecordListV1(param, {
+      .ExportOperationRecordList(param, {
         responseType: 'blob'
       })
       .then((res) => {
@@ -139,7 +183,11 @@ const OperationRecordList: React.FC = () => {
     <article>
       {contextHolder}
       <PageHeader
-        title={t('menu.operationRecord')}
+        title={
+          projectName
+            ? t('operationRecord.pageTitle')
+            : t('operationRecord.globalPageTitle')
+        }
         extra={
           <Space size={12}>
             <BasicButton
@@ -186,7 +234,7 @@ const OperationRecordList: React.FC = () => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={OperationRecordListColumn}
+        columns={columns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
       />

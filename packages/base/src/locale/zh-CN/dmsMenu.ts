@@ -8,7 +8,7 @@ export default {
   authAudit: '授权审计',
   templateAudit: '权限模板审计',
   instanceAudit: '数据源操作审计',
-  SQLEOperateRecord: 'SQLE操作记录',
+  SQLEOperateRecord: '操作记录',
   inspectionAndDiagnosis: '巡检与诊断',
   SQLWorkbench: 'SQL工作台',
   ruleTemplate: '审核规则模板',
@@ -68,6 +68,7 @@ export default {
     viewRule: '查看规则',
     ruleManage: '规则管理',
     system: '系统设置',
+    globalOperationRecord: '全局操作记录',
     changeTheme: '模式切换',
     instanceManager: '数据源管理',
     knowledge: '知识库'

@@ -708,7 +708,7 @@ exports[`test base/home/DefaultScene should match snapshot when role is admin 1`
                     <div
                       class="ant-space-item"
                     >
-                      SQLE操作记录
+                      操作记录
                     </div>
                   </div>
                 </button>

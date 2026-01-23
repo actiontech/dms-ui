@@ -117,7 +117,7 @@ describe('test base/Home/StepItems', () => {
       `/sqle/project/${projectID}/exec-workflow/create`
     );
 
-    fireEvent.click(screen.getByText('SQLE操作记录'));
+    fireEvent.click(screen.getByText('操作记录'));
     expect(navigateSpy).toHaveBeenCalledTimes(13);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       13,
