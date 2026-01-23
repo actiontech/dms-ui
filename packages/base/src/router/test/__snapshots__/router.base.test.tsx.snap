@@ -344,6 +344,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "path": "/sqle/global-dashboard",
       },
       {
+        "element": <div>
+          globalOperationRecord
+        </div>,
+        "key": "globalOperationRecord",
+        "path": "/operation-record",
+      },
+      {
         "children": [
           {
             "element": <div>

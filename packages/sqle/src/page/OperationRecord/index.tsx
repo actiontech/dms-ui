@@ -3,12 +3,23 @@ import { PageHeader } from '@actiontech/dms-kit';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { Typography } from 'antd';
 import OperationRecordList from './List';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
+
 const OperationRecord = () => {
   const { t } = useTranslation();
+
+  const { projectName } = useCurrentProject();
+
   return (
     <>
       {/* #if [ce] */}
-      <PageHeader title={t('operationRecord.pageTitle')} />
+      <PageHeader
+        title={
+          projectName
+            ? t('operationRecord.pageTitle')
+            : t('operationRecord.globalPageTitle')
+        }
+      />
       {/* #endif */}
 
       <EnterpriseFeatureDisplay

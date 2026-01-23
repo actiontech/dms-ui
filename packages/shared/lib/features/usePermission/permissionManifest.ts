@@ -114,6 +114,17 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.admin,
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.project_admin
+  },
+  [PERMISSIONS.PAGES.SQLE.GLOBAL_OPERATION_RECORD]: {
+    id: PERMISSIONS.PAGES.SQLE.GLOBAL_OPERATION_RECORD,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.certainProjectManager
     ]
   },
   [PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION]: {

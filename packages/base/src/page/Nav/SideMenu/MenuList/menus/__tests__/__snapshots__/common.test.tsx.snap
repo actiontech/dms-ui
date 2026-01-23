@@ -434,7 +434,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "label": <ForwardRef(TypedLink)
           to="/sqle/project/600300/operation-record"
         >
-          SQLE操作记录
+          操作记录
         </ForwardRef(TypedLink)>,
         "permission": "page:operation_record",
         "structKey": "sqle-log",

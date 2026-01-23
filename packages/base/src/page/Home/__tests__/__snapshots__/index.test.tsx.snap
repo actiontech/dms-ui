@@ -721,7 +721,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        SQLE操作记录
+                        操作记录
                       </div>
                     </div>
                   </button>

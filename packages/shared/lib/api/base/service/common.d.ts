@@ -25,6 +25,7 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   OperationOperationTypeEnum,
+  OperationRecordListItemStatusEnum,
   ProjectInfoProjectPriorityEnum,
   ProjectV1ProjectPriorityEnum,
   ProjectV2ProjectPriorityEnum,
@@ -142,6 +143,16 @@ export interface IAddMemberReply {
 
 export interface IAddMemberReq {
   member?: IMember;
+}
+
+export interface IAddOperationRecordReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IAddOperationRecordReq {
+  operation_record?: IOperationRecord;
 }
 
 export interface IAddProjectReply {
@@ -992,6 +1003,16 @@ export interface IGetOauth2TipsResData {
   login_tip?: string;
 }
 
+export interface IGetOperationRecordListReply {
+  code?: number;
+
+  data?: IOperationRecordListItem[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetProjectTipsReply {
   code?: number;
 
@@ -1837,10 +1858,6 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
-  member_group?: IProjectMemberGroup;
-
-  op_permissions?: IUidWithName[];
-
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -2180,6 +2197,52 @@ export interface IOperation {
   operation_detail?: string;
 
   operation_type?: OperationOperationTypeEnum;
+}
+
+export interface IOperationRecord {
+  operation_action?: string;
+
+  operation_i18n_content?: II18nStr;
+
+  operation_project_name?: string;
+
+  operation_req_ip?: string;
+
+  operation_status?: string;
+
+  operation_time?: string;
+
+  operation_type_name?: string;
+
+  operation_user_agent?: string;
+
+  operation_user_name?: string;
+}
+
+export interface IOperationRecordListItem {
+  id?: number;
+
+  operation_action?: string;
+
+  operation_content?: string;
+
+  operation_time?: string;
+
+  operation_type_name?: string;
+
+  operation_user?: IOperationUser;
+
+  operation_user_agent?: string;
+
+  project_name?: string;
+
+  status?: OperationRecordListItemStatusEnum;
+}
+
+export interface IOperationUser {
+  ip?: string;
+
+  user_name?: string;
 }
 
 export interface IParam {

@@ -1054,7 +1054,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                          SQLE操作记录
+                          操作记录
                         </div>
                       </div>
                     </button>
@@ -2231,7 +2231,7 @@ exports[`App render App when token is existed 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                          SQLE操作记录
+                          操作记录
                         </div>
                       </div>
                     </button>
