@@ -267,5 +267,7 @@ export default {
   },
   deleteConfirmTitle: '确认要删除么?',
   somethingWentWrong: '出错了',
-  backToHome: '返回首页'
+  backToHome: '返回首页',
+  pageUpdating: '系统已更新',
+  pageUpdatingDesc: '检测到系统有新版本，请点击下方按钮刷新页面以加载最新内容'
 };
