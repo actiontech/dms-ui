@@ -9,8 +9,43 @@ import {
 export const AuditResultForCreateWorkflowActions = (
   clickAnalyze: (sqlNum?: number) => void,
   onCreateWhitelist: (record?: IAuditTaskSQLResV2) => void,
-  handleClickSqlRewritten: (record: IAuditTaskSQLResV2) => void
+  handleClickSqlRewritten: (record: IAuditTaskSQLResV2) => void,
+  isMobile: boolean
 ): ActiontechTableActionsWithPermissions<IAuditTaskSQLResV2> => {
+  if (isMobile) {
+    return {
+      buttons: [],
+      moreButtons: [
+        {
+          key: 'jumpAnalyze',
+          text: t('execWorkflow.audit.table.analyze'),
+          onClick: (record) => {
+            clickAnalyze(record?.number);
+          }
+        },
+        // #if [ee]
+        {
+          key: 'create-exception',
+          text: t('execWorkflow.audit.table.createWhitelist'),
+          onClick: (record) => {
+            onCreateWhitelist(record);
+          },
+          permissions:
+            PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST
+        },
+        // #endif
+        {
+          key: 'sqlRewriter',
+          text: t('sqlRewrite.actionName'),
+          onClick: (record) => {
+            handleClickSqlRewritten(record!);
+          },
+          icon: <RobotOutlined height={18} width={18} />
+        }
+      ]
+    };
+  }
+
   return [
     {
       key: 'jumpAnalyze',

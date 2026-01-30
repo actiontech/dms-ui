@@ -3,7 +3,7 @@
 exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
 <div>
   <section
-    class="css-16gjh2w"
+    class="css-qgwq6g"
   >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
@@ -60,10 +60,10 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between segmented-row-style-wrapper css-156vlto"
     >
       <div
-        class="audit-result-filter-container-borderless clear-padding css-1c0dogt"
+        class="audit-result-filter-container-borderless clear-padding css-137brcn"
       >
         <div
           class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -414,7 +414,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
 exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
 <div>
   <section
-    class="css-16gjh2w"
+    class="css-qgwq6g"
   >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
@@ -472,10 +472,10 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
       </div>
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between segmented-row-style-wrapper css-156vlto"
     >
       <div
-        class="audit-result-filter-container-borderless clear-padding css-1c0dogt"
+        class="audit-result-filter-container-borderless clear-padding css-137brcn"
       >
         <div
           class="custom-segmented-filter-wrapper audit-result-filter-option"

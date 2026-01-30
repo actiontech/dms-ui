@@ -4,6 +4,26 @@ export const TasksResultListStyleWrapper = styled('div')`
   padding: 0 40px;
   margin-bottom: 80px;
 
+  /* style for mobile */
+  &.mobile-task-result-list {
+    padding: 0 1rem 4rem;
+    margin-bottom: 4rem !important;
+
+    .task-result-pagination-list {
+      width: 100% !important;
+    }
+
+    .file-mode-title {
+      margin-bottom: 1rem !important;
+    }
+  }
+
+  &.mobile-task-result-list.file-mode-task-result-pagination-list,
+  &.mobile-task-result-list.file-mode-task-result-infinite-list {
+    margin-bottom: 1rem !important;
+  }
+  /* end style for mobile */
+
   &.file-mode-task-result-pagination-list,
   &.file-mode-task-result-infinite-list {
     margin-top: 20px;

@@ -8,4 +8,5 @@ export type BasicInfoWrapperProps = {
   className?: string;
   gap?: number;
   sqlVersion?: ISqlVersion;
+  isMobile?: boolean;
 };

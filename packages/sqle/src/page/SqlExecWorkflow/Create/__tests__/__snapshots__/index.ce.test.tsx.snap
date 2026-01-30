@@ -693,7 +693,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+                  class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"

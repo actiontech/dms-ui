@@ -89,7 +89,8 @@ const useTableAction = () => {
 
   const renderActionInTable = useCallback(
     <T extends Record<string, any>>(
-      actions: ActiontechTableProps<T>['actions']
+      actions: ActiontechTableProps<T>['actions'],
+      enableOnlyRenderMoreButtons = false
     ):
       | ActiontechTableColumn<
           T,
@@ -151,7 +152,11 @@ const useTableAction = () => {
             checkButtonPermissions(button.permissions, record)
           );
         }
-        if (visibleButtons.length === 0 && visibleMoreButtons.length > 0) {
+        if (
+          visibleButtons.length === 0 &&
+          visibleMoreButtons.length > 0 &&
+          !enableOnlyRenderMoreButtons
+        ) {
           //todo 文档记录. 当 visibleButtons 为 0 时，从 moreButtons 中 move 两个 button 到外层。
           const maxIndex = Math.min(visibleMoreButtons.length, 2);
 

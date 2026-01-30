@@ -1,3 +1,4 @@
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 import AuditResultFilterContainer from '..';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { AuditResultFilterContainerProps } from '../index.type';
@@ -79,6 +80,18 @@ describe('sqle/ExecWorkflow/Common/AuditResultFilterContainer', () => {
   });
 
   it('render snap when other params', () => {
+    const { baseElement } = customRender({
+      options: filterOptionsData,
+      value: '',
+      passRate: 1,
+      score: 9,
+      instanceSchemaName: 'schema name'
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when isMobile is true', () => {
+    mockUseMedia({ isMobile: true });
     const { baseElement } = customRender({
       options: filterOptionsData,
       value: '',

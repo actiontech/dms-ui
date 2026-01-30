@@ -44,6 +44,8 @@ import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
+import { useMedia } from '@actiontech/shared';
+import classNames from 'classnames';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -54,6 +56,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   ...props
 }) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
   const [messageApi, contextHolder] = message.useMessage();
   const { sqleTheme } = useThemeStyleData();
   const dispatch = useDispatch();
@@ -158,7 +161,9 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       : '';
   }, [props.taskStatus, props.backup_result, t]);
   return (
-    <TasksResultCardStyleWrapper>
+    <TasksResultCardStyleWrapper
+      className={classNames({ 'mobile-task-result-card': isMobile })}
+    >
       {contextHolder}
       <div className="result-card-header">
         <Space>
@@ -176,7 +181,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
             />
           </div>
         </Space>
-        <Space>
+        <Space className="task-result-card-button-wrap">
           {/* #if [ee] */}
           <EmptyBox if={!!props.associated_rollback_workflows?.length}>
             <RollbackWorkflowEntry
@@ -284,7 +289,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
               }
             ]}
             segmentedRowExtraContent={
-              <Space size={0}>
+              <Space size={0} className="task-result-card-source-file-wrap">
                 <EmptyBox
                   if={!!props?.sql_source_file}
                   defaultNode={

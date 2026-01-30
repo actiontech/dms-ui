@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/dms-kit';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import UserGuideModal from './UserGuideModal';
+import { useMedia } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/dms-kit';
 
 // #if [ee]
 import EESideMenu from './SideMenu';
@@ -15,11 +17,13 @@ import CopyrightInformation from './Copyright';
 
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
   useBrowserVersionTips();
-
+  const { isMobile } = useMedia();
   return (
     <LayoutStyleWrapper>
       {/* #if [ee] */}
-      <EESideMenu />
+      <EmptyBox if={!isMobile}>
+        <EESideMenu />
+      </EmptyBox>
       {/* #else */}
       <CESideMenu />
       {/* #endif */}

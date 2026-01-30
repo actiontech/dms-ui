@@ -13,6 +13,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -226,5 +227,12 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
       }
     });
     expect(navigateSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render mobile snap', async () => {
+    mockUseMedia({ isMobile: true });
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 });

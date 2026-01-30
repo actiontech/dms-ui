@@ -45,6 +45,10 @@ group:
 
 <code src="./demo/moreActions.tsx"></code>
 
+### 仅渲染更多按钮（enableOnlyRenderMoreButtons）
+
+<code src="./demo/enableOnlyRenderMoreButtons.tsx"></code>
+
 ## API
 
 ActiontechTable 继承 Ant Design Table 的所有属性，完整 API 请参考 [Table 文档](https://ant.design/components/table-cn)。
@@ -58,6 +62,7 @@ ActiontechTable 继承 Ant Design Table 的所有属性，完整 API 请参考 [
 | actions | 操作列配置，自动生成操作列 | `ActiontechTableActionsConfig` \| `ActiontechTableActionMeta[]` | - | - |
 | setting | 列设置配置，用户的列选择会存储到 localStorage | `ColumnsSettingProps` \| `false` | - | - |
 | isPaginationFixed | 分页器是否固定在页面底部 | `boolean` | `true` | - |
+| enableOnlyRenderMoreButtons | 是否只渲染更多按钮。默认为 `false`：当 `actions.buttons` 为空时，会从 `moreButtons` 中自动“外露”最多 2 个按钮到表格内联按钮；设置为 `true` 时不会外露，全部操作都放入更多按钮中（适配窄屏/移动端）。 | `boolean` | `false` | - |
 | errorMessage | 错误消息，用于请求失败时显示 | `string` | - | - |
 
 ### 常用 Table 属性

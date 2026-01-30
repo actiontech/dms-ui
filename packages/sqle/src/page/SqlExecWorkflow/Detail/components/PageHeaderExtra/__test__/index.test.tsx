@@ -13,8 +13,8 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { OpPermissionTypeUid } from '@actiontech/dms-kit';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 import MockDate from 'mockdate';
-
 type paramsType = Pick<
   WorkflowDetailPageHeaderExtraProps,
   | 'workflowInfo'
@@ -58,6 +58,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     mockUsePermission(undefined, {
       mockSelector: true
     });
+    mockUseMedia();
   });
 
   afterEach(() => {
@@ -534,5 +535,397 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(showModifySqlStatementStep).toHaveBeenCalledTimes(1);
+  });
+
+  describe('mobile layout', () => {
+    beforeEach(() => {
+      mockUseMedia({ isMobile: true });
+    });
+
+    it('render mobile snap', () => {
+      const { baseElement } = customRender({
+        workflowStepsVisibility: true
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_audit,
+            current_step_number: 1,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        canRejectWorkflow: true
+      });
+
+      // 检查是否有 "更多操作" 按钮
+      expect(screen.getByText('更多操作')).toBeVisible();
+
+      // 点击下拉菜单
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      // 验证菜单项存在
+      expect(screen.getByText('审核通过')).toBeInTheDocument();
+      expect(screen.getByText('全部驳回')).toBeInTheDocument();
+      expect(screen.getByText('关闭工单')).toBeInTheDocument();
+    });
+
+    it('render mobile dropdown menu with batch execute', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+            current_step_number: 1,
+            executable: true,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.sql_execute,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        maintenanceTimeInfo: []
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(screen.getByText('批量立即上线')).toBeInTheDocument();
+      expect(screen.getByText('标记为人工上线')).toBeInTheDocument();
+    });
+
+    it('click approve in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_audit,
+            current_step_number: 1,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        }
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      const approveButton = screen.getByText('审核通过');
+      expect(approveButton).toBeInTheDocument();
+      fireEvent.click(approveButton);
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('click batch execute in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+            current_step_number: 1,
+            executable: true,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        maintenanceTimeInfo: []
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('批量立即上线'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '当前操作将立即执行工单下的所有SQL语句，且已经设置了定时上线的数据源仍然在定时时间上线，不会立即上线，是否确认立即批量上线?'
+        )
+      ).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('确 定'));
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('click manual execute in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+            current_step_number: 1,
+            executable: true,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.sql_execute,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        maintenanceTimeInfo: []
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('标记为人工上线'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '当前操作仅修改工单状态，而不对数据源产生操作，是否确认标记为人工上线?'
+        )
+      ).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('确 定'));
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('click reject in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_audit,
+            current_step_number: 1,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        canRejectWorkflow: true
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('全部驳回'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.input(getBySelector('#reason'), {
+        target: { value: 'test reason' }
+      });
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('驳 回'));
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('click terminate in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.executing,
+            current_step_number: 1,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.sql_execute,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        }
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('中止上线'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '此操作将中断当前上线操作, 并回滚当前正在执行的SQL, 是否确认中止上线?'
+        )
+      ).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('确 定'));
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('click close workflow in mobile dropdown menu', async () => {
+      const cancelWorkflowSpy = workflow.cancelWorkflow();
+
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_audit,
+            current_step_number: 1,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                operation_user_name: 'admin',
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        }
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('关闭工单'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '工单关闭后将无法再对工单执行任何操作，是否确认关闭当前工单？'
+        )
+      ).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('确 定'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
+      expect(cancelWorkflowSpy).toHaveBeenCalledWith({
+        project_name: mockProjectInfo.projectName,
+        workflow_id: '1'
+      });
+    });
+
+    it('click retry in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          record: {
+            status: WorkflowRecordResV2StatusEnum.exec_failed
+          }
+        }
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('修改工单'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(showModifySqlStatementStep).toHaveBeenCalledTimes(1);
+    });
+
+    it('click rollback in mobile dropdown menu', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          record: {
+            status: WorkflowRecordResV2StatusEnum.finished,
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.sql_execute,
+                assignee_user_name_list: ['admin']
+              }
+            ]
+          }
+        }
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('回滚'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(startRollback).toHaveBeenCalledTimes(1);
+    });
+
+    it('click clone workflow in mobile dropdown menu', async () => {
+      mockUseCurrentUser({
+        isProjectManager: jest.fn(() => true)
+      });
+
+      customRender({
+        workflowStepsVisibility: true
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      fireEvent.click(screen.getByText('上线到其他实例'));
+      await act(async () => jest.advanceTimersByTime(100));
+    });
+
+    it('disabled batch execute when executable is false in mobile dropdown', async () => {
+      customRender({
+        workflowStepsVisibility: true,
+        workflowInfo: {
+          workflow_id: '1',
+          record: {
+            status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+            current_step_number: 1,
+            executable: false,
+            executable_reason: '无法上线',
+            workflow_step_list: [
+              {
+                number: 1,
+                type: WorkflowStepResV2TypeEnum.create_workflow,
+                assignee_user_name_list: ['admin'],
+                operation_time: '2024-02-22T18:08:00+08:00'
+              }
+            ]
+          }
+        },
+        maintenanceTimeInfo: []
+      });
+
+      fireEvent.click(screen.getByText('更多操作'));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      const batchExecButton = screen.getByText('批量立即上线');
+      expect(batchExecButton).toBeInTheDocument();
+      // 验证按钮已禁用
+      expect(batchExecButton.closest('.ant-dropdown-menu-item')).toHaveClass(
+        'ant-dropdown-menu-item-disabled'
+      );
+    });
   });
 });

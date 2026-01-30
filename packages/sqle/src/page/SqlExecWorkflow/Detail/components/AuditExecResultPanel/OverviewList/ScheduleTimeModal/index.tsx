@@ -237,6 +237,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             showTime={{
               defaultValue: createDefaultRangeTime()
             }}
+            inputReadOnly
           />
         </FormItemNoLabelStyleWrapper>
 

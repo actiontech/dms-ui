@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { Transfer } from 'antd';
 
 export const SqlRollbackTableStyleWrapper = styled('section')`
   & .ant-transfer.ant-transfer-customize-list .ant-transfer-list {
@@ -47,5 +48,30 @@ export const SqlRollbackTableStyleWrapper = styled('section')`
       padding: 0 !important;
       border: none !important;
     }
+  }
+`;
+
+export const MobileTableTransferStyleWrapper = styled(Transfer)`
+  &.mobile-table-transfer {
+    flex-direction: column;
+
+    .ant-transfer-list-header {
+      min-height: 2.5rem;
+      height: auto !important;
+    }
+
+    .ant-transfer-operation {
+      transform: rotate(90deg);
+    }
+
+    .ant-transfer-list-header-title {
+      padding: 0 !important;
+    }
+  }
+`;
+
+export const SqlRollbackPageStyleWrapper = styled('div')`
+  &.sql-rollback-page-style-wrapper .actiontech-page-header-namespace {
+    padding: 0 1rem;
   }
 `;

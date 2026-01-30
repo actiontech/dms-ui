@@ -28,10 +28,12 @@ import { ModalName } from '../../../../../../data/ModalName';
 import { updateSqlExecWorkflowModalStatus } from '../../../../../../store/sqlExecWorkflow/index';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
+import { useMedia } from '@actiontech/shared';
 
 const RetryExecuteModal = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const { isMobile } = useMedia();
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail>();
 
@@ -170,7 +172,7 @@ const RetryExecuteModal = () => {
       open={visible}
       size="large"
       title={
-        <Space>
+        <Space direction={isMobile ? 'vertical' : 'horizontal'}>
           {t('execWorkflow.detail.overview.table.selectRetryExecuteSql')}
           <RetryExecuteModalTitleDescStyleWrapper type="secondary">
             {t('execWorkflow.detail.overview.table.selectRetryExecuteSqlDesc')}
@@ -225,6 +227,7 @@ const RetryExecuteModal = () => {
             dataIndex: 'exec_result',
             className: 'ellipsis-column-width',
             title: () => t('execWorkflow.audit.table.execResult'),
+            width: 400,
             render: (result) => {
               return result ? (
                 <BasicTypographyEllipsis textCont={result} />
@@ -260,6 +263,7 @@ const RetryExecuteModal = () => {
             setAllSelectedKeys(newAllSelectedKeys);
           },
           columnWidth: 60,
+          fixed: 'left',
           getCheckboxProps: (record) => {
             return {
               disabled:

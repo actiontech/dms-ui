@@ -27,4 +27,14 @@ export const AuditResultForCreateWorkflowStyleWrapper = styled('section')`
       margin-left: 4px;
     }
   }
+
+  &.mobile-audit-result-list {
+    .audit-result-segmented-row {
+      padding: 1rem;
+    }
+
+    .ant-pagination {
+      width: 100% !important;
+    }
+  }
 `;

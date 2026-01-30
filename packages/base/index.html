@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <link id="dms-logo-favicon" rel="icon" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 禁止移动端Safari中的手机号、邮箱识别 避免页面里出现“自动加下划线/变蓝/可点”的号码或邮箱 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 当用户把网站“添加到主屏幕”后，从主屏图标启动时，允许以类似 App 的独立模式运行（通常会隐藏 Safari 地址栏/工具栏）。-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 仅在 iOS 主屏幕启动的独立模式下生效，用来设置状态栏样式 -->
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title><%= title %></title>
   </head>
   <body>

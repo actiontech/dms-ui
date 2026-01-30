@@ -8,6 +8,49 @@ export const TasksResultCardStyleWrapper = styled('div')`
   background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
   margin-bottom: 20px;
 
+  &.mobile-task-result-card {
+    .result-card-header {
+      padding: 0.4rem 0.8rem;
+      flex-wrap: wrap;
+      height: auto;
+
+      .result-card-status-wrap {
+        margin-left: 0.2rem;
+
+        .result-card-status-divider {
+          margin: 0 0.2rem;
+        }
+
+        .ant-tag {
+          padding: 0 0.2rem;
+          margin-right: 0;
+        }
+      }
+
+      .task-result-card-button-wrap {
+        margin-top: 0.2rem;
+      }
+
+      .ant-space {
+        gap: 0.5rem !important;
+      }
+    }
+
+    .result-card-content {
+      padding: 0.3rem 0.6rem;
+
+      .task-result-card-source-file-wrap {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .file-result-collapse-wrapper {
+      .ant-collapse-expand-icon {
+        padding-right: 0 !important;
+      }
+    }
+  }
+
   & .result-card-header {
     height: 60px;
     padding: 16px 20px;

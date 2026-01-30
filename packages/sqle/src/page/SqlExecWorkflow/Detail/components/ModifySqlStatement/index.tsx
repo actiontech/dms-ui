@@ -16,13 +16,9 @@ import { useBoolean } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { isSupportLanguage, ResponseCode } from '@actiontech/dms-kit';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
-import { usePrompt } from '@actiontech/shared/lib/hooks';
-import {
-  FormAreaBlockStyleWrapper,
-  FormAreaLineStyleWrapper
-} from '@actiontech/dms-kit/es/components/CustomForm/style';
+import { usePrompt, useMedia } from '@actiontech/shared/lib/hooks';
+import { FormAreaLineStyleWrapper } from '@actiontech/dms-kit/es/components/CustomForm/style';
 import { FormItemBigTitle } from '@actiontech/dms-kit';
 import useSharedStepDetail from '../../../Create/hooks/useSharedStepDetail';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
@@ -37,6 +33,11 @@ import Icon from '@ant-design/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import useCheckTaskAuditRuleExceptionStatus from '../../../Create/hooks/useCheckTaskAuditRuleExceptionStatus';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
+import classNames from 'classnames';
+import {
+  ModifySqlStatementPageStyleWrapper,
+  ModifySqlStatementFormAreaBlockStyleWrapper
+} from './style';
 
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
@@ -55,6 +56,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   backToDetailText
 }) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
   const { projectName } = useCurrentProject();
   const { updateInstanceList, instanceList } = useInstance();
   const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
@@ -270,7 +272,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       spinning={getAllSqlStatementLoading || isAuditing.value || submitLoading}
     >
       {messageContextHolder}
-      <PageLayoutHasFixedHeaderStyleWrapper>
+      <ModifySqlStatementPageStyleWrapper
+        className={classNames({
+          'mobile-modify-sql-statement-page': isMobile
+        })}
+      >
         <PageHeader
           fixed
           title={
@@ -305,8 +311,16 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           labelAlign="left"
         >
           <FormAreaLineStyleWrapper className="has-border">
-            <FormAreaBlockStyleWrapper>
-              <FormItemBigTitle>
+            <ModifySqlStatementFormAreaBlockStyleWrapper
+              className={classNames({
+                'mobile-modify-sql-statement-form-area-block': isMobile
+              })}
+            >
+              <FormItemBigTitle
+                className={classNames({
+                  'mobile-modify-sql-statement-form-item-big-title': isMobile
+                })}
+              >
                 <Icon component={BriefcaseFilled} className="title-icon" />
                 <span>{t('execWorkflow.detail.operator.modifySql')}</span>
               </FormItemBigTitle>
@@ -323,7 +337,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
                 isAtRejectStep
                 dbSourceInfoCollection={dbSourceInfoCollection}
               />
-            </FormAreaBlockStyleWrapper>
+            </ModifySqlStatementFormAreaBlockStyleWrapper>
           </FormAreaLineStyleWrapper>
         </ModifySqlStatementFormStyleWrapper>
 
@@ -336,7 +350,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
             }
           />
         </EmptyBox>
-      </PageLayoutHasFixedHeaderStyleWrapper>
+      </ModifySqlStatementPageStyleWrapper>
     </Spin>
   ) : null;
 };

@@ -18,7 +18,10 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act, cleanup } from '@testing-library/react';
 import MockDate from 'mockdate';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
@@ -26,6 +29,7 @@ import {
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../../../../data/ModalName';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -789,5 +793,19 @@ describe('test OverviewList', () => {
       }
     });
     expect(screen.getByText('再次执行').closest('button')).toBeDisabled();
+  });
+
+  it('render snap when is mobile', async () => {
+    mockUseMedia({ isMobile: true });
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(getAllBySelector('.overview-card')[0]);
+
+    expect(activeTabChangeEvent).toHaveBeenCalledTimes(1);
+    expect(activeTabChangeEvent).toHaveBeenCalledWith(
+      `${WorkflowTasksItemData[0].task_id}`
+    );
   });
 });

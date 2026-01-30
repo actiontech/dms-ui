@@ -94,10 +94,10 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
       </div>
     </div>
     <section
-      class="css-avbjmz"
+      class="css-11jxvkh"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto"
+        class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
       >
         <div
           class="ant-segmented basic-segmented-wrapper css-192b3m1"
@@ -264,7 +264,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
         </div>
       </div>
       <div
-        class="audit-result-filter-container-wrapper css-1c0dogt"
+        class="audit-result-filter-container-wrapper css-137brcn"
       >
         <div
           class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -676,10 +676,10 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
       </div>
     </div>
     <section
-      class="css-avbjmz"
+      class="css-11jxvkh"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto"
+        class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
       >
         <div
           class="ant-segmented basic-segmented-wrapper css-192b3m1"
@@ -860,7 +860,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
         </div>
       </div>
       <div
-        class="audit-result-filter-container-wrapper css-1c0dogt"
+        class="audit-result-filter-container-wrapper css-137brcn"
       >
         <div
           class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -1725,10 +1725,10 @@ exports[`test AuditResultStep should match snapshot 1`] = `
     </div>
   </div>
   <section
-    class="css-avbjmz"
+    class="css-11jxvkh"
   >
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
         class="ant-segmented basic-segmented-wrapper css-192b3m1"
@@ -1909,7 +1909,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"

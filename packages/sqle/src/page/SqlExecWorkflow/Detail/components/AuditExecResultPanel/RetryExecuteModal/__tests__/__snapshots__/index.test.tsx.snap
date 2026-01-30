@@ -70,7 +70,7 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-fixed-header"
+                      class="ant-table ant-table-fixed-header ant-table-has-fix-left"
                     >
                       <div
                         class="ant-table-container"
@@ -92,8 +92,9 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                             >
                               <tr>
                                 <th
-                                  class="ant-table-cell ant-table-selection-column"
+                                  class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
                                   scope="col"
+                                  style="position: sticky; left: 0px;"
                                 >
                                   <div
                                     class="ant-table-selection"
@@ -156,6 +157,9 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                               <col
                                 style="width: 110px;"
                               />
+                              <col
+                                style="width: 400px;"
+                              />
                             </colgroup>
                             <tbody
                               class="ant-table-tbody"
@@ -207,7 +211,8 @@ exports[`RetryExecuteModal handles row selection correctly 1`] = `
                                 data-row-key="1"
                               >
                                 <td
-                                  class="ant-table-cell ant-table-selection-column"
+                                  class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                  style="position: sticky; left: 0px;"
                                 >
                                   <label
                                     class="ant-checkbox-wrapper"

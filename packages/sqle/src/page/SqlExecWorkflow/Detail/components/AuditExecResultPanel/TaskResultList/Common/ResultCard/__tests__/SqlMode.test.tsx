@@ -17,6 +17,7 @@ import { AuditTaskSQLsMockDataWithExceptionRule } from '@actiontech/shared/lib/t
 import { useDispatch } from 'react-redux';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 import { ModalName } from '../../../../../../../../../data/ModalName';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 const projectID = '700300';
 const taskId = 'task_id_1234';
@@ -384,5 +385,16 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
         pageSize: mockData.pagination.page_size
       }
     });
+  });
+
+  it('should render retry execute action when is mobile', async () => {
+    mockUseMedia({ isMobile: true });
+    const { container } = customRender({
+      number: 1,
+      exec_status: getAuditTaskSQLsV2FilterExecStatusEnum.failed,
+      enableRetryExecute: true,
+      exec_sql: 'select 1;'
+    });
+    expect(container).toMatchSnapshot();
   });
 });

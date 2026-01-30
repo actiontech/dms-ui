@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
 
-export const RejectReasonStyleWrapper = styled('div')`
-  margin: 40px;
-  padding: 24px;
+export const RejectReasonStyleWrapper = styled('div')<{ isMobile?: boolean }>`
+  margin: ${({ isMobile }) => (isMobile ? '1rem' : '40px')};
+  padding: ${({ isMobile }) => (isMobile ? '1rem' : '24px')};
   display: flex;
   align-items: center;
   border-radius: 8px;

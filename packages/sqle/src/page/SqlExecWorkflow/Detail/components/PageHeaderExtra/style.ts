@@ -1,6 +1,8 @@
 import { styled } from '@mui/material';
 
-export const WorkflowPageHeaderExtraStyleWrapper = styled('div')`
+export const WorkflowPageHeaderExtraStyleWrapper = styled('div')<{
+  isMobile?: boolean;
+}>`
   display: flex;
 
   .workflow-detail-page-header-divider {
@@ -28,5 +30,17 @@ export const WorkflowPageHeaderExtraStyleWrapper = styled('div')`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
+  }
+
+  /* 移动端适配 */
+  &.mobile-workflow-detail-page-header-extra-wrapper {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.5rem;
+
+    .toggle-workflow-detail-wrapper {
+      flex: 1;
+      min-width: auto;
+    }
   }
 `;

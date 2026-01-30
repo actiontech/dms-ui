@@ -32,6 +32,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -540,5 +541,14 @@ describe('sqle/ExecWorkflow/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
     expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+  });
+
+  // todo  Warning: Encountered two children with the same key, `test_task_id`.
+  it('render snap detail when is mobile', async () => {
+    mockUseMedia({ isMobile: true });
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 });

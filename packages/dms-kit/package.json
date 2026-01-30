@@ -1,6 +1,6 @@
 {
   "name": "@actiontech/dms-kit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DMS Kit - React UI Components Library",
   "main": "lib/index.js",
   "module": "es/index.js",

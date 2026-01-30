@@ -10,6 +10,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 describe('sqle/SqlExecWorkflow/Detail/RecordInfo', () => {
   const closeFn = jest.fn();
@@ -64,6 +65,21 @@ describe('sqle/SqlExecWorkflow/Detail/RecordInfo', () => {
   });
 
   it('render snap when has associated stage workflows and rollback workflows', () => {
+    const { baseElement } = customRender({
+      visibility: true,
+      onClose: closeFn,
+      workflowInfo: WorkflowsOverviewListData,
+      tasksStatusCount: {
+        success: 1,
+        failed: 0,
+        executing: 0
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render mobile snap', () => {
+    mockUseMedia({ isMobile: true });
     const { baseElement } = customRender({
       visibility: true,
       onClose: closeFn,

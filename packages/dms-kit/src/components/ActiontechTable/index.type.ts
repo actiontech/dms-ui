@@ -419,4 +419,10 @@ export interface ActiontechTableProps<
    * 控制表格的分页器是否固定于页面底部，默认为true，固定在页面底部，注意：只有在表格有pagination时，设置isPaginationFixed才有意义
    */
   isPaginationFixed?: boolean;
+  /**
+   * 是否只渲染更多按钮，默认为false，如果action.buttons为空数组，会从moreButtons中移动两个按钮到buttons中
+   * 如果设置为true，则不会移动
+   * 为了适配移动端窄屏幕的场景，将全部操作都放入moreButtons中
+   */
+  enableOnlyRenderMoreButtons?: boolean;
 }

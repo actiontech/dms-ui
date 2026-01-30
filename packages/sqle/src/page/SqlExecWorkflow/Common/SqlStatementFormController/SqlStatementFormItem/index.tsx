@@ -53,7 +53,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
             <span>{t('execWorkflow.create.form.sqlInfo.uploadType')}</span>
           </>
         }
-        className="form-item-label-mb-16"
+        className="form-item-label-mb-16 sql-statement-form-item-label"
       />
 
       <FormItemNoLabel

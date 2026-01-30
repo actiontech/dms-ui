@@ -9,7 +9,8 @@ import {
 import {
   SQLRenderer,
   BasicTypographyEllipsis,
-  parse2ReactRouterPath
+  parse2ReactRouterPath,
+  useMedia
 } from '@actiontech/shared';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import {
@@ -34,6 +35,7 @@ const ReportDrawer = ({
   extra
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
   const { sqleTheme } = useThemeStyleData();
   const closeModal = () => {
     onClose();
@@ -69,6 +71,7 @@ const ReportDrawer = ({
         onClose={closeModal}
         noBodyPadding
         size="large"
+        width={isMobile ? '23rem' : undefined}
         maskClosable
         extra={extra}
       >

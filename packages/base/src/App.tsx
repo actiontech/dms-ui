@@ -27,7 +27,8 @@ import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
 import { ThemeData } from './theme';
 import {
   StyleProvider,
-  legacyLogicalPropertiesTransformer
+  legacyLogicalPropertiesTransformer,
+  px2remTransformer
 } from '@ant-design/cssinjs';
 import { useRequest } from 'ahooks';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
@@ -53,6 +54,7 @@ import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import useRecentlySelectedZone from '@actiontech/dms-kit/es/features/useRecentlySelectedZone';
 import { debounce } from 'lodash';
 import ErrorBoundary from './page/ErrorBoundary';
+import { useMedia } from '@actiontech/shared';
 import './index.less';
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -95,7 +97,13 @@ export const Wrapper: React.FC<{
   }, [initRenderApp, location.pathname, location.search, navigate, token]);
   return <>{!initRenderApp && children}</>;
 };
+
+const px2rem = px2remTransformer({
+  rootValue: 16 // 16px = 1rem;
+});
+
 function App() {
+  const { isMobile } = useMedia();
   const { isAfterLoggingIn } = useSelector((state: IReduxState) => ({
     isAfterLoggingIn: !state.user.isLoggingIn && !!state.user.token
   }));
@@ -239,7 +247,11 @@ function App() {
     <Wrapper>
       <StyleProvider
         hashPriority="high"
-        transformers={[legacyLogicalPropertiesTransformer]}
+        transformers={
+          isMobile
+            ? [legacyLogicalPropertiesTransformer, px2rem]
+            : [legacyLogicalPropertiesTransformer]
+        }
       >
         <ConfigProvider
           locale={antdLanguage}

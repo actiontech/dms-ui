@@ -29,6 +29,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-redux', () => {
   return {
@@ -467,5 +468,17 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       1,
       []
     );
+  });
+
+  it('render snap when isMobile is true', async () => {
+    mockUseMedia({ isMobile: true });
+    const { baseElement } = customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 });

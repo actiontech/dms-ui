@@ -4,9 +4,10 @@ import { styled } from '@mui/material/styles';
 export const BasicInfoStyleWrapper = styled('div')<{
   gap: number;
   status?: WorkflowRecordResV2StatusEnum;
+  isMobile?: boolean;
 }>`
   display: flex;
-  padding: 24px 40px;
+  padding: ${({ isMobile }) => (isMobile ? '1rem' : '24px 40px')};
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;

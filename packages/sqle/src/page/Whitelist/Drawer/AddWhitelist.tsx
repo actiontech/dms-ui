@@ -19,10 +19,12 @@ import WhitelistForm from './WhitelistForm';
 import { WhitelistFormFields } from './index.type';
 import { initWhitelistModalStatus } from '../../../store/whitelist';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { useMedia } from '@actiontech/shared';
 const AddWhitelist: React.FC<{
   onCreated?: () => void;
 }> = ({ onCreated }) => {
   const { t } = useTranslation();
+  const { isMobile } = useMedia();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [form] = Form.useForm<WhitelistFormFields>();
   const visible = useSelector<IReduxState, boolean>(
@@ -104,6 +106,7 @@ const AddWhitelist: React.FC<{
       {messageContextHolder}
       <BasicDrawer
         size="large"
+        width={isMobile ? '23rem' : undefined}
         title={t('whitelist.modal.add.title')}
         open={visible}
         onClose={closeModal}

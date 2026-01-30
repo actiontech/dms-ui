@@ -14,7 +14,8 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   className,
   status,
   gap = 12,
-  sqlVersion
+  sqlVersion,
+  isMobile
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -23,6 +24,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
       className={classNames(className)}
       gap={gap}
       status={status}
+      isMobile={isMobile}
     >
       <EmptyBox if={!!status}>
         <div className="workflow-base-info-status">

@@ -53,3 +53,53 @@ body * {
   width: max-content;
   max-width: 100vw;
 }
+
+/*
+ antd DatePicker和RangePicker的移动端适配样式
+ 在移动端中，DatePicker和RangePicker的弹窗会超出移动端屏幕宽度，导致部分选项被遮盖
+ 所以在移动端中采用上下排列方式，避免此问题
+ 可参考issue：https://github.com/ant-design/ant-design/issues/26758
+ issue目前一直在open状态，暂无官方的处理方案，后续如果官方修复此问题，可删除此样式
+*/
+.ant-picker-panel-container {
+  .ant-picker-presets {
+    min-height: 25rem !important;
+  }
+
+  @media (max-width: 768px) {
+    overflow: scroll !important;
+    height: 400px;
+
+    .ant-picker-panel-layout {
+      flex-direction: column !important;
+
+      .ant-picker-presets {
+        max-width: 100% !important;
+        min-height: 10rem !important;
+      }
+
+      .ant-picker-panels,
+      .ant-picker-datetime-panel {
+        flex-direction: column !important;
+      }
+    }
+  }
+}
+
+/*
+  设置ios 独立模式的安全区域内边距
+  可参考MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Values/env
+*/
+:root {
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+}
+
+body {
+  padding-top: var(--sat);
+  padding-right: var(--sar);
+  padding-bottom: var(--sab);
+  padding-left: var(--sal);
+}
