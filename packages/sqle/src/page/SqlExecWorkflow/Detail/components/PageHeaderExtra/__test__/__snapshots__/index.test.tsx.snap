@@ -1,10 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra mobile layout render mobile snap 1`] = `
+<body>
+  <div>
+    <div
+      class="mobile-workflow-detail-page-header-extra-wrapper css-1n9ywt0"
+    >
+      <button
+        class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-1vnelmv"
+        type="button"
+      >
+        <span>
+          更多操作
+        </span>
+      </button>
+      <div
+        class="toggle-workflow-detail-wrapper"
+        hidden=""
+      >
+        工单详情
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch executing button 1`] = `
 <body>
   <div>
     <div
-      class="css-12u4yvr"
+      class="css-1n9ywt0"
     >
       <div>
         <button
@@ -225,7 +250,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
 <body>
   <div>
     <div
-      class="css-12u4yvr"
+      class="css-1n9ywt0"
     >
       <div>
         <button
@@ -398,7 +423,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
 <body>
   <div>
     <div
-      class="css-12u4yvr"
+      class="css-1n9ywt0"
     >
       <div
         hidden=""
@@ -536,7 +561,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
 <body>
   <div>
     <div
-      class="css-12u4yvr"
+      class="css-1n9ywt0"
     >
       <div
         hidden=""
@@ -674,7 +699,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
 <body>
   <div>
     <div
-      class="css-12u4yvr"
+      class="css-1n9ywt0"
     >
       <div>
         <button

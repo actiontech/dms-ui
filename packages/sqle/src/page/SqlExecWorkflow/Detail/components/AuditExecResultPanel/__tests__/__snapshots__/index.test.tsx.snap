@@ -3,7 +3,7 @@
 exports[`test AuditExecResultPanel matches snapshot and selects task on initial render 1`] = `
 <div>
   <section
-    class="css-142ey94"
+    class="css-d5acm"
   >
     <div
       class="audit-result-title"
@@ -11,10 +11,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper mobile-audit-result-segmented css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -109,7 +109,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           </label>
         </div>
       </div>
-      <div>
+      <div
+        class="audit-result-segmented-row-actions"
+      >
         <div
           class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
@@ -281,7 +283,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
     </div>
     <div
-      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-1c0dogt"
+      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -400,7 +402,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
     </div>
     <div
-      class="task-result-pagination-list sql-mode-task-result-pagination-list css-wd7bz1"
+      class="task-result-pagination-list sql-mode-task-result-pagination-list css-l4tf20"
     >
       <div
         class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item"
@@ -603,7 +605,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
 exports[`test AuditExecResultPanel matches snapshot and selects task on initial render 2`] = `
 <div>
   <section
-    class="css-142ey94"
+    class="css-d5acm"
   >
     <div
       class="audit-result-title"
@@ -611,10 +613,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper mobile-audit-result-segmented css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -709,7 +711,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           </label>
         </div>
       </div>
-      <div>
+      <div
+        class="audit-result-segmented-row-actions"
+      >
         <div
           class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
@@ -881,7 +885,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
     </div>
     <div
-      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-1c0dogt"
+      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -1000,7 +1004,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
     </div>
     <div
-      class="task-result-pagination-list sql-mode-task-result-pagination-list css-wd7bz1"
+      class="task-result-pagination-list sql-mode-task-result-pagination-list css-l4tf20"
     >
       <div
         class="ant-list ant-list-vertical ant-list-something-after-last-item"
@@ -1018,7 +1022,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1zp131"
                 >
                   <div
                     class="result-card-header"
@@ -1081,7 +1085,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                       </div>
                     </div>
                     <div
-                      class="ant-space ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
                     >
                       <div
                         class="ant-space-item"
@@ -1203,7 +1207,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                             </div>
                           </div>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
                           >
                             <div
                               class="ant-space-item"
@@ -1601,7 +1605,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
 exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
 <div>
   <section
-    class="css-142ey94"
+    class="css-d5acm"
   >
     <div
       class="audit-result-title"
@@ -1609,10 +1613,10 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper mobile-audit-result-segmented css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -1708,6 +1712,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
         </div>
       </div>
       <div
+        class="audit-result-segmented-row-actions"
         hidden=""
       >
         <div
@@ -2425,7 +2430,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
 exports[`test AuditExecResultPanel sql retry execute permission should enable retry execute when task is failed and current time enable execute workflow 1`] = `
 <div>
   <section
-    class="css-142ey94"
+    class="css-d5acm"
   >
     <div
       class="audit-result-title"
@@ -2433,10 +2438,10 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper mobile-audit-result-segmented css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -2530,7 +2535,9 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
           </label>
         </div>
       </div>
-      <div>
+      <div
+        class="audit-result-segmented-row-actions"
+      >
         <div
           class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
@@ -2702,7 +2709,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
       </div>
     </div>
     <div
-      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-1c0dogt"
+      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -2797,7 +2804,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
       </div>
     </div>
     <div
-      class="task-result-pagination-list sql-mode-task-result-pagination-list css-wd7bz1"
+      class="task-result-pagination-list sql-mode-task-result-pagination-list css-l4tf20"
     >
       <div
         class="ant-list ant-list-vertical ant-list-something-after-last-item"
@@ -2815,7 +2822,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1zp131"
                 >
                   <div
                     class="result-card-header"
@@ -2878,7 +2885,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
                       </div>
                     </div>
                     <div
-                      class="ant-space ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
                     >
                       <div
                         class="ant-space-item"
@@ -3009,7 +3016,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
                             </div>
                           </div>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
                           >
                             <div
                               class="ant-space-item"
@@ -3407,7 +3414,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
 exports[`test AuditExecResultPanel updates layout to waterfall and retrieves task SQLs 1`] = `
 <div>
   <section
-    class="css-142ey94"
+    class="css-d5acm"
   >
     <div
       class="audit-result-title"
@@ -3415,10 +3422,10 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto"
+      class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1"
+        class="ant-segmented basic-segmented-wrapper mobile-audit-result-segmented css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -3513,7 +3520,9 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
           </label>
         </div>
       </div>
-      <div>
+      <div
+        class="audit-result-segmented-row-actions"
+      >
         <div
           class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
@@ -3685,7 +3694,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
       </div>
     </div>
     <div
-      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-1c0dogt"
+      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -3804,7 +3813,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
       </div>
     </div>
     <div
-      class="task-result-scroll-infinite-list sql-mode-task-result-infinite-list css-wd7bz1"
+      class="task-result-scroll-infinite-list sql-mode-task-result-infinite-list css-l4tf20"
     >
       <div
         class="infinite-scroll-component__outerdiv"
@@ -3829,7 +3838,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                     class="ant-list-item ant-list-item-no-flex"
                   >
                     <div
-                      class="css-1gxdwqg"
+                      class="css-1zp131"
                     >
                       <div
                         class="result-card-header"
@@ -3892,7 +3901,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                           </div>
                         </div>
                         <div
-                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
                         >
                           <div
                             class="ant-space-item"
@@ -4014,7 +4023,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                 </div>
                               </div>
                               <div
-                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
                               >
                                 <div
                                   class="ant-space-item"

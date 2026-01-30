@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -58,7 +58,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -180,7 +180,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -408,7 +408,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -462,7 +462,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -563,7 +563,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -868,7 +868,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -922,7 +922,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -1023,7 +1023,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -1251,7 +1251,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -1305,7 +1305,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -1406,7 +1406,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -1696,7 +1696,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -1750,7 +1750,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -1851,7 +1851,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -2141,7 +2141,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -2195,7 +2195,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -2296,7 +2296,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -2591,7 +2591,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -2645,7 +2645,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -2746,7 +2746,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -2965,7 +2965,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -3019,7 +3019,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -3120,7 +3120,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -3363,7 +3363,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -3402,7 +3402,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -3503,7 +3503,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -3760,7 +3760,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -3814,7 +3814,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -3915,7 +3915,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -4165,7 +4165,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -4219,7 +4219,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -4320,7 +4320,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -4625,7 +4625,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -4679,7 +4679,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -4801,7 +4801,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -5118,7 +5118,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -5172,7 +5172,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -5294,7 +5294,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -5610,7 +5610,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -5664,7 +5664,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -5765,7 +5765,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -5984,7 +5984,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
 <body>
   <div>
     <div
-      class="css-1gxdwqg"
+      class="css-1zp131"
     >
       <div
         class="result-card-header"
@@ -6038,7 +6038,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
           </div>
         </div>
         <div
-          class="ant-space ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
         >
           <div
             class="ant-space-item"
@@ -6160,7 +6160,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                 </div>
               </div>
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
               >
                 <div
                   class="ant-space-item"
@@ -6476,7 +6476,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
 exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute action when exec status is failed or initialized 1`] = `
 <div>
   <div
-    class="css-1gxdwqg"
+    class="css-1zp131"
   >
     <div
       class="result-card-header"
@@ -6532,7 +6532,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute actio
         </div>
       </div>
       <div
-        class="ant-space ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
       >
         <div
           class="ant-space-item"
@@ -6642,7 +6642,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute actio
               </div>
             </div>
             <div
-              class="ant-space ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
             >
               <div
                 class="ant-space-item"
@@ -6877,3 +6877,406 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute actio
 `;
 
 exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute action when exec status is failed or initialized 2`] = `<div />`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute action when is mobile 1`] = `
+<div>
+  <div
+    class="mobile-task-result-card css-1zp131"
+  >
+    <div
+      class="result-card-header"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <span
+            class="number"
+          >
+            #
+            1
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="result-card-status-wrap"
+          >
+            <span
+              class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-tg454x"
+            >
+              执行失败
+            </span>
+            <div
+              class="ant-divider ant-divider-vertical result-card-status-divider"
+              role="separator"
+            />
+            <span
+              class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 20 20"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                  fill="#41BF9A"
+                />
+              </svg>
+              <span>
+                审核通过
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        />
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+            type="button"
+          >
+            <span>
+              再次执行
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+            type="button"
+          >
+            <span>
+              复制执行语句
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-1vnelmv"
+            type="button"
+          >
+            <span>
+              分 析
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="result-card-content"
+    >
+      <div
+        class="result-card-content-options"
+      >
+        <div
+          class="segmented-tabs-wrapper"
+        >
+          <div
+            class="ant-row segmented-row-wrapper css-156vlto"
+          >
+            <div
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
+            >
+              <div
+                class="ant-segmented-group"
+              >
+                <label
+                  class="ant-segmented-item ant-segmented-item-selected"
+                >
+                  <input
+                    checked=""
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="执行语句"
+                  >
+                    执行语句
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="回滚语句"
+                  >
+                    回滚语句
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="执行结果"
+                  >
+                    执行结果
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 0px;"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
+                        >
+                          <svg
+                            color="#4583FF"
+                            height="18"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <span>
+                            <span
+                              class="sql-source-title"
+                            >
+                              所在文件
+                            </span>
+                            -
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
+                >
+                  <svg
+                    height="18"
+                    viewBox="0 0 1024 1024"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                      fill="#4583FF"
+                    />
+                  </svg>
+                  <span>
+                    <span
+                      class="sql-source-title"
+                    >
+                      所在行
+                    </span>
+                    -
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+          >
+            <div
+              class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+            >
+              <pre>
+                <code>
+                  <div
+                    class="code-line wrapped-line with-line-number"
+                  >
+                    <span
+                      class="code-line-number"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="hljs-keyword"
+                    >
+                      select
+                    </span>
+                     
+                    <span
+                      class="hljs-number"
+                    >
+                      1
+                    </span>
+                    ;
+                  </div>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="#C3C6CD"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title=""
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      <span
+                        class="audit-result-tree-title"
+                      >
+                        审核结果
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="result-card-footer"
+    >
+      <div
+        class="ant-spin-nested-loading"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="css-lpwde2"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                fill="#8A8F99"
+              />
+            </svg>
+            <input
+              class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
+              placeholder="添加说明"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

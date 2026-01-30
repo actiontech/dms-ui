@@ -916,6 +916,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                   autocomplete="off"
                                   id="schedule_time"
                                   placeholder="请选择日期"
+                                  readonly=""
                                   size="21"
                                   title="2024-12-29 06:06:06"
                                   value="2024-12-29 06:06:06"

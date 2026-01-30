@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -66,7 +66,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -128,7 +128,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -252,7 +252,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when bo
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-1c0dogt"
+      class="audit-result-filter-container-wrapper audit-result-filter-container-borderless css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -310,11 +310,97 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when bo
 </body>
 `;
 
+exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when isMobile is true 1`] = `
+<body>
+  <div>
+    <div
+      class="audit-result-filter-container-wrapper audit-result-filter-container-mobile-wrapper css-137brcn"
+    >
+      <div
+        class="custom-segmented-filter-wrapper audit-result-filter-option"
+      >
+        <div
+          class="custom-segmented-filter-item"
+        >
+          a
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          b
+        </div>
+      </div>
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 20px;"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-value audit-level-normal"
+            >
+              100
+              %
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              审核通过率
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 20px;"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-value audit-level-normal"
+            >
+              9
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              审核结果评分
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-schema-value"
+            >
+              schema name
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              Schema
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when no optional parameters 1`] = `
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"
@@ -376,7 +462,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when ot
 <body>
   <div>
     <div
-      class="audit-result-filter-container-wrapper css-1c0dogt"
+      class="audit-result-filter-container-wrapper css-137brcn"
     >
       <div
         class="custom-segmented-filter-wrapper audit-result-filter-option"

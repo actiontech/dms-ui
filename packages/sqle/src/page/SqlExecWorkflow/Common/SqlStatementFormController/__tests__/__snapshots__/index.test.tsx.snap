@@ -47,7 +47,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
       hidden=""
     >
       <div
-        class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+        class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -742,7 +742,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
     </div>
     <div>
       <div
-        class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+        class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -1294,7 +1294,7 @@ exports[`test SqlStatementFormController matches snapshot with same SQL mode ena
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"

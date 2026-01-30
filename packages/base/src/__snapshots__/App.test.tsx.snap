@@ -3,7 +3,7 @@
 exports[`App render App when "checkPageAction" is false 1`] = `
 <div>
   <section
-    class="css-m36rcd"
+    class="css-14ap8e0"
   >
     <div
       class="dms-layout-side css-1mju0nn"
@@ -1076,10 +1076,12 @@ exports[`App render App when "isFeatureSupportFetched" is equal false 1`] = `<di
 
 exports[`App render App when "isUserInfoFetched" is equal false 1`] = `<div />`;
 
+exports[`App render App when isMobile is true 1`] = `<div />`;
+
 exports[`App render App when token is existed 1`] = `
 <div>
   <section
-    class="css-m36rcd"
+    class="css-14ap8e0"
   >
     <div
       class="dms-layout-side css-1mju0nn"

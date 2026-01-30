@@ -66,7 +66,7 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
             onChange={isLeftTable ? onTableChange : undefined}
             scroll={{
               y: '700px',
-              x: isMobile ? '100%' : true // todo 待验证移动端适配情况
+              x: isMobile ? '100%' : true
             }}
             className={isLeftTable ? 'left-table' : 'right-table'}
           />

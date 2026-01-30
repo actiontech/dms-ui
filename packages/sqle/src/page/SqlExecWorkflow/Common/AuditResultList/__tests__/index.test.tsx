@@ -15,6 +15,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import { mockSqlExecWorkflowTasksData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-redux', () => {
   return {
@@ -171,5 +172,13 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     fireEvent.click(screen.getByText('切换数据源备份策略'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(onBatchSwitchBackupPolicySpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render snap when isMobile is true', () => {
+    mockUseMedia({ isMobile: true });
+    const { baseElement } = customRender({
+      tasks: mockSqlExecWorkflowTasksData
+    });
+    expect(baseElement).toMatchSnapshot();
   });
 });

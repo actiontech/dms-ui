@@ -6,7 +6,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -503,7 +503,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"

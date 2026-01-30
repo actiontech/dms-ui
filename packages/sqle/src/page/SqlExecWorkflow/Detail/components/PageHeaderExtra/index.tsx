@@ -101,7 +101,12 @@ const WorkflowDetailPageHeaderExtra: React.FC<
         }
       });
     }
-
+    // console.log(
+    //   manualExecuteWorkflowButtonMeta.hidden,
+    //   checkActionPermission(
+    //     PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC
+    //   )
+    // );
     // 标记为人工上线
     if (
       !manualExecuteWorkflowButtonMeta.hidden &&

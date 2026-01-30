@@ -25,7 +25,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1zp131"
                 >
                   <div
                     class="result-card-header"
@@ -88,7 +88,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-space ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
                     >
                       <div
                         class="ant-space-item"
@@ -219,7 +219,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                             </div>
                           </div>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
                           >
                             <div
                               class="ant-space-item"
@@ -538,7 +538,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1zp131"
                 >
                   <div
                     class="result-card-header"
@@ -601,7 +601,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-space ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center task-result-card-button-wrap"
                     >
                       <div
                         class="ant-space-item"
@@ -732,7 +732,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                             </div>
                           </div>
                           <div
-                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center task-result-card-source-file-wrap"
                           >
                             <div
                               class="ant-space-item"

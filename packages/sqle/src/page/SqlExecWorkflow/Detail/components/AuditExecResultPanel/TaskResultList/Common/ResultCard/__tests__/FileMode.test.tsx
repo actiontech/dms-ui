@@ -8,6 +8,7 @@ import { sqleSuperRender } from '../../../../../../../../../testUtils/superRende
 import { TaskFileListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -91,6 +92,19 @@ describe('test TaskResultList/Result/FileMode', () => {
       />
     );
 
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render retry execute action when is mobile', async () => {
+    mockUseMedia({ isMobile: true });
+    const { container } = sqleSuperRender(
+      <FileMode
+        taskId="123"
+        projectID="300200"
+        enableRetryExecute
+        {...(TaskFileListMockData[0] as unknown as IAuditFileStatistic)}
+      />
+    );
     expect(container).toMatchSnapshot();
   });
 });

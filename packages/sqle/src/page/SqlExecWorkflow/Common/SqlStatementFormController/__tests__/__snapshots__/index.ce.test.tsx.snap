@@ -6,7 +6,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 sql-statement-form-item-label css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"

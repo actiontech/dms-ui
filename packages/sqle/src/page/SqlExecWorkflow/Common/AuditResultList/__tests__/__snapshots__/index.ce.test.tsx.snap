@@ -4,10 +4,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
 <body>
   <div>
     <section
-      class="css-avbjmz"
+      class="css-11jxvkh"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto"
+        class="ant-row ant-row-space-between audit-result-segmented-row css-156vlto"
       >
         <div
           class="ant-segmented basic-segmented-wrapper css-192b3m1"
@@ -170,7 +170,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
         </div>
       </div>
       <div
-        class="audit-result-filter-container-wrapper css-1c0dogt"
+        class="audit-result-filter-container-wrapper css-137brcn"
       >
         <div
           class="custom-segmented-filter-wrapper audit-result-filter-option"

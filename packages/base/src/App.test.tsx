@@ -34,6 +34,7 @@ import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
 import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
+import { mockUseMedia } from '@actiontech/shared/lib/testUtil/mockHook/mockUseMedia';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -345,5 +346,13 @@ describe('App', () => {
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
+  });
+
+  it('render App when isMobile is true', async () => {
+    mockUseMedia({ isMobile: true });
+    const { container } = baseSuperRender(<App />, undefined, {
+      routerProps: { initialEntries: ['/'] }
+    });
+    expect(container).toMatchSnapshot();
   });
 });
