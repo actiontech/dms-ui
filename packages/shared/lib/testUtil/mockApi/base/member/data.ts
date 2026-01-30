@@ -204,6 +204,23 @@ export const memberList: IListMember[] = [
       }
     ],
     projects: ['default']
+  },
+  {
+    uid: '700504',
+    user: {
+      uid: '20250604112007137',
+      name: ''
+    },
+    is_project_admin: false,
+    is_group_member: false,
+    current_project_op_permissions: [],
+    platform_roles: [
+      {
+        uid: '700018',
+        name: '普通用户'
+      }
+    ],
+    projects: ['default']
   }
 ];
 

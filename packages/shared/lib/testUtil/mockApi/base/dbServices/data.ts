@@ -137,12 +137,11 @@ export const globalDataSourceMockData: IListGlobalDBServiceV2[] = [
   {
     uid: '123458',
     name: 'vm1-oracle',
-    db_type: 'Oracle',
+    db_type: '',
     host: '10.186.62.41',
     port: '',
     environment_tag: {
-      uid: '2',
-      name: 'environment-2'
+      uid: '2'
     },
     maintenance_times: [],
     desc: '',

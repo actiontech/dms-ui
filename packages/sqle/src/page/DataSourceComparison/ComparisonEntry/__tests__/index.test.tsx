@@ -140,7 +140,6 @@ describe('EnvironmentSelector', () => {
     );
     fireEvent.click(screen.getByText('生成变更SQL'));
 
-    expect(screen.getByText('变更SQL语句信息')).toBeInTheDocument();
     expect(genDatabaseDiffModifySQLsSPy).toHaveBeenCalledTimes(1);
     expect(genDatabaseDiffModifySQLsSPy).toHaveBeenCalledWith({
       base_instance_id: '1739531854064652288',
@@ -163,6 +162,12 @@ describe('EnvironmentSelector', () => {
       ],
       project_name: mockProjectInfo.projectName
     });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('变更SQL语句信息')).toBeVisible();
+    fireEvent.click(getBySelector('.closed-icon-custom'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('变更SQL语句信息')).not.toBeVisible();
   });
 
   it('should toggle the showDifferencesOnly state and clear checked nodes when the toggle is clicked', async () => {

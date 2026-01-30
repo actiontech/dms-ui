@@ -77,6 +77,59 @@ LIMIT 1000 OFFSET 500;
         mockDataSource.length
       );
     });
+
+    it('render detail when sql and ddl is not exists', () => {
+      const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
+        (v) => v.type === RewriteSuggestionTypeEnum.statement
+      )!;
+      const props = {
+        dataSource: [
+          {
+            ...mockDataSource[0],
+            ddl_dcl: undefined,
+            rewritten_sql: undefined
+          },
+          mockDataSource[1]
+        ],
+        originalSql,
+        taskID: 'task-123',
+        sqlNumber: 1,
+        instanceName: 'mysql',
+        schema: 'dms'
+      };
+
+      const { container } = sqleSuperRender(
+        <RewrittenSuggestionDetails {...props} />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it('render detail when sql and ddl is all exists', () => {
+      const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
+        (v) => v.type === RewriteSuggestionTypeEnum.statement
+      )!;
+      const props = {
+        dataSource: [
+          {
+            ...mockDataSource[0],
+            ddl_dcl:
+              'CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(255))',
+            rewritten_sql: 'SELECT * FROM users'
+          },
+          mockDataSource[1]
+        ],
+        originalSql,
+        taskID: 'task-123',
+        sqlNumber: 1,
+        instanceName: 'mysql',
+        schema: 'dms'
+      };
+
+      const { container } = sqleSuperRender(
+        <RewrittenSuggestionDetails {...props} />
+      );
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('RewrittenSuggestionItem', () => {

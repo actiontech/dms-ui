@@ -40,18 +40,6 @@ describe('sqle/RuleTemplate/List/CommonTable', () => {
     ).toBeInTheDocument();
   });
 
-  it('should render empty tips when request not success', async () => {
-    getRuleTemplateListSpy.mockClear();
-    getRuleTemplateListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
-  });
-
   it('should refresh table when emit "Refresh_Rule_Template_List" event', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));

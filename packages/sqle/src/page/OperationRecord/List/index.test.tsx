@@ -64,17 +64,6 @@ describe('sqle/OperationRecord/List', () => {
     });
   });
 
-  it('render table when request return error', async () => {
-    const operationRecordListSpy = operationRecord.getOperationRecordList();
-    operationRecordListSpy.mockImplementationOnce(() =>
-      createSpyErrorResponse({ message: 'error info' })
-    );
-    const { baseElement } = superRender(<OperationRecordList />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('全局操作记录')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it('render table list when action filter', async () => {
     const operationRecordListSpy = operationRecord.getOperationRecordList();
     const { baseElement } = superRender(<OperationRecordList />);

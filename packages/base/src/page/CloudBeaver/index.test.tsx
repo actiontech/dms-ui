@@ -138,4 +138,65 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
   });
+
+  it('should auto jump to odc when odc query is enable and "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
+    const enableOdcQueryUrlData = {
+      enable_odc_query: true,
+      odc_query_root_uri: '/odc_query'
+    };
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: enableOdcQueryUrlData
+      })
+    );
+
+    superRender(<CloudBeaver />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(window.location.href).toBe(enableOdcQueryUrlData.odc_query_root_uri);
+  });
+
+  it('should enable odc and cloud beaver when enable_odc_query and enable_sql_query are true', async () => {
+    global.open = jest.fn();
+    const enableOdcQueryUrlData = {
+      enable_odc_query: true,
+      odc_query_root_uri: '/odc_query'
+    };
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...enableOdcQueryUrlData,
+          ...enableSqlQueryUrlData
+        }
+      })
+    );
+
+    const { baseElement } = superRender(<CloudBeaver />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('打开SQL工作台'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('SQL工作台（旧）')).toBeInTheDocument();
+    expect(screen.getByText('SQL工作台（新）')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('SQL工作台（新）'));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(global.open).toHaveBeenCalledTimes(1);
+    expect(global.open).toHaveBeenCalledWith(
+      enableOdcQueryUrlData.odc_query_root_uri,
+      '_blank'
+    );
+  });
 });

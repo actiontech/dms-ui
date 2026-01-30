@@ -2,6 +2,7 @@ import AuditResultMessage from '..';
 import { AuditResultMessageProps } from '../index.type';
 
 import { sqleSuperRender } from '../../../testUtils/superRender';
+import { fireEvent, screen } from '@testing-library/react';
 
 describe('sqle/components/AuditResultMessage', () => {
   const customRender = (params: AuditResultMessageProps) => {
@@ -111,5 +112,19 @@ describe('sqle/components/AuditResultMessage', () => {
       }
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('switch annotation visible when click', () => {
+    customRender({
+      showAnnotation: true,
+      auditResult: {
+        annotation: 'annotation text',
+        level: 'error',
+        message: 'result message'
+      }
+    });
+    expect(screen.getByText('annotation text')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('result message'));
+    expect(screen.queryByText('annotation text')).not.toBeInTheDocument();
   });
 });

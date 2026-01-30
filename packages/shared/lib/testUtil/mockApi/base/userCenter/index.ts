@@ -171,7 +171,7 @@ class MockUserCenterApi implements MockSpyApy {
   public getUserOpPermission() {
     const spy = jest.spyOn(User, 'GetUserOpPermission');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ userOpPermissionMockData })
+      createSpySuccessResponse({ data: userOpPermissionMockData })
     );
     return spy;
   }

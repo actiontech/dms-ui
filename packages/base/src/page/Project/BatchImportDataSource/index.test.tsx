@@ -8,12 +8,14 @@ import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
+  createSpyErrorResponse,
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { AxiosResponse } from 'axios';
 import 'blob-polyfill';
+import { MIMETypeEnum } from '@actiontech/dms-kit';
 
 describe('base/Project/BatchImportDataSource', () => {
   let importDBServicesOfProjectsSpy: jest.SpyInstance;
@@ -176,6 +178,71 @@ describe('base/Project/BatchImportDataSource', () => {
       'ant-btn-loading'
     );
     expect(screen.queryByText('批量导入数据源成功')).not.toBeInTheDocument();
+  });
+
+  it('render check file error', async () => {
+    importDBServicesOfProjectsCheckSpy.mockClear();
+    importDBServicesOfProjectsCheckSpy.mockImplementation(() =>
+      createSpyErrorResponse({
+        data: {
+          message: 'error'
+        }
+      })
+    );
+    const { baseElement } = baseSuperRender(<ProjectImport />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#files', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+  });
+
+  it('render check file request success but code is not success code', async () => {
+    importDBServicesOfProjectsCheckSpy = jest.spyOn(
+      Project,
+      'ImportDBServicesOfProjectsCheckV2'
+    );
+    importDBServicesOfProjectsCheckSpy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [
+                JSON.stringify({
+                  code: 100,
+                  message: 'error',
+                  data: mockBatchImportDBCheckData
+                })
+              ],
+              {
+                type: MIMETypeEnum.Application_Json
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
+    const { baseElement } = baseSuperRender(<ProjectImport />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#files', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(importDBServicesOfProjectsCheckSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('error')).toBeInTheDocument();
   });
 
   it('render connectable error modal', async () => {

@@ -450,7 +450,7 @@ export const mockGlobalWorkflowListData = [
     project_priority: 'high',
     workflow_name: 'dms-ui_20241016043751',
     workflow_id: '1846470650022072320',
-    desc: '',
+    desc: 'test desc',
     create_user_name: '700200',
     create_time: '2024-10-16T16:38:03.438+08:00',
     current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
@@ -493,7 +493,6 @@ export const mockGlobalWorkflowListData = [
   {
     project_uid: '700300',
     project_name: 'default',
-    project_priority: 'high',
     workflow_name: 'mysql-1_20241016045354',
     workflow_id: '1846474683185106944',
     desc: '',
@@ -584,7 +583,8 @@ export const mockGlobalDataExportWorkflowListData: IWorkflowDetailResV1[] = [
     sql_version_name: ['v1'],
     status: WorkflowDetailResV1StatusEnum.rejected,
     workflow_id: '1739531854064652288',
-    workflow_name: 'test'
+    workflow_name: 'test',
+    project_priority: 'medium'
   },
   {
     create_time: '2023-12-25 15:04:11',
@@ -595,6 +595,10 @@ export const mockGlobalDataExportWorkflowListData: IWorkflowDetailResV1[] = [
       {
         instance_id: '1739531854064652288',
         instance_name: 'mysql-1'
+      },
+      {
+        instance_id: '1739531854064652289',
+        instance_name: 'mysql-2'
       }
     ],
     project_name: 'test_project',
@@ -602,6 +606,20 @@ export const mockGlobalDataExportWorkflowListData: IWorkflowDetailResV1[] = [
     sql_version_name: ['v1'],
     status: WorkflowDetailResV1StatusEnum.exporting,
     workflow_id: '1739531854064652289',
+    workflow_name: 'test2',
+    project_priority: 'medium'
+  },
+  {
+    create_time: '2023-12-25 15:04:11',
+    create_user_name: 'admin',
+    current_step_assignee_user_name_list: ['test_user'],
+    desc: '',
+    instance_info: [],
+    project_name: 'test_project',
+    project_uid: '700301',
+    sql_version_name: ['v1'],
+    status: WorkflowDetailResV1StatusEnum.exporting,
+    workflow_id: '1739531854064652211',
     workflow_name: 'test2'
   }
 ];

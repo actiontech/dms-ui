@@ -22,6 +22,12 @@ describe('useCheckTaskAuditRuleExceptionStatus', () => {
     });
 
     expect(result.current.hasExceptionAuditRule).toBe(true);
+
+    act(() => {
+      result.current.resetTaskAuditRuleExceptionStatus();
+    });
+
+    expect(result.current.hasExceptionAuditRule).toBe(false);
   });
 
   it('should not detect exception audit rules when all levels are valid', () => {

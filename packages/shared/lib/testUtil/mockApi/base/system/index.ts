@@ -223,7 +223,9 @@ class MockSystemApi implements MockSpyApy {
     const spy = jest.spyOn(configuration, 'getFeishuAuditConfigurationV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        is_message_sent_normally: true
+        data: {
+          is_message_sent_normally: true
+        }
       })
     );
     return spy;

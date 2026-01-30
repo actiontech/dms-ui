@@ -16,6 +16,7 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import BindUser from '.';
 import { mockUseSessionUser } from '../../testUtils/mockHooks/mockUseSessionUser';
 import { mockUseNavigateToWorkbench } from '../../testUtils/mockHooks/mockUseNavigateToWorkbench';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -340,6 +341,66 @@ describe('page/BindUser-ee', () => {
       expect(navigateSpy).toHaveBeenCalledWith(
         '/cloud-beaver?open_cloud_beaver=true'
       );
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+    });
+
+    it('when should navigate to workbench', async () => {
+      getSessionUserInfoAsyncSpy.mockImplementation(() =>
+        Promise.resolve(true)
+      );
+      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
+      const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
+        '/project/test'
+      )}`;
+      const requestFn = dms.bindUser();
+      requestFn.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            token: ''
+          }
+        })
+      );
+      const { baseElement } = customRender(`/user/bind?${search}`);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#username', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: {
+          value: 'oauth2_admin'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      await act(async () => {
+        fireEvent.click(getBySelector('.login-btn', baseElement));
+        await act(async () => jest.advanceTimersByTime(300));
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestFn).toHaveBeenCalled();
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(dispatchSpy).toHaveBeenCalledTimes(3);
+      expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+        type: 'user/updateToken',
+        payload: {
+          token: ''
+        }
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+        type: 'user/updateIsLoggingIn',
+        payload: true
+      });
+      expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+        type: 'user/updateIsLoggingIn',
+        payload: false
+      });
+      expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
+      expect(navigateToWorkbenchAsyncSpy).toHaveBeenCalledTimes(1);
+      expect(getAvailabilityZoneTipsAsyncSpy).toHaveBeenCalledTimes(1);
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
     });
   });

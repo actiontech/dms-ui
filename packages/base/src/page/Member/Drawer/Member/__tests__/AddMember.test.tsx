@@ -9,7 +9,10 @@ import { ModalName } from '../../../../../data/ModalName';
 import AddMember from '../AddMember';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  selectOptionByIndex
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -152,6 +155,24 @@ describe('base/Member/Drawer/AddMember', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     const firstDb = dbServicesList[0];
+    selectOptionByIndex(
+      '操作范围',
+      `${firstDb.name} (${firstDb.host}:${firstDb.port})`,
+      0
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    // 删除权限
+    fireEvent.click(getBySelector('.ant-btn-icon-only'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(screen.getByLabelText('项目角色'));
+    const role = screen.getAllByText(roleList[0].name ?? '')[0];
+    fireEvent.click(role);
+    await act(async () => jest.advanceTimersByTime(3000));
+
     selectOptionByIndex(
       '操作范围',
       `${firstDb.name} (${firstDb.host}:${firstDb.port})`,

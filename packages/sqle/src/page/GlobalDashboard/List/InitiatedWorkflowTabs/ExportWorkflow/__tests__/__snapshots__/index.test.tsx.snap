@@ -312,7 +312,7 @@ exports[`sqle/GlobalDashboard/InitiatedWorkflowTabs/ExportWorkflow render init s
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        中
                       </td>
                     </tr>
                     <tr
@@ -462,18 +462,120 @@ exports[`sqle/GlobalDashboard/InitiatedWorkflowTabs/ExportWorkflow render init s
                         class="ant-table-cell"
                       >
                         <div
-                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
-                            <a
-                              class="ant-typography"
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
-                              mysql-1
-                            </a>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <a
+                                  class="ant-typography"
+                                >
+                                  mysql-1
+                                </a>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <a
+                          class="ant-typography"
+                        >
+                          test_project
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        中
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1739531854064652211"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="css-3q8fl"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#6094FC"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              clip-rule="evenodd"
+                              d="M8 3.155V8l-4.207 2.404a1 1 0 0 0 .377.385L7.5 12.71a1 1 0 0 0 1 0l3.33-1.922a1 1 0 0 0 .5-.866V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+                              fill="#6094FC"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                          <span>
+                            正在导出
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="css-10kos8e"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 24 28"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                          <a
+                            href="/project/700301/data/export/1739531854064652211"
+                          >
+                            test2
+                          </a>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell workflow-list-table-desc-column"
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-12-25 15:04:11
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -502,7 +604,7 @@ exports[`sqle/GlobalDashboard/InitiatedWorkflowTabs/ExportWorkflow render init s
               class="ant-pagination-total-text"
             >
               <span>
-                共 2 条数据
+                共 3 条数据
               </span>
             </li>
             <li

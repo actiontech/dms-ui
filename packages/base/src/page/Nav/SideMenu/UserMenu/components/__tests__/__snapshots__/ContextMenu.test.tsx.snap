@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/Nav/SideMenu/UserMenu/ContextMenu should render context menu with items 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-popover-open"
+    >
+      Trigger
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-1lz0wpv"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 1
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <span>
+                    Icon
+                  </span>
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 2
+                  </div>
+                </div>
+                <div
+                  class="content-item content-item-disabled"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 3
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/UserMenu/ContextMenu should render header and footer when provided 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-popover-open"
+    >
+      Trigger
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-1lz0wpv"
+            >
+              <div
+                class="header"
+                title="Header Title"
+              >
+                Header Title
+              </div>
+              <div
+                class="content"
+              >
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 1
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <span>
+                    Icon
+                  </span>
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 2
+                  </div>
+                </div>
+                <div
+                  class="content-item content-item-disabled"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 3
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 4
+                  </div>
+                </div>
+              </div>
+              <div
+                class="footer"
+              >
+                <div>
+                  Footer Content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/UserMenu/ContextMenu should toggle popover open state when clicking trigger 1`] = `
+<body>
+  <div>
+    <button>
+      Trigger
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-1lz0wpv"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 1
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <span>
+                    Icon
+                  </span>
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 2
+                  </div>
+                </div>
+                <div
+                  class="content-item content-item-disabled"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 3
+                  </div>
+                </div>
+                <div
+                  class="content-item"
+                >
+                  <div
+                    class="content-item-text"
+                  >
+                    Menu Item 4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -1,19 +1,11 @@
 import { t } from '../../../locale';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  ActiontechTableActionMeta,
-  ActiontechTableColumn,
-  InlineActiontechTableMoreActionsButtonMeta
-} from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { Space } from 'antd';
 import { DatabaseTypeLogo } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import {
-  ProfileSquareFilled,
-  LogoutBoxFilled,
-  CheckboxMultipleBlankFilled
-} from '@actiontech/icons';
+import { ProfileSquareFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
@@ -69,61 +61,3 @@ export const RuleTemplateColumns =
       }
     ];
   };
-export const RuleTemplateActions = (
-  onNavigateUpdateRuleTemplate: (templateName: string) => void,
-  onDelete: (name: string) => void,
-  openCloneRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
-  openExportRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
-  canOperate: boolean
-): {
-  buttons: ActiontechTableActionMeta<IRuleTemplateResV1>[];
-  moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IRuleTemplateResV1>[];
-  title?: ActiontechTableColumn<IRuleTemplateResV1>[0]['title'];
-} => {
-  if (!canOperate) {
-    return {
-      buttons: []
-    };
-  }
-  return {
-    buttons: [
-      {
-        key: 'edit-rule-template',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: onNavigateUpdateRuleTemplate.bind(
-            null,
-            record?.rule_template_name ?? ''
-          )
-        })
-      },
-      {
-        key: 'remove-rule-template',
-        text: t('common.delete'),
-        buttonProps: () => ({
-          danger: true
-        }),
-        confirm: (record) => ({
-          title: t('ruleTemplate.deleteRuleTemplate.tips', {
-            name: record?.rule_template_name
-          }),
-          onConfirm: onDelete.bind(null, record?.rule_template_name ?? '')
-        })
-      }
-    ],
-    moreButtons: [
-      {
-        key: 'clone-rule-template',
-        text: t('ruleTemplate.cloneRuleTemplate.button'),
-        onClick: (record) => openCloneRuleTemplateModal(record ?? {}),
-        icon: <CheckboxMultipleBlankFilled />
-      },
-      {
-        key: 'export-rule-template',
-        text: t('ruleTemplate.exportRuleTemplate.button'),
-        onClick: (record) => openExportRuleTemplateModal(record ?? {}),
-        icon: <LogoutBoxFilled />
-      }
-    ]
-  };
-};

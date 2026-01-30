@@ -50,7 +50,63 @@ exports[`base/Member should render member list when it first entered the member 
         </div>
         <div
           class="extra"
-        />
+        >
+          <button
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                color="currentColor"
+                fill="none"
+                height="10"
+                viewBox="0 0 10 10"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5.02.5-.012 9M.5 5h9"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+            <span>
+              添加成员
+            </span>
+          </button>
+          <button
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+            hidden=""
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                color="currentColor"
+                fill="none"
+                height="10"
+                viewBox="0 0 10 10"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5.02.5-.012 9M.5 5h9"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+            <span>
+              添加成员组
+            </span>
+          </button>
+        </div>
       </div>
       <div
         class="segmented-tabs-wrapper"
@@ -109,7 +165,7 @@ exports[`base/Member should render member list when it first entered the member 
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-has-fix-right"
+                  class="ant-table"
                 >
                   <div
                     class="ant-table-container"
@@ -135,9 +191,6 @@ exports[`base/Member should render member list when it first entered the member 
                           />
                           <col
                             style="width: 20%;"
-                          />
-                          <col
-                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -209,13 +262,6 @@ exports[`base/Member should render member list when it first entered the member 
                             >
                               当前项目管理权限
                             </th>
-                            <th
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              scope="col"
-                              style="position: sticky; right: 0px;"
-                            >
-                              操作
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -253,14 +299,6 @@ exports[`base/Member should render member list when it first entered the member 
                               <span>
                                 ALL
                               </span>
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
                             </td>
                           </tr>
                           <tr
@@ -336,14 +374,6 @@ exports[`base/Member should render member list when it first entered the member 
                               <span>
                                 ALL
                               </span>
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
                             </td>
                           </tr>
                           <tr
@@ -458,13 +488,74 @@ exports[`base/Member should render member list when it first entered the member 
                             >
                               -
                             </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="700504"
+                          >
                             <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
+                              class="ant-table-cell whitespace-pre"
+                            />
+                            <td
+                              class="ant-table-cell"
                             >
                               <div
-                                class="css-new95e"
-                              />
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-d31ub5"
+                                    style="height: 28px;"
+                                  >
+                                    普通用户
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1h1nm3c"
+                                    style="height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                           </tr>
                         </tbody>
@@ -479,7 +570,7 @@ exports[`base/Member should render member list when it first entered the member 
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 3 条数据
+                      共 4 条数据
                     </span>
                   </li>
                   <li
@@ -682,7 +773,63 @@ exports[`base/Member should update content when change segmented value 1`] = `
         </div>
         <div
           class="extra"
-        />
+        >
+          <button
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+            hidden=""
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                color="currentColor"
+                fill="none"
+                height="10"
+                viewBox="0 0 10 10"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5.02.5-.012 9M.5 5h9"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+            <span>
+              添加成员
+            </span>
+          </button>
+          <button
+            class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                color="currentColor"
+                fill="none"
+                height="10"
+                viewBox="0 0 10 10"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5.02.5-.012 9M.5 5h9"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+            <span>
+              添加成员组
+            </span>
+          </button>
+        </div>
       </div>
       <div
         class="segmented-tabs-wrapper"
@@ -765,7 +912,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <div
-                  class="ant-table ant-table-empty ant-table-has-fix-right"
+                  class="ant-table ant-table-empty"
                 >
                   <div
                     class="ant-table-container"
@@ -791,9 +938,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           />
                           <col
                             style="width: 20%;"
-                          />
-                          <col
-                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -865,13 +1009,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             >
                               当前项目管理权限
                             </th>
-                            <th
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              scope="col"
-                              style="position: sticky; right: 0px;"
-                            >
-                              操作
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -882,7 +1019,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="6"
+                              colspan="5"
                             >
                               <div
                                 class="ant-empty ant-empty-normal"
@@ -953,7 +1090,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                  class="ant-table ant-table-scroll-horizontal"
                 >
                   <div
                     class="ant-table-container"
@@ -973,9 +1110,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           />
                           <col
                             style="width: 30%;"
-                          />
-                          <col
-                            style="width: 164px;"
                           />
                         </colgroup>
                         <thead
@@ -1041,13 +1175,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             >
                               当前项目管理权限
                             </th>
-                            <th
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              scope="col"
-                              style="position: sticky; right: 0px;"
-                            >
-                              操作
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -1058,15 +1185,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
-                            <td
-                              style="padding: 0px; border: 0px; height: 0px;"
-                            >
-                              <div
-                                style="height: 0px; overflow: hidden;"
-                              >
-                                 
-                              </div>
-                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -1132,14 +1250,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             >
                               ALL
                             </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
-                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1168,14 +1278,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               -
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
                             </td>
                           </tr>
                           <tr
@@ -1325,14 +1427,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                 </div>
                               </div>
                             </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
-                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1355,14 +1449,6 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               -
-                            </td>
-                            <td
-                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                              style="position: sticky; right: 0px;"
-                            >
-                              <div
-                                class="css-new95e"
-                              />
                             </td>
                           </tr>
                         </tbody>

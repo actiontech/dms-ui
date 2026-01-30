@@ -6,6 +6,7 @@ import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 describe('base/System/PushNotification/LarkSetting', () => {
   let requestGetFeishuConfiguration: jest.SpyInstance;
@@ -90,8 +91,45 @@ describe('base/System/PushNotification/LarkSetting', () => {
       fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(500));
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(baseElement).toMatchSnapshot();
+      expect(requestUpdateFeishuConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateFeishuConfiguration).toHaveBeenCalledWith({
+        update_feishu_configuration: {
+          app_id: 'app_id',
+          is_feishu_notification_enabled: false
+        }
+      });
+      expect(requestGetFeishuConfiguration).toHaveBeenCalledTimes(2);
+    });
+
+    it('close configuration when enable is false', async () => {
+      requestGetFeishuConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            is_feishu_notification_enabled: false
+          }
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3300));
+      fireEvent.click(getBySelector('#enabled', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(getBySelector('#enabled', baseElement));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+        )
+      ).toBeVisible();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(100));
+      expect(
+        screen.getByText(
+          '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+        )
+      ).not.toBeVisible();
     });
   });
 

@@ -1,7 +1,6 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MemberGroupList from '../MemberGroupList';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import { useDispatch } from 'react-redux';
@@ -14,10 +13,7 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { MemberListTypeEnum } from '../../index.enum';
 import { SystemRole } from '@actiontech/dms-kit';
 
@@ -60,20 +56,6 @@ describe('base/MemberGroupList', () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText('删 除')).toHaveLength(4);
     expect(screen.getAllByText('编 辑')).toHaveLength(4);
-  });
-
-  it('should render empty tips when request not success', async () => {
-    memberGroupListSpy.mockClear();
-    memberGroupListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = superRender(
-      <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should hide table actions', async () => {

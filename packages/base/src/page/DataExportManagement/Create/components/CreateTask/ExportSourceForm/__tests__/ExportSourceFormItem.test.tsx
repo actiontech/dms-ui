@@ -14,13 +14,20 @@ import { Form } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  selectOptionByIndex
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import MockDate from 'mockdate';
+import { compressToEncodedURIComponent } from 'lz-string';
+import { TRANSIT_FROM_CONSTANT } from '@actiontech/dms-kit';
+import { WrapperOptions } from '@actiontech/shared/lib/testUtil/superRender';
+import { dbServicesTips } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 
 describe('test ExportSourceFormItem', () => {
   const getBaseFormFieldValueSpy = jest.fn();
   const setBaseFormFieldValueSpy = jest.fn();
-  const customRender = () => {
+  const customRender = (options?: WrapperOptions) => {
     const { result } = renderHook(() => useForm());
 
     return baseSuperRender(
@@ -40,7 +47,9 @@ describe('test ExportSourceFormItem', () => {
             } as any
           }
         />
-      </Form>
+      </Form>,
+      undefined,
+      options
     );
   };
   let dbServiceTipsSpy: jest.SpyInstance;
@@ -48,6 +57,7 @@ describe('test ExportSourceFormItem', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    MockDate.set('2023-12-18 12:00:00');
     dbServiceTipsSpy = dbServices.ListDBServicesTips();
     schemaTipsSpy = instance.getInstanceSchemas();
     mockUseCurrentProject();
@@ -57,11 +67,10 @@ describe('test ExportSourceFormItem', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   it('should set default workflow name when workflow is undefined', async () => {
-    MockDate.set('2023-12-18 12:00:00');
-
     customRender();
 
     expect(dbServiceTipsSpy).toHaveBeenCalledTimes(1);
@@ -100,7 +109,53 @@ describe('test ExportSourceFormItem', () => {
       instance_name: 'test2'
     });
     expect(setBaseFormFieldValueSpy).toHaveBeenCalledTimes(1);
+  });
 
-    MockDate.reset();
+  it('should fill form fields when searchParams exist with valid compression data', async () => {
+    const instanceName = dbServicesTips[0].name ?? '';
+    const mockCompressionData = compressToEncodedURIComponent(
+      JSON.stringify({
+        databaseName: 'test_db',
+        instanceName: instanceName,
+        taskName: 'test_task_name',
+        sql: 'SELECT * FROM table'
+      })
+    );
+
+    customRender({
+      routerProps: {
+        initialEntries: [
+          `/project/1/data/export/create?from=${TRANSIT_FROM_CONSTANT.odc_client}&compression_data=${mockCompressionData}`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(setBaseFormFieldValueSpy).toHaveBeenCalledWith(
+      'workflow_subject',
+      'test_task_name'
+    );
+    expect(setBaseFormFieldValueSpy).toHaveBeenCalledWith(
+      'sql',
+      'SELECT * FROM table'
+    );
+    expect(screen.getByText('test_db')).toBeInTheDocument();
+  });
+
+  it('should handle invalid compression data gracefully', async () => {
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
+
+    customRender({
+      routerProps: {
+        initialEntries: [
+          `/project/1/data/export/create?from=${TRANSIT_FROM_CONSTANT.odc_client}&compression_data=invalid_data`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(consoleErrorSpy).toHaveBeenCalled();
+    consoleErrorSpy.mockRestore();
   });
 });

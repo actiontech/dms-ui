@@ -7,6 +7,8 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
+import { weChatConfig } from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
 
 describe('base/System/PushNotification/Wechat', () => {
   let requestGetWeChatConfiguration: jest.SpyInstance;
@@ -97,6 +99,40 @@ describe('base/System/PushNotification/Wechat', () => {
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('close configuration success when enable is true', async () => {
+      requestGetWeChatConfiguration.mockClear();
+      requestGetWeChatConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            ...weChatConfig,
+            enable_wechat_notify: true
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.click(getBySelector('#enable_wechat_notify', baseElement));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(requestUpdateWeChatConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateWeChatConfiguration).toHaveBeenLastCalledWith({
+        update_wechat_configuration: {
+          ...weChatConfig,
+          enable_wechat_notify: false
+        }
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetWeChatConfiguration).toHaveBeenCalledTimes(2);
     });
   });
 

@@ -1,5 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggestionDetails render detail when sql and ddl is all exists 1`] = `
+<div>
+  <div
+    class="ant-list ant-list-split"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <ul
+          class="ant-list-items"
+        >
+          <div
+            class="css-3a45f5"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle"
+              role="img"
+              style="font-size: 18px; color: rgb(240, 0, 0);"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                />
+                <path
+                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
+            >
+              不建议LIMIT的偏移OFFSET大于阈值
+            </div>
+          </div>
+          <div
+            class="css-3a45f5"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle"
+              role="img"
+              style="font-size: 18px; color: rgb(240, 0, 0);"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                />
+                <path
+                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
+            >
+              禁止对索引列进行数学运算和使用函数
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggestionDetails render detail when sql and ddl is not exists 1`] = `
+<div>
+  <div
+    class="ant-list ant-list-split"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <ul
+          class="ant-list-items"
+        >
+          <div
+            class="css-3a45f5"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle"
+              role="img"
+              style="font-size: 18px; color: rgb(240, 0, 0);"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                />
+                <path
+                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
+            >
+              不建议LIMIT的偏移OFFSET大于阈值
+            </div>
+          </div>
+          <div
+            class="css-3a45f5"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle"
+              role="img"
+              style="font-size: 18px; color: rgb(240, 0, 0);"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                />
+                <path
+                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
+            >
+              禁止对索引列进行数学运算和使用函数
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggestionItem should display combined SQL for subsequent items 1`] = `
 <div>
   <div

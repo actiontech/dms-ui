@@ -85,8 +85,9 @@ export const ResourceDetailWrapper = styled('div')`
   }
 
   & .ant-btn-default.btn-active {
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
-    background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+    background: ${({ theme }) =>
+      theme.sharedTheme.basic.colorPrimaryBgActive} !important;
   }
 
   & .ant-table-wrapper.actiontech-table-namespace.cursor-pointer {

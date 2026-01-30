@@ -76,6 +76,35 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
     expect(getSmsConfigurationSpy).toHaveBeenCalledTimes(2);
   });
 
+  it('render close sms configuration when enable is false', async () => {
+    getSmsConfigurationSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          enable: false,
+          url: '',
+          sms_type: '',
+          configuration: {
+            token: ''
+          }
+        }
+      })
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(getBySelector('#enabled'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('短信服务接口地址')).toBeInTheDocument();
+
+    fireEvent.click(getBySelector('#enabled'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 认'));
+  });
+
   it('render edit sms configuration', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -136,6 +165,9 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('正在测试短信服务...')).toBeInTheDocument();
+    // Invalid operation
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(testSmsConfigurationSpy).toHaveBeenCalledTimes(1);
     expect(testSmsConfigurationSpy).toHaveBeenCalledWith({
       test_sms_configuration: {
@@ -144,6 +176,22 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('当前短信服务验证通过')).toBeInTheDocument();
+  });
+
+  it('render close sms connection popover', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseEnter(getBySelector('.switch-field-wrapper'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.system-config-button')).toBeVisible();
+    fireEvent.click(getBySelector('.system-config-button'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(baseElement).toMatchSnapshot();
+    expect(getBySelector('#phone')).toBeInTheDocument();
+
+    fireEvent.click(screen.getAllByText('取 消')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('#phone')).not.toBeVisible();
   });
 
   it('render test sms connection when request return error message', async () => {

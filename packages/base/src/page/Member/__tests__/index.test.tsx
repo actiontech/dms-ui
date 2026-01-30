@@ -7,16 +7,19 @@ import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import {
-  mockCurrentUserReturn,
-  mockProjectInfo
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import { SystemRole } from '@actiontech/dms-kit';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { useDispatch } from 'react-redux';
+import { ModalName } from '../../../data/ModalName';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn()
+}));
 
 describe('base/Member', () => {
+  const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
     member.mockAllApi();
@@ -25,6 +28,16 @@ describe('base/Member', () => {
     dbServices.ListDBServicesTips();
     userCenter.getRoleList();
     userCenter.getOpPermissionsList();
+
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
   });
 
   afterEach(() => {
@@ -71,81 +84,39 @@ describe('base/Member', () => {
     const { baseElement } = superRender(<Member />);
     fireEvent.click(screen.getByText('成员组列表'));
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('.ant-segmented-item-selected')).toHaveTextContent(
+      '成员组列表'
+    );
     expect(baseElement).toMatchSnapshot();
     expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('添加成员组')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('添加成员组'));
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'member/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Add_Member_Group,
+        status: true
+      }
+    });
   });
 
   it('should render add button when current user is admin or project manager', async () => {
-    const mockUseCurrentUserSpy = mockUseCurrentUser();
-    const { baseElement } = superRender(<Member />);
+    superRender(<Member />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加成员')).toHaveLength(1);
     fireEvent.click(screen.getByText('添加成员'));
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
-    expect(screen.queryAllByText('添加成员')).toHaveLength(2);
-    cleanup();
-    mockUseCurrentUserSpy.mockClear();
-    mockUseCurrentUserSpy.mockImplementation(() => {
-      return {
-        ...mockCurrentUserReturn,
-        userRoles: {
-          ...mockCurrentUserReturn.userRoles,
-          [SystemRole.admin]: false,
-          [SystemRole.systemAdministrator]: false
-        },
-        bindProjects: [
-          {
-            project_id: mockProjectInfo.projectID,
-            project_name: mockProjectInfo.projectName,
-            is_manager: true,
-            archived: false
-          }
-        ]
-      };
-    });
-    superRender(<Member />);
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加成员')).toHaveLength(1);
-    cleanup();
-    mockUseCurrentUserSpy.mockClear();
-    mockUseCurrentUserSpy.mockImplementation(() => {
-      return {
-        ...mockCurrentUserReturn,
-        userRoles: {
-          ...mockCurrentUserReturn.userRoles,
-          [SystemRole.admin]: false,
-          [SystemRole.systemAdministrator]: false
-        }
-      };
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'member/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Add_Member,
+        status: true
+      }
     });
-    superRender(<Member />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('添加成员')).not.toBeInTheDocument();
-
-    cleanup();
-    mockUseCurrentUserSpy.mockClear();
-    mockUseCurrentUserSpy.mockImplementation(() => {
-      return {
-        ...mockCurrentUserReturn,
-        userRoles: {
-          ...mockCurrentUserReturn.userRoles,
-          [SystemRole.admin]: false,
-          [SystemRole.systemAdministrator]: false
-        },
-        bindProjects: [
-          {
-            project_id: mockProjectInfo.projectID,
-            project_name: mockProjectInfo.projectName,
-            is_manager: true,
-            archived: true
-          }
-        ]
-      };
-    });
-    superRender(<Member />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('添加成员')).not.toBeInTheDocument();
   });
 });

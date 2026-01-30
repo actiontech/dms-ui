@@ -40,10 +40,16 @@ const GlobalSetting = () => {
       hideCBOperationLogsExpiredHoursField();
     if (urlFieldVisible) hideUrlField();
   };
-
   const hasOneFieldVisible = useMemo(
-    () => operationRecordExpiredHoursField || urlFieldVisible,
-    [operationRecordExpiredHoursField, urlFieldVisible]
+    () =>
+      operationRecordExpiredHoursField ||
+      cbOperationLogsExpiredHoursField ||
+      urlFieldVisible,
+    [
+      operationRecordExpiredHoursField,
+      cbOperationLogsExpiredHoursField,
+      urlFieldVisible
+    ]
   );
 
   useHideConfigInputNode(hasOneFieldVisible, hideFieldsAction);

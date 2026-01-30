@@ -8,6 +8,7 @@ import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
+  createSpyErrorResponse,
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -180,6 +181,28 @@ describe('base/DataSource/BatchImportDataSource', () => {
       'ant-btn-loading'
     );
     expect(screen.queryByText('批量导入数据源成功')).not.toBeInTheDocument();
+  });
+
+  it('render check file error', async () => {
+    importDBServicesOfOneProjectCheckSpy.mockClear();
+    importDBServicesOfOneProjectCheckSpy.mockImplementation(() =>
+      createSpyErrorResponse({
+        data: {
+          message: 'error'
+        }
+      })
+    );
+    const { baseElement } = baseSuperRender(<ProjectImport />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#files', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
   });
 
   it('render connectable error modal', async () => {

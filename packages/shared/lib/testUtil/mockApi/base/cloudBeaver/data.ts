@@ -38,7 +38,8 @@ export const listCBOperationLogsMockData: ICBOperationLog[] = [
         message: '语法错误或者解析器不支持，请人工确认SQL正确性',
         rule_name: ''
       }
-    ]
+    ],
+    workflow_id: 'test_workflow_id'
   },
   {
     uid: '123345',

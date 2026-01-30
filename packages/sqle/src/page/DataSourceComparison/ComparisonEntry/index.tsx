@@ -421,10 +421,6 @@ const ComparisonEntry: React.FC = () => {
                   <ToggleButtonStyleWrapper
                     disabled={true}
                     active={showDifferencesOnly}
-                    onClick={() => {
-                      toggleShowDifferencesOnly();
-                      setCheckedObjectNodeKeys([]);
-                    }}
                   >
                     {t('dataSourceComparison.entry.showDifferencesOnly')}
                   </ToggleButtonStyleWrapper>

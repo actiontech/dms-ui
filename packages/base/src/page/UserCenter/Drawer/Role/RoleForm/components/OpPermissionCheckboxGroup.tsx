@@ -35,8 +35,6 @@ const OpPermissionCheckboxGroup: React.FC<IOpPermissionCheckboxGroupProps> = ({
     permissions: IListOpPermission[],
     isLast: boolean
   ) => {
-    if (permissions.length === 0) return null;
-
     const groupPermissionUids = permissions.map(
       (p) => p.op_permission?.uid || ''
     );

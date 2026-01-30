@@ -4,7 +4,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
-import ExportWorkflowList from '../List';
+import ExportWorkflowList from '../index';
 import { GlobalDashboardFilterType } from '../../../../index.type';
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import eventEmitter from '../../../../../../utils/EventEmitter';

@@ -19,7 +19,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import { LocalStorageWrapper, SupportLanguage } from '@actiontech/dms-kit';
 import { compressToBase64 } from 'lz-string';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/dms-kit';
 import { SystemRole } from '@actiontech/dms-kit';
@@ -345,5 +345,33 @@ describe('App', () => {
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
+  });
+
+  it('should filter routes with permission', async () => {
+    const mockCheckPagePermission = jest.fn().mockReturnValue(true);
+
+    mockUsePermission(
+      {
+        checkPagePermission: mockCheckPagePermission,
+        checkActionPermission: jest.fn().mockReturnValue(true),
+        userOperationPermissions: {}
+      },
+      { useSpyOnMockHooks: true }
+    );
+
+    const { container } = baseSuperRender(<App />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(mockCheckPagePermission).toHaveBeenCalled();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('render App when currentLanguage is US', async () => {
+    mockUseCurrentUser({ language: SupportLanguage.enUS });
+
+    const { container } = baseSuperRender(<App />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
   });
 });

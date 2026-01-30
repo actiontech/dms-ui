@@ -68,6 +68,9 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
 
       fireEvent.click(btnSubmit);
       await act(async () => jest.advanceTimersByTime(500));
+      // Invalid operation
+      fireEvent.click(btnSubmit);
+      await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
       expect(requestTestDingTalkConfig).toHaveBeenCalled();

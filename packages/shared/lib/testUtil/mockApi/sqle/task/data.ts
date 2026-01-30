@@ -431,7 +431,7 @@ export const SqlRewrittenMockDataNoDDL = {
     {
       rule_name: 'SQL查询条件需要走索引',
       audit_level: 'warn',
-      type: 'structure',
+      type: 'other',
       desc: '',
       rewritten_sql: '',
       ddl_dcl_desc: '',

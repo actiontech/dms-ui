@@ -2,12 +2,12 @@ import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter'
 import { roleList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import RoleList from '../List';
 import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+  getBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
+import RoleList from '../List';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
@@ -50,18 +50,6 @@ describe('base/UserCenter/RoleList', () => {
     expect(screen.getAllByText('编 辑')).toHaveLength(3);
     expect(screen.getAllByText('删 除')).toHaveLength(3);
     expect(screen.getAllByText('克 隆')).toHaveLength(3);
-  });
-
-  it('should render empty tips when request not success', async () => {
-    roleListSpy.mockClear();
-    roleListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = superRender(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should refresh role table when change current page', async () => {
@@ -184,6 +172,36 @@ describe('base/UserCenter/RoleList', () => {
         modalName: ModalName.DMS_Clone_Role,
         status: true
       }
+    });
+  });
+
+  it('render table list when action filter', async () => {
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
+    const searchInputEle = getBySelector(
+      '.basic-input-wrapper #actiontech-table-search-input'
+    );
+    await act(async () => {
+      fireEvent.input(searchInputEle, {
+        target: { value: 'test' }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => {
+      fireEvent.keyDown(searchInputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await act(() => jest.advanceTimersByTime(300));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(roleListSpy).toHaveBeenCalled();
+    expect(roleListSpy).toHaveBeenCalledWith({
+      fuzzy_keyword: 'test',
+      page_index: 1,
+      page_size: 20
     });
   });
 });

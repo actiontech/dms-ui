@@ -105,6 +105,7 @@ describe('test base/CloudBeaver/List', () => {
 
   it('filter data with search', async () => {
     const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(1);
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -130,7 +131,31 @@ describe('test base/CloudBeaver/List', () => {
     });
 
     fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
+    const filterItems = getAllBySelector(
+      '.actiontech-table-filter-container-namespace .ant-space-item'
+    );
+    expect(filterItems).toHaveLength(4);
+    const execResultFilter = getBySelector(
+      '.ant-select-selection-search-input',
+      filterItems[3]
+    );
+    fireEvent.mouseDown(execResultFilter);
+    await act(async () => jest.advanceTimersByTime(0));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(3);
+    expect(listCBOperationLogsSpy).toHaveBeenCalledWith({
+      fuzzy_keyword: searchText,
+      page_index: 1,
+      page_size: 20,
+      project_uid: mockProjectInfo.projectID,
+      filter_exec_result: 'success'
+    });
   });
 
   it('export file', async () => {

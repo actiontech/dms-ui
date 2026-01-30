@@ -130,6 +130,23 @@ describe('page/DataSource/AddDataSource', () => {
     fireEvent.click(firstOption);
     await act(async () => jest.advanceTimersByTime(0));
 
+    // maintenance_times
+    fireEvent.click(screen.getByText('添 加'));
+    const startTimeInput = getBySelector('input[placeholder="开始时间"]');
+    const endTimeInput = getBySelector('input[placeholder="结束时间"]');
+    expect(startTimeInput).toBeInTheDocument();
+    expect(endTimeInput).toBeInTheDocument();
+    fireEvent.mouseDown(startTimeInput);
+    fireEvent.click(screen.getAllByText('00')[0]);
+    fireEvent.click(screen.getAllByText('59')[0]);
+    fireEvent.click(screen.getByText('确 定'));
+    fireEvent.mouseDown(endTimeInput);
+    fireEvent.click(screen.getAllByText('01')[0]);
+    fireEvent.click(screen.getAllByText('59')[0]);
+    fireEvent.click(screen.getByText('确 定'));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     // ruleTemplateName
     fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -204,7 +221,12 @@ describe('page/DataSource/AddDataSource', () => {
         desc: undefined,
         host: '1.1.1.1',
         is_enable_masking: false,
-        maintenance_times: [],
+        maintenance_times: [
+          {
+            maintenance_start_time: { hour: 0, minute: 59 },
+            maintenance_stop_time: { hour: 1, minute: 59 }
+          }
+        ],
         name: 'name-database',
         password: 'root',
         port: '3306',

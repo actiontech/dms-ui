@@ -8,10 +8,7 @@ import {
   getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
-import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
@@ -61,18 +58,6 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getAllByText('dms')).toHaveLength(5);
     expect(screen.getAllByText('删 除')).toHaveLength(5);
     expect(screen.getAllByText('编 辑')).toHaveLength(5);
-  });
-
-  it('should render empty tips when request not success', async () => {
-    userListSpy.mockClear();
-    userListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = superRender(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should refresh user table when change current page', async () => {

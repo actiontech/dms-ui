@@ -65,7 +65,6 @@ const InitiatedWorkflowTabs: React.FC<GlobalDashboardWorkflowTabsProps> = ({
     updateFilterValue,
     exportWorkflowOrderStatistics
   ]);
-
   return (
     <SegmentedTabs
       activeKey={innerActiveKey}

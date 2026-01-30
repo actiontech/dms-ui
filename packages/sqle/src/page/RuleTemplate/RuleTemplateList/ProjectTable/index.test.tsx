@@ -71,18 +71,6 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   const customRender = (actionPermission?: boolean) =>
     superRender(<ProjectTable />);
 
-  it('should render empty tips when request not success', async () => {
-    getProjectRuleTemplateListSpy.mockClear();
-    getProjectRuleTemplateListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
-  });
-
   it('should refresh table when emit "Refresh_Rule_Template_List" event', async () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));

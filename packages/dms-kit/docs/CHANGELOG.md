@@ -49,3 +49,8 @@ nav:
 ## 1.0.7
 
 - 国际化变更
+
+
+## 1.0.8
+
+- 修改useTableRequestError错误处理

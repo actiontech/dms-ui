@@ -6,7 +6,10 @@ import {
   BatchGetDataExportTaskResponseData,
   ListDataExportTaskSQLsResponseData
 } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyErrorResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   getAllBySelector,
@@ -250,6 +253,27 @@ describe('test DataExport/Common/AuditResultList', () => {
     expect(onSuccessGetDataExportTaskSqlsSpy).toHaveBeenCalledWith(
       ListDataExportTaskSQLsResponseData
     );
+  });
+
+  it('should execute onErrorGetDataExportTaskSqls', async () => {
+    const onErrorGetDataExportTaskSqlsSpy = jest.fn();
+    getTaskSQLsSpy.mockImplementation(() =>
+      createSpyErrorResponse({
+        code: 100,
+        message: 'error'
+      })
+    );
+    baseSuperRender(
+      <AuditResultList
+        taskIDs={taskIDs}
+        projectID={projectID}
+        onErrorGetDataExportTaskSqls={onErrorGetDataExportTaskSqlsSpy}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(onErrorGetDataExportTaskSqlsSpy).toHaveBeenCalledTimes(1);
   });
 
   // it('should render sql rewriter button', async () => {

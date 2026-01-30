@@ -252,6 +252,23 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('cancel testing', async () => {
+      const { baseElement } = customRender({
+        enabled: true,
+        isConfigClosed: false,
+        extraButtonsVisible: true
+      });
+
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(getBySelector('#receiveEmail', baseElement)).toBeVisible();
+
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(getBySelector('#receiveEmail', baseElement)).not.toBeVisible();
+    });
+
     it('render snap when send api error', async () => {
       requestTestFeishuConfiguration.mockImplementation(() =>
         createSpySuccessResponse({})

@@ -247,4 +247,31 @@ describe('base/Member/Modal/ManageMemberGroup', () => {
 
     expect(listMemberGroupsSpy).not.toHaveBeenCalled();
   });
+
+  it('should not call update API when memberGroup uid is missing', async () => {
+    const errSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const memberGroupWithoutUid = {
+      ...memberGroupList[2],
+      uid: undefined,
+      users: [memberList[1].user!]
+    };
+
+    listMemberGroupsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [memberGroupWithoutUid]
+      })
+    );
+
+    superRender(<ManageMemberGroup />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('退出组'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(updateMemberGroupSpy).not.toHaveBeenCalled();
+    errSpy.mockRestore();
+  });
 });

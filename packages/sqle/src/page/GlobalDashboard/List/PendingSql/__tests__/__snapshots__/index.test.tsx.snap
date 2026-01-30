@@ -522,7 +522,12 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                         <td
                           class="ant-table-cell"
                         >
-                          -
+                          <a
+                            href="/sqle/project//sql-audit?sql_audit_record_id=345"
+                            target="_blank"
+                          >
+                            慢日志
+                          </a>
                         </td>
                         <td
                           class="ant-table-cell"
@@ -568,6 +573,72 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                           </div>
                         </td>
                       </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="212"
+                      >
+                        <td
+                          class="ant-table-cell ellipsis-column-width"
+                        />
+                        <td
+                          class="ant-table-cell ellipsis-column-width"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell audit-status"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          2024-01-02 11:28:34
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            class="ant-typography"
+                          >
+                            mysql-1
+                          </a>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <a
+                            class="ant-typography"
+                          />
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
+                              type="button"
+                            >
+                              <span>
+                                详 情
+                              </span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -580,7 +651,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                 class="ant-pagination-total-text"
               >
                 <span>
-                  共 2 条数据
+                  共 3 条数据
                 </span>
               </li>
               <li

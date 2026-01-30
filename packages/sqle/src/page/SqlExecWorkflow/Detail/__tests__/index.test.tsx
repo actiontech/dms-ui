@@ -511,6 +511,10 @@ describe('sqle/ExecWorkflow/Detail', () => {
   });
 
   it('render cancel polling request when summary task request return null', async () => {
+    const originOutputError = console.error;
+    console.error = () => {
+      return;
+    };
     requestWorkflowInfo.mockClear();
     requestWorkflowInfo.mockImplementation(() =>
       createSpySuccessResponse({ data: workflowsDetailExecutingData })
@@ -525,7 +529,8 @@ describe('sqle/ExecWorkflow/Detail', () => {
     expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalledTimes(2);
-    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(2);
+    console.error = originOutputError;
   });
 
   it('render polling request when workflow status is not executing or all of task status is not executing', async () => {

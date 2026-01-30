@@ -162,4 +162,25 @@ describe('base/System/GlobalSetting/PersonalSMS', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateCurrentUserSpy).not.toHaveBeenCalled();
   });
+
+  it('cancel open personal sms', async () => {
+    customRender({ enabled: false });
+    await act(async () => jest.advanceTimersByTime(3000));
+    const switchEle = getBySelector('#enabled');
+    expect(switchEle).not.toBeChecked();
+
+    fireEvent.click(switchEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(switchEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateCurrentUserSpy).not.toHaveBeenCalled();
+    expect(switchEle).not.toBeChecked();
+  });
 });

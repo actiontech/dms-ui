@@ -37,7 +37,7 @@ describe('page/GlobalDataSource/List', () => {
   let getProjectListSpy: jest.SpyInstance;
   let listGlobalDBServicesTipsSpy: jest.SpyInstance;
   let CheckGlobalDBServicesConnectionsSpy: jest.SpyInstance;
-
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   const customRender = () => {
     return superRender(<GlobalDataSourceList />);
   };
@@ -51,6 +51,7 @@ describe('page/GlobalDataSource/List', () => {
     getProjectListSpy = project.getProjectList();
     CheckGlobalDBServicesConnectionsSpy =
       project.CheckGlobalDBServicesConnections();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
 
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
@@ -132,6 +133,14 @@ describe('page/GlobalDataSource/List', () => {
     );
     expect(filterItems.length).toBe(4);
     expect(baseElement).toMatchSnapshot();
+    const projectFilterElement = getBySelector('input', filterItems[0]);
+    fireEvent.mouseDown(projectFilterElement);
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(0));
+    });
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should display an error message and return if dataSourceList is empty or undefined', async () => {
