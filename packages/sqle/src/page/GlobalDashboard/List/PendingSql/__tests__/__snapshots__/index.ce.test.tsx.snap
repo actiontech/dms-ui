@@ -1064,7 +1064,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                                   <span
                                     class="ant-typography"
                                   >
-                                    SQL合规重写
+                                    AI智能修正
                                   </span>
                                 </div>
                               </div>

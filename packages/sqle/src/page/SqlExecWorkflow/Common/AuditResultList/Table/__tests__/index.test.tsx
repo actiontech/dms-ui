@@ -320,7 +320,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(screen.getByText('SQL合规重写'));
+    fireEvent.click(screen.getByText('AI智能修正'));
 
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });

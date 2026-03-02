@@ -61,7 +61,7 @@ describe('sqle/SqlOptimization', () => {
 
     expect(
       screen.getByText(
-        'SQL调优功能可以帮助您自动优化SQL性能。该功能为付费增值模块，请联系商务获取详细信息。'
+        'AI性能调优功能可以帮助您自动优化SQL性能。该功能为付费增值模块，请联系商务获取详细信息。'
       )
     ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
