@@ -23,6 +23,7 @@ type Props = {
   sqlNumber: number;
   instanceName?: string;
   schema?: string;
+  showAnalyzeLink?: boolean;
 };
 const RewrittenSuggestionItem: React.FC<Props> = ({
   dataSource,
@@ -30,7 +31,8 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
   taskID,
   sqlNumber,
   instanceName,
-  schema
+  schema,
+  showAnalyzeLink = true
 }) => {
   const { t } = useTranslation();
   const { rule_name, desc, rewritten_sql, audit_level, ddl_dcl } = dataSource;
@@ -87,7 +89,7 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
                 source={desc}
                 rehypePlugins={[rehypeSanitize]}
               />
-              <EmptyBox if={!!ddl_dcl}>
+              <EmptyBox if={!!ddl_dcl && showAnalyzeLink}>
                 <TypedLink
                   className="sql-analyze-link"
                   target="_blank"

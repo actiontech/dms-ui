@@ -1,4 +1,4 @@
-import { RobotOutlined } from '@actiontech/icons';
+import { AiOutlined } from '@actiontech/icons';
 import { t } from '../../../../../locale';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -44,7 +44,7 @@ export const AuditResultForCreateWorkflowActions = (
       text: t('sqlRewrite.actionName'),
       buttonProps: (record) => {
         return {
-          icon: <RobotOutlined height={18} width={18} />,
+          icon: <AiOutlined height={18} width={18} />,
           onClick: (e) => {
             e.stopPropagation();
             handleClickSqlRewritten(record!);

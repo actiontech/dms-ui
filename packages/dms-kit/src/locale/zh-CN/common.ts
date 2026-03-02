@@ -245,7 +245,7 @@ export default {
     demoDesc:
       '支持纳管10多种主流数据源\n提供专业SQL审核能力\n集成CloudBeaver在线查询\n支持IDE工具审核\n支持多方式采集各数据源数据\n最大实例个数20',
     eeDesc:
-      '支持纳管10多种主流数据源\n提供专业SQL审核能力\n集成CloudBeaver在线查询\n支持IDE工具审核\n支持多方式采集各数据源数据\n无实例限制\n提供SQL问题下钻能力\n支持 SQL 变更的版本化管理\n支持备份恢复\n支持结构对比\nSQL合规重写\nSQL智能优化\n支持版本控制\n多维度智能统计\n个性化定制',
+      '支持纳管10多种主流数据源\n提供专业SQL审核能力\n集成CloudBeaver在线查询\n支持IDE工具审核\n支持多方式采集各数据源数据\n无实例限制\n提供SQL问题下钻能力\n支持 SQL 变更的版本化管理\n支持备份恢复\n支持结构对比\nAI智能修正\nSQL智能优化\n支持版本控制\n多维度智能统计\n个性化定制',
     ceSubTitle: '适用于MySQL基础审核场景',
     demoSubTitle: '适用于多种数据源类型体验场景',
     eeSubTitle: '适用于私有云用户定制场景',

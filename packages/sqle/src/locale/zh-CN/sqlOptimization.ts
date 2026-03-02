@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: 'SQL调优',
+  pageTitle: 'AI性能调优',
   ceTips:
     '当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的智能调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果',
   noConfiagurationTips:
-    'SQL调优功能可以帮助您自动优化SQL性能。该功能为付费增值模块，请联系商务获取详细信息。',
+    'AI性能调优功能可以帮助您自动优化SQL性能。该功能为付费增值模块，请联系商务获取详细信息。',
   table: {
     optimizationId: 'ID',
     numberOfRule: '触发调优规则总数',
@@ -28,11 +28,11 @@ export default {
   },
   create: {
     linkButton: '创建智能调优',
-    returnButton: '返回SQL调优列表',
-    successTips: '创建SQL调优成功',
+    returnButton: '返回AI性能调优列表',
+    successTips: '创建AI性能调优成功',
     base: {
-      title: '创建SQL调优',
-      name: 'SQL调优名称'
+      title: '创建AI性能调优',
+      name: 'AI性能调优名称'
     },
     sqlInfo: {
       title: '输入SQL',
@@ -133,7 +133,7 @@ export default {
     }
   },
   result: {
-    viewOptimizationResult: '返回SQL调优列表',
+    viewOptimizationResult: '返回AI性能调优列表',
     newOptimizedQuery: '新的优化查询为',
     originalQuery: '原始的SQL查询为',
     bestPerformanceSqlTips:
@@ -164,7 +164,7 @@ export default {
     originalExecutionPlan: '原执行计划',
     exitFullscreen: '退出全屏',
     fullscreenDisplay: '全屏显示',
-    drawerTitle: 'SQL调优结果详情',
+    drawerTitle: 'AI性能调优结果详情',
     optimizing: '优化进行中',
     bestIndexUsedForOriginalSql:
       '恭喜，您的原始SQL已使用了最佳索引，暂无进一步的优化！',

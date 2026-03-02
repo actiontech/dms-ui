@@ -5,7 +5,7 @@ export default {
 
   sqlExplain: 'SQL解析',
   tableTitle: '{{tableName}}表',
-  optimize: 'SQL优化',
+  optimize: 'AI性能调优',
   optimization: {
     confirmTitle: '是否启用高精度索引推荐？',
     confirmContent:
@@ -14,8 +14,8 @@ export default {
     useRegularAnalysis: '否，使用常规推荐'
   },
   optimizationResultDrawer: {
-    title: 'SQL调优结果详情',
-    trackProgressTips: '也可进入 快捷诊断-SQL调优 页面追踪进度',
+    title: 'AI性能调优结果详情',
+    trackProgressTips: '也可进入 快捷诊断-AI性能调优 页面追踪进度',
     resultTips: '优化进行中，预计5-10分钟后完成。感谢您的耐心等待。'
   }
 };

@@ -96,5 +96,87 @@ export default {
     feature: {
       desc: '如果管理员需要全面了解平台业务的审核进度以及平台的使用情况，可以使用报表统计功能。该功能提供多维度的业务分析视角，协助管理员了解工单的审核效率和提交的SQL质量，从而更高效、灵活地开展SQL审核工作。'
     }
+  },
+  tabs: {
+    report: '报表统计',
+    aiGovernance: 'AI 智能治理'
+  },
+  aiGovernance: {
+    title: 'AI 智能效能中心',
+    period: {
+      thisWeek: '本周',
+      thisMonth: '本月',
+      thisQuarter: '本季',
+      thisYear: '全年'
+    },
+    strategicInsight: {
+      moduleTitle: '战略价值',
+      moduleDesc: '决策层'
+    },
+    efficiencyCard: {
+      security_defense: '高危风险消除率',
+      resource_cost: '性能问题优化率',
+      code_standard: 'SQL规范遵从率',
+      rd_efficiency: '预计节省工时',
+      query_performance: '平均性能提升'
+    },
+    managementView: {
+      moduleTitle: '管理视图',
+      moduleDesc: '分析层',
+      viewType: {
+        comprehensive: '综合视图',
+        rewrite: 'AI 智能修正',
+        tuning: 'AI 性能引擎'
+      },
+      projectIOAnalysis: {
+        title: '项目组投入产出分析',
+        moduleTitle: '项目组投入产出分析',
+        moduleDesc: '各业务线 AI 引擎使用深度与健康度',
+        columns: {
+          projectName: '项目团队名称',
+          activeMembers: '活跃人数',
+          invokeCount: '调用频次',
+          performanceGain: '性能提升幅度',
+          timeSaved: '节省工时',
+          healthScore: '健康分'
+        }
+      },
+      topProblemDistribution: {
+        title: '已解决的问题分布',
+        moduleTitle: '已解决的问题分布',
+        moduleDesc: '代码规范与语法质量'
+      }
+    },
+    executionData: {
+      moduleTitle: '执行数据',
+      moduleDesc: '数据层',
+      searchPlaceholder: '搜索 SQL 特征或项目...',
+      columns: {
+        sourceProject: '来源项目',
+        sqlSnippet: 'SQL 片段',
+        functionModule: '功能模块',
+        valueDimension: '价值维度',
+        processStatus: '处理状态',
+        estimatedUpgrade: '预估提升',
+        time: '时间'
+      },
+      functionModule: {
+        smartCorrection: 'AI 智能修正',
+        performanceEngine: 'AI 性能引擎'
+      },
+      valueDimension: {
+        security: '安全性',
+        performance: '性能问题',
+        correction: '正确性',
+        maintenance: '可维护性',
+        codeStandard: '代码规范'
+      },
+      processStatus: {
+        pending: '待处理',
+        running: '处理中',
+        completed: '已处理',
+        failed: '处理失败'
+      }
+    }
   }
 };
