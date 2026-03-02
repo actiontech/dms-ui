@@ -15,36 +15,6 @@ exports[`test base/page/Home should match snapshot 1`] = `
         class="extra"
       />
     </div>
-    <div
-      class="css-1n5cj6v"
-    >
-      <div
-        class="ant-card ant-card-loading ant-card-bordered ai-banner-card"
-      >
-        <div
-          class="ant-card-body"
-        >
-          <div
-            class="ant-skeleton ant-skeleton-active"
-          >
-            <div
-              class="ant-skeleton-content"
-            >
-              <ul
-                class="ant-skeleton-paragraph"
-              >
-                <li />
-                <li />
-                <li />
-                <li
-                  style="width: 61%;"
-                />
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <section
       class="css-1wil037"
     >
@@ -173,25 +143,6 @@ exports[`test base/page/Home should match snapshot 1`] = `
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
-                >
-                  <button
-                    class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
-                    type="button"
-                  >
-                    <div
-                      class="ant-space ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        查看列表
-                      </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="ant-space-item"
                   style="padding-bottom: 8px;"
                 >
                   <button
@@ -204,7 +155,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        新建同步任务
+                        查看列表
                       </div>
                     </div>
                   </button>
@@ -487,7 +438,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        配置审批流程模板
+                        查看审批流程模板
                       </div>
                     </div>
                   </button>

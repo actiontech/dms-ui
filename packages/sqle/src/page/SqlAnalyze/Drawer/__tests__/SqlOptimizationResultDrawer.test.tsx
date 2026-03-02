@@ -90,7 +90,7 @@ describe('SqlOptimizationResultDrawer', () => {
   it('should render correctly when drawer is open with finished optimization', () => {
     const { baseElement } = superRender(<SqlOptimizationResultDrawer />);
 
-    expect(screen.getByText('SQL调优结果详情')).toBeInTheDocument();
+    expect(screen.getByText('AI性能调优结果详情')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

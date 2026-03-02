@@ -228,7 +228,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
 
-    fireEvent.click(screen.getByText('SQL优化'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(screen.getByText('是，启用高精度推荐')).toBeInTheDocument();
@@ -256,7 +256,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(screen.getByText('SQL优化'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.click(screen.getByText('否，使用常规推荐'));

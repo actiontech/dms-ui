@@ -38,7 +38,7 @@ exports[`SqlOptimizationResultDrawer should render correctly when drawer is open
                 <div
                   class="ant-drawer-title"
                 >
-                  SQL调优结果详情
+                  AI性能调优结果详情
                 </div>
               </div>
             </div>

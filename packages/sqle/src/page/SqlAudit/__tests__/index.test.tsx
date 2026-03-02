@@ -35,7 +35,7 @@ describe('sqle/SqlAudit', () => {
     const { baseElement } = superRender(<SqlAudit />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建SQL审核')).toBeInTheDocument();
-    expect(screen.getByText('创建SQL调优')).toBeInTheDocument();
+    expect(screen.getByText('创建AI性能调优')).toBeInTheDocument();
   });
 
   it('should switch segment tab and refresh list', async () => {
@@ -47,7 +47,7 @@ describe('sqle/SqlAudit', () => {
     fireEvent.click(refreshButton);
     expect(spy).toHaveBeenCalledWith(EmitterKey.Refresh_Sql_Audit_List);
 
-    fireEvent.click(screen.getByText('SQL调优'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     expect(allTabs[1]).toBeChecked();
     fireEvent.click(refreshButton);
     expect(spy).toHaveBeenCalledWith(EmitterKey.Refresh_Sql_Optimization_List);

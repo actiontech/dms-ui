@@ -1077,7 +1077,7 @@ exports[`page/SqlManagement render ce sql management page 1`] = `
                                     <span
                                       class="ant-typography"
                                     >
-                                      SQL合规重写
+                                      AI智能修正
                                     </span>
                                   </div>
                                 </div>
