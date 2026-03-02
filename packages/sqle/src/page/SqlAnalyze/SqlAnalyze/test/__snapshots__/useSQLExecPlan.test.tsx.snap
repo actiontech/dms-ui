@@ -472,9 +472,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -488,9 +495,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -625,9 +639,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -641,9 +662,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -860,9 +888,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -876,9 +911,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -1015,9 +1057,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -1031,9 +1080,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -1170,9 +1226,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -1186,9 +1249,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -1325,9 +1395,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
         <EmptyBox
           defaultNode={
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           }
           if={true}
@@ -1341,9 +1418,16 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
             title="是否启用高精度索引推荐？"
           >
             <BasicButton
+              icon={
+                <AiOutlined
+                  height={18}
+                  stroke="#fff"
+                  width={18}
+                />
+              }
               type="primary"
             >
-              SQL优化
+              AI性能调优
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
