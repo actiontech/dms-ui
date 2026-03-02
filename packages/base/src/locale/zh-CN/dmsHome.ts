@@ -1,6 +1,17 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: '用户引导',
+  aiBanner: {
+    insightTitle: 'AI治理效能洞察',
+    insightDescription: '基于大模型实时监控规范与性能, AI驱动全链路质量闭环。',
+    viewFullReport: '查看完整报告',
+    riskIntercept: '风险拦截',
+    performanceOptimization: '性能优化',
+    times: '次',
+    aiPerformanceEngine: 'AI 性能引擎',
+    aiSmartCorrection: 'AI 智能修正',
+    paidFeaturePrompt: '当前功能为付费增值模块，请联系商务获取详细信息'
+  },
   defaultScene: {
     header: {
       adminUser: '管理用户',

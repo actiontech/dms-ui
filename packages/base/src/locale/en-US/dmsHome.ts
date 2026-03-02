@@ -1,6 +1,19 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'User guide',
+  aiBanner: {
+    insightTitle: 'AI Governance Efficiency Insights',
+    insightDescription:
+      'Based on large model real-time monitoring specifications and performance, AI-driven closed-loop quality for the entire chain.',
+    viewFullReport: 'View full report',
+    riskIntercept: 'Risk Intercept',
+    performanceOptimization: 'Performance Optimization',
+    times: 'times',
+    aiPerformanceEngine: 'AI Performance Engine',
+    aiSmartCorrection: 'AI Smart Correction',
+    paidFeaturePrompt:
+      'This feature is a paid value-added module. Please contact sales for details'
+  },
   defaultScene: {
     header: {
       adminUser: 'Admin user',

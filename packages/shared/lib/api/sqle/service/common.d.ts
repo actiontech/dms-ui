@@ -1,5 +1,10 @@
 import {
   RuleCategoryStatisticCategoryEnum,
+  AIHubExecutionRecordFunctionModuleEnum,
+  AIHubExecutionRecordProcessStatusEnum,
+  AIHubExecutionRecordValueDimensionEnum,
+  AIModuleAnalysisAiModuleTypeEnum,
+  AIModuleBannerCardsAiModuleTypeEnum,
   AssociateWorkflowsStatusEnum,
   AsyncRewriteTaskStatusEnum,
   AuditPlanParamResV1TypeEnum,
@@ -27,6 +32,7 @@ import {
   DatabaseObjectObjectTypeEnum,
   DirectAuditFileReqV1SqlTypeEnum,
   DirectAuditReqV1SqlTypeEnum,
+  EfficiencyCardMetricTitleEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
   GetAuditPlanSQLExportReqV1ExportFormatEnum,
@@ -220,6 +226,60 @@ export interface ITotalAnalysis {
   state?: string;
 
   total_score?: number;
+}
+
+export interface IAIHubBannerData {
+  modules?: IAIModuleBannerCards[];
+}
+
+export interface IAIHubExecutionRecord {
+  estimated_upgrade?: number;
+
+  function_module?: AIHubExecutionRecordFunctionModuleEnum;
+
+  id?: number;
+
+  operation_time?: string;
+
+  process_status?: AIHubExecutionRecordProcessStatusEnum;
+
+  source_project?: string;
+
+  sql_snippet?: string;
+
+  value_dimension?: AIHubExecutionRecordValueDimensionEnum;
+}
+
+export interface IAIHubManagementViewData {
+  modules?: IAIModuleAnalysis[];
+}
+
+export interface IAIHubStrategicValueData {
+  ai_strategic_insight?: IAIStrategicInsight;
+
+  efficiency_cards?: IEfficiencyCard[];
+}
+
+export interface IAIModuleAnalysis {
+  ai_module_type?: AIModuleAnalysisAiModuleTypeEnum;
+
+  project_io_analysis?: IProjectIOAnalysis[];
+
+  top_problem_distribution?: ITopProblemDistribution[];
+}
+
+export interface IAIModuleBannerCards {
+  ai_module_type?: AIModuleBannerCardsAiModuleTypeEnum;
+
+  banner_cards?: IBannerCard[];
+
+  is_enabled?: boolean;
+}
+
+export interface IAIStrategicInsight {
+  description?: string;
+
+  title?: string;
 }
 
 export interface IAbnormalAuditPlanInstance {
@@ -640,6 +700,14 @@ export interface IBackupSqlListRes {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IBannerCard {
+  evidence_value?: string;
+
+  metric_evaluation?: string;
+
+  need_display?: boolean;
 }
 
 export interface IBatchAssociateWorkflowsWithVersionReqV1 {
@@ -1156,6 +1224,14 @@ export interface IEdgeResponse {
   weight?: number;
 }
 
+export interface IEfficiencyCard {
+  evidence_value?: string;
+
+  metric_evaluation?: string;
+
+  metric_title?: EfficiencyCardMetricTitleEnum;
+}
+
 export interface IEnumsValueResV1 {
   desc?: string;
 
@@ -1246,6 +1322,40 @@ export interface IGenModifylSQLReqV1 {
   comparison_instance_id?: string;
 
   database_schema_objects?: IDatabaseSchemaObject[];
+}
+
+export interface IGetAIHubBannerResp {
+  code?: number;
+
+  data?: IAIHubBannerData;
+
+  message?: string;
+}
+
+export interface IGetAIHubExecutionDataResp {
+  code?: number;
+
+  data?: IAIHubExecutionRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetAIHubManagementViewResp {
+  code?: number;
+
+  data?: IAIHubManagementViewData;
+
+  message?: string;
+}
+
+export interface IGetAIHubStrategicValueResp {
+  code?: number;
+
+  data?: IAIHubStrategicValueData;
+
+  message?: string;
 }
 
 export interface IGetAbnormalAuditPlanInstancesResp {
@@ -2816,6 +2926,20 @@ export interface IPostSqlManageCodingResp {
   message?: string;
 }
 
+export interface IProjectIOAnalysis {
+  active_members?: number;
+
+  health_score?: number;
+
+  invoke_count?: number;
+
+  performance_gain?: string;
+
+  project_name?: string;
+
+  time_saved?: number;
+}
+
 export interface IProjectRuleTemplateResV1 {
   db_type?: string;
 
@@ -3640,6 +3764,12 @@ export interface ITimeResV1 {
   hour?: number;
 
   minute?: number;
+}
+
+export interface ITopProblemDistribution {
+  percentage?: number;
+
+  problem_type?: string;
 }
 
 export interface ITransactionInfo {
