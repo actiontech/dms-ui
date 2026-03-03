@@ -32,7 +32,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </svg>
             </span>
             <span>
-              返回SQL调优列表
+              返回AI性能调优列表
             </span>
           </button>
         </a>
@@ -83,7 +83,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </svg>
             </span>
             <span>
-              创建SQL调优
+              创建AI性能调优
             </span>
           </h3>
           <div
@@ -114,7 +114,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       aria-required="true"
                       class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入SQL调优名称"
+                      placeholder="请输入AI性能调优名称"
                       type="text"
                       value="UI20240101120000000"
                     />

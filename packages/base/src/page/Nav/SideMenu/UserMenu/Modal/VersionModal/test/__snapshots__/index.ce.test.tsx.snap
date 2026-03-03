@@ -1224,7 +1224,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             <span
                                               class="ant-typography"
                                             >
-                                              SQL合规重写
+                                              AI智能修正
                                             </span>
                                           </div>
                                         </div>
@@ -2664,7 +2664,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             <span
                                               class="ant-typography"
                                             >
-                                              SQL合规重写
+                                              AI智能修正
                                             </span>
                                           </div>
                                         </div>

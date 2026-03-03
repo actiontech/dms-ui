@@ -11,7 +11,8 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   open,
   setOpen,
   bindProjects,
-  updateRecentlyProject
+  updateRecentlyProject,
+  onAfterSelectProject
 }) => {
   const [projectSelectorValue, setProjectSelectorValue] = useState('');
   const navigate = useTypedNavigate();
@@ -23,10 +24,14 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
         ?.project_name ?? ''
     );
 
-    navigate(ROUTE_PATHS.SQLE.RULE.index, {
-      queries: { projectID: projectSelectorValue },
-      replace: true
-    });
+    if (onAfterSelectProject) {
+      onAfterSelectProject(projectSelectorValue);
+    } else {
+      navigate(ROUTE_PATHS.SQLE.RULE.index, {
+        queries: { projectID: projectSelectorValue },
+        replace: true
+      });
+    }
   };
   const onModalCancel = () => {
     setOpen(false);

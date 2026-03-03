@@ -1,4 +1,4 @@
-import { RobotOutlined } from '@actiontech/icons';
+import { AiOutlined } from '@actiontech/icons';
 import ReportDrawer from '../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from './index.type';
@@ -43,7 +43,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
         <Space>
           {handleClickSqlRewritten && (
             <BasicButton
-              icon={<RobotOutlined height={18} width={18} />}
+              icon={<AiOutlined height={18} width={18} />}
               onClick={() => {
                 handleClickSqlRewritten(auditResultRecord!);
                 onClose();

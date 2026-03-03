@@ -15,6 +15,36 @@ exports[`test base/page/Home should match snapshot 1`] = `
         class="extra"
       />
     </div>
+    <div
+      class="css-1n5cj6v"
+    >
+      <div
+        class="ant-card ant-card-loading ant-card-bordered ai-banner-card"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-skeleton ant-skeleton-active"
+          >
+            <div
+              class="ant-skeleton-content"
+            >
+              <ul
+                class="ant-skeleton-paragraph"
+              >
+                <li />
+                <li />
+                <li />
+                <li
+                  style="width: 61%;"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section
       class="css-1wil037"
     >

@@ -1,9 +1,7 @@
-import { cleanup, fireEvent, screen, act } from '@testing-library/react';
+import { act, cleanup } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleData';
-
 import EEIndex from '.';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import MockDate from 'mockdate';
@@ -38,10 +36,5 @@ describe('sqle/ReportStatistics/EEIndex', () => {
     const { baseElement } = sqleSuperRender(<EEIndex />);
     expect(requestPlotsData).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('报表统计')).toBeInTheDocument();
-    expect(getBySelector('.refresh-icon')).toBeInTheDocument();
-    fireEvent.click(getBySelector('.refresh-icon'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestPlotsData).toHaveBeenCalled();
   });
 });

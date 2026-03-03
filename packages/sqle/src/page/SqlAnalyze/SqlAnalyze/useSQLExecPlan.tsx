@@ -12,7 +12,7 @@ import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { formatParamsBySeparator } from '@actiontech/dms-kit';
-import { HorizontalTripleLineOutlined } from '@actiontech/icons';
+import { HorizontalTripleLineOutlined, AiOutlined } from '@actiontech/icons';
 import ExecPlanCostChart from './ExecPlanCostChart';
 import { ExecPlanParams } from './index';
 import { useRef, useMemo } from 'react';
@@ -84,6 +84,11 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                     type="primary"
                     onClick={onViewOptimizationResult}
                     loading={createSqlOptimizationLoading}
+                    icon={
+                      !createSqlOptimizationLoading ? (
+                        <AiOutlined height={18} width={18} stroke="#fff" />
+                      ) : undefined
+                    }
                   >
                     {t('sqlAnalyze.optimize')}
                   </BasicButton>
@@ -100,6 +105,11 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
                   <BasicButton
                     type="primary"
                     loading={createSqlOptimizationLoading}
+                    icon={
+                      !createSqlOptimizationLoading ? (
+                        <AiOutlined height={18} width={18} stroke="#fff" />
+                      ) : undefined
+                    }
                   >
                     {t('sqlAnalyze.optimize')}
                   </BasicButton>

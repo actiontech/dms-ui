@@ -3,10 +3,40 @@ import { styled } from '@mui/material/styles';
 export const ReportStatisticsEEIndexStyleWrapper = styled('section')`
   background-color: ${({ theme }) =>
     theme.sharedTheme.uiToken.colorFillTertiary};
+
+  .fixed-tabs-row {
+    position: fixed;
+    top: 0;
+    left: 220px;
+    right: 0;
+    width: calc(100% - 220px);
+    z-index: 9;
+    background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+
+    .refresh-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+        font-size: 16px;
+      }
+    }
+  }
+
+  .segmented-tabs-wrapper {
+    .segmented-item-content {
+      padding-top: 56px;
+    }
+  }
 `;
 
 export const EEIndexStyleWrapper = styled('section')`
-  padding: 60px 40px 30px;
+  padding: 0 40px 30px;
   min-width: 880px;
 
   .marginTop20 {

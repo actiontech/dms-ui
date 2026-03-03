@@ -866,6 +866,9 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
     },
   },
   "reportStatistics": {
+    "AIGovernanceTab": {
+      "titleIconColor": "#7c3aed",
+    },
     "CardWrapper": {
       "titleBorderColor": "#E8E7E6",
       "titleColor": "#575C66",
@@ -891,6 +894,24 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
         "boxShadow": "0 3px 12px 0 #332c1f1a",
       },
     },
+    "ExecutionData": {
+      "functionModuleTag": {
+        "performanceEngine": {
+          "bgColor": "#dbeafe",
+          "color": "#1d4ed8",
+        },
+        "smartCorrection": {
+          "bgColor": "#f5f3ff",
+          "color": "#6d28d9",
+        },
+      },
+      "processStatus": {
+        "completed": "#1cb889",
+        "failed": "#f66074",
+        "pending": "#edb054",
+        "running": "#4583ff",
+      },
+    },
     "LicenseStatistics": {
       "ChartContTitle": {
         "lineColor": "#6094FC",
@@ -906,6 +927,66 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
           "xAxis": "#8a8f99",
           "yAxis": "#FFFFFF",
         },
+      },
+    },
+    "ManagementView": {
+      "cardSectionTitle": {
+        "descColor": "#94a3b8",
+        "titleColor": "#1e293b",
+      },
+      "segmented": {
+        "defaultBgColor": "#FFFFFF",
+        "defaultTextColor": "#292c33",
+        "selectedBgColor": "#7c3aed",
+        "selectedTextColor": "#FFFFFF",
+      },
+      "topProblemDistribution": {
+        "barBackgroundColor": "#f7f6f4",
+        "labelColor": "#575c66",
+      },
+    },
+    "ModuleTitle": {
+      "descBgColor": "#e2e8f0",
+      "descBorderRadius": "9999px",
+      "descColor": "#475569",
+      "descFontSize": 12,
+      "descPadding": "2px 8px",
+      "gap": 5,
+      "iconSize": 24,
+      "titleColor": "#1e293b",
+      "titleFontSize": 18,
+      "titleFontWeight": 700,
+    },
+    "ProjectIOAnalysis": {
+      "healthScore": {
+        "excellent": "#1cb889",
+        "good": "#4583ff",
+        "normal": "#8a8f99",
+        "poor": "#f66074",
+        "trailColor": "#ebeae7",
+      },
+    },
+    "StrategicInsight": {
+      "efficiencyCard": {
+        "businessValueColor": "#94a3b8",
+        "evaluationColor": "#1e293b",
+        "titleColor": "#64748b",
+        "valueColor": "#334155",
+      },
+      "efficiencyCardEvaluationLine": {
+        "codeStandard": "#4583ff",
+        "queryPerformance": "#edb054",
+        "rdEfficiency": "#a855f7",
+        "resourceCost": "#1cb889",
+        "securityDefense": "#f66074",
+      },
+      "valueMilestoneBanner": {
+        "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "bgIconColor": "rgba(255, 255, 255, 0.16)",
+        "descriptionColor": "rgba(255, 255, 255, 0.9)",
+        "headerIconColor": "#fde047",
+        "iconCircleBgColor": "rgba(255, 255, 255, 0.2)",
+        "textColor": "#FFFFFF",
       },
     },
     "TableTopList": {

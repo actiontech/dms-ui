@@ -243,9 +243,9 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
 
-    expect(screen.getByText('SQL优化')).toBeInTheDocument();
+    expect(screen.getByText('AI性能调优')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('SQL优化'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(screen.getByText('是，启用高精度推荐')).toBeInTheDocument();
@@ -277,7 +277,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
 
-    expect(screen.queryByText('SQL优化')).not.toBeInTheDocument();
+    expect(screen.queryByText('AI性能调优')).not.toBeInTheDocument();
   });
 
   it('should render view optimization result button when optimizationRecordId exists', async () => {
@@ -304,9 +304,9 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
 
-    expect(screen.getByText('SQL优化')).toBeInTheDocument();
+    expect(screen.getByText('AI性能调优')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('SQL优化'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     expect(onViewOptimizationResultSpy).toHaveBeenCalledTimes(1);
   });
 
@@ -333,7 +333,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
 
-    fireEvent.click(screen.getByText('SQL优化'));
+    fireEvent.click(screen.getByText('AI性能调优'));
     await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.click(screen.getByText('否，使用常规推荐'));

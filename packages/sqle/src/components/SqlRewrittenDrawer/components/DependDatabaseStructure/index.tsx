@@ -10,7 +10,7 @@ import { WarningFilled } from '@actiontech/icons';
 import { DependDatabaseStructureStyleWrapper } from './style';
 type Props = {
   dataSource: IRewriteSuggestion[];
-  toggleEnableStructureOptimizeAction: () => void;
+  toggleEnableStructureOptimizeAction?: () => void;
 };
 const DependDatabaseStructure: React.FC<Props> = ({
   dataSource,
@@ -26,9 +26,11 @@ const DependDatabaseStructure: React.FC<Props> = ({
         message={
           <Space>
             <span>{t('sqlRewrite.rewriteRulesAffectingStructure')}</span>
-            <BasicButton onClick={toggleEnableStructureOptimizeAction}>
-              {t('sqlRewrite.enableDatabaseStructureOptimization')}
-            </BasicButton>
+            {toggleEnableStructureOptimizeAction ? (
+              <BasicButton onClick={toggleEnableStructureOptimizeAction}>
+                {t('sqlRewrite.enableDatabaseStructureOptimization')}
+              </BasicButton>
+            ) : null}
           </Space>
         }
         icon={<WarningFilled />}
