@@ -270,6 +270,48 @@ import { WorkflowFilled } from '@actiontech/icons';
 export default () => <WorkflowFilled width={32} height={32} />
 ```
 
+## AiIntelligenceCenterOutlined
+```jsx
+import { AiIntelligenceCenterOutlined } from '@actiontech/icons';
+
+export default () => <AiIntelligenceCenterOutlined width={32} height={32} />
+```
+
+## AiOutlined
+```jsx
+import { AiOutlined } from '@actiontech/icons';
+
+export default () => <AiOutlined width={32} height={32} />
+```
+
+## AiPerformanceEngineOutlined
+```jsx
+import { AiPerformanceEngineOutlined } from '@actiontech/icons';
+
+export default () => <AiPerformanceEngineOutlined width={32} height={32} />
+```
+
+## AiSmartCorrectionOutlined
+```jsx
+import { AiSmartCorrectionOutlined } from '@actiontech/icons';
+
+export default () => <AiSmartCorrectionOutlined width={32} height={32} />
+```
+
+## AiStrategicInsightBgOutlined
+```jsx
+import { AiStrategicInsightBgOutlined } from '@actiontech/icons';
+
+export default () => <AiStrategicInsightBgOutlined width={32} height={32} />
+```
+
+## AiStrategicInsightOutlined
+```jsx
+import { AiStrategicInsightOutlined } from '@actiontech/icons';
+
+export default () => <AiStrategicInsightOutlined width={32} height={32} />
+```
+
 ## BookMarkOutlined
 ```jsx
 import { BookMarkOutlined } from '@actiontech/icons';
@@ -319,6 +361,13 @@ import { CodeOutlined } from '@actiontech/icons';
 export default () => <CodeOutlined width={32} height={32} />
 ```
 
+## CodeStandardOutlined
+```jsx
+import { CodeStandardOutlined } from '@actiontech/icons';
+
+export default () => <CodeStandardOutlined width={32} height={32} />
+```
+
 ## ComparisonOutlined
 ```jsx
 import { ComparisonOutlined } from '@actiontech/icons';
@@ -359,6 +408,13 @@ export default () => <DownTriangleOutlined width={32} height={32} />
 import { EmptyHexagonOutlined } from '@actiontech/icons';
 
 export default () => <EmptyHexagonOutlined width={32} height={32} />
+```
+
+## ExecutionDataOutlined
+```jsx
+import { ExecutionDataOutlined } from '@actiontech/icons';
+
+export default () => <ExecutionDataOutlined width={32} height={32} />
 ```
 
 ## EyeClosedOutlined
@@ -403,6 +459,13 @@ import { ListLayoutOutlined } from '@actiontech/icons';
 export default () => <ListLayoutOutlined width={32} height={32} />
 ```
 
+## ManagementViewOutlined
+```jsx
+import { ManagementViewOutlined } from '@actiontech/icons';
+
+export default () => <ManagementViewOutlined width={32} height={32} />
+```
+
 ## MinusCircleOutlined
 ```jsx
 import { MinusCircleOutlined } from '@actiontech/icons';
@@ -431,11 +494,39 @@ import { PipelineOutlined } from '@actiontech/icons';
 export default () => <PipelineOutlined width={32} height={32} />
 ```
 
+## ProjectTeamIoAnalysisOutlined
+```jsx
+import { ProjectTeamIoAnalysisOutlined } from '@actiontech/icons';
+
+export default () => <ProjectTeamIoAnalysisOutlined width={32} height={32} />
+```
+
+## QueryPerformanceOutlined
+```jsx
+import { QueryPerformanceOutlined } from '@actiontech/icons';
+
+export default () => <QueryPerformanceOutlined width={32} height={32} />
+```
+
 ## RefreshOutlined
 ```jsx
 import { RefreshOutlined } from '@actiontech/icons';
 
 export default () => <RefreshOutlined width={32} height={32} />
+```
+
+## ResearchEfficiencyOutlined
+```jsx
+import { ResearchEfficiencyOutlined } from '@actiontech/icons';
+
+export default () => <ResearchEfficiencyOutlined width={32} height={32} />
+```
+
+## ResourceCostOutlined
+```jsx
+import { ResourceCostOutlined } from '@actiontech/icons';
+
+export default () => <ResourceCostOutlined width={32} height={32} />
 ```
 
 ## RingOutlined
@@ -459,6 +550,13 @@ import { SearchOutlined } from '@actiontech/icons';
 export default () => <SearchOutlined width={32} height={32} />
 ```
 
+## SecurityDefenseOutlined
+```jsx
+import { SecurityDefenseOutlined } from '@actiontech/icons';
+
+export default () => <SecurityDefenseOutlined width={32} height={32} />
+```
+
 ## SettingOutlined
 ```jsx
 import { SettingOutlined } from '@actiontech/icons';
@@ -466,11 +564,25 @@ import { SettingOutlined } from '@actiontech/icons';
 export default () => <SettingOutlined width={32} height={32} />
 ```
 
+## StrategicValueOutlined
+```jsx
+import { StrategicValueOutlined } from '@actiontech/icons';
+
+export default () => <StrategicValueOutlined width={32} height={32} />
+```
+
 ## TodoListOutlined
 ```jsx
 import { TodoListOutlined } from '@actiontech/icons';
 
 export default () => <TodoListOutlined width={32} height={32} />
+```
+
+## TopProblemDistributionOutlined
+```jsx
+import { TopProblemDistributionOutlined } from '@actiontech/icons';
+
+export default () => <TopProblemDistributionOutlined width={32} height={32} />
 ```
 
 ## UploadCloudOutlined

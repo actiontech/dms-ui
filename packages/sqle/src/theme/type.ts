@@ -70,6 +70,9 @@ export type ExecWorkflowTheme = {
 export type ReportStatisticsTheme = {
   bgColor: string;
   loadingColor: string;
+  AIGovernanceTab: {
+    titleIconColor: string;
+  };
   cardShow: {
     titleColor: string;
     iconColor: string;
@@ -135,6 +138,84 @@ export type ReportStatisticsTheme = {
     ChartContTitle: {
       color: string;
       noteSubColor: string;
+    };
+  };
+  ModuleTitle: {
+    gap: number;
+    iconSize: number;
+    titleColor: string;
+    titleFontSize: number;
+    titleFontWeight: number;
+    descColor: string;
+    descFontSize: number;
+    descBorderRadius: string;
+    descPadding: string;
+    descBgColor: string;
+  };
+  ProjectIOAnalysis: {
+    healthScore: {
+      excellent: string;
+      good: string;
+      normal: string;
+      poor: string;
+      trailColor: string;
+    };
+  };
+  ManagementView: {
+    segmented: {
+      defaultBgColor: string;
+      defaultTextColor: string;
+      selectedBgColor: string;
+      selectedTextColor: string;
+    };
+    cardSectionTitle: {
+      titleColor: string;
+      descColor: string;
+    };
+    topProblemDistribution: {
+      barBackgroundColor: string;
+      labelColor: string;
+    };
+  };
+  ExecutionData: {
+    functionModuleTag: {
+      smartCorrection: {
+        color: string;
+        bgColor: string;
+      };
+      performanceEngine: {
+        color: string;
+        bgColor: string;
+      };
+    };
+    processStatus: {
+      pending: string;
+      running: string;
+      completed: string;
+      failed: string;
+    };
+  };
+  StrategicInsight: {
+    valueMilestoneBanner: {
+      background: string;
+      textColor: string;
+      bgIconColor: string;
+      iconCircleBgColor: string;
+      headerIconColor: string;
+      descriptionColor: string;
+    };
+    efficiencyCard: {
+      titleColor: string;
+      evaluationColor: string;
+      valueColor: string;
+      businessValueColor: string;
+    };
+    efficiencyCardEvaluationLine: {
+      securityDefense: string;
+      resourceCost: string;
+      codeStandard: string;
+      rdEfficiency: string;
+      queryPerformance: string;
     };
   };
 };

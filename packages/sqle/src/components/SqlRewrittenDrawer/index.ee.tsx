@@ -19,16 +19,25 @@ import {
 } from './style';
 import { CollapseItemKeyEnum } from './index.enum';
 import { hasSqlBeenRewritten } from './utils/sqlRewriteCache';
+import useSqlRewrittenDrawerMockData from './hooks/useSqlRewrittenDrawerMockData';
 const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   open,
   taskID,
   originSqlInfo,
+  mockData,
   ...props
 }) => {
   const { t } = useTranslation();
   const [modal, modalContextHolder] = Modal.useModal();
   const originSqlNumber = originSqlInfo?.number ?? 0;
   const originalSql = originSqlInfo?.sql ?? '';
+  const {
+    isMockMode,
+    mockRewriteResult,
+    mockRuleProgressList,
+    mockOverallStatus,
+    isMockProgressActive
+  } = useSqlRewrittenDrawerMockData(mockData);
 
   // 使用异步重写进度 hook
   const {
@@ -47,28 +56,58 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     errorMessage,
     updateEnableStructureOptimize
   } = useAsyncRewriteProgress({});
+  const currentRewriteResult = isMockMode ? mockRewriteResult : rewriteResult;
   const toggleEnableStructureOptimizeAction = useCallback(() => {
+    if (isMockMode) {
+      return;
+    }
     toggleStructureOptimize(taskID, originSqlNumber);
-  }, [toggleStructureOptimize, taskID, originSqlNumber]);
+  }, [isMockMode, toggleStructureOptimize, taskID, originSqlNumber]);
 
   // 更新重写结果按钮处理
   const handleUpdateRewriteResult = useCallback(() => {
+    if (isMockMode) {
+      return;
+    }
     updateEnableStructureOptimize(false);
     startRewrite(taskID, originSqlNumber, false);
-  }, [startRewrite, taskID, originSqlNumber, updateEnableStructureOptimize]);
+  }, [
+    isMockMode,
+    startRewrite,
+    taskID,
+    originSqlNumber,
+    updateEnableStructureOptimize
+  ]);
 
   // 重试重写处理
   const handleRetryRewrite = useCallback(() => {
+    if (isMockMode) {
+      return;
+    }
     startRewrite(taskID, originSqlNumber, enableStructureOptimize);
-  }, [startRewrite, taskID, originSqlNumber, enableStructureOptimize]);
+  }, [
+    isMockMode,
+    startRewrite,
+    taskID,
+    originSqlNumber,
+    enableStructureOptimize
+  ]);
 
   // 检查是否有重写任务正在进行
   const isRewriteTaskRunning = useMemo(() => {
+    if (isMockMode) {
+      return false;
+    }
     return isRewriting || showProgress || isDelayingComplete;
-  }, [isRewriting, showProgress, isDelayingComplete]);
+  }, [isMockMode, isRewriting, showProgress, isDelayingComplete]);
 
   // 处理抽屉关闭确认
   const handleDrawerClose = useCallback(() => {
+    if (isMockMode) {
+      props.onClose?.();
+      resetAllState();
+      return;
+    }
     if (isRewriteTaskRunning) {
       modal.confirm({
         title: t('sqlRewrite.closeDrawerConfirm'),
@@ -81,19 +120,22 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       props.onClose?.();
       resetAllState();
     }
-  }, [isRewriteTaskRunning, t, props, resetAllState, modal]);
+  }, [isMockMode, isRewriteTaskRunning, t, props, resetAllState, modal]);
 
   // 页面离开确认
-  usePrompt(t('sqlRewrite.leavePageConfirm'), isRewriteTaskRunning);
+  usePrompt(
+    t('sqlRewrite.leavePageConfirm'),
+    !isMockMode && isRewriteTaskRunning
+  );
   const collapseItems = useMemo<CollapseProps['items']>(() => {
     // 如果没有重写结果，返回空数组
-    if (!rewriteResult?.suggestions) {
+    if (!currentRewriteResult?.suggestions) {
       return [];
     }
     const statementTypeSuggestion: IRewriteSuggestion[] = [];
     const structureTypeSuggestion: IRewriteSuggestion[] = [];
     const otherTypeSuggestion: IRewriteSuggestion[] = [];
-    rewriteResult.suggestions.forEach((item) => {
+    currentRewriteResult.suggestions.forEach((item) => {
       if (item.type === RewriteSuggestionTypeEnum.statement) {
         statementTypeSuggestion.push(item);
       } else if (item.type === RewriteSuggestionTypeEnum.structure) {
@@ -122,15 +164,19 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         children: (
           <OverallRewrittenSuggestion
             originalSql={originalSql}
-            businessNonEquivalentDesc={rewriteResult.businessNonEquivalentDesc}
-            rewrittenSql={rewriteResult.rewrittenSql}
-            suggestions={rewriteResult.suggestions}
+            businessNonEquivalentDesc={
+              currentRewriteResult.businessNonEquivalentDesc
+            }
+            rewrittenSql={currentRewriteResult.rewrittenSql}
+            suggestions={currentRewriteResult.suggestions}
             optimizedCount={optimizedSuggestions.length}
             remainingCount={remainingSuggestions.length}
             businessCount={businessSuggestions.length}
-            businessDesc={rewriteResult.businessDesc ?? ''}
-            sqlLogicDesc={rewriteResult.logicDesc ?? ''}
-            rewrittenSqlLogicDesc={rewriteResult.rewrittenSqlLogicDesc ?? ''}
+            businessDesc={currentRewriteResult.businessDesc ?? ''}
+            sqlLogicDesc={currentRewriteResult.logicDesc ?? ''}
+            rewrittenSqlLogicDesc={
+              currentRewriteResult.rewrittenSqlLogicDesc ?? ''
+            }
             isRewriting={isRewriteTaskRunning}
           />
         )
@@ -155,6 +201,7 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
             dataSource={optimizedSuggestions}
             instanceName={originSqlInfo?.instanceName}
             schema={originSqlInfo?.schema}
+            showAnalyzeLink={!isMockMode}
           />
         )
       },
@@ -171,16 +218,18 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
               </span>
             </ModuleHeaderTitleStyleWrapper>
 
-            <BasicButton onClick={toggleEnableStructureOptimizeAction}>
-              {t('sqlRewrite.enableDatabaseStructureOptimization')}
-            </BasicButton>
+            <EmptyBox if={!isMockMode}>
+              <BasicButton onClick={toggleEnableStructureOptimizeAction}>
+                {t('sqlRewrite.enableDatabaseStructureOptimization')}
+              </BasicButton>
+            </EmptyBox>
           </div>
         ),
         children: (
           <DependDatabaseStructure
             dataSource={remainingSuggestions}
             toggleEnableStructureOptimizeAction={
-              toggleEnableStructureOptimizeAction
+              isMockMode ? undefined : toggleEnableStructureOptimizeAction
             }
           />
         )
@@ -211,12 +260,12 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       return true;
     });
   }, [
-    rewriteResult?.suggestions,
-    rewriteResult?.businessNonEquivalentDesc,
-    rewriteResult?.rewrittenSql,
-    rewriteResult?.businessDesc,
-    rewriteResult?.logicDesc,
-    rewriteResult?.rewrittenSqlLogicDesc,
+    currentRewriteResult?.suggestions,
+    currentRewriteResult?.businessNonEquivalentDesc,
+    currentRewriteResult?.rewrittenSql,
+    currentRewriteResult?.businessDesc,
+    currentRewriteResult?.logicDesc,
+    currentRewriteResult?.rewrittenSqlLogicDesc,
     enableStructureOptimize,
     t,
     originalSql,
@@ -224,10 +273,14 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     taskID,
     originSqlNumber,
     toggleEnableStructureOptimizeAction,
+    isMockMode,
     originSqlInfo?.instanceName,
     originSqlInfo?.schema
   ]);
   useEffect(() => {
+    if (isMockMode) {
+      return;
+    }
     if (open) {
       if (!hasSqlBeenRewritten(taskID, originSqlNumber)) {
         // 初次加载时启动异步重写
@@ -239,19 +292,22 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
     }
   }, [
     open,
+    isMockMode,
     originSqlNumber,
     startRewrite,
     taskID,
     resetAllState,
     loadCachedRewriteResult
   ]);
+  const shouldShowUpdateButton =
+    !isMockMode && hasSqlBeenRewritten(taskID, originSqlNumber);
   return (
     <BasicDrawer
       {...props}
       onClose={handleDrawerClose}
       open={open}
       extra={
-        <EmptyBox if={hasSqlBeenRewritten(taskID, originSqlNumber)}>
+        <EmptyBox if={shouldShowUpdateButton}>
           <BasicButton
             loading={isRewriting}
             type="primary"
@@ -268,19 +324,34 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       <section>
         {modalContextHolder}
 
-        <EmptyBox
-          if={!asyncStartLoading}
-          defaultNode={<CustomLoadingIndicator />}
-        >
-          <RewriteProgressDisplay
-            isProgressActive={showProgress || isDelayingComplete}
-            overallStatus={overallStatus}
-            ruleProgressList={ruleProgressList}
-            errorMessage={errorMessage}
-            onRetry={handleRetryRewrite}
-            isRetryLoading={isRewriting}
-          />
+        <EmptyBox if={!isMockMode}>
+          <EmptyBox
+            if={!asyncStartLoading}
+            defaultNode={<CustomLoadingIndicator />}
+          >
+            <RewriteProgressDisplay
+              isProgressActive={showProgress || isDelayingComplete}
+              overallStatus={overallStatus}
+              ruleProgressList={ruleProgressList}
+              errorMessage={errorMessage}
+              onRetry={handleRetryRewrite}
+              isRetryLoading={isRewriting}
+            />
 
+            <RewrittenSqlCollapseStyleWrapper
+              defaultActiveKey={[
+                CollapseItemKeyEnum.overall_rewritten_suggestion
+              ]}
+              items={collapseItems}
+            />
+          </EmptyBox>
+        </EmptyBox>
+        <EmptyBox if={isMockMode}>
+          <RewriteProgressDisplay
+            isProgressActive={isMockProgressActive}
+            overallStatus={mockOverallStatus}
+            ruleProgressList={mockRuleProgressList}
+          />
           <RewrittenSqlCollapseStyleWrapper
             defaultActiveKey={[
               CollapseItemKeyEnum.overall_rewritten_suggestion

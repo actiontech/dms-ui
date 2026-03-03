@@ -118,7 +118,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                     </svg>
                   </span>
                   <span>
-                    创建SQL调优
+                    创建AI性能调优
                   </span>
                 </button>
               </a>
@@ -162,9 +162,9 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 />
                 <div
                   class="ant-segmented-item-label"
-                  title="SQL调优"
+                  title="AI性能调优"
                 >
-                  SQL调优
+                  AI性能调优
                 </div>
               </label>
             </div>

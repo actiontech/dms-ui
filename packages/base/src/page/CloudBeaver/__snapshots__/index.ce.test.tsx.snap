@@ -1105,7 +1105,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                     <span
                                       class="ant-typography"
                                     >
-                                      SQL合规重写
+                                      AI智能修正
                                     </span>
                                   </div>
                                 </div>
@@ -2624,7 +2624,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                     <span
                                       class="ant-typography"
                                     >
-                                      SQL合规重写
+                                      AI智能修正
                                     </span>
                                   </div>
                                 </div>
@@ -4078,7 +4078,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                     <span
                                       class="ant-typography"
                                     >
-                                      SQL合规重写
+                                      AI智能修正
                                     </span>
                                   </div>
                                 </div>

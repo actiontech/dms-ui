@@ -11,6 +11,7 @@ type Props = {
   sqlNumber: number;
   instanceName?: string;
   schema?: string;
+  showAnalyzeLink?: boolean;
 };
 
 const RewrittenSuggestionDetails: React.FC<Props> = ({
@@ -19,7 +20,8 @@ const RewrittenSuggestionDetails: React.FC<Props> = ({
   taskID,
   sqlNumber,
   instanceName,
-  schema
+  schema,
+  showAnalyzeLink = true
 }) => {
   const { t } = useTranslation();
   const generateOverallRewrittenSql = (sql?: string, ddl?: string): string => {
@@ -52,6 +54,7 @@ const RewrittenSuggestionDetails: React.FC<Props> = ({
             }
             instanceName={instanceName}
             schema={schema}
+            showAnalyzeLink={showAnalyzeLink}
           />
         );
       }}

@@ -80,7 +80,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                     class="title"
                     hidden=""
                   >
-                    SQL合规重写
+                    AI智能修正
                   </div>
                   <div
                     class="left"
@@ -88,7 +88,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                     <div
                       class="ant-typography paragraph"
                     >
-                      SQL合规重写可以基于触发的规则自动重写SQL，节省开发时间，提高工作效率。
+                      AI智能修正可以基于触发的规则自动重写SQL，节省开发时间，提高工作效率。
                     </div>
                     <div
                       class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -1129,7 +1129,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                                           <span
                                             class="ant-typography"
                                           >
-                                            SQL合规重写
+                                            AI智能修正
                                           </span>
                                         </div>
                                       </div>
@@ -1353,7 +1353,7 @@ exports[`SqlRewrittenDrawerCE should match snapshot 1`] = `
                           <p
                             class="cont-tip"
                           >
-                            SQL合规重写为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                            AI智能修正为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                           </p>
                           <div
                             class="ant-space ant-space-horizontal ant-space-align-center button-group-wrapper"

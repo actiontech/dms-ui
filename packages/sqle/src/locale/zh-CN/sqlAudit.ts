@@ -2,8 +2,8 @@
 export default {
   pageTitle: '快捷诊断',
   sqlAudit: 'SQL审核',
-  sqlOptimization: 'SQL调优',
-  createOptimization: '创建SQL调优',
+  sqlOptimization: 'AI性能调优',
+  createOptimization: '创建AI性能调优',
   list: {
     action: {
       create: '创建SQL审核',
