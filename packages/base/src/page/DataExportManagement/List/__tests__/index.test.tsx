@@ -196,6 +196,29 @@ describe('test base/DataExport/List', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
+    const searchText = 'search text';
+    const inputEle = getBySelector('#actiontech-table-search-input');
+    fireEvent.change(inputEle, {
+      target: { value: searchText }
+    });
+
+    await act(async () => {
+      fireEvent.keyDown(inputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(exportWorkflowListSpy).toHaveBeenCalledTimes(3);
+    expect(exportWorkflowListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      fuzzy_keyword: searchText,
+      project_uid: mockProjectInfo.projectID,
+      filter_by_status:
+        ListDataExportWorkflowsFilterByStatusEnum.wait_for_export
+    });
     fireEvent.click(screen.getByText('筛选'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(container).toMatchSnapshot();

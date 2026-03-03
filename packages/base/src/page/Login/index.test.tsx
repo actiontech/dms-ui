@@ -546,6 +546,59 @@ describe('page/Login-ee', () => {
     expect(navigateToWorkbenchAsyncSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('should show message', async () => {
+    const requestLogin = dms.addSession();
+    requestLogin.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          token: 'Dhsiwkow133jn',
+          name: 'test',
+          userUid: '300123',
+          message: 'error'
+        }
+      })
+    );
+    getSessionUserInfoAsyncSpy.mockImplementation(() => Promise.resolve(true));
+
+    requestGetOauth2Tip.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          enable_oauth2: false,
+          login_tip: 'Login no Oauth2'
+        }
+      })
+    );
+
+    requestGetLoginBasicConfig.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
+          disable_user_pwd_login: false
+        }
+      })
+    );
+
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    fireEvent.change(getBySelector('#username', baseElement), {
+      target: { value: 'admin' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: { value: 'admin' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('登 录'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestLogin).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('error')).toBeInTheDocument();
+  });
+
   it('should enable login button when user is admin regardless of disable_user_pwd_login setting', async () => {
     requestGetOauth2Tip.mockImplementation(() =>
       createSpySuccessResponse({

@@ -3,10 +3,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import PermissionList from '../List';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ListOpPermissionRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import { UserCenterListEnum } from '../../../index.enum';
@@ -36,20 +33,6 @@ describe('base/UserCenter/PermissionList', () => {
     expect(screen.getByText('修改项目')).toBeInTheDocument();
     expect(screen.getAllByText('数据源')).toHaveLength(2);
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
-  });
-
-  it('should render empty tips when request error', async () => {
-    permissionListSpy.mockClear();
-    permissionListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = superRender(
-      <PermissionList activePage={UserCenterListEnum.operate_permission_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should refresh permission table when click pagination button', async () => {

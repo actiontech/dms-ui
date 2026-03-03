@@ -24,7 +24,9 @@ const CustomSearchInput: React.FC<
       suffix={
         <SearchOutlined
           className="pointer"
-          onClick={() => onChange?.(value as string)}
+          onClick={() => {
+            onChange?.(value as string);
+          }}
         />
       }
       {...otherProps}

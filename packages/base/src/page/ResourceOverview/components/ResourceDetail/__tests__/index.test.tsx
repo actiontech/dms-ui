@@ -126,12 +126,27 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
       'btn-active'
     );
 
+    fireEvent.click(getAllBySelector('.ant-tree-switcher')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('展开全部').closest('button')).not.toHaveClass(
+      'btn-active'
+    );
+
     fireEvent.click(screen.getByText('折叠全部'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('展开全部').closest('button')).not.toHaveClass(
       'btn-active'
     );
     expect(screen.getByText('折叠全部').closest('button')).toHaveClass(
+      'btn-active'
+    );
+
+    fireEvent.click(screen.getByText('展开全部'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('展开全部').closest('button')).toHaveClass(
+      'btn-active'
+    );
+    expect(screen.getByText('折叠全部').closest('button')).not.toHaveClass(
       'btn-active'
     );
   });
@@ -156,13 +171,41 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
     fireEvent.click(getAllBySelector('.ant-table-row')[0]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(getBySelector('.ant-tree-node-selected')).toBeInTheDocument();
+    fireEvent.click(getAllBySelector('.ant-table-row')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.ant-tree-node-selected')).toBeInTheDocument();
   });
 
   it('download resource list', async () => {
     baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('导 出'));
-    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(downloadResourceOverviewListSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render table for filter input', async () => {
+    const { baseElement } = baseSuperRender(<ResourceDetail />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const searchInputEle = getBySelector(
+      '#actiontech-table-search-input',
+      baseElement
+    );
+    fireEvent.change(searchInputEle, {
+      target: {
+        value: 'fuzzy_keyword_text'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(searchInputEle).toHaveValue('fuzzy_keyword_text');
+
+    fireEvent.click(getBySelector('.custom-icon-search'));
+    await act(async () => jest.advanceTimersByTime(3200));
+    expect(getResourceOverviewResourceListV1Spy).toHaveBeenCalledWith({
+      fuzzy_search_resource_name: 'fuzzy_keyword_text',
+      page_index: 1,
+      page_size: 20
+    });
   });
 });

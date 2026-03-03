@@ -175,6 +175,8 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
       expect(
         screen.getByText(`正在向${receiveIdVal}发送测试消息...`)
       ).toBeInTheDocument();
+      // Invalid action
+      fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(2700));
       expect(requestTestWeChatConfiguration).toHaveBeenCalledTimes(1);
       expect(requestTestWeChatConfiguration).toHaveBeenCalledWith({
@@ -186,6 +188,23 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
       expect(screen.getByText('测试消息发送成功')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('cancel testing', async () => {
+      const { baseElement } = customRender({
+        enabled: true,
+        isConfigClosed: false,
+        extraButtonsVisible: true
+      });
+
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(getBySelector('#receiveId', baseElement)).toBeVisible();
+
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(getBySelector('#receiveId', baseElement)).not.toBeVisible();
     });
 
     it('render snap when send api error', async () => {

@@ -21,7 +21,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
+                class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-affix-wrapper-input-with-clear-btn basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                 style="width: 210px;"
               >
                 <input
@@ -29,13 +29,13 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
                   id="fuzzy_keyword"
                   placeholder="请输入规则关键词搜索"
                   type="text"
-                  value=""
+                  value="test"
                 />
                 <span
                   class="ant-input-suffix"
                 >
                   <span
-                    class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                    class="ant-input-clear-icon ant-input-clear-icon-has-suffix"
                     role="button"
                     tabindex="-1"
                   >

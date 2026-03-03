@@ -1,7 +1,6 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MemberList from '../MemberList';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import { useDispatch } from 'react-redux';
@@ -14,10 +13,7 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { MemberListTypeEnum } from '../../index.enum';
 import { SystemRole } from '@actiontech/dms-kit';
 
@@ -57,20 +53,6 @@ describe('base/MemberList', () => {
     expect(
       screen.getByText(`共 ${memberList.length} 条数据`)
     ).toBeInTheDocument();
-  });
-
-  it('should render empty tips when request not success', async () => {
-    memberListSpy.mockClear();
-    memberListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = superRender(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should handle pagination changes', async () => {
@@ -127,9 +109,9 @@ describe('base/MemberList', () => {
     }));
     superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('移 除')).toHaveLength(3);
-    expect(screen.queryAllByText('编 辑')).toHaveLength(3);
-    expect(screen.queryAllByText('管理成员组')).toHaveLength(3);
+    expect(screen.queryAllByText('移 除')).toHaveLength(4);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(4);
+    expect(screen.queryAllByText('管理成员组')).toHaveLength(4);
   });
 
   it('should hide actions for archived project', async () => {

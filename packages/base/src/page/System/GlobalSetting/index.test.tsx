@@ -53,6 +53,11 @@ describe('base/System/GlobalSetting', () => {
     expect(editBtn.length).toBe(3);
     expect(editBtn[0]).toHaveAttribute('hidden');
 
+    fireEvent.click(editBtn[0]);
+    await act(async () => jest.advanceTimersByTime(500));
+    fireEvent.mouseDown(screen.getByText('操作记录过期时间(小时)'));
+    await act(async () => jest.advanceTimersByTime(300));
+
     fireEvent.click(editBtn[1]);
     await act(async () => jest.advanceTimersByTime(500));
     fireEvent.mouseDown(screen.getByText('CB工作台操作审计过期时间(小时)'));

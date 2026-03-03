@@ -507,4 +507,129 @@ describe('sqlRewriteCache', () => {
       expect(getCacheStats().itemCount).toBe(4);
     });
   });
+
+  describe('Error Handling', () => {
+    it('should handle corrupted cache data in getSqlRewriteCache', () => {
+      const taskId = 'test-task';
+      const sqlNumber = 1;
+      const rewriteResult = createMockRewriteResult();
+
+      // 保存正常数据
+      saveSqlRewriteCache(taskId, sqlNumber, rewriteResult, false);
+
+      // 验证正常数据可以获取
+      const cached = getSqlRewriteCache(taskId, sqlNumber);
+      expect(cached).not.toBeNull();
+
+      // 保存一个 rewriteResult 为 null 的数据来触发 143 行的返回 null
+      saveSqlRewriteCache(taskId, 2, null as any, false);
+      const invalidCache = getSqlRewriteCache(taskId, 2);
+      // 由于数据不完整（rewriteResult 为 null），应该返回 null
+      expect(invalidCache).toBeNull();
+    });
+
+    it('should handle errors in getSqlRewriteCache catch block', () => {
+      // 通过模拟 Map.get 抛出错误来覆盖 catch 块
+      const originalGet = Map.prototype.get;
+      Map.prototype.get = jest.fn(() => {
+        throw new Error('Simulated Map.get error');
+      });
+
+      const result = getSqlRewriteCache('any-task', 1);
+
+      expect(result).toBeNull();
+      expect(console.warn).toHaveBeenCalledWith(
+        'Failed to get SQL rewrite cache:',
+        expect.any(Error)
+      );
+
+      // 恢复原始方法
+      Map.prototype.get = originalGet;
+    });
+
+    it('should handle errors in removeSqlRewriteCache catch block', () => {
+      // 通过模拟 Map.delete 抛出错误来覆盖 catch 块
+      const originalDelete = Map.prototype.delete;
+      Map.prototype.delete = jest.fn(() => {
+        throw new Error('Simulated Map.delete error');
+      });
+
+      // 应该不会抛出错误，而是记录警告
+      expect(() => {
+        removeSqlRewriteCache('any-task', 1);
+      }).not.toThrow();
+
+      expect(console.warn).toHaveBeenCalledWith(
+        'Failed to remove SQL rewrite cache:',
+        expect.any(Error)
+      );
+
+      // 恢复原始方法
+      Map.prototype.delete = originalDelete;
+    });
+
+    it('should handle errors in cleanTaskCaches catch block', () => {
+      // 通过模拟 Map.entries 抛出错误来覆盖 catch 块
+      const originalEntries = Map.prototype.entries;
+      Map.prototype.entries = jest.fn(() => {
+        throw new Error('Simulated Map.entries error');
+      });
+
+      // 应该不会抛出错误，而是记录警告
+      expect(() => {
+        cleanTaskCaches('any-task');
+      }).not.toThrow();
+
+      expect(console.warn).toHaveBeenCalledWith(
+        'Failed to clean task caches:',
+        expect.any(Error)
+      );
+
+      // 恢复原始方法
+      Map.prototype.entries = originalEntries;
+    });
+
+    it('should handle errors in clearAllCaches catch block', () => {
+      // 通过模拟 Map.clear 抛出错误来覆盖 catch 块
+      const originalClear = Map.prototype.clear;
+      Map.prototype.clear = jest.fn(() => {
+        throw new Error('Simulated Map.clear error');
+      });
+
+      // 应该不会抛出错误，而是记录警告
+      expect(() => {
+        clearAllCaches();
+      }).not.toThrow();
+
+      expect(console.warn).toHaveBeenCalledWith(
+        'Failed to clear all caches:',
+        expect.any(Error)
+      );
+
+      // 恢复原始方法
+      Map.prototype.clear = originalClear;
+    });
+
+    it('should handle errors in getCacheStats catch block and return default values', () => {
+      // 通过模拟 Map.values 抛出错误来覆盖 catch 块
+      const originalValues = Map.prototype.values;
+      Map.prototype.values = jest.fn(() => {
+        throw new Error('Simulated Map.values error');
+      });
+
+      const stats = getCacheStats();
+
+      // 应该返回默认值（240-241行）
+      expect(stats.itemCount).toBe(0);
+      expect(stats.totalSizeKB).toBe('0.00');
+      expect(stats.utilizationPercent).toBe('0.0');
+      expect(console.warn).toHaveBeenCalledWith(
+        'Failed to get cache stats:',
+        expect.any(Error)
+      );
+
+      // 恢复原始方法
+      Map.prototype.values = originalValues;
+    });
+  });
 });

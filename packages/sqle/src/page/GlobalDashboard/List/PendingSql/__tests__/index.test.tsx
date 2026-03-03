@@ -8,10 +8,20 @@ import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/bas
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import { useNavigate } from 'react-router-dom';
+import { mockGlobalSqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
+
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
 
 describe('sqle/GlobalDashboard/PendingSqlList', () => {
   let getGlobalSqlManageList: jest.SpyInstance;
   const updateFilterValueFn = jest.fn();
+  const navigateSpy = jest.fn();
 
   const commonParams = {
     page_index: 1,
@@ -23,6 +33,7 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
+    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
   });
 
   afterEach(() => {
@@ -114,5 +125,20 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
       jest.advanceTimersByTime(0);
     });
     expect(getGlobalSqlManageList).toHaveBeenCalledTimes(2);
+  });
+
+  it('click check detail button', async () => {
+    customRender({});
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalSqlManageList).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(screen.getAllByText('详 情')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    const data = mockGlobalSqlManageListData[0];
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      1,
+      `/sqle/project/${data.project_uid}/sql-management?instance_id=${data.instance_id}&source=${data.source?.sql_source_type}`
+    );
   });
 });

@@ -15,6 +15,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
 import {
+  createSpyErrorResponse,
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -32,9 +33,10 @@ jest.mock('react-redux', () => {
 
 describe('test base/DataExport/Create/SubmitWorkflow', () => {
   const dispatchSpy = jest.fn();
+  let listDataExportTaskSQLsSpy: jest.SpyInstance;
   beforeEach(() => {
     dataExport.BatchGetDataExportTask();
-    dataExport.ListDataExportTaskSQLs();
+    listDataExportTaskSQLsSpy = dataExport.ListDataExportTaskSQLs();
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -165,5 +167,22 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     await act(async () => jest.advanceTimersByTime(300));
 
     expect(screen.getByText('仅支持对DQL语句创建导出工单')).toBeInTheDocument();
+  });
+
+  it('when get data export task sqls failed, should reset executeSQLsIsDQL to true', async () => {
+    listDataExportTaskSQLsSpy.mockImplementation(() =>
+      createSpyErrorResponse({})
+    );
+    baseSuperRender(<SubmitExportWorkflow />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(screen.getByText('提交工单').closest('button')).not.toHaveClass(
+      'ant-btn-disabled'
+    );
+    expect(screen.getByText('提交工单').closest('button')).not.toHaveClass(
+      'ant-btn-dangerous'
+    );
   });
 });

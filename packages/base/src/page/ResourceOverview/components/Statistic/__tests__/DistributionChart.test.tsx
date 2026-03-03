@@ -1,7 +1,13 @@
-import ResourceOverviewDistributionChart from '../DistributionChart';
+import ResourceOverviewDistributionChart, {
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+} from '../DistributionChart';
 import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { baseSuperRender } from '../../../../../testUtils/superRender';
+import {
+  baseSuperRender,
+  baseSuperRenderHook
+} from '../../../../../testUtils/superRender';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { PieConfig } from '@ant-design/plots';
@@ -9,6 +15,7 @@ import {
   createSpySuccessResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { ThemeData } from '../../../../../theme';
 
 jest.mock('@ant-design/plots', () => {
   return {
@@ -103,5 +110,19 @@ describe('base/page/ResourceOverview/Statictis/DistributionChart', () => {
     expect(
       getResourceOverviewResourceTypeDistributionV1Spy
     ).toHaveBeenCalledTimes(2);
+  });
+
+  it('render tooltip formatter', async () => {
+    const { result } = baseSuperRenderHook(() =>
+      renderTooltipFormatter?.({ name: 'test', value: 1 })
+    );
+    expect(result.current).toStrictEqual({ name: 'test', value: 1 });
+  });
+
+  it('render empty tooltip customContent', async () => {
+    const { result } = baseSuperRenderHook(() =>
+      renderTooltipCustomContent([], ThemeData.light.sharedTheme, 0)
+    );
+    expect(result.current).toBe(null);
   });
 });

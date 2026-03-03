@@ -83,6 +83,38 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     expect(getCodingConfigurationSpy).toHaveBeenCalledTimes(2);
   });
 
+  it('render close coding configuration when enable is false', async () => {
+    getCodingConfigurationSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          coding_url: '',
+          is_coding_enabled: false
+        }
+      })
+    );
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(screen.getByText('启用Coding对接')).toBeInTheDocument();
+
+    fireEvent.click(getBySelector('#enabled'));
+    await act(async () => jest.advanceTimersByTime(500));
+    fireEvent.click(getBySelector('#enabled'));
+    expect(
+      screen.getByText(
+        '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+      )
+    ).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('确 认'));
+    expect(
+      screen.queryByText(
+        '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+      )
+    ).not.toBeVisible();
+  });
+
   it('render edit coding configuration', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -141,6 +173,9 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('正在测试Coding联通性...')).toBeInTheDocument();
+    // Invalid operation
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(testCodingConfig).toHaveBeenCalledTimes(1);
     expect(testCodingConfig).toHaveBeenCalledWith({
       coding_project_name: 'test_project'
@@ -149,6 +184,22 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     expect(
       screen.getByText('当前服务地址和访问令牌验证通过')
     ).toBeInTheDocument();
+  });
+
+  it('render close sms connection popover', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseEnter(getBySelector('.switch-field-wrapper'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('.system-config-button')).toBeVisible();
+    fireEvent.click(getBySelector('.system-config-button'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(baseElement).toMatchSnapshot();
+    expect(getBySelector('#codingProjectName')).toBeInTheDocument();
+
+    fireEvent.click(screen.getAllByText('取 消')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('#codingProjectName')).not.toBeVisible();
   });
 
   it('render test coding connection when request return error message', async () => {

@@ -5,6 +5,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DEFAULT_CONSTANT } from './index.data';
 import WebHook from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 describe('base/System/PushNotification/WebhookSetting', () => {
   let requestGetWebHookConfiguration: jest.SpyInstance;
@@ -97,6 +98,40 @@ describe('base/System/PushNotification/WebhookSetting', () => {
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('close configuration success when enable is true', async () => {
+      requestGetWebHookConfiguration.mockClear();
+      requestGetWebHookConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            enable: true
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.click(getBySelector('#enable', baseElement));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(requestUpdateWebHookConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateWebHookConfiguration).toHaveBeenLastCalledWith({
+        webhook_config: {
+          enable: false,
+          maxRetryTimes: 3,
+          retryIntervalSeconds: 1
+        }
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetWebHookConfiguration).toHaveBeenCalledTimes(2);
     });
   });
 

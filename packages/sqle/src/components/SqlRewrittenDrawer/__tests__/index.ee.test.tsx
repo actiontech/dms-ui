@@ -7,7 +7,10 @@ import {
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act, cleanup } from '@testing-library/react';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyErrorResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
@@ -23,21 +26,6 @@ import {
   AsyncRewriteTaskStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { removeSqlRewriteCache } from '../utils/sqlRewriteCache';
-
-// Mock Modal.useModal
-const mockModalConfirm = jest.fn();
-jest.mock('antd', () => ({
-  ...jest.requireActual('antd'),
-  Modal: {
-    ...jest.requireActual('antd').Modal,
-    useModal: () => [
-      {
-        confirm: mockModalConfirm
-      },
-      <div key="modal-context" />
-    ]
-  }
-}));
 
 describe('SqlRewrittenDrawerEE Unit Tests', () => {
   const mockProps = {
@@ -350,10 +338,12 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       fireEvent.click(getBySelector('.closed-icon-custom'));
       await act(async () => jest.advanceTimersByTime(300));
 
-      expect(mockModalConfirm).toHaveBeenCalledWith({
-        title: '重写任务正在进行中，关闭后任务将被终止。确认关闭吗？',
-        onOk: expect.any(Function)
-      });
+      expect(
+        screen.getByText('重写任务正在进行中，关闭后任务将被终止。确认关闭吗？')
+      ).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 定'));
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(localMockProps.onClose).toHaveBeenCalledTimes(1);
     });
 
     it('should close drawer without confirmation when not rewriting', async () => {
@@ -374,8 +364,42 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
       await act(async () => jest.advanceTimersByTime(300));
 
       // 验证没有调用模态框确认
-      expect(mockModalConfirm).not.toHaveBeenCalled();
+      expect(
+        screen.queryByText(
+          '重写任务正在进行中，关闭后任务将被终止。确认关闭吗？'
+        )
+      ).not.toBeInTheDocument();
       expect(localMockProps.onClose).toHaveBeenCalled();
     });
+  });
+
+  it('render retry rewrite button when rewrite task is failed', async () => {
+    mockSqlRewrittenSpy.mockImplementation(() =>
+      createSpyErrorResponse({
+        data: {
+          message: 'api error'
+        }
+      })
+    );
+    sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
+
+    expect(queryBySelector('.custom-loading-container')).toBeInTheDocument();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(1);
+    expect(mockSqlRewrittenSpy).toHaveBeenCalledWith({
+      task_id: mockProps.taskID,
+      number: mockProps.originSqlInfo.number,
+      enable_structure_type: false
+    });
+
+    expect(
+      queryBySelector('.custom-loading-container')
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('重 试')).toBeInTheDocument();
+    expect(screen.getByText('重写失败')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('重 试'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(mockSqlRewrittenSpy).toHaveBeenCalledTimes(2);
   });
 });

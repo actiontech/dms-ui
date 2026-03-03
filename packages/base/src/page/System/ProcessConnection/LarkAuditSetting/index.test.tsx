@@ -5,6 +5,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import LarkAuditSetting from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 describe('base/System/ProcessConnection/LarkAuditSetting', () => {
   let requestGetFeishuAuditConfiguration: jest.SpyInstance;
@@ -98,6 +99,37 @@ describe('base/System/ProcessConnection/LarkAuditSetting', () => {
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('close configuration success', async () => {
+      requestGetFeishuAuditConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            is_feishu_notification_enabled: true
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.click(getBySelector('#enabled', baseElement));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(requestUpdateFeishuAuditConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateFeishuAuditConfiguration).toHaveBeenLastCalledWith({
+        is_feishu_notification_enabled: false,
+        app_id: '',
+        app_secret: ''
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetFeishuAuditConfiguration).toHaveBeenCalledTimes(2);
     });
   });
 

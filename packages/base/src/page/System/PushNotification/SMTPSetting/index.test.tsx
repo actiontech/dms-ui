@@ -7,6 +7,8 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SMTPConfig } from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 describe('base/System/PushNotification/SMTPSetting', () => {
   let requestGetSMTPConfiguration: jest.SpyInstance;
@@ -68,7 +70,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('render snap when click switch change', async () => {
+    it('disable SMTP configuration', async () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
@@ -88,8 +90,47 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       fireEvent.click(switchEle[0]);
       await act(async () => jest.advanceTimersByTime(500));
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(500));
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(baseElement).toMatchSnapshot();
+      expect(requestUpdateSMTPConfiguration).toHaveBeenCalled();
+      expect(requestUpdateSMTPConfiguration).toHaveBeenCalledWith({
+        smtp_configuration: {
+          ...SMTPConfig,
+          enable_smtp_notify: false
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetSMTPConfiguration).toHaveBeenCalledTimes(2);
+    });
+
+    it('change SMTP configuration when enable is false', async () => {
+      requestGetSMTPConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            ...SMTPConfig,
+            enable_smtp_notify: false
+          }
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3300));
+      fireEvent.click(getBySelector('#enable', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(getBySelector('#enable', baseElement));
+      await act(async () => jest.advanceTimersByTime(100));
+
+      expect(
+        screen.getByText(
+          '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+        )
+      ).toBeVisible();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(100));
+      expect(
+        screen.getByText(
+          '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+        )
+      ).not.toBeVisible();
     });
   });
 

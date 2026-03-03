@@ -1,9 +1,23 @@
-import { shallow } from 'enzyme';
 import DataSourceComparison from '..';
-import toJson from 'enzyme-to-json';
+import { sqleSuperRender } from '../../../testUtils/superRender';
+import {
+  mockUseCurrentUser,
+  mockUseDbServiceDriver,
+  mockUseCurrentProject
+} from '@actiontech/shared/lib/testUtil';
 
-describe('DataSourceComparison ce', () => {
+describe('DataSourceComparison', () => {
+  beforeEach(() => {
+    mockUseCurrentUser();
+    mockUseDbServiceDriver();
+    mockUseCurrentProject();
+  });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   it('should match snapshot', () => {
-    expect(toJson(shallow(<DataSourceComparison />))).toMatchSnapshot();
+    const { container } = sqleSuperRender(<DataSourceComparison />);
+
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent, getByText } from '@testing-library/dom';
 import DataSourceManagement from '..';
 import { baseSuperRender } from '../../../testUtils/superRender';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
@@ -104,5 +104,17 @@ describe('test DataSourceManagement', () => {
 
     expect(queryByText('全局数据源')).not.toBeInTheDocument();
     expect(queryByText('外部数据源同步')).not.toBeInTheDocument();
+  });
+
+  it('should set active key when search params is not empty', () => {
+    baseSuperRender(<DataSourceManagement />, undefined, {
+      routerProps: {
+        initialEntries: ['/data-source-management?active=SyncDataSource']
+      }
+    });
+
+    expect(getBySelector('.ant-segmented-item-selected')).toHaveTextContent(
+      '外部数据源同步'
+    );
   });
 });

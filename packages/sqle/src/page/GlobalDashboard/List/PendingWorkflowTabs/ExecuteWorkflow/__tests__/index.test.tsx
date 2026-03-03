@@ -11,7 +11,11 @@ import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/bas
 import eventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import { paramsSerializer } from '@actiontech/dms-kit/es/utils/Common';
-import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil';
+import {
+  createSpySuccessResponse,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil';
+import { mockGlobalWorkflowListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;

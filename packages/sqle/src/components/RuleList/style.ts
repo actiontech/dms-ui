@@ -24,50 +24,7 @@ export const RuleTypeStyleWrapper = styled('div')`
   align-self: stretch;
   width: 100%;
 `;
-export const RuleTypeItemStyleWrapper = styled('div')<{
-  active?: boolean;
-}>`
-  display: flex;
-  height: 28px;
-  padding: 0 8px;
-  align-items: center;
-  cursor: pointer;
-  border-radius: 4px;
-  border: ${({ theme }) =>
-    theme.sharedTheme.components.ruleComponent.ruleType.border};
-  background: ${({ theme, active }) =>
-    !!active
-      ? theme.sharedTheme.components.ruleComponent.ruleType
-          .activeBackgroundColor
-      : theme.sharedTheme.components.ruleComponent.ruleType.backgroundColor};
-  color: ${({ theme, active }) =>
-    !!active
-      ? theme.sharedTheme.components.ruleComponent.ruleType.activeColor
-      : theme.sharedTheme.components.ruleComponent.ruleType.color};
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  transition: color 0.3s;
-  transition: background-color 0.3s;
 
-  &:not(:first-of-type) {
-    margin-left: 8px;
-  }
-
-  .number-wrapper {
-    display: inline-block;
-    border-radius: 3px;
-    background-color: ${({ theme, active }) =>
-      !!active
-        ? theme.sharedTheme.components.ruleComponent.ruleType
-            .countActiveBackgroundColor
-        : theme.sharedTheme.components.ruleComponent.ruleType
-            .countBackgroundColor};
-    padding: 0 3px;
-    margin-left: 4px;
-  }
-`;
 export const RulesStyleWrapper = styled('div')<{
   pageHeaderHeight: number;
   paddingBottomNone: boolean;

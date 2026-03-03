@@ -3,6 +3,7 @@ import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   baseMockApi,
+  createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import useNavigateToWorkbench from '.';
@@ -65,6 +66,26 @@ describe('useNavigateToWorkbench', () => {
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'availabilityZone/updateAvailabilityZoneTips',
       payload: { availabilityZoneTips: mockGatewayTipsData }
+    });
+  });
+
+  it('should fetch availability zone tips failed', async () => {
+    const { result } = superRenderHook(() => useNavigateToWorkbench());
+    expect(result.current.getAvailabilityZoneTipsLoading).toBeFalsy();
+    getGatewayTipsSpy.mockImplementation(() =>
+      createSpyFailResponse({ data: [] })
+    );
+    act(() => {
+      result.current.getAvailabilityZoneTipsAsync();
+    });
+    expect(result.current.getAvailabilityZoneTipsLoading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.getAvailabilityZoneTipsLoading).toBeFalsy();
+
+    expect(getGatewayTipsSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'availabilityZone/updateAvailabilityZoneTips',
+      payload: { availabilityZoneTips: [] }
     });
   });
 

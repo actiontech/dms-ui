@@ -100,6 +100,40 @@ describe('base/System/LoginConnection/Oauth', () => {
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });
+
+    it('close configuration success', async () => {
+      requestGetOauth2Configuration.mockClear();
+      requestGetOauth2Configuration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            ...oauthConfig,
+            enable_oauth2: true
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.click(getBySelector('#enable', baseElement));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateOauth2Configuration).toHaveBeenLastCalledWith({
+        oauth2: {
+          ...oauthConfig,
+          enable_oauth2: false
+        }
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetOauth2Configuration).toHaveBeenCalledTimes(2);
+    });
   });
 
   describe('render submit Oauth setting', () => {

@@ -892,7 +892,12 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                         <td
                           class="ant-table-cell"
                         >
-                          -
+                          <a
+                            href="/sqle/project/700300/exec-workflow/test_workflow_id"
+                            target="_blank"
+                          >
+                            test_workflow_id
+                          </a>
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"
@@ -2648,7 +2653,12 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                         <td
                           class="ant-table-cell"
                         >
-                          -
+                          <a
+                            href="/sqle/project/700300/exec-workflow/test_workflow_id"
+                            target="_blank"
+                          >
+                            test_workflow_id
+                          </a>
                         </td>
                         <td
                           class="ant-table-cell ellipsis-column-width"

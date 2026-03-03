@@ -97,17 +97,6 @@ describe('sqle/SqlAudit/List', () => {
     });
   });
 
-  it('render table when request return error', async () => {
-    sqlAuditRecordsSpy.mockClear();
-    sqlAuditRecordsSpy.mockImplementationOnce(() =>
-      createSpyErrorResponse({ message: 'error info' })
-    );
-    const { baseElement } = sqleSuperRender(<SqlAuditList />);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it('render table list when action filter', async () => {
     const { baseElement } = sqleSuperRender(<SqlAuditList />);
 

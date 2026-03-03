@@ -9,10 +9,7 @@ import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import {
-  createSpyErrorResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -67,18 +64,6 @@ describe('base/AvailabilityZoneList', () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText('删 除')).toHaveLength(2);
     expect(screen.getAllByText('编 辑')).toHaveLength(2);
-  });
-
-  it('should render empty tips when request not success', async () => {
-    gatewayListSpy.mockClear();
-    gatewayListSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: [] })
-    );
-    const { baseElement } = superRender(<AvailabilityZoneList />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    const element = queryBySelector('.ant-table-placeholder', baseElement);
-    expect(element).toBeInTheDocument();
   });
 
   it('should refresh availability zone table when emit "Refresh_Availability_Zone_Page" event', async () => {

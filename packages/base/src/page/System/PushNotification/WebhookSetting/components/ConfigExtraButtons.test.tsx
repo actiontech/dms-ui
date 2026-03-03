@@ -74,6 +74,9 @@ describe('base/System/PushNotification/WebhookSetting/ConfigExtraButtons', () =>
 
       fireEvent.click(btnSubmit);
       await act(async () => jest.advanceTimersByTime(500));
+      // Invalid action
+      fireEvent.click(btnSubmit);
+      await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
       expect(requestTestWebHookConfiguration).toHaveBeenCalled();

@@ -738,11 +738,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
-                        >
-                          environment-2
-                        </span>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -767,18 +763,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-1uw16ge"
-                        >
-                          <img
-                            alt=""
-                          />
-                          <span
-                            title="Oracle"
-                          >
-                            Oracle
-                          </span>
-                        </div>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1753,11 +1738,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
-                        >
-                          environment-2
-                        </span>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1782,18 +1763,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-1uw16ge"
-                        >
-                          <img
-                            alt=""
-                          />
-                          <span
-                            title="Oracle"
-                          >
-                            Oracle
-                          </span>
-                        </div>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3006,11 +2976,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
-                        >
-                          environment-2
-                        </span>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3035,18 +3001,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-1uw16ge"
-                        >
-                          <img
-                            alt=""
-                          />
-                          <span
-                            title="Oracle"
-                          >
-                            Oracle
-                          </span>
-                        </div>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5673,11 +5628,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       <td
                         class="ant-table-cell"
                       >
-                        <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-d31ub5"
-                        >
-                          environment-2
-                        </span>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5702,18 +5653,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-1uw16ge"
-                        >
-                          <img
-                            alt=""
-                          />
-                          <span
-                            title="Oracle"
-                          >
-                            Oracle
-                          </span>
-                        </div>
+                        -
                       </td>
                       <td
                         class="ant-table-cell"

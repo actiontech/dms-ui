@@ -9,7 +9,8 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   createSpyFailResponse,
-  createSpySuccessResponse
+  createSpySuccessResponse,
+  createSpyErrorResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { AxiosResponse } from 'axios';
@@ -178,6 +179,28 @@ describe('base/GlobalDataSource/BatchImportDataSource', () => {
       'ant-btn-loading'
     );
     expect(screen.queryByText('批量导入数据源成功')).not.toBeInTheDocument();
+  });
+
+  it('render check file error', async () => {
+    importDBServicesOfProjectsCheckSpy.mockClear();
+    importDBServicesOfProjectsCheckSpy.mockImplementation(() =>
+      createSpyErrorResponse({
+        data: {
+          message: 'error'
+        }
+      })
+    );
+    const { baseElement } = baseSuperRender(<GlobalBatchImportDataSource />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#files', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
   });
 
   it('render connectable error modal', async () => {

@@ -1,9 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { GetUserSystemEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { baseSuperRender } from '../../../../../testUtils/superRender';
 import {
   mockUseCurrentUser,
-  baseMockApi
+  baseMockApi,
+  getAllBySelector
 } from '@actiontech/shared/lib/testUtil';
 import LoginConfiguration from '../index';
 import { DefaultLoginPageProps } from '../../../index.type';
@@ -21,9 +22,10 @@ const defaultProps: DefaultLoginPageProps = {
 };
 
 describe('LoginConfiguration', () => {
+  let updateCurrentUserSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseCurrentUser();
-    baseMockApi.userCenter.updateCurrentUser();
+    updateCurrentUserSpy = baseMockApi.userCenter.updateCurrentUser();
     jest.useFakeTimers();
   });
 
@@ -82,7 +84,7 @@ describe('LoginConfiguration', () => {
     expect(screen.getByText('-')).toBeInTheDocument();
   });
 
-  it('should pass correct props to LoginConfigurationModal', () => {
+  it('should pass correct props to LoginConfigurationModal', async () => {
     const { container } = baseSuperRender(
       <LoginConfiguration {...defaultProps} />
     );
@@ -96,8 +98,21 @@ describe('LoginConfiguration', () => {
       '.config-item-filed-edit-button'
     );
     fireEvent.click(editButton!);
-
-    expect(mockUpdateUserInfo).toEqual(expect.any(Function));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText('为数据分析师和开发者提供，用于数据查询与操作。')
+    ).toBeInTheDocument();
+    const options = getAllBySelector('.ant-radio-wrapper');
+    expect(options).toHaveLength(2);
+    expect(options[0]).toHaveTextContent('SQL工作台');
+    expect(options[1]).toHaveTextContent('管理后台');
+    fireEvent.click(options[1]);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockUpdateUserInfo).toHaveBeenCalledTimes(1);
   });
 
   it('should handle mouse enter and leave events on ConfigItem', () => {

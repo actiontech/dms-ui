@@ -7,22 +7,7 @@ export const ProjectMemberStyleWrapper = styled('section')`
     padding-left: 24px;
   }
 `;
-export const FormListDeleteIconWrap = styled('section')`
-  height: 36px;
-  width: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  border: ${({ theme }) =>
-    theme.sharedTheme.components.basicSelect.default.border};
-  cursor: pointer;
 
-  &:hover {
-    border: ${({ theme }) =>
-      theme.sharedTheme.components.basicSelect.hover.border};
-  }
-`;
 export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
   .member-form-add-button {
     background-color: ${({ theme }) =>

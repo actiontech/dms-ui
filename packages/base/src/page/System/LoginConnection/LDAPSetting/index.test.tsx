@@ -7,6 +7,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import LDAPSetting from '.';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 describe('base/System/LoginConnection/LDAPSetting', () => {
   let requestGetLDAPConfiguration: jest.SpyInstance;
@@ -98,6 +99,48 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('close configuration success', async () => {
+      requestGetLDAPConfiguration.mockClear();
+      requestGetLDAPConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            enable_ldap: true,
+            enable_ssl: true,
+            ldap_connect_dn: '1',
+            ldap_search_base_dn: '1',
+            ldap_server_host: '1',
+            ldap_server_port: '1'
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.click(getBySelector('#enable_ldap', baseElement));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(requestUpdateLDAPConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestUpdateLDAPConfiguration).toHaveBeenLastCalledWith({
+        ldap: {
+          enable_ldap: false,
+          enable_ssl: true,
+          ldap_connect_dn: '1',
+          ldap_search_base_dn: '1',
+          ldap_server_host: '1',
+          ldap_server_port: '1'
+        }
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetLDAPConfiguration).toHaveBeenCalledTimes(2);
     });
   });
 

@@ -1,16 +1,5 @@
 import { styled } from '@mui/material/styles';
 
-export const DefaultSceneSegmentedWrapper = styled('section')`
-  display: flex;
-  align-items: center;
-  padding: ${({ theme }) => `0 ${theme.baseTheme.guidance.padding}px`};
-  height: 56px;
-  background-color: ${({ theme }) =>
-    theme.baseTheme.guidance.sceneSegmented.backgroundColor};
-  border-bottom: ${({ theme }) =>
-    theme.baseTheme.guidance.sceneSegmented.borderBottom};
-`;
-
 export const DefaultSceneStepContainerWrapper = styled('section')`
   padding: ${({ theme }) => theme.baseTheme.guidance.padding}px;
 

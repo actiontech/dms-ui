@@ -46,6 +46,31 @@ describe('sqle/GlobalDashboard', () => {
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(2);
+    expect(screen.getByText('待解决工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
+    expect(screen.getByText('上线工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
+    fireEvent.click(screen.getByText('导出工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('导出工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
+
+    fireEvent.click(screen.getByText('发起的工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('发起的工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
+    expect(screen.getByText('上线工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
+    fireEvent.click(screen.getByText('导出工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('导出工单').closest('label')).toHaveClass(
+      'ant-segmented-item-selected'
+    );
   });
 
   it('render filter list', async () => {

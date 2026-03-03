@@ -45,6 +45,9 @@ export const mockResourceListData: IResourceListData[] = [
     high_priority_sql_count: 2,
     pending_workflow_count: 2,
     audit_score: 80
+  },
+  {
+    resource_uid: '3'
   }
 ];
 

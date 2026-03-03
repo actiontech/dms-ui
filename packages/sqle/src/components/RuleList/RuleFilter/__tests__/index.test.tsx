@@ -1,4 +1,10 @@
-import { act, cleanup, renderHook, screen } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  renderHook,
+  screen
+} from '@testing-library/react';
 import RuleFilter from '../index';
 import { Form } from 'antd';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
@@ -29,12 +35,21 @@ describe('sqle/components/RuleList/RuleFilter', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
-    expect(getBySelector('#fuzzy_keyword')).toBeInTheDocument();
+    const inputEle = getBySelector('#fuzzy_keyword');
+    expect(inputEle).toBeInTheDocument();
     expect(screen.getByText('操作对象')).toBeInTheDocument();
     expect(screen.getByText('审核目的')).toBeInTheDocument();
     expect(screen.getByText('SQL分类')).toBeInTheDocument();
     expect(screen.getByText('审核精度')).toBeInTheDocument();
     expect(screen.getByText('性能消耗')).toBeInTheDocument();
+
+    fireEvent.change(inputEle, {
+      target: {
+        value: 'test'
+      }
+    });
+    fireEvent.click(getBySelector('.pointer'));
+
+    expect(baseElement).toMatchSnapshot();
   });
 });

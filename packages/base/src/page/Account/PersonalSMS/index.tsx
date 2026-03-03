@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useMemo, useEffect } from 'react';
-import { Spin, message } from 'antd';
+import { Spin, message, Form } from 'antd';
 import ConfigField from './components/ConfigField';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { FormFields } from './index.type';
@@ -39,13 +39,15 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
     switchFieldLabel: t('dmsAccount.sms.title')
   });
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   useEffect(() => {
-    if (!!userBaseInfo) {
+    if (!!userBaseInfo && !modifyFlag) {
       form.setFieldsValue({
         [switchFieldName]: !!userBaseInfo.two_factor_enabled
       });
     }
-  }, [userBaseInfo, form]);
+  }, [userBaseInfo, form, modifyFlag]);
 
   const isConfigClosed = useMemo(() => {
     return !userBaseInfo?.two_factor_enabled;
@@ -95,15 +97,6 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
       });
   };
 
-  const onConfigSwitchPopoverConfirm = () => {
-    if (!userBaseInfo?.two_factor_enabled && modifyFlag) {
-      handleClickCancel();
-      hiddenConfigSwitchPopover();
-    } else {
-      onSubmit(false);
-    }
-  };
-
   const {
     configSwitchPopoverOpenState,
     generateConfigSwitchPopoverTitle,
@@ -111,6 +104,15 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
     handleConfigSwitchChange,
     hiddenConfigSwitchPopover
   } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      hiddenConfigSwitchPopover();
+    } else {
+      onSubmit(false);
+    }
+  };
 
   return (
     <div>
@@ -125,6 +127,7 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
               title={generateConfigSwitchPopoverTitle(modifyFlag)}
               switchFieldName={switchFieldName}
               submitLoading={submitLoading}
+              checked={switchOpen}
               popoverVisible={configSwitchPopoverOpenState}
               onConfirm={onConfigSwitchPopoverConfirm}
               onSwitchChange={(open) => {

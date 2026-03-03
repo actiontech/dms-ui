@@ -91,7 +91,9 @@ const SMSSetting: React.FC = () => {
     startModify();
   };
   const handleClickCancel = () => {
-    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) {
+      form.setFieldValue(switchFieldName, false);
+    }
     setFormDefaultValue();
     modifyFinish();
   };

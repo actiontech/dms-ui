@@ -1,8 +1,9 @@
-import { cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, act } from '@testing-library/react';
 import { Form } from 'antd';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import SqlAuditFields from '..';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('SqlAuditFields', () => {
   const mockOnNeedAuditForSqlQueryChange = jest.fn();
@@ -64,5 +65,28 @@ describe('SqlAuditFields', () => {
       needAuditForSqlQuery: true
     });
     expect(container).toMatchSnapshot();
+  });
+
+  it('should call onChange when switching from unchecked to checked', async () => {
+    const { result } = superRenderHook(() => Form.useForm());
+    const [form] = result.current;
+
+    const { container } = baseSuperRender(
+      <Form form={form} initialValues={{ needSqlAuditService: false }}>
+        <SqlAuditFields
+          getTemplateOptionsLoading={false}
+          ruleTemplateOptions={mockRuleTemplateOptions}
+          onNeedAuditForSqlQueryChange={mockOnNeedAuditForSqlQueryChange}
+        />
+      </Form>
+    );
+
+    const switchElement = getBySelector('.audit-confirm-switch', container);
+
+    await act(async () => {
+      fireEvent.click(switchElement);
+    });
+
+    expect(form.getFieldValue('needSqlAuditService')).toBe(true);
   });
 });

@@ -135,6 +135,9 @@ describe('base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons', 
       expect(
         screen.getByText('正在向企业微信用户推送消息...')
       ).toBeInTheDocument();
+      // Invalid operation
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(0));
 
       await act(async () => jest.advanceTimersByTime(2600));
       expect(requestTestWechatAuditConfig).toHaveBeenCalledTimes(1);

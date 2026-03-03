@@ -45,7 +45,7 @@ class MockCloudBeaverApi implements MockSpyApy {
     const spy = jest.spyOn(CBOperationLogs, 'GetCBOperationLogTips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: CBOperationLogTipsMockData
+        data: { exec_result: CBOperationLogTipsMockData }
       })
     );
     return spy;

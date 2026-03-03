@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { AxiosResponse } from 'axios';
 import { useState } from 'react';
 import { getErrorMessage } from '../../../utils';
@@ -13,30 +12,32 @@ const useTableRequestError = () => {
       message?: string;
       total_nums?: number;
     },
-    R = { list: T['data']; total: number; otherData?: Record<string, any> }
+    R = {
+      list: NonNullable<T['data']>;
+      total: number;
+      otherData?: Record<string, any>;
+    }
   >(request: Promise<AxiosResponse<T>>): Promise<R> {
     return request
       .then((response) => {
         setRequestErrorMessage('');
-        if ('data' in response.data && 'total_nums' in response.data) {
-          const { data, total_nums, ...otherData } = response.data;
-          return {
-            list: response.data.data ?? [],
-            total: response.data?.total_nums ?? 0,
-            otherData
-          };
-        } else if ('data' in response.data) {
-          const { data, total_nums, ...otherData } = response.data;
-          return {
-            list: response.data.data ?? [],
-            total: response.data.data?.length ?? 0,
-            otherData
-          };
+        const { data, total_nums, ...otherData } = response.data;
+
+        const list = (data ?? []) as NonNullable<T['data']>;
+        let total = 0;
+        if (typeof total_nums === 'number') {
+          total = total_nums;
+        } else if (Array.isArray(list)) {
+          total = list.length;
         }
+
+        return { list, total, otherData } as R;
       })
       .catch((error) => {
         setRequestErrorMessage(getErrorMessage(error));
-        return error;
+        // 因为此方法通常配合useRequest使用，所以需要抛出Error或者Promise.reject(error)
+        // 否则会因为Promise的链式调用特性，直接return error会触发.then而不是.catch，导致useRequest的onError回调函数不会正确执行
+        throw error instanceof Error ? error : new Error(String(error));
       });
   }
 

@@ -23,6 +23,7 @@ import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/bas
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import sharedEmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
 import { eventEmitter as sharedEventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
+import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -130,11 +131,24 @@ describe('test Base/Nav/SideMenu/index', () => {
   });
 
   it('Click on the menu of the project selector', async () => {
+    mockUseRecentlyOpenedProjects({
+      currentProjectID: mockBindProjects[0].project_id,
+      recentlyProjects: [
+        {
+          project_id: mockBindProjects[0].project_id,
+          project_name: mockBindProjects[0].project_name
+        },
+        {
+          project_id: mockBindProjects[1].project_id,
+          project_name: mockBindProjects[1].project_name
+        }
+      ]
+    });
     const { baseElement } = baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText(mockBindProjects[1].project_name));
+    fireEvent.click(screen.getAllByText(mockBindProjects[1].project_name)[0]);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockBindProjects[1].project_id}/overview`
@@ -153,6 +167,26 @@ describe('test Base/Nav/SideMenu/index', () => {
       type: 'availabilityZone/updateAvailabilityZoneTips',
       payload: {
         availabilityZoneTips: mockGatewayTipsData
+      }
+    });
+    expect(verifyRecentlySelectedZoneRecordSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should dispatch updateAvailabilityZoneTips and call verifyRecentlySelectedZoneRecord func when request failed', async () => {
+    getGatewayTipsSpy.mockImplementation(() =>
+      createSpyFailResponse({ data: [] })
+    );
+    const verifyRecentlySelectedZoneRecordSpy = jest.fn();
+    mockUseRecentlySelectedZone({
+      verifyRecentlySelectedZoneRecord: verifyRecentlySelectedZoneRecordSpy
+    });
+    baseSuperRender(<SideMenu />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGatewayTipsSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'availabilityZone/updateAvailabilityZoneTips',
+      payload: {
+        availabilityZoneTips: []
       }
     });
     expect(verifyRecentlySelectedZoneRecordSpy).toHaveBeenCalledTimes(1);
