@@ -97,5 +97,87 @@ export default {
     feature: {
       desc: 'If the administrator needs to fully understand the audit progress of the platform business and the usage of the platform, you can use the report statistics function. this function provides multi-dimensional business analysis perspectives to help administrators understand the audit efficiency of workflows and the quality of submitted SQLs, so as to carry out SQL audit work more efficiently and flexibly.'
     }
+  },
+  tabs: {
+    report: 'Report Statistics',
+    aiGovernance: 'AI Governance'
+  },
+  aiGovernance: {
+    title: 'AI Governance Efficiency Center',
+    period: {
+      thisWeek: 'This Week',
+      thisMonth: 'This Month',
+      thisQuarter: 'This Quarter',
+      thisYear: 'This Year'
+    },
+    strategicInsight: {
+      moduleTitle: 'Strategic Value Pillars',
+      moduleDesc: 'Decision Layer'
+    },
+    efficiencyCard: {
+      security_defense: 'High-Risk Elimination Rate',
+      resource_cost: 'Performance Issue Optimization Rate',
+      code_standard: 'SQL Standards Compliance Rate',
+      rd_efficiency: 'Estimated Time Saved',
+      query_performance: 'Average Performance Improvement'
+    },
+    managementView: {
+      moduleTitle: 'Management View',
+      moduleDesc: 'Analysis Layer',
+      viewType: {
+        comprehensive: 'Comprehensive View',
+        rewrite: 'AI Smart Correction',
+        tuning: 'AI Performance Engine'
+      },
+      projectIOAnalysis: {
+        title: 'Project Team Input-Output Analysis',
+        moduleTitle: 'Project Team Input-Output Analysis',
+        moduleDesc: 'AI engine usage depth and health per business line',
+        columns: {
+          projectName: 'Project Team Name',
+          activeMembers: 'Active Members',
+          invokeCount: 'Invoke Count',
+          performanceGain: 'Performance Gain',
+          timeSaved: 'Time Saved',
+          healthScore: 'Health Score'
+        }
+      },
+      topProblemDistribution: {
+        title: 'Top Problem Distribution',
+        moduleTitle: 'Top Problem Analysis',
+        moduleDesc: 'Code standards and syntax quality'
+      }
+    },
+    executionData: {
+      moduleTitle: 'Execution Log',
+      moduleDesc: 'Data Layer',
+      searchPlaceholder: 'Search SQL features or projects...',
+      columns: {
+        sourceProject: 'Source Project',
+        sqlSnippet: 'SQL Snippet',
+        functionModule: 'Function Module',
+        valueDimension: 'Value Dimension',
+        processStatus: 'Process Status',
+        estimatedUpgrade: 'Estimated Upgrade',
+        time: 'Time'
+      },
+      functionModule: {
+        smartCorrection: 'AI Smart Correction',
+        performanceEngine: 'AI Performance Engine'
+      },
+      valueDimension: {
+        security: 'Security',
+        performance: 'Performance Issue',
+        correction: 'Correctness',
+        maintenance: 'Maintainability',
+        codeStandard: 'Code Standard'
+      },
+      processStatus: {
+        pending: 'Pending',
+        running: 'Running',
+        completed: 'Completed',
+        failed: 'Failed'
+      }
+    }
   }
 };

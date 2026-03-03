@@ -51,6 +51,12 @@ nav:
 - 国际化变更
 
 
+
 ## 1.0.8
+
+- 国际化变更
+- 更新UtilsConsoleErrorStringsEnum枚举类型
+
+## 1.0.9
 
 - 修改useTableRequestError错误处理

@@ -79,8 +79,8 @@ describe('sqle/SqlOptimization/Create', () => {
 
   it('render return back to optimization list page', async () => {
     sqleSuperRender(customRender());
-    expect(screen.getByText('返回SQL调优列表')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('返回SQL调优列表'));
+    expect(screen.getByText('返回AI性能调优列表')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('返回AI性能调优列表'));
   });
 
   it('enter default content to create sql optimization', async () => {

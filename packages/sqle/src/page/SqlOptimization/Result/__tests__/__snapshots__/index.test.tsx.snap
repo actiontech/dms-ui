@@ -32,7 +32,7 @@ exports[`sqle/SqlOptimization/Result render snap 1`] = `
               </svg>
             </span>
             <span>
-              返回SQL调优列表
+              返回AI性能调优列表
             </span>
           </button>
         </a>

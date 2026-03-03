@@ -79,7 +79,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('分 析'));
     expect(clickAnalyzeFn).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByText('SQL合规重写'));
+    fireEvent.click(screen.getByText('AI智能修正'));
     expect(handleClickSqlRewrittenFn).toHaveBeenCalledTimes(1);
     expect(handleClickSqlRewrittenFn).toHaveBeenCalledWith({
       audit_level: '',

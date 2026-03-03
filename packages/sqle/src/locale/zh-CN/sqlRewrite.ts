@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   ceDescription:
-    'SQL合规重写可以基于触发的规则自动重写SQL，节省开发时间，提高工作效率。',
-  featureName: 'SQL合规重写',
+    'AI智能修正可以基于触发的规则自动重写SQL，节省开发时间，提高工作效率。',
+  featureName: 'AI智能修正',
 
-  actionName: 'SQL合规重写',
+  actionName: 'AI智能修正',
   alreadyRewrittenRules: '已应用的规则',
   businessInterventionRequired: '待人工介入的规则',
   overallRewriteSuggestions: '整体重写建议',

@@ -8,6 +8,46 @@ export enum RuleCategoryStatisticCategoryEnum {
   'sql' = 'sql'
 }
 
+export enum AIHubExecutionRecordFunctionModuleEnum {
+  'smart_correction' = 'smart_correction',
+
+  'performance_engine' = 'performance_engine'
+}
+
+export enum AIHubExecutionRecordProcessStatusEnum {
+  'pending' = 'pending',
+
+  'running' = 'running',
+
+  'completed' = 'completed',
+
+  'failed' = 'failed'
+}
+
+export enum AIHubExecutionRecordValueDimensionEnum {
+  'security' = 'security',
+
+  'performance' = 'performance',
+
+  'correction' = 'correction',
+
+  'maintenance' = 'maintenance',
+
+  'code_standard' = 'code_standard'
+}
+
+export enum AIModuleAnalysisAiModuleTypeEnum {
+  'smart_correction' = 'smart_correction',
+
+  'performance_engine' = 'performance_engine'
+}
+
+export enum AIModuleBannerCardsAiModuleTypeEnum {
+  'smart_correction' = 'smart_correction',
+
+  'performance_engine' = 'performance_engine'
+}
+
 export enum AssociateWorkflowsStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
@@ -278,6 +318,18 @@ export enum DirectAuditReqV1SqlTypeEnum {
   'mybatis' = 'mybatis',
 
   'UNKNOWN' = ''
+}
+
+export enum EfficiencyCardMetricTitleEnum {
+  'security_defense' = 'security_defense',
+
+  'resource_cost' = 'resource_cost',
+
+  'code_standard' = 'code_standard',
+
+  'rd_efficiency' = 'rd_efficiency',
+
+  'query_performance' = 'query_performance'
 }
 
 export enum FilterMetaFilterInputTypeEnum {
