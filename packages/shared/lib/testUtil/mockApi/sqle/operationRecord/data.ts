@@ -1,7 +1,3 @@
-import {
-  IOperationTypeNameList,
-  IOperationActionList
-} from '../../../../api/sqle/service/common';
 import { IOperationRecordListItem } from '../../../../api/base/service/common';
 import { OperationRecordListItemStatusEnum } from '../../../../api/base/service/common.enum';
 
@@ -35,30 +31,5 @@ export const operationRecordListMockData: IOperationRecordListItem[] = [
     status: OperationRecordListItemStatusEnum.failed,
     operation_user_agent:
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
-  }
-];
-
-export const operationTypeNameMockData: IOperationTypeNameList[] = [
-  {
-    operation_type_name: 'operation_type_name1',
-    desc: '操作类型'
-  }
-];
-
-export const operationActionMockData: IOperationActionList[] = [
-  {
-    operation_type: 'project',
-    operation_action: 'create_project',
-    desc: '创建项目'
-  },
-  {
-    operation_type: 'instance',
-    operation_action: 'delete_instance',
-    desc: '删除数据源'
-  },
-  {
-    operation_type: 'audit_plan',
-    operation_action: 'create_audit_plan',
-    desc: '创建智能扫描任务'
   }
 ];

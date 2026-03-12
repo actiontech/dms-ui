@@ -448,12 +448,6 @@ export enum ObjectDiffResultComparisonResultEnum {
   'comparison_not_exist' = 'comparison_not_exist'
 }
 
-export enum OperationRecordListStatusEnum {
-  'succeeded' = 'succeeded',
-
-  'failed' = 'failed'
-}
-
 export enum OptimizationRecordStatusEnum {
   'optimizing' = 'optimizing',
 
@@ -1048,6 +1042,24 @@ export enum InstanceTipResV2SupportedBackupStrategyEnum {
   'reverse_sql' = 'reverse_sql',
 
   'original_row' = 'original_row'
+}
+
+export enum OptimizedSQLFeedbackVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum OptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum UpdateOptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
 }
 
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
