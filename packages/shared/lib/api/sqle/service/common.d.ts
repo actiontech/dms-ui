@@ -47,7 +47,6 @@ import {
   InstanceTipResV1SupportedBackupStrategyEnum,
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
-  OperationRecordListStatusEnum,
   OptimizationRecordStatusEnum,
   OptimizationSQLDetailStatusEnum,
   RecordSourceNameEnum,
@@ -112,6 +111,9 @@ import {
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
   InstanceTipResV2SupportedBackupStrategyEnum,
+  OptimizedSQLFeedbackVoteEnum,
+  OptimizedSQLFeedbackReqVoteEnum,
+  UpdateOptimizedSQLFeedbackReqVoteEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ExecModeEnum,
@@ -1822,32 +1824,6 @@ export interface IGetModuleStatusResV1 {
   message?: string;
 }
 
-export interface IGetOperationActionListResV1 {
-  code?: number;
-
-  data?: IOperationActionList[];
-
-  message?: string;
-}
-
-export interface IGetOperationRecordListResV1 {
-  code?: number;
-
-  data?: IOperationRecordList[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
-export interface IGetOperationTypeNamesListResV1 {
-  code?: number;
-
-  data?: IOperationTypeNameList[];
-
-  message?: string;
-}
-
 export interface IGetOperationsResV1 {
   code?: number;
 
@@ -2702,48 +2678,10 @@ export interface IObjectDiffResult {
   object_name?: string;
 }
 
-export interface IOperationActionList {
-  desc?: string;
-
-  operation_action?: string;
-
-  operation_type?: string;
-}
-
-export interface IOperationRecordList {
-  id?: number;
-
-  operation_action?: string;
-
-  operation_content?: string;
-
-  operation_time?: string;
-
-  operation_type_name?: string;
-
-  operation_user?: IOperationUser;
-
-  project_name?: string;
-
-  status?: OperationRecordListStatusEnum;
-}
-
 export interface IOperationResV1 {
   op_code?: number;
 
   op_desc?: string;
-}
-
-export interface IOperationTypeNameList {
-  desc?: string;
-
-  operation_type_name?: string;
-}
-
-export interface IOperationUser {
-  ip?: string;
-
-  user_name?: string;
 }
 
 export interface IOperatorResV1 {
@@ -2773,6 +2711,8 @@ export interface IOptimizationDetail {
 }
 
 export interface IOptimizationRecord {
+  adoption_rate?: number;
+
   created_time?: string;
 
   created_user?: string;
@@ -2830,6 +2770,8 @@ export interface IOptimizationSQLDetail {
   optimization_id?: string;
 
   optimize?: IOptimizeDetail;
+
+  optimized_sql_feedbacks?: IOptimizedSQLFeedback[];
 
   origin_query_plan?: IQueryPlan;
 
@@ -4840,6 +4782,24 @@ export interface IInstanceTipResV2 {
   workflow_template_id?: number;
 }
 
+export interface IOptimizedSQLFeedback {
+  created_at?: string;
+
+  creator?: string;
+
+  id?: number;
+
+  reason?: string;
+
+  vote?: OptimizedSQLFeedbackVoteEnum;
+}
+
+export interface IOptimizedSQLFeedbackReq {
+  reason?: string;
+
+  vote?: OptimizedSQLFeedbackReqVoteEnum;
+}
+
 export interface IPartialSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
@@ -4866,6 +4826,12 @@ export interface ITaskAnalysisDataV2 {
   sql_explain?: ISQLExplain;
 
   table_metas?: ITableMetas;
+}
+
+export interface IUpdateOptimizedSQLFeedbackReq {
+  reason?: string;
+
+  vote?: UpdateOptimizedSQLFeedbackReqVoteEnum;
 }
 
 export interface IUpdateWorkflowReqV2 {
