@@ -47,7 +47,6 @@ import {
   InstanceTipResV1SupportedBackupStrategyEnum,
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
-  OperationRecordListStatusEnum,
   OptimizationRecordStatusEnum,
   OptimizationSQLDetailStatusEnum,
   RecordSourceNameEnum,
@@ -1825,32 +1824,6 @@ export interface IGetModuleStatusResV1 {
   message?: string;
 }
 
-export interface IGetOperationActionListResV1 {
-  code?: number;
-
-  data?: IOperationActionList[];
-
-  message?: string;
-}
-
-export interface IGetOperationRecordListResV1 {
-  code?: number;
-
-  data?: IOperationRecordList[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
-export interface IGetOperationTypeNamesListResV1 {
-  code?: number;
-
-  data?: IOperationTypeNameList[];
-
-  message?: string;
-}
-
 export interface IGetOperationsResV1 {
   code?: number;
 
@@ -2705,48 +2678,10 @@ export interface IObjectDiffResult {
   object_name?: string;
 }
 
-export interface IOperationActionList {
-  desc?: string;
-
-  operation_action?: string;
-
-  operation_type?: string;
-}
-
-export interface IOperationRecordList {
-  id?: number;
-
-  operation_action?: string;
-
-  operation_content?: string;
-
-  operation_time?: string;
-
-  operation_type_name?: string;
-
-  operation_user?: IOperationUser;
-
-  project_name?: string;
-
-  status?: OperationRecordListStatusEnum;
-}
-
 export interface IOperationResV1 {
   op_code?: number;
 
   op_desc?: string;
-}
-
-export interface IOperationTypeNameList {
-  desc?: string;
-
-  operation_type_name?: string;
-}
-
-export interface IOperationUser {
-  ip?: string;
-
-  user_name?: string;
 }
 
 export interface IOperatorResV1 {

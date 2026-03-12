@@ -448,12 +448,6 @@ export enum ObjectDiffResultComparisonResultEnum {
   'comparison_not_exist' = 'comparison_not_exist'
 }
 
-export enum OperationRecordListStatusEnum {
-  'succeeded' = 'succeeded',
-
-  'failed' = 'failed'
-}
-
 export enum OptimizationRecordStatusEnum {
   'optimizing' = 'optimizing',
 
