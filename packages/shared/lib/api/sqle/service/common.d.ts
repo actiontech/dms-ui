@@ -112,6 +112,9 @@ import {
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
   InstanceTipResV2SupportedBackupStrategyEnum,
+  OptimizedSQLFeedbackVoteEnum,
+  OptimizedSQLFeedbackReqVoteEnum,
+  UpdateOptimizedSQLFeedbackReqVoteEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ExecModeEnum,
@@ -2773,6 +2776,8 @@ export interface IOptimizationDetail {
 }
 
 export interface IOptimizationRecord {
+  adoption_rate?: number;
+
   created_time?: string;
 
   created_user?: string;
@@ -2830,6 +2835,8 @@ export interface IOptimizationSQLDetail {
   optimization_id?: string;
 
   optimize?: IOptimizeDetail;
+
+  optimized_sql_feedbacks?: IOptimizedSQLFeedback[];
 
   origin_query_plan?: IQueryPlan;
 
@@ -4840,6 +4847,24 @@ export interface IInstanceTipResV2 {
   workflow_template_id?: number;
 }
 
+export interface IOptimizedSQLFeedback {
+  created_at?: string;
+
+  creator?: string;
+
+  id?: number;
+
+  reason?: string;
+
+  vote?: OptimizedSQLFeedbackVoteEnum;
+}
+
+export interface IOptimizedSQLFeedbackReq {
+  reason?: string;
+
+  vote?: OptimizedSQLFeedbackReqVoteEnum;
+}
+
 export interface IPartialSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
@@ -4866,6 +4891,12 @@ export interface ITaskAnalysisDataV2 {
   sql_explain?: ISQLExplain;
 
   table_metas?: ITableMetas;
+}
+
+export interface IUpdateOptimizedSQLFeedbackReq {
+  reason?: string;
+
+  vote?: UpdateOptimizedSQLFeedbackReqVoteEnum;
 }
 
 export interface IUpdateWorkflowReqV2 {

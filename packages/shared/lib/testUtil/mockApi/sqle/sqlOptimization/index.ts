@@ -19,6 +19,9 @@ class SqlOptimization implements MockSpyApy {
     this.getOptimizationSQLDetail();
     this.getDBPerformanceImproveOverview();
     this.getOptimizationOverview();
+    this.addOptimizedSQLFeedback();
+    this.deleteOptimizedSQLFeedback();
+    this.updateOptimizedSQLFeedback();
   }
 
   public getOptimizationRecords() {
@@ -86,6 +89,24 @@ class SqlOptimization implements MockSpyApy {
         data: optimizationRecordOverviewMockData
       })
     );
+    return spy;
+  }
+
+  public addOptimizedSQLFeedback() {
+    const spy = jest.spyOn(sqlOptimization, 'AddOptimizedSQLFeedback');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteOptimizedSQLFeedback() {
+    const spy = jest.spyOn(sqlOptimization, 'DeleteOptimizedSQLFeedback');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateOptimizedSQLFeedback() {
+    const spy = jest.spyOn(sqlOptimization, 'UpdateOptimizedSQLFeedback');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

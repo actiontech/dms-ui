@@ -31,6 +31,10 @@ export const SqlOptimizationRightContentWrapper = styled(Col)`
     flex-direction: column;
     justify-content: center;
   }
+
+  .feedback-divider-in-right {
+    margin: 16px 0;
+  }
 `;
 
 export const SqlOptimizationCardWrapper = styled(Card)`
