@@ -4,7 +4,7 @@ exports[`RightContent should render with empty content 1`] = `
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -140,7 +140,7 @@ exports[`RightContent should render with error message 1`] = `
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -379,7 +379,7 @@ exports[`RightContent should render with horizontal layout by default 1`] = `
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -556,7 +556,7 @@ exports[`RightContent should render with horizontal layout when isVerticalLayout
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -733,7 +733,7 @@ exports[`RightContent should render with optimizeSteps is empty 1`] = `
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -822,7 +822,7 @@ exports[`RightContent should render with totalAnalysis detail is empty 1`] = `
 <body>
   <div>
     <div
-      class="ant-col ant-col-8 css-18hn8eo"
+      class="ant-col ant-col-8 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div
@@ -1046,7 +1046,7 @@ exports[`RightContent should render with vertical layout when isVerticalLayout i
 <body>
   <div>
     <div
-      class="ant-col ant-col-24 css-18hn8eo"
+      class="ant-col ant-col-24 css-1yq8nat"
       style="background: rgba(255, 255, 255, 0.7);"
     >
       <div

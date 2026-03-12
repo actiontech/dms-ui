@@ -1267,7 +1267,7 @@ WHERE
               </div>
             </div>
             <div
-              class="ant-col ant-col-8 css-18hn8eo"
+              class="ant-col ant-col-8 css-1yq8nat"
               style="padding-left: 12px; padding-right: 12px; background: rgba(255, 255, 255, 0.7);"
             >
               <div
@@ -1348,6 +1348,7 @@ WHERE
                 </div>
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 16px;"
                 >
                   <div
                     class="css-1xremcl"
@@ -1563,6 +1564,104 @@ WHERE
                             </span>
                           </span>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 16px;"
+                >
+                  <div
+                    class="ant-divider ant-divider-horizontal feedback-divider-in-right"
+                    role="separator"
+                  />
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-1ia503z"
+                  >
+                    <div
+                      class="feedback-section-title"
+                    >
+                      评估反馈
+                    </div>
+                    <div
+                      class="css-1hhgau3"
+                    >
+                      <div
+                        class="vote-buttons"
+                      >
+                        <button
+                          class="vote-tile-btn "
+                        >
+                          <span
+                            class="vote-btn-icon"
+                          >
+                            <svg
+                              color="currentColor"
+                              height="22"
+                              viewBox="0 0 1024 1024"
+                              width="22"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M398.495 365.118c138.97-76.823 29.377-272.875 156.586-280.923C742.605 92.84 655.198 384 655.198 384h117.454c82.783 0 132.925 64.723 112.547 144.562l-67.237 263.425c-11.69 45.8-59.225 82.68-106.25 82.68H448.134c-14.269 0-27.891-2.8-40.343-7.879C384 853.813 384 830.741 384 830.741V401.324s.758-25.168 14.495-36.206M304.19 874.667h-77.18c-35.281 0-66.2-28.501-69.058-63.643l-29.553-363.38C125.54 412.493 151.875 384 187.013 384h117.816c38.863 3.295 36.504 37.732 36.504 37.732v421.12s2.068 28.046-37.143 31.815"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="vote-btn-text"
+                          >
+                            通过
+                          </span>
+                        </button>
+                        <button
+                          class="vote-tile-btn "
+                        >
+                          <span
+                            class="vote-btn-icon"
+                          >
+                            <svg
+                              color="currentColor"
+                              height="22"
+                              viewBox="0 0 16 16"
+                              width="22"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="vote-btn-text"
+                          >
+                            不行
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-divider ant-divider-horizontal feedback-divider"
+                      role="separator"
+                    />
+                    <span
+                      class="ant-typography ant-typography-secondary review-records-title"
+                    >
+                      会审记录
+                    </span>
+                    <div
+                      class="css-ppohht"
+                    >
+                      <div
+                        class="no-records"
+                      >
+                        暂无反馈记录
                       </div>
                     </div>
                   </div>

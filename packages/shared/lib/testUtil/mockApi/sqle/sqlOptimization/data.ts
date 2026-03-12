@@ -5,11 +5,13 @@ import {
   IOptimizationSQL,
   IOptimizationSQLDetail,
   IDBPerformanceImproveOverview,
-  IOptimizationRecordOverview
+  IOptimizationRecordOverview,
+  IOptimizedSQLFeedback
 } from '../../../../api/sqle/service/common';
 import {
   OptimizationRecordStatusEnum,
-  OptimizationSQLDetailStatusEnum
+  OptimizationSQLDetailStatusEnum,
+  OptimizedSQLFeedbackVoteEnum
 } from '../../../../api/sqle/service/common.enum';
 
 export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
@@ -530,3 +532,26 @@ export const optimizationRecordOverviewMockData: IOptimizationRecordOverview[] =
       time: '2024-04-23'
     }
   ];
+
+export const optimizedSQLFeedbacksMockData: IOptimizedSQLFeedback[] = [
+  {
+    id: 1,
+    creator: 'admin',
+    vote: OptimizedSQLFeedbackVoteEnum.agree,
+    reason: '优化效果明显',
+    created_at: '2024-04-17T03:33:09Z'
+  },
+  {
+    id: 2,
+    creator: 'user1',
+    vote: OptimizedSQLFeedbackVoteEnum.disagree,
+    reason: '性能提升不明显',
+    created_at: '2024-04-16T10:00:00Z'
+  },
+  {
+    id: 3,
+    creator: 'user2',
+    vote: OptimizedSQLFeedbackVoteEnum.agree,
+    created_at: '2024-04-15T08:00:00Z'
+  }
+];

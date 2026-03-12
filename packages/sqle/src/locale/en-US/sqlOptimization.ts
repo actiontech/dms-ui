@@ -11,7 +11,8 @@ export default {
     performanceGain: 'Performance gain',
     createTime: 'Create time',
     status: 'Status',
-    creator: 'Creator'
+    creator: 'Creator',
+    adoptionRate: 'Adoption rate'
   },
   status: {
     finish: 'Optimization success',
@@ -66,6 +67,26 @@ export default {
     optimizingStatusTips:
       'Optimization in progress, please refresh to get the latest results',
     failedStatusTips: 'Optimization failed'
+  },
+  feedback: {
+    sectionTitle: 'Evaluation Feedback',
+    reviewRecords: 'Review Records',
+    agreeButton: 'Approve',
+    disagreeButton: 'Reject',
+    reasonPlaceholder: 'Enter a note (optional)',
+    saveButton: 'Save',
+    cancelButton: 'Cancel',
+    reEditButton: 'Re-edit',
+    deleteButton: 'Delete',
+    submittedAgree: 'Approved',
+    submittedDisagree: 'Rejected',
+    deleteConfirmTitle: 'Confirm to delete this feedback?',
+    deleteSuccess: 'Feedback deleted successfully',
+    submitSuccess: 'Feedback submitted successfully',
+    updateSuccess: 'Feedback updated successfully',
+    noRecords: 'No feedback records',
+    agreeLabel: 'Approve',
+    disagreeLabel: 'Reject'
   },
   detail: {
     returnButton: 'Return to performance optimization overview',

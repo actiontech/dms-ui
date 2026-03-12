@@ -1050,6 +1050,24 @@ export enum InstanceTipResV2SupportedBackupStrategyEnum {
   'original_row' = 'original_row'
 }
 
+export enum OptimizedSQLFeedbackVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum OptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum UpdateOptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
   'wechat' = 'wechat',
 
