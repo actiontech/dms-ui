@@ -380,6 +380,34 @@ export enum GetWorkflowTasksItemV2StatusEnum {
   'terminate_failed' = 'terminate_failed'
 }
 
+export enum InstanceTipResV2SupportedBackupStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'original_row' = 'original_row'
+}
+
+export enum OptimizedSQLFeedbackVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum OptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
+export enum UpdateOptimizedSQLFeedbackReqVoteEnum {
+  'agree' = 'agree',
+
+  'disagree' = 'disagree'
+}
+
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
   'wechat' = 'wechat',
 

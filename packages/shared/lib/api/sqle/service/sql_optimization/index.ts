@@ -26,7 +26,13 @@ import {
   ISQLOptimizeV2Params,
   ISQLOptimizeV2Return,
   IGetOptimizationSQLDetailV2Params,
-  IGetOptimizationSQLDetailV2Return
+  IGetOptimizationSQLDetailV2Return,
+  IAddOptimizedSQLFeedbackParams,
+  IAddOptimizedSQLFeedbackReturn,
+  IDeleteOptimizedSQLFeedbackParams,
+  IDeleteOptimizedSQLFeedbackReturn,
+  IUpdateOptimizedSQLFeedbackParams,
+  IUpdateOptimizedSQLFeedbackReturn
 } from './index.d';
 
 class SqlOptimizationService extends ServiceBase {
@@ -315,6 +321,66 @@ class SqlOptimizationService extends ServiceBase {
 
     return this.get<IGetOptimizationSQLDetailV2Return>(
       `/v2/projects/${project_name}/sql_optimization_records/${optimization_record_id}/detail`,
+      paramsData,
+      options
+    );
+  }
+
+  public AddOptimizedSQLFeedback(
+    params: IAddOptimizedSQLFeedbackParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const optimization_record_id = paramsData.optimization_record_id;
+    delete paramsData.optimization_record_id;
+
+    return this.post<IAddOptimizedSQLFeedbackReturn>(
+      `/v2/projects/${project_name}/sql_optimization_records/${optimization_record_id}/feedback`,
+      paramsData,
+      options
+    );
+  }
+
+  public DeleteOptimizedSQLFeedback(
+    params: IDeleteOptimizedSQLFeedbackParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const optimization_record_id = paramsData.optimization_record_id;
+    delete paramsData.optimization_record_id;
+
+    const feedback_id = paramsData.feedback_id;
+    delete paramsData.feedback_id;
+
+    return this.delete<IDeleteOptimizedSQLFeedbackReturn>(
+      `/v2/projects/${project_name}/sql_optimization_records/${optimization_record_id}/feedback/${feedback_id}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateOptimizedSQLFeedback(
+    params: IUpdateOptimizedSQLFeedbackParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const optimization_record_id = paramsData.optimization_record_id;
+    delete paramsData.optimization_record_id;
+
+    const feedback_id = paramsData.feedback_id;
+    delete paramsData.feedback_id;
+
+    return this.patch<IUpdateOptimizedSQLFeedbackReturn>(
+      `/v2/projects/${project_name}/sql_optimization_records/${optimization_record_id}/feedback/${feedback_id}/`,
       paramsData,
       options
     );

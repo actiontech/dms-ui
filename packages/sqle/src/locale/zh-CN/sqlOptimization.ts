@@ -19,7 +19,8 @@ export default {
     autoRefresh: '自动刷新',
     openAutoRefreshTips: '开启自动刷新（每5秒刷新一次）',
     closeAutoRefreshTips: '关闭自动刷新（当前每5秒刷新一次）',
-    view: '查看'
+    view: '查看',
+    adoptionRate: '采纳率'
   },
   status: {
     finish: '调优成功',
@@ -173,5 +174,25 @@ export default {
       '注意！您的SQL暂无法通过索引解决性能问题，可参考如下方式调整：',
     sqlQueryAlreadyOptimal:
       '恭喜！ 您的SQL查询配置已经非常优秀，无需进一步优化。'
+  },
+  feedback: {
+    sectionTitle: '评估反馈',
+    reviewRecords: '会审记录',
+    agreeButton: '通过',
+    disagreeButton: '不行',
+    reasonPlaceholder: '请输入备注（可选）',
+    saveButton: '保存',
+    cancelButton: '取消',
+    reEditButton: '重新编辑',
+    deleteButton: '删除',
+    submittedAgree: '通过',
+    submittedDisagree: '不行',
+    deleteConfirmTitle: '确认删除此条反馈？',
+    deleteSuccess: '删除反馈成功',
+    submitSuccess: '反馈提交成功',
+    updateSuccess: '反馈更新成功',
+    noRecords: '暂无反馈记录',
+    agreeLabel: '通过',
+    disagreeLabel: '不行'
   }
 };

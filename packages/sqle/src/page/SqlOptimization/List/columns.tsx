@@ -100,6 +100,16 @@ export const sqlOptimizationListColumns: (
       }
     },
     {
+      dataIndex: 'adoption_rate',
+      title: () => t('sqlOptimization.table.adoptionRate'),
+      render: (adoption_rate) => {
+        if (adoption_rate === undefined || adoption_rate === null) {
+          return '-';
+        }
+        return isNaN(adoption_rate) ? '-' : `${adoption_rate}%`;
+      }
+    },
+    {
       dataIndex: 'created_time',
       title: () => t('sqlOptimization.table.createTime'),
       render: (value) => {

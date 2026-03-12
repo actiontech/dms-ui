@@ -31,6 +31,12 @@ const SqlOptimizationResult: React.FC = () => {
     }
   }, [urlParams.optimizationId, getOptimizationResult]);
 
+  const handleFeedbackChanged = () => {
+    if (urlParams.optimizationId) {
+      getOptimizationResult(urlParams.optimizationId);
+    }
+  };
+
   return (
     <>
       <PageHeader
@@ -50,6 +56,8 @@ const SqlOptimizationResult: React.FC = () => {
           errorMessage={errorMessage}
           optimizationResult={optimizationResult}
           optimizationResultLoading={optimizationResultLoading}
+          optimizationRecordId={urlParams.optimizationId}
+          onFeedbackChanged={handleFeedbackChanged}
         />
       </SqlOptimizationResultStyleWrapper>
     </>

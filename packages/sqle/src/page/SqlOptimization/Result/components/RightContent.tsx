@@ -1,18 +1,20 @@
 import React from 'react';
-import { Space } from 'antd';
+import { Space, Divider } from 'antd';
 import ProbabilityDisplay from './ProbabilityDisplay';
 import AnalysisChart from './AnalysisChart';
 import OptimizeSteps from './OptimizeSteps';
 import { SqlOptimizationRightContentWrapper } from './style';
 import {
   ITotalAnalysis,
-  IOptimizeStep
+  IOptimizeStep,
+  IOptimizedSQLFeedback
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { EmptyBox } from '@actiontech/shared';
 import BestPerformanceIcon from './BestPerformanceIcon';
 import { useTranslation } from 'react-i18next';
+import FeedbackPanel from './FeedbackPanel';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 export interface RightContentProps {
   isVerticalLayout?: boolean;
@@ -21,6 +23,9 @@ export interface RightContentProps {
   errorMessage?: string;
   onOptimizationRuleClick: (stepIndex: number) => void;
   optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  optimizationRecordId?: string;
+  initialFeedbacks?: IOptimizedSQLFeedback[];
+  onFeedbackChanged?: () => void;
 }
 
 const RightContent: React.FC<RightContentProps> = ({
@@ -29,10 +34,17 @@ const RightContent: React.FC<RightContentProps> = ({
   optimizeSteps,
   errorMessage,
   onOptimizationRuleClick,
-  optimizationStatus
+  optimizationStatus,
+  optimizationRecordId,
+  initialFeedbacks,
+  onFeedbackChanged
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+
+  const showFeedback =
+    !!optimizationRecordId &&
+    optimizationStatus !== OptimizationSQLDetailStatusEnum.optimizing;
 
   return (
     <SqlOptimizationRightContentWrapper
@@ -70,6 +82,17 @@ const RightContent: React.FC<RightContentProps> = ({
             optimizationStatus={optimizationStatus}
           />
         </EmptyBox>
+
+        {showFeedback && (
+          <>
+            <Divider className="feedback-divider-in-right" />
+            <FeedbackPanel
+              optimizationRecordId={optimizationRecordId}
+              initialFeedbacks={initialFeedbacks}
+              onFeedbackChanged={onFeedbackChanged}
+            />
+          </>
+        )}
       </Space>
     </SqlOptimizationRightContentWrapper>
   );
