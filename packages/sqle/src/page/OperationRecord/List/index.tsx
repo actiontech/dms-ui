@@ -26,8 +26,6 @@ import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType
 } from './column';
-// import useOperationTypeName from '../../../hooks/useOperationTypeName';
-// import useOperationActions from '../../../hooks/useOperationActions';
 import { ResponseCode } from '../../../data/common';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 const OperationRecordList: React.FC = () => {
@@ -35,16 +33,12 @@ const OperationRecordList: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
   const { bindProjects, userRoles } = useCurrentUser();
-  // const [currentOperationTypeName, setCurrentOperationTypeName] =
-  //   useState<string>();
+
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
-  // const { updateOperationTypeNameList, operationTypeNameOptions } =
-  //   useOperationTypeName();
-  // const { updateOperationActions, operationActionOptions } =
-  //   useOperationActions();
+
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -119,21 +113,6 @@ const OperationRecordList: React.FC = () => {
           options: operationOptions
         }
       ]
-      // [
-      //   'operation_type_name',
-      //   {
-      //     options: operationTypeNameOptions,
-      //     onChange: (value: unknown) => {
-      //       setCurrentOperationTypeName(value as string);
-      //     }
-      //   }
-      // ],
-      // [
-      //   'operation_content',
-      //   {
-      //     options: operationActionOptions(currentOperationTypeName)
-      //   }
-      // ]
     ]);
   }, [bindProjects, t, userRoles]);
 
@@ -148,10 +127,7 @@ const OperationRecordList: React.FC = () => {
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
-  // useEffect(() => {
-  //   updateOperationTypeNameList();
-  //   updateOperationActions();
-  // }, [updateOperationActions, updateOperationTypeNameList]);
+
   const onExport = () => {
     startExport();
     const hideLoading = messageApi.loading(

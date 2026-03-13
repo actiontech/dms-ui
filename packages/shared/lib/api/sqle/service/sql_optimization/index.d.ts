@@ -7,7 +7,10 @@ import {
   IGetOptimizationSQLRes,
   IGetDBPerformanceImproveOverviewResp,
   IGetOptimizationOverviewResp,
-  IGetOptimizationDetailRes
+  IGetOptimizationDetailRes,
+  IOptimizedSQLFeedbackReq,
+  IBaseRes,
+  IUpdateOptimizedSQLFeedbackReq
 } from '../common.d';
 
 import { GetOptimizationRecordsV2FilterStatusEnum } from './index.enum';
@@ -173,3 +176,33 @@ export interface IGetOptimizationSQLDetailV2Params {
 
 export interface IGetOptimizationSQLDetailV2Return
   extends IGetOptimizationDetailRes {}
+
+export interface IAddOptimizedSQLFeedbackParams
+  extends IOptimizedSQLFeedbackReq {
+  project_name: string;
+
+  optimization_record_id: string;
+}
+
+export interface IAddOptimizedSQLFeedbackReturn extends IBaseRes {}
+
+export interface IDeleteOptimizedSQLFeedbackParams {
+  project_name: string;
+
+  optimization_record_id: string;
+
+  feedback_id: string;
+}
+
+export interface IDeleteOptimizedSQLFeedbackReturn extends IBaseRes {}
+
+export interface IUpdateOptimizedSQLFeedbackParams
+  extends IUpdateOptimizedSQLFeedbackReq {
+  project_name: string;
+
+  optimization_record_id: string;
+
+  feedback_id: string;
+}
+
+export interface IUpdateOptimizedSQLFeedbackReturn extends IBaseRes {}
