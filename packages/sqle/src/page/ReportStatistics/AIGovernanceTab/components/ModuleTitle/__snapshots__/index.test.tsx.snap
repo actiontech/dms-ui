@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/AIGovernance/ModuleTitle should match snapshot 1`] = `
+<div>
+  <div
+    class="css-1baqgp0"
+  >
+    <span
+      class="module-title-text"
+    >
+      模块标题
+    </span>
+    <span
+      class="module-title-desc"
+    >
+      模块描述
+    </span>
+  </div>
+</div>
+`;
