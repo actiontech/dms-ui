@@ -20,7 +20,9 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
   isVerticalLayout = false,
   optimizationResult,
   errorMessage,
-  optimizationResultLoading
+  optimizationResultLoading,
+  optimizationRecordId,
+  onFeedbackChanged
 }) => {
   const dispatch = useDispatch();
 
@@ -176,6 +178,9 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           errorMessage={errorMessage}
           onOptimizationRuleClick={onViewOptimizationResult}
           optimizationStatus={optimizationResult?.status}
+          optimizationRecordId={optimizationRecordId}
+          initialFeedbacks={optimizationResult?.optimized_sql_feedbacks ?? []}
+          onFeedbackChanged={onFeedbackChanged}
         />
 
         <SqlOptimizationModals />

@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedbackList should render feedback list with mock data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-ppohht"
+    >
+      <div
+        class="feedback-card"
+      >
+        <div
+          class="feedback-avatar"
+        >
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="transform: scale(1) translateX(-50%);"
+                >
+                  A
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="feedback-card-body"
+        >
+          <div
+            class="feedback-card-header"
+          >
+            <span
+              class="creator-name"
+            >
+              admin
+            </span>
+            <span
+              class="vote-badge agree"
+            >
+              通过
+            </span>
+            <span
+              class="feedback-time"
+            >
+              2024-04-17 11:33:09
+            </span>
+          </div>
+          <span
+            class="ant-typography feedback-reason"
+          >
+            优化效果明显
+          </span>
+        </div>
+        <button
+          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous basic-button-wrapper css-10ae2zl"
+          type="button"
+        >
+          <span>
+            删 除
+          </span>
+        </button>
+      </div>
+      <div
+        class="feedback-card"
+      >
+        <div
+          class="feedback-avatar"
+        >
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="transform: scale(1) translateX(-50%);"
+                >
+                  U
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="feedback-card-body"
+        >
+          <div
+            class="feedback-card-header"
+          >
+            <span
+              class="creator-name"
+            >
+              user1
+            </span>
+            <span
+              class="vote-badge disagree"
+            >
+              不行
+            </span>
+            <span
+              class="feedback-time"
+            >
+              2024-04-16 18:00:00
+            </span>
+          </div>
+          <span
+            class="ant-typography feedback-reason"
+          >
+            性能提升不明显
+          </span>
+        </div>
+      </div>
+      <div
+        class="feedback-card"
+      >
+        <div
+          class="feedback-avatar"
+        >
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle action-avatar css-6ssfc7"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="transform: scale(1) translateX(-50%);"
+                >
+                  U
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="feedback-card-body"
+        >
+          <div
+            class="feedback-card-header"
+          >
+            <span
+              class="creator-name"
+            >
+              user2
+            </span>
+            <span
+              class="vote-badge agree"
+            >
+              通过
+            </span>
+            <span
+              class="feedback-time"
+            >
+              2024-04-15 16:00:00
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`FeedbackList should render no records message when feedbacks is empty 1`] = `
+<body>
+  <div>
+    <div
+      class="css-ppohht"
+    >
+      <div
+        class="no-records"
+      >
+        暂无反馈记录
+      </div>
+    </div>
+  </div>
+</body>
+`;
