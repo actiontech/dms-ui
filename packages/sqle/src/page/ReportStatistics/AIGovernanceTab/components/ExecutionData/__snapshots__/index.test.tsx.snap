@@ -1,0 +1,1068 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/AIGovernance/ExecutionData should render empty data when api returns empty list 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1qg2zf5"
+    >
+      <div
+        class="execution-data-header"
+      >
+        <div
+          class="css-1baqgp0"
+        >
+          <span
+            class="module-title-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+              />
+              <path
+                d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"
+              />
+            </svg>
+          </span>
+          <span
+            class="module-title-text"
+          >
+            执行数据
+          </span>
+          <span
+            class="module-title-desc"
+          >
+            数据层
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-card ant-card-hoverable css-121p60i"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <header
+            class="card-header"
+          >
+            <div
+              class="title"
+            >
+              <div
+                class="title-cont"
+              />
+            </div>
+            <div
+              class="extra"
+            />
+          </header>
+          <section
+            class="card-cont"
+          >
+            <div
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-table ant-table-small ant-table-empty ant-table-scroll-horizontal"
+                  >
+                    <div
+                      class="ant-table-container"
+                    >
+                      <div
+                        class="ant-table-content"
+                        style="overflow-x: auto; overflow-y: hidden;"
+                      >
+                        <table
+                          style="min-width: 100%; table-layout: auto;"
+                        >
+                          <colgroup>
+                            <col
+                              style="width: 260px;"
+                            />
+                            <col
+                              style="width: 260px;"
+                            />
+                          </colgroup>
+                          <thead
+                            class="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                来源项目
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SQL 片段
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                功能模块
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                价值维度
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                处理状态
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                时间
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="ant-table-tbody"
+                          >
+                            <tr
+                              aria-hidden="true"
+                              class="ant-table-measure-row"
+                              style="height: 0px; font-size: 0px;"
+                            >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-placeholder"
+                            >
+                              <td
+                                class="ant-table-cell"
+                                colspan="6"
+                              >
+                                <div
+                                  class="ant-table-expanded-row-fixed"
+                                  style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/AIGovernance/ExecutionData should render loading and data snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1qg2zf5"
+    >
+      <div
+        class="execution-data-header"
+      >
+        <div
+          class="css-1baqgp0"
+        >
+          <span
+            class="module-title-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+              />
+              <path
+                d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"
+              />
+            </svg>
+          </span>
+          <span
+            class="module-title-text"
+          >
+            执行数据
+          </span>
+          <span
+            class="module-title-desc"
+          >
+            数据层
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-card ant-card-loading ant-card-hoverable css-121p60i"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-skeleton ant-skeleton-active"
+          >
+            <div
+              class="ant-skeleton-content"
+            >
+              <ul
+                class="ant-skeleton-paragraph"
+              >
+                <li />
+                <li />
+                <li />
+                <li
+                  style="width: 61%;"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/AIGovernance/ExecutionData should render loading and data snapshot 2`] = `
+<body>
+  <div>
+    <div
+      class="css-1qg2zf5"
+    >
+      <div
+        class="execution-data-header"
+      >
+        <div
+          class="css-1baqgp0"
+        >
+          <span
+            class="module-title-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+              />
+              <path
+                d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"
+              />
+            </svg>
+          </span>
+          <span
+            class="module-title-text"
+          >
+            执行数据
+          </span>
+          <span
+            class="module-title-desc"
+          >
+            数据层
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-card ant-card-hoverable css-121p60i"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <header
+            class="card-header"
+          >
+            <div
+              class="title"
+            >
+              <div
+                class="title-cont"
+              />
+            </div>
+            <div
+              class="extra"
+            />
+          </header>
+          <section
+            class="card-cont"
+          >
+            <div
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-table ant-table-small ant-table-scroll-horizontal"
+                  >
+                    <div
+                      class="ant-table-container"
+                    >
+                      <div
+                        class="ant-table-content"
+                        style="overflow-x: auto; overflow-y: hidden;"
+                      >
+                        <table
+                          style="min-width: 100%; table-layout: auto;"
+                        >
+                          <colgroup>
+                            <col
+                              style="width: 260px;"
+                            />
+                            <col
+                              style="width: 260px;"
+                            />
+                          </colgroup>
+                          <thead
+                            class="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                来源项目
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SQL 片段
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                功能模块
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                价值维度
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                处理状态
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                时间
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="ant-table-tbody"
+                          >
+                            <tr
+                              aria-hidden="true"
+                              class="ant-table-measure-row"
+                              style="height: 0px; font-size: 0px;"
+                            >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="1-0"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目A
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  SELECT * FROM users WHERE id = 1
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(245, 243, 255); color: rgb(109, 40, 217);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"
+                                      />
+                                    </svg>
+                                    AI 智能修正
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    安全性
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(237, 176, 84);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(237, 176, 84);"
+                                    />
+                                    待处理
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:00:00
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="2-1"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目B
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  SELECT * FROM orders WHERE amount &gt; 1000
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(219, 234, 254); color: rgb(29, 78, 216);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <ellipse
+                                        cx="12"
+                                        cy="5"
+                                        rx="9"
+                                        ry="3"
+                                      />
+                                      <path
+                                        d="M3 5v14a9 3 0 0 0 18 0V5"
+                                      />
+                                      <path
+                                        d="M3 12a9 3 0 0 0 18 0"
+                                      />
+                                    </svg>
+                                    AI 性能引擎
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    性能问题
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(69, 131, 255);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(69, 131, 255);"
+                                    />
+                                    处理中
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:05:00
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="3-2"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目C
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  UPDATE account SET balance = balance - 1 WHERE id = 3
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(245, 243, 255); color: rgb(109, 40, 217);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"
+                                      />
+                                    </svg>
+                                    AI 智能修正
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    正确性
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(28, 184, 137);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(28, 184, 137);"
+                                    />
+                                    已处理
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:10:00
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="4-3"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目D
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  DELETE FROM logs WHERE created_at &lt; NOW() - INTERVAL 30 DAY
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(219, 234, 254); color: rgb(29, 78, 216);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <ellipse
+                                        cx="12"
+                                        cy="5"
+                                        rx="9"
+                                        ry="3"
+                                      />
+                                      <path
+                                        d="M3 5v14a9 3 0 0 0 18 0V5"
+                                      />
+                                      <path
+                                        d="M3 12a9 3 0 0 0 18 0"
+                                      />
+                                    </svg>
+                                    AI 性能引擎
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    可维护性
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(246, 96, 116);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(246, 96, 116);"
+                                    />
+                                    处理失败
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:15:00
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="5-4"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目E
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  SELECT * FROM t5
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(245, 243, 255); color: rgb(109, 40, 217);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"
+                                      />
+                                    </svg>
+                                    AI 智能修正
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    代码规范
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(28, 184, 137);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(28, 184, 137);"
+                                    />
+                                    已处理
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:20:00
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-row ant-table-row-level-0"
+                              data-row-key="6-5"
+                            >
+                              <td
+                                class="ant-table-cell"
+                              >
+                                项目F
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                                style="width: 260px; min-width: 260px; max-width: 260px;"
+                              >
+                                <span
+                                  style="display: inline-block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                                >
+                                  SELECT * FROM t6
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="ant-tag"
+                                  style="background-color: rgb(219, 234, 254); color: rgb(29, 78, 216);"
+                                >
+                                  <span
+                                    class="execution-module-tag-content"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      viewBox="0 0 24 24"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <ellipse
+                                        cx="12"
+                                        cy="5"
+                                        rx="9"
+                                        ry="3"
+                                      />
+                                      <path
+                                        d="M3 5v14a9 3 0 0 0 18 0V5"
+                                      />
+                                      <path
+                                        d="M3 12a9 3 0 0 0 18 0"
+                                      />
+                                    </svg>
+                                    AI 性能引擎
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-value-dimension-wrapper"
+                                >
+                                  <span
+                                    class="ant-tag"
+                                  >
+                                    安全性
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                <span
+                                  class="execution-process-status-wrapper"
+                                >
+                                  <span
+                                    class="execution-process-status"
+                                    style="color: rgb(69, 131, 255);"
+                                  >
+                                    <span
+                                      class="execution-process-status-dot"
+                                      style="background-color: rgb(69, 131, 255);"
+                                    />
+                                    处理中
+                                  </span>
+                                </span>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                2026-02-12 10:25:00
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

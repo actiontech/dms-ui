@@ -14,10 +14,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        createCustomRule
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          createCustomRule
+        </div>
       </div>
     </div>
   </div>
@@ -28,10 +32,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        updateCustomRule
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          updateCustomRule
+        </div>
       </div>
     </div>
   </div>
@@ -42,10 +50,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        globalRuleTemplateCreate
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateCreate
+        </div>
       </div>
     </div>
   </div>
@@ -55,8 +67,12 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route global-detail 1`] = `
 <body>
   <div>
-    <div>
-      globalRuleTemplateDetail
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        globalRuleTemplateDetail
+      </div>
     </div>
   </div>
 </body>
@@ -66,10 +82,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        globalRuleTemplateImport
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateImport
+        </div>
       </div>
     </div>
   </div>
@@ -80,10 +100,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        globalRuleTemplateUpdate
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateUpdate
+        </div>
       </div>
     </div>
   </div>
@@ -93,8 +117,12 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
 <body>
   <div>
-    <div>
-      reportStatistics
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        reportStatistics
+      </div>
     </div>
   </div>
 </body>
@@ -103,8 +131,12 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route rule 1`] = `
 <body>
   <div>
-    <div>
-      rule
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        rule
+      </div>
     </div>
   </div>
 </body>
@@ -114,10 +146,14 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 <body>
   <div>
     <div
-      data-test-parent-id="ruleManager"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplateManagement
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          ruleTemplateManagement
+        </div>
       </div>
     </div>
   </div>
@@ -128,13 +164,17 @@ exports[`base/router-sqle-ce render sqle project detail router render route anal
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlExecWorkflow"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          workflowAnalyze
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowAnalyze
+          </div>
         </div>
       </div>
     </div>
@@ -146,10 +186,14 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        operationRecord
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          operationRecord
+        </div>
       </div>
     </div>
   </div>
@@ -159,8 +203,12 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render operationRecord 2`] = `
 <body>
   <div>
-    <div>
-      globalOperationRecord
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        globalOperationRecord
+      </div>
     </div>
   </div>
 </body>
@@ -170,10 +218,14 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        dashboard
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          dashboard
+        </div>
       </div>
     </div>
   </div>
@@ -184,13 +236,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagementConf"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          SqlManagementConfAnalyze
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfAnalyze
+          </div>
         </div>
       </div>
     </div>
@@ -202,13 +258,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagementConf"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          CreateSqlManagementConf
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            CreateSqlManagementConf
+          </div>
         </div>
       </div>
     </div>
@@ -220,13 +280,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagementConf"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          SqlManagementConfDetail
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfDetail
+          </div>
         </div>
       </div>
     </div>
@@ -238,13 +302,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagementConf"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          SqlManagementConfList
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfList
+          </div>
         </div>
       </div>
     </div>
@@ -256,13 +324,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagementConf"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          UpdateSqlManagementConf
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            UpdateSqlManagementConf
+          </div>
         </div>
       </div>
     </div>
@@ -274,13 +346,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="pluginAudit"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          pluginAuditList
+        <div
+          data-test-parent-id="pluginAudit"
+        >
+          <div>
+            pluginAuditList
+          </div>
         </div>
       </div>
     </div>
@@ -292,13 +368,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="progress"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          progressDetail
+        <div
+          data-test-parent-id="progress"
+        >
+          <div>
+            progressDetail
+          </div>
         </div>
       </div>
     </div>
@@ -310,10 +390,14 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        projectOverview
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          projectOverview
+        </div>
       </div>
     </div>
   </div>
@@ -324,13 +408,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplate
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplate
+          </div>
         </div>
       </div>
     </div>
@@ -342,13 +430,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplateCreate
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateCreate
+          </div>
         </div>
       </div>
     </div>
@@ -360,13 +452,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplateImport
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateImport
+          </div>
         </div>
       </div>
     </div>
@@ -378,13 +474,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplate
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplate
+          </div>
         </div>
       </div>
     </div>
@@ -396,13 +496,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplateDetail
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateDetail
+          </div>
         </div>
       </div>
     </div>
@@ -414,13 +518,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="ruleTemplate"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          ruleTemplateUpdate
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateUpdate
+          </div>
         </div>
       </div>
     </div>
@@ -432,13 +540,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlAudit"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          sqlAuditCreate
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditCreate
+          </div>
         </div>
       </div>
     </div>
@@ -450,13 +562,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlAudit"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          sqlAuditDetail
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditDetail
+          </div>
         </div>
       </div>
     </div>
@@ -468,13 +584,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlAudit"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          sqlAuditList
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditList
+          </div>
         </div>
       </div>
     </div>
@@ -486,13 +606,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlManagement"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          SqlManagement
+        <div
+          data-test-parent-id="sqlManagement"
+        >
+          <div>
+            SqlManagement
+          </div>
         </div>
       </div>
     </div>
@@ -504,13 +628,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlExecWorkflow"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          workflowSqlFileStatementOverview
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowSqlFileStatementOverview
+          </div>
         </div>
       </div>
     </div>
@@ -522,13 +650,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlExecWorkflow"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          createSqlExecWorkflow
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            createSqlExecWorkflow
+          </div>
         </div>
       </div>
     </div>
@@ -540,13 +672,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlExecWorkflow"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          workflowDetail
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowDetail
+          </div>
         </div>
       </div>
     </div>
@@ -558,13 +694,17 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
       <div
-        data-test-parent-id="sqlExecWorkflow"
+        data-test-parent-id="sqleProjectDetail"
       >
-        <div>
-          sqlExecWorkflowList
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            sqlExecWorkflowList
+          </div>
         </div>
       </div>
     </div>
@@ -576,10 +716,14 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlManagementException
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          sqlManagementException
+        </div>
       </div>
     </div>
   </div>
@@ -590,10 +734,14 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqleProjectDetail"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        Whitelist
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          Whitelist
+        </div>
       </div>
     </div>
   </div>
