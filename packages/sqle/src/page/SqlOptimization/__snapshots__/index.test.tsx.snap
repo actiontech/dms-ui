@@ -171,6 +171,7 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                             <col />
                             <col />
                             <col />
+                            <col />
                             <col
                               style="width: 82px;"
                             />
@@ -231,6 +232,12 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                 class="ant-table-cell"
                                 scope="col"
                               >
+                                采纳率
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
                                 创建时间
                               </th>
                               <th
@@ -250,6 +257,15 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                               class="ant-table-measure-row"
                               style="height: 0px; font-size: 0px;"
                             >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
                               <td
                                 style="padding: 0px; border: 0px; height: 0px;"
                               >
@@ -441,6 +457,11 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                               <td
                                 class="ant-table-cell"
                               >
+                                -
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
                                 2024-04-17 11:33:09
                               </td>
                               <td
@@ -523,6 +544,11 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                               <td
                                 class="ant-table-cell"
                               />
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
+                              </td>
                               <td
                                 class="ant-table-cell"
                               >
@@ -636,6 +662,11 @@ exports[`sqle/SqlOptimization should render enterprise feature display with prop
                                     </span>
                                   </div>
                                 </div>
+                              </td>
+                              <td
+                                class="ant-table-cell"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"
