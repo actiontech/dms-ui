@@ -76,7 +76,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
       {
         key: 'report-statistics',
         title: t('dmsMenu.globalSettings.reportStatistics'),
-        path: ROUTE_PATHS.SQLE.REPORT_STATISTICS,
+        path: ROUTE_PATHS.SQLE.REPORT_STATISTICS.index.path,
         icon: <SignalFilled width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
       },

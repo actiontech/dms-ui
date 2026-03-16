@@ -1,0 +1,476 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/AIGovernance/ManagementView should render management view and rewrite module data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-18s2h7y"
+    >
+      <div
+        class="management-view-header"
+      >
+        <div
+          class="css-1baqgp0"
+        >
+          <span
+            class="module-title-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 3v16a2 2 0 0 0 2 2h16M18 17V9M13 17V5M8 17v-3"
+              />
+            </svg>
+          </span>
+          <span
+            class="module-title-text"
+          >
+            管理视图
+          </span>
+          <span
+            class="module-title-desc"
+          >
+            分析层
+          </span>
+        </div>
+        <div
+          class="ant-segmented basic-segmented-wrapper management-view-segmented css-18p941p"
+        >
+          <div
+            class="ant-segmented-group"
+          >
+            <label
+              class="ant-segmented-item ant-segmented-item-selected"
+            >
+              <input
+                checked=""
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+              >
+                <span
+                  class="management-view-segmented-option"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"
+                    />
+                  </svg>
+                  AI 智能修正
+                </span>
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+              >
+                <span
+                  class="management-view-segmented-option"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <ellipse
+                      cx="12"
+                      cy="5"
+                      rx="9"
+                      ry="3"
+                    />
+                    <path
+                      d="M3 5v14a9 3 0 0 0 18 0V5"
+                    />
+                    <path
+                      d="M3 12a9 3 0 0 0 18 0"
+                    />
+                  </svg>
+                  AI 性能引擎
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="management-view-cards"
+      >
+        <div
+          class="ant-card ant-card-hoverable css-121p60i"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <header
+              class="card-header"
+            >
+              <div
+                class="title"
+              >
+                <div
+                  class="title-cont"
+                >
+                  <div
+                    class="css-1jmuc9j"
+                  >
+                    <div
+                      class="card-section-title-row"
+                    >
+                      <span
+                        class="card-section-title-icon"
+                      >
+                        <svg
+                          fill="none"
+                          height="16"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87"
+                          />
+                          <circle
+                            cx="9"
+                            cy="7"
+                            r="4"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="card-section-title-text"
+                      >
+                        项目组投入产出分析
+                      </span>
+                    </div>
+                    <span
+                      class="card-section-title-desc"
+                    >
+                      各业务线 AI 引擎使用深度与健康度
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="extra"
+              />
+            </header>
+            <section
+              class="card-cont"
+            >
+              <div
+                class="css-9hw9mh"
+              >
+                <div
+                  class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+                >
+                  <div
+                    class="ant-spin-nested-loading"
+                  >
+                    <div
+                      class="ant-spin-container"
+                    >
+                      <div
+                        class="ant-table ant-table-small ant-table-scroll-horizontal"
+                      >
+                        <div
+                          class="ant-table-container"
+                        >
+                          <div
+                            class="ant-table-content"
+                            style="overflow-x: auto; overflow-y: hidden;"
+                          >
+                            <table
+                              style="min-width: 100%; table-layout: auto;"
+                            >
+                              <colgroup />
+                              <thead
+                                class="ant-table-thead"
+                              >
+                                <tr>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
+                                    项目团队名称
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
+                                    活跃人数
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
+                                    调用频次
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
+                                    节省工时
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                    style="text-align: right;"
+                                  >
+                                    健康分
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody
+                                class="ant-table-tbody"
+                              >
+                                <tr
+                                  aria-hidden="true"
+                                  class="ant-table-measure-row"
+                                  style="height: 0px; font-size: 0px;"
+                                >
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr
+                                  class="ant-table-row ant-table-row-level-0"
+                                  data-row-key="重写项目A"
+                                >
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    <div
+                                      class="project-name-cell"
+                                    >
+                                      <span
+                                        class="project-rank-badge is-top1"
+                                      >
+                                        1
+                                      </span>
+                                      <span>
+                                        重写项目A
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    8
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    120
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    6 小时
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                    style="text-align: right;"
+                                  >
+                                    <div
+                                      class="health-score-cell"
+                                    >
+                                      <div
+                                        aria-valuenow="92"
+                                        class="ant-progress ant-progress-status-normal ant-progress-line"
+                                        role="progressbar"
+                                      >
+                                        <div
+                                          class="ant-progress-outer"
+                                          style="width: 80px; height: 6px;"
+                                        >
+                                          <div
+                                            class="ant-progress-inner"
+                                            style="background-color: rgb(235, 234, 231);"
+                                          >
+                                            <div
+                                              class="ant-progress-bg"
+                                              style="width: 92%; height: 6px; background-color: rgb(28, 184, 137);"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <span
+                                        class="ant-typography health-score-value"
+                                        style="color: rgb(41, 44, 51);"
+                                      >
+                                        92
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-hoverable css-121p60i"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <header
+              class="card-header"
+            >
+              <div
+                class="title"
+              >
+                <div
+                  class="title-cont"
+                >
+                  <div
+                    class="css-1jmuc9j"
+                  >
+                    <div
+                      class="card-section-title-row"
+                    >
+                      <span
+                        class="card-section-title-icon"
+                      >
+                        <svg
+                          class="top-problem-distribution-icon"
+                          fill="none"
+                          height="16"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3M12 9v4M12 17h.01"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="card-section-title-text"
+                      >
+                        已解决的问题分布
+                      </span>
+                    </div>
+                    <span
+                      class="card-section-title-desc"
+                    >
+                      代码规范与语法质量
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="extra"
+              />
+            </header>
+            <section
+              class="card-cont"
+            >
+              <div
+                class="css-nly9hy"
+              >
+                <div>
+                  <div
+                    data-custom-params="{"data":[{"type":"语法错误","value":45}],"xField":"value","yField":"type","seriesField":"type","legend":false,"yAxis":false,"xAxis":false,"appendPadding":[10,10,0,0],"height":45,"meta":{"value":{"min":0,"max":45}},"minBarWidth":8,"maxBarWidth":8,"barBackground":{"style":{"fill":"#f7f6f4","fillOpacity":1}},"tooltip":{"showTitle":false,"fields":["type","value"]},"label":{"position":"left","offsetX":0,"offsetY":-12}}"
+                    data-testid="mock-antd-plots"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/ManagementView/ProjectIOAnalysis should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="css-9hw9mh"
+    >
+      <div
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table ant-table-small ant-table-scroll-horizontal"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup />
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          项目团队名称
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          活跃人数
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          调用频次
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          性能提升幅度
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          节省工时
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                          style="text-align: right;"
+                        >
+                          健康分
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="项目A"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="project-name-cell"
+                          >
+                            <span
+                              class="project-rank-badge is-top1"
+                            >
+                              1
+                            </span>
+                            <span>
+                              项目A
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          10
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          100
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          12%
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          2 小时
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          <div
+                            class="health-score-cell"
+                          >
+                            <div
+                              aria-valuenow="95"
+                              class="ant-progress ant-progress-status-normal ant-progress-line"
+                              role="progressbar"
+                            >
+                              <div
+                                class="ant-progress-outer"
+                                style="width: 80px; height: 6px;"
+                              >
+                                <div
+                                  class="ant-progress-inner"
+                                  style="background-color: rgb(235, 234, 231);"
+                                >
+                                  <div
+                                    class="ant-progress-bg"
+                                    style="width: 95%; height: 6px; background-color: rgb(28, 184, 137);"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography health-score-value"
+                              style="color: rgb(41, 44, 51);"
+                            >
+                              95
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="项目B"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="project-name-cell"
+                          >
+                            <span
+                              class="project-rank-badge "
+                            >
+                              2
+                            </span>
+                            <span>
+                              项目B
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          8
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          80
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          8%
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          1 小时
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          <div
+                            class="health-score-cell"
+                          >
+                            <div
+                              aria-valuenow="75"
+                              class="ant-progress ant-progress-status-normal ant-progress-line"
+                              role="progressbar"
+                            >
+                              <div
+                                class="ant-progress-outer"
+                                style="width: 80px; height: 6px;"
+                              >
+                                <div
+                                  class="ant-progress-inner"
+                                  style="background-color: rgb(235, 234, 231);"
+                                >
+                                  <div
+                                    class="ant-progress-bg"
+                                    style="width: 75%; height: 6px; background-color: rgb(138, 143, 153);"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography health-score-value"
+                              style="color: rgb(41, 44, 51);"
+                            >
+                              75
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

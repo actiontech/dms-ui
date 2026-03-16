@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/ManagementView/TopProblemDistribution should match snapshot when data exists 1`] = `
+<body>
+  <div>
+    <div
+      class="css-nly9hy"
+    >
+      <div />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/ManagementView/TopProblemDistribution should render empty node when data is empty 1`] = `
+<body>
+  <div>
+    <div
+      class="css-nly9hy"
+    >
+      <div
+        class="top-problem-distribution-empty"
+      >
+        暂无数据
+      </div>
+    </div>
+  </div>
+</body>
+`;
