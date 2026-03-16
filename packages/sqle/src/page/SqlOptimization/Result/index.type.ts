@@ -18,4 +18,6 @@ export interface SqlOptimizationResultProps
     'getOptimizationResult' | 'cancelOptimizationRequestPolling'
   > {
   isVerticalLayout?: boolean;
+  optimizationRecordId?: string;
+  onFeedbackChanged?: () => void;
 }
