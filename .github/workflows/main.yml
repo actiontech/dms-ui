@@ -37,7 +37,7 @@ jobs:
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-artifacts
           path: coverage/
@@ -55,7 +55,7 @@ jobs:
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ce-coverage-artifacts
           path: ce_coverage/
