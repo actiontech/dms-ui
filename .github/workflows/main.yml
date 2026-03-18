@@ -21,7 +21,7 @@ jobs:
       - name: Code lint checker
         run: pnpm checker
 
-  test-ee:
+  test:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     strategy:
@@ -34,65 +34,41 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Coverage test report ee
-        run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
+      - name: Coverage test report
+        run: sh ./scripts/jest/run-ci.sh ${{ matrix.shard }} ${{ strategy.job-total }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: coverage-artifacts-${{ matrix.shard }}
           path: coverage/
 
-  test-ce:
-    runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        uses: ./.github/actions/catch-install-pnpm
-
-      - name: Coverage test report ce
-        run: sh ./scripts/jest/run-ci-ce.sh
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ce-coverage-artifacts
-          path: ce_coverage/
-
   report:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
-    needs: [test-ee, test-ce]
+    needs: [test]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get CE Coverage
-        uses: actions/download-artifact@v4
-        with:
-          name: ce-coverage-artifacts
-          path: ce_coverage
-
-      - name: Get EE Coverage 1
+      - name: Get Coverage 1
         uses: actions/download-artifact@v4
         with:
           name: coverage-artifacts-1
           path: coverage
 
-      - name: Get EE Coverage 2
+      - name: Get Coverage 2
         uses: actions/download-artifact@v4
         with:
           name: coverage-artifacts-2
           path: coverage
 
-      - name: Get EE Coverage 3
+      - name: Get Coverage 3
         uses: actions/download-artifact@v4
         with:
           name: coverage-artifacts-3
           path: coverage
 
-      - name: Get EE Coverage 4
+      - name: Get Coverage 4
         uses: actions/download-artifact@v4
         with:
           name: coverage-artifacts-4
@@ -115,7 +91,6 @@ jobs:
         uses: geekyeggo/delete-artifact@v5
         with:
           name: |
-            ce-coverage-artifacts
             coverage-artifacts-1
             coverage-artifacts-2
             coverage-artifacts-3

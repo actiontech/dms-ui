@@ -1,9 +1,26 @@
 #!/bin/sh
 
-test_version=${2:-ee}
+# Usage: pnpm test:c [path] [project]
+#
+# Arguments:
+#   path    - (optional) test path pattern, e.g. packages/sqle/src/components/Foo
+#   project - (optional) project name: ee | ce  (default: runs both)
 
-echo "current test version: $test_version"
+test_path="${1:-}"
+test_project="${2:-}"
 
-export JEST_TEST_VERSION_ENV=$test_version
+echo "project: ${test_project:-all} | path: ${test_path:-all}"
+
 pnpm test:clean
-pnpm jest --watchAll=false --filter='<rootDir>/scripts/jest/custom-filter' --coverage --coverageDirectory='coverage' --logHeapUsage $1
+
+base_args="--watchAll=false --coverage --coverageDirectory=coverage --logHeapUsage"
+
+if [ -n "$test_project" ]; then
+  base_args="$base_args --selectProjects $test_project"
+fi
+
+if [ -n "$test_path" ]; then
+  pnpm jest $base_args --testPathPattern="$test_path"
+else
+  pnpm jest $base_args
+fi
