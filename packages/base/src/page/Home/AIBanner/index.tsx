@@ -102,7 +102,9 @@ const AIBanner: React.FC = () => {
       return;
     }
 
-    navigate(`${ROUTE_PATHS.SQLE.REPORT_STATISTICS}?tab=ai-governance`);
+    navigate(ROUTE_PATHS.SQLE.REPORT_STATISTICS.index, {
+      queries: { tab: 'ai-governance' }
+    });
   };
 
   // 处理AI性能引擎跳转

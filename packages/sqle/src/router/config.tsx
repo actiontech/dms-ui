@@ -499,7 +499,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 
 export const globalRouterConfig: RouterConfigItem[] = [
   {
-    path: ROUTE_PATHS.SQLE.REPORT_STATISTICS,
+    path: ROUTE_PATHS.SQLE.REPORT_STATISTICS.index.path,
     element: <ReportStatistics />,
     key: 'reportStatistics',
     permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS

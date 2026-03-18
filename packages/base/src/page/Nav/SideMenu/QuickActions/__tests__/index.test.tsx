@@ -181,7 +181,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(2);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       2,
-      ROUTE_PATHS.SQLE.REPORT_STATISTICS
+      ROUTE_PATHS.SQLE.REPORT_STATISTICS.index.path
     );
 
     fireEvent.click(actions[2]);

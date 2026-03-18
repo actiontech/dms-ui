@@ -46,11 +46,16 @@ const ReportStatistics = () => {
   const handleTabChange = (key: string | number) => {
     const newTab = key as ReportStatisticsTabEnum;
     setActiveTab(newTab);
-    const path =
-      newTab === ReportStatisticsTabEnum.AIGovernance
-        ? `${ROUTE_PATHS.SQLE.REPORT_STATISTICS}?tab=ai-governance`
-        : ROUTE_PATHS.SQLE.REPORT_STATISTICS;
-    navigate(path, { replace: true });
+    if (newTab === ReportStatisticsTabEnum.AIGovernance) {
+      navigate(ROUTE_PATHS.SQLE.REPORT_STATISTICS.index, {
+        queries: { tab: 'ai-governance' },
+        replace: true
+      });
+    } else {
+      navigate(ROUTE_PATHS.SQLE.REPORT_STATISTICS.index, {
+        replace: true
+      });
+    }
   };
 
   const onRefreshPage = () => {

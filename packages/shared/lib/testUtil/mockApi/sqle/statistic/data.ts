@@ -132,3 +132,160 @@ export const WorkflowStatusCountData = {
 
   waiting_for_execution_count: 20
 };
+
+export const AIHubExecutionData = [
+  {
+    id: 1,
+    source_project: '项目A',
+    sql_snippet: 'SELECT * FROM users WHERE id = 1',
+    function_module: 'smart_correction',
+    value_dimension: 'security',
+    process_status: 'pending',
+    operation_time: '2026-02-12 10:00:00'
+  },
+  {
+    id: 2,
+    source_project: '项目B',
+    sql_snippet: 'SELECT * FROM orders WHERE amount > 1000',
+    function_module: 'performance_engine',
+    value_dimension: 'performance',
+    process_status: 'running',
+    operation_time: '2026-02-12 10:05:00'
+  },
+  {
+    id: 3,
+    source_project: '项目C',
+    sql_snippet: 'UPDATE account SET balance = balance - 1 WHERE id = 3',
+    function_module: 'smart_correction',
+    value_dimension: 'correction',
+    process_status: 'completed',
+    operation_time: '2026-02-12 10:10:00'
+  },
+  {
+    id: 4,
+    source_project: '项目D',
+    sql_snippet: 'DELETE FROM logs WHERE created_at < NOW() - INTERVAL 30 DAY',
+    function_module: 'performance_engine',
+    value_dimension: 'maintenance',
+    process_status: 'failed',
+    operation_time: '2026-02-12 10:15:00'
+  },
+  {
+    id: 5,
+    source_project: '项目E',
+    sql_snippet: 'SELECT * FROM t5',
+    function_module: 'smart_correction',
+    value_dimension: 'code_standard',
+    process_status: 'completed',
+    operation_time: '2026-02-12 10:20:00'
+  },
+  {
+    id: 6,
+    source_project: '项目F',
+    sql_snippet: 'SELECT * FROM t6',
+    function_module: 'performance_engine',
+    value_dimension: 'security',
+    process_status: 'running',
+    operation_time: '2026-02-12 10:25:00'
+  },
+  {
+    id: 7,
+    source_project: '项目G',
+    sql_snippet: 'SELECT * FROM t7',
+    function_module: 'smart_correction',
+    value_dimension: 'performance',
+    process_status: 'pending',
+    operation_time: '2026-02-12 10:30:00'
+  }
+];
+
+export const AIHubManagementViewData = {
+  modules: [
+    {
+      ai_module_type: 'smart_correction',
+      project_io_analysis: [
+        {
+          project_name: '重写项目A',
+          active_members: 8,
+          invoke_count: 120,
+          performance_gain: '15%',
+          time_saved: 6,
+          health_score: 92
+        }
+      ],
+      top_problem_distribution: [
+        {
+          problem_type: '语法错误',
+          percentage: 45
+        }
+      ]
+    },
+    {
+      ai_module_type: 'performance_engine',
+      project_io_analysis: [
+        {
+          project_name: '调优项目B',
+          active_members: 5,
+          invoke_count: 88,
+          performance_gain: '23%',
+          time_saved: 4,
+          health_score: 81
+        }
+      ],
+      top_problem_distribution: [
+        {
+          problem_type: '索引优化',
+          percentage: 38
+        }
+      ]
+    }
+  ]
+};
+
+export const AIHubStrategicValueData = {
+  ai_strategic_insight: {
+    title: 'AI 战略价值里程碑',
+    description: '通过智能审核与优化，推动质量与效率双提升'
+  },
+  efficiency_cards: [
+    {
+      metric_title: 'security_defense',
+      metric_evaluation: '高',
+      evidence_value: '18',
+      business_value: '风险拦截提升'
+    },
+    {
+      metric_title: 'query_performance',
+      metric_evaluation: '中',
+      evidence_value: '12',
+      business_value: '平均响应缩短'
+    }
+  ]
+};
+
+export const AIHubBannerData = {
+  modules: [
+    {
+      ai_module_type: 'performance_engine',
+      is_enabled: true,
+      banner_cards: [
+        {
+          need_display: true,
+          evidence_value: '12',
+          metric_evaluation: '中'
+        }
+      ]
+    },
+    {
+      ai_module_type: 'smart_correction',
+      is_enabled: true,
+      banner_cards: [
+        {
+          need_display: true,
+          evidence_value: '18',
+          metric_evaluation: '高'
+        }
+      ]
+    }
+  ]
+};

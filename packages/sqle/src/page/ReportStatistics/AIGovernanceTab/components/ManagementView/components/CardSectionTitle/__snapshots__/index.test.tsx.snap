@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/ManagementView/CardSectionTitle should match snapshot 1`] = `
+<div>
+  <div
+    class="css-1jmuc9j"
+  >
+    <div
+      class="card-section-title-row"
+    >
+      <span
+        class="card-section-title-text"
+      >
+        模块标题
+      </span>
+    </div>
+    <span
+      class="card-section-title-desc"
+    >
+      模块描述
+    </span>
+  </div>
+</div>
+`;
