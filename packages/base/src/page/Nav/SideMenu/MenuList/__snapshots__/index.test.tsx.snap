@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/Nav/SideMenu/MenuList - dms mode renders empty menu in dms mode - snapshot 1`] = `
+<body>
+  <div>
+    <ul
+      class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
+      data-menu-list="true"
+      role="menu"
+      tabindex="0"
+    />
+    <div
+      aria-hidden="true"
+      style="display: none;"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/MenuList - dms mode renders empty menu with location path in dms mode - snapshot 1`] = `
+<body>
+  <div>
+    <ul
+      class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
+      data-menu-list="true"
+      role="menu"
+      tabindex="0"
+    />
+    <div
+      aria-hidden="true"
+      style="display: none;"
+    />
+  </div>
+</body>
+`;
