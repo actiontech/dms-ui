@@ -126,7 +126,12 @@ export const ROUTE_PATHS = {
   SQLE: {
     PREFIX: '/sqle',
     GLOBAL_DASHBOARD: '/sqle/global-dashboard',
-    REPORT_STATISTICS: '/sqle/report-statistics',
+    REPORT_STATISTICS: {
+      index: {
+        path: '/sqle/report-statistics',
+        query: 'tab'
+      }
+    },
     RULE: {
       index: {
         path: '/sqle/rule',

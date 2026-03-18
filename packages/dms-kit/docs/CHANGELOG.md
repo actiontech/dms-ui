@@ -54,3 +54,7 @@ nav:
 
 - 国际化变更
 - 更新UtilsConsoleErrorStringsEnum枚举类型
+
+## 1.0.9
+
+- 路由数据变更
