@@ -1,51 +1,77 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Empty, Popconfirm, Space, Spin, message } from 'antd';
-import { EmptyBox, BasicButton, BasicInput } from '@actiontech/dms-kit';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
+import {
+  Empty,
+  Form,
+  Popconfirm,
+  Space,
+  Spin,
+  Typography,
+  message
+} from 'antd';
+import { EmptyBox, BasicButton, formatTime } from '@actiontech/dms-kit';
 import { useBoolean, useRequest } from 'ahooks';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
-import {
-  ResponseCode,
-  CompanyNoticeDisplayStatusEnum,
-  StorageKey
-} from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { initNavModalStatus } from '../../../../../../store/nav';
 import { ModalName } from '../../../../../../data/ModalName';
 import { IReduxState } from '../../../../../../store';
 import { updateNavModalStatus } from '../../../../../../store/nav';
 import { CompanyNoticeModalStyleWrapper } from '../../../style';
-import { CompanyNoticeModalActions } from './actions';
+import { companyNoticeModalActions } from './actions';
+import { CompanyNoticeForm } from './CompanyNoticeForm';
+import { ICompanyNoticeFormValues } from './CompanyNoticeForm/index.type';
+import dayjs from 'dayjs';
+
+const { Text } = Typography;
+
 const CompanyNoticeModal: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [form] = Form.useForm<ICompanyNoticeFormValues>();
   const visible = useSelector<IReduxState, boolean>(
     (state) => state.nav.modalStatus[ModalName.Company_Notice]
   );
-  const [value, setValue] = useState('');
   const [canEdit, { setTrue: showEditor, setFalse: hideEditor }] = useBoolean();
   const [hasDirtyData, setHasDirtyData] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: finishedSubmit }] =
     useBoolean(false);
   const [messageApi, contextHolder] = message.useMessage();
-  const { data, loading } = useRequest(
+
+  const { data: noticeData, loading } = useRequest(
     () =>
-      CompanyNotice.GetCompanyNotice().then((res) => {
+      CompanyNotice.GetCompanyNotice({
+        include_latest_outside_period: true
+      }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          setValue(res.data.data?.notice_str ?? '');
-          return res.data.data?.notice_str ?? '';
+          return res.data.data;
         }
       }),
     {
       ready: !!visible
     }
   );
+
+  const getFormInitialValues = useCallback(():
+    | Partial<ICompanyNoticeFormValues>
+    | undefined => {
+    if (!noticeData) return undefined;
+    return {
+      notice_str: noticeData.notice_str ?? '',
+      validPeriod:
+        noticeData.start_time && noticeData.expire_time
+          ? [dayjs(noticeData.start_time), dayjs(noticeData.expire_time)]
+          : null
+    };
+  }, [noticeData]);
+
   const resetAllState = useCallback(() => {
-    setValue('');
-    hideEditor();
+    form.resetFields();
     setHasDirtyData(false);
-  }, [hideEditor]);
+    hideEditor();
+  }, [form, hideEditor]);
+
   const handleCloseModal = useCallback(() => {
     dispatch(
       updateNavModalStatus({
@@ -55,16 +81,27 @@ const CompanyNoticeModal: React.FC = () => {
     );
     resetAllState();
   }, [dispatch, resetAllState]);
+
   const handleCancelEdit = useCallback(() => {
+    form.resetFields();
+    const initial = getFormInitialValues();
+    form.setFieldsValue(
+      initial
+        ? { ...initial, validPeriod: initial.validPeriod ?? undefined }
+        : {}
+    );
     setHasDirtyData(false);
     hideEditor();
-    setValue(data ?? '');
-  }, [data, hideEditor]);
-  const submit = () => {
+  }, [form, hideEditor, getFormInitialValues]);
+
+  const handleSubmit = useCallback(async () => {
+    const values = await form.validateFields();
     startSubmit();
     CompanyNotice.UpdateCompanyNotice({
       company_notice: {
-        notice_str: value
+        notice_str: values.notice_str,
+        start_time: values.validPeriod?.[0]?.toISOString() ?? '',
+        end_time: values.validPeriod?.[1]?.toISOString() ?? ''
       }
     })
       .then((res) => {
@@ -74,15 +111,8 @@ const CompanyNoticeModal: React.FC = () => {
         }
       })
       .finally(finishedSubmit);
-  };
-  useEffect(() => {
-    if (visible) {
-      LocalStorageWrapper.set(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.Displayed
-      );
-    }
-  }, [visible]);
+  }, [form, startSubmit, finishedSubmit, messageApi, t, handleCloseModal]);
+
   useEffect(() => {
     dispatch(
       initNavModalStatus({
@@ -92,7 +122,9 @@ const CompanyNoticeModal: React.FC = () => {
       })
     );
   }, [dispatch]);
-  const actions = CompanyNoticeModalActions(showEditor);
+
+  const actions = companyNoticeModalActions(showEditor);
+
   return (
     <CompanyNoticeModalStyleWrapper
       width={720}
@@ -130,7 +162,7 @@ const CompanyNoticeModal: React.FC = () => {
               </EmptyBox>
 
               <BasicButton
-                onClick={submit}
+                onClick={handleSubmit}
                 loading={submitLoading}
                 disabled={submitLoading}
                 type="primary"
@@ -155,8 +187,31 @@ const CompanyNoticeModal: React.FC = () => {
           if={canEdit}
           defaultNode={
             <>
-              {data ? (
-                <span className="pre-warp-break-all">{data}</span>
+              {noticeData?.notice_str ? (
+                <Space
+                  direction="vertical"
+                  className="company-notice-view-space"
+                >
+                  <span className="pre-warp-break-all">
+                    {noticeData.notice_str}
+                  </span>
+                  {(noticeData.start_time || noticeData.expire_time) && (
+                    <Text
+                      type="secondary"
+                      className="company-notice-effective-period"
+                    >
+                      {t('dmsSystem.notification.effectivePeriod')}
+                      {': '}
+                      {noticeData.start_time
+                        ? formatTime(noticeData.start_time)
+                        : '--'}
+                      {' ~ '}
+                      {noticeData.expire_time
+                        ? formatTime(noticeData.expire_time)
+                        : '--'}
+                    </Text>
+                  )}
+                </Space>
               ) : (
                 <Empty
                   image={Empty.PRESENTED_IMAGE_SIMPLE}
@@ -166,14 +221,11 @@ const CompanyNoticeModal: React.FC = () => {
             </>
           }
         >
-          <BasicInput.TextArea
-            autoSize
-            value={value}
+          <CompanyNoticeForm
+            form={form}
+            initialValues={getFormInitialValues()}
             disabled={submitLoading}
-            onChange={(e) => {
-              setValue(e.target.value ?? '');
-              setHasDirtyData(true);
-            }}
+            onValuesChange={() => setHasDirtyData(true)}
           />
         </EmptyBox>
       </Spin>

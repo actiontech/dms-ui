@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true 1`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true - no edit button 1`] = `
 <body>
   <textarea
     aria-hidden="true"
@@ -33,7 +33,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -194,7 +194,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
 </body>
 `;
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true 2`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true - no edit button 2`] = `
 <body>
   <textarea
     aria-hidden="true"
@@ -227,7 +227,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -279,11 +279,33 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
                 <div
                   class="ant-spin-container"
                 >
-                  <span
-                    class="pre-warp-break-all"
+                  <div
+                    class="ant-space ant-space-vertical company-notice-view-space"
                   >
-                    notice
-                  </span>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="pre-warp-break-all"
+                      >
+                        notice
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary company-notice-effective-period"
+                      >
+                        有效期
+                        : 
+                        2026-01-01 08:00:00
+                         ~ 
+                        2027-01-01 07:59:59
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -324,8 +346,24 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
 </body>
 `;
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click cancel btn 1`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click cancel btn with dirty data and confirm to cancel 1`] = `
 <body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
   <div />
   <div>
     <div
@@ -341,7 +379,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -390,305 +428,151 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
               <div
                 class="ant-spin-nested-loading"
               >
-                <div>
-                  <div
-                    aria-busy="true"
-                    aria-live="polite"
-                    class="ant-spin ant-spin-spinning"
+                <div
+                  class="ant-spin-container"
+                >
+                  <form
+                    class="ant-form ant-form-vertical"
                   >
-                    <span
-                      class="ant-spin-dot ant-spin-dot-spin"
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
                     >
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="ant-spin-container ant-spin-blur"
-                >
-                  <textarea
-                    class="ant-input basic-input-wrapper css-1pd1cd5"
-                    placeholder="请输入{{name}}"
-                    style="resize: none; height: 2px;"
-                  >
-                    这是一条公告信息
-                  </textarea>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-modal-footer"
-            >
-              <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
-              >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 8px;"
-                >
-                  <button
-                    class="ant-btn ant-btn-default ant-popover-open basic-button-wrapper css-10ae2zl"
-                    type="button"
-                  >
-                    <span>
-                      取 消
-                    </span>
-                  </button>
-                </div>
-                <div
-                  class="ant-space-item"
-                >
-                  <button
-                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
-                    type="button"
-                  >
-                    <span>
-                      提 交
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-hidden="true"
-            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-            tabindex="0"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
-  <div>
-    <div
-      class="ant-popover ant-popconfirm ant-popover-placement-top"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
-    >
-      <div
-        class="ant-popover-arrow"
-        style="position: absolute; bottom: 0px; left: 0px;"
-      />
-      <div
-        class="ant-popover-content"
-      >
-        <div
-          class="ant-popover-inner"
-          role="tooltip"
-        >
-          <div
-            class="ant-popover-inner-content"
-          >
-            <div
-              class="ant-popconfirm-inner-content"
-            >
-              <div
-                class="ant-popconfirm-message"
-              >
-                <span
-                  class="ant-popconfirm-message-icon"
-                >
-                  <span
-                    aria-label="exclamation-circle"
-                    class="anticon anticon-exclamation-circle"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="exclamation-circle"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="64 64 896 896"
-                      width="1em"
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="notice_str"
+                            title="公告内容"
+                          >
+                            公告内容
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <textarea
+                                aria-required="true"
+                                class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
+                                id="notice_str"
+                                placeholder="请输入公告内容"
+                                style="resize: none; height: -150px; min-height: -6px; max-height: -150px;"
+                              >
+                                notice
+                              </textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
                     >
-                      <path
-                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="ant-popconfirm-message-text"
-                >
-                  <div
-                    class="ant-popconfirm-title"
-                  >
-                    当前内容已经发生更改，是否确认取消修改？
-                  </div>
-                </div>
-              </div>
-              <div
-                class="ant-popconfirm-buttons"
-              >
-                <button
-                  class="ant-btn ant-btn-default ant-btn-sm"
-                  type="button"
-                >
-                  <span>
-                    取 消
-                  </span>
-                </button>
-                <button
-                  class="ant-btn ant-btn-primary ant-btn-sm"
-                  type="button"
-                >
-                  <span>
-                    确 认
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click cancel btn and confirm to cancel 1`] = `
-<body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
-  <div />
-  <div>
-    <div
-      class="ant-modal-root"
-    >
-      <div
-        class="ant-modal-mask"
-      />
-      <div
-        class="ant-modal-wrap"
-        tabindex="-1"
-      >
-        <div
-          aria-labelledby="test-id"
-          aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
-          role="dialog"
-          style="width: 720px;"
-        >
-          <div
-            aria-hidden="true"
-            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-            tabindex="0"
-          />
-          <div
-            class="ant-modal-content"
-          >
-            <button
-              aria-label="Close"
-              class="ant-modal-close"
-              type="button"
-            >
-              <span
-                class="ant-modal-close-x"
-              >
-                <svg
-                  fill="currentColor"
-                  height="16"
-                  viewBox="0 0 14 14"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
-                  />
-                </svg>
-              </span>
-            </button>
-            <div
-              class="ant-modal-header"
-            >
-              <div
-                class="ant-modal-title"
-                id="test-id"
-              >
-                系统公告
-              </div>
-            </div>
-            <div
-              class="ant-modal-body"
-            >
-              <div
-                class="ant-spin-nested-loading"
-              >
-                <div>
-                  <div
-                    aria-busy="true"
-                    aria-live="polite"
-                    class="ant-spin ant-spin-spinning"
-                  >
-                    <span
-                      class="ant-spin-dot ant-spin-dot-spin"
-                    >
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="ant-spin-container ant-spin-blur"
-                >
-                  <textarea
-                    class="ant-input basic-input-wrapper css-1pd1cd5"
-                    placeholder="请输入{{name}}"
-                    style="resize: none; height: 2px;"
-                  >
-                    这是一条公告信息
-                  </textarea>
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="validPeriod"
+                            title="有效时间范围"
+                          >
+                            有效时间范围
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="css-1y8q0oh"
+                              >
+                                <div
+                                  aria-required="true"
+                                  class="ant-picker ant-picker-range ant-picker-status-success basic-range-picker-wrapper company-notice-date-picker css-w7y1zu"
+                                >
+                                  <div
+                                    class="ant-picker-input ant-picker-input-active"
+                                  >
+                                    <input
+                                      autocomplete="off"
+                                      id="validPeriod"
+                                      placeholder="请选择开始时间"
+                                      readonly=""
+                                      size="21"
+                                      value="2026-01-01 08:00:00"
+                                    />
+                                  </div>
+                                  <div
+                                    class="ant-picker-range-separator"
+                                  >
+                                    <svg
+                                      fill="currentColor"
+                                      height="14"
+                                      viewBox="0 0 14 14"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                        fill="#C3C6CD"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div
+                                    class="ant-picker-input"
+                                  >
+                                    <input
+                                      autocomplete="off"
+                                      placeholder="请选择结束时间"
+                                      readonly=""
+                                      size="21"
+                                      value="2027-01-01 07:59:59"
+                                    />
+                                  </div>
+                                  <div
+                                    class="ant-picker-active-bar"
+                                    style="left: 0px; width: 0px; position: absolute;"
+                                  />
+                                  <span
+                                    class="ant-picker-clear"
+                                  >
+                                    <svg
+                                      fill="currentColor"
+                                      height="16"
+                                      viewBox="0 0 14 14"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -822,7 +706,168 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
 </body>
 `;
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click submit btn 1`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click cancel btn without dirty data 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
+          role="dialog"
+          style="width: 720px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                系统公告
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-space ant-space-vertical company-notice-view-space"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="pre-warp-break-all"
+                      >
+                        notice
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary company-notice-effective-period"
+                      >
+                        有效期
+                        : 
+                        2026-01-01 08:00:00
+                         ~ 
+                        2027-01-01 07:59:59
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+                    type="button"
+                  >
+                    <span>
+                      编 辑
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edit notice click submit btn with valid content and time range 1`] = `
 <body>
   <textarea
     aria-hidden="true"
@@ -855,7 +900,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px; transform-origin: NaNpx NaNpx;"
         >
@@ -904,41 +949,151 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
               <div
                 class="ant-spin-nested-loading"
               >
-                <div>
-                  <div
-                    aria-busy="true"
-                    aria-live="polite"
-                    class="ant-spin ant-spin-spinning"
-                  >
-                    <span
-                      class="ant-spin-dot ant-spin-dot-spin"
-                    >
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                      <i
-                        class="ant-spin-dot-item"
-                      />
-                    </span>
-                  </div>
-                </div>
                 <div
-                  class="ant-spin-container ant-spin-blur"
+                  class="ant-spin-container"
                 >
-                  <textarea
-                    class="ant-input basic-input-wrapper css-1pd1cd5 ant-input-disabled"
-                    disabled=""
-                    placeholder="请输入{{name}}"
-                    style="resize: none; height: 2px;"
+                  <form
+                    class="ant-form ant-form-vertical"
                   >
-                    公告信息
-                  </textarea>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="notice_str"
+                            title="公告内容"
+                          >
+                            公告内容
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <textarea
+                                aria-required="true"
+                                class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
+                                id="notice_str"
+                                placeholder="请输入公告内容"
+                                style="resize: none; height: -150px; min-height: -6px; max-height: -150px;"
+                              >
+                                notice
+                              </textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="validPeriod"
+                            title="有效时间范围"
+                          >
+                            有效时间范围
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="css-1y8q0oh"
+                              >
+                                <div
+                                  aria-required="true"
+                                  class="ant-picker ant-picker-range ant-picker-status-success basic-range-picker-wrapper company-notice-date-picker css-w7y1zu"
+                                >
+                                  <div
+                                    class="ant-picker-input ant-picker-input-active"
+                                  >
+                                    <input
+                                      autocomplete="off"
+                                      id="validPeriod"
+                                      placeholder="请选择开始时间"
+                                      readonly=""
+                                      size="21"
+                                      value="2026-01-01 08:00:00"
+                                    />
+                                  </div>
+                                  <div
+                                    class="ant-picker-range-separator"
+                                  >
+                                    <svg
+                                      fill="currentColor"
+                                      height="14"
+                                      viewBox="0 0 14 14"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                        fill="#C3C6CD"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div
+                                    class="ant-picker-input"
+                                  >
+                                    <input
+                                      autocomplete="off"
+                                      placeholder="请选择结束时间"
+                                      readonly=""
+                                      size="21"
+                                      value="2027-01-01 07:59:59"
+                                    />
+                                  </div>
+                                  <div
+                                    class="ant-picker-active-bar"
+                                    style="left: 0px; width: 0px; position: absolute;"
+                                  />
+                                  <span
+                                    class="ant-picker-clear"
+                                  >
+                                    <svg
+                                      fill="currentColor"
+                                      height="16"
+                                      viewBox="0 0 14 14"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -953,33 +1108,9 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn ant-btn-default ant-btn-loading basic-button-wrapper css-10ae2zl"
-                    disabled=""
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
-                    <span
-                      class="ant-btn-icon ant-btn-loading-icon"
-                    >
-                      <span
-                        aria-label="loading"
-                        class="anticon anticon-loading anticon-spin"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="loading"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="0 0 1024 1024"
-                          width="1em"
-                        >
-                          <path
-                            d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
                     <span>
                       取 消
                     </span>
@@ -989,33 +1120,9 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-10ae2zl"
-                    disabled=""
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
                     type="button"
                   >
-                    <span
-                      class="ant-btn-icon ant-btn-loading-icon"
-                    >
-                      <span
-                        aria-label="loading"
-                        class="anticon anticon-loading anticon-spin"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="loading"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="0 0 1024 1024"
-                          width="1em"
-                        >
-                          <path
-                            d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
                     <span>
                       提 交
                     </span>
@@ -1053,7 +1160,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -1240,7 +1347,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-1suoy2j"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -1292,11 +1399,178 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
                 <div
                   class="ant-spin-container"
                 >
-                  <span
-                    class="pre-warp-break-all"
+                  <div
+                    class="ant-space ant-space-vertical company-notice-view-space"
                   >
-                    notice
-                  </span>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="pre-warp-break-all"
+                      >
+                        notice
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary company-notice-effective-period"
+                      >
+                        有效期
+                        : 
+                        2026-01-01 08:00:00
+                         ~ 
+                        2027-01-01 07:59:59
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+                    type="button"
+                  >
+                    <span>
+                      编 辑
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal should display notice content and effective period in view mode 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
+          role="dialog"
+          style="width: 720px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                系统公告
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-space ant-space-vertical company-notice-view-space"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="pre-warp-break-all"
+                      >
+                        notice
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary company-notice-effective-period"
+                      >
+                        有效期
+                        : 
+                        2026-01-01 08:00:00
+                         ~ 
+                        2027-01-01 07:59:59
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

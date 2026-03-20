@@ -291,6 +291,14 @@ export default {
     title: '系统公告',
     hasDirtyDataTips: '当前内容已经发生更改，是否确认取消修改？',
     successMessage: '成功发布系统公告!',
-    notData: '暂无公告信息'
+    notData: '暂无公告信息',
+    validPeriod: '有效时间范围',
+    startTimePlaceholder: '请选择开始时间',
+    endTimePlaceholder: '请选择结束时间',
+    timeRangeRequired: '请选择公告生效时间范围',
+    timeRangeValidate: '开始时间必须早于结束时间',
+    noticeContent: '公告内容',
+    effectivePeriod: '有效期',
+    viewFullContent: '查看全部'
   }
 };
