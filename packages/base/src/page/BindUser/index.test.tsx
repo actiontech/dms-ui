@@ -6,11 +6,6 @@ import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import EmitterKey from '@actiontech/dms-kit/es/data/EmitterKey';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  StorageKey
-} from '@actiontech/dms-kit';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
 import BindUser from '.';
@@ -133,7 +128,6 @@ describe('page/BindUser-ee', () => {
     });
 
     it('render oauth2_token params submit without target param', async () => {
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val`;
       const requestFn = dms.bindUser();
       const { baseElement } = customRender(`/user/bind?${search}`);
@@ -184,15 +178,9 @@ describe('page/BindUser-ee', () => {
       expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/');
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
-      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-      );
     });
 
     it('render oauth2_token params submit with target param', async () => {
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
         '/project/test'
       )}`;
@@ -238,11 +226,9 @@ describe('page/BindUser-ee', () => {
       expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/project/test');
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
     });
 
     it('render oauth2_token params submit with target param containing query params', async () => {
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
         '/project/test?active=overview'
       )}`;
@@ -288,11 +274,9 @@ describe('page/BindUser-ee', () => {
       expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/project/test?active=overview');
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
     });
 
     it('render oauth2_token params submit with cloud-beaver target param', async () => {
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val&target=${encodeURIComponent(
         '/cloud-beaver'
       )}`;
@@ -340,7 +324,6 @@ describe('page/BindUser-ee', () => {
       expect(navigateSpy).toHaveBeenCalledWith(
         '/cloud-beaver?open_cloud_beaver=true'
       );
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
     });
   });
 

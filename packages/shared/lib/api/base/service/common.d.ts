@@ -486,9 +486,15 @@ export interface ICheckLicenseReply {
 }
 
 export interface ICompanyNotice {
+  create_user_name?: string;
+
+  expire_time?: string;
+
   notice_str?: string;
 
   read_by_current_user?: boolean;
+
+  start_time?: string;
 }
 
 export interface IComponentNameWithVersion {
@@ -1187,9 +1193,7 @@ export interface IGlobalDataExportWorkflow {
   workflow_uid?: string;
 }
 
-export interface II18nStr {
-  [key: string]: string;
-}
+export interface II18nStr {}
 
 export interface IImportDBService {
   additional_params?: IAdditionalParam[];
@@ -2720,7 +2724,11 @@ export interface IUpdateBusinessTagReq {
 }
 
 export interface IUpdateCompanyNotice {
+  end_time?: string;
+
   notice_str?: string;
+
+  start_time?: string;
 }
 
 export interface IUpdateCompanyNoticeReq {

@@ -7,16 +7,21 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetCompanyNoticeParams,
   IGetCompanyNoticeReturn,
   IUpdateCompanyNoticeParams,
   IUpdateCompanyNoticeReturn
 } from './index.d';
 
 class CompanyNoticeService extends ServiceBase {
-  public GetCompanyNotice(options?: AxiosRequestConfig) {
+  public GetCompanyNotice(
+    params: IGetCompanyNoticeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.get<IGetCompanyNoticeReturn>(
       '/v1/dms/company_notice',
-      undefined,
+      paramsData,
       options
     );
   }

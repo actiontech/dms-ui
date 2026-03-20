@@ -25,11 +25,6 @@ import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
 } from '@actiontech/dms-kit';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
-import {
-  StorageKey,
-  CompanyNoticeDisplayStatusEnum
-} from '@actiontech/dms-kit';
 import useSessionUser from '../../hooks/useSessionUser';
 import useNavigateToWorkbench from '../../hooks/useNavigateToWorkbench';
 const BindUser = () => {
@@ -135,12 +130,6 @@ const BindUser = () => {
             })
           );
           navigateToTarget();
-          // #if [ee]
-          LocalStorageWrapper.set(
-            StorageKey.SHOW_COMPANY_NOTICE,
-            CompanyNoticeDisplayStatusEnum.NotDisplayed
-          );
-          // #endif
         }
       })
       .finally(() => {
