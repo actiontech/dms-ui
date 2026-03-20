@@ -37,6 +37,11 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
 `;
 export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
   &.company-notice-modal {
+    .ant-modal-body {
+      max-height: 700px;
+      overflow-y: auto;
+    }
+
     .company-notice-view-space {
       width: 100%;
     }

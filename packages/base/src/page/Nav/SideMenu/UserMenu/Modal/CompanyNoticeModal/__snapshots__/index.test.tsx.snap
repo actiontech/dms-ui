@@ -33,7 +33,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -227,7 +227,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -379,7 +379,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -723,7 +723,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -900,7 +900,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px; transform-origin: NaNpx NaNpx;"
         >
@@ -1160,7 +1160,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -1347,7 +1347,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when vis
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
@@ -1492,7 +1492,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal should display notic
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal company-notice-modal basic-modal-wrapper css-9ei8gy"
+          class="ant-modal company-notice-modal basic-modal-wrapper css-15z6kbb"
           role="dialog"
           style="width: 720px;"
         >
