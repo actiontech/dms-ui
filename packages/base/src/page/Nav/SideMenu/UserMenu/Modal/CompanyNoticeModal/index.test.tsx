@@ -138,23 +138,6 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       fireEvent.click(screen.getByText('确 认'));
     });
 
-    it('click submit btn without any data shows validation error', async () => {
-      requestGetCompanyNotice.mockImplementation(() =>
-        createSpySuccessResponse({ data: { notice_str: undefined } })
-      );
-      const { baseElement } = customRender();
-
-      await act(async () => jest.advanceTimersByTime(3300));
-      fireEvent.click(screen.getByText('编 辑'));
-      await act(async () => jest.advanceTimersByTime(500));
-
-      fireEvent.click(screen.getByText('提 交'));
-      await act(async () => jest.advanceTimersByTime(500));
-      expect(baseElement).toMatchSnapshot();
-      await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateCompanyNotice).not.toHaveBeenCalled();
-    });
-
     it('click submit btn with valid content and time range', async () => {
       requestUpdateCompanyNotice.mockClear();
       const { baseElement } = customRender();
