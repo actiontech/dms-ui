@@ -4,7 +4,7 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { t } from '../../../../../../locale';
-export const CompanyNoticeModalActions = (
+export const companyNoticeModalActions = (
   onClick: () => void
 ): Record<'edit-notice', React.ReactNode> => {
   return {

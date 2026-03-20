@@ -88,11 +88,6 @@ export enum OpPermissionTypeUid {
   'system_administrator' = '700017' // 系统管理员
 }
 
-export enum CompanyNoticeDisplayStatusEnum {
-  Displayed = '1',
-  NotDisplayed = '0'
-}
-
 export enum MIMETypeEnum {
   'Application_Json' = 'application/json'
 }

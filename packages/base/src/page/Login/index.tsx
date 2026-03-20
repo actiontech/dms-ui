@@ -8,12 +8,7 @@ import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
 import { useBoolean, useRequest } from 'ahooks';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
-import {
-  StorageKey,
-  CompanyNoticeDisplayStatusEnum,
-  ResponseCode
-} from '@actiontech/dms-kit';
+import { ResponseCode } from '@actiontech/dms-kit';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
@@ -134,12 +129,6 @@ const Login = () => {
             }
           });
         }
-        // #if [ee]
-        LocalStorageWrapper.set(
-          StorageKey.SHOW_COMPANY_NOTICE,
-          CompanyNoticeDisplayStatusEnum.NotDisplayed
-        );
-        // #endif
       })
       .finally(() => {
         setFalse();

@@ -9,11 +9,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { LocalStorageWrapper, SupportTheme } from '@actiontech/dms-kit';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  SupportLanguage
-} from '@actiontech/dms-kit';
+import { SupportTheme, SupportLanguage } from '@actiontech/dms-kit';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 
 jest.mock('react-redux', () => {
@@ -63,15 +59,9 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
   });
 
   it('render snap', async () => {
-    jest
-      .spyOn(LocalStorageWrapper, 'get')
-      .mockReturnValue(CompanyNoticeDisplayStatusEnum.NotDisplayed);
-    const requestGetCompanyNotice = dms.getCompanyNotice();
-
     const { baseElement } = customRender();
 
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetCompanyNotice).toHaveBeenCalledTimes(0);
     const iconUserName = getBySelector('.ant-avatar-string', baseElement);
     fireEvent.click(iconUserName);
     await act(async () => jest.advanceTimersByTime(500));
