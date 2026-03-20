@@ -5,12 +5,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { LocalStorageWrapper, SupportTheme } from '@actiontech/dms-kit';
-import { ModalName } from '../../../../../../data/ModalName';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  SupportLanguage
-} from '@actiontech/dms-kit';
+import { SupportTheme, SupportLanguage } from '@actiontech/dms-kit';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -35,7 +30,6 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
   const versionModalOpenFn = jest.fn();
   const navigateSpy = jest.fn();
   const scopeDispatch = jest.fn();
-  let requestGetCompanyNotice: jest.SpyInstance;
   let requestDelSession: jest.SpyInstance;
   let requestUpdateCurrentUser: jest.SpyInstance;
 
@@ -56,7 +50,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => scopeDispatch);
     jest.useFakeTimers();
-    requestGetCompanyNotice = dms.getCompanyNotice();
+    dms.getCompanyNotice();
     requestDelSession = dms.delSession();
     requestUpdateCurrentUser = account.updateCurrentUser();
     mockUseUserInfo({ clearUserInfo: mockClearUserInfo });
@@ -69,20 +63,10 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
   });
 
   it('render snap', async () => {
-    jest
-      .spyOn(LocalStorageWrapper, 'get')
-      .mockReturnValue(CompanyNoticeDisplayStatusEnum.NotDisplayed);
     const { baseElement } = customRender();
-    expect(requestGetCompanyNotice).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
-
-    expect(scopeDispatch).toHaveBeenCalled();
-    expect(scopeDispatch).toHaveBeenCalledWith({
-      payload: { modalName: ModalName.Company_Notice, status: true },
-      type: 'nav/updateModalStatus'
-    });
 
     const iconUserName = getBySelector('.ant-avatar-string', baseElement);
     fireEvent.click(iconUserName);

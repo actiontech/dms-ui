@@ -38,7 +38,20 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
 export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
   &.company-notice-modal {
     .ant-modal-body {
-      max-height: 600px;
+      max-height: 700px;
+      overflow-y: auto;
+    }
+
+    .company-notice-view-space {
+      width: 100%;
+    }
+
+    .company-notice-date-picker {
+      width: 500px;
+    }
+
+    .company-notice-effective-period {
+      font-size: 12px;
     }
   }
 `;

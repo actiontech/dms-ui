@@ -2,16 +2,10 @@ import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/dms-kit';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import UserGuideModal from './UserGuideModal';
-
-// #if [ee]
+import CompanyNoticeBanner from './CompanyNoticeBanner';
 import EESideMenu from './SideMenu';
-// #else
 import CESideMenu from './SideMenu/index.ce';
-// #endif
-
-// #if [demo || ce]
 import CopyrightInformation from './Copyright';
-// #endif
 
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
   useBrowserVersionTips();
@@ -25,6 +19,9 @@ const Nav: React.FC<{ children?: ReactNode }> = (props) => {
       {/* #endif */}
 
       <div className="dms-layout-content">
+        {/* #if [ee] */}
+        <CompanyNoticeBanner />
+        {/* #endif */}
         {props.children}
         {/* #if [demo || ce] */}
         <CopyrightInformation />

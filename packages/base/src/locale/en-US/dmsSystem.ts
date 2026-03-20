@@ -240,6 +240,15 @@ export default {
     hasDirtyDataTips:
       'The current content has changed. are you sure you want to cancel the modification?',
     successMessage: 'Successfully published system announcement!',
-    notData: 'No announcement information'
+    notData: 'No announcement information',
+    validPeriod: 'Valid period',
+    startTimePlaceholder: 'Select start time',
+    endTimePlaceholder: 'Select end time',
+    timeRangeRequired:
+      'Please select the effective time range for the announcement',
+    timeRangeValidate: 'Start time must be earlier than end time',
+    noticeContent: 'Announcement content',
+    effectivePeriod: 'Effective period',
+    viewFullContent: 'View full content'
   }
 };

@@ -11,21 +11,12 @@ import { CustomAvatarStyleWrapper } from '@actiontech/dms-kit/es/components/Cust
 import { useState } from 'react';
 import { useUserInfo } from '@actiontech/shared/lib/features';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
-import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
-import {
-  LocalStorageWrapper,
-  ResponseCode,
-  SupportTheme
-} from '@actiontech/dms-kit';
+import { ResponseCode, SupportTheme } from '@actiontech/dms-kit';
 import { SupportLanguage } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../../store/nav';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTypedNavigate } from '@actiontech/shared';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  StorageKey
-} from '@actiontech/dms-kit';
 import { useBoolean, useRequest } from 'ahooks';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
@@ -195,30 +186,6 @@ const UserNavigate: React.FC<Props> = ({
       disabled: logoutPending
     }
   ];
-
-  // #if [ee]
-  useRequest(
-    () =>
-      CompanyNotice.GetCompanyNotice().then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          const { read_by_current_user, notice_str } = res.data.data || {};
-          if (notice_str && !read_by_current_user) {
-            dispatch(
-              updateNavModalStatus({
-                modalName: ModalName.Company_Notice,
-                status: true
-              })
-            );
-          }
-        }
-      }),
-    {
-      ready:
-        LocalStorageWrapper.get(StorageKey.SHOW_COMPANY_NOTICE) ===
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-    }
-  );
-  // #endif
 
   // TODO 暂时不放开切换主题功能
   // const footer = (

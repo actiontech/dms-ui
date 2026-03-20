@@ -48,7 +48,9 @@ export const BasicInfoMockData: IBasicInfo = {
 
 export const CompanyNoticeMockData: ICompanyNotice = {
   notice_str: 'notice',
-  read_by_current_user: false
+  read_by_current_user: false,
+  start_time: '2026-01-01T00:00:00.000Z',
+  expire_time: '2026-12-31T23:59:59.000Z'
 };
 
 export const DBServicesList: IListDBServiceV2[] = [

@@ -11,14 +11,9 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { LocalStorageWrapper } from '@actiontech/dms-kit';
 import { eventEmitter } from '@actiontech/dms-kit/es/utils/EventEmitter';
 import Login from '.';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  StorageKey,
-  SystemRole
-} from '@actiontech/dms-kit';
+import { SystemRole } from '@actiontech/dms-kit';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
@@ -297,7 +292,6 @@ describe('page/Login-ee', () => {
 
     it('render with other search val', async () => {
       const requestLogin = dms.addSession();
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/index1')
@@ -356,16 +350,10 @@ describe('page/Login-ee', () => {
       expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/index1');
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
-      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-      );
     });
 
     it('render with cloud-beaver path', async () => {
       const requestLogin = dms.addSession();
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/project/700300/cloud-beaver')
@@ -426,16 +414,10 @@ describe('page/Login-ee', () => {
       expect(navigateSpy).toHaveBeenCalledWith(
         `/project/700300/cloud-beaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
       );
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
-      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-      );
     });
 
     it('render search value with search params', async () => {
       const requestLogin = dms.addSession();
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/transit?from=cloudbeaver')
@@ -494,11 +476,6 @@ describe('page/Login-ee', () => {
       expect(getSessionUserInfoAsyncSpy).toHaveBeenCalledTimes(1);
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/transit?from=cloudbeaver');
-      expect(LocalStorageWrapperSet).toHaveBeenCalled();
-      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-      );
     });
   });
 
