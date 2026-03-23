@@ -58,3 +58,7 @@ nav:
 ## 1.0.9
 
 - 路由数据变更
+
+## 1.0.10
+
+- [BasicRangePicker] 修复用户无法自定义 `getPopupContainer` 属性的问题
