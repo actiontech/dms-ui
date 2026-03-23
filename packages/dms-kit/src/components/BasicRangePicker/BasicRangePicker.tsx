@@ -10,6 +10,7 @@ const BasicRangePicker: React.FC<BasicRangePickerProps> = (props) => {
     suffixIcon,
     prefix,
     hideSuperIcon = true,
+    getPopupContainer,
     ...otherParams
   } = props;
 
@@ -27,9 +28,7 @@ const BasicRangePicker: React.FC<BasicRangePickerProps> = (props) => {
         //todo allowClear={{clearIcon: <IconClose />}} need antd 5.8.0
         clearIcon={<CloseOutlined fill="currentColor" />}
         separator={<RightOutlined width={14} height={14} fill="currentColor" />}
-        getPopupContainer={(trigger) => {
-          return trigger;
-        }}
+        getPopupContainer={getPopupContainer ?? ((trigger) => trigger)}
         nextIcon={
           <span className="next-icon">
             <RightOutlined width={14} height={14} />
