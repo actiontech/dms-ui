@@ -132,6 +132,7 @@ export const CompanyNoticeForm: React.FC<{
           ]}
           disabled={disabled}
           className="company-notice-date-picker"
+          getPopupContainer={() => document.body}
         />
       </Form.Item>
     </Form>
