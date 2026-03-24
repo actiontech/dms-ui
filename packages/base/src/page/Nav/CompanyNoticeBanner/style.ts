@@ -15,7 +15,6 @@ export const CompanyNoticeBannerStyleWrapper = styled('div')`
     ${({ theme }) => theme.sharedTheme.uiToken.colorWarningBgHover}bf 100%
   );
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorWarning}66;
   padding: 0 16px;

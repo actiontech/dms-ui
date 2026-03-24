@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { BasicButton, BasicTag, useTypedNavigate } from '@actiontech/shared';
+import { useTypedNavigate } from '@actiontech/shared';
+import { BasicButton, BasicTag } from '@actiontech/dms-kit';
 import { AiHubService } from '@actiontech/shared/lib/api/sqle';
 import {
   ClockCircleOutlined,

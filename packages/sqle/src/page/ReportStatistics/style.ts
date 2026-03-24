@@ -6,7 +6,7 @@ export const ReportStatisticsEEIndexStyleWrapper = styled('section')`
 
   .fixed-tabs-row {
     position: fixed;
-    top: var(--notice-banner-height, 0px);
+    top: var(--notice-banner-height, 0);
     left: ${({ theme }) => theme.sharedTheme.nav.width}px;
     right: 0;
     width: calc(100% - ${({ theme }) => theme.sharedTheme.nav.width}px);
