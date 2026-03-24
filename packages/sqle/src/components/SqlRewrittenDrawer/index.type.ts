@@ -11,12 +11,13 @@ export type SqlRewrittenDrawerProps = {
     instanceName?: string;
     schema?: string;
   };
+  title?: React.ReactNode;
 };
 
 interface SqlRewrittenDrawerBaseProps {
   maskClosable: boolean;
   width: number;
-  title: string;
+  title?: React.ReactNode;
 }
 
 export interface SqlRewrittenDrawerWithBaseProps

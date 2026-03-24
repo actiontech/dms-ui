@@ -33,6 +33,7 @@ export const PageHeaderStyleWrapper = styled('div')`
 
   &.fixed-style {
     position: fixed;
+    top: var(--notice-banner-height, 0px);
     width: calc(100% - 220px);
     left: 220px;
     z-index: 9;

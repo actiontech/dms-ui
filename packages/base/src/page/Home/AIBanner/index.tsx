@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
-import { Card, Space, Button, Tag, Typography, message } from 'antd';
+import { Card, Space, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useTypedNavigate } from '@actiontech/shared';
+import { BasicButton, BasicTag, useTypedNavigate } from '@actiontech/shared';
 import { AiHubService } from '@actiontech/shared/lib/api/sqle';
 import {
   ClockCircleOutlined,
@@ -16,11 +16,13 @@ import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProje
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { AIModuleBannerCardsAiModuleTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAIModuleBannerCards } from '@actiontech/shared/lib/api/sqle/service/common.d';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import {
+  PERMISSIONS,
+  useCurrentUser,
+  usePermission
+} from '@actiontech/shared/lib/features';
 import NotFoundProject from '../DefaultScene/components/NotFoundProject';
 import SqlRewrittenExampleDrawer from './components/SqlRewrittenExampleDrawer';
-
-const { Link } = Typography;
 
 const DEFAULT_METRIC_VALUE = '-';
 
@@ -29,6 +31,7 @@ type PendingProjectAction = 'performance' | null;
 const AIBanner: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
+  const [messageApi, messageContextHolder] = message.useMessage();
   const { bindProjects } = useCurrentUser();
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -38,6 +41,7 @@ const AIBanner: React.FC = () => {
     useState<PendingProjectAction>(null);
   const [openSqlRewrittenExampleDrawer, setOpenSqlRewrittenExampleDrawer] =
     useState(false);
+  const { checkPagePermission } = usePermission();
 
   const { data: bannerData, loading } = useRequest(() => {
     return AiHubService.GetAIHubBanner().then((res) => {
@@ -92,7 +96,7 @@ const AIBanner: React.FC = () => {
   }, [bannerData]);
 
   const showPaidFeaturePrompt = () => {
-    message.info(t('dmsHome.aiBanner.paidFeaturePrompt'));
+    messageApi.info(t('dmsHome.aiBanner.paidFeaturePrompt'));
   };
 
   // 处理查看完整报告跳转
@@ -152,6 +156,7 @@ const AIBanner: React.FC = () => {
 
   return (
     <AIBannerStyleWrapper>
+      {messageContextHolder}
       <Card className="ai-banner-card" loading={loading}>
         <div className="banner-content">
           {/* 左侧：AI治理效能洞察 */}
@@ -167,9 +172,14 @@ const AIBanner: React.FC = () => {
             <div className="insight-description">
               {t('dmsHome.aiBanner.insightDescription')}
             </div>
-            <Link className="view-report-link" onClick={handleViewFullReport}>
-              {t('dmsHome.aiBanner.viewFullReport')} <RightOutlined />
-            </Link>
+            {checkPagePermission(PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS) && (
+              <Typography.Link
+                className="view-report-link"
+                onClick={handleViewFullReport}
+              >
+                {t('dmsHome.aiBanner.viewFullReport')} <RightOutlined />
+              </Typography.Link>
+            )}
           </div>
 
           {/* 中间：核心指标（接口存在对应模块时隐藏对应指标） */}
@@ -189,9 +199,9 @@ const AIBanner: React.FC = () => {
                   </span>
                 </div>
                 {bannerState.metrics.riskIntercept.evaluation && (
-                  <Tag color="success" className="metric-tag">
+                  <BasicTag color="green" className="metric-tag">
                     {bannerState.metrics.riskIntercept.evaluation}
-                  </Tag>
+                  </BasicTag>
                 )}
               </div>
             )}
@@ -211,9 +221,9 @@ const AIBanner: React.FC = () => {
                   </span>
                 </div>
                 {bannerState.metrics.performanceOptimization.evaluation && (
-                  <Tag color="processing" className="metric-tag">
+                  <BasicTag color="cyan" className="metric-tag">
                     {bannerState.metrics.performanceOptimization.evaluation}
-                  </Tag>
+                  </BasicTag>
                 )}
               </div>
             )}
@@ -221,21 +231,22 @@ const AIBanner: React.FC = () => {
 
           {/* 右侧：快捷行动按钮 */}
           <div className="right-section">
-            {showPerformanceEngineButton && (
-              <Button
-                type="primary"
-                size="large"
-                className="action-button primary-button"
-                onClick={handleAIPerformanceEngine}
-              >
-                <Space>
-                  {t('dmsHome.aiBanner.aiPerformanceEngine')}
-                  <RightOutlined />
-                </Space>
-              </Button>
-            )}
+            {showPerformanceEngineButton &&
+              checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION) && (
+                <BasicButton
+                  type="primary"
+                  size="large"
+                  className="action-button primary-button"
+                  onClick={handleAIPerformanceEngine}
+                >
+                  <Space>
+                    {t('dmsHome.aiBanner.aiPerformanceEngine')}
+                    <RightOutlined />
+                  </Space>
+                </BasicButton>
+              )}
             {showSmartCorrectionButton && (
-              <Button
+              <BasicButton
                 size="large"
                 className="action-button secondary-button"
                 onClick={handleAISmartCorrection}
@@ -244,7 +255,7 @@ const AIBanner: React.FC = () => {
                   {t('dmsHome.aiBanner.aiSmartCorrection')}
                   <CheckCircleOutlined />
                 </Space>
-              </Button>
+              </BasicButton>
             )}
           </div>
         </div>
