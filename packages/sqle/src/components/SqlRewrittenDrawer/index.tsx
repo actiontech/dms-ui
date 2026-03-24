@@ -9,9 +9,9 @@ import SqlRewrittenDrawerCE from './index.ce';
 const SqlRewrittenDrawer: React.FC<SqlRewrittenDrawerProps> = (props) => {
   const { t } = useTranslation();
   const commonProps: SqlRewrittenDrawerWithBaseProps = {
-    ...props,
     width: 920,
     title: t('sqlRewrite.rewriteDetails'),
+    ...props,
     maskClosable: false
   };
   return (

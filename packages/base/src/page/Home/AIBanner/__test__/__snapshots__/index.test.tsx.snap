@@ -4,7 +4,7 @@ exports[`test base/home/AIBanner should match snapshot and render metrics and ac
 <body>
   <div>
     <div
-      class="css-1n5cj6v"
+      class="css-1su4mhq"
     >
       <div
         class="ant-card ant-card-bordered ai-banner-card"
@@ -129,7 +129,7 @@ exports[`test base/home/AIBanner should match snapshot and render metrics and ac
                   </span>
                 </div>
                 <span
-                  class="ant-tag ant-tag-success metric-tag"
+                  class="ant-tag ant-tag-green metric-tag basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                 >
                   高
                 </span>
@@ -176,7 +176,7 @@ exports[`test base/home/AIBanner should match snapshot and render metrics and ac
                   </span>
                 </div>
                 <span
-                  class="ant-tag ant-tag-processing metric-tag"
+                  class="ant-tag ant-tag-blue metric-tag basic-tag-wrapper basic-default-tag-wrapper css-1q0n2j9"
                 >
                   中
                 </span>
@@ -186,7 +186,7 @@ exports[`test base/home/AIBanner should match snapshot and render metrics and ac
               class="right-section"
             >
               <button
-                class="ant-btn ant-btn-primary ant-btn-lg action-button primary-button"
+                class="ant-btn ant-btn-primary ant-btn-lg action-button primary-button basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <div
@@ -224,7 +224,7 @@ exports[`test base/home/AIBanner should match snapshot and render metrics and ac
                 </div>
               </button>
               <button
-                class="ant-btn ant-btn-default ant-btn-lg action-button secondary-button"
+                class="ant-btn ant-btn-default ant-btn-lg action-button secondary-button basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <div

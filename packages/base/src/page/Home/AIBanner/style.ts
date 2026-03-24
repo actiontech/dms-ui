@@ -154,25 +154,22 @@ export const AIBannerStyleWrapper = styled('div')`
         font-size: 14px;
 
         &.primary-button {
-          background: linear-gradient(135deg, #722ed1 0%, #9254de 100%);
+          background: linear-gradient(
+            135deg,
+            #722ed1 0%,
+            #9254de 100%
+          ) !important;
           border: none;
-          color: #fff;
+          color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
+          box-shadow: none !important;
 
           &:hover {
-            background: linear-gradient(135deg, #9254de 0%, #b37feb 100%);
-            color: #fff;
-          }
-        }
-
-        &.secondary-button {
-          background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
-          border: 1px solid
-            ${({ theme }) => theme.sharedTheme.uiToken.colorBorder};
-          color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
-
-          &:hover {
-            border-color: #722ed1;
-            color: #722ed1;
+            background: linear-gradient(
+              135deg,
+              #9254de 0%,
+              #b37feb 100%
+            ) !important;
+            color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
           }
         }
       }

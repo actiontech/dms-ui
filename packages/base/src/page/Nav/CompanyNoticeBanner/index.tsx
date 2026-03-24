@@ -31,6 +31,19 @@ const CompanyNoticeBanner: React.FC = () => {
   );
 
   useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--notice-banner-height',
+      noticeStr ? '34px' : '0px'
+    );
+    return () => {
+      document.documentElement.style.setProperty(
+        '--notice-banner-height',
+        '0px'
+      );
+    };
+  }, [noticeStr]);
+
+  useEffect(() => {
     const el = textRef.current;
     if (!el || !noticeStr) return;
 
