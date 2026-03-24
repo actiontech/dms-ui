@@ -391,6 +391,7 @@ export const LayoutStyleWrapper = styled('section')`
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    padding-top: var(--notice-banner-height, 0px);
 
     .copyright-information {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};

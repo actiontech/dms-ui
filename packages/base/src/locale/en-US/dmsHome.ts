@@ -12,7 +12,10 @@ export default {
     aiPerformanceEngine: 'AI Performance Engine',
     aiSmartCorrection: 'AI Smart Correction',
     paidFeaturePrompt:
-      'This feature is a paid value-added module. Please contact sales for details'
+      'This feature is a paid value-added module. Please contact sales for details',
+    aiBannerExampleDrawerTitle: 'SQL Rewritten Example',
+    aiBannerExampleDrawerDescription:
+      'This example shows the SQL comparison after AI smart correction. When using it in practice, please first perform SQL audit, and the system will automatically provide the correction entry for the SQL that triggers the rules.'
   },
   defaultScene: {
     header: {

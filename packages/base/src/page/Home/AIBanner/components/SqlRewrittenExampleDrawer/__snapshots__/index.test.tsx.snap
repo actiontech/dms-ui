@@ -38,7 +38,25 @@ exports[`SqlRewrittenExampleDrawer should match snapshot 1`] = `
                 <div
                   class="ant-drawer-title"
                 >
-                  重写详情
+                  <div
+                    class="ant-space ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      SQL 重写示例
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary"
+                      >
+                        本示例展示 AI 智能修正后的 SQL 对比。实际使用时，请先进行 SQL 审核，系统将针对触发规则的 SQL 自动提供修正入口。
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div

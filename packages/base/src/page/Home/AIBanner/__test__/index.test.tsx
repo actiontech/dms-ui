@@ -11,6 +11,7 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import AIBanner from '..';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -19,28 +20,27 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-const mockMessageInfo = jest.fn();
-jest.mock('antd', () => ({
-  ...jest.requireActual('antd'),
-  message: {
-    ...jest.requireActual('antd').message,
-    info: (...args: unknown[]) => mockMessageInfo(...args)
-  }
-}));
-
 describe('test base/home/AIBanner', () => {
   const navigateSpy = jest.fn();
   const mockedUseNavigate = useNavigate as jest.Mock;
   let requestBannerSpy: jest.SpyInstance;
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     jest.useFakeTimers();
-    mockMessageInfo.mockClear();
     requestBannerSpy = statistic.getAIHubBanner();
     mockedUseNavigate.mockImplementation(() => navigateSpy);
     mockUseCurrentUser();
     mockUseRecentlyOpenedProjects({ currentProjectID: '1' });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
   });
 
   afterEach(() => {
@@ -142,7 +142,9 @@ describe('test base/home/AIBanner', () => {
 
     fireEvent.click(screen.getByText('查看完整报告'));
 
-    expect(mockMessageInfo).toHaveBeenCalled();
+    expect(
+      screen.getByText('当前功能为付费增值模块，请联系商务获取详细信息')
+    ).toBeInTheDocument();
     expect(navigateSpy).not.toHaveBeenCalled();
   });
 
@@ -171,7 +173,9 @@ describe('test base/home/AIBanner', () => {
 
     fireEvent.click(screen.getByText('AI 性能引擎'));
 
-    expect(mockMessageInfo).toHaveBeenCalled();
+    expect(
+      screen.getByText('当前功能为付费增值模块，请联系商务获取详细信息')
+    ).toBeInTheDocument();
     expect(navigateSpy).not.toHaveBeenCalled();
   });
 
@@ -200,18 +204,34 @@ describe('test base/home/AIBanner', () => {
 
     fireEvent.click(screen.getByText('AI 智能修正'));
 
-    expect(mockMessageInfo).toHaveBeenCalled();
-    expect(screen.queryByText('重写详情')).not.toBeInTheDocument();
+    expect(
+      screen.getByText('当前功能为付费增值模块，请联系商务获取详细信息')
+    ).toBeInTheDocument();
+    expect(screen.queryByText('SQL 重写示例')).not.toBeInTheDocument();
   });
 
   it('should open SqlRewrittenExampleDrawer when AI smart correction clicked', async () => {
     baseSuperRender(<AIBanner />);
     await act(async () => jest.advanceTimersByTime(3300));
 
-    expect(screen.queryByText('重写详情')).not.toBeInTheDocument();
+    expect(screen.queryByText('SQL 重写示例')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText('AI 智能修正'));
 
-    expect(screen.getByText('重写详情')).toBeInTheDocument();
+    expect(screen.getByText('SQL 重写示例')).toBeInTheDocument();
+  });
+
+  it('should not render viewFullReport and performance engine button when all modules are disabled', async () => {
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(false)
+      },
+      { useSpyOnMockHooks: true }
+    );
+    baseSuperRender(<AIBanner />);
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    expect(screen.queryByText('查看完整报告')).not.toBeInTheDocument();
+    expect(screen.queryByText('AI 性能引擎')).not.toBeInTheDocument();
   });
 });
