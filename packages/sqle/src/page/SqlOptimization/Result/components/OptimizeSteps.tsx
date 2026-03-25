@@ -5,21 +5,25 @@ import { Typography } from 'antd';
 import { IOptimizeStep } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useTranslation } from 'react-i18next';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { normalizeOptimizationModuleState } from '../utils/optimizationModuleState';
 
 interface OptimizeStepsProps {
   optimizeSteps: IOptimizeStep[];
   onOptimizationRuleClick?: (stepIndex: number) => void;
   errorMessage?: string;
   optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  moduleState?: string;
 }
 
 const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
   optimizeSteps,
   onOptimizationRuleClick,
   errorMessage,
-  optimizationStatus
+  optimizationStatus,
+  moduleState
 }) => {
   const { t } = useTranslation();
+  const moduleNorm = normalizeOptimizationModuleState(moduleState);
   const handleRuleClick = (stepIndex: number) => {
     onOptimizationRuleClick?.(stepIndex);
   };
@@ -45,6 +49,10 @@ const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
                 optimizationStatus ===
                 OptimizationSQLDetailStatusEnum.optimizing
                   ? t('sqlOptimization.result.optimizing')
+                  : moduleNorm === 'running'
+                  ? t('sqlOptimization.result.moduleGenerating')
+                  : moduleNorm === 'failed'
+                  ? t('sqlOptimization.result.moduleFailed')
                   : t('common.tip.no_data')
               }
             />

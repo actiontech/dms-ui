@@ -15,6 +15,25 @@ export const SqlOptimizationOtherAdviceTitleStyleWrapper = styled(Space)`
   }
 `;
 
+/** 索引建议区：左侧主文案、右侧「查看表结构」等操作 */
+export const SqlOptimizationIndexAdviceRowStyleWrapper = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .index-advice-row__main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .index-advice-row__action {
+    flex-shrink: 0;
+  }
+`;
+
 export const SqlOptimizationRightContentWrapper = styled(Col)`
   padding: 20px;
 

@@ -8,21 +8,25 @@ import {
   IAnalysisDetail
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { normalizeOptimizationModuleState } from '../utils/optimizationModuleState';
 
 interface AnalysisChartProps {
   data?: ITotalAnalysis;
   loading?: boolean;
   errorMessage?: string;
   optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  moduleState?: string;
 }
 
 const AnalysisChart: React.FC<AnalysisChartProps> = ({
   data,
   loading = false,
   errorMessage,
-  optimizationStatus
+  optimizationStatus,
+  moduleState
 }) => {
   const { t } = useTranslation();
+  const moduleNorm = normalizeOptimizationModuleState(moduleState);
 
   const radarData = useMemo(() => {
     const transformedData: Array<{
@@ -109,6 +113,10 @@ const AnalysisChart: React.FC<AnalysisChartProps> = ({
         emptyCont={
           optimizationStatus === OptimizationSQLDetailStatusEnum.optimizing
             ? t('sqlOptimization.result.optimizing')
+            : moduleNorm === 'running'
+            ? t('sqlOptimization.result.moduleGenerating')
+            : moduleNorm === 'failed'
+            ? t('sqlOptimization.result.moduleFailed')
             : t('common.tip.no_data')
         }
       >
