@@ -48,6 +48,14 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
       };
     }, [optimizationResult]);
 
+  const optimizedPlanModuleState = useMemo(() => {
+    const steps = optimizationResult?.optimize?.steps;
+    if (steps?.length) {
+      return steps[steps.length - 1]?.query_plan?.state;
+    }
+    return optimizationResult?.origin_query_plan?.state;
+  }, [optimizationResult]);
+
   const onViewOverallDiff = () => {
     dispatch(
       updateDiffModalData({
@@ -164,11 +172,15 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           onViewQueryPlanDiff={onViewQueryPlanDiff}
           onExpandQueryPlan={onExpandQueryPlan}
           isVerticalLayout={isVerticalLayout}
-          optimizationStatus={optimizationResult?.status}
+          optimizationDetailStatus={optimizationResult?.status}
+          optimizeStatus={optimizationResult?.optimize_status}
           isBestPerformance={isBestPerformance}
           hasAdvice={optimizationResult?.advised_index?.has_advice}
           otherAdvice={optimizationResult?.advised_index?.other_advice}
           originalSql={optimizationResult?.origin_sql}
+          optimizeModuleState={optimizationResult?.optimize?.state}
+          advisedIndexModuleState={optimizationResult?.advised_index?.state}
+          optimizedPlanModuleState={optimizedPlanModuleState}
         />
 
         <RightContent
@@ -177,10 +189,13 @@ const SqlOptimizationResult: React.FC<SqlOptimizationResultProps> = ({
           optimizeSteps={optimizationResult?.optimize?.steps ?? []}
           errorMessage={errorMessage}
           onOptimizationRuleClick={onViewOptimizationResult}
-          optimizationStatus={optimizationResult?.status}
+          optimizationDetailStatus={optimizationResult?.status}
+          optimizeStatus={optimizationResult?.optimize_status}
           optimizationRecordId={optimizationRecordId}
           initialFeedbacks={optimizationResult?.optimized_sql_feedbacks ?? []}
           onFeedbackChanged={onFeedbackChanged}
+          analysisModuleState={optimizationResult?.total_analysis?.state}
+          optimizeModuleState={optimizationResult?.optimize?.state}
         />
 
         <SqlOptimizationModals />

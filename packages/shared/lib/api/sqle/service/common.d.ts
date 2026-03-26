@@ -48,7 +48,8 @@ import {
   WorkflowResV2ModeEnum,
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum,
-  OptimizationSQLDetailStatusEnum
+  OptimizationSQLDetailStatusEnum,
+  OptimizationSQLDetailOptimizeStatusEnum
 } from './common.enum';
 
 export interface IBaseRes {
@@ -2899,6 +2900,8 @@ export interface IOptimizationSQLDetail {
   metadata?: string;
 
   optimization_id?: string;
+
+  optimize_status?: OptimizationSQLDetailOptimizeStatusEnum;
 
   optimize?: IOptimizeDetail;
 
