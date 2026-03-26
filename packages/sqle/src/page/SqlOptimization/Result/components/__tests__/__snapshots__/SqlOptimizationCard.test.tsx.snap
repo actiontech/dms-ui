@@ -164,7 +164,7 @@ exports[`SqlOptimizationCard should render empty state when isEmpty is true 1`] 
             <span
               class="no-data-cont"
             >
-              暂无数据
+              优化进行中
             </span>
           </div>
           <div
@@ -365,7 +365,7 @@ exports[`SqlOptimizationCard should render error state when errorMessage is prov
 </body>
 `;
 
-exports[`SqlOptimizationCard should render optimizing state when optimizationStatus is optimizing 1`] = `
+exports[`SqlOptimizationCard should render optimizing state when optimizationDetailStatus is rewriting 1`] = `
 <body>
   <div>
     <div

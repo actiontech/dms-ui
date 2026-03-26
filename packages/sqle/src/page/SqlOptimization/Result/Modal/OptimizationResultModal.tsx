@@ -63,7 +63,7 @@ const OptimizationResultModal: React.FC = () => {
           <Space direction="vertical">
             <ProbabilityDisplay
               analysis={currentResultData?.analysis}
-              optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+              optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
             />
 
             <Typography.Title level={5}>

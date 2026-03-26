@@ -166,7 +166,7 @@ describe('SqlOptimizationResultDrawer', () => {
       ...defaultOptimizationResult,
       getOptimizationResult: getOptimizationResultSpy,
       optimizationResult: {
-        status: OptimizationSQLDetailStatusEnum.optimizing
+        status: OptimizationSQLDetailStatusEnum.rewriting
       }
     });
 

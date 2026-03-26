@@ -87,9 +87,9 @@ describe('useOptimizationResult', () => {
     expect(result.current.optimizationResult).toBeUndefined();
   });
 
-  it('should continue polling when status is optimizing', async () => {
+  it('should continue polling when status is rewriting', async () => {
     const mockOptimizingData = {
-      status: OptimizationSQLDetailStatusEnum.optimizing,
+      status: OptimizationSQLDetailStatusEnum.rewriting,
       origin_sql: 'SELECT * FROM test'
     };
 
@@ -188,7 +188,7 @@ describe('useOptimizationResult', () => {
 
   it('should handle cancel polling manually', async () => {
     const mockData = {
-      status: OptimizationSQLDetailStatusEnum.optimizing,
+      status: OptimizationSQLDetailStatusEnum.rewriting,
       origin_sql: 'SELECT * FROM test'
     };
 

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
+import { Card, Col, Space, Typography } from 'antd';
 import { ExecutionPlanType } from '../index.type';
-import { Col, Card, Typography, Space } from 'antd';
 
 export const SqlOptimizationCardSubTitleStyleWrapper = styled(Typography.Text)`
   &.ant-typography.ant-typography-secondary {
@@ -12,6 +12,25 @@ export const SqlOptimizationCardSubTitleStyleWrapper = styled(Typography.Text)`
 export const SqlOptimizationOtherAdviceTitleStyleWrapper = styled(Space)`
   .advice-title {
     font-weight: 600 !important;
+  }
+`;
+
+/** 索引建议区：左侧主文案、右侧「查看表结构」等操作 */
+export const SqlOptimizationIndexAdviceRowStyleWrapper = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .index-advice-row__main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .index-advice-row__action {
+    flex-shrink: 0;
   }
 `;
 

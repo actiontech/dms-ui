@@ -5,7 +5,10 @@ import {
   mockUseCurrentUser
 } from '@actiontech/shared/lib/testUtil';
 import { mockReactFlow } from '@actiontech/shared/lib/testUtil/mockModule/mockReactFlow';
-import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  OptimizationSQLDetailOptimizeStatusEnum,
+  OptimizationSQLDetailStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { screen } from '@testing-library/react';
 
 describe('LeftContent', () => {
@@ -26,7 +29,8 @@ describe('LeftContent', () => {
     onExpandQueryPlan: jest.fn(),
     isBestPerformance: false,
     originalSql: 'SELECT * FROM users',
-    optimizationStatus: OptimizationSQLDetailStatusEnum.finish
+    optimizationDetailStatus: OptimizationSQLDetailStatusEnum.finish,
+    optimizeStatus: OptimizationSQLDetailOptimizeStatusEnum.finish
   };
 
   beforeEach(() => {
@@ -133,31 +137,31 @@ describe('LeftContent', () => {
     ).toBeInTheDocument();
   });
 
-  it('should render with optimizationStatus optimizing', () => {
+  it('should render with optimizationDetailStatus rewriting', () => {
     const { baseElement } = superRender(
       <LeftContent
         {...mockProps}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.rewriting}
       />
     );
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should render with optimizationStatus failed', () => {
+  it('should render with optimizationDetailStatus failed', () => {
     const { baseElement } = superRender(
       <LeftContent
         {...mockProps}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.failed}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.failed}
       />
     );
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should render with optimizationStatus finish', () => {
+  it('should render with optimizationDetailStatus finish', () => {
     const { baseElement } = superRender(
       <LeftContent
         {...mockProps}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
