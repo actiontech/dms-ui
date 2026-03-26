@@ -111,7 +111,7 @@ exports[`ProbabilityDisplay should render "NULL" when analysis state is failed 1
             class="probability-number"
             style="background-clip: text;"
           >
-            NULL
+            运行失败
           </div>
           <svg
             height="30"

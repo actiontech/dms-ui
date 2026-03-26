@@ -9,7 +9,7 @@ export enum ExecutionPlanType {
 
 export interface ProbabilityDisplayProps {
   analysis?: ITotalAnalysis;
-  optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  optimizationDetailStatus?: OptimizationSQLDetailStatusEnum;
 }
 
 export interface SqlOptimizationResultProps

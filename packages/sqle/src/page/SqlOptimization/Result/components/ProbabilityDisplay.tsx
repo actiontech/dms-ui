@@ -6,15 +6,18 @@ import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle
 import { EmptyBox, floatToPercent } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { normalizeOptimizationModuleState } from '../utils/normalizeOptimizationModuleState';
 
 enum UnusualRateText {
   'NULL' = 'NULL',
-  'Best' = 'Best'
+  'Best' = 'Best',
+  'Generating' = 'Generating',
+  'Failed' = 'Failed'
 }
 
 const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
   analysis,
-  optimizationStatus
+  optimizationDetailStatus
 }) => {
   const { t } = useTranslation();
 
@@ -22,25 +25,35 @@ const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
 
   const { rate, showPercentSign } = useMemo(() => {
     const getRate = () => {
+      const moduleState = normalizeOptimizationModuleState(analysis?.state);
       if (
-        optimizationStatus !== OptimizationSQLDetailStatusEnum.finish ||
-        analysis?.state === 'failed'
+        (optimizationDetailStatus !== OptimizationSQLDetailStatusEnum.finish &&
+          optimizationDetailStatus !==
+            OptimizationSQLDetailStatusEnum.failed) ||
+        moduleState === 'running'
       ) {
+        return UnusualRateText.Generating;
+      }
+      if (moduleState === 'failed') {
+        return UnusualRateText.Failed;
+      }
+      if (optimizationDetailStatus !== OptimizationSQLDetailStatusEnum.finish) {
         return UnusualRateText.NULL;
       }
       if (
-        optimizationStatus === OptimizationSQLDetailStatusEnum.finish &&
+        optimizationDetailStatus === OptimizationSQLDetailStatusEnum.finish &&
         (!analysis?.improvement_rate || analysis?.improvement_rate <= 0)
       ) {
         return UnusualRateText.Best;
       }
       return floatToPercent(analysis?.improvement_rate ?? 0, 1);
     };
+    const resolvedRate = getRate();
     return {
-      rate: getRate(),
-      showPercentSign: typeof getRate() === 'number' ? true : false
+      rate: resolvedRate,
+      showPercentSign: typeof resolvedRate === 'number' ? true : false
     };
-  }, [analysis, optimizationStatus]);
+  }, [analysis, optimizationDetailStatus]);
 
   return (
     <Space direction="vertical">
@@ -54,7 +67,11 @@ const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
             WebkitTextFillColor: 'transparent'
           }}
         >
-          {rate}
+          {rate === UnusualRateText.Generating
+            ? t('sqlOptimization.result.moduleGenerating')
+            : rate === UnusualRateText.Failed
+            ? t('sqlOptimization.result.moduleFailed')
+            : rate}
           <EmptyBox if={showPercentSign}>
             <span>%</span>
           </EmptyBox>

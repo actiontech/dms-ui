@@ -10,6 +10,7 @@ import {
 } from '../../../../api/sqle/service/common';
 import {
   OptimizationRecordStatusEnum,
+  OptimizationSQLDetailOptimizeStatusEnum,
   OptimizationSQLDetailStatusEnum,
   OptimizedSQLFeedbackVoteEnum
 } from '../../../../api/sqle/service/common.enum';
@@ -25,7 +26,8 @@ export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
     status: OptimizationRecordStatusEnum.finish,
     number_of_index: 2,
     number_of_rule: 2,
-    performance_improve: 2.384615385
+    performance_improve: 2.384615385,
+    adoption_rate: 85.5
   },
   {
     optimization_id: '1234567',
@@ -98,8 +100,34 @@ export const optimizationRecordSqlMockData: IOptimizationSQL[] = [
   }
 ];
 
+export const optimizedSQLFeedbacksMockData: IOptimizedSQLFeedback[] = [
+  {
+    id: 1,
+    creator: 'admin',
+    vote: OptimizedSQLFeedbackVoteEnum.agree,
+    reason: '优化效果明显',
+    created_at: '2024-04-17T03:33:09Z'
+  },
+  {
+    id: 2,
+    creator: 'user1',
+    vote: OptimizedSQLFeedbackVoteEnum.disagree,
+    reason: '性能提升不明显',
+    created_at: '2024-04-16T10:00:00Z'
+  },
+  {
+    id: 3,
+    creator: 'user2',
+    vote: OptimizedSQLFeedbackVoteEnum.agree,
+    created_at: '2024-04-15T08:00:00Z'
+  }
+];
+
 export const optimizationDetailMockData: IOptimizationSQLDetail = {
   id: 1,
+  optimization_id: '1234567',
+  optimize_status: OptimizationSQLDetailOptimizeStatusEnum.finish,
+  optimized_sql_feedbacks: optimizedSQLFeedbacksMockData,
   status: OptimizationSQLDetailStatusEnum.finish,
   status_detail: '',
   origin_sql:
@@ -532,26 +560,3 @@ export const optimizationRecordOverviewMockData: IOptimizationRecordOverview[] =
       time: '2024-04-23'
     }
   ];
-
-export const optimizedSQLFeedbacksMockData: IOptimizedSQLFeedback[] = [
-  {
-    id: 1,
-    creator: 'admin',
-    vote: OptimizedSQLFeedbackVoteEnum.agree,
-    reason: '优化效果明显',
-    created_at: '2024-04-17T03:33:09Z'
-  },
-  {
-    id: 2,
-    creator: 'user1',
-    vote: OptimizedSQLFeedbackVoteEnum.disagree,
-    reason: '性能提升不明显',
-    created_at: '2024-04-16T10:00:00Z'
-  },
-  {
-    id: 3,
-    creator: 'user2',
-    vote: OptimizedSQLFeedbackVoteEnum.agree,
-    created_at: '2024-04-15T08:00:00Z'
-  }
-];
