@@ -71,7 +71,7 @@ exports[`OptimizeSteps should render empty state when no steps provided 1`] = `
             <span
               class="no-data-cont"
             >
-              暂无数据
+              优化进行中
             </span>
           </div>
           <div

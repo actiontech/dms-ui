@@ -48,6 +48,7 @@ import {
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
   OptimizationRecordStatusEnum,
+  OptimizationSQLDetailOptimizeStatusEnum,
   OptimizationSQLDetailStatusEnum,
   RecordSourceNameEnum,
   RelatedSQLInfoSourceEnum,
@@ -2770,6 +2771,8 @@ export interface IOptimizationSQLDetail {
   optimization_id?: string;
 
   optimize?: IOptimizeDetail;
+
+  optimize_status?: OptimizationSQLDetailOptimizeStatusEnum;
 
   optimized_sql_feedbacks?: IOptimizedSQLFeedback[];
 

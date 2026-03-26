@@ -25,7 +25,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: 0.15,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -38,7 +38,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: 0,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -51,7 +51,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: -0.05,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -64,7 +64,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: 0.15,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.failed}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.failed}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -77,7 +77,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: 0.15,
           state: 'failed'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -87,7 +87,7 @@ describe('ProbabilityDisplay', () => {
     const { baseElement } = superRender(
       <ProbabilityDisplay
         analysis={undefined}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -100,7 +100,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: undefined,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();
@@ -113,7 +113,7 @@ describe('ProbabilityDisplay', () => {
           improvement_rate: 0.856789,
           state: 'success'
         }}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.finish}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
       />
     );
     expect(baseElement).toMatchSnapshot();

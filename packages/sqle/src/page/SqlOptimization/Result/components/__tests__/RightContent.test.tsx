@@ -18,7 +18,7 @@ describe('RightContent', () => {
         }
       ]
     },
-    optimizationStatus: OptimizationSQLDetailStatusEnum.finish,
+    optimizationDetailStatus: OptimizationSQLDetailStatusEnum.finish,
     optimizeSteps: [
       {
         chat_id: 'chat_1',

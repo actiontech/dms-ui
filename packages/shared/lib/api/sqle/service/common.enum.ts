@@ -456,12 +456,26 @@ export enum OptimizationRecordStatusEnum {
   'finish' = 'finish'
 }
 
-export enum OptimizationSQLDetailStatusEnum {
+export enum OptimizationSQLDetailOptimizeStatusEnum {
   'optimizing' = 'optimizing',
 
   'failed' = 'failed',
 
   'finish' = 'finish'
+}
+
+export enum OptimizationSQLDetailStatusEnum {
+  'rewriting' = 'rewriting',
+
+  'rewrite_done' = 'rewrite_done',
+
+  'advise_indexing' = 'advise_indexing',
+
+  'advise_index_done' = 'advise_index_done',
+
+  'finish' = 'finish',
+
+  'failed' = 'failed'
 }
 
 export enum RecordSourceNameEnum {
