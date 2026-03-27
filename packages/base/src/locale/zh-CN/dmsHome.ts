@@ -10,7 +10,10 @@ export default {
     times: '次',
     aiPerformanceEngine: 'AI 性能引擎',
     aiSmartCorrection: 'AI 智能修正',
-    paidFeaturePrompt: '当前功能为付费增值模块，请联系商务获取详细信息'
+    paidFeaturePrompt: '当前功能为付费增值模块，请联系商务获取详细信息',
+    aiBannerExampleDrawerTitle: 'SQL 重写示例',
+    aiBannerExampleDrawerDescription:
+      '本示例展示 AI 智能修正后的 SQL 对比。实际使用时，请先进行 SQL 审核，系统将针对触发规则的 SQL 自动提供修正入口。'
   },
   defaultScene: {
     header: {

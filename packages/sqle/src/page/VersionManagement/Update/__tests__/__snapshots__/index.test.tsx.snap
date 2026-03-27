@@ -4,7 +4,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -1416,7 +1416,7 @@ exports[`sqle/VersionManagement/Create update version when The current version h
   />
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"

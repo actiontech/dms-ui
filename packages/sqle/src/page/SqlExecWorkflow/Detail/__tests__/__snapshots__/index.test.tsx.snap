@@ -16,7 +16,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
             class="workflow-detail-content"
           >
             <div
-              class="actiontech-page-header-namespace css-1xspr0w"
+              class="actiontech-page-header-namespace css-ex8bfe"
             >
               <div
                 class="title"
@@ -782,7 +782,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
             class="workflow-detail-content"
           >
             <div
-              class="actiontech-page-header-namespace css-1xspr0w"
+              class="actiontech-page-header-namespace css-ex8bfe"
             >
               <div
                 class="title"
@@ -1338,7 +1338,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
             class="workflow-detail-content"
           >
             <div
-              class="actiontech-page-header-namespace css-1xspr0w"
+              class="actiontech-page-header-namespace css-ex8bfe"
             >
               <div
                 class="title"
@@ -2230,7 +2230,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
             class="workflow-detail-content"
           >
             <div
-              class="actiontech-page-header-namespace css-1xspr0w"
+              class="actiontech-page-header-namespace css-ex8bfe"
             >
               <div
                 class="title"
@@ -3170,7 +3170,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
             class="workflow-detail-content"
           >
             <div
-              class="actiontech-page-header-namespace css-1xspr0w"
+              class="actiontech-page-header-namespace css-ex8bfe"
             >
               <div
                 class="title"

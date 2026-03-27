@@ -4,7 +4,7 @@ exports[`base/GlobalDataSource/BatchImportDataSource render check api return csv
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -294,7 +294,7 @@ exports[`base/GlobalDataSource/BatchImportDataSource render connectable error mo
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -712,7 +712,7 @@ exports[`base/GlobalDataSource/BatchImportDataSource render delete file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -965,7 +965,7 @@ exports[`base/GlobalDataSource/BatchImportDataSource render init snap 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -1146,7 +1146,7 @@ exports[`base/GlobalDataSource/BatchImportDataSource render upload file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
