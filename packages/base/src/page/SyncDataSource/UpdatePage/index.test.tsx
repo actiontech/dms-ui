@@ -8,7 +8,10 @@ import EventEmitter from '../../../utils/EventEmitter';
 import UpdateSyncTask from '.';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { DataSourceManagerSegmentedKey } from '../../DataSourceManagement/index.type';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  getAllBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { syncTaskDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
 
 jest.mock('react-router-dom', () => {
@@ -138,7 +141,8 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
             audit_enabled: undefined,
             rule_template_id: undefined,
             rule_template_name: undefined,
-            allow_query_when_less_than_audit_level: undefined
+            allow_query_when_less_than_audit_level: undefined,
+            maintenance_times: []
           }
         },
         additional_params: [
@@ -156,6 +160,62 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
         replace: true
       }
     );
+  });
+
+  it('should submit sql workbench maintenance times on update', async () => {
+    const requestUpdate = syncTaskList.updateTaskSource();
+    const { container, baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    fireEvent.change(getBySelector('#url', container), {
+      target: {
+        value: 'http://192.168.1.5:5555'
+      }
+    });
+
+    const workbenchMaintenanceField = screen
+      .getByText('SQL 工作台运维时间')
+      .closest('.ant-form-item') as HTMLElement;
+    fireEvent.click(getBySelector('button', workbenchMaintenanceField));
+    await act(async () => jest.advanceTimersByTime(300));
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
+    expect(inputEle.length).toBe(2);
+    fireEvent.click(inputEle[0].parentElement!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('02')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('10')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('04')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('20')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestUpdate).toHaveBeenCalled();
+    expect(
+      requestUpdate.mock.calls[0][0].db_service_sync_task?.sqle_config
+        ?.sql_query_config?.maintenance_times
+    ).toEqual([
+      {
+        maintenance_start_time: {
+          hour: 2,
+          minute: 10
+        },
+        maintenance_stop_time: {
+          hour: 4,
+          minute: 20
+        }
+      }
+    ]);
   });
 
   it('get task source failed', async () => {

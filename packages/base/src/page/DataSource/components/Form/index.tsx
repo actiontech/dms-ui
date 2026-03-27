@@ -103,7 +103,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         'dataExportRuleTemplateId',
         'workbenchTemplateName',
         'workbenchTemplateId',
-        'allowExecuteNonDqlInWorkflow'
+        'allowExecuteNonDqlInWorkflow',
+        'sqlWorkbenchMaintenanceTime'
       ]);
       // #endif
       // #if [sqle && ee]
@@ -213,6 +214,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         allowExecuteNonDqlInWorkflow:
           !!props.defaultData.sqle_config?.sql_query_config
             ?.workflow_exec_enabled,
+        sqlWorkbenchMaintenanceTime:
+          props.defaultData.sqle_config?.sql_query_config?.maintenance_times?.map(
+            (item) => ({
+              startTime: item.maintenance_start_time,
+              endTime: item.maintenance_stop_time
+            })
+          ) ?? [],
         // #endif
         needUpdatePassword: false,
         environmentTagId: props.defaultData.environment_tag?.uid ?? '',

@@ -3,9 +3,11 @@ import { isArray } from 'lodash';
 import LabelPreview from './components/LabelPreview';
 import SqlDiffPreview from './components/SqlDiffPreview';
 import SqlPreview from './components/SqlPreview';
-import { MDEditorProps } from '@uiw/react-md-editor';
+import type { BasicMDEditorProps } from '@actiontech/shared';
 
-export const markdownPreviewOptions: MDEditorProps['previewOptions'] = {
+type PreviewOptions = BasicMDEditorProps['previewOptions'];
+
+export const markdownPreviewOptions: PreviewOptions = {
   components: {
     code: ({ children, className, ...props }) => {
       /**
