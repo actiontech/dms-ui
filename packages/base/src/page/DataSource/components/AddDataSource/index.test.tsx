@@ -63,7 +63,7 @@ describe('page/DataSource/AddDataSource', () => {
 
   afterEach(() => {
     jest.useRealTimers();
-    jest.clearAllMocks();
+    jest.restoreAllMocks();
     cleanup();
   });
 
@@ -219,7 +219,8 @@ describe('page/DataSource/AddDataSource', () => {
             audit_enabled: true,
             rule_template_id: '3',
             rule_template_name: 'default_MySQL1',
-            workflow_exec_enabled: true
+            workflow_exec_enabled: true,
+            maintenance_times: []
           }
         },
         user: 'root'
@@ -443,7 +444,8 @@ describe('page/DataSource/AddDataSource', () => {
           sql_query_config: {
             allow_query_when_less_than_audit_level: undefined,
             audit_enabled: undefined,
-            workflow_exec_enabled: undefined
+            workflow_exec_enabled: undefined,
+            maintenance_times: []
           }
         },
         user: 'root',
@@ -461,6 +463,114 @@ describe('page/DataSource/AddDataSource', () => {
     fireEvent.click(skipALink);
     await act(async () => jest.advanceTimersByTime(300));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should submit sql workbench maintenance times', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(9300));
+    fireEvent.change(getBySelector('#name', baseElement), {
+      target: {
+        value: 'name-database-field-case'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.mouseDown(getBySelector('#type', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.change(getBySelector('#ip', baseElement), {
+      target: {
+        value: '1.1.1.3'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#user', baseElement), {
+      target: {
+        value: 'root'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: {
+        value: 'root'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('.ant-dropdown-menu-item')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('div[title="custom_template_b"]', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(getBySelector('#workbenchTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('div[title="default_MySQL1"]')[2]);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(
+      getBySelector('#allowQueryWhenLessThanAuditLevel', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="warn"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    const workbenchMaintenanceField = screen
+      .getByText('SQL 工作台运维时间')
+      .closest('.ant-form-item') as HTMLElement;
+    fireEvent.click(getBySelector('button', workbenchMaintenanceField));
+    await act(async () => jest.advanceTimersByTime(300));
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
+    expect(inputEle.length).toBe(2);
+    fireEvent.click(inputEle[0].parentElement!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('01')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('05')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('03')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('15')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('提 交'));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestAddDBServiceSpy).toHaveBeenCalled();
+    expect(
+      requestAddDBServiceSpy.mock.calls[0][0].db_service.sqle_config
+        .sql_query_config.maintenance_times
+    ).toEqual([
+      {
+        maintenance_start_time: {
+          hour: 1,
+          minute: 5
+        },
+        maintenance_stop_time: {
+          hour: 3,
+          minute: 15
+        }
+      }
+    ]);
   });
 
   it('render prepare api req', async () => {
