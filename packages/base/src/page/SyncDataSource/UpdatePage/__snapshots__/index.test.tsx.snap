@@ -3295,6 +3295,78 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                           </div>
                         </div>
                         <div
+                          class="ant-form-item has-label-tip css-1jlm9cy"
+                        >
+                          <div
+                            class="ant-row ant-form-item-row"
+                          >
+                            <div
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                            >
+                              <label
+                                class="ant-form-item-no-colon"
+                                for="sqlWorkbenchMaintenanceTime"
+                                title=""
+                              >
+                                <div
+                                  class="label-cont-custom"
+                                >
+                                  <div>
+                                    SQL 工作台运维时间
+                                  </div>
+                                  <div
+                                    class="tip-content-box"
+                                  >
+                                    设置后，非 DQL 语句仅能在该运维时间段内于 SQL 工作台执行（与数据源运维时间独立）
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                            <div
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                            >
+                              <div
+                                class="ant-form-item-control-input"
+                              >
+                                <div
+                                  class="ant-form-item-control-input-content"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center full-width-element"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    />
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <span
+                                        class="ant-typography ant-typography-secondary"
+                                      >
+                                        请选择时间段
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+                                        type="button"
+                                      >
+                                        <span>
+                                          添 加
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
                           class="ant-form-item has-label-tip no-margin-field css-1jlm9cy"
                         >
                           <div
@@ -4696,6 +4768,78 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                           </svg>
                                         </span>
                                       </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-form-item has-label-tip css-1jlm9cy"
+                        >
+                          <div
+                            class="ant-row ant-form-item-row"
+                          >
+                            <div
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                            >
+                              <label
+                                class="ant-form-item-no-colon"
+                                for="sqlWorkbenchMaintenanceTime"
+                                title=""
+                              >
+                                <div
+                                  class="label-cont-custom"
+                                >
+                                  <div>
+                                    SQL 工作台运维时间
+                                  </div>
+                                  <div
+                                    class="tip-content-box"
+                                  >
+                                    设置后，非 DQL 语句仅能在该运维时间段内于 SQL 工作台执行（与数据源运维时间独立）
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                            <div
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                            >
+                              <div
+                                class="ant-form-item-control-input"
+                              >
+                                <div
+                                  class="ant-form-item-control-input-content"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center full-width-element"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    />
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <span
+                                        class="ant-typography ant-typography-secondary"
+                                      >
+                                        请选择时间段
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+                                        type="button"
+                                      >
+                                        <span>
+                                          添 加
+                                        </span>
+                                      </button>
                                     </div>
                                   </div>
                                 </div>
@@ -6438,6 +6582,78 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                                         </svg>
                                       </span>
                                     </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-form-item has-label-tip css-1jlm9cy"
+                      >
+                        <div
+                          class="ant-row ant-form-item-row"
+                        >
+                          <div
+                            class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                          >
+                            <label
+                              class="ant-form-item-no-colon"
+                              for="sqlWorkbenchMaintenanceTime"
+                              title=""
+                            >
+                              <div
+                                class="label-cont-custom"
+                              >
+                                <div>
+                                  SQL 工作台运维时间
+                                </div>
+                                <div
+                                  class="tip-content-box"
+                                >
+                                  设置后，非 DQL 语句仅能在该运维时间段内于 SQL 工作台执行（与数据源运维时间独立）
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                          <div
+                            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                          >
+                            <div
+                              class="ant-form-item-control-input"
+                            >
+                              <div
+                                class="ant-form-item-control-input-content"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center full-width-element"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  />
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-typography ant-typography-secondary"
+                                    >
+                                      请选择时间段
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添 加
+                                      </span>
+                                    </button>
                                   </div>
                                 </div>
                               </div>

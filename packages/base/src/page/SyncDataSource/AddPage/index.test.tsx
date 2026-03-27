@@ -177,7 +177,8 @@ describe('page/SyncDataSource/AddPage', () => {
             audit_enabled: true,
             allow_query_when_less_than_audit_level: 'notice',
             rule_template_id: '9',
-            rule_template_name: 'custom_template'
+            rule_template_name: 'custom_template',
+            maintenance_times: []
           }
         },
         cron_express: '0 0 * * *',
@@ -196,5 +197,105 @@ describe('page/SyncDataSource/AddPage', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(300));
+  });
+
+  it('should submit sql workbench maintenance times', async () => {
+    const requestSubmit = syncTaskList.addTaskSource();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.change(getBySelector('#name', baseElement), {
+      target: {
+        value: 'name-sync-maintenance'
+      }
+    });
+    fireEvent.mouseDown(getBySelector('#source', baseElement));
+    fireEvent.click(getBySelector('div[title="source1"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#params_key1', baseElement), {
+      target: { value: 'param1' }
+    });
+    fireEvent.change(getBySelector('#params_key2', baseElement), {
+      target: { value: 111 }
+    });
+    fireEvent.change(getBySelector('#url', baseElement), {
+      target: {
+        value: 'http://192.168.1.1:27601'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.mouseDown(getBySelector('#instanceType', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('div[title="custom_template_b"]', baseElement)
+    );
+    fireEvent.mouseDown(
+      getBySelector('#dataExportRuleTemplateName', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getAllBySelector('div[title="custom_template"]')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(getBySelector('#workbenchTemplateName', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('div[title="custom_template"]')[2]);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(
+      getBySelector('#allowQueryWhenLessThanAuditLevel', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('div[title="notice"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const workbenchMaintenanceField = screen
+      .getByText('SQL 工作台运维时间')
+      .closest('.ant-form-item') as HTMLElement;
+    fireEvent.click(getBySelector('button', workbenchMaintenanceField));
+    await act(async () => jest.advanceTimersByTime(300));
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
+    expect(inputEle.length).toBe(2);
+    fireEvent.click(inputEle[0].parentElement!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('01')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('05')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('03')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('15')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestSubmit).toHaveBeenCalled();
+    expect(
+      requestSubmit.mock.calls[0][0].db_service_sync_task?.sqle_config
+        ?.sql_query_config?.maintenance_times
+    ).toEqual([
+      {
+        maintenance_start_time: {
+          hour: 1,
+          minute: 5
+        },
+        maintenance_stop_time: {
+          hour: 3,
+          minute: 15
+        }
+      }
+    ]);
   });
 });
