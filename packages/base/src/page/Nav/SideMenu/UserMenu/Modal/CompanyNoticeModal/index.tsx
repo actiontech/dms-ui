@@ -123,6 +123,19 @@ const CompanyNoticeModal: React.FC = () => {
     );
   }, [dispatch]);
 
+  useEffect(() => {
+    if (!visible || !canEdit || !noticeData) {
+      return;
+    }
+    const initial = getFormInitialValues();
+    if (initial) {
+      form.setFieldsValue({
+        ...initial,
+        validPeriod: initial.validPeriod ?? undefined
+      });
+    }
+  }, [visible, canEdit, noticeData, form, getFormInitialValues]);
+
   const actions = companyNoticeModalActions(showEditor);
 
   return (
@@ -223,7 +236,6 @@ const CompanyNoticeModal: React.FC = () => {
         >
           <CompanyNoticeForm
             form={form}
-            initialValues={getFormInitialValues()}
             disabled={submitLoading}
             onValuesChange={() => setHasDirtyData(true)}
           />

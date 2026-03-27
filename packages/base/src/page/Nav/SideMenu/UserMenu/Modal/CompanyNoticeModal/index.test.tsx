@@ -5,7 +5,6 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ModalName } from '../../../../../../data/ModalName';
 import { SystemRole } from '@actiontech/dms-kit';
