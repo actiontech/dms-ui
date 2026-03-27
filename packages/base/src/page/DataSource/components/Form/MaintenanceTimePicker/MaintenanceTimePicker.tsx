@@ -10,7 +10,10 @@ import {
   BasicTag,
   EmptyBox
 } from '@actiontech/dms-kit';
-import { MaintenanceTimePickerPopoverWrapper } from './style';
+import {
+  MaintenanceTimePickerPopoverWrapper,
+  MaintenanceTimePickerTagsWrapper
+} from './style';
 const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
   const { value = [], onChange } = props;
   const [messageApi, contextHolder] = message.useMessage();
@@ -76,17 +79,19 @@ const MaintenanceTimePicker: React.FC<MaintenanceTimePickerProps> = (props) => {
           </Typography.Text>
         }
       >
-        {value.map((v, index) => (
-          <BasicTag
-            closable
-            onClose={() => deleteTime(index)}
-            key={`${generateKey(v)}-${index}`}
-            size="large"
-          >
-            {addZero(v.startTime.hour)}:{addZero(v.startTime.minute)} -
-            {addZero(v.endTime.hour)}:{addZero(v.endTime.minute)}
-          </BasicTag>
-        ))}
+        <MaintenanceTimePickerTagsWrapper>
+          {value.map((v, index) => (
+            <BasicTag
+              closable
+              onClose={() => deleteTime(index)}
+              key={`${generateKey(v)}-${index}`}
+              size="small"
+            >
+              {addZero(v.startTime.hour)}:{addZero(v.startTime.minute)} -{' '}
+              {addZero(v.endTime.hour)}:{addZero(v.endTime.minute)}
+            </BasicTag>
+          ))}
+        </MaintenanceTimePickerTagsWrapper>
       </EmptyBox>
       <Popover
         open={popoverVisible}

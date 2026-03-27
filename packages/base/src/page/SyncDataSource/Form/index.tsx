@@ -56,7 +56,8 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
       'dataExportRuleTemplateId',
       'dataExportRuleTemplateName',
       'workbenchTemplateId',
-      'workbenchTemplateName'
+      'workbenchTemplateName',
+      'sqlWorkbenchMaintenanceTime'
     ]);
     updateGlobalRuleTemplateList(type);
     // #endif
@@ -121,6 +122,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
           'workbenchTemplateId',
           'workbenchTemplateName',
           'allowQueryWhenLessThanAuditLevel',
+          'sqlWorkbenchMaintenanceTime',
           // #endif
           'syncInterval'
         ]);
@@ -166,6 +168,13 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         allowQueryWhenLessThanAuditLevel:
           defaultValue.sqle_config?.sql_query_config
             ?.allow_query_when_less_than_audit_level,
+        sqlWorkbenchMaintenanceTime:
+          defaultValue.sqle_config?.sql_query_config?.maintenance_times?.map(
+            (item) => ({
+              startTime: item.maintenance_start_time,
+              endTime: item.maintenance_stop_time
+            })
+          ) ?? [],
         // #endif
         syncInterval: defaultValue.cron_express,
         params: generateFormValueByParams(defaultValue.additional_params ?? [])
