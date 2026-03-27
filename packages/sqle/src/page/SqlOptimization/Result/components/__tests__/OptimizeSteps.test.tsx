@@ -75,7 +75,7 @@ describe('OptimizeSteps', () => {
       <OptimizeSteps
         optimizeSteps={[]}
         onOptimizationRuleClick={mockOnOptimizationRuleClick}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.rewriting}
       />
     );
     expect(baseElement).toMatchSnapshot();

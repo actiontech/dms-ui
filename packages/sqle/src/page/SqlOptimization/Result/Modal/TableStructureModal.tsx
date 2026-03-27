@@ -27,6 +27,11 @@ const TableStructureModal: React.FC = () => {
 
   const open = !!modalStatus[ModalName.Sql_Optimization_Table_Structure_Modal];
 
+  const hasRecommendedIndexes = !!(
+    currentTableData?.recommendedIndexes &&
+    currentTableData.recommendedIndexes.trim()
+  );
+
   const handleCancel = () => {
     dispatch(
       updateSqlOptimizationModalStatus({
@@ -38,7 +43,11 @@ const TableStructureModal: React.FC = () => {
 
   return (
     <BasicModal
-      title={t('sqlOptimization.result.viewTableStructureAndOptimalIndex')}
+      title={
+        hasRecommendedIndexes
+          ? t('sqlOptimization.result.viewTableStructureAndOptimalIndex')
+          : t('sqlOptimization.result.viewTableStructure')
+      }
       open={open}
       onCancel={handleCancel}
       footer={null}
@@ -71,24 +80,26 @@ const TableStructureModal: React.FC = () => {
           </div>
         </div>
 
-        <div className="section">
-          <div className="section-header">
-            <div className="section-title">
-              {t('sqlOptimization.result.optimalIndexForQuery')}
+        <EmptyBox if={hasRecommendedIndexes}>
+          <div className="section">
+            <div className="section-header">
+              <div className="section-title">
+                {t('sqlOptimization.result.optimalIndexForQuery')}
+              </div>
+              <CopyButton
+                content={currentTableData?.recommendedIndexes}
+                onlyIcon
+              />
             </div>
-            <CopyButton
-              content={currentTableData?.recommendedIndexes}
-              onlyIcon
-            />
+            <div className="section-content">
+              <SQLRenderer
+                wordWrap
+                showLineNumbers
+                sql={currentTableData?.recommendedIndexes}
+              />
+            </div>
           </div>
-          <div className="section-content">
-            <SQLRenderer
-              wordWrap
-              showLineNumbers
-              sql={currentTableData?.recommendedIndexes}
-            />
-          </div>
-        </div>
+        </EmptyBox>
       </TableStructureModalWrapper>
     </BasicModal>
   );

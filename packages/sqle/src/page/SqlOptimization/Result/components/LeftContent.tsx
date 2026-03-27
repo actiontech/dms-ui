@@ -12,13 +12,18 @@ import SqlOptimizationCard from './SqlOptimizationCard';
 import CopyButton from './CopyButton';
 import QueryPlanFlow from './QueryPlanFlow';
 import { IQueryPlanNode } from '@actiontech/shared/lib/api/sqle/service/common';
-import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  OptimizationSQLDetailStatusEnum,
+  OptimizationSQLDetailOptimizeStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import BestPerformanceIcon from './BestPerformanceIcon';
 import {
   SqlOptimizationCardSubTitleStyleWrapper,
-  SqlOptimizationOtherAdviceTitleStyleWrapper
+  SqlOptimizationOtherAdviceTitleStyleWrapper,
+  SqlOptimizationIndexAdviceRowStyleWrapper
 } from './style';
 import SqlDiffView from './SqlDiffView';
+import { normalizeOptimizationModuleState } from '../utils/normalizeOptimizationModuleState';
 
 export interface LeftContentProps {
   optimizedSql?: string;
@@ -30,11 +35,15 @@ export interface LeftContentProps {
   onViewQueryPlanDiff: () => void;
   onExpandQueryPlan: () => void;
   isVerticalLayout?: boolean;
-  optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  optimizationDetailStatus?: OptimizationSQLDetailStatusEnum;
+  optimizeStatus?: OptimizationSQLDetailOptimizeStatusEnum;
   isBestPerformance: boolean;
   hasAdvice?: boolean;
   otherAdvice?: string;
   originalSql?: string;
+  optimizeModuleState?: string;
+  advisedIndexModuleState?: string;
+  optimizedPlanModuleState?: string;
 }
 
 const LeftContent: React.FC<LeftContentProps> = ({
@@ -47,18 +56,25 @@ const LeftContent: React.FC<LeftContentProps> = ({
   onViewQueryPlanDiff,
   onExpandQueryPlan,
   isVerticalLayout = false,
-  optimizationStatus,
+  optimizationDetailStatus,
+  optimizeStatus,
   isBestPerformance,
   hasAdvice,
   otherAdvice,
-  originalSql
+  originalSql,
+  optimizeModuleState,
+  advisedIndexModuleState,
+  optimizedPlanModuleState
 }) => {
   const { t } = useTranslation();
 
   const showAdvice = (hasAdvice && !!otherAdvice) || !advisedIndex;
 
+  const indexModuleDone =
+    normalizeOptimizationModuleState(advisedIndexModuleState) === 'done';
+
   const isOptimizationFinished =
-    optimizationStatus === OptimizationSQLDetailStatusEnum.finish;
+    optimizeStatus === OptimizationSQLDetailOptimizeStatusEnum.finish;
 
   return (
     <Col span={isVerticalLayout ? 24 : 16}>
@@ -98,7 +114,9 @@ const LeftContent: React.FC<LeftContentProps> = ({
           }
           isEmpty={!optimizedSql}
           errorMessage={errorMessage}
-          optimizationStatus={optimizationStatus}
+          optimizationDetailStatus={optimizationDetailStatus}
+          optimizeStatus={optimizeStatus}
+          moduleState={optimizeModuleState}
         >
           <EmptyBox
             if={isBestPerformance}
@@ -117,7 +135,7 @@ const LeftContent: React.FC<LeftContentProps> = ({
 
         {/* 索引优化建议 */}
         <EmptyBox
-          if={showAdvice && isOptimizationFinished}
+          if={showAdvice && (indexModuleDone || isOptimizationFinished)}
           defaultNode={
             <SqlOptimizationCard
               title={
@@ -154,7 +172,9 @@ const LeftContent: React.FC<LeftContentProps> = ({
               isEmpty={!advisedIndex}
               errorMessage={errorMessage}
               className="execution-plan-flow-card"
-              optimizationStatus={optimizationStatus}
+              optimizationDetailStatus={optimizationDetailStatus}
+              optimizeStatus={optimizeStatus}
+              moduleState={advisedIndexModuleState}
             >
               <SQLRenderer wordWrap showLineNumbers sql={advisedIndex} />
             </SqlOptimizationCard>
@@ -164,22 +184,48 @@ const LeftContent: React.FC<LeftContentProps> = ({
             <EmptyBox
               if={hasAdvice && !!otherAdvice}
               defaultNode={
-                <Space>
-                  <BestPerformanceIcon />
-                  <span>
-                    {isBestPerformance
-                      ? t('sqlOptimization.result.bestIndexUsedForOriginalSql')
-                      : t(
-                          'sqlOptimization.result.bestIndexUsedForOptimizedSql'
-                        )}
-                  </span>
-                </Space>
+                <SqlOptimizationIndexAdviceRowStyleWrapper>
+                  <div className="index-advice-row__main">
+                    <Space align="center" size={8}>
+                      <BestPerformanceIcon />
+                      <span>
+                        {isBestPerformance
+                          ? t(
+                              'sqlOptimization.result.bestIndexUsedForOriginalSql'
+                            )
+                          : t(
+                              'sqlOptimization.result.bestIndexUsedForOptimizedSql'
+                            )}
+                      </span>
+                    </Space>
+                  </div>
+                  <div className="index-advice-row__action">
+                    <BasicButton
+                      icon={<MagnifierFilled />}
+                      size="small"
+                      onClick={onViewTableStructure}
+                    >
+                      {t('sqlOptimization.result.viewTableStructure')}
+                    </BasicButton>
+                  </div>
+                </SqlOptimizationIndexAdviceRowStyleWrapper>
               }
             >
               <SqlOptimizationOtherAdviceTitleStyleWrapper direction="vertical">
-                <span className="advice-title">
-                  {t('sqlOptimization.result.cannotOptimizeByIndexTips')}
-                </span>
+                <SqlOptimizationIndexAdviceRowStyleWrapper>
+                  <span className="advice-title index-advice-row__main">
+                    {t('sqlOptimization.result.cannotOptimizeByIndexTips')}
+                  </span>
+                  <div className="index-advice-row__action">
+                    <BasicButton
+                      icon={<MagnifierFilled />}
+                      size="small"
+                      onClick={onViewTableStructure}
+                    >
+                      {t('sqlOptimization.result.viewTableStructure')}
+                    </BasicButton>
+                  </div>
+                </SqlOptimizationIndexAdviceRowStyleWrapper>
                 <Typography.Text type="secondary">
                   {otherAdvice}
                 </Typography.Text>
@@ -214,7 +260,9 @@ const LeftContent: React.FC<LeftContentProps> = ({
           }
           isEmpty={!optimizedQueryPlan?.length}
           errorMessage={errorMessage}
-          optimizationStatus={optimizationStatus}
+          optimizationDetailStatus={optimizationDetailStatus}
+          optimizeStatus={optimizeStatus}
+          moduleState={optimizedPlanModuleState}
         >
           <QueryPlanFlow
             queryPlanDesc={optimizedQueryPlan ?? []}

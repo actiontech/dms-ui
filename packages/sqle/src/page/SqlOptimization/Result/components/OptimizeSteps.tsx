@@ -5,21 +5,25 @@ import { Typography } from 'antd';
 import { IOptimizeStep } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useTranslation } from 'react-i18next';
 import { OptimizationSQLDetailStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { normalizeOptimizationModuleState } from '../utils/normalizeOptimizationModuleState';
 
 interface OptimizeStepsProps {
   optimizeSteps: IOptimizeStep[];
   onOptimizationRuleClick?: (stepIndex: number) => void;
   errorMessage?: string;
-  optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  optimizationDetailStatus?: OptimizationSQLDetailStatusEnum;
+  moduleState?: string;
 }
 
 const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
   optimizeSteps,
   onOptimizationRuleClick,
   errorMessage,
-  optimizationStatus
+  optimizationDetailStatus,
+  moduleState
 }) => {
   const { t } = useTranslation();
+  const moduleNorm = normalizeOptimizationModuleState(moduleState);
   const handleRuleClick = (stepIndex: number) => {
     onOptimizationRuleClick?.(stepIndex);
   };
@@ -42,9 +46,15 @@ const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
             <BasicEmpty
               errorInfo={errorMessage}
               emptyCont={
-                optimizationStatus ===
-                OptimizationSQLDetailStatusEnum.optimizing
+                optimizationDetailStatus !==
+                  OptimizationSQLDetailStatusEnum.finish &&
+                optimizationDetailStatus !==
+                  OptimizationSQLDetailStatusEnum.failed
                   ? t('sqlOptimization.result.optimizing')
+                  : moduleNorm === 'running'
+                  ? t('sqlOptimization.result.moduleGenerating')
+                  : moduleNorm === 'failed'
+                  ? t('sqlOptimization.result.moduleFailed')
                   : t('common.tip.no_data')
               }
             />
