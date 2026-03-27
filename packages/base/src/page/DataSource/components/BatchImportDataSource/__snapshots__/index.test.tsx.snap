@@ -4,7 +4,7 @@ exports[`base/DataSource/BatchImportDataSource render connectable error modal 1`
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -426,7 +426,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -611,7 +611,7 @@ exports[`base/DataSource/BatchImportDataSource render upload file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

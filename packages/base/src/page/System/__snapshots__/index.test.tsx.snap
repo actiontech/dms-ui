@@ -7,7 +7,7 @@ exports[`base/System-ee render snap 1`] = `
       class="css-f69rf1"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -2199,7 +2199,7 @@ exports[`base/System-ee render snap 2`] = `
       class="css-f69rf1"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -4463,7 +4463,7 @@ exports[`base/System-ee render snap 3`] = `
       class="css-f69rf1"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -6158,7 +6158,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
       class="css-f69rf1"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

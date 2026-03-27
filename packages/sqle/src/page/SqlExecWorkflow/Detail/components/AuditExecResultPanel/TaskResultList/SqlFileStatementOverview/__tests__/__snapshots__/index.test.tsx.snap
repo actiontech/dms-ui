@@ -6,7 +6,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
     class="css-16gjh2w"
   >
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -418,7 +418,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
     class="css-16gjh2w"
   >
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
