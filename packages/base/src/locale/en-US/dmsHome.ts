@@ -11,6 +11,8 @@ export default {
     times: 'times',
     aiPerformanceEngine: 'AI Performance Engine',
     aiSmartCorrection: 'AI Smart Correction',
+    aiPerformanceEngineNoPermissionPrompt:
+      'No SQL optimization permission. Please contact your administrator',
     paidFeaturePrompt:
       'This feature is a paid value-added module. Please contact sales for details',
     aiBannerExampleDrawerTitle: 'SQL Rewritten Example',

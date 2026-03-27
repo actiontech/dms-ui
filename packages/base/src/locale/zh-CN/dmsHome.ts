@@ -10,6 +10,7 @@ export default {
     times: '次',
     aiPerformanceEngine: 'AI 性能引擎',
     aiSmartCorrection: 'AI 智能修正',
+    aiPerformanceEngineNoPermissionPrompt: '暂无 SQL 调优权限，请联系管理员',
     paidFeaturePrompt: '当前功能为付费增值模块，请联系商务获取详细信息',
     aiBannerExampleDrawerTitle: 'SQL 重写示例',
     aiBannerExampleDrawerDescription:
