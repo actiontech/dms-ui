@@ -20,6 +20,7 @@ import {
   SqlAuditFieldsSubTitleWrapper,
   DataSourceSqlAuditConfigurationStyleWrapper
 } from '../style';
+import MaintenanceTimePicker from '../MaintenanceTimePicker';
 type SqlAuditFieldsValue = {
   needSqlAuditService: boolean;
   ruleTemplateId: string;
@@ -250,6 +251,26 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                         );
                       })}
                     </BasicSelect>
+                  </FormItemLabel>
+                  <FormItemLabel
+                    className="has-label-tip"
+                    label={
+                      <div className="label-cont-custom">
+                        <div>
+                          {t(
+                            'dmsDataSource.dataSourceForm.sqlWorkbenchMaintenanceTime'
+                          )}
+                        </div>
+                        <div className="tip-content-box">
+                          {t(
+                            'dmsDataSource.dataSourceForm.sqlWorkbenchMaintenanceTimeTips'
+                          )}
+                        </div>
+                      </div>
+                    }
+                    name="sqlWorkbenchMaintenanceTime"
+                  >
+                    <MaintenanceTimePicker />
                   </FormItemLabel>
                   <FormItemLabel
                     label={

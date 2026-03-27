@@ -57,7 +57,12 @@ const AddDataSource = () => {
           audit_enabled: values.needAuditForSqlQuery,
           rule_template_id: values.workbenchTemplateId,
           rule_template_name: values.workbenchTemplateName,
-          workflow_exec_enabled: values.allowExecuteNonDqlInWorkflow
+          workflow_exec_enabled: values.allowExecuteNonDqlInWorkflow,
+          maintenance_times:
+            values.sqlWorkbenchMaintenanceTime?.map((time) => ({
+              maintenance_start_time: time.startTime,
+              maintenance_stop_time: time.endTime
+            })) ?? []
         }
       },
       // #endif

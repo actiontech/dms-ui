@@ -71,6 +71,9 @@ export default {
     queryTimeoutSecond: 'SQL超时限制(s)',
     maintenanceTime: '运维时间',
     maintenanceTimeTips: '设置运维时间后，仅能在此运维时间段内上线工单',
+    sqlWorkbenchMaintenanceTime: 'SQL 工作台运维时间',
+    sqlWorkbenchMaintenanceTimeTips:
+      '设置后，非 DQL 语句仅能在该运维时间段内于 SQL 工作台执行（与数据源运维时间独立）',
     needAuditSqlService: '是否开启SQL审核业务',
     needAuditSqlServiceTips: '关闭后将禁用所用场景的SQL审核',
     closeAuditSqlServiceTips:
