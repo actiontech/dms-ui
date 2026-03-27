@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
-import { Card, Space, Typography, message } from 'antd';
+import { Card, Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useTypedNavigate } from '@actiontech/shared';
+import { useNotificationContext, useTypedNavigate } from '@actiontech/shared';
 import { BasicButton, BasicTag } from '@actiontech/dms-kit';
 import { AiHubService } from '@actiontech/shared/lib/api/sqle';
 import {
@@ -32,7 +32,8 @@ type PendingProjectAction = 'performance' | null;
 const AIBanner: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
-  const [messageApi, messageContextHolder] = message.useMessage();
+  const { notificationContextHolder, openNotification } =
+    useNotificationContext();
   const { bindProjects } = useCurrentUser();
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -97,7 +98,15 @@ const AIBanner: React.FC = () => {
   }, [bannerData]);
 
   const showPaidFeaturePrompt = () => {
-    messageApi.info(t('dmsHome.aiBanner.paidFeaturePrompt'));
+    openNotification('info', {
+      message: t('dmsHome.aiBanner.paidFeaturePrompt')
+    });
+  };
+
+  const showNoOptimizationPermissionPrompt = () => {
+    openNotification('warning', {
+      message: t('dmsHome.aiBanner.aiPerformanceEngineNoPermissionPrompt')
+    });
   };
 
   // 处理查看完整报告跳转
@@ -116,6 +125,10 @@ const AIBanner: React.FC = () => {
   const handleAIPerformanceEngine = () => {
     if (!bannerState.performanceEnabled) {
       showPaidFeaturePrompt();
+      return;
+    }
+    if (!checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION)) {
+      showNoOptimizationPermissionPrompt();
       return;
     }
 
@@ -157,7 +170,7 @@ const AIBanner: React.FC = () => {
 
   return (
     <AIBannerStyleWrapper>
-      {messageContextHolder}
+      {notificationContextHolder}
       <Card className="ai-banner-card" loading={loading}>
         <div className="banner-content">
           {/* 左侧：AI治理效能洞察 */}
@@ -232,20 +245,19 @@ const AIBanner: React.FC = () => {
 
           {/* 右侧：快捷行动按钮 */}
           <div className="right-section">
-            {showPerformanceEngineButton &&
-              checkPagePermission(PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION) && (
-                <BasicButton
-                  type="primary"
-                  size="large"
-                  className="action-button primary-button"
-                  onClick={handleAIPerformanceEngine}
-                >
-                  <Space>
-                    {t('dmsHome.aiBanner.aiPerformanceEngine')}
-                    <RightOutlined />
-                  </Space>
-                </BasicButton>
-              )}
+            {showPerformanceEngineButton && (
+              <BasicButton
+                type="primary"
+                size="large"
+                className="action-button primary-button"
+                onClick={handleAIPerformanceEngine}
+              >
+                <Space>
+                  {t('dmsHome.aiBanner.aiPerformanceEngine')}
+                  <RightOutlined />
+                </Space>
+              </BasicButton>
+            )}
             {showSmartCorrectionButton && (
               <BasicButton
                 size="large"
