@@ -202,8 +202,8 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
 
     expect(requestUpdate).toHaveBeenCalled();
     expect(
-      requestUpdate.mock.calls[0][0].db_service_sync_task.sqle_config
-        .sql_query_config.maintenance_times
+      requestUpdate.mock.calls[0][0].db_service_sync_task?.sqle_config
+        ?.sql_query_config?.maintenance_times
     ).toEqual([
       {
         maintenance_start_time: {
