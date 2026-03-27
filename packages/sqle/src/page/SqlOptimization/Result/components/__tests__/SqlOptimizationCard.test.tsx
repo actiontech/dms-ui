@@ -52,11 +52,11 @@ describe('SqlOptimizationCard', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should render optimizing state when optimizationStatus is optimizing', () => {
+  it('should render optimizing state when optimizationDetailStatus is rewriting', () => {
     const { baseElement } = superRender(
       <SqlOptimizationCard
         title="Test Title"
-        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.rewriting}
         extra={mockExtra}
       >
         {mockChildren}

@@ -15,6 +15,7 @@ import BestPerformanceIcon from './BestPerformanceIcon';
 import { useTranslation } from 'react-i18next';
 import FeedbackPanel from './FeedbackPanel';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { normalizeOptimizationModuleState } from '../utils/normalizeOptimizationModuleState';
 
 export interface RightContentProps {
   isVerticalLayout?: boolean;
@@ -22,10 +23,12 @@ export interface RightContentProps {
   optimizeSteps: IOptimizeStep[];
   errorMessage?: string;
   onOptimizationRuleClick: (stepIndex: number) => void;
-  optimizationStatus?: OptimizationSQLDetailStatusEnum;
+  optimizationDetailStatus?: OptimizationSQLDetailStatusEnum;
   optimizationRecordId?: string;
   initialFeedbacks?: IOptimizedSQLFeedback[];
   onFeedbackChanged?: () => void;
+  analysisModuleState?: string;
+  optimizeModuleState?: string;
 }
 
 const RightContent: React.FC<RightContentProps> = ({
@@ -34,17 +37,23 @@ const RightContent: React.FC<RightContentProps> = ({
   optimizeSteps,
   errorMessage,
   onOptimizationRuleClick,
-  optimizationStatus,
+  optimizationDetailStatus,
   optimizationRecordId,
   initialFeedbacks,
-  onFeedbackChanged
+  onFeedbackChanged,
+  analysisModuleState,
+  optimizeModuleState
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
 
+  const analysisStateNorm =
+    normalizeOptimizationModuleState(analysisModuleState);
+
   const showFeedback =
     !!optimizationRecordId &&
-    optimizationStatus !== OptimizationSQLDetailStatusEnum.optimizing;
+    (optimizationDetailStatus === OptimizationSQLDetailStatusEnum.finish ||
+      optimizationDetailStatus === OptimizationSQLDetailStatusEnum.failed);
 
   return (
     <SqlOptimizationRightContentWrapper
@@ -54,19 +63,22 @@ const RightContent: React.FC<RightContentProps> = ({
       <Space direction="vertical" size={16}>
         <ProbabilityDisplay
           analysis={totalAnalysis}
-          optimizationStatus={optimizationStatus}
+          optimizationDetailStatus={optimizationDetailStatus}
         />
         <div className="analysis-chart">
           <EmptyBox
             if={
               !totalAnalysis?.detail?.length &&
-              optimizationStatus === OptimizationSQLDetailStatusEnum.finish
+              optimizationDetailStatus ===
+                OptimizationSQLDetailStatusEnum.finish &&
+              (analysisStateNorm === 'done' || analysisStateNorm === undefined)
             }
             defaultNode={
               <AnalysisChart
                 data={totalAnalysis}
                 errorMessage={errorMessage}
-                optimizationStatus={optimizationStatus}
+                optimizationDetailStatus={optimizationDetailStatus}
+                moduleState={analysisModuleState}
               />
             }
           >
@@ -79,7 +91,8 @@ const RightContent: React.FC<RightContentProps> = ({
             optimizeSteps={optimizeSteps}
             onOptimizationRuleClick={onOptimizationRuleClick}
             errorMessage={errorMessage}
-            optimizationStatus={optimizationStatus}
+            optimizationDetailStatus={optimizationDetailStatus}
+            moduleState={optimizeModuleState}
           />
         </EmptyBox>
 

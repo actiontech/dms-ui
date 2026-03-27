@@ -109,5 +109,10 @@ export default {
       beforePlan: 'Execution plan (before optimization)',
       afterPlan: 'Execution plan (after optimization)'
     }
+  },
+  result: {
+    optimizing: 'Optimization in progress',
+    moduleGenerating: 'Generating',
+    moduleFailed: 'Run failed'
   }
 };

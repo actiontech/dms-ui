@@ -87,7 +87,7 @@ describe('sqle/SqlOptimization/Result/components/AnalysisChart', () => {
     superRender(
       <AnalysisChart
         data={{}}
-        optimizationStatus={OptimizationSQLDetailStatusEnum.optimizing}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.rewriting}
       />
     );
 
@@ -95,7 +95,12 @@ describe('sqle/SqlOptimization/Result/components/AnalysisChart', () => {
   });
 
   it('should handle null data gracefully', () => {
-    superRender(<AnalysisChart data={undefined} />);
+    superRender(
+      <AnalysisChart
+        data={undefined}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
+      />
+    );
 
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
   });
@@ -106,7 +111,12 @@ describe('sqle/SqlOptimization/Result/components/AnalysisChart', () => {
       detail: []
     };
 
-    superRender(<AnalysisChart data={emptyData} />);
+    superRender(
+      <AnalysisChart
+        data={emptyData}
+        optimizationDetailStatus={OptimizationSQLDetailStatusEnum.finish}
+      />
+    );
 
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
   });

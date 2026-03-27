@@ -167,6 +167,8 @@ export default {
     fullscreenDisplay: '全屏显示',
     drawerTitle: 'AI性能调优结果详情',
     optimizing: '优化进行中',
+    moduleGenerating: '生成中',
+    moduleFailed: '运行失败',
     bestIndexUsedForOriginalSql:
       '恭喜，您的原始SQL已使用了最佳索引，暂无进一步的优化！',
     bestIndexUsedForOptimizedSql:
