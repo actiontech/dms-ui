@@ -57,7 +57,12 @@ const AddSyncTask: React.FC = () => {
             allow_query_when_less_than_audit_level:
               values.allowQueryWhenLessThanAuditLevel,
             rule_template_id: values.workbenchTemplateId,
-            rule_template_name: values.workbenchTemplateName
+            rule_template_name: values.workbenchTemplateName,
+            maintenance_times:
+              values.sqlWorkbenchMaintenanceTime?.map((time) => ({
+                maintenance_start_time: time.startTime,
+                maintenance_stop_time: time.endTime
+              })) ?? []
           }
         },
         // #endif
