@@ -240,6 +240,63 @@ describe('page/DataSource/UpdateDataSource', () => {
     expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 
+  it('should update sql workbench maintenance times', async () => {
+    getListDBServicesSpy.mockImplementationOnce(() =>
+      createSpySuccessResponse(mockDBListData)
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(9300));
+
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getAllBySelector('.ant-dropdown-menu-item')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    const workbenchMaintenanceField = screen
+      .getByText('SQL 工作台运维时间')
+      .closest('.ant-form-item') as HTMLElement;
+    fireEvent.click(getBySelector('button', workbenchMaintenanceField));
+    await act(async () => jest.advanceTimersByTime(300));
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
+    expect(inputEle.length).toBe(2);
+    fireEvent.click(inputEle[0].parentElement!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('02')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('10')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('04')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('20')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
+    const params = updateDBServiceSpy.mock.calls[0][0];
+    expect(
+      params.db_service.sqle_config.sql_query_config.maintenance_times
+    ).toEqual([
+      {
+        maintenance_start_time: {
+          hour: 2,
+          minute: 10
+        },
+        maintenance_stop_time: {
+          hour: 4,
+          minute: 20
+        }
+      }
+    ]);
+  });
+
   it('render connectable modal when service can not connect', async () => {
     getListDBServicesSpy.mockImplementationOnce(() =>
       createSpySuccessResponse(mockDBListData)

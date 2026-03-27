@@ -1193,7 +1193,9 @@ export interface IGlobalDataExportWorkflow {
   workflow_uid?: string;
 }
 
-export interface II18nStr {}
+export interface II18nStr {
+  [key: string]: string;
+}
 
 export interface IImportDBService {
   additional_params?: IAdditionalParam[];
@@ -2535,6 +2537,8 @@ export interface ISQLQueryConfig {
   allow_query_when_less_than_audit_level?: SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum;
 
   audit_enabled?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
 
   max_pre_query_rows?: number;
 

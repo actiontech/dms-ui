@@ -55,6 +55,9 @@ export default {
     maintenanceTime: 'Maintenance time',
     maintenanceTimeTips:
       'After setting the maintenance time, workflows can only be executed during this maintenance time period',
+    sqlWorkbenchMaintenanceTime: 'SQL workbench maintenance time',
+    sqlWorkbenchMaintenanceTimeTips:
+      'Non-DQL statements in the SQL workbench can only run during these windows (independent from DB instance maintenance time)',
     needAuditSqlService: 'Enable SQL audit service',
     closeAuditSqlServiceTips:
       'If you do not enable the SQL audit service, the DB instance cannot be used in SQL audit related services, are you sure to close it?',
