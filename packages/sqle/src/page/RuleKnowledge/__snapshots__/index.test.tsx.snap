@@ -7,7 +7,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
       class="css-bwb9yf"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -205,7 +205,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
       class="css-bwb9yf"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -384,7 +384,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
       class="css-bwb9yf"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -563,7 +563,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
       class="css-bwb9yf"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

@@ -3,7 +3,7 @@
 exports[`test SqlManagementConf/Detail/index.tsx should display error message when data request fails 1`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-1xspr0w"
+    class="actiontech-page-header-namespace css-ex8bfe"
   >
     <div
       class="title"
@@ -86,7 +86,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
 exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-1xspr0w"
+    class="actiontech-page-header-namespace css-ex8bfe"
   >
     <div
       class="title"
@@ -398,7 +398,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
 exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-1xspr0w"
+    class="actiontech-page-header-namespace css-ex8bfe"
   >
     <div
       class="title"
@@ -1309,7 +1309,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should render extra action butt
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

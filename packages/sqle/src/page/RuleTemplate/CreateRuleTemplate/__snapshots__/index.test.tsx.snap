@@ -7,7 +7,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1815,7 +1815,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -4267,7 +4267,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"

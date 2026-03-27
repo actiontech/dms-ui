@@ -3,7 +3,7 @@
 exports[`App render App when "checkPageAction" is false 1`] = `
 <div>
   <section
-    class="css-m36rcd"
+    class="css-7jjle5"
   >
     <div
       class="dms-layout-side css-g2hyay"
@@ -337,7 +337,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
       class="dms-layout-content"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -349,7 +349,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
         />
       </div>
       <div
-        class="css-1n5cj6v"
+        class="css-1su4mhq"
       >
         <div
           class="ant-card ant-card-loading ant-card-bordered ai-banner-card"
@@ -1109,7 +1109,7 @@ exports[`App render App when "isUserInfoFetched" is equal false 1`] = `<div />`;
 exports[`App render App when token is existed 1`] = `
 <div>
   <section
-    class="css-m36rcd"
+    class="css-7jjle5"
   >
     <div
       class="dms-layout-side css-g2hyay"
@@ -1544,7 +1544,7 @@ exports[`App render App when token is existed 1`] = `
       class="dms-layout-content"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1556,7 +1556,7 @@ exports[`App render App when token is existed 1`] = `
         />
       </div>
       <div
-        class="css-1n5cj6v"
+        class="css-1su4mhq"
       >
         <div
           class="ant-card ant-card-loading ant-card-bordered ai-banner-card"

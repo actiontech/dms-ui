@@ -7,7 +7,7 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
       class="css-fobtcc"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1674,7 +1674,7 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
       class="css-fobtcc"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

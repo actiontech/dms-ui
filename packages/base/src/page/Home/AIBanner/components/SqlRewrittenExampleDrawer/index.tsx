@@ -4,6 +4,8 @@ import {
   sqlRewrittenExampleOriginalSql,
   sqlRewrittenExampleResult
 } from './data';
+import { useTranslation } from 'react-i18next';
+import { Space, Typography } from 'antd';
 
 interface SqlRewrittenExampleDrawerProps {
   open: boolean;
@@ -14,6 +16,7 @@ const SqlRewrittenExampleDrawer: React.FC<SqlRewrittenExampleDrawerProps> = ({
   open,
   onClose
 }) => {
+  const { t } = useTranslation();
   return (
     <SqlRewrittenDrawer
       open={open}
@@ -24,6 +27,14 @@ const SqlRewrittenExampleDrawer: React.FC<SqlRewrittenExampleDrawerProps> = ({
         number: 1
       }}
       mockData={sqlRewrittenExampleResult as IRewriteSQLData}
+      title={
+        <Space direction="vertical">
+          {t('dmsHome.aiBanner.aiBannerExampleDrawerTitle')}
+          <Typography.Text type="secondary">
+            {t('dmsHome.aiBanner.aiBannerExampleDrawerDescription')}
+          </Typography.Text>
+        </Space>
+      }
     />
   );
 };

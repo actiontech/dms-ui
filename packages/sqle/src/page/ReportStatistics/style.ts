@@ -6,10 +6,10 @@ export const ReportStatisticsEEIndexStyleWrapper = styled('section')`
 
   .fixed-tabs-row {
     position: fixed;
-    top: 0;
-    left: 220px;
+    top: var(--notice-banner-height, 0);
+    left: ${({ theme }) => theme.sharedTheme.nav.width}px;
     right: 0;
-    width: calc(100% - 220px);
+    width: calc(100% - ${({ theme }) => theme.sharedTheme.nav.width}px);
     z-index: 9;
     background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
 

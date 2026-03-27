@@ -4,7 +4,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -452,7 +452,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -954,7 +954,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -2172,7 +2172,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -3390,7 +3390,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -4174,7 +4174,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -5090,7 +5090,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -6006,7 +6006,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -6928,7 +6928,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -7875,7 +7875,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -8352,7 +8352,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -8829,7 +8829,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

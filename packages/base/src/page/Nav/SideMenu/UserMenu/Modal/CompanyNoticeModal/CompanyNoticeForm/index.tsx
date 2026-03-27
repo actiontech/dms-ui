@@ -56,14 +56,6 @@ export const CompanyNoticeForm: React.FC<{
       <Form.Item
         name="notice_str"
         label={t('dmsSystem.notification.noticeContent')}
-        rules={[
-          {
-            required: true,
-            message: t('common.form.rule.require', {
-              name: t('dmsSystem.notification.noticeContent')
-            })
-          }
-        ]}
       >
         <BasicInput.TextArea
           autoSize={{ minRows: 2, maxRows: 20 }}
@@ -77,10 +69,6 @@ export const CompanyNoticeForm: React.FC<{
         name="validPeriod"
         label={t('dmsSystem.notification.validPeriod')}
         rules={[
-          {
-            required: true,
-            message: t('dmsSystem.notification.timeRangeRequired')
-          },
           {
             validator: (_, value) => {
               if (!value || !Array.isArray(value) || !value[0] || !value[1]) {

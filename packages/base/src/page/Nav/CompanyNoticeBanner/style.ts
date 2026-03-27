@@ -1,15 +1,20 @@
 import { styled } from '@mui/material/styles';
 
 export const CompanyNoticeBannerStyleWrapper = styled('div')`
+  position: fixed;
+  top: 0;
+  left: ${({ theme }) => theme.sharedTheme.nav.width}px;
+  width: calc(100% - ${({ theme }) => theme.sharedTheme.nav.width}px);
   display: flex;
   align-items: center;
   height: 36px;
   flex-shrink: 0;
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.sharedTheme.uiToken.colorWarningBgHover} 0%,
-    ${({ theme }) => theme.sharedTheme.uiToken.colorWarningBgHover}cc 100%
+    ${({ theme }) => theme.sharedTheme.uiToken.colorWarningBgHover}e6 0%,
+    ${({ theme }) => theme.sharedTheme.uiToken.colorWarningBgHover}bf 100%
   );
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorWarning}66;
   padding: 0 16px;
