@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, FormInstance } from 'antd';
 import { BasicInput, BasicRangePicker } from '@actiontech/dms-kit';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import { RangePickerProps } from 'antd/es/date-picker';
 import { ICompanyNoticeFormValues } from './index.type';
 
@@ -16,23 +15,10 @@ const range = (start: number, end: number) => {
 
 export const CompanyNoticeForm: React.FC<{
   form: FormInstance<ICompanyNoticeFormValues>;
-  initialValues?: Partial<ICompanyNoticeFormValues>;
   disabled?: boolean;
   onValuesChange?: () => void;
-}> = ({ form, initialValues, disabled, onValuesChange }) => {
+}> = ({ form, disabled, onValuesChange }) => {
   const { t } = useTranslation();
-  const startTimeRef = useRef<Dayjs | null>(null);
-
-  useEffect(() => {
-    if (initialValues) {
-      form.setFieldsValue({
-        ...initialValues,
-        validPeriod: initialValues.validPeriod ?? undefined
-      });
-      const period = initialValues.validPeriod;
-      startTimeRef.current = Array.isArray(period) ? period[0] ?? null : null;
-    }
-  }, [initialValues, form]);
 
   const disabledRangeTime: RangePickerProps['disabledTime'] = (date, type) => {
     const now = dayjs();
@@ -50,7 +36,7 @@ export const CompanyNoticeForm: React.FC<{
             : []
       };
     }
-    const startTime = startTimeRef.current;
+    const startTime = form.getFieldValue('validPeriod')?.[0];
     if (!startTime || !date || !date.isSame(startTime, 'day')) {
       return {};
     }
@@ -66,17 +52,7 @@ export const CompanyNoticeForm: React.FC<{
   };
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onValuesChange={(_, all) => {
-        const period = all.validPeriod;
-        if (Array.isArray(period) && period[0]) {
-          startTimeRef.current = period[0];
-        }
-        onValuesChange?.();
-      }}
-    >
+    <Form form={form} layout="vertical" onValuesChange={onValuesChange}>
       <Form.Item
         name="notice_str"
         label={t('dmsSystem.notification.noticeContent')}
