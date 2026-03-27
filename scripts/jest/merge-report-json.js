@@ -4,71 +4,28 @@ const path = require('path');
 const fs = require('fs');
 const istanbul = require('istanbul-lib-coverage');
 
+const SHARD_COUNT = parseInt(process.env.SHARD_COUNT || '4', 10);
+
 const finalReportJSONFilePath = path.resolve(
   process.cwd(),
   'coverage-merged.json'
 );
 
-const ceReportJSONFilePath = path.resolve(
-  process.cwd(),
-  'ce_coverage/report.json'
-);
-const report1JSONFilePath = path.resolve(
-  process.cwd(),
-  'coverage/report-1.json'
-);
-const report2JSONFilePath = path.resolve(
-  process.cwd(),
-  'coverage/report-2.json'
-);
-const report3JSONFilePath = path.resolve(
-  process.cwd(),
-  'coverage/report-3.json'
-);
-const report4JSONFilePath = path.resolve(
-  process.cwd(),
-  'coverage/report-4.json'
-);
-
-if (!fs.existsSync(ceReportJSONFilePath)) {
-  console.error(`not found ce report.json ${ceReportJSONFilePath}`);
-  process.exit(1);
+for (let i = 1; i <= SHARD_COUNT; i++) {
+  const reportPath = path.resolve(
+    process.cwd(),
+    `coverage/report-${i}.json`
+  );
+  if (!fs.existsSync(reportPath)) {
+    console.error(`not found report-${i}.json: ${reportPath}`);
+    process.exit(1);
+  }
 }
 
-if (!fs.existsSync(report1JSONFilePath)) {
-  console.error(`not found report1.json: ${report1JSONFilePath}`);
-  process.exit(1);
-}
-
-if (!fs.existsSync(report2JSONFilePath)) {
-  console.error(`not found report2.json: ${report2JSONFilePath}`);
-  process.exit(1);
-}
-
-if (!fs.existsSync(report3JSONFilePath)) {
-  console.error(`not found report3.json: ${report3JSONFilePath}`);
-  process.exit(1);
-}
-
-if (!fs.existsSync(report4JSONFilePath)) {
-  console.error(`not found report4.json: ${report4JSONFilePath}`);
-  process.exit(1);
-}
-
-const ceCoverageReport = require(ceReportJSONFilePath);
-const coverage1Report = require(report1JSONFilePath);
-const coverage2Report = require(report2JSONFilePath);
-const coverage3Report = require(report3JSONFilePath);
-const coverage4Report = require(report4JSONFilePath);
-
-const coverageJsonReport = [
-  ceCoverageReport,
-  coverage1Report,
-  coverage2Report,
-  coverage3Report,
-  coverage4Report
-].reduce((acc, cur) => {
-  return {
+const coverageJsonReport = Array.from({ length: SHARD_COUNT }, (_, i) =>
+  require(path.resolve(process.cwd(), `coverage/report-${i + 1}.json`))
+).reduce(
+  (acc, cur) => ({
     numFailedTestSuites:
       (acc.numFailedTestSuites ?? 0) + cur.numFailedTestSuites,
     numFailedTests: (acc.numFailedTests ?? 0) + cur.numFailedTests,
@@ -84,45 +41,32 @@ const coverageJsonReport = [
     numTotalTestSuites: (acc.numTotalTestSuites ?? 0) + cur.numTotalTestSuites,
     numTotalTests: (acc.numTotalTests ?? 0) + cur.numTotalTests,
     success: (acc.success ?? true) && cur.success
-  };
-}, {});
+  }),
+  {}
+);
 
-if (!fs.existsSync(path.resolve(process.cwd(), 'coverage-merged'))) {
-  fs.mkdirSync('coverage-merged');
+const coverageMergedDir = path.resolve(process.cwd(), 'coverage-merged');
+if (!fs.existsSync(coverageMergedDir)) {
+  fs.mkdirSync(coverageMergedDir);
 }
 
-if (
-  fs.existsSync(path.resolve(process.cwd(), 'ce_coverage/coverage-final.json'))
-) {
-  fs.renameSync(
-    path.resolve(process.cwd(), 'ce_coverage/coverage-final.json'),
-    path.resolve(process.cwd(), 'coverage-merged/ce-coverage-final.json')
+for (let i = 1; i <= SHARD_COUNT; i++) {
+  const src = path.resolve(
+    process.cwd(),
+    `coverage/coverage-final-${i}.json`
   );
-}
-
-[1, 2, 3, 4].forEach((num) => {
-  if (
-    fs.existsSync(
-      path.resolve(process.cwd(), `coverage/coverage-final-${num}.json`)
-    )
-  ) {
+  if (fs.existsSync(src)) {
     fs.renameSync(
-      path.resolve(process.cwd(), `coverage/coverage-final-${num}.json`),
-      path.resolve(process.cwd(), `coverage-merged/coverage-map-${num}.json`)
+      src,
+      path.resolve(coverageMergedDir, `coverage-map-${i}.json`)
     );
   }
-});
+}
 
 const mergeCoverageReport = istanbul.createCoverageMap({});
 
-const reportFiles = fs.readdirSync(
-  path.resolve(process.cwd(), 'coverage-merged')
-);
-
-reportFiles.forEach((file) => {
-  const json = fs.readFileSync(
-    path.resolve(process.cwd(), path.join('coverage-merged', file))
-  );
+fs.readdirSync(coverageMergedDir).forEach((file) => {
+  const json = fs.readFileSync(path.resolve(coverageMergedDir, file));
   mergeCoverageReport.merge(JSON.parse(json));
 });
 
@@ -137,6 +81,6 @@ fs.writeFile(
       process.exit(1);
     }
 
-    console.log('Coverage report appended to ' + finalReportJSONFilePath);
+    console.log('Coverage report merged to ' + finalReportJSONFilePath);
   }
 );

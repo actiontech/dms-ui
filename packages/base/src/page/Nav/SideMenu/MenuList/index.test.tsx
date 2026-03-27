@@ -2,11 +2,11 @@ import { cleanup, act } from '@testing-library/react';
 import MenuList from '.';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
-import { SystemRole } from '@actiontech/dms-kit';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 const projectID = '700300';
 
@@ -16,21 +16,18 @@ jest.mock('react-router-dom', () => ({
 }));
 
 /**
- * 为了保证数据源的测试代码与 dms-ui-ee 中同步，现在的环境变量中的 dms 为 true，在该环境下左侧菜单的数据为空，所以这个文件的单元测试暂时没有任何意义了
- * 暂时先跳过，解决单元测试项目的条件编译时来处理
+ * EE/DMS 模式（dms=true）：DMS_ALL_MENUS 和 DMS_MENU_STRUCT 均为空数组（由 dms-ui-ee 维护），
+ * 因此菜单在此仓库中渲染为空。验证组件在 DMS 模式下不崩溃并渲染空菜单。
  */
-
-describe.skip('base/page/Nav/SideMenu/MenuList', () => {
+describe('base/page/Nav/SideMenu/MenuList - dms mode', () => {
   const navigateSpy = jest.fn();
-  const customRender = (role: SystemRole | '' = '') => {
-    return baseSuperRender(<MenuList projectID={projectID} />);
-  };
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
   });
 
   afterEach(() => {
@@ -38,35 +35,13 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
     cleanup();
   });
 
-  it('render snap when is not admin', async () => {
-    const { baseElement } = customRender();
-
+  it('renders empty menu in dms mode - snapshot', async () => {
+    const { baseElement } = baseSuperRender(<MenuList projectID={projectID} />);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when is admin', async () => {
-    const { baseElement } = customRender(SystemRole.admin);
-
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render is not admin snap when has location pathname', async () => {
-    const { baseElement } = baseSuperRender(
-      <MenuList projectID={projectID} />,
-      undefined,
-      {
-        routerProps: {
-          initialEntries: [`/project/${projectID}/member`]
-        }
-      }
-    );
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render is admin snap when has location pathname', async () => {
+  it('renders empty menu with location path in dms mode - snapshot', async () => {
     const { baseElement } = baseSuperRender(
       <MenuList projectID={projectID} />,
       undefined,

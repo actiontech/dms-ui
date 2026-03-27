@@ -23,7 +23,7 @@
     "checker": "concurrently \"pnpm ts-check\" \"pnpm eslint\" \"pnpm stylelint\" \"pnpm prettier:c\"",
     "test": "sh ./scripts/jest/run.sh",
     "test:c": "sh ./scripts/jest/run-coverage.sh",
-    "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
+    "test:ci": "sh ./scripts/jest/run-ci.sh 1 1 && node ./scripts/jest/merge-report-json.js",
     "test:clean": "jest --clearCache",
     "icon:g": "pnpm --filter @actiontech/icons icon:g",
     "icon:docs:g": "pnpm --filter @actiontech/icons docs:g",
