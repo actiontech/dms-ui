@@ -4,6 +4,7 @@ import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/c
 import { BackendFormValues } from '@actiontech/shared';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import useTaskSource from '../../../hooks/useTaskSource';
+import { MaintenanceTimeValue } from '../../DataSource/components/Form/MaintenanceTimePicker';
 
 export type SyncTaskFormFields = {
   name: string;
@@ -21,6 +22,7 @@ export type SyncTaskFormFields = {
   workbenchTemplateName?: string;
   dataExportRuleTemplateId?: string;
   dataExportRuleTemplateName?: string;
+  sqlWorkbenchMaintenanceTime?: MaintenanceTimeValue[];
 };
 
 export type SyncTaskFormProps = {
