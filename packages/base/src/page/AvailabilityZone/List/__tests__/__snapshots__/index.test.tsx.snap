@@ -4,7 +4,7 @@ exports[`base/AvailabilityZoneList render availability zone table 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -420,7 +420,7 @@ exports[`base/AvailabilityZoneList should render empty tips when request not suc
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

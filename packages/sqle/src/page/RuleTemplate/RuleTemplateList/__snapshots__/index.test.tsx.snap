@@ -4,7 +4,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -585,7 +585,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -1411,7 +1411,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

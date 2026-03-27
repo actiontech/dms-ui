@@ -7,7 +7,7 @@ exports[`sqle/CustomRule/UpdateCustomRule return to custom list page 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -1464,7 +1464,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -3808,7 +3808,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"

@@ -6,7 +6,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -295,7 +295,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -6375,7 +6375,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -11994,7 +11994,7 @@ exports[`SqlAnalyze/Workflow should render error result of type "error" when res
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -12095,7 +12095,7 @@ exports[`SqlAnalyze/Workflow should render error result of type "info" when resp
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"

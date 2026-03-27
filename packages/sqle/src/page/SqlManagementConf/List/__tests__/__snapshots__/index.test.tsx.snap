@@ -7,7 +7,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
       class="css-0"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1171,7 +1171,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
       class="css-0"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1664,7 +1664,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
       class="css-0"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -2453,7 +2453,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
       class="css-0"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -3618,7 +3618,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
       class="css-0"
     >
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

@@ -444,7 +444,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                           class="ant-col ant-form-item-label"
                         >
                           <label
-                            class="ant-form-item-required"
+                            class=""
                             for="notice_str"
                             title="公告内容"
                           >
@@ -461,7 +461,6 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                               class="ant-form-item-control-input-content"
                             >
                               <textarea
-                                aria-required="true"
                                 class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                                 id="notice_str"
                                 placeholder="请输入公告内容"
@@ -484,7 +483,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                           class="ant-col ant-form-item-label"
                         >
                           <label
-                            class="ant-form-item-required"
+                            class=""
                             for="validPeriod"
                             title="有效时间范围"
                           >
@@ -504,7 +503,6 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                                 class="css-1y8q0oh"
                               >
                                 <div
-                                  aria-required="true"
                                   class="ant-picker ant-picker-range ant-picker-status-success basic-range-picker-wrapper company-notice-date-picker css-w7y1zu"
                                 >
                                   <div
@@ -965,7 +963,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                           class="ant-col ant-form-item-label"
                         >
                           <label
-                            class="ant-form-item-required"
+                            class=""
                             for="notice_str"
                             title="公告内容"
                           >
@@ -982,7 +980,6 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                               class="ant-form-item-control-input-content"
                             >
                               <textarea
-                                aria-required="true"
                                 class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                                 id="notice_str"
                                 placeholder="请输入公告内容"
@@ -1005,7 +1002,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                           class="ant-col ant-form-item-label"
                         >
                           <label
-                            class="ant-form-item-required"
+                            class=""
                             for="validPeriod"
                             title="有效时间范围"
                           >
@@ -1025,7 +1022,6 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render snap when edi
                                 class="css-1y8q0oh"
                               >
                                 <div
-                                  aria-required="true"
                                   class="ant-picker ant-picker-range ant-picker-status-success basic-range-picker-wrapper company-notice-date-picker css-w7y1zu"
                                 >
                                   <div

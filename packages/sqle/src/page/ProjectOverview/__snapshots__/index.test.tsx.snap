@@ -4,7 +4,7 @@ exports[`page/ProjectOverview render over view and refresh page 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -773,7 +773,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"

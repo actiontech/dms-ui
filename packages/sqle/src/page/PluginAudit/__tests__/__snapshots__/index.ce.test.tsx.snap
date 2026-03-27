@@ -5,7 +5,7 @@ exports[`page/PluginAudit render ce plugin audit page 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

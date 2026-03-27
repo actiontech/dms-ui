@@ -7,7 +7,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -274,7 +274,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -565,7 +565,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when errorType is error 1`] = 
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -668,7 +668,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when errorType is info 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -1111,7 +1111,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -7193,7 +7193,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when init time and cost is not
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -13012,7 +13012,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
@@ -18953,7 +18953,7 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when showExecPlanCostChart is 
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+        class="actiontech-page-header-namespace fixed-style css-ex8bfe"
       >
         <div
           class="title"
