@@ -13,7 +13,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
           class="css-doq0dk"
         >
           <div
-            class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+            class="actiontech-page-header-namespace fixed-style css-ex8bfe"
           >
             <div
               class="title"
@@ -2315,7 +2315,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
           class="css-doq0dk"
         >
           <div
-            class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+            class="actiontech-page-header-namespace fixed-style css-ex8bfe"
           >
             <div
               class="title"
@@ -4570,7 +4570,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
           class="css-doq0dk"
         >
           <div
-            class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+            class="actiontech-page-header-namespace fixed-style css-ex8bfe"
           >
             <div
               class="title"

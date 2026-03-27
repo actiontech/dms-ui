@@ -5,7 +5,7 @@ exports[`page/SqlManagement render ce sql management page 1`] = `
   <div>
     <article>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"

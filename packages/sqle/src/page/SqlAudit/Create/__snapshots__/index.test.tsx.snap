@@ -4,7 +4,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -1534,7 +1534,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -2896,7 +2896,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -4452,7 +4452,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -5951,7 +5951,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"
@@ -7685,7 +7685,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      class="actiontech-page-header-namespace fixed-style css-ex8bfe"
     >
       <div
         class="title"

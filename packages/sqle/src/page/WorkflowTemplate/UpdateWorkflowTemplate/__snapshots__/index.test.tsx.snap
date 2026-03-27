@@ -29,7 +29,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
           class="ant-spin-container"
         >
           <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+            class="actiontech-page-header-namespace css-ex8bfe"
           >
             <div
               class="title"
@@ -721,7 +721,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template
           class="ant-spin-container"
         >
           <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+            class="actiontech-page-header-namespace css-ex8bfe"
           >
             <div
               class="title"
@@ -1214,7 +1214,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
           class="ant-spin-container"
         >
           <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+            class="actiontech-page-header-namespace css-ex8bfe"
           >
             <div
               class="title"
@@ -1890,7 +1890,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
           class="ant-spin-container"
         >
           <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+            class="actiontech-page-header-namespace css-ex8bfe"
           >
             <div
               class="title"
@@ -2566,7 +2566,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
           class="ant-spin-container"
         >
           <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+            class="actiontech-page-header-namespace css-ex8bfe"
           >
             <div
               class="title"

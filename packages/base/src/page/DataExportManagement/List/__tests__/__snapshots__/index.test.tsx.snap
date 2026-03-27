@@ -4,7 +4,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -982,7 +982,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -1614,7 +1614,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"
@@ -2733,7 +2733,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="actiontech-page-header-namespace css-ex8bfe"
     >
       <div
         class="title"

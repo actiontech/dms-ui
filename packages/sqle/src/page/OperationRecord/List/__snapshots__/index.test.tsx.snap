@@ -5,7 +5,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
   <div>
     <article>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -896,7 +896,7 @@ exports[`sqle/OperationRecord/List render operation record table when project na
   <div>
     <article>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -1633,7 +1633,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
   <div>
     <article>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
@@ -2395,7 +2395,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
   <div>
     <article>
       <div
-        class="actiontech-page-header-namespace css-1xspr0w"
+        class="actiontech-page-header-namespace css-ex8bfe"
       >
         <div
           class="title"
