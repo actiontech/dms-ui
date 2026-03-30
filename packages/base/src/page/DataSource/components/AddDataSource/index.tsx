@@ -66,10 +66,7 @@ const AddDataSource = () => {
         }
       },
       // #endif
-      additional_params: values.asyncParams,
-      // #if [dms]
-      is_enable_masking: values.is_enable_masking
-      // #endif
+      additional_params: values.asyncParams
     };
     // #if [sqle && ee]
     if (dbService.sqle_config) {

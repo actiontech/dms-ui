@@ -18,7 +18,7 @@ export type DataSourceListParamType = Omit<
   IListDBServicesV2Params,
   'page_index' | 'page_size' | 'project_uid'
 >;
-export const DataSourceColumns = (
+export const dataSourceColumns = (
   getLogoUrlByDbType: (dbType: string) => string
 ): ActiontechTableColumn<
   IListDBServiceV2,
