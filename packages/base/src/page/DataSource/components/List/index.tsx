@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { message, Modal, Space } from 'antd';
 import { PageHeader } from '@actiontech/dms-kit';
@@ -24,11 +24,11 @@ import {
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,
-  DataSourceColumns,
+  dataSourceColumns,
   DataSourceListParamType,
   filterDataMaskOptions
 } from './columns';
-import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
+import { dataSourceListActions, dataSourcePageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import useStaticTips from '../../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
@@ -37,6 +37,9 @@ import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
 } from '../../../../utils/common';
+import CreateTaskModal from '../../../DataMasking/Tasks/List/components/CreateTaskModal';
+import useDataMasking from './hooks/useDataMasking';
+
 const DataSourceList = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -45,6 +48,16 @@ const DataSourceList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { parse2TableActionPermissions } = usePermission();
   const { projectID } = useCurrentProject();
+  const [selectData, setSelectData] = useState<IListDBServiceV2 | null>(null);
+
+  // #if [dms]
+  const {
+    setMaskingModalVisible,
+    maskingModalVisible,
+    supportedMaskingDbTypesData
+  } = useDataMasking();
+  // #endif
+
   const [
     batchTestDatabaseConnectionPending,
     { setFalse: finishTestConnection, setTrue: startTestConnection }
@@ -80,6 +93,8 @@ const DataSourceList = () => {
   });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
+  // #if [dms]
   const createEnableMaskingParams = (
     params: DataSourceListParamType,
     enableMasking: DataMaskingFilterTypeEnum
@@ -88,16 +103,19 @@ const DataSourceList = () => {
     params.is_enable_masking =
       enableMasking === DataMaskingFilterTypeEnum.checked;
   };
+  // #endif
   const {
     data: dataSourceList,
     loading,
     refresh
   } = useRequest(
     () => {
+      // #if [dms]
       createEnableMaskingParams(
         tableFilterInfo,
         tableFilterInfo.is_enable_masking as unknown as DataMaskingFilterTypeEnum
       );
+      // #endif
       return handleTableRequestError(
         DmsApi.DBServiceService.ListDBServicesV2({
           ...tableFilterInfo,
@@ -113,6 +131,7 @@ const DataSourceList = () => {
       ready: !!projectID
     }
   );
+
   const navigateToUpdatePage = useCallback(
     (dbServiceUid: string) => {
       navigate(ROUTE_PATHS.BASE.DATA_SOURCE.update, {
@@ -124,6 +143,7 @@ const DataSourceList = () => {
     },
     [navigate, projectID]
   );
+  // #if [ee]
   const navigateToSqlManagementConf = useCallback(
     (uid: string, environment: string, instanceAuditPlanId?: string) => {
       if (instanceAuditPlanId) {
@@ -147,6 +167,8 @@ const DataSourceList = () => {
     },
     [navigate, projectID]
   );
+  // #endif
+
   const deleteDatabase = useCallback(
     (dbServiceUid: string, dvServiceName: string) => {
       const hideLoading = messageApi.loading(
@@ -245,7 +267,7 @@ const DataSourceList = () => {
       });
   };
   const columns = useMemo(
-    () => DataSourceColumns(getLogoUrlByDbType),
+    () => dataSourceColumns(getLogoUrlByDbType),
     [getLogoUrlByDbType]
   );
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
@@ -299,11 +321,21 @@ const DataSourceList = () => {
   ]);
   const tableActions = useMemo(() => {
     return parse2TableActionPermissions(
-      DataSourceListActions(
+      dataSourceListActions(
         navigateToUpdatePage,
         deleteDatabase,
         testDatabaseConnection,
-        navigateToSqlManagementConf
+        // #if [ee]
+        navigateToSqlManagementConf,
+        // #endif
+        // #if [dms]
+        (record) => {
+          if (!record) return;
+          setSelectData(record);
+          setMaskingModalVisible(true);
+        },
+        supportedMaskingDbTypesData
+        // #endif
       )
     );
   }, [
@@ -311,9 +343,15 @@ const DataSourceList = () => {
     navigateToUpdatePage,
     deleteDatabase,
     testDatabaseConnection,
-    navigateToSqlManagementConf
+    // #if [ee]
+    navigateToSqlManagementConf,
+    // #endif
+    // #if [dms]
+    supportedMaskingDbTypesData,
+    setMaskingModalVisible
+    // #endif
   ]);
-  const pageHeaderActions = DataSourcePageHeaderActions(
+  const pageHeaderActions = dataSourcePageHeaderActions(
     projectID,
     batchTestDatabaseConnection,
     batchTestDatabaseConnectionPending
@@ -328,6 +366,22 @@ const DataSourceList = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
+
+  useEffect(() => {
+    const instanceNameQuery = extractQuery(
+      ROUTE_PATHS.BASE.DATA_SOURCE.index
+    )?.name;
+
+    if (instanceNameQuery) {
+      updateAllSelectedFilterItem(true);
+      updateTableFilterInfo({
+        ...tableChange,
+        filter_by_name: instanceNameQuery
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       {modalContextHolder}
@@ -382,6 +436,22 @@ const DataSourceList = () => {
         errorMessage={requestErrorMessage}
         onChange={tableChange}
       />
+      {/* #if [dms] */}
+      <CreateTaskModal
+        visible={maskingModalVisible}
+        projectUID={projectID}
+        initialDbService={selectData}
+        onClose={() => {
+          setMaskingModalVisible(false);
+          setSelectData(null);
+        }}
+        onSuccess={() => {
+          refresh();
+          setMaskingModalVisible(false);
+          setSelectData(null);
+        }}
+      />
+      {/* #endif */}
     </>
   );
 };

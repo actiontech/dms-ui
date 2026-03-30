@@ -32,7 +32,6 @@ export type DataSourceFormField = {
   params?: BackendFormValues;
   asyncParams?: BackendFormRequestParams[];
   needUpdatePassword?: boolean;
-  is_enable_masking?: boolean;
   enableBackup?: boolean;
   backupMaxRows?: number;
 };
