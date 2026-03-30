@@ -80,6 +80,76 @@ export const PERMISSION_MANIFEST: Record<
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.EDIT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.VIEW_HISTORY]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.VIEW_HISTORY,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.CREATE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.EDIT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.OVERVIEW.CONFIGURE_RULE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.OVERVIEW.CONFIGURE_RULE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
   [PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS]: {
     id: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS,
     type: 'page',

@@ -1,3 +1,15 @@
+export enum AddSensitiveDataDiscoveryTaskExecutionPlanEnum {
+  'PERIODIC' = 'PERIODIC',
+
+  'ONE_TIME' = 'ONE_TIME'
+}
+
+export enum AddSensitiveDataDiscoveryTaskIdentificationMethodEnum {
+  'BY_FIELD_NAME' = 'BY_FIELD_NAME',
+
+  'BY_SAMPLE_DATA' = 'BY_SAMPLE_DATA'
+}
+
 export enum DBServiceIsConnectableReplyConnectionStatusEnum {
   'connect_success' = 'connect_success',
 
@@ -168,6 +180,52 @@ export enum ListRoleStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum ListSensitiveDataDiscoveryTaskHistoriesDataStatusEnum {
+  'PENDING_CONFIRM' = 'PENDING_CONFIRM',
+
+  'NORMAL' = 'NORMAL',
+
+  'COMPLETED' = 'COMPLETED',
+
+  'RUNNING' = 'RUNNING',
+
+  'FAILED' = 'FAILED',
+
+  'STOPPED' = 'STOPPED'
+}
+
+export enum ListSensitiveDataDiscoveryTasksDataExecutionPlanEnum {
+  'PERIODIC' = 'PERIODIC',
+
+  'ONE_TIME' = 'ONE_TIME'
+}
+
+export enum ListSensitiveDataDiscoveryTasksDataIdentificationMethodEnum {
+  'BY_FIELD_NAME' = 'BY_FIELD_NAME',
+
+  'BY_SAMPLE_DATA' = 'BY_SAMPLE_DATA'
+}
+
+export enum ListSensitiveDataDiscoveryTasksDataStatusEnum {
+  'PENDING_CONFIRM' = 'PENDING_CONFIRM',
+
+  'NORMAL' = 'NORMAL',
+
+  'COMPLETED' = 'COMPLETED',
+
+  'RUNNING' = 'RUNNING',
+
+  'FAILED' = 'FAILED',
+
+  'STOPPED' = 'STOPPED'
+}
+
+export enum ListSensitiveDataDiscoveryTasksDataTaskTypeEnum {
+  'PERIODIC' = 'PERIODIC',
+
+  'ONE_TIME' = 'ONE_TIME'
+}
+
 export enum ListUserAuthenticationTypeEnum {
   'ldap' = 'ldap',
 
@@ -295,6 +353,8 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'desensitization' = 'desensitization',
 
+  'masking_audit' = 'masking_audit',
+
   'none' = 'none'
 }
 
@@ -316,6 +376,12 @@ export enum OperationRecordListItemStatusEnum {
   'succeeded' = 'succeeded',
 
   'failed' = 'failed'
+}
+
+export enum ProcessApprovalRequestReqActionEnum {
+  'APPROVE' = 'APPROVE',
+
+  'REJECT' = 'REJECT'
 }
 
 export enum ProjectInfoProjectPriorityEnum {
@@ -358,6 +424,30 @@ export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
   'error' = 'error'
 }
 
+export enum SensitiveFieldScanResultConfidenceEnum {
+  'HIGH' = 'HIGH',
+
+  'MEDIUM' = 'MEDIUM',
+
+  'LOW' = 'LOW'
+}
+
+export enum TableColumnMaskingDetailConfidenceEnum {
+  'HIGH' = 'HIGH',
+
+  'MEDIUM' = 'MEDIUM',
+
+  'LOW' = 'LOW'
+}
+
+export enum TableColumnMaskingDetailStatusEnum {
+  'CONFIGURED' = 'CONFIGURED',
+
+  'PENDING_CONFIRM' = 'PENDING_CONFIRM',
+
+  'SYSTEM_CONFIRMED' = 'SYSTEM_CONFIRMED'
+}
+
 export enum TestFeishuConfigurationAccountTypeEnum {
   'email' = 'email',
 
@@ -388,6 +478,26 @@ export enum UpdateProjectV2ProjectPriorityEnum {
   'low' = 'low',
 
   'unknown' = 'unknown'
+}
+
+export enum UpdateSensitiveDataDiscoveryTaskExecutionPlanEnum {
+  'PERIODIC' = 'PERIODIC',
+
+  'ONE_TIME' = 'ONE_TIME'
+}
+
+export enum UpdateSensitiveDataDiscoveryTaskIdentificationMethodEnum {
+  'BY_FIELD_NAME' = 'BY_FIELD_NAME',
+
+  'BY_SAMPLE_DATA' = 'BY_SAMPLE_DATA'
+}
+
+export enum UpdateSensitiveDataDiscoveryTaskReqActionEnum {
+  'ENABLE' = 'ENABLE',
+
+  'TERMINATE' = 'TERMINATE',
+
+  'UPDATE' = 'UPDATE'
 }
 
 export enum UpdateUserSystemEnum {

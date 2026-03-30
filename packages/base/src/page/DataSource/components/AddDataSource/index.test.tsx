@@ -203,7 +203,6 @@ describe('page/DataSource/AddDataSource', () => {
         db_type: 'mysql',
         desc: undefined,
         host: '1.1.1.1',
-        is_enable_masking: false,
         maintenance_times: [],
         name: 'name-database',
         password: 'root',
@@ -430,7 +429,6 @@ describe('page/DataSource/AddDataSource', () => {
         db_type: 'mysql',
         desc: undefined,
         host: '1.1.1.1',
-        is_enable_masking: false,
         maintenance_times: [],
         name: 'name-database',
         password: 'root',
@@ -613,32 +611,6 @@ describe('page/DataSource/AddDataSource', () => {
     expect(eventEmitSpy).toHaveBeenCalled();
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Reset_DataSource_Form
-    );
-  });
-
-  it('check enable masking have href', async () => {
-    customRender();
-    expect(screen.getByText('查看脱敏规则')).toBeInTheDocument();
-    expect(screen.getByText('查看脱敏规则')).toHaveAttribute(
-      'href',
-      `/project/${projectID}/data-mask-rule-overview`
-    );
-  });
-
-  it('check enable masking have href when project is undefined', async () => {
-    mockUseCurrentProject({ projectID: undefined });
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('查看脱敏规则')).not.toBeInTheDocument();
-    const projectEle = getBySelector('#project');
-    expect(projectEle).not.toBeDisabled();
-    fireEvent.mouseDown(projectEle, baseElement);
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('test_project_1'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('查看脱敏规则')).toHaveAttribute(
-      'href',
-      `/project/${mockProjectList[0].uid}/data-mask-rule-overview`
     );
   });
 });

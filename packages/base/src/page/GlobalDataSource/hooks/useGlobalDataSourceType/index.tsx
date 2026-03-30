@@ -10,7 +10,7 @@ const useGlobalDataSourceType = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();
   const updateDbTypeList = React.useCallback(() => {
     setTrue();
-    DBService.ListGlobalDBServicesTips()
+    DBService.ListGlobalDBServicesTips({})
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setDBTypeList(res.data?.data?.db_type ?? []);

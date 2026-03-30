@@ -110,6 +110,21 @@ export const PERMISSIONS = {
         DELETE_MEMBER_GROUP: 'action:delete_member_group',
         SWITCH_PROJECT_MANAGER: 'action:switch_project_manager'
       },
+      DATA_MASKING: {
+        TASK: {
+          CREATE: 'action:masking_task_create',
+          EDIT: 'action:masking_task_edit',
+          VIEW_HISTORY: 'action:masking_task_view_history'
+        },
+        TEMPLATE: {
+          CREATE: 'action:masking_template_create',
+          EDIT: 'action:masking_template_edit',
+          DELETE: 'action:masking_template_delete'
+        },
+        OVERVIEW: {
+          CONFIGURE_RULE: 'action:masking_overview_configure_rule'
+        }
+      },
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',
         CREATE_WHITELIST: 'action:data_export_create_whitelist',
