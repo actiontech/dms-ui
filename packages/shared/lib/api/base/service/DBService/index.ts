@@ -10,6 +10,7 @@ import {
   IListGlobalDBServicesParams,
   IListGlobalDBServicesReturn,
   IListDBServiceDriverOptionReturn,
+  IListGlobalDBServicesTipsParams,
   IListGlobalDBServicesTipsReturn,
   IListDBServicesParams,
   IListDBServicesReturn,
@@ -64,10 +65,14 @@ class DBServiceService extends ServiceBase {
     );
   }
 
-  public ListGlobalDBServicesTips(options?: AxiosRequestConfig) {
+  public ListGlobalDBServicesTips(
+    params: IListGlobalDBServicesTipsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.get<IListGlobalDBServicesTipsReturn>(
       '/v1/dms/db_services/tips',
-      undefined,
+      paramsData,
       options
     );
   }

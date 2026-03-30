@@ -68,7 +68,7 @@ describe('page/DataSource/DataSourceList', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     useParamsMock.mockReturnValue({ projectID });
     dms.mockAllApi();
-    dbServices.ListDBServicesTips();
+    dbServices.listGlobalDBServicesTips();
     project.listEnvironmentTags();
     CheckProjectDBServicesConnectionsSpy =
       dbServices.CheckProjectDBServicesConnections();
@@ -108,7 +108,7 @@ describe('page/DataSource/DataSourceList', () => {
 
   it('render table for api return no data', async () => {
     const requestTableList = dms.getListDBServices();
-    const dbServiceTips = dbServices.ListDBServicesTips();
+    const globalDbServiceTips = dbServices.listGlobalDBServicesTips();
     requestTableList.mockImplementationOnce(() =>
       createSpySuccessResponse({ total_nums: 0, data: [] })
     );
@@ -118,10 +118,7 @@ describe('page/DataSource/DataSourceList', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestListDBServiceDriver).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dbServiceTips).toHaveBeenCalledTimes(1);
-    expect(dbServiceTips).toHaveBeenNthCalledWith(1, {
-      project_uid: projectID
-    });
+    expect(globalDbServiceTips).toHaveBeenCalledTimes(1);
     expect(requestTableList).toHaveBeenCalledTimes(1);
     expect(requestTableList).toHaveBeenNthCalledWith(1, {
       fuzzy_keyword: '',
