@@ -12,6 +12,7 @@ import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/m
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import AIBanner from '..';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -221,17 +222,32 @@ describe('test base/home/AIBanner', () => {
     expect(screen.getByText('SQL 重写示例')).toBeInTheDocument();
   });
 
-  it('should not render viewFullReport and performance engine button when all modules are disabled', async () => {
+  it('should render performance engine button and show no permission prompt when no optimization permission', async () => {
     mockUsePermission(
       {
-        checkPagePermission: jest.fn().mockReturnValue(false)
+        checkPagePermission: jest.fn((permissionKey) => {
+          if (permissionKey === PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION) {
+            return false;
+          }
+          return true;
+        })
       },
       { useSpyOnMockHooks: true }
     );
+
     baseSuperRender(<AIBanner />);
     await act(async () => jest.advanceTimersByTime(3300));
 
-    expect(screen.queryByText('查看完整报告')).not.toBeInTheDocument();
-    expect(screen.queryByText('AI 性能引擎')).not.toBeInTheDocument();
+    expect(screen.getByText('查看完整报告')).toBeInTheDocument();
+    expect(screen.getByText('AI 性能引擎')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('AI 性能引擎'));
+
+    expect(
+      screen.getByText('暂无 SQL 调优权限，请联系管理员')
+    ).toBeInTheDocument();
+    expect(navigateSpy).not.toHaveBeenCalledWith(
+      '/sqle/project/1/sql-audit/create-optimization'
+    );
   });
 });
