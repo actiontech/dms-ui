@@ -22,6 +22,21 @@ exports[`usePermission should match snapshot 1`] = `
         "EXECUTE": "action:execute_data_export",
         "REJECT": "action:reject_data_export",
       },
+      "DATA_MASKING": {
+        "OVERVIEW": {
+          "CONFIGURE_RULE": "action:masking_overview_configure_rule",
+        },
+        "TASK": {
+          "CREATE": "action:masking_task_create",
+          "EDIT": "action:masking_task_edit",
+          "VIEW_HISTORY": "action:masking_task_view_history",
+        },
+        "TEMPLATE": {
+          "CREATE": "action:masking_template_create",
+          "DELETE": "action:masking_template_delete",
+          "EDIT": "action:masking_template_edit",
+        },
+      },
       "DB_SERVICE": {
         "ADD": "action:add_db_service",
         "BATCH_IMPORT": "action:batch_import_db_service",
@@ -1138,6 +1153,76 @@ exports[`usePermission should match snapshot 2`] = `
   "action:manually_exec_workflow": {
     "id": "action:manually_exec_workflow",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:masking_overview_configure_rule": {
+    "id": "action:masking_overview_configure_rule",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_task_create": {
+    "id": "action:masking_task_create",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_task_edit": {
+    "id": "action:masking_task_edit",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_task_view_history": {
+    "id": "action:masking_task_view_history",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_template_create": {
+    "id": "action:masking_template_create",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_template_delete": {
+    "id": "action:masking_template_delete",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_template_edit": {
+    "id": "action:masking_template_edit",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
     "type": "action",
   },
   "action:operation_log_expired_hours": {
