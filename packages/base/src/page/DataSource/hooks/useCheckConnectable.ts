@@ -39,6 +39,8 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         delete values.params;
       }
 
+      const isPasswordEditing = form.getFieldValue('isPasswordEditing');
+
       setLoadingTrue();
       return DmsApi.DBServiceService.CheckDBServiceIsConnectable({
         db_service: {
@@ -46,7 +48,7 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
           port: `${values.port}`,
           user: values.user,
           db_type: values.type,
-          password: values.password,
+          password: isPasswordEditing ? values.password : undefined,
           additional_params: values.asyncParams ?? []
         },
         project_uid: projectID

@@ -93,7 +93,7 @@ const UpdateDataSource = () => {
     }
     // #endif
 
-    if (!!values.needUpdatePassword && !!values.password && params.db_service) {
+    if (!!values.isPasswordEditing && !!values.password && params.db_service) {
       params.db_service.password = values.password;
     }
     return DmsApi.DBServiceService.UpdateDBServiceV2(params)

@@ -222,7 +222,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             })
           ) ?? [],
         // #endif
-        needUpdatePassword: false,
+        isPasswordEditing: false,
         environmentTagId: props.defaultData.environment_tag?.uid ?? '',
         password: props.defaultData.password,
         // #if [dms]
@@ -291,7 +291,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [reset]);
   const onCheckConnectableBeforeSubmit = useCallback(async () => {
     const values = await props.form.validateFields();
-    if (props.isUpdate && !values.needUpdatePassword) {
+    if (props.isUpdate && !values.isPasswordEditing) {
       submit();
       return;
     }
