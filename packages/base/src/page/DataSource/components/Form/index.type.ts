@@ -31,7 +31,7 @@ export type DataSourceFormField = {
   dataExportRuleTemplateName?: string;
   params?: BackendFormValues;
   asyncParams?: BackendFormRequestParams[];
-  needUpdatePassword?: boolean;
+  isPasswordEditing?: boolean;
   is_enable_masking?: boolean;
   enableBackup?: boolean;
   backupMaxRows?: number;
