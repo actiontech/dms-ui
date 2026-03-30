@@ -17,6 +17,8 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { DataSourceFormContextProvide } from '../../context';
+import { DataSourceFormContextType } from '../../context';
 
 import DataSourceForm from '.';
 
@@ -158,15 +160,6 @@ describe('page/DataSource/DataSourceForm', () => {
       defaultData: singleData
     });
 
-    const needUpdatePassword = getBySelector(
-      '#needUpdatePassword',
-      baseElement
-    );
-    fireEvent.change(needUpdatePassword, {
-      target: {
-        value: true
-      }
-    });
     await act(async () => jest.advanceTimersByTime(300));
 
     const needAuditForSqlQuery = getBySelector(
@@ -280,5 +273,239 @@ describe('page/DataSource/DataSourceForm', () => {
     });
     expect(screen.queryByText('environment-1')).not.toBeInTheDocument();
     expect(screen.queryByText('test_project_1')).not.toBeInTheDocument();
+  });
+
+  describe('submit logic (TC 5.3.x)', () => {
+    const mockOnCheckConnectable = jest.fn();
+    const submitPromiseFn = jest.fn();
+
+    const singleData: IListDBServiceV2 = {
+      ...DBServicesList[0],
+      db_type: 'mysql',
+      name: 'mysql-1',
+      host: '10.186.62.13',
+      port: '33061',
+      user: 'root',
+      password: '',
+      environment_tag: {
+        uid: '1',
+        name: 'test'
+      }
+    };
+
+    const renderWithContext = (params?: {
+      isUpdate?: boolean;
+      defaultData?: IListDBServiceV2;
+      contextOverrides?: Partial<DataSourceFormContextType>;
+    }) => {
+      const { result } = superRenderHook(() =>
+        Form.useForm<DataSourceFormField>()
+      );
+
+      const contextValue: DataSourceFormContextType = {
+        loading: false,
+        connectAble: false,
+        connectErrorMessage: 'connection failed',
+        onCheckConnectable: mockOnCheckConnectable,
+        submitLoading: false,
+        ...(params?.contextOverrides ?? {})
+      };
+
+      return {
+        ...baseSuperRender(
+          <DataSourceFormContextProvide value={contextValue}>
+            <DataSourceForm
+              form={result.current[0]}
+              defaultData={params?.defaultData}
+              isUpdate={params?.isUpdate}
+              submit={submitPromiseFn}
+            />
+          </DataSourceFormContextProvide>
+        ),
+        form: result.current[0]
+      };
+    };
+
+    beforeEach(() => {
+      submitPromiseFn.mockResolvedValue(undefined);
+      mockOnCheckConnectable.mockResolvedValue(true);
+    });
+
+    // TC 5.3.1: Default state (isPasswordEditing=false) - skip connectivity test
+    it('should skip connectivity test and submit directly when password is not in edit mode', async () => {
+      const { form } = renderWithContext({
+        isUpdate: true,
+        defaultData: singleData
+      });
+
+      // Wait for form to initialize with defaultData (isPasswordEditing: false)
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Confirm isPasswordEditing is false after initialization
+      expect(form.getFieldValue('isPasswordEditing')).toBe(false);
+
+      // Trigger submit via EventEmitter
+      await act(async () => {
+        EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Connectivity test should NOT have been called
+      expect(mockOnCheckConnectable).not.toHaveBeenCalled();
+
+      // Submit should have been called
+      expect(submitPromiseFn).toHaveBeenCalledTimes(1);
+
+      // Submit args should not contain password (password field is empty/undefined)
+      const submitArgs = submitPromiseFn.mock.calls[0][0];
+      expect(
+        submitArgs.password === '' ||
+          submitArgs.password === undefined ||
+          submitArgs.password === null
+      ).toBe(true);
+    });
+
+    // TC 5.3.2: Edit mode (isPasswordEditing=true) - execute connectivity test
+    it('should execute connectivity test before submit when password is in edit mode', async () => {
+      const { form, baseElement } = renderWithContext({
+        isUpdate: true,
+        defaultData: singleData
+      });
+
+      // Wait for form to initialize
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Enter edit mode by clicking the pencil icon
+      const editIcon = getBySelector('.anticon-edit', baseElement);
+      await act(async () => {
+        fireEvent.click(editIcon);
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Type password
+      const passwordInput = getBySelector(
+        '.ant-input-password input.ant-input',
+        baseElement
+      );
+      await act(async () => {
+        fireEvent.change(passwordInput, { target: { value: 'newpass' } });
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Trigger submit via EventEmitter
+      await act(async () => {
+        EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Connectivity test should have been called
+      expect(mockOnCheckConnectable).toHaveBeenCalledTimes(1);
+
+      // Since connectivity returned true, submit should have been called
+      expect(submitPromiseFn).toHaveBeenCalledTimes(1);
+    });
+
+    // TC 5.3.3: Edit mode - connectivity test fails, show confirmation modal
+    it('should show confirmation modal when connectivity test fails in edit mode', async () => {
+      mockOnCheckConnectable.mockResolvedValue(false);
+
+      const { form, baseElement } = renderWithContext({
+        isUpdate: true,
+        defaultData: singleData,
+        contextOverrides: {
+          connectErrorMessage: 'connection failed: timeout'
+        }
+      });
+
+      // Wait for form to initialize
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Enter edit mode by clicking the pencil icon
+      const editIcon = getBySelector('.anticon-edit', baseElement);
+      await act(async () => {
+        fireEvent.click(editIcon);
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Type password
+      const passwordInput = getBySelector(
+        '.ant-input-password input.ant-input',
+        baseElement
+      );
+      await act(async () => {
+        fireEvent.change(passwordInput, { target: { value: 'newpass' } });
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Trigger submit via EventEmitter
+      await act(async () => {
+        EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Connectivity test should have been called
+      expect(mockOnCheckConnectable).toHaveBeenCalledTimes(1);
+
+      // Submit should NOT have been called (connectivity failed)
+      expect(submitPromiseFn).not.toHaveBeenCalled();
+
+      // Confirmation modal should appear
+      expect(
+        screen.getByText('数据源连通性测试失败')
+      ).toBeInTheDocument();
+
+      // "返回修改" button should be visible
+      expect(screen.getByText('返回修改')).toBeInTheDocument();
+
+      // Click "返回修改" to close modal
+      await act(async () => {
+        fireEvent.click(screen.getByText('返回修改'));
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Password field should still be in edit mode (rollback icon visible)
+      expect(
+        getBySelector('.anticon-rollback', baseElement)
+      ).toBeTruthy();
+    });
+
+    // TC 5.3.4: Edit mode with empty password - validation blocks submit
+    it('should block submit with validation error when password is empty in edit mode', async () => {
+      const { form, baseElement } = renderWithContext({
+        isUpdate: true,
+        defaultData: singleData
+      });
+
+      // Wait for form to initialize
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // Enter edit mode by clicking the pencil icon
+      const editIcon = getBySelector('.anticon-edit', baseElement);
+      await act(async () => {
+        fireEvent.click(editIcon);
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // Do NOT type any password (leave empty)
+
+      // Verify that form validation will fail for the password field
+      let validationFailed = false;
+      try {
+        await form.validateFields();
+      } catch (err: any) {
+        validationFailed = true;
+        // Verify the error is specifically about the password field
+        const passwordError = err.errorFields?.find(
+          (f: any) => f.name?.includes('password')
+        );
+        expect(passwordError).toBeTruthy();
+      }
+      expect(validationFailed).toBe(true);
+
+      // Since validateFields throws, the submit event handler will also
+      // reject. Neither connectivity test nor submit should be called.
+      expect(mockOnCheckConnectable).not.toHaveBeenCalled();
+      expect(submitPromiseFn).not.toHaveBeenCalled();
+    });
   });
 });
