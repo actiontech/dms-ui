@@ -1,14 +1,13 @@
 import { useBoolean } from 'ahooks';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd';
+import { FormInstance, InputRef } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
 import {
   BasicInput,
   BasicSelect,
-  BasicSwitch,
   EmptyBox,
   TestDatabaseConnectButton
 } from '@actiontech/dms-kit';
@@ -19,6 +18,12 @@ import {
   BackendFormItemParams
 } from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
+import {
+  EditOutlined,
+  RollbackOutlined,
+  EyeOutlined,
+  EyeInvisibleOutlined
+} from '@ant-design/icons';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
@@ -34,18 +39,46 @@ const DatabaseFormItem: React.FC<{
     hideConnectionInfo,
     { setFalse: setConnectionInfoShow, setTrue: setConnectionInfoHide }
   ] = useBoolean(true);
-  const [needUpdatePassword, setNeedUpdatePassword] = useState(false);
-  const changeNeedUpdatePassword = (check: boolean) => {
-    setNeedUpdatePassword(check);
+
+  const PASSWORD_PLACEHOLDER = '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022';
+
+  const [isPasswordEditing, setIsPasswordEditing] = useState(false);
+  const passwordInputRef = useRef<InputRef>(null);
+
+  const handleStartEdit = useCallback(() => {
+    setIsPasswordEditing(true);
     props.form.setFieldsValue({
-      needUpdatePassword: check
+      isPasswordEditing: true,
+      password: ''
     });
-  };
-  const testDatabaseConnect = async () => {
+  }, [props.form]);
+
+  const handleCancelEdit = useCallback(() => {
+    setIsPasswordEditing(false);
+    props.form.setFieldsValue({
+      isPasswordEditing: false,
+      password: undefined
+    });
+    props.form.setFields([{ name: 'password', errors: [] }]);
+  }, [props.form]);
+
+  useEffect(() => {
+    if (isPasswordEditing) {
+      setTimeout(() => {
+        passwordInputRef.current?.focus();
+      }, 0);
+    }
+  }, [isPasswordEditing]);
+  // When isPasswordEditing is false (default state), the password FormItem has
+  // no name="password" binding, so form.validateFields in the hook will return
+  // password as undefined, which is naturally excluded from the API request.
+  // When isPasswordEditing is true, the password FormItem is bound and the
+  // user's input will be included in the connectivity test.
+  const testDatabaseConnect = useCallback(async () => {
     formContext?.onCheckConnectable(props.currentAsyncParams).finally(() => {
       setConnectionInfoShow();
     });
-  };
+  }, [props.currentAsyncParams, formContext, setConnectionInfoShow]);
   useEffect(() => {
     const resetConnectAbleStatus = () => {
       setConnectionInfoHide();
@@ -149,41 +182,90 @@ const DatabaseFormItem: React.FC<{
           })}
         />
       </FormItemLabel>
-      <EmptyBox if={props.isUpdate}>
+      {/* Default state: edit page, not editing password */}
+      {props.isUpdate && !isPasswordEditing && (
         <FormItemLabel
-          label={t('dmsDataSource.dataSourceForm.needUpdatePassword')}
-          name="needUpdatePassword"
-          valuePropName="checked"
+          className="has-required-style"
+          label={t('dmsDataSource.dataSourceForm.password')}
+          rules={[{ required: false }]}
         >
-          <BasicSwitch
-            checked={needUpdatePassword}
-            onChange={changeNeedUpdatePassword}
+          <BasicInput
+            readOnly
+            value={PASSWORD_PLACEHOLDER}
+            onClick={handleStartEdit}
+            suffix={
+              <EditOutlined
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleStartEdit();
+                }}
+                style={{ cursor: 'pointer', color: '#8c8c8c' }}
+              />
+            }
           />
         </FormItemLabel>
-      </EmptyBox>
-      <FormItemLabel
-        className="has-required-style"
-        label={
-          props.isUpdate
-            ? t('dmsDataSource.dataSourceForm.updatePassword')
-            : t('dmsDataSource.dataSourceForm.password')
-        }
-        name="password"
-        rules={[
-          {
-            required: (props.isUpdate && needUpdatePassword) || !props.isUpdate,
-            message: t('common.form.rule.require', {
+      )}
+
+      {/* Edit mode: edit page, actively editing password */}
+      {props.isUpdate && isPasswordEditing && (
+        <FormItemLabel
+          className="has-required-style"
+          label={t('dmsDataSource.dataSourceForm.password')}
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: t('common.form.rule.require', {
+                name: t('dmsDataSource.dataSourceForm.password')
+              })
+            }
+          ]}
+        >
+          <BasicInput.Password
+            ref={passwordInputRef}
+            placeholder={t(
+              'dmsDataSource.dataSourceForm.editPasswordPlaceholder'
+            )}
+            iconRender={(visible: boolean) => (
+              <span
+                style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+              >
+                <RollbackOutlined
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCancelEdit();
+                  }}
+                  style={{ cursor: 'pointer', color: '#8c8c8c' }}
+                />
+                {visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+              </span>
+            )}
+          />
+        </FormItemLabel>
+      )}
+
+      {/* Create mode: new datasource */}
+      {!props.isUpdate && (
+        <FormItemLabel
+          className="has-required-style"
+          label={t('dmsDataSource.dataSourceForm.password')}
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: t('common.form.rule.require', {
+                name: t('dmsDataSource.dataSourceForm.password')
+              })
+            }
+          ]}
+        >
+          <BasicInput.Password
+            placeholder={t('common.form.placeholder.input', {
               name: t('dmsDataSource.dataSourceForm.password')
-            })
-          }
-        ]}
-      >
-        <BasicInput.Password
-          placeholder={t('common.form.placeholder.input', {
-            name: t('dmsDataSource.dataSourceForm.password')
-          })}
-        />
-      </FormItemLabel>
+            })}
+          />
+        </FormItemLabel>
+      )}
 
       <EmptyBox if={(props.currentAsyncParams?.length ?? 0) > 0}>
         <AutoCreatedFormItemByApi
