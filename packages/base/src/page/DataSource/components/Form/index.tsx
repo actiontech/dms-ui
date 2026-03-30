@@ -269,6 +269,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [props.form]);
   const submit = useCallback(async () => {
     const values = props.form.getFieldsValue();
+    // getFieldsValue() only returns fields registered via <Form.Item name="...">.
+    // isPasswordEditing is set via setFieldsValue() without a corresponding
+    // Form.Item, so we must read it with getFieldValue() (which accesses the
+    // full form store) to keep behaviour consistent with
+    // onCheckConnectableBeforeSubmit().
+    values.isPasswordEditing = props.form.getFieldValue('isPasswordEditing');
     if (values.params) {
       values.asyncParams = mergeFromValueIntoParams(values.params, params).map(
         (v) => ({
