@@ -432,9 +432,9 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="password"
-                  title="密码"
+                  title="连接密码"
                 >
-                  密码
+                  连接密码
                 </label>
               </div>
               <div
@@ -453,7 +453,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         aria-required="true"
                         class="ant-input"
                         id="password"
-                        placeholder="请输入密码"
+                        placeholder="请输入连接密码"
                         type="password"
                       />
                       <span
