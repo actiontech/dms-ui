@@ -80,7 +80,7 @@ export default {
 
         sql: 'SQL statement',
         sqlFile: 'SQL file',
-        sqlFileTips: 'Click to select a file or drag the file to this area. Supports .sql, .txt, .java formats',
+        sqlFileTips: 'Click to select a file or drag the file to this area. Supports .sql, .txt, .java, .xlsx formats',
         mybatisFile: 'Mybatis XML file',
         mybatisFileTips:
           'Click to select an XML file or drag the file to this area',
@@ -95,6 +95,9 @@ export default {
         uploadFile: 'Upload SQL file',
         updateMybatisFile: 'Upload Mybatis XML file',
         uploadZipFile: 'Upload compressed file',
+        xlsxTemplateTips: 'Please use the standard template format',
+        downloadTemplate: 'Download template',
+        noSqlColumnFound: 'No column containing SQL found, please refer to the template',
 
         audit: 'Audit',
         analyze: 'SQL analysis',
