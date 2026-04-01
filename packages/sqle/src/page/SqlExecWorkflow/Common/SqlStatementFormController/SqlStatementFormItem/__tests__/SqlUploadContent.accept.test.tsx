@@ -1,4 +1,4 @@
-import { renderHook, render, screen } from '@testing-library/react';
+import { renderHook, screen } from '@testing-library/react';
 import { Form } from 'antd';
 import SqlUploadContent from '../components/SqlUploadContent';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -6,6 +6,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 describe('SqlUploadContent accept attributes and tips', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
@@ -14,7 +15,7 @@ describe('SqlUploadContent accept attributes and tips', () => {
     uploadType: AuditTaskResV1SqlSourceEnum
   ) => {
     const { result } = renderHook(() => Form.useForm());
-    return render(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlUploadContent
           currentSqlUploadType={uploadType}
@@ -27,9 +28,9 @@ describe('SqlUploadContent accept attributes and tips', () => {
 
   const acceptTestCases = [
     {
-      name: 'SQL file upload accept should include .sql, .txt, .java',
+      name: 'SQL file upload accept should include .sql, .txt, .java, .xlsx',
       uploadType: AuditTaskResV1SqlSourceEnum.sql_file,
-      expectedAccept: '.sql,.txt,.java'
+      expectedAccept: '.sql,.txt,.java,.xlsx'
     },
     {
       name: 'ZIP file upload accept should include .zip, .rar, .7z',
@@ -49,11 +50,11 @@ describe('SqlUploadContent accept attributes and tips', () => {
     }
   );
 
-  it('should display correct SQL file tips text', () => {
+  it('should display correct SQL file tips text including .xlsx', () => {
     renderWithUploadType(AuditTaskResV1SqlSourceEnum.sql_file);
     expect(
       screen.getByText(
-        /支持 \.sql, \.txt, \.java 格式/
+        /支持 \.sql, \.txt, \.java, \.xlsx 格式/
       )
     ).toBeInTheDocument();
   });
@@ -67,9 +68,39 @@ describe('SqlUploadContent accept attributes and tips', () => {
     ).toBeInTheDocument();
   });
 
-  it('should not render file inputs when upload type is form_data', () => {
+  it('should render XLSX template tips text when upload type is sql_file', () => {
+    renderWithUploadType(AuditTaskResV1SqlSourceEnum.sql_file);
+    expect(
+      screen.getByText(/请使用标准模板格式/)
+    ).toBeInTheDocument();
+  });
+
+  it('should render XLSX template download link when upload type is sql_file', () => {
     const { container } = renderWithUploadType(
-      AuditTaskResV1SqlSourceEnum.form_data
+      AuditTaskResV1SqlSourceEnum.sql_file
+    );
+    const downloadLink = container.querySelector(
+      'a[href="/static/xlsx_template.xlsx"]'
+    );
+    expect(downloadLink).not.toBeNull();
+    expect(downloadLink?.textContent).toContain('下载模板');
+    expect(downloadLink?.getAttribute('download')).toBe('xlsx_template.xlsx');
+  });
+
+  it('should not render file inputs when no file-based upload type is active', () => {
+    // Render without specifying an upload type (defaults to undefined),
+    // so no LazyLoadComponent opens and no file inputs should appear.
+    // Avoids rendering form_data type which triggers CustomMonacoEditor
+    // and its Redux dependencies outside the scope of this test.
+    const { result } = renderHook(() => Form.useForm());
+    const { container } = sqleSuperRender(
+      <Form form={result.current[0]}>
+        <SqlUploadContent
+          currentSqlUploadType={undefined as unknown as AuditTaskResV1SqlSourceEnum}
+          fieldPrefixPath="1"
+          dbSourceInfoCollection={{ value: {}, set: jest.fn() }}
+        />
+      </Form>
     );
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeNull();
