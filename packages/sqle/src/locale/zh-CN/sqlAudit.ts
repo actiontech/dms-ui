@@ -79,14 +79,14 @@ export default {
         sql: '输入SQL语句',
         sqlFile: '上传SQL文件',
         mybatisFile: '上传Mybatis的XML文件',
-        zipFile: '上传ZIP文件',
+        zipFile: '上传压缩包',
         git: '配置GIT仓库'
       },
       uploadLabelEnum: {
         sql: 'SQL语句',
         sqlFile: 'SQL文件',
         mybatisFile: 'Mybatis的XML文件',
-        zipFile: 'ZIP文件',
+        zipFile: '压缩包',
         gitUrl: 'GIT地址',
         gitProtocol: 'Git协议类型',
         gitUrlTips: '请输入代码仓库地址',
@@ -101,10 +101,10 @@ export default {
         sshAuthTips: '使用SSH协议克隆仓库时，需要先配置SSH密钥。'
       },
       uploadFileTip: {
-        sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
+        sqlFile: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java 格式',
         mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
         zipFile:
-          '点击选择ZIP文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核'
+          '点击选择压缩包或将文件拖拽到此区域，支持 .zip, .rar, .7z 格式，仅支持对压缩包内 .sql, .xml, .txt, .java 文件做SQL审核'
       }
     }
   },

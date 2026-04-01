@@ -76,12 +76,12 @@ export default {
 
         sql: 'SQL语句',
         sqlFile: 'SQL文件',
-        sqlFileTips: '点击选择SQL文件或将文件拖拽到此区域',
+        sqlFileTips: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java 格式',
         mybatisFile: 'Mybatis的XML文件',
         mybatisFileTips: '点击选择XML文件或将文件拖拽到此区域',
-        zipFile: 'zip文件',
+        zipFile: '压缩包',
         zipFileTips:
-          '点击选择zip文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核',
+          '点击选择压缩包或将文件拖拽到此区域，支持 .zip, .rar, .7z 格式，仅支持对压缩包内 .sql, .xml, .txt, .java 文件做SQL审核',
 
         addInstanceTips: '请添加数据源',
         addInstance: '添加数据源',
@@ -89,7 +89,7 @@ export default {
         manualInput: '输入SQL语句',
         uploadFile: '上传SQL文件',
         updateMybatisFile: '上传Mybatis的XML文件',
-        uploadZipFile: '上传ZIP文件',
+        uploadZipFile: '上传压缩包',
 
         audit: '审核',
         analyze: 'SQL分析',
