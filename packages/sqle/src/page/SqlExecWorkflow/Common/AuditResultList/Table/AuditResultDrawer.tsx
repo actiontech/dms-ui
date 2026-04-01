@@ -26,7 +26,8 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
         auditResult: auditResultRuleInfo,
         sql: auditResultRecord?.exec_sql ?? '',
         sqlSourceFile: auditResultRecord?.sql_source_file ?? '',
-        sqlStartLine: auditResultRecord?.sql_start_line
+        sqlStartLine: auditResultRecord?.sql_start_line,
+        auditStatus: auditResultRecord?.audit_status
       }}
       showSourceFile
       title={

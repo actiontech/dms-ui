@@ -11,6 +11,7 @@ export type TypeData = {
   sql: string;
   sqlSourceFile?: string;
   sqlStartLine?: number;
+  auditStatus?: string;
 };
 
 export interface DetailReportDrawerProps {

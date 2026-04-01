@@ -31,6 +31,42 @@ exports[`sqle/components/AuditResultMessage render snap when auditResult is {} 1
 </body>
 `;
 
+exports[`sqle/components/AuditResultMessage render snap when auditResult is empty and audit is doing 1`] = `
+<body>
+  <div>
+    <div
+      class=" css-1avyf41"
+    >
+      <span
+        class="icon-wrapper"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+            stroke="#7470ED"
+          />
+          <path
+            d="M8 3.155V8l4.207 2.404a1 1 0 0 0 .123-.481V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+            fill="#7470ED"
+          />
+        </svg>
+      </span>
+      <span
+        class="text-wrapper"
+      >
+        正在审核
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/components/AuditResultMessage render snap when current result is delete from rule manage & showAnnotation is false 1`] = `
 <body>
   <div>
@@ -186,30 +222,28 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class=" css-1avyf41"
     >
-      <div
-        class="css-1avyf41"
+      <span
+        class="icon-wrapper"
       >
-        <span
-          class="icon-wrapper"
+        <svg
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            height="20"
-            viewBox="0 0 20 20"
-            width="20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-              fill="#41BF9A"
-            />
-          </svg>
-        </span>
-        <span
-          class="text-wrapper"
-        />
-      </div>
+          <path
+            d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+            fill="#41BF9A"
+          />
+        </svg>
+      </span>
+      <span
+        class="text-wrapper"
+      >
+        审核通过
+      </span>
     </div>
   </div>
 </body>

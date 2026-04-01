@@ -51,6 +51,7 @@ export const AuditResultForCreateWorkflowColumn = (
               />
             ) : (
               <AuditResultMessage
+                auditStatus={record.audit_status}
                 auditResult={
                   Array.isArray(result) && result.length ? result[0] : {}
                 }
