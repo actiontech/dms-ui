@@ -85,7 +85,10 @@ describe('i18n key completeness for file upload changes', () => {
       'create.form.sqlInfo.sqlFileTips',
       'create.form.sqlInfo.zipFile',
       'create.form.sqlInfo.zipFileTips',
-      'create.form.sqlInfo.uploadZipFile'
+      'create.form.sqlInfo.uploadZipFile',
+      'create.form.sqlInfo.xlsxTemplateTips',
+      'create.form.sqlInfo.downloadTemplate',
+      'create.form.sqlInfo.noSqlColumnFound'
     ];
 
     it.each(requiredKeys)(
@@ -120,7 +123,10 @@ describe('i18n key completeness for file upload changes', () => {
       'create.sqlInfo.uploadTypeEnum.zipFile',
       'create.sqlInfo.uploadLabelEnum.zipFile',
       'create.sqlInfo.uploadFileTip.sqlFile',
-      'create.sqlInfo.uploadFileTip.zipFile'
+      'create.sqlInfo.uploadFileTip.zipFile',
+      'create.sqlInfo.xlsxTemplateTips',
+      'create.sqlInfo.downloadTemplate',
+      'create.sqlInfo.noSqlColumnFound'
     ];
 
     it.each(requiredKeys)(
@@ -151,12 +157,13 @@ describe('i18n key completeness for file upload changes', () => {
   });
 
   describe('execWorkflow - file upload tip content correctness', () => {
-    it('zh-CN sqlFileTips should mention .sql, .txt, .java', () => {
+    it('zh-CN sqlFileTips should mention .sql, .txt, .java, .xlsx', () => {
       const tip = (execWorkflowZhCN as Record<string, unknown> as any).create
         .form.sqlInfo.sqlFileTips;
       expect(tip).toContain('.sql');
       expect(tip).toContain('.txt');
       expect(tip).toContain('.java');
+      expect(tip).toContain('.xlsx');
     });
 
     it('zh-CN zipFileTips should mention .zip, .rar, .7z', () => {
@@ -167,12 +174,13 @@ describe('i18n key completeness for file upload changes', () => {
       expect(tip).toContain('.7z');
     });
 
-    it('en-US sqlFileTips should mention .sql, .txt, .java', () => {
+    it('en-US sqlFileTips should mention .sql, .txt, .java, .xlsx', () => {
       const tip = (execWorkflowEnUS as Record<string, unknown> as any).create
         .form.sqlInfo.sqlFileTips;
       expect(tip).toContain('.sql');
       expect(tip).toContain('.txt');
       expect(tip).toContain('.java');
+      expect(tip).toContain('.xlsx');
     });
 
     it('en-US zipFileTips should mention .zip, .rar, .7z', () => {
@@ -185,12 +193,13 @@ describe('i18n key completeness for file upload changes', () => {
   });
 
   describe('sqlAudit - file upload tip content correctness', () => {
-    it('zh-CN uploadFileTip.sqlFile should mention .sql, .txt, .java', () => {
+    it('zh-CN uploadFileTip.sqlFile should mention .sql, .txt, .java, .xlsx', () => {
       const tip = (sqlAuditZhCN as Record<string, unknown> as any).create
         .sqlInfo.uploadFileTip.sqlFile;
       expect(tip).toContain('.sql');
       expect(tip).toContain('.txt');
       expect(tip).toContain('.java');
+      expect(tip).toContain('.xlsx');
     });
 
     it('zh-CN uploadFileTip.zipFile should mention .zip, .rar, .7z', () => {
@@ -201,12 +210,13 @@ describe('i18n key completeness for file upload changes', () => {
       expect(tip).toContain('.7z');
     });
 
-    it('en-US uploadFileTip.sqlFile should mention .sql, .txt, .java', () => {
+    it('en-US uploadFileTip.sqlFile should mention .sql, .txt, .java, .xlsx', () => {
       const tip = (sqlAuditEnUS as Record<string, unknown> as any).create
         .sqlInfo.uploadFileTip.sqlFile;
       expect(tip).toContain('.sql');
       expect(tip).toContain('.txt');
       expect(tip).toContain('.java');
+      expect(tip).toContain('.xlsx');
     });
 
     it('en-US uploadFileTip.zipFile should mention .zip, .rar, .7z', () => {
