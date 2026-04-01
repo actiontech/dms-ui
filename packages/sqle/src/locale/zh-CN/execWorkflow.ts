@@ -76,7 +76,7 @@ export default {
 
         sql: 'SQL语句',
         sqlFile: 'SQL文件',
-        sqlFileTips: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java 格式',
+        sqlFileTips: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java, .xlsx 格式',
         mybatisFile: 'Mybatis的XML文件',
         mybatisFileTips: '点击选择XML文件或将文件拖拽到此区域',
         zipFile: '压缩包',
@@ -90,6 +90,9 @@ export default {
         uploadFile: '上传SQL文件',
         updateMybatisFile: '上传Mybatis的XML文件',
         uploadZipFile: '上传压缩包',
+        xlsxTemplateTips: '请使用标准模板格式',
+        downloadTemplate: '下载模板',
+        noSqlColumnFound: '未找到包含SQL的列，请参照模板格式',
 
         audit: '审核',
         analyze: 'SQL分析',

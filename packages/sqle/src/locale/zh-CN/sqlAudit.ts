@@ -101,11 +101,14 @@ export default {
         sshAuthTips: '使用SSH协议克隆仓库时，需要先配置SSH密钥。'
       },
       uploadFileTip: {
-        sqlFile: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java 格式',
+        sqlFile: '点击选择文件或将文件拖拽到此区域，支持 .sql, .txt, .java, .xlsx 格式',
         mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
         zipFile:
           '点击选择压缩包或将文件拖拽到此区域，支持 .zip, .rar, .7z 格式，仅支持对压缩包内 .sql, .xml, .txt, .java 文件做SQL审核'
-      }
+      },
+      xlsxTemplateTips: '请使用标准模板格式',
+      downloadTemplate: '下载模板',
+      noSqlColumnFound: '未找到包含SQL的列，请参照模板格式'
     }
   },
   result: {
