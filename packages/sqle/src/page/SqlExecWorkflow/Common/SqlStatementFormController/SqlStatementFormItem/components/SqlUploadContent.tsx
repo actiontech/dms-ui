@@ -114,7 +114,7 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".sql,.txt,.java"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, generateFieldName('sql_file'))}
             title={t('execWorkflow.create.form.sqlInfo.sqlFileTips')}
@@ -140,7 +140,7 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".zip"
+            accept=".zip,.rar,.7z"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, generateFieldName('zip_file'))}
             title={t('execWorkflow.create.form.sqlInfo.zipFileTips')}

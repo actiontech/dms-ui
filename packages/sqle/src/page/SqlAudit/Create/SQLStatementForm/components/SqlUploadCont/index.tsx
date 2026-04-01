@@ -96,7 +96,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".sql,.txt,.java"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'sqlFile')}
             title={t('sqlAudit.create.sqlInfo.uploadFileTip.sqlFile')}
@@ -145,7 +145,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             getValueFromEvent={getFileFromUploadChangeEvent}
           >
             <CustomDraggerUpload
-              accept=".zip"
+              accept=".zip,.rar,.7z"
               beforeUpload={() => false}
               onRemove={removeFile.bind(null, 'zipFile')}
               title={t('sqlAudit.create.sqlInfo.uploadFileTip.zipFile')}
