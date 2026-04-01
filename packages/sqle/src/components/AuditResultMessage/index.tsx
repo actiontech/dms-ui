@@ -13,17 +13,46 @@ import {
   CheckCircleFilled,
   WarningFilled,
   InfoHexagonFilled,
-  CloseCircleFilled
+  CloseCircleFilled,
+  PartialHexagonFilled
 } from '@actiontech/icons';
+import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
+
+const isSqlTaskAuditInProgress = (auditStatus?: string) =>
+  auditStatus === getAuditTaskSQLsV2FilterAuditStatusEnum.initialized ||
+  auditStatus === getAuditTaskSQLsV2FilterAuditStatusEnum.doing;
+
+const hasMeaningfulAuditContent = (
+  auditResult?: AuditResultMessageProps['auditResult']
+) => {
+  if (!auditResult) {
+    return false;
+  }
+  const { message, level, annotation, rule_name } = auditResult;
+  if (message) {
+    return true;
+  }
+  if (level !== undefined && level !== '') {
+    return true;
+  }
+  if (annotation) {
+    return true;
+  }
+  if (rule_name) {
+    return true;
+  }
+  return false;
+};
 
 const AuditResultMessage = ({
   auditResult,
   styleClass,
   showAnnotation,
   moreBtnLink,
-  isRuleDeleted
+  isRuleDeleted,
+  auditStatus
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
   const [visible, { set }] = useBoolean(true);
@@ -52,7 +81,24 @@ const AuditResultMessage = ({
     return '';
   }, [auditResult, t]);
 
-  if (!auditResult || JSON.stringify(auditResult) === '{}')
+  const auditPendingCopy = useMemo(() => {
+    if (auditStatus === getAuditTaskSQLsV2FilterAuditStatusEnum.initialized) {
+      return t('audit.auditStatus.initialized');
+    }
+    return t('audit.auditStatus.doing');
+  }, [auditStatus, t]);
+
+  if (!hasMeaningfulAuditContent(auditResult)) {
+    if (isSqlTaskAuditInProgress(auditStatus)) {
+      return (
+        <AuditResultMessageStyleWrapper className={classNames([styleClass])}>
+          <span className="icon-wrapper">
+            <PartialHexagonFilled />
+          </span>
+          <span className="text-wrapper">{auditPendingCopy}</span>
+        </AuditResultMessageStyleWrapper>
+      );
+    }
     return (
       <AuditResultMessageStyleWrapper className={classNames([styleClass])}>
         <span className="icon-wrapper">
@@ -63,6 +109,7 @@ const AuditResultMessage = ({
         </span>
       </AuditResultMessageStyleWrapper>
     );
+  }
 
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
@@ -84,11 +131,11 @@ const AuditResultMessage = ({
         if={
           showAnnotation &&
           visible &&
-          (!!auditResult.annotation || !!moreBtnLink)
+          (!!auditResult?.annotation || !!moreBtnLink)
         }
       >
         <div className="annotation-wrapper">
-          {auditResult.annotation}
+          {auditResult?.annotation}
           {/* #if [ee] */}
           <EmptyBox if={!!moreBtnLink}>
             <Typography.Link target="_blank" href={moreBtnLink}>

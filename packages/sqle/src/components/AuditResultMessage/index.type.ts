@@ -6,4 +6,5 @@ export type AuditResultMessageProps = {
   showAnnotation?: boolean;
   moreBtnLink?: string;
   isRuleDeleted?: boolean;
+  auditStatus?: string;
 };

@@ -4,6 +4,7 @@
 
 import AuditResultMessage from '..';
 import { AuditResultMessageProps } from '../index.type';
+import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
 import { renderWithTheme } from '../../../testUtils/customRender';
 
@@ -16,6 +17,14 @@ describe('sqle/components/AuditResultMessage', () => {
     const { baseElement } = customRender({
       auditResult: {},
       styleClass: 'custom-class-name'
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when auditResult is empty and audit is doing', () => {
+    const { baseElement } = customRender({
+      auditResult: {},
+      auditStatus: getAuditTaskSQLsV2FilterAuditStatusEnum.doing
     });
     expect(baseElement).toMatchSnapshot();
   });

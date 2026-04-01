@@ -61,7 +61,10 @@ const ReportDrawer = ({
               </Typography.Title>
               <div className="wrapper-cont">
                 {resultDataIsEmpty ? (
-                  <AuditResultMessage styleClass="result-item" />
+                  <AuditResultMessage
+                    styleClass="result-item"
+                    auditStatus={data?.auditStatus}
+                  />
                 ) : (
                   (data?.auditResult ?? [])?.map(
                     (item: IAuditResultItem, index: number) => {
