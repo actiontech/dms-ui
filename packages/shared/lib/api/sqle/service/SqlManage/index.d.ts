@@ -44,7 +44,9 @@ import {
   ISqlManageCodingReq,
   IPostSqlManageCodingResp,
   IGetSqlManageSqlAnalysisResp,
-  ISqlManageAnalysisChartResp
+  ISqlManageAnalysisChartResp,
+  IGetExplainHistoryResp,
+  IGetExplainHistoryDetailResp
 } from '../common.d';
 
 export interface IGetGlobalSqlManageListParams {
@@ -326,3 +328,24 @@ export interface IGetSqlManageListV3Params {
 }
 
 export interface IGetSqlManageListV3Return extends IGetSqlManageListResp {}
+
+export interface IGetExplainHistoryParams {
+  project_name: string;
+
+  sql_manage_id: string;
+
+  time_range?: string;
+}
+
+export interface IGetExplainHistoryReturn extends IGetExplainHistoryResp {}
+
+export interface IGetExplainHistoryDetailParams {
+  project_name: string;
+
+  sql_manage_id: string;
+
+  explain_id: string;
+}
+
+export interface IGetExplainHistoryDetailReturn
+  extends IGetExplainHistoryDetailResp {}

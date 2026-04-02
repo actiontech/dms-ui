@@ -30,7 +30,11 @@ import {
   IGetSqlManageListV2Return,
   IExportSqlManageV2Params,
   IGetSqlManageListV3Params,
-  IGetSqlManageListV3Return
+  IGetSqlManageListV3Return,
+  IGetExplainHistoryParams,
+  IGetExplainHistoryReturn,
+  IGetExplainHistoryDetailParams,
+  IGetExplainHistoryDetailReturn
 } from './index.d';
 
 class SqlManageService extends ServiceBase {
@@ -224,6 +228,45 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageListV3Return>(
       `/v3/projects/${project_name}/sql_manages`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetExplainHistory(
+    params: IGetExplainHistoryParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_manage_id = paramsData.sql_manage_id;
+    delete paramsData.sql_manage_id;
+
+    return this.get<IGetExplainHistoryReturn>(
+      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/explain_history`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetExplainHistoryDetail(
+    params: IGetExplainHistoryDetailParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_manage_id = paramsData.sql_manage_id;
+    delete paramsData.sql_manage_id;
+
+    const explain_id = paramsData.explain_id;
+    delete paramsData.explain_id;
+
+    return this.get<IGetExplainHistoryDetailReturn>(
+      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/explain_history/${explain_id}`,
       paramsData,
       options
     );

@@ -2,12 +2,17 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
 import { ModalStatus } from '@actiontech/dms-kit/es/types/common.type';
 import { Dayjs } from 'dayjs';
-import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IRelatedSQLInfo,
+  IRawSQLRecord
+} from '@actiontech/shared/lib/api/sqle/service/common';
 type SqlInsightsReduxState = {
   modalStatus: ModalStatus;
   relateSqlList: {
     selectedDateRange: [Dayjs, Dayjs] | null;
     selectedRecord: IRelatedSQLInfo | null;
+    expandedRowKeys: string[];
+    selectedRawSqlRecord: IRawSQLRecord | null;
   };
 };
 
@@ -15,7 +20,9 @@ const initialState: SqlInsightsReduxState = {
   modalStatus: {},
   relateSqlList: {
     selectedDateRange: null,
-    selectedRecord: null
+    selectedRecord: null,
+    expandedRowKeys: [],
+    selectedRawSqlRecord: null
   }
 };
 
@@ -37,6 +44,20 @@ const sqlInsights = createSlice({
     ) {
       state.relateSqlList.selectedRecord = record;
     },
+    updateExpandedRowKeys(
+      state,
+      { payload: { keys } }: PayloadAction<{ keys: string[] }>
+    ) {
+      state.relateSqlList.expandedRowKeys = keys;
+    },
+    updateSelectedRawSqlRecord(
+      state,
+      {
+        payload: { record }
+      }: PayloadAction<{ record: IRawSQLRecord | null }>
+    ) {
+      state.relateSqlList.selectedRawSqlRecord = record;
+    },
     ...commonModalReducer()
   }
 });
@@ -44,6 +65,8 @@ const sqlInsights = createSlice({
 export const {
   updateRelateSqlListDateRange,
   updateRelateSqlSelectedRecord,
+  updateExpandedRowKeys,
+  updateSelectedRawSqlRecord,
   initModalStatus: initSqlInsightsModalStatus,
   updateModalStatus: updateSqlInsightsModalStatus
 } = sqlInsights.actions;
