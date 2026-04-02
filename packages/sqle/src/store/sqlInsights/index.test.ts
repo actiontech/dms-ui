@@ -1,11 +1,16 @@
 import reducers, {
   updateRelateSqlListDateRange,
   updateRelateSqlSelectedRecord,
+  updateExpandedRowKeys,
+  updateSelectedRawSqlRecord,
   initSqlInsightsModalStatus,
   updateSqlInsightsModalStatus
 } from '.';
 import dayjs, { Dayjs } from 'dayjs';
-import { IRelatedSQLInfo } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IRelatedSQLInfo,
+  IRawSQLRecord
+} from '@actiontech/shared/lib/api/sqle/service/common';
 
 describe('store/sqlInsights', () => {
   test('should create action', () => {
@@ -54,13 +59,41 @@ describe('store/sqlInsights', () => {
       type: 'sqlInsights/updateModalStatus',
       payload: { modalName: 'testModal', status: false }
     });
+
+    const keys = ['key1', 'key2'];
+    expect(updateExpandedRowKeys({ keys })).toEqual({
+      type: 'sqlInsights/updateExpandedRowKeys',
+      payload: { keys }
+    });
+
+    const rawSqlRecord: IRawSQLRecord = {
+      id: 1,
+      sql_text: 'SELECT * FROM users WHERE id = 1',
+      execute_time: 0.05,
+      lock_wait_time: 0,
+      execute_at: '2023-01-01T00:00:00Z',
+      is_in_transaction: false,
+      sql_manage_id: 100,
+      source: 'sql_manage'
+    };
+    expect(updateSelectedRawSqlRecord({ record: rawSqlRecord })).toEqual({
+      type: 'sqlInsights/updateSelectedRawSqlRecord',
+      payload: { record: rawSqlRecord }
+    });
+
+    expect(updateSelectedRawSqlRecord({ record: null })).toEqual({
+      type: 'sqlInsights/updateSelectedRawSqlRecord',
+      payload: { record: null }
+    });
   });
 
   const state = {
     modalStatus: {},
     relateSqlList: {
       selectedDateRange: null,
-      selectedRecord: null
+      selectedRecord: null,
+      expandedRowKeys: [] as string[],
+      selectedRawSqlRecord: null
     }
   };
 
@@ -78,7 +111,9 @@ describe('store/sqlInsights', () => {
       modalStatus: {},
       relateSqlList: {
         selectedDateRange: dateRange,
-        selectedRecord: null
+        selectedRecord: null,
+        expandedRowKeys: [],
+        selectedRawSqlRecord: null
       }
     });
   });
@@ -96,7 +131,9 @@ describe('store/sqlInsights', () => {
       modalStatus: {},
       relateSqlList: {
         selectedDateRange: null,
-        selectedRecord: record
+        selectedRecord: record,
+        expandedRowKeys: [],
+        selectedRawSqlRecord: null
       }
     });
   });
@@ -112,7 +149,9 @@ describe('store/sqlInsights', () => {
       modalStatus: modalStatus,
       relateSqlList: {
         selectedDateRange: null,
-        selectedRecord: null
+        selectedRecord: null,
+        expandedRowKeys: [],
+        selectedRawSqlRecord: null
       }
     });
   });
@@ -122,7 +161,9 @@ describe('store/sqlInsights', () => {
       modalStatus: { testModal: false },
       relateSqlList: {
         selectedDateRange: null,
-        selectedRecord: null
+        selectedRecord: null,
+        expandedRowKeys: [] as string[],
+        selectedRawSqlRecord: null
       }
     };
     const newState = reducers(
@@ -137,8 +178,86 @@ describe('store/sqlInsights', () => {
       modalStatus: { testModal: true },
       relateSqlList: {
         selectedDateRange: null,
-        selectedRecord: null
+        selectedRecord: null,
+        expandedRowKeys: [],
+        selectedRawSqlRecord: null
       }
     });
+  });
+
+  test('should update expandedRowKeys when dispatch updateExpandedRowKeys action', () => {
+    const keys = ['fingerprint_1', 'fingerprint_2'];
+    const newState = reducers(state, updateExpandedRowKeys({ keys }));
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      modalStatus: {},
+      relateSqlList: {
+        selectedDateRange: null,
+        selectedRecord: null,
+        expandedRowKeys: keys,
+        selectedRawSqlRecord: null
+      }
+    });
+  });
+
+  test('should clear expandedRowKeys when dispatch with empty array', () => {
+    const stateWithExpanded = {
+      ...state,
+      relateSqlList: {
+        ...state.relateSqlList,
+        expandedRowKeys: ['key1', 'key2']
+      }
+    };
+    const newState = reducers(
+      stateWithExpanded,
+      updateExpandedRowKeys({ keys: [] })
+    );
+    expect(newState.relateSqlList.expandedRowKeys).toEqual([]);
+  });
+
+  test('should update selectedRawSqlRecord when dispatch updateSelectedRawSqlRecord action', () => {
+    const rawSqlRecord: IRawSQLRecord = {
+      id: 1,
+      sql_text: 'SELECT * FROM users WHERE id = 1',
+      execute_time: 0.05,
+      lock_wait_time: 0.01,
+      execute_at: '2023-01-01T10:00:00Z',
+      is_in_transaction: true,
+      sql_manage_id: 100,
+      source: 'sql_manage'
+    };
+    const newState = reducers(
+      state,
+      updateSelectedRawSqlRecord({ record: rawSqlRecord })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      modalStatus: {},
+      relateSqlList: {
+        selectedDateRange: null,
+        selectedRecord: null,
+        expandedRowKeys: [],
+        selectedRawSqlRecord: rawSqlRecord
+      }
+    });
+  });
+
+  test('should clear selectedRawSqlRecord when dispatch with null', () => {
+    const stateWithRecord = {
+      ...state,
+      relateSqlList: {
+        ...state.relateSqlList,
+        selectedRawSqlRecord: {
+          id: 1,
+          sql_text: 'SELECT 1',
+          execute_time: 0.01
+        }
+      }
+    };
+    const newState = reducers(
+      stateWithRecord,
+      updateSelectedRawSqlRecord({ record: null })
+    );
+    expect(newState.relateSqlList.selectedRawSqlRecord).toBeNull();
   });
 });

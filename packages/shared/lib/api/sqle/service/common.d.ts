@@ -547,6 +547,16 @@ export interface IAuditResult {
   rule_name?: string;
 }
 
+export interface IAuditResultItem {
+  rule_name?: string;
+
+  level?: string;
+
+  description?: string;
+
+  suggestion?: string;
+}
+
 export interface IAuditSQLResV1 {
   audit_level?: string;
 
@@ -1259,6 +1269,28 @@ export interface IExplainValidationDetail {
   before_plan?: string;
 
   perform_improve_per?: number;
+}
+
+export interface IExplainHistoryItem {
+  id?: number;
+
+  cost?: number;
+
+  collect_time?: string;
+
+  is_anomaly?: boolean;
+}
+
+export interface IExplainHistoryDetail {
+  id?: number;
+
+  cost?: number;
+
+  collect_time?: string;
+
+  explain_result?: Array<{
+    [key: string]: any;
+  }>;
 }
 
 export interface IFeishuConfigurationV1 {
@@ -2115,6 +2147,22 @@ export interface IGetSqlManageRuleTipsResp {
   message?: string;
 }
 
+export interface IGetExplainHistoryResp {
+  code?: number;
+
+  data?: IExplainHistoryItem[];
+
+  message?: string;
+}
+
+export interface IGetExplainHistoryDetailResp {
+  code?: number;
+
+  data?: IExplainHistoryDetail;
+
+  message?: string;
+}
+
 export interface IGetSqlManageSqlAnalysisResp {
   code?: number;
 
@@ -2897,6 +2945,24 @@ export interface IProjectScore {
   score?: number;
 }
 
+export interface IRawSQLRecord {
+  id?: number;
+
+  sql_text?: string;
+
+  execute_time?: number;
+
+  lock_wait_time?: number;
+
+  execute_at?: string;
+
+  is_in_transaction?: boolean;
+
+  sql_manage_id?: number;
+
+  source?: string;
+}
+
 export interface IReExecuteTaskOnWorkflowReq {
   exec_sql_ids?: number[];
 }
@@ -2931,6 +2997,10 @@ export interface IRelatedSQLInfo {
   source?: RelatedSQLInfoSourceEnum;
 
   sql_fingerprint?: string;
+
+  raw_sql_records?: IRawSQLRecord[];
+
+  raw_sql_total_count?: number;
 }
 
 export interface IRelatedTransactionInfo {
@@ -2941,6 +3011,12 @@ export interface IRelatedTransactionInfo {
   transaction_lock_info?: ITransactionLockInfo[];
 
   transaction_timeline?: ITransactionTimeline;
+
+  data_available?: boolean;
+
+  unavailable_reason?: string;
+
+  collect_time?: string;
 }
 
 export interface IReleaseWorkflows {
@@ -3321,6 +3397,8 @@ export interface ISqlAnalysis {
   sql_explain?: ISQLExplain;
 
   table_metas?: ITableMetas;
+
+  audit_results?: IAuditResultItem[];
 }
 
 export interface ISqlAnalysisChart {
