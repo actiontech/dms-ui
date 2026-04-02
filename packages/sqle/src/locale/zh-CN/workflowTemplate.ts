@@ -151,6 +151,30 @@ export default {
     }
   },
 
+  dataExport: {
+    createStep: {
+      title: '数据导出工单发起',
+      desc: '数据导出工单被创建，等待审批'
+    },
+    reviewTitle: '导出审批',
+    reviewDesc:
+      '编辑审批流程，拖拽移动审批节点顺序，审批人在该步骤可以执行「审批通过」或「驳回」操作',
+    execTitle: '导出执行确认',
+    execDesc: '编辑审批流程，执行人在该步骤可以执行「确认执行」或「驳回」操作',
+    reviewUser: '审批人',
+    execUser: '执行人',
+    reviewUserType: {
+      matchExportApproval: '匹配拥有导出审批权限的成员'
+    },
+    execUserType: {
+      matchExportExecute: '匹配拥有导出执行权限的成员'
+    },
+    operator: {
+      addReview: '添加导出审批节点',
+      addExec: '添加导出执行确认节点'
+    }
+  },
+
   auditLevel: {
     normal: '普通(Normal)',
     error: '错误(Error)',

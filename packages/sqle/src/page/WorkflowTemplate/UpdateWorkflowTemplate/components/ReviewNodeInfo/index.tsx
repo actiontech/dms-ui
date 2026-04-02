@@ -91,13 +91,13 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
       <div className="step-title-wrapper">
         <div className="step-title">
           {props.type === NodeTypeEnum.review
-            ? t('workflowTemplate.step.progressTitle')
-            : t('workflowTemplate.step.execTitle')}
+            ? (props.titleOverrides?.reviewTitle ?? t('workflowTemplate.step.progressTitle'))
+            : (props.titleOverrides?.execTitle ?? t('workflowTemplate.step.execTitle'))}
         </div>
         <div className="step-title-info">
           {props.type === NodeTypeEnum.review
-            ? t('workflowTemplate.step.progressDesc')
-            : t('workflowTemplate.step.execDesc')}
+            ? (props.titleOverrides?.reviewDesc ?? t('workflowTemplate.step.progressDesc'))
+            : (props.titleOverrides?.execDesc ?? t('workflowTemplate.step.execDesc'))}
         </div>
       </div>
       <div className="step-info-wrapper">
@@ -129,13 +129,15 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
           </Form.Item>
           <Form.Item
             label={
-              props.type === NodeTypeEnum.review
-                ? t(
-                    'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
-                  )
-                : t(
-                    'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                  )
+              props.titleOverrides?.matchAuthLabel
+                ? props.titleOverrides.matchAuthLabel
+                : props.type === NodeTypeEnum.review
+                  ? t(
+                      'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
+                    )
+                  : t(
+                      'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                    )
             }
             name={[authorizedParam]}
             valuePropName="checked"
