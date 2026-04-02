@@ -42,8 +42,8 @@ const WorkflowTemplateList: React.FC = () => {
     const stepTypeNameMap: Record<string, string> = {
       sql_review: t('workflowTemplate.progressConfig.review.title'),
       sql_execute: t('workflowTemplate.progressConfig.exec.title'),
-      export_review: t('workflowTemplate.progressConfig.review.title'),
-      export_execute: t('workflowTemplate.progressConfig.exec.title')
+      export_review: t('workflowTemplate.dataExport.reviewTitle'),
+      export_execute: t('workflowTemplate.dataExport.execTitle')
     };
     return steps
       .map((step) => stepTypeNameMap[step.type ?? ''] ?? step.type ?? '')
