@@ -17,6 +17,7 @@ import {
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -39,6 +40,7 @@ describe('first', () => {
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCreateDataExportReduxManage();
+    workflowTemplate.getWorkflowTemplate();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
