@@ -17,5 +17,11 @@ export default {
     title: 'AI性能调优结果详情',
     trackProgressTips: '也可进入 快捷诊断-AI性能调优 页面追踪进度',
     resultTips: '优化进行中，预计5-10分钟后完成。感谢您的耐心等待。'
+  },
+
+  execPlanCostChart: {
+    normalPoint: '正常',
+    anomalyPoint: '异常',
+    currentPoint: '当前时间点'
   }
 };

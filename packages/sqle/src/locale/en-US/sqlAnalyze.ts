@@ -4,5 +4,11 @@ export default {
   pageDesc: 'You can view the parsed SQL statements here.',
 
   sqlExplain: 'SQL Explain',
-  tableTitle: '{{tableName}} table'
+  tableTitle: '{{tableName}} table',
+
+  execPlanCostChart: {
+    normalPoint: 'Normal',
+    anomalyPoint: 'Anomaly',
+    currentPoint: 'Current'
+  }
 };
