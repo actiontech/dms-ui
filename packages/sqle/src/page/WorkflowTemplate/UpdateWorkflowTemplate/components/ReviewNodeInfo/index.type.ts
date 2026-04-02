@@ -29,4 +29,11 @@ export type ReviewAndExecNodeInfoProps = {
   updateReviewAndExecNodeInfo: (data: IWorkFlowStepTemplateResV1) => void;
   generateUsernameSelectOption: () => React.ReactNode;
   getUsernameListLoading: boolean;
+  titleOverrides?: {
+    reviewTitle?: string;
+    reviewDesc?: string;
+    execTitle?: string;
+    execDesc?: string;
+    matchAuthLabel?: string;
+  };
 };

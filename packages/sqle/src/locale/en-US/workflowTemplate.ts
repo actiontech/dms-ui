@@ -161,6 +161,31 @@ export default {
     }
   },
 
+  dataExport: {
+    createStep: {
+      title: 'Data export workflow initiation',
+      desc: 'Data export workflow is created, waiting for approval'
+    },
+    reviewTitle: 'Export approval',
+    reviewDesc:
+      'Edit the approval process, drag and drop to reorder the approval nodes. The approver can execute "approve" or "reject" operations in this step',
+    execTitle: 'Export execution confirmation',
+    execDesc:
+      'Edit the approval process. The executor can execute "confirm execution" or "reject" operations in this step',
+    reviewUser: 'Approver',
+    execUser: 'Executor',
+    reviewUserType: {
+      matchExportApproval: 'Match members who have export approval permissions'
+    },
+    execUserType: {
+      matchExportExecute: 'Match members who have export execution permissions'
+    },
+    operator: {
+      addReview: 'Add export approval node',
+      addExec: 'Add export execution confirmation node'
+    }
+  },
+
   auditLevel: {
     normal: 'Normal',
     error: 'Error',
