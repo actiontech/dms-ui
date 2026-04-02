@@ -275,7 +275,7 @@ export const ROUTE_PATHS = {
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',
         path: ':sqlManageId/analyze',
-        query: 'instance_name&schema'
+        query: 'instance_name&schema&source'
       }
     },
     SQL_INSIGHTS: {
