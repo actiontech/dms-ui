@@ -8,6 +8,7 @@ import {
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../../data/ModalName';
 import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   AddDataExportWorkflowResponseData,
@@ -35,6 +36,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
   beforeEach(() => {
     dataExport.BatchGetDataExportTask();
     dataExport.ListDataExportTaskSQLs();
+    workflowTemplate.getWorkflowTemplate();
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();

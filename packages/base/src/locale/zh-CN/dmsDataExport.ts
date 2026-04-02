@@ -58,6 +58,18 @@ export default {
       methodTitle: '导出方式',
       updateInfoAction: '修改工单'
     },
+    approvalProcess: {
+      title: '审批流程预览',
+      stepType: {
+        exportReview: '导出审批',
+        exportExecute: '导出执行确认'
+      },
+      assigneeMode: {
+        byPermission: '按权限匹配',
+        specifiedUsers: '指定用户: {{users}}'
+      },
+      guidance: '审批流程可在 项目配置 -> 审批流程 中修改'
+    },
     result: {
       success: '工单创建成功',
       guide: '查看刚刚创建的工单',
