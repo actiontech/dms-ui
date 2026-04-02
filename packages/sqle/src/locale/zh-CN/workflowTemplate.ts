@@ -10,11 +10,22 @@ export default {
 
     table: {
       workflowTemplateName: '审批流程模板名称',
-      desc: '审批流程模板描述'
+      desc: '审批流程模板描述',
+      workflowType: '适用类型',
+      stepCount: '审批步骤数',
+      stepDescription: '审批节点描述',
+      updateTime: '更新时间',
+      action: '操作'
+    },
+
+    workflowType: {
+      workflow: '上线工单',
+      data_export: '数据导出'
     },
 
     operator: {
-      create: '创建审批流程模板'
+      create: '创建审批流程模板',
+      edit: '编辑'
     }
   },
 

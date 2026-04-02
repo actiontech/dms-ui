@@ -10,11 +10,22 @@ export default {
 
     table: {
       workflowTemplateName: 'Approval workflow template name',
-      desc: 'Approval workflow template description'
+      desc: 'Approval workflow template description',
+      workflowType: 'Applicable type',
+      stepCount: 'Approval steps',
+      stepDescription: 'Approval node description',
+      updateTime: 'Update time',
+      action: 'Action'
+    },
+
+    workflowType: {
+      workflow: 'SQL workflow',
+      data_export: 'Data export'
     },
 
     operator: {
-      create: 'Create approval workflow template'
+      create: 'Create approval workflow template',
+      edit: 'Edit'
     }
   },
 
