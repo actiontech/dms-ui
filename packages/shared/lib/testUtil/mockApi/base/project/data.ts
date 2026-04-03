@@ -114,8 +114,7 @@ export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
         query_timeout_second: 0,
         audit_enabled: true
       }
-    },
-    is_enable_masking: false
+    }
   },
   {
     name: 'oracle_1',
@@ -143,8 +142,7 @@ export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
         description: 'service name',
         type: 'string'
       }
-    ],
-    is_enable_masking: false
+    ]
   }
 ];
 
