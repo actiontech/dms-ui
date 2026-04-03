@@ -10,6 +10,7 @@ import { dataSourceComparisonTheme } from './dataSourceComparison';
 import { knowledgeTheme } from './knowledge';
 import { sqlInsightTheme } from './sqlInsight';
 import { sqlOptimizationTheme } from './sqlOptimization';
+import { globalDashboardTheme } from '../globalDashboard';
 
 export const sqleLightTheme: SqleTheme = {
   statistics: statisticsTheme,
@@ -21,7 +22,8 @@ export const sqleLightTheme: SqleTheme = {
   dataSourceComparison: dataSourceComparisonTheme,
   knowledgeTheme: knowledgeTheme,
   sqlInsight: sqlInsightTheme,
-  sqlOptimization: sqlOptimizationTheme
+  sqlOptimization: sqlOptimizationTheme,
+  globalDashboard: globalDashboardTheme
 };
 
 const lightTheme = createTheme({

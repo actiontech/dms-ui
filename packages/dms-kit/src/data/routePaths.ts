@@ -125,7 +125,12 @@ export const ROUTE_PATHS = {
   },
   SQLE: {
     PREFIX: '/sqle',
-    GLOBAL_DASHBOARD: '/sqle/global-dashboard',
+    GLOBAL_DASHBOARD: {
+      index: {
+        path: '/sqle/global-dashboard',
+        query: 'tab'
+      }
+    },
     REPORT_STATISTICS: {
       index: {
         path: '/sqle/report-statistics',
@@ -270,7 +275,8 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-management',
-        query: 'instance_id&source'
+        query:
+          'instance_id&source&is_high_priority&is_assignee_self&status_filter'
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',

@@ -10,7 +10,6 @@ import {
 } from '../../../../api/sqle/service/common';
 import {
   OptimizationRecordStatusEnum,
-  OptimizationSQLDetailOptimizeStatusEnum,
   OptimizationSQLDetailStatusEnum,
   OptimizedSQLFeedbackVoteEnum
 } from '../../../../api/sqle/service/common.enum';
@@ -126,7 +125,6 @@ export const optimizedSQLFeedbacksMockData: IOptimizedSQLFeedback[] = [
 export const optimizationDetailMockData: IOptimizationSQLDetail = {
   id: 1,
   optimization_id: '1234567',
-  optimize_status: OptimizationSQLDetailOptimizeStatusEnum.finish,
   optimized_sql_feedbacks: optimizedSQLFeedbacksMockData,
   status: OptimizationSQLDetailStatusEnum.finish,
   status_detail: '',

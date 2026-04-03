@@ -12,6 +12,7 @@ export type GlobalDashboardTableFilterProps = {
   projectOptions: SelectProps['options'];
   instanceIDOptions: SelectProps['options'];
   getInstanceListLoading: boolean;
+  onProjectChange?: (projectId: string) => void;
 };
 
 export enum GlobalDashBoardSegmentedEnum {

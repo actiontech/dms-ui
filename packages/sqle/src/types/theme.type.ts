@@ -8,7 +8,8 @@ import {
   DataSourceComparisonTheme,
   KnowledgeTheme,
   SqlInsight,
-  SqlOptimization
+  SqlOptimization,
+  GlobalDashboardTheme
 } from '../theme/type';
 
 export interface SqleTheme {
@@ -22,6 +23,7 @@ export interface SqleTheme {
   knowledgeTheme: KnowledgeTheme;
   sqlInsight: SqlInsight;
   sqlOptimization: SqlOptimization;
+  globalDashboard: GlobalDashboardTheme;
 }
 
 interface ThemeCustom {
