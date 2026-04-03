@@ -65,7 +65,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
       {
         key: 'global-dashboard',
         title: t('dmsMenu.quickActions.globalDashboard'),
-        path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD,
+        path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index.path,
         icon: <TodoListOutlined width={18} height={18} color="currentColor" />,
         dot: data?.some(
           (i) =>

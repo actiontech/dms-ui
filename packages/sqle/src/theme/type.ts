@@ -1,4 +1,9 @@
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  GetGlobalAccountListV2FilterCardEnum,
+  GetGlobalSqlManageTaskListV2FilterCardEnum,
+  GetGlobalWorkflowListV2FilterCardEnum
+} from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 
 export type ExecWorkflowTheme = {
   list: {
@@ -500,4 +505,12 @@ export type SqlInsight = {
 export type SqlOptimization = {
   rateNumberBackground: string;
   rightContentBackground: string;
+};
+
+export type GlobalDashboardTheme = {
+  filterCardAccent: {
+    sqlGovernance: Record<GetGlobalSqlManageTaskListV2FilterCardEnum, string>;
+    account: Record<GetGlobalAccountListV2FilterCardEnum, string>;
+    workflow: Record<GetGlobalWorkflowListV2FilterCardEnum, string>;
+  };
 };

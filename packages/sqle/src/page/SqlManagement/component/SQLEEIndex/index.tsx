@@ -477,14 +477,45 @@ const SQLEEIndex = () => {
   );
   useEffect(() => {
     const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
-    if (searchParams && !!searchParams.instance_id && !!searchParams.source) {
+
+    const isFilterStatusEnum = (
+      val: string
+    ): val is GetSqlManageListV3FilterStatusEnum => {
+      return Object.values(GetSqlManageListV3FilterStatusEnum).includes(
+        val as GetSqlManageListV3FilterStatusEnum
+      );
+    };
+    const isFilterSourceEnum = (
+      val: string
+    ): val is GetSqlManageListV3FilterSourceEnum => {
+      return Object.values(GetSqlManageListV3FilterSourceEnum).includes(
+        val as GetSqlManageListV3FilterSourceEnum
+      );
+    };
+    if (searchParams) {
       updateAllSelectedFilterItem(true);
-      updateTableFilterInfo({
-        filter_source:
-          searchParams.source as GetSqlManageListV3FilterSourceEnum,
-        filter_instance_id: searchParams.instance_id
-      });
-      setIsHighPriority(true);
+      if (!!searchParams.instance_id) {
+        updateTableFilterInfo({
+          filter_instance_id: searchParams.instance_id
+        });
+      }
+      if (!!searchParams.source && isFilterSourceEnum(searchParams.source)) {
+        updateTableFilterInfo({
+          filter_source: searchParams.source
+        });
+      }
+      if (searchParams.is_high_priority === String(true)) {
+        setIsHighPriority(true);
+      }
+      if (searchParams.is_assignee_self === String(true)) {
+        setAssigneeSelf(true);
+      }
+      if (
+        searchParams.status_filter &&
+        isFilterStatusEnum(searchParams.status_filter)
+      ) {
+        setFilterStatus(searchParams.status_filter);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
