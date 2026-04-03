@@ -93,6 +93,8 @@ export default {
     text: 'Enable scan task for DB instance'
   },
 
+  enableMaskingTask: 'Enable data masking task',
+
   batchImportDataSource: {
     buttonText: 'Batch import DB instances',
     title: 'Batch import DB instances',

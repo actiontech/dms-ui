@@ -129,6 +129,8 @@ export default {
     text: '为数据源开启扫描任务'
   },
 
+  enableMaskingTask: '为数据源开启脱敏任务',
+
   batchImportDataSource: {
     buttonText: '批量导入数据源',
     title: '批量导入数据源',

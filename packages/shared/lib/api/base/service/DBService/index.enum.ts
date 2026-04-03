@@ -10,6 +10,10 @@ export enum ListGlobalDBServicesFilterLastConnectionTestStatusEnum {
   'connect_failed' = 'connect_failed'
 }
 
+export enum ListGlobalDBServicesTipsFunctionSupportEnum {
+  'data_masking' = 'data_masking'
+}
+
 export enum ListDBServicesOrderByEnum {
   'name' = 'name'
 }

@@ -18,7 +18,6 @@ import {
   BasicButton,
   ReminderInformation
 } from '@actiontech/dms-kit';
-import { TypedLink } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -225,9 +224,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         needUpdatePassword: false,
         environmentTagId: props.defaultData.environment_tag?.uid ?? '',
         password: props.defaultData.password,
-        // #if [dms]
-        is_enable_masking: props.defaultData.is_enable_masking,
-        // #endif
         // #if [sqle && ee]
         enableBackup: props.defaultData.enable_backup,
         backupMaxRows: props.defaultData.backup_max_rows,
@@ -240,10 +236,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       setDatabaseType(props.defaultData.db_type ?? '');
     } else {
       props.form.setFieldsValue({
-        needSqlAuditService: true,
-        // #if [dms]
-        is_enable_masking: false
-        // #endif
+        needSqlAuditService: true
       });
       if (params.length > 0) {
         props.form.setFieldsValue({
@@ -508,50 +501,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       </EmptyBox>
       {/* #endif */}
 
-      {/* #if [dms] */}
-      <FormAreaLineStyleWrapper>
-        <FormAreaBlockStyleWrapper>
-          <FormItemSubTitle>
-            {t('dmsDataSource.dataSourceForm.dataMaskConfig')}
-          </FormItemSubTitle>
-          <FormItemLabel
-            className="has-label-tip"
-            label={
-              <div className="label-cont-custom">
-                <div>
-                  {t('dmsDataSource.dataSourceForm.dataMaskConfigLabel')}
-                </div>
-                <EmptyBox if={!!project}>
-                  <div className="tip-content-box">
-                    <Space>
-                      {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
-                      <TypedLink
-                        // todo provision 路由，后续处理
-                        to={`/project/${project}/data-mask-rule-overview`}
-                        target="_blank"
-                      >
-                        {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
-                      </TypedLink>
-                    </Space>
-                  </div>
-                </EmptyBox>
-              </div>
-            }
-            name="is_enable_masking"
-            valuePropName="checked"
-            labelCol={{
-              span: 12
-            }}
-            wrapperCol={{
-              span: 11,
-              push: 1
-            }}
-          >
-            <BasicSwitch />
-          </FormItemLabel>
-        </FormAreaBlockStyleWrapper>
-      </FormAreaLineStyleWrapper>
-      {/* #endif */}
       <BasicModal
         open={modalOpen}
         title={t('dmsDataSource.dataSourceForm.dataSourceConnectError')}

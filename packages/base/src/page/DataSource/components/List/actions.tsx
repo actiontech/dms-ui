@@ -1,4 +1,5 @@
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS,
@@ -9,15 +10,21 @@ import { PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
 import { ReactNode } from 'react';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-export const DataSourceListActions = (
+export const dataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
   onDeleteDataSource: (uid: string, name: string) => void,
   onTestConnection: (uid: string, name: string) => void,
+  // #if [ee]
   navigateToSqlManagementConf: (
     name: string,
     environment: string,
     instanceAuditPlanId?: string
-  ) => void
+  ) => void,
+  // #endif
+  onOpenMaskingTask: (record: IListDBServiceV2 | null) => void,
+  // #if [dms]
+  supportedMaskingDbTypes?: string[] | null
+  // #endif
 ): ActiontechTableActionsWithPermissions<IListDBServiceV2> => {
   return {
     buttons: [
@@ -68,6 +75,21 @@ export const DataSourceListActions = (
         onClick: (record) =>
           onTestConnection(record?.uid ?? '', record?.name ?? '')
       },
+      // #if [dms]
+      {
+        key: 'enable-data-masking-task',
+        text: t('dmsDataSource.enableMaskingTask'),
+        permissions: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE,
+        disabled: (record) =>
+          record?.last_connection_test_status ===
+            ListDBServiceV2LastConnectionTestStatusEnum.connect_failed ||
+          !!record?.is_enable_masking ||
+          (supportedMaskingDbTypes
+            ? !supportedMaskingDbTypes.includes(record?.db_type ?? '')
+            : false),
+        onClick: (record) => onOpenMaskingTask(record ?? null)
+      },
+      // #endif
       // #if [ee]
       {
         key: 'create-audit-plan',
@@ -85,7 +107,7 @@ export const DataSourceListActions = (
     ]
   };
 };
-export const DataSourcePageHeaderActions = (
+export const dataSourcePageHeaderActions = (
   projectID: string,
   batchTestDatabaseConnection: () => void,
   batchTestDatabaseConnectionPending: boolean

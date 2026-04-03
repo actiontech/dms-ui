@@ -1,4 +1,6 @@
 import {
+  AddSensitiveDataDiscoveryTaskExecutionPlanEnum,
+  AddSensitiveDataDiscoveryTaskIdentificationMethodEnum,
   DBServiceIsConnectableReplyConnectionStatusEnum,
   DMSProxyTargetScenarioEnum,
   GetDataExportTaskStatusEnum,
@@ -17,6 +19,11 @@ import {
   ListProjectV1ProjectPriorityEnum,
   ListProjectV2ProjectPriorityEnum,
   ListRoleStatEnum,
+  ListSensitiveDataDiscoveryTaskHistoriesDataStatusEnum,
+  ListSensitiveDataDiscoveryTasksDataExecutionPlanEnum,
+  ListSensitiveDataDiscoveryTasksDataIdentificationMethodEnum,
+  ListSensitiveDataDiscoveryTasksDataStatusEnum,
+  ListSensitiveDataDiscoveryTasksDataTaskTypeEnum,
   ListUserAuthenticationTypeEnum,
   ListUserStatEnum,
   ListUserSystemEnum,
@@ -26,14 +33,21 @@ import {
   OpPermissionItemRangeTypeEnum,
   OperationOperationTypeEnum,
   OperationRecordListItemStatusEnum,
+  ProcessApprovalRequestReqActionEnum,
   ProjectInfoProjectPriorityEnum,
   ProjectV1ProjectPriorityEnum,
   ProjectV2ProjectPriorityEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
+  SensitiveFieldScanResultConfidenceEnum,
+  TableColumnMaskingDetailConfidenceEnum,
+  TableColumnMaskingDetailStatusEnum,
   TestFeishuConfigurationAccountTypeEnum,
   UpdateCurrentUserSystemEnum,
   UpdateProjectProjectPriorityEnum,
   UpdateProjectV2ProjectPriorityEnum,
+  UpdateSensitiveDataDiscoveryTaskExecutionPlanEnum,
+  UpdateSensitiveDataDiscoveryTaskIdentificationMethodEnum,
+  UpdateSensitiveDataDiscoveryTaskReqActionEnum,
   UpdateUserSystemEnum,
   WorkflowRecordStatusEnum,
   WorkflowStepStateEnum
@@ -117,6 +131,22 @@ export interface IAddGatewayReq {
   add_gateway?: IGateway;
 }
 
+export interface IAddMaskingTemplate {
+  name: string;
+
+  rule_ids: number[];
+}
+
+export interface IAddMaskingTemplateReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IAddMaskingTemplateReq {
+  masking_template: IAddMaskingTemplate;
+}
+
 export interface IAddMemberGroupReply {
   code?: number;
 
@@ -195,6 +225,36 @@ export interface IAddRoleReply {
 
 export interface IAddRoleReq {
   role?: IRole;
+}
+
+export interface IAddSensitiveDataDiscoveryTask {
+  cron_expression?: string;
+
+  db_service_uid: string;
+
+  execution_plan: AddSensitiveDataDiscoveryTaskExecutionPlanEnum;
+
+  identification_method: AddSensitiveDataDiscoveryTaskIdentificationMethodEnum;
+
+  is_periodic_scan_enabled?: boolean;
+
+  masking_template_id: number;
+}
+
+export interface IAddSensitiveDataDiscoveryTaskData {
+  suspected_sensitive_fields_tree?: ISuspectedSensitiveFieldsTree;
+}
+
+export interface IAddSensitiveDataDiscoveryTaskReply {
+  code?: number;
+
+  data?: IAddSensitiveDataDiscoveryTaskData;
+
+  message?: string;
+}
+
+export interface IAddSensitiveDataDiscoveryTaskReq {
+  task: IAddSensitiveDataDiscoveryTask;
 }
 
 export interface IAddSession {
@@ -503,6 +563,16 @@ export interface IComponentNameWithVersion {
   version?: string;
 }
 
+export interface IConfigureMaskingRulesReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IConfigureMaskingRulesReq {
+  masking_rule_configs: IMaskingRuleConfig[];
+}
+
 export interface ICreateBusinessTagReq {
   business_tag?: IBusinessTag;
 }
@@ -531,8 +601,6 @@ export interface IDBService {
   enable_backup?: boolean;
 
   host: string;
-
-  is_enable_masking?: boolean;
 
   maintenance_times: IMaintenanceTime[];
 
@@ -607,8 +675,6 @@ export interface IDBServiceV2 {
   environment_tag_uid: string;
 
   host: string;
-
-  is_enable_masking?: boolean;
 
   maintenance_times: IMaintenanceTime[];
 
@@ -712,6 +778,18 @@ export interface IDelSessionReply {
 }
 
 export interface IDeleteGatewayReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IDeleteMaskingTemplateReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IDeleteSensitiveDataDiscoveryTaskReply {
   code?: number;
 
   message?: string;
@@ -927,6 +1005,22 @@ export interface IGetLoginTipsReply {
   message?: string;
 }
 
+export interface IGetMaskingOverviewTreeData {
+  dashboard?: IMaskingOverviewDashboard;
+
+  databases?: {
+    [key: string]: any;
+  };
+}
+
+export interface IGetMaskingOverviewTreeReply {
+  code?: number;
+
+  data?: IGetMaskingOverviewTreeData;
+
+  message?: string;
+}
+
 export interface IGetMemberGroup {
   is_project_admin?: boolean;
 
@@ -1019,6 +1113,20 @@ export interface IGetOperationRecordListReply {
   total_nums?: number;
 }
 
+export interface IGetPlaintextAccessRequestDetailReply {
+  code?: number;
+
+  data?: {
+    masking_preview?: IMaskingPreviewData;
+
+    query_sql?: string;
+
+    reason?: string;
+  };
+
+  message?: string;
+}
+
 export interface IGetProjectTipsReply {
   code?: number;
 
@@ -1075,6 +1183,14 @@ export interface IGetSystemVariablesReply {
   code?: number;
 
   data?: ISystemVariablesResV1;
+
+  message?: string;
+}
+
+export interface IGetTableColumnMaskingDetailsReply {
+  code?: number;
+
+  data?: ITableColumnMaskingDetail[];
 
   message?: string;
 }
@@ -1193,9 +1309,7 @@ export interface IGlobalDataExportWorkflow {
   workflow_uid?: string;
 }
 
-export interface II18nStr {
-  [key: string]: string;
-}
+export interface II18nStr {}
 
 export interface IImportDBService {
   additional_params?: IAdditionalParam[];
@@ -1207,8 +1321,6 @@ export interface IImportDBService {
   desc?: string;
 
   host?: string;
-
-  is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -1237,8 +1349,6 @@ export interface IImportDBServiceV2 {
   environment_tag_name: string;
 
   host?: string;
-
-  is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -1399,6 +1509,28 @@ export interface IListCBOperationLogsReply {
   exec_sql_total?: number;
 
   exec_success_rate?: number;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListCreatableDBServicesForMaskingTaskData {
+  db_service_host?: string;
+
+  db_service_name?: string;
+
+  db_service_port?: string;
+
+  db_service_uid?: string;
+
+  db_type?: string;
+}
+
+export interface IListCreatableDBServicesForMaskingTaskReply {
+  code?: number;
+
+  data?: IListCreatableDBServicesForMaskingTaskData[];
 
   message?: string;
 
@@ -1782,11 +1914,13 @@ export interface IListMaskingRulesData {
 
   effect?: string;
 
+  effect_example_after?: string;
+
+  effect_example_before?: string;
+
   id?: number;
 
   masking_type?: string;
-
-  reference_fields?: string[];
 }
 
 export interface IListMaskingRulesReply {
@@ -1795,6 +1929,26 @@ export interface IListMaskingRulesReply {
   data?: IListMaskingRulesData[];
 
   message?: string;
+}
+
+export interface IListMaskingTemplatesData {
+  id?: number;
+
+  name?: string;
+
+  rule_count?: number;
+
+  rule_names?: string[];
+}
+
+export interface IListMaskingTemplatesReply {
+  code?: number;
+
+  data?: IListMaskingTemplatesData[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IListMember {
@@ -1864,6 +2018,10 @@ export interface IListMemberReply {
 }
 
 export interface IListMemberRoleWithOpRange {
+  member_group?: IProjectMemberGroup;
+
+  op_permissions?: IUidWithName[];
+
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
   range_uids?: IUidWithName[];
@@ -1919,6 +2077,16 @@ export interface IListOpPermissionReply {
   code?: number;
 
   data?: IListOpPermission[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListPendingApprovalRequestsReply {
+  code?: number;
+
+  data?: IPendingApprovalRequestData[];
 
   message?: string;
 
@@ -2013,6 +2181,66 @@ export interface IListRoleReply {
   total_nums?: number;
 }
 
+export interface IListSensitiveDataDiscoveryTaskHistoriesData {
+  executed_at?: string;
+
+  new_sensitive_field_count?: number;
+
+  remark?: string;
+
+  status?: ListSensitiveDataDiscoveryTaskHistoriesDataStatusEnum;
+}
+
+export interface IListSensitiveDataDiscoveryTaskHistoriesReply {
+  code?: number;
+
+  data?: IListSensitiveDataDiscoveryTaskHistoriesData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListSensitiveDataDiscoveryTasksData {
+  db_service_host?: string;
+
+  db_service_name?: string;
+
+  db_service_port?: string;
+
+  db_service_uid?: string;
+
+  execution_frequency?: string;
+
+  execution_plan?: ListSensitiveDataDiscoveryTasksDataExecutionPlanEnum;
+
+  id?: number;
+
+  identification_method?: ListSensitiveDataDiscoveryTasksDataIdentificationMethodEnum;
+
+  is_periodic_scan_enabled?: boolean;
+
+  masking_template_id?: number;
+
+  masking_template_name?: string;
+
+  next_execution_at?: string;
+
+  status?: ListSensitiveDataDiscoveryTasksDataStatusEnum;
+
+  task_type?: ListSensitiveDataDiscoveryTasksDataTaskTypeEnum;
+}
+
+export interface IListSensitiveDataDiscoveryTasksReply {
+  code?: number;
+
+  data?: IListSensitiveDataDiscoveryTasksData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListUser {
   authentication_type?: ListUserAuthenticationTypeEnum;
 
@@ -2093,6 +2321,48 @@ export interface IMaintenanceTime {
   maintenance_start_time?: ITime;
 
   maintenance_stop_time?: ITime;
+}
+
+export interface IMaskingOverviewDashboard {
+  configured_masking_columns?: number;
+
+  pending_confirm_masking_columns?: number;
+
+  total_sensitive_tables?: number;
+}
+
+export interface IMaskingOverviewDatabaseNode {
+  tables?: {
+    [key: string]: any;
+  };
+}
+
+export interface IMaskingOverviewTableData {
+  configured_masking_columns?: number;
+
+  pending_confirm_masking_columns?: number;
+
+  table_id?: number;
+}
+
+export interface IMaskingPreviewData {
+  columns?: string[];
+
+  rows?: string[][];
+}
+
+export interface IMaskingRuleConfig {
+  column_name: string;
+
+  db_service_uid: string;
+
+  is_masking_enabled: boolean;
+
+  masking_rule_id: number;
+
+  schema_name: string;
+
+  table_name: string;
 }
 
 export interface IMember {
@@ -2263,6 +2533,18 @@ export interface IParam {
 
 export type IParams = IParam[];
 
+export interface IPendingApprovalRequestData {
+  applicant_name?: string;
+
+  applied_at?: string;
+
+  data_scope?: string;
+
+  id?: number;
+
+  reason?: string;
+}
+
 export interface IPersonalizationReq {
   file?: IFileHeader;
 
@@ -2309,6 +2591,20 @@ export interface IPreviewImportProjectsV2 {
   desc?: string;
 
   name?: string;
+}
+
+export interface IProcessApprovalRequestReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IProcessApprovalRequestReq {
+  action: ProcessApprovalRequestReqActionEnum;
+
+  approve_remark?: string;
+
+  reject_reason?: string;
 }
 
 export interface IProjectInfo {
@@ -2569,6 +2865,34 @@ export interface ISendSmsCodeReq {
   username?: string;
 }
 
+export interface ISensitiveFieldScanResult {
+  confidence?: SensitiveFieldScanResultConfidenceEnum;
+
+  recommended_masking_rule_id?: number;
+
+  recommended_masking_rule_name?: string;
+
+  scan_info?: string;
+}
+
+export interface ISuspectedSensitiveDatabaseNode {
+  tables?: {
+    [key: string]: any;
+  };
+}
+
+export interface ISuspectedSensitiveFieldsTree {
+  databases?: {
+    [key: string]: any;
+  };
+}
+
+export interface ISuspectedSensitiveTableNode {
+  fields?: {
+    [key: string]: any;
+  };
+}
+
 export interface ISyncGatewayReq {
   gateways?: IGateway[];
 }
@@ -2585,6 +2909,18 @@ export interface ISystemVariablesResV1 {
   system_variable_workflow_expired_hours?: number;
 
   url?: string;
+}
+
+export interface ITableColumnMaskingDetail {
+  column_name?: string;
+
+  confidence?: TableColumnMaskingDetailConfidenceEnum;
+
+  masking_rule_id?: number;
+
+  masking_rule_name?: string;
+
+  status?: TableColumnMaskingDetailStatusEnum;
 }
 
 export interface ITask {
@@ -2776,8 +3112,6 @@ export interface IUpdateDBService {
 
   host: string;
 
-  is_enable_masking?: boolean;
-
   maintenance_times: IMaintenanceTime[];
 
   password?: string;
@@ -2825,8 +3159,6 @@ export interface IUpdateDBServiceV2 {
   environment_tag_uid: string;
 
   host: string;
-
-  is_enable_masking?: boolean;
 
   maintenance_times: IMaintenanceTime[];
 
@@ -2879,6 +3211,20 @@ export interface IUpdateLDAPConfigurationReq {
 
 export interface IUpdateLoginConfigurationReq {
   login?: ILoginConfiguration;
+}
+
+export interface IUpdateMaskingTemplate {
+  rule_ids: number[];
+}
+
+export interface IUpdateMaskingTemplateReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IUpdateMaskingTemplateReq {
+  masking_template: IUpdateMaskingTemplate;
 }
 
 export interface IUpdateMember {
@@ -2961,6 +3307,34 @@ export interface IUpdateSMTPConfiguration {
 
 export interface IUpdateSMTPConfigurationReq {
   smtp_configuration?: IUpdateSMTPConfiguration;
+}
+
+export interface IUpdateSensitiveDataDiscoveryTask {
+  cron_expression?: string;
+
+  execution_plan?: UpdateSensitiveDataDiscoveryTaskExecutionPlanEnum;
+
+  identification_method?: UpdateSensitiveDataDiscoveryTaskIdentificationMethodEnum;
+
+  masking_template_id?: number;
+}
+
+export interface IUpdateSensitiveDataDiscoveryTaskData {
+  suspected_sensitive_fields_tree?: ISuspectedSensitiveFieldsTree;
+}
+
+export interface IUpdateSensitiveDataDiscoveryTaskReply {
+  code?: number;
+
+  data?: IUpdateSensitiveDataDiscoveryTaskData;
+
+  message?: string;
+}
+
+export interface IUpdateSensitiveDataDiscoveryTaskReq {
+  action: UpdateSensitiveDataDiscoveryTaskReqActionEnum;
+
+  task?: IUpdateSensitiveDataDiscoveryTask;
 }
 
 export interface IUpdateSmsConfiguration {
