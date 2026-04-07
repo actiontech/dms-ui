@@ -53,7 +53,11 @@ export default {
       workflowType: '工单类型'
     },
     toolbar: {
-      searchPlaceholder: '搜索工单标题或工单 ID'
+      searchPlaceholder: '搜索标题或工单ID'
+    },
+    action: {
+      goHandle: '去处理',
+      detail: '详情'
     }
   },
   sql: {
@@ -87,7 +91,7 @@ export default {
       detail: '详情'
     },
     toolbar: {
-      searchPlaceholder: '搜索 SQL 指纹、优化建议或来源'
+      searchPlaceholder: '搜索 SQL 指纹'
     }
   },
   pendingSql: {
@@ -172,7 +176,7 @@ export default {
     }
   },
   filter: {
-    project: '项目',
-    instance: '数据源'
+    project: '项目：',
+    instance: '数据源：'
   }
 };

@@ -14,7 +14,9 @@ export default {
   },
   workflow: {
     action: {
-      viewDetail: 'View'
+      viewDetail: 'View',
+      goHandle: 'Handle',
+      detail: 'Detail'
     },
     card: {
       pendingMine: 'Pending Mine',
