@@ -15,7 +15,7 @@ import {
   GlobalWorkflowListItemStatusEnum,
   GlobalWorkflowListItemWorkflowTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { GetGlobalWorkflowListV2WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
+import { workflowTypeLabelDictionary } from './data';
 
 const getPriorityTagColor = (priority?: string) => {
   const p = priority?.toLowerCase();
@@ -109,16 +109,6 @@ const getStatusTagColor = (
   return 'default';
 };
 
-const getWorkflowTypeLabel = (workflowType?: string) => {
-  if (workflowType === GetGlobalWorkflowListV2WorkflowTypeEnum.sql_release) {
-    return t('globalDashboard.workflow.workflowTypeLabel.sql_release');
-  }
-  if (workflowType === GetGlobalWorkflowListV2WorkflowTypeEnum.data_export) {
-    return t('globalDashboard.workflow.workflowTypeLabel.data_export');
-  }
-  return workflowType ?? '-';
-};
-
 const getWorkflowTypeColor = (
   workflowType?: GlobalWorkflowListItemWorkflowTypeEnum
 ): BasicTagProps['color'] => {
@@ -141,12 +131,31 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
       title: t('globalDashboard.workflow.column.name'),
       className: 'ellipsis-column-width',
       render: (name, record) => {
+        const projectID = record.project_uid ?? '';
+        const workflowId = record.workflow_id ?? '';
+        if (
+          record.workflow_type ===
+          GlobalWorkflowListItemWorkflowTypeEnum.data_export
+        ) {
+          return (
+            <TypedLink
+              to={ROUTE_PATHS.BASE.DATA_EXPORT.detail}
+              params={{
+                projectID,
+                workflowID: workflowId
+              }}
+              target="__blank"
+            >
+              {name}
+            </TypedLink>
+          );
+        }
         return (
           <TypedLink
             to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
             params={{
-              projectID: record.project_uid ?? '',
-              workflowId: record.workflow_id ?? ''
+              projectID,
+              workflowId
             }}
             target="__blank"
           >
@@ -158,14 +167,10 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
     {
       dataIndex: 'workflow_type',
       title: t('globalDashboard.workflow.column.type'),
-      filterCustomType: 'select',
-      filterKey: 'workflow_type',
-      filterLabel: t('globalDashboard.workflow.filter.workflowType'),
-      filterOrder: 1,
       render: (workflowType) =>
         workflowType ? (
           <BasicTag color={getWorkflowTypeColor(workflowType)}>
-            {getWorkflowTypeLabel(workflowType)}
+            {workflowTypeLabelDictionary()[workflowType]}
           </BasicTag>
         ) : (
           <span>-</span>

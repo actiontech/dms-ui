@@ -1,11 +1,10 @@
 import {
   ActiontechTable,
   ActiontechTableWrapper,
-  FilterCustomProps,
+  CustomSegmentedFilter,
   getErrorMessage,
-  TableFilterContainer,
+  ROUTE_PATHS,
   TableToolbar,
-  useTableFilterContainer,
   useTableRequestParams
 } from '@actiontech/dms-kit';
 import {
@@ -14,6 +13,7 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import { useRequest } from 'ahooks';
+import { message } from 'antd';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StatCardsStyleWrapper, StatCardItemStyleWrapper } from '../../style';
@@ -24,8 +24,12 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 import { IGlobalWorkflowListItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GlobalDashboardWorkflowTableFilterParam } from './index.type';
+import { workflowPanelTableActions } from './action';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { GlobalDashboardService } from '@actiontech/shared/lib/api/sqle';
+import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { parse2ReactRouterPath } from '@actiontech/shared';
+import { workflowTypeLabelDictionary } from './data';
 
 type WorkflowPanelProps = {
   projectId?: string;
@@ -119,35 +123,43 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
 
   const columns = useMemo(() => workflowPanelColumns(), []);
 
-  const filterCustomProps = useMemo(() => {
-    return new Map<keyof IGlobalWorkflowListItem, FilterCustomProps>([
-      [
-        'workflow_type',
-        {
-          options: [
-            {
-              label: t(
-                'globalDashboard.workflow.workflowTypeLabel.sql_release'
-              ),
-              value: GetGlobalWorkflowListV2WorkflowTypeEnum.sql_release
-            },
-            {
-              label: t(
-                'globalDashboard.workflow.workflowTypeLabel.data_export'
-              ),
-              value: GetGlobalWorkflowListV2WorkflowTypeEnum.data_export
-            }
-          ]
+  const openWorkflow = useCallback(
+    (record: IGlobalWorkflowListItem) => {
+      const getGlobalWorkflowDetailPath = (): string | null => {
+        const projectID = record.project_uid?.trim();
+        const workflowId = record.workflow_id?.trim();
+        if (!projectID || !workflowId) {
+          return null;
         }
-      ]
-    ]);
-  }, [t]);
+        if (
+          record.workflow_type ===
+          GlobalWorkflowListItemWorkflowTypeEnum.data_export
+        ) {
+          return parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
+            params: { projectID, workflowID: workflowId }
+          });
+        }
+        return parse2ReactRouterPath(
+          ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+          {
+            params: { projectID, workflowId }
+          }
+        );
+      };
+      const path = getGlobalWorkflowDetailPath();
+      if (!path) {
+        message.warning(t('globalDashboard.common.missingProject'));
+        return;
+      }
+      window.open(path, '_blank');
+    },
+    [t]
+  );
 
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer<
-      IGlobalWorkflowListItem,
-      GlobalDashboardWorkflowTableFilterParam
-    >(columns, updateTableFilterInfo);
+  const actions = useMemo(
+    () => workflowPanelTableActions(workflowCard, openWorkflow),
+    [workflowCard, openWorkflow]
+  );
 
   const tableLoading = workflowList.loading || workflowStats.loading;
 
@@ -215,10 +227,6 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
             refresh: workflowList.refresh,
             disabled: tableLoading
           }}
-          filterButton={{
-            filterButtonMeta,
-            updateAllSelectedFilterItem
-          }}
           searchInput={{
             placeholder: t(
               'globalDashboard.workflow.toolbar.searchPlaceholder'
@@ -228,17 +236,29 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
               refreshBySearchKeyword();
             }
           }}
-        />
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          disabled={tableLoading}
-          filterCustomProps={filterCustomProps}
-        />
+        >
+          <CustomSegmentedFilter<GetGlobalWorkflowListV2WorkflowTypeEnum | null>
+            value={tableFilterInfo.workflow_type ?? null}
+            onChange={(val) => {
+              updateTableFilterInfo(() =>
+                val == null
+                  ? ({} as GlobalDashboardWorkflowTableFilterParam)
+                  : { workflow_type: val }
+              );
+            }}
+            labelDictionary={workflowTypeLabelDictionary()}
+            options={[
+              GetGlobalWorkflowListV2WorkflowTypeEnum.sql_release,
+              GetGlobalWorkflowListV2WorkflowTypeEnum.data_export
+            ]}
+            withAll
+          />
+        </TableToolbar>
         <ActiontechTable
           dataSource={workflowList.data?.data?.data?.workflows}
           rowKey="workflow_id"
           columns={columns}
+          actions={actions}
           pagination={{
             total: workflowList.data?.data?.data?.total_nums ?? 0,
             current: pagination.page_index,

@@ -20,6 +20,7 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
           <Form.Item noStyle name="projectId">
             <CustomSelect
               prefix={t('globalDashboard.filter.project')}
+              placeholder={t('common.all')}
               suffixIcon={null}
               bordered={false}
               options={projectOptions}
@@ -31,6 +32,7 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
           <Form.Item noStyle name="instanceId">
             <CustomSelect
               prefix={t('globalDashboard.filter.instance')}
+              placeholder={t('common.all')}
               suffixIcon={null}
               bordered={false}
               options={instanceIDOptions}
