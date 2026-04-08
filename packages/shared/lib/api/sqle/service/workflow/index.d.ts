@@ -3,6 +3,7 @@ import {
   IGetWorkflowsResV1,
   IGlobalWorkflowStatisticsResV1,
   IGetWorkflowTemplateResV1,
+  IGetWorkflowTemplatesResV1,
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
   ICreateWorkflowReqV1,
@@ -129,10 +130,19 @@ export interface IGetGlobalWorkflowStatisticsReturn
 
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;
+
+  workflow_type?: string;
 }
 
 export interface IGetWorkflowTemplateV1Return
   extends IGetWorkflowTemplateResV1 {}
+
+export interface IGetWorkflowTemplatesV1Params {
+  project_name: string;
+}
+
+export interface IGetWorkflowTemplatesV1Return
+  extends IGetWorkflowTemplatesResV1 {}
 
 export interface IUpdateWorkflowTemplateV1Params
   extends IUpdateWorkflowTemplateReqV1 {

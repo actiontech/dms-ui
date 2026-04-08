@@ -94,6 +94,7 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
+  WorkflowTemplateTypeEnum,
   pipelineNodeBaseAuditMethodEnum,
   pipelineNodeBaseObjectTypeEnum,
   pipelineNodeBaseTypeEnum,
@@ -2349,6 +2350,18 @@ export interface IGetWorkflowTemplateResV1 {
   message?: string;
 }
 
+export interface IGetWorkflowTemplatesResV1 {
+  code?: number;
+
+  data?: IWorkflowTemplatesListData;
+
+  message?: string;
+}
+
+export interface IWorkflowTemplatesListData {
+  workflow_template_list?: IWorkflowTemplateDetailResV1[];
+}
+
 export interface IGetWorkflowsResV1 {
   code?: number;
 
@@ -3965,6 +3978,8 @@ export interface IUpdateWorkflowTemplateReqV1 {
   desc?: string;
 
   workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
+
+  workflow_type?: WorkflowTemplateTypeEnum;
 }
 
 export interface IUserTipResV1 {
@@ -4215,6 +4230,8 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_step_template_list?: IWorkFlowStepTemplateResV1[];
 
   workflow_template_name?: string;
+
+  workflow_type?: WorkflowTemplateTypeEnum;
 }
 
 export interface ICreatePipelineResData {

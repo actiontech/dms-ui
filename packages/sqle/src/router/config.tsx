@@ -70,10 +70,10 @@ const UpdateRuleTemplate = React.lazy(
     )
 );
 
-const WorkflowTemplateDetail = React.lazy(
+const WorkflowTemplateList = React.lazy(
   () =>
     import(
-      /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
+      /* webpackChunkName: "WorkflowTemplateList" */ '../page/WorkflowTemplate/WorkflowTemplateList'
     )
 );
 const SqlManagement = React.lazy(
@@ -389,8 +389,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     children: [
       {
         index: true,
-        element: <WorkflowTemplateDetail />,
-        key: 'progressDetail'
+        element: <WorkflowTemplateList />,
+        key: 'progressList'
       },
       // #if [ee]
       {

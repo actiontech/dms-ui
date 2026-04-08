@@ -10,11 +10,22 @@ export default {
 
     table: {
       workflowTemplateName: 'Approval workflow template name',
-      desc: 'Approval workflow template description'
+      desc: 'Approval workflow template description',
+      workflowType: 'Applicable type',
+      stepCount: 'Approval steps',
+      stepDescription: 'Approval node description',
+      updateTime: 'Update time',
+      action: 'Action'
+    },
+
+    workflowType: {
+      workflow: 'SQL workflow',
+      data_export: 'Data export'
     },
 
     operator: {
-      create: 'Create approval workflow template'
+      create: 'Create approval workflow template',
+      edit: 'Edit'
     }
   },
 
@@ -147,6 +158,31 @@ export default {
         'The approval workflow template can set up to 4 audit steps, or no audit steps can be set;',
       rule3:
         'When specifying the executor for a single step, at least one specified person needs to be added, and a maximum of three specified persons can be added.'
+    }
+  },
+
+  dataExport: {
+    createStep: {
+      title: 'Data export workflow initiation',
+      desc: 'Data export workflow is created, waiting for approval'
+    },
+    reviewTitle: 'Export approval',
+    reviewDesc:
+      'Edit the approval process, drag and drop to reorder the approval nodes. The approver can execute "approve" or "reject" operations in this step',
+    execTitle: 'Export execution confirmation',
+    execDesc:
+      'Edit the approval process. The executor can execute "confirm execution" or "reject" operations in this step',
+    reviewUser: 'Approver',
+    execUser: 'Executor',
+    reviewUserType: {
+      matchExportApproval: 'Match members who have export approval permissions'
+    },
+    execUserType: {
+      matchExportExecute: 'Match members who have export execution permissions'
+    },
+    operator: {
+      addReview: 'Add export approval node',
+      addExec: 'Add export execution confirmation node'
     }
   },
 

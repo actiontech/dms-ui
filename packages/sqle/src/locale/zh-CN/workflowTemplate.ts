@@ -10,11 +10,22 @@ export default {
 
     table: {
       workflowTemplateName: '审批流程模板名称',
-      desc: '审批流程模板描述'
+      desc: '审批流程模板描述',
+      workflowType: '适用类型',
+      stepCount: '审批步骤数',
+      stepDescription: '审批节点描述',
+      updateTime: '更新时间',
+      action: '操作'
+    },
+
+    workflowType: {
+      workflow: '上线工单',
+      data_export: '数据导出'
     },
 
     operator: {
-      create: '创建审批流程模板'
+      create: '创建审批流程模板',
+      edit: '编辑'
     }
   },
 
@@ -137,6 +148,30 @@ export default {
       rule2: '审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；',
       rule3:
         '单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。'
+    }
+  },
+
+  dataExport: {
+    createStep: {
+      title: '数据导出工单发起',
+      desc: '数据导出工单被创建，等待审批'
+    },
+    reviewTitle: '导出审批',
+    reviewDesc:
+      '编辑审批流程，拖拽移动审批节点顺序，审批人在该步骤可以执行「审批通过」或「驳回」操作',
+    execTitle: '导出执行确认',
+    execDesc: '编辑审批流程，执行人在该步骤可以执行「确认执行」或「驳回」操作',
+    reviewUser: '审批人',
+    execUser: '执行人',
+    reviewUserType: {
+      matchExportApproval: '匹配拥有导出审批权限的成员'
+    },
+    execUserType: {
+      matchExportExecute: '匹配拥有导出执行权限的成员'
+    },
+    operator: {
+      addReview: '添加导出审批节点',
+      addExec: '添加导出执行确认节点'
     }
   },
 

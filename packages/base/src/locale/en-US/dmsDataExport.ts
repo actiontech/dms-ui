@@ -53,6 +53,19 @@ export default {
       submitAction: 'Submit task',
       submitTips: 'Only supports creating export tasks for dql statements'
     },
+    approvalProcess: {
+      title: 'Approval Process Preview',
+      stepType: {
+        exportReview: 'Export Approval',
+        exportExecute: 'Export Execution Confirmation'
+      },
+      assigneeMode: {
+        byPermission: 'By permission matching',
+        specifiedUsers: 'Specified users: {{users}}'
+      },
+      guidance:
+        'The approval process can be modified in Project Configuration -> Approval Process'
+    },
     result: {
       success: 'Task created successfully',
       guide: 'View the newly created task'
