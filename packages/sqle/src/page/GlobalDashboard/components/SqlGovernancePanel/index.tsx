@@ -20,7 +20,6 @@ import { sqlGovernancePanelColumns } from './column';
 import { sqlGovernancePanelTableActions } from './action';
 import { IGlobalSqlManageTaskItemV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { GetGlobalSqlManageTaskListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
-import { usePermission } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { parse2ReactRouterPath } from '@actiontech/shared';
 import { GetSqlManageListV3FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
@@ -39,7 +38,6 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
-  const { checkActionPermission } = usePermission();
   const [sqlFilterCard, setSqlFilterCard] =
     useState<GetGlobalSqlManageTaskListV2FilterCardEnum>(
       GetGlobalSqlManageTaskListV2FilterCardEnum.pending
@@ -137,13 +135,8 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
   const columns = useMemo(() => sqlGovernancePanelColumns(), []);
 
   const actions = useMemo(
-    () =>
-      sqlGovernancePanelTableActions(
-        onOptimize,
-        onDetail,
-        checkActionPermission
-      ),
-    [onOptimize, onDetail, checkActionPermission]
+    () => sqlGovernancePanelTableActions(onOptimize, onDetail),
+    [onOptimize, onDetail]
   );
 
   const tableLoading = sqlList.loading || sqlStats.loading;
