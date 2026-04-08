@@ -63,7 +63,7 @@ describe('base/System-ee', () => {
       '.ant-segmented-item-label',
       baseElement
     );
-    expect(segmentedEle.length).toBe(7);
+    expect(segmentedEle.length).toBe(8);
     fireEvent.click(segmentedEle[1]);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
