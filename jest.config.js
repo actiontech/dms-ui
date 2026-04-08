@@ -28,16 +28,14 @@ const sharedModuleNameMapper = {
 const sharedIgnorePatterns = ['/node_modules/', '/demo/', '/demos/'];
 
 // Naming conventions for condition-specific test files:
-//   *.ce.test.{ts,tsx}       → CE project  (ee=false, ce=true, sqle=true)
-//   *.ce.sqle.test.{ts,tsx}  → CE project  (ee=false, ce=true, sqle=true)
-//   *.sqle.test.{ts,tsx}     → sqle project (ee=true,  ce=false, sqle=true, dms=false)
-//   *.ee.test.{ts,tsx}       → ee project  (ee=true, dms=true)  [default]
-//   *.test.{ts,tsx}          → ee project  (default)
-const CE_TEST_PATTERN = '\\.ce\\.test\\.[jt]sx?$';
-const CE_TEST_PATH_PATTERN = '/ce\\.test\\.[jt]sx?$';
-const SQLE_TEST_PATTERN = '\\.sqle\\.test\\.[jt]sx?$';
-const SQLE_TEST_PATH_PATTERN = '/sqle\\.test\\.[jt]sx?$';
-const CE_SQLE_TEST_PATTERN = '\\.ce\\.sqle\\.test\\.[jt]sx?$';
+//   *.ce.test.{ts,tsx}       → CE project  (ee=false, ce=true, sqle=true, dms=false) 不要强制匹配 ce.test， ce.[可选项].test.{ts,tsx}
+//   *.sqle.test.{ts,tsx}     → EE project (ee=true,  ce=false, sqle=true, dms=false) 同上
+//   *.provision.test.{ts,tsx} → PROVISION project (ee=true, ce=false, sqle=false, provision=true, dms=false) 同上
+//   *.test.{ts,tsx}          → DMS project  (ee=true, ce=false, sqle=true, provision=true, dms=true)  [default] 同上
+// 实现：`.ce.` / `.sqle.` / `.provision.` 与 `.test.` 之间可有零段或多段 `.xxx.`（正则见下方 *_TEST_FILE_RE）。
+const CE_TEST_FILE_RE = '\\.ce(\\.[^./]+)*\\.test\\.[jt]sx?$';
+const SQLE_TEST_FILE_RE = '\\.sqle(\\.[^./]+)*\\.test\\.[jt]sx?$';
+const PROVISION_TEST_FILE_RE = '\\.provision(\\.[^./]+)*\\.test\\.[jt]sx?$';
 
 const sharedProjectConfig = {
   transform: {
@@ -71,68 +69,69 @@ module.exports = {
   projects: [
     {
       ...sharedProjectConfig,
-      displayName: 'ee',
+      displayName: 'dms',
       globals: {
         TEST_CONDITIONS: {
           ee: true,
           ce: false,
           sqle: true,
           provision: true,
-          dms: true,
-          demo: false
+          dms: true
         }
       },
-      // Exclude CE-named and sqle-named test files; they have dedicated projects
+      // Default tests only: exclude CE / sqle / provision condition tests (dedicated projects)
       testPathIgnorePatterns: [
         ...sharedIgnorePatterns,
-        CE_TEST_PATTERN,
-        CE_TEST_PATH_PATTERN,
-        SQLE_TEST_PATTERN,
-        SQLE_TEST_PATH_PATTERN
+        CE_TEST_FILE_RE,
+        SQLE_TEST_FILE_RE,
+        PROVISION_TEST_FILE_RE
       ]
     },
     {
       ...sharedProjectConfig,
-      displayName: 'ce',
+      displayName: 'sqle-ce',
       globals: {
         TEST_CONDITIONS: {
           ee: false,
           ce: true,
           sqle: true,
           provision: false,
-          dms: false,
-          demo: false
+          dms: false
         }
       },
-      // CE project: run ce-named and ce.sqle-named test files
-      testMatch: [
-        '**/*.ce.test.{ts,tsx}',
-        '**/ce.test.{ts,tsx}',
-        '**/*.ce.sqle.test.{ts,tsx}',
-        '**/ce.sqle.test.{ts,tsx}'
-      ],
+      testRegex: CE_TEST_FILE_RE,
       testPathIgnorePatterns: sharedIgnorePatterns
     },
     {
       ...sharedProjectConfig,
-      displayName: 'sqle',
+      displayName: 'sqle-ee',
       globals: {
         TEST_CONDITIONS: {
-          // EE + SQLE without DMS/PROVISION — covers [sqle && !dms] conditions
           ee: true,
           ce: false,
           sqle: true,
           provision: false,
-          dms: false,
-          demo: false
+          dms: false
         }
       },
-      // sqle project: run sqle-named files, but NOT ce.sqle files (those belong to CE project)
-      testMatch: ['**/*.sqle.test.{ts,tsx}', '**/sqle.test.{ts,tsx}'],
-      testPathIgnorePatterns: [
-        ...sharedIgnorePatterns,
-        CE_SQLE_TEST_PATTERN
-      ]
+      testRegex: SQLE_TEST_FILE_RE,
+      // e.g. *.ce.sqle.test.* belongs to CE, not EE
+      testPathIgnorePatterns: [...sharedIgnorePatterns, CE_TEST_FILE_RE]
+    },
+    {
+      ...sharedProjectConfig,
+      displayName: 'provision',
+      globals: {
+        TEST_CONDITIONS: {
+          ee: true,
+          ce: false,
+          sqle: false,
+          provision: true,
+          dms: false
+        }
+      },
+      testRegex: PROVISION_TEST_FILE_RE,
+      testPathIgnorePatterns: [...sharedIgnorePatterns, CE_TEST_FILE_RE]
     }
   ],
   reporters: [
