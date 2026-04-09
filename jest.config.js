@@ -54,6 +54,8 @@ const sharedProjectConfig = {
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
     'packages/**/src/App.tsx',
     'packages/shared/api/common/**',
+    '!packages/dms-kit/es/**',
+    '!packages/dms-kit/lib/**',
     '!packages/shared/lib/testUtil/**',
     '!packages/shared/lib/api/**',
     '!packages/**/index.type.ts',
