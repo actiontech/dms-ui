@@ -13,7 +13,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               height="18"
@@ -28,7 +28,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test1
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test1
+              </div>
             </span>
           </div>
         </div>
@@ -40,7 +44,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               class="project-flag-icon"
@@ -58,7 +62,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test2
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test2
+              </div>
             </span>
           </div>
         </div>
@@ -81,7 +89,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               height="18"
@@ -96,7 +104,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test1
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test1
+              </div>
             </span>
           </div>
         </div>
@@ -108,7 +120,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               class="project-flag-icon"
@@ -126,7 +138,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test2
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test2
+              </div>
             </span>
           </div>
         </div>
@@ -149,7 +165,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               height="18"
@@ -164,7 +180,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test1
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test1
+              </div>
             </span>
           </div>
         </div>
@@ -176,7 +196,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
           class="ant-select-item-option-content"
         >
           <div
-            class="css-gmbytu"
+            class="css-1abqcxt"
           >
             <svg
               class="project-flag-icon"
@@ -194,7 +214,11 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
             <span
               class="project-selector-label-text"
             >
-              test2
+              <div
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+              >
+                test2
+              </div>
             </span>
           </div>
         </div>

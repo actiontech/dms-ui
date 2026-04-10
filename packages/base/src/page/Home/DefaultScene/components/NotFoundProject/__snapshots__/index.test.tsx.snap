@@ -259,7 +259,7 @@ exports[`test base/home/NotFoundProject should match snapshot 1`] = `
                         class="ant-select-item-option-content"
                       >
                         <div
-                          class="css-gmbytu"
+                          class="css-1abqcxt"
                         >
                           <svg
                             height="18"
@@ -294,7 +294,7 @@ exports[`test base/home/NotFoundProject should match snapshot 1`] = `
                         class="ant-select-item-option-content"
                       >
                         <div
-                          class="css-gmbytu"
+                          class="css-1abqcxt"
                         >
                           <svg
                             height="18"

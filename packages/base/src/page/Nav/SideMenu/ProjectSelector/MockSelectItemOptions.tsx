@@ -7,7 +7,7 @@ import {
 import { IBindProject } from './index.type';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const MockSelectItemOptions: React.FC<{
   list: IBindProject[];
@@ -51,7 +51,11 @@ const MockSelectItemOptions: React.FC<{
                 )}
 
                 <span className="project-selector-label-text">
-                  {v.project_name}
+                  <BasicTypographyEllipsis
+                    tooltipsMaxWidth={400}
+                    textCont={v.project_name ?? ''}
+                    copyable={false}
+                  />
                 </span>
               </ProjectSelectorLabelStyleWrapper>
             </div>

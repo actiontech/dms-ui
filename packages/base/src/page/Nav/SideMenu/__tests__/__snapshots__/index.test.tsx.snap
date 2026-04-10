@@ -837,7 +837,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                         class="ant-select-item-option-content"
                       >
                         <div
-                          class="css-gmbytu"
+                          class="css-1abqcxt"
                         >
                           <svg
                             height="18"
@@ -852,7 +852,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                           <span
                             class="project-selector-label-text"
                           >
-                            test_project_1
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                            >
+                              test_project_1
+                            </div>
                           </span>
                         </div>
                       </div>
@@ -883,7 +887,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 class="ant-select-item-option-content"
               >
                 <div
-                  class="css-gmbytu"
+                  class="css-1abqcxt"
                 >
                   <svg
                     height="18"
@@ -898,7 +902,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   <span
                     class="project-selector-label-text"
                   >
-                    test_project_1
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                    >
+                      test_project_1
+                    </div>
                   </span>
                 </div>
               </div>
@@ -910,7 +918,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 class="ant-select-item-option-content"
               >
                 <div
-                  class="css-gmbytu"
+                  class="css-1abqcxt"
                 >
                   <svg
                     class="project-flag-icon"
@@ -928,7 +936,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   <span
                     class="project-selector-label-text"
                   >
-                    test_project_2
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                    >
+                      test_project_2
+                    </div>
                   </span>
                 </div>
               </div>
@@ -940,7 +952,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 class="ant-select-item-option-content"
               >
                 <div
-                  class="css-gmbytu"
+                  class="css-1abqcxt"
                 >
                   <svg
                     height="18"
@@ -955,7 +967,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   <span
                     class="project-selector-label-text"
                   >
-                    test_project_3
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                    >
+                      test_project_3
+                    </div>
                   </span>
                 </div>
               </div>
