@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
-import { SideMenuStyleWrapper } from '@actiontech/dms-kit';
+import {
+  BasicTypographyEllipsis,
+  SideMenuStyleWrapper
+} from '@actiontech/dms-kit';
 import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
@@ -118,7 +121,11 @@ const SideMenu: React.FC = () => {
             )}
 
             <span className="project-selector-label-text">
-              {v.project_name}
+              <BasicTypographyEllipsis
+                tooltipsMaxWidth={400}
+                textCont={v.project_name ?? ''}
+                copyable={false}
+              />
             </span>
           </ProjectSelectorLabelStyleWrapper>
         ),
