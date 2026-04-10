@@ -262,6 +262,13 @@ export default {
     duplicate: 'Deduplication',
     downloadSql: 'Download SQL statement',
     downloadReport: 'Download audit report',
+    exportFormat: {
+      html: 'HTML Format',
+      pdf: 'PDF Format',
+      csv: 'CSV Format',
+      word: 'WORD Format (.docx)'
+    },
+    exportFormatNotSupported: 'This export format is only available in Enterprise Edition',
     table: {
       number: 'Serial number',
       auditLevel: 'Rule level',

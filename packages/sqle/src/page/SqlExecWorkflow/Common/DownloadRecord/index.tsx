@@ -15,12 +15,24 @@ import {
 import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 // import { useCurrentProject } from '@actiontech/shared/lib/features';
 
+const REPORT_FORMAT_KEYS = [
+  'html',
+  // #if [ee]
+  'pdf',
+  // #endif
+  'csv',
+  // #if [ee]
+  'word'
+  // #endif
+] as const;
+
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
   taskId
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [reportExpanded, setReportExpanded] = useState(false);
 
   // const { projectName } = useCurrentProject();
 
@@ -35,17 +47,20 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
     );
     setOpen(false);
   };
-  const downloadReport = () => {
+
+  const downloadReport = (format: string) => {
     task.downloadAuditTaskSQLReportV1(
       {
         task_id: taskId,
-        no_duplicate: noDuplicate
+        no_duplicate: noDuplicate,
+        export_format: format
       },
       {
         responseType: 'blob'
       }
     );
     setOpen(false);
+    setReportExpanded(false);
   };
 
   // todo 后端暂未实现导出回滚sql接口 暂时注释导出回滚sql相关代码
@@ -66,13 +81,37 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
   const renderDownloadDropdown = () => {
     return (
       <DownloadDropdownStyleWrapper>
-        <div className="download-record-item" onClick={downloadReport}>
+        <div
+          className="download-record-item"
+          onClick={() => setReportExpanded(!reportExpanded)}
+        >
           <ProfileFilled
             color="currentColor"
             className="download-record-item-icon"
           />
           {t('execWorkflow.audit.downloadReport')}
+          <CommonIconStyleWrapper className="download-record-item-arrow">
+            {reportExpanded ? (
+              <UpOutlined color="currentColor" />
+            ) : (
+              <DownOutlined color="currentColor" />
+            )}
+          </CommonIconStyleWrapper>
         </div>
+
+        {reportExpanded && (
+          <div className="download-record-sub-menu">
+            {REPORT_FORMAT_KEYS.map((formatKey) => (
+              <div
+                key={formatKey}
+                className="download-record-sub-item"
+                onClick={() => downloadReport(formatKey)}
+              >
+                {t(`execWorkflow.audit.exportFormat.${formatKey}`)}
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="download-record-item" onClick={downloadSql}>
           <PanelCardOutlined className="download-record-item-icon" />
@@ -92,7 +131,12 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
       open={open}
       arrow={false}
       trigger={['click']}
-      onOpenChange={setOpen}
+      onOpenChange={(newOpen) => {
+        setOpen(newOpen);
+        if (!newOpen) {
+          setReportExpanded(false);
+        }
+      }}
       placement="bottomLeft"
       content={renderDownloadDropdown()}
       overlayInnerStyle={{
