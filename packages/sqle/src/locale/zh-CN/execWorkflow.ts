@@ -307,6 +307,8 @@ export default {
       word: 'WORD 格式 (.docx)'
     },
     exportFormatNotSupported: '该导出格式仅企业版支持',
+    downloadFailed: '下载失败，请检查网络后重试',
+    downloadDisabledTip: '请等待审核完成后再下载',
     table: {
       number: '序号',
       auditLevel: '规则等级',

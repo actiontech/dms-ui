@@ -109,4 +109,25 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord ce', () => {
       { responseType: 'blob' }
     );
   });
+
+  it('first format option has default highlight style (CE: html)', async () => {
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true
+    });
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    // Expand the report submenu
+    fireEvent.click(screen.getByText('下载审核报告'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    // In CE, the first format is 'html' (index 0)
+    const firstOption = screen.getByText('HTML 格式');
+    expect(firstOption.closest('.download-record-sub-item-default')).not.toBeNull();
+
+    // Second option (CSV) should NOT have the default class
+    const secondOption = screen.getByText('CSV 格式');
+    expect(secondOption.closest('.download-record-sub-item-default')).toBeNull();
+  });
 });

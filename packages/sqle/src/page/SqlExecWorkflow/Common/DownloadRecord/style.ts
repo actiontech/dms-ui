@@ -82,4 +82,8 @@ export const DownloadDropdownStyleWrapper = styled('div')`
           .itemHoverColor};
     }
   }
+
+  .download-record-sub-item-default {
+    font-weight: 600;
+  }
 `;

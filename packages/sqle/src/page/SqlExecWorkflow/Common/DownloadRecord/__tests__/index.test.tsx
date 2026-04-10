@@ -272,6 +272,118 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
     expect(screen.queryByText('HTML 格式')).not.toBeInTheDocument();
   });
 
+  it('downloadReport shows error message when API call fails', async () => {
+    // Override mock to reject
+    requestDownloadReport.mockImplementation(() =>
+      Promise.reject(new Error('Network Error'))
+    );
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true
+    });
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('下载审核报告'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('HTML 格式'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // Error message should be displayed
+    expect(
+      screen.getByText('下载失败，请检查网络后重试')
+    ).toBeInTheDocument();
+  });
+
+  it('downloadSql shows error message when API call fails', async () => {
+    // Override mock to reject
+    requestDownloadFile.mockImplementation(() =>
+      Promise.reject(new Error('Network Error'))
+    );
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true
+    });
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(screen.getByText('下载SQL语句'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // Error message should be displayed
+    expect(
+      screen.getByText('下载失败，请检查网络后重试')
+    ).toBeInTheDocument();
+  });
+
+  it('first format option has default highlight style', async () => {
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true
+    });
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    // Expand the report submenu
+    fireEvent.click(screen.getByText('下载审核报告'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    // In EE, the first format is 'html' (index 0 of REPORT_FORMAT_KEYS)
+    const firstOption = screen.getByText('HTML 格式');
+    expect(firstOption.closest('.download-record-sub-item-default')).not.toBeNull();
+
+    // Second option should NOT have the default class
+    const secondOption = screen.getByText('PDF 格式');
+    expect(secondOption.closest('.download-record-sub-item-default')).toBeNull();
+  });
+
+  it('download button is disabled when auditStatusFinished is false', async () => {
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true,
+      auditStatusFinished: false
+    });
+    const downloadBtn = screen.getByText('下载').closest('button');
+    expect(downloadBtn).toBeDisabled();
+
+    // Clicking the disabled button should not open the popover
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.queryByText('下载审核报告')).not.toBeInTheDocument();
+  });
+
+  it('download button shows tooltip when auditStatusFinished is false', async () => {
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true,
+      auditStatusFinished: false
+    });
+
+    // Hover over the download button to trigger tooltip
+    fireEvent.mouseEnter(screen.getByText('下载').closest('button')!);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(
+      screen.getByText('请等待审核完成后再下载')
+    ).toBeInTheDocument();
+  });
+
+  it('download button works normally when auditStatusFinished is true', async () => {
+    customRender({
+      taskId: 'task Id',
+      noDuplicate: true,
+      auditStatusFinished: true
+    });
+    const downloadBtn = screen.getByText('下载').closest('button');
+    expect(downloadBtn).not.toBeDisabled();
+
+    // Clicking should open the popover
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('下载审核报告')).toBeInTheDocument();
+    expect(screen.getByText('下载SQL语句')).toBeInTheDocument();
+  });
+
   // it('render snap when click down backup sql', async () => {
   //   const { baseElement } = customRender({
   //     taskId: 'task Id',
