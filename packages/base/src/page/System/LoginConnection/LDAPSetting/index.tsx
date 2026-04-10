@@ -193,12 +193,6 @@ const LDAPSetting = () => {
           hidden: !ldapSetting?.enable_ldap
         },
         {
-          label: t('dmsSystem.ldap.ldapSearchBaseDn'),
-          span: 3,
-          dataIndex: 'ldap_search_base_dn',
-          hidden: !ldapSetting?.enable_ldap
-        },
-        {
           label: t('dmsSystem.ldap.ldapUserNameRdnKey'),
           span: 3,
           dataIndex: 'ldap_user_name_rdn_key',
