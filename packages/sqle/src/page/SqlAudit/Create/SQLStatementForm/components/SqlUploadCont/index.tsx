@@ -96,13 +96,24 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".sql,.txt,.java,.xlsx"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'sqlFile')}
             title={t('sqlAudit.create.sqlInfo.uploadFileTip.sqlFile')}
             disabled={submitLoading}
           />
         </FormItemNoLabel>
+        <div style={{ marginTop: 8, fontSize: 13, color: '#8c8c8c' }}>
+          {t('sqlAudit.create.sqlInfo.xlsxTemplateTips')}
+          {' '}
+          <a
+            href="/static/xlsx_template.xlsx"
+            download="xlsx_template.xlsx"
+            style={{ fontSize: 13 }}
+          >
+            {t('sqlAudit.create.sqlInfo.downloadTemplate')}
+          </a>
+        </div>
       </EmptyBox>
       {/* mybatisFile */}
       <EmptyBox if={uploadType === UploadTypeEnum.mybatisFile}>
@@ -145,7 +156,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             getValueFromEvent={getFileFromUploadChangeEvent}
           >
             <CustomDraggerUpload
-              accept=".zip"
+              accept=".zip,.rar,.7z"
               beforeUpload={() => false}
               onRemove={removeFile.bind(null, 'zipFile')}
               title={t('sqlAudit.create.sqlInfo.uploadFileTip.zipFile')}

@@ -73,25 +73,28 @@ export default {
         sql: 'Input SQL statement',
         sqlFile: 'Upload SQL file',
         mybatisFile: 'Upload Mybatis XML file',
-        zipFile: 'Upload ZIP file',
+        zipFile: 'Upload compressed file',
         git: 'Configure GIT repository'
       },
       uploadLabelEnum: {
         sql: 'SQL statement',
         sqlFile: 'SQL file',
         mybatisFile: 'Mybatis XML file',
-        zipFile: 'ZIP file',
+        zipFile: 'Compressed file',
         gitUrl: 'GIT address',
         gitUrlTips:
           'Please enter the HTTP(S) clone address of the git repository. if it is a private GIT repository, you must enter the account and password with read permission'
       },
       uploadFileTip: {
-        sqlFile: 'Click to select a SQL file or drag the file to this area',
+        sqlFile: 'Click to select a file or drag the file to this area. Supports .sql, .txt, .java, .xlsx formats',
         mybatisFile:
           'Click to select a Mybatis XML file or drag the file to this area',
         zipFile:
-          'Click to select a ZIP file or drag the file to this area. currently, only .xml and .sql files in the ZIP file can be audited for SQL'
-      }
+          'Click to select a compressed file or drag the file to this area. Supports .zip, .rar, .7z formats. Only .sql, .xml, .txt, .java files in the archive will be audited'
+      },
+      xlsxTemplateTips: 'Please use the standard template format',
+      downloadTemplate: 'Download template',
+      noSqlColumnFound: 'No column containing SQL found, please refer to the template'
     }
   },
   result: {
