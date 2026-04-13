@@ -1,6 +1,8 @@
 import GlobalDashboard from '../../../../api/sqle/service/GlobalDashboard';
 import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
+  mockGlobalAccountListData,
+  mockGlobalAccountStatisticsData,
   mockGlobalSqlManageStatisticsData,
   mockGlobalSqlManageTaskListData,
   mockGlobalWorkflowListData,
@@ -9,10 +11,33 @@ import {
 
 class MockGlobalDashboardApi implements MockSpyApy {
   public mockAllApi(): void {
+    this.getGlobalAccountStatistics();
+    this.getGlobalAccountList();
     this.getGlobalWorkflowStatistics();
     this.getGlobalWorkflowList();
     this.getGlobalSqlManageStatistics();
     this.getGlobalSqlManageTaskList();
+  }
+
+  public getGlobalAccountStatistics() {
+    const spy = jest.spyOn(GlobalDashboard, 'GetGlobalAccountStatisticsV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockGlobalAccountStatisticsData
+      })
+    );
+    return spy;
+  }
+
+  public getGlobalAccountList() {
+    const spy = jest.spyOn(GlobalDashboard, 'GetGlobalAccountListV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockGlobalAccountListData,
+        total_nums: mockGlobalAccountListData.accounts?.length ?? 0
+      })
+    );
+    return spy;
   }
 
   public getGlobalWorkflowStatistics() {

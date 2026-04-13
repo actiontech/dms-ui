@@ -148,4 +148,65 @@ describe('GlobalDashboard/WorkflowPanel', () => {
 
     expect(getGlobalWorkflowListSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('should update workflow type filter and then clear to all', async () => {
+    superRender(<WorkflowPanel />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(
+      document.querySelector(
+        '.custom-segmented-filter-wrapper .ant-segmented-item-label[title="SQL上线工单"]'
+      ) as Element
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getGlobalWorkflowListSpy).toHaveBeenLastCalledWith(
+      expect.objectContaining({ workflow_type: 'sql_release' })
+    );
+
+    fireEvent.click(
+      document.querySelector(
+        '.custom-segmented-filter-wrapper .ant-segmented-item-label[title="全部"]'
+      ) as Element
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
+    const lastCallArgs = (getGlobalWorkflowListSpy as jest.Mock).mock.calls[
+      (getGlobalWorkflowListSpy as jest.Mock).mock.calls.length - 1
+    ][0];
+    expect(lastCallArgs).not.toHaveProperty('workflow_type');
+  });
+
+  it('should keep cursor when requesting page greater than one', async () => {
+    getGlobalWorkflowListSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          total_nums: 30,
+          has_more: true,
+          next_cursor: 'cursor-page-1',
+          workflows: [
+            {
+              workflow_id: 'workflow-page',
+              workflow_name: 'Workflow Page',
+              workflow_type: GlobalWorkflowListItemWorkflowTypeEnum.sql_release
+            }
+          ]
+        }
+      })
+    );
+
+    superRender(<WorkflowPanel />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(
+      document.querySelector('.ant-pagination-item-2') as Element
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getGlobalWorkflowListSpy).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        page_index: 2,
+        cursor: 'cursor-page-1'
+      })
+    );
+  });
 });

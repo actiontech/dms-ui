@@ -34,4 +34,38 @@ describe('GlobalDashboard/SqlGovernancePanel/action', () => {
     expect(onDetail).toHaveBeenCalledWith(solvedRecord);
     expect(detailBtn?.permissions?.(solvedRecord as any)).toBe(true);
   });
+
+  it('should not call callbacks when record is undefined', () => {
+    const onOptimize = jest.fn();
+    const onDetail = jest.fn();
+    const actions = sqlGovernancePanelTableActions(onOptimize, onDetail);
+    const event = { stopPropagation: jest.fn() };
+
+    actions.buttons?.[0]
+      .buttonProps?.(undefined as any)
+      .onClick?.(event as any);
+    actions.buttons?.[1]
+      .buttonProps?.(undefined as any)
+      .onClick?.(event as any);
+
+    expect(event.stopPropagation).toHaveBeenCalledTimes(2);
+    expect(onOptimize).not.toHaveBeenCalled();
+    expect(onDetail).not.toHaveBeenCalled();
+  });
+
+  it('should return false permissions for unmatched statuses', () => {
+    const onOptimize = jest.fn();
+    const onDetail = jest.fn();
+    const actions = sqlGovernancePanelTableActions(onOptimize, onDetail);
+    const ignoredRecord = {
+      status: GlobalSqlManageTaskItemV2StatusEnum.ignored
+    };
+
+    expect(actions.buttons?.[0].permissions?.(ignoredRecord as any)).toBe(
+      false
+    );
+    expect(actions.buttons?.[1].permissions?.(ignoredRecord as any)).toBe(
+      false
+    );
+  });
 });
