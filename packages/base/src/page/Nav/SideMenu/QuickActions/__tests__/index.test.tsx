@@ -38,7 +38,7 @@ describe('base/Nav/QuickActions', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     useLocationMock.mockReturnValue({
-      pathname: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD
+      pathname: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index.path
     });
     getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
   });
@@ -173,7 +173,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       1,
-      ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD
+      ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index.path
     );
 
     fireEvent.click(actions[1]);
