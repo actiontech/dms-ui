@@ -1,0 +1,862 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel and request data 1`] = `
+<body>
+  <div>
+    <div
+      class="css-zc10yy"
+    >
+      <div
+        class="css-1sy9oi7"
+      >
+        <div
+          class="css-14aw10r"
+        >
+          <div
+            class="stat-card-title"
+          >
+            待治理SQL
+          </div>
+          <div
+            class="stat-card-count-row"
+          >
+            <span
+              class="stat-card-icon"
+            >
+              <svg
+                color="currentColor"
+                fill="none"
+                height="20"
+                viewBox="0 0 16 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              class="stat-card-count"
+            >
+              16
+            </span>
+          </div>
+          <div
+            class="stat-card-subtitle"
+          >
+            SQL管控过程中需调整的SQL
+          </div>
+        </div>
+        <div
+          class="css-1n94o74"
+        >
+          <div
+            class="stat-card-title"
+          >
+            优化完成
+          </div>
+          <div
+            class="stat-card-count-row"
+          >
+            <span
+              class="stat-card-icon"
+            >
+              <svg
+                class="RocketFilled_svg__icon"
+                color="currentColor"
+                height="20"
+                viewBox="0 0 1024 1024"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M673.45 675.968s121.814-121.813 163.457-163.37c130.688-130.689 65.322-392.15 65.322-392.15S640.768 55.083 510.08 185.813c-97.707 97.707-162.816 164.992-162.816 164.992S183.296 316.501 85.248 414.55l522.88 522.88c98.048-98.048 65.323-261.461 65.323-261.461m-64.085-383.36a85.25 85.25 0 0 1 120.662 0 85.333 85.333 0 1 1-120.662 0m-482.688 602.07s128 0 213.334-85.334l-128-128c-85.334 42.667-85.334 213.333-85.334 213.333"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              class="stat-card-count"
+            >
+              23
+            </span>
+          </div>
+          <div
+            class="stat-card-subtitle"
+          >
+            已优化的SQL
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                  >
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="搜索 SQL 指纹"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
+                    >
+                      <span
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
+                      </span>
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+          >
+            <div
+              class="ant-spin-nested-loading"
+            >
+              <div
+                class="ant-spin-container"
+              >
+                <div
+                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                >
+                  <div
+                    class="ant-table-container"
+                  >
+                    <div
+                      class="ant-table-content"
+                      style="overflow-x: auto; overflow-y: hidden;"
+                    >
+                      <table
+                        style="min-width: 100%; table-layout: auto;"
+                      >
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 120px;"
+                          />
+                        </colgroup>
+                        <thead
+                          class="ant-table-thead"
+                        >
+                          <tr>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              SQL指纹
+                            </th>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
+                              scope="col"
+                            >
+                              优化建议/说明
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              来源
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              项目
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              数据源
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              最后出现
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              状态
+                            </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="ant-table-tbody"
+                        >
+                          <tr
+                            aria-hidden="true"
+                            class="ant-table-measure-row"
+                            style="height: 0px; font-size: 0px;"
+                          >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="select * from user where id = ?"
+                          >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                class="global-dashboard-sql-fingerprint-cell"
+                              >
+                                <div
+                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                >
+                                  <div
+                                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
+                                  >
+                                    <span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        select
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        *
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        from
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        user
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        where
+                                      </span>
+                                       id 
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        =
+                                      </span>
+                                       ?
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="global-dashboard-sql-metrics"
+                                >
+                                  <span>
+                                    平均 0.14s
+                                  </span>
+                                  <span
+                                    class="sql-metrics-sep"
+                                  >
+                                     · 
+                                  </span>
+                                  <span>
+                                    执行 10 次
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                add index
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              workflow
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  height="14"
+                                  viewBox="0 0 18 18"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                    fill="#EBAD1C"
+                                  />
+                                </svg>
+                                default
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              mysql-1
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              2026-04-13 12:10:00
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span
+                                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-wneatz"
+                              >
+                                待处理
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
+                                  type="button"
+                                >
+                                  <span>
+                                    去优化
+                                  </span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="update order set status = ? where id = ?"
+                          >
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                class="global-dashboard-sql-fingerprint-cell"
+                              >
+                                <div
+                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                >
+                                  <div
+                                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
+                                  >
+                                    <span>
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        update
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        order
+                                      </span>
+                                       
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        set
+                                      </span>
+                                       status 
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        =
+                                      </span>
+                                       ? 
+                                      <span
+                                        class="hljs-keyword"
+                                      >
+                                        where
+                                      </span>
+                                       id 
+                                      <span
+                                        class="hljs-operator"
+                                      >
+                                        =
+                                      </span>
+                                       ?
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="global-dashboard-sql-metrics"
+                                >
+                                  <span>
+                                    平均 0.03s
+                                  </span>
+                                  <span
+                                    class="sql-metrics-sep"
+                                  >
+                                     · 
+                                  </span>
+                                  <span>
+                                    执行 6 次
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
+                              >
+                                rewrite sql
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              workflow
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  height="14"
+                                  viewBox="0 0 18 18"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                    fill="#EBAD1C"
+                                  />
+                                </svg>
+                                test
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              mysql-2
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              2026-04-13 12:30:00
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
+                              >
+                                已优化
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
+                                  type="button"
+                                >
+                                  <span>
+                                    详 情
+                                  </span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <ul
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
+                >
+                  <li
+                    class="ant-pagination-total-text"
+                  >
+                    <span>
+                      共 2 条数据
+                    </span>
+                  </li>
+                  <li
+                    aria-disabled="true"
+                    class="ant-pagination-prev ant-pagination-disabled"
+                    title="上一页"
+                  >
+                    <button
+                      class="ant-pagination-item-link"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        aria-label="left"
+                        class="anticon anticon-left"
+                        role="img"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          data-icon="left"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <path
+                            d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </li>
+                  <li
+                    class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                    tabindex="0"
+                    title="1"
+                  >
+                    <a
+                      rel="nofollow"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li
+                    aria-disabled="true"
+                    class="ant-pagination-next ant-pagination-disabled"
+                    title="下一页"
+                  >
+                    <button
+                      class="ant-pagination-item-link"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        aria-label="right"
+                        class="anticon anticon-right"
+                        role="img"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          data-icon="right"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <path
+                            d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </li>
+                  <li
+                    class="ant-pagination-options"
+                  >
+                    <div
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
+                    >
+                      <div
+                        class="ant-select-selector"
+                      >
+                        <span
+                          class="ant-select-selection-search"
+                        >
+                          <input
+                            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                            aria-autocomplete="list"
+                            aria-controls="rc_select_TEST_OR_SSR_list"
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-label="页码"
+                            aria-owns="rc_select_TEST_OR_SSR_list"
+                            autocomplete="off"
+                            class="ant-select-selection-search-input"
+                            id="rc_select_TEST_OR_SSR"
+                            role="combobox"
+                            type="search"
+                            value=""
+                          />
+                        </span>
+                        <span
+                          class="ant-select-selection-item"
+                          title="20 条/页"
+                        >
+                          20 条/页
+                        </span>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        class="ant-select-arrow"
+                        style="user-select: none;"
+                        unselectable="on"
+                      >
+                        <span
+                          aria-label="down"
+                          class="anticon anticon-down ant-select-suffix"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="down"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
