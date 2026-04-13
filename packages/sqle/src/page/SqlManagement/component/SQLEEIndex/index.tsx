@@ -477,7 +477,6 @@ const SQLEEIndex = () => {
   );
   useEffect(() => {
     const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
-
     const isFilterStatusEnum = (
       val: string
     ): val is GetSqlManageListV3FilterStatusEnum => {
@@ -493,17 +492,20 @@ const SQLEEIndex = () => {
       );
     };
     if (searchParams) {
-      updateAllSelectedFilterItem(true);
-      if (!!searchParams.instance_id) {
-        updateTableFilterInfo({
-          filter_instance_id: searchParams.instance_id
-        });
+      if (Object.values(searchParams).some((v) => !!v)) {
+        updateAllSelectedFilterItem(true);
       }
-      if (!!searchParams.source && isFilterSourceEnum(searchParams.source)) {
+      if (
+        typeof searchParams.instance_id !== 'undefined' &&
+        typeof searchParams.source !== 'undefined' &&
+        isFilterSourceEnum(searchParams.source)
+      ) {
         updateTableFilterInfo({
+          filter_instance_id: searchParams.instance_id,
           filter_source: searchParams.source
         });
       }
+
       if (searchParams.is_high_priority === String(true)) {
         setIsHighPriority(true);
       }
@@ -511,7 +513,7 @@ const SQLEEIndex = () => {
         setAssigneeSelf(true);
       }
       if (
-        searchParams.status_filter &&
+        typeof searchParams.status_filter !== 'undefined' &&
         isFilterStatusEnum(searchParams.status_filter)
       ) {
         setFilterStatus(searchParams.status_filter);

@@ -764,7 +764,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     useSearchParamsSpy.mockReturnValue([
       new URLSearchParams({
         instance_id: '123456',
-        source: 'mysql_slow_log'
+        source: 'audit_plan',
+        is_high_priority: 'true'
       })
     ]);
     const request = sqlManage.getSqlManageList();
@@ -776,7 +777,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       page_size: 20,
       project_name: mockProjectInfo.projectName,
       filter_instance_id: '123456',
-      filter_source: 'mysql_slow_log',
+      filter_source: 'audit_plan',
       sort_field: undefined,
       sort_order: undefined,
       fuzzy_search_sql_fingerprint: '',
