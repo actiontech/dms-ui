@@ -33,7 +33,8 @@ describe('GlobalDashboard', () => {
 
     getGlobalWorkflowStatisticsSpy =
       sqleMockApi.globalDashboard.getGlobalWorkflowStatistics();
-    getGlobalWorkflowListSpy = sqleMockApi.globalDashboard.getGlobalWorkflowList();
+    getGlobalWorkflowListSpy =
+      sqleMockApi.globalDashboard.getGlobalWorkflowList();
     getGlobalSqlManageStatisticsSpy =
       sqleMockApi.globalDashboard.getGlobalSqlManageStatistics();
     getGlobalSqlManageTaskListSpy =

@@ -2,7 +2,9 @@ import { sqlGovernancePanelTableActions } from '../action';
 import { GlobalSqlManageTaskItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('GlobalDashboard/SqlGovernancePanel/action', () => {
-  const pendingRecord = { status: GlobalSqlManageTaskItemV2StatusEnum.unhandled };
+  const pendingRecord = {
+    status: GlobalSqlManageTaskItemV2StatusEnum.unhandled
+  };
   const solvedRecord = { status: GlobalSqlManageTaskItemV2StatusEnum.solved };
 
   it('should call optimize callback and enable optimize permission', () => {

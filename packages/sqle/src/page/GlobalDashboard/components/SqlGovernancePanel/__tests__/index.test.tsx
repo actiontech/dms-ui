@@ -10,7 +10,9 @@ import { GlobalSqlManageTaskItemV2StatusEnum } from '@actiontech/shared/lib/api/
 
 describe('GlobalDashboard/SqlGovernancePanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
-  const warningSpy = jest.spyOn(message, 'warning').mockImplementation(jest.fn());
+  const warningSpy = jest
+    .spyOn(message, 'warning')
+    .mockImplementation(jest.fn());
   let getGlobalSqlManageStatisticsSpy: jest.SpyInstance;
   let getGlobalSqlManageTaskListSpy: jest.SpyInstance;
 
@@ -105,9 +107,13 @@ describe('GlobalDashboard/SqlGovernancePanel', () => {
     superRender(<SqlGovernancePanel />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    const searchInput = document.getElementById('actiontech-table-search-input');
+    const searchInput = document.getElementById(
+      'actiontech-table-search-input'
+    );
     expect(searchInput).toBeInTheDocument();
-    fireEvent.change(searchInput as Element, { target: { value: 'fingerprint' } });
+    fireEvent.change(searchInput as Element, {
+      target: { value: 'fingerprint' }
+    });
     fireEvent.click(document.querySelector('.custom-icon-search') as Element);
     await act(async () => jest.advanceTimersByTime(0));
 

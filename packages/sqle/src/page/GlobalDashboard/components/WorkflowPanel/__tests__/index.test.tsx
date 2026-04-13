@@ -15,7 +15,9 @@ describe('GlobalDashboard/WorkflowPanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowListSpy: jest.SpyInstance;
-  const warningSpy = jest.spyOn(message, 'warning').mockImplementation(jest.fn());
+  const warningSpy = jest
+    .spyOn(message, 'warning')
+    .mockImplementation(jest.fn());
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -23,7 +25,8 @@ describe('GlobalDashboard/WorkflowPanel', () => {
     mockUseCurrentUser();
     getGlobalWorkflowStatisticsSpy =
       sqleMockApi.globalDashboard.getGlobalWorkflowStatistics();
-    getGlobalWorkflowListSpy = sqleMockApi.globalDashboard.getGlobalWorkflowList();
+    getGlobalWorkflowListSpy =
+      sqleMockApi.globalDashboard.getGlobalWorkflowList();
   });
 
   afterEach(() => {
@@ -121,7 +124,9 @@ describe('GlobalDashboard/WorkflowPanel', () => {
     superRender(<WorkflowPanel />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    const searchInput = document.getElementById('actiontech-table-search-input');
+    const searchInput = document.getElementById(
+      'actiontech-table-search-input'
+    );
     expect(searchInput).toBeInTheDocument();
     fireEvent.change(searchInput as Element, { target: { value: 'workflow' } });
     fireEvent.click(document.querySelector('.custom-icon-search') as Element);
