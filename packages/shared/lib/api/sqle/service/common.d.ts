@@ -1,4 +1,8 @@
 import {
+  GlobalAccountListItemV2StatusEnum,
+  GlobalSqlManageTaskItemV2StatusEnum,
+  GlobalWorkflowListItemStatusEnum,
+  GlobalWorkflowListItemWorkflowTypeEnum,
   RuleCategoryStatisticCategoryEnum,
   AIHubExecutionRecordFunctionModuleEnum,
   AIHubExecutionRecordProcessStatusEnum,
@@ -127,6 +131,156 @@ export interface IBaseRes {
   code?: number;
 
   message?: string;
+}
+
+export interface IGlobalAccountListItemV2 {
+  account_name?: string;
+
+  account_uid?: string;
+
+  expired_time?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  status?: GlobalAccountListItemV2StatusEnum;
+}
+
+export interface IGlobalAccountListResV2 {
+  code?: number;
+
+  data?: IGlobalAccountListItemV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGlobalAccountStatisticsData {
+  active_account_count?: number;
+
+  expiring_soon_count?: number;
+}
+
+export interface IGlobalAccountStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalAccountStatisticsData;
+
+  message?: string;
+}
+
+export interface IGlobalSqlManageStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalSqlManageStatisticsV2;
+
+  message?: string;
+}
+
+export interface IGlobalSqlManageStatisticsV2 {
+  optimized_this_week_count?: number;
+
+  pending_sql_count?: number;
+}
+
+export interface IGlobalSqlManageTaskItemV2 {
+  avg_time?: number;
+
+  count?: number;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  last_seen_at?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sql_fingerprint?: string;
+
+  status?: GlobalSqlManageTaskItemV2StatusEnum;
+
+  suggestion?: string;
+}
+
+export interface IGlobalSqlManageTaskListResV2 {
+  code?: number;
+
+  data?: IGlobalSqlManageTaskItemV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGlobalWorkflowListData {
+  has_more?: boolean;
+
+  next_cursor?: string;
+
+  total_nums?: number;
+
+  workflows?: IGlobalWorkflowListItem[];
+}
+
+export interface IGlobalWorkflowListItem {
+  assignee?: string;
+
+  created_at?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  priority?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  status?: GlobalWorkflowListItemStatusEnum;
+
+  workflow_desc?: string;
+
+  workflow_id?: string;
+
+  workflow_name?: string;
+
+  workflow_type?: GlobalWorkflowListItemWorkflowTypeEnum;
+}
+
+export interface IGlobalWorkflowListResV2 {
+  code?: number;
+
+  data?: IGlobalWorkflowListData;
+
+  message?: string;
+}
+
+export interface IGlobalWorkflowStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalWorkflowStatisticsV2;
+
+  message?: string;
+}
+
+export interface IGlobalWorkflowStatisticsV2 {
+  archived_count?: number;
+
+  initiated_by_me_count?: number;
+
+  pending_for_me_count?: number;
 }
 
 export interface IAuditResultInfo {
@@ -3231,6 +3385,94 @@ export interface ISQLExplain {
   err_message?: string;
 
   sql?: string;
+}
+
+export interface ISQLLineageAnalyzeReqV1 {
+  default_schema?: string;
+
+  instance_type?: string;
+
+  result_columns?: string[];
+
+  sql?: string;
+}
+
+export interface ISQLLineageAnalyzeResDataV1 {
+  result?: ISQLLineageAnalyzeResultV1;
+}
+
+export interface ISQLLineageAnalyzeResV1 {
+  code?: number;
+
+  data?: ISQLLineageAnalyzeResDataV1;
+
+  message?: string;
+}
+
+export interface ISQLLineageAnalyzeResultV1 {
+  edges?: ISQLLineageEdgeV1[];
+
+  nodes?: ISQLLineageNodeV1[];
+
+  original_sql?: string;
+
+  result_columns?: ISQLLineageResultColumnV1[];
+
+  source_columns?: ISQLLineageColumnRefV1[];
+
+  tables?: ISQLLineageTableRefV1[];
+
+  title?: string;
+
+  warnings?: string[];
+}
+
+export interface ISQLLineageColumnRefV1 {
+  column?: string;
+
+  schema?: string;
+
+  table?: string;
+}
+
+export interface ISQLLineageEdgeV1 {
+  from_id?: string;
+
+  to_id?: string;
+
+  type?: string;
+}
+
+export interface ISQLLineageNodeV1 {
+  column?: string;
+
+  expr?: string;
+
+  id?: string;
+
+  name?: string;
+
+  schema?: string;
+
+  table?: string;
+
+  type?: string;
+}
+
+export interface ISQLLineageResultColumnV1 {
+  expression?: string;
+
+  name?: string;
+
+  sources?: ISQLLineageColumnRefV1[];
+}
+
+export interface ISQLLineageTableRefV1 {
+  alias?: string;
+
+  schema?: string;
+
+  table?: string;
 }
 
 export interface ISQLQueryConfigResV1 {

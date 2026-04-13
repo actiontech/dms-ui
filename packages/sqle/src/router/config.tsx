@@ -580,7 +580,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   },
   // #endif
   {
-    path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD,
+    path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index.path,
     key: 'globalDashboard',
     element: <GlobalDashboard />
   },

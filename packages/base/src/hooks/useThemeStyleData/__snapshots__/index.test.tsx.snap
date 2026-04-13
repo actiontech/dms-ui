@@ -770,6 +770,23 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
       "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
     },
   },
+  "globalDashboard": {
+    "filterCardAccent": {
+      "account": {
+        "active": "#1677ff",
+        "expiring_soon": "#f5222d",
+      },
+      "sqlGovernance": {
+        "optimized": "#52c41a",
+        "pending": "#fa8c16",
+      },
+      "workflow": {
+        "archived": "#52c41a",
+        "initiated_by_me": "#1677ff",
+        "pending_for_me": "#fa8c16",
+      },
+    },
+  },
   "icon": {
     "execWorkFlow": {
       "clock": "#6094FC",

@@ -3,46 +3,39 @@ import { CustomSelect } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { GlobalDashboardFilterStyleWrapper } from '../../style';
 import { GlobalDashboardTableFilterProps } from '../../index.type';
-import { ProjectPriorityOptions } from '../../index.data';
 
 const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
   form,
   projectOptions,
   instanceIDOptions,
-  getInstanceListLoading
+  getInstanceListLoading,
+  onProjectChange
 }) => {
   const { t } = useTranslation();
 
   return (
-    <GlobalDashboardFilterStyleWrapper className="full-width-element">
+    <GlobalDashboardFilterStyleWrapper>
       <Form form={form}>
         <Space size={12}>
           <Form.Item noStyle name="projectId">
             <CustomSelect
               prefix={t('globalDashboard.filter.project')}
+              placeholder={t('common.all')}
               suffixIcon={null}
               bordered={false}
               options={projectOptions}
-              onChange={() => {
-                form.resetFields(['instanceId', 'projectPriority']);
+              onChange={(value) => {
+                onProjectChange?.(value as string);
               }}
             />
           </Form.Item>
           <Form.Item noStyle name="instanceId">
             <CustomSelect
               prefix={t('globalDashboard.filter.instance')}
+              placeholder={t('common.all')}
               suffixIcon={null}
               bordered={false}
               options={instanceIDOptions}
-              loading={getInstanceListLoading}
-            />
-          </Form.Item>
-          <Form.Item noStyle name="projectPriority">
-            <CustomSelect
-              prefix={t('globalDashboard.filter.projectPriority')}
-              suffixIcon={null}
-              bordered={false}
-              options={ProjectPriorityOptions}
               loading={getInstanceListLoading}
             />
           </Form.Item>

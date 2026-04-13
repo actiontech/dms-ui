@@ -1,154 +1,157 @@
-import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
-import { SegmentedTabsProps } from '@actiontech/dms-kit/es/components/SegmentedTabs/SegmentedTabs.types';
-import useDashboardFilter from './hooks/useDashboardFilter';
-import GlobalDashboardTableFilter from './components/TableFilter';
-import { useState, useMemo } from 'react';
-import { GlobalDashBoardSegmentedEnum } from './index.type';
-import { useTranslation } from 'react-i18next';
-import { Space } from 'antd';
-import PendingWorkflowTabs from './List/PendingWorkflowTabs';
-import PendingSql from './List/PendingSql';
-import InitiatedWorkflowTabs from './List/InitiatedWorkflowTabs';
-import eventEmitter from '../../utils/EventEmitter';
-import EmitterKey from '../../data/EmitterKey';
 import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import { PageHeader, ROUTE_PATHS, SegmentedTabs } from '@actiontech/dms-kit';
+import { SegmentedTabsProps } from '@actiontech/dms-kit/es/components/SegmentedTabs/SegmentedTabs.types';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
+import { Form, Space } from 'antd';
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import useInstance from '../../hooks/useInstance';
+import GlobalDashboardTableFilter from './components/TableFilter';
+import { GlobalDashboardFilterType } from './index.type';
+import { DashboardTabKey } from './constants';
+import WorkflowPanel from './components/WorkflowPanel';
+import SqlGovernancePanel from './components/SqlGovernancePanel';
+import AccountPanel from './components/AccountPanel';
+import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
-  const {
-    projectOptions,
-    instanceIDOptions,
-    form,
-    getInstanceListLoading,
-    filterValues,
-    updateFilterValue,
-    refreshStatistics,
-    pendingSqlStatistics,
-    pendingWorkflowOrderStatistics,
-    initiatedWorkflowOrderStatistics,
-    pendingExportWorkflowOrderStatistics,
-    initiatedExportWorkflowOrderStatistics,
-    filterAssignedToMe,
-    toggleFilterAssignedToMe
-  } = useDashboardFilter();
-  const [activeKey, setActiveKey] = useState(
-    GlobalDashBoardSegmentedEnum.PendingWorkOrder
+  const { bindProjects, isAdmin } = useCurrentUser();
+  const extractQuery = useTypedQuery();
+  const navigate = useTypedNavigate();
+  const [activeTab, setActiveTab] = useState<DashboardTabKey>(
+    DashboardTabKey.Workflow
   );
-  const onRefresh = () => {
-    if (activeKey === GlobalDashBoardSegmentedEnum.PendingWorkOrder) {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Execute_Work_Order);
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Export_Work_Order);
-    } else if (activeKey === GlobalDashBoardSegmentedEnum.PendingSqlRecord) {
-      eventEmitter.emit(EmitterKey.Refresh_Global_Dashboard_Pending_Sql);
-    } else if (activeKey === GlobalDashBoardSegmentedEnum.InitiatedWorkOrder) {
-      eventEmitter.emit(
-        EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order
-      );
-      eventEmitter.emit(
-        EmitterKey.Refresh_Global_Dashboard_Initiated_Export_Work_Order
-      );
-    }
-    refreshStatistics();
+  const [refreshSignals, setRefreshSignals] = useState({
+    [DashboardTabKey.Workflow]: 0,
+    [DashboardTabKey.SqlGovernance]: 0,
+    [DashboardTabKey.Account]: 0
+  });
+
+  const [form] = Form.useForm<GlobalDashboardFilterType>();
+  const projectId = Form.useWatch('projectId', form);
+  const instanceId = Form.useWatch('instanceId', form);
+
+  const {
+    updateInstanceList,
+    instanceIDOptions,
+    loading: getInstanceListLoading
+  } = useInstance();
+
+  const projectOptions = useMemo(() => {
+    return bindProjects.map((project) => ({
+      label: project.project_name,
+      value: project.project_id
+    }));
+  }, [bindProjects]);
+
+  const refreshCurrentTab = () => {
+    setRefreshSignals((prev) => ({
+      ...prev,
+      [activeTab]: prev[activeTab] + 1
+    }));
   };
+
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
-    return [
+    const items: SegmentedTabsProps['items'] = [
       {
-        label: (
-          <Space>
-            {t('globalDashboard.pendingWorkOrder')}
-            {(pendingWorkflowOrderStatistics ?? 0) +
-              (pendingExportWorkflowOrderStatistics ?? 0)}
-          </Space>
-        ),
-        value: GlobalDashBoardSegmentedEnum.PendingWorkOrder,
+        label: t('globalDashboard.tab.workflow'),
+        value: DashboardTabKey.Workflow,
+        destroyInactivePane: true,
         children: (
-          <PendingWorkflowTabs
-            filterValues={filterValues}
-            updateFilterValue={updateFilterValue}
-            workflowOrderStatistics={pendingWorkflowOrderStatistics ?? 0}
-            exportWorkflowOrderStatistics={
-              pendingExportWorkflowOrderStatistics ?? 0
-            }
-            filterAssignedToMe={filterAssignedToMe}
-            toggleFilterAssignedToMe={toggleFilterAssignedToMe}
+          <WorkflowPanel
+            projectId={projectId}
+            instanceId={instanceId}
+            refreshSignal={refreshSignals[DashboardTabKey.Workflow]}
           />
-        ),
-        destroyInactivePane: true
+        )
       },
       {
-        label: (
-          <Space>
-            {t('globalDashboard.initiatedWorkOrder')}
-            {(initiatedWorkflowOrderStatistics ?? 0) +
-              (initiatedExportWorkflowOrderStatistics ?? 0)}
-          </Space>
-        ),
-        value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
+        label: t('globalDashboard.tab.sqlGovernance'),
+        value: DashboardTabKey.SqlGovernance,
+        destroyInactivePane: true,
         children: (
-          <InitiatedWorkflowTabs
-            filterValues={filterValues}
-            updateFilterValue={updateFilterValue}
-            workflowOrderStatistics={initiatedWorkflowOrderStatistics ?? 0}
-            exportWorkflowOrderStatistics={
-              initiatedExportWorkflowOrderStatistics ?? 0
-            }
+          <SqlGovernancePanel
+            projectId={projectId}
+            instanceId={instanceId}
+            refreshSignal={refreshSignals[DashboardTabKey.SqlGovernance]}
           />
-        ),
-        destroyInactivePane: true
+        )
       },
+      // #if [provision]
       {
-        label: (
-          <Space>
-            {t('globalDashboard.pendingSql.title')}
-            {pendingSqlStatistics}
-          </Space>
-        ),
-        value: GlobalDashBoardSegmentedEnum.PendingSqlRecord,
+        label: t('globalDashboard.tab.account'),
+        value: DashboardTabKey.Account,
+        destroyInactivePane: true,
         children: (
-          <PendingSql
-            filterValues={filterValues}
-            updateFilterValue={updateFilterValue}
+          <AccountPanel
+            projectId={projectId}
+            instanceId={instanceId}
+            refreshSignal={refreshSignals[DashboardTabKey.Account]}
+            isAdmin={isAdmin}
           />
-        ),
-        destroyInactivePane: true
+        )
       }
+      // #endif
     ];
-  }, [
-    t,
-    pendingWorkflowOrderStatistics,
-    pendingExportWorkflowOrderStatistics,
-    filterValues,
-    updateFilterValue,
-    initiatedWorkflowOrderStatistics,
-    initiatedExportWorkflowOrderStatistics,
-    pendingSqlStatistics,
-    filterAssignedToMe,
-    toggleFilterAssignedToMe
-  ]);
+
+    return items;
+  }, [t, projectId, instanceId, refreshSignals, isAdmin]);
+
+  useEffect(() => {
+    const searchParams = extractQuery(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index);
+    if (
+      searchParams &&
+      searchParams.tab &&
+      Object.values(DashboardTabKey).includes(
+        searchParams.tab as DashboardTabKey
+      )
+    ) {
+      setActiveTab(searchParams.tab as DashboardTabKey);
+    }
+  }, [extractQuery]);
+
   return (
     <>
       <PageHeader
         title={
           <Space>
             {t('globalDashboard.pageTitle')}
-            <TableRefreshButton refresh={onRefresh} />
+            <TableRefreshButton refresh={refreshCurrentTab} />
           </Space>
         }
       />
-      <GlobalDashboardTableFilter
-        form={form}
-        projectOptions={projectOptions}
-        instanceIDOptions={instanceIDOptions}
-        getInstanceListLoading={getInstanceListLoading}
-      />
       <SegmentedTabs
-        activeKey={activeKey}
+        activeKey={activeTab}
         onChange={(key) => {
-          setActiveKey(key);
+          setActiveTab(key as DashboardTabKey);
+          navigate(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index, {
+            queries: { tab: key },
+            replace: true
+          });
         }}
         items={tabItems}
+        segmentedRowClassName="flex-space-between"
+        segmentedRowExtraContent={
+          <GlobalDashboardTableFilter
+            form={form}
+            projectOptions={projectOptions}
+            instanceIDOptions={instanceIDOptions}
+            getInstanceListLoading={getInstanceListLoading}
+            onProjectChange={(selectedProjectId) => {
+              const projectName = projectOptions.find(
+                (p) => p.value === selectedProjectId
+              )?.label;
+              if (projectName) {
+                updateInstanceList({ project_name: projectName });
+              }
+              form.resetFields(['instanceId']);
+            }}
+          />
+        }
       />
     </>
   );
 };
+
 export default GlobalDashBoard;
