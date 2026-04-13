@@ -5,14 +5,10 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi/common';
-import { message } from 'antd';
 import { GlobalSqlManageTaskItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('GlobalDashboard/SqlGovernancePanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
-  const warningSpy = jest
-    .spyOn(message, 'warning')
-    .mockImplementation(jest.fn());
   let getGlobalSqlManageStatisticsSpy: jest.SpyInstance;
   let getGlobalSqlManageTaskListSpy: jest.SpyInstance;
 
@@ -34,7 +30,6 @@ describe('GlobalDashboard/SqlGovernancePanel', () => {
 
   afterAll(() => {
     openSpy.mockRestore();
-    warningSpy.mockRestore();
   });
 
   it('should render sql governance panel and request data', async () => {
@@ -99,7 +94,7 @@ describe('GlobalDashboard/SqlGovernancePanel', () => {
 
     fireEvent.click(screen.getByText('去优化'));
 
-    expect(warningSpy).toHaveBeenCalledWith('缺少项目信息，无法跳转');
+    expect(screen.queryByText('缺少项目信息，无法跳转')).toBeInTheDocument();
     expect(openSpy).not.toHaveBeenCalled();
   });
 

@@ -44,6 +44,7 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+  const [messageApi, messageContextHolder] = message.useMessage();
   const [workflowCard, setWorkflowCard] =
     useState<GetGlobalWorkflowListV2FilterCardEnum>(
       GetGlobalWorkflowListV2FilterCardEnum.pending_for_me
@@ -148,12 +149,12 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
       };
       const path = getGlobalWorkflowDetailPath();
       if (!path) {
-        message.warning(t('globalDashboard.common.missingProject'));
+        messageApi.warning(t('globalDashboard.common.missingProject'));
         return;
       }
       window.open(path, '_blank');
     },
-    [t]
+    [t, messageApi]
   );
 
   const actions = useMemo(
@@ -201,6 +202,7 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
 
   return (
     <>
+      {messageContextHolder}
       <StatCardsStyleWrapper>
         {cards.map((card) => (
           <StatCardItemStyleWrapper

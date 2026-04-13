@@ -8,16 +8,12 @@ import {
   createSpyErrorResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi/common';
-import { message } from 'antd';
 import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('GlobalDashboard/WorkflowPanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowListSpy: jest.SpyInstance;
-  const warningSpy = jest
-    .spyOn(message, 'warning')
-    .mockImplementation(jest.fn());
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -37,7 +33,6 @@ describe('GlobalDashboard/WorkflowPanel', () => {
 
   afterAll(() => {
     openSpy.mockRestore();
-    warningSpy.mockRestore();
   });
 
   it('should render workflow panel and request data', async () => {
@@ -117,7 +112,7 @@ describe('GlobalDashboard/WorkflowPanel', () => {
 
     fireEvent.click(screen.getByText('去处理'));
 
-    expect(warningSpy).toHaveBeenCalledWith('缺少项目信息，无法跳转');
+    expect(screen.queryByText('缺少项目信息，无法跳转')).toBeInTheDocument();
   });
 
   it('should refresh workflow list when clicking search icon', async () => {

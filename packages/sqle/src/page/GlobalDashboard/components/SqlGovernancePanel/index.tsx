@@ -38,6 +38,7 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+  const [messageApi, messageContextHolder] = message.useMessage();
   const [sqlFilterCard, setSqlFilterCard] =
     useState<GetGlobalSqlManageTaskListV2FilterCardEnum>(
       GetGlobalSqlManageTaskListV2FilterCardEnum.pending
@@ -94,7 +95,7 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
   const goSqlManagement = useCallback(
     (record: IGlobalSqlManageTaskItemV2, type: 'optimize' | 'detail') => {
       if (!record.project_uid) {
-        message.warning(t('globalDashboard.common.missingProject'));
+        messageApi.warning(t('globalDashboard.common.missingProject'));
         return;
       }
 
@@ -115,7 +116,7 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
       );
       window.open(targetPath, '_blank');
     },
-    [t]
+    [t, messageApi]
   );
 
   const onOptimize = useCallback(
@@ -168,6 +169,7 @@ const SqlGovernancePanel: React.FC<SqlGovernancePanelProps> = ({
 
   return (
     <SqlGovernancePanelStyleWrapper>
+      {messageContextHolder}
       <StatCardsStyleWrapper>
         {cards.map((card) => (
           <StatCardItemStyleWrapper
