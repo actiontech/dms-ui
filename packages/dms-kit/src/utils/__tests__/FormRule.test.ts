@@ -75,6 +75,17 @@ describe('utils/FormRule', () => {
     expect(message).toBe('请输入SQL语句');
   });
 
+  it('should reject whitespace-only sql', async () => {
+    const check = whiteSpaceSqlValidator();
+    let message = '';
+    try {
+      await check?.({} as any, '   ', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('请输入SQL语句');
+  });
+
   it('should not check white space sql when enableRule is false', async () => {
     const check = whiteSpaceSqlValidator(false);
     let message = '';

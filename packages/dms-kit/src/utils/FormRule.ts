@@ -91,7 +91,7 @@ export const whiteSpaceSqlValidator = (
 ): FormValidatorRule => {
   return (_, values) => {
     const placeholder = '/* input your sql */';
-    if (values === placeholder && enableRule) {
+    if (enableRule && (values === placeholder || !values?.trim())) {
       return Promise.reject(
         i18n.t('common.form.placeholder.input', {
           name: i18n.t('common.sqlStatements')
