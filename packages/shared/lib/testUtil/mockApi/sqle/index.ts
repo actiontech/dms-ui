@@ -23,3 +23,4 @@ export { default as task } from './task';
 export { default as user } from './user';
 export { default as workflowTemplate } from './workflowTemplate';
 export { default as sqlInsight } from './sqlInsight';
+export { default as globalDashboard } from './globalDashboard';
