@@ -86,6 +86,7 @@ export default {
         addInstanceTips: '请添加数据源',
         addInstance: '添加数据源',
         uploadType: '选择SQL语句上传方式',
+        uploadTypeTips: '单次上线SQL数量为1000条',
         manualInput: '输入SQL语句',
         uploadFile: '上传SQL文件',
         updateMybatisFile: '上传Mybatis的XML文件',

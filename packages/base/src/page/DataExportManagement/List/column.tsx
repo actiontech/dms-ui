@@ -77,7 +77,7 @@ export const ExportWorkflowListColumn: (
     {
       dataIndex: 'desc',
       title: () => t('dmsDataExport.list.column.desc'),
-      className: 'ellipsis-column-width-large',
+      className: 'ellipsis-column-width',
       render: (desc, record) =>
         desc ? (
           <BasicTypographyEllipsis

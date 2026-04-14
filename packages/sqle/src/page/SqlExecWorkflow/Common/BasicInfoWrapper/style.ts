@@ -62,9 +62,10 @@ export const BasicInfoStyleWrapper = styled('div')<{
 
   .workflow-base-info-desc {
     color: ${({ theme }) =>
-      theme.sqleTheme.execWorkflow.common.basicInfo.descColor};
+      theme.sqleTheme.execWorkflow.common.basicInfo.descColor} !important;
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
+    max-width: 800px;
   }
 `;
