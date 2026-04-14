@@ -14,7 +14,7 @@ import useAuditResultFilterParams from '../../../../../Common/AuditResultFilterC
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditTaskExtraFilterMeta } from '../../index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { ResponseCode } from '@actiontech/dms-kit';
+import { FilterCustomProps, ResponseCode } from '@actiontech/dms-kit';
 import { GetAuditTaskSQLsPrams } from '../../index.type';
 import {
   BasicButton,
@@ -228,7 +228,7 @@ const SqlFileStatementOverview: React.FC = () => {
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
         filterCustomProps={
-          new Map([
+          new Map<keyof IAuditTaskSQLResV2, FilterCustomProps>([
             [
               'audit_level',
               {
