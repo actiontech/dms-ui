@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './locale';
-import './utils/HighlightCode';
-import './index.less';
 import { initReactI18n } from './locale';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
