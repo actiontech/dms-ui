@@ -3,7 +3,7 @@
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 1`] = `
 <div>
   <div
-    class="css-sjztq0"
+    class="css-rgmylz"
   >
     <div
       class="workflow-base-info-title"
@@ -11,9 +11,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 1`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="-"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       -
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -22,7 +93,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 1`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 2`] = `
 <div>
   <div
-    class="test-cls css-xak3ai"
+    class="test-cls css-szp7nz"
   >
     <div
       class="workflow-base-info-title"
@@ -30,9 +101,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 2`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -41,7 +183,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 2`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 3`] = `
 <div>
   <div
-    class="css-118aod"
+    class="css-1rz37bc"
   >
     <div
       class="workflow-base-info-status"
@@ -122,9 +264,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 3`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -133,7 +346,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 3`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 4`] = `
 <div>
   <div
-    class="css-1s7y2us"
+    class="css-t0lsb1"
   >
     <div
       class="workflow-base-info-status"
@@ -214,9 +427,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 4`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -225,7 +509,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 4`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 5`] = `
 <div>
   <div
-    class="css-sjztq0"
+    class="css-rgmylz"
   >
     <div
       class="workflow-base-info-status"
@@ -306,9 +590,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 5`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -317,7 +672,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 5`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 6`] = `
 <div>
   <div
-    class="css-753lme"
+    class="css-6g9lap"
   >
     <div
       class="workflow-base-info-status"
@@ -398,9 +753,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 6`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -409,7 +835,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 6`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 7`] = `
 <div>
   <div
-    class="css-67i22y"
+    class="css-gdyhjj"
   >
     <div
       class="workflow-base-info-status"
@@ -490,9 +916,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 7`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -501,7 +998,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 7`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 8`] = `
 <div>
   <div
-    class="css-izsvc5"
+    class="css-1aigfbd"
   >
     <div
       class="workflow-base-info-status"
@@ -582,9 +1079,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 8`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>
@@ -593,7 +1161,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 8`] 
 exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 9`] = `
 <div>
   <div
-    class="css-1bld33o"
+    class="css-1lls3h9"
   >
     <div
       class="workflow-base-info-status"
@@ -674,9 +1242,80 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 9`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      aria-label="desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
+      <div
+        aria-label="复制"
+        class="ant-typography-copy"
+        role="button"
+        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+        tabindex="0"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+      >
+        lg
+      </span>
+      <span
+        aria-hidden="true"
+        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ...
+        </span>
+        <div
+          aria-label="复制"
+          class="ant-typography-copy"
+          role="button"
+          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+          tabindex="0"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+        </div>
+      </span>
     </div>
   </div>
 </div>

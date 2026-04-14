@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
 <body>
   <div>
     <div
-      class="custom-class-name-a css-gjgjfg"
+      class="custom-class-name-a css-n0dig9"
     >
       <div
         class="workflow-base-info-status"
@@ -105,7 +105,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
         </div>
       </div>
       <div
-        class="workflow-base-info-desc"
+        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
       >
         this is a desc str
       </div>
@@ -118,7 +118,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has need params 1`]
 <body>
   <div>
     <div
-      class="css-sjztq0"
+      class="css-rgmylz"
     >
       <div
         class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -134,7 +134,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has need params 1`]
         />
       </div>
       <div
-        class="workflow-base-info-desc"
+        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
       >
         -
       </div>
