@@ -1,1 +1,1 @@
-export const UI_VERSION = 'chore/update-tsconfig   42f23849f0';
+export const UI_VERSION = 'sync/data-masking   417b194dd';
