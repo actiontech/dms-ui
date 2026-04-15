@@ -10,13 +10,18 @@
     "build:ee": "node ../../scripts/getGitVersion.mjs ee && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ee,SQLE vite build",
     "build:demo": "node ../../scripts/getGitVersion.mjs trial && tsc && cross-env NODE_OPTIONS=--max_old_space_size=102400 buildType=ce,SQLE,DEMO vite build",
     "preview": "vite preview",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src vite.config.mts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "check": "echo \"base check\"",
     "test": "jest --watchAll=true",
-    "test:c": "jest --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --coverageDirectory=coverage --json --outputFile=coverage/report.json --color --silent --testLocationInResults"
   },
   "dependencies": {
     "@actiontech/shared": "workspace:^",
     "@actiontech/dms-kit": "workspace:^",
+    "@actiontech/tooling-config": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
     "sqle": "workspace:^",
     "@actiontech/icons": "workspace:^"
