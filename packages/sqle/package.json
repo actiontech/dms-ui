@@ -23,6 +23,7 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@actiontech/tooling-config": "workspace:^",
     "@types/react-grid-layout": "^1.3.2",
     "graphology-types": "^0.24.8",
     "jest-canvas-mock": "^2.2.0"
@@ -30,9 +31,13 @@
   "scripts": {
     "start": "PORT=3030 craco start",
     "build": "craco build",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "check": "echo \"sqle check\"",
     "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
+    "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --coverageDirectory=coverage --json --outputFile=coverage/report.json --color --silent --testLocationInResults",
     "eject": "react-scripts eject"
   },
   "browserslist": {

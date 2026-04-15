@@ -187,48 +187,35 @@ pnpm test:clean
 
 ## CI 流程（GitHub Actions）
 
-### 执行步骤
+### 执行步骤（Turbo + 按包覆盖率）
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  test job (matrix: shard [1,2,3,4])                      │
+│  test job                                                 │
 │                                                           │
-│  run-ci.sh $shard_index $shard_count                     │
+│  pnpm test:ci:turbo                                       │
 │      │                                                    │
-│      ├── pnpm test:clean                                  │
-│      ├── pnpm jest --ci --shard=$i/4                     │
-│      │       ├── ee project    ┐                         │
-│      │       ├── ce project    ├── 全部 project 的测试    │
-│      │       └── sqle project  ┘   被统一 shard          │
-│      ├── coverage/report-$i.json                         │
-│      └── coverage/coverage-final-$i.json                 │
+│      └── turbo run test:ci --filter='./packages/*'       │
+│             ├── packages/base/test:ci                    │
+│             ├── packages/dms-kit/test:ci                 │
+│             ├── packages/shared/test:ci                  │
+│             └── packages/sqle/test:ci                    │
+│                                                           │
+│  每个包独立产出 coverage/report.json                      │
 └─────────────────────────────────────────────────────────┘
-                           ↓
+                          ↓
 ┌─────────────────────────────────────────────────────────┐
 │  report job (needs: test)                                 │
 │                                                           │
-│  下载 4 个 shard 的 artifacts                             │
-│  node merge-report-json.js                               │
-│      ├── 合并 4 份 report-*.json（测试计数）              │
-│      └── 合并 4 份 coverage-final-*.json（覆盖率）        │
-│                                                           │
-│  → coverage-merged.json（最终报告）                       │
+│  下载各包 coverage artifact                                │
+│  对每个包分别执行 ArtiomTr/jest-coverage-report-action    │
 └─────────────────────────────────────────────────────────┘
 ```
-
-### Shard 机制
-
-Jest 的 `--shard=i/N` 将**所有 project 的测试文件总集合**平均分配到 N 个 runner 上。
-
-- 添加新的 project 会自动被纳入分片，无需修改 CI 配置
-- `SHARD_COUNT` 环境变量控制 `merge-report-json.js` 的合并逻辑（默认值 4，与 matrix 一致）
 
 ### 关键脚本
 
 | 脚本 | 用途 |
 |---|---|
-| `scripts/jest/run-ci.sh` | CI 单个 shard 的完整执行流程 |
-| `scripts/jest/merge-report-json.js` | 合并所有 shard 的覆盖率与测试报告 |
 | `scripts/jest/custom-transform.js` | 条件编译 + Babel 的自定义 transformer |
 | `scripts/jest/run.sh` | 本地开发监视模式运行入口 |
 | `scripts/jest/run-coverage.sh` | 本地覆盖率报告运行入口 |
@@ -309,7 +296,5 @@ CI= pnpm jest --updateSnapshot --testPathPattern="<path>"
 
 - [`jest.config.js`](../../jest.config.js) — Jest Projects 完整配置
 - [`scripts/jest/custom-transform.js`](./custom-transform.js) — 条件编译 transformer
-- [`scripts/jest/run-ci.sh`](./run-ci.sh) — CI shard 执行脚本
-- [`scripts/jest/merge-report-json.js`](./merge-report-json.js) — 报告合并脚本
 - [`.github/workflows/main.yml`](../../.github/workflows/main.yml) — GitHub Actions CI 配置
 - [`.cursor/commands/unit-testing.md`](../../.cursor/commands/unit-testing.md) — 单元测试编写规范
