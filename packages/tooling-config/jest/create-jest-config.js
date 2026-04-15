@@ -1,5 +1,7 @@
 import path from 'node:path';
 
+process.env.TZ = 'Asia/Shanghai';
+
 const CE_TEST_FILE_RE = '\\.ce(\\.[^./]+)*\\.test\\.[jt]sx?$';
 const SQLE_TEST_FILE_RE = '\\.sqle(\\.[^./]+)*\\.test\\.[jt]sx?$';
 const PROVISION_TEST_FILE_RE = '\\.provision(\\.[^./]+)*\\.test\\.[jt]sx?$';
