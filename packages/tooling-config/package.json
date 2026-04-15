@@ -1,0 +1,20 @@
+{
+  "name": "@actiontech/tooling-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./jest/create-jest-config": "./jest/create-jest-config.js",
+    "./tsconfig/base": "./tsconfig/base.json"
+  },
+  "scripts": {
+    "oxlint": "oxlint --no-error-on-unmatched-pattern jest tsconfig",
+    "typecheck": "echo \"tooling-config typecheck skipped\"",
+    "stylelint": "echo \"tooling-config stylelint skipped\"",
+    "check": "echo \"tooling-config check\""
+  },
+  "files": [
+    "jest",
+    "tsconfig"
+  ]
+}

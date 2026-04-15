@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import eslint from 'vite-plugin-eslint2';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import * as path from 'path';
@@ -50,7 +49,6 @@ export default defineConfig(() => {
           demo: isDemo
         }
       }),
-      eslint(),
       react(),
       createHtmlPlugin({
         inject: {

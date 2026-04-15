@@ -9,6 +9,10 @@
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
     "build": "father build",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "check": "echo \"icons check\"",
     "icon:g": "svgr --template template/template.cjs -d src svg/ ",
     "docs:g": "node scripts/generate.js"
   },
