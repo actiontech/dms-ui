@@ -6,11 +6,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "@actiontech/icons": ["src"],
-      "@actiontech/icons/*": ["src/*", "*"]
+      "@@/*": ["./.dumi/tmp/*"],
+      "@actiontech/icons": ["./src"],
+      "@actiontech/icons/*": ["./src/*", "./*"]
     }
   },
   "include": [".dumirc.ts", "src/**/*"]
