@@ -24,6 +24,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
+    strategy:
+      matrix:
+        include:
+          - package_name: base
+            package_path: packages/base
+            artifact_name: coverage-artifacts-base
+          - package_name: '@actiontech/dms-kit'
+            package_path: packages/dms-kit
+            artifact_name: coverage-artifacts-dms-kit
+          - package_name: '@actiontech/shared'
+            package_path: packages/shared
+            artifact_name: coverage-artifacts-shared
+          - package_name: sqle
+            package_path: packages/sqle
+            artifact_name: coverage-artifacts-sqle
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,32 +46,14 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Run package test suites
-        run: pnpm test:ci:turbo
+      - name: Run package test suite
+        run: pnpm turbo run test:ci --filter=${{ matrix.package_name }}
 
-      - name: Upload base coverage artifact
+      - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-artifacts-base
-          path: packages/base/coverage/
-
-      - name: Upload dms-kit coverage artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-artifacts-dms-kit
-          path: packages/dms-kit/coverage/
-
-      - name: Upload shared coverage artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-artifacts-shared
-          path: packages/shared/coverage/
-
-      - name: Upload sqle coverage artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-artifacts-sqle
-          path: packages/sqle/coverage/
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.package_path }}/coverage/
 
   report:
     runs-on: ubuntu-latest
