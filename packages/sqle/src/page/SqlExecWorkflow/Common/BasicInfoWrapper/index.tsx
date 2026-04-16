@@ -1,13 +1,18 @@
 import classNames from 'classnames';
 import { BasicInfoStyleWrapper } from './style';
 import { BasicInfoWrapperProps } from './index.type';
-import { EmptyBox, BasicTag } from '@actiontech/dms-kit';
+import {
+  EmptyBox,
+  BasicTag,
+  BasicTypographyEllipsis
+} from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { Space } from 'antd';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
+
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
   desc,
@@ -102,7 +107,11 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
           </TypedLink>
         </EmptyBox>
       </Space>
-      <div className="workflow-base-info-desc">{desc ?? '-'}</div>
+      <BasicTypographyEllipsis
+        className="workflow-base-info-desc"
+        copyable={false}
+        textCont={desc ?? '-'}
+      />
     </BasicInfoStyleWrapper>
   );
 };

@@ -200,7 +200,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
               </div>
             </div>
             <div
-              class="clearPaddingTop css-1rxlo0k"
+              class="clearPaddingTop css-xcpaj5"
             >
               <div
                 class="workflow-base-info-status"
@@ -289,7 +289,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                 />
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 this is a desc
               </div>
@@ -951,7 +951,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ahxq8i"
+              class="clearPaddingTop css-ddk1y4"
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -965,7 +965,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                 />
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 -
               </div>
@@ -1522,7 +1522,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-1pvtba3"
+              class="clearPaddingTop css-1yb6xb6"
             >
               <div
                 class="workflow-base-info-status"
@@ -1623,7 +1623,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 </div>
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 this is a desc
               </div>
@@ -2414,7 +2414,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-1pvtba3"
+              class="clearPaddingTop css-1yb6xb6"
             >
               <div
                 class="workflow-base-info-status"
@@ -2515,7 +2515,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 </div>
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 this is a desc
               </div>
@@ -3338,7 +3338,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
               </div>
             </div>
             <div
-              class="clearPaddingTop css-14ff2p5"
+              class="clearPaddingTop css-fljemo"
             >
               <div
                 class="workflow-base-info-status"
@@ -3427,7 +3427,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 />
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 this is a desc
               </div>

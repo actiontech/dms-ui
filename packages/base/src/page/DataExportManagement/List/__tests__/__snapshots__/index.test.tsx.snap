@@ -376,7 +376,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             工单名称
                           </th>
                           <th
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             描述
@@ -516,7 +516,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"
@@ -678,7 +678,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"
@@ -1471,7 +1471,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                             工单名称
                           </th>
                           <th
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             描述
@@ -2078,7 +2078,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             工单名称
                           </th>
                           <th
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             描述
@@ -2247,7 +2247,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"
@@ -2429,7 +2429,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"
@@ -3441,7 +3441,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             工单名称
                           </th>
                           <th
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             描述
@@ -3610,7 +3610,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"
@@ -3792,7 +3792,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell ellipsis-column-width-large"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               aria-label="desc"

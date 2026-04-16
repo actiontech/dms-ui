@@ -72,7 +72,7 @@ exports[`test AuditResultStep ce render init snap 1`] = `
       </div>
     </div>
     <div
-      class="css-sjztq0"
+      class="css-rgmylz"
     >
       <div
         class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -88,7 +88,7 @@ exports[`test AuditResultStep ce render init snap 1`] = `
         />
       </div>
       <div
-        class="workflow-base-info-desc"
+        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
       >
         desc
       </div>

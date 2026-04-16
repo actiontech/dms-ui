@@ -793,32 +793,80 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -2551,32 +2599,80 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -4313,32 +4409,80 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -5073,7 +5217,7 @@ from
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -5089,7 +5233,7 @@ from
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               -
             </div>
@@ -6666,32 +6810,80 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -7423,7 +7615,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -7439,7 +7631,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               test desc
             </div>
@@ -8702,32 +8894,80 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -9459,7 +9699,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -9475,7 +9715,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               test desc
             </div>
@@ -11118,32 +11358,80 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -11670,7 +11958,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -11686,7 +11974,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               workflow desc
             </div>
@@ -13737,32 +14025,80 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -14289,7 +14625,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -14305,7 +14641,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               workflow desc
             </div>
@@ -16368,32 +16704,80 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               class="ant-form-item-no-colon"
                               title=""
                             >
-                              <svg
-                                class="custom-icon-ellipse"
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
-                                <rect
-                                  fill="#E8F3FF"
-                                  height="16"
-                                  rx="3"
-                                  width="16"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#fff"
-                                  r="3"
-                                  stroke="#4583FF"
-                                  stroke-width="2"
-                                />
-                              </svg>
-                              <span>
-                                选择SQL语句上传方式
-                              </span>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <svg
+                                    class="custom-icon-ellipse"
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      fill="#E8F3FF"
+                                      height="16"
+                                      rx="3"
+                                      width="16"
+                                    />
+                                    <circle
+                                      cx="8"
+                                      cy="8"
+                                      fill="#fff"
+                                      r="3"
+                                      stroke="#4583FF"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <span>
+                                    选择SQL语句上传方式
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        aria-label="info-circle"
+                                        class="anticon anticon-info-circle tooltips-default-icon"
+                                        role="img"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="info-circle"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                          />
+                                          <path
+                                            d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </label>
                           </div>
                           <div
@@ -17682,32 +18066,80 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -18234,7 +18666,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -18250,7 +18682,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               workflow desc
             </div>
@@ -20808,32 +21240,80 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               class="ant-form-item-no-colon"
                               title=""
                             >
-                              <svg
-                                class="custom-icon-ellipse"
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
-                                <rect
-                                  fill="#E8F3FF"
-                                  height="16"
-                                  rx="3"
-                                  width="16"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#fff"
-                                  r="3"
-                                  stroke="#4583FF"
-                                  stroke-width="2"
-                                />
-                              </svg>
-                              <span>
-                                选择SQL语句上传方式
-                              </span>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <svg
+                                    class="custom-icon-ellipse"
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      fill="#E8F3FF"
+                                      height="16"
+                                      rx="3"
+                                      width="16"
+                                    />
+                                    <circle
+                                      cx="8"
+                                      cy="8"
+                                      fill="#fff"
+                                      r="3"
+                                      stroke="#4583FF"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <span>
+                                    选择SQL语句上传方式
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <div
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        aria-label="info-circle"
+                                        class="anticon anticon-info-circle tooltips-default-icon"
+                                        role="img"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="info-circle"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                          />
+                                          <path
+                                            d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </label>
                           </div>
                           <div
@@ -22382,32 +22862,80 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -23737,32 +24265,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -25628,32 +26204,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -27607,32 +28231,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -28367,7 +29039,7 @@ from
             </div>
           </div>
           <div
-            class="css-sjztq0"
+            class="css-rgmylz"
           >
             <div
               class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -28383,7 +29055,7 @@ from
               />
             </div>
             <div
-              class="workflow-base-info-desc"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
             >
               -
             </div>
@@ -30107,32 +30779,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -32153,32 +32873,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -32707,32 +33475,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -33442,32 +34258,80 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                           class="ant-form-item-no-colon"
                           title=""
                         >
-                          <svg
-                            class="custom-icon-ellipse"
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="#fff"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          <span>
-                            选择SQL语句上传方式
-                          </span>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <svg
+                                class="custom-icon-ellipse"
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#E8F3FF"
+                                  height="16"
+                                  rx="3"
+                                  width="16"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#fff"
+                                  r="3"
+                                  stroke="#4583FF"
+                                  stroke-width="2"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span>
+                                选择SQL语句上传方式
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    aria-label="info-circle"
+                                    class="anticon anticon-info-circle tooltips-default-icon"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="info-circle"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      />
+                                      <path
+                                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -35174,32 +36038,80 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <svg
-                          class="custom-icon-ellipse"
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          <rect
-                            fill="#E8F3FF"
-                            height="16"
-                            rx="3"
-                            width="16"
-                          />
-                          <circle
-                            cx="8"
-                            cy="8"
-                            fill="#fff"
-                            r="3"
-                            stroke="#4583FF"
-                            stroke-width="2"
-                          />
-                        </svg>
-                        <span>
-                          选择SQL语句上传方式
-                        </span>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <svg
+                              class="custom-icon-ellipse"
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#E8F3FF"
+                                height="16"
+                                rx="3"
+                                width="16"
+                              />
+                              <circle
+                                cx="8"
+                                cy="8"
+                                fill="#fff"
+                                r="3"
+                                stroke="#4583FF"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              选择SQL语句上传方式
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  aria-label="info-circle"
+                                  class="anticon anticon-info-circle tooltips-default-icon"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="info-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    />
+                                    <path
+                                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
