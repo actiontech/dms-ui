@@ -221,7 +221,13 @@ const SqlFileStatementOverview: React.FC = () => {
           >
             {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
-          <DownloadRecord taskId={taskId ?? ''} noDuplicate={noDuplicate} />
+          <DownloadRecord
+            taskId={taskId ?? ''}
+            noDuplicate={noDuplicate}
+            auditStatusFinished={
+              currentTask?.status !== 'wait_for_audit'
+            }
+          />
         </Space>
       </SegmentedRowStyleWrapper>
       <TableFilterContainer

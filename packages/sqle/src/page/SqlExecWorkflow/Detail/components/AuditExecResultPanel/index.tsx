@@ -166,6 +166,9 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
                 taskId={activeTabKey}
                 noDuplicate={noDuplicate}
                 workflowId={resetProps.workflowInfo?.workflow_id}
+                auditStatusFinished={
+                  currentTask?.status !== 'initialized'
+                }
               />
             </Space>
           </EmptyBox>
