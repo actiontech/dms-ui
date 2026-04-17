@@ -26,7 +26,19 @@ jobs:
     if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
     strategy:
       matrix:
-        shard: [1, 2, 3, 4]
+        include:
+          - package_name: base
+            package_path: packages/base
+            artifact_name: coverage-artifacts-base
+          - package_name: '@actiontech/dms-kit'
+            package_path: packages/dms-kit
+            artifact_name: coverage-artifacts-dms-kit
+          - package_name: '@actiontech/shared'
+            package_path: packages/shared
+            artifact_name: coverage-artifacts-shared
+          - package_name: sqle
+            package_path: packages/sqle
+            artifact_name: coverage-artifacts-sqle
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,13 +46,14 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
-      - name: Coverage test report
-        run: sh ./scripts/jest/run-ci.sh ${{ matrix.shard }} ${{ strategy.job-total }}
+      - name: Run package test suite
+        run: pnpm turbo run test:ci --filter=${{ matrix.package_name }}
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: coverage-artifacts-${{ matrix.shard }}
-          path: coverage/
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.package_path }}/coverage/
 
   report:
     runs-on: ubuntu-latest
@@ -53,45 +66,56 @@ jobs:
       - name: Get Coverage 1
         uses: actions/download-artifact@v4
         with:
-          name: coverage-artifacts-1
-          path: coverage
+          name: coverage-artifacts-base
+          path: coverage/base
 
       - name: Get Coverage 2
         uses: actions/download-artifact@v4
         with:
-          name: coverage-artifacts-2
-          path: coverage
+          name: coverage-artifacts-dms-kit
+          path: coverage/dms-kit
 
       - name: Get Coverage 3
         uses: actions/download-artifact@v4
         with:
-          name: coverage-artifacts-3
-          path: coverage
+          name: coverage-artifacts-shared
+          path: coverage/shared
 
       - name: Get Coverage 4
         uses: actions/download-artifact@v4
         with:
-          name: coverage-artifacts-4
-          path: coverage
+          name: coverage-artifacts-sqle
+          path: coverage/sqle
 
-      - name: Install dependencies
-        uses: ./.github/actions/catch-install-pnpm
-
-      - name: Merge coverage reports
-        run: node ./scripts/jest/merge-report-json.js
-
-      - name: Coverage test report
+      - name: Coverage report (base)
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-coverage-file: coverage-merged.json
-          coverage-file: coverage-merged.json
+          coverage-file: coverage/base/report.json
 
-      - name: Delete artifact
+      - name: Coverage report (dms-kit)
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage/dms-kit/report.json
+
+      - name: Coverage report (shared)
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage/shared/report.json
+
+      - name: Coverage report (sqle)
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage/sqle/report.json
+
+      - name: Delete coverage artifacts
         uses: geekyeggo/delete-artifact@v5
         with:
           name: |
-            coverage-artifacts-1
-            coverage-artifacts-2
-            coverage-artifacts-3
-            coverage-artifacts-4
+            coverage-artifacts-base
+            coverage-artifacts-dms-kit
+            coverage-artifacts-shared
+            coverage-artifacts-sqle

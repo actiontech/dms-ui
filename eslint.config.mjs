@@ -9,7 +9,7 @@ import pluginNode from 'eslint-plugin-node';
 export default defineConfig([
   tseslint.configs.recommended,
   {
-    files: ['**/scripts/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ['**/scripts/**/*.{js,mjs,cjs,ts,jsx,tsx}', '**/vite.config.mts'],
     plugins: {
       import: pluginImport,
       node: pluginNode

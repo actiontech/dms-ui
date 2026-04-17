@@ -16,12 +16,19 @@
   "scripts": {
     "build": "father build",
     "dev": "father dev --incremental",
+    "start": "pnpm dev",
+    "start:ee": "pnpm dev",
+    "start:demo": "pnpm dev",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "check": "echo \"dms-kit check\"",
     "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --coverageDirectory=coverage --json --outputFile=coverage/report.json --color --silent --testLocationInResults"
   },
   "dependencies": {
     "ahooks": "^3.7.0",
@@ -54,6 +61,7 @@
     "typescript": "^5.0.2"
   },
   "devDependencies": {
+    "@actiontech/tooling-config": "workspace:^",
     "father": "^4.5.2",
     "dumi": "^2.3.8",
     "babel-plugin-import": "^1.13.8"

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import eslint from 'vite-plugin-eslint';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import * as path from 'path';
@@ -50,14 +49,6 @@ export default defineConfig(() => {
           demo: isDemo
         }
       }),
-      eslint({
-        exclude: [
-          '**/node_modules/**',
-          '**/packages/**/lib/**',
-          '**/packages/**/es/**',
-          '!**/packages/**/lib/api/common/**'
-        ]
-      }),
       react(),
       createHtmlPlugin({
         inject: {
@@ -81,6 +72,7 @@ export default defineConfig(() => {
       }
     },
     build: {
+      target: 'chrome80',
       rollupOptions: {
         // resolve css in js 'use client' warn
         onwarn(warning, warn) {
@@ -91,13 +83,33 @@ export default defineConfig(() => {
         },
         output: {
           minifyInternalExports: true,
-          manualChunks: {
-            'antd.module': ['antd'],
-            'react.module': ['react'],
-            'lodash.module': ['lodash'],
-            'antd.icon.module': ['@ant-design/icons'],
-            'antd.plots': ['@ant-design/plots'],
-            'actiontech.shared': ['@actiontech/shared']
+          codeSplitting: {
+            groups: [
+              {
+                test: /[\\/]node_modules[\\/]antd[\\/]/,
+                name: 'antd.module'
+              },
+              {
+                test: /[\\/]node_modules[\\/]react[\\/]/,
+                name: 'react.module'
+              },
+              {
+                test: /[\\/]node_modules[\\/]lodash[\\/]/,
+                name: 'lodash.module'
+              },
+              {
+                test: /[\\/]node_modules[\\/]@ant-design[\\/]icons[\\/]/,
+                name: 'antd.icon.module'
+              },
+              {
+                test: /[\\/]node_modules[\\/]@ant-design[\\/]plots[\\/]/,
+                name: 'antd.plots'
+              },
+              {
+                test: /[\\/]node_modules[\\/]@actiontech[\\/]shared[\\/]/,
+                name: 'actiontech.shared'
+              }
+            ]
           }
         }
       }
