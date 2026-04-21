@@ -144,8 +144,7 @@ export default {
     },
     exportReview: {
       title: 'Export Review',
-      subTitle:
-        'Reviewer checks the legitimacy of the export request'
+      subTitle: 'Reviewer checks the legitimacy of the export request'
     },
     exportExecute: {
       title: 'Export Execution Confirm',

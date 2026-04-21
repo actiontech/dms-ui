@@ -194,9 +194,7 @@ class WorkflowService extends ServiceBase {
     const workflow_type = paramsData.workflow_type;
     delete paramsData.workflow_type;
 
-    const queryString = workflow_type
-      ? `?workflow_type=${workflow_type}`
-      : '';
+    const queryString = workflow_type ? `?workflow_type=${workflow_type}` : '';
 
     return this.patch<IUpdateWorkflowTemplateV1Return>(
       `/v1/projects/${project_name}/workflow_template${queryString}`,
