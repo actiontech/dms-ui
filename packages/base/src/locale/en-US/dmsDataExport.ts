@@ -62,7 +62,11 @@ export default {
       hint: 'Approval process can be modified in Project Configure > Approval Process',
       stepLabel: 'Step {{number}}',
       matchByPermission: 'Match by Permission',
-      loadFailed: 'Failed to load approval process'
+      loadFailed: 'Failed to load approval process',
+      stepType: {
+        export_review: 'Export Review',
+        export_execute: 'Export Execution Confirm'
+      }
     }
   },
   batchClose: {

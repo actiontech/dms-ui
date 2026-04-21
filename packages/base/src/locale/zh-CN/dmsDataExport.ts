@@ -57,7 +57,11 @@ export default {
       hint: '审批流程可在 Project Configure > Approval Process 中修改',
       stepLabel: '步骤 {{number}}',
       matchByPermission: '按权限匹配',
-      loadFailed: '加载审批流程失败'
+      loadFailed: '加载审批流程失败',
+      stepType: {
+        export_review: '导出审批',
+        export_execute: '导出执行确认'
+      }
     },
     update: {
       baseTitle: '工单基本信息',
