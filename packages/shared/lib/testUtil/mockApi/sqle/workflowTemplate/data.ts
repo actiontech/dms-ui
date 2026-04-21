@@ -29,5 +29,28 @@ export const workflowTemplateData = {
       type: 'sql_execute'
     }
   ],
-  workflow_template_name: '700300-WorkflowTemplate'
+  workflow_template_name: '700300-WorkflowTemplate',
+  workflow_type: 'workflow'
 };
+
+export const dataExportWorkflowTemplateData = {
+  allow_submit_when_less_audit_level: '',
+  desc: '',
+  update_time: '2024-01-15T10:30:00+08:00',
+  workflow_step_template_list: [
+    {
+      approved_by_authorized: true,
+      assignee_user_id_list: [],
+      execute_by_authorized: false,
+      number: 1,
+      type: 'export_review'
+    }
+  ],
+  workflow_template_name: '700300-DataExportWorkflowTemplate',
+  workflow_type: 'data_export'
+};
+
+export const workflowTemplateListData = [
+  workflowTemplateData,
+  dataExportWorkflowTemplateData
+];
