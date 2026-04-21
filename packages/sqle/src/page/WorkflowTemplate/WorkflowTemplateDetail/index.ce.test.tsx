@@ -8,12 +8,10 @@ import { act, cleanup, screen } from '@testing-library/react';
 import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 
 describe('page/WorkflowTemplate CE', () => {
   beforeEach(() => {
     workflowTemplate.mockAllApi();
-    user.mockAllApi();
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
@@ -28,14 +26,12 @@ describe('page/WorkflowTemplate CE', () => {
     return sqleSuperRender(<WorkflowTemplateDetail />);
   };
 
-  it('render workflow template detail', async () => {
-    const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTipList();
+  it('render workflow template list without edit actions in CE', async () => {
+    const getListRequest = workflowTemplate.getWorkflowTemplateList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toHaveBeenCalled();
-    expect(userInfoRequest).toHaveBeenCalled();
+    expect(getListRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
+    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
   });
 });

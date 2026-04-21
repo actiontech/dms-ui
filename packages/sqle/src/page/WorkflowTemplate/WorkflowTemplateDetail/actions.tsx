@@ -1,32 +1,23 @@
 import { t } from '../../../locale';
 import {
-  PERMISSIONS,
-  PermissionControl
+  ActiontechTableActionsWithPermissions,
+  PERMISSIONS
 } from '@actiontech/shared/lib/features';
-import { ActionButton } from '@actiontech/shared';
-import { EditOutlined } from '@ant-design/icons';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
-export const WorkflowTemplatePageHeaderActions = (
-  projectID: string,
-  templateName?: string
-): Record<'update-workflow-template', React.ReactNode> => ({
-  'update-workflow-template': (
-    <PermissionControl
-      permission={PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE}
-    >
-      <ActionButton
-        type="primary"
-        icon={<EditOutlined />}
-        text={t('workflowTemplate.detail.updateTemplate')}
-        actionType="navigate-link"
-        link={{
-          to: ROUTE_PATHS.SQLE.PROGRESS.update,
-          params: {
-            projectID,
-            workflowName: templateName ?? ''
-          }
-        }}
-      />
-    </PermissionControl>
-  )
+import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+
+export const WorkflowTemplateTableActions: (
+  onEdit: (record: IWorkflowTemplateDetailResV1) => void
+) => ActiontechTableActionsWithPermissions<IWorkflowTemplateDetailResV1> = (
+  onEdit
+) => ({
+  buttons: [
+    {
+      key: 'edit-workflow-template',
+      text: t('common.edit'),
+      buttonProps: (record) => ({
+        onClick: () => onEdit(record ?? {})
+      }),
+      permissions: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE
+    }
+  ]
 });
