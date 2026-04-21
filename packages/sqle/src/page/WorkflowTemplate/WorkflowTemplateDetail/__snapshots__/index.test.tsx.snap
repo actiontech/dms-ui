@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template list 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-ex8bfe"
+    >
+      <div
+        class="title"
+      >
+        审批流程模板
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
+        >
+          <div
+            class="ant-spin-nested-loading"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <div
+                class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+              >
+                <div
+                  class="ant-table-container"
+                >
+                  <div
+                    class="ant-table-content"
+                    style="overflow-x: auto; overflow-y: hidden;"
+                  >
+                    <table
+                      style="min-width: 100%; table-layout: auto;"
+                    >
+                      <colgroup>
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col
+                          style="width: 82px;"
+                        />
+                      </colgroup>
+                      <thead
+                        class="ant-table-thead"
+                      >
+                        <tr>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            审批流程模板名称
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            适用类型
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            审批节点描述
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            更新时间
+                          </th>
+                          <th
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            scope="col"
+                            style="position: sticky; right: 0px;"
+                          >
+                            操作
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="ant-table-tbody"
+                      >
+                        <tr
+                          aria-hidden="true"
+                          class="ant-table-measure-row"
+                          style="height: 0px; font-size: 0px;"
+                        >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ant-table-row ant-table-row-level-0"
+                          data-row-key="700300-WorkflowTemplate"
+                        >
+                          <td
+                            class="ant-table-cell"
+                          >
+                            700300-WorkflowTemplate
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            <span
+                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-161r05n"
+                            >
+                              上线工单
+                            </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            审核节点 -&gt; 审核节点 -&gt; 执行上线
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2023-12-26 14:19:12
+                          </td>
+                          <td
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            style="position: sticky; right: 0px;"
+                          >
+                            <div
+                              class="css-new95e"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ant-table-row ant-table-row-level-0"
+                          data-row-key="700300-DataExportWorkflowTemplate"
+                        >
+                          <td
+                            class="ant-table-cell"
+                          >
+                            700300-DataExportWorkflowTemplate
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            <span
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-6zycqe"
+                            >
+                              数据导出
+                            </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            导出审批
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2024-01-15 10:30:00
+                          </td>
+                          <td
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            style="position: sticky; right: 0px;"
+                          >
+                            <div
+                              class="css-new95e"
+                            >
+                              <button
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-10ae2zl"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

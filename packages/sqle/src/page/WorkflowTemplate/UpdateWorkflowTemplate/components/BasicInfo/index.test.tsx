@@ -3,7 +3,8 @@ import BasicInfo from '.';
 import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
   getAllBySelector,
-  getBySelector
+  getBySelector,
+  queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -24,7 +25,7 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
   const updateMock = jest.fn();
 
   const { result } = renderHook(() => Form.useForm());
-  const customRender = (data?: { [key: string]: undefined }) => {
+  const customRender = (data?: Record<string, unknown>) => {
     return sqleSuperRender(
       <BasicInfo
         form={result.current[0]}
@@ -65,5 +66,21 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
     const { baseElement } = customRender({ defaultData: undefined });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('告警(Warning)')).toBeInTheDocument();
+  });
+
+  it('should hide AllowSubmitWhenLessAuditLevel when workflowType is data_export', async () => {
+    const { baseElement } = customRender({ workflowType: 'data_export' });
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('基本信息')).toBeInTheDocument();
+    expect(
+      screen.queryByText('允许创建工单的最高审核等级')
+    ).not.toBeInTheDocument();
+    expect(
+      queryBySelector('.ant-select-selection-search-input')
+    ).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(nextStepMock).toHaveBeenCalled();
   });
 });
