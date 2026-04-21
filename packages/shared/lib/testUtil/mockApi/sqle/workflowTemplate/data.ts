@@ -1,3 +1,4 @@
+import { IWorkflowTemplateDetailResV1 } from '../../../../api/sqle/service/common';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '../../../../api/sqle/service/common.enum';
 
 export const workflowTemplateData = {
@@ -33,8 +34,7 @@ export const workflowTemplateData = {
   workflow_type: 'workflow'
 };
 
-export const dataExportWorkflowTemplateData = {
-  allow_submit_when_less_audit_level: '',
+export const dataExportWorkflowTemplateData: IWorkflowTemplateDetailResV1 = {
   desc: '',
   update_time: '2024-01-15T10:30:00+08:00',
   workflow_step_template_list: [
