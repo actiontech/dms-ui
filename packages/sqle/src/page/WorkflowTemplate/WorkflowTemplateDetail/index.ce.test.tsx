@@ -9,12 +9,29 @@ import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workf
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
+
 describe('page/WorkflowTemplate CE', () => {
   beforeEach(() => {
     workflowTemplate.mockAllApi();
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
+
+    const { useSelector } = require('react-redux');
+    (useSelector as jest.Mock).mockImplementation((selector: Function) =>
+      selector({
+        permission: {
+          moduleFeatureSupport: {},
+          userOperationPermissions: null
+        }
+      })
+    );
   });
 
   afterEach(() => {
