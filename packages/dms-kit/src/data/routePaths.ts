@@ -325,7 +325,8 @@ export const ROUTE_PATHS = {
       },
       update: {
         prefix: '/sqle/project/:projectID/progress',
-        path: 'update/:workflowName'
+        path: 'update/:workflowName',
+        query: 'workflowType'
       }
     },
     WHITELIST: {

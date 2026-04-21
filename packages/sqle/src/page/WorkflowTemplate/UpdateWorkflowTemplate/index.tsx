@@ -1,5 +1,9 @@
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
-import { ActionButton, useTypedParams } from '@actiontech/shared';
+import {
+  ActionButton,
+  useTypedParams,
+  useTypedQuery
+} from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
 import React, { useState } from 'react';
@@ -41,6 +45,23 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const urlParams = useTypedParams<typeof ROUTE_PATHS.SQLE.PROGRESS.update>();
   const { projectName, projectID } = useCurrentProject();
+  const extractQueries = useTypedQuery();
+  const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.update);
+  const workflowType = searchParams?.workflowType || 'workflow';
+
+  const pageTitle =
+    workflowType === 'data_export'
+      ? t('workflowTemplate.update.title.dataExport')
+      : t('workflowTemplate.update.title.workflow');
+
+  const reviewType =
+    workflowType === 'data_export'
+      ? WorkFlowStepTemplateReqV1TypeEnum.export_review
+      : WorkFlowStepTemplateReqV1TypeEnum.sql_review;
+  const executeType =
+    workflowType === 'data_export'
+      ? WorkFlowStepTemplateReqV1TypeEnum.export_execute
+      : WorkFlowStepTemplateReqV1TypeEnum.sql_execute;
   const {
     loading: getUsernameListLoading,
     updateUsernameList,
@@ -63,19 +84,20 @@ const UpdateWorkflowTemplate: React.FC = () => {
     await form?.validateFields();
     const reviewTempData = reviewSteps.map((item) => ({
       ...item,
-      type: WorkFlowStepTemplateReqV1TypeEnum.sql_review
+      type: reviewType
     }));
     const templateList: IWorkFlowStepTemplateReqV1[] = [
       ...reviewTempData,
       {
         ...execSteps,
-        type: WorkFlowStepTemplateReqV1TypeEnum.sql_execute
+        type: executeType
       }
     ];
     startSubmit();
     return workflow
       .updateWorkflowTemplateV1({
         project_name: projectName,
+        workflow_type: workflowType,
         workflow_step_template_list: templateList,
         allow_submit_when_less_audit_level: selectLevel as
           | UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum
@@ -92,7 +114,8 @@ const UpdateWorkflowTemplate: React.FC = () => {
       () =>
         workflow
           .getWorkflowTemplateV1({
-            project_name: projectName
+            project_name: projectName,
+            workflow_type: workflowType
           })
           .then((res) => {
             const temp = res.data.data;
@@ -150,6 +173,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
           nextStep={nextStep}
           updateBaseInfo={updateBaseInfo}
           totalStep={reviewSteps.length + 2}
+          workflowType={workflowType}
         />
       );
     }
@@ -184,7 +208,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
           assignee_user_id_list: [],
           desc: '',
           approved_by_authorized: true,
-          type: WorkFlowStepTemplateReqV1TypeEnum.sql_review
+          type: reviewType
         }
       ]);
       setCurrentStep(reviewSteps.length + 1);
@@ -204,7 +228,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
       assignee_user_id_list: [],
       desc: '',
       execute_by_authorized: true,
-      type: WorkFlowStepTemplateReqV1TypeEnum.sql_execute
+      type: executeType
     });
   };
   const handleExchangeReviewNode = (from: number, to: number) => {
@@ -232,7 +256,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
             <ActionButton
               key="go-back"
               icon={<ArrowLeftOutlined />}
-              text={t('workflowTemplate.create.title.returnButton')}
+              text={pageTitle}
               actionType="navigate-link"
               link={{
                 to: ROUTE_PATHS.SQLE.PROGRESS.index,

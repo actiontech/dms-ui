@@ -3,9 +3,9 @@ import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/se
 import { WorkflowTemplateTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BasicTag } from '@actiontech/dms-kit';
 import { formatTime } from '@actiontech/dms-kit';
-import { t } from '../../../locale';
+import { t, I18nKey } from '../../../locale';
 
-const stepTypeNameMap: Record<string, string> = {
+const stepTypeNameMap: Record<string, I18nKey> = {
   sql_review: 'workflowTemplate.progressConfig.review.title',
   sql_execute: 'workflowTemplate.progressConfig.exec.title',
   export_review: 'workflowTemplate.progressConfig.exportReview.title',
@@ -49,9 +49,7 @@ export const WorkflowTemplateListColumn =
         render: (stepList) => {
           if (!stepList || stepList.length === 0) return '-';
           return stepList
-            .map(
-              (step: { type?: string }) => getStepTypeName(step.type)
-            )
+            .map((step: { type?: string }) => getStepTypeName(step.type))
             .join(' -> ');
         }
       },

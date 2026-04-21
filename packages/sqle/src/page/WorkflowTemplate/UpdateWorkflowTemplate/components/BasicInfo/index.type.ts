@@ -10,6 +10,7 @@ export type BaseFormProps = {
     info: BaseFormFields['allowSubmitWhenLessAuditLevel']
   ) => void;
   totalStep: number;
+  workflowType?: string;
 };
 
 export type BaseFormFields = {
