@@ -18,6 +18,8 @@ import {
   IGetGlobalWorkflowStatisticsReturn,
   IGetWorkflowTemplateV1Params,
   IGetWorkflowTemplateV1Return,
+  IGetWorkflowTemplateListV1Params,
+  IGetWorkflowTemplateListV1Return,
   IUpdateWorkflowTemplateV1Params,
   IUpdateWorkflowTemplateV1Return,
   IGetWorkflowsV1Params,
@@ -166,6 +168,21 @@ class WorkflowService extends ServiceBase {
     );
   }
 
+  public getWorkflowTemplateListV1(
+    params: IGetWorkflowTemplateListV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetWorkflowTemplateListV1Return>(
+      `/v1/projects/${project_name}/workflow_templates`,
+      paramsData,
+      options
+    );
+  }
+
   public updateWorkflowTemplateV1(
     params: IUpdateWorkflowTemplateV1Params,
     options?: AxiosRequestConfig
@@ -174,8 +191,15 @@ class WorkflowService extends ServiceBase {
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
+    const workflow_type = paramsData.workflow_type;
+    delete paramsData.workflow_type;
+
+    const queryString = workflow_type
+      ? `?workflow_type=${workflow_type}`
+      : '';
+
     return this.patch<IUpdateWorkflowTemplateV1Return>(
-      `/v1/projects/${project_name}/workflow_template`,
+      `/v1/projects/${project_name}/workflow_template${queryString}`,
       paramsData,
       options
     );
