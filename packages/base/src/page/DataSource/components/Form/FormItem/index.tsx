@@ -162,7 +162,9 @@ const DatabaseFormItem: React.FC<{
         </FormItemLabel>
       </EmptyBox>
       <FormItemLabel
-        className="has-required-style"
+        className={
+          props.isUpdate && needUpdatePassword ? 'has-required-style' : ''
+        }
         label={
           props.isUpdate
             ? t('dmsDataSource.dataSourceForm.updatePassword')
@@ -171,7 +173,7 @@ const DatabaseFormItem: React.FC<{
         name="password"
         rules={[
           {
-            required: (props.isUpdate && needUpdatePassword) || !props.isUpdate,
+            required: props.isUpdate && needUpdatePassword,
             message: t('common.form.rule.require', {
               name: t('dmsDataSource.dataSourceForm.password')
             })
