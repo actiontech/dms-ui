@@ -56,6 +56,13 @@ export default {
     result: {
       success: 'Task created successfully',
       guide: 'View the newly created task'
+    },
+    approvalProcess: {
+      title: 'Approval Process',
+      hint: 'Approval process can be modified in Project Configure > Approval Process',
+      stepLabel: 'Step {{number}}',
+      matchByPermission: 'Match by Permission',
+      loadFailed: 'Failed to load approval process'
     }
   },
   batchClose: {

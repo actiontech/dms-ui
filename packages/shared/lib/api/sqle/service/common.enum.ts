@@ -829,7 +829,17 @@ export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {
 export enum WorkFlowStepTemplateReqV1TypeEnum {
   'sql_review' = 'sql_review',
 
-  'sql_execute' = 'sql_execute'
+  'sql_execute' = 'sql_execute',
+
+  'export_review' = 'export_review',
+
+  'export_execute' = 'export_execute'
+}
+
+export enum WorkflowTemplateTypeEnum {
+  'workflow' = 'workflow',
+
+  'data_export' = 'data_export'
 }
 
 export enum WorkflowDetailResV1CurrentStepTypeEnum {

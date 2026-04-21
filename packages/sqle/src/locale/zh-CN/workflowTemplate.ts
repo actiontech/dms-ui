@@ -10,7 +10,15 @@ export default {
 
     table: {
       workflowTemplateName: '审批流程模板名称',
-      desc: '审批流程模板描述'
+      desc: '审批流程模板描述',
+      applicableType: '适用类型',
+      approvalNodeDesc: '审批节点描述',
+      updateTime: '更新时间'
+    },
+
+    type: {
+      workflow: '上线工单',
+      dataExport: '数据导出'
     },
 
     operator: {
@@ -32,7 +40,9 @@ export default {
 
   update: {
     title: {
-      wrapper: '更新审批流程模板'
+      wrapper: '更新审批流程模板',
+      workflow: '编辑审批流程 - 上线工单',
+      dataExport: '编辑审批流程 - 数据导出'
     },
     result: {
       title: '更新审批流程模板成功',
@@ -123,6 +133,14 @@ export default {
         specifyExecute: '指定执行人',
         matchExecute: '匹配拥有数据源上线权限的成员'
       }
+    },
+    exportReview: {
+      title: '导出审批',
+      subTitle: '审批人在该步骤审核导出请求的合理性'
+    },
+    exportExecute: {
+      title: '导出执行确认',
+      subTitle: '确认执行导出操作'
     },
     operator: {
       remove: '移除该步骤',

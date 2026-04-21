@@ -10,7 +10,15 @@ export default {
 
     table: {
       workflowTemplateName: 'Approval workflow template name',
-      desc: 'Approval workflow template description'
+      desc: 'Approval workflow template description',
+      applicableType: 'Applicable Type',
+      approvalNodeDesc: 'Approval Node Description',
+      updateTime: 'Update Time'
+    },
+
+    type: {
+      workflow: 'SQL Exec Workflow',
+      dataExport: 'Data Export'
     },
 
     operator: {
@@ -33,7 +41,9 @@ export default {
 
   update: {
     title: {
-      wrapper: 'Update approval workflow template'
+      wrapper: 'Update approval workflow template',
+      workflow: 'Edit Approval Process - SQL Exec Workflow',
+      dataExport: 'Edit Approval Process - Data Export'
     },
     result: {
       title: 'Update approval workflow template successfully',
@@ -131,6 +141,15 @@ export default {
         specifyExecute: 'Specify executor',
         matchExecute: 'Match members who have data source online permissions'
       }
+    },
+    exportReview: {
+      title: 'Export Review',
+      subTitle:
+        'Reviewer checks the legitimacy of the export request'
+    },
+    exportExecute: {
+      title: 'Export Execution Confirm',
+      subTitle: 'Confirm to execute the export operation'
     },
     operator: {
       remove: 'Remove this step',

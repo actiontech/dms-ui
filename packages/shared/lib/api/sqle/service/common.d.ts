@@ -2503,6 +2503,14 @@ export interface IGetWorkflowTemplateResV1 {
   message?: string;
 }
 
+export interface IGetWorkflowTemplateListResV1 {
+  code?: number;
+
+  data?: IWorkflowTemplateDetailResV1[];
+
+  message?: string;
+}
+
 export interface IGetWorkflowsResV1 {
   code?: number;
 
@@ -4457,6 +4465,8 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_step_template_list?: IWorkFlowStepTemplateResV1[];
 
   workflow_template_name?: string;
+
+  workflow_type?: string;
 }
 
 export interface ICreatePipelineResData {
