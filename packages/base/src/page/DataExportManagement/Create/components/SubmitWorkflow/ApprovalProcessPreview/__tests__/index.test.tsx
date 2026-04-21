@@ -63,9 +63,9 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
   });
 
   it('should render fallback error state when request fails', async () => {
-    jest.spyOn(workflow, 'getWorkflowTemplateV1').mockImplementation(() =>
-      createSpyErrorResponse({})
-    );
+    jest
+      .spyOn(workflow, 'getWorkflowTemplateV1')
+      .mockImplementation(() => createSpyErrorResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 

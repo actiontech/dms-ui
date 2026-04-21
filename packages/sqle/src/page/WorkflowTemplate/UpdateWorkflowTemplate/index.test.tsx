@@ -75,9 +75,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.getByText('编辑审批流程 - 上线工单')
-    ).toBeInTheDocument();
+    expect(screen.getByText('编辑审批流程 - 上线工单')).toBeInTheDocument();
     expect(getBySelector('a')).toBeInTheDocument();
     expect(getBySelector('a')).toHaveAttribute(
       'href',
@@ -272,9 +270,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       customRender();
       await act(async () => jest.advanceTimersByTime(3000));
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(
-        screen.getByText('编辑审批流程 - 数据导出')
-      ).toBeInTheDocument();
+      expect(screen.getByText('编辑审批流程 - 数据导出')).toBeInTheDocument();
     });
 
     it('should use export step types when workflowType is data_export', async () => {
