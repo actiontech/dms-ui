@@ -321,7 +321,8 @@ export const ROUTE_PATHS = {
     PROGRESS: {
       index: {
         prefix: '/sqle/project',
-        path: ':projectID/progress'
+        path: ':projectID/progress',
+        query: 'activeTab'
       },
       update: {
         prefix: '/sqle/project/:projectID/progress',

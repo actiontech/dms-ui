@@ -321,7 +321,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
           </div>
         </div>
         <div
-          class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
+          class="ant-steps-item ant-steps-item-process ant-steps-item-custom ant-steps-item-active"
         >
           <div
             class="ant-steps-item-container"

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import { Spin, Space, Typography } from 'antd';
+import { Spin } from 'antd';
 import { Result } from 'antd';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -72,27 +72,28 @@ const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
           {t('dmsDataExport.create.approvalProcess.title')}
         </div>
 
-        {templateData?.workflow_step_template_list?.map(
-          (step: IWorkFlowStepTemplateResV1, index: number) => (
-            <div className="approval-process-step" key={index}>
-              <div className="approval-process-step-header">
-                <Space>
-                  <span className="step-number">
-                    {t('dmsDataExport.create.approvalProcess.stepLabel', {
-                      number: step.number ?? index + 1
-                    })}
-                  </span>
-                  <Typography.Text type="secondary">
+        <div className="approval-process-steps">
+          {templateData?.workflow_step_template_list?.map(
+            (step: IWorkFlowStepTemplateResV1, index: number) => (
+              <div className="approval-process-step" key={index}>
+                <div className="step-indicator">
+                  <div className="step-dot">
+                    {step.number ?? index + 1}
+                  </div>
+                  <div className="step-connector" />
+                </div>
+                <div className="step-content">
+                  <div className="step-type-name">
                     {renderStepTypeName(step.type)}
-                  </Typography.Text>
-                </Space>
+                  </div>
+                  <div className="step-assignee">
+                    {renderAssigneeInfo(step)}
+                  </div>
+                </div>
               </div>
-              <div className="approval-process-step-assignee">
-                {renderAssigneeInfo(step)}
-              </div>
-            </div>
-          )
-        )}
+            )
+          )}
+        </div>
 
         <div className="approval-process-hint">
           {t('dmsDataExport.create.approvalProcess.hint')}

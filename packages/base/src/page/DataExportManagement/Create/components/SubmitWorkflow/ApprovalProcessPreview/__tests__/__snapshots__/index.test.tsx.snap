@@ -4,7 +4,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render fallback er
 <body>
   <div>
     <div
-      class="css-t6qjyj"
+      class="css-1pq3fv8"
     >
       <div
         class="ant-result ant-result-warning"
@@ -50,7 +50,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render loading sta
 <body>
   <div>
     <div
-      class="css-t6qjyj"
+      class="css-1pq3fv8"
     >
       <div
         class="ant-spin-nested-loading"
@@ -88,9 +88,12 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render loading sta
             审批流程
           </div>
           <div
+            class="approval-process-steps"
+          />
+          <div
             class="approval-process-hint"
           >
-            审批流程可在 Project Configure &gt; Approval Process 中修改
+            审批流程可在 项目配置 &gt; 审批流程 中修改
           </div>
         </div>
       </div>
@@ -103,7 +106,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render step list w
 <body>
   <div>
     <div
-      class="css-t6qjyj"
+      class="css-1pq3fv8"
     >
       <div
         class="ant-spin-nested-loading"
@@ -117,45 +120,43 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render step list w
             审批流程
           </div>
           <div
-            class="approval-process-step"
+            class="approval-process-steps"
           >
             <div
-              class="approval-process-step-header"
+              class="approval-process-step"
             >
               <div
-                class="ant-space ant-space-horizontal ant-space-align-center"
+                class="step-indicator"
               >
                 <div
-                  class="ant-space-item"
-                  style="margin-right: 8px;"
+                  class="step-dot"
                 >
-                  <span
-                    class="step-number"
-                  >
-                    步骤 1
-                  </span>
+                  1
                 </div>
                 <div
-                  class="ant-space-item"
+                  class="step-connector"
+                />
+              </div>
+              <div
+                class="step-content"
+              >
+                <div
+                  class="step-type-name"
                 >
-                  <span
-                    class="ant-typography ant-typography-secondary"
-                  >
-                    导出审批
-                  </span>
+                  导出审批
+                </div>
+                <div
+                  class="step-assignee"
+                >
+                  按权限匹配
                 </div>
               </div>
-            </div>
-            <div
-              class="approval-process-step-assignee"
-            >
-              按权限匹配
             </div>
           </div>
           <div
             class="approval-process-hint"
           >
-            审批流程可在 Project Configure &gt; Approval Process 中修改
+            审批流程可在 项目配置 &gt; 审批流程 中修改
           </div>
         </div>
       </div>

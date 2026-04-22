@@ -20,7 +20,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
   />
   <div>
     <div
-      class="css-4b375e"
+      class="css-lqkgr4"
     >
       <div
         class="ant-spin-nested-loading"
@@ -712,7 +712,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template
   />
   <div>
     <div
-      class="css-4b375e"
+      class="css-lqkgr4"
     >
       <div
         class="ant-spin-nested-loading"
@@ -1205,7 +1205,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
 <body>
   <div>
     <div
-      class="css-4b375e"
+      class="css-lqkgr4"
     >
       <div
         class="ant-spin-nested-loading"
@@ -1881,7 +1881,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
 <body>
   <div>
     <div
-      class="css-4b375e"
+      class="css-lqkgr4"
     >
       <div
         class="ant-spin-nested-loading"
@@ -2557,7 +2557,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
 <body>
   <div>
     <div
-      class="css-4b375e"
+      class="css-lqkgr4"
     >
       <div
         class="ant-spin-nested-loading"

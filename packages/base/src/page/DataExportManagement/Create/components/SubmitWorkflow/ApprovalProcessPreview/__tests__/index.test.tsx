@@ -56,7 +56,7 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
     expect(screen.getByText('按权限匹配')).toBeInTheDocument();
     expect(
       screen.getByText(
-        '审批流程可在 Project Configure > Approval Process 中修改'
+        /审批流程可在.*中修改/
       )
     ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();

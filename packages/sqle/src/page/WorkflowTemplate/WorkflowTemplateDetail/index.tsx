@@ -1,16 +1,16 @@
 import { useMemo, useCallback, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { Col, Row, Spin, Tabs } from 'antd';
+import { Col, Row, Spin } from 'antd';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import {
   useCurrentProject,
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
-import { ActionButton } from '@actiontech/shared';
+import { ActionButton, useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { PageHeader } from '@actiontech/dms-kit';
+import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import WorkflowTemplateStepInfo from './components/WorkflowTemplateStepInfo';
 import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
@@ -21,7 +21,10 @@ import { EditOutlined } from '@ant-design/icons';
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
-  const [activeTab, setActiveTab] = useState<string>('workflow');
+  const extractQueries = useTypedQuery();
+  const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.index);
+  const initialTab = searchParams?.activeTab === 'data_export' ? 'data_export' : 'workflow';
+  const [activeTab, setActiveTab] = useState<string>(initialTab);
 
   const {
     updateUsernameList,
@@ -109,8 +112,8 @@ const WorkflowTemplateDetail: React.FC = () => {
 
   const renderEditButton = useCallback(
     (workflowType: string, templateName?: string) => {
+      // #if [ee]
       return (
-        // #if [ee]
         <PermissionControl
           permission={PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE}
         >
@@ -131,8 +134,9 @@ const WorkflowTemplateDetail: React.FC = () => {
             }}
           />
         </PermissionControl>
-        // #endif
       );
+      // #endif
+      return null;
     },
     [t, projectID]
   );
@@ -140,7 +144,7 @@ const WorkflowTemplateDetail: React.FC = () => {
   const tabItems = useMemo(
     () => [
       {
-        key: 'workflow',
+        value: 'workflow',
         label: t('workflowTemplate.list.type.workflow'),
         children: (
           <Spin
@@ -173,7 +177,7 @@ const WorkflowTemplateDetail: React.FC = () => {
         )
       },
       {
-        key: 'data_export',
+        value: 'data_export',
         label: t('workflowTemplate.list.type.dataExport'),
         children: (
           <Spin
@@ -224,11 +228,10 @@ const WorkflowTemplateDetail: React.FC = () => {
   return (
     <WorkflowTemplateStyleWrapper>
       <PageHeader title={t('workflowTemplate.pageTitle')} />
-      <Tabs
+      <SegmentedTabs
         activeKey={activeTab}
         onChange={setActiveTab}
         items={tabItems}
-        className="workflow-template-tabs"
       />
     </WorkflowTemplateStyleWrapper>
   );
