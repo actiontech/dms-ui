@@ -197,6 +197,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
         getUsernameListLoading={getUsernameListLoading}
         totalStep={reviewSteps.length + 1}
         updateReviewAndExecNodeInfo={updateReviewAndExecNodeInfo}
+        workflowType={workflowType}
       />
     );
   };
@@ -299,6 +300,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
                 exchangeReviewNode={handleExchangeReviewNode}
                 clickReviewNode={handleClickReviewNode}
                 usernameList={usernameList}
+                isDataExport={workflowType === 'data_export'}
               />
             </Col>
             <Col

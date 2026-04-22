@@ -54,7 +54,7 @@ export default {
     },
     approvalProcess: {
       title: '审批流程',
-      hint: '审批流程可在 Project Configure > Approval Process 中修改',
+      hint: '审批流程可在 项目配置 > 审批流程 中修改',
       stepLabel: '步骤 {{number}}',
       matchByPermission: '按权限匹配',
       loadFailed: '加载审批流程失败',

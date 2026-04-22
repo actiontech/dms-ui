@@ -76,7 +76,9 @@ export default {
       fourth:
         'Audit tickets: the auditor can execute “pass audit” or “reject” operations in this step;',
       fifth:
-        'Online tickets: the executor can execute “execute online” or “reject” operations in this step.'
+        'Online tickets: the executor can execute “execute online” or “reject” operations in this step.',
+      fifthExport:
+        'Export tickets: the executor can execute “execute export” or “reject” operations in this step.'
     }
   },
 
@@ -91,6 +93,10 @@ export default {
     execTitle: 'Execute online',
     execDesc:
       'Edit the audit process. The executor can execute “execute online” or “reject” operations in this step',
+
+    exportExecTitle: 'Execute export',
+    exportExecDesc:
+      'Edit the audit process. The executor can execute “execute export” or “reject” operations in this step',
 
     resultTitle: 'Result',
     resultDesc: 'Change result'
@@ -142,6 +148,15 @@ export default {
         matchExecute: 'Match members who have data source online permissions'
       }
     },
+    exportExec: {
+      title: 'Execute export',
+      subTitle:
+        'The executor can execute “execute export” or “reject” operations in this step',
+      executeUserType: {
+        specifyExecute: 'Specify executor',
+        matchExecute: 'Match members who have data source export permissions'
+      }
+    },
     exportReview: {
       title: 'Export Review',
       subTitle: 'Reviewer checks the legitimacy of the export request'
@@ -165,6 +180,10 @@ export default {
         'The approval workflow template can set up to 4 audit steps, or no audit steps can be set;',
       rule3:
         'When specifying the executor for a single step, at least one specified person needs to be added, and a maximum of three specified persons can be added.'
+    },
+    exportRuler: {
+      rule1:
+        'The approval process starts from the initiation of the ticket, and ends with the execution of export after passing through the set audit steps;'
     }
   },
 

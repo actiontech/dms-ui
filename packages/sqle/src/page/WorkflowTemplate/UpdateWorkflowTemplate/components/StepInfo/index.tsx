@@ -48,7 +48,8 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
         reviewStepData: props.reviewStepData,
         execStepData: props.execStepData,
         usernameList: props.usernameList,
-        theme: sqleTheme.icon
+        theme: sqleTheme.icon,
+        isDataExport: props.isDataExport
       }),
     [
       templateLevel,
@@ -56,6 +57,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
       props.execStepData,
       props.reviewStepData,
       props.usernameList,
+      props.isDataExport,
       sqleTheme
     ]
   );
