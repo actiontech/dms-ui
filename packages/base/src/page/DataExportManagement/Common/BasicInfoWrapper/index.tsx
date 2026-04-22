@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { BasicInfoWrapperProps } from './index.type';
-import { BasicTypographyEllipsis, EmptyBox } from '@actiontech/dms-kit';
+import { EmptyBox } from '@actiontech/dms-kit';
 import { DataExportStatusDictionary } from '../index.data';
 import { BasicInfoStyleWrapper } from './style';
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
@@ -77,10 +77,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
       </EmptyBox>
 
       <div className="workflow-base-info-title">{title}</div>
-      <BasicTypographyEllipsis
-        className="workflow-base-info-desc"
-        textCont={desc ?? '-'}
-      />
+      <div className="workflow-base-info-desc">{desc ?? '-'}</div>
     </BasicInfoStyleWrapper>
   );
 };

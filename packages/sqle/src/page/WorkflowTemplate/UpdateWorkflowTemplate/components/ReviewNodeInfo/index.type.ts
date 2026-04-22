@@ -29,4 +29,5 @@ export type ReviewAndExecNodeInfoProps = {
   updateReviewAndExecNodeInfo: (data: IWorkFlowStepTemplateResV1) => void;
   generateUsernameSelectOption: () => React.ReactNode;
   getUsernameListLoading: boolean;
+  workflowType?: string;
 };

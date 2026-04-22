@@ -20,6 +20,7 @@ const MAX_USER_COUNT = 10;
 
 const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const { t } = useTranslation();
+  const isDataExport = props.workflowType === 'data_export';
   const [authorizedParam, setAuthorizedParam] = useState(
     props.type === NodeTypeEnum.review
       ? 'approved_by_authorized'
@@ -92,12 +93,16 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
         <div className="step-title">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressTitle')
-            : t('workflowTemplate.step.execTitle')}
+            : isDataExport
+              ? t('workflowTemplate.step.exportExecTitle')
+              : t('workflowTemplate.step.execTitle')}
         </div>
         <div className="step-title-info">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressDesc')
-            : t('workflowTemplate.step.execDesc')}
+            : isDataExport
+              ? t('workflowTemplate.step.exportExecDesc')
+              : t('workflowTemplate.step.execDesc')}
         </div>
       </div>
       <div className="step-info-wrapper">
@@ -133,9 +138,13 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
                 ? t(
                     'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
                   )
-                : t(
-                    'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                  )
+                : isDataExport
+                  ? t(
+                      'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
+                    )
+                  : t(
+                      'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                    )
             }
             name={[authorizedParam]}
             valuePropName="checked"
@@ -208,7 +217,11 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
           </Typography.Text>
           <Typography.Paragraph className="step-alert-content">
             <ul className="step-alert-item-icon">
-              <li>{t('workflowTemplate.progressConfig.ruler.rule1')}</li>
+              <li>
+                {isDataExport
+                  ? t('workflowTemplate.progressConfig.exportRuler.rule1')
+                  : t('workflowTemplate.progressConfig.ruler.rule1')}
+              </li>
               <li>{t('workflowTemplate.progressConfig.ruler.rule2')}</li>
               <li>{t('workflowTemplate.progressConfig.ruler.rule3')}</li>
             </ul>
