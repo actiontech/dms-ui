@@ -43,11 +43,11 @@ describe('page/WorkflowTemplate CE', () => {
     return sqleSuperRender(<WorkflowTemplateDetail />);
   };
 
-  it('render workflow template list without edit actions in CE', async () => {
-    const getListRequest = workflowTemplate.getWorkflowTemplateList();
+  it('render workflow template detail without edit actions in CE', async () => {
+    const getTemplateRequest = workflowTemplate.getWorkflowTemplate();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getListRequest).toHaveBeenCalled();
+    expect(getTemplateRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模板')).toBeInTheDocument();
   });

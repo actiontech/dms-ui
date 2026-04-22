@@ -324,6 +324,9 @@ const UpdateWorkflowTemplate: React.FC = () => {
                   to: ROUTE_PATHS.SQLE.PROGRESS.index,
                   params: {
                     projectID
+                  },
+                  queries: {
+                    activeTab: workflowType
                   }
                 }}
               />

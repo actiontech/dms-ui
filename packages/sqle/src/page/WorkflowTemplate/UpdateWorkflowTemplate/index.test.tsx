@@ -101,7 +101,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     expect(getAllBySelector('a').length).toBe(2);
     expect(getAllBySelector('a')?.[1]).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/progress`
+      `/sqle/project/${mockProjectInfo.projectID}/progress?activeTab=workflow`
     );
   });
 
