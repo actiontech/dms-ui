@@ -44,6 +44,13 @@ export const dataExportWorkflowTemplateData: IWorkflowTemplateDetailResV1 = {
       execute_by_authorized: false,
       number: 1,
       type: 'export_review'
+    },
+    {
+      approved_by_authorized: false,
+      assignee_user_id_list: [],
+      execute_by_authorized: true,
+      number: 2,
+      type: 'export_execute'
     }
   ],
   workflow_template_name: '700300-DataExportWorkflowTemplate',
