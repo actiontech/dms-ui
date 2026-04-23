@@ -87,6 +87,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const nextStep = async () => {
     props.form.validateFields().then(() => props?.nextStep?.());
   };
+  const isDataExportExec = isDataExport && props.type === NodeTypeEnum.exec;
   return (
     <UpdateWorkflowTemplateStyleWrapper>
       <div className="step-title-wrapper">
@@ -107,6 +108,25 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
       </div>
       <div className="step-info-wrapper">
         <Form form={props.form} requiredMark={false} layout="vertical">
+          {isDataExportExec ? (
+            <>
+              <StepNodeAlertStyleWrapper>
+                <Typography.Text className="step-alert-title">
+                  <InfoCircleOutlined className="step-alert-title-tips-icon" />
+                  {t(
+                    'workflowTemplate.progressConfig.exportExec.creatorAsExecutor'
+                  )}
+                </Typography.Text>
+              </StepNodeAlertStyleWrapper>
+              <StepButton
+                currentStep={props.currentStep}
+                totalStep={props.totalStep}
+                nextStep={nextStep}
+                prevStep={prevStep}
+              />
+            </>
+          ) : (
+            <>
           <Form.Item
             label={t('workflowTemplate.form.label.reviewDesc')}
             name="desc"
@@ -208,6 +228,8 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
             nextStep={nextStep}
             prevStep={prevStep}
           />
+            </>
+          )}
         </Form>
         <Divider className="step-info-divider" />
         <StepNodeAlertStyleWrapper>

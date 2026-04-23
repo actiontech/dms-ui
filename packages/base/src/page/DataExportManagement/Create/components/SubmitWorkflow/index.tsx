@@ -15,7 +15,6 @@ import { CreateDataExportPageEnum } from '../../../../../store/dataExport';
 import useCheckTaskAuditRuleExceptionStatus from '../../hooks/useCheckTaskAuditRuleExceptionStatus';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import SubmitWorkflowButton from './SubmitWorkflowButton';
-import ApprovalProcessPreview from './ApprovalProcessPreview';
 const SubmitExportWorkflow: React.FC = () => {
   const { t } = useTranslation();
   const {
@@ -28,7 +27,7 @@ const SubmitExportWorkflow: React.FC = () => {
     updatePageState,
     updateWorkflowID
   } = useCreateDataExportReduxManage();
-  const { projectID, projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
   const [executeSQLsIsDQL, updateExecuteSQLsTypeIsDQL] = useState(true);
   const {
     hasExceptionAuditRule,
@@ -105,8 +104,6 @@ const SubmitExportWorkflow: React.FC = () => {
         title={formValues?.baseValues?.workflow_subject ?? ''}
         desc={formValues?.baseValues?.desc}
       />
-
-      <ApprovalProcessPreview projectName={projectName} />
 
       <AuditResultList
         projectID={projectID}

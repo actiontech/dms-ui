@@ -141,6 +141,7 @@ export default {
     exportExec: {
       title: '执行导出',
       subTitle: '执行人在该步骤可以执行 执行导出或驳回 操作',
+      creatorAsExecutor: '数据导出的执行人默认为工单创建者，不可修改。',
       executeUserType: {
         specifyExecute: '指定执行人',
         matchExecute: '匹配拥有数据源导出权限的成员'
