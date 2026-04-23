@@ -23,7 +23,8 @@ const WorkflowTemplateDetail: React.FC = () => {
   const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
   const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.index);
-  const initialTab = searchParams?.activeTab === 'data_export' ? 'data_export' : 'workflow';
+  const initialTab =
+    searchParams?.activeTab === 'data_export' ? 'data_export' : 'workflow';
   const [activeTab, setActiveTab] = useState<string>(initialTab);
 
   const {
@@ -57,10 +58,11 @@ const WorkflowTemplateDetail: React.FC = () => {
             workflow_type: 'workflow'
           })
           .then((res) => {
-            const stepList =
-              res.data.data?.workflow_step_template_list ?? [];
+            const stepList = res.data.data?.workflow_step_template_list ?? [];
             if (stepList.length <= 1) {
-              setWorkflowExecStep(stepList[0] ?? { assignee_user_id_list: [], desc: '' });
+              setWorkflowExecStep(
+                stepList[0] ?? { assignee_user_id_list: [], desc: '' }
+              );
               setWorkflowReviewSteps([]);
             } else {
               const execStep = stepList.pop();
@@ -93,10 +95,11 @@ const WorkflowTemplateDetail: React.FC = () => {
             workflow_type: 'data_export'
           })
           .then((res) => {
-            const stepList =
-              res.data.data?.workflow_step_template_list ?? [];
+            const stepList = res.data.data?.workflow_step_template_list ?? [];
             if (stepList.length <= 1) {
-              setExportExecStep(stepList[0] ?? { assignee_user_id_list: [], desc: '' });
+              setExportExecStep(
+                stepList[0] ?? { assignee_user_id_list: [], desc: '' }
+              );
               setExportReviewSteps([]);
             } else {
               const execStep = stepList.pop();
@@ -147,10 +150,14 @@ const WorkflowTemplateDetail: React.FC = () => {
         value: 'workflow',
         label: t('workflowTemplate.list.type.workflow'),
         children: (
-          <Spin
-            spinning={getUsernameListLoading || getWorkflowTemplateLoading}
-          >
-            <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 40px 16px' }}>
+          <Spin spinning={getUsernameListLoading || getWorkflowTemplateLoading}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                padding: '0 40px 16px'
+              }}
+            >
               {renderEditButton(
                 'workflow',
                 workflowTemplate?.workflow_template_name
@@ -166,9 +173,7 @@ const WorkflowTemplateDetail: React.FC = () => {
               </Col>
               <Col flex="360px" className="workflow-template-right-module">
                 <WorkflowTemplateAuthInfo
-                  level={
-                    workflowTemplate?.allow_submit_when_less_audit_level
-                  }
+                  level={workflowTemplate?.allow_submit_when_less_audit_level}
                   time={workflowTemplate?.update_time}
                 />
               </Col>
@@ -180,10 +185,14 @@ const WorkflowTemplateDetail: React.FC = () => {
         value: 'data_export',
         label: t('workflowTemplate.list.type.dataExport'),
         children: (
-          <Spin
-            spinning={getUsernameListLoading || getExportTemplateLoading}
-          >
-            <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 40px 16px' }}>
+          <Spin spinning={getUsernameListLoading || getExportTemplateLoading}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                padding: '0 40px 16px'
+              }}
+            >
               {renderEditButton(
                 'data_export',
                 exportTemplate?.workflow_template_name

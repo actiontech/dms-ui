@@ -46,8 +46,7 @@ export const ApprovalProcessPreviewStyleWrapper = styled('div')`
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        background: ${({ theme }) =>
-          theme.sharedTheme.uiToken.colorPrimary};
+        background: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
         color: #fff;
         font-size: 12px;
         font-weight: 600;
@@ -61,8 +60,7 @@ export const ApprovalProcessPreviewStyleWrapper = styled('div')`
         width: 2px;
         flex: 1;
         min-height: 16px;
-        background: ${({ theme }) =>
-          theme.sharedTheme.basic.colorGrayLine};
+        background: ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
         margin-top: 4px;
       }
     }
@@ -79,8 +77,7 @@ export const ApprovalProcessPreviewStyleWrapper = styled('div')`
       }
 
       .step-assignee {
-        color: ${({ theme }) =>
-          theme.sharedTheme.uiToken.colorTextSecondary};
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
         font-size: 13px;
         line-height: 20px;
         margin-top: 2px;

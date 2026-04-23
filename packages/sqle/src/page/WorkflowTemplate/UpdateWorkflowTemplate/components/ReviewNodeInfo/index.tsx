@@ -95,15 +95,15 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressTitle')
             : isDataExport
-              ? t('workflowTemplate.step.exportExecTitle')
-              : t('workflowTemplate.step.execTitle')}
+            ? t('workflowTemplate.step.exportExecTitle')
+            : t('workflowTemplate.step.execTitle')}
         </div>
         <div className="step-title-info">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressDesc')
             : isDataExport
-              ? t('workflowTemplate.step.exportExecDesc')
-              : t('workflowTemplate.step.execDesc')}
+            ? t('workflowTemplate.step.exportExecDesc')
+            : t('workflowTemplate.step.execDesc')}
         </div>
       </div>
       <div className="step-info-wrapper">
@@ -127,107 +127,107 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
             </>
           ) : (
             <>
-          <Form.Item
-            label={t('workflowTemplate.form.label.reviewDesc')}
-            name="desc"
-            rules={[
-              {
-                validator(_, value) {
-                  if (!value || value?.length <= 255) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    t('workflowTemplate.form.rule.descMessage')
-                  );
-                }
-              }
-            ]}
-          >
-            <BasicInput.TextArea
-              onChange={updateNodeDesc}
-              placeholder={t('common.form.placeholder.input')}
-              data-testid="exec-user-desc"
-              autoSize
-              className="step-desc-textarea"
-              size="middle"
-            />
-          </Form.Item>
-          <Form.Item
-            label={
-              props.type === NodeTypeEnum.review
-                ? t(
-                    'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
-                  )
-                : isDataExport
-                  ? t(
-                      'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
-                    )
-                  : t(
-                      'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                    )
-            }
-            name={[authorizedParam]}
-            valuePropName="checked"
-            rules={[
-              {
-                required: true
-              }
-            ]}
-            className="authorized-item-switch"
-          >
-            <BasicSwitch onChange={updateNodeType} />
-          </Form.Item>
-          <Form.Item
-            label={
-              props.type === NodeTypeEnum.review
-                ? t('workflowTemplate.form.label.reviewUser')
-                : t('workflowTemplate.form.label.execUser')
-            }
-            name="assignee_user_id_list"
-            rules={
-              userType === ReviewAndExecUserTypeEnum.specify
-                ? [
-                    {
-                      required: true,
-                      message: t('workflowTemplate.form.rule.userRequired')
-                    },
-                    {
-                      validator(_, value) {
-                        if (
-                          Array.isArray(value) &&
-                          value.length <= MAX_USER_COUNT
-                        ) {
-                          return Promise.resolve();
-                        }
-                        return Promise.reject(
-                          t('workflowTemplate.form.rule.userMessage')
-                        );
+              <Form.Item
+                label={t('workflowTemplate.form.label.reviewDesc')}
+                name="desc"
+                rules={[
+                  {
+                    validator(_, value) {
+                      if (!value || value?.length <= 255) {
+                        return Promise.resolve();
                       }
+                      return Promise.reject(
+                        t('workflowTemplate.form.rule.descMessage')
+                      );
                     }
-                  ]
-                : []
-            }
-          >
-            <BasicSelect
-              disabled={userType === ReviewAndExecUserTypeEnum.matchAuth}
-              onChange={updateNodeUsername}
-              mode="multiple"
-              showSearch
-              loading={props.getUsernameListLoading}
-              placeholder={t('common.form.placeholder.select')}
-              data-testid="exec-user-select"
-              size="middle"
-              filterOption={filterOptionByLabel}
-            >
-              {props.generateUsernameSelectOption()}
-            </BasicSelect>
-          </Form.Item>
-          <StepButton
-            currentStep={props.currentStep}
-            totalStep={props.totalStep}
-            nextStep={nextStep}
-            prevStep={prevStep}
-          />
+                  }
+                ]}
+              >
+                <BasicInput.TextArea
+                  onChange={updateNodeDesc}
+                  placeholder={t('common.form.placeholder.input')}
+                  data-testid="exec-user-desc"
+                  autoSize
+                  className="step-desc-textarea"
+                  size="middle"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  props.type === NodeTypeEnum.review
+                    ? t(
+                        'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
+                      )
+                    : isDataExport
+                    ? t(
+                        'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
+                      )
+                    : t(
+                        'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                      )
+                }
+                name={[authorizedParam]}
+                valuePropName="checked"
+                rules={[
+                  {
+                    required: true
+                  }
+                ]}
+                className="authorized-item-switch"
+              >
+                <BasicSwitch onChange={updateNodeType} />
+              </Form.Item>
+              <Form.Item
+                label={
+                  props.type === NodeTypeEnum.review
+                    ? t('workflowTemplate.form.label.reviewUser')
+                    : t('workflowTemplate.form.label.execUser')
+                }
+                name="assignee_user_id_list"
+                rules={
+                  userType === ReviewAndExecUserTypeEnum.specify
+                    ? [
+                        {
+                          required: true,
+                          message: t('workflowTemplate.form.rule.userRequired')
+                        },
+                        {
+                          validator(_, value) {
+                            if (
+                              Array.isArray(value) &&
+                              value.length <= MAX_USER_COUNT
+                            ) {
+                              return Promise.resolve();
+                            }
+                            return Promise.reject(
+                              t('workflowTemplate.form.rule.userMessage')
+                            );
+                          }
+                        }
+                      ]
+                    : []
+                }
+              >
+                <BasicSelect
+                  disabled={userType === ReviewAndExecUserTypeEnum.matchAuth}
+                  onChange={updateNodeUsername}
+                  mode="multiple"
+                  showSearch
+                  loading={props.getUsernameListLoading}
+                  placeholder={t('common.form.placeholder.select')}
+                  data-testid="exec-user-select"
+                  size="middle"
+                  filterOption={filterOptionByLabel}
+                >
+                  {props.generateUsernameSelectOption()}
+                </BasicSelect>
+              </Form.Item>
+              <StepButton
+                currentStep={props.currentStep}
+                totalStep={props.totalStep}
+                nextStep={nextStep}
+                prevStep={prevStep}
+              />
             </>
           )}
         </Form>

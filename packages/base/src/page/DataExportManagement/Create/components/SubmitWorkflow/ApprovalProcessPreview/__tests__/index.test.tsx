@@ -54,11 +54,7 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
     expect(screen.getByText('审批流程')).toBeInTheDocument();
     expect(screen.getByText('导出审批')).toBeInTheDocument();
     expect(screen.getAllByText('按权限匹配').length).toBeGreaterThanOrEqual(1);
-    expect(
-      screen.getByText(
-        /审批流程可在.*中修改/
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText(/审批流程可在.*中修改/)).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

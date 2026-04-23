@@ -77,9 +77,7 @@ const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
             (step: IWorkFlowStepTemplateResV1, index: number) => (
               <div className="approval-process-step" key={index}>
                 <div className="step-indicator">
-                  <div className="step-dot">
-                    {step.number ?? index + 1}
-                  </div>
+                  <div className="step-dot">{step.number ?? index + 1}</div>
                   <div className="step-connector" />
                 </div>
                 <div className="step-content">
