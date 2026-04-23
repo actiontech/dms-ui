@@ -24,7 +24,7 @@ const StepCard: React.FC<IStepCardProps> = (props) => {
           <div className="operator-content">{props?.operator}</div>
         </div>
       ) : null}
-      {props?.active ? (
+      {props?.active && props?.close ? (
         <ReviewNodeCloseButton
           shape="circle"
           size="small"

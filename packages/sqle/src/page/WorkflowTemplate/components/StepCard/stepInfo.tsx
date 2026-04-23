@@ -43,6 +43,22 @@ const renderReviewUser = (
         </>
       );
     } else if (stepItem.execute_by_authorized && type === 'exec') {
+      if (isDataExport) {
+        return (
+          <>
+            <UserCircleFilled
+              color={theme?.workflowTemplate.userCircleFilled}
+              width={18}
+              height={18}
+            />
+            <span className="review-exec-auth-text">
+              {t(
+                'workflowTemplate.progressConfig.exportExec.creatorAsExecutor'
+              )}
+            </span>
+          </>
+        );
+      }
       return (
         <>
           <UserCircleFilled

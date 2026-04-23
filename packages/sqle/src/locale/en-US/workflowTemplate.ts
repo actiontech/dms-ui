@@ -152,6 +152,8 @@ export default {
       title: 'Execute export',
       subTitle:
         'The executor can execute “execute export” or “reject” operations in this step',
+      creatorAsExecutor:
+        'The executor of data export is the workflow creator by default and cannot be modified.',
       executeUserType: {
         specifyExecute: 'Specify executor',
         matchExecute: 'Match members who have data source export permissions'
