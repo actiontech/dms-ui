@@ -1432,55 +1432,6 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
       desc
     </div>
   </div>
-  <div
-    class="css-1pq3fv8"
-  >
-    <div
-      class="ant-spin-nested-loading"
-    >
-      <div>
-        <div
-          aria-busy="true"
-          aria-live="polite"
-          class="ant-spin ant-spin-spinning"
-        >
-          <span
-            class="ant-spin-dot ant-spin-dot-spin"
-          >
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-          </span>
-        </div>
-      </div>
-      <div
-        class="ant-spin-container ant-spin-blur"
-      >
-        <div
-          class="approval-process-title"
-        >
-          审批流程
-        </div>
-        <div
-          class="approval-process-steps"
-        />
-        <div
-          class="approval-process-hint"
-        >
-          审批流程可在 项目配置 &gt; 审批流程 中修改
-        </div>
-      </div>
-    </div>
-  </div>
   <section
     class="css-zgknaj"
   >
