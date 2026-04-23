@@ -152,6 +152,36 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render step list w
                 </div>
               </div>
             </div>
+            <div
+              class="approval-process-step"
+            >
+              <div
+                class="step-indicator"
+              >
+                <div
+                  class="step-dot"
+                >
+                  2
+                </div>
+                <div
+                  class="step-connector"
+                />
+              </div>
+              <div
+                class="step-content"
+              >
+                <div
+                  class="step-type-name"
+                >
+                  导出执行确认
+                </div>
+                <div
+                  class="step-assignee"
+                >
+                  按权限匹配
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="approval-process-hint"
