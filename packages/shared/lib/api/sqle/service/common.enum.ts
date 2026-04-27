@@ -836,12 +836,6 @@ export enum WorkFlowStepTemplateReqV1TypeEnum {
   'export_execute' = 'export_execute'
 }
 
-export enum WorkflowTemplateTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
-}
-
 export enum WorkflowDetailResV1CurrentStepTypeEnum {
   'sql_review' = 'sql_review',
 
@@ -948,6 +942,12 @@ export enum WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum {
   'warn' = 'warn',
 
   'error' = 'error'
+}
+
+export enum WorkflowTemplateDetailResV1WorkflowTypeEnum {
+  'workflow' = 'workflow',
+
+  'data_export' = 'data_export'
 }
 
 export enum pipelineNodeBaseAuditMethodEnum {

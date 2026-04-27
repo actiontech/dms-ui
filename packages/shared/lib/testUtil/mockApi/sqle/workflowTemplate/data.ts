@@ -1,5 +1,8 @@
 import { IWorkflowTemplateDetailResV1 } from '../../../../api/sqle/service/common';
-import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '../../../../api/sqle/service/common.enum';
+import {
+  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
+  WorkflowTemplateDetailResV1WorkflowTypeEnum
+} from '../../../../api/sqle/service/common.enum';
 
 export const workflowTemplateData = {
   allow_submit_when_less_audit_level:
@@ -31,7 +34,7 @@ export const workflowTemplateData = {
     }
   ],
   workflow_template_name: '700300-WorkflowTemplate',
-  workflow_type: 'workflow'
+  workflow_type: WorkflowTemplateDetailResV1WorkflowTypeEnum.workflow
 };
 
 export const dataExportWorkflowTemplateData: IWorkflowTemplateDetailResV1 = {
@@ -54,7 +57,7 @@ export const dataExportWorkflowTemplateData: IWorkflowTemplateDetailResV1 = {
     }
   ],
   workflow_template_name: '700300-DataExportWorkflowTemplate',
-  workflow_type: 'data_export'
+  workflow_type: WorkflowTemplateDetailResV1WorkflowTypeEnum.data_export
 };
 
 export const workflowTemplateListData = [

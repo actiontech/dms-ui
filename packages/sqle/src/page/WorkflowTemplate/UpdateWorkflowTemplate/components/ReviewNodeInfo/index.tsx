@@ -200,7 +200,9 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
                               return Promise.resolve();
                             }
                             return Promise.reject(
-                              t('workflowTemplate.form.rule.userMessage')
+                              t('workflowTemplate.form.rule.userMessage', {
+                                max: MAX_USER_COUNT
+                              })
                             );
                           }
                         }

@@ -33,7 +33,12 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { ROUTE_PATHS, ResponseCode } from '@actiontech/dms-kit';
+import {
+  getWorkflowTemplateV1WorkflowTypeEnum,
+  updateWorkflowTemplateV1WorkflowTypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+
 const UpdateWorkflowTemplate: React.FC = () => {
   const { t } = useTranslation();
   const [form] = useForm<ReviewNodeField>();
@@ -47,10 +52,10 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
   const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.update);
-  const workflowType = searchParams?.workflowType || 'workflow';
+  const workflowType = searchParams?.workflowType;
 
   const pageTitle =
-    workflowType === 'data_export'
+    workflowType === updateWorkflowTemplateV1WorkflowTypeEnum.data_export
       ? t('workflowTemplate.update.title.dataExport')
       : t('workflowTemplate.update.title.workflow');
 
@@ -97,14 +102,16 @@ const UpdateWorkflowTemplate: React.FC = () => {
     return workflow
       .updateWorkflowTemplateV1({
         project_name: projectName,
-        workflow_type: workflowType,
+        workflow_type: workflowType as updateWorkflowTemplateV1WorkflowTypeEnum,
         workflow_step_template_list: templateList,
         allow_submit_when_less_audit_level: selectLevel as
           | UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum
           | undefined
       })
       .then((res) => {
-        setUpdateSuccess(true);
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setUpdateSuccess(true);
+        }
         return res;
       })
       .finally(() => submitFinish());
@@ -115,7 +122,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
         workflow
           .getWorkflowTemplateV1({
             project_name: projectName,
-            workflow_type: workflowType
+            workflow_type: workflowType as getWorkflowTemplateV1WorkflowTypeEnum
           })
           .then((res) => {
             const temp = res.data.data;
@@ -231,6 +238,8 @@ const UpdateWorkflowTemplate: React.FC = () => {
       execute_by_authorized: true,
       type: executeType
     });
+    basicForm.resetFields();
+    form.resetFields();
   };
   const handleExchangeReviewNode = (from: number, to: number) => {
     const temp = cloneDeep(reviewSteps);

@@ -310,7 +310,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal exec node info 1`] =
                 审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
               </li>
               <li>
-                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。
               </li>
             </ul>
           </div>
@@ -616,7 +616,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render normal review node info 1`]
                 审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
               </li>
               <li>
-                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。
               </li>
             </ul>
           </div>
@@ -953,7 +953,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node and update revi
                 审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
               </li>
               <li>
-                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。
               </li>
             </ul>
           </div>
@@ -1314,7 +1314,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
                 审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
               </li>
               <li>
-                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。
               </li>
             </ul>
           </div>
@@ -1841,7 +1841,7 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] 
                 审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
               </li>
               <li>
-                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。
               </li>
             </ul>
           </div>

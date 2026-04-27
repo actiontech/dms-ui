@@ -79,7 +79,7 @@ exports[`test base/DataExport/Create/SubmitWorkflow should match snapshot 1`] = 
       test
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -326,7 +326,7 @@ exports[`test base/DataExport/Create/SubmitWorkflow should match snapshot 2`] = 
       test
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>

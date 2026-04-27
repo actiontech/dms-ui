@@ -1,9 +1,9 @@
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowTemplateTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BasicTag } from '@actiontech/dms-kit';
 import { formatTime } from '@actiontech/dms-kit';
 import { t, I18nKey } from '../../../locale';
+import { WorkflowTemplateDetailResV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const stepTypeNameMap: Record<string, I18nKey> = {
   sql_review: 'workflowTemplate.progressConfig.review.title',
@@ -29,7 +29,10 @@ export const WorkflowTemplateListColumn =
         dataIndex: 'workflow_type',
         title: () => t('workflowTemplate.list.table.applicableType'),
         render: (workflowType) => {
-          if (workflowType === WorkflowTemplateTypeEnum.data_export) {
+          if (
+            workflowType ===
+            WorkflowTemplateDetailResV1WorkflowTypeEnum.data_export
+          ) {
             return (
               <BasicTag color="green">
                 {t('workflowTemplate.list.type.dataExport')}

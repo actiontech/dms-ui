@@ -3,9 +3,9 @@ import {
   IGetWorkflowsResV1,
   IGlobalWorkflowStatisticsResV1,
   IGetWorkflowTemplateResV1,
-  IGetWorkflowTemplateListResV1,
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
+  IGetWorkflowTemplateListResV1,
   ICreateWorkflowReqV1,
   IAutoCreateAndExecuteWorkflowResV1,
   IBatchCancelWorkflowsReqV1,
@@ -43,6 +43,8 @@ import {
   getGlobalWorkflowsV1FilterProjectPriorityEnum,
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
+  getWorkflowTemplateV1WorkflowTypeEnum,
+  updateWorkflowTemplateV1WorkflowTypeEnum,
   getWorkflowsV1FilterStatusEnum,
   autoCreateAndExecuteWorkflowV1ExecModeEnum,
   exportWorkflowV1FilterStatusEnum,
@@ -131,11 +133,20 @@ export interface IGetGlobalWorkflowStatisticsReturn
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;
 
-  workflow_type?: string;
+  workflow_type: getWorkflowTemplateV1WorkflowTypeEnum;
 }
 
 export interface IGetWorkflowTemplateV1Return
   extends IGetWorkflowTemplateResV1 {}
+
+export interface IUpdateWorkflowTemplateV1Params
+  extends IUpdateWorkflowTemplateReqV1 {
+  project_name: string;
+
+  workflow_type: updateWorkflowTemplateV1WorkflowTypeEnum;
+}
+
+export interface IUpdateWorkflowTemplateV1Return extends IBaseRes {}
 
 export interface IGetWorkflowTemplateListV1Params {
   project_name: string;
@@ -143,15 +154,6 @@ export interface IGetWorkflowTemplateListV1Params {
 
 export interface IGetWorkflowTemplateListV1Return
   extends IGetWorkflowTemplateListResV1 {}
-
-export interface IUpdateWorkflowTemplateV1Params
-  extends IUpdateWorkflowTemplateReqV1 {
-  project_name: string;
-
-  workflow_type?: string;
-}
-
-export interface IUpdateWorkflowTemplateV1Return extends IBaseRes {}
 
 export interface IGetWorkflowsV1Params {
   filter_subject?: string;
