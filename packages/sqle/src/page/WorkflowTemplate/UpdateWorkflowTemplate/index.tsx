@@ -48,7 +48,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
   const [updateSuccess, setUpdateSuccess] = useState(false);
-  const urlParams = useTypedParams<typeof ROUTE_PATHS.SQLE.PROGRESS.update>();
   const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
   const [workflowType, setWorkflowType] = useState<
@@ -159,7 +158,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
             return res.data.data;
           }),
       {
-        ready: !!projectName && !!urlParams.workflowName
+        ready: !!projectName && !!workflowType
       }
     );
   const [currentStep, setCurrentStep] = useState<number>(0);
