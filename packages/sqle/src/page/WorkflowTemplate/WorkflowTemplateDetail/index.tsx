@@ -3,12 +3,8 @@ import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Spin } from 'antd';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import {
-  useCurrentProject,
-  PERMISSIONS,
-  PermissionControl
-} from '@actiontech/shared/lib/features';
-import { ActionButton, useTypedQuery } from '@actiontech/shared';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
+import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -16,20 +12,25 @@ import WorkflowTemplateStepInfo from './components/WorkflowTemplateStepInfo';
 import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
 import { WorkflowTemplateStyleWrapper } from './style';
 import useUsername from '../../../hooks/useUsername';
-import { EditOutlined } from '@ant-design/icons';
 import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
-
-type WorkflowTemplateDetailTab = 'workflow' | 'data_export';
+import { workflowTemplateDetailAction } from './actions';
 
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
   const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.index);
-  const initialTab =
-    searchParams?.activeTab === 'data_export' ? 'data_export' : 'workflow';
+
   const [activeTab, setActiveTab] =
-    useState<WorkflowTemplateDetailTab>(initialTab);
+    useState<getWorkflowTemplateV1WorkflowTypeEnum>(() => {
+      if (
+        searchParams?.activeTab ===
+        getWorkflowTemplateV1WorkflowTypeEnum.data_export
+      ) {
+        return getWorkflowTemplateV1WorkflowTypeEnum.data_export;
+      }
+      return getWorkflowTemplateV1WorkflowTypeEnum.workflow;
+    });
 
   const {
     updateUsernameList,
@@ -118,31 +119,17 @@ const WorkflowTemplateDetail: React.FC = () => {
     );
 
   const renderEditButton = useCallback(
-    (workflowType: WorkflowTemplateDetailTab, templateName?: string) => {
-      return (
-        <PermissionControl
-          permission={PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE}
-        >
-          <ActionButton
-            type="primary"
-            icon={<EditOutlined />}
-            text={t('workflowTemplate.detail.updateTemplate')}
-            actionType="navigate-link"
-            link={{
-              to: ROUTE_PATHS.SQLE.PROGRESS.update,
-              params: {
-                projectID,
-                workflowName: templateName ?? ''
-              },
-              queries: {
-                workflowType
-              }
-            }}
-          />
-        </PermissionControl>
-      );
+    (
+      workflowType: getWorkflowTemplateV1WorkflowTypeEnum,
+      templateName?: string
+    ) => {
+      return workflowTemplateDetailAction({
+        projectID,
+        templateName: templateName,
+        workflowType
+      });
     },
-    [t, projectID]
+    [projectID]
   );
 
   const tabItems = useMemo(
@@ -221,7 +208,7 @@ const WorkflowTemplateDetail: React.FC = () => {
         segmentedRowClassName="flex-space-between"
         segmentedRowExtraContent={renderEditButton(
           activeTab,
-          activeTab === 'workflow'
+          activeTab === getWorkflowTemplateV1WorkflowTypeEnum.workflow
             ? workflowTemplate?.workflow_template_name
             : exportTemplate?.workflow_template_name
         )}

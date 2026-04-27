@@ -4,7 +4,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render fallback er
 <body>
   <div>
     <div
-      class="css-1pq3fv8"
+      class="css-n1p2wu"
     >
       <div
         class="ant-result ant-result-warning"
@@ -50,7 +50,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render loading sta
 <body>
   <div>
     <div
-      class="css-1pq3fv8"
+      class="css-n1p2wu"
     >
       <div
         class="ant-spin-nested-loading"
@@ -106,7 +106,7 @@ exports[`base/DataExport/Create/ApprovalProcessPreview should render step list w
 <body>
   <div>
     <div
-      class="css-1pq3fv8"
+      class="css-n1p2wu"
     >
       <div
         class="ant-spin-nested-loading"

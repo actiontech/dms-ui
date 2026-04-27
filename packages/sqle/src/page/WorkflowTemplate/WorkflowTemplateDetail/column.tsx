@@ -2,20 +2,20 @@ import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/Actiont
 import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BasicTag } from '@actiontech/dms-kit';
 import { formatTime } from '@actiontech/dms-kit';
-import { t, I18nKey } from '../../../locale';
+import { t } from '../../../locale';
 import { WorkflowTemplateDetailResV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const stepTypeNameMap: Record<string, I18nKey> = {
-  sql_review: 'workflowTemplate.progressConfig.review.title',
-  sql_execute: 'workflowTemplate.progressConfig.exec.title',
-  export_review: 'workflowTemplate.progressConfig.exportReview.title',
-  export_execute: 'workflowTemplate.progressConfig.exportExecute.title'
+const stepTypeNameMap: Record<string, string> = {
+  sql_review: t('workflowTemplate.progressConfig.review.title'),
+  sql_execute: t('workflowTemplate.progressConfig.exec.title'),
+  export_review: t('workflowTemplate.progressConfig.exportReview.title'),
+  export_execute: t('workflowTemplate.progressConfig.exportExecute.title')
 };
 
 const getStepTypeName = (stepType?: string): string => {
   if (!stepType) return '-';
-  const i18nKey = stepTypeNameMap[stepType];
-  return i18nKey ? t(i18nKey) : stepType;
+  const name = stepTypeNameMap[stepType];
+  return name ? name : stepType;
 };
 
 export const WorkflowTemplateListColumn =

@@ -2,20 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
 import { Result } from 'antd';
-import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ApprovalProcessPreviewStyleWrapper } from './style';
-import { I18nKey } from '../../../../../../locale';
 import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { stepTypeNameMap } from './index.data';
+import { SqleApi } from '@actiontech/shared/lib/api';
 
 interface ApprovalProcessPreviewProps {
   projectName: string;
 }
-
-const stepTypeNameMap: Record<string, I18nKey> = {
-  export_review: 'dmsDataExport.create.approvalProcess.stepType.export_review',
-  export_execute: 'dmsDataExport.create.approvalProcess.stepType.export_execute'
-};
 
 const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
   projectName
@@ -28,14 +23,14 @@ const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
     error
   } = useRequest(
     () =>
-      workflow
-        .getWorkflowTemplateV1({
-          project_name: projectName,
-          workflow_type: getWorkflowTemplateV1WorkflowTypeEnum.data_export
-        })
-        .then((res) => res.data.data),
+      SqleApi.WorkflowService.getWorkflowTemplateV1({
+        project_name: projectName,
+        workflow_type: getWorkflowTemplateV1WorkflowTypeEnum.data_export
+      }).then((res) => res.data.data),
     {
-      ready: !!projectName
+      ready: !!projectName,
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      onError: () => {}
     }
   );
 
@@ -50,10 +45,10 @@ const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
   };
 
   const renderStepTypeName = (type?: string) => {
-    if (type && stepTypeNameMap[type]) {
-      return t(stepTypeNameMap[type]);
+    if (type) {
+      return stepTypeNameMap[type] ?? '-';
     }
-    return type ?? '-';
+    return '-';
   };
 
   if (error) {
@@ -78,7 +73,7 @@ const ApprovalProcessPreview: React.FC<ApprovalProcessPreviewProps> = ({
           {templateData?.workflow_step_template_list?.map((step, index) => (
             <div className="approval-process-step" key={index}>
               <div className="step-indicator">
-                <div className="step-dot">{step.number ?? index + 1}</div>
+                <div className="step-dot">{step.number}</div>
                 <div className="step-connector" />
               </div>
               <div className="step-content">

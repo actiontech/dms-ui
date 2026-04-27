@@ -7,11 +7,14 @@ import { BaseFormProps } from './index.type';
 import useStaticStatus from '../../../../../hooks/useStaticStatus';
 import StepButton from '../StepButton';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+
 const BasicInfo: React.FC<BaseFormProps> = (props) => {
   const { t } = useTranslation();
   const { form, workflowType } = props;
   const { getAuditLevelStatusSelectOption } = useStaticStatus();
-  const isDataExport = workflowType === 'data_export';
+  const isDataExport =
+    workflowType === getWorkflowTemplateV1WorkflowTypeEnum.data_export;
   const nextStep = async () => {
     const value = await form.validateFields();
     props.updateBaseInfo(value?.allowSubmitWhenLessAuditLevel);

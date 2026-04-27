@@ -1,4 +1,5 @@
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { FormInstance } from 'antd';
 
 export enum NodeTypeEnum {
@@ -29,5 +30,5 @@ export type ReviewAndExecNodeInfoProps = {
   updateReviewAndExecNodeInfo: (data: IWorkFlowStepTemplateResV1) => void;
   generateUsernameSelectOption: () => React.ReactNode;
   getUsernameListLoading: boolean;
-  workflowType?: string;
+  workflowType?: getWorkflowTemplateV1WorkflowTypeEnum;
 };
