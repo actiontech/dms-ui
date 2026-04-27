@@ -1,6 +1,5 @@
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -33,8 +32,7 @@ export const useAllowAuditLevel = () => {
     ) => {
       const request = (projectName: string) => {
         return workflow.getWorkflowTemplateV1({
-          project_name: projectName,
-          workflow_type: getWorkflowTemplateV1WorkflowTypeEnum.workflow
+          project_name: projectName
         });
       };
       const tips: string[] = [];

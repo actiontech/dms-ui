@@ -15,14 +15,11 @@ import {
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import StepButton from '../StepButton';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 const MAX_USER_COUNT = 10;
 
 const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const { t } = useTranslation();
-  const isDataExport =
-    props.workflowType === getWorkflowTemplateV1WorkflowTypeEnum.data_export;
   const [authorizedParam, setAuthorizedParam] = useState(
     props.type === NodeTypeEnum.review
       ? 'approved_by_authorized'
@@ -89,151 +86,119 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const nextStep = async () => {
     props.form.validateFields().then(() => props?.nextStep?.());
   };
-  const isDataExportExec = isDataExport && props.type === NodeTypeEnum.exec;
   return (
     <UpdateWorkflowTemplateStyleWrapper>
       <div className="step-title-wrapper">
         <div className="step-title">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressTitle')
-            : isDataExport
-            ? t('workflowTemplate.step.exportExecTitle')
             : t('workflowTemplate.step.execTitle')}
         </div>
         <div className="step-title-info">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressDesc')
-            : isDataExport
-            ? t('workflowTemplate.step.exportExecDesc')
             : t('workflowTemplate.step.execDesc')}
         </div>
       </div>
       <div className="step-info-wrapper">
         <Form form={props.form} requiredMark={false} layout="vertical">
-          {isDataExportExec ? (
-            <>
-              <StepNodeAlertStyleWrapper>
-                <Typography.Text className="step-alert-title">
-                  <InfoCircleOutlined className="step-alert-title-tips-icon" />
-                  {t(
-                    'workflowTemplate.progressConfig.exportExec.creatorAsExecutor'
-                  )}
-                </Typography.Text>
-              </StepNodeAlertStyleWrapper>
-              <StepButton
-                currentStep={props.currentStep}
-                totalStep={props.totalStep}
-                nextStep={nextStep}
-                prevStep={prevStep}
-              />
-            </>
-          ) : (
-            <>
-              <Form.Item
-                label={t('workflowTemplate.form.label.reviewDesc')}
-                name="desc"
-                rules={[
-                  {
-                    validator(_, value) {
-                      if (!value || value?.length <= 255) {
-                        return Promise.resolve();
-                      }
-                      return Promise.reject(
-                        t('workflowTemplate.form.rule.descMessage')
-                      );
-                    }
+          <Form.Item
+            label={t('workflowTemplate.form.label.reviewDesc')}
+            name="desc"
+            rules={[
+              {
+                validator(_, value) {
+                  if (!value || value?.length <= 255) {
+                    return Promise.resolve();
                   }
-                ]}
-              >
-                <BasicInput.TextArea
-                  onChange={updateNodeDesc}
-                  placeholder={t('common.form.placeholder.input')}
-                  data-testid="exec-user-desc"
-                  autoSize
-                  className="step-desc-textarea"
-                  size="middle"
-                />
-              </Form.Item>
-              <Form.Item
-                label={
-                  props.type === NodeTypeEnum.review
-                    ? t(
-                        'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
-                      )
-                    : isDataExport
-                    ? t(
-                        'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
-                      )
-                    : t(
-                        'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                      )
+                  return Promise.reject(
+                    t('workflowTemplate.form.rule.descMessage')
+                  );
                 }
-                name={[authorizedParam]}
-                valuePropName="checked"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
-                className="authorized-item-switch"
-              >
-                <BasicSwitch onChange={updateNodeType} />
-              </Form.Item>
-              <Form.Item
-                label={
-                  props.type === NodeTypeEnum.review
-                    ? t('workflowTemplate.form.label.reviewUser')
-                    : t('workflowTemplate.form.label.execUser')
-                }
-                name="assignee_user_id_list"
-                rules={
-                  userType === ReviewAndExecUserTypeEnum.specify
-                    ? [
-                        {
-                          required: true,
-                          message: t('workflowTemplate.form.rule.userRequired')
-                        },
-                        {
-                          validator(_, value) {
-                            if (
-                              Array.isArray(value) &&
-                              value.length <= MAX_USER_COUNT
-                            ) {
-                              return Promise.resolve();
-                            }
-                            return Promise.reject(
-                              t('workflowTemplate.form.rule.userMessage', {
-                                max: MAX_USER_COUNT
-                              })
-                            );
-                          }
+              }
+            ]}
+          >
+            <BasicInput.TextArea
+              onChange={updateNodeDesc}
+              placeholder={t('common.form.placeholder.input')}
+              data-testid="exec-user-desc"
+              autoSize
+              className="step-desc-textarea"
+              size="middle"
+            />
+          </Form.Item>
+          <Form.Item
+            label={
+              props.type === NodeTypeEnum.review
+                ? t(
+                    'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
+                  )
+                : t(
+                    'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                  )
+            }
+            name={[authorizedParam]}
+            valuePropName="checked"
+            rules={[
+              {
+                required: true
+              }
+            ]}
+            className="authorized-item-switch"
+          >
+            <BasicSwitch onChange={updateNodeType} />
+          </Form.Item>
+          <Form.Item
+            label={
+              props.type === NodeTypeEnum.review
+                ? t('workflowTemplate.form.label.reviewUser')
+                : t('workflowTemplate.form.label.execUser')
+            }
+            name="assignee_user_id_list"
+            rules={
+              userType === ReviewAndExecUserTypeEnum.specify
+                ? [
+                    {
+                      required: true,
+                      message: t('workflowTemplate.form.rule.userRequired')
+                    },
+                    {
+                      validator(_, value) {
+                        if (
+                          Array.isArray(value) &&
+                          value.length <= MAX_USER_COUNT
+                        ) {
+                          return Promise.resolve();
                         }
-                      ]
-                    : []
-                }
-              >
-                <BasicSelect
-                  disabled={userType === ReviewAndExecUserTypeEnum.matchAuth}
-                  onChange={updateNodeUsername}
-                  mode="multiple"
-                  showSearch
-                  loading={props.getUsernameListLoading}
-                  placeholder={t('common.form.placeholder.select')}
-                  data-testid="exec-user-select"
-                  size="middle"
-                  filterOption={filterOptionByLabel}
-                >
-                  {props.generateUsernameSelectOption()}
-                </BasicSelect>
-              </Form.Item>
-              <StepButton
-                currentStep={props.currentStep}
-                totalStep={props.totalStep}
-                nextStep={nextStep}
-                prevStep={prevStep}
-              />
-            </>
-          )}
+                        return Promise.reject(
+                          t('workflowTemplate.form.rule.userMessage')
+                        );
+                      }
+                    }
+                  ]
+                : []
+            }
+          >
+            <BasicSelect
+              disabled={userType === ReviewAndExecUserTypeEnum.matchAuth}
+              onChange={updateNodeUsername}
+              mode="multiple"
+              showSearch
+              loading={props.getUsernameListLoading}
+              placeholder={t('common.form.placeholder.select')}
+              data-testid="exec-user-select"
+              size="middle"
+              filterOption={filterOptionByLabel}
+            >
+              {props.generateUsernameSelectOption()}
+            </BasicSelect>
+          </Form.Item>
+          <StepButton
+            currentStep={props.currentStep}
+            totalStep={props.totalStep}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
         </Form>
         <Divider className="step-info-divider" />
         <StepNodeAlertStyleWrapper>
@@ -243,11 +208,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
           </Typography.Text>
           <Typography.Paragraph className="step-alert-content">
             <ul className="step-alert-item-icon">
-              <li>
-                {isDataExport
-                  ? t('workflowTemplate.progressConfig.exportRuler.rule1')
-                  : t('workflowTemplate.progressConfig.ruler.rule1')}
-              </li>
+              <li>{t('workflowTemplate.progressConfig.ruler.rule1')}</li>
               <li>{t('workflowTemplate.progressConfig.ruler.rule2')}</li>
               <li>{t('workflowTemplate.progressConfig.ruler.rule3')}</li>
             </ul>

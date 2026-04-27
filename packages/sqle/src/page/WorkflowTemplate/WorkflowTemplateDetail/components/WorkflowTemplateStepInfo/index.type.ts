@@ -7,5 +7,4 @@ export interface IWorkflowTemplateStepInfoProps {
   reviewStepData: IWorkFlowStepTemplateResV1[];
   execStepData: IWorkFlowStepTemplateResV1;
   usernameList: IUserTipResV1[];
-  isDataExport?: boolean;
 }

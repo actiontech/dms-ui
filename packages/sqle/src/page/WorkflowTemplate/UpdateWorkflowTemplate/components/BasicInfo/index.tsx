@@ -7,21 +7,16 @@ import { BaseFormProps } from './index.type';
 import useStaticStatus from '../../../../../hooks/useStaticStatus';
 import StepButton from '../StepButton';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
-
 const BasicInfo: React.FC<BaseFormProps> = (props) => {
   const { t } = useTranslation();
-  const { form, workflowType } = props;
+  const { form } = props;
   const { getAuditLevelStatusSelectOption } = useStaticStatus();
-  const isDataExport =
-    workflowType === getWorkflowTemplateV1WorkflowTypeEnum.data_export;
   const nextStep = async () => {
     const value = await form.validateFields();
     props.updateBaseInfo(value?.allowSubmitWhenLessAuditLevel);
     props.nextStep();
   };
   useEffect(() => {
-    if (isDataExport) return;
     if (!!props.defaultData) {
       form.setFieldsValue({
         allowSubmitWhenLessAuditLevel: props.defaultData
@@ -35,7 +30,7 @@ const BasicInfo: React.FC<BaseFormProps> = (props) => {
           WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.warn
       });
     }
-  }, [form, props.defaultData, isDataExport]);
+  }, [form, props.defaultData]);
   const handleChangeLevel = (
     level: WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
   ) => {
@@ -54,30 +49,28 @@ const BasicInfo: React.FC<BaseFormProps> = (props) => {
         </div>
         <div className="step-info-wrapper">
           <Form form={form} requiredMark={false} layout="vertical">
-            {!isDataExport && (
-              <Form.Item
-                label={t(
-                  'workflowTemplate.form.label.allowSubmitWhenLessAuditLevel'
-                )}
-                name="allowSubmitWhenLessAuditLevel"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
+            <Form.Item
+              label={t(
+                'workflowTemplate.form.label.allowSubmitWhenLessAuditLevel'
+              )}
+              name="allowSubmitWhenLessAuditLevel"
+              rules={[
+                {
+                  required: true
+                }
+              ]}
+            >
+              <BasicSelect
+                placeholder={t('common.form.placeholder.select', {
+                  name: t(
+                    'workflowTemplate.form.label.allowSubmitWhenLessAuditLevel'
+                  )
+                })}
+                onChange={handleChangeLevel}
               >
-                <BasicSelect
-                  placeholder={t('common.form.placeholder.select', {
-                    name: t(
-                      'workflowTemplate.form.label.allowSubmitWhenLessAuditLevel'
-                    )
-                  })}
-                  onChange={handleChangeLevel}
-                >
-                  {getAuditLevelStatusSelectOption()}
-                </BasicSelect>
-              </Form.Item>
-            )}
+                {getAuditLevelStatusSelectOption()}
+              </BasicSelect>
+            </Form.Item>
             <StepButton
               currentStep={0}
               totalStep={props.totalStep}

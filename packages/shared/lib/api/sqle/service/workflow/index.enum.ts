@@ -96,18 +96,6 @@ export enum GetGlobalWorkflowStatisticsFilterProjectPriorityEnum {
   'low' = 'low'
 }
 
-export enum getWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
-}
-
-export enum updateWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
-}
-
 export enum getWorkflowsV1FilterStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

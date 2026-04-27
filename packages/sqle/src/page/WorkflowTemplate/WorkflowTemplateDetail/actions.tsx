@@ -1,20 +1,16 @@
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { t } from '../../../locale';
 import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
-import { EditOutlined } from '@ant-design/icons';
-import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ActionButton } from '@actiontech/shared';
-import { t } from '../../../locale';
-
-export const workflowTemplateDetailAction = (params: {
-  projectID: string;
-  templateName?: string;
-  workflowType: getWorkflowTemplateV1WorkflowTypeEnum;
-}) => {
-  const { projectID, templateName, workflowType } = params;
-  return (
+import { EditOutlined } from '@ant-design/icons';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
+export const WorkflowTemplatePageHeaderActions = (
+  projectID: string,
+  templateName?: string
+): Record<'update-workflow-template', React.ReactNode> => ({
+  'update-workflow-template': (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE}
     >
@@ -28,12 +24,9 @@ export const workflowTemplateDetailAction = (params: {
           params: {
             projectID,
             workflowName: templateName ?? ''
-          },
-          queries: {
-            workflowType
           }
         }}
       />
     </PermissionControl>
-  );
-};
+  )
+});

@@ -23,8 +23,7 @@ const renderReviewUser = (
   type: 'review' | 'exec',
   stepItem: IWorkFlowStepTemplateResV1,
   userList: IUserTipResV1[],
-  theme: IStepInfoProps['theme'],
-  isDataExport?: boolean
+  theme: IStepInfoProps['theme']
 ) => {
   if (stepItem.assignee_user_id_list?.length === 0) {
     if (stepItem.approved_by_authorized && type === 'review') {
@@ -43,22 +42,6 @@ const renderReviewUser = (
         </>
       );
     } else if (stepItem.execute_by_authorized && type === 'exec') {
-      if (isDataExport) {
-        return (
-          <>
-            <UserCircleFilled
-              color={theme?.workflowTemplate.userCircleFilled}
-              width={18}
-              height={18}
-            />
-            <span className="review-exec-auth-text">
-              {t(
-                'workflowTemplate.progressConfig.exportExec.creatorAsExecutor'
-              )}
-            </span>
-          </>
-        );
-      }
       return (
         <>
           <UserCircleFilled
@@ -67,13 +50,9 @@ const renderReviewUser = (
             height={18}
           />
           <span className="review-exec-auth-text">
-            {isDataExport
-              ? t(
-                  'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
-                )
-              : t(
-                  'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                )}
+            {t(
+              'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+            )}
           </span>
         </>
       );
@@ -101,7 +80,7 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
   return [
     {
       key: 'honour-step',
-      show: isUpdateMode && !props.isDataExport,
+      show: isUpdateMode,
       disabled: !(props?.currentStep === 0),
       icon: (
         <span className="honour-icon">
@@ -194,17 +173,14 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
         </span>
       ),
       arrow: StepInfoArrowEnum.none,
-      title: props.isDataExport
-        ? t('workflowTemplate.progressConfig.exportExec.title')
-        : t('workflowTemplate.progressConfig.exec.title'),
+      title: t('workflowTemplate.progressConfig.exec.title'),
       desc: props.execStepData?.desc ?? '-',
       operatorTitle: t('workflowTemplate.form.label.execUser'),
       operator: renderReviewUser(
         'exec',
         props?.execStepData,
         props.usernameList,
-        props.theme,
-        props.isDataExport
+        props.theme
       )
     }
   ];

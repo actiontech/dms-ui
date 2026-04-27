@@ -48,8 +48,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
         reviewStepData: props.reviewStepData,
         execStepData: props.execStepData,
         usernameList: props.usernameList,
-        theme: sqleTheme.icon,
-        isDataExport: props.isDataExport
+        theme: sqleTheme.icon
       }),
     [
       templateLevel,
@@ -57,7 +56,6 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
       props.execStepData,
       props.reviewStepData,
       props.usernameList,
-      props.isDataExport,
       sqleTheme
     ]
   );
@@ -135,11 +133,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                     key={step.key}
                     indexNumber={index}
                     rowKey={step.key}
-                    removeReviewNode={
-                      props.reviewStepData.length > 1
-                        ? props.removeReviewNode
-                        : undefined
-                    }
+                    removeReviewNode={props.removeReviewNode}
                     clickReviewNode={props.clickReviewNode}
                   />
                 ) : (
@@ -157,11 +151,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                           {...step}
                           key={`${step.key}-step-card`}
                           indexNumber={index}
-                          close={
-                            props.reviewStepData.length > 1
-                              ? props?.removeReviewNode
-                              : undefined
-                          }
+                          close={props?.removeReviewNode}
                           click={props.clickReviewNode}
                         />
                       </Row>

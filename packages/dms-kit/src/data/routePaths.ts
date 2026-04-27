@@ -321,13 +321,11 @@ export const ROUTE_PATHS = {
     PROGRESS: {
       index: {
         prefix: '/sqle/project',
-        path: ':projectID/progress',
-        query: 'activeTab'
+        path: ':projectID/progress'
       },
       update: {
         prefix: '/sqle/project/:projectID/progress',
-        path: 'update/:workflowName',
-        query: 'workflowType'
+        path: 'update/:workflowName'
       }
     },
     WHITELIST: {

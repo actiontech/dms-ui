@@ -38,7 +38,6 @@ export interface IStepInfoProps {
   execStepData: IWorkFlowStepTemplateResV1;
   usernameList: IUserTipResV1[];
   theme?: IconTheme;
-  isDataExport?: boolean;
 }
 
 export interface IStepInfoDataProps extends IStepCardProps {
@@ -61,5 +60,4 @@ export interface IUpdateWorkflowStepInfoProps {
   exchangeReviewNode: (from: number, to: number) => void;
   clickReviewNode: (index: number) => void;
   usernameList: IUserTipResV1[];
-  isDataExport?: boolean;
 }

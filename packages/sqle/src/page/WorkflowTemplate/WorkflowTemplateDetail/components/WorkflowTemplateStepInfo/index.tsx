@@ -22,8 +22,7 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
         reviewStepData: props.reviewStepData,
         execStepData: props.execStepData,
         usernameList: props.usernameList,
-        theme: sqleTheme.icon,
-        isDataExport: props.isDataExport
+        theme: sqleTheme.icon
       }).map((step) =>
         step.show ? (
           <React.Fragment key={`${step.key}-wrapper`}>

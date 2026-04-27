@@ -1,6 +1,6 @@
 import { Divider, StepProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { WorkflowStep, WorkflowStepsProps } from './index.type';
+import { WorkflowStepsProps } from './index.type';
 import { useCallback, useMemo } from 'react';
 import { CustomSteps, WorkflowStepsItemStyleWrapper } from './style';
 import { Space } from 'antd';
@@ -26,38 +26,20 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
-
-  // Dynamic step number calculation based on workflow status and steps
   const stepNumber = useMemo(() => {
-    if (!workflowStatus || !workflowSteps) {
+    if (!workflowStatus) {
       return currentStepNumber;
     }
-    // Total steps: create(1) + N approval nodes + execute(1)
-    const totalApprovalSteps = workflowSteps.length;
-
-    if (workflowStatus === WorkflowRecordStatusEnum.rejected) {
-      // Find which approval step was rejected
-      for (let i = 0; i < workflowSteps.length; i++) {
-        if (workflowSteps[i]?.state === 'rejected') {
-          return i + 2; // +1 for create step, +1 for 1-indexed
-        }
-      }
+    //本期后端没有流程模板，当前固定为：创建、审核、执行 三步，所以前端自己判断当前到第几步了
+    if (
+      workflowStatus === WorkflowRecordStatusEnum.wait_for_approve ||
+      workflowStatus === WorkflowRecordStatusEnum.rejected
+    ) {
       return 2;
     }
-
-    if (workflowStatus === WorkflowRecordStatusEnum.wait_for_approve) {
-      // Find the current step being awaited
-      if (currentStepNumber !== undefined && currentStepNumber !== null) {
-        // currentStepNumber from API represents which step we are on (1-indexed)
-        return (currentStepNumber as number) + 1; // +1 for create step
-      }
-      return 2;
-    }
-
     if (workflowStatus === WorkflowRecordStatusEnum.wait_for_export) {
-      return totalApprovalSteps + 2; // all approval done, at execute step
+      return 3;
     }
-
     if (
       [
         WorkflowRecordStatusEnum.exporting,
@@ -66,15 +48,18 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         WorkflowRecordStatusEnum.cancel
       ].includes(workflowStatus)
     ) {
-      return totalApprovalSteps + 2; // at execute step
+      return 4;
     }
-  }, [currentStepNumber, workflowStatus, workflowSteps]);
-
+  }, [currentStepNumber, workflowStatus]);
   const renderTitle = useCallback(
     (type?: string) => {
       if (type === 'create') {
         return t('dmsDataExport.detail.record.steps.create');
       }
+
+      // if (type === WorkflowStepResV2TypeEnum.update_workflow) {
+      //   return t('dmsDataExport.detail.record.steps.update');
+      // }
 
       if (type === 'approve') {
         return t('dmsDataExport.detail.record.steps.approve');
@@ -151,7 +136,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     ]
   );
   const renderOrderStepsItem = useCallback(
-    (title: string, step: WorkflowStep) => {
+    (title: string, step: any) => {
       return (
         <WorkflowStepsItemStyleWrapper>
           <div className="step-title">{title}</div>
@@ -163,14 +148,12 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     [renderOrderStepsItemContent]
   );
   const renderOrderStepsItemIcon = useCallback(
-    (type?: string, step?: WorkflowStep) => {
+    (type?: string) => {
       if (type === 'create') {
         return <PlusCircleFilled color="currentColor" />;
       }
       if (type === 'approve') {
-        const isRejected =
-          workflowStatus === WorkflowRecordStatusEnum.rejected &&
-          step?.state === 'rejected';
+        const isRejected = workflowStatus === WorkflowRecordStatusEnum.rejected;
         return (
           <ProgressCircleFilled
             fill="currentColor"
@@ -196,14 +179,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     },
     [workflowStatus, sharedTheme.uiToken.colorWarning]
   );
-
   const stepsItems = useMemo(() => {
     if (!workflowSteps) {
       return [];
     }
 
-    // Build dynamic steps: create + N approval nodes + execute
-    const allSteps: WorkflowStep[] = [
+    // 没有流程模板，先固定这 3 步
+    return [
       {
         type: 'create',
         number: 1,
@@ -211,30 +193,21 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           name: createUser
         },
         operation_time: createTime
-      }
-    ];
-
-    // Add all approval steps from workflow_step_list
-    workflowSteps.forEach((step, index) => {
-      allSteps.push({
-        ...step,
+      },
+      {
+        ...workflowSteps[0],
         type: 'approve',
-        number: index + 2
-      });
-    });
-
-    // Add execute step
-    allSteps.push({
-      type: 'execute',
-      number: allSteps.length + 1
-    });
-
-    return allSteps.map<StepProps>((v, i) => {
-      const nextStep = allSteps[i + 1];
-      const isNextRejected = nextStep?.state === 'rejected';
+        number: 2
+      },
+      {
+        type: 'execute',
+        number: 3
+      }
+    ].map<StepProps>((v, i) => {
+      const isNextRejected = workflowSteps[i + 1]?.state === 'rejected';
       return {
         title: renderOrderStepsItem(renderTitle(v.type), v),
-        icon: renderOrderStepsItemIcon(v.type, v),
+        icon: renderOrderStepsItemIcon(v.type),
         className: classNames({
           'prev-rejected-step': isNextRejected
         })

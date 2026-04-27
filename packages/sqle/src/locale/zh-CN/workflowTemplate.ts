@@ -10,15 +10,7 @@ export default {
 
     table: {
       workflowTemplateName: '审批流程模板名称',
-      desc: '审批流程模板描述',
-      applicableType: '适用类型',
-      approvalNodeDesc: '审批节点描述',
-      updateTime: '更新时间'
-    },
-
-    type: {
-      workflow: '上线工单',
-      dataExport: '数据导出'
+      desc: '审批流程模板描述'
     },
 
     operator: {
@@ -40,9 +32,7 @@ export default {
 
   update: {
     title: {
-      wrapper: '更新审批流程模板',
-      workflow: '编辑审批流程 - 上线工单',
-      dataExport: '编辑审批流程 - 数据导出'
+      wrapper: '更新审批流程模板'
     },
     result: {
       title: '更新审批流程模板成功',
@@ -72,9 +62,7 @@ export default {
         '被驳回的工单，需要创建人更新SQL语句后重新发起，驳回记录可在 “工单进度-工单历史操作” 中查看；',
       third: '处于 “审核节点” 中的工单，创建人可在工单详情页随时关闭；',
       fourth: '审核工单：审核人在该步骤可以执行「审核通过」或「驳回」操作；',
-      fifth: '上线工单：执行人在该步骤可以执行「执行上线」或「驳回」操作。',
-      fifthExport:
-        '导出工单：执行人在该步骤可以执行「执行导出」或「驳回」操作。'
+      fifth: '上线工单：执行人在该步骤可以执行「执行上线」或「驳回」操作。'
     }
   },
 
@@ -88,10 +76,6 @@ export default {
 
     execTitle: '执行上线',
     execDesc: '编辑审核流程，执行人在该步骤可以执行「执行上线」或「驳回」操作',
-
-    exportExecTitle: '执行导出',
-    exportExecDesc:
-      '编辑审核流程，执行人在该步骤可以执行「执行导出」或「驳回」操作',
 
     resultTitle: '结果',
     resultDesc: '变更结果'
@@ -112,7 +96,7 @@ export default {
     rule: {
       descMessage: '步骤描述不能超过255个字符',
       userRequired: '最少需要添加一个指定人',
-      userMessage: '最多只能添加{{max}}个指定人'
+      userMessage: '最多只能添加十个指定人'
     }
   },
 
@@ -140,23 +124,6 @@ export default {
         matchExecute: '匹配拥有数据源上线权限的成员'
       }
     },
-    exportExec: {
-      title: '执行导出',
-      subTitle: '执行人在该步骤可以执行 执行导出或驳回 操作',
-      creatorAsExecutor: '数据导出的执行人默认为工单创建者，不可修改。',
-      executeUserType: {
-        specifyExecute: '指定执行人',
-        matchExecute: '匹配拥有数据源导出权限的成员'
-      }
-    },
-    exportReview: {
-      title: '导出审批',
-      subTitle: '审批人在该步骤审核导出请求的合理性'
-    },
-    exportExecute: {
-      title: '导出执行确认',
-      subTitle: '确认执行导出操作'
-    },
     operator: {
       remove: '移除该步骤',
       moveUp: '上移该步骤',
@@ -169,11 +136,7 @@ export default {
         '审核流程自工单发起开始，通过设置的审核步骤后，最后以执行上线结束；',
       rule2: '审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；',
       rule3:
-        '单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加十个指定人。'
-    },
-    exportRuler: {
-      rule1:
-        '审核流程自工单发起开始，通过设置的审核步骤后，最后以执行导出结束；'
+        '单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。'
     }
   },
 

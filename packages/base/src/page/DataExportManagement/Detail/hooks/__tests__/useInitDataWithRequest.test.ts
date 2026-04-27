@@ -48,7 +48,7 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
     const { result } = renderHook(() => useInitDataWithRequest());
 
     expect(result.current.getWorkflowLoading).toBeTruthy();
-    expect(result.current.getTaskInfosLoading).toBeTruthy();
+    expect(result.current.getTaskInfosLoading).toBeFalsy();
     expect(getWorkflowSpy).toHaveBeenCalledTimes(1);
     expect(getWorkflowSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
@@ -56,7 +56,7 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(result.current.getWorkflowLoading).toBeTruthy();
+    expect(result.current.getWorkflowLoading).toBeFalsy();
     expect(result.current.getTaskInfosLoading).toBeTruthy();
     expect(mockDataExportDetailRedux.updateWorkflowInfo).toHaveBeenCalledTimes(
       1

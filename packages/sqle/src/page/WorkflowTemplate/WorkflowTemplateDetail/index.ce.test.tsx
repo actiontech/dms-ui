@@ -8,30 +8,15 @@ import { act, cleanup, screen } from '@testing-library/react';
 import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 
 describe('page/WorkflowTemplate CE', () => {
   beforeEach(() => {
     workflowTemplate.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
-
-    const { useSelector } = require('react-redux');
-    (useSelector as jest.Mock).mockImplementation((selector: Function) =>
-      selector({
-        permission: {
-          moduleFeatureSupport: {},
-          userOperationPermissions: null
-        }
-      })
-    );
   });
 
   afterEach(() => {
@@ -43,13 +28,14 @@ describe('page/WorkflowTemplate CE', () => {
     return sqleSuperRender(<WorkflowTemplateDetail />);
   };
 
-  it('render workflow template detail without edit actions in CE', async () => {
-    const getTemplateRequest = workflowTemplate.getWorkflowTemplate();
+  it('render workflow template detail', async () => {
+    const getInfoRequest = workflowTemplate.getWorkflowTemplate();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getTemplateRequest).toHaveBeenCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
+    expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
     expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
   });
 });
