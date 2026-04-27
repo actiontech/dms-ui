@@ -52,6 +52,17 @@ export default {
       hasExceptionRule: '当前存在审核规则未被校验，请排除问题后重新触发审核',
       continueSubmission: '仍要创建'
     },
+    approvalProcess: {
+      title: '审批流程',
+      hint: '审批流程可在 项目配置 > 审批流程 中修改',
+      stepLabel: '步骤 {{number}}',
+      matchByPermission: '按权限匹配',
+      loadFailed: '加载审批流程失败',
+      stepType: {
+        export_review: '导出审批',
+        export_execute: '导出执行确认'
+      }
+    },
     update: {
       baseTitle: '工单基本信息',
       sourceTitle: '工单导出对象',

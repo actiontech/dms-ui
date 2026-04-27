@@ -79,6 +79,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
       <div className="workflow-base-info-title">{title}</div>
       <BasicTypographyEllipsis
         className="workflow-base-info-desc"
+        copyable={false}
         textCont={desc ?? '-'}
       />
     </BasicInfoStyleWrapper>

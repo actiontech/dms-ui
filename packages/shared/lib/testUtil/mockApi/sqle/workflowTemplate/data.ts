@@ -1,4 +1,8 @@
-import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '../../../../api/sqle/service/common.enum';
+import { IWorkflowTemplateDetailResV1 } from '../../../../api/sqle/service/common';
+import {
+  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
+  WorkflowTemplateDetailResV1WorkflowTypeEnum
+} from '../../../../api/sqle/service/common.enum';
 
 export const workflowTemplateData = {
   allow_submit_when_less_audit_level:
@@ -29,5 +33,34 @@ export const workflowTemplateData = {
       type: 'sql_execute'
     }
   ],
-  workflow_template_name: '700300-WorkflowTemplate'
+  workflow_template_name: '700300-WorkflowTemplate',
+  workflow_type: WorkflowTemplateDetailResV1WorkflowTypeEnum.workflow
 };
+
+export const dataExportWorkflowTemplateData: IWorkflowTemplateDetailResV1 = {
+  desc: '',
+  update_time: '2024-01-15T10:30:00+08:00',
+  workflow_step_template_list: [
+    {
+      approved_by_authorized: true,
+      assignee_user_id_list: [],
+      execute_by_authorized: false,
+      number: 1,
+      type: 'export_review'
+    },
+    {
+      approved_by_authorized: false,
+      assignee_user_id_list: [],
+      execute_by_authorized: true,
+      number: 2,
+      type: 'export_execute'
+    }
+  ],
+  workflow_template_name: '700300-DataExportWorkflowTemplate',
+  workflow_type: WorkflowTemplateDetailResV1WorkflowTypeEnum.data_export
+};
+
+export const workflowTemplateListData = [
+  workflowTemplateData,
+  dataExportWorkflowTemplateData
+];

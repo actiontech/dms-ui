@@ -3,11 +3,14 @@ import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExp
 import { ResponseCode } from '@actiontech/dms-kit';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useDataExportDetailReduxManage from './index.redux';
-import { useRequest } from 'ahooks';
-import { useEffect } from 'react';
+import { useBoolean, useRequest } from 'ahooks';
+import { useEffect, useMemo } from 'react';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  GetDataExportTaskStatusEnum,
+  WorkflowRecordStatusEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 
@@ -18,7 +21,14 @@ const useInitDataWithRequest = () => {
   const { updateTaskInfos, updateWorkflowInfo, updateTaskStatusNumber } =
     useDataExportDetailReduxManage();
 
-  const { refresh: refreshWorkflow, loading: getWorkflowLoading } = useRequest(
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
+
+  const {
+    refresh: refreshWorkflow,
+    loading: getWorkflowLoading,
+    cancel
+  } = useRequest(
     () =>
       DataExportWorkflows.GetDataExportWorkflow({
         project_uid: projectID,
@@ -31,8 +41,27 @@ const useInitDataWithRequest = () => {
               ?.map((v) => v.task_uid ?? '')
               ?.join(',') ?? ''
           );
+
+          // Stop polling when no longer in exporting status
+          if (
+            res.data.data?.workflow_record?.status !==
+            WorkflowRecordStatusEnum.exporting
+          ) {
+            cancel();
+            finishPollRequest();
+          } else {
+            startPollRequest();
+          }
         }
-      })
+      }),
+    {
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onError: () => {
+        cancel();
+        finishPollRequest();
+      }
+    }
   );
 
   const { loading: getTaskInfosLoading, run: batchGetDataExportTask } =
@@ -82,9 +111,14 @@ const useInitDataWithRequest = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const initLoading = useMemo(
+    () => (polling ? false : getTaskInfosLoading || getWorkflowLoading),
+    [getTaskInfosLoading, getWorkflowLoading, polling]
+  );
+
   return {
-    getWorkflowLoading,
-    getTaskInfosLoading
+    getWorkflowLoading: initLoading,
+    getTaskInfosLoading: initLoading
   };
 };
 

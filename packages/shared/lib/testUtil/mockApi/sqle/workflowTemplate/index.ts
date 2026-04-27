@@ -1,12 +1,13 @@
 import workflow from '../../../../api/sqle/service/workflow';
 import { MockSpyApy, createSpySuccessResponse } from '../../common';
-import { workflowTemplateData } from './data';
+import { workflowTemplateData, workflowTemplateListData } from './data';
 import { cloneDeep } from 'lodash';
 
 class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
     this.getWorkflowTemplate();
+    this.getWorkflowTemplateList();
     this.cancelWorkflow();
   }
 
@@ -21,6 +22,16 @@ class MockWorkflowTemplateApi implements MockSpyApy {
     spy.mockImplementation(() => {
       return createSpySuccessResponse({
         data: cloneDeep(workflowTemplateData)
+      });
+    });
+    return spy;
+  }
+
+  public getWorkflowTemplateList() {
+    const spy = jest.spyOn(workflow, 'getWorkflowTemplateListV1');
+    spy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: cloneDeep(workflowTemplateListData)
       });
     });
     return spy;
