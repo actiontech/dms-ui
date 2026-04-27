@@ -15,12 +15,14 @@ import {
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import StepButton from '../StepButton';
 import { InfoCircleOutlined } from '@ant-design/icons';
+import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 const MAX_USER_COUNT = 10;
 
 const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
   const { t } = useTranslation();
-  const isDataExport = props.workflowType === 'data_export';
+  const isDataExport =
+    props.workflowType === getWorkflowTemplateV1WorkflowTypeEnum.data_export;
   const [authorizedParam, setAuthorizedParam] = useState(
     props.type === NodeTypeEnum.review
       ? 'approved_by_authorized'

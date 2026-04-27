@@ -23,3 +23,8 @@ export type WorkflowStepsProps = {
 export type WorkflowHistoryStepsProps = {
   recordHistoryList?: IWorkflowRecord[];
 };
+
+export type WorkflowStep = {
+  type: 'create' | 'approve' | 'execute';
+  number: number;
+} & IWorkflowStep;

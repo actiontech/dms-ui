@@ -67,11 +67,13 @@ const renderReviewUser = (
             height={18}
           />
           <span className="review-exec-auth-text">
-            {t(
-              isDataExport
-                ? 'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
-                : 'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-            )}
+            {isDataExport
+              ? t(
+                  'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
+                )
+              : t(
+                  'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                )}
           </span>
         </>
       );

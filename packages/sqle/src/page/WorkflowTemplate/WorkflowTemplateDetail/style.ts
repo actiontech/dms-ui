@@ -13,7 +13,3 @@ export const WorkflowTemplateStyleWrapper = styled('div')`
     height: auto;
   }
 `;
-
-export const WorkflowTemplateStepInfoWrapper = styled('div')`
-  height: 100%;
-`;

@@ -47,7 +47,7 @@ export const ApprovalProcessPreviewStyleWrapper = styled('div')`
         height: 24px;
         border-radius: 50%;
         background: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
-        color: #fff;
+        color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
         font-size: 12px;
         font-weight: 600;
         display: flex;

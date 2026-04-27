@@ -1,5 +1,6 @@
 import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { FormInstance } from 'antd';
 
 export type BaseFormProps = {
@@ -10,7 +11,7 @@ export type BaseFormProps = {
     info: BaseFormFields['allowSubmitWhenLessAuditLevel']
   ) => void;
   totalStep: number;
-  workflowType?: string;
+  workflowType?: getWorkflowTemplateV1WorkflowTypeEnum;
 };
 
 export type BaseFormFields = {

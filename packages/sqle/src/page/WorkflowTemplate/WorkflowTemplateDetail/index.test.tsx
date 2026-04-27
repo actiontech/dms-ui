@@ -40,6 +40,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(getTemplateRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模板')).toBeInTheDocument();
+    expect(screen.queryByText('修改当前审批流程模板')).toBeInTheDocument();
   });
 
   it('render segmented tab labels correctly', async () => {

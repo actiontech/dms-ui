@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicInfo from './components/BasicInfo';
 import StepInfo from './components/StepInfo';
@@ -51,11 +51,29 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const urlParams = useTypedParams<typeof ROUTE_PATHS.SQLE.PROGRESS.update>();
   const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
-  const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.update);
-  const workflowType = searchParams?.workflowType;
+  const [workflowType, setWorkflowType] = useState<
+    getWorkflowTemplateV1WorkflowTypeEnum | undefined
+  >(undefined);
+
+  useEffect(() => {
+    const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.update);
+    const isWorkflowType = (
+      value: string
+    ): value is getWorkflowTemplateV1WorkflowTypeEnum => {
+      return Object.values(getWorkflowTemplateV1WorkflowTypeEnum).includes(
+        value as getWorkflowTemplateV1WorkflowTypeEnum
+      );
+    };
+    if (
+      searchParams?.workflowType &&
+      isWorkflowType(searchParams.workflowType)
+    ) {
+      setWorkflowType(searchParams.workflowType);
+    }
+  }, [extractQueries]);
 
   const pageTitle =
-    workflowType === updateWorkflowTemplateV1WorkflowTypeEnum.data_export
+    workflowType === getWorkflowTemplateV1WorkflowTypeEnum.data_export
       ? t('workflowTemplate.update.title.dataExport')
       : t('workflowTemplate.update.title.workflow');
 
@@ -102,7 +120,8 @@ const UpdateWorkflowTemplate: React.FC = () => {
     return workflow
       .updateWorkflowTemplateV1({
         project_name: projectName,
-        workflow_type: workflowType as updateWorkflowTemplateV1WorkflowTypeEnum,
+        workflow_type:
+          workflowType as unknown as updateWorkflowTemplateV1WorkflowTypeEnum,
         workflow_step_template_list: templateList,
         allow_submit_when_less_audit_level: selectLevel as
           | UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum

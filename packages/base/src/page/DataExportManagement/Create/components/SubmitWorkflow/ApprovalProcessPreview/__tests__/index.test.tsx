@@ -8,10 +8,13 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { dataExportWorkflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { cloneDeep } from 'lodash';
+import MockWorkflowTemplateApi from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 
 describe('base/DataExport/Create/ApprovalProcessPreview', () => {
+  let mockGetWorkflowTemplateApi: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    mockGetWorkflowTemplateApi = MockWorkflowTemplateApi.getWorkflowTemplate();
   });
 
   afterEach(() => {
@@ -26,28 +29,20 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
   };
 
   it('should render loading state', () => {
-    jest.spyOn(workflow, 'getWorkflowTemplateV1').mockImplementation(
-      () =>
-        new Promise(() => {
-          /* never resolves to keep loading */
-        })
-    );
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should render step list when data loaded successfully', async () => {
-    const getTemplateSpy = jest
-      .spyOn(workflow, 'getWorkflowTemplateV1')
-      .mockImplementation(() =>
-        createSpySuccessResponse({
-          data: cloneDeep(dataExportWorkflowTemplateData)
-        })
-      );
+    mockGetWorkflowTemplateApi.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: cloneDeep(dataExportWorkflowTemplateData)
+      })
+    );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(getTemplateSpy).toHaveBeenCalledWith({
+    expect(mockGetWorkflowTemplateApi).toHaveBeenCalledWith({
       project_name: 'test-project',
       workflow_type: 'data_export'
     });
@@ -59,9 +54,9 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
   });
 
   it('should render fallback error state when request fails', async () => {
-    jest
-      .spyOn(workflow, 'getWorkflowTemplateV1')
-      .mockImplementation(() => createSpyErrorResponse({}));
+    mockGetWorkflowTemplateApi.mockImplementation(() =>
+      createSpyErrorResponse({})
+    );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -87,9 +82,9 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
         type: 'export_execute'
       }
     ];
-    jest.spyOn(workflow, 'getWorkflowTemplateV1').mockImplementation(() =>
+    mockGetWorkflowTemplateApi.mockImplementation(() =>
       createSpySuccessResponse({
-        data: multiStepData
+        data: cloneDeep(multiStepData)
       })
     );
     customRender();
@@ -110,9 +105,9 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
         type: 'export_review'
       }
     ];
-    jest.spyOn(workflow, 'getWorkflowTemplateV1').mockImplementation(() =>
+    mockGetWorkflowTemplateApi.mockImplementation(() =>
       createSpySuccessResponse({
-        data: customData
+        data: cloneDeep(customData)
       })
     );
     customRender();
@@ -122,10 +117,10 @@ describe('base/DataExport/Create/ApprovalProcessPreview', () => {
   });
 
   it('should not make API call when projectName is empty', () => {
-    const getTemplateSpy = jest
-      .spyOn(workflow, 'getWorkflowTemplateV1')
-      .mockImplementation(() => createSpySuccessResponse({ data: {} }));
+    mockGetWorkflowTemplateApi.mockImplementation(() =>
+      createSpySuccessResponse({ data: {} })
+    );
     customRender('');
-    expect(getTemplateSpy).not.toHaveBeenCalled();
+    expect(mockGetWorkflowTemplateApi).not.toHaveBeenCalled();
   });
 });

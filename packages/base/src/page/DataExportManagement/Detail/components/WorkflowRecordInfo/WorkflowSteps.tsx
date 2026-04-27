@@ -1,6 +1,6 @@
 import { Divider, StepProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { WorkflowStepsProps } from './index.type';
+import { WorkflowStep, WorkflowStepsProps } from './index.type';
 import { useCallback, useMemo } from 'react';
 import { CustomSteps, WorkflowStepsItemStyleWrapper } from './style';
 import { Space } from 'antd';
@@ -151,7 +151,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     ]
   );
   const renderOrderStepsItem = useCallback(
-    (title: string, step: any) => {
+    (title: string, step: WorkflowStep) => {
       return (
         <WorkflowStepsItemStyleWrapper>
           <div className="step-title">{title}</div>
@@ -163,7 +163,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     [renderOrderStepsItemContent]
   );
   const renderOrderStepsItemIcon = useCallback(
-    (type?: string, step?: any) => {
+    (type?: string, step?: WorkflowStep) => {
       if (type === 'create') {
         return <PlusCircleFilled color="currentColor" />;
       }
@@ -203,7 +203,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
     }
 
     // Build dynamic steps: create + N approval nodes + execute
-    const allSteps: any[] = [
+    const allSteps: WorkflowStep[] = [
       {
         type: 'create',
         number: 1,
