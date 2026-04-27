@@ -17,6 +17,9 @@ import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
 import { WorkflowTemplateStyleWrapper } from './style';
 import useUsername from '../../../hooks/useUsername';
 import { EditOutlined } from '@ant-design/icons';
+import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+
+type WorkflowTemplateDetailTab = 'workflow' | 'data_export';
 
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -25,7 +28,8 @@ const WorkflowTemplateDetail: React.FC = () => {
   const searchParams = extractQueries(ROUTE_PATHS.SQLE.PROGRESS.index);
   const initialTab =
     searchParams?.activeTab === 'data_export' ? 'data_export' : 'workflow';
-  const [activeTab, setActiveTab] = useState<string>(initialTab);
+  const [activeTab, setActiveTab] =
+    useState<WorkflowTemplateDetailTab>(initialTab);
 
   const {
     updateUsernameList,
@@ -55,7 +59,7 @@ const WorkflowTemplateDetail: React.FC = () => {
         workflow
           .getWorkflowTemplateV1({
             project_name: projectName,
-            workflow_type: 'workflow'
+            workflow_type: getWorkflowTemplateV1WorkflowTypeEnum.workflow
           })
           .then((res) => {
             const stepList = res.data.data?.workflow_step_template_list ?? [];
@@ -92,7 +96,7 @@ const WorkflowTemplateDetail: React.FC = () => {
         workflow
           .getWorkflowTemplateV1({
             project_name: projectName,
-            workflow_type: 'data_export'
+            workflow_type: getWorkflowTemplateV1WorkflowTypeEnum.data_export
           })
           .then((res) => {
             const stepList = res.data.data?.workflow_step_template_list ?? [];
@@ -114,8 +118,7 @@ const WorkflowTemplateDetail: React.FC = () => {
     );
 
   const renderEditButton = useCallback(
-    (workflowType: string, templateName?: string) => {
-      // #if [ee]
+    (workflowType: WorkflowTemplateDetailTab, templateName?: string) => {
       return (
         <PermissionControl
           permission={PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE}
@@ -138,8 +141,6 @@ const WorkflowTemplateDetail: React.FC = () => {
           />
         </PermissionControl>
       );
-      // #endif
-      return null;
     },
     [t, projectID]
   );
@@ -151,18 +152,6 @@ const WorkflowTemplateDetail: React.FC = () => {
         label: t('workflowTemplate.list.type.workflow'),
         children: (
           <Spin spinning={getUsernameListLoading || getWorkflowTemplateLoading}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                padding: '0 40px 16px'
-              }}
-            >
-              {renderEditButton(
-                'workflow',
-                workflowTemplate?.workflow_template_name
-              )}
-            </div>
             <Row className="workflow-template-wrapper">
               <Col flex="auto">
                 <WorkflowTemplateStepInfo
@@ -186,18 +175,6 @@ const WorkflowTemplateDetail: React.FC = () => {
         label: t('workflowTemplate.list.type.dataExport'),
         children: (
           <Spin spinning={getUsernameListLoading || getExportTemplateLoading}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                padding: '0 40px 16px'
-              }}
-            >
-              {renderEditButton(
-                'data_export',
-                exportTemplate?.workflow_template_name
-              )}
-            </div>
             <Row className="workflow-template-wrapper">
               <Col flex="auto">
                 <WorkflowTemplateStepInfo
@@ -229,8 +206,7 @@ const WorkflowTemplateDetail: React.FC = () => {
       exportExecStep,
       usernameList,
       workflowTemplate,
-      exportTemplate,
-      renderEditButton
+      exportTemplate
     ]
   );
 
@@ -241,6 +217,15 @@ const WorkflowTemplateDetail: React.FC = () => {
         activeKey={activeTab}
         onChange={setActiveTab}
         items={tabItems}
+        // #if [ee]
+        segmentedRowClassName="flex-space-between"
+        segmentedRowExtraContent={renderEditButton(
+          activeTab,
+          activeTab === 'workflow'
+            ? workflowTemplate?.workflow_template_name
+            : exportTemplate?.workflow_template_name
+        )}
+        // #endif
       />
     </WorkflowTemplateStyleWrapper>
   );

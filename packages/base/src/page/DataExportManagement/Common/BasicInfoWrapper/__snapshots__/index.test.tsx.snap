@@ -11,7 +11,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 1`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       -
     </div>
@@ -30,7 +30,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 2`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -122,7 +122,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 3`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -214,7 +214,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 4`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -306,7 +306,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 5`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -398,7 +398,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 6`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -490,7 +490,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 7`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -582,7 +582,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 8`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
@@ -674,7 +674,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 9`] 
       export-task-1
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>

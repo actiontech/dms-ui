@@ -212,7 +212,7 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                 mysql-1_20240130113114
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 desc
               </div>
@@ -1154,7 +1154,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                 mysql-1_20240130113114
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 desc
               </div>
@@ -3735,7 +3735,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                 mysql-1_20240130113114
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 desc
               </div>
@@ -6316,7 +6316,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                 mysql-1_20240130113114
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 desc
               </div>
@@ -8897,7 +8897,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                 mysql-1_20240130113114
               </div>
               <div
-                class="workflow-base-info-desc"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
               >
                 desc
               </div>

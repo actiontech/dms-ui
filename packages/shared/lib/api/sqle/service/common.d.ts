@@ -98,6 +98,7 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
+  WorkflowTemplateDetailResV1WorkflowTypeEnum,
   pipelineNodeBaseAuditMethodEnum,
   pipelineNodeBaseObjectTypeEnum,
   pipelineNodeBaseTypeEnum,
@@ -133,6 +134,12 @@ export interface IBaseRes {
   message?: string;
 }
 
+export interface IGlobalAccountListDataV2 {
+  accounts?: IGlobalAccountListItemV2[];
+
+  can_manage?: boolean;
+}
+
 export interface IGlobalAccountListItemV2 {
   account_name?: string;
 
@@ -154,7 +161,7 @@ export interface IGlobalAccountListItemV2 {
 export interface IGlobalAccountListResV2 {
   code?: number;
 
-  data?: IGlobalAccountListItemV2[];
+  data?: IGlobalAccountListDataV2;
 
   message?: string;
 
@@ -2495,18 +2502,18 @@ export interface IGetWorkflowTasksResV1 {
   message?: string;
 }
 
-export interface IGetWorkflowTemplateResV1 {
-  code?: number;
-
-  data?: IWorkflowTemplateDetailResV1;
-
-  message?: string;
-}
-
 export interface IGetWorkflowTemplateListResV1 {
   code?: number;
 
   data?: IWorkflowTemplateDetailResV1[];
+
+  message?: string;
+}
+
+export interface IGetWorkflowTemplateResV1 {
+  code?: number;
+
+  data?: IWorkflowTemplateDetailResV1;
 
   message?: string;
 }
@@ -4466,7 +4473,7 @@ export interface IWorkflowTemplateDetailResV1 {
 
   workflow_template_name?: string;
 
-  workflow_type?: string;
+  workflow_type?: WorkflowTemplateDetailResV1WorkflowTypeEnum;
 }
 
 export interface ICreatePipelineResData {
@@ -5108,6 +5115,8 @@ export interface IUploadInstanceAuditPlanSQLsReqV2 {
 }
 
 export interface IWorkflowRecordResV2 {
+  assignee_user_name_list?: string[];
+
   current_step_number?: number;
 
   executable?: boolean;

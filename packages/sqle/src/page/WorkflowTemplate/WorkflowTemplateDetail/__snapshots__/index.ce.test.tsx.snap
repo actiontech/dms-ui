@@ -4,7 +4,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail without edit a
 <body>
   <div>
     <div
-      class="css-lqkgr4"
+      class="css-1w47t3a"
     >
       <div
         class="actiontech-page-header-namespace css-ex8bfe"
@@ -95,9 +95,6 @@ exports[`page/WorkflowTemplate CE render workflow template detail without edit a
             <div
               class="ant-spin-container ant-spin-blur"
             >
-              <div
-                style="display: flex; justify-content: flex-end; padding: 0px 40px 16px;"
-              />
               <div
                 class="ant-row workflow-template-wrapper"
               >

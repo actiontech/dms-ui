@@ -1427,7 +1427,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
       test
     </div>
     <div
-      class="workflow-base-info-desc"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line workflow-base-info-desc basic-typography-ellipsis css-wgj5gs"
     >
       desc
     </div>
