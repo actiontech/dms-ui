@@ -133,9 +133,13 @@ export function createJestConfig(options) {
         repoRoot,
         'packages/shared/lib/testUtil/mockModule/mockSigmaGraphSearch.tsx'
       ),
+      '^@actiontech/dms-kit/es/(.*)$': path.resolve(
+        repoRoot,
+        'packages/dms-kit/src/$1'
+      ),
+      '^@actiontech/dms-kit$': path.resolve(repoRoot, 'packages/dms-kit/src'),
       '^@actiontech/(.*)$': path.resolve(packageRoot, '../$1')
     },
-    collectCoverageFrom,
     setupFilesAfterEnv: [path.resolve(repoRoot, 'jest-setup.ts')]
   };
 
@@ -158,6 +162,7 @@ export function createJestConfig(options) {
   }
 
   return {
+    collectCoverageFrom,
     projects,
     reporters
   };
