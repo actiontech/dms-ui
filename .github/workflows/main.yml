@@ -46,7 +46,6 @@ jobs:
         run: pnpm turbo run test:ci --filter=${{ matrix.package_name }}
 
       - name: Coverage report
-        if: always()
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
