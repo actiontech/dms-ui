@@ -59,9 +59,20 @@ export default defineConfig(() => {
       })
     ],
     resolve: {
-      alias: {
-        '~': path.resolve(__dirname, '../provision/src')
-      }
+      alias: [
+        {
+          find: /^@actiontech\/dms-kit\/es\/(.*)$/,
+          replacement: path.resolve(__dirname, '../dms-kit/src/$1')
+        },
+        {
+          find: '@actiontech/dms-kit',
+          replacement: path.resolve(__dirname, '../dms-kit/src')
+        },
+        {
+          find: '~',
+          replacement: path.resolve(__dirname, '../provision/src')
+        }
+      ]
     },
     css: {
       preprocessorOptions: {

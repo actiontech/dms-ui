@@ -3,6 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "cache": false,
       "outputs": ["dist/**", "lib/**", "es/**", "build/**"]
     },
     "test:ci": {

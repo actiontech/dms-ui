@@ -29,16 +29,12 @@ jobs:
         include:
           - package_name: base
             package_path: packages/base
-            artifact_name: coverage-artifacts-base
           - package_name: '@actiontech/dms-kit'
             package_path: packages/dms-kit
-            artifact_name: coverage-artifacts-dms-kit
           - package_name: '@actiontech/shared'
             package_path: packages/shared
-            artifact_name: coverage-artifacts-shared
           - package_name: sqle
             package_path: packages/sqle
-            artifact_name: coverage-artifacts-sqle
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,73 +45,9 @@ jobs:
       - name: Run package test suite
         run: pnpm turbo run test:ci --filter=${{ matrix.package_name }}
 
-      - name: Upload coverage artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.artifact_name }}
-          path: ${{ matrix.package_path }}/coverage/
-
-  report:
-    runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.pull_request.title, '[skip checker]') }}
-    needs: [test]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Get Coverage 1
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-base
-          path: coverage/base
-
-      - name: Get Coverage 2
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-dms-kit
-          path: coverage/dms-kit
-
-      - name: Get Coverage 3
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-shared
-          path: coverage/shared
-
-      - name: Get Coverage 4
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts-sqle
-          path: coverage/sqle
-
-      - name: Coverage report (base)
+      - name: Coverage report
+        if: always()
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: coverage/base/report.json
-
-      - name: Coverage report (dms-kit)
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: coverage/dms-kit/report.json
-
-      - name: Coverage report (shared)
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: coverage/shared/report.json
-
-      - name: Coverage report (sqle)
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: coverage/sqle/report.json
-
-      - name: Delete coverage artifacts
-        uses: geekyeggo/delete-artifact@v5
-        with:
-          name: |
-            coverage-artifacts-base
-            coverage-artifacts-dms-kit
-            coverage-artifacts-shared
-            coverage-artifacts-sqle
+          coverage-file: ${{ matrix.package_path }}/coverage/report.json
