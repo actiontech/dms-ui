@@ -1,5 +1,7 @@
 import hljs from 'highlight.js/lib/core';
 import sqlCore from 'highlight.js/lib/languages/sql';
+
+// oxlint-disable-next-line import/no-unassigned-import
 import 'highlight.js/styles/github.css';
 
 class HighlightCode {
@@ -13,5 +15,5 @@ class HighlightCode {
   }
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
+// oxlint-disable-next-line import/no-anonymous-default-export
 export default new HighlightCode();
