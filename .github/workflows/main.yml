@@ -49,6 +49,7 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          custom-title: 'Coverage report (${{ matrix.package_name }})'
           coverage-file: ${{ matrix.package_path }}/coverage/report.json
           base-coverage-file: ${{ matrix.package_path }}/coverage/report.json
           skip-step: all
