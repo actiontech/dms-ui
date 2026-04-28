@@ -16,6 +16,7 @@
     "check": "echo \"base check\"",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
+    "test:run": "jest --watchAll=false --color",
     "test:ci": "jest --ci --watchAll=false --coverage --coverageDirectory=coverage --json --outputFile=coverage/report.json --color --silent --testLocationInResults"
   },
   "dependencies": {

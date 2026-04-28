@@ -37,40 +37,36 @@ menus = genMenuItemsWithMenuStructTree(DMS_ALL_MENUS, DMS_MENU_STRUCT);
 ### 架构图
 
 ```
-pnpm jest
+pnpm jest（包级别）
 │
-├── project: ee   (dms=true)    → 运行 *.test.tsx / *.ee.test.tsx
-├── project: ce   (ce=true)     → 运行 *.ce.test.tsx / *.ce.sqle.test.tsx
-└── project: sqle (dms=false)   → 运行 *.sqle.test.tsx
+├── project: dms   (dms=true)       → 运行 *.test.tsx / *.ee.test.tsx
+├── project: sqle-ce  (ce=true)     → 运行 *.ce.test.tsx / *.ce.sqle.test.tsx
+└── project: sqle-ee  (sqle=true)   → 运行 *.sqle.test.tsx
           │
           └── 每个 project 由 custom-transform.js 用对应条件编译源代码
 ```
 
 ---
 
-## 三个 Project 的配置
+## Project 配置（`packages/tooling-config/jest/create-jest-config.js`）
 
-| Project | displayName | ee | ce | sqle | provision | dms | demo |
-|---|---|---|---|---|---|---|---|
-| EE（默认）| `ee` | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ |
-| CE（社区版）| `ce` | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| SQLE-only | `sqle` | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Project | displayName | ee | ce | sqle | provision | dms |
+|---|---|---|---|---|---|---|
+| EE（默认）| `dms` | ✅ | ❌ | ✅ | ✅ | ✅ |
+| CE（社区版）| `sqle-ce` | ❌ | ✅ | ✅ | ❌ | ❌ |
+| SQLE-only | `sqle-ee` | ✅ | ❌ | ✅ | ❌ | ❌ |
+| Provision | `provision` | ✅ | ❌ | ❌ | ✅ | ❌ |
 
-### 各 Project 的文件匹配规则
+各包通过 `enabledProjects` 按需开启所需 project：
 
-**ee project**（默认）：
-
-- 包含：`*.test.tsx`、`*.test.ts`（所有普通测试文件）
-- 排除：`*.ce.test.*`、`*.sqle.test.*`（这些由其他 project 处理）
-
-**ce project**：
-
-- 仅包含：`*.ce.test.{ts,tsx}`、`*.ce.sqle.test.{ts,tsx}`
-
-**sqle project**：
-
-- 仅包含：`*.sqle.test.{ts,tsx}`
-- 排除：`*.ce.sqle.test.*`（已归属 ce project）
+```js
+// packages/base/jest.config.mjs
+export default createJestConfig({
+  packageRoot,
+  enabledProjects: ['dms', 'sqle-ce', 'sqle-ee'],
+  collectCoverageFrom: [ ... ]
+});
+```
 
 ---
 
@@ -96,85 +92,72 @@ babel-jest (babel-preset-react-app)  ← JSX / TypeScript 转换
 Jest 可执行的 JS 代码
 ```
 
-### 缓存 key 策略
-
-```javascript
-getCacheKey: (sourceText, sourcePath, options) => {
-  const conditions = options?.config?.globals?.TEST_CONDITIONS ?? getDefaultConditions();
-  const baseKey = babelJestConfig.getCacheKey(sourceText, sourcePath, options);
-  return crypto.createHash('md5')
-    .update(baseKey)
-    .update(JSON.stringify(conditions))
-    .digest('hex');
-}
-```
-
-同一源文件在 `ee` 和 `sqle` project 下会生成**不同的缓存 key**，确保两套编译结果各自独立存储。
-
 ---
 
 ## 测试文件命名约定
 
 | 文件名 | 归属 Project | 对应源码分支 |
 |---|---|---|
-| `Foo.test.tsx` | ee | `#else` / 默认 EE/DMS 分支 |
-| `Foo.ee.test.tsx` | ee | 同上（显式标注） |
-| `Foo.ce.test.tsx` | ce | `#if [ce]` / `#if [!ee]` 分支 |
-| `Foo.ce.sqle.test.tsx` | ce | `#if [ce && sqle]` 组合条件分支 |
-| `Foo.sqle.test.tsx` | sqle | `#if [sqle && !dms]` 分支 |
+| `Foo.test.tsx` | dms | `#else` / 默认 EE/DMS 分支 |
+| `Foo.ee.test.tsx` | dms | 同上（显式标注） |
+| `Foo.ce.test.tsx` | sqle-ce | `#if [ce]` / `#if [!ee]` 分支 |
+| `Foo.ce.sqle.test.tsx` | sqle-ce | `#if [ce && sqle]` 组合条件分支 |
+| `Foo.sqle.test.tsx` | sqle-ee | `#if [sqle && !dms]` 分支 |
 
 **实际示例**：
 
 ```
 packages/base/src/page/Nav/SideMenu/MenuList/
 ├── index.tsx                         # 源文件（含 #if [sqle && !dms] 分支）
-├── index.test.tsx                    # ee project → dms=true，DMS 模式（空菜单）
-└── index.sqle.test.tsx               # sqle project → dms=false，SQLE 专属菜单
+├── index.test.tsx                    # dms project → dms=true，DMS 模式（空菜单）
+└── index.sqle.test.tsx               # sqle-ee project → dms=false，SQLE 专属菜单
 ```
 
 ---
 
 ## 本地运行命令
 
-所有命令均通过 `package.json` scripts 调用：
-
-### 开发时监视运行
+### 根目录（全量，按包并行执行）
 
 ```bash
-# 运行全部 projects（ee + ce + sqle）
+# 运行全部包的测试（非 watch）
 pnpm test
 
-# 按路径过滤（推荐：开发时只跑相关文件）
-pnpm test packages/base/src/page/Nav/SideMenu/MenuList
-
-# 指定 project + 路径（sqle / ce / ee）
-pnpm test packages/base/src/page/Nav/SideMenu/MenuList sqle
-
-# 只跑某个 project 的全部测试
-pnpm test "" sqle
+# 全部包收集覆盖率（各包独立输出 packages/<pkg>/coverage/）
+pnpm test:c
 ```
 
-### 覆盖率报告（本地）
+### 单包开发（watch 模式）
 
 ```bash
-# 全量覆盖率
-pnpm test:c
+# 进入特定包目录开启 watch
+pnpm --filter base test
+pnpm --filter sqle test
+pnpm --filter @actiontech/shared test
 
-# 路径过滤
-pnpm test:c packages/base/src/page/Nav/SideMenu/MenuList
+# 单包覆盖率
+pnpm --filter base test:c
+```
+
+### 单包直接调用 jest（路径过滤、project 选择）
+
+```bash
+# 指定测试文件路径
+pnpm --filter base jest -- --testPathPattern="SideMenu/MenuList"
 
 # 指定 project
-pnpm test:c packages/base/src/page/Nav/SideMenu/MenuList sqle
+pnpm --filter base jest -- --selectProjects sqle-ee
+
+# 指定 project + 路径
+pnpm --filter base jest -- --selectProjects sqle-ee --testPathPattern="SideMenu/MenuList"
 ```
 
 ### 更新快照
 
 ```bash
-# 更新指定文件的快照（需取消 CI 环境变量）
-CI= pnpm jest --updateSnapshot --testPathPattern="MenuList/index"
-
-# 更新指定 project 的快照
-CI= pnpm jest --selectProjects sqle --updateSnapshot --testPathPattern="MenuList/index"
+# 在对应包目录下更新快照（需取消 CI 环境变量）
+CI= pnpm --filter base jest -- --updateSnapshot --testPathPattern="MenuList/index"
+CI= pnpm --filter base jest -- --selectProjects sqle-ee --updateSnapshot --testPathPattern="MenuList/index"
 ```
 
 ### 清理缓存
@@ -212,13 +195,17 @@ pnpm test:clean
 └─────────────────────────────────────────────────────────┘
 ```
 
-### 关键脚本
+---
 
-| 脚本 | 用途 |
-|---|---|
-| `scripts/jest/custom-transform.js` | 条件编译 + Babel 的自定义 transformer |
-| `scripts/jest/run.sh` | 本地开发监视模式运行入口 |
-| `scripts/jest/run-coverage.sh` | 本地覆盖率报告运行入口 |
+## 各脚本对比
+
+| 脚本 | 执行方式 | watch | 覆盖率 | 用途 |
+|---|---|---|---|---|
+| `pnpm test`（根目录） | pnpm 并行，按包 | ❌ | ❌ | 本地全量验证 |
+| `pnpm test:c`（根目录） | pnpm 并行，按包 | ❌ | ✅ 各包独立 | 本地覆盖率报告 |
+| `pnpm --filter <pkg> test` | 单包 jest | ✅ | ❌ | 开发时 watch |
+| `pnpm --filter <pkg> test:c` | 单包 jest | ❌ | ✅ | 单包覆盖率 |
+| `pnpm test:ci:turbo` | turbo 并行，按包 | ❌ | ✅ + json | CI 流水线 |
 
 ---
 
@@ -226,44 +213,44 @@ pnpm test:clean
 
 当出现新的条件组合（例如需要专门覆盖 `provision=true, dms=false` 的代码分支）时：
 
-### 第一步：在 `jest.config.js` 中添加 project
+### 第一步：在 `packages/tooling-config/jest/create-jest-config.js` 中注册 project
 
 ```javascript
-{
-  ...sharedProjectConfig,
-  displayName: 'provision',
-  globals: {
-    TEST_CONDITIONS: {
-      ee: true, ce: false, sqle: true,
-      provision: true, dms: false, demo: false
-    }
-  },
-  testMatch: ['**/*.provision.test.{ts,tsx}'],
-  testPathIgnorePatterns: sharedIgnorePatterns
-}
+const PROJECT_CONDITIONS = {
+  // ... 已有 project
+  'my-new-project': {
+    ee: true, ce: false, sqle: false, provision: true, dms: false
+  }
+};
 ```
 
-### 第二步：按约定命名测试文件
+### 第二步：在需要的包的 `jest.config.mjs` 中启用
+
+```js
+export default createJestConfig({
+  packageRoot,
+  enabledProjects: ['dms', 'sqle-ce', 'my-new-project'],
+  collectCoverageFrom: [ ... ]
+});
+```
+
+### 第三步：按约定命名测试文件
 
 ```
-Foo.provision.test.tsx
+Foo.my-new-project.test.tsx
 ```
-
-### 第三步：编写测试
-
-测试文件无需任何特殊配置，直接按普通测试文件结构编写即可。
 
 ### 第四步：验证
 
 ```bash
-pnpm test "" provision
+pnpm --filter base jest -- --selectProjects my-new-project
 ```
 
 ---
 
 ## 常见问题
 
-### Q：为何在 ee project 下 MenuList 的菜单是空的？
+### Q：为何在 dms project 下 MenuList 的菜单是空的？
 
 **A**：`dms=true` 时源码走 `#else` 分支，使用 `DMS_ALL_MENUS` 和 `DMS_MENU_STRUCT`。这两个变量在本仓库中均为空数组（DMS 菜单由 `dms-ui-ee` 仓库维护）。这是预期行为，对应的 `index.test.tsx` 已验证此空菜单状态。
 
@@ -272,29 +259,29 @@ pnpm test "" provision
 **A**：运行时 Jest 会在每行测试结果前显示 project 名，例如：
 
 ```
-PASS ee packages/base/src/page/Nav/SideMenu/MenuList/index.test.tsx
-PASS sqle packages/base/src/page/Nav/SideMenu/MenuList/index.sqle.test.tsx
+PASS dms packages/base/src/page/Nav/SideMenu/MenuList/index.test.tsx
+PASS sqle-ee packages/base/src/page/Nav/SideMenu/MenuList/index.sqle.test.tsx
 ```
 
-也可以用 `--selectProjects sqle` 明确指定只运行 sqle project。
+也可以用 `--selectProjects sqle-ee` 明确指定只运行某个 project。
 
 ### Q：更新快照时为何提示 "New snapshot was not written"？
 
 **A**：这是因为 `CI=true` 环境变量被设置。本地更新快照时需要：
 
 ```bash
-CI= pnpm jest --updateSnapshot --testPathPattern="<path>"
+CI= pnpm --filter base jest -- --updateSnapshot --testPathPattern="<path>"
 ```
 
 ### Q：两个 project 能运行同一个测试文件吗？
 
-**A**：不能，文件命名约定保证了互斥性。`ee` project 通过 `testPathIgnorePatterns` 排除了 `*.ce.test.*` 和 `*.sqle.test.*`；`ce` 和 `sqle` project 通过 `testMatch` 只匹配特定命名模式。
+**A**：不能，文件命名约定保证了互斥性。`dms` project 通过 `testPathIgnorePatterns` 排除了 `*.ce.test.*` 和 `*.sqle.test.*`；`sqle-ce` 和 `sqle-ee` project 通过 `testRegex` 只匹配特定命名模式。
 
 ---
 
 ## 参考文件
 
-- [`jest.config.js`](../../jest.config.js) — Jest Projects 完整配置
+- [`packages/tooling-config/jest/create-jest-config.js`](../../packages/tooling-config/jest/create-jest-config.js) — Jest Projects 配置工厂函数
 - [`scripts/jest/custom-transform.js`](./custom-transform.js) — 条件编译 transformer
 - [`.github/workflows/main.yml`](../../.github/workflows/main.yml) — GitHub Actions CI 配置
 - [`.cursor/commands/unit-testing.md`](../../.cursor/commands/unit-testing.md) — 单元测试编写规范
