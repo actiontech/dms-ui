@@ -1,9 +1,5 @@
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
-import {
-  ActionButton,
-  useTypedParams,
-  useTypedQuery
-} from '@actiontech/shared';
+import { ActionButton, useTypedQuery } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
@@ -38,6 +34,7 @@ import {
   getWorkflowTemplateV1WorkflowTypeEnum,
   updateWorkflowTemplateV1WorkflowTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { WorkflowStepTypeEnum } from '../WorkflowTemplateDetail/enum';
 
 const UpdateWorkflowTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -150,9 +147,30 @@ const UpdateWorkflowTemplate: React.FC = () => {
               if (stepList.length <= 1) {
                 setExecSteps(stepList[0]);
               } else {
-                const execStep = stepList.pop();
-                setReviewSteps(stepList);
-                if (execStep) setExecSteps(execStep);
+                const execSteps = stepList.filter(
+                  (v) =>
+                    v.type ===
+                    (workflowType ===
+                    getWorkflowTemplateV1WorkflowTypeEnum.workflow
+                      ? WorkflowStepTypeEnum.sql_execute
+                      : WorkflowStepTypeEnum.export_execute)
+                );
+                const reviewSteps = stepList
+                  .filter(
+                    (v) =>
+                      v.type ===
+                      (workflowType ===
+                      getWorkflowTemplateV1WorkflowTypeEnum.workflow
+                        ? WorkflowStepTypeEnum.sql_review
+                        : WorkflowStepTypeEnum.export_review)
+                  )
+                  .sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
+                setReviewSteps(reviewSteps);
+                if (execSteps.length === 1) {
+                  setExecSteps(execSteps[0]);
+                } else {
+                  setExecSteps({ assignee_user_id_list: [], desc: '' });
+                }
               }
             }
             return res.data.data;
@@ -327,7 +345,10 @@ const UpdateWorkflowTemplate: React.FC = () => {
                 exchangeReviewNode={handleExchangeReviewNode}
                 clickReviewNode={handleClickReviewNode}
                 usernameList={usernameList}
-                isDataExport={workflowType === 'data_export'}
+                isDataExport={
+                  workflowType ===
+                  getWorkflowTemplateV1WorkflowTypeEnum.data_export
+                }
               />
             </Col>
             <Col
