@@ -14,6 +14,7 @@ import { WorkflowTemplateStyleWrapper } from './style';
 import useUsername from '../../../hooks/useUsername';
 import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { workflowTemplateDetailAction } from './actions';
+import { WorkflowStepTypeEnum } from './enum';
 
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -70,9 +71,18 @@ const WorkflowTemplateDetail: React.FC = () => {
               );
               setWorkflowReviewSteps([]);
             } else {
-              const execStep = stepList.pop();
-              setWorkflowReviewSteps(stepList);
-              if (execStep) setWorkflowExecStep(execStep);
+              const execSteps = stepList.filter(
+                (v) => v.type === WorkflowStepTypeEnum.sql_execute
+              );
+              const reviewSteps = stepList
+                .filter((v) => v.type === WorkflowStepTypeEnum.sql_review)
+                .sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
+              setWorkflowReviewSteps(reviewSteps);
+              if (execSteps.length === 1) {
+                setWorkflowExecStep(execSteps[0]);
+              } else {
+                setWorkflowExecStep({ assignee_user_id_list: [], desc: '' });
+              }
             }
             return res.data.data;
           }),
@@ -107,9 +117,20 @@ const WorkflowTemplateDetail: React.FC = () => {
               );
               setExportReviewSteps([]);
             } else {
-              const execStep = stepList.pop();
-              setExportReviewSteps(stepList);
-              if (execStep) setExportExecStep(execStep);
+              const execSteps = stepList.filter(
+                (v) => v.type === WorkflowStepTypeEnum.export_execute
+              );
+              const reviewSteps = stepList
+                .filter((v) => v.type === WorkflowStepTypeEnum.export_review)
+                .sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
+              setExportReviewSteps(reviewSteps);
+              if (execSteps.length === 1) {
+                setExportExecStep(execSteps[0]);
+              } else {
+                setExportExecStep(
+                  stepList[0] ?? { assignee_user_id_list: [], desc: '' }
+                );
+              }
             }
             return res.data.data;
           }),
