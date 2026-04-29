@@ -1,9 +1,5 @@
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/dms-kit';
-import {
-  ActionButton,
-  useTypedParams,
-  useTypedQuery
-} from '@actiontech/shared';
+import { ActionButton, useTypedQuery } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';

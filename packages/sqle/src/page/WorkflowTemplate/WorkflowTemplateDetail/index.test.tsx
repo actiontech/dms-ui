@@ -76,9 +76,8 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     // workflowTemplateOutOfOrderData has steps in order: sql_execute(3), sql_review(2, desc='step desc'), sql_review(1, approved_by_authorized)
     // After filter + sort by number: reviewSteps = [sql_review(1), sql_review(2)], execStep = sql_execute(3)
     // Rendered order: create → review#1(approved_by_authorized) → review#2(desc='step desc') → exec
-    const reviewStep1Indicator = screen.getByText(
-      '匹配拥有数据源审核权限的成员'
-    );
+    const reviewStep1Indicator =
+      screen.getByText('匹配拥有数据源审核权限的成员');
     const reviewStep2Desc = screen.getByText('step desc');
 
     // review#1 (number:1, approved_by_authorized) must appear before review#2 (number:2, desc='step desc')
