@@ -288,6 +288,8 @@ export interface IGlobalWorkflowStatisticsV2 {
   initiated_by_me_count?: number;
 
   pending_for_me_count?: number;
+
+  view_all_count?: number;
 }
 
 export interface IAuditResultInfo {

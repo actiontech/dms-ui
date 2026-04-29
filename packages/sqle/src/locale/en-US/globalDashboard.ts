@@ -24,7 +24,9 @@ export default {
       initiated: 'Initiated By Me',
       initiatedSubtitle: 'Track progress',
       archived: 'Archived',
-      archivedSubtitle: 'Completed tasks'
+      archivedSubtitle: 'Completed tasks',
+      viewAll: 'View All',
+      viewAllSubtitle: 'Visible scope'
     },
     column: {
       name: 'Workflow Name',
