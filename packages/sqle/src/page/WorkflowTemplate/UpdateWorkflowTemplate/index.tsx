@@ -155,14 +155,16 @@ const UpdateWorkflowTemplate: React.FC = () => {
                       ? WorkflowStepTypeEnum.sql_execute
                       : WorkflowStepTypeEnum.export_execute)
                 );
-                const reviewSteps = stepList.filter(
-                  (v) =>
-                    v.type ===
-                    (workflowType ===
-                    getWorkflowTemplateV1WorkflowTypeEnum.workflow
-                      ? WorkflowStepTypeEnum.sql_review
-                      : WorkflowStepTypeEnum.export_review)
-                );
+                const reviewSteps = stepList
+                  .filter(
+                    (v) =>
+                      v.type ===
+                      (workflowType ===
+                      getWorkflowTemplateV1WorkflowTypeEnum.workflow
+                        ? WorkflowStepTypeEnum.sql_review
+                        : WorkflowStepTypeEnum.export_review)
+                  )
+                  .sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
                 setReviewSteps(reviewSteps);
                 if (execSteps.length === 1) {
                   setExecSteps(execSteps[0]);
