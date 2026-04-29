@@ -15,7 +15,8 @@ import {
 export const mockGlobalWorkflowStatisticsData: IGlobalWorkflowStatisticsV2 = {
   pending_for_me_count: 8,
   initiated_by_me_count: 5,
-  archived_count: 12
+  archived_count: 12,
+  view_all_count: 25
 };
 
 export const mockGlobalWorkflowListData: IGlobalWorkflowListData = {

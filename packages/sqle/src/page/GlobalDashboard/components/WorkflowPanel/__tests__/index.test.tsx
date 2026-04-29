@@ -9,6 +9,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi/common';
 import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockGlobalWorkflowStatisticsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/globalDashboard/data';
 
 describe('GlobalDashboard/WorkflowPanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
@@ -203,5 +204,80 @@ describe('GlobalDashboard/WorkflowPanel', () => {
         cursor: 'cursor-page-1'
       })
     );
+  });
+
+  describe('view_all card', () => {
+    const viewAllTestCases = [
+      {
+        name: 'should render four stat cards with the fourth being "查看全部"',
+        action: async () => {
+          superRender(<WorkflowPanel />);
+          await act(async () => jest.advanceTimersByTime(3000));
+        },
+        assertion: () => {
+          expect(screen.getByText('待我处理')).toBeInTheDocument();
+          expect(screen.getByText('我发起的')).toBeInTheDocument();
+          expect(screen.getByText('已归档')).toBeInTheDocument();
+          expect(screen.getByText('查看全部')).toBeInTheDocument();
+
+          const statCards = document.querySelectorAll('.stat-card-title');
+          expect(statCards).toHaveLength(4);
+          expect(statCards[3].textContent).toBe('查看全部');
+        }
+      },
+      {
+        name: 'should request list with filter_card=view_all when clicking "查看全部" card',
+        action: async () => {
+          superRender(<WorkflowPanel />);
+          await act(async () => jest.advanceTimersByTime(3000));
+
+          fireEvent.click(screen.getByText('查看全部'));
+          await act(async () => jest.advanceTimersByTime(0));
+        },
+        assertion: () => {
+          expect(getGlobalWorkflowListSpy).toHaveBeenLastCalledWith(
+            expect.objectContaining({
+              filter_card: 'view_all'
+            })
+          );
+        }
+      },
+      {
+        name: 'should not have "查看全部" card selected by default (pending_for_me is default)',
+        action: async () => {
+          superRender(<WorkflowPanel />);
+          await act(async () => jest.advanceTimersByTime(3000));
+        },
+        assertion: () => {
+          expect(getGlobalWorkflowListSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+              filter_card: 'pending_for_me'
+            })
+          );
+        }
+      },
+      {
+        name: 'should display view_all_count value on the "查看全部" card',
+        action: async () => {
+          superRender(<WorkflowPanel />);
+          await act(async () => jest.advanceTimersByTime(3000));
+        },
+        assertion: () => {
+          const expectedCount = String(
+            mockGlobalWorkflowStatisticsData.view_all_count
+          );
+          const statCountElements =
+            document.querySelectorAll('.stat-card-count');
+          expect(statCountElements[3].textContent).toBe(expectedCount);
+        }
+      }
+    ];
+
+    viewAllTestCases.forEach(({ name, action, assertion }) => {
+      it(name, async () => {
+        await action();
+        assertion();
+      });
+    });
   });
 });

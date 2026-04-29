@@ -8,6 +8,7 @@ import {
   useTableRequestParams
 } from '@actiontech/dms-kit';
 import {
+  CheckboxMultipleBlankFilled,
   ClockCircleOutlined,
   EditFilled,
   ProfileSquareFilled
@@ -196,6 +197,23 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
       accentColor:
         sqleTheme.globalDashboard.filterCardAccent.workflow[
           GetGlobalWorkflowListV2FilterCardEnum.archived
+        ]
+    },
+    {
+      key: GetGlobalWorkflowListV2FilterCardEnum.view_all,
+      title: t('globalDashboard.workflow.card.viewAll'),
+      subtitle: t('globalDashboard.workflow.card.viewAllSubtitle'),
+      count: workflowStats.data?.data.data?.view_all_count ?? 0,
+      icon: (
+        <CheckboxMultipleBlankFilled
+          color="currentColor"
+          width={20}
+          height={20}
+        />
+      ),
+      accentColor:
+        sqleTheme.globalDashboard.filterCardAccent.workflow[
+          GetGlobalWorkflowListV2FilterCardEnum.view_all
         ]
     }
   ];
