@@ -17,7 +17,9 @@ export enum GetGlobalWorkflowListV2FilterCardEnum {
 
   'pending_for_me' = 'pending_for_me',
 
-  'initiated_by_me' = 'initiated_by_me'
+  'initiated_by_me' = 'initiated_by_me',
+
+  'view_all' = 'view_all'
 }
 
 export enum GetGlobalWorkflowListV2WorkflowTypeEnum {
