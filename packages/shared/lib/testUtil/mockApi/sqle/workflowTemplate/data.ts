@@ -101,25 +101,26 @@ export const workflowTemplateOutOfOrderData = {
  *   reviewSteps (sorted by number): [number:1 export_review]
  *   execStep: number:2 export_execute
  */
-export const dataExportWorkflowTemplateOutOfOrderData: IWorkflowTemplateDetailResV1 = {
-  ...dataExportWorkflowTemplateData,
-  workflow_step_template_list: [
-    {
-      approved_by_authorized: false,
-      assignee_user_id_list: [],
-      execute_by_authorized: true,
-      number: 2,
-      type: 'export_execute'
-    },
-    {
-      approved_by_authorized: true,
-      assignee_user_id_list: [],
-      execute_by_authorized: false,
-      number: 1,
-      type: 'export_review'
-    }
-  ]
-};
+export const dataExportWorkflowTemplateOutOfOrderData: IWorkflowTemplateDetailResV1 =
+  {
+    ...dataExportWorkflowTemplateData,
+    workflow_step_template_list: [
+      {
+        approved_by_authorized: false,
+        assignee_user_id_list: [],
+        execute_by_authorized: true,
+        number: 2,
+        type: 'export_execute'
+      },
+      {
+        approved_by_authorized: true,
+        assignee_user_id_list: [],
+        execute_by_authorized: false,
+        number: 1,
+        type: 'export_review'
+      }
+    ]
+  };
 
 export const workflowTemplateListData = [
   workflowTemplateData,
