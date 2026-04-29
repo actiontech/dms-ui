@@ -1,6 +1,10 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import UpdateWorkflowTemplate from '.';
 import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
+import {
+  workflowTemplateOutOfOrderData,
+  dataExportWorkflowTemplateData
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';
 import {
   getAllBySelector,
@@ -224,6 +228,36 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     expect(getAllBySelector('.ant-card').length).toBe(3);
   });
 
+  it('should extract exec and review steps by type regardless of position in API response', async () => {
+    const getInfoRequest = workflowTemplate.getWorkflowTemplate();
+    // workflowTemplateOutOfOrderData: [sql_execute(3), sql_review(2, desc='step desc'), sql_review(1)]
+    // Without type-based filter (old pop() logic), pop() would give sql_review(1) as exec step
+    // With new filter logic, sql_execute(3) is correctly identified as exec step
+    getInfoRequest.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: cloneDeep(workflowTemplateOutOfOrderData)
+      })
+    );
+    user.getUserTipList();
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 2 review steps + exec step = 3 cards (+ create card + title card)
+    expect(getAllBySelector('.ant-card').length).toBe(5);
+
+    // Navigate to exec step (step index 3: after 2 review steps)
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // Exec step is sql_execute (execute_by_authorized: true) → checkbox should be checked
+    expect(getBySelector('#execute_by_authorized')).toBeChecked();
+  });
+
   it('no review node in template', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const tempData = cloneDeep(workflowTemplateData);
@@ -293,6 +327,49 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
           workflow_type: 'data_export'
         })
       );
+    });
+
+    it('should correctly identify export_execute as exec step when API returns steps in wrong order', async () => {
+      const getInfoRequest = workflowTemplate.getWorkflowTemplate();
+      // Override: return dataExportWorkflowTemplateData but with steps in wrong order
+      // [export_execute(2) first, export_review(1) second]
+      getInfoRequest.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            ...cloneDeep(dataExportWorkflowTemplateData),
+            workflow_step_template_list: [
+              {
+                approved_by_authorized: false,
+                assignee_user_id_list: [],
+                execute_by_authorized: true,
+                number: 2,
+                type: 'export_execute'
+              },
+              {
+                approved_by_authorized: true,
+                assignee_user_id_list: [],
+                execute_by_authorized: false,
+                number: 1,
+                type: 'export_review'
+              }
+            ]
+          }
+        })
+      );
+      user.getUserTipList();
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      // 1 export_review step + exec step = 2 step cards (+ create card)
+      expect(getAllBySelector('.ant-card').length).toBe(3);
+
+      // Navigate to exec step
+      fireEvent.click(screen.getByText('下一步'));
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(screen.getByText('下一步'));
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(baseElement).toMatchSnapshot();
     });
   });
 });
