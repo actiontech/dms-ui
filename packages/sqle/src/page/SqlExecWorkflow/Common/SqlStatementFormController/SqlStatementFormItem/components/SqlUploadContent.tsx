@@ -114,12 +114,23 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".sql,.txt,.java,.xlsx"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, generateFieldName('sql_file'))}
             title={t('execWorkflow.create.form.sqlInfo.sqlFileTips')}
           />
         </FormItemNoLabel>
+        <div style={{ marginTop: 8, fontSize: 13, color: '#8c8c8c' }}>
+          {t('execWorkflow.create.form.sqlInfo.xlsxTemplateTips')}
+          {' '}
+          <a
+            href="/static/xlsx_template.xlsx"
+            download="xlsx_template.xlsx"
+            style={{ fontSize: 13 }}
+          >
+            {t('execWorkflow.create.form.sqlInfo.downloadTemplate')}
+          </a>
+        </div>
       </LazyLoadComponent>
       <LazyLoadComponent
         open={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file}
@@ -140,7 +151,7 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".zip"
+            accept=".zip,.rar,.7z"
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, generateFieldName('zip_file'))}
             title={t('execWorkflow.create.form.sqlInfo.zipFileTips')}

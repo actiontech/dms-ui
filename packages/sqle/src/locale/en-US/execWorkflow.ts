@@ -80,13 +80,13 @@ export default {
 
         sql: 'SQL statement',
         sqlFile: 'SQL file',
-        sqlFileTips: 'Click to select a SQL file or drag the file to this area',
+        sqlFileTips: 'Click to select a file or drag the file to this area. Supports .sql, .txt, .java, .xlsx formats',
         mybatisFile: 'Mybatis XML file',
         mybatisFileTips:
           'Click to select an XML file or drag the file to this area',
-        zipFile: 'Zip file',
+        zipFile: 'Compressed file',
         zipFileTips:
-          'Click to select a zip file or drag the file to this area, currently only supports SQL auditing of .xml and .sql files in the ZIP file',
+          'Click to select a compressed file or drag the file to this area. Supports .zip, .rar, .7z formats. Only .sql, .xml, .txt, .java files in the archive will be audited',
 
         addInstanceTips: 'Please add DB instance',
         addInstance: 'Add DB instance',
@@ -96,7 +96,10 @@ export default {
         manualInput: 'Enter SQL statement',
         uploadFile: 'Upload SQL file',
         updateMybatisFile: 'Upload Mybatis XML file',
-        uploadZipFile: 'Upload ZIP file',
+        uploadZipFile: 'Upload compressed file',
+        xlsxTemplateTips: 'Please use the standard template format',
+        downloadTemplate: 'Download template',
+        noSqlColumnFound: 'No column containing SQL found, please refer to the template',
 
         audit: 'Audit',
         analyze: 'SQL analysis',
