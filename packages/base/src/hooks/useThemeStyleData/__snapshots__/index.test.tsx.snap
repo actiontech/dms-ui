@@ -784,6 +784,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
         "archived": "#52c41a",
         "initiated_by_me": "#1677ff",
         "pending_for_me": "#fa8c16",
+        "view_all": "#722ed1",
       },
     },
   },
