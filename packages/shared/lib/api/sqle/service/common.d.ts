@@ -241,7 +241,7 @@ export interface IGlobalWorkflowListData {
 }
 
 export interface IGlobalWorkflowListItem {
-  assignee?: string;
+  current_step_assignee_user_name_list?: string[];
 
   created_at?: string;
 
