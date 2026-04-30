@@ -1,0 +1,50 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "outputs": ["dist/**", "lib/**", "es/**", "build/**"]
+    },
+    "test:ci": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": ["coverage/**"]
+    },
+    "oxlint": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": []
+    },
+    "stylelint": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": []
+    },
+    "check": {
+      "dependsOn": ["oxlint", "typecheck", "stylelint"],
+      "cache": false,
+      "outputs": []
+    },
+    "start": {
+      "dependsOn": [],
+      "cache": false,
+      "persistent": true
+    },
+    "start:ee": {
+      "dependsOn": [],
+      "cache": false,
+      "persistent": true
+    },
+    "start:demo": {
+      "dependsOn": [],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

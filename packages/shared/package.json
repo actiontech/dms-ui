@@ -5,15 +5,21 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src lib api",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "stylelint": "stylelint \"{src,lib}/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "check": "echo \"shared check\"",
     "test": "jest --watchAll=true",
-    "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
+    "test:run": "jest --watchAll=false --color",
+    "test:ci": "jest --ci --watchAll=false --coverage --coverageDirectory=coverage --json --outputFile=coverage/report.json --color --silent --testLocationInResults"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^",
     "@actiontech/dms-kit": "workspace:^"
   },
   "devDependencies": {
+    "@actiontech/tooling-config": "workspace:^",
     "tsup": "^8.5.0"
   }
 }

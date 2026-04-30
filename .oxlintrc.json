@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "import",
+    "node",
+    "jest",
+    "typescript",
+    "unicorn",
+    "oxc"
+  ],
+  "categories": {
+    "correctness": "warn",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "no-console": "warn",
+    "react-in-jsx-scope": "off",
+    "no-shadow": "off",
+    "no-shadow-restricted-names": "error",
+    "prefer-const": "warn",
+    "no-extra-boolean-cast": "off",
+    "no-template-curly-in-string": "warn",
+    "react/display-name": "off",
+    "import/no-anonymous-default-export": "warn"
+  },
+  "env": {
+    "builtin": true
+  },
+  "ignorePatterns": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/demo/**",
+    "**/demos/**",
+    "**/dist/**",
+    "**/es/**",
+    "**/node_modules/**",
+    "packages/shared/lib/api/*",
+    "packages/**/mockApi/*",
+    "packages/**/testUtil/*"
+  ]
+}

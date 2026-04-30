@@ -3,7 +3,10 @@
   "include": ["src"],
   "compilerOptions": {
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@actiontech/dms-kit": ["../dms-kit/src/index.ts"],
+      "@actiontech/dms-kit/es/*": ["../dms-kit/src/*"],
+      "@actiontech/dms-kit/*": ["../dms-kit/src/*"]
     }
   }
 }
