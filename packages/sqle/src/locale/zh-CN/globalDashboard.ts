@@ -19,7 +19,9 @@ export default {
       initiated: '我发起的',
       initiatedSubtitle: '关注进度',
       archived: '已归档',
-      archivedSubtitle: '已完结任务'
+      archivedSubtitle: '已完结任务',
+      viewAll: '查看全部',
+      viewAllSubtitle: '当前可见范围'
     },
     column: {
       name: '工单名称',

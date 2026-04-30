@@ -19,7 +19,8 @@ export const globalDashboardTheme: GlobalDashboardTheme = {
     workflow: {
       [GetGlobalWorkflowListV2FilterCardEnum.pending_for_me]: '#fa8c16',
       [GetGlobalWorkflowListV2FilterCardEnum.initiated_by_me]: '#1677ff',
-      [GetGlobalWorkflowListV2FilterCardEnum.archived]: '#52c41a'
+      [GetGlobalWorkflowListV2FilterCardEnum.archived]: '#52c41a',
+      [GetGlobalWorkflowListV2FilterCardEnum.view_all]: '#722ed1'
     }
   }
 };
