@@ -208,9 +208,7 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
         if (!list || list.length === 0) {
           return '-';
         }
-        return list.map((v: string) => (
-          <CustomAvatar key={v} name={v} />
-        ));
+        return list.map((v) => <CustomAvatar key={v} name={v} />);
       }
     },
     {
