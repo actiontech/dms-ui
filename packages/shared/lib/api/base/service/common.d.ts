@@ -134,7 +134,9 @@ export interface IAddGatewayReq {
 export interface IAddMaskingTemplate {
   name: string;
 
-  rule_ids: number[];
+  rule_refs?: Array<{ rule_id: number; rule_source: string }>;
+
+  rule_ids?: number[];
 }
 
 export interface IAddMaskingTemplateReply {
@@ -239,6 +241,10 @@ export interface IAddSensitiveDataDiscoveryTask {
   is_periodic_scan_enabled?: boolean;
 
   masking_template_id: number;
+
+  schema_names?: string[];
+
+  table_names?: string[];
 }
 
 export interface IAddSensitiveDataDiscoveryTaskData {
@@ -1525,6 +1531,8 @@ export interface IListCreatableDBServicesForMaskingTaskData {
   db_service_uid?: string;
 
   db_type?: string;
+
+  has_task?: boolean;
 }
 
 export interface IListCreatableDBServicesForMaskingTaskReply {
@@ -2226,6 +2234,10 @@ export interface IListSensitiveDataDiscoveryTasksData {
 
   next_execution_at?: string;
 
+  schema_names?: string[];
+
+  table_names?: string[];
+
   status?: ListSensitiveDataDiscoveryTasksDataStatusEnum;
 
   task_type?: ListSensitiveDataDiscoveryTasksDataTaskTypeEnum;
@@ -2359,6 +2371,8 @@ export interface IMaskingRuleConfig {
   is_masking_enabled: boolean;
 
   masking_rule_id: number;
+
+  masking_rule_source?: string;
 
   schema_name: string;
 
@@ -2872,6 +2886,8 @@ export interface ISensitiveFieldScanResult {
 
   recommended_masking_rule_name?: string;
 
+  recommended_masking_rule_source?: string;
+
   scan_info?: string;
 }
 
@@ -2916,9 +2932,13 @@ export interface ITableColumnMaskingDetail {
 
   confidence?: TableColumnMaskingDetailConfidenceEnum;
 
+  is_masking_enabled?: boolean;
+
   masking_rule_id?: number;
 
   masking_rule_name?: string;
+
+  masking_rule_source?: string;
 
   status?: TableColumnMaskingDetailStatusEnum;
 }
@@ -3214,7 +3234,9 @@ export interface IUpdateLoginConfigurationReq {
 }
 
 export interface IUpdateMaskingTemplate {
-  rule_ids: number[];
+  rule_refs?: Array<{ rule_id: number; rule_source: string }>;
+
+  rule_ids?: number[];
 }
 
 export interface IUpdateMaskingTemplateReply {
@@ -3317,6 +3339,10 @@ export interface IUpdateSensitiveDataDiscoveryTask {
   identification_method?: UpdateSensitiveDataDiscoveryTaskIdentificationMethodEnum;
 
   masking_template_id?: number;
+
+  schema_names?: string[];
+
+  table_names?: string[];
 }
 
 export interface IUpdateSensitiveDataDiscoveryTaskData {
