@@ -202,13 +202,13 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
       }
     },
     {
-      dataIndex: 'assignee',
+      dataIndex: 'current_step_assignee_user_name_list',
       title: t('globalDashboard.workflow.column.assignee'),
-      render: (assignee) => {
-        if (!assignee) {
+      render: (list) => {
+        if (!list || list.length === 0) {
           return '-';
         }
-        return <CustomAvatar name={assignee} />;
+        return list.map((v) => <CustomAvatar key={v} name={v} />);
       }
     },
     {
