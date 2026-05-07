@@ -55,7 +55,8 @@ export default {
       data_export: '数据导出工单'
     },
     filter: {
-      workflowType: '工单类型'
+      workflowType: '工单类型',
+      status: '状态'
     },
     toolbar: {
       searchPlaceholder: '搜索标题或工单ID'
