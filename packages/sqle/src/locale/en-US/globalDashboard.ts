@@ -60,7 +60,8 @@ export default {
       data_export: 'Data Export Workflow'
     },
     filter: {
-      workflowType: 'Workflow type'
+      workflowType: 'Workflow type',
+      status: 'Status'
     },
     toolbar: {
       searchPlaceholder: 'Search by workflow title or ID'
