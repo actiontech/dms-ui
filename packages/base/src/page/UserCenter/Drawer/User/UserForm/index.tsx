@@ -209,7 +209,6 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           const prevUid = prevOpPermissionUidRef.current;
 
           if (
-            prevUid !== undefined &&
             prevUid !== currentOpPermissionUid &&
             isSystemAdministrator(currentOpPermissionUid)
           ) {
