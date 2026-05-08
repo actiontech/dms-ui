@@ -2,10 +2,11 @@ import { IUserFormProps } from './index.type';
 import { Form, Switch } from 'antd';
 import type { Rule } from 'antd/es/form';
 import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/dms-kit';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { phoneRule } from '@actiontech/dms-kit';
 import { BasicToolTip } from '@actiontech/dms-kit';
+import { OpPermissionTypeUid } from '@actiontech/dms-kit';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 const UserForm: React.FC<IUserFormProps> = (props) => {
@@ -15,6 +16,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
+  const prevOpPermissionUidRef = useRef<string | undefined>(undefined);
 
   const getUsernameRules = (): Rule[] => {
     const rules: Rule[] = [
@@ -41,6 +43,17 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
     }
   }, [updateOpPermissionList, props.visible]);
+
+  useEffect(() => {
+    if (!props.visible) {
+      prevOpPermissionUidRef.current = undefined;
+    }
+  }, [props.visible]);
+
+  const isSystemAdministrator = (uid: string | undefined): boolean => {
+    return uid === OpPermissionTypeUid.system_administrator;
+  };
+
   return (
     <Form form={props.form} layout="vertical">
       <Form.Item
@@ -183,6 +196,46 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           options={opPermissionOptions}
           optionFilterProp="label"
         />
+      </Form.Item>
+      <Form.Item
+        noStyle
+        shouldUpdate={(prevValues, curValues) =>
+          prevValues.opPermissionUid !== curValues.opPermissionUid
+        }
+      >
+        {() => {
+          const currentOpPermissionUid =
+            props.form.getFieldValue('opPermissionUid');
+          const prevUid = prevOpPermissionUidRef.current;
+
+          if (
+            prevUid !== undefined &&
+            prevUid !== currentOpPermissionUid &&
+            isSystemAdministrator(currentOpPermissionUid)
+          ) {
+            props.form.setFieldValue('businessWritePermission', true);
+          }
+          prevOpPermissionUidRef.current = currentOpPermissionUid;
+
+          const shouldShowBWP =
+            isSystemAdministrator(currentOpPermissionUid) ||
+            !!props.isEditingAdmin;
+
+          return (
+            <EmptyBox if={shouldShowBWP}>
+              <Form.Item
+                name="businessWritePermission"
+                label={t('dmsUserCenter.user.userForm.businessWritePermission')}
+                valuePropName="checked"
+                extra={t(
+                  'dmsUserCenter.user.userForm.businessWritePermissionDesc'
+                )}
+              >
+                <Switch />
+              </Form.Item>
+            </EmptyBox>
+          );
+        }}
       </Form.Item>
       <EmptyBox if={props.isUpdate && !props.isAdmin}>
         <Form.Item

@@ -11,8 +11,13 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
+import {
+  BasicDrawer,
+  BasicButton,
+  OpPermissionTypeUid
+} from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
+import { IUser } from '@actiontech/shared/lib/api/base/service/common';
 import dayjs from 'dayjs';
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -34,19 +39,25 @@ const AddUser = () => {
   }, [dispatch, form]);
   const addUser = useCallback(async () => {
     const values = await form.validateFields();
+    const isRoleSysAdmin =
+      values.opPermissionUid === OpPermissionTypeUid.system_administrator;
+    const userPayload: IUser & { business_write_permission?: boolean } = {
+      name: values.username,
+      password: values.passwordConfirm,
+      email: values.email ?? '',
+      phone: values.phone ?? '',
+      wxid: values.wxid ?? '',
+      op_permission_uids: values.opPermissionUid
+        ? [values.opPermissionUid]
+        : [],
+      uid: dayjs().format('YYYYMMDDHHmmssSSS'),
+      business_write_permission: isRoleSysAdmin
+        ? !!values.businessWritePermission
+        : true
+    };
     setTrue();
     User.AddUser({
-      user: {
-        name: values.username,
-        password: values.passwordConfirm,
-        email: values.email ?? '',
-        phone: values.phone ?? '',
-        wxid: values.wxid ?? '',
-        op_permission_uids: values.opPermissionUid
-          ? [values.opPermissionUid]
-          : [],
-        uid: dayjs().format('YYYYMMDDHHmmssSSS')
-      }
+      user: userPayload
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

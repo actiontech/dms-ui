@@ -18,7 +18,7 @@ import {
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
-import { SystemRole } from '@actiontech/dms-kit';
+import { SystemRole, OpPermissionTypeUid } from '@actiontech/dms-kit';
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
   const { t } = useTranslation();
@@ -40,9 +40,16 @@ const UpdateUser = () => {
       })
     );
   }, [dispatch, form]);
+  const isEditingAdmin = currentUser?.name === SystemRole.admin;
+
   const updateUser = async () => {
     const values = await form.validateFields();
-    const userParams: IUpdateUser = {
+    const isRoleSysAdmin =
+      values.opPermissionUid === OpPermissionTypeUid.system_administrator;
+    const shouldSendBWP = isRoleSysAdmin || isEditingAdmin;
+    const userParams: IUpdateUser & {
+      business_write_permission?: boolean;
+    } = {
       password: values.passwordConfirm,
       email: values.email ?? '',
       phone: values.phone ?? '',
@@ -50,7 +57,10 @@ const UpdateUser = () => {
       op_permission_uids: values.opPermissionUid
         ? [values.opPermissionUid]
         : [],
-      is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
+      is_disabled: values.username !== 'admin' ? !!values.isDisabled : false,
+      business_write_permission: shouldSendBWP
+        ? !!values.businessWritePermission
+        : true
     };
     setTrue();
     User.UpdateUser({
@@ -74,6 +84,9 @@ const UpdateUser = () => {
   };
   useEffect(() => {
     if (visible) {
+      const bwpValue =
+        (currentUser as Record<string, unknown> | null)
+          ?.business_write_permission ?? true;
       form.setFieldsValue({
         username: currentUser?.name,
         email: currentUser?.email,
@@ -84,7 +97,8 @@ const UpdateUser = () => {
         )?.[0],
         isDisabled:
           (currentUser?.stat ?? ListUserStatEnum.未知) ===
-          ListUserStatEnum.被禁用
+          ListUserStatEnum.被禁用,
+        businessWritePermission: !!bwpValue
       });
     }
   }, [visible, currentUser, form]);
@@ -114,7 +128,8 @@ const UpdateUser = () => {
         form={form}
         visible={visible}
         isUpdate={true}
-        isAdmin={currentUser?.name === SystemRole.admin}
+        isAdmin={isEditingAdmin}
+        isEditingAdmin={isEditingAdmin}
       />
     </BasicDrawer>
   );

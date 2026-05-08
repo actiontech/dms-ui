@@ -32,7 +32,10 @@ export default {
       userGroups: '所属用户组',
       opPermissions: '平台角色',
       isDisabled: '是否禁用',
-      disabledTips: '当用户被禁用，该用户将无法登录'
+      disabledTips: '当用户被禁用，该用户将无法登录',
+      businessWritePermission: '业务写权',
+      businessWritePermissionDesc:
+        '关闭后该账号仅保留资源配置与业务只读能力，不再参与业务写入与通知。'
     },
     createUser: {
       createSuccessTips: '添加用户 "{{name}}" 成功'

@@ -10,6 +10,7 @@ export interface IUserFormFields {
   wxid?: string;
   opPermissionUid?: string;
   isDisabled: boolean;
+  businessWritePermission?: boolean;
 }
 
 export interface IUserFormProps {
@@ -17,4 +18,5 @@ export interface IUserFormProps {
   visible: boolean;
   isUpdate?: boolean;
   isAdmin?: boolean;
+  isEditingAdmin?: boolean;
 }
