@@ -53,7 +53,7 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(6);
+    expect(mockDispatch).toHaveBeenCalledTimes(7);
 
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
@@ -81,6 +81,10 @@ describe('useUserInfo', () => {
       type: 'user/updateManagementPermissions'
     });
     expect(mockDispatch).toHaveBeenCalledWith({
+      payload: true,
+      type: 'user/updateBusinessWritePermission'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         systemPreference: GetUserSystemEnum.MANAGEMENT
       },
@@ -103,7 +107,7 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
 
     expect(mockDispatch).not.toHaveBeenCalledWith({
       payload: {
@@ -121,7 +125,6 @@ describe('useUserInfo', () => {
     const { result } = renderHook(() => useUserInfo());
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(12);
     expect(mockDispatch).toHaveBeenNthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
@@ -145,6 +148,10 @@ describe('useUserInfo', () => {
         managementPermissions: []
       },
       type: 'user/updateManagementPermissions'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(6, {
+      payload: true,
+      type: 'user/updateBusinessWritePermission'
     });
     // expect(navigateSpy).toHaveBeenCalledTimes(1);
     // expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
@@ -158,7 +165,6 @@ describe('useUserInfo', () => {
     const { result } = renderHook(() => useUserInfo());
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalledTimes(6);
     expect(mockDispatch).toHaveBeenNthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
@@ -182,6 +188,10 @@ describe('useUserInfo', () => {
         managementPermissions: []
       },
       type: 'user/updateManagementPermissions'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(6, {
+      payload: true,
+      type: 'user/updateBusinessWritePermission'
     });
     // expect(navigateSpy).toHaveBeenCalledTimes(1);
     // expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });

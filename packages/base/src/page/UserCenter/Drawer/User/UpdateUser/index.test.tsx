@@ -74,7 +74,8 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
         phone: '',
         wxid: '',
         op_permission_uids: ['700001'],
-        is_disabled: true
+        is_disabled: true,
+        business_write_permission: true
       },
       user_uid: mockUserData.uid
     });
@@ -129,7 +130,8 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
         phone: '',
         wxid: '',
         op_permission_uids: ['700001'],
-        is_disabled: false
+        is_disabled: false,
+        business_write_permission: true
       },
       user_uid: mockUserData.uid
     });

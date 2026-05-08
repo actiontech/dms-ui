@@ -101,7 +101,7 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.systemAdministrator]: false
+        [SystemRole.systemAdministrator]: true
       }
     });
     baseSuperRender(<Project />);

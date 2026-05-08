@@ -1291,7 +1291,6 @@ exports[`usePermission should match snapshot 2`] = `
     "role": [
       "admin",
       "systemAdministrator",
-      "projectDirector",
     ],
     "type": "action",
   },
@@ -1318,7 +1317,6 @@ exports[`usePermission should match snapshot 2`] = `
     "role": [
       "admin",
       "systemAdministrator",
-      "projectDirector",
     ],
     "type": "action",
   },
@@ -1337,7 +1335,6 @@ exports[`usePermission should match snapshot 2`] = `
     "role": [
       "admin",
       "systemAdministrator",
-      "projectDirector",
     ],
     "type": "action",
   },
