@@ -201,7 +201,6 @@ describe('test base/project/list', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });

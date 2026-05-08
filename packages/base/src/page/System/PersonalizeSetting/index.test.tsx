@@ -49,7 +49,6 @@ describe('base/System/PersonalizeSetting', () => {
         [SystemRole.admin]: false,
         [SystemRole.systemAdministrator]: false,
         [SystemRole.auditAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: false
       }
     });

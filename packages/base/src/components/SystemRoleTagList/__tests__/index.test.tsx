@@ -17,10 +17,6 @@ describe('PermissionTagList', () => {
   it('should render permission tags with correct colors', () => {
     const roles = [
       {
-        uid: OpPermissionTypeUid.project_director,
-        name: '项目总监'
-      },
-      {
         uid: OpPermissionTypeUid.audit_administrator,
         name: '审计管理员'
       },
@@ -36,7 +32,6 @@ describe('PermissionTagList', () => {
 
     superRender(<SystemRoleTagList roles={roles} />);
 
-    expect(screen.getByText('项目总监')).toBeInTheDocument();
     expect(screen.getByText('审计管理员')).toBeInTheDocument();
     expect(screen.getByText('系统管理员')).toBeInTheDocument();
     expect(screen.getByText('创建工单')).toBeInTheDocument();

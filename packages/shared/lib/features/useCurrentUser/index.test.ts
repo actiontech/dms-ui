@@ -90,7 +90,6 @@ describe('hooks/useCurrentUser', () => {
       [SystemRole.admin]: true,
       [SystemRole.certainProjectManager]: true,
       [SystemRole.auditAdministrator]: false,
-      [SystemRole.projectDirector]: true,
       [SystemRole.systemAdministrator]: false
     });
     expect(result.current.systemPreference).toBe(GetUserSystemEnum.MANAGEMENT);
@@ -127,7 +126,6 @@ describe('hooks/useCurrentUser', () => {
       [SystemRole.admin]: false,
       [SystemRole.certainProjectManager]: false,
       [SystemRole.auditAdministrator]: true,
-      [SystemRole.projectDirector]: false,
       [SystemRole.systemAdministrator]: false
     });
   });

@@ -155,7 +155,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: true,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });
@@ -191,7 +190,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });
@@ -236,7 +234,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: true,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });
@@ -277,7 +274,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       },
       bindProjects: [
@@ -316,7 +312,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });
@@ -352,7 +347,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });
@@ -382,7 +376,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       },
       bindProjects: [
@@ -419,7 +412,6 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.auditAdministrator]: false
       }
     });

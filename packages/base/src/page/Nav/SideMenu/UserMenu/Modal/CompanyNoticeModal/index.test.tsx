@@ -181,8 +181,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
           [SystemRole.admin]: false,
           [SystemRole.systemAdministrator]: false,
           [SystemRole.auditAdministrator]: false,
-          [SystemRole.certainProjectManager]: false,
-          [SystemRole.projectDirector]: false
+          [SystemRole.certainProjectManager]: false
         }
       });
     });

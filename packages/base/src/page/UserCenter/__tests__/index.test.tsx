@@ -138,7 +138,6 @@ describe('base/UserCenter', () => {
         [SystemRole.admin]: false,
         [SystemRole.systemAdministrator]: false,
         [SystemRole.auditAdministrator]: true,
-        [SystemRole.projectDirector]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
