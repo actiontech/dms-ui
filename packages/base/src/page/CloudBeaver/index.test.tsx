@@ -138,4 +138,54 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
   });
+
+  it('should disable jump to cloud beaver button when business write permission is off', async () => {
+    mockUseCurrentUser({
+      businessWritePermission: false
+    });
+
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: enableSqlQueryUrlData
+      })
+    );
+
+    superRender(<CloudBeaver />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const button = screen.getByText('打开SQL工作台').closest('button');
+    expect(button).toBeDisabled();
+  });
+
+  it('should not auto redirect when business write permission is off', async () => {
+    const savedHref = window.location.href;
+    window.location.href = '';
+
+    mockUseCurrentUser({
+      businessWritePermission: false
+    });
+
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: enableSqlQueryUrlData
+      })
+    );
+
+    superRender(<CloudBeaver />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(window.location.href).not.toBe(
+      enableSqlQueryUrlData.sql_query_root_uri
+    );
+
+    window.location.href = savedHref;
+  });
 });
