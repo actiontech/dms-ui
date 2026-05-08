@@ -6,7 +6,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 has-label-tip css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -19,9 +19,12 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
             title=""
           >
             <div
-              class="label-cont-custom"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
-              <div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
                 <svg
                   class="custom-icon-ellipse"
                   fill="none"
@@ -45,14 +48,13 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                     stroke-width="2"
                   />
                 </svg>
+              </div>
+              <div
+                class="ant-space-item"
+              >
                 <span>
                   选择SQL语句上传方式
                 </span>
-              </div>
-              <div
-                class="tip-content-box"
-              >
-                单次上线SQL数量为1000条
               </div>
             </div>
           </label>
@@ -514,7 +516,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 has-label-tip css-1jlm9cy"
+      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -527,9 +529,12 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
             title=""
           >
             <div
-              class="label-cont-custom"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
-              <div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
                 <svg
                   class="custom-icon-ellipse"
                   fill="none"
@@ -553,14 +558,13 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                     stroke-width="2"
                   />
                 </svg>
+              </div>
+              <div
+                class="ant-space-item"
+              >
                 <span>
                   选择SQL语句上传方式
                 </span>
-              </div>
-              <div
-                class="tip-content-box"
-              >
-                单次上线SQL数量为1000条
               </div>
             </div>
           </label>
