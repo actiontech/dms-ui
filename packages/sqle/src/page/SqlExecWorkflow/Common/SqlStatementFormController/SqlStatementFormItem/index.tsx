@@ -6,7 +6,7 @@ import { defaultUploadTypeOptions } from './index.data';
 import { SqlStatementFormItemProps } from './index.type';
 import { useMemo } from 'react';
 import SqlUploadContent from './components/SqlUploadContent';
-import { Form, Space } from 'antd';
+import { Form } from 'antd';
 import { SqlAuditInfoFormProps } from '../../../Create/components/FormStep/SqlAuditInfoForm/index.type';
 import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
@@ -48,10 +48,10 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
     <>
       <FormItemLabel
         label={
-          <Space>
+          <>
             <RingPieFilled className="custom-icon-ellipse" />
             <span>{t('execWorkflow.create.form.sqlInfo.uploadType')}</span>
-          </Space>
+          </>
         }
         className="form-item-label-mb-16"
       />

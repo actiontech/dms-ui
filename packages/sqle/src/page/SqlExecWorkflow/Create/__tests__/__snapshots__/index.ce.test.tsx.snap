@@ -705,45 +705,32 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <div
-                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        <svg
+                          class="custom-icon-ellipse"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
-                          >
-                            <svg
-                              class="custom-icon-ellipse"
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <rect
-                                fill="#E8F3FF"
-                                height="16"
-                                rx="3"
-                                width="16"
-                              />
-                              <circle
-                                cx="8"
-                                cy="8"
-                                fill="#fff"
-                                r="3"
-                                stroke="#4583FF"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <span>
-                              选择SQL语句上传方式
-                            </span>
-                          </div>
-                        </div>
+                          <rect
+                            fill="#E8F3FF"
+                            height="16"
+                            rx="3"
+                            width="16"
+                          />
+                          <circle
+                            cx="8"
+                            cy="8"
+                            fill="#fff"
+                            r="3"
+                            stroke="#4583FF"
+                            stroke-width="2"
+                          />
+                        </svg>
+                        <span>
+                          选择SQL语句上传方式
+                        </span>
                       </label>
                     </div>
                     <div
