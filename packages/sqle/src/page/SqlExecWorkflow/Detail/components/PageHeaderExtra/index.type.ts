@@ -29,4 +29,5 @@ export type WorkflowDetailActionMeta = {
   action: (val?: string) => Promise<void> | undefined;
   loading: boolean;
   hidden: boolean;
+  disabled?: boolean;
 };

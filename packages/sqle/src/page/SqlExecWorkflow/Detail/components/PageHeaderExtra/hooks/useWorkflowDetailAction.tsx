@@ -8,7 +8,10 @@ import {
   WorkflowRecordResV2StatusEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import {
+  useCurrentUser,
+  useBusinessWritePermission
+} from '@actiontech/shared/lib/features';
 import dayjs, { Dayjs } from 'dayjs';
 import {
   WorkflowDetailActionMeta,
@@ -49,6 +52,7 @@ const useWorkflowDetailAction = ({
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { username } = useCurrentUser();
+  const { isBusinessWriteDisabled } = useBusinessWritePermission();
 
   const currentStep = useMemo(() => {
     return workflowInfo?.record?.workflow_step_list?.find(
@@ -335,22 +339,26 @@ const useWorkflowDetailAction = ({
     auditPassWorkflowButtonMeta: {
       action: auditPassWorkflow,
       loading: passLoading,
-      hidden: !auditWorkflowButtonVisibility
+      hidden: !auditWorkflowButtonVisibility,
+      disabled: isBusinessWriteDisabled
     },
     rejectWorkflowButtonMeta: {
       action: rejectWorkflow,
       loading: rejectLoading,
-      hidden: !rejectWorkflowButtonVisibility
+      hidden: !rejectWorkflowButtonVisibility,
+      disabled: isBusinessWriteDisabled
     },
     batchExecutingWorkflowButtonMeta: {
       action: executingWorkflow,
       loading: executingLoading,
-      hidden: !executingButtonVisibility
+      hidden: !executingButtonVisibility,
+      disabled: isBusinessWriteDisabled
     },
     manualExecuteWorkflowButtonMeta: {
       action: completeWorkflow,
       loading: completeLoading,
-      hidden: !manualExecuteButtonVisibility
+      hidden: !manualExecuteButtonVisibility,
+      disabled: isBusinessWriteDisabled
     },
     terminateWorkflowButtonMeta: {
       action: terminateWorkflow,

@@ -17,10 +17,12 @@ import {
 import CBOperationLogsList from './List/index';
 import { DownOutlined } from '@ant-design/icons';
 import { EnterpriseFeatureDisplay, useTypedQuery } from '@actiontech/shared';
+import { useBusinessWritePermission } from '@actiontech/shared/lib/features';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
+  const { isBusinessWriteDisabled } = useBusinessWritePermission();
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
   const {
@@ -47,7 +49,8 @@ const CloudBeaver = () => {
       extractQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index)?.open_cloud_beaver ===
         String(true) &&
       !loading &&
-      data
+      data &&
+      !isBusinessWriteDisabled
     ) {
       let url = '';
 
@@ -61,7 +64,7 @@ const CloudBeaver = () => {
         window.location.href = url;
       }
     }
-  }, [extractQueries, loading, data]);
+  }, [extractQueries, loading, data, isBusinessWriteDisabled]);
 
   const renderActionButton = useMemo(() => {
     if (loading) {
@@ -99,6 +102,14 @@ const CloudBeaver = () => {
       );
     }
 
+    if (isBusinessWriteDisabled) {
+      return (
+        <BasicButton disabled>
+          {t('dmsCloudBeaver.jumpToCloudBeaver')}
+        </BasicButton>
+      );
+    }
+
     if (menuItems.length === 1) {
       return (
         <BasicButton
@@ -126,7 +137,7 @@ const CloudBeaver = () => {
         </BasicButton>
       </Dropdown>
     );
-  }, [data, loading, t, handleMenuClick]);
+  }, [data, loading, t, handleMenuClick, isBusinessWriteDisabled]);
 
   // Determine if the main content should be displayed
   const isFeatureEnabled = useMemo(() => {
