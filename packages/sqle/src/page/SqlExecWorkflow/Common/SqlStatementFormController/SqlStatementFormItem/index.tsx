@@ -48,17 +48,12 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
     <>
       <FormItemLabel
         label={
-          <div className="label-cont-custom">
-            <div>
-              <RingPieFilled className="custom-icon-ellipse" />
-              <span>{t('execWorkflow.create.form.sqlInfo.uploadType')}</span>
-            </div>
-            <div className="tip-content-box">
-              {t('execWorkflow.create.form.sqlInfo.uploadTypeTips')}
-            </div>
-          </div>
+          <>
+            <RingPieFilled className="custom-icon-ellipse" />
+            <span>{t('execWorkflow.create.form.sqlInfo.uploadType')}</span>
+          </>
         }
-        className="form-item-label-mb-16 has-label-tip"
+        className="form-item-label-mb-16"
       />
 
       <FormItemNoLabel

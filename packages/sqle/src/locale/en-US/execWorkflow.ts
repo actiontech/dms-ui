@@ -91,8 +91,6 @@ export default {
         addInstanceTips: 'Please add DB instance',
         addInstance: 'Add DB instance',
         uploadType: 'Select SQL statement upload method',
-        uploadTypeTip:
-          'The number of SQL statements that can be deployed at one time is 1000',
         manualInput: 'Enter SQL statement',
         uploadFile: 'Upload SQL file',
         updateMybatisFile: 'Upload Mybatis XML file',
