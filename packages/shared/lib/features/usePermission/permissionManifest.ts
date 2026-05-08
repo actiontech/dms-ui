@@ -1108,29 +1108,17 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT,
     type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.projectDirector
-    ]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT,
     type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.projectDirector
-    ]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE,
     type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.projectDirector
-    ]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT,
