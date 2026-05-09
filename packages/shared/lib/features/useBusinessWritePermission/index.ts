@@ -26,9 +26,14 @@ const useBusinessWritePermission = () => {
 
   // Determine if the user is a project manager (is_manager=true) in the current project.
   // If we are not in a project context (projectID empty), this is always false.
+  // Note: projectID from URL params may be either the numeric UID (e.g. "700300")
+  // or the project name (e.g. "default"), so we match against both project_id and
+  // project_name to handle both navigation patterns robustly.
   const isProjectManagerInCurrentProject = useMemo(() => {
     if (!projectID) return false;
-    const project = bindProjects.find((v) => v.project_id === projectID);
+    const project = bindProjects.find(
+      (v) => v.project_id === projectID || v.project_name === projectID
+    );
     return !!project?.is_manager;
   }, [projectID, bindProjects]);
 

@@ -191,6 +191,33 @@ describe('useBusinessWritePermission', () => {
       expect(result.current.businessWritePermission).toBe(false);
     });
 
+    it('should return isBusinessWriteDisabled=false when BWP=false and projectID from URL matches project_name (name-based routing)', () => {
+      mockUseCurrentUser({
+        isAdmin: true,
+        userRoles: {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: true,
+          [SystemRole.systemAdministrator]: false,
+          [SystemRole.auditAdministrator]: false
+        },
+        businessWritePermission: false,
+        bindProjects: [
+          {
+            project_id: '700300',
+            project_name: 'default',
+            is_manager: true,
+            archived: false
+          }
+        ]
+      });
+      // Simulate URL param being project name instead of UID
+      mockUseCurrentProject({ projectID: 'default', projectName: 'default' });
+
+      const { result } = superRenderHook(() => useBusinessWritePermission());
+      expect(result.current.isBusinessWriteDisabled).toBe(false);
+      expect(result.current.businessWritePermission).toBe(false);
+    });
+
     it('should return isBusinessWriteDisabled=true when in project context with is_manager=true but BWP=true (normal flow)', () => {
       mockUseCurrentUser({
         isAdmin: true,
