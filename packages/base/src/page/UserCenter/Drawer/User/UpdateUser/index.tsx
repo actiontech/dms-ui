@@ -19,6 +19,7 @@ import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
 import { SystemRole, OpPermissionTypeUid } from '@actiontech/dms-kit';
+import useUserInfo from '@actiontech/shared/lib/features/useUserInfo';
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
   const { t } = useTranslation();
@@ -30,7 +31,12 @@ const UpdateUser = () => {
   const currentUser = useSelector<IReduxState, IListUser | null>(
     (state) => state.userCenter.selectUser
   );
+  // Current logged-in user's UID (from Redux store)
+  const currentLoginUserId = useSelector<IReduxState, string>(
+    (state) => state.user.uid
+  );
   const [messageApi, contextHolder] = message.useMessage();
+  const { updateUserInfo } = useUserInfo();
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -76,6 +82,12 @@ const UpdateUser = () => {
             })
           );
           EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
+          // If the updated user is the currently logged-in user, refresh user
+          // info in the Redux store so changes (e.g. BWP toggle) take effect
+          // immediately without requiring a full page reload.
+          if (currentUser?.uid && currentUser.uid === currentLoginUserId) {
+            updateUserInfo();
+          }
         }
       })
       .finally(() => {
