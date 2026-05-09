@@ -176,27 +176,29 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           })}
         />
       </Form.Item>
-      <Form.Item
-        name="opPermissionUid"
-        label={t('dmsUserCenter.user.userForm.opPermissions')}
-        rules={[
-          {
-            required: true,
-            message: t('common.form.placeholder.select', {
+      <EmptyBox if={!props.isEditingAdmin}>
+        <Form.Item
+          name="opPermissionUid"
+          label={t('dmsUserCenter.user.userForm.opPermissions')}
+          rules={[
+            {
+              required: !props.isEditingAdmin,
+              message: t('common.form.placeholder.select', {
+                name: t('dmsUserCenter.user.userForm.opPermissions')
+              })
+            }
+          ]}
+        >
+          <BasicSelect
+            loading={getOpPermissionListLoading}
+            placeholder={t('common.form.placeholder.select', {
               name: t('dmsUserCenter.user.userForm.opPermissions')
-            })
-          }
-        ]}
-      >
-        <BasicSelect
-          loading={getOpPermissionListLoading}
-          placeholder={t('common.form.placeholder.select', {
-            name: t('dmsUserCenter.user.userForm.opPermissions')
-          })}
-          options={opPermissionOptions}
-          optionFilterProp="label"
-        />
-      </Form.Item>
+            })}
+            options={opPermissionOptions}
+            optionFilterProp="label"
+          />
+        </Form.Item>
+      </EmptyBox>
       <Form.Item
         noStyle
         shouldUpdate={(prevValues, curValues) =>

@@ -174,13 +174,6 @@ const usePermission = () => {
         return false;
       }
 
-      // BWP=off 时，所有标记为 businessWrite 的操作一律禁止
-      // 白名单思路：只有项目配置模块（数据源、审核流程模板、成员与权限、推送规则、审核SQL例外、管控SQL例外）
-      // 下的操作不标记 businessWrite，其余项目内业务写操作均标记 businessWrite=true
-      if (permissionDetails.businessWrite === true && isBusinessWriteDisabled) {
-        return false;
-      }
-
       // 是否有对应的项目管理权限
       const hasProjectPermission = checkProjectPermission(
         permissionDetails.projectPermission
@@ -212,9 +205,38 @@ const usePermission = () => {
       getProjectAttributesStatus,
       checkRoles,
       checkDbServicePermission,
-      checkProjectPermission,
-      isBusinessWriteDisabled
+      checkProjectPermission
     ]
+  );
+
+  const checkActionDisabledByBWP = useCallback(
+    (requiredPermission: PermissionsConstantType): boolean => {
+      const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
+      // BWP=off 时，所有标记为 businessWrite 的操作保留页面结构但禁用
+      // 白名单思路：只有项目配置模块（数据源、审核流程模板、成员与权限、推送规则、审核SQL例外、管控SQL例外）
+      // 下的操作不标记 businessWrite，其余项目内业务写操作均标记 businessWrite=true
+      return (
+        permissionDetails.businessWrite === true && isBusinessWriteDisabled
+      );
+    },
+    [isBusinessWriteDisabled]
+  );
+
+  const mergeActionButtonPropsWithBWPDisabled = useCallback(
+    <T>(
+      buttonProps: ((record?: T) => Record<string, any>) | undefined,
+      bwpDisabled: boolean
+    ): ((record?: T) => Record<string, any>) | undefined => {
+      if (!bwpDisabled) return buttonProps;
+      if (typeof buttonProps === 'function') {
+        return (record?: T) => ({
+          ...buttonProps(record),
+          disabled: true
+        });
+      }
+      return () => ({ disabled: true });
+    },
+    []
   );
 
   const parse2TableActionPermissions = useCallback(
@@ -226,12 +248,21 @@ const usePermission = () => {
       actions: ActiontechTableActionsWithPermissions<T, F, OtherColumnKeys>
     ): ActiontechTableProps<T, F, OtherColumnKeys>['actions'] => {
       if (Array.isArray(actions)) {
-        return actions.map((item) => ({
-          ...item,
-          permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, { record })
-            : undefined
-        }));
+        return actions.map((item) => {
+          const bwpDisabled = item.permissions
+            ? checkActionDisabledByBWP(item.permissions)
+            : false;
+          return {
+            ...item,
+            permissions: item.permissions
+              ? (record) => checkActionPermission(item.permissions!, { record })
+              : undefined,
+            buttonProps: mergeActionButtonPropsWithBWPDisabled(
+              item.buttonProps,
+              bwpDisabled
+            )
+          };
+        });
       }
 
       const parseActionMoreButtons = (
@@ -239,49 +270,83 @@ const usePermission = () => {
       ): ActiontechTableActionsConfig<T, F, OtherColumnKeys>['moreButtons'] => {
         if (typeof moreButtons === 'function') {
           return (record: T) =>
-            moreButtons(record).map((item) => ({
-              ...item,
-              permissions: item.permissions
-                ? (data) =>
-                    checkActionPermission(item.permissions!, { record: data })
-                : undefined
-            }));
+            moreButtons(record).map((item) => {
+              const bwpDisabled = item.permissions
+                ? checkActionDisabledByBWP(item.permissions)
+                : false;
+              return {
+                ...item,
+                permissions: item.permissions
+                  ? (data) =>
+                      checkActionPermission(item.permissions!, { record: data })
+                  : undefined,
+                disabled: bwpDisabled || !!item.disabled
+              };
+            });
         }
 
-        return moreButtons?.map((item) => ({
-          ...item,
-          permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, { record })
-            : undefined
-        }));
+        return moreButtons?.map((item) => {
+          const bwpDisabled = item.permissions
+            ? checkActionDisabledByBWP(item.permissions)
+            : false;
+          return {
+            ...item,
+            permissions: item.permissions
+              ? (record) => checkActionPermission(item.permissions!, { record })
+              : undefined,
+            disabled: bwpDisabled || !!item.disabled
+          };
+        });
       };
 
       return {
         ...actions,
-        buttons: actions.buttons.map((item) => ({
-          ...item,
-          permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, { record })
-            : undefined
-        })),
+        buttons: actions.buttons.map((item) => {
+          const bwpDisabled = item.permissions
+            ? checkActionDisabledByBWP(item.permissions)
+            : false;
+          return {
+            ...item,
+            permissions: item.permissions
+              ? (record) => checkActionPermission(item.permissions!, { record })
+              : undefined,
+            buttonProps: mergeActionButtonPropsWithBWPDisabled(
+              item.buttonProps,
+              bwpDisabled
+            )
+          };
+        }),
         moreButtons: parseActionMoreButtons(actions.moreButtons)
       };
     },
-    [checkActionPermission]
+    [
+      checkActionPermission,
+      checkActionDisabledByBWP,
+      mergeActionButtonPropsWithBWPDisabled
+    ]
   );
 
   const parse2TableToolbarActionPermissions = useCallback(
     (
       actions: ActiontechTableToolbarActionWithPermissions
     ): ActiontechTableToolbarActionMeta[] => {
-      return actions.map((item) => ({
-        ...item,
-        permissions: item.permissions
-          ? checkActionPermission(item.permissions!)
-          : undefined
-      }));
+      return actions.map((item) => {
+        const bwpDisabled = item.permissions
+          ? checkActionDisabledByBWP(item.permissions)
+          : false;
+        return {
+          ...item,
+          permissions: item.permissions
+            ? checkActionPermission(item.permissions!)
+            : undefined,
+          buttonProps: {
+            ...item.buttonProps,
+            ...(bwpDisabled ? { disabled: true } : {})
+          }
+        };
+      });
     },
-    [checkActionPermission]
+    [checkActionPermission, checkActionDisabledByBWP]
   );
 
   return {
@@ -290,6 +355,7 @@ const usePermission = () => {
     checkDbServicePermission,
     checkPagePermission,
     checkActionPermission,
+    checkActionDisabledByBWP,
     parse2TableActionPermissions,
     parse2TableToolbarActionPermissions,
     checkProjectPermission
