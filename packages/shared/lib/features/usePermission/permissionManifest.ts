@@ -81,6 +81,16 @@ export const PERMISSION_MANIFEST: Record<
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
+  [PERMISSIONS.PAGES.BASE.DATA_MASKING]: {
+    id: PERMISSIONS.PAGES.BASE.DATA_MASKING,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+  },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE,
     type: 'action',
@@ -89,7 +99,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.EDIT,
@@ -99,7 +110,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.VIEW_HISTORY]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.VIEW_HISTORY,
@@ -109,7 +121,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.CREATE,
@@ -119,7 +132,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.EDIT,
@@ -129,7 +143,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE,
@@ -139,7 +154,41 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.CREATE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.EDIT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.DELETE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.OVERVIEW.CONFIGURE_RULE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.OVERVIEW.CONFIGURE_RULE,
@@ -149,7 +198,8 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
+    businessWrite: true
   },
   [PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS]: {
     id: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS,
@@ -272,12 +322,33 @@ export const PERMISSION_MANIFEST: Record<
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
   },
+  [PERMISSIONS.PAGES.PROVISION.DATABASE_ROLE]: {
+    id: PERMISSIONS.PAGES.PROVISION.DATABASE_ROLE,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange
+  },
+  [PERMISSIONS.PAGES.PROVISION.DATABASE_ACCOUNT]: {
+    id: PERMISSIONS.PAGES.PROVISION.DATABASE_ACCOUNT,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+  },
   // action
 
   //cloud beaver
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT,
-    type: 'action'
+    type: 'action',
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST,
@@ -286,7 +357,8 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
 
   //数据源
@@ -317,7 +389,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'uid',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT,
@@ -700,7 +773,8 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE,
@@ -716,22 +790,26 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
 
   // SQL 工单
@@ -753,7 +831,8 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLOSE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLOSE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLONE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLONE,
@@ -768,48 +847,57 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC_TASK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC_TASK,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.SCHEDULE_TIME_EXEC_TASK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.SCHEDULE_TIME_EXEC_TASK,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CANCEL_SCHEDULE_TIME_EXEC_TASK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW
       .CANCEL_SCHEDULE_TIME_EXEC_TASK,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
@@ -818,7 +906,8 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE,
@@ -829,12 +918,14 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.ROLLBACK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.ROLLBACK,
     type: 'action',
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
 
   // SQL 管控
@@ -843,21 +934,24 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION,
@@ -866,7 +960,8 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST,
@@ -875,28 +970,32 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
@@ -905,21 +1004,24 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
 
   // SQL 管控例外
@@ -1078,7 +1180,8 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    businessWrite: true
   },
 
   //IDE审核
@@ -1089,7 +1192,8 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false,
     projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
+    businessWrite: true
   },
 
   // 数据源结构对比
@@ -1102,7 +1206,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
-    }
+    },
+    businessWrite: true
   },
 
   // 项目管理
@@ -1203,7 +1308,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.version_manage
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT,
@@ -1213,7 +1319,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.version_manage
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE,
@@ -1223,7 +1330,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.version_manage
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK,
@@ -1233,7 +1341,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.version_manage
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY,
@@ -1243,7 +1352,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     },
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    businessWrite: true
   },
 
   //SQL管控配置
@@ -1255,7 +1365,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT,
@@ -1266,7 +1377,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.STOP]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.STOP,
@@ -1277,7 +1389,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.ENABLE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.ENABLE,
@@ -1288,7 +1401,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DELETE,
@@ -1299,7 +1413,8 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_AUDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_AUDIT,
@@ -1309,7 +1424,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_STOP]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_STOP,
@@ -1319,7 +1435,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_ENABLE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_ENABLE,
@@ -1329,7 +1446,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_DELETE,
@@ -1339,7 +1457,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.RESET_TOKEN]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.RESET_TOKEN,
@@ -1349,7 +1468,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    businessWrite: true
   },
 
   // 快捷审核
@@ -1361,9 +1481,10 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
-    }
+    },
+    businessWrite: true
   },
-  // 快捷审核
+  // SQL 优化
   [PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_OPTIMIZATION.CREATE,
     type: 'action',
@@ -1372,7 +1493,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_optimization
-    }
+    },
+    businessWrite: true
   },
 
   // 流水线配置
@@ -1384,7 +1506,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.EDIT,
@@ -1394,7 +1517,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PIPELINE_CONFIGURATION.DELETE,
@@ -1404,6 +1528,76 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
-    }
+    },
+    businessWrite: true
+  },
+
+  // provision
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.EDIT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.DELETE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.CREATE]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.CREATE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.TABLE_ACTIONS]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.TABLE_ACTIONS,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.BATCH_MODIFY_PASSWORD]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.BATCH_MODIFY_PASSWORD,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+    businessWrite: true
+  },
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.DISCOVER_ACCOUNT]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.DISCOVER_ACCOUNT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+    businessWrite: true
   }
 } as const;

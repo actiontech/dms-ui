@@ -50,8 +50,7 @@ const usePermission = () => {
   const checkDbServicePermission = useCallback(
     (
       opPermissionType: OpPermissionItemOpPermissionTypeEnum,
-      authDataSourceId?: string,
-      skipAdminCheck?: boolean
+      authDataSourceId?: string
     ) => {
       if (userOperationPermissions) {
         const { is_admin, op_permission_list } = userOperationPermissions;
@@ -80,11 +79,7 @@ const usePermission = () => {
           }
           return false;
         });
-        if (
-          (!skipAdminCheck && is_admin) ||
-          isProjctAdmin ||
-          hasServicePermission
-        ) {
+        if (is_admin || isProjctAdmin || hasServicePermission) {
           return true;
         }
 
@@ -179,19 +174,21 @@ const usePermission = () => {
         return false;
       }
 
+      // BWP=off 时，所有标记为 businessWrite 的操作一律禁止
+      // 白名单思路：只有项目配置模块（数据源、审核流程模板、成员与权限、推送规则、审核SQL例外、管控SQL例外）
+      // 下的操作不标记 businessWrite，其余项目内业务写操作均标记 businessWrite=true
+      if (permissionDetails.businessWrite === true && isBusinessWriteDisabled) {
+        return false;
+      }
+
       // 是否有对应的项目管理权限
       const hasProjectPermission = checkProjectPermission(
         permissionDetails.projectPermission
       );
 
-      // When businessWrite=true and BWP is off, skip admin/sysAdmin role check
-      // but still allow project-level permissions (projectManager, dbServicePermission, projectPermission)
-      const skipRoleForBwp =
-        permissionDetails.businessWrite === true && isBusinessWriteDisabled;
-
       // 检查角色或项目管理员权限
       const hasRoleOrManagerPermission =
-        (!skipRoleForBwp && checkRoles(permissionDetails)) ||
+        checkRoles(permissionDetails) ||
         (permissionDetails.projectManager === true &&
           projectAttributesStatus.isManager) ||
         hasProjectPermission;
@@ -204,8 +201,7 @@ const usePermission = () => {
             opType,
             fieldName
               ? (record as Record<string, string>)?.[fieldName]
-              : authDataSourceId,
-            skipRoleForBwp
+              : authDataSourceId
           )
         );
       }
