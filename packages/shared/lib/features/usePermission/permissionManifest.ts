@@ -14,6 +14,7 @@ export type PermissionDetail = {
     opType: OpPermissionItemOpPermissionTypeEnum;
   };
   projectPermission?: OpPermissionItemOpPermissionTypeEnum;
+  businessWrite?: boolean;
 };
 
 export const PERMISSION_MANIFEST: Record<
@@ -689,7 +690,8 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST,
@@ -708,7 +710,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_export_task
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE,
@@ -740,7 +743,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT,
@@ -758,7 +762,8 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
-    }
+    },
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT,
@@ -818,7 +823,8 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.systemAdministrator]
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY,

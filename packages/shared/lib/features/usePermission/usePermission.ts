@@ -19,9 +19,11 @@ import {
 } from '../../api/base/service/common.enum';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
+import useBusinessWritePermission from '../useBusinessWritePermission';
 
 const usePermission = () => {
   const { userRoles, bindProjects } = useCurrentUser();
+  const { isBusinessWriteDisabled } = useBusinessWritePermission();
   const { moduleFeatureSupport, userOperationPermissions } = useSelector(
     (state: IReduxState) => ({
       moduleFeatureSupport: state.permission.moduleFeatureSupport,
@@ -48,7 +50,8 @@ const usePermission = () => {
   const checkDbServicePermission = useCallback(
     (
       opPermissionType: OpPermissionItemOpPermissionTypeEnum,
-      authDataSourceId?: string
+      authDataSourceId?: string,
+      skipAdminCheck?: boolean
     ) => {
       if (userOperationPermissions) {
         const { is_admin, op_permission_list } = userOperationPermissions;
@@ -77,7 +80,11 @@ const usePermission = () => {
           }
           return false;
         });
-        if (is_admin || isProjctAdmin || hasServicePermission) {
+        if (
+          (!skipAdminCheck && is_admin) ||
+          isProjctAdmin ||
+          hasServicePermission
+        ) {
           return true;
         }
 
@@ -177,9 +184,14 @@ const usePermission = () => {
         permissionDetails.projectPermission
       );
 
+      // When businessWrite=true and BWP is off, skip admin/sysAdmin role check
+      // but still allow project-level permissions (projectManager, dbServicePermission, projectPermission)
+      const skipRoleForBwp =
+        permissionDetails.businessWrite === true && isBusinessWriteDisabled;
+
       // 检查角色或项目管理员权限
       const hasRoleOrManagerPermission =
-        checkRoles(permissionDetails) ||
+        (!skipRoleForBwp && checkRoles(permissionDetails)) ||
         (permissionDetails.projectManager === true &&
           projectAttributesStatus.isManager) ||
         hasProjectPermission;
@@ -192,7 +204,8 @@ const usePermission = () => {
             opType,
             fieldName
               ? (record as Record<string, string>)?.[fieldName]
-              : authDataSourceId
+              : authDataSourceId,
+            skipRoleForBwp
           )
         );
       }
@@ -203,7 +216,8 @@ const usePermission = () => {
       getProjectAttributesStatus,
       checkRoles,
       checkDbServicePermission,
-      checkProjectPermission
+      checkProjectPermission,
+      isBusinessWriteDisabled
     ]
   );
 
