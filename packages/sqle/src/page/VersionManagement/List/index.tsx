@@ -32,7 +32,7 @@ const VersionManagementList = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
   const { projectID, projectName } = useCurrentProject();
-  const { checkActionPermission } = usePermission();
+  const { checkActionPermission, checkActionDisabledByBWP } = usePermission();
   const [messageApi, messageContextHolder] = message.useMessage();
   const {
     tableFilterInfo,
@@ -164,7 +164,8 @@ const VersionManagementList = () => {
           onEdit,
           onDelete,
           onLock,
-          checkActionPermission
+          checkActionPermission,
+          checkActionDisabledByBWP
         })}
         scroll={{}}
       />
