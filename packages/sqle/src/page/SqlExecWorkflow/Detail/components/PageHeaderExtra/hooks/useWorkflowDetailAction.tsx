@@ -347,25 +347,25 @@ const useWorkflowDetailAction = ({
       action: auditPassWorkflow,
       loading: passLoading,
       hidden: !auditWorkflowButtonVisibility,
-      disabled: isWorkflowApproveBWPDisabled
+      disabled: isWorkflowApproveBWPDisabled && !auditWorkflowButtonVisibility
     },
     rejectWorkflowButtonMeta: {
       action: rejectWorkflow,
       loading: rejectLoading,
       hidden: !rejectWorkflowButtonVisibility,
-      disabled: isWorkflowApproveBWPDisabled
+      disabled: isWorkflowApproveBWPDisabled && !rejectWorkflowButtonVisibility
     },
     batchExecutingWorkflowButtonMeta: {
       action: executingWorkflow,
       loading: executingLoading,
       hidden: !executingButtonVisibility,
-      disabled: isWorkflowExecBWPDisabled
+      disabled: isWorkflowExecBWPDisabled && !executingButtonVisibility
     },
     manualExecuteWorkflowButtonMeta: {
       action: completeWorkflow,
       loading: completeLoading,
       hidden: !manualExecuteButtonVisibility,
-      disabled: isWorkflowExecBWPDisabled
+      disabled: isWorkflowExecBWPDisabled && !manualExecuteButtonVisibility
     },
     terminateWorkflowButtonMeta: {
       action: terminateWorkflow,
