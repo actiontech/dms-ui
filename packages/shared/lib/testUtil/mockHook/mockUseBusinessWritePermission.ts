@@ -2,6 +2,7 @@ import * as useBusinessWritePermission from '../../features/useBusinessWritePerm
 
 export const mockBusinessWritePermissionReturn = {
   isBusinessWriteDisabled: false,
+  isBWPOff: false,
   businessWritePermission: true
 };
 

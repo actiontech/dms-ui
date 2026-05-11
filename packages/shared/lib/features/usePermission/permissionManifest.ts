@@ -348,6 +348,9 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT,
     type: 'action',
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.sql_query
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST]: {

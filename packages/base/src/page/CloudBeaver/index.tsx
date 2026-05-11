@@ -17,12 +17,15 @@ import {
 import CBOperationLogsList from './List/index';
 import { DownOutlined } from '@ant-design/icons';
 import { EnterpriseFeatureDisplay, useTypedQuery } from '@actiontech/shared';
-import { useBusinessWritePermission } from '@actiontech/shared/lib/features';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isBusinessWriteDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT
+  );
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
   const {

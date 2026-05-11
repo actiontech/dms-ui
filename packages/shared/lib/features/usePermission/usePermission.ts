@@ -23,7 +23,7 @@ import useBusinessWritePermission from '../useBusinessWritePermission';
 
 const usePermission = () => {
   const { userRoles, bindProjects } = useCurrentUser();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const { isBusinessWriteDisabled, isBWPOff } = useBusinessWritePermission();
   const { moduleFeatureSupport, userOperationPermissions } = useSelector(
     (state: IReduxState) => ({
       moduleFeatureSupport: state.permission.moduleFeatureSupport,
@@ -210,23 +210,115 @@ const usePermission = () => {
   );
 
   const checkActionDisabledByBWP = useCallback(
-    (requiredPermission: PermissionsConstantType): boolean => {
+    (
+      requiredPermission: PermissionsConstantType,
+      otherValues?: {
+        record?: Record<string, string>;
+        authDataSourceId?: string;
+      }
+    ): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
-      // BWP=off 时，所有标记为 businessWrite 的操作保留页面结构但禁用
-      // 白名单思路：只有项目配置模块（数据源、审核流程模板、成员与权限、推送规则、审核SQL例外、管控SQL例外）
-      // 下的操作不标记 businessWrite，其余项目内业务写操作均标记 businessWrite=true
-      return (
-        permissionDetails.businessWrite === true && isBusinessWriteDisabled
-      );
+
+      // Non-businessWrite actions are never disabled by BWP
+      if (permissionDetails.businessWrite !== true) {
+        return false;
+      }
+
+      // BWP is on, or user is not admin/systemAdministrator => no BWP restriction
+      if (!isBWPOff) {
+        return false;
+      }
+
+      // BWP=off and user has NO project-level authorization at all => disabled
+      if (isBusinessWriteDisabled) {
+        return true;
+      }
+
+      // BWP=off but user has project-level authorization (isBusinessWriteDisabled=false).
+      // In this case, we must check whether the user actually has the SPECIFIC
+      // permission for this particular action. If the action requires a
+      // dbServicePermission or projectPermission that the user doesn't have,
+      // the button should remain disabled.
+      //
+      // This fixes the bug where having ANY project role (e.g., "development
+      // engineer" with create_workflow) would enable ALL businessWrite buttons
+      // (including data export, data masking, etc.).
+
+      // Check project-level permission (e.g., desensitization, manage_role_mange)
+      if (permissionDetails.projectPermission) {
+        if (checkProjectPermission(permissionDetails.projectPermission)) {
+          return false; // User has this specific project permission => not disabled
+        }
+      }
+
+      // Check db-service-level permission (e.g., create_workflow, version_manage)
+      if (permissionDetails.dbServicePermission) {
+        const { fieldName, opType } = permissionDetails.dbServicePermission;
+        const recordTyped = otherValues?.record as
+          | Record<string, string>
+          | undefined;
+        if (
+          checkDbServicePermission(
+            opType,
+            fieldName ? recordTyped?.[fieldName] : otherValues?.authDataSourceId
+          )
+        ) {
+          return false; // User has this specific db-service permission => not disabled
+        }
+      }
+
+      // Check if user is project manager (project managers can do everything)
+      if (permissionDetails.projectManager === true) {
+        const { isManager } = getProjectAttributesStatus();
+        if (isManager) {
+          return false;
+        }
+      }
+
+      // If the action has no specific dbServicePermission and no projectPermission
+      // requirement, it is a generic businessWrite action (like workflow approve,
+      // batch close, etc.). Since the user already has project-level authorization
+      // (isBusinessWriteDisabled=false), these generic actions should be enabled.
+      // Their access control is handled by other mechanisms (e.g., assignee checks).
+      if (
+        !permissionDetails.dbServicePermission &&
+        !permissionDetails.projectPermission
+      ) {
+        return false;
+      }
+
+      // User has a specific permission requirement but doesn't meet it => disabled
+      return true;
     },
-    [isBusinessWriteDisabled]
+    [
+      isBWPOff,
+      isBusinessWriteDisabled,
+      checkProjectPermission,
+      checkDbServicePermission,
+      getProjectAttributesStatus
+    ]
   );
 
   const mergeActionButtonPropsWithBWPDisabled = useCallback(
     <T>(
       buttonProps: ((record?: T) => Record<string, any>) | undefined,
-      bwpDisabled: boolean
+      bwpDisabled: boolean | ((record?: T) => boolean)
     ): ((record?: T) => Record<string, any>) | undefined => {
+      if (typeof bwpDisabled === 'function') {
+        // Per-record BWP check: evaluate lazily for each row
+        if (typeof buttonProps === 'function') {
+          return (record?: T) => {
+            const disabled = bwpDisabled(record);
+            return disabled
+              ? { ...buttonProps(record), disabled: true }
+              : buttonProps(record);
+          };
+        }
+        return (record?: T) => {
+          const disabled = bwpDisabled(record);
+          return disabled ? { disabled: true } : {};
+        };
+      }
       if (!bwpDisabled) return buttonProps;
       if (typeof buttonProps === 'function') {
         return (record?: T) => ({
@@ -249,8 +341,13 @@ const usePermission = () => {
     ): ActiontechTableProps<T, F, OtherColumnKeys>['actions'] => {
       if (Array.isArray(actions)) {
         return actions.map((item) => {
-          const bwpDisabled = item.permissions
-            ? checkActionDisabledByBWP(item.permissions)
+          // Create per-record BWP check that passes record context for
+          // db-service-level permission evaluation
+          const bwpDisabledFn = item.permissions
+            ? (record?: T) =>
+                checkActionDisabledByBWP(item.permissions!, {
+                  record: record as unknown as Record<string, string>
+                })
             : false;
           return {
             ...item,
@@ -259,7 +356,7 @@ const usePermission = () => {
               : undefined,
             buttonProps: mergeActionButtonPropsWithBWPDisabled(
               item.buttonProps,
-              bwpDisabled
+              bwpDisabledFn
             )
           };
         });
@@ -272,7 +369,9 @@ const usePermission = () => {
           return (record: T) =>
             moreButtons(record).map((item) => {
               const bwpDisabled = item.permissions
-                ? checkActionDisabledByBWP(item.permissions)
+                ? checkActionDisabledByBWP(item.permissions!, {
+                    record: record as unknown as Record<string, string>
+                  })
                 : false;
               return {
                 ...item,
@@ -302,8 +401,12 @@ const usePermission = () => {
       return {
         ...actions,
         buttons: actions.buttons.map((item) => {
-          const bwpDisabled = item.permissions
-            ? checkActionDisabledByBWP(item.permissions)
+          // Create per-record BWP check for row-level buttons
+          const bwpDisabledFn = item.permissions
+            ? (record?: T) =>
+                checkActionDisabledByBWP(item.permissions!, {
+                  record: record as unknown as Record<string, string>
+                })
             : false;
           return {
             ...item,
@@ -312,7 +415,7 @@ const usePermission = () => {
               : undefined,
             buttonProps: mergeActionButtonPropsWithBWPDisabled(
               item.buttonProps,
-              bwpDisabled
+              bwpDisabledFn
             )
           };
         }),

@@ -89,8 +89,21 @@ const useBusinessWritePermission = () => {
     hasProjectLevelAuthorizationInCurrentProject
   ]);
 
+  /**
+   * isBWPOff: true when the user is an admin/systemAdministrator AND has
+   * businessWritePermission=false. This is the raw BWP-off flag regardless
+   * of project-level overrides. Used by checkActionDisabledByBWP to apply
+   * per-action permission checks when the user has partial project roles.
+   */
+  const isBWPOff = useMemo(() => {
+    return (
+      (isAdmin || userRoles.systemAdministrator) && !businessWritePermission
+    );
+  }, [isAdmin, userRoles.systemAdministrator, businessWritePermission]);
+
   return {
     isBusinessWriteDisabled,
+    isBWPOff,
     businessWritePermission
   };
 };

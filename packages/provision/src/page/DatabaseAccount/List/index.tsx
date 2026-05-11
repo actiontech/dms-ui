@@ -6,7 +6,6 @@ import {
   useCurrentProject,
   useCurrentUser,
   usePermission,
-  useBusinessWritePermission,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
@@ -75,9 +74,14 @@ const DatabaseAccountList = () => {
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
 
-  const { checkActionPermission, parse2TableToolbarActionPermissions } =
-    usePermission();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const {
+    checkActionPermission,
+    parse2TableToolbarActionPermissions,
+    checkActionDisabledByBWP
+  } = usePermission();
+  const isBusinessWriteDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.TABLE_ACTIONS
+  );
 
   const { toggleModal, initModalStatus } = useModalStatus(
     DatabaseAccountModalStatus

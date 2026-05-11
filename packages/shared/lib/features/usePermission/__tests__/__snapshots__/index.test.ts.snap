@@ -26,6 +26,11 @@ exports[`usePermission should match snapshot 1`] = `
         "OVERVIEW": {
           "CONFIGURE_RULE": "action:masking_overview_configure_rule",
         },
+        "RULE": {
+          "CREATE": "action:masking_rule_create",
+          "DELETE": "action:masking_rule_delete",
+          "EDIT": "action:masking_rule_edit",
+        },
         "TASK": {
           "CREATE": "action:masking_task_create",
           "EDIT": "action:masking_task_edit",
@@ -136,6 +141,19 @@ exports[`usePermission should match snapshot 1`] = `
           "DELETE": "action:delete_user",
           "EDIT": "action:edit_user",
         },
+      },
+    },
+    "PROVISION": {
+      "DATABASE_ACCOUNT": {
+        "BATCH_MODIFY_PASSWORD": "action:db_auth_account_batch_modify_password",
+        "CREATE": "action:create_db_auth_account",
+        "DISCOVER_ACCOUNT": "action:db_auth_account_discover",
+        "TABLE_ACTIONS": "action:db_auth_account_table_actions",
+      },
+      "DATABASE_ROLE": {
+        "CREATE": "action:create_db_auth_role",
+        "DELETE": "action:delete_db_auth_role",
+        "EDIT": "action:edit_db_auth_role",
       },
     },
     "SQLE": {
@@ -255,6 +273,7 @@ exports[`usePermission should match snapshot 1`] = `
   },
   "PAGES": {
     "BASE": {
+      "DATA_MASKING": "page:data_masking",
       "DATA_SOURCE_MANAGEMENT": "page:data_source_management",
       "DB_SERVICE": "page:db_service",
       "GLOBAL_DATA_SOURCE": "page:global_data_source",
@@ -263,6 +282,10 @@ exports[`usePermission should match snapshot 1`] = `
       "SYNC_DATA_SOURCE": "page:sync_data_source",
       "SYSTEM_SETTING": "page:system_setting",
       "USER_CENTER": "page:user_center",
+    },
+    "PROVISION": {
+      "DATABASE_ACCOUNT": "page:database_account",
+      "DATABASE_ROLE": "page:database_role",
     },
     "SQLE": {
       "GLOBAL_OPERATION_RECORD": "page:global_operation_record",
@@ -358,11 +381,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:approve_data_export": {
+    "businessWrite": true,
     "id": "action:approve_data_export",
     "projectArchived": false,
     "type": "action",
   },
   "action:approve_workflow": {
+    "businessWrite": true,
     "id": "action:approve_workflow",
     "projectArchived": false,
     "type": "action",
@@ -392,6 +417,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:batch_close_workflow": {
+    "businessWrite": true,
     "id": "action:batch_close_workflow",
     "role": [
       "admin",
@@ -400,11 +426,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:batch_exec_workflow": {
+    "businessWrite": true,
     "id": "action:batch_exec_workflow",
     "projectArchived": false,
     "type": "action",
   },
   "action:batch_ignore": {
+    "businessWrite": true,
     "id": "action:batch_ignore",
     "projectArchived": false,
     "projectManager": true,
@@ -435,11 +463,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:batch_reject_workflow": {
+    "businessWrite": true,
     "id": "action:batch_reject_workflow",
     "projectArchived": false,
     "type": "action",
   },
   "action:batch_resolve": {
+    "businessWrite": true,
     "id": "action:batch_resolve",
     "projectArchived": false,
     "projectManager": true,
@@ -450,6 +480,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:batch_sql_assignment": {
+    "businessWrite": true,
     "id": "action:batch_sql_assignment",
     "projectArchived": false,
     "projectManager": true,
@@ -479,11 +510,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:cancel_schedule_time_exec_task": {
+    "businessWrite": true,
     "id": "action:cancel_schedule_time_exec_task",
     "projectArchived": false,
     "type": "action",
   },
   "action:cb_create_white_list": {
+    "businessWrite": true,
     "id": "action:cb_create_white_list",
     "projectArchived": false,
     "projectManager": true,
@@ -529,6 +562,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:clone_workflow": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_workflow",
     },
@@ -541,11 +575,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:close_data_export": {
+    "businessWrite": true,
     "id": "action:close_data_export",
     "projectArchived": false,
     "type": "action",
   },
   "action:close_workflow": {
+    "businessWrite": true,
     "id": "action:close_workflow",
     "projectArchived": false,
     "type": "action",
@@ -559,6 +595,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_SQL_exception": {
+    "businessWrite": true,
     "id": "action:create_SQL_exception",
     "projectArchived": false,
     "projectManager": true,
@@ -578,6 +615,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_data_export": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_export_task",
     },
@@ -590,7 +628,32 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:create_db_auth_account": {
+    "businessWrite": true,
+    "id": "action:create_db_auth_account",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "auth_db_service_data",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:create_db_auth_role": {
+    "businessWrite": true,
+    "id": "action:create_db_auth_role",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_role_mange",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
   "action:create_modified_sql_workflow": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_workflow",
     },
@@ -603,6 +666,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_pipeline_configuration": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_pipeline",
     },
@@ -627,6 +691,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_sql_audit": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_workflow",
     },
@@ -651,6 +716,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_sql_optimization": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_optimization",
     },
@@ -664,6 +730,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:create_workflow": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_workflow",
     },
@@ -677,6 +744,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:data_export_batch_close": {
+    "businessWrite": true,
     "id": "action:data_export_batch_close",
     "projectManager": true,
     "role": [
@@ -686,6 +754,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:data_export_create_whitelist": {
+    "businessWrite": true,
     "id": "action:data_export_create_whitelist",
     "projectArchived": false,
     "projectManager": true,
@@ -696,7 +765,44 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:db_auth_account_batch_modify_password": {
+    "businessWrite": true,
+    "id": "action:db_auth_account_batch_modify_password",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "auth_db_service_data",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:db_auth_account_discover": {
+    "businessWrite": true,
+    "id": "action:db_auth_account_discover",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "auth_db_service_data",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:db_auth_account_table_actions": {
+    "businessWrite": true,
+    "id": "action:db_auth_account_table_actions",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "auth_db_service_data",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
   "action:db_service_create_audit_plan": {
+    "businessWrite": true,
     "dbServicePermission": {
       "fieldName": "uid",
       "opType": "save_audit_plan",
@@ -712,6 +818,18 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:delete_custom_rule": {
     "id": "action:delete_custom_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:delete_db_auth_role": {
+    "businessWrite": true,
+    "id": "action:delete_db_auth_role",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_role_mange",
     "role": [
       "admin",
       "systemAdministrator",
@@ -761,6 +879,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:delete_pipeline_configuration": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_pipeline",
     },
@@ -846,6 +965,18 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:edit_db_auth_role": {
+    "businessWrite": true,
+    "id": "action:edit_db_auth_role",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_role_mange",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
   "action:edit_db_service": {
     "id": "action:edit_db_service",
     "projectArchived": false,
@@ -889,6 +1020,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:edit_pipeline_configuration": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_pipeline",
     },
@@ -948,6 +1080,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:edit_sql_remark": {
+    "businessWrite": true,
     "id": "action:sql_management_action_layout",
     "projectArchived": false,
     "projectManager": true,
@@ -1065,16 +1198,22 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:exec_task": {
+    "businessWrite": true,
     "id": "action:exec_task",
     "projectArchived": false,
     "type": "action",
   },
   "action:execute_data_export": {
+    "businessWrite": true,
     "id": "action:execute_data_export",
     "projectArchived": false,
     "type": "action",
   },
   "action:export_cb_operation_log": {
+    "businessWrite": true,
+    "dbServicePermission": {
+      "opType": "sql_query",
+    },
     "id": "action:export_cb_operation_log",
     "type": "action",
   },
@@ -1151,11 +1290,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:manually_exec_workflow": {
+    "businessWrite": true,
     "id": "action:manually_exec_workflow",
     "projectArchived": false,
     "type": "action",
   },
   "action:masking_overview_configure_rule": {
+    "businessWrite": true,
     "id": "action:masking_overview_configure_rule",
     "projectPermission": "desensitization",
     "role": [
@@ -1165,7 +1306,41 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:masking_rule_create": {
+    "businessWrite": true,
+    "id": "action:masking_rule_create",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_rule_delete": {
+    "businessWrite": true,
+    "id": "action:masking_rule_delete",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:masking_rule_edit": {
+    "businessWrite": true,
+    "id": "action:masking_rule_edit",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "action",
+  },
   "action:masking_task_create": {
+    "businessWrite": true,
     "id": "action:masking_task_create",
     "projectPermission": "desensitization",
     "role": [
@@ -1176,6 +1351,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:masking_task_edit": {
+    "businessWrite": true,
     "id": "action:masking_task_edit",
     "projectPermission": "desensitization",
     "role": [
@@ -1186,6 +1362,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:masking_task_view_history": {
+    "businessWrite": true,
     "id": "action:masking_task_view_history",
     "projectPermission": "desensitization",
     "role": [
@@ -1196,6 +1373,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:masking_template_create": {
+    "businessWrite": true,
     "id": "action:masking_template_create",
     "projectPermission": "desensitization",
     "role": [
@@ -1206,6 +1384,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:masking_template_delete": {
+    "businessWrite": true,
     "id": "action:masking_template_delete",
     "projectPermission": "desensitization",
     "role": [
@@ -1216,6 +1395,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:masking_template_edit": {
+    "businessWrite": true,
     "id": "action:masking_template_edit",
     "projectPermission": "desensitization",
     "role": [
@@ -1250,6 +1430,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:plugin_audit_create_whitelist": {
+    "businessWrite": true,
     "id": "action:plugin_audit_create_whitelist",
     "projectArchived": false,
     "projectManager": true,
@@ -1348,6 +1529,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:push_to_coding": {
+    "businessWrite": true,
     "id": "action:push_to_coding",
     "projectArchived": false,
     "projectManager": true,
@@ -1358,6 +1540,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:reject_data_export": {
+    "businessWrite": true,
     "id": "action:reject_data_export",
     "projectArchived": false,
     "type": "action",
@@ -1372,16 +1555,19 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:retry_workflow": {
+    "businessWrite": true,
     "id": "action:retry_workflow",
     "projectArchived": false,
     "type": "action",
   },
   "action:rollback_workflow": {
+    "businessWrite": true,
     "id": "action:rollback_workflow",
     "projectArchived": false,
     "type": "action",
   },
   "action:rule_create_rule_template": {
+    "businessWrite": true,
     "id": "action:rule_create_rule_template",
     "projectArchived": false,
     "projectManager": true,
@@ -1392,6 +1578,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:schedule_time_exec_task": {
+    "businessWrite": true,
     "id": "action:schedule_time_exec_task",
     "projectArchived": false,
     "type": "action",
@@ -1405,6 +1592,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_assignment": {
+    "businessWrite": true,
     "id": "action:sql_assignment",
     "projectArchived": false,
     "projectManager": true,
@@ -1415,6 +1603,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_action_layout": {
+    "businessWrite": true,
     "id": "action:sql_management_action_layout",
     "projectArchived": false,
     "projectManager": true,
@@ -1426,6 +1615,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_create_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1439,6 +1629,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_delete_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "fieldName": "instance_id",
       "opType": "save_audit_plan",
@@ -1453,6 +1644,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_detail_audit_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1466,6 +1658,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_detail_delete_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1479,6 +1672,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_detail_enable_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1492,6 +1686,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_detail_stop_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1505,6 +1700,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_edit_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "fieldName": "instance_id",
       "opType": "save_audit_plan",
@@ -1519,6 +1715,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_enable_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "fieldName": "instance_id",
       "opType": "save_audit_plan",
@@ -1533,6 +1730,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_reset_token": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "save_audit_plan",
     },
@@ -1546,6 +1744,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_conf_stop_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "fieldName": "instance_id",
       "opType": "save_audit_plan",
@@ -1560,6 +1759,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:sql_management_create_white_list": {
+    "businessWrite": true,
     "id": "action:sql_management_create_white_list",
     "projectArchived": false,
     "projectManager": true,
@@ -1598,11 +1798,13 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:terminate_exec_task": {
+    "businessWrite": true,
     "id": "action:terminate_exec_task",
     "projectArchived": false,
     "type": "action",
   },
   "action:terminate_exec_workflow": {
+    "businessWrite": true,
     "id": "action:terminate_exec_workflow",
     "projectArchived": false,
     "type": "action",
@@ -1622,6 +1824,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:update_sql_priority": {
+    "businessWrite": true,
     "id": "action:update_sql_priority",
     "projectArchived": false,
     "projectManager": true,
@@ -1632,6 +1835,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:update_sql_status": {
+    "businessWrite": true,
     "id": "action:update_sql_status",
     "projectArchived": false,
     "projectManager": true,
@@ -1661,6 +1865,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:version_management_add_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "version_manage",
     },
@@ -1674,6 +1879,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:version_management_delete_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "version_manage",
     },
@@ -1687,6 +1893,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:version_management_deploy_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "create_workflow",
     },
@@ -1700,6 +1907,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:version_management_edit_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "version_manage",
     },
@@ -1713,6 +1921,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:version_management_lock_operator": {
+    "businessWrite": true,
     "dbServicePermission": {
       "opType": "version_manage",
     },
@@ -1747,6 +1956,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:workflow_sql_audit_result_create_white_list": {
+    "businessWrite": true,
     "id": "action:workflow_sql_audit_result_create_white_list",
     "projectArchived": false,
     "projectManager": true,
@@ -1767,6 +1977,16 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "page",
   },
+  "page:data_masking": {
+    "id": "page:data_masking",
+    "projectPermission": "desensitization",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
   "page:data_source_management": {
     "id": "page:data_source_management",
     "role": [
@@ -1774,6 +1994,26 @@ exports[`usePermission should match snapshot 2`] = `
       "systemAdministrator",
       "auditAdministrator",
       "certainProjectManager",
+    ],
+    "type": "page",
+  },
+  "page:database_account": {
+    "id": "page:database_account",
+    "projectPermission": "auth_db_service_data",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:database_role": {
+    "id": "page:database_role",
+    "projectPermission": "manage_role_mange",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
     ],
     "type": "page",
   },

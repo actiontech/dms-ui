@@ -4,7 +4,8 @@ import { useMemo } from 'react';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   useCurrentUser,
-  useBusinessWritePermission
+  usePermission,
+  PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
 import { ActionMeta } from './index.type';
@@ -16,7 +17,16 @@ const useActionButtonState: (messageApi: MessageInstance) => {
   executeExportButtonMeta: ActionMeta;
 } = (messageApi) => {
   const { userId } = useCurrentUser();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isExportApproveBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE
+  );
+  const isExportRejectBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT
+  );
+  const isExportExecuteBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE
+  );
   const { workflowInfo, updateWorkflowRejectOpen } =
     useDataExportDetailReduxManage();
 
@@ -100,19 +110,19 @@ const useActionButtonState: (messageApi: MessageInstance) => {
       action: () => approveWorkflow(workflowID),
       hidden: !approveWorkflowButtonVisibility,
       loading: approveWorkflowLoading,
-      disabled: isBusinessWriteDisabled
+      disabled: isExportApproveBWPDisabled
     },
     rejectWorkflowButtonMeta: {
       action: () => updateWorkflowRejectOpen(true),
       hidden: !rejectWorkflowButtonVisibility,
       loading: false,
-      disabled: isBusinessWriteDisabled
+      disabled: isExportRejectBWPDisabled
     },
     executeExportButtonMeta: {
       action: () => executeExport(workflowID),
       hidden: !executingButtonVisibility,
       loading: executeExportLoading,
-      disabled: isBusinessWriteDisabled
+      disabled: isExportExecuteBWPDisabled
     }
   };
 };

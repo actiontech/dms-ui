@@ -14,10 +14,7 @@ import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
 import { AuditResultForCreateWorkflowActions } from './actions';
-import {
-  usePermission,
-  useBusinessWritePermission
-} from '@actiontech/shared/lib/features';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import SwitchSqlBackupStrategyModal from './SwitchSqlBackupStrategyModal';
@@ -56,8 +53,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { pagination, tableChange, setPagination } = useTableRequestParams();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const { parse2TableActionPermissions } = usePermission();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const { parse2TableActionPermissions, checkActionDisabledByBWP } =
+    usePermission();
+  const isBusinessWriteDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE
+  );
   const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
     useWhitelistRedux();
   const [

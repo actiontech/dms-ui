@@ -6,7 +6,8 @@ import type { Node, NodeProps } from '@xyflow/react';
 import { StageNodeStyleWrapper } from '../../style';
 import {
   useCurrentProject,
-  useBusinessWritePermission
+  usePermission,
+  PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
@@ -35,7 +36,16 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   } = data;
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
-  const { isBusinessWriteDisabled } = useBusinessWritePermission();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isVersionEditBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT
+  );
+  const isVersionAddBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD
+  );
+  const isWorkflowCreateBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE
+  );
   const displayWorkflow = useMemo(() => {
     // 版本初始化不存在工单时 统一展示一个空占位
     if (!workflowList?.length) {
@@ -103,7 +113,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                     <BasicButton
                       size="small"
                       onClick={() => onRetry?.(workflow?.workflow_id ?? '')}
-                      disabled={isBusinessWriteDisabled}
+                      disabled={isVersionEditBWPDisabled}
                     >
                       {t('versionManagement.stageNode.updateInfo')}
                     </BasicButton>
@@ -112,7 +122,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                       onClick={() =>
                         onOfflineExecute?.(workflow.workflow_id ?? '')
                       }
-                      disabled={isBusinessWriteDisabled}
+                      disabled={isVersionEditBWPDisabled}
                     >
                       {t('versionManagement.stageNode.offlineExecuted')}
                     </BasicButton>
@@ -127,7 +137,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
             type="primary"
             onClick={() => onAssociateWorkflow?.(data.stageId ?? 0)}
             disabled={
-              isBusinessWriteDisabled ||
+              isVersionAddBWPDisabled ||
               versionStatus === SqlVersionDetailResV1StatusEnum.locked
             }
           >
@@ -137,7 +147,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
             type="primary"
             onClick={onCreateNewWorkflow}
             disabled={
-              isBusinessWriteDisabled ||
+              isWorkflowCreateBWPDisabled ||
               versionStatus === SqlVersionDetailResV1StatusEnum.locked
             }
           >
