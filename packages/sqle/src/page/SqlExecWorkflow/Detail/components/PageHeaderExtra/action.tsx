@@ -50,6 +50,7 @@ export const BatchRejectWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.rejectFull')}
@@ -66,6 +67,7 @@ export const ApproveWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.sqlReview')}
@@ -89,6 +91,7 @@ export const BatchExecWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.batchSqlExecute')}
@@ -122,6 +125,7 @@ export const MarkManuallyExecWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.markManually')}

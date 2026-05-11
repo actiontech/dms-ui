@@ -6,7 +6,8 @@ const PermissionControl: React.FC<PermissionControlProps> = ({
   permission,
   children,
   projectID,
-  authDataSourceId
+  authDataSourceId,
+  skipBWPCheck
 }) => {
   const { checkActionPermission, checkActionDisabledByBWP } = usePermission();
 
@@ -16,7 +17,7 @@ const PermissionControl: React.FC<PermissionControlProps> = ({
       authDataSourceId
     })
   ) {
-    const bwpDisabled = checkActionDisabledByBWP(permission);
+    const bwpDisabled = !skipBWPCheck && checkActionDisabledByBWP(permission);
     if (bwpDisabled) {
       return (
         <>
