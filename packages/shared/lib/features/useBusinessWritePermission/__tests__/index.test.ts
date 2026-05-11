@@ -139,7 +139,7 @@ describe('useBusinessWritePermission', () => {
       expect(result.current.businessWritePermission).toBe(false);
     });
 
-    it('should return isBusinessWriteDisabled=true when admin has BWP=false and is NOT project manager in current project', () => {
+    it('should return isBusinessWriteDisabled=true when admin has BWP=false and is NOT project manager and has NO project permissions in current project', () => {
       mockUseCurrentUser({
         isAdmin: true,
         userRoles: {
@@ -162,6 +162,109 @@ describe('useBusinessWritePermission', () => {
 
       const { result } = superRenderHook(() => useBusinessWritePermission());
       expect(result.current.isBusinessWriteDisabled).toBe(true);
+      expect(result.current.businessWritePermission).toBe(false);
+    });
+
+    it('should return isBusinessWriteDisabled=false when admin has BWP=false but has data-source-level permissions in current project', () => {
+      mockUseCurrentUser({
+        isAdmin: true,
+        userRoles: {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: false,
+          [SystemRole.systemAdministrator]: false,
+          [SystemRole.auditAdministrator]: false
+        },
+        businessWritePermission: false,
+        bindProjects: [
+          {
+            project_id: PROJECT_ID,
+            project_name: 'proj',
+            is_manager: false,
+            archived: false
+          }
+        ]
+      });
+      mockUseCurrentProject({ projectID: PROJECT_ID, projectName: 'proj' });
+
+      const { result } = superRenderHook(
+        () => useBusinessWritePermission(),
+        undefined,
+        {
+          initStore: {
+            permission: {
+              moduleFeatureSupport: {
+                sqlOptimization: false,
+                knowledge: false
+              },
+              userOperationPermissions: {
+                is_admin: false,
+                op_permission_list: [
+                  {
+                    op_permission_type: 'create_workflow',
+                    range_type: 'db_service',
+                    range_uids: ['ds-001']
+                  }
+                ]
+              }
+            }
+          }
+        }
+      );
+      expect(result.current.isBusinessWriteDisabled).toBe(false);
+      expect(result.current.businessWritePermission).toBe(false);
+    });
+
+    it('should return isBusinessWriteDisabled=false when sysAdmin has BWP=false but has db_service permissions in current project', () => {
+      mockUseCurrentUser({
+        isAdmin: false,
+        userRoles: {
+          [SystemRole.admin]: false,
+          [SystemRole.certainProjectManager]: false,
+          [SystemRole.systemAdministrator]: true,
+          [SystemRole.auditAdministrator]: false
+        },
+        businessWritePermission: false,
+        bindProjects: [
+          {
+            project_id: PROJECT_ID,
+            project_name: 'proj',
+            is_manager: false,
+            archived: false
+          }
+        ]
+      });
+      mockUseCurrentProject({ projectID: PROJECT_ID, projectName: 'proj' });
+
+      const { result } = superRenderHook(
+        () => useBusinessWritePermission(),
+        undefined,
+        {
+          initStore: {
+            permission: {
+              moduleFeatureSupport: {
+                sqlOptimization: false,
+                knowledge: false
+              },
+              userOperationPermissions: {
+                is_admin: false,
+                op_permission_list: [
+                  {
+                    op_permission_type: 'create_workflow',
+                    range_type: 'db_service',
+                    range_uids: ['ds-001']
+                  },
+                  {
+                    op_permission_type: 'sql_query',
+                    range_type: 'db_service',
+                    range_uids: ['ds-001']
+                  }
+                ]
+              }
+            }
+          }
+        }
+      );
+      expect(result.current.isBusinessWriteDisabled).toBe(false);
       expect(result.current.businessWritePermission).toBe(false);
     });
 
