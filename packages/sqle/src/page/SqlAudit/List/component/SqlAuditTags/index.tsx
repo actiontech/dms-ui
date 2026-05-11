@@ -13,6 +13,7 @@ import { Divider, Form, InputRef, Popover, Space, Spin, message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import useSQLAuditRecordTag from '../../../../../hooks/useSQLAuditRecordTag';
 import { tagNameRule } from '@actiontech/dms-kit';
+import { useBusinessWritePermission } from '@actiontech/shared/lib/features';
 export interface ISqlAuditTags {
   projectName: string;
   defaultTags: string[];
@@ -24,6 +25,7 @@ const SqlAuditTags = ({
   updateTags
 }: ISqlAuditTags) => {
   const { t } = useTranslation();
+  const { isBusinessWriteDisabled } = useBusinessWritePermission();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [open, setOpen] = useState(false);
   const [extraTagForm] = useForm<{
@@ -141,7 +143,7 @@ const SqlAuditTags = ({
             color="geekblue"
             size="small"
             key={v}
-            closable
+            closable={!isBusinessWriteDisabled}
             onClose={(e) => {
               e.preventDefault();
               removeTag(v);
@@ -172,6 +174,7 @@ const SqlAuditTags = ({
             shape="circle"
             size="small"
             onClick={handelClickAddTagsIcon}
+            disabled={isBusinessWriteDisabled}
           ></SqlAuditTagsButton>
         </Popover>
       </Space>

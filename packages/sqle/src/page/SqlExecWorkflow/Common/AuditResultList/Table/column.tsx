@@ -12,7 +12,8 @@ import { BackupStrategyDictionary } from './index.data';
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
-  onSwitchSqlBackupPolicy: (sqlID?: number) => void
+  onSwitchSqlBackupPolicy: (sqlID?: number) => void,
+  isBusinessWriteDisabled?: boolean
 ): ActiontechTableColumn<IAuditTaskSQLResV2> => {
   return [
     {
@@ -90,6 +91,9 @@ export const AuditResultForCreateWorkflowColumn = (
       title: () => t('execWorkflow.audit.table.describe'),
       className: 'audit-result-describe-column',
       render: (description, record) => {
+        if (isBusinessWriteDisabled) {
+          return description || '-';
+        }
         return (
           <EditText
             editButtonProps={{
