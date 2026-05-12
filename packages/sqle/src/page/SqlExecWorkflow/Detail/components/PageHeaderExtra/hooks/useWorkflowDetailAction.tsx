@@ -362,7 +362,7 @@ const useWorkflowDetailAction = ({
       action: rejectWorkflow,
       loading: rejectLoading,
       hidden: !rejectWorkflowButtonVisibility,
-      disabled: isWorkflowApproveBWPDisabled
+      disabled: isWorkflowRejectBWPDisabled
     },
     batchExecutingWorkflowButtonMeta: {
       action: executingWorkflow,
