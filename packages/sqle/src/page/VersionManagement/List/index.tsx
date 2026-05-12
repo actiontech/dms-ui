@@ -7,7 +7,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import {
   VersionManagementTableFilterParamType,
-  VersionManagementTableColumns
+  versionManagementTableColumns
 } from './column';
 import { useRequest } from 'ahooks';
 import {
@@ -25,8 +25,8 @@ import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/serv
 import { ResponseCode } from '@actiontech/dms-kit';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import {
-  VersionManagementPageHeaderActions,
-  VersionManagementTableActions
+  versionManagementPageHeaderActions,
+  versionManagementTableActions
 } from './action';
 const VersionManagementList = () => {
   const { t } = useTranslation();
@@ -69,7 +69,7 @@ const VersionManagementList = () => {
   );
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(
-      VersionManagementTableColumns(projectID),
+      versionManagementTableColumns(projectID),
       updateTableFilterInfo
     );
   const onEdit = (id?: number) => {
@@ -118,7 +118,7 @@ const VersionManagementList = () => {
         hide();
       });
   };
-  const pageHeaderActions = VersionManagementPageHeaderActions(projectID);
+  const pageHeaderActions = versionManagementPageHeaderActions(projectID);
   return (
     <>
       {messageContextHolder}
@@ -156,11 +156,11 @@ const VersionManagementList = () => {
         pagination={{
           total: versionData?.total ?? 0
         }}
-        columns={VersionManagementTableColumns(projectID)}
+        columns={versionManagementTableColumns(projectID)}
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={VersionManagementTableActions({
+        actions={versionManagementTableActions({
           onEdit,
           onDelete,
           onLock,

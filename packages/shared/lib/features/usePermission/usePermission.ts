@@ -218,7 +218,6 @@ const usePermission = () => {
       }
     ): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
-
       // Non-businessWrite actions are never disabled by BWP
       if (permissionDetails.businessWrite !== true) {
         return false;
@@ -228,7 +227,6 @@ const usePermission = () => {
       if (!isBWPOff) {
         return false;
       }
-
       // BWP=off and user has NO project-level authorization at all => disabled
       if (isBusinessWriteDisabled) {
         return true;

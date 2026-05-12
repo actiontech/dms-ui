@@ -11,7 +11,7 @@ import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/servi
 import { ActiontechTableActionsConfig } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-export const VersionManagementPageHeaderActions = (
+export const versionManagementPageHeaderActions = (
   projectID: string
 ): Record<'add', ReactNode> => {
   return {
@@ -35,7 +35,7 @@ export const VersionManagementPageHeaderActions = (
     )
   };
 };
-export const VersionManagementTableActions = ({
+export const versionManagementTableActions = ({
   onEdit,
   onDelete,
   onLock,

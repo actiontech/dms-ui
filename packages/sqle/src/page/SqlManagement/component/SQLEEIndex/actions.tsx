@@ -12,7 +12,7 @@ import {
   ActiontechTableToolbarActionMeta
 } from '@actiontech/dms-kit/es/components/ActiontechTable';
 
-export const SqlManagementRowAction = (
+export const sqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
   jumpToAnalyze: (
     sqlManageID: string,
@@ -26,7 +26,10 @@ export const SqlManagementRowAction = (
     requiredPermission: PermissionsConstantType
   ) => boolean,
   onPushToCoding: (batch: boolean, record?: ISqlManage) => void,
-  username: string
+  username: string,
+  checkActionDisabledByBWP: (
+    requiredPermission: PermissionsConstantType
+  ) => boolean
 ): ActiontechTableActionsConfig<ISqlManage> => {
   const getWidth = () => {
     return language === SupportLanguage.enUS
@@ -44,7 +47,10 @@ export const SqlManagementRowAction = (
           return {
             onClick: () => {
               openModal(ModalName.Assignment_Member_Single, record);
-            }
+            },
+            disabled: checkActionDisabledByBWP(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT
+            )
           };
         },
         permissions: (record) => {
@@ -64,7 +70,10 @@ export const SqlManagementRowAction = (
           return {
             onClick: () => {
               openModal(ModalName.Change_Status_Single, record);
-            }
+            },
+            disabled: checkActionDisabledByBWP(
+              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS
+            )
           };
         },
         permissions: (record) => {
@@ -85,6 +94,9 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           openModal(ModalName.Change_SQL_Priority, record);
         },
+        disabled: checkActionDisabledByBWP(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY
+        ),
         permissions: (record) => {
           return (
             (checkActionPermission(
@@ -104,7 +116,10 @@ export const SqlManagementRowAction = (
             record?.instance_name,
             record?.schema_name
           );
-        }
+        },
+        disabled: checkActionDisabledByBWP(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
+        )
       },
       {
         text: t('sqlManagement.table.action.createSqlManagementException'),
@@ -115,7 +130,10 @@ export const SqlManagementRowAction = (
         permissions: () =>
           checkActionPermission(
             PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
-          )
+          ),
+        disabled: checkActionDisabledByBWP(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
+        )
       },
       {
         text: t('sqlManagement.table.action.createWhitelist'),
@@ -126,7 +144,10 @@ export const SqlManagementRowAction = (
         permissions: () =>
           checkActionPermission(
             PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
-          )
+          ),
+        disabled: checkActionDisabledByBWP(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+        )
       },
       {
         key: 'push-to-coding',
@@ -140,13 +161,16 @@ export const SqlManagementRowAction = (
               record?.assignees?.includes(username)) ??
             false
           );
-        }
+        },
+        disabled: checkActionDisabledByBWP(
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
+        )
       }
     ]
   };
 };
 
-export const SqlManagementTableToolbarActions = (
+export const sqlManagementTableToolbarActions = (
   disabled: boolean,
   batchSolveLoading: boolean,
   batchIgnoreLoading: boolean,

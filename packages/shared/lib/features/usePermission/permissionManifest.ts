@@ -363,6 +363,17 @@ export const PERMISSION_MANIFEST: Record<
       OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list,
     businessWrite: true
   },
+  [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER]: {
+    id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.sql_query
+    },
+    projectManager: true,
+    projectArchived: false,
+    businessWrite: true
+  },
 
   //数据源
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD]: {

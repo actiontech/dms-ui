@@ -22,9 +22,13 @@ import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
-  const { checkActionDisabledByBWP } = usePermission();
+  const { checkActionDisabledByBWP, checkActionPermission } = usePermission();
+
   const isBusinessWriteDisabled = checkActionDisabledByBWP(
-    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT
+    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER
+  );
+  const allowOpenCloudBeaver = checkActionPermission(
+    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER
   );
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
@@ -70,6 +74,14 @@ const CloudBeaver = () => {
   }, [extractQueries, loading, data, isBusinessWriteDisabled]);
 
   const renderActionButton = useMemo(() => {
+    if (isBusinessWriteDisabled) {
+      return (
+        <BasicButton disabled>
+          {t('dmsCloudBeaver.jumpToCloudBeaver')}
+        </BasicButton>
+      );
+    }
+
     if (loading) {
       return (
         <BasicButton loading type="primary">
@@ -101,14 +113,6 @@ const CloudBeaver = () => {
       return (
         <BasicButton disabled>
           {t('dmsCloudBeaver.noInstanceAvailable')}
-        </BasicButton>
-      );
-    }
-
-    if (isBusinessWriteDisabled) {
-      return (
-        <BasicButton disabled>
-          {t('dmsCloudBeaver.jumpToCloudBeaver')}
         </BasicButton>
       );
     }
@@ -153,7 +157,11 @@ const CloudBeaver = () => {
     <>
       <PageHeader
         title={t('dmsCloudBeaver.pageTitle')}
-        extra={<EmptyBox if={!loading}>{renderActionButton}</EmptyBox>}
+        extra={
+          <EmptyBox if={!loading && allowOpenCloudBeaver}>
+            {renderActionButton}
+          </EmptyBox>
+        }
       />
       <Spin spinning={getOperationLogsLoading || loading}>
         <EmptyBox if={!isFeatureEnabled && !loading}>

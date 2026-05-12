@@ -1200,6 +1200,8 @@ export interface IGetUser {
 
   authentication_type?: GetUserAuthenticationTypeEnum;
 
+  business_write_permission?: boolean;
+
   email?: string;
 
   is_admin?: boolean;
@@ -1245,6 +1247,8 @@ export interface IGetUserOpPermissionReply {
   code?: number;
 
   data?: {
+    business_write_permission?: boolean;
+
     is_admin?: boolean;
 
     op_permission_list?: IOpPermissionItem[];
@@ -2243,6 +2247,8 @@ export interface IListSensitiveDataDiscoveryTasksReply {
 
 export interface IListUser {
   authentication_type?: ListUserAuthenticationTypeEnum;
+
+  business_write_permission?: boolean;
 
   email?: string;
 
@@ -3368,6 +3374,8 @@ export interface IUpdateSystemVariablesReqV1 {
 }
 
 export interface IUpdateUser {
+  business_write_permission?: boolean;
+
   email?: string;
 
   is_disabled?: boolean;
@@ -3432,6 +3440,8 @@ export interface IUpdateWebHookConfigurationReq {
 }
 
 export interface IUser {
+  business_write_permission?: boolean;
+
   desc?: string;
 
   email?: string;

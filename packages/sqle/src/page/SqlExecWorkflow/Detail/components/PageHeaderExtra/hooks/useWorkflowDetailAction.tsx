@@ -54,11 +54,20 @@ const useWorkflowDetailAction = ({
   const [messageApi, messageContextHolder] = message.useMessage();
   const { username } = useCurrentUser();
   const { checkActionDisabledByBWP } = usePermission();
+  const isWorkflowRejectBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT
+  );
+
+  const isWorkflowManuallyExecBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC
+  );
+
+  const isWorkflowBatchExecBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC
+  );
+
   const isWorkflowApproveBWPDisabled = checkActionDisabledByBWP(
     PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE
-  );
-  const isWorkflowExecBWPDisabled = checkActionDisabledByBWP(
-    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC
   );
 
   const currentStep = useMemo(() => {
@@ -347,25 +356,25 @@ const useWorkflowDetailAction = ({
       action: auditPassWorkflow,
       loading: passLoading,
       hidden: !auditWorkflowButtonVisibility,
-      disabled: isWorkflowApproveBWPDisabled && !auditWorkflowButtonVisibility
+      disabled: isWorkflowApproveBWPDisabled
     },
     rejectWorkflowButtonMeta: {
       action: rejectWorkflow,
       loading: rejectLoading,
       hidden: !rejectWorkflowButtonVisibility,
-      disabled: isWorkflowApproveBWPDisabled && !rejectWorkflowButtonVisibility
+      disabled: isWorkflowApproveBWPDisabled
     },
     batchExecutingWorkflowButtonMeta: {
       action: executingWorkflow,
       loading: executingLoading,
       hidden: !executingButtonVisibility,
-      disabled: isWorkflowExecBWPDisabled && !executingButtonVisibility
+      disabled: isWorkflowBatchExecBWPDisabled
     },
     manualExecuteWorkflowButtonMeta: {
       action: completeWorkflow,
       loading: completeLoading,
       hidden: !manualExecuteButtonVisibility,
-      disabled: isWorkflowExecBWPDisabled && !manualExecuteButtonVisibility
+      disabled: isWorkflowManuallyExecBWPDisabled
     },
     terminateWorkflowButtonMeta: {
       action: terminateWorkflow,

@@ -115,8 +115,7 @@ const useUserInfo = () => {
 
           dispatch(
             updateBusinessWritePermission(
-              (data as Record<string, unknown>)?.business_write_permission !==
-                false
+              data?.business_write_permission !== false
             )
           );
 

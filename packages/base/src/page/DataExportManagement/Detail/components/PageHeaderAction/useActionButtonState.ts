@@ -110,19 +110,19 @@ const useActionButtonState: (messageApi: MessageInstance) => {
       action: () => approveWorkflow(workflowID),
       hidden: !approveWorkflowButtonVisibility,
       loading: approveWorkflowLoading,
-      disabled: isExportApproveBWPDisabled && !allowOperateStep
+      disabled: isExportApproveBWPDisabled
     },
     rejectWorkflowButtonMeta: {
       action: () => updateWorkflowRejectOpen(true),
       hidden: !rejectWorkflowButtonVisibility,
       loading: false,
-      disabled: isExportRejectBWPDisabled && !allowOperateStep
+      disabled: isExportRejectBWPDisabled
     },
     executeExportButtonMeta: {
       action: () => executeExport(workflowID),
       hidden: !executingButtonVisibility,
       loading: executeExportLoading,
-      disabled: isExportExecuteBWPDisabled && !executingButtonVisibility
+      disabled: isExportExecuteBWPDisabled
     }
   };
 };

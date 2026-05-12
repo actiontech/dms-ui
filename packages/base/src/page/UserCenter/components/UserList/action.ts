@@ -6,7 +6,7 @@ import {
 import { t } from '../../../../locale';
 import { OpPermissionTypeUid, SystemRole } from '@actiontech/dms-kit';
 
-export const UserListActions = (
+export const userListActions = (
   onEditUser: (record?: IListUser) => void,
   onDeleteUser: (record?: IListUser) => void,
   username: string
@@ -15,7 +15,7 @@ export const UserListActions = (
    * 用户列表操作列编辑按钮特殊权限控制：
    * 前置权限判断：当前登陆用户为 admin 或拥有 全局管理 权限。
    * 1. admin 用户仅 admin 能进行编辑
-   * 2. 若被操作列用户拥有全局管理权限，admin 用户以及自身用户能进行编辑
+   * 2. 若被操作列用户拥有全局管理权限，admin 用户以及自身用户且business_write_permission为true时能进行编辑
    */
   const calculateEditActionEnabled = (record?: IListUser) => {
     if (record?.name === SystemRole.admin) {
@@ -26,7 +26,10 @@ export const UserListActions = (
         (v) => v.uid === OpPermissionTypeUid.system_administrator
       )
     ) {
-      return username === SystemRole.admin || username === record.name;
+      if (username === record.name) {
+        return record.business_write_permission;
+      }
+      return username === SystemRole.admin;
     }
     return true;
   };

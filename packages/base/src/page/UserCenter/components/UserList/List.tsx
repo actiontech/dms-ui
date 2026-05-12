@@ -22,12 +22,12 @@ import {
   updateSelectUser,
   updateUserManageModalStatus
 } from '../../../../store/userCenter';
-import { UserListColumns } from './column';
+import { userListColumns } from './column';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
-import { UserListActions } from './action';
+import { userListActions } from './action';
 import {
   ListUsersFilterByStatEnum,
   ListUsersFilterByAuthenticationTypeEnum
@@ -112,7 +112,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
 
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      UserListActions(onEditUser, onDeleteUser, username)
+      userListActions(onEditUser, onDeleteUser, username)
     );
   }, [parse2TableActionPermissions, onEditUser, onDeleteUser, username]);
 
@@ -125,7 +125,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   );
 
   const columns = useMemo(() => {
-    return UserListColumns();
+    return userListColumns();
   }, []);
 
   const filterCustomProps = useMemo(() => {

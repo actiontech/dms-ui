@@ -53,9 +53,7 @@ const UpdateUser = () => {
     const isRoleSysAdmin =
       values.opPermissionUid === OpPermissionTypeUid.system_administrator;
     const shouldSendBWP = isRoleSysAdmin || isEditingAdmin;
-    const userParams: IUpdateUser & {
-      business_write_permission?: boolean;
-    } = {
+    const userParams: IUpdateUser = {
       password: values.passwordConfirm,
       email: values.email ?? '',
       phone: values.phone ?? '',
@@ -66,7 +64,7 @@ const UpdateUser = () => {
       is_disabled: values.username !== 'admin' ? !!values.isDisabled : false,
       business_write_permission: shouldSendBWP
         ? !!values.businessWritePermission
-        : true
+        : undefined
     };
     setTrue();
     User.UpdateUser({
@@ -96,9 +94,6 @@ const UpdateUser = () => {
   };
   useEffect(() => {
     if (visible) {
-      const bwpValue =
-        (currentUser as Record<string, unknown> | null)
-          ?.business_write_permission ?? true;
       form.setFieldsValue({
         username: currentUser?.name,
         email: currentUser?.email,
@@ -107,10 +102,8 @@ const UpdateUser = () => {
         opPermissionUid: currentUser?.op_permissions?.map(
           (v) => v.uid ?? ''
         )?.[0],
-        isDisabled:
-          (currentUser?.stat ?? ListUserStatEnum.未知) ===
-          ListUserStatEnum.被禁用,
-        businessWritePermission: !!bwpValue
+        isDisabled: currentUser?.stat === ListUserStatEnum.被禁用,
+        businessWritePermission: !!currentUser?.business_write_permission
       });
     }
   }, [visible, currentUser, form]);
