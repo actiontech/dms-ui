@@ -31,5 +31,49 @@ export default {
   ruleDetail: {
     title: 'View rule',
     knowledge: 'Rule knowledge base'
+  },
+  category: {
+    auditAccuracy: 'Audit Accuracy',
+    auditPurpose: 'Audit Purpose',
+    operand: 'Operand',
+    sql: 'SQL Category',
+    performanceCost: 'Performance Cost',
+    performanceLevelTips:
+      'High-cost rules generate extensive data scans or complex queries that may significantly impact database performance. Use with caution in production environments.',
+    tag: {
+      online: 'Online',
+      offline: 'Offline',
+      database: 'Database',
+      tableSpace: 'Tablespace',
+      table: 'Table',
+      column: 'Column',
+      index: 'Index',
+      view: 'View',
+      procedure: 'Stored Procedure',
+      function: 'Function',
+      trigger: 'Trigger',
+      event: 'Event',
+      user: 'User',
+      ddl: 'DDL',
+      dcl: 'DCL',
+      dml: 'DML',
+      integrity: 'Integrity Constraint',
+      query: 'Query',
+      transaction: 'Transaction Control',
+      privilege: 'Data Privilege',
+      management: 'Database Management',
+      complete: 'Completeness Constraint',
+      join: 'Join',
+      table_space: 'Tablespace',
+      sequence: 'Sequence',
+      business: 'Business Data',
+      correction: 'Correctness',
+      security: 'Security',
+      maintenance: 'Maintainability',
+      performance: 'Performance',
+      high: 'High Cost',
+      medium: 'Medium Cost',
+      low: 'Low Cost'
+    }
   }
 };
