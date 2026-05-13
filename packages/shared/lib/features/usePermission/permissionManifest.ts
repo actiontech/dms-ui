@@ -949,6 +949,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS]: {
@@ -957,6 +960,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY]: {
@@ -965,6 +971,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION]: {
@@ -993,6 +1002,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE]: {
@@ -1001,6 +1013,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE]: {
@@ -1009,6 +1024,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT]: {
@@ -1027,6 +1045,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING]: {
@@ -1035,6 +1056,9 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    },
     businessWrite: true
   },
 
