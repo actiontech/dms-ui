@@ -116,10 +116,7 @@ export const sqlManagementRowAction = (
             record?.instance_name,
             record?.schema_name
           );
-        },
-        disabled: checkActionDisabledByBWP(
-          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
-        )
+        }
       },
       {
         text: t('sqlManagement.table.action.createSqlManagementException'),
@@ -130,10 +127,7 @@ export const sqlManagementRowAction = (
         permissions: () =>
           checkActionPermission(
             PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
-          ),
-        disabled: checkActionDisabledByBWP(
-          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
-        )
+          )
       },
       {
         text: t('sqlManagement.table.action.createWhitelist'),
@@ -144,10 +138,7 @@ export const sqlManagementRowAction = (
         permissions: () =>
           checkActionPermission(
             PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
-          ),
-        disabled: checkActionDisabledByBWP(
-          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
-        )
+          )
       },
       {
         key: 'push-to-coding',

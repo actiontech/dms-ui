@@ -53,7 +53,7 @@ const usePermission = () => {
       authDataSourceId?: string
     ) => {
       if (userOperationPermissions) {
-        const { is_admin, op_permission_list } = userOperationPermissions;
+        const { op_permission_list } = userOperationPermissions;
         const isProjctAdmin = op_permission_list?.some((permission) => {
           if (
             permission.range_type === OpPermissionItemRangeTypeEnum.project &&
@@ -79,7 +79,7 @@ const usePermission = () => {
           }
           return false;
         });
-        if (is_admin || isProjctAdmin || hasServicePermission) {
+        if (isProjctAdmin || hasServicePermission) {
           return true;
         }
 
@@ -222,7 +222,6 @@ const usePermission = () => {
       if (permissionDetails.businessWrite !== true) {
         return false;
       }
-
       // BWP is on, or user is not admin/systemAdministrator => no BWP restriction
       if (!isBWPOff) {
         return false;
