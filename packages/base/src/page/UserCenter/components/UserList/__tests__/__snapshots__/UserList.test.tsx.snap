@@ -195,9 +195,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                     <col />
                     <col />
                     <col />
-                    <col
-                      style="width: 35%;"
-                    />
+                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -1679,9 +1677,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                   <col />
                   <col />
                   <col />
-                  <col
-                    style="width: 35%;"
-                  />
+                  <col />
                   <col
                     style="width: 164px;"
                   />
@@ -3011,9 +3007,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                   <col />
                   <col />
                   <col />
-                  <col
-                    style="width: 35%;"
-                  />
+                  <col />
                   <col
                     style="width: 164px;"
                   />
@@ -4495,9 +4489,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col />
-                    <col
-                      style="width: 35%;"
-                    />
+                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -8814,9 +8806,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col />
-                    <col
-                      style="width: 35%;"
-                    />
+                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -13133,9 +13123,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                     <col />
                     <col />
                     <col />
-                    <col
-                      style="width: 35%;"
-                    />
+                    <col />
                     <col
                       style="width: 164px;"
                     />

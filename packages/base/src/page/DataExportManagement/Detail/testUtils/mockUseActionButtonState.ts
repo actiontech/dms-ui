@@ -4,22 +4,26 @@ export const mockActionButtonStateData = {
   closeWorkflowButtonMeta: {
     action: jest.fn(),
     loading: false,
-    hidden: false
+    hidden: false,
+    disabled: false
   },
   approveWorkflowButtonMeta: {
     action: jest.fn(),
     loading: false,
-    hidden: false
+    hidden: false,
+    disabled: false
   },
   rejectWorkflowButtonMeta: {
     action: jest.fn(),
     loading: false,
-    hidden: false
+    hidden: false,
+    disabled: false
   },
   executeExportButtonMeta: {
     action: jest.fn(),
     loading: false,
-    hidden: false
+    hidden: false,
+    disabled: false
   }
 };
 

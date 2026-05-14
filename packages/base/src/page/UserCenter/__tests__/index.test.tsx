@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SystemRole } from '@actiontech/dms-kit';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => {
   return {
@@ -147,5 +149,65 @@ describe('base/UserCenter', () => {
     expect(screen.queryByText('添加用户')).not.toBeInTheDocument();
     expect(screen.queryByText('添加角色')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
+  });
+
+  describe('PermissionControl / usePermission', () => {
+    let usePermissionSpy: jest.SpyInstance | undefined;
+
+    afterEach(() => {
+      usePermissionSpy?.mockRestore();
+      usePermissionSpy = undefined;
+    });
+
+    it('should hide add user and add role header actions when checkActionPermission returns false', async () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(false),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(false)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      superRender(<UserCenter />);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.queryByText('添加用户')).not.toBeInTheDocument();
+      expect(screen.queryByText('添加角色')).not.toBeInTheDocument();
+    });
+
+    it('should show add user on user tab when checkActionPermission returns true', async () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(true),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(false)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      superRender(<UserCenter />);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('添加用户')).toBeInTheDocument();
+    });
+
+    it('should disable add user header button when PermissionControl BWP blocks USER.ADD', async () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(true),
+          checkActionDisabledByBWP: jest
+            .fn()
+            .mockImplementation(
+              (permission: string) =>
+                permission === PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD
+            )
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      superRender(<UserCenter />);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('添加用户').closest('button')).toBeDisabled();
+    });
   });
 });

@@ -7,16 +7,32 @@ import {
   SqlVersionDetailResV1StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { ReactFlowProvider } from '@xyflow/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
+
 describe('sqle/VersionManagement/Detail/StageNode', () => {
+  let permissionSpy: jest.SpyInstance | undefined;
+
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
   });
 
   afterEach(() => {
+    permissionSpy?.mockRestore();
+    permissionSpy = undefined;
     jest.useRealTimers();
     cleanup();
   });
@@ -161,5 +177,90 @@ describe('sqle/VersionManagement/Detail/StageNode', () => {
     fireEvent.click(screen.getByText('已线下执行'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(offlineExecuteSpy).toHaveBeenCalledTimes(1);
+  });
+
+  describe('BWP (mockUsePermission spy)', () => {
+    it('disables first-stage workflow buttons when VERSION_MANAGEMENT.ADD is blocked by BWP', async () => {
+      permissionSpy = mockUsePermission(
+        {
+          checkActionDisabledByBWP: jest
+            .fn()
+            .mockImplementation(
+              (perm: string) =>
+                perm === PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD
+            )
+        },
+        { useSpyOnMockHooks: true }
+      );
+      const { baseElement } = customRender({
+        isFirstStage: true,
+        isLastStage: false
+      });
+      expect(baseElement).toBeTruthy();
+      expect(screen.getByText('添加已有工单').closest('button')).toBeDisabled();
+      expect(
+        screen.getByText('创建新工单').closest('button')
+      ).not.toBeDisabled();
+    });
+
+    it('disables create workflow when SQL_EXEC_WORKFLOW.CREATE is blocked by BWP', async () => {
+      permissionSpy = mockUsePermission(
+        {
+          checkActionDisabledByBWP: jest
+            .fn()
+            .mockImplementation(
+              (perm: string) =>
+                perm === PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE
+            )
+        },
+        { useSpyOnMockHooks: true }
+      );
+      customRender({
+        isFirstStage: true,
+        isLastStage: false
+      });
+      expect(
+        screen.getByText('添加已有工单').closest('button')
+      ).not.toBeDisabled();
+      expect(screen.getByText('创建新工单').closest('button')).toBeDisabled();
+    });
+
+    it('disables failed-workflow retry and offline buttons when VERSION_MANAGEMENT.EDIT is blocked by BWP', async () => {
+      permissionSpy = mockUsePermission(
+        {
+          checkActionDisabledByBWP: jest
+            .fn()
+            .mockImplementation(
+              (perm: string) =>
+                perm === PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT
+            )
+        },
+        { useSpyOnMockHooks: true }
+      );
+      customRender({
+        isFirstStage: true,
+        isLastStage: false,
+        workflowList: [
+          {
+            workflow_name: 'DEV1_20241021103951',
+            workflow_id: '12345678',
+            workflow_sequence: 1,
+            status: WorkflowDetailWithInstanceStatusEnum.exec_failed,
+            workflow_exec_time: '2024-10-21T14:42:42.348+08:00',
+            workflow_instances: [
+              {
+                instances_id: '123456',
+                instances_name: 'DEV1',
+                instance_schema: 'test'
+              }
+            ]
+          }
+        ],
+        onRetry: jest.fn(),
+        onOfflineExecute: jest.fn()
+      });
+      expect(screen.getByText('修改工单').closest('button')).toBeDisabled();
+      expect(screen.getByText('已线下执行').closest('button')).toBeDisabled();
+    });
   });
 });

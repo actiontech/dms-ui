@@ -10,6 +10,7 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -142,5 +143,62 @@ describe('sqle/VersionManagement/List', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(2);
+  });
+
+  describe('checkActionPermission granular', () => {
+    it('hides add version in header when ADD is denied', async () => {
+      checkActionPermissionSpy.mockImplementation(
+        (perm) => perm !== PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD
+      );
+      sqleSuperRender(<VersionManagementList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(getSqlVersionListSpy).toHaveBeenCalled();
+      expect(screen.queryByText('添加版本')).not.toBeInTheDocument();
+    });
+
+    it('hides edit when EDIT is denied for releasing row', async () => {
+      checkActionPermissionSpy.mockImplementation(
+        (perm) => perm !== PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT
+      );
+      getSqlVersionListSpy.mockClear();
+      getSqlVersionListSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [firstMockVersion]
+        })
+      );
+      sqleSuperRender(<VersionManagementList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.queryByText('编 辑')).not.toBeInTheDocument();
+    });
+
+    it('hides lock when LOCK is denied', async () => {
+      checkActionPermissionSpy.mockImplementation(
+        (perm) => perm !== PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK
+      );
+      getSqlVersionListSpy.mockClear();
+      getSqlVersionListSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [firstMockVersion]
+        })
+      );
+      sqleSuperRender(<VersionManagementList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.queryByText('锁 定')).not.toBeInTheDocument();
+    });
+
+    it('hides delete when DELETE is denied', async () => {
+      checkActionPermissionSpy.mockImplementation(
+        (perm) => perm !== PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE
+      );
+      getSqlVersionListSpy.mockClear();
+      getSqlVersionListSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [firstMockVersion]
+        })
+      );
+      sqleSuperRender(<VersionManagementList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.queryByText('删 除')).not.toBeInTheDocument();
+    });
   });
 });

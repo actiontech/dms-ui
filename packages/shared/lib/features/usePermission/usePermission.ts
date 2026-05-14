@@ -370,13 +370,22 @@ const usePermission = () => {
                     record: record as unknown as Record<string, string>
                   })
                 : false;
+              const itemDisabled = item.disabled;
               return {
                 ...item,
                 permissions: item.permissions
                   ? (data) =>
                       checkActionPermission(item.permissions!, { record: data })
                   : undefined,
-                disabled: bwpDisabled || !!item.disabled
+                disabled:
+                  typeof itemDisabled === 'function'
+                    ? (data?: T) =>
+                        (item.permissions
+                          ? checkActionDisabledByBWP(item.permissions!, {
+                              record: data as unknown as Record<string, string>
+                            })
+                          : false) || !!itemDisabled(data)
+                    : bwpDisabled || !!itemDisabled
               };
             });
         }
@@ -385,12 +394,21 @@ const usePermission = () => {
           const bwpDisabled = item.permissions
             ? checkActionDisabledByBWP(item.permissions)
             : false;
+          const itemDisabled = item.disabled;
           return {
             ...item,
             permissions: item.permissions
               ? (record) => checkActionPermission(item.permissions!, { record })
               : undefined,
-            disabled: bwpDisabled || !!item.disabled
+            disabled:
+              typeof itemDisabled === 'function'
+                ? (data?: T) =>
+                    (item.permissions
+                      ? checkActionDisabledByBWP(item.permissions!, {
+                          record: data as unknown as Record<string, string>
+                        })
+                      : false) || !!itemDisabled(data)
+                : bwpDisabled || !!itemDisabled
           };
         });
       };

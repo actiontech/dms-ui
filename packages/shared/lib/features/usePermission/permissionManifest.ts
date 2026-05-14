@@ -81,16 +81,6 @@ export const PERMISSION_MANIFEST: Record<
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
-  [PERMISSIONS.PAGES.BASE.DATA_MASKING]: {
-    id: PERMISSIONS.PAGES.BASE.DATA_MASKING,
-    type: 'page',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization
-  },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TASK.CREATE,
     type: 'action',
@@ -148,39 +138,6 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.TEMPLATE.DELETE,
-    type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.CREATE]: {
-    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.CREATE,
-    type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.EDIT]: {
-    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.EDIT,
-    type: 'action',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.desensitization,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.DELETE]: {
-    id: PERMISSIONS.ACTIONS.BASE.DATA_MASKING.RULE.DELETE,
     type: 'action',
     role: [
       SystemRole.admin,
@@ -321,26 +278,6 @@ export const PERMISSION_MANIFEST: Record<
     ],
     projectPermission:
       OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
-  },
-  [PERMISSIONS.PAGES.PROVISION.DATABASE_ROLE]: {
-    id: PERMISSIONS.PAGES.PROVISION.DATABASE_ROLE,
-    type: 'page',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange
-  },
-  [PERMISSIONS.PAGES.PROVISION.DATABASE_ACCOUNT]: {
-    id: PERMISSIONS.PAGES.PROVISION.DATABASE_ACCOUNT,
-    type: 'page',
-    role: [
-      SystemRole.admin,
-      SystemRole.systemAdministrator,
-      SystemRole.auditAdministrator
-    ],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
   },
   // action
 
@@ -1567,75 +1504,6 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_pipeline
     },
-    businessWrite: true
-  },
-
-  // provision
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.EDIT]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.EDIT,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.DELETE]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.DELETE,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_role_mange,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.CREATE]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.CREATE,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.TABLE_ACTIONS]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.TABLE_ACTIONS,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.BATCH_MODIFY_PASSWORD]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.BATCH_MODIFY_PASSWORD,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
-    businessWrite: true
-  },
-  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.DISCOVER_ACCOUNT]: {
-    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ACCOUNT.DISCOVER_ACCOUNT,
-    type: 'action',
-    projectArchived: false,
-    projectManager: true,
-    role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectPermission:
-      OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
     businessWrite: true
   }
 } as const;

@@ -32,6 +32,9 @@ describe('usePermission', () => {
   };
 
   beforeEach(() => {
+    mockState.permission.moduleFeatureSupport.sqlOptimization = true;
+    mockState.permission.userOperationPermissions.is_admin = false;
+    mockState.permission.userOperationPermissions.op_permission_list = [];
     (useSelector as jest.Mock).mockImplementation((selector) =>
       selector(mockState)
     );
@@ -87,16 +90,31 @@ describe('usePermission', () => {
       )
     ).toBeFalsy();
 
-    // Case 2: User is admin
+    // Case 2: is_admin alone does not grant db service permissions (must match
+    // project_admin or explicit db_service-scoped op_permission_list entries).
     mockState.permission.userOperationPermissions.is_admin = true;
     expect(
       result.current.checkDbServicePermission(
         OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
         'dbService1'
       )
+    ).toBeFalsy();
+
+    // Case 2b: Admin with project_admin on current project can access db ops
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        range_uids: [mockProjectInfo.projectID, '2233'],
+        op_permission_type: OpPermissionItemOpPermissionTypeEnum.project_admin
+      }
+    ];
+    expect(
+      result.current.checkDbServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+      )
     ).toBeTruthy();
 
-    // Case 3: User has project admin permission
+    // Case 3: User has project admin permission (non-admin flag)
     mockState.permission.userOperationPermissions.is_admin = false;
     mockState.permission.userOperationPermissions.op_permission_list = [
       {

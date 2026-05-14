@@ -3,10 +3,7 @@ import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import {
-  mockProjectInfo,
-  mockUseUserOperationPermissionData
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import { mockInstanceAuditPlanListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
@@ -23,11 +20,176 @@ import {
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import usePermission from '@actiontech/shared/lib/features/usePermission/usePermission';
 import {
   AuditPlanTypeResBaseActiveStatusEnum,
   AuditPlanTypeResBaseLastCollectionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
+import type { ActiontechTableActionsWithPermissions } from '@actiontech/shared/lib/features';
+import type { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import type { PermissionsConstantType } from '@actiontech/shared/lib/features/usePermission/permissions';
+import type { CheckActionPermissionOtherValues } from '@actiontech/shared/lib/features/usePermission/index.type';
+import type { ActiontechTableProps } from '@actiontech/dms-kit/es/components/ActiontechTable';
+
+type Row = IInstanceAuditPlanResV1;
+
+type CheckActionPermFn = (
+  permission: PermissionsConstantType,
+  other?: CheckActionPermissionOtherValues<Row>
+) => boolean;
+
+type CheckBwpFn = (
+  permission: PermissionsConstantType,
+  other?: { record?: Record<string, string> }
+) => boolean;
+
+/** 与 usePermission.parse2TableActionPermissions 对齐的简化实现，供 spy mock 注入 */
+function mergeActionButtonPropsWithBWPDisabled(
+  buttonProps: ((record?: Row) => Record<string, any>) | undefined,
+  bwpDisabled: boolean | ((record?: Row) => boolean)
+): ((record?: Row) => Record<string, any>) | undefined {
+  if (typeof bwpDisabled === 'function') {
+    if (typeof buttonProps === 'function') {
+      return (record?: Row) => {
+        const disabled = bwpDisabled(record);
+        return disabled
+          ? { ...buttonProps(record), disabled: true }
+          : buttonProps(record);
+      };
+    }
+    return (record?: Row) => {
+      const disabled = bwpDisabled(record);
+      return disabled ? { disabled: true } : {};
+    };
+  }
+  if (!bwpDisabled) return buttonProps;
+  if (typeof buttonProps === 'function') {
+    return (record?: Row) => ({
+      ...buttonProps(record),
+      disabled: true
+    });
+  }
+  return () => ({ disabled: true });
+}
+
+function createMockParse2TableActionPermissions(
+  checkActionPermission: CheckActionPermFn,
+  checkActionDisabledByBWP: CheckBwpFn = () => false
+) {
+  return (
+    actions: ActiontechTableActionsWithPermissions<Row>
+  ): ActiontechTableProps<Row>['actions'] => {
+    if (Array.isArray(actions)) {
+      return actions.map((item) => {
+        const bwpDisabledFn = item.permissions
+          ? (record?: Row) =>
+              checkActionDisabledByBWP(item.permissions!, {
+                record: record as unknown as Record<string, string>
+              })
+          : false;
+        return {
+          ...item,
+          permissions: item.permissions
+            ? (record) =>
+                checkActionPermission(item.permissions!, {
+                  record
+                })
+            : undefined,
+          buttonProps: mergeActionButtonPropsWithBWPDisabled(
+            item.buttonProps as (r?: Row) => Record<string, any>,
+            bwpDisabledFn
+          )
+        };
+      }) as ActiontechTableProps<Row>['actions'];
+    }
+
+    const parseActionMoreButtons = (
+      moreButtons: typeof actions.moreButtons
+    ) => {
+      if (typeof moreButtons === 'function') {
+        return (record: Row) =>
+          moreButtons(record).map((item) => {
+            const bwpDisabled = item.permissions
+              ? checkActionDisabledByBWP(item.permissions!, {
+                  record: record as unknown as Record<string, string>
+                })
+              : false;
+            const itemDisabled = item.disabled;
+            return {
+              ...item,
+              permissions: item.permissions
+                ? (data: Row) =>
+                    checkActionPermission(item.permissions!, {
+                      record: data
+                    })
+                : undefined,
+              disabled:
+                typeof itemDisabled === 'function'
+                  ? (data?: Row) =>
+                      (item.permissions
+                        ? checkActionDisabledByBWP(item.permissions!, {
+                            record: data as unknown as Record<string, string>
+                          })
+                        : false) || !!itemDisabled(data)
+                  : bwpDisabled || !!itemDisabled
+            };
+          });
+      }
+      return moreButtons?.map((item) => {
+        const bwpDisabled = item.permissions
+          ? checkActionDisabledByBWP(item.permissions)
+          : false;
+        const itemDisabled = item.disabled;
+        return {
+          ...item,
+          permissions: item.permissions
+            ? (record: Row) =>
+                checkActionPermission(item.permissions!, {
+                  record
+                })
+            : undefined,
+          disabled:
+            typeof itemDisabled === 'function'
+              ? (data?: Row) =>
+                  (item.permissions
+                    ? checkActionDisabledByBWP(item.permissions!, {
+                        record: data as unknown as Record<string, string>
+                      })
+                    : false) || !!itemDisabled(data)
+              : bwpDisabled || !!itemDisabled
+        };
+      });
+    };
+
+    return {
+      ...actions,
+      buttons: actions.buttons.map((item) => {
+        const bwpDisabledFn = item.permissions
+          ? (record?: Row) =>
+              checkActionDisabledByBWP(item.permissions!, {
+                record: record as unknown as Record<string, string>
+              })
+          : false;
+        return {
+          ...item,
+          permissions: item.permissions
+            ? (record) =>
+                checkActionPermission(item.permissions!, {
+                  record
+                })
+            : undefined,
+          buttonProps: mergeActionButtonPropsWithBWPDisabled(
+            item.buttonProps as (r?: Row) => Record<string, any>,
+            bwpDisabledFn
+          )
+        };
+      }),
+      moreButtons: parseActionMoreButtons(actions.moreButtons)
+    } as ActiontechTableProps<Row>['actions'];
+  };
+}
 
 jest.mock('react-redux', () => {
   return {
@@ -278,8 +440,11 @@ describe('test sqle/SqlManagementConf/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('停用')).toBeVisible();
-    fireEvent.click(screen.getByText('停用').closest('div')!);
+    const stopInMoreMenu = screen.getByText('停用', {
+      selector: '.more-button-item-text'
+    });
+    expect(stopInMoreMenu).toBeVisible();
+    fireEvent.click(stopInMoreMenu);
     expect(
       screen.getByText('禁用后所有数据将不再更新，是否确认停用？')
     ).toBeInTheDocument();
@@ -311,8 +476,11 @@ describe('test sqle/SqlManagementConf/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('启用')).toBeVisible();
-    fireEvent.click(screen.getByText('启用').closest('div')!);
+    const enableInMoreMenu = screen.getByText('启用', {
+      selector: '.more-button-item-text'
+    });
+    expect(enableInMoreMenu).toBeVisible();
+    fireEvent.click(enableInMoreMenu);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateInstanceAuditPlanStatus).toHaveBeenCalledTimes(1);
     expect(updateInstanceAuditPlanStatus).toHaveBeenNthCalledWith(1, {
@@ -339,8 +507,11 @@ describe('test sqle/SqlManagementConf/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('删除')).toBeVisible();
-    fireEvent.click(screen.getByText('删除').closest('div')!);
+    const deleteInMoreMenu = screen
+      .getAllByText('删除')
+      .find((el) => !!el.closest('.more-button-item-text'));
+    expect(deleteInMoreMenu).toBeTruthy();
+    fireEvent.click(deleteInMoreMenu!);
     expect(
       screen.getByText('删除后所有数据将不再保留，是否确认删除？')
     ).toBeInTheDocument();
@@ -353,5 +524,148 @@ describe('test sqle/SqlManagementConf/List', () => {
       instance_audit_plan_id: `${mockInstanceAuditPlanListData[0].instance_audit_plan_id}`
     });
     expect(screen.getByText('删除成功')).toBeInTheDocument();
+  });
+
+  describe('permissions (mockUsePermission spy)', () => {
+    let permissionSpy: jest.SpyInstance | undefined;
+
+    afterEach(() => {
+      permissionSpy?.mockRestore();
+      permissionSpy = undefined;
+    });
+
+    const SqleConfPerms = PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF;
+
+    const setupPermissionMock = (
+      checkActionPermission: CheckActionPermFn,
+      checkActionDisabledByBWP: CheckBwpFn = () => false
+    ) => {
+      permissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn(checkActionPermission),
+          checkActionDisabledByBWP: jest.fn(checkActionDisabledByBWP),
+          checkPagePermission: jest.fn().mockReturnValue(true),
+          parse2TableActionPermissions: createMockParse2TableActionPermissions(
+            checkActionPermission,
+            checkActionDisabledByBWP
+          )
+        } as Partial<ReturnType<typeof usePermission>>,
+        { useSpyOnMockHooks: true }
+      );
+    };
+
+    it('hides header create button when CREATE is denied', async () => {
+      setupPermissionMock((perm) => perm !== SqleConfPerms.CREATE);
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(
+        screen.queryByText('为数据源开启扫描任务')
+      ).not.toBeInTheDocument();
+      expect(screen.getByText('编 辑').closest('button')).toBeInTheDocument();
+    });
+
+    it('hides row edit button when EDIT is denied', async () => {
+      setupPermissionMock((perm) => perm !== SqleConfPerms.EDIT);
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.queryByText('编 辑')).not.toBeInTheDocument();
+      expect(screen.getByText('为数据源开启扫描任务')).toBeInTheDocument();
+    });
+
+    it('hides stop action in more menu when STOP is denied', async () => {
+      setupPermissionMock((perm) => perm !== SqleConfPerms.STOP);
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+      await act(async () => jest.advanceTimersByTime(100));
+      expect(
+        screen.queryByText('停用', { selector: '.more-button-item-text' })
+      ).not.toBeInTheDocument();
+      expect(
+        screen
+          .getAllByText('删除')
+          .some((el) => !!el.closest('.more-button-item-text'))
+      ).toBe(true);
+    });
+
+    it('hides more menu when STOP, ENABLE and DELETE are all denied', async () => {
+      setupPermissionMock(
+        (perm) =>
+          perm !== SqleConfPerms.STOP &&
+          perm !== SqleConfPerms.ENABLE &&
+          perm !== SqleConfPerms.DELETE
+      );
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(
+        document.querySelector('.actiontech-table-actions-more-button')
+      ).toBeNull();
+      expect(screen.getByText('编 辑').closest('button')).toBeInTheDocument();
+    });
+
+    it('disables header create button when CREATE is allowed but blocked by BWP', async () => {
+      setupPermissionMock(
+        () => true,
+        (perm) => perm === SqleConfPerms.CREATE
+      );
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(
+        screen.getByText('为数据源开启扫描任务').closest('button')
+      ).toBeDisabled();
+    });
+
+    it('renders stop in more menu as disabled when STOP is blocked by BWP', async () => {
+      setupPermissionMock(
+        () => true,
+        (perm) => perm === SqleConfPerms.STOP
+      );
+      getInstanceAuditPlansSpy.mockClear();
+      getInstanceAuditPlansSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [mockInstanceAuditPlanListData[0]]
+        })
+      );
+      sqleSuperRender(<SqlManagementConfList />);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+      await act(async () => jest.advanceTimersByTime(100));
+      const stopLabel = screen.getByText('停用', {
+        selector: '.more-button-item-text'
+      });
+      expect(stopLabel.closest('.more-button-item')).toHaveClass(
+        'more-button-item-disabled'
+      );
+    });
   });
 });
