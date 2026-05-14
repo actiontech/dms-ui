@@ -8,7 +8,11 @@ import {
   WorkflowRecordResV2StatusEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import {
+  useCurrentUser,
+  usePermission,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 import dayjs, { Dayjs } from 'dayjs';
 import {
   WorkflowDetailActionMeta,
@@ -49,6 +53,22 @@ const useWorkflowDetailAction = ({
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { username } = useCurrentUser();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isWorkflowRejectBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT
+  );
+
+  const isWorkflowManuallyExecBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC
+  );
+
+  const isWorkflowBatchExecBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC
+  );
+
+  const isWorkflowApproveBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE
+  );
 
   const currentStep = useMemo(() => {
     return workflowInfo?.record?.workflow_step_list?.find(
@@ -335,22 +355,26 @@ const useWorkflowDetailAction = ({
     auditPassWorkflowButtonMeta: {
       action: auditPassWorkflow,
       loading: passLoading,
-      hidden: !auditWorkflowButtonVisibility
+      hidden: !auditWorkflowButtonVisibility,
+      disabled: isWorkflowApproveBWPDisabled
     },
     rejectWorkflowButtonMeta: {
       action: rejectWorkflow,
       loading: rejectLoading,
-      hidden: !rejectWorkflowButtonVisibility
+      hidden: !rejectWorkflowButtonVisibility,
+      disabled: isWorkflowRejectBWPDisabled
     },
     batchExecutingWorkflowButtonMeta: {
       action: executingWorkflow,
       loading: executingLoading,
-      hidden: !executingButtonVisibility
+      hidden: !executingButtonVisibility,
+      disabled: isWorkflowBatchExecBWPDisabled
     },
     manualExecuteWorkflowButtonMeta: {
       action: completeWorkflow,
       loading: completeLoading,
-      hidden: !manualExecuteButtonVisibility
+      hidden: !manualExecuteButtonVisibility,
+      disabled: isWorkflowManuallyExecBWPDisabled
     },
     terminateWorkflowButtonMeta: {
       action: terminateWorkflow,

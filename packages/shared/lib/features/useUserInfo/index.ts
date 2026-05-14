@@ -11,7 +11,8 @@ import {
   updateUserInfoFetchStatus,
   updateUserUid,
   updateLanguage,
-  updateSystemPreference
+  updateSystemPreference,
+  updateBusinessWritePermission
 } from '../../../../base/src/store/user';
 import {
   ResponseCode,
@@ -61,6 +62,8 @@ const useUserInfo = () => {
       })
     );
 
+    dispatch(updateBusinessWritePermission(true));
+
     dispatch(updateUserInfoFetchStatus(false));
   }, [dispatch]);
 
@@ -108,6 +111,12 @@ const useUserInfo = () => {
             updateManagementPermissions({
               managementPermissions: data?.op_permissions ?? []
             })
+          );
+
+          dispatch(
+            updateBusinessWritePermission(
+              data?.business_write_permission !== false
+            )
           );
 
           if (!systemPreference) {

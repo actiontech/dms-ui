@@ -8,7 +8,8 @@ import reducers, {
   updateManagementPermissions,
   updateLanguage,
   updateSystemPreference,
-  updateIsLoggingIn
+  updateIsLoggingIn,
+  updateBusinessWritePermission
 } from '.';
 import { IReduxState } from '..';
 import { LocalStorageWrapper } from '@actiontech/dms-kit';
@@ -35,7 +36,8 @@ describe('store user', () => {
     isUserInfoFetched: false,
     language: SupportLanguage.zhCN,
     systemPreference: undefined,
-    isLoggingIn: false
+    isLoggingIn: false,
+    businessWritePermission: true
   };
 
   it('should update token when dispatch updateToken action', () => {
@@ -57,7 +59,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -80,7 +83,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -104,7 +108,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -128,7 +133,8 @@ describe('store user', () => {
       role: SystemRole.admin,
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -151,7 +157,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -169,7 +176,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: true,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -200,7 +208,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -224,7 +233,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -247,7 +257,8 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: GetUserSystemEnum.MANAGEMENT,
-      isLoggingIn: false
+      isLoggingIn: false,
+      businessWritePermission: true
     });
   });
 
@@ -265,7 +276,27 @@ describe('store user', () => {
       role: '',
       isUserInfoFetched: false,
       systemPreference: undefined,
-      isLoggingIn: true
+      isLoggingIn: true,
+      businessWritePermission: true
+    });
+  });
+
+  it('should update businessWritePermission when dispatch updateBusinessWritePermission action', () => {
+    const newState = reducers(state, updateBusinessWritePermission(false));
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
+      bindProjects: [],
+      managementPermissions: [],
+      role: '',
+      isUserInfoFetched: false,
+      systemPreference: undefined,
+      isLoggingIn: false,
+      businessWritePermission: false
     });
   });
 });

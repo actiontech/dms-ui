@@ -12,6 +12,7 @@ import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices'
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => {
   return {
@@ -137,5 +138,144 @@ describe('test base/page/CloudBeaver', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(window.location.href).toBe(enableSqlQueryUrlData.sql_query_root_uri);
+  });
+
+  it('should disable jump to cloud beaver button when business write permission is off', async () => {
+    mockUseCurrentUser({
+      businessWritePermission: false
+    });
+
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: enableSqlQueryUrlData
+      })
+    );
+
+    superRender(<CloudBeaver />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const button = screen.getByText('打开SQL工作台').closest('button');
+    expect(button).toBeDisabled();
+  });
+
+  it('should not auto redirect when business write permission is off', async () => {
+    const savedHref = window.location.href;
+    window.location.href = '';
+
+    mockUseCurrentUser({
+      businessWritePermission: false
+    });
+
+    getSqlQueryUrlSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: enableSqlQueryUrlData
+      })
+    );
+
+    superRender(<CloudBeaver />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(window.location.href).not.toBe(
+      enableSqlQueryUrlData.sql_query_root_uri
+    );
+
+    window.location.href = savedHref;
+  });
+
+  describe('usePermission OPEN_CLOUD_BEAVER', () => {
+    let usePermissionSpy: jest.SpyInstance | undefined;
+
+    afterEach(() => {
+      usePermissionSpy?.mockRestore();
+      usePermissionSpy = undefined;
+    });
+
+    it('should hide jump button in header when checkActionPermission returns false', async () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(false),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(false)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      getSqlQueryUrlSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: enableSqlQueryUrlData
+        })
+      );
+
+      superRender(<CloudBeaver />);
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.queryByText('打开SQL工作台')).not.toBeInTheDocument();
+    });
+
+    it('should render disabled jump button when checkActionDisabledByBWP returns true', async () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(true),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(true)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      getSqlQueryUrlSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: enableSqlQueryUrlData
+        })
+      );
+
+      superRender(<CloudBeaver />);
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      const button = screen.getByText('打开SQL工作台').closest('button');
+      expect(button).toBeDisabled();
+    });
+
+    it('should not auto redirect when checkActionDisabledByBWP returns true', async () => {
+      const savedHref = window.location.href;
+      window.location.href = '';
+
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(true),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(true)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      getSqlQueryUrlSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: enableSqlQueryUrlData
+        })
+      );
+
+      superRender(<CloudBeaver />, undefined, {
+        routerProps: {
+          initialEntries: [
+            `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+          ]
+        }
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(window.location.href).not.toBe(
+        enableSqlQueryUrlData.sql_query_root_uri
+      );
+
+      window.location.href = savedHref;
+    });
   });
 });

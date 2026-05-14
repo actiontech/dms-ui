@@ -19,6 +19,7 @@ const mockUsePermissionData = {
   checkDbServicePermission: jest.fn(),
   checkPagePermission: jest.fn(),
   checkActionPermission: jest.fn(),
+  checkActionDisabledByBWP: jest.fn().mockReturnValue(false),
   parse2TableActionPermissions: jest.fn(),
   parse2TableToolbarActionPermissions: jest.fn(),
   checkProjectPermission: jest.fn()

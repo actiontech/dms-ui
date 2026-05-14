@@ -36,14 +36,14 @@ import {
   exportSqlManageV2FilterStatusEnum,
   exportSqlManageV2ExportFormatEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import SqlManagementColumn, {
+import sqlManagementColumn, {
   ExtraFilterMeta,
   ExtraFilterMetaType,
   type SqlManagementTableFilterParamType
 } from './column';
 import {
-  SqlManagementRowAction,
-  SqlManagementTableToolbarActions
+  sqlManagementRowAction,
+  sqlManagementTableToolbarActions
 } from './actions';
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
@@ -73,7 +73,7 @@ const SQLEEIndex = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { checkActionPermission } = usePermission();
+  const { checkActionPermission, checkActionDisabledByBWP } = usePermission();
   // api
   const { projectID, projectName } = useCurrentProject();
   const { username, userId, language } = useCurrentUser();
@@ -277,7 +277,7 @@ const SQLEEIndex = () => {
     [updateModalStatus, setBatchSelectData, selectedRowData]
   );
   const actions = useMemo(() => {
-    return SqlManagementRowAction(
+    return sqlManagementRowAction(
       openModal,
       jumpToAnalyze,
       onCreateSqlManagementException,
@@ -285,7 +285,8 @@ const SQLEEIndex = () => {
       language,
       checkActionPermission,
       onPushToCoding,
-      username
+      username,
+      checkActionDisabledByBWP
     );
   }, [
     jumpToAnalyze,
@@ -295,7 +296,8 @@ const SQLEEIndex = () => {
     language,
     checkActionPermission,
     onPushToCoding,
-    username
+    username,
+    checkActionDisabledByBWP
   ]);
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
@@ -322,7 +324,7 @@ const SQLEEIndex = () => {
   );
   const columns = useMemo(
     () =>
-      SqlManagementColumn(
+      sqlManagementColumn(
         projectID,
         updateRemark,
         openModal,
@@ -442,7 +444,7 @@ const SQLEEIndex = () => {
     const isCertainAssignees =
       sqlList?.list?.some((item) => item?.assignees?.includes(username)) ??
       false;
-    return SqlManagementTableToolbarActions(
+    return sqlManagementTableToolbarActions(
       isDisabled,
       batchSolveLoading,
       batchIgnoreLoading,

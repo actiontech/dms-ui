@@ -17,10 +17,19 @@ import {
 import CBOperationLogsList from './List/index';
 import { DownOutlined } from '@ant-design/icons';
 import { EnterpriseFeatureDisplay, useTypedQuery } from '@actiontech/shared';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
+  const { checkActionDisabledByBWP, checkActionPermission } = usePermission();
+
+  const isBusinessWriteDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER
+  );
+  const allowOpenCloudBeaver = checkActionPermission(
+    PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.OPEN_CLOUD_BEAVER
+  );
   const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
   const {
@@ -47,7 +56,8 @@ const CloudBeaver = () => {
       extractQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index)?.open_cloud_beaver ===
         String(true) &&
       !loading &&
-      data
+      data &&
+      !isBusinessWriteDisabled
     ) {
       let url = '';
 
@@ -61,9 +71,17 @@ const CloudBeaver = () => {
         window.location.href = url;
       }
     }
-  }, [extractQueries, loading, data]);
+  }, [extractQueries, loading, data, isBusinessWriteDisabled]);
 
   const renderActionButton = useMemo(() => {
+    if (isBusinessWriteDisabled) {
+      return (
+        <BasicButton disabled>
+          {t('dmsCloudBeaver.jumpToCloudBeaver')}
+        </BasicButton>
+      );
+    }
+
     if (loading) {
       return (
         <BasicButton loading type="primary">
@@ -126,7 +144,7 @@ const CloudBeaver = () => {
         </BasicButton>
       </Dropdown>
     );
-  }, [data, loading, t, handleMenuClick]);
+  }, [data, loading, t, handleMenuClick, isBusinessWriteDisabled]);
 
   // Determine if the main content should be displayed
   const isFeatureEnabled = useMemo(() => {
@@ -139,7 +157,11 @@ const CloudBeaver = () => {
     <>
       <PageHeader
         title={t('dmsCloudBeaver.pageTitle')}
-        extra={<EmptyBox if={!loading}>{renderActionButton}</EmptyBox>}
+        extra={
+          <EmptyBox if={!loading && allowOpenCloudBeaver}>
+            {renderActionButton}
+          </EmptyBox>
+        }
       />
       <Spin spinning={getOperationLogsLoading || loading}>
         <EmptyBox if={!isFeatureEnabled && !loading}>

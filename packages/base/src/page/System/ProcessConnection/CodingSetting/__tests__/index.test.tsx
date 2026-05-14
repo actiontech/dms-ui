@@ -48,8 +48,7 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
         [SystemRole.admin]: false,
         [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.auditAdministrator]: true,
-        [SystemRole.projectDirector]: true
+        [SystemRole.auditAdministrator]: true
       }
     });
     const { baseElement } = customRender();

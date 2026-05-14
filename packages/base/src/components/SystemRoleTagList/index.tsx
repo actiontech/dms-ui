@@ -17,8 +17,6 @@ const SystemRoleTagList: React.FC<SystemRoleTagListProps> = ({
   }
   const getPermissionTagColor = (uid: string): BasicTagProps['color'] => {
     switch (uid) {
-      case OpPermissionTypeUid.project_director:
-        return 'orange';
       case OpPermissionTypeUid.audit_administrator:
         return 'blue';
       case OpPermissionTypeUid.system_administrator:

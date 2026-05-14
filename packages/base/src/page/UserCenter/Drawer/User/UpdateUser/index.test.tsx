@@ -7,10 +7,7 @@ import { screen, act, cleanup, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import EmitterKey from '../../../../../data/EmitterKey';
-import {
-  getAllBySelector,
-  queryBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -28,8 +25,9 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
     updateUserSpy = userCenter.updateUser();
     opPermissionListSpy = userCenter.getOpPermissionsList();
 
-    (useSelector as jest.Mock).mockImplementation((e) =>
-      e({
+    (useSelector as jest.Mock).mockImplementation((selector) =>
+      selector({
+        user: { uid: 'session-user-not-editing-self' },
         userCenter: {
           modalStatus: { [ModalName.DMS_Update_User]: true },
           selectUser: userList[0]
@@ -74,7 +72,8 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
         phone: '',
         wxid: '',
         op_permission_uids: ['700001'],
-        is_disabled: true
+        is_disabled: true,
+        business_write_permission: undefined
       },
       user_uid: mockUserData.uid
     });
@@ -129,15 +128,17 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
         phone: '',
         wxid: '',
         op_permission_uids: ['700001'],
-        is_disabled: false
+        is_disabled: false,
+        business_write_permission: undefined
       },
       user_uid: mockUserData.uid
     });
   });
 
   it('should disable field in document when user name is admin', async () => {
-    (useSelector as jest.Mock).mockImplementation((e) =>
-      e({
+    (useSelector as jest.Mock).mockImplementation((selector) =>
+      selector({
+        user: { uid: 'session-user-not-editing-self' },
         userCenter: {
           modalStatus: { [ModalName.DMS_Update_User]: true },
           selectUser: userList[2]
@@ -151,10 +152,6 @@ describe('base/UserCenter/Drawer/UpdateUser', () => {
       target: { value: 'test@163.com' }
     });
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.mouseDown(screen.getByLabelText('平台角色'));
-    fireEvent.click(
-      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
-    );
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateUserSpy).toHaveBeenCalledTimes(1);

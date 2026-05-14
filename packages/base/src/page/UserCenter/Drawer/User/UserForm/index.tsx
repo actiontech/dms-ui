@@ -1,11 +1,17 @@
 import { IUserFormProps } from './index.type';
-import { Form, Switch } from 'antd';
+import { Form } from 'antd';
 import type { Rule } from 'antd/es/form';
-import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/dms-kit';
+import {
+  BasicInput,
+  BasicSelect,
+  BasicSwitch,
+  EmptyBox
+} from '@actiontech/dms-kit';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { phoneRule } from '@actiontech/dms-kit';
 import { BasicToolTip } from '@actiontech/dms-kit';
+import { OpPermissionTypeUid } from '@actiontech/dms-kit';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 const UserForm: React.FC<IUserFormProps> = (props) => {
@@ -15,6 +21,8 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
+
+  const currentOpPermissionUid = Form.useWatch('opPermissionUid', props.form);
 
   const getUsernameRules = (): Rule[] => {
     const rules: Rule[] = [
@@ -41,6 +49,20 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
     }
   }, [updateOpPermissionList, props.visible]);
+
+  const isSystemAdministrator = (uid: string | undefined): boolean => {
+    return uid === OpPermissionTypeUid.system_administrator;
+  };
+
+  const shouldShowBWP =
+    isSystemAdministrator(currentOpPermissionUid) || !!props.isEditingAdmin;
+
+  const handleSelectOpPermission = (value: string) => {
+    if (isSystemAdministrator(value)) {
+      props.form.setFieldValue('businessWritePermission', true);
+    }
+  };
+
   return (
     <Form form={props.form} layout="vertical">
       <Form.Item
@@ -62,7 +84,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           label={t('dmsUserCenter.user.userForm.needUpdatePassWord')}
           valuePropName="checked"
         >
-          <Switch />
+          <BasicSwitch />
         </Form.Item>
       </EmptyBox>
       <Form.Item
@@ -163,26 +185,41 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           })}
         />
       </Form.Item>
-      <Form.Item
-        name="opPermissionUid"
-        label={t('dmsUserCenter.user.userForm.opPermissions')}
-        rules={[
-          {
-            required: true,
-            message: t('common.form.placeholder.select', {
+      <EmptyBox if={!props.isEditingAdmin}>
+        <Form.Item
+          name="opPermissionUid"
+          label={t('dmsUserCenter.user.userForm.opPermissions')}
+          rules={[
+            {
+              required: !props.isEditingAdmin,
+              message: t('common.form.placeholder.select', {
+                name: t('dmsUserCenter.user.userForm.opPermissions')
+              })
+            }
+          ]}
+        >
+          <BasicSelect
+            loading={getOpPermissionListLoading}
+            placeholder={t('common.form.placeholder.select', {
               name: t('dmsUserCenter.user.userForm.opPermissions')
-            })
-          }
-        ]}
-      >
-        <BasicSelect
-          loading={getOpPermissionListLoading}
-          placeholder={t('common.form.placeholder.select', {
-            name: t('dmsUserCenter.user.userForm.opPermissions')
-          })}
-          options={opPermissionOptions}
-          optionFilterProp="label"
-        />
+            })}
+            options={opPermissionOptions}
+            optionFilterProp="label"
+            onChange={handleSelectOpPermission}
+          />
+        </Form.Item>
+      </EmptyBox>
+      <Form.Item noStyle>
+        <EmptyBox if={shouldShowBWP}>
+          <Form.Item
+            name="businessWritePermission"
+            label={t('dmsUserCenter.user.userForm.businessWritePermission')}
+            valuePropName="checked"
+            extra={t('dmsUserCenter.user.userForm.businessWritePermissionDesc')}
+          >
+            <BasicSwitch />
+          </Form.Item>
+        </EmptyBox>
       </Form.Item>
       <EmptyBox if={props.isUpdate && !props.isAdmin}>
         <Form.Item
@@ -198,7 +235,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           }
           valuePropName="checked"
         >
-          <Switch />
+          <BasicSwitch />
         </Form.Item>
       </EmptyBox>
     </Form>

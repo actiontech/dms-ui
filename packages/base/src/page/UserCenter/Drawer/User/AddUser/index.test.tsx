@@ -93,7 +93,8 @@ describe('base/UserCenter/Drawer/AddUser', () => {
         phone: '13312341234',
         wxid: 'qwe',
         op_permission_uids: ['700001'],
-        uid: `${currentTime.format('YYYYMMDDHHmmssSSS')}`
+        uid: `${currentTime.format('YYYYMMDDHHmmssSSS')}`,
+        business_write_permission: undefined
       }
     });
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

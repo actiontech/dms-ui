@@ -179,7 +179,6 @@ describe('base/UserCenter/UserList', () => {
         [SystemRole.admin]: false,
         [SystemRole.auditAdministrator]: true,
         [SystemRole.systemAdministrator]: true,
-        [SystemRole.projectDirector]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
@@ -199,7 +198,6 @@ describe('base/UserCenter/UserList', () => {
         [SystemRole.admin]: false,
         [SystemRole.auditAdministrator]: true,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: true
       }
     });

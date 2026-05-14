@@ -270,7 +270,6 @@ describe('sqle/VersionManagement/Detail', () => {
         [SystemRole.admin]: false,
         [SystemRole.auditAdministrator]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: false
       }
     });

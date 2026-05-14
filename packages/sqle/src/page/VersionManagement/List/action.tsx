@@ -11,7 +11,7 @@ import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/servi
 import { ActiontechTableActionsConfig } from '@actiontech/dms-kit/es/components/ActiontechTable/index.type';
 import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-export const VersionManagementPageHeaderActions = (
+export const versionManagementPageHeaderActions = (
   projectID: string
 ): Record<'add', ReactNode> => {
   return {
@@ -35,24 +35,36 @@ export const VersionManagementPageHeaderActions = (
     )
   };
 };
-export const VersionManagementTableActions = ({
+export const versionManagementTableActions = ({
   onEdit,
   onDelete,
   onLock,
-  checkActionPermission
+  checkActionPermission,
+  checkActionDisabledByBWP
 }: {
   onEdit: (id?: number) => void;
   onDelete: (id?: number) => void;
   onLock: (id?: number) => void;
   checkActionPermission: (permission: PermissionsConstantType) => boolean;
+  checkActionDisabledByBWP: (permission: PermissionsConstantType) => boolean;
 }): ActiontechTableActionsConfig<ISqlVersionResV1> => {
+  const editBwpDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT
+  );
+  const lockBwpDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK
+  );
+  const deleteBwpDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE
+  );
   return {
     buttons: [
       {
         key: 'edit-button',
         text: t('common.edit'),
         buttonProps: (record) => ({
-          onClick: () => onEdit(record?.version_id)
+          onClick: () => onEdit(record?.version_id),
+          disabled: editBwpDisabled
         }),
         permissions: (record) =>
           record?.status === SqlVersionResV1StatusEnum.is_being_released &&
@@ -67,6 +79,9 @@ export const VersionManagementTableActions = ({
           title: t('versionManagement.list.action.lockConfirm'),
           onConfirm: () => onLock(record?.version_id)
         }),
+        buttonProps: () => ({
+          disabled: lockBwpDisabled
+        }),
         permissions: (record) =>
           !!record?.lockable &&
           record?.status !== SqlVersionResV1StatusEnum.locked &&
@@ -78,7 +93,8 @@ export const VersionManagementTableActions = ({
         key: 'delete-button',
         text: t('common.delete'),
         buttonProps: () => ({
-          danger: true
+          danger: true,
+          disabled: deleteBwpDisabled
         }),
         confirm: (record) => ({
           title: t('versionManagement.list.action.deleteConfirm'),

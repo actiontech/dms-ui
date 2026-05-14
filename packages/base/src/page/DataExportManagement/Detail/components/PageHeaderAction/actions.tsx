@@ -27,10 +27,14 @@ export const CloseWorkflowAction = (closeWorkflowButtonMeta: ActionMeta) => {
 };
 export const RejectWorkflowAction = (rejectWorkflowButtonMeta: ActionMeta) => {
   return (
-    <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT}>
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT}
+      skipBWPCheck
+    >
       <ActionButton
         text={t('dmsDataExport.detail.action.reject.text')}
         hidden={rejectWorkflowButtonMeta.hidden}
+        disabled={rejectWorkflowButtonMeta.disabled}
         onClick={rejectWorkflowButtonMeta.action}
       />
     </PermissionControl>
@@ -42,10 +46,12 @@ export const ApproveWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE}
+      skipBWPCheck
     >
       <ActionButton
         text={t('dmsDataExport.detail.action.approve.text')}
         hidden={approveWorkflowButtonMeta.hidden}
+        disabled={approveWorkflowButtonMeta.disabled}
         onClick={approveWorkflowButtonMeta.action}
         loading={approveWorkflowButtonMeta.loading}
         type="primary"
@@ -57,10 +63,13 @@ export const ExecuteWorkflowAction = (executeExportButtonMeta: ActionMeta) => {
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE}
+      skipBWPCheck
     >
       <ActionButton
         text={t('dmsDataExport.detail.action.execute.text')}
-        disabled={executeExportButtonMeta.loading}
+        disabled={
+          executeExportButtonMeta.loading || executeExportButtonMeta.disabled
+        }
         loading={executeExportButtonMeta.loading}
         type="primary"
         actionType="confirm"

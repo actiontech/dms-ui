@@ -4,7 +4,11 @@ import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { Card, Space, Typography } from 'antd';
 import type { Node, NodeProps } from '@xyflow/react';
 import { StageNodeStyleWrapper } from '../../style';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  usePermission,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import WorkflowStatus from '../../../../SqlExecWorkflow/List/components/WorkflowStatus';
@@ -32,6 +36,16 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   } = data;
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isVersionEditBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT
+  );
+  const isVersionAddBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD
+  );
+  const isWorkflowCreateBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE
+  );
   const displayWorkflow = useMemo(() => {
     // 版本初始化不存在工单时 统一展示一个空占位
     if (!workflowList?.length) {
@@ -99,6 +113,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                     <BasicButton
                       size="small"
                       onClick={() => onRetry?.(workflow?.workflow_id ?? '')}
+                      disabled={isVersionEditBWPDisabled}
                     >
                       {t('versionManagement.stageNode.updateInfo')}
                     </BasicButton>
@@ -107,6 +122,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                       onClick={() =>
                         onOfflineExecute?.(workflow.workflow_id ?? '')
                       }
+                      disabled={isVersionEditBWPDisabled}
                     >
                       {t('versionManagement.stageNode.offlineExecuted')}
                     </BasicButton>
@@ -120,14 +136,20 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
           <BasicButton
             type="primary"
             onClick={() => onAssociateWorkflow?.(data.stageId ?? 0)}
-            disabled={versionStatus === SqlVersionDetailResV1StatusEnum.locked}
+            disabled={
+              isVersionAddBWPDisabled ||
+              versionStatus === SqlVersionDetailResV1StatusEnum.locked
+            }
           >
             {t('versionManagement.stageNode.addExistingWorkflow')}
           </BasicButton>
           <BasicButton
             type="primary"
             onClick={onCreateNewWorkflow}
-            disabled={versionStatus === SqlVersionDetailResV1StatusEnum.locked}
+            disabled={
+              isWorkflowCreateBWPDisabled ||
+              versionStatus === SqlVersionDetailResV1StatusEnum.locked
+            }
           >
             {t('versionManagement.stageNode.createWorkflow')}
           </BasicButton>

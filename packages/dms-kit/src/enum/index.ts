@@ -30,8 +30,7 @@ export enum SystemRole {
   admin = 'admin',
   certainProjectManager = 'certainProjectManager',
   auditAdministrator = 'auditAdministrator',
-  systemAdministrator = 'systemAdministrator',
-  projectDirector = 'projectDirector'
+  systemAdministrator = 'systemAdministrator'
 }
 
 export type UserRolesType = {
@@ -74,7 +73,6 @@ export enum StorageKey {
  * 后端暂时无法在swagger中暴露OpPermissionType的映射，但权限对应的uid一般不会变化，因此前端先保存一份。
  */
 export enum OpPermissionTypeUid {
-  'project_director' = '700001', // 项目总监；创建项目的用户自动拥有该项目管理权限 700001
   'project_admin' = '700002', // 项目管理；拥有该权限的用户可以管理项目下的所有资源 700002
   'create_workflow' = '700003', // 创建/编辑工单；拥有该权限的用户可以创建/编辑工单 700003
   'audit_workflow' = '700004', // 审核/驳回工单；拥有该权限的用户可以审核/驳回工单 700004

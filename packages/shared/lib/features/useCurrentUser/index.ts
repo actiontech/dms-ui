@@ -24,7 +24,8 @@ const useCurrentUser = () => {
     isUserInfoFetched,
     userId,
     language,
-    systemPreference
+    systemPreference,
+    businessWritePermission
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -35,7 +36,8 @@ const useCurrentUser = () => {
       isUserInfoFetched: state.user.isUserInfoFetched,
       userId: state.user.uid,
       language: state.user.language,
-      systemPreference: state.user.systemPreference
+      systemPreference: state.user.systemPreference,
+      businessWritePermission: state.user.businessWritePermission
     };
   });
 
@@ -76,9 +78,6 @@ const useCurrentUser = () => {
       ),
       [SystemRole.systemAdministrator]: managementPermissions.some(
         (v) => v.uid === OpPermissionTypeUid.system_administrator
-      ),
-      [SystemRole.projectDirector]: managementPermissions.some(
-        (v) => v.uid === OpPermissionTypeUid.project_director
       )
     };
   }, [isAdmin, isCertainProjectManager, managementPermissions]);
@@ -98,7 +97,8 @@ const useCurrentUser = () => {
     userRoles,
     language,
     updateLanguage,
-    systemPreference
+    systemPreference,
+    businessWritePermission
   };
 };
 export default useCurrentUser;

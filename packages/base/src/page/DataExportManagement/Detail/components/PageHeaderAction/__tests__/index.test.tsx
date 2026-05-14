@@ -10,6 +10,7 @@ import {
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
 import { fireEvent, screen } from '@testing-library/react';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('test base/DataExport/Detail/PageHeaderAction', () => {
   beforeEach(() => {
@@ -75,5 +76,52 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     expect(
       mockActionButtonStateData.executeExportButtonMeta.action
     ).toHaveBeenCalledTimes(1);
+  });
+
+  describe('PermissionControl / usePermission', () => {
+    let usePermissionSpy: jest.SpyInstance | undefined;
+
+    afterEach(() => {
+      usePermissionSpy?.mockRestore();
+      usePermissionSpy = undefined;
+    });
+
+    it('should hide workflow action buttons when checkActionPermission returns false', () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(false),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(false)
+        },
+        { useSpyOnMockHooks: true }
+      );
+
+      baseSuperRender(<ExportDetailPageHeaderAction />);
+
+      expect(screen.queryByText('关闭工单')).not.toBeInTheDocument();
+      expect(screen.queryByText('审核通过')).not.toBeInTheDocument();
+      expect(screen.queryByText('审核驳回')).not.toBeInTheDocument();
+      expect(screen.queryByText('执行导出')).not.toBeInTheDocument();
+      expect(screen.getByText('工单详情')).toBeInTheDocument();
+    });
+
+    it('should render approve button as disabled when workflow meta has disabled true', () => {
+      usePermissionSpy = mockUsePermission(
+        {
+          checkActionPermission: jest.fn().mockReturnValue(true),
+          checkActionDisabledByBWP: jest.fn().mockReturnValue(false)
+        },
+        { useSpyOnMockHooks: true }
+      );
+      mockUseActionButtonState({
+        approveWorkflowButtonMeta: {
+          ...mockActionButtonStateData.approveWorkflowButtonMeta,
+          disabled: true
+        }
+      });
+
+      baseSuperRender(<ExportDetailPageHeaderAction />);
+
+      expect(screen.getByText('审核通过').closest('button')).toBeDisabled();
+    });
   });
 });

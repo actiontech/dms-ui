@@ -149,8 +149,7 @@ describe('sqle/OperationRecord/List', () => {
         admin: false,
         certainProjectManager: true,
         systemAdministrator: false,
-        auditAdministrator: false,
-        projectDirector: false
+        auditAdministrator: false
       }
     });
     const operationRecordListSpy = operationRecord.getOperationRecordList();

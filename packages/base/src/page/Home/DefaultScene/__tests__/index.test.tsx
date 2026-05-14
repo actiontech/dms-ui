@@ -39,8 +39,7 @@ describe('test base/home/DefaultScene', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.systemAdministrator]: false,
-        [SystemRole.auditAdministrator]: false,
-        [SystemRole.projectDirector]: false
+        [SystemRole.auditAdministrator]: false
       }
     });
 

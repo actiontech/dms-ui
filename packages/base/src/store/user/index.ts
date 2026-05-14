@@ -27,6 +27,7 @@ type UserReduxState = {
   language: SupportLanguage;
   systemPreference?: GetUserSystemEnum;
   isLoggingIn: boolean;
+  businessWritePermission: boolean;
 };
 
 const initialState: UserReduxState = {
@@ -46,7 +47,8 @@ const initialState: UserReduxState = {
     DEFAULT_LANGUAGE
   ) as SupportLanguage,
   systemPreference: undefined,
-  isLoggingIn: false
+  isLoggingIn: false,
+  businessWritePermission: true
 };
 
 const user = createSlice({
@@ -123,6 +125,12 @@ const user = createSlice({
     },
     updateIsLoggingIn: (state, { payload }: PayloadAction<boolean>) => {
       state.isLoggingIn = payload;
+    },
+    updateBusinessWritePermission: (
+      state,
+      { payload }: PayloadAction<boolean>
+    ) => {
+      state.businessWritePermission = payload;
     }
   }
 });
@@ -137,7 +145,8 @@ export const {
   updateUserUid,
   updateUserInfoFetchStatus,
   updateSystemPreference,
-  updateIsLoggingIn
+  updateIsLoggingIn,
+  updateBusinessWritePermission
 } = user.actions;
 
 export default user.reducer;

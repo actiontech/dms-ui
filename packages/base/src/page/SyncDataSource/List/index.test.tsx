@@ -110,7 +110,6 @@ describe('page/SyncDataSource/SyncTaskList', () => {
         [SystemRole.admin]: false,
         [SystemRole.systemAdministrator]: false,
         [SystemRole.auditAdministrator]: false,
-        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: true
       }
     });

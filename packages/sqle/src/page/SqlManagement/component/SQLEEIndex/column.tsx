@@ -100,7 +100,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ]
   ]);
 };
-const SqlManagementColumn: (
+const sqlManagementColumn: (
   projectID: string,
   updateRemark: (id: number, remark: string) => void,
   openModal: (name: ModalName, row?: ISqlManage) => void,
@@ -386,4 +386,4 @@ const SqlManagementColumn: (
     }
   ];
 };
-export default SqlManagementColumn;
+export default sqlManagementColumn;

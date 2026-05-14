@@ -50,11 +50,13 @@ export const BatchRejectWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.rejectFull')}
         onClick={openRejectModal}
         hidden={rejectWorkflowButtonMeta.hidden}
+        disabled={rejectWorkflowButtonMeta.disabled}
       />
     </PermissionControl>
   );
@@ -65,11 +67,15 @@ export const ApproveWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.sqlReview')}
         hidden={approveWorkflowButtonMeta.hidden}
-        disabled={approveWorkflowButtonMeta.loading}
+        disabled={
+          approveWorkflowButtonMeta.loading ||
+          approveWorkflowButtonMeta.disabled
+        }
         loading={approveWorkflowButtonMeta.loading}
         onClick={() => approveWorkflowButtonMeta.action()}
         type="primary"
@@ -85,11 +91,16 @@ export const BatchExecWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.batchSqlExecute')}
         hidden={batchExecutingWorkflowButtonMeta.hidden}
-        disabled={batchExecutingWorkflowButtonMeta.loading || !executable}
+        disabled={
+          batchExecutingWorkflowButtonMeta.loading ||
+          !executable ||
+          batchExecutingWorkflowButtonMeta.disabled
+        }
         loading={batchExecutingWorkflowButtonMeta.loading}
         type="primary"
         actionType={executable ? 'confirm' : 'tooltip'}
@@ -114,11 +125,16 @@ export const MarkManuallyExecWorkflowAction = (
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC}
+      skipBWPCheck
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.markManually')}
         hidden={manualExecuteWorkflowButtonMeta.hidden}
-        disabled={manualExecuteWorkflowButtonMeta.loading || !executable}
+        disabled={
+          manualExecuteWorkflowButtonMeta.loading ||
+          !executable ||
+          manualExecuteWorkflowButtonMeta.disabled
+        }
         loading={manualExecuteWorkflowButtonMeta.loading}
         type="primary"
         actionType={executable ? 'confirm' : 'tooltip'}

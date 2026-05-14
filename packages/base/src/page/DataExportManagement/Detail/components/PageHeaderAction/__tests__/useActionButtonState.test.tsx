@@ -12,6 +12,8 @@ import {
 import { IGetDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import { GetDataExportWorkflowResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 const notExistCurrentStepWorkflowInfo: IGetDataExportWorkflow = {
   ...GetDataExportWorkflowResponseData,
@@ -64,7 +66,17 @@ describe('test useActionButtonState', () => {
     destroy: jest.fn()
   };
 
+  let checkActionDisabledByBWPMock: jest.Mock;
+  let usePermissionSpy: jest.SpyInstance | undefined;
+
   beforeEach(() => {
+    checkActionDisabledByBWPMock = jest.fn().mockReturnValue(false);
+    usePermissionSpy = mockUsePermission(
+      {
+        checkActionDisabledByBWP: checkActionDisabledByBWPMock
+      },
+      { useSpyOnMockHooks: true }
+    );
     mockUseCurrentUser({
       userId: '700200'
     });
@@ -72,6 +84,8 @@ describe('test useActionButtonState', () => {
     mockUseDataExportDetailReduxManage();
   });
   afterEach(() => {
+    usePermissionSpy?.mockRestore();
+    usePermissionSpy = undefined;
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
@@ -246,5 +260,58 @@ describe('test useActionButtonState', () => {
     expect(mockExportDetailActionData.executeExport).toHaveBeenCalledWith(
       workflowID
     );
+  });
+
+  it('should set approveWorkflowButtonMeta.disabled when BWP blocks APPROVE permission', () => {
+    checkActionDisabledByBWPMock.mockImplementation(
+      (permission: string) =>
+        permission === PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE
+    );
+    mockUseDataExportDetailReduxManage({
+      workflowInfo: waitForApproveStatusWorkflow
+    });
+    const { result } = renderHook(() => useActionButtonState(messageApiSpy));
+    expect(result.current.approveWorkflowButtonMeta.disabled).toBe(true);
+    expect(result.current.rejectWorkflowButtonMeta.disabled).toBe(false);
+    expect(result.current.executeExportButtonMeta.disabled).toBe(false);
+  });
+
+  it('should set rejectWorkflowButtonMeta.disabled when BWP blocks REJECT permission', () => {
+    checkActionDisabledByBWPMock.mockImplementation(
+      (permission: string) =>
+        permission === PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT
+    );
+    mockUseDataExportDetailReduxManage({
+      workflowInfo: waitForApproveStatusWorkflow
+    });
+    const { result } = renderHook(() => useActionButtonState(messageApiSpy));
+    expect(result.current.approveWorkflowButtonMeta.disabled).toBe(false);
+    expect(result.current.rejectWorkflowButtonMeta.disabled).toBe(true);
+    expect(result.current.executeExportButtonMeta.disabled).toBe(false);
+  });
+
+  it('should set executeExportButtonMeta.disabled when BWP blocks EXECUTE permission', () => {
+    checkActionDisabledByBWPMock.mockImplementation(
+      (permission: string) =>
+        permission === PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE
+    );
+    mockUseDataExportDetailReduxManage({
+      workflowInfo: waitForExportStatusWorkflow
+    });
+    const { result } = renderHook(() => useActionButtonState(messageApiSpy));
+    expect(result.current.approveWorkflowButtonMeta.disabled).toBe(false);
+    expect(result.current.rejectWorkflowButtonMeta.disabled).toBe(false);
+    expect(result.current.executeExportButtonMeta.disabled).toBe(true);
+  });
+
+  it('should set disabled on approve, reject and execute metas when checkActionDisabledByBWP always returns true', () => {
+    checkActionDisabledByBWPMock.mockReturnValue(true);
+    mockUseDataExportDetailReduxManage({
+      workflowInfo: waitForApproveStatusWorkflow
+    });
+    const { result } = renderHook(() => useActionButtonState(messageApiSpy));
+    expect(result.current.approveWorkflowButtonMeta.disabled).toBe(true);
+    expect(result.current.rejectWorkflowButtonMeta.disabled).toBe(true);
+    expect(result.current.executeExportButtonMeta.disabled).toBe(true);
   });
 });

@@ -8,12 +8,22 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { enableSqlQueryUrlData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { baseSuperRender } from '../../testUtils/superRender';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/dms-kit';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil';
 
 describe('test base/page/CloudBeaver', () => {
   let getSqlQueryUrlSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     getSqlQueryUrlSpy = cloudBeaver.getSqlQueryUrl();
+    mockUsePermission(
+      {
+        checkActionDisabledByBWP: jest.fn().mockReturnValue(false),
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
   });
 
   afterEach(() => {

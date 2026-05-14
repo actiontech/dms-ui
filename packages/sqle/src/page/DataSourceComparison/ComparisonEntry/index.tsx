@@ -39,10 +39,15 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ModifiedSqlDrawer from './component/ModifiedSqlDrawer';
 import { Key, useMemo, useState, useRef } from 'react';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 const ComparisonEntry: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isBusinessWriteDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON.CREATE_MODIFIED_SQL_WORKFLOW
+  );
   const [messageApi, messageContextHolder] = message.useMessage();
   const treeRef = useRef<ComparisonTreeNodeRef>(null);
   const [
@@ -363,7 +368,7 @@ const ComparisonEntry: React.FC = () => {
           className="full-width-element"
           type="primary"
           onClick={executeComparison}
-          disabled={executeComparisonPending}
+          disabled={executeComparisonPending || isBusinessWriteDisabled}
           loading={executeComparisonPending}
           style={{
             marginTop: 16
@@ -442,7 +447,7 @@ const ComparisonEntry: React.FC = () => {
               )}
 
               {filteredWithoutParentNodeKey(checkedObjectNodeKeys).length ===
-              0 ? (
+                0 || isBusinessWriteDisabled ? (
                 <BasicToolTip
                   title={t(
                     'dataSourceComparison.entry.generateSQLDisabledTips'

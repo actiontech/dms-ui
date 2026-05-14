@@ -18,7 +18,8 @@ import {
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
-import { SystemRole } from '@actiontech/dms-kit';
+import { SystemRole, OpPermissionTypeUid } from '@actiontech/dms-kit';
+import useUserInfo from '@actiontech/shared/lib/features/useUserInfo';
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
   const { t } = useTranslation();
@@ -30,7 +31,12 @@ const UpdateUser = () => {
   const currentUser = useSelector<IReduxState, IListUser | null>(
     (state) => state.userCenter.selectUser
   );
+  // Current logged-in user's UID (from Redux store)
+  const currentLoginUserId = useSelector<IReduxState, string>(
+    (state) => state.user.uid
+  );
   const [messageApi, contextHolder] = message.useMessage();
+  const { updateUserInfo } = useUserInfo();
   const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
@@ -40,8 +46,13 @@ const UpdateUser = () => {
       })
     );
   }, [dispatch, form]);
+  const isEditingAdmin = currentUser?.name === SystemRole.admin;
+
   const updateUser = async () => {
     const values = await form.validateFields();
+    const isRoleSysAdmin =
+      values.opPermissionUid === OpPermissionTypeUid.system_administrator;
+    const shouldSendBWP = isRoleSysAdmin || isEditingAdmin;
     const userParams: IUpdateUser = {
       password: values.passwordConfirm,
       email: values.email ?? '',
@@ -50,7 +61,10 @@ const UpdateUser = () => {
       op_permission_uids: values.opPermissionUid
         ? [values.opPermissionUid]
         : [],
-      is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
+      is_disabled: values.username !== 'admin' ? !!values.isDisabled : false,
+      business_write_permission: shouldSendBWP
+        ? !!values.businessWritePermission
+        : undefined
     };
     setTrue();
     User.UpdateUser({
@@ -66,6 +80,12 @@ const UpdateUser = () => {
             })
           );
           EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
+          // If the updated user is the currently logged-in user, refresh user
+          // info in the Redux store so changes (e.g. BWP toggle) take effect
+          // immediately without requiring a full page reload.
+          if (currentUser?.uid && currentUser.uid === currentLoginUserId) {
+            updateUserInfo();
+          }
         }
       })
       .finally(() => {
@@ -82,9 +102,8 @@ const UpdateUser = () => {
         opPermissionUid: currentUser?.op_permissions?.map(
           (v) => v.uid ?? ''
         )?.[0],
-        isDisabled:
-          (currentUser?.stat ?? ListUserStatEnum.未知) ===
-          ListUserStatEnum.被禁用
+        isDisabled: currentUser?.stat === ListUserStatEnum.被禁用,
+        businessWritePermission: !!currentUser?.business_write_permission
       });
     }
   }, [visible, currentUser, form]);
@@ -114,7 +133,8 @@ const UpdateUser = () => {
         form={form}
         visible={visible}
         isUpdate={true}
-        isAdmin={currentUser?.name === SystemRole.admin}
+        isAdmin={isEditingAdmin}
+        isEditingAdmin={isEditingAdmin}
       />
     </BasicDrawer>
   );

@@ -28,7 +28,10 @@ export default {
       opPermissions: 'Platform management permissions',
       isDisabled: 'Disabled',
       disabledTips:
-        'When the user is disabled, the user will not be able to log in'
+        'When the user is disabled, the user will not be able to log in',
+      businessWritePermission: 'Business write permission',
+      businessWritePermissionDesc:
+        'When disabled, this account retains only resource configuration and read-only access, and will no longer participate in business writes or notifications.'
     },
     createUser: {
       createSuccessTips: 'Add user "{{name}}" successfully'

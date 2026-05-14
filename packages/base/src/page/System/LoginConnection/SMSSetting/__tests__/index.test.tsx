@@ -47,8 +47,7 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
         [SystemRole.admin]: false,
         [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.auditAdministrator]: true,
-        [SystemRole.projectDirector]: true
+        [SystemRole.auditAdministrator]: true
       }
     });
     customRender();

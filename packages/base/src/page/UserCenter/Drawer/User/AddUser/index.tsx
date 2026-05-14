@@ -11,7 +11,11 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { BasicDrawer, BasicButton } from '@actiontech/dms-kit';
+import {
+  BasicDrawer,
+  BasicButton,
+  OpPermissionTypeUid
+} from '@actiontech/dms-kit';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import dayjs from 'dayjs';
 const AddUser = () => {
@@ -34,6 +38,8 @@ const AddUser = () => {
   }, [dispatch, form]);
   const addUser = useCallback(async () => {
     const values = await form.validateFields();
+    const isRoleSysAdmin =
+      values.opPermissionUid === OpPermissionTypeUid.system_administrator;
     setTrue();
     User.AddUser({
       user: {
@@ -45,7 +51,10 @@ const AddUser = () => {
         op_permission_uids: values.opPermissionUid
           ? [values.opPermissionUid]
           : [],
-        uid: dayjs().format('YYYYMMDDHHmmssSSS')
+        uid: dayjs().format('YYYYMMDDHHmmssSSS'),
+        business_write_permission: isRoleSysAdmin
+          ? !!values.businessWritePermission
+          : undefined
       }
     })
       .then((res) => {

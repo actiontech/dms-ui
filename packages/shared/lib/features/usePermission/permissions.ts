@@ -97,6 +97,7 @@ export const PERMISSIONS = {
         }
       },
       CLOUD_BEAVER: {
+        OPEN_CLOUD_BEAVER: 'action:open_cloud_beaver',
         EXPORT: 'action:export_cb_operation_log',
         CREATE_WHITE_LIST: 'action:cb_create_white_list'
       },

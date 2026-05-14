@@ -2,7 +2,11 @@ import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import useExportDetailAction from '../../hooks/useExportDetailAction';
 import { useMemo } from 'react';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import {
+  useCurrentUser,
+  usePermission,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
 import { ActionMeta } from './index.type';
 
@@ -13,6 +17,16 @@ const useActionButtonState: (messageApi: MessageInstance) => {
   executeExportButtonMeta: ActionMeta;
 } = (messageApi) => {
   const { userId } = useCurrentUser();
+  const { checkActionDisabledByBWP } = usePermission();
+  const isExportApproveBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE
+  );
+  const isExportRejectBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT
+  );
+  const isExportExecuteBWPDisabled = checkActionDisabledByBWP(
+    PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE
+  );
   const { workflowInfo, updateWorkflowRejectOpen } =
     useDataExportDetailReduxManage();
 
@@ -95,17 +109,20 @@ const useActionButtonState: (messageApi: MessageInstance) => {
     approveWorkflowButtonMeta: {
       action: () => approveWorkflow(workflowID),
       hidden: !approveWorkflowButtonVisibility,
-      loading: approveWorkflowLoading
+      loading: approveWorkflowLoading,
+      disabled: isExportApproveBWPDisabled
     },
     rejectWorkflowButtonMeta: {
       action: () => updateWorkflowRejectOpen(true),
       hidden: !rejectWorkflowButtonVisibility,
-      loading: false
+      loading: false,
+      disabled: isExportRejectBWPDisabled
     },
     executeExportButtonMeta: {
       action: () => executeExport(workflowID),
       hidden: !executingButtonVisibility,
-      loading: executeExportLoading
+      loading: executeExportLoading,
+      disabled: isExportExecuteBWPDisabled
     }
   };
 };

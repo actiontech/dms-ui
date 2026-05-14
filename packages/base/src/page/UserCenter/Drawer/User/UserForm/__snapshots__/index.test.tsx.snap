@@ -75,7 +75,7 @@ exports[`base/UserCenter/Drawer/UserForm should match snapshot when isAdmin is t
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="needUpdatePassWord"
                   role="switch"
                   type="button"
@@ -784,7 +784,7 @@ exports[`base/UserCenter/Drawer/UserForm should match snapshot when isUpdate is 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="needUpdatePassWord"
                   role="switch"
                   type="button"
@@ -1078,7 +1078,7 @@ exports[`base/UserCenter/Drawer/UserForm should match snapshot when isUpdate is 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isDisabled"
                   role="switch"
                   type="button"
