@@ -16,8 +16,9 @@ dist
 # testing
 /ce_coverage
 /coverage
-**/coverage/**
 /report.json
+/coverage-merged
+/coverage-merged.json
 
 # production
 /build
@@ -53,5 +54,3 @@ ftp-data
 
 
 /scripts/cli/dms-kit-publish/docs
-
-*.turbo

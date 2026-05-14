@@ -9,15 +9,7 @@ type PreviewOptions = BasicMDEditorProps['previewOptions'];
 
 export const markdownPreviewOptions: PreviewOptions = {
   components: {
-    code: ({
-      children,
-      className,
-      node
-    }: {
-      children: string;
-      className: string;
-      node: { children: Parameters<typeof getCodeString>[0] };
-    }) => {
+    code: ({ children, className, ...props }) => {
       /**
      * label 代码块
      * Example:
@@ -31,8 +23,11 @@ export const markdownPreviewOptions: PreviewOptions = {
       if (isArray(match) && !!match[1]) {
         return <LabelPreview source={match[1]} />;
       }
+
       const code =
-        node && node.children ? getCodeString(node.children) : children;
+        props.node && props.node.children
+          ? getCodeString(props.node.children)
+          : children;
       /**
      * sql_diff 代码块
      * Example:
