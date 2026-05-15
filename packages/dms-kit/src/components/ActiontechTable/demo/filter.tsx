@@ -201,7 +201,7 @@ const FilterDemo: React.FC = () => {
   return (
     <ConfigProvider>
       <>
-        {/* 
+        {/*
           使用独立的 TableToolbar 组件
           注意：在 demo 环境中，组件外层有容器包裹，需要手动设置 width: '100%' 
           在实际项目中使用时，如果也遇到宽度不足的问题，请添加相同的 style
@@ -216,7 +216,7 @@ const FilterDemo: React.FC = () => {
           style={{ width: '100%' }}
         />
 
-        {/* 
+        {/*
           使用独立的 TableFilterContainer 组件
           同样需要设置 width: '100%' 确保筛选容器占满整行
         */}

@@ -45,5 +45,4 @@ export interface IGetCBOperationLogTipsParams {
   project_uid: string;
 }
 
-export interface IGetCBOperationLogTipsReturn
-  extends IGetCBOperationLogTipsReply {}
+export interface IGetCBOperationLogTipsReturn extends IGetCBOperationLogTipsReply {}

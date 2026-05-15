@@ -26,8 +26,7 @@ export type ExpandedBackupSqlType = IBackupSqlData & {
 
 export type TableRowSelection<T extends object> = TableProps<T>['rowSelection'];
 
-export interface TableTransferProps
-  extends TransferProps<ExpandedBackupSqlType> {
+export interface TableTransferProps extends TransferProps<ExpandedBackupSqlType> {
   dataSource: ExpandedBackupSqlType[];
   leftColumns: TableColumnsType<ExpandedBackupSqlType>;
   rightColumns: TableColumnsType<ExpandedBackupSqlType>;

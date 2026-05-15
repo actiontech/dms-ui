@@ -64,7 +64,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
                   </span>
                 </button>
                 <div
-                  class="toggle-button-wrapper css-14po76i"
+                  class="toggle-button-wrapper css-urh9a6"
                 >
                   查看差异
                 </div>
@@ -225,7 +225,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
           </span>
         </button>
         <div
-          class="toggle-button-wrapper css-1la9g0j"
+          class="toggle-button-wrapper css-uz37d1"
         >
           查看差异
         </div>
@@ -391,7 +391,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
           </span>
         </button>
         <div
-          class="toggle-button-wrapper css-14po76i"
+          class="toggle-button-wrapper css-urh9a6"
         >
           查看差异
         </div>

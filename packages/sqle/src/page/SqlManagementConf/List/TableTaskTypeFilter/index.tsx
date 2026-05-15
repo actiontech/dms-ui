@@ -47,7 +47,7 @@ const TableTaskTypeFilter = (props: TableTaskTypeFilterProps) => {
       const currentDesc =
         desc && /Top\s+SQL$/i.test(desc)
           ? 'Top SQL'
-          : desc ?? 'custom_action_desc';
+          : (desc ?? 'custom_action_desc');
       if (currentDesc) {
         dataTypeSource.add(currentDesc);
       }
@@ -194,7 +194,7 @@ const TableTaskTypeFilter = (props: TableTaskTypeFilterProps) => {
     const comTaskType =
       taskType && taskType !== PageDefaultEnum.allTypeVal
         ? Array.isArray(relationalData[taskType])
-          ? relationalData[taskType][0]?.type ?? ''
+          ? (relationalData[taskType][0]?.type ?? '')
           : ''
         : '';
     updateParams({

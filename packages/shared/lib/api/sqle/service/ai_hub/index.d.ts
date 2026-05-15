@@ -7,11 +7,8 @@ import {
 
 export interface IGetAIHubBannerReturn extends IGetAIHubBannerResp {}
 
-export interface IGetAIHubExecutionDataReturn
-  extends IGetAIHubExecutionDataResp {}
+export interface IGetAIHubExecutionDataReturn extends IGetAIHubExecutionDataResp {}
 
-export interface IGetAIHubManagementViewReturn
-  extends IGetAIHubManagementViewResp {}
+export interface IGetAIHubManagementViewReturn extends IGetAIHubManagementViewResp {}
 
-export interface IGetAIHubStrategicValueReturn
-  extends IGetAIHubStrategicValueResp {}
+export interface IGetAIHubStrategicValueReturn extends IGetAIHubStrategicValueResp {}

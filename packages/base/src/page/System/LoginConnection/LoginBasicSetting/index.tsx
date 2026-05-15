@@ -55,8 +55,8 @@ const LoginBasicSetting: React.FC = () => {
     const confirmTitle = isPasswordLoginDisabled
       ? t('dmsSystem.loginBasic.confirmDisable')
       : isLDAPEnabled
-      ? t('dmsSystem.loginBasic.confirmEnableWithLDAP')
-      : t('dmsSystem.loginBasic.confirmEnable');
+        ? t('dmsSystem.loginBasic.confirmEnableWithLDAP')
+        : t('dmsSystem.loginBasic.confirmEnable');
     return (
       <Popconfirm
         title={confirmTitle}

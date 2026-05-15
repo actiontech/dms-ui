@@ -275,10 +275,10 @@ const AnimationDemo: React.FC = () => {
                 ? activeKey1 === 'fade'
                   ? ' 淡入效果 (fadeIn 0.3s)'
                   : activeKey1 === 'slide'
-                  ? ' 滑入效果 (slideIn 0.3s)'
-                  : activeKey1 === 'bounce'
-                  ? ' 弹跳效果 (bounceIn 0.5s)'
-                  : ' 无动画'
+                    ? ' 滑入效果 (slideIn 0.3s)'
+                    : activeKey1 === 'bounce'
+                      ? ' 弹跳效果 (bounceIn 0.5s)'
+                      : ' 无动画'
                 : ' 已禁用'}
             </p>
           </div>

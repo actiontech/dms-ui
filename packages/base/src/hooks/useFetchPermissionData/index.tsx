@@ -39,10 +39,14 @@ const useFetchPermissionData = () => {
         );
 
         const results = await Promise.all(requests);
-        return results.reduce((acc, curr, index) => {
-          acc[REQUIRED_MODULES[index]] = curr.data?.data?.is_supported ?? false;
-          return acc;
-        }, {} as Record<getSystemModuleStatusModuleNameEnum, boolean>);
+        return results.reduce(
+          (acc, curr, index) => {
+            acc[REQUIRED_MODULES[index]] =
+              curr.data?.data?.is_supported ?? false;
+            return acc;
+          },
+          {} as Record<getSystemModuleStatusModuleNameEnum, boolean>
+        );
       },
       {
         onFinally: () => {

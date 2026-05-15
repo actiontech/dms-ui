@@ -9884,7 +9884,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -12095,7 +12095,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -14714,7 +14714,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -18659,7 +18659,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"

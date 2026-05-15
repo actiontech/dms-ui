@@ -104,16 +104,19 @@ const useSetFormValuesWithGenModifiedSqlParams = ({
       }
       const sqlParams = databaseDiffModifiedSqlInfos.reduce<
         Record<string, SqlStatementFields>
-      >((acc, curr, index) => {
-        return {
-          ...acc,
-          [index]: {
-            form_data: curr.modify_sqls
-              ?.flatMap((v) => v.sql_statement)
-              ?.join('\n')
-          }
-        };
-      }, {} as Record<string, SqlStatementFields>);
+      >(
+        (acc, curr, index) => {
+          return {
+            ...acc,
+            [index]: {
+              form_data: curr.modify_sqls
+                ?.flatMap((v) => v.sql_statement)
+                ?.join('\n')
+            }
+          };
+        },
+        {} as Record<string, SqlStatementFields>
+      );
       form.setFieldsValue({
         isSameSqlForAll: false,
         databaseInfo: databaseDiffModifiedSqlInfos.map((item) => {

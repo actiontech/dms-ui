@@ -16,8 +16,8 @@ type ReplaceButtonsPermissions<T> = T extends (...args: any[]) => any
       ? Array<ReplacePermissions<K>>
       : ReturnType<T>
   : T extends Array<infer K>
-  ? Array<ReplacePermissions<K>>
-  : T;
+    ? Array<ReplacePermissions<K>>
+    : T;
 
 // 根据 ActiontechTableActionsConfig 调整内部 permissions 的类型
 export type ActiontechTableActionsWithPermissions<

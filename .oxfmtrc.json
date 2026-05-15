@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "tabWidth": 2,
   "semi": true,
   "printWidth": 80,
@@ -8,5 +9,10 @@
   "useTabs": false,
   "singleQuote": true,
   "bracketSpacing": true,
-  "jsxBracketSameLine": false
+  "jsxBracketSameLine": false,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "*.snap",
+    "*.md"
+  ]
 }

@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { AuditExecResultPanelProps } from './index.type';
 import { AuditExecResultPanelStyleWrapper } from './style';
-import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
+import {
+  FilterCustomProps,
+  SegmentedRowStyleWrapper
+} from '@actiontech/dms-kit';
 import { BasicSegmented, EmptyBox } from '@actiontech/dms-kit';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSetup';
 import {
@@ -35,6 +38,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import useRetryExecute from './hooks/useRetryExecute';
+import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
   activeTabKey,
@@ -180,7 +184,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
         filterCustomProps={
-          new Map([
+          new Map<keyof IAuditTaskSQLResV2, FilterCustomProps>([
             [
               'audit_level',
               {

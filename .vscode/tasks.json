@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "scripts/cli/create-dms-page",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build - packages/cli/create-dms-page",
+      "detail": "tsc"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "scripts/cli/api-mock-server",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build - packages/cli/api-mock-server",
+      "detail": "tsc"
+    }
+  ]
+}

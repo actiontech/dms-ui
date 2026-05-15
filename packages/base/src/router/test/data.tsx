@@ -28,7 +28,7 @@ const generateLazyElement = (route: any): RouterConfigItem => {
     };
   } else {
     const { key, path } = route;
-    const content = key === '*' ? `${JSON.stringify(route)}` : key ?? path;
+    const content = key === '*' ? `${JSON.stringify(route)}` : (key ?? path);
     return {
       key,
       path: path ?? '',

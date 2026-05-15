@@ -149,7 +149,7 @@ exports[`LeftContent should render when isBestPerformance is false with SqlDiffV
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -313,7 +313,7 @@ exports[`LeftContent should render when isBestPerformance is false with SqlDiffV
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -2440,7 +2440,7 @@ exports[`LeftContent should render with hasAdvice is false and advisedIndex is e
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -3142,7 +3142,7 @@ exports[`LeftContent should render with horizontal layout by default 1`] = `
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -3718,7 +3718,7 @@ exports[`LeftContent should render with horizontal layout when isVerticalLayout 
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -4294,7 +4294,7 @@ exports[`LeftContent should render with optimizationDetailStatus failed 1`] = `
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -4870,7 +4870,7 @@ exports[`LeftContent should render with optimizationDetailStatus finish 1`] = `
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -5446,7 +5446,7 @@ exports[`LeftContent should render with optimizationDetailStatus rewriting 1`] =
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -6022,7 +6022,7 @@ exports[`LeftContent should render with vertical layout when isVerticalLayout is
               class="ant-card-body"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>

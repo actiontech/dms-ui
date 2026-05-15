@@ -106,7 +106,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <span
                         class="empty-sql-placeholder"
@@ -399,7 +399,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -2737,7 +2737,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -5853,7 +5853,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -8357,7 +8357,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -11472,7 +11472,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -12171,7 +12171,7 @@ exports[`SqlAnalyze/Workflow should render error result of type "info" when resp
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <span
                         class="empty-sql-placeholder"

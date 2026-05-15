@@ -117,12 +117,12 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
             </span>
           </button>
           <div
-            class="toggle-button-wrapper css-14po76i"
+            class="toggle-button-wrapper css-urh9a6"
           >
             查看差异
           </div>
           <div
-            class="toggle-button-wrapper css-14po76i"
+            class="toggle-button-wrapper css-urh9a6"
           >
             查看SQL执行解释
           </div>

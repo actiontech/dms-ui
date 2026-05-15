@@ -24,8 +24,10 @@ export interface MenuItemI18nConfig {
   permission?: PermissionsConstantType;
 }
 
-export interface MenuItemTranslatedConfig
-  extends Omit<MenuItemI18nConfig, 'label'> {
+export interface MenuItemTranslatedConfig extends Omit<
+  MenuItemI18nConfig,
+  'label'
+> {
   label: ReactNode;
 }
 
@@ -36,8 +38,10 @@ interface MenuTreeGroupI18n {
   permission?: PermissionsConstantType;
 }
 
-interface MenuTreeGroupTranslated
-  extends Omit<MenuTreeGroupI18n, 'groupLabelKey'> {
+interface MenuTreeGroupTranslated extends Omit<
+  MenuTreeGroupI18n,
+  'groupLabelKey'
+> {
   label: string;
 }
 

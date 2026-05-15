@@ -52,10 +52,10 @@ const OptimizeSteps: React.FC<OptimizeStepsProps> = ({
                   OptimizationSQLDetailStatusEnum.failed
                   ? t('sqlOptimization.result.optimizing')
                   : moduleNorm === 'running'
-                  ? t('sqlOptimization.result.moduleGenerating')
-                  : moduleNorm === 'failed'
-                  ? t('sqlOptimization.result.moduleFailed')
-                  : t('common.tip.no_data')
+                    ? t('sqlOptimization.result.moduleGenerating')
+                    : moduleNorm === 'failed'
+                      ? t('sqlOptimization.result.moduleFailed')
+                      : t('common.tip.no_data')
               }
             />
           }

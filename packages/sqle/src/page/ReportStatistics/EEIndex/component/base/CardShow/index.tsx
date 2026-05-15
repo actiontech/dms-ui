@@ -37,7 +37,7 @@ const CardShow = (props: ICardShowProps) => {
               }}
             />
           ) : (
-            numberCont ?? defaultNumber
+            (numberCont ?? defaultNumber)
           )}
         </div>
         <div className="note-cont">{noteCont}</div>

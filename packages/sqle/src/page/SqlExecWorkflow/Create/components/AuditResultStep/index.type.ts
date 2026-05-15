@@ -7,7 +7,8 @@ import { SubmitWorkflowButtonProps } from '../../../Common/SubmitWorkflowButton/
 import { AuditResultListProps } from '../../../Common/AuditResultList/index.type';
 
 export interface AuditResultStepProps
-  extends Pick<
+  extends
+    Pick<
       SubmitWorkflowButtonProps,
       | 'isConfirmationRequiredForSubmission'
       | 'submitWorkflowConfirmationMessage'

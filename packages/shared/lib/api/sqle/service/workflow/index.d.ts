@@ -52,8 +52,7 @@ import {
   GetBackupSqlListV1FilterExecStatusEnum
 } from './index.enum';
 
-export interface IGetScheduledTaskDefaultOptionV1Return
-  extends IScheduledTaskDefaultOptionV1Rsp {}
+export interface IGetScheduledTaskDefaultOptionV1Return extends IScheduledTaskDefaultOptionV1Rsp {}
 
 export interface IGetGlobalDataExportWorkflowsV1Params {
   filter_create_user_id?: string;
@@ -73,8 +72,7 @@ export interface IGetGlobalDataExportWorkflowsV1Params {
   page_size: number;
 }
 
-export interface IGetGlobalDataExportWorkflowsV1Return
-  extends IGetWorkflowsResV1 {}
+export interface IGetGlobalDataExportWorkflowsV1Return extends IGetWorkflowsResV1 {}
 
 export interface IGetGlobalDataExportWorkflowStatisticsV1Params {
   filter_create_user_id?: string;
@@ -90,8 +88,7 @@ export interface IGetGlobalDataExportWorkflowStatisticsV1Params {
   filter_current_step_assignee_user_id?: string;
 }
 
-export interface IGetGlobalDataExportWorkflowStatisticsV1Return
-  extends IGlobalWorkflowStatisticsResV1 {}
+export interface IGetGlobalDataExportWorkflowStatisticsV1Return extends IGlobalWorkflowStatisticsResV1 {}
 
 export interface IGetGlobalWorkflowsV1Params {
   filter_create_user_id?: string;
@@ -127,8 +124,7 @@ export interface IGetGlobalWorkflowStatisticsParams {
   filter_current_step_assignee_user_id?: string;
 }
 
-export interface IGetGlobalWorkflowStatisticsReturn
-  extends IGlobalWorkflowStatisticsResV1 {}
+export interface IGetGlobalWorkflowStatisticsReturn extends IGlobalWorkflowStatisticsResV1 {}
 
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;
@@ -136,11 +132,9 @@ export interface IGetWorkflowTemplateV1Params {
   workflow_type: getWorkflowTemplateV1WorkflowTypeEnum;
 }
 
-export interface IGetWorkflowTemplateV1Return
-  extends IGetWorkflowTemplateResV1 {}
+export interface IGetWorkflowTemplateV1Return extends IGetWorkflowTemplateResV1 {}
 
-export interface IUpdateWorkflowTemplateV1Params
-  extends IUpdateWorkflowTemplateReqV1 {
+export interface IUpdateWorkflowTemplateV1Params extends IUpdateWorkflowTemplateReqV1 {
   project_name: string;
 
   workflow_type: updateWorkflowTemplateV1WorkflowTypeEnum;
@@ -152,8 +146,7 @@ export interface IGetWorkflowTemplateListV1Params {
   project_name: string;
 }
 
-export interface IGetWorkflowTemplateListV1Return
-  extends IGetWorkflowTemplateListResV1 {}
+export interface IGetWorkflowTemplateListV1Return extends IGetWorkflowTemplateListResV1 {}
 
 export interface IGetWorkflowsV1Params {
   filter_subject?: string;
@@ -219,18 +212,15 @@ export interface IAutoCreateAndExecuteWorkflowV1Params {
   input_zip_file?: any;
 }
 
-export interface IAutoCreateAndExecuteWorkflowV1Return
-  extends IAutoCreateAndExecuteWorkflowResV1 {}
+export interface IAutoCreateAndExecuteWorkflowV1Return extends IAutoCreateAndExecuteWorkflowResV1 {}
 
-export interface IBatchCancelWorkflowsV1Params
-  extends IBatchCancelWorkflowsReqV1 {
+export interface IBatchCancelWorkflowsV1Params extends IBatchCancelWorkflowsReqV1 {
   project_name: string;
 }
 
 export interface IBatchCancelWorkflowsV1Return extends IBaseRes {}
 
-export interface IBatchCompleteWorkflowsV1Params
-  extends IBatchCompleteWorkflowsReqV1 {
+export interface IBatchCompleteWorkflowsV1Params extends IBatchCompleteWorkflowsReqV1 {
   project_name: string;
 }
 
@@ -280,15 +270,13 @@ export interface IGetBackupSqlListV1Params {
 
 export interface IGetBackupSqlListV1Return extends IBackupSqlListRes {}
 
-export interface ICreateRollbackWorkflowParams
-  extends ICreateRollbackWorkflowReq {
+export interface ICreateRollbackWorkflowParams extends ICreateRollbackWorkflowReq {
   project_name: string;
 
   workflow_id: string;
 }
 
-export interface ICreateRollbackWorkflowReturn
-  extends ICreateRollbackWorkflowRes {}
+export interface ICreateRollbackWorkflowReturn extends ICreateRollbackWorkflowRes {}
 
 export interface ITerminateMultipleTaskByWorkflowV1Params {
   workflow_id: string;
@@ -306,8 +294,7 @@ export interface IGetWorkflowAttachmentParams {
   task_id: string;
 }
 
-export interface IReExecuteTaskOnWorkflowV1Params
-  extends IReExecuteTaskOnWorkflowReq {
+export interface IReExecuteTaskOnWorkflowV1Params extends IReExecuteTaskOnWorkflowReq {
   project_name: string;
 
   workflow_id: string;
@@ -377,8 +364,7 @@ export interface IGetSummaryOfInstanceTasksV1Params {
   project_name: string;
 }
 
-export interface IGetSummaryOfInstanceTasksV1Return
-  extends IGetWorkflowTasksResV1 {}
+export interface IGetSummaryOfInstanceTasksV1Return extends IGetWorkflowTasksResV1 {}
 
 export interface IExecuteTasksOnWorkflowV1Params {
   workflow_name: string;
@@ -398,8 +384,7 @@ export interface IExecuteOneTaskOnWorkflowV1Params {
 
 export interface IExecuteOneTaskOnWorkflowV1Return extends IBaseRes {}
 
-export interface IUpdateWorkflowScheduleV1Params
-  extends IUpdateWorkflowScheduleReqV1 {
+export interface IUpdateWorkflowScheduleV1Params extends IUpdateWorkflowScheduleReqV1 {
   workflow_name: string;
 
   task_id: string;
@@ -409,15 +394,13 @@ export interface IUpdateWorkflowScheduleV1Params
 
 export interface IUpdateWorkflowScheduleV1Return extends IBaseRes {}
 
-export interface IUpdateTaskBackupStrategyV1Params
-  extends IUpdateTaskBackupStrategyReq {
+export interface IUpdateTaskBackupStrategyV1Params extends IUpdateTaskBackupStrategyReq {
   task_id: string;
 }
 
 export interface IUpdateTaskBackupStrategyV1Return extends IBaseRes {}
 
-export interface IUpdateSqlBackupStrategyV1Params
-  extends IUpdateSqlBackupStrategyReq {
+export interface IUpdateSqlBackupStrategyV1Params extends IUpdateSqlBackupStrategyReq {
   task_id: string;
 
   sql_id: string;
@@ -429,8 +412,7 @@ export interface IGetWorkflowStatisticOfInstancesParams {
   instance_id: string;
 }
 
-export interface IGetWorkflowStatisticOfInstancesReturn
-  extends IGetWorkflowStatisticOfInstancesResV1 {}
+export interface IGetWorkflowStatisticOfInstancesReturn extends IGetWorkflowStatisticOfInstancesResV1 {}
 
 export interface ICreateWorkflowV2Params extends ICreateWorkflowReqV2 {
   project_name: string;
@@ -438,15 +420,13 @@ export interface ICreateWorkflowV2Params extends ICreateWorkflowReqV2 {
 
 export interface ICreateWorkflowV2Return extends ICreateWorkflowResV2 {}
 
-export interface IBatchCancelWorkflowsV2Params
-  extends IBatchCancelWorkflowsReqV2 {
+export interface IBatchCancelWorkflowsV2Params extends IBatchCancelWorkflowsReqV2 {
   project_name: string;
 }
 
 export interface IBatchCancelWorkflowsV2Return extends IBaseRes {}
 
-export interface IBatchCompleteWorkflowsV2Params
-  extends IBatchCompleteWorkflowsReqV2 {
+export interface IBatchCompleteWorkflowsV2Params extends IBatchCompleteWorkflowsReqV2 {
   project_name: string;
 }
 
@@ -502,8 +482,7 @@ export interface IGetSummaryOfInstanceTasksV2Params {
   project_name: string;
 }
 
-export interface IGetSummaryOfInstanceTasksV2Return
-  extends IGetWorkflowTasksResV2 {}
+export interface IGetSummaryOfInstanceTasksV2Return extends IGetWorkflowTasksResV2 {}
 
 export interface IExecuteTasksOnWorkflowV2Params {
   workflow_id: string;
@@ -523,8 +502,7 @@ export interface IExecuteOneTaskOnWorkflowV2Params {
 
 export interface IExecuteOneTaskOnWorkflowV2Return extends IBaseRes {}
 
-export interface IUpdateWorkflowScheduleV2Params
-  extends IUpdateWorkflowScheduleReqV2 {
+export interface IUpdateWorkflowScheduleV2Params extends IUpdateWorkflowScheduleReqV2 {
   workflow_id: string;
 
   task_id: string;
@@ -534,8 +512,7 @@ export interface IUpdateWorkflowScheduleV2Params
 
 export interface IUpdateWorkflowScheduleV2Return extends IBaseRes {}
 
-export interface IBatchCompleteWorkflowsV3Params
-  extends IBatchCompleteWorkflowsReqV3 {
+export interface IBatchCompleteWorkflowsV3Params extends IBatchCompleteWorkflowsReqV3 {
   project_name: string;
 }
 

@@ -21,8 +21,7 @@ export interface IGetSqlPerformanceInsightsParams {
   instance_id: string;
 }
 
-export interface IGetSqlPerformanceInsightsReturn
-  extends IGetSqlPerformanceInsightsResp {}
+export interface IGetSqlPerformanceInsightsReturn extends IGetSqlPerformanceInsightsResp {}
 
 export interface IGetSqlPerformanceInsightsRelatedSQLParams {
   project_name: string;
@@ -44,8 +43,7 @@ export interface IGetSqlPerformanceInsightsRelatedSQLParams {
   page_size: number;
 }
 
-export interface IGetSqlPerformanceInsightsRelatedSQLReturn
-  extends IGetSqlPerformanceInsightsRelatedSQLResp {}
+export interface IGetSqlPerformanceInsightsRelatedSQLReturn extends IGetSqlPerformanceInsightsRelatedSQLResp {}
 
 export interface IGetSqlPerformanceInsightsRelatedTransactionParams {
   project_name: string;
@@ -55,5 +53,4 @@ export interface IGetSqlPerformanceInsightsRelatedTransactionParams {
   sql_id: string;
 }
 
-export interface IGetSqlPerformanceInsightsRelatedTransactionReturn
-  extends IGetSqlPerformanceInsightsRelatedTransactionResp {}
+export interface IGetSqlPerformanceInsightsRelatedTransactionReturn extends IGetSqlPerformanceInsightsRelatedTransactionResp {}

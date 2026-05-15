@@ -50,7 +50,7 @@ const CustomSegmentedFilter = <
           return {
             label:
               typeof item.label === 'string'
-                ? labelDictionary[item.label] ?? item.label
+                ? (labelDictionary[item.label] ?? item.label)
                 : item.label,
             value: item.value as V
           };

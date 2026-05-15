@@ -9,7 +9,8 @@ export const KnowledgeGraphStyleWrapper = styled('div')`
   border: 1px solid
     ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.wrapper.borderColor};
   background-blend-mode: soft-light;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.wrapper.dotColor}
         1px,
       ${({ theme }) =>
@@ -24,7 +25,9 @@ export const KnowledgeGraphStyleWrapper = styled('div')`
         1px
     );
   background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  background-position:
+    0 0,
+    10px 10px;
 
   .ant-spin-nested-loading {
     width: 100%;

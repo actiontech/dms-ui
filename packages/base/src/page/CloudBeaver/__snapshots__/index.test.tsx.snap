@@ -1317,7 +1317,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1628,7 +1628,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3100,7 +3100,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3411,7 +3411,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"

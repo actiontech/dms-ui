@@ -165,7 +165,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
               </div>
             </div>
             <div
-              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -376,7 +376,7 @@ exports[`RewriteProgressDisplay Rewritten SQL Display should render rewritten SQ
     </div>
   </div>
   <div
-    class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+    class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
   >
     <div
       class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"

@@ -7,11 +7,10 @@ import {
 import React from 'react';
 import { SubmitWorkflowButtonProps } from '../../../Common/SubmitWorkflowButton/index.type';
 
-export interface ModifySqlStatementProps
-  extends Pick<
-    SubmitWorkflowButtonProps,
-    'submitWorkflowConfirmationMessage' | 'isConfirmationRequiredForSubmission'
-  > {
+export interface ModifySqlStatementProps extends Pick<
+  SubmitWorkflowButtonProps,
+  'submitWorkflowConfirmationMessage' | 'isConfirmationRequiredForSubmission'
+> {
   backToDetail: () => void;
   backToDetailText?: React.ReactNode;
   isAtRejectStep: boolean;

@@ -57,8 +57,7 @@ describe('SqlInsights', () => {
             selectedRecord: null
           },
           modalStatus: {
-            [ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer]:
-              false
+            [ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer]: false
           }
         }
       })
@@ -104,8 +103,7 @@ describe('SqlInsights', () => {
             selectedRecord: null
           },
           modalStatus: {
-            [ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer]:
-              false
+            [ModalName.Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer]: false
           }
         }
       })

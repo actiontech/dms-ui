@@ -373,7 +373,7 @@ exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel a
                                 class="global-dashboard-sql-fingerprint-cell"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -540,7 +540,7 @@ exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel a
                                 class="global-dashboard-sql-fingerprint-cell"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -707,7 +707,7 @@ exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel a
                                 class="global-dashboard-sql-fingerprint-cell"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -852,7 +852,7 @@ exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel a
                                 class="global-dashboard-sql-fingerprint-cell"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1002,7 +1002,7 @@ exports[`GlobalDashboard/SqlGovernancePanel should render sql governance panel a
                                 class="global-dashboard-sql-fingerprint-cell"
                               >
                                 <div
-                                  class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"

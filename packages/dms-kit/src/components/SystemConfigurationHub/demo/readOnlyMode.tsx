@@ -50,8 +50,8 @@ const ReadOnlyModeDemo = () => {
             {val === 'production'
               ? '生产环境'
               : val === 'staging'
-              ? '预发环境'
-              : '开发环境'}
+                ? '预发环境'
+                : '开发环境'}
           </Tag>
         );
       }

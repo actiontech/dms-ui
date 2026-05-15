@@ -126,7 +126,7 @@ const SQLEEIndex = () => {
         (sortData.field as unknown as GetSqlManageListV3SortFieldEnum) ??
         undefined,
       sort_order: sortData?.order
-        ? orderDesc[sortData?.order] ?? undefined
+        ? (orderDesc[sortData?.order] ?? undefined)
         : undefined
     };
   };

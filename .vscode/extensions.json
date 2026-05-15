@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "rain.react-i18n-prompt",
+    "styled-components.vscode-styled-components",
+    "oxc.oxc-vscode"
+  ]
+}

@@ -111,7 +111,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           (i) => i.instance_name === item.instance_name
         );
         return {
-          key: isSameSqlForAll ? `${index}` : item.task_id?.toString() ?? '',
+          key: isSameSqlForAll ? `${index}` : (item.task_id?.toString() ?? ''),
           instanceName: item.instance_name,
           schemaName: item.instance_schema,
           enableBackup: item.enable_backup,

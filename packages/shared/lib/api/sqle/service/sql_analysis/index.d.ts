@@ -14,8 +14,7 @@ export interface IDirectGetSQLAnalysisV1Params {
   sql?: string;
 }
 
-export interface IDirectGetSQLAnalysisV1Return
-  extends IDirectGetSQLAnalysisResV1 {}
+export interface IDirectGetSQLAnalysisV1Return extends IDirectGetSQLAnalysisResV1 {}
 
 export interface ISqlLineageAnalyzeV1Params extends ISQLLineageAnalyzeReqV1 {}
 

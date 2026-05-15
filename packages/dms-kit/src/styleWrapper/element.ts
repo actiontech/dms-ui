@@ -258,8 +258,8 @@ export const ToggleButtonStyleWrapper = styled('div')<{
     !!active
       ? theme.sharedTheme.uiToken.colorPrimary
       : disabled
-      ? theme.sharedTheme.basic.colorFontGrayByWhite
-      : theme.sharedTheme.uiToken.colorTextSecondary};
+        ? theme.sharedTheme.basic.colorFontGrayByWhite
+        : theme.sharedTheme.uiToken.colorTextSecondary};
   background: ${({ active, theme }) =>
     !!active
       ? theme.sharedTheme.basic.colorPrimaryBgActive
@@ -277,7 +277,9 @@ export const ToggleButtonStyleWrapper = styled('div')<{
     );
     transform: scale(0);
     opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition:
+      transform 0.3s ease-out,
+      opacity 0.3s ease-out;
   }
 
   &:active::before {

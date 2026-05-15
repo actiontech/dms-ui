@@ -16,10 +16,13 @@ import { t } from '../../locale';
 export const translateDictionaryI18nLabel = <T extends string>(
   dic: StaticEnumDictionary<T>
 ) => {
-  return Object.keys(dic).reduce<Record<keyof T, string>>((acc, cur) => {
-    const key = cur as keyof StaticEnumDictionary<T>;
-    return { ...acc, [key]: t(dic[key]) };
-  }, {} as Record<keyof T, string>);
+  return Object.keys(dic).reduce<Record<keyof T, string>>(
+    (acc, cur) => {
+      const key = cur as keyof StaticEnumDictionary<T>;
+      return { ...acc, [key]: t(dic[key]) };
+    },
+    {} as Record<keyof T, string>
+  );
 };
 
 export const execStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV2FilterExecStatusEnum> =

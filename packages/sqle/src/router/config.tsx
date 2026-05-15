@@ -146,9 +146,7 @@ const SqlWorkflowDetail = React.lazy(
 
 const WorkflowSqlFileStatementOverview = React.lazy(
   () =>
-    import(
-      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
-    )
+    import('../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview')
 );
 
 // sql management configuration
