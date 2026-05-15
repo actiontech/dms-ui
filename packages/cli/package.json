@@ -1,0 +1,49 @@
+{
+  "name": "@actiontech/dms-cli",
+  "version": "0.0.1",
+  "description": "ActionTech DMS UI CLI tools",
+  "bin": {
+    "dms-cli": "./bin/core.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:watch": "tsc -w",
+    "build": "tsc",
+    "oxlint": "oxlint --no-error-on-unmatched-pattern src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "oxfmt": "oxfmt --check \"src/**/*\"",
+    "check": "echo \"dms-cli check\""
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.6",
+    "@types/node": "^18.0.4",
+    "@types/nodemailer": "^7.0.3",
+    "@types/semver": "^7.7.1"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.25.0",
+    "@babel/parser": "^7.24.8",
+    "@babel/traverse": "^7.24.8",
+    "@babel/types": "^7.24.9",
+    "@inquirer/prompts": "^5.1.2",
+    "@octokit/rest": "^20.1.2",
+    "archiver": "^7.0.1",
+    "axios": "^0.27.2",
+    "basic-ftp": "^5.0.5",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "dotenv": "^17.2.3",
+    "execa": "^8.0.1",
+    "node-clipboardy": "^1.0.3",
+    "nodemailer": "^7.0.10",
+    "prettier": "^3.3.3",
+    "semver": "^7.7.3",
+    "zod": "^3.23.8"
+  }
+}

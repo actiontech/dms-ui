@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     "./jest/create-jest-config": "./jest/create-jest-config.js",
-    "./tsconfig/base": "./tsconfig/base.json"
+    "./tsconfig/base": "./tsconfig/base.json",
+    "./tsconfig/node": "./tsconfig/node.json"
   },
   "scripts": {
     "oxlint": "oxlint --no-error-on-unmatched-pattern jest tsconfig",

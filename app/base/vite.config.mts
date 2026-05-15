@@ -39,7 +39,10 @@ export default defineConfig(() => {
   return {
     plugins: [
       vitePluginConditionalCompile({
-        include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
+        include: [
+          /^.+\/packages\/.+\/.+.(ts|tsx)$/,
+          /^.+\/app\/.+\/.+.(ts|tsx)$/
+        ],
         env: {
           ee: isEE,
           ce: isCE,
@@ -62,15 +65,11 @@ export default defineConfig(() => {
       alias: [
         {
           find: /^@actiontech\/dms-kit\/es\/(.*)$/,
-          replacement: path.resolve(__dirname, '../dms-kit/src/$1')
+          replacement: path.resolve(__dirname, '../../packages/dms-kit/src/$1')
         },
         {
           find: '@actiontech/dms-kit',
-          replacement: path.resolve(__dirname, '../dms-kit/src')
-        },
-        {
-          find: '~',
-          replacement: path.resolve(__dirname, '../provision/src')
+          replacement: path.resolve(__dirname, '../../packages/dms-kit/src')
         }
       ]
     },

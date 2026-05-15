@@ -8,11 +8,10 @@ export default createJestConfig({
   packageRoot,
   enabledProjects: ['dms'],
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.test.{ts,tsx}',
-    '!src/**/*.type.ts',
-    '!src/**/*.enum.ts',
-    '!src/**/demo/**',
-    '!src/**/demos/**'
+    'src/{components,features,utils}/**/*.{ts,tsx}',
+    '!src/components/**/demo/**',
+    '!src/components/**/demos/**',
+    '!src/**/__tests__/**',
+    '!src/**/*.test.{ts,tsx}'
   ]
 });

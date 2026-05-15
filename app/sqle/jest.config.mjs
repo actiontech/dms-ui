@@ -6,21 +6,14 @@ const packageRoot = path.dirname(fileURLToPath(import.meta.url));
 
 export default createJestConfig({
   packageRoot,
-  enabledProjects: ['dms', 'sqle-ce'],
+  enabledProjects: ['dms', 'sqle-ce', 'sqle-ee'],
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    'lib/**/*.{ts,tsx}',
-    'api/common/**/*.{ts,tsx}',
+    'src/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
+    'src/App.tsx',
     '!src/**/*.test.{ts,tsx}',
-    '!lib/**/*.test.{ts,tsx}',
     '!src/**/*.type.ts',
     '!src/**/*.enum.ts',
-    '!lib/**/*.type.ts',
-    '!lib/**/*.enum.ts',
-    '!lib/hooks/usePrompt/index.tsx',
-    '!src/**/demo/**',
-    '!src/**/demos/**',
-    '!lib/**/demo/**',
-    '!lib/**/demos/**'
+    '!src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
+    '!src/page/Knowledge/Graph/components/**'
   ]
 });

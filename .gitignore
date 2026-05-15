@@ -3,6 +3,7 @@
 # dependencies
 /packages/*/node_modules
 /scripts/**/node_modules
+/app/**/node_modules
 /node_modules
 /.pnpm-store
 /.pnp
@@ -54,3 +55,7 @@ ftp-data
 /scripts/cli/dms-kit-publish/docs
 
 *.turbo
+
+findings.md
+progress.md
+task_plan.md

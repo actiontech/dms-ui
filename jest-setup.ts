@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import baseZhCN from './packages/base/src/locale/zh-CN';
-import sqleZhCN from './packages/sqle/src/locale/zh-CN';
+import baseZhCN from './app/base/src/locale/zh-CN';
+import sqleZhCN from './app/sqle/src/locale/zh-CN';
 import commonZhCN from './packages/dms-kit/src/locale/zh-CN';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as Enzyme from 'enzyme';

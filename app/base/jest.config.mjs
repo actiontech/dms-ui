@@ -12,8 +12,6 @@ export default createJestConfig({
     'src/App.tsx',
     '!src/**/*.test.{ts,tsx}',
     '!src/**/*.type.ts',
-    '!src/**/*.enum.ts',
-    '!src/**/demo/**',
-    '!src/**/demos/**'
+    '!src/**/*.enum.ts'
   ]
 });

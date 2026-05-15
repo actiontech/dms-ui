@@ -9,11 +9,11 @@ module.exports = {
   plugins: ['stylelint-prettier'],
   overrides: [
     {
-      files: 'packages/*/{src,lib}/**/*.less',
+      files: '{app,packages}/*/{src,lib}/**/*.less',
       customSyntax: 'postcss-less'
     },
     {
-      files: 'packages/*/{src,lib}/**/{style.ts,element.ts}',
+      files: '{app,packages}/*/{src,lib}/**/{style.ts,element.ts}',
       customSyntax: 'postcss-styled-syntax'
     }
   ],

@@ -8,14 +8,9 @@ export default createJestConfig({
   packageRoot,
   enabledProjects: ['dms', 'sqle-ce', 'sqle-ee'],
   collectCoverageFrom: [
-    'src/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
-    'src/App.tsx',
-    '!src/**/*.test.{ts,tsx}',
-    '!src/**/*.type.ts',
-    '!src/**/*.enum.ts',
-    '!src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
-    '!src/page/Knowledge/Graph/components/**',
-    '!src/**/demo/**',
-    '!src/**/demos/**'
+    'lib/{components,hooks,features}/**/*.{ts,tsx}',
+    '!lib/hooks/usePrompt/index.tsx',
+    '!lib/{components,hooks,features}/**/__tests__/**',
+    '!lib/{components,hooks,features}/**/*.test.{ts,tsx}'
   ]
 });

@@ -7,7 +7,8 @@ import User from '@actiontech/shared/lib/api/base/service/User';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../../store/user';
-export const UpdatePassword: React.FC<{
+
+const UpdatePassword: React.FC<{
   open: boolean;
   onClose: () => void;
 }> = ({ open, onClose }) => {

@@ -1,0 +1,13 @@
+{
+  "extends": "@actiontech/tooling-config/tsconfig/base",
+  "include": ["src"],
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"],
+      "@actiontech/dms-kit": ["../../packages/dms-kit/src/index.ts"],
+      "@actiontech/dms-kit/es/*": ["../../packages/dms-kit/src/*"],
+      "@actiontech/dms-kit/*": ["../../packages/dms-kit/src/*"]
+    },
+    "skipLibCheck": true
+  }
+}

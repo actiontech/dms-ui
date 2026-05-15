@@ -111,33 +111,38 @@ export function createJestConfig(options) {
       '^~/(.*)$': '<rootDir>/src/$1',
       '@ant-design/plots': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockAntDesignPlots.jsx'
+        'app/shared/lib/testUtil/mockModule/mockAntDesignPlots.jsx'
       ),
       'monaco-editor': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockEditor.jsx'
+        'app/shared/lib/testUtil/mockModule/mockEditor.jsx'
       ),
       '@monaco-editor/react': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockEditor.jsx'
+        'app/shared/lib/testUtil/mockModule/mockEditor.jsx'
       ),
       '@uiw/react-md-editor': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockEditor.jsx'
+        'app/shared/lib/testUtil/mockModule/mockEditor.jsx'
       ),
       '@react-sigma/core(.*)$': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockSigmaCore.tsx'
+        'app/shared/lib/testUtil/mockModule/mockSigmaCore.tsx'
       ),
       '@react-sigma/graph-search$': path.resolve(
         repoRoot,
-        'packages/shared/lib/testUtil/mockModule/mockSigmaGraphSearch.tsx'
+        'app/shared/lib/testUtil/mockModule/mockSigmaGraphSearch.tsx'
       ),
       '^@actiontech/dms-kit/es/(.*)$': path.resolve(
         repoRoot,
         'packages/dms-kit/src/$1'
       ),
+      '^@actiontech/dms-kit/(.*)$': path.resolve(repoRoot, 'packages/dms-kit/$1'),
       '^@actiontech/dms-kit$': path.resolve(repoRoot, 'packages/dms-kit/src'),
+      '^@actiontech/shared/(.*)$': path.resolve(repoRoot, 'app/shared/$1'),
+      '^@actiontech/shared$': path.resolve(repoRoot, 'app/shared'),
+      '^@actiontech/icons/(.*)$': path.resolve(repoRoot, 'packages/icons/$1'),
+      '^@actiontech/icons$': path.resolve(repoRoot, 'packages/icons/src'),
       '^@actiontech/(.*)$': path.resolve(packageRoot, '../$1')
     },
     setupFilesAfterEnv: [path.resolve(repoRoot, 'jest-setup.ts')]
