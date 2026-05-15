@@ -53,7 +53,11 @@ export default {
       }
     },
     modifiedSqlDrawer: {
-      title: '变更SQL语句信息'
+      title: '变更SQL语句信息',
+      dropCreateWarningBanner:
+        '变更SQL中含数据破坏性操作，请人工确认后再执行。',
+      dropCreateWarningTable: '数据将丢失；表将被删除并重建。',
+      dropCreateWarningView: '视图将被重建；依赖该视图的下游查询可能受影响。'
     },
     modifiedSqlAuditResult: {
       cardTitle: '变更语句'
