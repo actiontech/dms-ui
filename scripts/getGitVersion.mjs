@@ -62,7 +62,7 @@ const filePath = resolve(
   // import.meta.dirname 需要 node v20 +
   __dirname,
   '..',
-  'packages',
+  'app',
   'base',
   'src',
   'scripts',
