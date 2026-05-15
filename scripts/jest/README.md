@@ -50,6 +50,8 @@ pnpm jest（包级别）
 
 ## Project 配置（`packages/tooling-config/jest/create-jest-config.js`）
 
+> **注意**：配置工厂函数位于 `packages/tooling-config`，但业务包（`base`、`sqle`、`shared`）已迁移至 `app/` 目录。
+
 | Project | displayName | ee | ce | sqle | provision | dms |
 |---|---|---|---|---|---|---|
 | EE（默认）| `dms` | ✅ | ❌ | ✅ | ✅ | ✅ |
@@ -60,7 +62,7 @@ pnpm jest（包级别）
 各包通过 `enabledProjects` 按需开启所需 project：
 
 ```js
-// packages/base/jest.config.mjs
+// app/base/jest.config.mjs
 export default createJestConfig({
   packageRoot,
   enabledProjects: ['dms', 'sqle-ce', 'sqle-ee'],
@@ -107,7 +109,7 @@ Jest 可执行的 JS 代码
 **实际示例**：
 
 ```
-packages/base/src/page/Nav/SideMenu/MenuList/
+app/base/src/page/Nav/SideMenu/MenuList/
 ├── index.tsx                         # 源文件（含 #if [sqle && !dms] 分支）
 ├── index.test.tsx                    # dms project → dms=true，DMS 模式（空菜单）
 └── index.sqle.test.tsx               # sqle-ee project → dms=false，SQLE 专属菜单
@@ -123,7 +125,7 @@ packages/base/src/page/Nav/SideMenu/MenuList/
 # 运行全部包的测试（非 watch）
 pnpm test
 
-# 全部包收集覆盖率（各包独立输出 packages/<pkg>/coverage/）
+# 全部包收集覆盖率（各包独立输出 app/<pkg>/coverage/ 或 packages/<pkg>/coverage/）
 pnpm test:c
 ```
 
@@ -174,15 +176,13 @@ pnpm test:clean
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  test job                                                 │
+│  test job (matrix per package)                            │
 │                                                           │
-│  pnpm test:ci:turbo                                       │
-│      │                                                    │
-│      └── turbo run test:ci --filter='./packages/*'       │
-│             ├── packages/base/test:ci                    │
-│             ├── packages/dms-kit/test:ci                 │
-│             ├── packages/shared/test:ci                  │
-│             └── packages/sqle/test:ci                    │
+│  pnpm turbo run test:ci --filter=<package_name>          │
+│      ├── base          (app/base)                        │
+│      ├── @actiontech/dms-kit  (packages/dms-kit)         │
+│      ├── @actiontech/shared   (app/shared)               │
+│      └── sqle          (app/sqle)                        │
 │                                                           │
 │  每个包独立产出 coverage/report.json                      │
 └─────────────────────────────────────────────────────────┘
@@ -259,8 +259,8 @@ pnpm --filter base jest -- --selectProjects my-new-project
 **A**：运行时 Jest 会在每行测试结果前显示 project 名，例如：
 
 ```
-PASS dms packages/base/src/page/Nav/SideMenu/MenuList/index.test.tsx
-PASS sqle-ee packages/base/src/page/Nav/SideMenu/MenuList/index.sqle.test.tsx
+PASS dms app/base/src/page/Nav/SideMenu/MenuList/index.test.tsx
+PASS sqle-ee app/base/src/page/Nav/SideMenu/MenuList/index.sqle.test.tsx
 ```
 
 也可以用 `--selectProjects sqle-ee` 明确指定只运行某个 project。
@@ -285,3 +285,24 @@ CI= pnpm --filter base jest -- --updateSnapshot --testPathPattern="<path>"
 - [`scripts/jest/custom-transform.js`](./custom-transform.js) — 条件编译 transformer
 - [`.github/workflows/main.yml`](../../.github/workflows/main.yml) — GitHub Actions CI 配置
 - [`.cursor/commands/unit-testing.md`](../../.cursor/commands/unit-testing.md) — 单元测试编写规范
+
+---
+
+## 目录结构参考（当前）
+
+```
+dms-ui/
+├── app/                        ← 业务包（迁移自 packages/）
+│   ├── base/                   ← DMS 主应用
+│   ├── sqle/                   ← SQLE 应用
+│   └── shared/                 ← 业务共享库
+├── packages/                   ← 工具/通用库
+│   ├── cli/                    ← 统一 CLI 工具（@actiontech/dms-cli）
+│   ├── dms-kit/                ← UI 组件库
+│   ├── icons/                  ← 图标库
+│   └── tooling-config/         ← 构建/测试配置
+└── scripts/
+    ├── jest/                   ← Jest 相关脚本与文档（本文件所在处）
+    ├── api/                    ← API 生成脚本
+    └── getGitVersion.mjs
+```

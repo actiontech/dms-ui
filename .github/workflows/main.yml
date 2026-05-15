@@ -28,13 +28,13 @@ jobs:
       matrix:
         include:
           - package_name: base
-            package_path: packages/base
+            package_path: app/base
           - package_name: '@actiontech/dms-kit'
             package_path: packages/dms-kit
           - package_name: '@actiontech/shared'
-            package_path: packages/shared
+            package_path: app/shared
           - package_name: sqle
-            package_path: packages/sqle
+            package_path: app/sqle
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

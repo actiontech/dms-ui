@@ -2,7 +2,7 @@
   "client": {
     "sqle-ui": {
       "project": "sqle-ui",
-      "output": "packages/shared/lib/api/sqle/service",
+      "output": "app/shared/lib/api/sqle/service",
       "branch": "main",
       "swaggerPath": "",
       "swaggerOutput": "",
@@ -11,7 +11,7 @@
     },
     "dms-ui": {
       "project": "dms-ui",
-      "output": "packages/shared/lib/api/base/service",
+      "output": "app/shared/lib/api/base/service",
       "branch": "main",
       "swaggerPath": "",
       "swaggerOutput": "",
@@ -20,15 +20,15 @@
     }
   },
   "mocks": {
-    "packages/shared/lib/api/sqle/service": {
-      "clientPath": "packages/shared/lib/api/sqle/service",
-      "output": "packages/sqle/src/testUtils/mockApi",
+    "app/shared/lib/api/sqle/service": {
+      "clientPath": "app/shared/lib/api/sqle/service",
+      "output": "app/sqle/src/testUtils/mockApi",
       "utilsAlias": "@actiontech/shared/lib/testUtil/mockApi",
       "serviceAlias": "@actiontech/shared/lib/api/sqle/service"
     },
-    "packages/shared/lib/api/base/service": {
-      "clientPath": "packages/shared/lib/api/base/service",
-      "output": "packages/base/src/testUtils/mockApi",
+    "app/shared/lib/api/base/service": {
+      "clientPath": "app/shared/lib/api/base/service",
+      "output": "app/base/src/testUtils/mockApi",
       "utilsAlias": "@actiontech/shared/lib/testUtil/mockApi",
       "serviceAlias": "@actiontech/shared/lib/api/base/service"
     }
