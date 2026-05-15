@@ -333,9 +333,6 @@ importers:
       '@actiontech/tooling-config':
         specifier: workspace:^
         version: link:../../packages/tooling-config
-      babel-preset-react-app:
-        specifier: ^10.0.1
-        version: 10.1.0
       sqle:
         specifier: workspace:^
         version: link:../sqle
