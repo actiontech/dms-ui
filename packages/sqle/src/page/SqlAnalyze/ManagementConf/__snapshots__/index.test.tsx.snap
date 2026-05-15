@@ -110,7 +110,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -3008,7 +3008,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -6124,7 +6124,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -6722,7 +6722,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <span
                         class="empty-sql-placeholder"
@@ -9033,7 +9033,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 2`
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -12148,7 +12148,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 2`
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -12847,7 +12847,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should render error result of type "in
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                     >
                       <span
                         class="empty-sql-placeholder"

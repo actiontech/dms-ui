@@ -235,7 +235,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
               >
                 <pre>
                   <code>
@@ -263,7 +263,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
                   >
                     <pre>
                       <code>

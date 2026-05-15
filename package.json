@@ -21,6 +21,7 @@
     "oxfmt:w": "oxfmt --write \"packages/*/src/**/*\" \"packages/shared/lib/**/*\" \"scripts/cli/*/src/**/*\"",
     "checker": "pnpm check:turbo",
     "test": "pnpm --workspace-concurrency=1 --filter base --filter @actiontech/dms-kit --filter @actiontech/shared --filter sqle run test:run",
+    "test:u": "pnpm --workspace-concurrency=1 --filter base --filter @actiontech/dms-kit --filter @actiontech/shared --filter sqle run test:run:u",
     "test:c": "pnpm --workspace-concurrency=1 --filter base --filter @actiontech/dms-kit --filter @actiontech/shared --filter sqle run test:c",
     "test:ci": "turbo run test:ci --filter='./packages/*'",
     "test:ci:turbo": "pnpm test:ci",

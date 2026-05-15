@@ -3,7 +3,7 @@
 exports[`test SQLRenderer should apply word-wrap class when wordWrap is true 1`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+    class="actiontech-sql-renderer-wrapper word-wrap css-df96ly"
   >
     <pre>
       <code>
@@ -170,7 +170,7 @@ exports[`test SQLRenderer should render with different props configurations 1`] 
       class="ant-spin-container"
     >
       <div
-        class="actiontech-sql-renderer-wrapper css-q962ee"
+        class="actiontech-sql-renderer-wrapper css-df96ly"
       >
         <pre>
           <code>
@@ -371,7 +371,7 @@ exports[`test SQLRenderer should render with different props configurations 1`] 
 exports[`test SQLRenderer should render with different props configurations 2`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper css-q962ee"
+    class="actiontech-sql-renderer-wrapper css-df96ly"
   >
     <span
       class="empty-sql-placeholder"
@@ -385,7 +385,7 @@ exports[`test SQLRenderer should render with different props configurations 2`] 
 exports[`test SQLRenderer should render with different showCopyIcon values 1`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper css-q962ee"
+    class="actiontech-sql-renderer-wrapper css-df96ly"
   >
     <pre>
       <code>

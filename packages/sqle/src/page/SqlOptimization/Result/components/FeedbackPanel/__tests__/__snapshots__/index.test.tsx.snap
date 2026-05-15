@@ -12,7 +12,7 @@ exports[`FeedbackPanel should render feedback panel correctly with initial feedb
         评估反馈
       </div>
       <div
-        class="css-1hhgau3"
+        class="css-2q5y21"
       >
         <div
           class="submitted-view agree"
@@ -281,7 +281,7 @@ exports[`FeedbackPanel should render feedback panel with empty feedbacks 1`] = `
         评估反馈
       </div>
       <div
-        class="css-1hhgau3"
+        class="css-2q5y21"
       >
         <div
           class="vote-buttons"
@@ -373,7 +373,7 @@ exports[`FeedbackPanel should render without onFeedbackChanged prop 1`] = `
         评估反馈
       </div>
       <div
-        class="css-1hhgau3"
+        class="css-2q5y21"
       >
         <div
           class="vote-buttons"

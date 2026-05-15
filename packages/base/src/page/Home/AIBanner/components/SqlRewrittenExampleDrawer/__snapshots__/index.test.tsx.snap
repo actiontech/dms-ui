@@ -317,12 +317,12 @@ exports[`SqlRewrittenExampleDrawer should match snapshot 1`] = `
                                   </span>
                                 </button>
                                 <div
-                                  class="toggle-button-wrapper css-14po76i"
+                                  class="toggle-button-wrapper css-urh9a6"
                                 >
                                   查看差异
                                 </div>
                                 <div
-                                  class="toggle-button-wrapper css-1la9g0j"
+                                  class="toggle-button-wrapper css-uz37d1"
                                 >
                                   查看SQL执行解释
                                 </div>

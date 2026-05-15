@@ -4,7 +4,7 @@ exports[`FeedbackEntry EDITING state should render editing state snapshot 1`] = 
 <body>
   <div>
     <div
-      class="css-1hhgau3"
+      class="css-2q5y21"
     >
       <div
         class="vote-buttons"
@@ -108,7 +108,7 @@ exports[`FeedbackEntry INITIAL state should render vote buttons in initial state
 <body>
   <div>
     <div
-      class="css-1hhgau3"
+      class="css-2q5y21"
     >
       <div
         class="vote-buttons"
@@ -173,7 +173,7 @@ exports[`FeedbackEntry SUBMITTED state should render submitted view with agree v
 <body>
   <div>
     <div
-      class="css-1hhgau3"
+      class="css-2q5y21"
     >
       <div
         class="submitted-view agree"
@@ -255,7 +255,7 @@ exports[`FeedbackEntry SUBMITTED state should render submitted view with disagre
 <body>
   <div>
     <div
-      class="css-1hhgau3"
+      class="css-2q5y21"
     >
       <div
         class="submitted-view disagree"

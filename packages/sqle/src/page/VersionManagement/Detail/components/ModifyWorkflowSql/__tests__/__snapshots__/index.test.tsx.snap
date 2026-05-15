@@ -1669,7 +1669,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                                     class="ant-table-cell audit-result-exec-sql-column"
                                   >
                                     <div
-                                      class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                                      class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                                     >
                                       <div
                                         class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"

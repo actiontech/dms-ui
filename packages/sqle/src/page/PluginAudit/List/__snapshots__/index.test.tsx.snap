@@ -312,7 +312,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -361,7 +361,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1462,7 +1462,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1511,7 +1511,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1657,7 +1657,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1706,7 +1706,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+                              class="actiontech-sql-snippet-renderer-wrapper css-df96ly"
                             >
                               <div
                                 class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
