@@ -11,6 +11,7 @@
     "oxlint": "oxlint --no-error-on-unmatched-pattern jest tsconfig",
     "typecheck": "echo \"tooling-config typecheck skipped\"",
     "stylelint": "echo \"tooling-config stylelint skipped\"",
+    "oxfmt": "echo \"tooling-config oxfmt skipped\"",
     "check": "echo \"tooling-config check\""
   },
   "files": [

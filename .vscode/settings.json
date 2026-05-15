@@ -1,0 +1,29 @@
+{
+  "react-i18n-prompt.language-package-exclude-path": "packages/**/{src,lib}/locale/zh-CN/**/index.{ts,js,tsx,jsx}",
+  "react-i18n-prompt.language-package-path": "packages/**/{src,lib}/locale/zh-CN/**/*.{ts,js,tsx,jsx}",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "commentTranslate.multiLineMerge": true,
+  "commentTranslate.hover.enabled": true,
+  "commentTranslate.targetLanguage": "zh-CN",
+  "commentTranslate.browse.mode": "inplace",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  }
+}

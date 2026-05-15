@@ -8,6 +8,7 @@
     "oxlint": "oxlint --no-error-on-unmatched-pattern src lib api",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "stylelint": "stylelint \"{src,lib}/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "oxfmt": "oxfmt --check \"src/**/*\" \"lib/**/*\"",
     "check": "echo \"shared check\"",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",

@@ -7,7 +7,6 @@
 /.pnpm-store
 /.pnp
 .pnp.js
-.vscode
 .eslintcache
 
 dist

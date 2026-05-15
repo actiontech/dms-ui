@@ -26,8 +26,13 @@
       "cache": false,
       "outputs": []
     },
+    "oxfmt": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": []
+    },
     "check": {
-      "dependsOn": ["oxlint", "typecheck", "stylelint"],
+      "dependsOn": ["oxlint", "typecheck", "stylelint", "oxfmt"],
       "cache": false,
       "outputs": []
     },

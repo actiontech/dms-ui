@@ -34,6 +34,7 @@
     "oxlint": "oxlint --no-error-on-unmatched-pattern src",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "oxfmt": "oxfmt --check \"src/**/*\"",
     "check": "echo \"sqle check\"",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",

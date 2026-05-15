@@ -16,6 +16,7 @@
     "oxlint": "oxlint --no-error-on-unmatched-pattern src vite.config.mts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "stylelint": "stylelint \"src/**/{*.less,style.ts,element.ts}\" --allow-empty-input",
+    "oxfmt": "oxfmt --check \"src/**/*\"",
     "check": "echo \"base check\"",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage --coverageDirectory=coverage",
