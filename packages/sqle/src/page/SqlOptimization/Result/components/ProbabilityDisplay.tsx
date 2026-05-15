@@ -70,8 +70,8 @@ const ProbabilityDisplay: React.FC<ProbabilityDisplayProps> = ({
           {rate === UnusualRateText.Generating
             ? t('sqlOptimization.result.moduleGenerating')
             : rate === UnusualRateText.Failed
-            ? t('sqlOptimization.result.moduleFailed')
-            : rate}
+              ? t('sqlOptimization.result.moduleFailed')
+              : rate}
           <EmptyBox if={showPercentSign}>
             <span>%</span>
           </EmptyBox>

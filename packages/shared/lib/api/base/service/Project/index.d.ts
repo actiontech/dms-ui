@@ -85,22 +85,17 @@ export interface IDeleteBusinessTagParams {
 
 export interface IDeleteBusinessTagReturn extends IGenericResp {}
 
-export interface ICheckDBServicesPrivilegesParams
-  extends ICheckDBServicesPrivilegesReq {}
+export interface ICheckDBServicesPrivilegesParams extends ICheckDBServicesPrivilegesReq {}
 
-export interface ICheckDBServicesPrivilegesReturn
-  extends ICheckDBServicesPrivilegesReply {}
+export interface ICheckDBServicesPrivilegesReturn extends ICheckDBServicesPrivilegesReply {}
 
 export interface IDBServicesConnectionParams extends IDBServiceConnectionReq {}
 
-export interface IDBServicesConnectionReturn
-  extends IDBServicesConnectionReply {}
+export interface IDBServicesConnectionReturn extends IDBServicesConnectionReply {}
 
-export interface ICheckGlobalDBServicesConnectionsParams
-  extends IDBServicesConnectionReq {}
+export interface ICheckGlobalDBServicesConnectionsParams extends IDBServicesConnectionReq {}
 
-export interface ICheckGlobalDBServicesConnectionsReturn
-  extends IDBServicesConnectionReqReply {}
+export interface ICheckGlobalDBServicesConnectionsReturn extends IDBServicesConnectionReqReply {}
 
 export interface IExportProjectsParams {
   order_by?: ExportProjectsOrderByEnum;
@@ -114,8 +109,7 @@ export interface IImportProjectsParams extends IImportProjectsReq {}
 
 export interface IImportProjectsReturn extends IGenericResp {}
 
-export interface IImportDBServicesOfProjectsParams
-  extends IImportDBServicesOfProjectsReq {}
+export interface IImportDBServicesOfProjectsParams extends IImportDBServicesOfProjectsReq {}
 
 export interface IImportDBServicesOfProjectsReturn extends IGenericResp {}
 
@@ -127,8 +121,7 @@ export interface IPreviewImportProjectsParams {
   projects_file?: any;
 }
 
-export interface IPreviewImportProjectsReturn
-  extends IPreviewImportProjectsReply {}
+export interface IPreviewImportProjectsReturn extends IPreviewImportProjectsReply {}
 
 export interface IGetProjectTipsParams {
   project_uid?: string;
@@ -228,8 +221,7 @@ export interface IImportProjectsV2Params extends IImportProjectsReqV2 {}
 
 export interface IImportProjectsV2Return extends IGenericResp {}
 
-export interface IImportDBServicesOfProjectsV2Params
-  extends IImportDBServicesOfProjectsReqV2 {}
+export interface IImportDBServicesOfProjectsV2Params extends IImportDBServicesOfProjectsReqV2 {}
 
 export interface IImportDBServicesOfProjectsV2Return extends IGenericResp {}
 
@@ -241,8 +233,7 @@ export interface IPreviewImportProjectsV2Params {
   projects_file?: any;
 }
 
-export interface IPreviewImportProjectsV2Return
-  extends IPreviewImportProjectsReplyV2 {}
+export interface IPreviewImportProjectsV2Return extends IPreviewImportProjectsReplyV2 {}
 
 export interface IUpdateProjectV2Params extends IUpdateProjectReqV2 {
   project_uid: string;

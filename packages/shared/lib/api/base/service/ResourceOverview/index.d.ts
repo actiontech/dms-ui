@@ -33,14 +33,11 @@ export interface IGetResourceOverviewResourceListV1Params {
   page_size?: number;
 }
 
-export interface IGetResourceOverviewResourceListV1Return
-  extends IResourceOverviewResourceListResV1 {}
+export interface IGetResourceOverviewResourceListV1Return extends IResourceOverviewResourceListResV1 {}
 
-export interface IGetResourceOverviewResourceTypeDistributionV1Return
-  extends IResourceOverviewResourceTypeDistributionResV1 {}
+export interface IGetResourceOverviewResourceTypeDistributionV1Return extends IResourceOverviewResourceTypeDistributionResV1 {}
 
-export interface IGetResourceOverviewStatisticsV1Return
-  extends IResourceOverviewStatisticsResV1 {}
+export interface IGetResourceOverviewStatisticsV1Return extends IResourceOverviewStatisticsResV1 {}
 
 export interface IGetResourceOverviewTopologyV1Params {
   filter_by_db_type?: string;
@@ -54,5 +51,4 @@ export interface IGetResourceOverviewTopologyV1Params {
   fuzzy_search_resource_name?: string;
 }
 
-export interface IGetResourceOverviewTopologyV1Return
-  extends IResourceOverviewTopologyResV1 {}
+export interface IGetResourceOverviewTopologyV1Return extends IResourceOverviewTopologyResV1 {}

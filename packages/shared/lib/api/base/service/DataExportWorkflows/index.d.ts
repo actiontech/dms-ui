@@ -14,8 +14,7 @@ import {
   ListDataExportWorkflowsFilterByStatusEnum
 } from './index.enum';
 
-export interface IGetGlobalDataExportWorkflowsReturn
-  extends IGetGlobalDataExportWorkflowsReply {}
+export interface IGetGlobalDataExportWorkflowsReturn extends IGetGlobalDataExportWorkflowsReply {}
 
 export interface IListAllDataExportWorkflowsParams {
   project_uid: string;
@@ -39,8 +38,7 @@ export interface IListAllDataExportWorkflowsParams {
   fuzzy_keyword?: string;
 }
 
-export interface IListAllDataExportWorkflowsReturn
-  extends IListDataExportWorkflowsReply {}
+export interface IListAllDataExportWorkflowsReturn extends IListDataExportWorkflowsReply {}
 
 export interface IListDataExportWorkflowsParams {
   project_uid: string;
@@ -64,19 +62,15 @@ export interface IListDataExportWorkflowsParams {
   fuzzy_keyword?: string;
 }
 
-export interface IListDataExportWorkflowsReturn
-  extends IListDataExportWorkflowsReply {}
+export interface IListDataExportWorkflowsReturn extends IListDataExportWorkflowsReply {}
 
-export interface IAddDataExportWorkflowParams
-  extends IAddDataExportWorkflowReq {
+export interface IAddDataExportWorkflowParams extends IAddDataExportWorkflowReq {
   project_uid: string;
 }
 
-export interface IAddDataExportWorkflowReturn
-  extends IAddDataExportWorkflowReply {}
+export interface IAddDataExportWorkflowReturn extends IAddDataExportWorkflowReply {}
 
-export interface ICancelDataExportWorkflowParams
-  extends ICancelDataExportWorkflowReq {
+export interface ICancelDataExportWorkflowParams extends ICancelDataExportWorkflowReq {
   project_uid: string;
 }
 
@@ -88,8 +82,7 @@ export interface IGetDataExportWorkflowParams {
   project_uid: string;
 }
 
-export interface IGetDataExportWorkflowReturn
-  extends IGetDataExportWorkflowReply {}
+export interface IGetDataExportWorkflowReturn extends IGetDataExportWorkflowReply {}
 
 export interface IApproveDataExportWorkflowParams {
   project_uid: string;
@@ -107,8 +100,7 @@ export interface IExportDataExportWorkflowParams {
 
 export interface IExportDataExportWorkflowReturn extends IGenericResp {}
 
-export interface IRejectDataExportWorkflowParams
-  extends IRejectDataExportWorkflowReq {
+export interface IRejectDataExportWorkflowParams extends IRejectDataExportWorkflowReq {
   project_uid: string;
 
   data_export_workflow_uid: string;

@@ -5,8 +5,7 @@ import {
   getSystemModuleStatusModuleNameEnum
 } from './index.enum';
 
-export interface IGetSystemModuleRedDotsReturn
-  extends IGetSystemModuleRedDotsRes {}
+export interface IGetSystemModuleRedDotsReturn extends IGetSystemModuleRedDotsRes {}
 
 export interface IGetSystemModuleStatusParams {
   db_type?: getSystemModuleStatusDbTypeEnum;

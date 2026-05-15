@@ -32,25 +32,19 @@ import {
   ITestWeChatConfigurationReply
 } from '../common.d';
 
-export interface IGetFeishuConfigurationReturn
-  extends IGetFeishuConfigurationReply {}
+export interface IGetFeishuConfigurationReturn extends IGetFeishuConfigurationReply {}
 
-export interface IUpdateFeishuConfigurationParams
-  extends IUpdateFeishuConfigurationReq {}
+export interface IUpdateFeishuConfigurationParams extends IUpdateFeishuConfigurationReq {}
 
 export interface IUpdateFeishuConfigurationReturn extends IGenericResp {}
 
-export interface ITestFeishuConfigurationParams
-  extends ITestFeishuConfigurationReq {}
+export interface ITestFeishuConfigurationParams extends ITestFeishuConfigurationReq {}
 
-export interface ITestFeishuConfigurationReturn
-  extends ITestFeishuConfigurationReply {}
+export interface ITestFeishuConfigurationReturn extends ITestFeishuConfigurationReply {}
 
-export interface IGetLDAPConfigurationReturn
-  extends IGetLDAPConfigurationResDataReply {}
+export interface IGetLDAPConfigurationReturn extends IGetLDAPConfigurationResDataReply {}
 
-export interface IUpdateLDAPConfigurationParams
-  extends IUpdateLDAPConfigurationReq {}
+export interface IUpdateLDAPConfigurationParams extends IUpdateLDAPConfigurationReq {}
 
 export interface IUpdateLDAPConfigurationReturn extends IGenericResp {}
 
@@ -70,75 +64,58 @@ export interface ICheckLicenseReturn extends ICheckLicenseReply {}
 
 export interface IGetLicenseUsageReturn extends IGetLicenseUsageReply {}
 
-export interface IUpdateLoginConfigurationParams
-  extends IUpdateLoginConfigurationReq {}
+export interface IUpdateLoginConfigurationParams extends IUpdateLoginConfigurationReq {}
 
 export interface IUpdateLoginConfigurationReturn extends IGenericResp {}
 
 export interface IGetLoginTipsReturn extends IGetLoginTipsReply {}
 
-export interface IGetOauth2ConfigurationReturn
-  extends IGetOauth2ConfigurationResDataReply {}
+export interface IGetOauth2ConfigurationReturn extends IGetOauth2ConfigurationResDataReply {}
 
-export interface IUpdateOauth2ConfigurationParams
-  extends IOauth2ConfigurationReq {}
+export interface IUpdateOauth2ConfigurationParams extends IOauth2ConfigurationReq {}
 
 export interface IUpdateOauth2ConfigurationReturn extends IGenericResp {}
 
 export interface IGetSmsConfigurationReturn extends IGetSmsConfigurationReply {}
 
-export interface IUpdateSmsConfigurationParams
-  extends IUpdateSmsConfigurationReq {}
+export interface IUpdateSmsConfigurationParams extends IUpdateSmsConfigurationReq {}
 
 export interface IUpdateSmsConfigurationReturn extends IGenericResp {}
 
 export interface ITestSmsConfigurationParams extends ITestSmsConfigurationReq {}
 
-export interface ITestSmsConfigurationReturn
-  extends ITestSmsConfigurationReply {}
+export interface ITestSmsConfigurationReturn extends ITestSmsConfigurationReply {}
 
-export interface IGetSMTPConfigurationReturn
-  extends IGetSMTPConfigurationReply {}
+export interface IGetSMTPConfigurationReturn extends IGetSMTPConfigurationReply {}
 
-export interface IUpdateSMTPConfigurationParams
-  extends IUpdateSMTPConfigurationReq {}
+export interface IUpdateSMTPConfigurationParams extends IUpdateSMTPConfigurationReq {}
 
 export interface IUpdateSMTPConfigurationReturn extends IGenericResp {}
 
-export interface ITestSMTPConfigurationParams
-  extends ITestSMTPConfigurationReq {}
+export interface ITestSMTPConfigurationParams extends ITestSMTPConfigurationReq {}
 
-export interface ITestSMTPConfigurationReturn
-  extends ITestSMTPConfigurationReply {}
+export interface ITestSMTPConfigurationReturn extends ITestSMTPConfigurationReply {}
 
 export interface IGetSystemVariablesReturn extends IGetSystemVariablesReply {}
 
-export interface IUpdateSystemVariablesParams
-  extends IUpdateSystemVariablesReqV1 {}
+export interface IUpdateSystemVariablesParams extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesReturn extends IGenericResp {}
 
-export interface IGetWebHookConfigurationReturn
-  extends IGetWebHookConfigurationReply {}
+export interface IGetWebHookConfigurationReturn extends IGetWebHookConfigurationReply {}
 
-export interface IUpdateWebHookConfigurationParams
-  extends IUpdateWebHookConfigurationReq {}
+export interface IUpdateWebHookConfigurationParams extends IUpdateWebHookConfigurationReq {}
 
 export interface IUpdateWebHookConfigurationReturn extends IGenericResp {}
 
-export interface ITestWebHookConfigurationReturn
-  extends ITestWebHookConfigurationReply {}
+export interface ITestWebHookConfigurationReturn extends ITestWebHookConfigurationReply {}
 
-export interface IGetWeChatConfigurationReturn
-  extends IGetWeChatConfigurationReply {}
+export interface IGetWeChatConfigurationReturn extends IGetWeChatConfigurationReply {}
 
-export interface IUpdateWeChatConfigurationParams
-  extends IUpdateWeChatConfigurationReq {}
+export interface IUpdateWeChatConfigurationParams extends IUpdateWeChatConfigurationReq {}
 
 export interface IUpdateWeChatConfigurationReturn extends IGenericResp {}
 
-export interface ITestWeChatConfigurationParams
-  extends ITestWeChatConfigurationReq {}
+export interface ITestWeChatConfigurationParams extends ITestWeChatConfigurationReq {}
 
-export interface ITestWeChatConfigurationReturn
-  extends ITestWeChatConfigurationReply {}
+export interface ITestWeChatConfigurationReturn extends ITestWeChatConfigurationReply {}

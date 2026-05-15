@@ -123,7 +123,7 @@ describe('ReportStatistics/ManagementView/ProjectIOAnalysis', () => {
               colorTextBase: '#111'
             }
           }
-        } as any)
+        }) as any
     );
 
     const { container } = sqleSuperRender(

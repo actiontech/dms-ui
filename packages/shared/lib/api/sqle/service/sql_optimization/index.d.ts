@@ -31,8 +31,7 @@ export interface IGetOptimizationRecordsParams {
   project_name: string;
 }
 
-export interface IGetOptimizationRecordsReturn
-  extends IGetOptimizationRecordsRes {}
+export interface IGetOptimizationRecordsReturn extends IGetOptimizationRecordsRes {}
 
 export interface IOptimizeSQLReqParams extends IOptimizeSQLReq {
   project_name: string;
@@ -70,8 +69,7 @@ export interface IGetOptimizationRecordReqParams {
   sql?: string;
 }
 
-export interface IGetOptimizationRecordReqReturn
-  extends IGetOptimizationRecordRes {}
+export interface IGetOptimizationRecordReqReturn extends IGetOptimizationRecordRes {}
 
 export interface IGetOptimizationSQLsParams {
   page_index: number;
@@ -99,8 +97,7 @@ export interface IGetDBPerformanceImproveOverviewParams {
   project_name: string;
 }
 
-export interface IGetDBPerformanceImproveOverviewReturn
-  extends IGetDBPerformanceImproveOverviewResp {}
+export interface IGetDBPerformanceImproveOverviewReturn extends IGetDBPerformanceImproveOverviewResp {}
 
 export interface IGetOptimizationOverviewParams {
   filter_create_time_from: string;
@@ -110,8 +107,7 @@ export interface IGetOptimizationOverviewParams {
   project_name: string;
 }
 
-export interface IGetOptimizationOverviewReturn
-  extends IGetOptimizationOverviewResp {}
+export interface IGetOptimizationOverviewReturn extends IGetOptimizationOverviewResp {}
 
 export interface IGetOptimizationRecordsV2Params {
   fuzzy_search?: string;
@@ -131,8 +127,7 @@ export interface IGetOptimizationRecordsV2Params {
   project_name: string;
 }
 
-export interface IGetOptimizationRecordsV2Return
-  extends IGetOptimizationRecordsRes {}
+export interface IGetOptimizationRecordsV2Return extends IGetOptimizationRecordsRes {}
 
 export interface ISQLOptimizeV2Params extends IOptimizeSQLReq {
   project_name: string;
@@ -174,11 +169,9 @@ export interface IGetOptimizationSQLDetailV2Params {
   optimization_record_id: string;
 }
 
-export interface IGetOptimizationSQLDetailV2Return
-  extends IGetOptimizationDetailRes {}
+export interface IGetOptimizationSQLDetailV2Return extends IGetOptimizationDetailRes {}
 
-export interface IAddOptimizedSQLFeedbackParams
-  extends IOptimizedSQLFeedbackReq {
+export interface IAddOptimizedSQLFeedbackParams extends IOptimizedSQLFeedbackReq {
   project_name: string;
 
   optimization_record_id: string;
@@ -196,8 +189,7 @@ export interface IDeleteOptimizedSQLFeedbackParams {
 
 export interface IDeleteOptimizedSQLFeedbackReturn extends IBaseRes {}
 
-export interface IUpdateOptimizedSQLFeedbackParams
-  extends IUpdateOptimizedSQLFeedbackReq {
+export interface IUpdateOptimizedSQLFeedbackParams extends IUpdateOptimizedSQLFeedbackReq {
   project_name: string;
 
   optimization_record_id: string;

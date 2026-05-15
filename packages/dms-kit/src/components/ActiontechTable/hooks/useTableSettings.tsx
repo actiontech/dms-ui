@@ -80,17 +80,20 @@ const useTableSettings = <
           const columnsInfo: CatchTableColumnValueType<T, OtherColumnKeys> =
             defaultColumns.reduce<
               CatchTableColumnValueType<T, OtherColumnKeys>
-            >((acc, cur, index) => {
-              return {
-                ...acc,
-                [cur.dataIndex]: {
-                  order: index + 1,
-                  show: cur.show ?? true,
-                  fixed: cur?.fixed,
-                  title: getColumnsLabel(cur.title)
-                }
-              };
-            }, {} as CatchTableColumnValueType<T, OtherColumnKeys>);
+            >(
+              (acc, cur, index) => {
+                return {
+                  ...acc,
+                  [cur.dataIndex]: {
+                    order: index + 1,
+                    show: cur.show ?? true,
+                    fixed: cur?.fixed,
+                    title: getColumnsLabel(cur.title)
+                  }
+                };
+              },
+              {} as CatchTableColumnValueType<T, OtherColumnKeys>
+            );
 
           const data: CatchTableColumnsType<T> = localData
             ? { ...localData, [username]: columnsInfo }

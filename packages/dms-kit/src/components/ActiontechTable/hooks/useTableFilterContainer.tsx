@@ -114,7 +114,7 @@ const useTableFilterContainer = <
 
   const updateAllSelectedFilterItem = useCallback(
     (checked: boolean) => {
-      updateTableFilterInfo(() => ({} as F));
+      updateTableFilterInfo(() => ({}) as F);
       setFilterButtonMeta((meta) => {
         meta.forEach((value, key) => {
           meta.set(key, { ...value, checked });

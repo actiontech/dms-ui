@@ -94,7 +94,7 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
               dataIndex: 'trigger_type',
               render: (type) => {
                 return type
-                  ? WorkflowPushFrequencyDictionary[type] ?? 'unknown'
+                  ? (WorkflowPushFrequencyDictionary[type] ?? 'unknown')
                   : '--';
               }
             },
@@ -103,7 +103,7 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
               dataIndex: 'push_user_Type',
               render: (type) => {
                 return type
-                  ? WorkflowPushUserTypeDictionary[type] ?? 'unknown'
+                  ? (WorkflowPushUserTypeDictionary[type] ?? 'unknown')
                   : '--';
               }
             },

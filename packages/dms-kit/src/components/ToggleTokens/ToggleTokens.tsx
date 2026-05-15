@@ -76,7 +76,7 @@ const ToggleTokens = <V extends string | number | null = string>(
         return {
           label:
             typeof item.label === 'string'
-              ? labelDictionary[item.label] ?? item.label
+              ? (labelDictionary[item.label] ?? item.label)
               : item.label,
           value: item.value,
           className: item.className,

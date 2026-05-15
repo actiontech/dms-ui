@@ -15,7 +15,7 @@ const createMockEditor = (overrides = {}) =>
     onDidChangeModelContent: jest.fn(),
     onDidLayoutChange: jest.fn(),
     ...overrides
-  } as unknown as editor.IStandaloneCodeEditor);
+  }) as unknown as editor.IStandaloneCodeEditor;
 
 const createMockMonaco = () =>
   ({
@@ -23,7 +23,7 @@ const createMockMonaco = () =>
       defineTheme: jest.fn(),
       setTheme: jest.fn()
     }
-  } as unknown as Monaco);
+  }) as unknown as Monaco;
 
 describe('useMonacoScrollbarHandler', () => {
   it('should return required refs and setupScrollbarHandler function', () => {

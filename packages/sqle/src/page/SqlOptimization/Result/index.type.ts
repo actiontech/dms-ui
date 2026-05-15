@@ -12,11 +12,10 @@ export interface ProbabilityDisplayProps {
   optimizationDetailStatus?: OptimizationSQLDetailStatusEnum;
 }
 
-export interface SqlOptimizationResultProps
-  extends Omit<
-    ReturnType<typeof useOptimizationResult>,
-    'getOptimizationResult' | 'cancelOptimizationRequestPolling'
-  > {
+export interface SqlOptimizationResultProps extends Omit<
+  ReturnType<typeof useOptimizationResult>,
+  'getOptimizationResult' | 'cancelOptimizationRequestPolling'
+> {
   isVerticalLayout?: boolean;
   optimizationRecordId?: string;
   onFeedbackChanged?: () => void;

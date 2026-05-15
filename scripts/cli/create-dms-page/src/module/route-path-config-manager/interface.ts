@@ -10,5 +10,4 @@ export interface IRoutePathConfig {
   routeConfigVariableName: string;
 }
 
-export interface IRoutePathConfigManager
-  extends IModuleBase<IRoutePathConfig> {}
+export interface IRoutePathConfigManager extends IModuleBase<IRoutePathConfig> {}

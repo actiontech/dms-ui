@@ -21,5 +21,4 @@ interface SqlRewrittenDrawerBaseProps {
 }
 
 export interface SqlRewrittenDrawerWithBaseProps
-  extends SqlRewrittenDrawerBaseProps,
-    SqlRewrittenDrawerProps {}
+  extends SqlRewrittenDrawerBaseProps, SqlRewrittenDrawerProps {}

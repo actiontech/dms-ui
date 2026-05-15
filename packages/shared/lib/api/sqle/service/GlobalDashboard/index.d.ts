@@ -28,8 +28,7 @@ export interface IGetGlobalAccountListV2Params {
   filter_instance_id?: string;
 }
 
-export interface IGetGlobalAccountListV2Return
-  extends IGlobalAccountListResV2 {}
+export interface IGetGlobalAccountListV2Return extends IGlobalAccountListResV2 {}
 
 export interface IGetGlobalAccountStatisticsV2Params {
   filter_project_uid?: string;
@@ -37,8 +36,7 @@ export interface IGetGlobalAccountStatisticsV2Params {
   filter_instance_id?: string;
 }
 
-export interface IGetGlobalAccountStatisticsV2Return
-  extends IGlobalAccountStatisticsResV2 {}
+export interface IGetGlobalAccountStatisticsV2Return extends IGlobalAccountStatisticsResV2 {}
 
 export interface IGetGlobalSqlManageStatisticsV2Params {
   filter_project_uid?: string;
@@ -46,8 +44,7 @@ export interface IGetGlobalSqlManageStatisticsV2Params {
   filter_instance_id?: string;
 }
 
-export interface IGetGlobalSqlManageStatisticsV2Return
-  extends IGlobalSqlManageStatisticsResV2 {}
+export interface IGetGlobalSqlManageStatisticsV2Return extends IGlobalSqlManageStatisticsResV2 {}
 
 export interface IGetGlobalSqlManageTaskListV2Params {
   page_index: number;
@@ -63,8 +60,7 @@ export interface IGetGlobalSqlManageTaskListV2Params {
   filter_instance_id?: string;
 }
 
-export interface IGetGlobalSqlManageTaskListV2Return
-  extends IGlobalSqlManageTaskListResV2 {}
+export interface IGetGlobalSqlManageTaskListV2Return extends IGlobalSqlManageTaskListResV2 {}
 
 export interface IGetGlobalWorkflowListV2Params {
   cursor?: string;
@@ -84,8 +80,7 @@ export interface IGetGlobalWorkflowListV2Params {
   workflow_type?: GetGlobalWorkflowListV2WorkflowTypeEnum;
 }
 
-export interface IGetGlobalWorkflowListV2Return
-  extends IGlobalWorkflowListResV2 {}
+export interface IGetGlobalWorkflowListV2Return extends IGlobalWorkflowListResV2 {}
 
 export interface IGetGlobalWorkflowStatisticsV2Params {
   filter_project_uid?: string;
@@ -93,5 +88,4 @@ export interface IGetGlobalWorkflowStatisticsV2Params {
   filter_instance_id?: string;
 }
 
-export interface IGetGlobalWorkflowStatisticsV2Return
-  extends IGlobalWorkflowStatisticsResV2 {}
+export interface IGetGlobalWorkflowStatisticsV2Return extends IGlobalWorkflowStatisticsResV2 {}

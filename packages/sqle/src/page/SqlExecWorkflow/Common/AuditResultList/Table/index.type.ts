@@ -3,13 +3,12 @@ import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/a
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditResultListProps } from '../index.type';
 
-export interface AuditResultTableProps
-  extends Pick<
-    AuditResultListProps,
-    | 'updateTaskRecordCount'
-    | 'allowSwitchBackupPolicy'
-    | 'updateTaskAuditRuleExceptionStatus'
-  > {
+export interface AuditResultTableProps extends Pick<
+  AuditResultListProps,
+  | 'updateTaskRecordCount'
+  | 'allowSwitchBackupPolicy'
+  | 'updateTaskAuditRuleExceptionStatus'
+> {
   noDuplicate: boolean;
   taskID?: string;
   auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum | null;

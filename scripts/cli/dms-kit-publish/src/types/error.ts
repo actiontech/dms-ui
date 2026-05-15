@@ -13,7 +13,11 @@ export enum ErrorCode {
 
 // 部署错误类
 export class DeployError extends Error {
-  constructor(public code: ErrorCode, message: string, public details?: any) {
+  constructor(
+    public code: ErrorCode,
+    message: string,
+    public details?: any
+  ) {
     super(message);
     this.name = 'DeployError';
   }

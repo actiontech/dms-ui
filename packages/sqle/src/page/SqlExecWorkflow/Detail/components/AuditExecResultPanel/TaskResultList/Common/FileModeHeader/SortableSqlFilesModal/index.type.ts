@@ -6,7 +6,6 @@ export type SortableSQLFilesModalProps = {
   workflowId: string;
 };
 
-export interface SortableSQLFilesTableRowProps
-  extends React.HTMLAttributes<HTMLTableRowElement> {
+export interface SortableSQLFilesTableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   'data-row-key': string;
 }

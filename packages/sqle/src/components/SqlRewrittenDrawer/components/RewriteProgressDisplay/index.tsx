@@ -273,9 +273,12 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       const isProcessing = rule.status === RewriteSuggestionStatusEnum.initial;
       const hasExistingTimer = activeProgressTimers.current.has(rule.ruleId);
       if (isProcessing && !hasExistingTimer) {
-        const initialDelay = setTimeout(() => {
-          startRuleStageProgress(rule.ruleId);
-        }, Math.random() * 1000 + 500);
+        const initialDelay = setTimeout(
+          () => {
+            startRuleStageProgress(rule.ruleId);
+          },
+          Math.random() * 1000 + 500
+        );
         activeProgressTimers.current.set(rule.ruleId, initialDelay);
       } else if (!isProcessing && hasExistingTimer) {
         clearRuleTimer(rule.ruleId);

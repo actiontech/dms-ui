@@ -56,7 +56,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
       [authorizedParam]: value,
       assignee_user_id_list: value
         ? []
-        : props?.defaultData?.assignee_user_id_list ?? []
+        : (props?.defaultData?.assignee_user_id_list ?? [])
     });
   };
   const updateNodeDesc = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -97,15 +97,15 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressTitle')
             : isDataExport
-            ? t('workflowTemplate.step.exportExecTitle')
-            : t('workflowTemplate.step.execTitle')}
+              ? t('workflowTemplate.step.exportExecTitle')
+              : t('workflowTemplate.step.execTitle')}
         </div>
         <div className="step-title-info">
           {props.type === NodeTypeEnum.review
             ? t('workflowTemplate.step.progressDesc')
             : isDataExport
-            ? t('workflowTemplate.step.exportExecDesc')
-            : t('workflowTemplate.step.execDesc')}
+              ? t('workflowTemplate.step.exportExecDesc')
+              : t('workflowTemplate.step.execDesc')}
         </div>
       </div>
       <div className="step-info-wrapper">
@@ -161,12 +161,12 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
                         'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
                       )
                     : isDataExport
-                    ? t(
-                        'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
-                      )
-                    : t(
-                        'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
-                      )
+                      ? t(
+                          'workflowTemplate.progressConfig.exportExec.executeUserType.matchExecute'
+                        )
+                      : t(
+                          'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
+                        )
                 }
                 name={[authorizedParam]}
                 valuePropName="checked"

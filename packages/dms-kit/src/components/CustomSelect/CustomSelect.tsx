@@ -40,7 +40,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       const showLabel: string =
         typeof option.label === 'string'
           ? option.label
-          : option.text ?? option.value;
+          : (option.text ?? option.value);
 
       if (
         !showLabel.toLowerCase().includes(innerSearchValue?.toLowerCase() ?? '')

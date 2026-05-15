@@ -289,7 +289,7 @@ type ValueOf<T> = T[keyof T];
 type PermissionValueType<T> = T extends string
   ? T
   : T extends object
-  ? PermissionValueType<ValueOf<T>>
-  : never;
+    ? PermissionValueType<ValueOf<T>>
+    : never;
 
 export type PermissionsConstantType = PermissionValueType<typeof PERMISSIONS>;

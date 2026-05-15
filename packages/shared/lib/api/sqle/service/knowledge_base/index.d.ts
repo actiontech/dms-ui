@@ -22,5 +22,4 @@ export interface IGetKnowledgeGraphParams {
 
 export interface IGetKnowledgeGraphReturn extends IGetKnowledgeGraphResp {}
 
-export interface IGetKnowledgeBaseTagListReturn
-  extends IGetKnowledgeBaseTagListRes {}
+export interface IGetKnowledgeBaseTagListReturn extends IGetKnowledgeBaseTagListRes {}

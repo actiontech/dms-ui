@@ -47,8 +47,7 @@ export interface IGetSqlVersionDetailV1Params {
   sql_version_id: string;
 }
 
-export interface IGetSqlVersionDetailV1Return
-  extends IGetSqlVersionDetailResV1 {}
+export interface IGetSqlVersionDetailV1Return extends IGetSqlVersionDetailResV1 {}
 
 export interface IDeleteSqlVersionV1Params {
   project_name: string;
@@ -66,8 +65,7 @@ export interface IUpdateSqlVersionV1Params extends IUpdateSqlVersionReqV1 {
 
 export interface IUpdateSqlVersionV1Return extends IBaseRes {}
 
-export interface IBatchExecuteWorkflowsV1Params
-  extends IBatchExecuteWorkflowsReqV1 {
+export interface IBatchExecuteWorkflowsV1Params extends IBatchExecuteWorkflowsReqV1 {
   project_name: string;
 
   sql_version_id: string;
@@ -75,8 +73,7 @@ export interface IBatchExecuteWorkflowsV1Params
 
 export interface IBatchExecuteWorkflowsV1Return extends IBaseRes {}
 
-export interface IBatchReleaseWorkflowsV1Params
-  extends IBatchReleaseWorkflowReqV1 {
+export interface IBatchReleaseWorkflowsV1Params extends IBatchReleaseWorkflowReqV1 {
   project_name: string;
 
   sql_version_id: string;
@@ -100,11 +97,9 @@ export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Params {
   sql_version_stage_id: string;
 }
 
-export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Return
-  extends IGetWorkflowsThatCanBeAssociatedToVersionResV1 {}
+export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Return extends IGetWorkflowsThatCanBeAssociatedToVersionResV1 {}
 
-export interface IBatchAssociateWorkflowsWithVersionV1Params
-  extends IBatchAssociateWorkflowsWithVersionReqV1 {
+export interface IBatchAssociateWorkflowsWithVersionV1Params extends IBatchAssociateWorkflowsWithVersionReqV1 {
   project_name: string;
 
   sql_version_id: string;
@@ -122,5 +117,4 @@ export interface IGetDependenciesBetweenStageInstanceV1Params {
   sql_version_stage_id: string;
 }
 
-export interface IGetDependenciesBetweenStageInstanceV1Return
-  extends IGetDepBetweenStageInstanceResV1 {}
+export interface IGetDependenciesBetweenStageInstanceV1Return extends IGetDepBetweenStageInstanceResV1 {}

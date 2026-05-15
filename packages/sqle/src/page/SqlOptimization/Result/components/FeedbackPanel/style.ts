@@ -15,7 +15,9 @@ export const FeedbackEntryStyleWrapper = styled('div')`
     border-left-width: 1px;
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
     cursor: pointer;
-    transition: border-color 0.18s ease, background-color 0.18s ease,
+    transition:
+      border-color 0.18s ease,
+      background-color 0.18s ease,
       color 0.18s ease;
     display: flex;
     flex-direction: column;

@@ -63,18 +63,15 @@ export interface IListGlobalDBServicesParams {
   fuzzy_keyword?: string;
 }
 
-export interface IListGlobalDBServicesReturn
-  extends IListGlobalDBServicesReply {}
+export interface IListGlobalDBServicesReturn extends IListGlobalDBServicesReply {}
 
-export interface IListDBServiceDriverOptionReturn
-  extends IListDBServiceDriverOptionReply {}
+export interface IListDBServiceDriverOptionReturn extends IListDBServiceDriverOptionReply {}
 
 export interface IListGlobalDBServicesTipsParams {
   function_support?: ListGlobalDBServicesTipsFunctionSupportEnum;
 }
 
-export interface IListGlobalDBServicesTipsReturn
-  extends IListGlobalDBServicesTipsReply {}
+export interface IListGlobalDBServicesTipsReturn extends IListGlobalDBServicesTipsReply {}
 
 export interface IListDBServicesParams {
   page_size: number;
@@ -114,24 +111,19 @@ export interface IAddDBServiceParams extends IAddDBServiceReq {
 
 export interface IAddDBServiceReturn extends IAddDBServiceReply {}
 
-export interface ICheckDBServiceIsConnectableParams
-  extends ICheckDBServiceIsConnectableReq {
+export interface ICheckDBServiceIsConnectableParams extends ICheckDBServiceIsConnectableReq {
   project_uid: string;
 }
 
-export interface ICheckDBServiceIsConnectableReturn
-  extends ICheckDBServiceIsConnectableReply {}
+export interface ICheckDBServiceIsConnectableReturn extends ICheckDBServiceIsConnectableReply {}
 
-export interface ICheckProjectDBServicesConnectionsParams
-  extends ICheckDBServicesIsConnectableReq {
+export interface ICheckProjectDBServicesConnectionsParams extends ICheckDBServicesIsConnectableReq {
   project_uid: string;
 }
 
-export interface ICheckProjectDBServicesConnectionsReturn
-  extends ICheckDBServicesIsConnectableReply {}
+export interface ICheckProjectDBServicesConnectionsReturn extends ICheckDBServicesIsConnectableReply {}
 
-export interface IImportDBServicesOfOneProjectParams
-  extends IImportDBServicesOfOneProjectReq {
+export interface IImportDBServicesOfOneProjectParams extends IImportDBServicesOfOneProjectReq {
   project_uid: string;
 }
 
@@ -175,8 +167,7 @@ export interface ICheckDBServiceIsConnectableByIdParams {
   db_service_uid: string;
 }
 
-export interface ICheckDBServiceIsConnectableByIdReturn
-  extends ICheckDBServiceIsConnectableReply {}
+export interface ICheckDBServiceIsConnectableByIdReturn extends ICheckDBServiceIsConnectableReply {}
 
 export interface IListGlobalDBServicesV2Params {
   page_size: number;
@@ -206,8 +197,7 @@ export interface IListGlobalDBServicesV2Params {
   fuzzy_keyword?: string;
 }
 
-export interface IListGlobalDBServicesV2Return
-  extends IListGlobalDBServicesReplyV2 {}
+export interface IListGlobalDBServicesV2Return extends IListGlobalDBServicesReplyV2 {}
 
 export interface IListDBServicesV2Params {
   page_size: number;
@@ -247,8 +237,7 @@ export interface IAddDBServiceV2Params extends IAddDBServiceReqV2 {
 
 export interface IAddDBServiceV2Return extends IAddDBServiceReply {}
 
-export interface IImportDBServicesOfOneProjectV2Params
-  extends IImportDBServicesOfOneProjectReqV2 {
+export interface IImportDBServicesOfOneProjectV2Params extends IImportDBServicesOfOneProjectReqV2 {
   project_uid: string;
 }
 

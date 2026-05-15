@@ -12,21 +12,21 @@ export type RoutePathValue = To | ObjectRoutePathValue;
 type ExtractPathParams<T extends string> = string extends T
   ? Record<string, string>
   : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  T extends `${infer _}:${infer Param}/${infer Rest}`
-  ? { [K in Param | keyof ExtractPathParams<Rest>]: string }
-  : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  T extends `${infer _}:${infer Param}`
-  ? { [K in Param]: string }
-  : unknown;
+    T extends `${infer _}:${infer Param}/${infer Rest}`
+    ? { [K in Param | keyof ExtractPathParams<Rest>]: string }
+    : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      T extends `${infer _}:${infer Param}`
+      ? { [K in Param]: string }
+      : unknown;
 
 // 提取查询参数
 export type ExtractPathQueries<T extends string> = string extends T
   ? Record<string, string | undefined>
   : T extends `${infer Param}&${infer Rest}`
-  ? { [K in Param]?: string } & ExtractPathQueries<Rest>
-  : T extends `${infer Param}`
-  ? { [K in Param]?: string }
-  : unknown;
+    ? { [K in Param]?: string } & ExtractPathQueries<Rest>
+    : T extends `${infer Param}`
+      ? { [K in Param]?: string }
+      : unknown;
 
 export type InferParamsFromConfig<T> = T extends ObjectRoutePathValue
   ? T['prefix'] extends string
@@ -35,11 +35,11 @@ export type InferParamsFromConfig<T> = T extends ObjectRoutePathValue
         ? ExtractPathParams<T['path']> & ExtractPathParams<T['prefix']>
         : ExtractPathParams<T['prefix']>
       : ExtractPathParams<T['path']> extends object
+        ? ExtractPathParams<T['path']>
+        : never
+    : ExtractPathParams<T['path']> extends object
       ? ExtractPathParams<T['path']>
       : never
-    : ExtractPathParams<T['path']> extends object
-    ? ExtractPathParams<T['path']>
-    : never
   : never;
 
 export type InferQueriesFromConfig<T> = T extends ObjectRoutePathValue
@@ -61,26 +61,27 @@ export type TypedLinkProps<T extends RoutePathValue = string> = Omit<
         }
       : { to: T; queries?: InferQueriesFromConfig<T> }
     : InferQueriesFromConfig<T> extends never
-    ? {
-        to: T | To;
-        params: InferParamsFromConfig<T>;
-      }
-    : {
-        to: T | To;
-        params: InferParamsFromConfig<T>;
-        queries?: InferQueriesFromConfig<T>;
-      });
+      ? {
+          to: T | To;
+          params: InferParamsFromConfig<T>;
+        }
+      : {
+          to: T | To;
+          params: InferParamsFromConfig<T>;
+          queries?: InferQueriesFromConfig<T>;
+        });
 
-export type NavigateTypedOptions<T> = InferParamsFromConfig<T> extends never
-  ? InferQueriesFromConfig<T> extends never
-    ? NavigateOptions
-    : NavigateOptions & { queries?: InferQueriesFromConfig<T> }
-  : InferQueriesFromConfig<T> extends never
-  ? NavigateOptions & { params: InferParamsFromConfig<T> }
-  : NavigateOptions & {
-      params: InferParamsFromConfig<T>;
-      queries?: InferQueriesFromConfig<T>;
-    };
+export type NavigateTypedOptions<T> =
+  InferParamsFromConfig<T> extends never
+    ? InferQueriesFromConfig<T> extends never
+      ? NavigateOptions
+      : NavigateOptions & { queries?: InferQueriesFromConfig<T> }
+    : InferQueriesFromConfig<T> extends never
+      ? NavigateOptions & { params: InferParamsFromConfig<T> }
+      : NavigateOptions & {
+          params: InferParamsFromConfig<T>;
+          queries?: InferQueriesFromConfig<T>;
+        };
 
 // todo 遗留 params 存在但 options 为可选参数的问题
 export type NavigateFunction = {

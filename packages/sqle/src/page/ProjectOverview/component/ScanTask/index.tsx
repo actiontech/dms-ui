@@ -42,9 +42,9 @@ const ScanTask = () => {
     setDetailData(
       clickData?.type?.startsWith(defaultItemKey)
         ? {}
-        : data.filter(
+        : (data.filter(
             (item: IDBTypeAuditPlan) => clickData?.type === item.db_type
-          )?.[0] ?? {}
+          )?.[0] ?? {})
     );
   };
   const chartChildrenProps = useMemo(() => {

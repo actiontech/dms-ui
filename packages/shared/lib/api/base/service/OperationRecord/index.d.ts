@@ -22,8 +22,7 @@ export interface IGetOperationRecordListParams {
   page_size: number;
 }
 
-export interface IGetOperationRecordListReturn
-  extends IGetOperationRecordListReply {}
+export interface IGetOperationRecordListReturn extends IGetOperationRecordListReply {}
 
 export interface IAddOperationRecordParams extends IAddOperationRecordReq {}
 

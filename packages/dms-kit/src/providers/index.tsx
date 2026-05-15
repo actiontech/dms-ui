@@ -3,8 +3,7 @@ import { LocaleProvider, LocaleProviderProps } from './locale';
 import { SupportTheme } from '../enum';
 
 export interface ConfigProviderProps
-  extends ThemeProviderProps,
-    LocaleProviderProps {}
+  extends ThemeProviderProps, LocaleProviderProps {}
 
 export const ConfigProvider: React.FC<ConfigProviderProps> = ({
   children,

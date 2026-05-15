@@ -117,12 +117,12 @@ export type TableFilterContainerProps<
 export type FilterCustomProps<C = TypeFilterElement> = C extends 'select'
   ? CustomSelectProps
   : C extends 'date-range'
-  ? RangePickerProps
-  : C extends 'input'
-  ? CustomInputProps
-  : C extends 'search-input'
-  ? ICustomSearchInputProps
-  : never;
+    ? RangePickerProps
+    : C extends 'input'
+      ? CustomInputProps
+      : C extends 'search-input'
+        ? ICustomSearchInputProps
+        : never;
 
 /**
  * 表格筛选信息中 value 的数据格式

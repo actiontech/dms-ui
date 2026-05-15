@@ -7,10 +7,22 @@ export const SQLRendererStyleWrapper = styled('div')`
     max-width: 100%;
 
     code {
-      font-family: 'SF Mono', 'PlusJakartaSans Medium', -apple-system,
-        'Microsoft YaHei', BlinkMacSystemFont, 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+      font-family:
+        'SF Mono',
+        'PlusJakartaSans Medium',
+        -apple-system,
+        'Microsoft YaHei',
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        'Helvetica Neue',
+        Arial,
+        'Noto Sans',
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji' !important;
       font-size: 13px;
       font-style: normal;
       font-weight: 400;

@@ -190,9 +190,9 @@ const useTableAction = () => {
         className: ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS,
         title: Array.isArray(actions)
           ? () => t('common.operate')
-          : actions.title ?? (() => t('common.operate')),
-        fixed: Array.isArray(actions) ? 'right' : actions.fixed ?? 'right',
-        width: Array.isArray(actions) ? maxWidth : actions.width ?? maxWidth,
+          : (actions.title ?? (() => t('common.operate'))),
+        fixed: Array.isArray(actions) ? 'right' : (actions.fixed ?? 'right'),
+        width: Array.isArray(actions) ? maxWidth : (actions.width ?? maxWidth),
         render: (_: unknown, record: T) => renderContent(record)
       };
     },

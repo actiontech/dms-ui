@@ -34,7 +34,7 @@ const Home = () => {
         getWorkflowStatistics={getWorkflowStatistics}
         projectName={projectName}
       />
-      {/* todo 智能扫描重构，先隐藏 
+      {/* todo 智能扫描重构，先隐藏
        <AuditPlanRiskList projectName={projectName} projectID={projectID} /> */}
     </>
   );

@@ -59,8 +59,7 @@ export interface IGetGlobalSqlManageListParams {
   page_size: number;
 }
 
-export interface IGetGlobalSqlManageListReturn
-  extends IGetGlobalSqlManageListResp {}
+export interface IGetGlobalSqlManageListReturn extends IGetGlobalSqlManageListResp {}
 
 export interface IGetGlobalSqlManageStatisticsParams {
   filter_project_uid?: string;
@@ -72,8 +71,7 @@ export interface IGetGlobalSqlManageStatisticsParams {
   filter_current_step_assignee_user_id?: string;
 }
 
-export interface IGetGlobalSqlManageStatisticsReturn
-  extends IGetGlobalSqlManageStatisticsResp {}
+export interface IGetGlobalSqlManageStatisticsReturn extends IGetGlobalSqlManageStatisticsResp {}
 
 export interface IGetSqlManageListParams {
   project_name: string;
@@ -117,8 +115,7 @@ export interface IGetAbnormalInstanceAuditPlansV1Params {
   project_name: string;
 }
 
-export interface IGetAbnormalInstanceAuditPlansV1Return
-  extends IGetAbnormalAuditPlanInstancesResp {}
+export interface IGetAbnormalInstanceAuditPlansV1Return extends IGetAbnormalAuditPlanInstancesResp {}
 
 export interface IBatchUpdateSqlManageParams extends IBatchUpdateSqlManageReq {
   project_name: string;
@@ -166,8 +163,7 @@ export interface IGetSqlManageRuleTipsParams {
   project_name: string;
 }
 
-export interface IGetSqlManageRuleTipsReturn
-  extends IGetSqlManageRuleTipsResp {}
+export interface IGetSqlManageRuleTipsReturn extends IGetSqlManageRuleTipsResp {}
 
 export interface ISendSqlManageParams extends ISqlManageCodingReq {
   project_name: string;
@@ -183,8 +179,7 @@ export interface IGetSqlManageSqlAnalysisV1Params {
   affectRowsEnabled?: boolean;
 }
 
-export interface IGetSqlManageSqlAnalysisV1Return
-  extends IGetSqlManageSqlAnalysisResp {}
+export interface IGetSqlManageSqlAnalysisV1Return extends IGetSqlManageSqlAnalysisResp {}
 
 export interface IGetSqlManageSqlAnalysisChartV1Params {
   project_name: string;
@@ -200,8 +195,7 @@ export interface IGetSqlManageSqlAnalysisChartV1Params {
   metric_name: string;
 }
 
-export interface IGetSqlManageSqlAnalysisChartV1Return
-  extends ISqlManageAnalysisChartResp {}
+export interface IGetSqlManageSqlAnalysisChartV1Return extends ISqlManageAnalysisChartResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;
