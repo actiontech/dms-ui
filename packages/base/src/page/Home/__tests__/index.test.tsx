@@ -1,11 +1,25 @@
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { cleanup, screen } from '@testing-library/react';
+import {
+  mockUseCurrentUser,
+  mockUsePermission,
+  sqleMockApi
+} from '@actiontech/shared/lib/testUtil';
 import Home from '..';
 import { baseSuperRender } from '../../../testUtils/superRender';
-import { screen } from '@testing-library/react';
 
 describe('test base/page/Home', () => {
   beforeEach(() => {
     mockUseCurrentUser();
+    mockUsePermission(
+      { checkActionPermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
+    sqleMockApi.globalDashboard.getGlobalWorkflowStatistics();
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    cleanup();
   });
 
   test('should match snapshot', () => {
