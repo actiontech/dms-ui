@@ -12,6 +12,7 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
   onProjectChange
 }) => {
   const { t } = useTranslation();
+  const selectedProjectId = Form.useWatch('projectId', form);
 
   return (
     <GlobalDashboardFilterStyleWrapper>
@@ -22,7 +23,6 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
               prefix={t('globalDashboard.filter.project')}
               placeholder={t('common.all')}
               suffixIcon={null}
-              bordered={false}
               options={projectOptions}
               onChange={(value) => {
                 onProjectChange?.(value as string);
@@ -34,9 +34,9 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
               prefix={t('globalDashboard.filter.instance')}
               placeholder={t('common.all')}
               suffixIcon={null}
-              bordered={false}
               options={instanceIDOptions}
               loading={getInstanceListLoading}
+              disabled={!selectedProjectId}
             />
           </Form.Item>
         </Space>

@@ -3,18 +3,23 @@ import WorkflowPanel from '..';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  sqleMockApi,
+  baseMockApi
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   createSpyErrorResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi/common';
 import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockGlobalWorkflowStatisticsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/globalDashboard/data';
+import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 
 describe('GlobalDashboard/WorkflowPanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowListSpy: jest.SpyInstance;
+  let getUserListSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -24,6 +29,7 @@ describe('GlobalDashboard/WorkflowPanel', () => {
       sqleMockApi.globalDashboard.getGlobalWorkflowStatistics();
     getGlobalWorkflowListSpy =
       sqleMockApi.globalDashboard.getGlobalWorkflowList();
+    getUserListSpy = baseMockApi.userCenter.getUserList();
   });
 
   afterEach(() => {
@@ -145,31 +151,129 @@ describe('GlobalDashboard/WorkflowPanel', () => {
     expect(getGlobalWorkflowListSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should update workflow type filter and then clear to all', async () => {
+  it('should call User.ListUsers on mount with page_size 9999', async () => {
+    superRender(<WorkflowPanel />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getUserListSpy).toHaveBeenCalledWith({ page_size: 9999 });
+  });
+
+  it('should render filter button in toolbar', async () => {
+    superRender(<WorkflowPanel />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(
+      document.querySelector('.actiontech-filter-button-namespace')
+    ).toBeInTheDocument();
+  });
+
+  it('should show status and createdAt and updatedAt filters in TableFilterContainer after clicking filter button', async () => {
     superRender(<WorkflowPanel />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(
-      document.querySelector(
-        '.custom-segmented-filter-wrapper .ant-segmented-item-label[title="SQL上线工单"]'
-      ) as Element
+      document.querySelector('.actiontech-filter-button-namespace') as Element
     );
     await act(async () => jest.advanceTimersByTime(0));
-    expect(getGlobalWorkflowListSpy).toHaveBeenLastCalledWith(
-      expect.objectContaining({ workflow_type: 'sql_release' })
-    );
 
+    // After clicking filter button all filters are toggled on.
+    // "状态" / "创建时间" / "最后操作时间" appear in both table headers and filter container,
+    // so we verify at least one instance is in the filter container namespace.
+    expect(
+      document.querySelector('.actiontech-table-filter-container-namespace')
+    ).toBeInTheDocument();
+
+    const filterContainer = document.querySelector(
+      '.actiontech-table-filter-container-namespace'
+    ) as Element;
+    expect(filterContainer.textContent).toContain('状态');
+    expect(filterContainer.textContent).toContain('创建时间');
+    expect(filterContainer.textContent).toContain('最后操作时间');
+  });
+
+  it('should call workflow list with filter_status when status filter is applied', async () => {
+    superRender(<WorkflowPanel />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // Enable all filters
     fireEvent.click(
-      document.querySelector(
-        '.custom-segmented-filter-wrapper .ant-segmented-item-label[title="全部"]'
-      ) as Element
+      document.querySelector('.actiontech-filter-button-namespace') as Element
     );
     await act(async () => jest.advanceTimersByTime(0));
 
-    const lastCallArgs = (getGlobalWorkflowListSpy as jest.Mock).mock.calls[
-      (getGlobalWorkflowListSpy as jest.Mock).mock.calls.length - 1
-    ][0];
-    expect(lastCallArgs).not.toHaveProperty('workflow_type');
+    // Find the status select inside the filter container (first select = status filter)
+    const filterContainer = document.querySelector(
+      '.actiontech-table-filter-container-namespace'
+    ) as Element;
+    const statusSelect = filterContainer.querySelector(
+      '.ant-select-selector'
+    ) as Element;
+    fireEvent.mouseDown(statusSelect);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // Select '待处理' (pending_action) from dropdown
+    const dropdownOptions = document.querySelectorAll(
+      '.ant-select-item-option-content'
+    );
+    const pendingActionOption = Array.from(dropdownOptions).find(
+      (el) => el.textContent === '待处理'
+    );
+    fireEvent.click(pendingActionOption as Element);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getGlobalWorkflowListSpy).toHaveBeenLastCalledWith(
+      expect.objectContaining({ filter_status: 'pending_action' })
+    );
+  });
+
+  it('should render create_user_name and created_at and updated_at columns in table', async () => {
+    getGlobalWorkflowListSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          total_nums: 1,
+          has_more: false,
+          next_cursor: '',
+          workflows: [
+            {
+              workflow_id: 'workflow-col-test',
+              workflow_name: 'Column Test Workflow',
+              workflow_type: GlobalWorkflowListItemWorkflowTypeEnum.sql_release,
+              create_user_name: 'admin',
+              created_at: '2026-04-13 10:00:00',
+              updated_at: '2026-04-13 18:00:00',
+              project_uid: '1'
+            }
+          ]
+        }
+      })
+    );
+
+    superRender(<WorkflowPanel />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(screen.getByText('发起人')).toBeInTheDocument();
+    expect(screen.getByText('创建时间')).toBeInTheDocument();
+    expect(screen.getByText('最后操作时间')).toBeInTheDocument();
+    // CustomAvatar renders the uppercased first letter of user name
+    expect(screen.getByText('A')).toBeInTheDocument();
+    expect(screen.getByText('2026-04-13 10:00:00')).toBeInTheDocument();
+    expect(screen.getByText('2026-04-13 18:00:00')).toBeInTheDocument();
+  });
+
+  it('should render initialCard prop and request with the correct filter_card', async () => {
+    superRender(
+      <WorkflowPanel
+        initialCard={GetGlobalWorkflowListV2FilterCardEnum.initiated_by_me}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getGlobalWorkflowListSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        filter_card: 'initiated_by_me'
+      })
+    );
   });
 
   it('should keep cursor when requesting page greater than one', async () => {

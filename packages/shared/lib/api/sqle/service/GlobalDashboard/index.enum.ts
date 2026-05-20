@@ -27,3 +27,23 @@ export enum GetGlobalWorkflowListV2WorkflowTypeEnum {
 
   'data_export' = 'data_export'
 }
+
+export enum GetGlobalWorkflowListV2FilterStatusEnum {
+  'pending_approval' = 'pending_approval',
+
+  'pending_action' = 'pending_action',
+
+  'in_progress' = 'in_progress',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancelled' = 'cancelled',
+
+  'failed' = 'failed',
+
+  'completed' = 'completed',
+
+  'unknown' = 'unknown'
+}

@@ -238,6 +238,7 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
               </div>
               <div
                 class="ant-space-item"
+                style="margin-right: 12px;"
               >
                 <span
                   class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
@@ -283,6 +284,42 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                     </svg>
                   </span>
                 </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
+                >
+                  <div
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
+                    >
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
@@ -351,6 +388,9 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                         <col />
                         <col />
                         <col />
+                        <col />
+                        <col />
+                        <col />
                         <col
                           style="width: 100px;"
                         />
@@ -402,6 +442,24 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             状态
                           </th>
                           <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            发起人
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            创建时间
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            最后操作时间
+                          </th>
+                          <th
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
@@ -418,6 +476,33 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -580,6 +665,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 10:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
@@ -684,6 +784,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已完成
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 12:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -792,6 +907,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 13:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
@@ -896,6 +1026,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               处理中
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 14:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1004,6 +1149,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 15:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
@@ -1108,6 +1268,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已驳回
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 16:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1216,6 +1391,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 17:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
@@ -1320,6 +1510,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已失败
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 18:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1429,6 +1634,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 19:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
@@ -1497,6 +1717,21 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已完成
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2026-04-13 20:00:00
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"

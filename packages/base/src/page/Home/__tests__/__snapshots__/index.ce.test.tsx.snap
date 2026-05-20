@@ -9,11 +9,41 @@ exports[`test base/page/Home should match snapshot 1`] = `
       <div
         class="title"
       >
-        用户引导
+        首页
       </div>
       <div
         class="extra"
       />
+    </div>
+    <div
+      class="css-rl9ym1"
+    >
+      <div
+        class="ant-card ant-card-loading ant-card-bordered workflow-cards-card"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-skeleton ant-skeleton-active"
+          >
+            <div
+              class="ant-skeleton-content"
+            >
+              <ul
+                class="ant-skeleton-paragraph"
+              >
+                <li />
+                <li />
+                <li />
+                <li
+                  style="width: 61%;"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <section
       class="css-1wil037"

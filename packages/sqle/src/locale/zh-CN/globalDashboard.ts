@@ -30,7 +30,10 @@ export default {
       instance: '数据源',
       assignee: '当前处理人',
       priority: '优先级',
-      status: '状态'
+      status: '状态',
+      createUser: '发起人',
+      createdAt: '创建时间',
+      updatedAt: '最后操作时间'
     },
     status: '工单状态',
     name: '工单名称',
@@ -52,7 +55,8 @@ export default {
       data_export: '数据导出工单'
     },
     filter: {
-      workflowType: '工单类型'
+      workflowType: '工单类型',
+      status: '状态'
     },
     toolbar: {
       searchPlaceholder: '搜索标题或工单ID'
