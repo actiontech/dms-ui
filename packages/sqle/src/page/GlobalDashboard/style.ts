@@ -3,12 +3,12 @@ import { styled } from '@mui/material/styles';
 export const GlobalDashboardFilterStyleWrapper = styled('div')`
   & .ant-form.ant-form-horizontal {
     .ant-select-selector,
-    .custom-search-input {
+    .basic-search-input {
       font-size: 13px !important;
     }
   }
 
-  & .custom-select-namespace {
+  & .basic-select-wrapper {
     width: 280px;
   }
 `;

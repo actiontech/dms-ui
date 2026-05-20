@@ -7,7 +7,10 @@ import {
   mockUseCurrentProject,
   mockUseCurrentUser
 } from '@actiontech/shared/lib/testUtil';
-import { sqleMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  sqleMockApi,
+  baseMockApi
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 
 jest.mock('@actiontech/shared', () => ({
@@ -40,6 +43,7 @@ describe('GlobalDashboard', () => {
     getGlobalSqlManageTaskListSpy =
       sqleMockApi.globalDashboard.getGlobalSqlManageTaskList();
     getInstanceTipListSpy = sqleMockApi.instance.getInstanceTipList();
+    baseMockApi.userCenter.getUserList();
 
     (useTypedNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useTypedQuery as jest.Mock).mockImplementation(() => extractQuerySpy);
@@ -132,5 +136,30 @@ describe('GlobalDashboard', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledWith({
       project_name: 'test'
     });
+  });
+
+  it('should initialize workflow card from card URL query param', async () => {
+    extractQuerySpy.mockReturnValue({
+      tab: 'workflow',
+      card: 'initiated_by_me'
+    });
+
+    superRender(<GlobalDashboard />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getGlobalWorkflowListSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ filter_card: 'initiated_by_me' })
+    );
+  });
+
+  it('should default to pending_for_me when no card query param', async () => {
+    extractQuerySpy.mockReturnValue(undefined);
+
+    superRender(<GlobalDashboard />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getGlobalWorkflowListSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ filter_card: 'pending_for_me' })
+    );
   });
 });

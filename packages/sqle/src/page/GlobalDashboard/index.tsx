@@ -12,6 +12,7 @@ import { DashboardTabKey } from './constants';
 import WorkflowPanel from './components/WorkflowPanel';
 import SqlGovernancePanel from './components/SqlGovernancePanel';
 import AccountPanel from './components/AccountPanel';
+import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
 
 const GlobalDashBoard = () => {
@@ -22,6 +23,9 @@ const GlobalDashBoard = () => {
   const [activeTab, setActiveTab] = useState<DashboardTabKey>(
     DashboardTabKey.Workflow
   );
+  const [initialWorkflowCard, setInitialWorkflowCard] = useState<
+    GetGlobalWorkflowListV2FilterCardEnum | undefined
+  >(undefined);
   const [refreshSignals, setRefreshSignals] = useState({
     [DashboardTabKey.Workflow]: 0,
     [DashboardTabKey.SqlGovernance]: 0,
@@ -63,6 +67,7 @@ const GlobalDashBoard = () => {
             projectId={projectId}
             instanceId={instanceId}
             refreshSignal={refreshSignals[DashboardTabKey.Workflow]}
+            initialCard={initialWorkflowCard}
           />
         )
       },
@@ -96,7 +101,7 @@ const GlobalDashBoard = () => {
     ];
 
     return items;
-  }, [t, projectId, instanceId, refreshSignals, isAdmin]);
+  }, [t, projectId, instanceId, refreshSignals, isAdmin, initialWorkflowCard]);
 
   useEffect(() => {
     const searchParams = extractQuery(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index);
@@ -108,6 +113,16 @@ const GlobalDashBoard = () => {
       )
     ) {
       setActiveTab(searchParams.tab as DashboardTabKey);
+    }
+    if (
+      searchParams?.card &&
+      Object.values(GetGlobalWorkflowListV2FilterCardEnum).includes(
+        searchParams.card as GetGlobalWorkflowListV2FilterCardEnum
+      )
+    ) {
+      setInitialWorkflowCard(
+        searchParams.card as GetGlobalWorkflowListV2FilterCardEnum
+      );
     }
   }, [extractQuery]);
 

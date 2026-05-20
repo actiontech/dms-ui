@@ -3,7 +3,7 @@ import WorkflowStatCards from '..';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { sqleMockApi } from '@actiontech/shared/lib/testUtil';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 
 jest.mock('@actiontech/shared', () => ({

@@ -128,7 +128,7 @@ export const ROUTE_PATHS = {
     GLOBAL_DASHBOARD: {
       index: {
         path: '/sqle/global-dashboard',
-        query: 'tab'
+        query: 'tab&card'
       }
     },
     REPORT_STATISTICS: {
