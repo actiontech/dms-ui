@@ -2,6 +2,7 @@ import {
   BasicTag,
   BasicTagProps,
   CustomAvatar,
+  formatTime,
   ROUTE_PATHS
 } from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';
@@ -226,6 +227,9 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
     {
       dataIndex: 'status',
       title: t('globalDashboard.workflow.column.status'),
+      filterCustomType: 'select',
+      filterKey: 'filter_status',
+      filterLabel: t('globalDashboard.workflow.filter.status'),
       render: (status) =>
         status ? (
           <BasicTag color={getStatusTagColor(status)}>
@@ -234,6 +238,30 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
         ) : (
           '-'
         )
+    },
+    {
+      dataIndex: 'create_user_name',
+      title: t('globalDashboard.workflow.column.createUser'),
+      filterCustomType: 'select',
+      filterKey: 'filter_create_user_id',
+      filterLabel: t('globalDashboard.workflow.column.createUser'),
+      render: (name) => (name ? <CustomAvatar name={name} /> : '-')
+    },
+    {
+      dataIndex: 'created_at',
+      title: t('globalDashboard.workflow.column.createdAt'),
+      filterCustomType: 'date-range',
+      filterKey: ['filter_create_time_from', 'filter_create_time_to'],
+      filterLabel: t('globalDashboard.workflow.column.createdAt'),
+      render: (time) => formatTime(time, '-')
+    },
+    {
+      dataIndex: 'updated_at',
+      title: t('globalDashboard.workflow.column.updatedAt'),
+      filterCustomType: 'date-range',
+      filterKey: ['filter_update_time_from', 'filter_update_time_to'],
+      filterLabel: t('globalDashboard.workflow.column.updatedAt'),
+      render: (time) => formatTime(time, '-')
     }
   ];
 };

@@ -38,7 +38,8 @@ export const workflowPanelTableActions = (
         permissions: () =>
           filterCard ===
             GetGlobalWorkflowListV2FilterCardEnum.initiated_by_me ||
-          filterCard === GetGlobalWorkflowListV2FilterCardEnum.archived
+          filterCard === GetGlobalWorkflowListV2FilterCardEnum.archived ||
+          filterCard === GetGlobalWorkflowListV2FilterCardEnum.view_all
       }
     ]
   };

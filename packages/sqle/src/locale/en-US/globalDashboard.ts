@@ -35,7 +35,10 @@ export default {
       instance: 'Instance',
       assignee: 'Assignee',
       priority: 'Priority',
-      status: 'Status'
+      status: 'Status',
+      createUser: 'Initiator',
+      createdAt: 'Created At',
+      updatedAt: 'Last Updated'
     },
     status: 'Workflow Status',
     name: 'Workflow Name',

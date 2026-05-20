@@ -1,11 +1,15 @@
 import {
   ActiontechTable,
   ActiontechTableWrapper,
+  CustomAvatar,
   CustomSegmentedFilter,
   getErrorMessage,
   ROUTE_PATHS,
   TableToolbar,
-  useTableRequestParams
+  useTableRequestParams,
+  useTableFilterContainer,
+  TableFilterContainer,
+  FilterCustomProps
 } from '@actiontech/dms-kit';
 import {
   CheckboxMultipleBlankFilled,
@@ -14,7 +18,7 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import { useRequest } from 'ahooks';
-import { message } from 'antd';
+import { message, Space, Typography } from 'antd';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StatCardsStyleWrapper, StatCardItemStyleWrapper } from '../../style';
@@ -30,25 +34,33 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { GlobalDashboardService } from '@actiontech/shared/lib/api/sqle';
 import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { parse2ReactRouterPath } from '@actiontech/shared';
-import { workflowTypeLabelDictionary } from './data';
+import {
+  workflowFilterStatusOptions,
+  workflowTypeLabelDictionary
+} from './data';
+import { UserService } from '@actiontech/shared/lib/api/base';
 
 type WorkflowPanelProps = {
   projectId?: string;
   instanceId?: string;
   refreshSignal?: number;
+  initialCard?: GetGlobalWorkflowListV2FilterCardEnum;
 };
 
 const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
   projectId,
   instanceId,
-  refreshSignal
+  refreshSignal,
+  initialCard
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const [workflowType, setWorkflowType] =
+    useState<GetGlobalWorkflowListV2WorkflowTypeEnum | null>(null);
   const [workflowCard, setWorkflowCard] =
     useState<GetGlobalWorkflowListV2FilterCardEnum>(
-      GetGlobalWorkflowListV2FilterCardEnum.pending_for_me
+      initialCard ?? GetGlobalWorkflowListV2FilterCardEnum.pending_for_me
     );
 
   const cursor = useRef<string | undefined>(undefined);
@@ -100,6 +112,7 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
         filter_instance_id: instanceId,
         cursor: cursor.current ?? undefined,
         ...tableFilterInfo,
+        workflow_type: workflowType ?? undefined,
         keyword: searchKeyword?.trim() || undefined
       });
     },
@@ -118,12 +131,51 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
         instanceId,
         workflowCard,
         refreshSignal,
-        tableFilterInfo
+        tableFilterInfo,
+        workflowType
       ]
     }
   );
 
+  const { data: userListData } = useRequest(() =>
+    UserService.ListUsers({ page_size: 9999 })
+  );
+
+  const userOptions = useMemo(() => {
+    return (userListData?.data?.data ?? []).map((u) => ({
+      value: u.uid,
+      label: (
+        <Space>
+          <CustomAvatar
+            noTips
+            size="small"
+            name={(u.name?.[0] ?? '').toUpperCase()}
+          />
+          <Typography.Text>{u.name}</Typography.Text>
+        </Space>
+      ),
+      text: u.name
+    }));
+  }, [userListData]);
+
   const columns = useMemo(() => workflowPanelColumns(), []);
+
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer<
+      IGlobalWorkflowListItem,
+      GlobalDashboardWorkflowTableFilterParam
+    >(columns, updateTableFilterInfo);
+
+  const filterCustomProps = useMemo(
+    () =>
+      new Map<keyof IGlobalWorkflowListItem, FilterCustomProps>([
+        ['status', { options: workflowFilterStatusOptions() }],
+        ['updated_at', { showTime: false }],
+        ['create_user_name', { options: userOptions }],
+        ['created_at', { showTime: false }]
+      ]),
+    [userOptions]
+  );
 
   const openWorkflow = useCallback(
     (record: IGlobalWorkflowListItem) => {
@@ -247,6 +299,10 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
             refresh: workflowList.refresh,
             disabled: tableLoading
           }}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
           searchInput={{
             placeholder: t(
               'globalDashboard.workflow.toolbar.searchPlaceholder'
@@ -258,13 +314,9 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
           }}
         >
           <CustomSegmentedFilter<GetGlobalWorkflowListV2WorkflowTypeEnum | null>
-            value={tableFilterInfo.workflow_type ?? null}
+            value={workflowType}
             onChange={(val) => {
-              updateTableFilterInfo(() =>
-                val == null
-                  ? ({} as GlobalDashboardWorkflowTableFilterParam)
-                  : { workflow_type: val }
-              );
+              setWorkflowType(val);
             }}
             labelDictionary={workflowTypeLabelDictionary()}
             options={[
@@ -274,6 +326,12 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
             withAll
           />
         </TableToolbar>
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={tableLoading}
+          filterCustomProps={filterCustomProps}
+        />
         <ActiontechTable
           dataSource={workflowList.data?.data?.data?.workflows}
           rowKey="workflow_id"
