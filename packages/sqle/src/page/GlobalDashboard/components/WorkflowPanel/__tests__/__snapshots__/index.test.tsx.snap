@@ -289,7 +289,7 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
