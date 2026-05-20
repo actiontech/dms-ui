@@ -3,7 +3,6 @@ import {
   ActiontechTableWrapper,
   CustomAvatar,
   CustomSegmentedFilter,
-  CustomSelect,
   getErrorMessage,
   ROUTE_PATHS,
   TableToolbar,
@@ -26,7 +25,6 @@ import { StatCardsStyleWrapper, StatCardItemStyleWrapper } from '../../style';
 import { workflowPanelColumns } from './column';
 import {
   GetGlobalWorkflowListV2FilterCardEnum,
-  GetGlobalWorkflowListV2FilterStatusEnum,
   GetGlobalWorkflowListV2WorkflowTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 import { IGlobalWorkflowListItem } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -326,27 +324,6 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
               GetGlobalWorkflowListV2WorkflowTypeEnum.data_export
             ]}
             withAll
-          />
-          <CustomSelect
-            prefix={t('globalDashboard.workflow.filter.status')}
-            placeholder={t('common.all')}
-            allowClear
-            suffixIcon={null}
-            bordered={false}
-            value={tableFilterInfo.filter_status}
-            options={workflowFilterStatusOptions()}
-            onChange={(val) => {
-              updateTableFilterInfo((prev) => {
-                const { filter_status: _omit, ...rest } = prev;
-                return val
-                  ? {
-                      ...rest,
-                      filter_status:
-                        val as GetGlobalWorkflowListV2FilterStatusEnum
-                    }
-                  : rest;
-              });
-            }}
           />
         </TableToolbar>
         <TableFilterContainer

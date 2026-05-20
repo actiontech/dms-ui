@@ -106,7 +106,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -163,7 +163,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                 >
                   <div
                     class="ant-select-selector"
@@ -459,71 +459,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                   </div>
                   <div
                     class="ant-space-item"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                     style="margin-right: 12px;"
->>>>>>> 5153cce06 (feat(globalDashboard): add relevant fields and filter options)
-=======
-                    style="margin-right: 12px;"
-                  >
-                    <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
-                    >
-                      <div
-                        class="ant-select-selector"
-                      >
-                        <span
-                          class="ant-select-selection-search"
-                        >
-                          <input
-                            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
-                            aria-autocomplete="list"
-                            aria-controls="rc_select_TEST_OR_SSR_list"
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-owns="rc_select_TEST_OR_SSR_list"
-                            autocomplete="off"
-                            class="ant-select-selection-search-input"
-                            id="rc_select_TEST_OR_SSR"
-                            readonly=""
-                            role="combobox"
-                            style="opacity: 0;"
-                            type="search"
-                            unselectable="on"
-                            value=""
-                          />
-                        </span>
-                        <span
-                          class="ant-select-selection-placeholder"
-                        >
-                          <span
-                            class="custom-select-placeholder css-qly0fu"
-                          >
-                            <span
-                              class="custom-select-placeholder-prefix"
-                            >
-                              状态
-                            </span>
-                            <span
-                              class="custom-select-placeholder-value"
-                            >
-                              全部
-                            </span>
-                          </span>
-                        </span>
-                      </div>
-                      <span
-                        aria-hidden="true"
-                        class="ant-select-arrow"
-                        style="user-select: none;"
-                        unselectable="on"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
->>>>>>> d251c3d23 (feat(global-dashboard): 工单面板新增"状态"下拉筛选)
                   >
                     <span
                       class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
@@ -574,7 +510,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                     class="ant-space-item"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
                       style="padding: 0px 6px 0px 10px;"
                       type="button"
                     >
