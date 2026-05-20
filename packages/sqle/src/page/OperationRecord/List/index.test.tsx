@@ -29,8 +29,6 @@ describe('sqle/OperationRecord/List', () => {
 
   it('render operation record table when request return data', async () => {
     const operationRecordListSpy = operationRecord.getOperationRecordList();
-    // const actionSpy = operationRecord.getOperationActionList();
-    // const typeNameSpy = operationRecord.getOperationTypeNameList();
     const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
