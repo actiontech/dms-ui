@@ -1308,6 +1308,8 @@ export interface IGlobalDataExportWorkflow {
 
   status?: GlobalDataExportWorkflowStatusEnum;
 
+  updated_at?: string;
+
   workflow_name?: string;
 
   workflow_uid?: string;

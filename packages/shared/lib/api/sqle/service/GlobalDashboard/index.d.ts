@@ -2,7 +2,8 @@ import {
   GetGlobalAccountListV2FilterCardEnum,
   GetGlobalSqlManageTaskListV2FilterCardEnum,
   GetGlobalWorkflowListV2FilterCardEnum,
-  GetGlobalWorkflowListV2WorkflowTypeEnum
+  GetGlobalWorkflowListV2WorkflowTypeEnum,
+  GetGlobalWorkflowListV2FilterStatusEnum
 } from './index.enum';
 
 import {
@@ -82,6 +83,18 @@ export interface IGetGlobalWorkflowListV2Params {
   filter_card?: GetGlobalWorkflowListV2FilterCardEnum;
 
   workflow_type?: GetGlobalWorkflowListV2WorkflowTypeEnum;
+
+  filter_status?: GetGlobalWorkflowListV2FilterStatusEnum;
+
+  filter_update_time_from?: string;
+
+  filter_update_time_to?: string;
+
+  filter_create_user_id?: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
 }
 
 export interface IGetGlobalWorkflowListV2Return

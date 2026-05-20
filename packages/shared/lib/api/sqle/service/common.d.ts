@@ -241,9 +241,11 @@ export interface IGlobalWorkflowListData {
 }
 
 export interface IGlobalWorkflowListItem {
-  current_step_assignee_user_name_list?: string[];
+  create_user_name?: string;
 
   created_at?: string;
+
+  current_step_assignee_user_name_list?: string[];
 
   instance_id?: string;
 
@@ -256,6 +258,8 @@ export interface IGlobalWorkflowListItem {
   project_uid?: string;
 
   status?: GlobalWorkflowListItemStatusEnum;
+
+  updated_at?: string;
 
   workflow_desc?: string;
 
@@ -3402,94 +3406,6 @@ export interface ISQLExplain {
   err_message?: string;
 
   sql?: string;
-}
-
-export interface ISQLLineageAnalyzeReqV1 {
-  default_schema?: string;
-
-  instance_type?: string;
-
-  result_columns?: string[];
-
-  sql?: string;
-}
-
-export interface ISQLLineageAnalyzeResDataV1 {
-  result?: ISQLLineageAnalyzeResultV1;
-}
-
-export interface ISQLLineageAnalyzeResV1 {
-  code?: number;
-
-  data?: ISQLLineageAnalyzeResDataV1;
-
-  message?: string;
-}
-
-export interface ISQLLineageAnalyzeResultV1 {
-  edges?: ISQLLineageEdgeV1[];
-
-  nodes?: ISQLLineageNodeV1[];
-
-  original_sql?: string;
-
-  result_columns?: ISQLLineageResultColumnV1[];
-
-  source_columns?: ISQLLineageColumnRefV1[];
-
-  tables?: ISQLLineageTableRefV1[];
-
-  title?: string;
-
-  warnings?: string[];
-}
-
-export interface ISQLLineageColumnRefV1 {
-  column?: string;
-
-  schema?: string;
-
-  table?: string;
-}
-
-export interface ISQLLineageEdgeV1 {
-  from_id?: string;
-
-  to_id?: string;
-
-  type?: string;
-}
-
-export interface ISQLLineageNodeV1 {
-  column?: string;
-
-  expr?: string;
-
-  id?: string;
-
-  name?: string;
-
-  schema?: string;
-
-  table?: string;
-
-  type?: string;
-}
-
-export interface ISQLLineageResultColumnV1 {
-  expression?: string;
-
-  name?: string;
-
-  sources?: ISQLLineageColumnRefV1[];
-}
-
-export interface ISQLLineageTableRefV1 {
-  alias?: string;
-
-  schema?: string;
-
-  table?: string;
 }
 
 export interface ISQLQueryConfigResV1 {
