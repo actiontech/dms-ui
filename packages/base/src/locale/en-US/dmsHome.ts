@@ -1,6 +1,21 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: 'User guide',
+  pageTitle: 'Home',
+  workflowCards: {
+    sectionTitle: 'Workflow Overview',
+    sectionDescription: 'Track workflow progress related to you',
+    viewAll: 'View workflow management',
+    workflow: {
+      pendingMine: 'Pending for me',
+      pendingMineSubtitle: 'Action required',
+      initiated: 'Initiated by me',
+      initiatedSubtitle: 'Track progress',
+      archived: 'Archived',
+      archivedSubtitle: 'Completed tasks',
+      viewAll: 'View all',
+      viewAllSubtitle: 'Currently visible'
+    }
+  },
   aiBanner: {
     insightTitle: 'AI Governance Efficiency Insights',
     insightDescription:

@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkflowStatCards should render loading state on initial render 1`] = `
+<body>
+  <div>
+    <div
+      class="css-rl9ym1"
+    >
+      <div
+        class="ant-card ant-card-loading ant-card-bordered workflow-cards-card"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-skeleton ant-skeleton-active"
+          >
+            <div
+              class="ant-skeleton-content"
+            >
+              <ul
+                class="ant-skeleton-paragraph"
+              >
+                <li />
+                <li />
+                <li />
+                <li
+                  style="width: 61%;"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`WorkflowStatCards should render workflow statistics after data loaded 1`] = `
+<body>
+  <div>
+    <div
+      class="css-rl9ym1"
+    >
+      <div
+        class="ant-card ant-card-bordered workflow-cards-card"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="cards-content"
+          >
+            <div
+              class="cards-left-section"
+            >
+              <div
+                class="section-title"
+              >
+                工单概览
+              </div>
+              <div
+                class="section-description"
+              >
+                跟踪与您相关的工单进度
+              </div>
+              <a
+                class="ant-typography section-link"
+              >
+                查看工单管理
+                 
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div
+              class="cards-row"
+            >
+              <div
+                class="css-1klubt5"
+              >
+                <div
+                  class="card-header"
+                >
+                  <span
+                    class="card-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="card-title"
+                  >
+                    待我处理
+                  </span>
+                </div>
+                <div
+                  class="card-count"
+                >
+                  8
+                </div>
+                <div
+                  class="card-subtitle"
+                >
+                  需立即行动
+                </div>
+              </div>
+              <div
+                class="css-1gnfp85"
+              >
+                <div
+                  class="card-header"
+                >
+                  <span
+                    class="card-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      height="18"
+                      viewBox="0 0 16 16"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="card-title"
+                  >
+                    我发起的
+                  </span>
+                </div>
+                <div
+                  class="card-count"
+                >
+                  5
+                </div>
+                <div
+                  class="card-subtitle"
+                >
+                  关注进度
+                </div>
+              </div>
+              <div
+                class="css-ycy1hw"
+              >
+                <div
+                  class="card-header"
+                >
+                  <span
+                    class="card-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      height="18"
+                      viewBox="0 0 18 19"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="card-title"
+                  >
+                    已归档
+                  </span>
+                </div>
+                <div
+                  class="card-count"
+                >
+                  12
+                </div>
+                <div
+                  class="card-subtitle"
+                >
+                  已完结任务
+                </div>
+              </div>
+              <div
+                class="css-17p8x3u"
+              >
+                <div
+                  class="card-header"
+                >
+                  <span
+                    class="card-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      height="18"
+                      viewBox="0 0 16 16"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.667 4.667V2a.667.667 0 0 1 .666-.667H14a.667.667 0 0 1 .667.667v8.667a.667.667 0 0 1-.667.667h-2.667v2.662c0 .37-.3.67-.671.67H2.005a.67.67 0 0 1-.672-.67l.002-8.658c0-.37.3-.671.672-.671zm1.333 0h4.662c.37 0 .671.3.671.671V10h2V2.667H6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="card-title"
+                  >
+                    查看全部
+                  </span>
+                </div>
+                <div
+                  class="card-count"
+                >
+                  25
+                </div>
+                <div
+                  class="card-subtitle"
+                >
+                  当前可见范围
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

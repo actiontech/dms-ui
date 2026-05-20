@@ -1,6 +1,21 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '用户引导',
+  pageTitle: '首页',
+  workflowCards: {
+    sectionTitle: '工单概览',
+    sectionDescription: '跟踪与您相关的工单进度',
+    viewAll: '查看工单管理',
+    workflow: {
+      pendingMine: '待我处理',
+      pendingMineSubtitle: '需立即行动',
+      initiated: '我发起的',
+      initiatedSubtitle: '关注进度',
+      archived: '已归档',
+      archivedSubtitle: '已完结任务',
+      viewAll: '查看全部',
+      viewAllSubtitle: '当前可见范围'
+    }
+  },
   aiBanner: {
     insightTitle: 'AI治理效能洞察',
     insightDescription: '基于大模型实时监控规范与性能, AI驱动全链路质量闭环。',
