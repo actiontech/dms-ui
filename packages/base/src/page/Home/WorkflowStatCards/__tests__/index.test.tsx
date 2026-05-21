@@ -5,6 +5,8 @@ import { sqleMockApi } from '@actiontech/shared/lib/testUtil';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 jest.mock('@actiontech/shared', () => ({
   ...jest.requireActual('@actiontech/shared'),
@@ -151,5 +153,19 @@ describe('WorkflowStatCards', () => {
         }
       }
     );
+  });
+
+  it('should refresh workflow statistics when DMS_Reload_Initial_Data event is emitted', async () => {
+    baseSuperRender(<WorkflowStatCards />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
+      await jest.advanceTimersByTime(3000);
+    });
+
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(2);
   });
 });
