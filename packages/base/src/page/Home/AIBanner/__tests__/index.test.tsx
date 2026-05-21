@@ -6,7 +6,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
 import { useTypedNavigate } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 
@@ -81,7 +81,7 @@ describe('AIBanner', () => {
     fireEvent.click(screen.getByText('AI 性能引擎'));
 
     expect(navigateSpy).toHaveBeenCalledWith(
-      ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create,
+      ROUTE_PATHS.SQLE.SQL_AUDIT.create_optimization,
       { params: { projectID: '1' } }
     );
   });
@@ -92,7 +92,9 @@ describe('AIBanner', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     // 点击 AI 智能修正时，不会触发页面跳转（与 AI 性能引擎不同）
-    expect(() => fireEvent.click(screen.getByText('AI 智能修正'))).not.toThrow();
+    expect(() =>
+      fireEvent.click(screen.getByText('AI 智能修正'))
+    ).not.toThrow();
     expect(navigateSpy).not.toHaveBeenCalled();
   });
 
@@ -124,9 +126,7 @@ describe('AIBanner', () => {
     fireEvent.click(screen.getByText('查看完整报告'));
 
     expect(
-      screen.getByText(
-        '当前功能为付费增值模块，请联系商务获取详细信息'
-      )
+      screen.getByText('当前功能为付费增值模块，请联系商务获取详细信息')
     ).toBeInTheDocument();
   });
 
