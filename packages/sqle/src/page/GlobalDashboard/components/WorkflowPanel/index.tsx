@@ -170,9 +170,9 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
     () =>
       new Map<keyof IGlobalWorkflowListItem, FilterCustomProps>([
         ['status', { options: workflowFilterStatusOptions() }],
-        ['updated_at', { showTime: false }],
+        ['updated_at', { showTime: true }],
         ['create_user_name', { options: userOptions }],
-        ['created_at', { showTime: false }]
+        ['created_at', { showTime: true }]
       ]),
     [userOptions]
   );
