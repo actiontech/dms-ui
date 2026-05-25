@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,8 @@ import {
 import { AiOutlined } from '@actiontech/icons';
 import { AIBannerStyleWrapper } from './style';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { AIModuleBannerCardsAiModuleTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAIModuleBannerCards } from '@actiontech/shared/lib/api/sqle/service/common.d';
@@ -45,11 +47,23 @@ const AIBanner: React.FC = () => {
     useState(false);
   const { checkPagePermission } = usePermission();
 
-  const { data: bannerData, loading } = useRequest(() => {
+  const {
+    data: bannerData,
+    loading,
+    refresh
+  } = useRequest(() => {
     return AiHubService.GetAIHubBanner().then((res) => {
       return res.data?.data;
     });
   });
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Reload_Initial_Data,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
 
   const bannerState = useMemo(() => {
     const modules = bannerData?.modules ?? [];

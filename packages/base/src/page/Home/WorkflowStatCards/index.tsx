@@ -1,4 +1,5 @@
 import { useRequest } from 'ahooks';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, Typography } from 'antd';
 import {
@@ -13,6 +14,8 @@ import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { RightOutlined } from '@ant-design/icons';
 import { WorkflowStatCardsWrapper, WorkflowCardItemWrapper } from './style';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const WORKFLOW_ACCENT: Record<GetGlobalWorkflowListV2FilterCardEnum, string> = {
   [GetGlobalWorkflowListV2FilterCardEnum.pending_for_me]: '#fa8c16',
@@ -25,9 +28,21 @@ const WorkflowStatCards: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
 
-  const { data: workflowStats, loading } = useRequest(() =>
+  const {
+    data: workflowStats,
+    loading,
+    refresh
+  } = useRequest(() =>
     GlobalDashboardService.GetGlobalWorkflowStatisticsV2({})
   );
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Reload_Initial_Data,
+      refresh
+    );
+    return unsubscribe;
+  }, [refresh]);
 
   const cards = [
     {
