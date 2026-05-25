@@ -129,6 +129,8 @@ export interface IDownloadAuditTaskSQLReportV1Params {
   task_id: string;
 
   no_duplicate?: boolean;
+
+  export_format?: string;
 }
 
 export interface IGetAuditTaskSQLsV1Params {

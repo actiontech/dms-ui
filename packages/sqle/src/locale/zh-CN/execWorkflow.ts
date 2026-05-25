@@ -300,6 +300,15 @@ export default {
     downloadSql: '下载SQL语句',
     downloadReport: '下载审核报告',
     downloadRollbackSql: '下载回滚语句',
+    exportFormat: {
+      html: 'HTML 格式',
+      pdf: 'PDF 格式',
+      csv: 'CSV 格式',
+      word: 'WORD 格式 (.docx)'
+    },
+    exportFormatNotSupported: '该导出格式仅企业版支持',
+    downloadFailed: '下载失败，请检查网络后重试',
+    downloadDisabledTip: '请等待审核完成后再下载',
     table: {
       number: '序号',
       auditLevel: '规则等级',
