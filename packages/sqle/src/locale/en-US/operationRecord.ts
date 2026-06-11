@@ -13,7 +13,10 @@ export default {
       operator: 'Operator',
       operationType: 'Operation type',
       operationAction: 'Operation content',
-      platformOperation: '-- (platform operation)'
+      platformOperation: '-- (platform operation)',
+      globalOperation: 'Global operation',
+      searchOperatorPlaceholder:
+        'Search operator or content (username, IP, keywords)'
     },
     column: {
       operatingTime: 'Operation time',

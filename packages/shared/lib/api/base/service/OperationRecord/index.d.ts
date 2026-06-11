@@ -1,7 +1,10 @@
 import {
   IGetOperationRecordListReply,
   IAddOperationRecordReq,
-  IAddOperationRecordReply
+  IAddOperationRecordReply,
+  IGetOperationTypeNameListReply,
+  IGetOperationActionListReply,
+  IGetOperationUserNameListReply
 } from '../common.d';
 
 export interface IGetOperationRecordListParams {
@@ -13,9 +16,15 @@ export interface IGetOperationRecordListParams {
 
   fuzzy_search_operate_user_name?: string;
 
-  filter_operate_type_name?: string;
+  fuzzy_search_operate_content?: string;
 
-  filter_operate_action?: string;
+  filter_fuzzy_operate_user_name?: string;
+
+  filter_operate_type_names?: string[];
+
+  filter_operate_actions?: string[];
+
+  filter_operate_status?: string;
 
   page_index: number;
 
@@ -38,7 +47,30 @@ export interface IExportOperationRecordListParams {
 
   fuzzy_search_operate_user_name?: string;
 
-  filter_operate_type_name?: string;
+  fuzzy_search_operate_content?: string;
 
-  filter_operate_action?: string;
+  filter_fuzzy_operate_user_name?: string;
+
+  filter_operate_type_names?: string[];
+
+  filter_operate_actions?: string[];
+
+  filter_operate_status?: string;
 }
+
+export interface IGetOperationTypeNameListParams {}
+
+export interface IGetOperationTypeNameListReturn
+  extends IGetOperationTypeNameListReply {}
+
+export interface IGetOperationActionListParams {}
+
+export interface IGetOperationActionListReturn
+  extends IGetOperationActionListReply {}
+
+export interface IGetOperationUserNameListParams {
+  filter_operate_project_name?: string;
+}
+
+export interface IGetOperationUserNameListReturn
+  extends IGetOperationUserNameListReply {}

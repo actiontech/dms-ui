@@ -11,7 +11,13 @@ import {
   IGetOperationRecordListReturn,
   IAddOperationRecordParams,
   IAddOperationRecordReturn,
-  IExportOperationRecordListParams
+  IExportOperationRecordListParams,
+  IGetOperationTypeNameListParams,
+  IGetOperationTypeNameListReturn,
+  IGetOperationActionListParams,
+  IGetOperationActionListReturn,
+  IGetOperationUserNameListParams,
+  IGetOperationUserNameListReturn
 } from './index.d';
 
 class OperationRecordService extends ServiceBase {
@@ -46,6 +52,42 @@ class OperationRecordService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<any>(
       '/v1/dms/operation_records/exports',
+      paramsData,
+      options
+    );
+  }
+
+  public GetOperationTypeNameList(
+    params?: IGetOperationTypeNameListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetOperationTypeNameListReturn>(
+      '/v1/dms/operation_records/operation_type_names',
+      paramsData,
+      options
+    );
+  }
+
+  public GetOperationActionList(
+    params?: IGetOperationActionListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetOperationActionListReturn>(
+      '/v1/dms/operation_records/operation_actions',
+      paramsData,
+      options
+    );
+  }
+
+  public GetOperationUserNameList(
+    params?: IGetOperationUserNameListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetOperationUserNameListReturn>(
+      '/v1/dms/operation_records/operation_user_names',
       paramsData,
       options
     );

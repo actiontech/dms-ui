@@ -15,7 +15,9 @@ export default {
       operationType: '操作类型',
       operationAction: '操作内容',
       platformOperation: '-- (平台操作)',
-      globalOperation: '全局操作'
+      globalOperation: '全局操作',
+      searchOperatorPlaceholder:
+        '搜索操作人或操作内容（用户名、IP、内容关键字）'
     },
     column: {
       operatingTime: '操作时间',
