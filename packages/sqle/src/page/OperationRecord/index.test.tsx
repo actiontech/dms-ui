@@ -1,4 +1,4 @@
-import { screen, cleanup } from '@testing-library/react';
+import { screen, cleanup, act } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -9,6 +9,7 @@ describe('slqe/OperationRecord', () => {
   let operationRecordListSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    operationRecord.mockAllApi();
     operationRecordListSpy = operationRecord.getOperationRecordList();
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -21,6 +22,7 @@ describe('slqe/OperationRecord', () => {
 
   test('should render operation record list', async () => {
     const { baseElement } = superRender(<OperationRecord />);
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('导出')).toBeInTheDocument();
