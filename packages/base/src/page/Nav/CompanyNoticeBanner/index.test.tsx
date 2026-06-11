@@ -4,15 +4,53 @@ import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import CompanyNoticeBanner from '.';
 
+const mockMatchMedia = (matches = false) => {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query: string) => ({
+      matches: query === '(prefers-reduced-motion: reduce)' ? matches : false,
+      media: query,
+      onchange: null,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn()
+    }))
+  });
+};
+
+const triggerOverflow = (
+  container: HTMLElement,
+  textWidth = 800,
+  containerWidth = 200
+) => {
+  Object.defineProperty(container, 'clientWidth', {
+    configurable: true,
+    get: () => containerWidth
+  });
+
+  const measureEl = container.querySelector('.notice-measure');
+  if (measureEl) {
+    Object.defineProperty(measureEl, 'scrollWidth', {
+      configurable: true,
+      get: () => textWidth
+    });
+  }
+};
+
 describe('base/page/Nav/CompanyNoticeBanner', () => {
   let requestGetCompanyNotice: jest.SpyInstance;
+  let resizeCallback: (() => void) | null = null;
 
   beforeEach(() => {
     jest.useFakeTimers();
+    mockMatchMedia(false);
     requestGetCompanyNotice = dms.getCompanyNotice();
+    resizeCallback = null;
 
-    // Mock ResizeObserver
     global.ResizeObserver = class ResizeObserver {
+      constructor(cb: ResizeObserverCallback) {
+        resizeCallback = () => cb([], this as unknown as ResizeObserver);
+      }
       observe = jest.fn();
       unobserve = jest.fn();
       disconnect = jest.fn();
@@ -40,7 +78,9 @@ describe('base/page/Nav/CompanyNoticeBanner', () => {
     await act(async () => jest.advanceTimersByTime(3300));
 
     expect(screen.getByText('系统公告')).toBeInTheDocument();
-    expect(screen.getByText('notice')).toBeInTheDocument();
+    expect(baseElement.querySelector('.notice-text')?.textContent).toBe(
+      'notice'
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -56,86 +96,65 @@ describe('base/page/Nav/CompanyNoticeBanner', () => {
 
   it('should poll for notice every 60 seconds', async () => {
     baseSuperRender(<CompanyNoticeBanner />);
-    // Initial request fires after 3000ms timer resolves
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetCompanyNotice).toHaveBeenCalledTimes(1);
 
-    // After response resolves, pollingInterval timer (60s) is registered
-    // Advance 60s to trigger second poll, plus 3s for response to resolve
     await act(async () => jest.advanceTimersByTime(60 * 1000 + 3300));
     expect(requestGetCompanyNotice).toHaveBeenCalledTimes(2);
   });
 
-  describe('expand button and detail modal', () => {
-    it('should not show expand button when text does not overflow', async () => {
+  describe('marquee and detail modal', () => {
+    it('should not show marquee animation when text does not overflow', async () => {
       const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
       await act(async () => jest.advanceTimersByTime(3300));
 
-      expect(screen.getByText('notice')).toBeInTheDocument();
+      expect(baseElement.querySelector('.notice-text')?.textContent).toBe(
+        'notice'
+      );
+      expect(
+        baseElement.querySelector('.notice-marquee-animate')
+      ).not.toBeInTheDocument();
       expect(screen.queryByText('查看全部')).not.toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('should show expand button when text overflows and open detail modal on click', async () => {
+    it('should show marquee animation when text overflows', async () => {
       const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
       await act(async () => jest.advanceTimersByTime(3300));
 
-      // Simulate text overflow by manipulating scrollWidth > clientWidth
-      const textEl = screen.getByText('notice');
-      Object.defineProperty(textEl, 'scrollWidth', {
-        configurable: true,
-        get: () => 500
-      });
-      Object.defineProperty(textEl, 'clientWidth', {
-        configurable: true,
-        get: () => 200
-      });
+      const contentArea = baseElement.querySelector(
+        '.notice-content-area'
+      ) as HTMLElement;
+      triggerOverflow(contentArea);
 
-      // Trigger ResizeObserver callback by firing the checkOverflow again
-      act(() => {
-        window.dispatchEvent(new Event('resize'));
-      });
+      if (resizeCallback) {
+        act(resizeCallback);
+      }
+      await act(async () => jest.advanceTimersByTime(200));
 
-      // Manually trigger the overflow check via re-render
-      await act(async () => jest.advanceTimersByTime(500));
-
+      expect(
+        baseElement.querySelector('.notice-marquee-animate')
+      ).toBeInTheDocument();
+      expect(screen.queryByText('查看全部')).not.toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('should open detail modal when expand button is clicked', async () => {
-      const longNotice =
-        '这是一条非常长的公告内容，需要展开才能查看完整信息，测试展开按钮功能是否正常工作';
+    it('should open detail modal when content area is clicked', async () => {
       requestGetCompanyNotice.mockImplementation(() =>
-        createSpySuccessResponse({ data: { notice_str: longNotice } })
+        createSpySuccessResponse({
+          data: { notice_str: 'test notice content' }
+        })
       );
 
       const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
       await act(async () => jest.advanceTimersByTime(3300));
 
-      expect(screen.getByText(longNotice)).toBeInTheDocument();
-
-      // Simulate overflow to show expand button
-      const textEl = screen.getByText(longNotice);
-      Object.defineProperty(textEl, 'scrollWidth', {
-        configurable: true,
-        get: () => 1000
-      });
-      Object.defineProperty(textEl, 'clientWidth', {
-        configurable: true,
-        get: () => 300
-      });
-
-      // Trigger ResizeObserver by dispatching a custom event to the element
-      act(() => {
-        // Force re-check by triggering the observer
-        const resizeObserverCallbacks = (global.ResizeObserver as any).mock
-          ?.instances?.[0]?.observe?.mock?.calls;
-        if (resizeObserverCallbacks) {
-          // observer is already set up, check via checkOverflow
-        }
-      });
-
+      fireEvent.click(baseElement.querySelector('.notice-content-area')!);
       await act(async () => jest.advanceTimersByTime(200));
+
+      expect(
+        screen.getAllByText('test notice content').length
+      ).toBeGreaterThanOrEqual(1);
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -146,95 +165,61 @@ describe('base/page/Nav/CompanyNoticeBanner', () => {
         })
       );
 
-      // Override ResizeObserver to report overflow immediately
-      let resizeCallback: (() => void) | null = null;
-      global.ResizeObserver = class ResizeObserver {
-        constructor(cb: ResizeObserverCallback) {
-          resizeCallback = () => cb([], this as unknown as ResizeObserver);
-        }
-        observe = jest.fn(() => {
-          // Immediately call the callback to simulate overflow detection
-        });
-        unobserve = jest.fn();
-        disconnect = jest.fn();
-      };
-
       const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
       await act(async () => jest.advanceTimersByTime(3300));
 
-      const textEl = screen.getByText('test notice content');
-      Object.defineProperty(textEl, 'scrollWidth', {
-        configurable: true,
-        get: () => 800
-      });
-      Object.defineProperty(textEl, 'clientWidth', {
-        configurable: true,
-        get: () => 200
-      });
-
-      if (resizeCallback) {
-        act(resizeCallback);
-      }
-
+      fireEvent.click(baseElement.querySelector('.notice-content-area')!);
       await act(async () => jest.advanceTimersByTime(200));
 
-      const expandBtn = screen.queryByText('查看全部');
-      if (expandBtn) {
-        fireEvent.click(expandBtn);
-        await act(async () => jest.advanceTimersByTime(200));
-
-        expect(
-          screen.getAllByText('test notice content').length
-        ).toBeGreaterThanOrEqual(1);
-        expect(baseElement).toMatchSnapshot();
-
-        fireEvent.click(screen.getByText('关 闭'));
-        await act(async () => jest.advanceTimersByTime(200));
-        expect(baseElement).toMatchSnapshot();
-      }
+      fireEvent.click(screen.getByText('关 闭'));
+      await act(async () => jest.advanceTimersByTime(200));
+      expect(baseElement).toMatchSnapshot();
     });
 
-    it('should open detail modal via keyboard Enter on expand button', async () => {
+    it('should open detail modal via keyboard Enter on content area', async () => {
       requestGetCompanyNotice.mockImplementation(() =>
         createSpySuccessResponse({
           data: { notice_str: 'keyboard test notice' }
         })
       );
 
-      let resizeCallback: (() => void) | null = null;
-      global.ResizeObserver = class ResizeObserver {
-        constructor(cb: ResizeObserverCallback) {
-          resizeCallback = () => cb([], this as unknown as ResizeObserver);
-        }
-        observe = jest.fn();
-        unobserve = jest.fn();
-        disconnect = jest.fn();
-      };
+      const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      fireEvent.keyDown(baseElement.querySelector('.notice-content-area')!, {
+        key: 'Enter'
+      });
+      await act(async () => jest.advanceTimersByTime(200));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('should show expand button when prefers reduced motion and text overflows', async () => {
+      mockMatchMedia(true);
+
+      requestGetCompanyNotice.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: { notice_str: 'reduced motion notice content' }
+        })
+      );
 
       const { baseElement } = baseSuperRender(<CompanyNoticeBanner />);
       await act(async () => jest.advanceTimersByTime(3300));
 
-      const textEl = screen.getByText('keyboard test notice');
-      Object.defineProperty(textEl, 'scrollWidth', {
-        configurable: true,
-        get: () => 800
-      });
-      Object.defineProperty(textEl, 'clientWidth', {
-        configurable: true,
-        get: () => 200
-      });
+      const contentArea = baseElement.querySelector(
+        '.notice-content-area'
+      ) as HTMLElement;
+      triggerOverflow(contentArea);
 
       if (resizeCallback) {
         act(resizeCallback);
       }
       await act(async () => jest.advanceTimersByTime(200));
 
-      const expandBtn = screen.queryByText('查看全部');
-      if (expandBtn) {
-        fireEvent.keyDown(expandBtn, { key: 'Enter' });
-        await act(async () => jest.advanceTimersByTime(200));
-        expect(baseElement).toMatchSnapshot();
-      }
+      expect(
+        baseElement.querySelector('.notice-marquee-animate')
+      ).not.toBeInTheDocument();
+      expect(screen.getByText('查看全部')).toBeInTheDocument();
+      expect(baseElement).toMatchSnapshot();
     });
   });
 });
