@@ -1,4 +1,15 @@
-import { styled } from '@mui/material/styles';
+import { styled, keyframes } from '@mui/material/styles';
+
+const MARQUEE_GAP = 32;
+
+const noticeMarquee = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - ${MARQUEE_GAP}px / 2));
+  }
+`;
 
 export const CompanyNoticeBannerStyleWrapper = styled('div')`
   position: fixed;
@@ -40,12 +51,24 @@ export const CompanyNoticeBannerStyleWrapper = styled('div')`
   }
 
   .notice-content-area {
+    position: relative;
     flex: 1;
     min-width: 0;
     margin-left: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .notice-measure {
+    position: absolute;
+    visibility: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .notice-text {
@@ -55,8 +78,36 @@ export const CompanyNoticeBannerStyleWrapper = styled('div')`
     font-size: 13px;
     line-height: 1.5;
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+
+    &.is-ellipsis {
+      text-overflow: ellipsis;
+    }
+  }
+
+  .notice-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: ${MARQUEE_GAP}px;
+    flex-shrink: 0;
+    will-change: transform;
+  }
+
+  .notice-marquee-animate {
+    animation: ${noticeMarquee} var(--marquee-duration, 10s) linear infinite;
+  }
+
+  .notice-content-area:hover .notice-marquee-animate {
+    animation-play-state: paused;
+  }
+
+  .notice-marquee-text {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .notice-expand-btn {
@@ -69,6 +120,12 @@ export const CompanyNoticeBannerStyleWrapper = styled('div')`
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .notice-marquee-animate {
+      animation: none;
     }
   }
 `;
