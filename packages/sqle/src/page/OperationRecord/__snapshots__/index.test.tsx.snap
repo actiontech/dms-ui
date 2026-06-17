@@ -22,7 +22,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -37,7 +37,6 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                   >
                     <path
                       d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
-                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -66,11 +65,12 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
             >
               <span
                 class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                style="width: 360px;"
               >
                 <input
                   class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
-                  placeholder="请输入要搜索的 操作人"
+                  placeholder="搜索操作人或操作内容（用户名、IP、内容关键字）"
                   type="text"
                   value=""
                 />
@@ -103,7 +103,6 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                   >
                     <path
                       d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -113,7 +112,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-10ae2zl"
+                class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                 style="padding: 0px 6px 0px 10px;"
                 type="button"
               >
@@ -124,20 +123,21 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                     class="ant-space-item"
                     style="margin-right: 2px;"
                   >
-                    筛选
+                    收起筛选
                   </div>
                   <div
                     class="ant-space-item"
                   >
                     <svg
                       color="currentColor"
+                      fill="none"
                       height="14"
                       viewBox="0 0 16 16"
                       width="14"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
                         fill="currentColor"
                       />
                     </svg>
@@ -158,8 +158,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-10ae2zl"
-                disabled=""
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -174,7 +173,6 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                   >
                     <path
                       d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      fill="currentColor"
                     />
                   </svg>
                 </span>
@@ -184,40 +182,349 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
         </div>
       </div>
       <div
+        class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
+        style="flex-wrap: wrap; margin-bottom: -12px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <div
+            class="css-1y8q0oh"
+          >
+            <div
+              class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+              style="min-width: 320px;"
+            >
+              <div
+                class="ant-picker-input ant-picker-input-active"
+              >
+                <input
+                  autocomplete="off"
+                  placeholder="开始时间"
+                  readonly=""
+                  size="21"
+                  value=""
+                />
+              </div>
+              <div
+                class="ant-picker-range-separator"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="ant-picker-input"
+              >
+                <input
+                  autocomplete="off"
+                  placeholder="结束时间"
+                  readonly=""
+                  size="21"
+                  value=""
+                />
+              </div>
+              <div
+                class="ant-picker-active-bar"
+                style="left: 0px; width: 0px; position: absolute;"
+              />
+              <span
+                class="ant-picker-suffix"
+              >
+                <span
+                  class="custom-range-picker-filter-label"
+                >
+                  操作时间
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <div
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          >
+            <div
+              class="ant-select-selector"
+            >
+              <span
+                class="ant-select-selection-search"
+              >
+                <input
+                  aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                  aria-autocomplete="list"
+                  aria-controls="rc_select_TEST_OR_SSR_list"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="rc_select_TEST_OR_SSR_list"
+                  autocomplete="off"
+                  class="ant-select-selection-search-input"
+                  id="rc_select_TEST_OR_SSR"
+                  readonly=""
+                  role="combobox"
+                  style="opacity: 0;"
+                  type="search"
+                  unselectable="on"
+                  value=""
+                />
+              </span>
+              <span
+                class="ant-select-selection-placeholder"
+              >
+                <span
+                  class="custom-select-placeholder css-qly0fu"
+                >
+                  <span
+                    class="custom-select-placeholder-prefix"
+                  >
+                    操作人
+                  </span>
+                  <span
+                    class="custom-select-placeholder-value"
+                  >
+                    请选择{{name}}
+                  </span>
+                </span>
+              </span>
+            </div>
+            <span
+              aria-hidden="true"
+              class="ant-select-arrow"
+              style="user-select: none;"
+              unselectable="on"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <div
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-multiple ant-select-allow-clear ant-select-show-arrow"
+          >
+            <div
+              class="ant-select-selector"
+            >
+              <div
+                class="ant-select-selection-overflow"
+              >
+                <div
+                  class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                  style="opacity: 1;"
+                >
+                  <div
+                    class="ant-select-selection-search"
+                    style="width: 0px;"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                    <span
+                      aria-hidden="true"
+                      class="ant-select-selection-search-mirror"
+                    >
+                       
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="ant-select-selection-placeholder"
+              >
+                <span
+                  class="custom-select-placeholder css-qly0fu"
+                >
+                  <span
+                    class="custom-select-placeholder-prefix"
+                  >
+                    操作类型
+                  </span>
+                  <span
+                    class="custom-select-placeholder-value"
+                  >
+                    请选择{{name}}
+                  </span>
+                </span>
+              </span>
+            </div>
+            <span
+              aria-hidden="true"
+              class="ant-select-arrow"
+              style="user-select: none;"
+              unselectable="on"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <div
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-multiple ant-select-allow-clear ant-select-show-arrow"
+          >
+            <div
+              class="ant-select-selector"
+            >
+              <div
+                class="ant-select-selection-overflow"
+              >
+                <div
+                  class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                  style="opacity: 1;"
+                >
+                  <div
+                    class="ant-select-selection-search"
+                    style="width: 0px;"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                    <span
+                      aria-hidden="true"
+                      class="ant-select-selection-search-mirror"
+                    >
+                       
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="ant-select-selection-placeholder"
+              >
+                <span
+                  class="custom-select-placeholder css-qly0fu"
+                >
+                  <span
+                    class="custom-select-placeholder-prefix"
+                  >
+                    操作内容
+                  </span>
+                  <span
+                    class="custom-select-placeholder-value"
+                  >
+                    请选择{{name}}
+                  </span>
+                </span>
+              </span>
+            </div>
+            <span
+              aria-hidden="true"
+              class="ant-select-arrow"
+              style="user-select: none;"
+              unselectable="on"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 12px;"
+        >
+          <div
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          >
+            <div
+              class="ant-select-selector"
+            >
+              <span
+                class="ant-select-selection-search"
+              >
+                <input
+                  aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                  aria-autocomplete="list"
+                  aria-controls="rc_select_TEST_OR_SSR_list"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="rc_select_TEST_OR_SSR_list"
+                  autocomplete="off"
+                  class="ant-select-selection-search-input"
+                  id="rc_select_TEST_OR_SSR"
+                  readonly=""
+                  role="combobox"
+                  style="opacity: 0;"
+                  type="search"
+                  unselectable="on"
+                  value=""
+                />
+              </span>
+              <span
+                class="ant-select-selection-placeholder"
+              >
+                <span
+                  class="custom-select-placeholder css-qly0fu"
+                >
+                  <span
+                    class="custom-select-placeholder-prefix"
+                  >
+                    状态
+                  </span>
+                  <span
+                    class="custom-select-placeholder-value"
+                  >
+                    请选择{{name}}
+                  </span>
+                </span>
+              </span>
+            </div>
+            <span
+              aria-hidden="true"
+              class="ant-select-arrow"
+              style="user-select: none;"
+              unselectable="on"
+            />
+          </div>
+        </div>
+      </div>
+      <div
         class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
           class="ant-spin-nested-loading"
         >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning"
-            >
-              <span
-                class="ant-spin-dot ant-spin-dot-spin"
-              >
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-              </span>
-            </div>
-          </div>
           <div
-            class="ant-spin-container ant-spin-blur"
+            class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-empty ant-table-scroll-horizontal"
+              class="ant-table ant-table-scroll-horizontal"
             >
               <div
                 class="ant-table-container"
@@ -241,7 +548,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                           操作时间
                         </th>
                         <th
-                          class="ant-table-cell whitespace-pre"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           操作人
@@ -336,16 +643,267 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="ant-table-placeholder"
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="54"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="6"
+                        >
+                          2024-01-03 11:28:34
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          admin  192.168.22.31
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          流程模板
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          编辑流程模板
+                        </td>
+                        <td
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-table-expanded-row-fixed"
-                            style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
-                          />
+                            aria-label="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                          >
+                            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+                            <div
+                              aria-label="复制"
+                              class="ant-typography-copy"
+                              role="button"
+                              style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                              tabindex="0"
+                            >
+                              <span
+                                aria-label="copy"
+                                class="anticon anticon-copy"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="copy"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                            >
+                              lg
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                            >
+                              <span
+                                aria-hidden="true"
+                              >
+                                ...
+                              </span>
+                              <div
+                                aria-label="复制"
+                                class="ant-typography-copy"
+                                role="button"
+                                style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                tabindex="0"
+                              >
+                                <span
+                                  aria-label="copy"
+                                  class="anticon anticon-copy"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="copy"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="css-10kos8e"
+                          >
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                stroke="#41BF9A"
+                                stroke-width="1.5"
+                              />
+                              <path
+                                d="m5.083 8 2.084 2.083 4.166-4.166"
+                                stroke="#41BF9A"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </svg>
+                            <span>
+                              成功
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="53"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          2024-01-03 11:27:27
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          admin  192.168.22.33
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          流程模板
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          编辑流程模板
+                        </td>
+                        <td
+                          class="ant-table-cell ellipsis-column-width"
+                        >
+                          <div
+                            aria-label="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
+                          >
+                            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+                            <div
+                              aria-label="复制"
+                              class="ant-typography-copy"
+                              role="button"
+                              style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                              tabindex="0"
+                            >
+                              <span
+                                aria-label="copy"
+                                class="anticon anticon-copy"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="copy"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                            >
+                              lg
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                            >
+                              <span
+                                aria-hidden="true"
+                              >
+                                ...
+                              </span>
+                              <div
+                                aria-label="复制"
+                                class="ant-typography-copy"
+                                role="button"
+                                style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                tabindex="0"
+                              >
+                                <span
+                                  aria-label="copy"
+                                  class="anticon anticon-copy"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="copy"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="css-10kos8e"
+                          >
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                stroke="#F59957"
+                                stroke-width="1.5"
+                              />
+                            </svg>
+                            <span>
+                              失败
+                            </span>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -353,6 +911,156 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
                 </div>
               </div>
             </div>
+            <ul
+              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
+            >
+              <li
+                class="ant-pagination-total-text"
+              >
+                <span>
+                  共 2 条数据
+                </span>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-prev ant-pagination-disabled"
+                title="上一页"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="left"
+                    class="anticon anticon-left"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="left"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li
+                class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                tabindex="0"
+                title="1"
+              >
+                <a
+                  rel="nofollow"
+                >
+                  1
+                </a>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-next ant-pagination-disabled"
+                title="下一页"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="right"
+                    class="anticon anticon-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li
+                class="ant-pagination-options"
+              >
+                <div
+                  aria-label="页码"
+                  class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
+                >
+                  <div
+                    class="ant-select-selector"
+                  >
+                    <span
+                      class="ant-select-selection-search"
+                    >
+                      <input
+                        aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                        aria-autocomplete="list"
+                        aria-controls="rc_select_TEST_OR_SSR_list"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-label="页码"
+                        aria-owns="rc_select_TEST_OR_SSR_list"
+                        autocomplete="off"
+                        class="ant-select-selection-search-input"
+                        id="rc_select_TEST_OR_SSR"
+                        role="combobox"
+                        type="search"
+                        value=""
+                      />
+                    </span>
+                    <span
+                      class="ant-select-selection-item"
+                      title="20 条/页"
+                    >
+                      20 条/页
+                    </span>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-arrow"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="down"
+                      class="anticon anticon-down ant-select-suffix"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="down"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
