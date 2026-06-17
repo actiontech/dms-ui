@@ -7,6 +7,7 @@ export default {
   unknownStatus: '未知状态...',
   unknown: '未知',
   status: '状态',
+  color: '颜色',
 
   all: '全部',
   enabled: '已启用',

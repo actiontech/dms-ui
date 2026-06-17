@@ -1,4 +1,5 @@
 import { CustomSelect, CustomSelectProps } from '@actiontech/dms-kit';
+import { SelectProps } from 'antd';
 
 const CustomSelectField: React.FC<
   CustomSelectProps & { onAfterChange: (v: string) => void }
@@ -6,9 +7,12 @@ const CustomSelectField: React.FC<
   return (
     <CustomSelect
       {...props}
-      onChange={(v, option) => {
+      onChange={(
+        v: Parameters<NonNullable<SelectProps['onChange']>>[0],
+        option: Parameters<NonNullable<SelectProps['onChange']>>[1]
+      ) => {
         onChange?.(v, option);
-        onAfterChange(v);
+        onAfterChange(v as string);
       }}
     />
   );

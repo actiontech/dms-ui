@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { AuditTypeEnum, DatabaseInfoProps } from './index.type';
 import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { useCallback, useContext, useMemo, useState } from 'react';
-import { Form, Space } from 'antd';
+import { Form, Space, SelectProps } from 'antd';
 import { CustomSelect } from '@actiontech/dms-kit';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
 import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -152,7 +152,9 @@ const DatabaseInfo = ({
             disabled={submitLoading}
             loading={instanceLoading}
             options={instanceOptions}
-            onChange={(value) => handleInstanceNameChange(value)}
+            onChange={(
+              value: Parameters<NonNullable<SelectProps['onChange']>>[0]
+            ) => handleInstanceNameChange(value as string)}
           />
         </FormItemNoLabel>
         <FormItemNoLabel

@@ -1,4 +1,4 @@
-import { Form, Space } from 'antd';
+import { Form, Space, SelectProps } from 'antd';
 import { CustomSelect } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { GlobalDashboardFilterStyleWrapper } from '../../style';
@@ -24,7 +24,9 @@ const GlobalDashboardTableFilter: React.FC<GlobalDashboardTableFilterProps> = ({
               placeholder={t('common.all')}
               suffixIcon={null}
               options={projectOptions}
-              onChange={(value) => {
+              onChange={(
+                value: Parameters<NonNullable<SelectProps['onChange']>>[0]
+              ) => {
                 onProjectChange?.(value as string);
               }}
             />

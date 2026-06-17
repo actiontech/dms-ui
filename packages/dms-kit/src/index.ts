@@ -49,6 +49,7 @@ export * from './components/CustomSelect';
 export * from './components/DatabaseTypeLogo';
 export * from './components/EditText';
 export * from './components/EditableSelect';
+export type * from './components/EditableSelect/EditableSelect.types';
 export * from './components/EmptyBox';
 export * from './components/HeaderProgress';
 export * from './components/LazyLoadComponent';

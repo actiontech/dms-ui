@@ -48,10 +48,6 @@ const List: React.FC = () => {
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
   const { getLogoUrlByDbType } = useDbServiceDriver();
-  const columns = useMemo(
-    () => SqlManagementConfColumns(projectID, getLogoUrlByDbType),
-    [getLogoUrlByDbType, projectID]
-  );
   const {
     tableFilterInfo,
     tableChange,
@@ -65,15 +61,21 @@ const List: React.FC = () => {
     InstanceAuditPlanTableFilterParamType
   >();
   const { parse2TableActionPermissions } = usePermission();
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
   const {
     filterCustomData,
     filterCustomProps,
+    environmentList,
     setFilterCustomData,
     updateInstanceList,
     updateEnvironmentList
   } = useTableFilter();
+  const columns = useMemo(
+    () =>
+      SqlManagementConfColumns(projectID, getLogoUrlByDbType, environmentList),
+    [getLogoUrlByDbType, projectID, environmentList]
+  );
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
   const [
     taskTypeShowStatus,
     { setFalse: setTaskTypeHide, setTrue: setTaskTypeShow }

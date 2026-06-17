@@ -71,12 +71,35 @@ export const EditableSelectStyleWrapper = styled('div')<{
     width: 100%;
     padding: 0 8px;
 
+    .editable-select-color-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
     .button-group {
       display: flex;
       justify-content: flex-end;
-      gap: 8px;
       margin-top: 8px;
+
+      button + button {
+        margin-left: 8px;
+      }
     }
+  }
+
+  .editable-select-option-label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .editable-select-color-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 `;
 
@@ -118,5 +141,18 @@ export const EditableSelectTriggerStyleWrapper = styled('div')<{
 
   .arrow-icon {
     display: flex;
+  }
+
+  .editable-select-option-label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .editable-select-color-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 `;

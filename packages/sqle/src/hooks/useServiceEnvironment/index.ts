@@ -1,7 +1,8 @@
 import { useRequest } from 'ahooks';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/dms-kit';
-import { useMemo } from 'react';
+import { createElement, useMemo } from 'react';
+import { EnvironmentTag } from '@actiontech/shared';
 
 const useServiceEnvironment = () => {
   const {
@@ -32,7 +33,12 @@ const useServiceEnvironment = () => {
   const environmentOptions = useMemo(() => {
     return (
       data?.map((environment) => ({
-        label: environment.name,
+        label: createElement(EnvironmentTag, {
+          name: environment.name,
+          color: environment.color,
+          size: 'small'
+        }),
+        text: environment.name,
         value: environment.uid
       })) ?? []
     );

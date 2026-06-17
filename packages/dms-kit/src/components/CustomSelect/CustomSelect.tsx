@@ -41,6 +41,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         typeof option.label === 'string'
           ? option.label
           : option.text ?? option.value;
+      const displayLabel =
+        typeof option.label === 'string' ? showLabel : option.label;
 
       if (
         !showLabel.toLowerCase().includes(innerSearchValue?.toLowerCase() ?? '')
@@ -52,7 +54,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         optionLabel: !!props.mode ? (
           showLabel
         ) : (
-          <CustomOptionLabel prefix={valuePrefix} label={showLabel} />
+          <CustomOptionLabel prefix={valuePrefix} label={displayLabel} />
         )
       };
     };

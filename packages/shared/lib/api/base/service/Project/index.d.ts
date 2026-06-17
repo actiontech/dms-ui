@@ -168,6 +168,8 @@ export interface ICreateEnvironmentTagParams {
   project_uid: string;
 
   environment_name: string;
+
+  color?: string;
 }
 
 export interface ICreateEnvironmentTagReturn extends IGenericResp {}
@@ -178,6 +180,8 @@ export interface IUpdateEnvironmentTagParams {
   environment_tag_uid: string;
 
   environment_name: string;
+
+  color?: string;
 }
 
 export interface IUpdateEnvironmentTagReturn extends IGenericResp {}

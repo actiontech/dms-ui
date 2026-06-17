@@ -7,6 +7,7 @@ import { t } from '../../../locale';
 import { DatabaseTypeLogo, BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IEnvironmentTag } from '@actiontech/shared/lib/api/base/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import {
   formatTime,
@@ -26,6 +27,7 @@ import {
 import ScanTypeTagsCell from './ScanTypeTagsCell';
 import { InfoCircleOutlined } from '@actiontech/icons/';
 import { PlanListTaskTypeButtonStyleWrapper } from './style';
+import { EnvironmentTag } from '@actiontech/shared';
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
   InstanceAuditPlanTableFilterParamType
@@ -46,11 +48,12 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 };
 export const SqlManagementConfColumns: (
   projectID: string,
-  getLogoUrlByDbType: (dbType: string) => string
+  getLogoUrlByDbType: (dbType: string) => string,
+  environmentList: IEnvironmentTag[]
 ) => ActiontechTableColumn<
   IInstanceAuditPlanResV1,
   InstanceAuditPlanTableFilterParamType
-> = (projectID, getLogoUrlByDbType) => {
+> = (projectID, getLogoUrlByDbType, environmentList) => {
   return [
     {
       dataIndex: 'instance_name',
@@ -103,7 +106,20 @@ export const SqlManagementConfColumns: (
       dataIndex: 'environment',
       title: () => t('managementConf.list.table.column.environmentAttribute'),
       render: (environment) => {
-        return environment || '-';
+        if (!environment) {
+          return '-';
+        }
+
+        const matchedEnvironment = environmentList.find(
+          (item) => item.name === environment || item.uid === environment
+        );
+
+        return (
+          <EnvironmentTag
+            name={matchedEnvironment?.name ?? environment}
+            color={matchedEnvironment?.color}
+          />
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag'

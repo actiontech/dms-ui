@@ -1,7 +1,7 @@
 import { fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtil/superRender';
 import EditableSelect from '../EditableSelect';
-import { EditableSelectOption } from '../index.type';
+import { EditableSelectOption } from '../EditableSelect.types';
 import {
   getBySelector,
   getAllBySelector,

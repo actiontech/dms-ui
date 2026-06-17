@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Dropdown, Menu, Space, Popconfirm, Spin } from 'antd';
+import { Dropdown, Menu, Space, Popconfirm, Spin, ColorPicker } from 'antd';
 import { BasicButton } from '../BasicButton';
 import { BasicInput } from '../BasicInput';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,10 @@ import {
   EditableSelectStyleWrapper,
   EditableSelectTriggerStyleWrapper
 } from './style';
-import { EditableSelectProps, EditableSelectOption } from './index.type';
+import {
+  EditableSelectProps,
+  EditableSelectOption
+} from './EditableSelect.types';
 import classNames from 'classnames';
 import { EmptyBox } from '../EmptyBox';
 import {
@@ -39,7 +42,9 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   errorMessage,
   searchable = true,
   searchPlaceholder,
-  contentMaxHeight = 320
+  contentMaxHeight = 320,
+  colorable = false,
+  presetColors = []
 }) => {
   const { t } = useTranslation();
   const [newItemName, setNewItemName] = useState('');
@@ -48,6 +53,8 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     null
   );
   const [editName, setEditName] = useState('');
+  const [newItemColor, setNewItemColor] = useState<string>();
+  const [editColor, setEditColor] = useState<string>();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [deletingItem, setDeletingItem] = useState<EditableSelectOption | null>(
     null
@@ -55,29 +62,34 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   const [searchValue, setSearchValue] = useState('');
 
   const handleAdd = () => {
-    onAdd?.(newItemName);
+    onAdd?.(newItemName, newItemColor);
     setNewItemName('');
+    setNewItemColor(undefined);
     setIsAdding(false);
   };
 
   const handleUpdate = () => {
     onUpdate?.({
       value: editingItem?.value ?? '',
-      label: editName.trim()
+      label: editName.trim(),
+      color: editColor
     });
     setEditingItem(null);
     setEditName('');
+    setEditColor(undefined);
   };
 
   const startEditing = (item: EditableSelectOption) => {
     setEditingItem(item);
     setEditName(item.label);
+    setEditColor(item.color);
     setDeletingItem(null);
   };
 
   const cancelEditing = () => {
     setEditingItem(null);
     setEditName('');
+    setEditColor(undefined);
   };
 
   const startAdding = () => {
@@ -87,9 +99,11 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
 
   const resetState = () => {
     setNewItemName('');
+    setNewItemColor(undefined);
     setIsAdding(false);
     setEditingItem(null);
     setEditName('');
+    setEditColor(undefined);
     setDeletingItem(null);
     setSearchValue('');
   };
@@ -112,6 +126,15 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     );
   }, [searchable, searchValue, options]);
 
+  const colorPresets = presetColors.length
+    ? [
+        {
+          label: '',
+          colors: presetColors
+        }
+      ]
+    : undefined;
+
   const generateMenuItems = (): MenuProps['items'] => {
     const optionItems: MenuProps['items'] = filteredOptions.map((option) => ({
       key: option.value,
@@ -133,6 +156,20 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                   autoFocus
                   onChange={(e) => setEditName(e.target.value)}
                 />
+                <EmptyBox if={colorable}>
+                  <div className="editable-select-color-row">
+                    <span>{t('common.color')}</span>
+                    <ColorPicker
+                      value={editColor}
+                      presets={colorPresets}
+                      onChangeComplete={(color) =>
+                        setEditColor(color.toHexString())
+                      }
+                      allowClear
+                      onClear={() => setEditColor(undefined)}
+                    />
+                  </div>
+                </EmptyBox>
                 <div className="button-group">
                   <BasicButton size="small" onClick={cancelEditing}>
                     {t('common.cancel')}
@@ -149,7 +186,15 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
               </div>
             ) : (
               <>
-                <span>{option.label}</span>
+                <span className="editable-select-option-label">
+                  <EmptyBox if={colorable && !!option.color}>
+                    <span
+                      className="editable-select-color-dot"
+                      style={{ background: option.color }}
+                    />
+                  </EmptyBox>
+                  {option.label}
+                </span>
                 <Space>
                   <EmptyBox if={updatable}>
                     <BasicButton
@@ -237,6 +282,20 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                   onChange={(e) => setNewItemName(e.target.value)}
                   placeholder={t('common.form.placeholder.input')}
                 />
+                <EmptyBox if={colorable}>
+                  <div className="editable-select-color-row">
+                    <span>{t('common.color')}</span>
+                    <ColorPicker
+                      value={newItemColor}
+                      presets={colorPresets}
+                      onChangeComplete={(color) =>
+                        setNewItemColor(color.toHexString())
+                      }
+                      allowClear
+                      onClear={() => setNewItemColor(undefined)}
+                    />
+                  </div>
+                </EmptyBox>
                 <div className="button-group">
                   <BasicButton
                     size="small"
@@ -272,6 +331,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     </EditableSelectStyleWrapper>
   );
   const selectedLabel = options.find((o) => o.value === value)?.label;
+  const selectedColor = options.find((o) => o.value === value)?.color;
 
   return (
     <Dropdown
@@ -289,7 +349,15 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
         })}
       >
         {selectedLabel ? (
-          <span>{selectedLabel}</span>
+          <span className="editable-select-option-label">
+            <EmptyBox if={colorable && !!selectedColor}>
+              <span
+                className="editable-select-color-dot"
+                style={{ background: selectedColor }}
+              />
+            </EmptyBox>
+            {selectedLabel}
+          </span>
         ) : (
           <span className="placeholder">
             {placeholder ?? t('common.form.placeholder.select')}

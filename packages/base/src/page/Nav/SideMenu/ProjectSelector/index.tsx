@@ -125,7 +125,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
       }}
       allowClear={false}
       dropdownRender={renderDropdown}
-      onDropdownVisibleChange={(visible) => {
+      onDropdownVisibleChange={(visible: boolean) => {
         setOpen(visible);
         if (!visible) {
           setSearchValue('');

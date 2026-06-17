@@ -4943,6 +4943,8 @@ export interface IInstanceTipResV2 {
 
   enable_backup?: boolean;
 
+  environment_tag_color?: string;
+
   environment_tag_name?: string;
 
   environment_tag_uid?: string;

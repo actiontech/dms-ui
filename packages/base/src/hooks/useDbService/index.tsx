@@ -2,10 +2,62 @@ import React, { useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IListDBServiceTipItem,
+  IListDBServiceV2
+} from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo, ResponseCode } from '@actiontech/dms-kit';
+import { EnvironmentTag } from '@actiontech/shared';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
+
+const getDbServiceDisplayLabel = (dbService: IListDBServiceTipItem) => {
+  return !!dbService.host && !!dbService.port
+    ? `${dbService.name} (${dbService.host}:${dbService.port})`
+    : dbService.name;
+};
+
+const renderDbServiceOptionLabel = (dbService: IListDBServiceTipItem) => {
+  return (
+    <span
+      className="db-service-option-label"
+      style={{ display: 'inline-flex', alignItems: 'center' }}
+    >
+      <EnvironmentTag
+        name={dbService.environment_tag?.name}
+        color={dbService.environment_tag?.color}
+        size="small"
+        style={{ marginRight: 6 }}
+      />
+      <span>{getDbServiceDisplayLabel(dbService)}</span>
+    </span>
+  );
+};
+
+const mergeDbServiceEnvironmentTag = (
+  tips: IListDBServiceTipItem[],
+  dbServices: IListDBServiceV2[]
+) => {
+  if (dbServices.length === 0) {
+    return tips;
+  }
+
+  return tips.map((tip) => {
+    const dbService = dbServices.find(
+      (item) => item.uid === tip.id || item.name === tip.name
+    );
+
+    if (!dbService?.environment_tag) {
+      return tip;
+    }
+
+    return {
+      ...tip,
+      environment_tag: dbService.environment_tag
+    };
+  });
+};
+
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<
     IListDBServiceTipItem[]
@@ -16,9 +68,28 @@ const useDbService = () => {
     (params: IListDBServiceTipsParams) => {
       setTrue();
       DBService.ListDBServiceTips(params)
-        .then((res) => {
+        .then(async (res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            setDbServiceList(res.data?.data ?? []);
+            const tips = res.data?.data ?? [];
+            if (!params.project_uid || tips.length === 0) {
+              setDbServiceList(tips);
+              return;
+            }
+
+            const dbServicesRes = await DBService.ListDBServicesV2({
+              project_uid: params.project_uid,
+              page_index: 1,
+              page_size: 999
+            });
+
+            setDbServiceList(
+              mergeDbServiceEnvironmentTag(
+                tips,
+                dbServicesRes.data.code === ResponseCode.SUCCESS
+                  ? dbServicesRes.data?.data ?? []
+                  : []
+              )
+            );
           } else {
             setDbServiceList([]);
           }
@@ -54,17 +125,14 @@ const useDbService = () => {
               .map((db) => {
                 const id = db.id ?? '';
                 const name = db.name ?? '';
-                const label =
-                  !!db.host && !!db.port
-                    ? `${db.name} (${db.host}:${db.port})`
-                    : db.name;
+                const label = getDbServiceDisplayLabel(db);
                 return (
                   <Select.Option
                     key={db.id}
                     value={valueType === 'id' ? id : name}
                     label={label}
                   >
-                    {label}
+                    {renderDbServiceOptionLabel(db)}
                   </Select.Option>
                 );
               })}
@@ -97,10 +165,8 @@ const useDbService = () => {
           .filter((db) => db.db_type === type)
           .map((db) => ({
             value: valueType === 'id' ? db?.id : db?.name,
-            label:
-              !!db.host && !!db.port
-                ? `${db.name} (${db.host}:${db.port})`
-                : db.name
+            text: getDbServiceDisplayLabel(db),
+            label: renderDbServiceOptionLabel(db)
           }))
       }));
     },

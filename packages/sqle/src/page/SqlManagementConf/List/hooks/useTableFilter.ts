@@ -12,7 +12,8 @@ const useInstanceAuditPlanFilter = () => {
 
   const { updateInstanceList, instanceIDOptions } = useInstance();
 
-  const { environmentOptions, updateEnvironmentList } = useServiceEnvironment();
+  const { environmentList, environmentOptions, updateEnvironmentList } =
+    useServiceEnvironment();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IInstanceAuditPlanResV1, FilterCustomProps>([
@@ -61,7 +62,8 @@ const useInstanceAuditPlanFilter = () => {
     filterCustomData,
     setFilterCustomData,
     updateInstanceList,
-    updateEnvironmentList
+    updateEnvironmentList,
+    environmentList
   };
 };
 

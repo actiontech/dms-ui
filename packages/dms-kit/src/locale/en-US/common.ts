@@ -7,6 +7,7 @@ export default {
   unknownStatus: 'Unknown status...',
   unknown: 'Unknown',
   status: 'Status',
+  color: 'Color',
 
   all: 'All',
   enabled: 'Enabled',

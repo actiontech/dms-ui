@@ -169,6 +169,8 @@ const ExportSourceFormItem: React.FC<
       >
         <BasicSelect
           onChange={dbServiceChangeHandle}
+          optionFilterProp="label"
+          optionLabelProp="children"
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsDataExport.create.form.source.dbService')
           })}

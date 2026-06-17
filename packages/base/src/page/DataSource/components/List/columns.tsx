@@ -4,8 +4,8 @@ import { t } from '../../../../locale';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo, BasicTag } from '@actiontech/dms-kit';
-import { BasicTypographyEllipsis } from '@actiontech/shared';
+import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { BasicTypographyEllipsis, EnvironmentTag } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
 
@@ -113,7 +113,9 @@ export const dataSourceColumns = (
         if (!environment?.name) {
           return '-';
         }
-        return <BasicTag>{environment?.name}</BasicTag>;
+        return (
+          <EnvironmentTag name={environment?.name} color={environment?.color} />
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'
