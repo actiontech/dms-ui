@@ -75,6 +75,7 @@ const useInstance = () => {
                     key={item.instance_name}
                     value={item.instance_name ?? ''}
                     label={label}
+                    title={label}
                   >
                     <span className="instance-option-label">
                       <EnvironmentTag
@@ -108,6 +109,7 @@ const useInstance = () => {
           .map((v) => ({
             value: v.instance_name,
             text: `${v.instance_name}(${v.host}:${v.port})`,
+            title: `${v.instance_name}(${v.host}:${v.port})`,
             label: (
               <span className="instance-option-label">
                 <EnvironmentTag
@@ -138,6 +140,7 @@ const useInstance = () => {
           .map((v) => ({
             value: v.instance_id,
             text: `${v.instance_name}(${v.host}:${v.port})`,
+            title: `${v.instance_name}(${v.host}:${v.port})`,
             label: (
               <span className="instance-option-label">
                 <EnvironmentTag

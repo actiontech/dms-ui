@@ -124,7 +124,7 @@ describe('EditableSelect', () => {
     fireEvent.click(saveButton);
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(mockOnAdd).toHaveBeenCalledWith('New Option');
+    expect(mockOnAdd).toHaveBeenCalledWith('New Option', undefined);
   });
 
   it('should disable add button when input is empty', async () => {

@@ -4,7 +4,7 @@ exports[`EditableSelect should render select when options is empty 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+      class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
     >
       <span
         class="placeholder"
@@ -35,7 +35,7 @@ exports[`EditableSelect should render select when options is empty 2`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-159cif1"
       open=""
     >
       <span
@@ -67,7 +67,7 @@ exports[`EditableSelect should render select when options is empty 2`] = `
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
-        class="css-8go0jz"
+        class="css-r6iuvr"
         height="320"
       >
         <div
@@ -210,7 +210,7 @@ exports[`EditableSelect should render select with options 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+      class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
     >
       <span
         class="placeholder"
@@ -241,7 +241,7 @@ exports[`EditableSelect should render select with options 2`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-159cif1"
       open=""
     >
       <span
@@ -273,7 +273,7 @@ exports[`EditableSelect should render select with options 2`] = `
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
-        class="css-8go0jz"
+        class="css-r6iuvr"
         height="320"
       >
         <div
@@ -336,7 +336,9 @@ exports[`EditableSelect should render select with options 2`] = `
                     <div
                       class="menu-item-content"
                     >
-                      <span>
+                      <span
+                        class="editable-select-option-label"
+                      >
                         Option 1
                       </span>
                       <div
@@ -409,7 +411,9 @@ exports[`EditableSelect should render select with options 2`] = `
                     <div
                       class="menu-item-content"
                     >
-                      <span>
+                      <span
+                        class="editable-select-option-label"
+                      >
                         Option 2
                       </span>
                       <div
@@ -518,7 +522,7 @@ exports[`EditableSelect should render without options 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+      class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
     >
       <span
         class="placeholder"

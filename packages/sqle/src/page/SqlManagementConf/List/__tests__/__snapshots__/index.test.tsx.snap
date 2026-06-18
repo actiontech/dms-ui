@@ -624,7 +624,19 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -747,7 +759,19 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -915,7 +939,19 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-2
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-2
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3071,7 +3107,19 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3194,7 +3242,19 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3362,7 +3422,19 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-2
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-2
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -4256,7 +4328,19 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-yuolwb"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-color-dot"
+                                />
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"

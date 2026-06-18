@@ -1189,6 +1189,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                               </span>
                                                               <span
                                                                 class="ant-select-selection-item"
+                                                                title="mysql-2(10.186.62.14:33062)"
                                                               >
                                                                 <span
                                                                   class="custom-select-option-content css-17mg133"
@@ -1216,7 +1217,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                                   <span
                                                                     class="custom-select-option-content-label"
                                                                   >
-                                                                    mysql-2(10.186.62.14:33062)
+                                                                    <span
+                                                                      class="instance-option-label"
+                                                                    >
+                                                                      <span>
+                                                                        mysql-2(10.186.62.14:33062)
+                                                                      </span>
+                                                                    </span>
                                                                   </span>
                                                                 </span>
                                                               </span>
@@ -1313,7 +1320,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                                 class="ant-select-selection-item"
                                                                 title="mysql-2(10.186.62.14:33062)"
                                                               >
-                                                                mysql-2(10.186.62.14:33062)
+                                                                <span
+                                                                  class="instance-option-label"
+                                                                >
+                                                                  <span>
+                                                                    mysql-2(10.186.62.14:33062)
+                                                                  </span>
+                                                                </span>
                                                               </span>
                                                             </div>
                                                             <span
@@ -2013,6 +2026,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                               </span>
                                                               <span
                                                                 class="ant-select-selection-item"
+                                                                title="xin-test-database(10.186.62.15:33063)"
                                                               >
                                                                 <span
                                                                   class="custom-select-option-content css-17mg133"
@@ -2040,7 +2054,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                                   <span
                                                                     class="custom-select-option-content-label"
                                                                   >
-                                                                    xin-test-database(10.186.62.15:33063)
+                                                                    <span
+                                                                      class="instance-option-label"
+                                                                    >
+                                                                      <span>
+                                                                        xin-test-database(10.186.62.15:33063)
+                                                                      </span>
+                                                                    </span>
                                                                   </span>
                                                                 </span>
                                                               </span>
@@ -2137,7 +2157,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                                                 class="ant-select-selection-item"
                                                                 title="xin-test-database(10.186.62.15:33063)"
                                                               >
-                                                                xin-test-database(10.186.62.15:33063)
+                                                                <span
+                                                                  class="instance-option-label"
+                                                                >
+                                                                  <span>
+                                                                    xin-test-database(10.186.62.15:33063)
+                                                                  </span>
+                                                                </span>
                                                               </span>
                                                             </div>
                                                             <span
@@ -2536,7 +2562,6 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
               role="presentation"
             />
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="false"
               id="release_workflows_0_target_release_instances_0_target_instance_id_list_1"
               role="option"
@@ -2544,7 +2569,6 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
               1739531942258282496
             </div>
             <div
-              aria-label="xin-test-database(10.186.62.15:33063)"
               aria-selected="true"
               id="release_workflows_0_target_release_instances_0_target_instance_id_list_2"
               role="option"
@@ -2594,7 +2618,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -2611,7 +2641,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -3160,6 +3196,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                               </span>
                                                               <span
                                                                 class="ant-select-selection-item"
+                                                                title="mysql-2(10.186.62.14:33062)"
                                                               >
                                                                 <span
                                                                   class="custom-select-option-content css-17mg133"
@@ -3187,7 +3224,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                   <span
                                                                     class="custom-select-option-content-label"
                                                                   >
-                                                                    mysql-2(10.186.62.14:33062)
+                                                                    <span
+                                                                      class="instance-option-label"
+                                                                    >
+                                                                      <span>
+                                                                        mysql-2(10.186.62.14:33062)
+                                                                      </span>
+                                                                    </span>
                                                                   </span>
                                                                 </span>
                                                               </span>
@@ -3284,7 +3327,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                 class="ant-select-selection-item"
                                                                 title="mysql-2(10.186.62.14:33062)"
                                                               >
-                                                                mysql-2(10.186.62.14:33062)
+                                                                <span
+                                                                  class="instance-option-label"
+                                                                >
+                                                                  <span>
+                                                                    mysql-2(10.186.62.14:33062)
+                                                                  </span>
+                                                                </span>
                                                               </span>
                                                             </div>
                                                             <span
@@ -4023,6 +4072,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                               </span>
                                                               <span
                                                                 class="ant-select-selection-item"
+                                                                title="mysql-2(10.186.62.14:33062)"
                                                               >
                                                                 <span
                                                                   class="custom-select-option-content css-17mg133"
@@ -4050,7 +4100,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                   <span
                                                                     class="custom-select-option-content-label"
                                                                   >
-                                                                    mysql-2(10.186.62.14:33062)
+                                                                    <span
+                                                                      class="instance-option-label"
+                                                                    >
+                                                                      <span>
+                                                                        mysql-2(10.186.62.14:33062)
+                                                                      </span>
+                                                                    </span>
                                                                   </span>
                                                                 </span>
                                                               </span>
@@ -4147,7 +4203,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                 class="ant-select-selection-item"
                                                                 title="mysql-2(10.186.62.14:33062)"
                                                               >
-                                                                mysql-2(10.186.62.14:33062)
+                                                                <span
+                                                                  class="instance-option-label"
+                                                                >
+                                                                  <span>
+                                                                    mysql-2(10.186.62.14:33062)
+                                                                  </span>
+                                                                </span>
                                                               </span>
                                                             </div>
                                                             <span
@@ -4886,6 +4948,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                               </span>
                                                               <span
                                                                 class="ant-select-selection-item"
+                                                                title="mysql-2(10.186.62.14:33062)"
                                                               >
                                                                 <span
                                                                   class="custom-select-option-content css-17mg133"
@@ -4913,7 +4976,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                   <span
                                                                     class="custom-select-option-content-label"
                                                                   >
-                                                                    mysql-2(10.186.62.14:33062)
+                                                                    <span
+                                                                      class="instance-option-label"
+                                                                    >
+                                                                      <span>
+                                                                        mysql-2(10.186.62.14:33062)
+                                                                      </span>
+                                                                    </span>
                                                                   </span>
                                                                 </span>
                                                               </span>
@@ -5010,7 +5079,13 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                                                 class="ant-select-selection-item"
                                                                 title="mysql-2(10.186.62.14:33062)"
                                                               >
-                                                                mysql-2(10.186.62.14:33062)
+                                                                <span
+                                                                  class="instance-option-label"
+                                                                >
+                                                                  <span>
+                                                                    mysql-2(10.186.62.14:33062)
+                                                                  </span>
+                                                                </span>
                                                               </span>
                                                             </div>
                                                             <span

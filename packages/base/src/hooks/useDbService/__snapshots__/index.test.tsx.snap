@@ -9,11 +9,55 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
     />,
     "options": [
       {
-        "label": "test (127.0.0.1:3306)",
+        "label": <span
+          className="db-service-option-label"
+          style={
+            {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <Memo(EnvironmentTag)
+            size="small"
+            style={
+              {
+                "marginRight": 6,
+              }
+            }
+          />
+          <span>
+            test (127.0.0.1:3306)
+          </span>
+        </span>,
+        "text": "test (127.0.0.1:3306)",
+        "title": "test (127.0.0.1:3306)",
         "value": "123123",
       },
       {
-        "label": "test2 (localhost:3306)",
+        "label": <span
+          className="db-service-option-label"
+          style={
+            {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <Memo(EnvironmentTag)
+            size="small"
+            style={
+              {
+                "marginRight": 6,
+              }
+            }
+          />
+          <span>
+            test2 (localhost:3306)
+          </span>
+        </span>,
+        "text": "test2 (localhost:3306)",
+        "title": "test2 (localhost:3306)",
         "value": "300123",
       },
     ],
@@ -57,7 +101,14 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
           class="ant-select-selection-item"
           title="test (127.0.0.1:3306)"
         >
-          test (127.0.0.1:3306)
+          <span
+            class="db-service-option-label"
+            style="display: inline-flex; align-items: center;"
+          >
+            <span>
+              test (127.0.0.1:3306)
+            </span>
+          </span>
         </span>
       </div>
       <span
@@ -127,7 +178,14 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
           class="ant-select-selection-item"
           title="test (127.0.0.1:3306)"
         >
-          test (127.0.0.1:3306)
+          <span
+            class="db-service-option-label"
+            style="display: inline-flex; align-items: center;"
+          >
+            <span>
+              test (127.0.0.1:3306)
+            </span>
+          </span>
         </span>
       </div>
       <span
@@ -175,7 +233,6 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
             role="presentation"
           />
           <div
-            aria-label="test (127.0.0.1:3306)"
             aria-selected="true"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -183,7 +240,6 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
             123123
           </div>
           <div
-            aria-label="test2 (localhost:3306)"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_2"
             role="option"
@@ -230,7 +286,14 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
                   <div
                     class="ant-select-item-option-content"
                   >
-                    test (127.0.0.1:3306)
+                    <span
+                      class="db-service-option-label"
+                      style="display: inline-flex; align-items: center;"
+                    >
+                      <span>
+                        test (127.0.0.1:3306)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -248,7 +311,14 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
                   <div
                     class="ant-select-item-option-content"
                   >
-                    test2 (localhost:3306)
+                    <span
+                      class="db-service-option-label"
+                      style="display: inline-flex; align-items: center;"
+                    >
+                      <span>
+                        test2 (localhost:3306)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -276,11 +346,55 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
     />,
     "options": [
       {
-        "label": "test (127.0.0.1:3306)",
+        "label": <span
+          className="db-service-option-label"
+          style={
+            {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <Memo(EnvironmentTag)
+            size="small"
+            style={
+              {
+                "marginRight": 6,
+              }
+            }
+          />
+          <span>
+            test (127.0.0.1:3306)
+          </span>
+        </span>,
+        "text": "test (127.0.0.1:3306)",
+        "title": "test (127.0.0.1:3306)",
         "value": "test",
       },
       {
-        "label": "test2 (localhost:3306)",
+        "label": <span
+          className="db-service-option-label"
+          style={
+            {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <Memo(EnvironmentTag)
+            size="small"
+            style={
+              {
+                "marginRight": 6,
+              }
+            }
+          />
+          <span>
+            test2 (localhost:3306)
+          </span>
+        </span>,
+        "text": "test2 (localhost:3306)",
+        "title": "test2 (localhost:3306)",
         "value": "test2",
       },
     ],
@@ -442,7 +556,6 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
             role="presentation"
           />
           <div
-            aria-label="test (127.0.0.1:3306)"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -450,7 +563,6 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
             test
           </div>
           <div
-            aria-label="test2 (localhost:3306)"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_2"
             role="option"
@@ -497,7 +609,14 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
                   <div
                     class="ant-select-item-option-content"
                   >
-                    test (127.0.0.1:3306)
+                    <span
+                      class="db-service-option-label"
+                      style="display: inline-flex; align-items: center;"
+                    >
+                      <span>
+                        test (127.0.0.1:3306)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -515,7 +634,14 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
                   <div
                     class="ant-select-item-option-content"
                   >
-                    test2 (localhost:3306)
+                    <span
+                      class="db-service-option-label"
+                      style="display: inline-flex; align-items: center;"
+                    >
+                      <span>
+                        test2 (localhost:3306)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"

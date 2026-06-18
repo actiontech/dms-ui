@@ -83,7 +83,6 @@ exports[`useInstance should be group instance by database type 1`] = `
             role="presentation"
           />
           <div
-            aria-label="mysql_instance_test_name_1"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -91,7 +90,6 @@ exports[`useInstance should be group instance by database type 1`] = `
             mysql_instance_test_name_1
           </div>
           <div
-            aria-label="mysql_instance_test_name_2"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_2"
             role="option"
@@ -132,12 +130,19 @@ exports[`useInstance should be group instance by database type 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
+                  label="mysql_instance_test_name_1"
                   title="mysql_instance_test_name_1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    mysql_instance_test_name_1
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        mysql_instance_test_name_1
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -149,12 +154,19 @@ exports[`useInstance should be group instance by database type 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="mysql_instance_test_name_2"
                   title="mysql_instance_test_name_2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    mysql_instance_test_name_2
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        mysql_instance_test_name_2
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -183,12 +195,19 @@ exports[`useInstance should be group instance by database type 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="oracle_instance_test_name"
                   title="oracle_instance_test_name"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    oracle_instance_test_name
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        oracle_instance_test_name
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -217,12 +236,19 @@ exports[`useInstance should be group instance by database type 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="sqlserver_instance_test_name"
                   title="sqlserver_instance_test_name"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    sqlserver_instance_test_name
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        sqlserver_instance_test_name
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -458,7 +484,6 @@ exports[`useInstance should get instance data from request 3`] = `
             role="presentation"
           />
           <div
-            aria-label="instance_test_name (127.0.0.1:8081)"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -499,12 +524,19 @@ exports[`useInstance should get instance data from request 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
+                  label="instance_test_name (127.0.0.1:8081)"
                   title="instance_test_name (127.0.0.1:8081)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    instance_test_name (127.0.0.1:8081)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        instance_test_name (127.0.0.1:8081)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -558,7 +590,13 @@ exports[`useInstance should show one database type which your choose 1`] = `
           class="ant-select-selection-item"
           title="oracle_instance_test_name"
         >
-          oracle_instance_test_name
+          <span
+            class="instance-option-label"
+          >
+            <span>
+              oracle_instance_test_name
+            </span>
+          </span>
         </span>
       </div>
       <span
@@ -627,7 +665,13 @@ exports[`useInstance should show one database type which your choose 2`] = `
           class="ant-select-selection-item"
           title="oracle_instance_test_name"
         >
-          oracle_instance_test_name
+          <span
+            class="instance-option-label"
+          >
+            <span>
+              oracle_instance_test_name
+            </span>
+          </span>
         </span>
       </div>
       <span
@@ -675,7 +719,6 @@ exports[`useInstance should show one database type which your choose 2`] = `
             role="presentation"
           />
           <div
-            aria-label="oracle_instance_test_name"
             aria-selected="true"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -716,12 +759,19 @@ exports[`useInstance should show one database type which your choose 2`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  label="oracle_instance_test_name"
                   title="oracle_instance_test_name"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    oracle_instance_test_name
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        oracle_instance_test_name
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"

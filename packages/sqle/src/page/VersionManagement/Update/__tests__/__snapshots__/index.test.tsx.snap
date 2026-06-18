@@ -427,7 +427,13 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                         class="ant-select-selection-item"
                                         title="mysql-1(10.186.62.13:33061)"
                                       >
-                                        mysql-1(10.186.62.13:33061)
+                                        <span
+                                          class="instance-option-label"
+                                        >
+                                          <span>
+                                            mysql-1(10.186.62.13:33061)
+                                          </span>
+                                        </span>
                                       </span>
                                     </div>
                                     <span
@@ -561,7 +567,13 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                         class="ant-select-selection-item"
                                         title="mysql-2(10.186.62.14:33062)"
                                       >
-                                        mysql-2(10.186.62.14:33062)
+                                        <span
+                                          class="instance-option-label"
+                                        >
+                                          <span>
+                                            mysql-2(10.186.62.14:33062)
+                                          </span>
+                                        </span>
                                       </span>
                                     </div>
                                     <span

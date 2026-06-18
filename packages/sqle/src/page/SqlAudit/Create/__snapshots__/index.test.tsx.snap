@@ -6432,6 +6432,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                                 </span>
                                 <span
                                   class="ant-select-selection-item"
+                                  title="mysql-1(10.186.62.13:33061)"
                                 >
                                   <span
                                     class="custom-select-option-content css-17mg133"
@@ -6459,7 +6460,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                                     <span
                                       class="custom-select-option-content-label"
                                     >
-                                      mysql-1(10.186.62.13:33061)
+                                      <span
+                                        class="instance-option-label"
+                                      >
+                                        <span>
+                                          mysql-1(10.186.62.13:33061)
+                                        </span>
+                                      </span>
                                     </span>
                                   </span>
                                 </span>
@@ -7366,7 +7373,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -7385,7 +7398,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -7404,7 +7423,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -7423,7 +7448,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -7463,7 +7494,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -7503,7 +7540,13 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"

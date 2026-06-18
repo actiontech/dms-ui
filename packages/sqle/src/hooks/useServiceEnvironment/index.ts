@@ -39,6 +39,7 @@ const useServiceEnvironment = () => {
           size: 'small'
         }),
         text: environment.name,
+        title: environment.name,
         value: environment.uid
       })) ?? []
     );

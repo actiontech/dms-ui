@@ -568,7 +568,14 @@ exports[`base/Member/Drawer/UpdateMemberGroup should render update member group 
                                             <span
                                               class="ant-select-selection-item-content"
                                             >
-                                              test (127.0.0.1:3306)
+                                              <span
+                                                class="db-service-option-label"
+                                                style="display: inline-flex; align-items: center;"
+                                              >
+                                                <span>
+                                                  test (127.0.0.1:3306)
+                                                </span>
+                                              </span>
                                             </span>
                                             <span
                                               aria-hidden="true"
@@ -1512,7 +1519,14 @@ exports[`base/Member/Drawer/UpdateMemberGroup should send update member group re
                                             <span
                                               class="ant-select-selection-item-content"
                                             >
-                                              test (127.0.0.1:3306)
+                                              <span
+                                                class="db-service-option-label"
+                                                style="display: inline-flex; align-items: center;"
+                                              >
+                                                <span>
+                                                  test (127.0.0.1:3306)
+                                                </span>
+                                              </span>
                                             </span>
                                             <span
                                               aria-hidden="true"

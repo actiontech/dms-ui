@@ -1427,7 +1427,19 @@ exports[`base/page/ResourceOverview render init snap 1`] = `
                                       <td
                                         class="ant-table-cell"
                                       >
-                                        environment-1
+                                        <span
+                                          class="css-yuolwb"
+                                          color="#8C8C8C"
+                                        >
+                                          <span
+                                            class="environment-tag-color-dot"
+                                          />
+                                          <span
+                                            class="environment-tag-name"
+                                          >
+                                            environment-1
+                                          </span>
+                                        </span>
                                       </td>
                                       <td
                                         class="ant-table-cell"
@@ -1535,7 +1547,19 @@ exports[`base/page/ResourceOverview render init snap 1`] = `
                                       <td
                                         class="ant-table-cell"
                                       >
-                                        environment-2
+                                        <span
+                                          class="css-yuolwb"
+                                          color="#8C8C8C"
+                                        >
+                                          <span
+                                            class="environment-tag-color-dot"
+                                          />
+                                          <span
+                                            class="environment-tag-name"
+                                          >
+                                            environment-2
+                                          </span>
+                                        </span>
                                       </td>
                                       <td
                                         class="ant-table-cell"

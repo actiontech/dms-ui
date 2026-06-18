@@ -669,7 +669,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                            class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                           >
                             <span
                               class="placeholder"
@@ -2189,9 +2189,11 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                            class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                           >
-                            <span>
+                            <span
+                              class="editable-select-option-label"
+                            >
                               environment-1
                             </span>
                             <span
@@ -3413,7 +3415,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                            class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                           >
                             <span
                               class="placeholder"

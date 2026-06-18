@@ -23,6 +23,7 @@ describe('useDbService', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     listDbServicesSpy = dbServices.ListDBServicesTips();
+    dbServices.ListDBServicesV2();
   });
 
   afterEach(() => {

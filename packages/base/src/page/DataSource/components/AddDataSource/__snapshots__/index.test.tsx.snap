@@ -632,7 +632,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                        class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                       >
                         <span
                           class="placeholder"
@@ -1878,9 +1878,11 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                        class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                       >
-                        <span>
+                        <span
+                          class="editable-select-option-label"
+                        >
                           environment-1
                         </span>
                         <span
@@ -2227,7 +2229,7 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
-        class="css-8go0jz"
+        class="css-r6iuvr"
         height="320"
       >
         <div
@@ -2290,7 +2292,9 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                     <div
                       class="menu-item-content"
                     >
-                      <span>
+                      <span
+                        class="editable-select-option-label"
+                      >
                         environment-1
                       </span>
                       <div
@@ -2363,7 +2367,9 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                     <div
                       class="menu-item-content"
                     >
-                      <span>
+                      <span
+                        class="editable-select-option-label"
+                      >
                         environment-2
                       </span>
                       <div

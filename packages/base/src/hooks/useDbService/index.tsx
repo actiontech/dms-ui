@@ -68,28 +68,35 @@ const useDbService = () => {
     (params: IListDBServiceTipsParams) => {
       setTrue();
       DBService.ListDBServiceTips(params)
-        .then(async (res) => {
+        .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             const tips = res.data?.data ?? [];
+            setDbServiceList(tips);
+
             if (!params.project_uid || tips.length === 0) {
-              setDbServiceList(tips);
               return;
             }
 
-            const dbServicesRes = await DBService.ListDBServicesV2({
+            DBService.ListDBServicesV2({
               project_uid: params.project_uid,
               page_index: 1,
               page_size: 999
-            });
+            })
+              .then((dbServicesRes) => {
+                if (dbServicesRes.data.code !== ResponseCode.SUCCESS) {
+                  return;
+                }
 
-            setDbServiceList(
-              mergeDbServiceEnvironmentTag(
-                tips,
-                dbServicesRes.data.code === ResponseCode.SUCCESS
-                  ? dbServicesRes.data?.data ?? []
-                  : []
-              )
-            );
+                setDbServiceList(
+                  mergeDbServiceEnvironmentTag(
+                    tips,
+                    dbServicesRes.data?.data ?? []
+                  )
+                );
+              })
+              .catch(() => {
+                setDbServiceList(tips);
+              });
           } else {
             setDbServiceList([]);
           }
@@ -131,6 +138,7 @@ const useDbService = () => {
                     key={db.id}
                     value={valueType === 'id' ? id : name}
                     label={label}
+                    title={label}
                   >
                     {renderDbServiceOptionLabel(db)}
                   </Select.Option>
@@ -166,6 +174,7 @@ const useDbService = () => {
           .map((db) => ({
             value: valueType === 'id' ? db?.id : db?.name,
             text: getDbServiceDisplayLabel(db),
+            title: getDbServiceDisplayLabel(db),
             label: renderDbServiceOptionLabel(db)
           }))
       }));

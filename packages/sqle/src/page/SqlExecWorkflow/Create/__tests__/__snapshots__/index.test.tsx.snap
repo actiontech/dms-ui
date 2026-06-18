@@ -342,6 +342,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -369,7 +370,13 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -1531,7 +1538,6 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -1580,7 +1586,13 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -2100,6 +2112,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -2127,7 +2140,13 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -3293,7 +3312,6 @@ from
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -3342,7 +3360,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -3862,6 +3886,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -3889,7 +3914,13 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -5625,7 +5656,6 @@ from
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -5674,7 +5704,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -6196,6 +6232,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -6223,7 +6260,13 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -8232,6 +8275,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -8259,7 +8303,13 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -10642,6 +10692,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-2(10.186.62.14:33062)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -10669,7 +10720,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-2(10.186.62.14:33062)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-2(10.186.62.14:33062)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -12557,7 +12614,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -12565,7 +12621,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -12614,7 +12669,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -12631,7 +12692,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -12648,7 +12715,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -12665,7 +12738,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -12702,7 +12781,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -12739,7 +12824,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -13261,6 +13352,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-2(10.186.62.14:33062)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -13288,7 +13380,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-2(10.186.62.14:33062)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-2(10.186.62.14:33062)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -15176,7 +15274,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -15184,7 +15281,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -15233,7 +15329,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -15250,7 +15352,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -15267,7 +15375,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -15284,7 +15398,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -15321,7 +15441,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -15358,7 +15484,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -17206,6 +17338,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-2(10.186.62.14:33062)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -17233,7 +17366,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-2(10.186.62.14:33062)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-2(10.186.62.14:33062)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -19592,7 +19731,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -19600,7 +19738,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -19649,7 +19786,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -19666,7 +19809,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -19683,7 +19832,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -19700,7 +19855,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -19737,7 +19898,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -19774,7 +19941,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -20338,6 +20511,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                             </span>
                                             <span
                                               class="ant-select-selection-item"
+                                              title="mysql-2(10.186.62.14:33062)"
                                             >
                                               <span
                                                 class="custom-select-option-content css-17mg133"
@@ -20365,7 +20539,13 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                                 <span
                                                   class="custom-select-option-content-label"
                                                 >
-                                                  mysql-2(10.186.62.14:33062)
+                                                  <span
+                                                    class="instance-option-label"
+                                                  >
+                                                    <span>
+                                                      mysql-2(10.186.62.14:33062)
+                                                    </span>
+                                                  </span>
                                                 </span>
                                               </span>
                                             </span>
@@ -23286,6 +23466,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -23313,7 +23494,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -24475,7 +24662,6 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -24483,7 +24669,6 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -24532,7 +24717,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -24549,7 +24740,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -24566,7 +24763,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -24583,7 +24786,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -24620,7 +24829,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -24657,7 +24872,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -25177,6 +25398,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -25204,7 +25426,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -26370,7 +26598,6 @@ from
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -26378,7 +26605,6 @@ from
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -26427,7 +26653,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -26444,7 +26676,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -26461,7 +26699,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -26478,7 +26722,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -26515,7 +26765,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -26552,7 +26808,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -27156,6 +27418,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -27183,7 +27446,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -28919,7 +29188,6 @@ from
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="true"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -28927,7 +29195,6 @@ from
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -28976,7 +29243,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -28993,7 +29266,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -29010,7 +29289,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -29027,7 +29312,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -29064,7 +29355,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -29101,7 +29398,13 @@ from
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -30952,6 +31255,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -30979,7 +31283,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -31303,6 +31613,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -31330,7 +31641,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -31654,6 +31971,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="mysql-1(10.186.62.13:33061)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -31681,7 +31999,13 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              mysql-1(10.186.62.13:33061)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  mysql-1(10.186.62.13:33061)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -34723,6 +35047,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                         </span>
                                         <span
                                           class="ant-select-selection-item"
+                                          title="xin-test-database(10.186.62.15:33063)"
                                         >
                                           <span
                                             class="custom-select-option-content css-17mg133"
@@ -34750,7 +35075,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                             <span
                                               class="custom-select-option-content-label"
                                             >
-                                              xin-test-database(10.186.62.15:33063)
+                                              <span
+                                                class="instance-option-label"
+                                              >
+                                                <span>
+                                                  xin-test-database(10.186.62.15:33063)
+                                                </span>
+                                              </span>
                                             </span>
                                           </span>
                                         </span>
@@ -36027,7 +36358,6 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
               role="presentation"
             />
             <div
-              aria-label="mysql-1(10.186.62.13:33061)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_1"
               role="option"
@@ -36035,7 +36365,6 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
               mysql-1
             </div>
             <div
-              aria-label="mysql-2(10.186.62.14:33062)"
               aria-selected="false"
               id="databaseInfo_0_instanceName_list_2"
               role="option"
@@ -36084,7 +36413,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-1(10.186.62.13:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-1(10.186.62.13:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -36101,7 +36436,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-2(10.186.62.14:33062)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-2(10.186.62.14:33062)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -36118,7 +36459,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      xin-test-database(10.186.62.15:33063)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          xin-test-database(10.186.62.15:33063)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -36135,7 +36482,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      mysql-5(139.196.241.182:33061)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          mysql-5(139.196.241.182:33061)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -36172,7 +36525,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      progres-1(10.186.62.16:5432)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          progres-1(10.186.62.16:5432)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"
@@ -36209,7 +36568,13 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     <div
                       class="ant-select-item-option-content"
                     >
-                      tidb-1(10.186.62.17:4000)
+                      <span
+                        class="instance-option-label"
+                      >
+                        <span>
+                          tidb-1(10.186.62.17:4000)
+                        </span>
+                      </span>
                     </div>
                     <span
                       aria-hidden="true"

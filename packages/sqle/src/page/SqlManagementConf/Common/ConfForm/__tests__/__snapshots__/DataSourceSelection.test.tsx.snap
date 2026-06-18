@@ -835,7 +835,19 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
                     class="ant-select-selection-item"
                     title="environment-1"
                   >
-                    environment-1
+                    <span
+                      class="css-14lkj40"
+                      color="#8C8C8C"
+                    >
+                      <span
+                        class="environment-tag-color-dot"
+                      />
+                      <span
+                        class="environment-tag-name"
+                      >
+                        environment-1
+                      </span>
+                    </span>
                   </span>
                 </div>
                 <span
@@ -1011,7 +1023,13 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
                     class="ant-select-selection-item"
                     title="mysql-1(10.186.62.13:33061)"
                   >
-                    mysql-1(10.186.62.13:33061)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        mysql-1(10.186.62.13:33061)
+                      </span>
+                    </span>
                   </span>
                 </div>
                 <span
@@ -1114,7 +1132,13 @@ exports[`test SqlManagementConf/common/ConfForm/DataSourceSelection should set f
                     class="ant-select-selection-item"
                     title="mysql-1(10.186.62.13:33061)"
                   >
-                    mysql-1(10.186.62.13:33061)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span>
+                        mysql-1(10.186.62.13:33061)
+                      </span>
+                    </span>
                   </span>
                 </div>
                 <span

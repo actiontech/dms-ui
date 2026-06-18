@@ -52,7 +52,13 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span>
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
@@ -2937,7 +2943,13 @@ exports[`SqlInsights should get related sql list when current date range is exit
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span>
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
@@ -3901,7 +3913,13 @@ exports[`SqlInsights should render component correctly 1`] = `
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span>
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
