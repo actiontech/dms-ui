@@ -1,11 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BasicButton, PageHeader } from '@actiontech/dms-kit';
-import { useTypedQuery } from '@actiontech/shared';
-import { useExportFormatModal } from '../../../../hooks/useExportFormatModal';
-import ExportFormatModal from '../../../../components/ExportFormatModal';
-import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -28,13 +24,13 @@ import {
 import { ResponseCode } from '@actiontech/dms-kit';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
-  GetSqlManageListV3FilterPriorityEnum,
-  GetSqlManageListV3FilterStatusEnum,
-  GetSqlManageListV3SortFieldEnum,
-  GetSqlManageListV3SortOrderEnum,
-  exportSqlManageV2FilterPriorityEnum,
-  exportSqlManageV2FilterStatusEnum,
-  exportSqlManageV2ExportFormatEnum
+  GetSqlManageListV2FilterPriorityEnum,
+  GetSqlManageListV2FilterStatusEnum,
+  GetSqlManageListV2SortFieldEnum,
+  GetSqlManageListV2SortOrderEnum,
+  exportSqlManageV1FilterPriorityEnum,
+  exportSqlManageV1FilterStatusEnum,
+  exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import sqlManagementColumn, {
   ExtraFilterMeta,
@@ -48,8 +44,8 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message } from 'antd';
-import SqlManagementModals from './Modals';
+import { Space, Spin, message } from 'antd';
+import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
@@ -369,13 +365,10 @@ const SQLEEIndex = () => {
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
-  const {
-    exportFormatModalVisible,
-    showExportFormatModal,
-    hideExportFormatModal,
-    selectedExportFormat,
-    setSelectedExportFormat
-  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
+  const [
+    remediationExportButtonDisabled,
+    { setFalse: finishRemediationExport, setTrue: startRemediationExport }
+  ] = useBoolean(false);
   const handleExport = () => {
     hideExportFormatModal();
     startExport();
@@ -417,6 +410,36 @@ const SQLEEIndex = () => {
         finishExport();
       });
   };
+
+  const handleRemediationExport = () => {
+    if (!actionPermission || projectArchive) {
+      return;
+    }
+    startRemediationExport();
+    const hideLoading = messageApi.loading(
+      t('sqlManagement.pageHeader.action.remediationExporting')
+    );
+
+    SqlManage.exportSqlManageRemediationV1(
+      {
+        project_name: projectName,
+        export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
+      },
+      { responseType: 'blob' }
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          messageApi.success(
+            t('sqlManagement.pageHeader.action.remediationExportSuccessTips')
+          );
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        finishRemediationExport();
+      });
+  };
+
   useEffect(() => {
     EventEmitter.subscribe(EmitterKey.Refresh_SQL_Management, refresh);
     return () => {
@@ -529,13 +552,24 @@ const SQLEEIndex = () => {
       <PageHeader
         title={t('sqlManagement.pageTitle')}
         extra={
-          <BasicButton
-            onClick={showExportFormatModal}
-            icon={<DownArrowLineOutlined />}
-            disabled={exportButtonDisabled}
-          >
-            {t('sqlManagement.pageHeader.action.export')}
-          </BasicButton>
+          <Space>
+            <EmptyBox if={actionPermission && !projectArchive}>
+              <BasicButton
+                onClick={handleRemediationExport}
+                icon={<DownArrowLineOutlined />}
+                disabled={remediationExportButtonDisabled}
+              >
+                {t('sqlManagement.pageHeader.action.remediationExport')}
+              </BasicButton>
+            </EmptyBox>
+            <BasicButton
+              onClick={handleExport}
+              icon={<DownArrowLineOutlined />}
+              disabled={exportButtonDisabled}
+            >
+              {t('sqlManagement.pageHeader.action.export')}
+            </BasicButton>
+          </Space>
         }
       />
       <ExportFormatModal
