@@ -2,11 +2,16 @@ import ruleTemplate from '@actiontech/shared/lib/api/sqle/service/rule_template'
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { ReactNode, useMemo } from 'react';
-import { RuleCategoryDictionaryGroup, DictionaryType } from './index.data';
+import {
+  getRuleCategoryDictionaryGroup,
+  DictionaryType
+} from './index.data';
 import { Typography } from 'antd';
 import { RuleCategoryOptionStyleWrapper } from './style';
+import { useTranslation } from 'react-i18next';
 
 const useRuleCategories = (showOptionCount = false) => {
+  const { i18n } = useTranslation();
   const { data: ruleCategories, loading: getRuleCategoriesLoading } =
     useRequest(() =>
       ruleTemplate.getCategoryStatistics().then((res) => {
@@ -39,13 +44,14 @@ const useRuleCategories = (showOptionCount = false) => {
       return dictionary?.[tag];
     };
 
+    const dictionaryGroup = getRuleCategoryDictionaryGroup();
     const optionGroup: {
       [key: string]:
         | Array<{ label: ReactNode; value: string; text: string }>
         | undefined;
     } = {};
     Object.keys(ruleCategories ?? {}).forEach((key) => {
-      const dictionary = RuleCategoryDictionaryGroup[key];
+      const dictionary = dictionaryGroup[key];
       optionGroup[key] = ruleCategories?.[key]?.map((i) => ({
         label: renderOptionLabel(dictionary, i.tag ?? '', i.count ?? 0),
         value: i.tag ?? '',
@@ -59,7 +65,8 @@ const useRuleCategories = (showOptionCount = false) => {
       auditPurposeOptions: optionGroup.audit_purpose,
       performanceLevelOptions: optionGroup.performance_cost
     };
-  }, [ruleCategories, showOptionCount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ruleCategories, showOptionCount, i18n.language]);
 
   return {
     ruleCategories,
