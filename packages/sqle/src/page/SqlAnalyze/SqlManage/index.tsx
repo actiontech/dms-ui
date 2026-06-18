@@ -5,6 +5,7 @@ import { ResponseCode } from '../../../data/common';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   IPerformanceStatistics,
+  ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -30,65 +31,46 @@ const SQLManageAnalyze = () => {
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
     useState<IPerformanceStatistics>();
-
+  const [remediationCompare, setRemediationCompare] =
+    useState<ISqlManageRemediation>();
   const [
     loading,
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
   ] = useBoolean();
   const [errorType, setErrorType] = useState<ResultStatusType>('error');
 
-  const [isPerformanceInfoLoaded, { setTrue: setPerformanceInfoLoaded }] =
-    useBoolean();
-
-  const {
-    setOptimizationCreationParams,
-    onCreateSqlOptimization,
-    onViewOptimizationResult,
-    optimizationRecordId,
-    createSqlOptimizationLoading,
-    allowSqlOptimization
-  } = useSqlOptimization();
-
-  const getSqlAnalyze = useCallback(
-    async (affectRowsEnabled = false) => {
-      startGetSqlAnalyze();
-      try {
-        const res = await SqlManage.GetSqlManageSqlAnalysisV1({
+  const getSqlAnalyze = useCallback(async () => {
+    startGetSqlAnalyze();
+    try {
+      const [res, remediationRes] = await Promise.all([
+        SqlManage.GetSqlManageSqlAnalysisV1({
           sql_manage_id: urlParams.sqlManageId ?? '',
-          project_name: projectName,
-          affectRowsEnabled
-        });
-        if (res.data.code === ResponseCode.SUCCESS) {
-          if (affectRowsEnabled) {
-            setPerformanceInfoLoaded();
-          }
-          setErrorMessage('');
-          const { data } = res.data;
-          const queryParams = extractQueries(
-            ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze
-          );
-          setSqlExplain(data?.sql_explain);
-          setTableMetas(data?.table_metas);
-          setPerformancesStatistics(data?.performance_statistics);
-          setOptimizationCreationParams({
-            instance_name: queryParams?.instance_name,
-            schema_name: queryParams?.schema,
-            sql_content: data?.sql_explain?.sql
-          });
-        } else {
+          project_name: projectName
+        }),
+        SqlManage.GetSqlManageRemediationV1({
+          sql_manage_id: urlParams.sqlManageId ?? '',
+          project_name: projectName
+        })
+      ]);
+
+      if (res.data.code !== ResponseCode.SUCCESS) {
+        if (remediationRes.data.code !== ResponseCode.SUCCESS) {
           if (res.data.code === ResponseCode.NotSupportDML) {
             setErrorType('info');
           } else {
-            if (res.data.code === ResponseCode.NotSupportDML) {
-              setErrorType('info');
-            } else {
-              setErrorType('error');
-            }
-            setErrorMessage(res.data.message ?? '');
+            setErrorType('error');
           }
+          setErrorMessage(res.data.message ?? '');
+          return;
         }
-      } finally {
-        getSqlAnalyzeFinish();
+      }
+
+      setErrorMessage('');
+      setSqlExplain(res.data.data?.sql_explain);
+      setTableMetas(res.data.data?.table_metas);
+      setPerformancesStatistics(res.data.data?.performance_statistics);
+      if (remediationRes.data.code === ResponseCode.SUCCESS) {
+        setRemediationCompare(remediationRes.data.data);
       }
     },
     [
@@ -125,34 +107,15 @@ const SQLManageAnalyze = () => {
   }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
-    <>
-      <SqlAnalyze
-        errorType={errorType}
-        tableMetas={tableMetas}
-        sqlExplain={sqlExplain}
-        errorMessage={errorMessage}
-        performanceStatistics={performanceStatistics}
-        loading={loading}
-        sqlExecPlanCostDataSource={data}
-        getSqlExecPlanCostDataSourceLoading={
-          getSqlExecPlanCostDataSourceLoading
-        }
-        getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
-        getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
-        showExecPlanCostChart
-        initTime={initTime}
-        selectedPoint={selectedPoint}
-        setSelectedPoint={setSelectedPoint}
-        onCreateSqlOptimization={onCreateSqlOptimization}
-        onViewOptimizationResult={onViewOptimizationResult}
-        optimizationRecordId={optimizationRecordId}
-        createSqlOptimizationLoading={createSqlOptimizationLoading}
-        allowSqlOptimization={allowSqlOptimization}
-        getPerformanceStatistics={getPerformanceStatistics}
-        isPerformanceInfoLoaded={isPerformanceInfoLoaded}
-      />
-      <SqlOptimizationResultDrawer />
-    </>
+    <SqlAnalyze
+      errorType={errorType}
+      tableMetas={tableMetas}
+      sqlExplain={sqlExplain}
+      errorMessage={errorMessage}
+      performanceStatistics={performanceStatistics}
+      remediationCompare={remediationCompare}
+      loading={loading}
+    />
   );
 };
 

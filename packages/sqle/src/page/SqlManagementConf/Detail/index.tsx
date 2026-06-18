@@ -16,22 +16,30 @@ import { TableRefreshButton } from '@actiontech/dms-kit/es/components/Actiontech
 import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
-import { useLocation } from 'react-router-dom';
-import { SqleApi } from '@actiontech/shared/lib/api';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams
+} from 'react-router-dom';
+import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import {
+  useCurrentProject,
+  useCurrentUser,
+  useUserOperationPermission
+} from '@actiontech/shared/lib/global';
 import { Result, Space } from 'antd';
 import { getErrorMessage } from '@actiontech/dms-kit';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
-import { ResponseCode } from '@actiontech/dms-kit';
-import { SqlManagementConfDetailPageHeaderActions } from './action';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import useScanTypeVerify from '../Common/ConfForm/useScanTypeVerify';
-import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useExportFormatModal } from '../../../hooks/useExportFormatModal';
-import ExportFormatModal from '../../../components/ExportFormatModal';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { DownArrowLineOutlined } from '@actiontech/icons';
+import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -42,13 +50,20 @@ const ConfDetail: React.FC = () => {
     ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail
   );
   const location = useLocation();
-  const navigate = useTypedNavigate();
-  const { projectName } = useCurrentProject();
+  const navigate = useNavigate();
+  const { projectName, projectArchive } = useCurrentProject();
+  const { isAdmin, isProjectManager } = useCurrentUser();
+
   const [activeKey, setActiveKey] = useState(
     SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
   );
   const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
     useBoolean();
+  const [
+    remediationExporting,
+    { setTrue: remediationExportPending, setFalse: remediationExportDone }
+  ] = useBoolean();
+
   const [auditing, { setTrue: auditPending, setFalse: auditDone }] =
     useBoolean();
   const [messageApi, contextMessageHolder] = message.useMessage();
@@ -108,6 +123,22 @@ const ConfDetail: React.FC = () => {
       searchParams?.active_audit_plan_id
     ]
   );
+
+  const hasOpPermission = useMemo(() => {
+    return isHaveServicePermission(
+      OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
+      data?.instance_id
+    );
+  }, [data?.instance_id, isHaveServicePermission]);
+
+  const actionPermission = useMemo(() => {
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
+
+  const remediationExportPermission = useMemo(() => {
+    return (actionPermission || hasOpPermission) && !projectArchive;
+  }, [actionPermission, hasOpPermission, projectArchive]);
+
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -134,6 +165,8 @@ const ConfDetail: React.FC = () => {
           instanceName={data.instance_name ?? ''}
           exportPending={exportPending}
           exportDone={exportDone}
+          remediationExportPending={remediationExportPending}
+          remediationExportDone={remediationExportDone}
         />
       )
     })) ?? [])
@@ -152,6 +185,42 @@ const ConfDetail: React.FC = () => {
       selectedExportFormat
     );
   };
+
+  const exportScanTypeRemediation = () => {
+    eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Remediation);
+  };
+
+  const exportDataSourceRemediation = () => {
+    if (!remediationExportPermission || !data?.instance_id) {
+      return;
+    }
+    remediationExportPending();
+    const hideLoading = messageApi.loading(
+      t('managementConf.detail.remediationExportTips'),
+      0
+    );
+
+    SqlManage.exportSqlManageRemediationV1(
+      {
+        project_name: projectName,
+        export_scope: exportSqlManageRemediationV1ExportScopeEnum.data_source,
+        filter_instance_id: data.instance_id
+      },
+      { responseType: 'blob' }
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          messageApi.success(
+            t('managementConf.detail.remediationExportSuccessTips')
+          );
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        remediationExportDone();
+      });
+  };
+
   const onAuditImmediately = () => {
     auditPending();
     SqleApi.InstanceAuditPlanService.auditPlanTriggerSqlAuditV1({
@@ -205,9 +274,45 @@ const ConfDetail: React.FC = () => {
             <Space>
               <EmptyBox if={activeKey !== SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}>
                 <Space>
-                  {pageHeaderActions.export}
-                  {pageHeaderActions.immediately_audit}
+                  <BasicButton
+                    disabled={exporting}
+                    onClick={exportScanTypeSqlDetail}
+                  >
+                    {t('managementConf.detail.export')}
+                  </BasicButton>
+                  <EmptyBox if={remediationExportPermission}>
+                    <BasicButton
+                      disabled={remediationExporting}
+                      onClick={exportScanTypeRemediation}
+                      icon={<DownArrowLineOutlined />}
+                    >
+                      {t('managementConf.detail.remediationExport')}
+                    </BasicButton>
+                  </EmptyBox>
+                  {hasOpPermission && (
+                    <BasicButton
+                      loading={auditing}
+                      onClick={onAuditImmediately}
+                      type="primary"
+                    >
+                      {t('managementConf.detail.auditImmediately')}
+                    </BasicButton>
+                  )}
                 </Space>
+              </EmptyBox>
+              <EmptyBox
+                if={
+                  activeKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY &&
+                  remediationExportPermission
+                }
+              >
+                <BasicButton
+                  disabled={remediationExporting}
+                  onClick={exportDataSourceRemediation}
+                  icon={<DownArrowLineOutlined />}
+                >
+                  {t('managementConf.detail.remediationExport')}
+                </BasicButton>
               </EmptyBox>
               <TableRefreshButton refresh={onRefresh} />
             </Space>

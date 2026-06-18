@@ -14,6 +14,7 @@ import {
   ScanTypeSqlCollectionTableStyleWrapper
 } from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   useCurrentProject,
   useCurrentUser
@@ -38,12 +39,29 @@ import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
-import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { mergeFilterButtonMeta } from '@actiontech/dms-kit/es/components/ActiontechTable/hooks/useTableFilterContainer';
-import { ResponseCode } from '@actiontech/dms-kit';
-import { message } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { ResultIconRenderProps } from '../../../../components/AuditResultMessage/index.type';
+import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { Card, Spin, message } from 'antd';
+import { Link } from 'react-router-dom';
+import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import RemediationStatusTag, {
+  remediationStatusOptions
+} from '../../../SqlManagement/component/SQLEEIndex/RemediationStatusTag';
+
+const formatOverviewNumber = (value?: number) => {
+  if (typeof value !== 'number') {
+    return '-';
+  }
+  return formatParamsBySeparator(value);
+};
+
+const formatRemediationRate = (value?: number) => {
+  if (typeof value !== 'number') {
+    return '-';
+  }
+  return `${(value * 100).toFixed(2)}%`;
+};
 
 const BEING_AUDITED = 'being_audited';
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
@@ -54,7 +72,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceType,
   exportDone,
   exportPending,
-  instanceName
+  remediationExportPending,
+  remediationExportDone
 }) => {
   const { t } = useTranslation();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
@@ -196,6 +215,28 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       }
     }
   );
+
+  const {
+    data: remediationOverview,
+    loading: remediationOverviewLoading,
+    error: remediationOverviewError
+  } = useRequest(
+    () =>
+      SqlManage.getSqlManageRemediationOverviewV1({
+        project_name: projectName,
+        instance_audit_plan_id: Number(instanceAuditPlanId),
+        audit_plan_type: auditPlanType
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data;
+        }
+      }),
+    {
+      ready:
+        activeTabKey === auditPlanId && !!instanceAuditPlanId && !!auditPlanType
+    }
+  );
+
   const recordAuditResult = useMemo<IAuditResult[]>(() => {
     try {
       return JSON.parse(
@@ -264,6 +305,54 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     projectName,
     t
   ]);
+
+  useEffect(() => {
+    const exportScanTypeRemediation = () => {
+      remediationExportPending();
+      const hideLoading = messageApi.loading(
+        t('managementConf.detail.remediationExportTips'),
+        0
+      );
+
+      SqlManage.exportSqlManageRemediationV1(
+        {
+          project_name: projectName,
+          export_scope: exportSqlManageRemediationV1ExportScopeEnum.scan_task,
+          instance_audit_plan_id: Number(instanceAuditPlanId),
+          audit_plan_type: auditPlanType
+        },
+        { responseType: 'blob' }
+      )
+        .then((res) => {
+          if (res.status === 200) {
+            messageApi.success(
+              t('managementConf.detail.remediationExportSuccessTips')
+            );
+          }
+        })
+        .finally(() => {
+          remediationExportDone();
+          hideLoading();
+        });
+    };
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Export_Sql_Management_Conf_Detail_Remediation,
+      exportScanTypeRemediation
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [
+    auditPlanType,
+    instanceAuditPlanId,
+    messageApi,
+    projectName,
+    remediationExportDone,
+    remediationExportPending,
+    t
+  ]);
+
   const tableSetting = useMemo<ColumnsSettingProps>(() => {
     return {
       tableName: `sql_management_conf_${auditPlanType}`,
@@ -295,6 +384,81 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   };
   return (
     <ScanTypeSqlCollectionStyleWrapper>
+      <Card
+        className="remediation-overview-card"
+        title={t('managementConf.detail.remediationOverview.title')}
+      >
+        <Spin spinning={remediationOverviewLoading}>
+          {remediationOverviewError ? (
+            <div className="remediation-overview-error">
+              {t('managementConf.detail.remediationOverview.loadFailed', {
+                message: getErrorMessage(remediationOverviewError)
+              })}
+            </div>
+          ) : (
+            <>
+              <div className="remediation-overview-metrics">
+                <div className="remediation-overview-metric">
+                  <strong>
+                    {formatOverviewNumber(remediationOverview?.sql_total_num)}
+                  </strong>
+                  <span>
+                    {t('managementConf.detail.remediationOverview.sqlTotal')}
+                  </span>
+                </div>
+                <div className="remediation-overview-metric">
+                  <strong>
+                    {formatOverviewNumber(remediationOverview?.first_score)}
+                  </strong>
+                  <span>
+                    {t('managementConf.detail.remediationOverview.firstScore')}
+                  </span>
+                </div>
+                <div className="remediation-overview-metric">
+                  <strong>
+                    {formatOverviewNumber(remediationOverview?.latest_score)}
+                  </strong>
+                  <span>
+                    {t('managementConf.detail.remediationOverview.latestScore')}
+                  </span>
+                </div>
+                <div className="remediation-overview-metric">
+                  <strong>
+                    {formatOverviewNumber(remediationOverview?.score_change)}
+                  </strong>
+                  <span>
+                    {t('managementConf.detail.remediationOverview.scoreChange')}
+                  </span>
+                </div>
+                <div className="remediation-overview-metric">
+                  <strong>
+                    {formatRemediationRate(
+                      remediationOverview?.remediation_rate
+                    )}
+                  </strong>
+                  <span>
+                    {t(
+                      'managementConf.detail.remediationOverview.remediationRate'
+                    )}
+                  </span>
+                </div>
+              </div>
+              <div className="remediation-overview-status-list">
+                {remediationStatusOptions.map((status) => (
+                  <div className="remediation-overview-status" key={status}>
+                    <RemediationStatusTag status={status} />
+                    <strong>
+                      {formatOverviewNumber(
+                        remediationOverview?.remediation_status_count?.[status]
+                      )}
+                    </strong>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </Spin>
+      </Card>
       <TableToolbar setting={tableSetting}>
         {tableMetas?.filter_meta_list?.length && (
           <TableFilterContainer

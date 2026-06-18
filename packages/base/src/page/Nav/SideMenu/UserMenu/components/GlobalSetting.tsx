@@ -6,8 +6,12 @@ import {
   UserShieldFilled,
   CenterCircleHexagonFilled,
   DatabaseFilled,
+  // #if [sqle]
+  ProfileSquareFilled,
+  SignalFilled,
   ProfileEditFilled,
-  OperateAuditFilled
+  ManagementFilled
+  // #endif
 } from '@actiontech/icons';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
@@ -27,53 +31,129 @@ const GlobalSetting: React.FC = () => {
 
   const { checkPagePermission } = usePermission();
 
-  const menus: ContextMenuItem[] = useMemo(() => {
-    const handleClickItem = (path: string) => {
-      navigate(path);
-    };
-
-    const menusWithPermission: Array<
-      ContextMenuItem & { permission?: PermissionsConstantType }
-    > = [
-      {
-        key: 'user-center',
-        icon: <UserShieldFilled />,
-        text: t('menu.userCenter'),
-        onClick: () => handleClickItem(ROUTE_PATHS.BASE.USER_CENTER),
-        permission: PERMISSIONS.PAGES.BASE.USER_CENTER
-      },
-      {
-        key: 'data-source-management',
-        icon: <DatabaseFilled />,
-        text: t('dmsMenu.globalSettings.instanceManager'),
-        onClick: () =>
-          handleClickItem(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index.path),
-        permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT
-      },
-      // #if [sqle]
-      {
-        key: 'rule-manager',
-        icon: <ProfileEditFilled />,
-        text: t('dmsMenu.globalSettings.ruleManage'),
-        onClick: () =>
-          handleClickItem(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index.path),
-        permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT
-      },
-      // #endif
-      {
-        key: 'operationRecord',
-        icon: <OperateAuditFilled />,
-        text: t('dmsMenu.globalSettings.globalOperationRecord'),
-        onClick: () =>
-          handleClickItem(ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index),
-        permission: PERMISSIONS.PAGES.SQLE.GLOBAL_OPERATION_RECORD
-      },
-      {
-        key: 'system',
-        icon: <GearFilled />,
-        text: t('dmsMenu.globalSettings.system'),
-        onClick: () => handleClickItem(ROUTE_PATHS.BASE.SYSTEM.index.path),
-        permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
+  return (
+    <Popover
+      open={open}
+      onOpenChange={setOpen}
+      trigger={['click']}
+      placement="topRight"
+      arrow={false}
+      content={
+        <PopoverInnerStyleWrapper>
+          <div className="header">{t('dmsMenu.globalSettings.title')}</div>
+          <div className="content">
+            <EmptyBox if={isAdmin}>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem('/user-center')}
+              >
+                <UserShieldFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.userCenter')}
+                </span>
+              </div>
+            </EmptyBox>
+            <EmptyBox if={isAdmin || isCertainProjectManager}>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/data-source-management`)}
+              >
+                <DatabaseFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.instanceManager')}
+                </span>
+              </div>
+            </EmptyBox>
+            <EmptyBox if={!isAdmin}>
+              {/* #if [sqle]*/}
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/sqle/rule`)}
+              >
+                <ProfileSquareFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.viewRule')}
+                </span>
+              </div>
+              {/* #endif */}
+            </EmptyBox>
+            <EmptyBox if={isAdmin}>
+              {/* #if [sqle] */}
+              <div
+                className="content-item"
+                onClick={() => handleClickItem('/sqle/report-statistics')}
+              >
+                <SignalFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.reportStatistics')}
+                </span>
+              </div>
+              <div
+                className="content-item"
+                onClick={() =>
+                  handleClickItem('/sqle/sql-management-remediation-report')
+                }
+              >
+                <ManagementFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.sqlManagementRemediationReport')}
+                </span>
+              </div>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/sqle/rule`)}
+              >
+                <ProfileSquareFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.viewRule')}
+                </span>
+              </div>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/sqle/rule-manager`)}
+              >
+                <ProfileEditFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.ruleManage')}
+                </span>
+              </div>
+              {/* #endif */}
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/system`)}
+              >
+                <GearFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.system')}
+                </span>
+              </div>
+            </EmptyBox>
+          </div>
+          {/* todo: hide theme change in
+          <div className="footer">
+            <span className="footer-text">
+              {t('dmsMenu.globalSettings.changeTheme')}
+            </span>
+            <div className="footer-icon">
+              <span
+                onClick={() => updateTheme(SupportTheme.LIGHT)}
+                className={classNames('footer-icon-wrapper', {
+                  'footer-icon-active': theme === SupportTheme.LIGHT
+                })}
+              >
+                <IconSun />
+              </span>
+              <span
+                onClick={() => updateTheme(SupportTheme.DARK)}
+                className={classNames('footer-icon-wrapper', {
+                  'footer-icon-active': theme === SupportTheme.DARK
+                })}
+              >
+                <IconMoon />
+              </span>
+            </div>
+          </div> */}
+        </PopoverInnerStyleWrapper>
       }
     ];
 

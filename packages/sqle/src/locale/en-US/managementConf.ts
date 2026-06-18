@@ -111,6 +111,19 @@ export default {
     auditImmediately: 'Audit immediately',
     auditImmediatelySuccessTips: 'Audit successfully',
     exportTips: 'Exporting scan task details',
+    remediationExport: 'SQL remediation',
+    remediationExportTips: 'Exporting SQL management remediation report',
+    remediationExportSuccessTips:
+      'Export SQL management remediation report successfully',
+    remediationOverview: {
+      title: 'Remediation overview',
+      sqlTotal: 'SQL total',
+      firstScore: 'First score',
+      latestScore: 'Latest score',
+      scoreChange: 'Score change',
+      remediationRate: 'Remediation rate',
+      loadFailed: 'Failed to load remediation overview: {{message}}'
+    },
     overview: {
       title: 'Overview',
       column: {

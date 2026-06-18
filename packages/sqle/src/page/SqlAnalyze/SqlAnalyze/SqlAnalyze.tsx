@@ -12,6 +12,8 @@ import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
 import useSQLExecPlan from './useSQLExecPlan';
 import { SqlAnalyzeProps } from '.';
+import RemediationCompare from '../SqlManage/RemediationCompare';
+
 const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
   const { t } = useTranslation();
   const {
@@ -20,22 +22,8 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     errorMessage,
     loading = false,
     performanceStatistics,
-    errorType = 'error',
-    sqlExecPlanCostDataSource,
-    getSqlExecPlanCostDataSource,
-    getSqlExecPlanCostDataSourceLoading,
-    getSqlExecPlanCostDataSourceError,
-    showExecPlanCostChart,
-    initTime,
-    selectedPoint,
-    setSelectedPoint,
-    onCreateSqlOptimization,
-    onViewOptimizationResult,
-    optimizationRecordId,
-    createSqlOptimizationLoading,
-    allowSqlOptimization,
-    getPerformanceStatistics,
-    isPerformanceInfoLoaded
+    remediationCompare,
+    errorType = 'error'
   } = props;
   const { generateTableSchemaContent } = useTableSchema();
   const { generateSQLExecPlanContent } = useSQLExecPlan({
@@ -76,16 +64,18 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
       )
     ) {
       return [
+        { label: t('sqlAnalyze.sqlExplain'), value: 'sql' },
         {
-          label: t('sqlAnalyze.sqlExplain'),
-          value: 'sql'
+          label: t('sqlManagement.remediationCompare.tab'),
+          value: 'remediation'
         }
       ];
     }
     return [
+      { label: t('sqlAnalyze.sqlExplain'), value: 'sql' },
       {
-        label: t('sqlAnalyze.sqlExplain'),
-        value: 'sql'
+        label: t('sqlManagement.remediationCompare.tab'),
+        value: 'remediation'
       }
     ].concat(
       (tableMetas?.table_meta_items ?? []).map((table) => {
@@ -120,6 +110,9 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
                     ...sqlExplain,
                     ...performanceStatistics
                   })}
+                {tabStatus === 'remediation' && (
+                  <RemediationCompare data={remediationCompare} />
+                )}
                 {tableMetas?.table_meta_items?.map((table) => {
                   return (
                     <React.Fragment key={table.name}>
