@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   ActiontechTable,
@@ -29,7 +29,8 @@ import {
   GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum,
   exportSqlManageV1FilterPriorityEnum,
-  exportSqlManageV1FilterStatusEnum
+  exportSqlManageV1FilterStatusEnum,
+  exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
@@ -39,7 +40,7 @@ import SqlManagementColumn, {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message } from 'antd';
+import { Space, Spin, message } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -305,6 +306,10 @@ const SQLEEIndex = () => {
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
+  const [
+    remediationExportButtonDisabled,
+    { setFalse: finishRemediationExport, setTrue: startRemediationExport }
+  ] = useBoolean(false);
   const handleExport = () => {
     startExport();
     const hideLoading = messageApi.loading(
@@ -340,6 +345,35 @@ const SQLEEIndex = () => {
       .finally(() => {
         hideLoading();
         finishExport();
+      });
+  };
+
+  const handleRemediationExport = () => {
+    if (!actionPermission || projectArchive) {
+      return;
+    }
+    startRemediationExport();
+    const hideLoading = messageApi.loading(
+      t('sqlManagement.pageHeader.action.remediationExporting')
+    );
+
+    SqlManage.exportSqlManageRemediationV1(
+      {
+        project_name: projectName,
+        export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
+      },
+      { responseType: 'blob' }
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          messageApi.success(
+            t('sqlManagement.pageHeader.action.remediationExportSuccessTips')
+          );
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        finishRemediationExport();
       });
   };
 
@@ -383,13 +417,24 @@ const SQLEEIndex = () => {
       <PageHeader
         title={t('sqlManagement.pageTitle')}
         extra={
-          <BasicButton
-            onClick={handleExport}
-            icon={<DownArrowLineOutlined />}
-            disabled={exportButtonDisabled}
-          >
-            {t('sqlManagement.pageHeader.action.export')}
-          </BasicButton>
+          <Space>
+            <EmptyBox if={actionPermission && !projectArchive}>
+              <BasicButton
+                onClick={handleRemediationExport}
+                icon={<DownArrowLineOutlined />}
+                disabled={remediationExportButtonDisabled}
+              >
+                {t('sqlManagement.pageHeader.action.remediationExport')}
+              </BasicButton>
+            </EmptyBox>
+            <BasicButton
+              onClick={handleExport}
+              icon={<DownArrowLineOutlined />}
+              disabled={exportButtonDisabled}
+            >
+              {t('sqlManagement.pageHeader.action.export')}
+            </BasicButton>
+          </Space>
         }
       />
       {/* page */}

@@ -181,6 +181,10 @@ const UpdateCustomRule = React.lazy(
 );
 const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
 
+const SqlManagementRemediationReport = React.lazy(
+  () => import('../page/SqlManagementRemediationReport')
+);
+
 const PushRuleConfiguration = React.lazy(
   () => import('../page/PushRuleConfiguration')
 );
@@ -456,6 +460,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 ];
 
 export const globalRouterConfig: RouterConfigItem[] = [
+  {
+    path: 'sqle/sql-management-remediation-report',
+    element: <SqlManagementRemediationReport />,
+    key: 'sqlManagementRemediationReport',
+    role: [SystemRole.admin]
+  },
   {
     path: 'sqle/report-statistics',
     label: 'menu.reportStatistics',

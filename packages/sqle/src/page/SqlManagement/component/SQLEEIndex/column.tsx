@@ -19,6 +19,7 @@ import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
+import RemediationStatusTag from './RemediationStatusTag';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -31,6 +32,7 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_instance_id?: string;
   filter_audit_level?: string;
   filter_rule_name?: string;
+  filter_remediation_status?: string;
   time?: string;
 };
 
@@ -96,6 +98,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
         filterCustomType: 'select',
         filterKey: 'filter_rule_name',
         filterLabel: t('sqlManagement.table.filter.rule'),
+        checked: false
+      }
+    ],
+    [
+      'filter_remediation_status',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_remediation_status',
+        filterLabel: t('sqlManagement.table.column.remediationStatus'),
         checked: false
       }
     ]
@@ -317,6 +328,11 @@ const SqlManagementColumn: (
 
         return '-';
       }
+    },
+    {
+      dataIndex: 'remediation_status',
+      title: () => t('sqlManagement.table.column.remediationStatus'),
+      render: (status) => <RemediationStatusTag status={status} />
     },
     // {
     //   dataIndex: 'first_appear_timestamp',
