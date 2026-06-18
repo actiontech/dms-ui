@@ -1,4 +1,6 @@
 import { useState, useMemo } from 'react';
+import type { CSSProperties } from 'react';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import { Dropdown, Menu, Space, Popconfirm, Spin, ColorPicker } from 'antd';
 import { BasicButton } from '../BasicButton';
 import { BasicInput } from '../BasicInput';
@@ -23,6 +25,16 @@ import {
 import type { MenuProps } from 'antd';
 import { ReminderInformation } from '../ReminderInformation';
 import { BasicEmpty } from '../BasicEmpty';
+
+const COLOR_PICKER_POPUP_CLASS_NAME = 'editable-select-color-picker-popup';
+
+const COLOR_PICKER_POPUP_STYLE: CSSProperties = {
+  zIndex: 1070
+};
+
+const COLOR_PICKER_POPUP_INNER_STYLE: CSSProperties = {
+  zIndex: 1071
+};
 
 const EditableSelect: React.FC<EditableSelectProps> = ({
   value,
@@ -162,6 +174,11 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                     <ColorPicker
                       value={editColor}
                       presets={colorPresets}
+                      rootClassName={COLOR_PICKER_POPUP_CLASS_NAME}
+                      styles={{
+                        popup: COLOR_PICKER_POPUP_STYLE,
+                        popupOverlayInner: COLOR_PICKER_POPUP_INNER_STYLE
+                      }}
                       onChangeComplete={(color) =>
                         setEditColor(color.toHexString())
                       }
@@ -288,6 +305,11 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                     <ColorPicker
                       value={newItemColor}
                       presets={colorPresets}
+                      rootClassName={COLOR_PICKER_POPUP_CLASS_NAME}
+                      styles={{
+                        popup: COLOR_PICKER_POPUP_STYLE,
+                        popupOverlayInner: COLOR_PICKER_POPUP_INNER_STYLE
+                      }}
                       onChangeComplete={(color) =>
                         setNewItemColor(color.toHexString())
                       }
@@ -334,44 +356,56 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   const selectedColor = options.find((o) => o.value === value)?.color;
 
   return (
-    <Dropdown
-      dropdownRender={() => dropdownContentRender}
-      trigger={['click']}
-      open={dropdownOpen}
-      onOpenChange={onOpenChange}
-      disabled={disabled}
-    >
-      <EditableSelectTriggerStyleWrapper
+    <>
+      <GlobalStyles
+        styles={{
+          [`.${COLOR_PICKER_POPUP_CLASS_NAME}`]: {
+            zIndex: `${COLOR_PICKER_POPUP_STYLE.zIndex} !important`
+          },
+          [`.${COLOR_PICKER_POPUP_CLASS_NAME} .ant-popover-inner`]: {
+            zIndex: `${COLOR_PICKER_POPUP_INNER_STYLE.zIndex} !important`
+          }
+        }}
+      />
+      <Dropdown
+        dropdownRender={() => dropdownContentRender}
+        trigger={['click']}
         open={dropdownOpen}
+        onOpenChange={onOpenChange}
         disabled={disabled}
-        className={classNames('editable-select-trigger', {
-          'editable-select-trigger-disabled': disabled
-        })}
       >
-        {selectedLabel ? (
-          <span className="editable-select-option-label">
-            <EmptyBox if={colorable && !!selectedColor}>
-              <span
-                className="editable-select-color-dot"
-                style={{ background: selectedColor }}
-              />
-            </EmptyBox>
-            {selectedLabel}
-          </span>
-        ) : (
-          <span className="placeholder">
-            {placeholder ?? t('common.form.placeholder.select')}
-          </span>
-        )}
-        <span className="arrow-icon">
-          {dropdownOpen ? (
-            <UpOutlined width={20} height={20} />
+        <EditableSelectTriggerStyleWrapper
+          open={dropdownOpen}
+          disabled={disabled}
+          className={classNames('editable-select-trigger', {
+            'editable-select-trigger-disabled': disabled
+          })}
+        >
+          {selectedLabel ? (
+            <span className="editable-select-option-label">
+              <EmptyBox if={colorable && !!selectedColor}>
+                <span
+                  className="editable-select-color-dot"
+                  style={{ background: selectedColor }}
+                />
+              </EmptyBox>
+              {selectedLabel}
+            </span>
           ) : (
-            <DownOutlined width={20} height={20} />
+            <span className="placeholder">
+              {placeholder ?? t('common.form.placeholder.select')}
+            </span>
           )}
-        </span>
-      </EditableSelectTriggerStyleWrapper>
-    </Dropdown>
+          <span className="arrow-icon">
+            {dropdownOpen ? (
+              <UpOutlined width={20} height={20} />
+            ) : (
+              <DownOutlined width={20} height={20} />
+            )}
+          </span>
+        </EditableSelectTriggerStyleWrapper>
+      </Dropdown>
+    </>
   );
 };
 
