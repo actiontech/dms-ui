@@ -63,6 +63,7 @@ export default {
     title: 'Global settings',
     userCenter: 'User center',
     reportStatistics: 'Report statistics',
+    sqlManagementRemediationReport: 'SQL management remediation report',
     viewRule: 'View rule',
     ruleManage: 'Rule management',
     system: 'System settings',

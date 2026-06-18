@@ -5,6 +5,7 @@ import { ResponseCode } from '../../../data/common';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   IPerformanceStatistics,
+  ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -30,6 +31,8 @@ const SQLManageAnalyze = () => {
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
     useState<IPerformanceStatistics>();
+  const [remediationCompare, setRemediationCompare] =
+    useState<ISqlManageRemediation>();
 
   const [
     loading,
@@ -53,11 +56,17 @@ const SQLManageAnalyze = () => {
     async (affectRowsEnabled = false) => {
       startGetSqlAnalyze();
       try {
-        const res = await SqlManage.GetSqlManageSqlAnalysisV1({
+        const [res, remediationRes] = await Promise.all([
+          SqlManage.GetSqlManageSqlAnalysisV1({
           sql_manage_id: urlParams.sqlManageId ?? '',
           project_name: projectName,
           affectRowsEnabled
-        });
+          }),
+          SqlManage.GetSqlManageRemediationV1({
+            sql_manage_id: urlParams.sqlManageId ?? '',
+            project_name: projectName
+          })
+        ]);
         if (res.data.code === ResponseCode.SUCCESS) {
           if (affectRowsEnabled) {
             setPerformanceInfoLoaded();
@@ -70,6 +79,9 @@ const SQLManageAnalyze = () => {
           setSqlExplain(data?.sql_explain);
           setTableMetas(data?.table_metas);
           setPerformancesStatistics(data?.performance_statistics);
+          if (remediationRes.data.code === ResponseCode.SUCCESS) {
+            setRemediationCompare(remediationRes.data.data);
+          }
           setOptimizationCreationParams({
             instance_name: queryParams?.instance_name,
             schema_name: queryParams?.schema,
@@ -132,6 +144,7 @@ const SQLManageAnalyze = () => {
         sqlExplain={sqlExplain}
         errorMessage={errorMessage}
         performanceStatistics={performanceStatistics}
+        remediationCompare={remediationCompare}
         loading={loading}
         sqlExecPlanCostDataSource={data}
         getSqlExecPlanCostDataSourceLoading={

@@ -44,7 +44,9 @@ import {
   ISqlManageCodingReq,
   IPostSqlManageCodingResp,
   IGetSqlManageSqlAnalysisResp,
-  ISqlManageAnalysisChartResp
+  ISqlManageAnalysisChartResp,
+  IGetSqlManageRemediationResp,
+  IGetSqlManageRemediationOverviewResp
 } from '../common.d';
 
 export interface IGetGlobalSqlManageListParams {
@@ -162,6 +164,8 @@ export interface IExportSqlManageV1Params {
   sort_order?: exportSqlManageV1SortOrderEnum;
 }
 
+export interface IExportGlobalSqlManageRemediationV1Params {}
+
 export interface IGetSqlManageRuleTipsParams {
   project_name: string;
 }
@@ -246,6 +250,26 @@ export interface IGetSqlManageListV2Params {
 }
 
 export interface IGetSqlManageListV2Return extends IGetSqlManageListResp {}
+
+export interface IGetSqlManageRemediationV1Params {
+  project_name: string;
+
+  sql_manage_id: string;
+}
+
+export interface IGetSqlManageRemediationV1Return
+  extends IGetSqlManageRemediationResp {}
+
+export interface IGetSqlManageRemediationOverviewV1Params {
+  project_name: string;
+
+  instance_audit_plan_id?: number;
+
+  audit_plan_type?: string;
+}
+
+export interface IGetSqlManageRemediationOverviewV1Return
+  extends IGetSqlManageRemediationOverviewResp {}
 
 export interface IExportSqlManageV2Params {
   project_name: string;

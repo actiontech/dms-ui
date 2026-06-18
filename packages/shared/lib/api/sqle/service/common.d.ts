@@ -5103,3 +5103,77 @@ export interface ICompleteWorkflowReq {
 
   workflow_id?: string;
 }
+
+export interface IRuleDiff {
+  new?: IAuditResult[];
+
+  resolved?: IAuditResult[];
+
+  unchanged?: IAuditResult[];
+}
+
+export interface ISqlManageRemediation {
+  first_audit_missing?: boolean;
+
+  first_audit_result?: IAuditResult[];
+
+  first_audit_time?: string;
+
+  id?: number;
+
+  latest_audit_result?: IAuditResult[];
+
+  latest_audit_time?: string;
+
+  remediation_status?: string;
+
+  rule_diff?: IRuleDiff;
+
+  sql?: string;
+
+  sql_fingerprint?: string;
+}
+
+export interface IGetSqlManageRemediationResp {
+  code?: number;
+
+  data?: ISqlManageRemediation;
+
+  message?: string;
+}
+
+export interface ISqlManageRemediationOverviewStatusCount {
+  deteriorated?: number;
+
+  newly_discovered?: number;
+
+  partially_fixed?: number;
+
+  resolved?: number;
+
+  unchanged?: number;
+}
+
+export interface ISqlManageRemediationOverview {
+  first_audit_missing_num?: number;
+
+  first_score?: number;
+
+  latest_score?: number;
+
+  remediation_rate?: number;
+
+  score_change?: number;
+
+  sql_total_num?: number;
+
+  remediation_status_count?: ISqlManageRemediationOverviewStatusCount;
+}
+
+export interface IGetSqlManageRemediationOverviewResp {
+  code?: number;
+
+  data?: ISqlManageRemediationOverview;
+
+  message?: string;
+}
