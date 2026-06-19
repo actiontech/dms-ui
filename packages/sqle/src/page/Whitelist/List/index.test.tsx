@@ -1,16 +1,16 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import WhitelistList from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import auditWhiteList from '../../../testUtils/mockApi/auditWhiteList';
-import { auditWhiteListMockData } from '../../../testUtils/mockApi/auditWhiteList/data';
+import { superRender as renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/superRender';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
+import { auditWhiteListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import instance from '../../../testUtils/mockApi/instance';
-import user from '../../../testUtils/mockApi/user';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import {
   mockProjectInfo,
   mockCurrentUserReturn

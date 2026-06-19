@@ -42,10 +42,19 @@ export interface IGetInstanceTipListV1Params {
 
 export interface IGetInstanceTipListV1Return extends IGetInstanceTipsResV1 {}
 
-export interface IGetInstanceTipListV2Params
-  extends IGetInstanceTipListV1Params {}
+export interface IGetInstanceTipListV2Params {
+  project_name: string;
 
-export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV1 {}
+  filter_db_type?: string;
+
+  filter_by_business?: string;
+
+  filter_workflow_template_id?: string;
+
+  functional_module?: getInstanceTipListV2FunctionalModuleEnum;
+}
+
+export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV2 {}
 
 export interface IBatchCheckInstanceIsConnectableByNameParams
   extends IBatchCheckInstanceConnectionsReqV1 {

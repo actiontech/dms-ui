@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   SQLRuleExceptionColumn,
   SQLRuleExceptionTableFilterParamType,
@@ -11,7 +11,7 @@ import {
 } from './columns';
 import { ModalName } from '../../../data/ModalName';
 import { message } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { updateWhitelistModalStatus } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -20,7 +20,7 @@ import {
   BasicSegmented,
   EmptyBox,
   PageHeader
-} from '@actiontech/shared';
+} from '@actiontech/dms-kit';
 import WhitelistDrawer from '../Drawer';
 import {
   IAuditWhitelistResV1,
@@ -40,7 +40,7 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   ActiontechTableActionMeta
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit';
 import { PlusOutlined } from '@actiontech/icons';
 import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
@@ -63,12 +63,8 @@ const WhitelistList = () => {
     WhitelistManageView.sql
   );
 
-  const {
-    dispatch,
-    updateSelectWhitelistRecord,
-    openCreateWhitelistModal,
-    actionPermission
-  } = useWhitelistRedux();
+  const { dispatch, updateSelectWhitelistRecord, openCreateWhitelistModal } =
+    useWhitelistRedux();
 
   const {
     tableFilterInfo,
@@ -352,7 +348,7 @@ const WhitelistList = () => {
       <PageHeader
         title={t('whitelist.pageTitle')}
         extra={[
-          <EmptyBox if={actionPermission} key="add-whitelist">
+          <EmptyBox if key="add-whitelist">
             <BasicButton
               type="primary"
               icon={
@@ -405,7 +401,7 @@ const WhitelistList = () => {
             }}
             loading={loading}
             columns={columns}
-            actions={actionPermission ? whitelistActionsInTable : undefined}
+            actions={whitelistActionsInTable}
             errorMessage={requestErrorMessage}
             onChange={tableChange}
             scroll={{}}
@@ -448,7 +444,7 @@ const WhitelistList = () => {
             }}
             loading={ruleExceptionLoading}
             columns={ruleExceptionColumns}
-            actions={actionPermission ? ruleExceptionActionsInTable : undefined}
+            actions={ruleExceptionActionsInTable}
             errorMessage={requestErrorMessage}
             onChange={ruleExceptionTableChange}
             scroll={{ x: 1600 }}

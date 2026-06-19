@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, ResponseCode } from '@actiontech/dms-kit';
 import operationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
 import {
   IGetOperationRecordListV1Params,
-  IGetExportOperationRecordListV1Params
+  IGetExportOperationRecordListV1Params,
+  IGetOperationActionListReturn,
+  IGetOperationTypeNameListReturn
 } from '@actiontech/shared/lib/api/sqle/service/OperationRecord/index.d';
-import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IOperationRecordListItem } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTable,
   useTableRequestParams,
@@ -18,16 +20,22 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   TableToolbar
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+} from '@actiontech/dms-kit';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType
 } from './column';
-import useOperationTypeName from '../../../hooks/useOperationTypeName';
-import useOperationActions from '../../../hooks/useOperationActions';
-import { ResponseCode } from '../../../data/common';
 import { DownArrowLineOutlined } from '@actiontech/icons';
+
+type OperationRecordListResponse = {
+  list?: IOperationRecordListItem[];
+  total?: number;
+};
+
+type OperationOptionItem = {
+  op_desc?: string;
+};
 
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
@@ -39,17 +47,17 @@ const OperationRecordList: React.FC = () => {
 
   const [currentOperationTypeName, setCurrentOperationTypeName] =
     useState<string>();
+  const [operationTypeNameOptions, setOperationTypeNameOptions] = useState<
+    Array<{ label: string; value: string }>
+  >([]);
+  const [operationActionOptions, setOperationActionOptions] = useState<
+    Record<string, Array<{ label: string; value: string }>>
+  >({});
 
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
-
-  const { updateOperationTypeNameList, operationTypeNameOptions } =
-    useOperationTypeName();
-
-  const { updateOperationActions, operationActionOptions } =
-    useOperationActions();
 
   const defaultFilterInfo = useMemo<OperationRecordListFilterParamType>(() => {
     const filterOperateTypeName = searchParams.get('filter_operate_type_name');
@@ -79,7 +87,7 @@ const OperationRecordList: React.FC = () => {
     setSearchKeyword,
     refreshBySearchKeyword
   } = useTableRequestParams<
-    IOperationRecordList,
+    IOperationRecordListItem,
     OperationRecordListFilterParamType
   >({
     defaultFilterInfo
@@ -103,16 +111,19 @@ const OperationRecordList: React.FC = () => {
       };
       return handleTableRequestError(
         operationRecord.getOperationRecordListV1(params)
-      ).then((res) => {
+      ).then((response) => {
+        const res = response as OperationRecordListResponse;
         if (auditContentKeywords.length === 0) {
           return res;
         }
 
-        const filteredData = res.list?.filter((item) => {
-          return auditContentKeywords.every((keyword) =>
-            item.operation_content?.includes(keyword)
-          );
-        });
+        const filteredData = res.list?.filter(
+          (item: IOperationRecordListItem) => {
+            return auditContentKeywords.every((keyword) =>
+              item.operation_content?.includes(keyword)
+            );
+          }
+        );
 
         return {
           ...res,
@@ -127,7 +138,7 @@ const OperationRecordList: React.FC = () => {
   );
 
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof IOperationRecordList, FilterCustomProps>([
+    return new Map<keyof IOperationRecordListItem, FilterCustomProps>([
       [
         'operation_time',
         {
@@ -146,7 +157,9 @@ const OperationRecordList: React.FC = () => {
       [
         'operation_content',
         {
-          options: operationActionOptions(currentOperationTypeName)
+          options: currentOperationTypeName
+            ? operationActionOptions[currentOperationTypeName]
+            : Object.values(operationActionOptions).flat()
         }
       ]
     ]);
@@ -160,9 +173,39 @@ const OperationRecordList: React.FC = () => {
     useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
 
   useEffect(() => {
-    updateOperationTypeNameList();
-    updateOperationActions();
-  }, [updateOperationActions, updateOperationTypeNameList]);
+    operationRecord.GetOperationTypeNameList().then((res) => {
+      const data = (
+        res.data as IGetOperationTypeNameListReturn & {
+          data?: OperationOptionItem[];
+        }
+      ).data;
+      setOperationTypeNameOptions(
+        (data ?? []).map((item: OperationOptionItem) => ({
+          label: item.op_desc ?? '',
+          value: item.op_desc ?? ''
+        }))
+      );
+    });
+    operationRecord.getOperationActionList().then((res) => {
+      const data = (
+        res.data as IGetOperationActionListReturn & {
+          data?: OperationOptionItem[];
+        }
+      ).data;
+      setOperationActionOptions(
+        (data ?? []).reduce<
+          Record<string, Array<{ label: string; value: string }>>
+        >((actions, item: OperationOptionItem) => {
+          const typeName = item.op_desc ?? '';
+          actions[typeName] = [
+            ...(actions[typeName] ?? []),
+            { label: item.op_desc ?? '', value: item.op_desc ?? '' }
+          ];
+          return actions;
+        }, {})
+      );
+    });
+  }, []);
 
   const onExport = () => {
     startExport();

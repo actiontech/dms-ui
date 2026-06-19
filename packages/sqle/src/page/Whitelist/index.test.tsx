@@ -1,9 +1,9 @@
 import { screen, cleanup, act } from '@testing-library/react';
 import WhiteList from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import auditWhiteList from '../../testUtils/mockApi/auditWhiteList';
-import instance from '../../testUtils/mockApi/instance';
-import user from '../../testUtils/mockApi/user';
+import { superRender as renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/superRender';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../data/ModalName';

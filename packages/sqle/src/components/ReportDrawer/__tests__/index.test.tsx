@@ -1,6 +1,6 @@
 import ReportDrawer from '..';
 
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { superRender as renderWithTheme } from '@actiontech/shared/lib/testUtil/superRender';
 import { DetailReportDrawerProps } from '../index.type';
 import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

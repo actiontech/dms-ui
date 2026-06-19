@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit';
 import { AuditResultTableProps } from './index.type';
 import {
   AuditResultForCreateWorkflowActions,
@@ -24,6 +24,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   projectID,
   projectName,
   updateTaskRecordCount,
+  updateTaskAuditRuleExceptionStatus,
   dbType,
   instanceName,
   canCreateRuleException,
@@ -39,11 +40,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const {
-    openCreateWhitelistModal,
-    updateSelectWhitelistRecord,
-    actionPermission
-  } = useWhitelistRedux();
+  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
+    useWhitelistRedux();
 
   const handleClickAnalyze = (sqlNum?: number) => {
     if (typeof sqlNum === 'undefined') {
@@ -85,7 +83,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       handleTableRequestError(
         task.getAuditTaskSQLsV2({
           task_id: taskID!,
-          filter_audit_level: auditLevelFilterValue,
+          filter_audit_level: auditLevelFilterValue ?? undefined,
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           no_duplicate: noDuplicate
@@ -95,6 +93,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       ready: typeof taskID === 'string',
       refreshDeps: [pagination, taskID],
       onSuccess(res) {
+        updateTaskAuditRuleExceptionStatus?.(res.list ?? []);
         if (auditLevelFilterValue === undefined) {
           updateTaskRecordCount?.(taskID ?? '', res.total ?? 0);
         }
@@ -128,7 +127,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         rowKey="number"
         columns={AuditResultForCreateWorkflowColumn(
           updateSqlDescribe,
-          onClickAuditResult
+          onClickAuditResult,
+          () => undefined
         )}
         loading={loading}
         dataSource={data?.list}
@@ -139,8 +139,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         }}
         actions={AuditResultForCreateWorkflowActions(
           handleClickAnalyze,
-          onCreateWhitelist,
-          actionPermission
+          onCreateWhitelist
         )}
       />
       <AuditResultDrawer

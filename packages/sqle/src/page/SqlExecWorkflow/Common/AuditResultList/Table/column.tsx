@@ -1,5 +1,8 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
+import {
+  ActiontechTableActionMeta,
+  ActiontechTableColumn
+} from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { EditText } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit/es/components/BasicToolTip/utils';
@@ -121,3 +124,23 @@ export const AuditResultForCreateWorkflowColumn = (
     }
   ];
 };
+
+export const AuditResultForCreateWorkflowActions = (
+  handleClickAnalyze: (sqlNum?: number) => void,
+  onCreateWhitelist: (record?: IAuditTaskSQLResV2) => void
+): ActiontechTableActionMeta<IAuditTaskSQLResV2>[] => [
+  {
+    key: 'analyze',
+    text: t('execWorkflow.audit.table.analyze'),
+    buttonProps: (record) => ({
+      onClick: () => handleClickAnalyze(record?.number)
+    })
+  },
+  {
+    key: 'create-whitelist',
+    text: t('whitelist.operate.addWhitelist'),
+    buttonProps: (record) => ({
+      onClick: () => onCreateWhitelist(record)
+    })
+  }
+];

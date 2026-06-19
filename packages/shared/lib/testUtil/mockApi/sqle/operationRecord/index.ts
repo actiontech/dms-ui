@@ -1,4 +1,4 @@
-import baseOperationRecord from '../../../../api/base/service/OperationRecord';
+import operationRecord from '../../../../api/sqle/service/OperationRecord';
 import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { operationRecordListMockData } from './data';
 
@@ -9,18 +9,18 @@ class MockOperationRecordApi implements MockSpyApy {
   }
 
   public getOperationRecordList() {
-    const spy = jest.spyOn(baseOperationRecord, 'GetOperationRecordList');
+    const spy = jest.spyOn(operationRecord, 'getOperationRecordListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: operationRecordListMockData,
-        total_nums: operationRecordListMockData.length
+        total: operationRecordListMockData.length
       })
     );
     return spy;
   }
 
   public exportOperationRecordList() {
-    const spy = jest.spyOn(baseOperationRecord, 'ExportOperationRecordList');
+    const spy = jest.spyOn(operationRecord, 'getExportOperationRecordListV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

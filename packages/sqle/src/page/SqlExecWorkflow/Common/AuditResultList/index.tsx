@@ -1,5 +1,8 @@
-import { BasicSegmented, EmptyBox } from '@actiontech/shared';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  BasicSegmented,
+  EmptyBox,
+  SegmentedRowStyleWrapper
+} from '@actiontech/dms-kit';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { AuditResultForCreateWorkflowStyleWrapper } from './style';
@@ -15,7 +18,7 @@ import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/se
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useAuditResultFilterParams from '../AuditResultFilterContainer/useAuditResultFilterParams';
 import {
   auditLevelDictionary,
@@ -26,10 +29,14 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
   showTaskTab = true,
+  allowSwitchBackupPolicy,
+  onBatchSwitchBackupPolicy,
+  tasksSupportedBackupPolicies,
+  updateTaskAuditRuleExceptionStatus,
   onRuleExceptionCreated
 }) => {
   const { t } = useTranslation();
-  const { projectID, projectName, projectArchive } = useCurrentProject();
+  const { projectID, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
   const {
     noDuplicate,
@@ -46,8 +53,8 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   );
 
   const canCreateRuleException = useMemo(() => {
-    return (isAdmin || isProjectManager(projectName)) && !projectArchive;
-  }, [isAdmin, isProjectManager, projectName, projectArchive]);
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
 
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
@@ -111,9 +118,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         </Space>
       </SegmentedRowStyleWrapper>
       {/* todo: options 中部分数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
-      <AuditResultFilterContainer<
-        getAuditTaskSQLsV2FilterAuditLevelEnum | undefined
-      >
+      <AuditResultFilterContainer<getAuditTaskSQLsV2FilterAuditLevelEnum | null>
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
         instanceSchemaName={currentTask?.instance_schema}
@@ -123,19 +128,25 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         options={Object.keys(getAuditTaskSQLsV2FilterAuditLevelEnum)}
         withAll={{
           label: t('execWorkflow.create.auditResult.allLevel'),
-          value: undefined
+          value: null
         }}
         labelDictionary={translateDictionaryI18nLabel(auditLevelDictionary)}
       />
       <AuditResultTable
         taskID={currentTaskID}
         noDuplicate={noDuplicate}
-        auditLevelFilterValue={auditLevelFilterValue}
+        auditLevelFilterValue={auditLevelFilterValue ?? undefined}
         projectID={projectID}
         projectName={projectName}
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
         instanceName={currentTask?.instance_name}
+        allowSwitchBackupPolicy={allowSwitchBackupPolicy}
+        onBatchSwitchBackupPolicy={onBatchSwitchBackupPolicy}
+        supportedBackupPolicies={
+          tasksSupportedBackupPolicies?.[currentTaskID ?? '']
+        }
+        updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
         canCreateRuleException={canCreateRuleException}
         onRuleExceptionCreated={onRuleExceptionCreated}
       />

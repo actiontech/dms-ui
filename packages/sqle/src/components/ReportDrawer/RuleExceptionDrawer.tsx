@@ -1,9 +1,13 @@
-import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/shared';
-import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicInput,
+  DrawerFormLayout,
+  ResponseCode
+} from '@actiontech/dms-kit';
 import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { Form, Space, message } from 'antd';
@@ -52,7 +56,7 @@ const RuleExceptionDrawer: React.FC<RuleExceptionDrawerProps> = ({
               project_name: context?.projectName ?? '',
               filter_db_type: context?.dbType,
               functional_module:
-                getInstanceTipListV1FunctionalModuleEnum.create_workflow
+                getInstanceTipListV2FunctionalModuleEnum.create_workflow
             })
             .then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {

@@ -4,11 +4,11 @@ import {
   BasicDrawer,
   BasicTag,
   EmptyBox,
-  BasicToolTips,
-  SQLRenderer,
-  BasicTypographyEllipsis,
-  BasicButton
-} from '@actiontech/shared';
+  BasicToolTip,
+  BasicButton,
+  formatTime
+} from '@actiontech/dms-kit';
+import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
@@ -17,7 +17,6 @@ import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
 import RuleExceptionDrawer from './RuleExceptionDrawer';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const ReportDrawer = ({
   open,
@@ -90,10 +89,7 @@ const ReportDrawer = ({
               </Typography.Title>
               <div className="wrapper-cont">
                 {resultDataIsEmpty ? (
-                  <AuditResultMessage
-                    styleClass="result-item"
-                    auditStatus={data?.auditStatus}
-                  />
+                  <AuditResultMessage styleClass="result-item" />
                 ) : (
                   (data?.auditResult ?? [])?.map(
                     (item: IAuditResultItem, index: number) => {
@@ -237,7 +233,7 @@ const ReportDrawer = ({
                   <EmptyBox
                     if={!!data?.sqlSourceFile}
                     defaultNode={
-                      <BasicToolTips
+                      <BasicToolTip
                         title={t('auditPlan.report.drawer.sourceTip')}
                       >
                         <Space>
@@ -259,7 +255,7 @@ const ReportDrawer = ({
                             -
                           </BasicTag>
                         </Space>
-                      </BasicToolTips>
+                      </BasicToolTip>
                     }
                   >
                     <BasicTag

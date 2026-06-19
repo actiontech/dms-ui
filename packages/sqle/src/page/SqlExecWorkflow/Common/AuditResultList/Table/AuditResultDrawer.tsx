@@ -2,8 +2,9 @@ import ReportDrawer from '../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from './index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
+import { Space } from 'antd';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
@@ -15,7 +16,8 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   instanceName,
   canCreateRuleException,
   onRuleExceptionCreated,
-  clickAnalyze
+  clickAnalyze,
+  handleClickSqlRewritten
 }) => {
   const { t } = useTranslation();
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
@@ -62,9 +64,18 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       canCreateRuleException={canCreateRuleException}
       onRuleExceptionCreated={onRuleExceptionCreated}
       extra={
-        <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
-          {t('execWorkflow.audit.table.analyze')}
-        </BasicButton>
+        <Space>
+          <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
+            {t('execWorkflow.audit.table.analyze')}
+          </BasicButton>
+          {handleClickSqlRewritten ? (
+            <BasicButton
+              onClick={() => handleClickSqlRewritten(auditResultRecord)}
+            >
+              {t('execWorkflow.audit.table.aiFix')}
+            </BasicButton>
+          ) : null}
+        </Space>
       }
     />
   );

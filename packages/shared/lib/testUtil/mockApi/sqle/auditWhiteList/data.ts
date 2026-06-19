@@ -1,8 +1,8 @@
 import {
   IAuditWhitelistResV1,
   ISQLRuleExceptionResV1
-} from '@actiontech/shared/lib/api/sqle/service/common';
-import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+} from '../../../../api/sqle/service/common.d';
+import { CreateAuditWhitelistReqV1MatchTypeEnum } from '../../../../api/sqle/service/common.enum';
 
 export const auditWhiteListMockData: IAuditWhitelistResV1[] = [
   {

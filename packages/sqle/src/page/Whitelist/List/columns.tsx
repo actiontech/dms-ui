@@ -2,7 +2,7 @@ import { t } from '../../../locale';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
+} from '@actiontech/dms-kit';
 import { WhitelistMatchTypeLabel } from '../index.data';
 import {
   IAuditWhitelistResV1,
@@ -14,7 +14,7 @@ import {
   IGetAuditWhitelistV1Params,
   IGetSQLRuleExceptionV1Params
 } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { formatTime } from '@actiontech/dms-kit';
 
 export type WhitelistTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetAuditWhitelistV1Params & {

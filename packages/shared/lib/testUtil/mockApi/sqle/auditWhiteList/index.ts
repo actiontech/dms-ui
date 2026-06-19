@@ -1,8 +1,5 @@
-import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
-import {
-  MockSpyApy,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import audit_whitelist from '../../../../api/sqle/service/audit_whitelist';
+import { MockSpyApy, createSpySuccessResponse } from '../../index';
 import { auditWhiteListMockData, sqlRuleExceptionMockData } from './data';
 
 class AuditWhiteList implements MockSpyApy {
