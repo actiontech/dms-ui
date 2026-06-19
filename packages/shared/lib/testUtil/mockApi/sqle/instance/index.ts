@@ -10,12 +10,24 @@ import {
 class MockInstanceApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getInstanceTipList();
+    this.getInstanceTipListV2();
     this.getInstanceSchemas();
     this.batchCheckInstanceIsConnectableByName();
     this.getInstance();
   }
 
   public getInstanceTipList() {
+    const spy = jest.spyOn(instance, 'getInstanceTipListV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: instanceTipsMockData,
+        total_nums: instanceTipsMockData.length
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceTipListV2() {
     const spy = jest.spyOn(instance, 'getInstanceTipListV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({

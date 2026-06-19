@@ -6,15 +6,17 @@ import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/
 
 export type AuditResultListProps = {
   tasks: IAuditTaskResV1[];
-  updateTaskRecordCount?: (taskId: string, sqlCount: number) => void;
-  updateTaskAuditRuleExceptionStatus?: (taskSqls: IAuditTaskSQLResV2[]) => void;
+  updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   showTaskTab?: boolean;
   allowSwitchBackupPolicy?: boolean;
   onBatchSwitchBackupPolicy?: (
     currentTaskID?: string,
     supportedBackupStrategy?: InstanceTipResV2SupportedBackupStrategyEnum[]
   ) => void;
-  tasksSupportedBackupPolicies?: {
-    [key: number]: InstanceTipResV2SupportedBackupStrategyEnum[] | undefined;
-  };
+  tasksSupportedBackupPolicies?: Record<
+    string,
+    InstanceTipResV2SupportedBackupStrategyEnum[] | undefined
+  >;
+  updateTaskAuditRuleExceptionStatus?: (taskSqls: IAuditTaskSQLResV2[]) => void;
+  onRuleExceptionCreated?: () => void;
 };

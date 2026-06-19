@@ -1,5 +1,6 @@
 import { screen, cleanup } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
+import { superRender as renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/superRender';
+import { MemoryRouter } from 'react-router-dom';
 import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -20,9 +21,16 @@ describe('slqe/OperationRecord', () => {
   });
 
   test('should render operation record list', async () => {
-    const { baseElement } = superRender(<OperationRecord />);
+    const { baseElement } = renderWithReduxAndTheme(
+      <MemoryRouter>
+        <OperationRecord />
+      </MemoryRouter>
+    );
     expect(baseElement).toMatchSnapshot();
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('导出')).toBeInTheDocument();
+    expect(
+      screen.queryByText('操作记录列表为企业版功能')
+    ).not.toBeInTheDocument();
   });
 });

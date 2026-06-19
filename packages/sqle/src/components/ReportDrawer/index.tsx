@@ -1,29 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   BasicDrawer,
   BasicTag,
   EmptyBox,
-  BasicToolTip
+  BasicToolTip,
+  BasicButton,
+  formatTime
 } from '@actiontech/dms-kit';
-import {
-  SQLRenderer,
-  BasicTypographyEllipsis,
-  parse2ReactRouterPath
-} from '@actiontech/shared';
+import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
-import {
-  AuditReportStyleWrapper,
-  AuditResultExceptionStyleWrapper
-} from './style';
+import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
-import { Typography, Space } from 'antd';
+import { Typography, Space, Descriptions } from 'antd';
 import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import AuditExceptionItem from '../AuditResultMessage/AuditExceptionItem';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import RuleExceptionDrawer from './RuleExceptionDrawer';
 
 const ReportDrawer = ({
   open,
@@ -33,36 +26,49 @@ const ReportDrawer = ({
   showAnnotation,
   showSourceFile,
   loading,
-  extra
+  extra,
+  ruleExceptionContext,
+  canCreateRuleException = false,
+  onRuleExceptionCreated
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
+
   const { sqleTheme } = useThemeStyleData();
-  const { theme } = useCurrentUser();
+  const [selectedRuleException, setSelectedRuleException] =
+    useState<IAuditResultItem>();
+
   const closeModal = () => {
     onClose();
   };
-  const { auditResultWithNormalLevel, auditResultWithAuditException } =
-    useMemo(() => {
-      const normalLevel: IAuditResultItem[] = [];
-      const exceptionResult: IAuditResultItem[] = [];
-      (data?.auditResult ?? []).forEach((item) => {
-        if (item.execution_failed) {
-          exceptionResult.push(item);
-        } else {
-          normalLevel.push(item);
-        }
-      });
-      return {
-        auditResultWithAuditException: exceptionResult,
-        auditResultWithNormalLevel: normalLevel
-      };
-    }, [data?.auditResult]);
+
+  const closeRuleExceptionDrawer = () => {
+    setSelectedRuleException(undefined);
+  };
+
   const resultDataIsEmpty = useMemo(() => {
     return (
       (Array.isArray(data?.auditResult) && !data?.auditResult.length) ||
       !data?.auditResult
     );
   }, [data?.auditResult]);
+
+  const skippedAuditResult = useMemo(
+    () => data?.skippedAuditResult ?? [],
+    [data?.skippedAuditResult]
+  );
+
+  const openOperationRecord = () => {
+    if (!ruleExceptionContext?.projectName) {
+      return;
+    }
+
+    window.open(
+      `/sqle/project/${
+        ruleExceptionContext.projectID ?? ruleExceptionContext.projectName
+      }/operation-record`
+    );
+  };
+
   return (
     <>
       <BasicDrawer
@@ -77,38 +83,42 @@ const ReportDrawer = ({
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <Spin spinning={loading}>
-            <EmptyBox if={auditResultWithNormalLevel.length > 0}>
-              <section className="wrapper-item">
-                <Typography.Title level={3}>
-                  {t('auditPlan.report.drawer.subTitle.result')}
-                </Typography.Title>
-                <div className="wrapper-cont">
-                  {resultDataIsEmpty ? (
-                    <AuditResultMessage styleClass="result-item" />
-                  ) : (
-                    auditResultWithNormalLevel.map(
-                      (item: IAuditResultItem, index: number) => {
-                        if (!showAnnotation || item.isRuleDeleted) {
-                          return (
+            <section className="wrapper-item">
+              <Typography.Title level={3}>
+                {t('auditPlan.report.drawer.subTitle.result')}
+              </Typography.Title>
+              <div className="wrapper-cont">
+                {resultDataIsEmpty ? (
+                  <AuditResultMessage styleClass="result-item" />
+                ) : (
+                  (data?.auditResult ?? [])?.map(
+                    (item: IAuditResultItem, index: number) => {
+                      if (!showAnnotation || item.isRuleDeleted) {
+                        return (
+                          <div
+                            className="result-item"
+                            key={`${item.rule_name ?? ''}${
+                              item.message ?? ''
+                            }-${index}`}
+                          >
                             <AuditResultMessage
-                              styleClass="result-item"
-                              key={`${item.rule_name ?? ''}${
-                                item.message ?? ''
-                              }-${index}`}
                               auditResult={{
                                 level: item?.level ?? '',
                                 message: item?.message ?? ''
                               }}
                               isRuleDeleted={item.isRuleDeleted}
                             />
-                          );
-                        }
-                        return (
+                          </div>
+                        );
+                      }
+                      return (
+                        <div
+                          className="result-item"
+                          key={`${item.rule_name ?? ''}${
+                            item.message ?? ''
+                          }-${index}`}
+                        >
                           <AuditResultMessage
-                            styleClass="result-item"
-                            key={`${item.rule_name ?? ''}${
-                              item.message ?? ''
-                            }-${index}`}
                             auditResult={{
                               level: item?.level ?? '',
                               message: item?.message ?? '',
@@ -117,51 +127,102 @@ const ReportDrawer = ({
                             showAnnotation
                             moreBtnLink={
                               item?.rule_name && item?.db_type
-                                ? parse2ReactRouterPath(
-                                    ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
-                                    {
-                                      params: {
-                                        ruleName: item.rule_name ?? '',
-                                        dbType: item.db_type ?? ''
-                                      }
-                                    }
-                                  )
+                                ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
                                 : ''
                             }
                           />
-                        );
-                      }
-                    )
-                  )}
+                          <EmptyBox
+                            if={
+                              canCreateRuleException &&
+                              !!ruleExceptionContext &&
+                              !!item.rule_name
+                            }
+                          >
+                            <div className="rule-exception-action">
+                              <BasicButton
+                                type="link"
+                                onClick={() => setSelectedRuleException(item)}
+                              >
+                                {t('whitelist.ruleException.addAction')}
+                              </BasicButton>
+                            </div>
+                          </EmptyBox>
+                        </div>
+                      );
+                    }
+                  )
+                )}
+              </div>
+            </section>
+            <EmptyBox if={!!skippedAuditResult.length}>
+              <section className="wrapper-item skipped-rule-wrapper">
+                <Typography.Title level={3}>
+                  {t('whitelist.ruleException.skippedModule.title')}
+                </Typography.Title>
+                <div className="wrapper-cont">
+                  {skippedAuditResult.map((item, index) => (
+                    <div
+                      className="skipped-rule-item"
+                      key={`${item.rule_name ?? ''}-${index}`}
+                    >
+                      <Descriptions
+                        size="small"
+                        column={2}
+                        labelStyle={{ width: 110 }}
+                      >
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.ruleName')}
+                        >
+                          {item.rule_name || '-'}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.ruleLevel')}
+                        >
+                          {item.rule_level || item.level || '-'}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.ruleDesc')}
+                          span={2}
+                        >
+                          {item.rule_desc ||
+                            item.message ||
+                            item.rule_name ||
+                            '-'}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.createdBy')}
+                        >
+                          {item.created_by || '-'}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.createdAt')}
+                        >
+                          {formatTime(item.created_at, '-')}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.reason')}
+                          span={2}
+                        >
+                          {item.reason || '-'}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                          label={t('whitelist.ruleException.audit')}
+                          span={2}
+                        >
+                          <BasicButton
+                            type="link"
+                            onClick={openOperationRecord}
+                          >
+                            {t('whitelist.ruleException.viewAudit')}
+                          </BasicButton>
+                        </Descriptions.Item>
+                      </Descriptions>
+                    </div>
+                  ))}
                 </div>
               </section>
             </EmptyBox>
-
-            <EmptyBox if={auditResultWithAuditException.length > 0}>
-              <AuditResultExceptionStyleWrapper>
-                <div className="title">
-                  <BasicToolTip
-                    title={t('auditPlan.report.drawer.subTitle.exceptionTips')}
-                    suffixIcon
-                  >
-                    {t('auditPlan.report.drawer.subTitle.exception')}
-                  </BasicToolTip>
-                </div>
-
-                <div className="audit-exception-wrapper">
-                  {auditResultWithAuditException.map((item, index) => {
-                    return (
-                      <AuditExceptionItem
-                        key={`${item.rule_name}-${index}`}
-                        auditExceptionResult={item}
-                      />
-                    );
-                  })}
-                </div>
-              </AuditResultExceptionStyleWrapper>
-            </EmptyBox>
           </Spin>
-
           <section className="wrapper-item">
             <div className="title-wrap">
               <Typography.Title level={3}>
@@ -231,16 +292,23 @@ const ReportDrawer = ({
             </div>
             <div className="wrapper-cont">
               <SQLRenderer.ViewOnlyEditor
-                theme={theme}
                 value={data?.sql}
                 width="100%"
-                height="100%"
+                height="90%"
               />
             </div>
           </section>
         </AuditReportStyleWrapper>
       </BasicDrawer>
+      <RuleExceptionDrawer
+        open={!!selectedRuleException}
+        data={selectedRuleException}
+        context={ruleExceptionContext}
+        onClose={closeRuleExceptionDrawer}
+        onCreated={onRuleExceptionCreated}
+      />
     </>
   );
 };
+
 export default ReportDrawer;

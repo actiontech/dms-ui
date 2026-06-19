@@ -12,4 +12,10 @@ export type AuditResultFilterContainerProps<
   score?: number;
   instanceSchemaName?: string;
   auditLevel?: AuditTaskResV1AuditLevelEnum;
-} & Omit<CustomSegmentedFilterProps<T>, 'noStyle' | 'className'>;
+} & Omit<
+  CustomSegmentedFilterProps<T>,
+  'noStyle' | 'className' | 'value' | 'onChange'
+> & {
+    value?: T | null;
+    onChange?: (value: T | null) => void;
+  };

@@ -1,17 +1,13 @@
 import ReportDrawer from '..';
-import { sqleSuperRender } from '../../../testUtils/superRender';
+
+import { superRender as renderWithTheme } from '@actiontech/shared/lib/testUtil/superRender';
 import { DetailReportDrawerProps } from '../index.type';
 import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import {
-  ignoreConsoleErrors,
-  UtilsConsoleErrorStringsEnum
-} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/components/ReportDrawer', () => {
   const customRender = (params: DetailReportDrawerProps) => {
-    return sqleSuperRender(<ReportDrawer {...params} />);
+    return renderWithTheme(<ReportDrawer {...params} />);
   };
 
   beforeEach(() => {
@@ -23,7 +19,7 @@ describe('sqle/components/ReportDrawer', () => {
     jest.useRealTimers();
     cleanup();
   });
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   it('render snap open is false', () => {
     const { baseElement } = customRender({
       open: false,
@@ -57,7 +53,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: RuleResV1LevelEnum.error,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -83,7 +79,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: RuleResV1LevelEnum.warn,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -109,7 +105,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: RuleResV1LevelEnum.normal,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -135,7 +131,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message1',
-            level: RuleResV1LevelEnum.warn,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql',
             isRuleDeleted: true
@@ -143,7 +139,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule b',
             message: 'message2',
-            level: RuleResV1LevelEnum.error,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -167,7 +163,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: RuleResV1LevelEnum.error,
+            level: 'level',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -179,66 +175,62 @@ describe('sqle/components/ReportDrawer', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when audit rule is exception', () => {
-    const { baseElement } = customRender({
-      open: true,
-      title: 'this is a title',
-      showAnnotation: true,
-      data: {
-        sql: 'select 1',
-        sqlSourceFile: 'file_source',
-        sqlStartLine: 3,
-        auditResult: [
-          {
-            rule_name: 'rule a',
-            message: 'message',
-            level: RuleResV1LevelEnum.error,
-            annotation: 'annotation',
-            db_type: 'mysql',
-            execution_failed: false
-          },
-          {
-            rule_name: 'rule b',
-            message: 'rule b',
-            error_info: 'message',
-            level: ' RuleResV1LevelEnum.error',
-            annotation: 'annotation',
-            db_type: 'mysql',
-            execution_failed: true
-          }
-        ]
-      },
-      onClose: jest.fn(),
-      extra: <div>extra</div>
-    });
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('should hidden audit result when all rule execution failed', () => {
+  it('should hide rule exception entry without create permission', () => {
     customRender({
       open: true,
       title: 'this is a title',
       showAnnotation: true,
       data: {
         sql: 'select 1',
-        sqlSourceFile: 'file_source',
-        sqlStartLine: 3,
         auditResult: [
           {
-            rule_name: 'rule b',
-            message: 'rule b',
-            error_info: 'message',
-            level: RuleResV1LevelEnum.error,
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
             annotation: 'annotation',
-            db_type: 'mysql',
-            execution_failed: true
+            db_type: 'mysql'
           }
         ]
       },
-      onClose: jest.fn(),
-      extra: <div>extra</div>
+      ruleExceptionContext: {
+        projectName: 'default',
+        projectID: '700300',
+        instanceName: 'mysql_local_sqle',
+        sqlFingerprint: 'fp'
+      },
+      onClose: jest.fn()
     });
 
-    expect(screen.queryByText('审核结果')).not.toBeInTheDocument();
+    expect(screen.queryByText('添加为单规则例外')).not.toBeInTheDocument();
+  });
+
+  it('should show rule exception entry with create permission', () => {
+    customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      ruleExceptionContext: {
+        projectName: 'default',
+        projectID: '700300',
+        instanceName: 'mysql_local_sqle',
+        sqlFingerprint: 'fp'
+      },
+      canCreateRuleException: true,
+      onClose: jest.fn()
+    });
+
+    expect(screen.getByText('添加为单规则例外')).toBeInTheDocument();
   });
 });
