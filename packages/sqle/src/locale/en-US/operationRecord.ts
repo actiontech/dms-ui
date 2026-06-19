@@ -7,6 +7,7 @@ export default {
     exportButtonText: 'Export',
     exporting: 'Exporting operation log list...',
     exportSuccessTips: 'Operation log list exported successfully',
+    auditContentKeywordsTips: 'Located by audit content: {{keywords}}',
     filterForm: {
       operatingTime: 'Operation time',
       projectName: 'Project name',

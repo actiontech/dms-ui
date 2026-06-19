@@ -1,19 +1,34 @@
 import {
   IAuditResult,
-  IRuleResV1
+  ISQLRuleExceptionResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 
-export type IAuditResultItem = Omit<IRuleResV1, 'level'> &
-  IAuditResult & {
-    isRuleDeleted?: boolean;
-  };
+export type IAuditResultItem = IAuditResult & {
+  isRuleDeleted?: boolean;
+  annotation?: string;
+  desc?: string;
+};
+
+export type SkippedAuditResultItem = IAuditResult &
+  Partial<ISQLRuleExceptionResV1>;
+
+export type RuleExceptionContext = {
+  projectName: string;
+  projectID?: string;
+  instanceName?: string;
+  instanceId?: string;
+  dbType?: string;
+  sqlFingerprint?: string;
+};
 
 export type TypeData = {
   auditResult: Array<IAuditResultItem>;
+  skippedAuditResult?: Array<SkippedAuditResultItem>;
   sql: string;
   sqlSourceFile?: string;
   sqlStartLine?: number;
+  auditStatus?: string;
 };
 
 export interface DetailReportDrawerProps {
@@ -25,4 +40,19 @@ export interface DetailReportDrawerProps {
   showSourceFile?: boolean;
   loading?: boolean;
   extra?: ReactNode;
+  ruleExceptionContext?: RuleExceptionContext;
+  canCreateRuleException?: boolean;
+  onRuleExceptionCreated?: () => void;
 }
+
+export type RuleExceptionFormFields = {
+  reason: string;
+};
+
+export type RuleExceptionDrawerProps = {
+  open: boolean;
+  data?: IAuditResultItem;
+  context?: RuleExceptionContext;
+  onClose: () => void;
+  onCreated?: () => void;
+};

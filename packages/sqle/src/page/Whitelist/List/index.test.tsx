@@ -1,19 +1,21 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import WhitelistList from '.';
-import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
-import { auditWhiteListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList/data';
+import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import auditWhiteList from '../../../testUtils/mockApi/auditWhiteList';
+import { auditWhiteListMockData } from '../../../testUtils/mockApi/auditWhiteList/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import instance from '../../../testUtils/mockApi/instance';
+import user from '../../../testUtils/mockApi/user';
 import {
   mockProjectInfo,
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { SystemRole } from '@actiontech/dms-kit';
+import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 
 jest.mock('react-redux', () => {
   return {
@@ -23,24 +25,31 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
+
 describe('slqe/Whitelist/WhitelistList', () => {
   let whitelistSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   let useCurrentUserSpy: jest.SpyInstance;
+  let useCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     whitelistSpy = auditWhiteList.getAuditWhitelist();
+    instance.getInstanceTipList();
+    user.getUserTipList();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
-        permission: {
-          moduleFeatureSupport: { sqlOptimization: false },
-          userOperationPermissions: null
-        }
+        database: { driverMeta },
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    mockUseCurrentProject();
+    useCurrentProjectSpy = mockUseCurrentProject();
     useCurrentUserSpy = mockUseCurrentUser();
   });
 
@@ -50,7 +59,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
   });
 
   test('should render whitelist list', async () => {
-    const { baseElement } = superRender(<WhitelistList />);
+    const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
@@ -67,7 +76,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
   });
 
   test('refresh whitelist list', async () => {
-    const { baseElement } = superRender(<WhitelistList />);
+    const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
@@ -75,41 +84,79 @@ describe('slqe/Whitelist/WhitelistList', () => {
     expect(whitelistSpy).toHaveBeenCalledTimes(2);
   });
 
+  test('should render rule exception management view', async () => {
+    const ruleExceptionSpy = auditWhiteList.getSQLRuleException();
+    renderWithReduxAndTheme(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('单规则例外'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(ruleExceptionSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('项目')).toBeInTheDocument();
+    expect(screen.getByText('数据源')).toBeInTheDocument();
+    expect(screen.getByText('SQL指纹')).toBeInTheDocument();
+    expect(screen.getByText('规则名')).toBeInTheDocument();
+    expect(screen.getByText('规则描述')).toBeInTheDocument();
+    expect(screen.getByText('规则原级别')).toBeInTheDocument();
+    expect(screen.getByText('添加例外的人')).toBeInTheDocument();
+    expect(screen.getByText('添加时间')).toBeInTheDocument();
+    expect(screen.getByText('添加原因')).toBeInTheDocument();
+    expect(screen.getByText('命中信息')).toBeInTheDocument();
+    expect(screen.getByText('mysql_local_sqle')).toBeInTheDocument();
+    expect(screen.getByText('ddl_check_pk_not_exist')).toBeInTheDocument();
+    expect(screen.getByText('建表语句必须包含主键')).toBeInTheDocument();
+    expect(screen.getByText('标准管理页回归验证')).toBeInTheDocument();
+    expect(screen.getByText('查看审计')).toBeInTheDocument();
+    expect(screen.getByText('取消例外')).toBeInTheDocument();
+  });
+
+  test('should submit sql fingerprint filter in rule exception view', async () => {
+    const ruleExceptionSpy = auditWhiteList.getSQLRuleException();
+    const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('单规则例外'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const sqlFingerprintInput = getBySelector(
+      '.filter-search-input input.ant-input',
+      baseElement
+    );
+    fireEvent.change(sqlFingerprintInput, {
+      target: { value: 'ac013_standard_filter_20260618191804' }
+    });
+    fireEvent.click(
+      getBySelector('.filter-search-input .custom-icon-search', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(ruleExceptionSpy).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_sql_fingerprint: 'ac013_standard_filter_20260618191804'
+      })
+    );
+  });
+
   it('should hide table actions', async () => {
-    // not admin or global manager or project manager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      userRoles: {
-        ...mockCurrentUserReturn.userRoles,
-        [SystemRole.admin]: false,
-        [SystemRole.systemAdministrator]: false
-      }
+      isAdmin: false
     }));
-    superRender(<WhitelistList />);
+    renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
-
     useCurrentUserSpy.mockClear();
     cleanup();
-    // project manager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      userRoles: {
-        ...mockCurrentUserReturn.userRoles,
-        [SystemRole.admin]: false,
-        [SystemRole.systemAdministrator]: false
-      },
-      bindProjects: [
-        {
-          is_manager: true,
-          project_name: mockProjectInfo.projectName,
-          project_id: mockProjectInfo.projectID,
-          archived: false
-        }
-      ]
+      isProjectManager: jest.fn().mockImplementation(() => true),
+      isAdmin: false
     }));
-    superRender(<WhitelistList />);
+    renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(
       auditWhiteListMockData.length
@@ -119,22 +166,9 @@ describe('slqe/Whitelist/WhitelistList', () => {
     );
     useCurrentUserSpy.mockClear();
     cleanup();
-    // project archived
-    useCurrentUserSpy.mockImplementation(() => ({
-      ...mockCurrentUserReturn,
-      userRoles: {
-        ...mockCurrentUserReturn.userRoles,
-        [SystemRole.admin]: false,
-        [SystemRole.systemAdministrator]: false
-      },
-      bindProjects: [
-        {
-          is_manager: true,
-          project_name: mockProjectInfo.projectName,
-          project_id: mockProjectInfo.projectID,
-          archived: true
-        }
-      ]
+    useCurrentProjectSpy.mockImplementation(() => ({
+      ...mockProjectInfo,
+      projectArchive: true
     }));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
@@ -142,7 +176,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
   });
 
   test('add whitelist', async () => {
-    const { baseElement } = superRender(<WhitelistList />);
+    const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
@@ -176,7 +210,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
       })
     );
     const deleteAuthWhitelistSpy = auditWhiteList.deleteAuthWhitelist();
-    superRender(<WhitelistList />);
+    renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -201,7 +235,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
         data: [auditWhiteListMockData[1]]
       })
     );
-    superRender(<WhitelistList />);
+    renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({

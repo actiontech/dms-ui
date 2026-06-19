@@ -1,5 +1,5 @@
-import { BasicSegmented, EmptyBox, BasicButton } from '@actiontech/dms-kit';
-import { SegmentedRowStyleWrapper } from '@actiontech/dms-kit';
+import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { AuditResultForCreateWorkflowStyleWrapper } from './style';
@@ -12,40 +12,47 @@ import DownloadRecord from '../DownloadRecord';
 import AuditResultTable from './Table';
 import AuditResultFilterContainer from '../AuditResultFilterContainer';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import useAuditResultFilterParams from '../AuditResultFilterContainer/useAuditResultFilterParams';
 import {
   auditLevelDictionary,
   translateDictionaryI18nLabel
 } from '../../../../hooks/useStaticStatus/index.data';
+
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
   showTaskTab = true,
-  allowSwitchBackupPolicy = false,
-  onBatchSwitchBackupPolicy,
-  tasksSupportedBackupPolicies,
-  updateTaskAuditRuleExceptionStatus
+  onRuleExceptionCreated
 }) => {
   const { t } = useTranslation();
-  const { projectID } = useCurrentProject();
+  const { projectID, projectName, projectArchive } = useCurrentProject();
+  const { isAdmin, isProjectManager } = useCurrentUser();
   const {
     noDuplicate,
     setNoDuplicate,
     auditLevelFilterValue,
     setAuditLevelFilterValue
   } = useAuditResultFilterParams();
+
   const [currentTaskID, setCurrentTaskID] = useState<string>();
+
   const currentTask = useMemo(
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
-  const currentTaskSupportedBackupPolicies = useMemo(() => {
-    return tasksSupportedBackupPolicies?.[currentTask?.task_id ?? 0];
-  }, [tasksSupportedBackupPolicies, currentTask?.task_id]);
+
+  const canCreateRuleException = useMemo(() => {
+    return (isAdmin || isProjectManager(projectName)) && !projectArchive;
+  }, [isAdmin, isProjectManager, projectName, projectArchive]);
+
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
   };
+
   const generateCurrentTaskLabel = (
     instanceName?: string,
     auditLevel?: AuditTaskResV1AuditLevelEnum
@@ -53,6 +60,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     if (!instanceName) {
       return '-';
     }
+
     return (
       <InstanceSegmentedLabel
         instanceName={instanceName}
@@ -60,11 +68,13 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       />
     );
   };
+
   useEffect(() => {
     if (typeof tasks?.[0]?.task_id !== 'undefined') {
       setCurrentTaskID(`${tasks[0].task_id}`);
     }
   }, [tasks]);
+
   return (
     <AuditResultForCreateWorkflowStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
@@ -85,26 +95,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         )}
 
         <Space size={4}>
-          {/* #if [ee] */}
-          <EmptyBox if={allowSwitchBackupPolicy && currentTask?.enable_backup}>
-            <BasicButton
-              onClick={() => {
-                onBatchSwitchBackupPolicy?.(
-                  currentTaskID,
-                  currentTaskSupportedBackupPolicies
-                );
-              }}
-            >
-              {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicy')}
-            </BasicButton>
-            <Divider
-              type="vertical"
-              style={{
-                height: 28
-              }}
-            />
-          </EmptyBox>
-          {/* #endif */}
           <ToggleButtonStyleWrapper
             active={noDuplicate}
             onClick={() => {
@@ -114,19 +104,16 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
             {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
 
-          <Divider
-            type="vertical"
-            style={{
-              height: 28
-            }}
-          />
+          <Divider type="vertical" style={{ height: 28 }} />
           <EmptyBox if={!!currentTaskID}>
             <DownloadRecord noDuplicate={noDuplicate} taskId={currentTaskID!} />
           </EmptyBox>
         </Space>
       </SegmentedRowStyleWrapper>
       {/* todo: options 中部分数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
-      <AuditResultFilterContainer
+      <AuditResultFilterContainer<
+        getAuditTaskSQLsV2FilterAuditLevelEnum | undefined
+      >
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
         instanceSchemaName={currentTask?.instance_schema}
@@ -136,7 +123,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         options={Object.keys(getAuditTaskSQLsV2FilterAuditLevelEnum)}
         withAll={{
           label: t('execWorkflow.create.auditResult.allLevel'),
-          value: null
+          value: undefined
         }}
         labelDictionary={translateDictionaryI18nLabel(auditLevelDictionary)}
       />
@@ -145,15 +132,15 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         noDuplicate={noDuplicate}
         auditLevelFilterValue={auditLevelFilterValue}
         projectID={projectID}
+        projectName={projectName}
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
         instanceName={currentTask?.instance_name}
-        schema={currentTask?.instance_schema}
-        allowSwitchBackupPolicy={allowSwitchBackupPolicy}
-        supportedBackupPolicies={currentTaskSupportedBackupPolicies}
-        updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
+        canCreateRuleException={canCreateRuleException}
+        onRuleExceptionCreated={onRuleExceptionCreated}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );
 };
+
 export default AuditResultList;

@@ -1,14 +1,15 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
-import { BasicButton, PageHeader } from '@actiontech/dms-kit';
-import operationRecord from '@actiontech/shared/lib/api/base/service/OperationRecord';
+import { BasicButton, PageHeader } from '@actiontech/shared';
+import operationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
 import {
   IGetOperationRecordListV1Params,
   IGetExportOperationRecordListV1Params
 } from '@actiontech/shared/lib/api/sqle/service/OperationRecord/index.d';
-import { IOperationRecordListItem } from '@actiontech/shared/lib/api/base/service/common';
+import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
   useTableRequestParams,
@@ -17,27 +18,57 @@ import {
   useTableFilterContainer,
   FilterCustomProps,
   TableToolbar
-} from '@actiontech/dms-kit/es/components/ActiontechTable';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/features';
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType
 } from './column';
+import useOperationTypeName from '../../../hooks/useOperationTypeName';
+import useOperationActions from '../../../hooks/useOperationActions';
 import { ResponseCode } from '../../../data/common';
 import { DownArrowLineOutlined } from '@actiontech/icons';
+
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
+
   const [messageApi, contextHolder] = message.useMessage();
+
   const { projectName } = useCurrentProject();
-  const { bindProjects, userRoles } = useCurrentUser();
+
+  const [currentOperationTypeName, setCurrentOperationTypeName] =
+    useState<string>();
 
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
+
+  const { updateOperationTypeNameList, operationTypeNameOptions } =
+    useOperationTypeName();
+
+  const { updateOperationActions, operationActionOptions } =
+    useOperationActions();
+
+  const defaultFilterInfo = useMemo<OperationRecordListFilterParamType>(() => {
+    const filterOperateTypeName = searchParams.get('filter_operate_type_name');
+
+    if (!filterOperateTypeName) {
+      return {};
+    }
+
+    return {
+      filter_operate_type_name: filterOperateTypeName
+    };
+  }, [searchParams]);
+
+  const auditContentKeywords = useMemo(
+    () =>
+      searchParams.get('audit_content_keywords')?.split('|').filter(Boolean) ??
+      [],
+    [searchParams]
+  );
 
   const {
     tableFilterInfo,
@@ -48,11 +79,15 @@ const OperationRecordList: React.FC = () => {
     setSearchKeyword,
     refreshBySearchKeyword
   } = useTableRequestParams<
-    IOperationRecordListItem,
+    IOperationRecordList,
     OperationRecordListFilterParamType
-  >();
+  >({
+    defaultFilterInfo
+  });
+
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
   const {
     data: operationRecordList,
     loading,
@@ -61,46 +96,38 @@ const OperationRecordList: React.FC = () => {
     () => {
       const params: IGetOperationRecordListV1Params = {
         ...pagination,
+        page_size: auditContentKeywords.length > 0 ? 100 : pagination.page_size,
         ...tableFilterInfo,
+        filter_operate_project_name: projectName,
         fuzzy_search_operate_user_name: searchKeyword
       };
-      if (!!projectName) {
-        params.filter_operate_project_name = projectName;
-      }
       return handleTableRequestError(
-        operationRecord.GetOperationRecordList(params)
-      );
+        operationRecord.getOperationRecordListV1(params)
+      ).then((res) => {
+        if (auditContentKeywords.length === 0) {
+          return res;
+        }
+
+        const filteredData = res.list?.filter((item) => {
+          return auditContentKeywords.every((keyword) =>
+            item.operation_content?.includes(keyword)
+          );
+        });
+
+        return {
+          ...res,
+          list: filteredData,
+          total: filteredData?.length ?? 0
+        };
+      });
     },
     {
-      refreshDeps: [pagination, tableFilterInfo]
+      refreshDeps: [pagination, tableFilterInfo, auditContentKeywords]
     }
   );
+
   const filterCustomProps = useMemo(() => {
-    let operationOptions;
-    if (
-      userRoles.admin ||
-      userRoles.auditAdministrator ||
-      userRoles.systemAdministrator
-    ) {
-      operationOptions = [
-        {
-          label: t('operationRecord.list.filterForm.globalOperation'),
-          value: ''
-        },
-        ...bindProjects.map((v) => ({
-          label: v.project_name,
-          value: v.project_name
-        }))
-      ];
-    } else {
-      operationOptions = bindProjects
-        .filter((i) => i.is_manager)
-        .map((v) => ({
-          label: v.project_name,
-          value: v.project_name
-        }));
-    }
-    return new Map<keyof IOperationRecordListItem, FilterCustomProps>([
+    return new Map<keyof IOperationRecordList, FilterCustomProps>([
       [
         'operation_time',
         {
@@ -108,25 +135,34 @@ const OperationRecordList: React.FC = () => {
         }
       ],
       [
-        'project_name',
+        'operation_type_name',
         {
-          options: operationOptions
+          options: operationTypeNameOptions,
+          onChange: (value: unknown) => {
+            setCurrentOperationTypeName(value as string);
+          }
+        }
+      ],
+      [
+        'operation_content',
+        {
+          options: operationActionOptions(currentOperationTypeName)
         }
       ]
     ]);
-  }, [bindProjects, t, userRoles]);
-
-  const columns = useMemo(() => {
-    if (!!projectName) {
-      return OperationRecordListColumn.filter(
-        (column) => column.dataIndex !== 'project_name'
-      );
-    }
-    return OperationRecordListColumn;
-  }, [projectName]);
+  }, [
+    operationTypeNameOptions,
+    operationActionOptions,
+    currentOperationTypeName
+  ]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo);
+    useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
+
+  useEffect(() => {
+    updateOperationTypeNameList();
+    updateOperationActions();
+  }, [updateOperationActions, updateOperationTypeNameList]);
 
   const onExport = () => {
     startExport();
@@ -136,13 +172,11 @@ const OperationRecordList: React.FC = () => {
     );
     const param: IGetExportOperationRecordListV1Params = {
       ...tableFilterInfo,
+      filter_operate_project_name: projectName,
       fuzzy_search_operate_user_name: searchKeyword
     };
-    if (!!projectName) {
-      param.filter_operate_project_name = projectName;
-    }
     operationRecord
-      .ExportOperationRecordList(param, {
+      .getExportOperationRecordListV1(param, {
         responseType: 'blob'
       })
       .then((res) => {
@@ -155,15 +189,12 @@ const OperationRecordList: React.FC = () => {
         finishExport();
       });
   };
+
   return (
     <article>
       {contextHolder}
       <PageHeader
-        title={
-          projectName
-            ? t('operationRecord.pageTitle')
-            : t('operationRecord.globalPageTitle')
-        }
+        title={t('menu.operationRecord')}
         extra={
           <Space size={12}>
             <BasicButton
@@ -177,11 +208,15 @@ const OperationRecordList: React.FC = () => {
           </Space>
         }
       />
+      {auditContentKeywords.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          {t('operationRecord.list.auditContentKeywordsTips', {
+            keywords: auditContentKeywords.join(' / ')
+          })}
+        </div>
+      )}
       <TableToolbar
-        refreshButton={{
-          refresh,
-          disabled: loading
-        }}
+        refreshButton={{ refresh, disabled: loading }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -210,11 +245,12 @@ const OperationRecordList: React.FC = () => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={columns}
+        columns={OperationRecordListColumn}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
       />
     </article>
   );
 };
+
 export default OperationRecordList;
