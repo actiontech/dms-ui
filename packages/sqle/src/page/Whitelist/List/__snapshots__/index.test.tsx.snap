@@ -44,6 +44,43 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
       </div>
     </div>
     <div
+      class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented-group"
+      >
+        <label
+          class="ant-segmented-item ant-segmented-item-selected"
+        >
+          <input
+            checked=""
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="整条 SQL 例外"
+          >
+            整条 SQL 例外
+          </div>
+        </label>
+        <label
+          class="ant-segmented-item"
+        >
+          <input
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="单规则例外"
+          >
+            单规则例外
+          </div>
+        </label>
+      </div>
+    </div>
+    <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
     >
       <div

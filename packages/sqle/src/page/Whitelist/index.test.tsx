@@ -2,11 +2,14 @@ import { screen, cleanup, act } from '@testing-library/react';
 import WhiteList from '.';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import auditWhiteList from '../../testUtils/mockApi/auditWhiteList';
+import instance from '../../testUtils/mockApi/instance';
+import user from '../../testUtils/mockApi/user';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { driverMeta } from '../../hooks/useDatabaseType/index.test.data';
 
 jest.mock('react-redux', () => {
   return {
@@ -15,13 +18,23 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
+
 describe('slqe/Whitelist', () => {
   let whiteListSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     whiteListSpy = auditWhiteList.getAuditWhitelist();
+    instance.getInstanceTipList();
+    user.getUserTipList();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
+        database: { driverMeta },
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
       })
     );

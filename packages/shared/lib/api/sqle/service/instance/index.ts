@@ -9,6 +9,8 @@ import { AxiosRequestConfig } from 'axios';
 import {
   IGetInstanceTipListV1Params,
   IGetInstanceTipListV1Return,
+  IGetInstanceTipListV2Params,
+  IGetInstanceTipListV2Return,
   IBatchCheckInstanceIsConnectableByNameParams,
   IBatchCheckInstanceIsConnectableByNameReturn,
   ICheckInstanceIsConnectableByNameV1Params,
@@ -36,6 +38,21 @@ class InstanceService extends ServiceBase {
 
     return this.get<IGetInstanceTipListV1Return>(
       `/v1/projects/${project_name}/instance_tips`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceTipListV2(
+    params: IGetInstanceTipListV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetInstanceTipListV2Return>(
+      `/v2/projects/${project_name}/instance_tips`,
       paramsData,
       options
     );

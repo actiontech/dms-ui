@@ -9,16 +9,26 @@ import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import instance from '../../../testUtils/mockApi/instance';
+import user from '../../../testUtils/mockApi/user';
 import {
   mockProjectInfo,
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
     useSelector: jest.fn(),
     useDispatch: jest.fn()
+  };
+});
+
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
   };
 });
 
@@ -30,8 +40,11 @@ describe('slqe/Whitelist/WhitelistList', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     whitelistSpy = auditWhiteList.getAuditWhitelist();
+    instance.getInstanceTipList();
+    user.getUserTipList();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
+        database: { driverMeta },
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
       })
     );
@@ -69,6 +82,62 @@ describe('slqe/Whitelist/WhitelistList', () => {
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalledTimes(2);
+  });
+
+  test('should render rule exception management view', async () => {
+    const ruleExceptionSpy = auditWhiteList.getSQLRuleException();
+    renderWithReduxAndTheme(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('单规则例外'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(ruleExceptionSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('项目')).toBeInTheDocument();
+    expect(screen.getByText('数据源')).toBeInTheDocument();
+    expect(screen.getByText('SQL指纹')).toBeInTheDocument();
+    expect(screen.getByText('规则名')).toBeInTheDocument();
+    expect(screen.getByText('规则描述')).toBeInTheDocument();
+    expect(screen.getByText('规则原级别')).toBeInTheDocument();
+    expect(screen.getByText('添加例外的人')).toBeInTheDocument();
+    expect(screen.getByText('添加时间')).toBeInTheDocument();
+    expect(screen.getByText('添加原因')).toBeInTheDocument();
+    expect(screen.getByText('命中信息')).toBeInTheDocument();
+    expect(screen.getByText('mysql_local_sqle')).toBeInTheDocument();
+    expect(screen.getByText('ddl_check_pk_not_exist')).toBeInTheDocument();
+    expect(screen.getByText('建表语句必须包含主键')).toBeInTheDocument();
+    expect(screen.getByText('标准管理页回归验证')).toBeInTheDocument();
+    expect(screen.getByText('查看审计')).toBeInTheDocument();
+    expect(screen.getByText('取消例外')).toBeInTheDocument();
+  });
+
+  test('should submit sql fingerprint filter in rule exception view', async () => {
+    const ruleExceptionSpy = auditWhiteList.getSQLRuleException();
+    const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('单规则例外'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const sqlFingerprintInput = getBySelector(
+      '.filter-search-input input.ant-input',
+      baseElement
+    );
+    fireEvent.change(sqlFingerprintInput, {
+      target: { value: 'ac013_standard_filter_20260618191804' }
+    });
+    fireEvent.click(
+      getBySelector('.filter-search-input .custom-icon-search', baseElement)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(ruleExceptionSpy).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_sql_fingerprint: 'ac013_standard_filter_20260618191804'
+      })
+    );
   });
 
   it('should hide table actions', async () => {

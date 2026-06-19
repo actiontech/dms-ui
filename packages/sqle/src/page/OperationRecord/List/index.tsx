@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
 import { BasicButton, PageHeader } from '@actiontech/shared';
@@ -30,6 +31,7 @@ import { DownArrowLineOutlined } from '@actiontech/icons';
 
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -49,6 +51,25 @@ const OperationRecordList: React.FC = () => {
   const { updateOperationActions, operationActionOptions } =
     useOperationActions();
 
+  const defaultFilterInfo = useMemo<OperationRecordListFilterParamType>(() => {
+    const filterOperateTypeName = searchParams.get('filter_operate_type_name');
+
+    if (!filterOperateTypeName) {
+      return {};
+    }
+
+    return {
+      filter_operate_type_name: filterOperateTypeName
+    };
+  }, [searchParams]);
+
+  const auditContentKeywords = useMemo(
+    () =>
+      searchParams.get('audit_content_keywords')?.split('|').filter(Boolean) ??
+      [],
+    [searchParams]
+  );
+
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -60,7 +81,9 @@ const OperationRecordList: React.FC = () => {
   } = useTableRequestParams<
     IOperationRecordList,
     OperationRecordListFilterParamType
-  >();
+  >({
+    defaultFilterInfo
+  });
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -73,16 +96,33 @@ const OperationRecordList: React.FC = () => {
     () => {
       const params: IGetOperationRecordListV1Params = {
         ...pagination,
+        page_size: auditContentKeywords.length > 0 ? 100 : pagination.page_size,
         ...tableFilterInfo,
         filter_operate_project_name: projectName,
         fuzzy_search_operate_user_name: searchKeyword
       };
       return handleTableRequestError(
         operationRecord.getOperationRecordListV1(params)
-      );
+      ).then((res) => {
+        if (auditContentKeywords.length === 0) {
+          return res;
+        }
+
+        const filteredData = res.list?.filter((item) => {
+          return auditContentKeywords.every((keyword) =>
+            item.operation_content?.includes(keyword)
+          );
+        });
+
+        return {
+          ...res,
+          list: filteredData,
+          total: filteredData?.length ?? 0
+        };
+      });
     },
     {
-      refreshDeps: [pagination, tableFilterInfo]
+      refreshDeps: [pagination, tableFilterInfo, auditContentKeywords]
     }
   );
 
@@ -168,6 +208,13 @@ const OperationRecordList: React.FC = () => {
           </Space>
         }
       />
+      {auditContentKeywords.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          {t('operationRecord.list.auditContentKeywordsTips', {
+            keywords: auditContentKeywords.join(' / ')
+          })}
+        </div>
+      )}
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         filterButton={{

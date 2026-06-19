@@ -10,6 +10,11 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   open,
   auditResultRecord,
   dbType,
+  projectID,
+  projectName,
+  instanceName,
+  canCreateRuleException,
+  onRuleExceptionCreated,
   clickAnalyze
 }) => {
   const { t } = useTranslation();
@@ -24,6 +29,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       onClose={onClose}
       data={{
         auditResult: auditResultRuleInfo,
+        skippedAuditResult: auditResultRecord?.skipped_audit_result,
         sql: auditResultRecord?.exec_sql ?? '',
         sqlSourceFile: auditResultRecord?.sql_source_file ?? '',
         sqlStartLine: auditResultRecord?.sql_start_line,
@@ -39,6 +45,22 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       }
       showAnnotation
       loading={loading}
+      ruleExceptionContext={
+        projectName && canCreateRuleException
+          ? {
+              projectName,
+              projectID,
+              instanceName,
+              dbType,
+              sqlFingerprint:
+                auditResultRecord?.sql_fingerprint ??
+                auditResultRecord?.audit_fingerprint ??
+                auditResultRecord?.exec_sql
+            }
+          : undefined
+      }
+      canCreateRuleException={canCreateRuleException}
+      onRuleExceptionCreated={onRuleExceptionCreated}
       extra={
         <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
           {t('execWorkflow.audit.table.analyze')}

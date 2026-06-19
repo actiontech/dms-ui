@@ -2,7 +2,7 @@ import ReportDrawer from '..';
 
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { DetailReportDrawerProps } from '../index.type';
-import { cleanup } from '@testing-library/react';
+import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/components/ReportDrawer', () => {
@@ -173,5 +173,64 @@ describe('sqle/components/ReportDrawer', () => {
       extra: <div>extra</div>
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should hide rule exception entry without create permission', () => {
+    customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      ruleExceptionContext: {
+        projectName: 'default',
+        projectID: '700300',
+        instanceName: 'mysql_local_sqle',
+        sqlFingerprint: 'fp'
+      },
+      onClose: jest.fn()
+    });
+
+    expect(screen.queryByText('添加为单规则例外')).not.toBeInTheDocument();
+  });
+
+  it('should show rule exception entry with create permission', () => {
+    customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      ruleExceptionContext: {
+        projectName: 'default',
+        projectID: '700300',
+        instanceName: 'mysql_local_sqle',
+        sqlFingerprint: 'fp'
+      },
+      canCreateRuleException: true,
+      onClose: jest.fn()
+    });
+
+    expect(screen.getByText('添加为单规则例外')).toBeInTheDocument();
   });
 });

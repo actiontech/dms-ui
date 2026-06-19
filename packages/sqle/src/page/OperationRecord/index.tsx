@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
-import { Typography } from 'antd';
+import { PageHeader } from '@actiontech/shared';
 import OperationRecordList from './List';
 
 const OperationRecord = () => {
@@ -12,16 +11,7 @@ const OperationRecord = () => {
       <PageHeader title={t('operationRecord.pageTitle')} />
       {/* #endif */}
 
-      <EnterpriseFeatureDisplay
-        featureName={t('operationRecord.pageTitle')}
-        eeFeatureDescription={
-          <Typography.Paragraph className="paragraph">
-            {t('operationRecord.ceTips')}
-          </Typography.Paragraph>
-        }
-      >
-        <OperationRecordList />
-      </EnterpriseFeatureDisplay>
+      <OperationRecordList />
     </>
   );
 };

@@ -12,7 +12,10 @@ import DownloadRecord from '../DownloadRecord';
 import AuditResultTable from './Table';
 import AuditResultFilterContainer from '../AuditResultFilterContainer';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import useAuditResultFilterParams from '../AuditResultFilterContainer/useAuditResultFilterParams';
 import {
   auditLevelDictionary,
@@ -22,10 +25,12 @@ import {
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
-  showTaskTab = true
+  showTaskTab = true,
+  onRuleExceptionCreated
 }) => {
   const { t } = useTranslation();
-  const { projectID } = useCurrentProject();
+  const { projectID, projectName, projectArchive } = useCurrentProject();
+  const { isAdmin, isProjectManager } = useCurrentUser();
   const {
     noDuplicate,
     setNoDuplicate,
@@ -39,6 +44,10 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
+
+  const canCreateRuleException = useMemo(() => {
+    return (isAdmin || isProjectManager(projectName)) && !projectArchive;
+  }, [isAdmin, isProjectManager, projectName, projectArchive]);
 
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
@@ -123,8 +132,12 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         noDuplicate={noDuplicate}
         auditLevelFilterValue={auditLevelFilterValue}
         projectID={projectID}
+        projectName={projectName}
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
+        instanceName={currentTask?.instance_name}
+        canCreateRuleException={canCreateRuleException}
+        onRuleExceptionCreated={onRuleExceptionCreated}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );

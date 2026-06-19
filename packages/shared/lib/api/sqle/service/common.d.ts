@@ -529,6 +529,66 @@ export interface ICreateAuditWhitelistReqV1 {
   value?: string;
 }
 
+export interface ICreateSQLRuleExceptionReqV1 {
+  instance_id?: string;
+
+  sql_fingerprint?: string;
+
+  rule_name?: string;
+
+  rule_desc?: string;
+
+  rule_level?: string;
+
+  reason?: string;
+}
+
+export interface ISQLRuleExceptionResV1 {
+  sql_rule_exception_id?: number;
+
+  project_name?: string;
+
+  project_id?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  sql_fingerprint?: string;
+
+  rule_name?: string;
+
+  rule_desc?: string;
+
+  rule_level?: string;
+
+  reason?: string;
+
+  created_by?: string;
+
+  created_at?: string;
+
+  hit_count?: number;
+
+  last_match_time?: string;
+
+  matched_count?: number;
+
+  match_info?: string;
+
+  hit_info?: string;
+}
+
+export interface IGetSQLRuleExceptionResV1 {
+  code?: number;
+
+  data?: ISQLRuleExceptionResV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface ICreateBlacklistReqV1 {
   content?: string;
 
@@ -3125,6 +3185,12 @@ export interface IAuditTaskSQLResV2 {
   audit_level?: string;
 
   audit_result?: IAuditResult[];
+
+  skipped_audit_result?: (IAuditResult & Partial<ISQLRuleExceptionResV1>)[];
+
+  sql_fingerprint?: string;
+
+  audit_fingerprint?: string;
 
   audit_status?: string;
 
