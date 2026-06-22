@@ -139,7 +139,9 @@ exports[`useInstance should be group instance by database type 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql_instance_test_name_1
                       </span>
                     </span>
@@ -163,7 +165,9 @@ exports[`useInstance should be group instance by database type 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql_instance_test_name_2
                       </span>
                     </span>
@@ -204,7 +208,9 @@ exports[`useInstance should be group instance by database type 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         oracle_instance_test_name
                       </span>
                     </span>
@@ -245,7 +251,9 @@ exports[`useInstance should be group instance by database type 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         sqlserver_instance_test_name
                       </span>
                     </span>
@@ -533,7 +541,9 @@ exports[`useInstance should get instance data from request 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         instance_test_name (127.0.0.1:8081)
                       </span>
                     </span>
@@ -593,7 +603,9 @@ exports[`useInstance should show one database type which your choose 1`] = `
           <span
             class="instance-option-label"
           >
-            <span>
+            <span
+              style="white-space: nowrap;"
+            >
               oracle_instance_test_name
             </span>
           </span>
@@ -668,7 +680,9 @@ exports[`useInstance should show one database type which your choose 2`] = `
           <span
             class="instance-option-label"
           >
-            <span>
+            <span
+              style="white-space: nowrap;"
+            >
               oracle_instance_test_name
             </span>
           </span>
@@ -768,7 +782,9 @@ exports[`useInstance should show one database type which your choose 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         oracle_instance_test_name
                       </span>
                     </span>

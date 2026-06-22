@@ -1406,7 +1406,7 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-validating basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-validating basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1440,7 +1440,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1 (10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -1597,7 +1599,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1 (10.186.62.13:33061)
                       </span>
                     </span>
@@ -1621,7 +1625,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2 (10.186.62.14:33062)
                       </span>
                     </span>
@@ -1645,7 +1651,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database (10.186.62.15:33063)
                       </span>
                     </span>
@@ -1669,7 +1677,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5 (139.196.241.182:33061)
                       </span>
                     </span>
@@ -1710,7 +1720,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1 (10.186.62.16:5432)
                       </span>
                     </span>
@@ -1751,7 +1763,9 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1 (10.186.62.17:4000)
                       </span>
                     </span>

@@ -162,7 +162,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -293,7 +293,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -937,7 +937,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -1065,7 +1065,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -1682,7 +1682,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -1813,7 +1813,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -2192,9 +2192,14 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                             class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                           >
                             <span
-                              class="editable-select-option-label"
+                              class="css-1acawoa"
+                              color="#8C8C8C"
                             >
-                              environment-1
+                              <span
+                                class="environment-tag-name"
+                              >
+                                environment-1
+                              </span>
                             </span>
                             <span
                               class="arrow-icon"
@@ -2457,7 +2462,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -2604,7 +2609,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -2908,7 +2913,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -3039,7 +3044,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -3683,7 +3688,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"
@@ -3811,7 +3816,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                               >
                                 <div
                                   aria-required="true"
-                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                                  class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                                 >
                                   <div
                                     class="ant-select-selector"

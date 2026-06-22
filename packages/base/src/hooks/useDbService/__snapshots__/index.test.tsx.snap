@@ -15,18 +15,29 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
             {
               "alignItems": "center",
               "display": "inline-flex",
+              "maxWidth": "none",
             }
           }
         >
           <Memo(EnvironmentTag)
+            color="#F5222D"
+            ellipsis={false}
+            name="PROD"
             size="small"
             style={
               {
+                "flexShrink": 0,
                 "marginRight": 6,
               }
             }
           />
-          <span>
+          <span
+            style={
+              {
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
             test (127.0.0.1:3306)
           </span>
         </span>,
@@ -41,18 +52,29 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
             {
               "alignItems": "center",
               "display": "inline-flex",
+              "maxWidth": "none",
             }
           }
         >
           <Memo(EnvironmentTag)
+            color="#52C41A"
+            ellipsis={false}
+            name="TEST"
             size="small"
             style={
               {
+                "flexShrink": 0,
                 "marginRight": 6,
               }
             }
           />
-          <span>
+          <span
+            style={
+              {
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
             test2 (localhost:3306)
           </span>
         </span>,
@@ -103,9 +125,22 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
         >
           <span
             class="db-service-option-label"
-            style="display: inline-flex; align-items: center;"
+            style="display: inline-flex; align-items: center; max-width: none;"
           >
-            <span>
+            <span
+              class="css-cf91id"
+              color="#F5222D"
+              style="margin-right: 6px; flex-shrink: 0;"
+            >
+              <span
+                class="environment-tag-name"
+              >
+                PROD
+              </span>
+            </span>
+            <span
+              style="white-space: nowrap;"
+            >
               test (127.0.0.1:3306)
             </span>
           </span>
@@ -180,9 +215,22 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
         >
           <span
             class="db-service-option-label"
-            style="display: inline-flex; align-items: center;"
+            style="display: inline-flex; align-items: center; max-width: none;"
           >
-            <span>
+            <span
+              class="css-cf91id"
+              color="#F5222D"
+              style="margin-right: 6px; flex-shrink: 0;"
+            >
+              <span
+                class="environment-tag-name"
+              >
+                PROD
+              </span>
+            </span>
+            <span
+              style="white-space: nowrap;"
+            >
               test (127.0.0.1:3306)
             </span>
           </span>
@@ -288,9 +336,22 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
                   >
                     <span
                       class="db-service-option-label"
-                      style="display: inline-flex; align-items: center;"
+                      style="display: inline-flex; align-items: center; max-width: none;"
                     >
-                      <span>
+                      <span
+                        class="css-cf91id"
+                        color="#F5222D"
+                        style="margin-right: 6px; flex-shrink: 0;"
+                      >
+                        <span
+                          class="environment-tag-name"
+                        >
+                          PROD
+                        </span>
+                      </span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         test (127.0.0.1:3306)
                       </span>
                     </span>
@@ -313,9 +374,22 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
                   >
                     <span
                       class="db-service-option-label"
-                      style="display: inline-flex; align-items: center;"
+                      style="display: inline-flex; align-items: center; max-width: none;"
                     >
-                      <span>
+                      <span
+                        class="css-1wvwrtw"
+                        color="#52C41A"
+                        style="margin-right: 6px; flex-shrink: 0;"
+                      >
+                        <span
+                          class="environment-tag-name"
+                        >
+                          TEST
+                        </span>
+                      </span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         test2 (localhost:3306)
                       </span>
                     </span>
@@ -352,18 +426,29 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
             {
               "alignItems": "center",
               "display": "inline-flex",
+              "maxWidth": "none",
             }
           }
         >
           <Memo(EnvironmentTag)
+            color="#F5222D"
+            ellipsis={false}
+            name="PROD"
             size="small"
             style={
               {
+                "flexShrink": 0,
                 "marginRight": 6,
               }
             }
           />
-          <span>
+          <span
+            style={
+              {
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
             test (127.0.0.1:3306)
           </span>
         </span>,
@@ -378,18 +463,29 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
             {
               "alignItems": "center",
               "display": "inline-flex",
+              "maxWidth": "none",
             }
           }
         >
           <Memo(EnvironmentTag)
+            color="#52C41A"
+            ellipsis={false}
+            name="TEST"
             size="small"
             style={
               {
+                "flexShrink": 0,
                 "marginRight": 6,
               }
             }
           />
-          <span>
+          <span
+            style={
+              {
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
             test2 (localhost:3306)
           </span>
         </span>,
@@ -611,9 +707,22 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
                   >
                     <span
                       class="db-service-option-label"
-                      style="display: inline-flex; align-items: center;"
+                      style="display: inline-flex; align-items: center; max-width: none;"
                     >
-                      <span>
+                      <span
+                        class="css-cf91id"
+                        color="#F5222D"
+                        style="margin-right: 6px; flex-shrink: 0;"
+                      >
+                        <span
+                          class="environment-tag-name"
+                        >
+                          PROD
+                        </span>
+                      </span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         test (127.0.0.1:3306)
                       </span>
                     </span>
@@ -636,9 +745,22 @@ exports[`useDbService should render options when use generateDbServiceSelectOpti
                   >
                     <span
                       class="db-service-option-label"
-                      style="display: inline-flex; align-items: center;"
+                      style="display: inline-flex; align-items: center; max-width: none;"
                     >
-                      <span>
+                      <span
+                        class="css-1wvwrtw"
+                        color="#52C41A"
+                        style="margin-right: 6px; flex-shrink: 0;"
+                      >
+                        <span
+                          class="environment-tag-name"
+                        >
+                          TEST
+                        </span>
+                      </span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         test2 (localhost:3306)
                       </span>
                     </span>

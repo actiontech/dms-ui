@@ -319,7 +319,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -471,7 +471,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1179,7 +1179,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -1331,7 +1331,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"

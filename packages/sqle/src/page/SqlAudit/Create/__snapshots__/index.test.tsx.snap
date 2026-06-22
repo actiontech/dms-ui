@@ -119,7 +119,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-open ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-open ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -325,7 +325,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -453,7 +453,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -576,7 +576,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -735,7 +735,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -1649,7 +1649,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -1858,7 +1858,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1988,7 +1988,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2109,7 +2109,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2268,7 +2268,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -3011,7 +3011,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -3220,7 +3220,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3362,7 +3362,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -3483,7 +3483,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -3642,7 +3642,7 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-open"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-open"
                       >
                         <div
                           class="ant-select-selector"
@@ -4567,7 +4567,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -4776,7 +4776,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4918,7 +4918,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -5039,7 +5039,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -5198,7 +5198,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -6066,7 +6066,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -6274,7 +6274,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -6403,7 +6403,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -6435,38 +6435,12 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                                   title="mysql-1(10.186.62.13:33061)"
                                 >
                                   <span
-                                    class="custom-select-option-content css-17mg133"
+                                    class="instance-option-label"
                                   >
                                     <span
-                                      class="custom-select-option-content-prefix"
+                                      style="white-space: nowrap;"
                                     >
-                                      <span
-                                        class="css-u3jcp4"
-                                      >
-                                        <svg
-                                          color="#4583FF"
-                                          height="18"
-                                          viewBox="0 0 18 18"
-                                          width="18"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
-                                            fill="currentColor"
-                                          />
-                                        </svg>
-                                      </span>
-                                    </span>
-                                    <span
-                                      class="custom-select-option-content-label"
-                                    >
-                                      <span
-                                        class="instance-option-label"
-                                      >
-                                        <span>
-                                          mysql-1(10.186.62.13:33061)
-                                        </span>
-                                      </span>
+                                      mysql-1(10.186.62.13:33061)
                                     </span>
                                   </span>
                                 </span>
@@ -6534,7 +6508,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <span
                                 aria-live="polite"
@@ -6571,7 +6545,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                                   class="ant-select-selection-item"
                                 >
                                   <span
-                                    class="custom-select-option-content css-17mg133"
+                                    class="custom-select-option-content css-1xzd9w3"
                                   >
                                     <span
                                       class="custom-select-option-content-prefix"
@@ -6594,7 +6568,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="custom-select-option-content-label"
+                                      class="custom-select-option-content-label is-text-label"
                                     >
                                       testSchema
                                     </span>
@@ -6726,7 +6700,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-loading"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
                       >
                         <div
                           class="ant-select-selector"
@@ -7290,7 +7264,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
   <div>
     <div
       class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; padding: 0px; pointer-events: none;"
     >
       <div>
         <span
@@ -7376,7 +7350,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           mysql-1(10.186.62.13:33061)
                         </span>
                       </span>
@@ -7401,7 +7377,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           mysql-2(10.186.62.14:33062)
                         </span>
                       </span>
@@ -7426,7 +7404,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           xin-test-database(10.186.62.15:33063)
                         </span>
                       </span>
@@ -7451,7 +7431,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           mysql-5(139.196.241.182:33061)
                         </span>
                       </span>
@@ -7497,7 +7479,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           progres-1(10.186.62.16:5432)
                         </span>
                       </span>
@@ -7543,7 +7527,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       <span
                         class="instance-option-label"
                       >
-                        <span>
+                        <span
+                          style="white-space: nowrap;"
+                        >
                           tidb-1(10.186.62.17:4000)
                         </span>
                       </span>
@@ -7566,7 +7552,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
   <div>
     <div
       class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; padding: 0px; pointer-events: none;"
     >
       <div>
         <span
@@ -7843,7 +7829,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -8052,7 +8038,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -8194,7 +8180,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -8315,7 +8301,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                             >
                               <div
                                 class="ant-select-selector"
@@ -8474,7 +8460,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"

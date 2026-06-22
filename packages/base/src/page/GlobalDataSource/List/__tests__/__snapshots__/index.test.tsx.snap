@@ -362,12 +362,9 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -602,12 +599,9 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -755,12 +749,9 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -1401,12 +1392,9 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -1641,12 +1629,9 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -1794,12 +1779,9 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -2198,7 +2180,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2256,7 +2238,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2314,7 +2296,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="margin-right: 12px; padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2372,7 +2354,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
         style="padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -2678,12 +2660,9 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -2918,12 +2897,9 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -3071,12 +3047,9 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -3717,12 +3690,9 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -4593,12 +4563,9 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -5469,12 +5436,9 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -5667,12 +5631,9 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >
@@ -5778,12 +5739,9 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         <span
-                          class="css-yuolwb"
+                          class="css-1xciw48"
                           color="#8C8C8C"
                         >
-                          <span
-                            class="environment-tag-color-dot"
-                          />
                           <span
                             class="environment-tag-name"
                           >

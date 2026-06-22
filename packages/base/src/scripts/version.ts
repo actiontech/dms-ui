@@ -1,1 +1,1 @@
-export const UI_VERSION = 'main   6fdc83ce';
+export const UI_VERSION = 'dms-ui/feat-2983   ce77b682';

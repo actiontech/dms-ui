@@ -67,7 +67,7 @@ exports[`EditableSelect should render select when options is empty 2`] = `
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
-        class="css-r6iuvr"
+        class="css-ljujqb"
         height="320"
       >
         <div
@@ -273,7 +273,7 @@ exports[`EditableSelect should render select with options 2`] = `
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
-        class="css-r6iuvr"
+        class="css-ljujqb"
         height="320"
       >
         <div

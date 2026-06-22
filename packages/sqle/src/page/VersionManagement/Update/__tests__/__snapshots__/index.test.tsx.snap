@@ -395,7 +395,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -430,7 +430,9 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                         <span
                                           class="instance-option-label"
                                         >
-                                          <span>
+                                          <span
+                                            style="white-space: nowrap;"
+                                          >
                                             mysql-1(10.186.62.13:33061)
                                           </span>
                                         </span>
@@ -535,7 +537,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -570,7 +572,9 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                         <span
                                           class="instance-option-label"
                                         >
-                                          <span>
+                                          <span
+                                            style="white-space: nowrap;"
+                                          >
                                             mysql-2(10.186.62.14:33062)
                                           </span>
                                         </span>
@@ -849,7 +853,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -972,7 +976,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1190,7 +1194,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1279,7 +1283,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                   >
                                     <div
                                       class="ant-select-selector"

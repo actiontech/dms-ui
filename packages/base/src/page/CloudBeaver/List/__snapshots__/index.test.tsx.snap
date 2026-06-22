@@ -335,7 +335,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
           style="margin-right: 12px; padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -458,7 +458,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
           style="margin-right: 12px; padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"
@@ -516,7 +516,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
           style="padding-bottom: 12px;"
         >
           <div
-            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace exec-result-filter-item css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace exec-result-filter-item css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
           >
             <div
               class="ant-select-selector"

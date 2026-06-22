@@ -145,7 +145,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -240,7 +240,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -323,7 +323,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -356,7 +356,9 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -433,7 +435,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -465,7 +467,9 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -705,7 +709,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -800,7 +804,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -883,7 +887,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -916,7 +920,9 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -993,7 +999,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1025,7 +1031,9 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -1761,7 +1769,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2552,7 +2560,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2584,12 +2592,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                                 title="environment-1"
                               >
                                 <span
-                                  class="css-14lkj40"
+                                  class="css-1acawoa"
                                   color="#8C8C8C"
                                 >
-                                  <span
-                                    class="environment-tag-color-dot"
-                                  />
                                   <span
                                     class="environment-tag-name"
                                   >
@@ -2658,7 +2663,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2758,7 +2763,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2791,7 +2796,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -2868,7 +2875,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -2899,7 +2906,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -3143,58 +3152,39 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="environmentTag_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="true"
-            id="environmentTag_list_0"
-            role="option"
-          >
-            1
-          </div>
-          <div
-            aria-selected="false"
-            id="environmentTag_list_1"
-            role="option"
-          >
-            2
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="environmentTag_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  id="environmentTag_list_0"
+                  role="option"
                   title="environment-1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -3212,18 +3202,17 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  id="environmentTag_list_1"
+                  role="option"
                   title="environment-2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -3314,46 +3303,23 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="instanceId_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="false"
-            id="instanceId_list_0"
-            role="presentation"
-          />
-          <div
-            aria-selected="true"
-            id="instanceId_list_1"
-            role="option"
-          >
-            1739531854064652288
-          </div>
-          <div
-            aria-selected="false"
-            id="instanceId_list_2"
-            role="option"
-          >
-            1739531942258282496
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="instanceId_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
@@ -3376,6 +3342,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  id="instanceId_list_1"
+                  role="option"
                   title="mysql-1(10.186.62.13:33061)"
                 >
                   <div
@@ -3384,7 +3352,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1(10.186.62.13:33061)
                       </span>
                     </span>
@@ -3399,6 +3369,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_2"
+                  role="option"
                   title="mysql-2(10.186.62.14:33062)"
                 >
                   <div
@@ -3407,7 +3379,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2(10.186.62.14:33062)
                       </span>
                     </span>
@@ -3422,6 +3396,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_3"
+                  role="option"
                   title="xin-test-database(10.186.62.15:33063)"
                 >
                   <div
@@ -3430,7 +3406,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database(10.186.62.15:33063)
                       </span>
                     </span>
@@ -3445,6 +3423,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_4"
+                  role="option"
                   title="mysql-5(139.196.241.182:33061)"
                 >
                   <div
@@ -3453,7 +3433,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5(139.196.241.182:33061)
                       </span>
                     </span>
@@ -3485,6 +3467,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_6"
+                  role="option"
                   title="progres-1(10.186.62.16:5432)"
                 >
                   <div
@@ -3493,7 +3477,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1(10.186.62.16:5432)
                       </span>
                     </span>
@@ -3525,6 +3511,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_8"
+                  role="option"
                   title="tidb-1(10.186.62.17:4000)"
                 >
                   <div
@@ -3533,7 +3521,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 1`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1(10.186.62.17:4000)
                       </span>
                     </span>
@@ -3700,7 +3690,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3732,12 +3722,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                                 title="environment-1"
                               >
                                 <span
-                                  class="css-14lkj40"
+                                  class="css-1acawoa"
                                   color="#8C8C8C"
                                 >
-                                  <span
-                                    class="environment-tag-color-dot"
-                                  />
                                   <span
                                     class="environment-tag-name"
                                   >
@@ -3806,7 +3793,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3906,7 +3893,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3939,7 +3926,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -4016,7 +4005,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -4047,7 +4036,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -4495,7 +4486,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4631,7 +4622,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4878,7 +4869,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5427,7 +5418,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5563,7 +5554,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5697,7 +5688,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5801,7 +5792,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5894,58 +5885,39 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="environmentTag_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="true"
-            id="environmentTag_list_0"
-            role="option"
-          >
-            1
-          </div>
-          <div
-            aria-selected="false"
-            id="environmentTag_list_1"
-            role="option"
-          >
-            2
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="environmentTag_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  id="environmentTag_list_0"
+                  role="option"
                   title="environment-1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -5963,18 +5935,17 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  id="environmentTag_list_1"
+                  role="option"
                   title="environment-2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -6065,46 +6036,23 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="instanceId_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="false"
-            id="instanceId_list_0"
-            role="presentation"
-          />
-          <div
-            aria-selected="true"
-            id="instanceId_list_1"
-            role="option"
-          >
-            1739531854064652288
-          </div>
-          <div
-            aria-selected="false"
-            id="instanceId_list_2"
-            role="option"
-          >
-            1739531942258282496
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="instanceId_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
@@ -6127,6 +6075,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  id="instanceId_list_1"
+                  role="option"
                   title="mysql-1(10.186.62.13:33061)"
                 >
                   <div
@@ -6135,7 +6085,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1(10.186.62.13:33061)
                       </span>
                     </span>
@@ -6150,6 +6102,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_2"
+                  role="option"
                   title="mysql-2(10.186.62.14:33062)"
                 >
                   <div
@@ -6158,7 +6112,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2(10.186.62.14:33062)
                       </span>
                     </span>
@@ -6173,6 +6129,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_3"
+                  role="option"
                   title="xin-test-database(10.186.62.15:33063)"
                 >
                   <div
@@ -6181,7 +6139,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database(10.186.62.15:33063)
                       </span>
                     </span>
@@ -6196,6 +6156,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_4"
+                  role="option"
                   title="mysql-5(139.196.241.182:33061)"
                 >
                   <div
@@ -6204,7 +6166,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5(139.196.241.182:33061)
                       </span>
                     </span>
@@ -6236,6 +6200,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_6"
+                  role="option"
                   title="progres-1(10.186.62.16:5432)"
                 >
                   <div
@@ -6244,7 +6210,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1(10.186.62.16:5432)
                       </span>
                     </span>
@@ -6276,6 +6244,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_8"
+                  role="option"
                   title="tidb-1(10.186.62.17:4000)"
                 >
                   <div
@@ -6284,7 +6254,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1(10.186.62.17:4000)
                       </span>
                     </span>
@@ -6421,7 +6393,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -6453,12 +6425,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                                 title="environment-1"
                               >
                                 <span
-                                  class="css-14lkj40"
+                                  class="css-1acawoa"
                                   color="#8C8C8C"
                                 >
-                                  <span
-                                    class="environment-tag-color-dot"
-                                  />
                                   <span
                                     class="environment-tag-name"
                                   >
@@ -6527,7 +6496,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -6627,7 +6596,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -6660,7 +6629,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -6737,7 +6708,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -6768,7 +6739,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -7216,7 +7189,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -7352,7 +7325,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -7599,7 +7572,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -8160,7 +8133,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                                 data-testid="query_time_avg_operator"
                               >
                                 <div
@@ -8359,7 +8332,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                                 data-testid="row_examined_avg_operator"
                               >
                                 <div
@@ -8561,7 +8534,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                                 data-testid="audit_level_operator"
                               >
                                 <div
@@ -8650,7 +8623,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                                 data-testid="audit_level_value"
                               >
                                 <div
@@ -8805,7 +8778,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -8941,7 +8914,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -9075,7 +9048,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -9179,7 +9152,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -9708,58 +9681,39 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="environmentTag_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="true"
-            id="environmentTag_list_0"
-            role="option"
-          >
-            1
-          </div>
-          <div
-            aria-selected="false"
-            id="environmentTag_list_1"
-            role="option"
-          >
-            2
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="environmentTag_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  id="environmentTag_list_0"
+                  role="option"
                   title="environment-1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -9777,18 +9731,17 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  id="environmentTag_list_1"
+                  role="option"
                   title="environment-2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -9879,46 +9832,23 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="instanceId_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="false"
-            id="instanceId_list_0"
-            role="presentation"
-          />
-          <div
-            aria-selected="true"
-            id="instanceId_list_1"
-            role="option"
-          >
-            1739531854064652288
-          </div>
-          <div
-            aria-selected="false"
-            id="instanceId_list_2"
-            role="option"
-          >
-            1739531942258282496
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="instanceId_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
@@ -9941,6 +9871,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  id="instanceId_list_1"
+                  role="option"
                   title="mysql-1(10.186.62.13:33061)"
                 >
                   <div
@@ -9949,7 +9881,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1(10.186.62.13:33061)
                       </span>
                     </span>
@@ -9964,6 +9898,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_2"
+                  role="option"
                   title="mysql-2(10.186.62.14:33062)"
                 >
                   <div
@@ -9972,7 +9908,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2(10.186.62.14:33062)
                       </span>
                     </span>
@@ -9987,6 +9925,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_3"
+                  role="option"
                   title="xin-test-database(10.186.62.15:33063)"
                 >
                   <div
@@ -9995,7 +9935,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database(10.186.62.15:33063)
                       </span>
                     </span>
@@ -10010,6 +9952,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_4"
+                  role="option"
                   title="mysql-5(139.196.241.182:33061)"
                 >
                   <div
@@ -10018,7 +9962,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5(139.196.241.182:33061)
                       </span>
                     </span>
@@ -10050,6 +9996,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_6"
+                  role="option"
                   title="progres-1(10.186.62.16:5432)"
                 >
                   <div
@@ -10058,7 +10006,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1(10.186.62.16:5432)
                       </span>
                     </span>
@@ -10090,6 +10040,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_8"
+                  role="option"
                   title="tidb-1(10.186.62.17:4000)"
                 >
                   <div
@@ -10098,7 +10050,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1(10.186.62.17:4000)
                       </span>
                     </span>
@@ -10463,7 +10417,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -10495,12 +10449,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 title="environment-1"
                               >
                                 <span
-                                  class="css-14lkj40"
+                                  class="css-1acawoa"
                                   color="#8C8C8C"
                                 >
-                                  <span
-                                    class="environment-tag-color-dot"
-                                  />
                                   <span
                                     class="environment-tag-name"
                                   >
@@ -10569,7 +10520,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -10669,7 +10620,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -10702,7 +10653,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -10779,7 +10732,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -10810,7 +10763,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -11193,58 +11148,39 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="environmentTag_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="true"
-            id="environmentTag_list_0"
-            role="option"
-          >
-            1
-          </div>
-          <div
-            aria-selected="false"
-            id="environmentTag_list_1"
-            role="option"
-          >
-            2
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="environmentTag_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  id="environmentTag_list_0"
+                  role="option"
                   title="environment-1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -11262,18 +11198,17 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  id="environmentTag_list_1"
+                  role="option"
                   title="environment-2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -11364,46 +11299,23 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="instanceId_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="false"
-            id="instanceId_list_0"
-            role="presentation"
-          />
-          <div
-            aria-selected="true"
-            id="instanceId_list_1"
-            role="option"
-          >
-            1739531854064652288
-          </div>
-          <div
-            aria-selected="false"
-            id="instanceId_list_2"
-            role="option"
-          >
-            1739531942258282496
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="instanceId_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
@@ -11426,6 +11338,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  id="instanceId_list_1"
+                  role="option"
                   title="mysql-1(10.186.62.13:33061)"
                 >
                   <div
@@ -11434,7 +11348,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1(10.186.62.13:33061)
                       </span>
                     </span>
@@ -11449,6 +11365,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_2"
+                  role="option"
                   title="mysql-2(10.186.62.14:33062)"
                 >
                   <div
@@ -11457,7 +11375,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2(10.186.62.14:33062)
                       </span>
                     </span>
@@ -11472,6 +11392,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_3"
+                  role="option"
                   title="xin-test-database(10.186.62.15:33063)"
                 >
                   <div
@@ -11480,7 +11402,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database(10.186.62.15:33063)
                       </span>
                     </span>
@@ -11495,6 +11419,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_4"
+                  role="option"
                   title="mysql-5(139.196.241.182:33061)"
                 >
                   <div
@@ -11503,7 +11429,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5(139.196.241.182:33061)
                       </span>
                     </span>
@@ -11535,6 +11463,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_6"
+                  role="option"
                   title="progres-1(10.186.62.16:5432)"
                 >
                   <div
@@ -11543,7 +11473,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1(10.186.62.16:5432)
                       </span>
                     </span>
@@ -11575,6 +11507,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_8"
+                  role="option"
                   title="tidb-1(10.186.62.17:4000)"
                 >
                   <div
@@ -11583,7 +11517,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1(10.186.62.17:4000)
                       </span>
                     </span>
@@ -11720,7 +11656,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -11752,12 +11688,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 title="environment-1"
                               >
                                 <span
-                                  class="css-14lkj40"
+                                  class="css-1acawoa"
                                   color="#8C8C8C"
                                 >
-                                  <span
-                                    class="environment-tag-color-dot"
-                                  />
                                   <span
                                     class="environment-tag-name"
                                   >
@@ -11826,7 +11759,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -11926,7 +11859,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -11959,7 +11892,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -12036,7 +11971,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -12067,7 +12002,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                                 <span
                                   class="instance-option-label"
                                 >
-                                  <span>
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
                                     mysql-1(10.186.62.13:33061)
                                   </span>
                                 </span>
@@ -12886,58 +12823,39 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="environmentTag_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="true"
-            id="environmentTag_list_0"
-            role="option"
-          >
-            1
-          </div>
-          <div
-            aria-selected="false"
-            id="environmentTag_list_1"
-            role="option"
-          >
-            2
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="environmentTag_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  id="environmentTag_list_0"
+                  role="option"
                   title="environment-1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -12955,18 +12873,17 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  id="environmentTag_list_1"
+                  role="option"
                   title="environment-2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
                     <span
-                      class="css-14lkj40"
+                      class="css-1acawoa"
                       color="#8C8C8C"
                     >
-                      <span
-                        class="environment-tag-color-dot"
-                      />
                       <span
                         class="environment-tag-name"
                       >
@@ -13057,46 +12974,23 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown ant-select-dropdown-hidden environment-tag-select-dropdown ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; pointer-events: none;"
     >
       <div>
-        <div
-          id="instanceId_list"
-          role="listbox"
-          style="height: 0px; width: 0px; overflow: hidden;"
-        >
-          <div
-            aria-selected="false"
-            id="instanceId_list_0"
-            role="presentation"
-          />
-          <div
-            aria-selected="true"
-            id="instanceId_list_1"
-            role="option"
-          >
-            1739531854064652288
-          </div>
-          <div
-            aria-selected="false"
-            id="instanceId_list_2"
-            role="option"
-          >
-            1739531942258282496
-          </div>
-        </div>
         <div
           class="rc-virtual-list"
           style="position: relative;"
         >
           <div
             class="rc-virtual-list-holder"
-            style="max-height: 256px; overflow-y: hidden;"
+            style="max-height: 256px; overflow-y: auto;"
           >
             <div>
               <div
                 class="rc-virtual-list-holder-inner"
+                id="instanceId_list"
+                role="listbox"
                 style="display: flex; flex-direction: column;"
               >
                 <div
@@ -13119,6 +13013,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  id="instanceId_list_1"
+                  role="option"
                   title="mysql-1(10.186.62.13:33061)"
                 >
                   <div
@@ -13127,7 +13023,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-1(10.186.62.13:33061)
                       </span>
                     </span>
@@ -13142,6 +13040,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_2"
+                  role="option"
                   title="mysql-2(10.186.62.14:33062)"
                 >
                   <div
@@ -13150,7 +13050,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-2(10.186.62.14:33062)
                       </span>
                     </span>
@@ -13165,6 +13067,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_3"
+                  role="option"
                   title="xin-test-database(10.186.62.15:33063)"
                 >
                   <div
@@ -13173,7 +13077,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         xin-test-database(10.186.62.15:33063)
                       </span>
                     </span>
@@ -13188,6 +13094,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_4"
+                  role="option"
                   title="mysql-5(139.196.241.182:33061)"
                 >
                   <div
@@ -13196,7 +13104,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         mysql-5(139.196.241.182:33061)
                       </span>
                     </span>
@@ -13228,6 +13138,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_6"
+                  role="option"
                   title="progres-1(10.186.62.16:5432)"
                 >
                   <div
@@ -13236,7 +13148,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         progres-1(10.186.62.16:5432)
                       </span>
                     </span>
@@ -13268,6 +13182,8 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  id="instanceId_list_8"
+                  role="option"
                   title="tidb-1(10.186.62.17:4000)"
                 >
                   <div
@@ -13276,7 +13192,9 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan with perfor
                     <span
                       class="instance-option-label"
                     >
-                      <span>
+                      <span
+                        style="white-space: nowrap;"
+                      >
                         tidb-1(10.186.62.17:4000)
                       </span>
                     </span>
@@ -13443,7 +13361,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -13536,7 +13454,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                           >
                             <div
                               class="ant-select-selector"
@@ -13617,7 +13535,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -13720,7 +13638,7 @@ exports[`test sqle/SqlManagementConf/Create render init snap shot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper environment-tag-select css-16awv9j ant-select-single ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"

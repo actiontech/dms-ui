@@ -1428,12 +1428,9 @@ exports[`base/page/ResourceOverview render init snap 1`] = `
                                         class="ant-table-cell"
                                       >
                                         <span
-                                          class="css-yuolwb"
+                                          class="css-1xciw48"
                                           color="#8C8C8C"
                                         >
-                                          <span
-                                            class="environment-tag-color-dot"
-                                          />
                                           <span
                                             class="environment-tag-name"
                                           >
@@ -1548,12 +1545,9 @@ exports[`base/page/ResourceOverview render init snap 1`] = `
                                         class="ant-table-cell"
                                       >
                                         <span
-                                          class="css-yuolwb"
+                                          class="css-1xciw48"
                                           color="#8C8C8C"
                                         >
-                                          <span
-                                            class="environment-tag-color-dot"
-                                          />
                                           <span
                                             class="environment-tag-name"
                                           >
