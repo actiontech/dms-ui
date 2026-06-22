@@ -1,5 +1,6 @@
 import { BasicTag } from '@actiontech/dms-kit';
 import { t } from '../../../../locale';
+import { CSSProperties } from 'react';
 
 export const remediationStatusOptions = [
   'resolved',
@@ -7,13 +8,20 @@ export const remediationStatusOptions = [
   'unchanged',
   'deteriorated',
   'newly_discovered'
-];
+] as const;
+
+export type RemediationStatus = (typeof remediationStatusOptions)[number];
 
 type RemediationStatusTagProps = {
-  status?: string;
+  status?: RemediationStatus;
+  onClick?: () => void;
 };
 
-const remediationStatusColor: Record<string, string> = {
+const clickableStyle: CSSProperties = {
+  cursor: 'pointer'
+};
+
+const remediationStatusColor: Record<RemediationStatus, string> = {
   resolved: 'green',
   partially_fixed: 'blue',
   unchanged: 'gray',
@@ -22,12 +30,17 @@ const remediationStatusColor: Record<string, string> = {
 };
 
 const RemediationStatusTag: React.FC<RemediationStatusTagProps> = ({
-  status
+  status,
+  onClick
 }) => {
   const currentStatus = status || 'unchanged';
 
   return (
-    <BasicTag color={(remediationStatusColor[currentStatus] ?? 'gray') as any}>
+    <BasicTag
+      color={(remediationStatusColor[currentStatus] ?? 'gray') as any}
+      onClick={onClick}
+      style={onClick ? clickableStyle : undefined}
+    >
       {t(`sqlManagement.table.remediationStatus.${currentStatus}` as any)}
     </BasicTag>
   );

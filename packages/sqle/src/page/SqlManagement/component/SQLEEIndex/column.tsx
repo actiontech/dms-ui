@@ -13,6 +13,9 @@ import { BasicToolTip, CustomAvatar, EditText } from '@actiontech/dms-kit';
 import { SQLRenderer, TypedLink } from '@actiontech/shared';
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
+import RemediationStatusTag, {
+  RemediationStatus
+} from './RemediationStatusTag';
 import { BasicTag, basicTooltipCommonProps } from '@actiontech/dms-kit';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -31,6 +34,7 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_instance_id?: string;
   filter_audit_level?: string;
   filter_rule_name?: string;
+  filter_remediation_status?: string;
   time?: string;
 };
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
@@ -95,6 +99,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
         filterCustomType: 'select',
         filterKey: 'filter_rule_name',
         filterLabel: t('sqlManagement.table.filter.rule'),
+        checked: false
+      }
+    ],
+    [
+      'filter_remediation_status',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_remediation_status',
+        filterLabel: t('sqlManagement.table.column.remediationStatus'),
         checked: false
       }
     ]
@@ -340,6 +353,19 @@ const sqlManagementColumn: (
           </BasicToolTip>
         );
       }
+    },
+    {
+      dataIndex: 'remediation_status',
+      title: () => t('sqlManagement.table.column.remediationStatus'),
+      width: 140,
+      render: (status, record) => (
+        <RemediationStatusTag
+          status={status as RemediationStatus}
+          onClick={() => {
+            openModal(ModalName.View_Remediation_Detail_Drawer, record);
+          }}
+        />
+      )
     },
     {
       dataIndex: 'status',

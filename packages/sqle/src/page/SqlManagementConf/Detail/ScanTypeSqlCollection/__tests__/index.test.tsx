@@ -47,6 +47,8 @@ describe('test ScanTypeSqlCollection', () => {
         instanceType={instanceType}
         exportDone={jest.fn()}
         exportPending={jest.fn()}
+        remediationExportDone={jest.fn()}
+        remediationExportPending={jest.fn()}
         auditPlanType="default"
         instanceName="test"
       />

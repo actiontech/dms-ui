@@ -75,6 +75,8 @@ export default {
       highPriority: 'High priority',
       lowPriority: 'Low priority',
       auditResult: 'Audit result',
+      firstAuditResult: 'Initial audit result',
+      currentAuditResult: 'Current audit result',
       firstOccurrence: 'First occurrence time',
       lastOccurrence: 'Last occurrence time',
       occurrenceCount: 'Occurrence count',
@@ -121,5 +123,22 @@ export default {
     statusReport: {
       title: 'SQL audit result'
     }
+  },
+  remediationCompare: {
+    tab: 'Remediation compare',
+    drawerTitle: 'Remediation status details',
+    title: 'Remediation compare',
+    description:
+      'Compare the first audit result with the latest audit result and show rule changes.',
+    loadFailed: 'Failed to load remediation details. Please try again later.',
+    firstAuditMissing:
+      'No first audit snapshot is available. The latest result is shown as newly discovered issues.',
+    firstAuditResult: 'First audit result',
+    latestAuditResult: 'Latest audit result',
+    ruleDiffTitle: 'Rule differences',
+    resolved: 'Resolved rules',
+    new: 'New rules',
+    unchanged: 'Unchanged rules',
+    emptyRules: 'No matched rules'
   }
 };

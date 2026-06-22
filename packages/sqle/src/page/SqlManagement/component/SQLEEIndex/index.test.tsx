@@ -181,7 +181,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     fireEvent.click(screen.getByText('筛选'));
     expect(screen.getByText('审核规则')).toBeInTheDocument();
     const searchInput = getAllBySelector('.ant-select-selection-search-input');
-    fireEvent.mouseDown(searchInput[searchInput.length - 1]);
+    fireEvent.mouseDown(searchInput[searchInput.length - 2]);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     const options = getAllBySelector('.ant-select-item-option');
