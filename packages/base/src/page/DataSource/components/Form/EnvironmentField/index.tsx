@@ -11,13 +11,18 @@ import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { useBoolean } from 'ahooks';
+import { EnvironmentTag } from '@actiontech/shared';
 
 const ENVIRONMENT_TAG_PRESET_COLORS = [
   '#F5222D',
   '#FA8C16',
+  '#FAAD14',
   '#52C41A',
+  '#13C2C2',
   '#1677FF',
+  '#2F54EB',
   '#722ED1',
+  '#EB2F96',
   '#8C8C8C'
 ];
 
@@ -152,6 +157,14 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         onAdd={onAdd}
         colorable
         presetColors={ENVIRONMENT_TAG_PRESET_COLORS}
+        renderColorTag={(option) => (
+          <EnvironmentTag
+            name={option.label}
+            color={option.color}
+            size="small"
+            ellipsis={false}
+          />
+        )}
         loading={operationLoading || loading}
         errorMessage={
           boundServices.length > 0

@@ -1,9 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import classnames from 'classnames';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import { BasicSelectStyleWrapper, SelectContainerStyleWrapper } from './style';
 import BasicEmpty from '../BasicEmpty/BasicEmpty';
 import { CloseOutlined } from '@actiontech/icons';
 import { BasicSelectProps } from './BasicSelect.types';
+import { ENVIRONMENT_TAG_SELECT_DROPDOWN_CLASS_NAME } from './environmentTagSelectProps';
+
+const environmentTagSelectGlobalStyles = {
+  [`.${ENVIRONMENT_TAG_SELECT_DROPDOWN_CLASS_NAME}`]: {
+    minWidth: 'max-content'
+  },
+  [`.${ENVIRONMENT_TAG_SELECT_DROPDOWN_CLASS_NAME} .ant-select-item-option-content`]:
+    {
+      overflow: 'visible',
+      whiteSpace: 'nowrap'
+    }
+};
 
 const BasicSelect = <V = string,>(props: BasicSelectProps<V>) => {
   const { t } = useTranslation();
@@ -35,14 +48,22 @@ const BasicSelect = <V = string,>(props: BasicSelectProps<V>) => {
   );
 
   if (!prefix) {
-    return selectComponent;
+    return (
+      <>
+        <GlobalStyles styles={environmentTagSelectGlobalStyles} />
+        {selectComponent}
+      </>
+    );
   }
 
   return (
-    <SelectContainerStyleWrapper className="basic-select-container has-prefix">
-      <span className="basic-select-prefix">{prefix}</span>
-      {selectComponent}
-    </SelectContainerStyleWrapper>
+    <>
+      <GlobalStyles styles={environmentTagSelectGlobalStyles} />
+      <SelectContainerStyleWrapper className="basic-select-container has-prefix">
+        <span className="basic-select-prefix">{prefix}</span>
+        {selectComponent}
+      </SelectContainerStyleWrapper>
+    </>
   );
 };
 

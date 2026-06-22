@@ -15,11 +15,12 @@ const hexToRgba = (hexColor: string, alpha: number) => {
 export const EnvironmentTagStyleWrapper = styled('span')<{
   color: string;
   size: 'small' | 'default';
+  ellipsis?: boolean;
 }>`
   display: inline-flex;
   align-items: center;
   width: max-content;
-  max-width: 100%;
+  max-width: ${({ ellipsis = true }) => (ellipsis ? '100%' : 'none')};
   height: ${({ size }) => (size === 'small' ? '22px' : '24px')};
   padding: ${({ size }) => (size === 'small' ? '0 6px' : '0 8px')};
   border-radius: 4px;
@@ -29,19 +30,11 @@ export const EnvironmentTagStyleWrapper = styled('span')<{
   font-size: 12px;
   line-height: 1;
   vertical-align: middle;
-
-  .environment-tag-color-dot {
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    margin-right: 6px;
-    border-radius: 50%;
-    background: ${({ color }) => color};
-  }
+  flex-shrink: 0;
 
   .environment-tag-name {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: ${({ ellipsis = true }) => (ellipsis ? 'hidden' : 'visible')};
+    text-overflow: ${({ ellipsis = true }) => (ellipsis ? 'ellipsis' : 'unset')};
     white-space: nowrap;
   }
 `;

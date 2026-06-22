@@ -9,6 +9,7 @@ export type EnvironmentTagProps = {
   size?: 'small' | 'default';
   className?: string;
   style?: CSSProperties;
+  ellipsis?: boolean;
 };
 
 const EnvironmentTag: React.FC<EnvironmentTagProps> = ({
@@ -16,7 +17,8 @@ const EnvironmentTag: React.FC<EnvironmentTagProps> = ({
   color,
   size = 'default',
   className,
-  style
+  style,
+  ellipsis = true
 }) => {
   if (!name) {
     return null;
@@ -30,8 +32,8 @@ const EnvironmentTag: React.FC<EnvironmentTagProps> = ({
       size={size}
       className={className}
       style={style}
+      ellipsis={ellipsis}
     >
-      <span className="environment-tag-color-dot" />
       <span className="environment-tag-name">{name}</span>
     </EnvironmentTagStyleWrapper>
   );

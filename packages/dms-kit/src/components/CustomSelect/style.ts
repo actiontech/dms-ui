@@ -37,7 +37,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
         .custom-select-option-content {
           display: inline-flex;
           align-items: center;
-          max-width: 100%;
+          max-width: none;
         }
       }
     }
@@ -93,11 +93,19 @@ export const CustomSelectOptionLabelStyleWrapper = styled('span')`
 
   .custom-select-option-content-label {
     font-weight: 500;
-    text-overflow: ellipsis;
     white-space: pre;
-    overflow: hidden;
     color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.content.labelColor};
+
+    &.is-text-label {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:not(.is-text-label) {
+      overflow: visible;
+      max-width: none;
+    }
   }
 `;
 

@@ -51,6 +51,13 @@ export const BasicSelectStyleWrapper = styled(Select<any>)`
     }
   }
 
+  &.environment-tag-select.ant-select.basic-select-wrapper {
+    .ant-select-selector .ant-select-selection-item {
+      overflow: visible;
+      text-overflow: unset;
+    }
+  }
+
   &.ant-select-disabled {
     .ant-select-selector {
       border: ${({ theme }) =>

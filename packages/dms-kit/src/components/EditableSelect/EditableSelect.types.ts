@@ -29,4 +29,7 @@ export interface EditableSelectProps {
   contentMaxHeight?: number;
   colorable?: boolean;
   presetColors?: string[];
+  renderColorTag?: (
+    option: Pick<EditableSelectOption, 'label' | 'color'>
+  ) => React.ReactNode;
 }

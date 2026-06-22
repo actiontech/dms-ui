@@ -41,8 +41,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         typeof option.label === 'string'
           ? option.label
           : option.text ?? option.value;
-      const displayLabel =
-        typeof option.label === 'string' ? showLabel : option.label;
 
       if (
         !showLabel.toLowerCase().includes(innerSearchValue?.toLowerCase() ?? '')
@@ -53,8 +51,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         ...option,
         optionLabel: !!props.mode ? (
           showLabel
+        ) : typeof option.label === 'string' ? (
+          <CustomOptionLabel prefix={valuePrefix} label={showLabel} />
         ) : (
-          <CustomOptionLabel prefix={valuePrefix} label={displayLabel} />
+          option.label
         )
       };
     };
@@ -154,7 +154,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       }
       popupClassName={classnames('custom-select-popup-wrapper', popupClassName)}
       dropdownStyle={{
-        padding: 0
+        padding: 0,
+        minWidth: 'max-content'
       }}
       showSearch={false}
       tagRender={tagRender}

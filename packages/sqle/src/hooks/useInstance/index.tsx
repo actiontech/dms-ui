@@ -82,9 +82,10 @@ const useInstance = () => {
                         name={item.environment_tag_name}
                         color={item.environment_tag_color}
                         size="small"
-                        style={{ marginRight: 6 }}
+                        ellipsis={false}
+                        style={{ marginRight: 6, flexShrink: 0 }}
                       />
-                      <span>{label}</span>
+                      <span style={{ whiteSpace: 'nowrap' }}>{label}</span>
                     </span>
                   </Select.Option>
                 );
@@ -116,9 +117,10 @@ const useInstance = () => {
                   name={v.environment_tag_name}
                   color={v.environment_tag_color}
                   size="small"
-                  style={{ marginRight: 6 }}
+                  ellipsis={false}
+                  style={{ marginRight: 6, flexShrink: 0 }}
                 />
-                <span>{`${v.instance_name}(${v.host}:${v.port})`}</span>
+                <span style={{ whiteSpace: 'nowrap' }}>{`${v.instance_name}(${v.host}:${v.port})`}</span>
               </span>
             )
           }))
@@ -147,9 +149,10 @@ const useInstance = () => {
                   name={v.environment_tag_name}
                   color={v.environment_tag_color}
                   size="small"
-                  style={{ marginRight: 6 }}
+                  ellipsis={false}
+                  style={{ marginRight: 6, flexShrink: 0 }}
                 />
-                <span>{`${v.instance_name}(${v.host}:${v.port})`}</span>
+                <span style={{ whiteSpace: 'nowrap' }}>{`${v.instance_name}(${v.host}:${v.port})`}</span>
               </span>
             )
           }))

@@ -2,10 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import {
-  IListDBServiceTipItem,
-  IListDBServiceV2
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo, ResponseCode } from '@actiontech/dms-kit';
 import { EnvironmentTag } from '@actiontech/shared';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
@@ -21,41 +18,20 @@ const renderDbServiceOptionLabel = (dbService: IListDBServiceTipItem) => {
   return (
     <span
       className="db-service-option-label"
-      style={{ display: 'inline-flex', alignItems: 'center' }}
+      style={{ display: 'inline-flex', alignItems: 'center', maxWidth: 'none' }}
     >
       <EnvironmentTag
         name={dbService.environment_tag?.name}
         color={dbService.environment_tag?.color}
         size="small"
-        style={{ marginRight: 6 }}
+        ellipsis={false}
+        style={{ marginRight: 6, flexShrink: 0 }}
       />
-      <span>{getDbServiceDisplayLabel(dbService)}</span>
+      <span style={{ whiteSpace: 'nowrap' }}>
+        {getDbServiceDisplayLabel(dbService)}
+      </span>
     </span>
   );
-};
-
-const mergeDbServiceEnvironmentTag = (
-  tips: IListDBServiceTipItem[],
-  dbServices: IListDBServiceV2[]
-) => {
-  if (dbServices.length === 0) {
-    return tips;
-  }
-
-  return tips.map((tip) => {
-    const dbService = dbServices.find(
-      (item) => item.uid === tip.id || item.name === tip.name
-    );
-
-    if (!dbService?.environment_tag) {
-      return tip;
-    }
-
-    return {
-      ...tip,
-      environment_tag: dbService.environment_tag
-    };
-  });
 };
 
 const useDbService = () => {
@@ -70,33 +46,7 @@ const useDbService = () => {
       DBService.ListDBServiceTips(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            const tips = res.data?.data ?? [];
-            setDbServiceList(tips);
-
-            if (!params.project_uid || tips.length === 0) {
-              return;
-            }
-
-            DBService.ListDBServicesV2({
-              project_uid: params.project_uid,
-              page_index: 1,
-              page_size: 999
-            })
-              .then((dbServicesRes) => {
-                if (dbServicesRes.data.code !== ResponseCode.SUCCESS) {
-                  return;
-                }
-
-                setDbServiceList(
-                  mergeDbServiceEnvironmentTag(
-                    tips,
-                    dbServicesRes.data?.data ?? []
-                  )
-                );
-              })
-              .catch(() => {
-                setDbServiceList(tips);
-              });
+            setDbServiceList(res.data?.data ?? []);
           } else {
             setDbServiceList([]);
           }

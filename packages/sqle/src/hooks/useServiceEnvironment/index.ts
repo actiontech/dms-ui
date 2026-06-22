@@ -36,7 +36,8 @@ const useServiceEnvironment = () => {
         label: createElement(EnvironmentTag, {
           name: environment.name,
           color: environment.color,
-          size: 'small'
+          size: 'small',
+          ellipsis: false
         }),
         text: environment.name,
         title: environment.name,

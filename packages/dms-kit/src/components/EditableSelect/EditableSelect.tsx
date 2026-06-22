@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, type ReactNode } from 'react';
 import type { CSSProperties } from 'react';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { Dropdown, Menu, Space, Popconfirm, Spin, ColorPicker } from 'antd';
@@ -36,6 +36,63 @@ const COLOR_PICKER_POPUP_INNER_STYLE: CSSProperties = {
   zIndex: 1071
 };
 
+interface EditableSelectColorControlProps {
+  color?: string;
+  onColorChange: (color?: string) => void;
+}
+
+const EditableSelectColorControl: React.FC<EditableSelectColorControlProps> = ({
+  color,
+  onColorChange
+}) => {
+  const { t } = useTranslation();
+  const [pickerOpen, setPickerOpen] = useState(false);
+
+  return (
+    <div className="editable-select-color-control">
+      <span
+        className="editable-select-color-swatch"
+        style={{ background: color ?? undefined }}
+      />
+      <span className="editable-select-color-value">
+        {color?.toUpperCase() ?? '-'}
+      </span>
+      <div className="editable-select-color-actions">
+        <EmptyBox if={!!color}>
+          <BasicButton
+            type="link"
+            size="small"
+            className="editable-select-color-action"
+            onClick={() => onColorChange(undefined)}
+          >
+            {t('common.clear')}
+          </BasicButton>
+        </EmptyBox>
+        <ColorPicker
+          value={color}
+          open={pickerOpen}
+          onOpenChange={setPickerOpen}
+          rootClassName={COLOR_PICKER_POPUP_CLASS_NAME}
+          styles={{
+            popup: COLOR_PICKER_POPUP_STYLE,
+            popupOverlayInner: COLOR_PICKER_POPUP_INNER_STYLE
+          }}
+          onChange={(nextColor) => onColorChange(nextColor.toHexString())}
+          allowClear={false}
+        >
+          <BasicButton
+            type="link"
+            size="small"
+            className="editable-select-color-action"
+          >
+            {t('common.editableSelect.select')}
+          </BasicButton>
+        </ColorPicker>
+      </div>
+    </div>
+  );
+};
+
 const EditableSelect: React.FC<EditableSelectProps> = ({
   value,
   onChange,
@@ -56,7 +113,8 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   searchPlaceholder,
   contentMaxHeight = 320,
   colorable = false,
-  presetColors = []
+  presetColors = [],
+  renderColorTag
 }) => {
   const { t } = useTranslation();
   const [newItemName, setNewItemName] = useState('');
@@ -138,14 +196,146 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     );
   }, [searchable, searchValue, options]);
 
-  const colorPresets = presetColors.length
-    ? [
-        {
-          label: '',
-          colors: presetColors
-        }
-      ]
-    : undefined;
+  const isColorFormOpen = colorable && (isAdding || !!editingItem);
+  const effectiveContentMaxHeight = isColorFormOpen
+    ? Math.max(contentMaxHeight, 420)
+    : contentMaxHeight;
+
+  const renderPresetColors = (
+    selectedColor: string | undefined,
+    onSelect: (color: string) => void
+  ) => {
+    if (!presetColors.length) {
+      return null;
+    }
+
+    return (
+      <div className="editable-select-preset-colors">
+        {presetColors.map((color) => (
+          <button
+            key={color}
+            type="button"
+            aria-label={color}
+            className={classNames('editable-select-preset-color', {
+              'editable-select-preset-color-active': selectedColor === color
+            })}
+            style={{ background: color }}
+            onClick={() => onSelect(color)}
+          />
+        ))}
+      </div>
+    );
+  };
+
+  const renderColorControl = (
+    color: string | undefined,
+    onColorChange: (color?: string) => void
+  ) => (
+    <EditableSelectColorControl color={color} onColorChange={onColorChange} />
+  );
+
+  const renderColorEditForm = ({
+    name,
+    onNameChange,
+    namePlaceholder,
+    color,
+    onColorChange,
+    previewLabel,
+    autoFocus,
+    footer
+  }: {
+    name: string;
+    onNameChange: (value: string) => void;
+    namePlaceholder?: string;
+    color: string | undefined;
+    onColorChange: (color?: string) => void;
+    previewLabel: string;
+    autoFocus?: boolean;
+    footer: ReactNode;
+  }) => (
+    <div
+      className="edit-mode editable-select-color-form"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="editable-select-form-section">
+        <div className="editable-select-form-label">
+          {t('common.editableSelect.tagName')}
+        </div>
+        <BasicInput
+          value={name}
+          autoFocus={autoFocus}
+          placeholder={namePlaceholder}
+          onChange={(e) => onNameChange(e.target.value)}
+        />
+      </div>
+
+      <EmptyBox if={colorable}>
+        <div className="editable-select-form-section">
+          <div className="editable-select-form-label">
+            {t('common.editableSelect.tagColor')}
+          </div>
+          {renderColorControl(color, onColorChange)}
+        </div>
+
+        <EmptyBox if={!!presetColors.length}>
+          <div className="editable-select-form-section">
+            <div className="editable-select-form-label">
+              {t('common.editableSelect.presetColors')}
+            </div>
+            {renderPresetColors(color, (nextColor) => onColorChange(nextColor))}
+          </div>
+        </EmptyBox>
+
+        <EmptyBox if={!!renderColorTag}>
+          <div className="editable-select-form-section">
+            <div className="editable-select-form-label">
+              {t('common.preview')}
+            </div>
+            <div className="editable-select-color-preview">
+              {renderColorTag?.({
+                label: previewLabel,
+                color
+              })}
+            </div>
+          </div>
+        </EmptyBox>
+      </EmptyBox>
+
+      <div className="button-group">{footer}</div>
+    </div>
+  );
+
+  const renderColorLabel = (option: Pick<EditableSelectOption, 'label' | 'color'>) => {
+    if (renderColorTag) {
+      return renderColorTag(option);
+    }
+
+    if (!colorable || !option.color) {
+      return null;
+    }
+
+    return (
+      <span
+        className="editable-select-color-dot"
+        style={{ background: option.color }}
+      />
+    );
+  };
+
+  const renderOptionLabel = (option: Pick<EditableSelectOption, 'label' | 'color'>) => {
+    const colorLabel = renderColorLabel(option);
+
+    if (renderColorTag) {
+      return colorLabel ?? option.label;
+    }
+
+    return (
+      <span className="editable-select-option-label">
+        <EmptyBox if={!!colorLabel}>{colorLabel}</EmptyBox>
+        {option.label}
+      </span>
+    );
+  };
 
   const generateMenuItems = (): MenuProps['items'] => {
     const optionItems: MenuProps['items'] = filteredOptions.map((option) => ({
@@ -162,56 +352,32 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
         <div>
           <div className="menu-item-content">
             {editingItem?.value === option.value ? (
-              <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
-                <BasicInput
-                  value={editName}
-                  autoFocus
-                  onChange={(e) => setEditName(e.target.value)}
-                />
-                <EmptyBox if={colorable}>
-                  <div className="editable-select-color-row">
-                    <span>{t('common.color')}</span>
-                    <ColorPicker
-                      value={editColor}
-                      presets={colorPresets}
-                      rootClassName={COLOR_PICKER_POPUP_CLASS_NAME}
-                      styles={{
-                        popup: COLOR_PICKER_POPUP_STYLE,
-                        popupOverlayInner: COLOR_PICKER_POPUP_INNER_STYLE
-                      }}
-                      onChangeComplete={(color) =>
-                        setEditColor(color.toHexString())
-                      }
-                      allowClear
-                      onClear={() => setEditColor(undefined)}
-                    />
-                  </div>
-                </EmptyBox>
-                <div className="button-group">
-                  <BasicButton size="small" onClick={cancelEditing}>
-                    {t('common.cancel')}
-                  </BasicButton>
-                  <BasicButton
-                    type="primary"
-                    size="small"
-                    onClick={handleUpdate}
-                    disabled={!editName.trim()}
-                  >
-                    {t('common.save')}
-                  </BasicButton>
-                </div>
-              </div>
+              renderColorEditForm({
+                name: editName,
+                onNameChange: setEditName,
+                color: editColor,
+                onColorChange: setEditColor,
+                previewLabel: editName.trim() || option.label,
+                autoFocus: true,
+                footer: (
+                  <>
+                    <BasicButton size="small" onClick={cancelEditing}>
+                      {t('common.cancel')}
+                    </BasicButton>
+                    <BasicButton
+                      type="primary"
+                      size="small"
+                      onClick={handleUpdate}
+                      disabled={!editName.trim()}
+                    >
+                      {t('common.save')}
+                    </BasicButton>
+                  </>
+                )
+              })
             ) : (
               <>
-                <span className="editable-select-option-label">
-                  <EmptyBox if={colorable && !!option.color}>
-                    <span
-                      className="editable-select-color-dot"
-                      style={{ background: option.color }}
-                    />
-                  </EmptyBox>
-                  {option.label}
-                </span>
+                {renderOptionLabel(option)}
                 <Space>
                   <EmptyBox if={updatable}>
                     <BasicButton
@@ -264,7 +430,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   };
 
   const dropdownContentRender = (
-    <EditableSelectStyleWrapper height={contentMaxHeight}>
+    <EditableSelectStyleWrapper height={effectiveContentMaxHeight}>
       <Spin spinning={loading}>
         <EmptyBox if={searchable}>
           <div className="editable-select-search">
@@ -292,52 +458,37 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
         <EmptyBox if={addable}>
           <div className="editable-select-add-section">
             {isAdding ? (
-              <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
-                <BasicInput
-                  value={newItemName}
-                  autoFocus
-                  onChange={(e) => setNewItemName(e.target.value)}
-                  placeholder={t('common.form.placeholder.input')}
-                />
-                <EmptyBox if={colorable}>
-                  <div className="editable-select-color-row">
-                    <span>{t('common.color')}</span>
-                    <ColorPicker
-                      value={newItemColor}
-                      presets={colorPresets}
-                      rootClassName={COLOR_PICKER_POPUP_CLASS_NAME}
-                      styles={{
-                        popup: COLOR_PICKER_POPUP_STYLE,
-                        popupOverlayInner: COLOR_PICKER_POPUP_INNER_STYLE
+              renderColorEditForm({
+                name: newItemName,
+                onNameChange: setNewItemName,
+                namePlaceholder: t('common.form.placeholder.input'),
+                color: newItemColor,
+                onColorChange: setNewItemColor,
+                previewLabel: newItemName.trim(),
+                autoFocus: true,
+                footer: (
+                  <>
+                    <BasicButton
+                      size="small"
+                      onClick={() => {
+                        setIsAdding(false);
+                        setNewItemName('');
+                        setNewItemColor(undefined);
                       }}
-                      onChangeComplete={(color) =>
-                        setNewItemColor(color.toHexString())
-                      }
-                      allowClear
-                      onClear={() => setNewItemColor(undefined)}
-                    />
-                  </div>
-                </EmptyBox>
-                <div className="button-group">
-                  <BasicButton
-                    size="small"
-                    onClick={() => {
-                      setIsAdding(false);
-                      setNewItemName('');
-                    }}
-                  >
-                    {t('common.cancel')}
-                  </BasicButton>
-                  <BasicButton
-                    type="primary"
-                    size="small"
-                    onClick={handleAdd}
-                    disabled={!newItemName.trim()}
-                  >
-                    {t('common.add')}
-                  </BasicButton>
-                </div>
-              </div>
+                    >
+                      {t('common.cancel')}
+                    </BasicButton>
+                    <BasicButton
+                      type="primary"
+                      size="small"
+                      onClick={handleAdd}
+                      disabled={!newItemName.trim()}
+                    >
+                      {t('common.add')}
+                    </BasicButton>
+                  </>
+                )
+              })
             ) : (
               <Space
                 className="add-button-wraper"
@@ -352,8 +503,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
       </Spin>
     </EditableSelectStyleWrapper>
   );
-  const selectedLabel = options.find((o) => o.value === value)?.label;
-  const selectedColor = options.find((o) => o.value === value)?.color;
+  const selectedOption = options.find((o) => o.value === value);
 
   return (
     <>
@@ -381,16 +531,20 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
             'editable-select-trigger-disabled': disabled
           })}
         >
-          {selectedLabel ? (
-            <span className="editable-select-option-label">
-              <EmptyBox if={colorable && !!selectedColor}>
-                <span
-                  className="editable-select-color-dot"
-                  style={{ background: selectedColor }}
-                />
-              </EmptyBox>
-              {selectedLabel}
-            </span>
+          {selectedOption ? (
+            renderColorTag ? (
+              renderOptionLabel(selectedOption)
+            ) : (
+              <span className="editable-select-option-label">
+                <EmptyBox if={colorable && !!selectedOption.color}>
+                  <span
+                    className="editable-select-color-dot"
+                    style={{ background: selectedOption.color }}
+                  />
+                </EmptyBox>
+                {selectedOption.label}
+              </span>
+            )
           ) : (
             <span className="placeholder">
               {placeholder ?? t('common.form.placeholder.select')}

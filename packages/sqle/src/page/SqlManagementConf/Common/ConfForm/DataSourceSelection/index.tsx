@@ -1,7 +1,8 @@
 import {
   CustomLabelContent,
   FormItemLabel,
-  FormItemSubTitle
+  FormItemSubTitle,
+  environmentTagSelectProps
 } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
 import { BasicSelect } from '@actiontech/dms-kit';
@@ -146,6 +147,7 @@ const DataSourceSelection: React.FC = () => {
         ]}
       >
         <BasicSelect
+          {...environmentTagSelectProps}
           loading={getEnvironmentListLoading}
           disabled={formItemDisabled}
           options={environmentOptions}
@@ -194,6 +196,7 @@ const DataSourceSelection: React.FC = () => {
         className="has-required-style has-label-tip"
       >
         <BasicSelect
+          {...environmentTagSelectProps}
           showSearch
           filterOption={filterOptionByLabel}
           disabled={formItemDisabled}
