@@ -112,7 +112,8 @@ export const EditableSelectStyleWrapper = styled('div')<{
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
       border-radius: 4px;
       box-sizing: border-box;
-      background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillQuaternary};
+      background: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillQuaternary};
     }
 
     .editable-select-color-value {
@@ -167,7 +168,8 @@ export const EditableSelectStyleWrapper = styled('div')<{
       min-height: 32px;
       padding: 6px 8px;
       border-radius: 4px;
-      background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillQuaternary};
+      background: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillQuaternary};
     }
 
     .button-group {

@@ -34,7 +34,8 @@ export const EnvironmentTagStyleWrapper = styled('span')<{
 
   .environment-tag-name {
     overflow: ${({ ellipsis = true }) => (ellipsis ? 'hidden' : 'visible')};
-    text-overflow: ${({ ellipsis = true }) => (ellipsis ? 'ellipsis' : 'unset')};
+    text-overflow: ${({ ellipsis = true }) =>
+      ellipsis ? 'ellipsis' : 'unset'};
     white-space: nowrap;
   }
 `;

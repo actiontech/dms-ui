@@ -305,7 +305,9 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     </div>
   );
 
-  const renderColorLabel = (option: Pick<EditableSelectOption, 'label' | 'color'>) => {
+  const renderColorLabel = (
+    option: Pick<EditableSelectOption, 'label' | 'color'>
+  ) => {
     if (renderColorTag) {
       return renderColorTag(option);
     }
@@ -322,7 +324,9 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     );
   };
 
-  const renderOptionLabel = (option: Pick<EditableSelectOption, 'label' | 'color'>) => {
+  const renderOptionLabel = (
+    option: Pick<EditableSelectOption, 'label' | 'color'>
+  ) => {
     const colorLabel = renderColorLabel(option);
 
     if (renderColorTag) {

@@ -120,7 +120,9 @@ const useInstance = () => {
                   ellipsis={false}
                   style={{ marginRight: 6, flexShrink: 0 }}
                 />
-                <span style={{ whiteSpace: 'nowrap' }}>{`${v.instance_name}(${v.host}:${v.port})`}</span>
+                <span
+                  style={{ whiteSpace: 'nowrap' }}
+                >{`${v.instance_name}(${v.host}:${v.port})`}</span>
               </span>
             )
           }))
@@ -152,7 +154,9 @@ const useInstance = () => {
                   ellipsis={false}
                   style={{ marginRight: 6, flexShrink: 0 }}
                 />
-                <span style={{ whiteSpace: 'nowrap' }}>{`${v.instance_name}(${v.host}:${v.port})`}</span>
+                <span
+                  style={{ whiteSpace: 'nowrap' }}
+                >{`${v.instance_name}(${v.host}:${v.port})`}</span>
               </span>
             )
           }))
