@@ -28,6 +28,7 @@ import pipelineConfiguration from './pipelineConfiguration';
 import versionManagement from './versionManagement';
 import sqlInsights from './sqlInsights';
 import globalDashboard from './globalDashboard';
+import dataSourceComparison from './dataSourceComparison';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -61,6 +62,7 @@ export default {
     pipelineConfiguration,
     versionManagement,
     sqlInsights,
-    globalDashboard
+    globalDashboard,
+    dataSourceComparison
   }
 };
