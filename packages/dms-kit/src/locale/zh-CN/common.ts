@@ -7,6 +7,7 @@ export default {
   unknownStatus: '未知状态...',
   unknown: '未知',
   status: '状态',
+  color: '颜色',
 
   all: '全部',
   enabled: '已启用',
@@ -265,6 +266,13 @@ export default {
     sendCode: '发送验证码',
     secondsLater: '{{number}}秒后重试'
   },
+  editableSelect: {
+    tagName: '标签名称',
+    tagColor: '标签颜色',
+    presetColors: '预设颜色',
+    select: '选择'
+  },
+
   deleteConfirmTitle: '确认要删除么?',
   somethingWentWrong: '出错了',
   backToHome: '返回首页',

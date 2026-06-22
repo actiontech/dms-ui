@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            sync/data-masking   417b194dd
+                            dms-ui/feat-2983   ce77b682
                           </article>
                         </div>
                         <div
@@ -345,7 +345,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            sync/data-masking   417b194dd
+                            dms-ui/feat-2983   ce77b682
                           </article>
                         </div>
                         <div

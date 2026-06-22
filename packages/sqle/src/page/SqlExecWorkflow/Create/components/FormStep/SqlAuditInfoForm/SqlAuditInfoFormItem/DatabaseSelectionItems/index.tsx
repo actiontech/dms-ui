@@ -222,7 +222,11 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                               ? versionFirstStageInstanceOptions
                               : instanceOptions
                           }
-                          onChange={(name) => {
+                          onChange={(
+                            name: Parameters<
+                              NonNullable<SelectProps['onChange']>
+                            >[0]
+                          ) => {
                             form.setFieldValue(
                               ['databaseInfo', field.name, 'instanceSchema'],
                               undefined
@@ -240,8 +244,15 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                             !form.getFieldValue('databaseInfo')?.[index]
                               ?.instanceName
                           }
-                          onChange={(value) =>
-                            handleInstanceSchemaChange(fieldKey, value)
+                          onChange={(
+                            value: Parameters<
+                              NonNullable<SelectProps['onChange']>
+                            >[0]
+                          ) =>
+                            handleInstanceSchemaChange(
+                              fieldKey,
+                              value as string
+                            )
                           }
                           prefix={
                             <CommonIconStyleWrapper>

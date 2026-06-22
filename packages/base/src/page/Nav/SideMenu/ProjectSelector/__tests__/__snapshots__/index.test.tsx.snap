@@ -4,7 +4,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -60,7 +60,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
   <div>
     <div
       class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-empty ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0; pointer-events: none;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px; pointer-events: none;"
     >
       <div>
         <div
@@ -254,7 +254,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -310,7 +310,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
   <div>
     <div
       class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-empty ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0; pointer-events: none;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px; pointer-events: none;"
     >
       <div>
         <div
@@ -504,7 +504,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div
@@ -535,7 +535,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = 
           class="ant-select-selection-item"
         >
           <span
-            class="custom-select-option-content css-17mg133"
+            class="custom-select-option-content css-1xzd9w3"
           >
             <span
               class="custom-select-option-content-prefix"
@@ -545,7 +545,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = 
               </span>
             </span>
             <span
-              class="custom-select-option-content-label"
+              class="custom-select-option-content-label is-text-label"
             >
               test1
             </span>
@@ -580,7 +580,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -611,7 +611,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
           class="ant-select-selection-item"
         >
           <span
-            class="custom-select-option-content css-17mg133"
+            class="custom-select-option-content css-1xzd9w3"
           >
             <span
               class="custom-select-option-content-prefix"
@@ -621,7 +621,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
               </span>
             </span>
             <span
-              class="custom-select-option-content-label"
+              class="custom-select-option-content-label is-text-label"
             >
               test1
             </span>
@@ -652,7 +652,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
   <div>
     <div
       class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px;"
     >
       <div>
         <div
@@ -889,7 +889,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -920,7 +920,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
           class="ant-select-selection-item"
         >
           <span
-            class="custom-select-option-content css-17mg133"
+            class="custom-select-option-content css-1xzd9w3"
           >
             <span
               class="custom-select-option-content-prefix"
@@ -930,7 +930,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
               </span>
             </span>
             <span
-              class="custom-select-option-content-label"
+              class="custom-select-option-content-label is-text-label"
             >
               test1
             </span>
@@ -961,7 +961,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
   <div>
     <div
       class="ant-select-dropdown custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px;"
     >
       <div>
         <div
@@ -1198,7 +1198,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -1229,7 +1229,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
           class="ant-select-selection-item"
         >
           <span
-            class="custom-select-option-content css-17mg133"
+            class="custom-select-option-content css-1xzd9w3"
           >
             <span
               class="custom-select-option-content-prefix"
@@ -1239,7 +1239,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
               </span>
             </span>
             <span
-              class="custom-select-option-content-label"
+              class="custom-select-option-content-label is-text-label"
             >
               test1
             </span>
@@ -1270,7 +1270,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
   <div>
     <div
       class="ant-select-dropdown custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px;"
     >
       <div>
         <div
@@ -1507,7 +1507,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
       searchinputref="[object Object]"
     >
       <div
@@ -1539,7 +1539,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
           style="visibility: hidden;"
         >
           <span
-            class="custom-select-option-content css-17mg133"
+            class="custom-select-option-content css-1xzd9w3"
           >
             <span
               class="custom-select-option-content-prefix"
@@ -1549,7 +1549,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
               </span>
             </span>
             <span
-              class="custom-select-option-content-label"
+              class="custom-select-option-content-label is-text-label"
             >
               test1
             </span>
@@ -1580,7 +1580,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
   <div>
     <div
       class="ant-select-dropdown custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0;"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: max-content; padding: 0px; width: 240px;"
     >
       <div>
         <div
@@ -1775,7 +1775,7 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when no data 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-1jmxnk5 ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-8xciap ant-select-single ant-select-show-arrow"
       searchinputref="[object Object]"
     >
       <div

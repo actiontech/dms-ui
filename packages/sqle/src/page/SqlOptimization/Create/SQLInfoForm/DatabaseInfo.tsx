@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { DatabaseInfoProps } from '../../index.type';
-import { Alert, Form, Space } from 'antd';
+import { Alert, Form, Space, SelectProps } from 'antd';
 import { CustomSelect } from '@actiontech/dms-kit';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
@@ -82,7 +82,9 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
             disabled={submitLoading}
             loading={instanceLoading}
             options={instanceOptions}
-            onChange={(value) => handleInstanceNameChange(value)}
+            onChange={(
+              value: Parameters<NonNullable<SelectProps['onChange']>>[0]
+            ) => handleInstanceNameChange(value as string)}
           />
         </FormItemNoLabel>
         <FormItemNoLabel

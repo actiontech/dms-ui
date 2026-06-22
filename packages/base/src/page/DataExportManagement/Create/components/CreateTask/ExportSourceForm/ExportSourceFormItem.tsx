@@ -1,9 +1,11 @@
 import {
   BasicSelect,
+  BasicInput,
+  CommonIconStyleWrapper,
+  environmentTagSelectProps,
   jsonParse,
   ROUTE_PATHS,
-  TRANSIT_FROM_CONSTANT,
-  BasicInput
+  TRANSIT_FROM_CONSTANT
 } from '@actiontech/dms-kit';
 import { FormItemLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +18,6 @@ import { CreateExportTaskFormEntryProps } from '../index.type';
 import { Form, SelectProps } from 'antd';
 import dayjs from 'dayjs';
 import { RingPieFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 import { useTypedQuery } from '@actiontech/shared';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 const ExportSourceFormItem: React.FC<
@@ -168,7 +169,10 @@ const ExportSourceFormItem: React.FC<
         ]}
       >
         <BasicSelect
+          {...environmentTagSelectProps}
           onChange={dbServiceChangeHandle}
+          optionFilterProp="label"
+          optionLabelProp="children"
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsDataExport.create.form.source.dbService')
           })}

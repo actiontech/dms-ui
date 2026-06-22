@@ -6,6 +6,7 @@ import { instanceListDefaultKey } from '../../data/common';
 import { IGetInstanceTipListV2Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/dms-kit';
+import { EnvironmentTag } from '@actiontech/shared';
 import useDatabaseType from '../useDatabaseType';
 import { SqleApi } from '@actiontech/shared/lib/api';
 const useInstance = () => {
@@ -65,14 +66,27 @@ const useInstance = () => {
             {filterInstanceList
               .filter((item) => item.instance_type === type)
               .map((item) => {
+                const label =
+                  !!item.host && !!item.port
+                    ? `${item.instance_name} (${item.host}:${item.port})`
+                    : item.instance_name;
                 return (
                   <Select.Option
                     key={item.instance_name}
                     value={item.instance_name ?? ''}
+                    label={label}
+                    title={label}
                   >
-                    {!!item.host && !!item.port
-                      ? `${item.instance_name} (${item.host}:${item.port})`
-                      : item.instance_name}
+                    <span className="instance-option-label">
+                      <EnvironmentTag
+                        name={item.environment_tag_name}
+                        color={item.environment_tag_color}
+                        size="small"
+                        ellipsis={false}
+                        style={{ marginRight: 6, flexShrink: 0 }}
+                      />
+                      <span style={{ whiteSpace: 'nowrap' }}>{label}</span>
+                    </span>
                   </Select.Option>
                 );
               })}
@@ -95,7 +109,22 @@ const useInstance = () => {
           .filter((v) => v.instance_type === type)
           .map((v) => ({
             value: v.instance_name,
-            label: `${v.instance_name}(${v.host}:${v.port})`
+            text: `${v.instance_name}(${v.host}:${v.port})`,
+            title: `${v.instance_name}(${v.host}:${v.port})`,
+            label: (
+              <span className="instance-option-label">
+                <EnvironmentTag
+                  name={v.environment_tag_name}
+                  color={v.environment_tag_color}
+                  size="small"
+                  ellipsis={false}
+                  style={{ marginRight: 6, flexShrink: 0 }}
+                />
+                <span
+                  style={{ whiteSpace: 'nowrap' }}
+                >{`${v.instance_name}(${v.host}:${v.port})`}</span>
+              </span>
+            )
           }))
       };
     });
@@ -114,7 +143,22 @@ const useInstance = () => {
           .filter((v) => v.instance_type === type)
           .map((v) => ({
             value: v.instance_id,
-            label: `${v.instance_name}(${v.host}:${v.port})`
+            text: `${v.instance_name}(${v.host}:${v.port})`,
+            title: `${v.instance_name}(${v.host}:${v.port})`,
+            label: (
+              <span className="instance-option-label">
+                <EnvironmentTag
+                  name={v.environment_tag_name}
+                  color={v.environment_tag_color}
+                  size="small"
+                  ellipsis={false}
+                  style={{ marginRight: 6, flexShrink: 0 }}
+                />
+                <span
+                  style={{ whiteSpace: 'nowrap' }}
+                >{`${v.instance_name}(${v.host}:${v.port})`}</span>
+              </span>
+            )
           }))
       };
     });

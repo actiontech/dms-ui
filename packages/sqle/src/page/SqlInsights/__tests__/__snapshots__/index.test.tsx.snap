@@ -21,7 +21,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-16awv9j ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -52,7 +52,15 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span
+                      style="white-space: nowrap;"
+                    >
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
@@ -2200,7 +2208,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-15f13hq ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -2231,7 +2239,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -2239,7 +2247,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                           自动刷新时间间隔
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           1m
                         </span>
@@ -2602,7 +2610,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -2632,7 +2640,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -2640,7 +2648,7 @@ exports[`SqlInsights should disable future time in date picker 1`] = `
                           来源
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           工单
                         </span>
@@ -2906,7 +2914,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-16awv9j ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -2937,7 +2945,15 @@ exports[`SqlInsights should get related sql list when current date range is exit
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span
+                      style="white-space: nowrap;"
+                    >
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
@@ -3073,7 +3089,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-15f13hq ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -3104,7 +3120,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -3112,7 +3128,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                           自动刷新时间间隔
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           1m
                         </span>
@@ -3349,7 +3365,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -3379,7 +3395,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -3387,7 +3403,7 @@ exports[`SqlInsights should get related sql list when current date range is exit
                           来源
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           工单
                         </span>
@@ -3870,7 +3886,7 @@ exports[`SqlInsights should render component correctly 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-select ant-select-sm basic-select-wrapper instance-select css-x5nat1 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-sm basic-select-wrapper instance-select css-16awv9j ant-select-single ant-select-show-arrow"
               style="width: 240px;"
             >
               <div
@@ -3901,7 +3917,15 @@ exports[`SqlInsights should render component correctly 1`] = `
                   class="ant-select-selection-item"
                   title="mysql-1(10.186.62.13:33061)"
                 >
-                  mysql-1(10.186.62.13:33061)
+                  <span
+                    class="instance-option-label"
+                  >
+                    <span
+                      style="white-space: nowrap;"
+                    >
+                      mysql-1(10.186.62.13:33061)
+                    </span>
+                  </span>
                 </span>
               </div>
               <span
@@ -4037,7 +4061,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace auto-refresh-interval-select css-15f13hq ant-select-single ant-select-show-arrow"
                   style="width: 200px;"
                 >
                   <div
@@ -4068,7 +4092,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -4076,7 +4100,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                           自动刷新时间间隔
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           1m
                         </span>
@@ -4311,7 +4335,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                 style="padding-bottom: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -4341,7 +4365,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                       class="ant-select-selection-item"
                     >
                       <span
-                        class="custom-select-option-content css-17mg133"
+                        class="custom-select-option-content css-1xzd9w3"
                       >
                         <span
                           class="custom-select-option-content-prefix"
@@ -4349,7 +4373,7 @@ exports[`SqlInsights should render component correctly 1`] = `
                           来源
                         </span>
                         <span
-                          class="custom-select-option-content-label"
+                          class="custom-select-option-content-label is-text-label"
                         >
                           工单
                         </span>

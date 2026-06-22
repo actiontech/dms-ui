@@ -5,13 +5,14 @@ export type EditableSelectValue = string | number;
 export interface EditableSelectOption {
   value: EditableSelectValue;
   label: string;
+  color?: string;
 }
 
 export interface EditableSelectProps {
   value?: EditableSelectValue;
   onChange?: (value: EditableSelectValue) => void;
   loading?: boolean;
-  onAdd?: (value: string) => void;
+  onAdd?: (value: string, color?: string) => void;
   addable?: boolean;
   onUpdate?: (newData: EditableSelectOption) => void;
   updatable?: boolean;
@@ -26,4 +27,9 @@ export interface EditableSelectProps {
   searchable?: boolean;
   searchPlaceholder?: string;
   contentMaxHeight?: number;
+  colorable?: boolean;
+  presetColors?: string[];
+  renderColorTag?: (
+    option: Pick<EditableSelectOption, 'label' | 'color'>
+  ) => React.ReactNode;
 }

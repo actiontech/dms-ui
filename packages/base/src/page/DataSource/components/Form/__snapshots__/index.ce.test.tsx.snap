@@ -110,7 +110,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -241,7 +241,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -564,7 +564,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+                      class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
                     >
                       <span
                         class="placeholder"
@@ -832,7 +832,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"

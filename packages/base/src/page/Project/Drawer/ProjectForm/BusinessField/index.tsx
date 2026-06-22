@@ -1,5 +1,8 @@
 import { EditableSelect } from '@actiontech/dms-kit';
-import { EditableSelectValue, EditableSelectOption } from '@actiontech/dms-kit';
+import type {
+  EditableSelectValue,
+  EditableSelectOption
+} from '@actiontech/dms-kit/es/components/EditableSelect/EditableSelect.types';
 import { useTranslation } from 'react-i18next';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';

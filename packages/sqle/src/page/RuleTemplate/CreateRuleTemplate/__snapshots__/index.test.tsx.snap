@@ -230,7 +230,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -353,7 +353,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -604,7 +604,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -662,7 +662,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -720,7 +720,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -778,7 +778,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -842,7 +842,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2038,7 +2038,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2161,7 +2161,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2412,7 +2412,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2470,7 +2470,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2528,7 +2528,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2586,7 +2586,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2650,7 +2650,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4097,7 +4097,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -4474,7 +4474,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -4567,7 +4567,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                         >
                           <div
                             class="ant-select-selector"
@@ -4802,7 +4802,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4860,7 +4860,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4918,7 +4918,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4976,7 +4976,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -5040,7 +5040,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                           style="margin-right: 4px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"

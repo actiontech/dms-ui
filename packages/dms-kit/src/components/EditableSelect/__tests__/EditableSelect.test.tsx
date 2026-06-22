@@ -1,7 +1,7 @@
 import { fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtil/superRender';
 import EditableSelect from '../EditableSelect';
-import { EditableSelectOption } from '../index.type';
+import { EditableSelectOption } from '../EditableSelect.types';
 import {
   getBySelector,
   getAllBySelector,
@@ -124,7 +124,7 @@ describe('EditableSelect', () => {
     fireEvent.click(saveButton);
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(mockOnAdd).toHaveBeenCalledWith('New Option');
+    expect(mockOnAdd).toHaveBeenCalledWith('New Option', undefined);
   });
 
   it('should disable add button when input is empty', async () => {

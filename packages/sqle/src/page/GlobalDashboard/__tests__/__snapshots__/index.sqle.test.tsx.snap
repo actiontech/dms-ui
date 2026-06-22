@@ -106,7 +106,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                 style="margin-right: 12px;"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -163,7 +163,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                  class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                 >
                   <div
                     class="ant-select-selector"

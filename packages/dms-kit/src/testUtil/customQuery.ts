@@ -70,8 +70,9 @@ export const selectOptionByIndex = (
 ) => {
   fireEvent.mouseDown(screen.getByLabelText(label));
   const option = screen.getAllByText(optionText)[index];
-  expect(option).toHaveClass('ant-select-item-option-content');
-  fireEvent.click(option);
+  const optionContent = option.closest('.ant-select-item-option-content');
+  expect(optionContent).toBeInTheDocument();
+  fireEvent.click(optionContent!);
 };
 
 /**

@@ -53,14 +53,22 @@ export const dbServicesTips: IListDBServiceTipItem[] = [
     host: '127.0.0.1',
     name: 'test',
     port: '3306',
-    id: '123123'
+    id: '123123',
+    environment_tag: {
+      name: 'PROD',
+      color: '#F5222D'
+    }
   },
   {
     db_type: 'MySQL',
     host: 'localhost',
     name: 'test2',
     port: '3306',
-    id: '300123'
+    id: '300123',
+    environment_tag: {
+      name: 'TEST',
+      color: '#52C41A'
+    }
   }
 ];
 

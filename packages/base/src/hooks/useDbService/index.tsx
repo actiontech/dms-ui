@@ -4,8 +4,36 @@ import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo, ResponseCode } from '@actiontech/dms-kit';
+import { EnvironmentTag } from '@actiontech/shared';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
+
+const getDbServiceDisplayLabel = (dbService: IListDBServiceTipItem) => {
+  return !!dbService.host && !!dbService.port
+    ? `${dbService.name} (${dbService.host}:${dbService.port})`
+    : dbService.name;
+};
+
+const renderDbServiceOptionLabel = (dbService: IListDBServiceTipItem) => {
+  return (
+    <span
+      className="db-service-option-label"
+      style={{ display: 'inline-flex', alignItems: 'center', maxWidth: 'none' }}
+    >
+      <EnvironmentTag
+        name={dbService.environment_tag?.name}
+        color={dbService.environment_tag?.color}
+        size="small"
+        ellipsis={false}
+        style={{ marginRight: 6, flexShrink: 0 }}
+      />
+      <span style={{ whiteSpace: 'nowrap' }}>
+        {getDbServiceDisplayLabel(dbService)}
+      </span>
+    </span>
+  );
+};
+
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<
     IListDBServiceTipItem[]
@@ -54,17 +82,15 @@ const useDbService = () => {
               .map((db) => {
                 const id = db.id ?? '';
                 const name = db.name ?? '';
-                const label =
-                  !!db.host && !!db.port
-                    ? `${db.name} (${db.host}:${db.port})`
-                    : db.name;
+                const label = getDbServiceDisplayLabel(db);
                 return (
                   <Select.Option
                     key={db.id}
                     value={valueType === 'id' ? id : name}
                     label={label}
+                    title={label}
                   >
-                    {label}
+                    {renderDbServiceOptionLabel(db)}
                   </Select.Option>
                 );
               })}
@@ -97,10 +123,9 @@ const useDbService = () => {
           .filter((db) => db.db_type === type)
           .map((db) => ({
             value: valueType === 'id' ? db?.id : db?.name,
-            label:
-              !!db.host && !!db.port
-                ? `${db.name} (${db.host}:${db.port})`
-                : db.name
+            text: getDbServiceDisplayLabel(db),
+            title: getDbServiceDisplayLabel(db),
+            label: renderDbServiceOptionLabel(db)
           }))
       }));
     },

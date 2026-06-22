@@ -12,6 +12,7 @@ import DBService from '../../../../api/base/service/DBService';
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
     this.ListDBServices();
+    this.ListDBServicesV2();
     this.AddDBService();
     this.UpdateDBService();
     this.DelDBService();
@@ -27,6 +28,17 @@ class MockDbServicesApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: dbServices
+      })
+    );
+    return spy;
+  }
+
+  public ListDBServicesV2() {
+    const spy = jest.spyOn(DBService, 'ListDBServicesV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: dbServices,
+        total_nums: dbServices.length
       })
     );
     return spy;

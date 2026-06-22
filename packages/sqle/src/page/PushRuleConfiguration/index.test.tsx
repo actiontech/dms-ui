@@ -3,6 +3,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import PushRuleConfiguration from '.';
 import { sqleSuperRender } from '../../testUtils/superRender';
 import MockReportPushConfigService from '@actiontech/shared/lib/testUtil/mockApi/sqle/reportPushConfigService';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act } from '@testing-library/react';
@@ -17,6 +18,7 @@ jest.mock('react-redux', () => {
 
 describe('test PushRuleConfiguration', () => {
   let mockGetReportPushConfigList: jest.SpyInstance;
+  let mockGetUserTipList: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     MockDate.set('2024-12-12:12:00:00');
@@ -25,6 +27,7 @@ describe('test PushRuleConfiguration', () => {
     mockUsePermission(undefined, { mockSelector: true });
     mockGetReportPushConfigList =
       MockReportPushConfigService.GetReportPushConfigList();
+    mockGetUserTipList = user.getUserTipList();
   });
   afterEach(() => {
     jest.clearAllMocks();
@@ -37,6 +40,9 @@ describe('test PushRuleConfiguration', () => {
     expect(mockGetReportPushConfigList).toHaveBeenCalledTimes(1);
     expect(mockGetReportPushConfigList).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
+    });
+    expect(mockGetUserTipList).toHaveBeenCalledWith({
+      filter_project: mockProjectInfo.projectName
     });
 
     await act(async () => jest.advanceTimersByTime(3000));

@@ -7,6 +7,7 @@ export default {
   unknownStatus: 'Unknown status...',
   unknown: 'Unknown',
   status: 'Status',
+  color: 'Color',
 
   all: 'All',
   enabled: 'Enabled',
@@ -271,5 +272,12 @@ export default {
     code: 'Verification code',
     sendCode: 'Send code',
     secondsLater: 'Retry in {{number}} seconds'
+  },
+
+  editableSelect: {
+    tagName: 'Tag name',
+    tagColor: 'Tag color',
+    presetColors: 'Preset colors',
+    select: 'Select'
   }
 };

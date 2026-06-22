@@ -181,7 +181,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -239,7 +239,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"

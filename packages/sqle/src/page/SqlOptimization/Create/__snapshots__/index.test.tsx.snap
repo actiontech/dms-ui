@@ -251,7 +251,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                   >
                     <div
                       class="ant-select-selector"
@@ -379,7 +379,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -501,7 +501,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                         >
                           <div
                             class="ant-select-selector"

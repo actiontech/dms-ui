@@ -57,6 +57,7 @@ describe('Project/EnvironmentField', () => {
     fireEvent.click(screen.getByText('添 加'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(createEnvironmentTagSpy).toHaveBeenCalledWith({
+      color: '',
       environment_name: 'test',
       project_uid: mockProjectInfo.projectID
     });
@@ -81,6 +82,7 @@ describe('Project/EnvironmentField', () => {
     fireEvent.click(screen.getByText('保 存'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateEnvironmentTagSpy).toHaveBeenCalledWith({
+      color: '',
       environment_tag_uid: '1',
       environment_name: 'Updated Option',
       project_uid: mockProjectInfo.projectID

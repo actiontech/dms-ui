@@ -796,6 +796,8 @@ export interface IDeleteSensitiveDataDiscoveryTaskReply {
 }
 
 export interface IEnvironmentTag {
+  color?: string;
+
   name?: string;
 
   uid?: string;
@@ -1657,6 +1659,8 @@ export interface IListDBServiceSyncTasksReply {
 
 export interface IListDBServiceTipItem {
   db_type?: string;
+
+  environment_tag?: IEnvironmentTag;
 
   host?: string;
 

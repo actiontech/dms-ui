@@ -1540,7 +1540,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"

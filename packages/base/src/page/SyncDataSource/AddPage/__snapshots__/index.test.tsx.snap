@@ -156,7 +156,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -416,7 +416,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -705,7 +705,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -852,7 +852,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -1058,7 +1058,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                                   >
                                     <div
                                       aria-required="true"
-                                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                     >
                                       <div
                                         class="ant-select-selector"
@@ -1197,7 +1197,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                                       </span>
                                       <div
                                         aria-required="true"
-                                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                                       >
                                         <div
                                           class="ant-select-selector"
@@ -2636,7 +2636,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2779,7 +2779,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -3038,7 +3038,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -3166,7 +3166,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -3580,7 +3580,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -3840,7 +3840,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -4129,7 +4129,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"
@@ -4257,7 +4257,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                                 >
                                   <div
                                     aria-required="true"
-                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                    class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                   >
                                     <div
                                       class="ant-select-selector"

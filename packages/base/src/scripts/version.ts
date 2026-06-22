@@ -1,1 +1,1 @@
-export const UI_VERSION = 'sync/data-masking   417b194dd';
+export const UI_VERSION = 'dms-ui/feat-2983   ce77b682';

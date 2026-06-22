@@ -624,7 +624,16 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -747,7 +756,16 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -915,7 +933,16 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              environment-2
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-2
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1948,7 +1975,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
               style="margin-right: 12px; padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -2006,7 +2033,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
               style="margin-right: 12px; padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -2064,7 +2091,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
               style="padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-d0rd34 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -3071,7 +3098,16 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3194,7 +3230,16 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3362,7 +3407,16 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              environment-2
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-2
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -4256,7 +4310,16 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                             <td
                               class="ant-table-cell"
                             >
-                              environment-1
+                              <span
+                                class="css-1xciw48"
+                                color="#8C8C8C"
+                              >
+                                <span
+                                  class="environment-tag-name"
+                                >
+                                  environment-1
+                                </span>
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"

@@ -6,6 +6,7 @@ import { DatabaseTypeLogo, BasicToolTip } from '@actiontech/dms-kit';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { FlagFilled, DatabaseSchemaFilled } from '@actiontech/icons';
 import { ResourceOverviewTheme } from '../../../../theme/type';
+import { EnvironmentTag } from '@actiontech/shared';
 export const ResourceDetailListColumns = (
   getLogoUrlByDbType: (dbType: string) => string,
   theme: ResourceOverviewTheme
@@ -66,7 +67,16 @@ export const ResourceDetailListColumns = (
       dataIndex: 'environment_tag',
       title: t('resourceOverview.resourceList.environment'),
       render: (environmentTag) => {
-        return environmentTag?.name ?? '-';
+        if (!environmentTag?.name) {
+          return '-';
+        }
+
+        return (
+          <EnvironmentTag
+            name={environmentTag.name}
+            color={environmentTag.color}
+          />
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_environment_tag_uid'

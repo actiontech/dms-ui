@@ -1406,7 +1406,7 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-validating basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-validating basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1437,7 +1437,15 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                                 class="ant-select-selection-item"
                                 title="mysql-1 (10.186.62.13:33061)"
                               >
-                                mysql-1 (10.186.62.13:33061)
+                                <span
+                                  class="instance-option-label"
+                                >
+                                  <span
+                                    style="white-space: nowrap;"
+                                  >
+                                    mysql-1 (10.186.62.13:33061)
+                                  </span>
+                                </span>
                               </span>
                             </div>
                             <span
@@ -1535,7 +1543,6 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
             role="presentation"
           />
           <div
-            aria-label="mysql-1 (10.186.62.13:33061)"
             aria-selected="true"
             id="instance_list_1"
             role="option"
@@ -1543,7 +1550,6 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
             mysql-1
           </div>
           <div
-            aria-label="mysql-2 (10.186.62.14:33062)"
             aria-selected="false"
             id="instance_list_2"
             role="option"
@@ -1584,12 +1590,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  label="mysql-1 (10.186.62.13:33061)"
                   title="mysql-1 (10.186.62.13:33061)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    mysql-1 (10.186.62.13:33061)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        mysql-1 (10.186.62.13:33061)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1601,12 +1616,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="mysql-2 (10.186.62.14:33062)"
                   title="mysql-2 (10.186.62.14:33062)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    mysql-2 (10.186.62.14:33062)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        mysql-2 (10.186.62.14:33062)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1618,12 +1642,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="xin-test-database (10.186.62.15:33063)"
                   title="xin-test-database (10.186.62.15:33063)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    xin-test-database (10.186.62.15:33063)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        xin-test-database (10.186.62.15:33063)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1635,12 +1668,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="mysql-5 (139.196.241.182:33061)"
                   title="mysql-5 (139.196.241.182:33061)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    mysql-5 (139.196.241.182:33061)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        mysql-5 (139.196.241.182:33061)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1669,12 +1711,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="progres-1 (10.186.62.16:5432)"
                   title="progres-1 (10.186.62.16:5432)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    progres-1 (10.186.62.16:5432)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        progres-1 (10.186.62.16:5432)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1703,12 +1754,21 @@ exports[`slqe/SqlManagementException/CreateSqlManagementException render create 
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="tidb-1 (10.186.62.17:4000)"
                   title="tidb-1 (10.186.62.17:4000)"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    tidb-1 (10.186.62.17:4000)
+                    <span
+                      class="instance-option-label"
+                    >
+                      <span
+                        style="white-space: nowrap;"
+                      >
+                        tidb-1 (10.186.62.17:4000)
+                      </span>
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"

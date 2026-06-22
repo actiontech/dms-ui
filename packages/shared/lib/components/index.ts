@@ -14,3 +14,6 @@ export * from './TypedRouter';
 export * from './BasicMDEditor';
 
 export * from './BackendForm';
+
+export { default as EnvironmentTag } from './EnvironmentTag';
+export type * from './EnvironmentTag';

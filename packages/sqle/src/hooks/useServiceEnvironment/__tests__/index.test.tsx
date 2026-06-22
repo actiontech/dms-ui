@@ -50,7 +50,15 @@ describe('sqle/hooks/useServiceEnvironment', () => {
     expect(result.current.environmentList).toEqual(mockEnvironmentTagsData);
     expect(result.current.environmentOptions).toEqual(
       mockEnvironmentTagsData.map((environment) => ({
-        label: environment.name,
+        label: expect.objectContaining({
+          props: expect.objectContaining({
+            name: environment.name,
+            color: environment.color,
+            size: 'small'
+          })
+        }),
+        text: environment.name,
+        title: environment.name,
         value: environment.uid
       }))
     );

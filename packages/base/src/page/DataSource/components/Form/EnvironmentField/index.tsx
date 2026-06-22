@@ -1,5 +1,8 @@
 import { EditableSelect } from '@actiontech/dms-kit';
-import { EditableSelectProps, EditableSelectOption } from '@actiontech/dms-kit';
+import type {
+  EditableSelectProps,
+  EditableSelectOption
+} from '@actiontech/dms-kit/es/components/EditableSelect/EditableSelect.types';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DmsApi } from '@actiontech/shared/lib/api';
@@ -8,6 +11,21 @@ import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { useBoolean } from 'ahooks';
+import { EnvironmentTag } from '@actiontech/shared';
+
+const ENVIRONMENT_TAG_PRESET_COLORS = [
+  '#F5222D',
+  '#FA8C16',
+  '#FAAD14',
+  '#52C41A',
+  '#13C2C2',
+  '#1677FF',
+  '#2F54EB',
+  '#722ED1',
+  '#EB2F96',
+  '#8C8C8C'
+];
+
 interface EnvironmentFieldProps extends Omit<EditableSelectProps, 'options'> {
   projectID?: string;
 }
@@ -36,7 +54,8 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         if (res.data.code === ResponseCode.SUCCESS) {
           return res.data.data?.map((item) => ({
             value: item.uid || '',
-            label: item.name || ''
+            label: item.name || '',
+            color: item.color || undefined
           }));
         }
       }),
@@ -45,10 +64,11 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
       ready: !!projectID
     }
   );
-  const onAdd = (v: string) => {
+  const onAdd = (v: string, color?: string) => {
     startOperationLoading();
     DmsApi.ProjectService.CreateEnvironmentTag({
       environment_name: v,
+      color: color ?? '',
       project_uid: projectID ?? ''
     })
       .then((res) => {
@@ -105,6 +125,7 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
     DmsApi.ProjectService.UpdateEnvironmentTag({
       environment_tag_uid: item.value.toString(),
       environment_name: item.label,
+      color: item.color ?? '',
       project_uid: projectID ?? ''
     })
       .then((res) => {
@@ -134,6 +155,16 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         onDelete={onDelete}
         onUpdate={onUpdate}
         onAdd={onAdd}
+        colorable
+        presetColors={ENVIRONMENT_TAG_PRESET_COLORS}
+        renderColorTag={(option) => (
+          <EnvironmentTag
+            name={option.label}
+            color={option.color}
+            size="small"
+            ellipsis={false}
+          />
+        )}
         loading={operationLoading || loading}
         errorMessage={
           boundServices.length > 0
