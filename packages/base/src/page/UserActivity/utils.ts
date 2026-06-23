@@ -4,10 +4,24 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 
 export const DATE_FORMAT = 'YYYY-MM-DD';
 
+/** 图表绘图区固定高度，避免横轴被父容器裁切 */
+export const USER_ACTIVITY_CHART_HEIGHT = 300;
+
 /** 图表底部留白，避免横轴标签被裁切 */
 export const USER_ACTIVITY_CHART_PADDING: [number, number, number, number] = [
-  16, 16, 52, 16
+  16, 16, 64, 16
 ];
+
+export const formatHourLabel = (hour?: number) => {
+  if (hour === undefined || hour === null) {
+    return '';
+  }
+  return `${String(hour).padStart(2, '0')}:00`;
+};
+
+export const USER_ACTIVITY_HOUR_LABELS = Array.from({ length: 24 }, (_, hour) =>
+  formatHourLabel(hour)
+);
 
 export const getDefaultStatDate = () => dayjs();
 
@@ -45,13 +59,6 @@ export const formatCount = (value?: number) => {
     return '-';
   }
   return formatParamsBySeparator(value);
-};
-
-export const formatHourLabel = (hour?: number) => {
-  if (hour === undefined || hour === null) {
-    return '';
-  }
-  return `${String(hour).padStart(2, '0')}:00`;
 };
 
 export const buildFullHourlyChartData = (

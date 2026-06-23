@@ -266,6 +266,7 @@ exports[`usePermission should match snapshot 1`] = `
       "RESOURCE_OVERVIEW": "page:resource_overview",
       "SYNC_DATA_SOURCE": "page:sync_data_source",
       "SYSTEM_SETTING": "page:system_setting",
+      "USER_ACTIVITY": "page:user_activity",
       "USER_CENTER": "page:user_center",
     },
     "SQLE": {
@@ -2059,6 +2060,14 @@ exports[`usePermission should match snapshot 2`] = `
       "admin",
       "systemAdministrator",
       "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:user_activity": {
+    "id": "page:user_activity",
+    "role": [
+      "admin",
+      "systemAdministrator",
     ],
     "type": "page",
   },

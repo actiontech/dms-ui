@@ -60,6 +60,7 @@ const DailyTrendChart = ({
       label: {
         autoRotate: true,
         autoHide: false,
+        offset: 10,
         style: {
           fontSize: 11
         }

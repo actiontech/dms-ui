@@ -8,7 +8,8 @@ export const PERMISSIONS = {
       SYSTEM_SETTING: 'page:system_setting',
       RESOURCE_OVERVIEW: 'page:resource_overview',
       MEMBER: 'page:member',
-      DB_SERVICE: 'page:db_service'
+      DB_SERVICE: 'page:db_service',
+      USER_ACTIVITY: 'page:user_activity'
     },
     SQLE: {
       OPERATION_RECORD: 'page:operation_record',

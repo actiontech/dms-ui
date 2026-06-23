@@ -5,7 +5,11 @@ import ChartWrapper from 'sqle/src/components/ChartCom/ChartWrapper';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { IUserActivityHourlyDistributionItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
-import { buildFullHourlyChartData, USER_ACTIVITY_CHART_PADDING } from '../../utils';
+import {
+  buildFullHourlyChartData,
+  USER_ACTIVITY_CHART_PADDING,
+  USER_ACTIVITY_HOUR_LABELS
+} from '../../utils';
 
 type HourlyDistributionChartProps = {
   loading?: boolean;
@@ -31,18 +35,25 @@ const HourlyDistributionChart = ({
     xField: 'hour_label',
     yField: 'request_count',
     appendPadding: USER_ACTIVITY_CHART_PADDING,
+    columnWidthRatio: 0.55,
     color: sharedTheme.uiToken.colorPrimary,
     xAxis: {
       label: {
-        autoRotate: false,
+        autoRotate: true,
         autoHide: false,
+        rotate: -0.75,
+        offset: 10,
         style: {
-          fontSize: 11
+          fontSize: 10,
+          textAlign: 'center'
         }
-      }
+      },
+      tickLine: null
     },
     meta: {
       hour_label: {
+        type: 'cat',
+        values: USER_ACTIVITY_HOUR_LABELS,
         alias: t('userActivity.hourlyDistribution.hour')
       },
       request_count: {
@@ -55,7 +66,7 @@ const HourlyDistributionChart = ({
     <ChartWrapper
       loading={!!loading}
       errorInfo={errorMessage}
-      dataLength={data?.length}
+      dataLength={chartData.length}
       emptyCont={t('userActivity.hourlyDistribution.emptyText')}
       onRefresh={onRefresh}
     >

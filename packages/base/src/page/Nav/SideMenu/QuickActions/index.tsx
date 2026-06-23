@@ -92,7 +92,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         title: t('dmsMenu.globalSettings.userActivity'),
         path: ROUTE_PATHS.BASE.USER_ACTIVITY,
         icon: <UserCircleFilled width={18} height={18} color="currentColor" />,
-        permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
+        permission: PERMISSIONS.PAGES.BASE.USER_ACTIVITY
       },
       {
         key: 'view-rule',

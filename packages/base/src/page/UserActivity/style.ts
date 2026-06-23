@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { USER_ACTIVITY_CHART_HEIGHT } from './utils';
 
 export const UserActivityStyleWrapper = styled('section')`
   &.user-activity-page {
@@ -31,20 +32,26 @@ export const UserActivityStyleWrapper = styled('section')`
 
       .chart-panel {
         width: 100%;
-        height: 400px;
+        height: 440px;
 
         .card-cont {
           overflow: visible;
+          height: calc(100% - 48px);
         }
 
-        .chart-wrapper .chart-box {
-          min-height: 280px;
+        .chart-wrapper {
+          height: ${USER_ACTIVITY_CHART_HEIGHT}px;
+
+          .chart-box {
+            height: ${USER_ACTIVITY_CHART_HEIGHT}px;
+            min-height: ${USER_ACTIVITY_CHART_HEIGHT}px;
+          }
         }
       }
 
       .ranking-panel {
         width: 100%;
-        height: 400px;
+        height: 440px;
       }
     }
 

@@ -95,10 +95,13 @@ const UserRankingTable = ({
           columns={columns}
           loading={loading}
           errorMessage={requestErrorMessage}
+          isPaginationFixed={false}
           pagination={{
             total: data?.total ?? 0,
             current: pagination.page_index,
-            pageSize: pagination.page_size
+            pageSize: pagination.page_size,
+            hideOnSinglePage: true,
+            showSizeChanger: (data?.total ?? 0) > 20
           }}
           onChange={tableChange}
         />

@@ -185,7 +185,7 @@ export const BaseGlobalRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.BASE.USER_ACTIVITY,
     key: 'userActivity',
     element: <UserActivity />,
-    permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
+    permission: PERMISSIONS.PAGES.BASE.USER_ACTIVITY
   }
   // #endif
 ];

@@ -40,15 +40,19 @@ const ModuleDistributionChart = ({
     xField: 'module_name',
     yField: 'request_count',
     appendPadding: USER_ACTIVITY_CHART_PADDING,
+    columnWidthRatio: 0.5,
     color: sharedTheme.uiToken.colorPrimary,
     xAxis: {
       label: {
         autoRotate: true,
         autoHide: false,
+        rotate: -0.75,
+        offset: 10,
         style: {
-          fontSize: 11
+          fontSize: 10
         }
-      }
+      },
+      tickLine: null
     },
     label: {
       position: 'top',
@@ -56,6 +60,7 @@ const ModuleDistributionChart = ({
     },
     meta: {
       module_name: {
+        type: 'cat',
         alias: t('userActivity.moduleDistribution.title')
       },
       request_count: {
