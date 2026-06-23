@@ -31,12 +31,20 @@ export const UserActivityStyleWrapper = styled('section')`
 
       .chart-panel {
         width: 100%;
-        height: 360px;
+        height: 400px;
+
+        .card-cont {
+          overflow: visible;
+        }
+
+        .chart-wrapper .chart-box {
+          min-height: 280px;
+        }
       }
 
       .ranking-panel {
         width: 100%;
-        height: 360px;
+        height: 400px;
       }
     }
 

@@ -5,6 +5,7 @@ import ChartWrapper from 'sqle/src/components/ChartCom/ChartWrapper';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { IUserActivityDailyTrendItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
+import { USER_ACTIVITY_CHART_PADDING } from '../../utils';
 
 type DailyTrendChartProps = {
   loading?: boolean;
@@ -51,12 +52,17 @@ const DailyTrendChart = ({
     seriesField: 'category',
     color: sqleTheme.statistics.rectColor,
     smooth: true,
+    appendPadding: USER_ACTIVITY_CHART_PADDING,
     legend: {
       position: 'top'
     },
     xAxis: {
       label: {
-        autoRotate: true
+        autoRotate: true,
+        autoHide: false,
+        style: {
+          fontSize: 11
+        }
       }
     }
   };

@@ -6,6 +6,7 @@ import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { IUserActivityModuleDistributionItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
 import { floatRound } from '@actiontech/shared/lib/utils/Math';
+import { USER_ACTIVITY_CHART_PADDING } from '../../utils';
 
 type ModuleDistributionChartProps = {
   loading?: boolean;
@@ -38,7 +39,17 @@ const ModuleDistributionChart = ({
     data: chartData,
     xField: 'module_name',
     yField: 'request_count',
+    appendPadding: USER_ACTIVITY_CHART_PADDING,
     color: sharedTheme.uiToken.colorPrimary,
+    xAxis: {
+      label: {
+        autoRotate: true,
+        autoHide: false,
+        style: {
+          fontSize: 11
+        }
+      }
+    },
     label: {
       position: 'top',
       formatter: (datum: { percent?: string }) => datum.percent ?? ''

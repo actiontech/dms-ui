@@ -4,7 +4,12 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 
 export const DATE_FORMAT = 'YYYY-MM-DD';
 
-export const getDefaultStatDate = () => dayjs().subtract(1, 'day');
+/** 图表底部留白，避免横轴标签被裁切 */
+export const USER_ACTIVITY_CHART_PADDING: [number, number, number, number] = [
+  16, 16, 52, 16
+];
+
+export const getDefaultStatDate = () => dayjs();
 
 export const getTrendDateRange = (statDate: Dayjs): [string, string] => {
   const end = statDate;
@@ -47,4 +52,19 @@ export const formatHourLabel = (hour?: number) => {
     return '';
   }
   return `${String(hour).padStart(2, '0')}:00`;
+};
+
+export const buildFullHourlyChartData = (
+  data?: Array<{ stat_hour?: number; request_count?: number }>
+) => {
+  const hourMap = new Map<number, number>();
+  data?.forEach((item) => {
+    if (item.stat_hour !== undefined && item.stat_hour !== null) {
+      hourMap.set(item.stat_hour, item.request_count ?? 0);
+    }
+  });
+  return Array.from({ length: 24 }, (_, hour) => ({
+    hour_label: formatHourLabel(hour),
+    request_count: hourMap.get(hour) ?? 0
+  }));
 };

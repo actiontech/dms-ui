@@ -5,7 +5,7 @@ import ChartWrapper from 'sqle/src/components/ChartCom/ChartWrapper';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { IUserActivityHourlyDistributionItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
-import { formatHourLabel } from '../../utils';
+import { buildFullHourlyChartData, USER_ACTIVITY_CHART_PADDING } from '../../utils';
 
 type HourlyDistributionChartProps = {
   loading?: boolean;
@@ -24,21 +24,23 @@ const HourlyDistributionChart = ({
   const { currentTheme } = useChangeTheme();
   const { sharedTheme } = useThemeStyleData();
 
-  const chartData = useMemo(
-    () =>
-      data?.map((item) => ({
-        hour_label: formatHourLabel(item.stat_hour),
-        request_count: item.request_count ?? 0,
-        active_users: item.active_users ?? 0
-      })) ?? [],
-    [data]
-  );
+  const chartData = useMemo(() => buildFullHourlyChartData(data), [data]);
 
   const config: ColumnConfig = {
     data: chartData,
     xField: 'hour_label',
     yField: 'request_count',
+    appendPadding: USER_ACTIVITY_CHART_PADDING,
     color: sharedTheme.uiToken.colorPrimary,
+    xAxis: {
+      label: {
+        autoRotate: false,
+        autoHide: false,
+        style: {
+          fontSize: 11
+        }
+      }
+    },
     meta: {
       hour_label: {
         alias: t('userActivity.hourlyDistribution.hour')

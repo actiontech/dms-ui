@@ -55,7 +55,9 @@ const UserRankingTable = ({
     () => [
       {
         dataIndex: 'user_name',
-        title: t('userActivity.userRanking.userName')
+        title: t('userActivity.userRanking.userName'),
+        render: (_: string, record: IUserActivityUserItem) =>
+          record.user_name || record.user_uid || '-'
       },
       {
         dataIndex: 'active_days',

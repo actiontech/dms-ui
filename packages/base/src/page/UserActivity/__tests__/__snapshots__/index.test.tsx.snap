@@ -3,7 +3,7 @@
 exports[`base/page/UserActivity render init snap 1`] = `
 <div>
   <section
-    class="user-activity-page css-2lbm0r"
+    class="user-activity-page css-1ef0t8i"
   >
     <div
       class="page-header"
@@ -30,8 +30,8 @@ exports[`base/page/UserActivity render init snap 1`] = `
               placeholder="请选择日期"
               readonly=""
               size="12"
-              title="2026-06-22"
-              value="2026-06-22"
+              title="2026-06-23"
+              value="2026-06-23"
             />
             <span
               class="ant-picker-suffix"
@@ -72,7 +72,7 @@ exports[`base/page/UserActivity render init snap 1`] = `
               placeholder="开始日期"
               readonly=""
               size="12"
-              value="2026-06-16"
+              value="2026-06-17"
             />
           </div>
           <div
@@ -111,7 +111,7 @@ exports[`base/page/UserActivity render init snap 1`] = `
               placeholder="结束日期"
               readonly=""
               size="12"
-              value="2026-06-22"
+              value="2026-06-23"
             />
           </div>
           <div
@@ -429,7 +429,7 @@ exports[`base/page/UserActivity render init snap 1`] = `
                     class="chart-box"
                   >
                     <div
-                      data-custom-params="{"data":[{"stat_date":"2026-06-20","value":2,"category":"日活跃用户"},{"stat_date":"2026-06-20","value":5,"category":"请求数"},{"stat_date":"2026-06-21","value":2,"category":"日活跃用户"},{"stat_date":"2026-06-21","value":6,"category":"请求数"},{"stat_date":"2026-06-22","value":3,"category":"日活跃用户"},{"stat_date":"2026-06-22","value":13,"category":"请求数"}],"xField":"stat_date","yField":"value","seriesField":"category","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"smooth":true,"legend":{"position":"top"},"xAxis":{"label":{"autoRotate":true}},"theme":"light"}"
+                      data-custom-params="{"data":[{"stat_date":"2026-06-20","value":2,"category":"日活跃用户"},{"stat_date":"2026-06-20","value":5,"category":"请求数"},{"stat_date":"2026-06-21","value":2,"category":"日活跃用户"},{"stat_date":"2026-06-21","value":6,"category":"请求数"},{"stat_date":"2026-06-22","value":3,"category":"日活跃用户"},{"stat_date":"2026-06-22","value":13,"category":"请求数"}],"xField":"stat_date","yField":"value","seriesField":"category","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"smooth":true,"appendPadding":[16,16,52,16],"legend":{"position":"top"},"xAxis":{"label":{"autoRotate":true,"autoHide":false,"style":{"fontSize":11}}},"theme":"light"}"
                       data-testid="mock-antd-plots"
                     />
                   </div>
@@ -478,7 +478,7 @@ exports[`base/page/UserActivity render init snap 1`] = `
                     class="chart-box"
                   >
                     <div
-                      data-custom-params="{"data":[{"module_name":"SQL工作台","request_count":4,"percent":"30.77%"},{"module_name":"SQL工单","request_count":2,"percent":"15.38%"},{"module_name":"快捷审核","request_count":2,"percent":"15.38%"}],"xField":"module_name","yField":"request_count","color":"#4583ff","label":{"position":"top"},"meta":{"module_name":{"alias":"模块访问分布"},"request_count":{"alias":"请求数"}},"theme":"light"}"
+                      data-custom-params="{"data":[{"module_name":"SQL工作台","request_count":4,"percent":"30.77%"},{"module_name":"SQL工单","request_count":2,"percent":"15.38%"},{"module_name":"快捷审核","request_count":2,"percent":"15.38%"}],"xField":"module_name","yField":"request_count","appendPadding":[16,16,52,16],"color":"#4583ff","xAxis":{"label":{"autoRotate":true,"autoHide":false,"style":{"fontSize":11}}},"label":{"position":"top"},"meta":{"module_name":{"alias":"模块访问分布"},"request_count":{"alias":"请求数"}},"theme":"light"}"
                       data-testid="mock-antd-plots"
                     />
                   </div>
@@ -527,7 +527,7 @@ exports[`base/page/UserActivity render init snap 1`] = `
                     class="chart-box"
                   >
                     <div
-                      data-custom-params="{"data":[{"hour_label":"00:00","request_count":1,"active_users":1},{"hour_label":"01:00","request_count":1,"active_users":1},{"hour_label":"02:00","request_count":1,"active_users":1},{"hour_label":"03:00","request_count":0,"active_users":0},{"hour_label":"04:00","request_count":0,"active_users":0},{"hour_label":"05:00","request_count":0,"active_users":0},{"hour_label":"06:00","request_count":0,"active_users":0},{"hour_label":"07:00","request_count":0,"active_users":0},{"hour_label":"08:00","request_count":0,"active_users":0},{"hour_label":"09:00","request_count":4,"active_users":2},{"hour_label":"10:00","request_count":0,"active_users":0},{"hour_label":"11:00","request_count":0,"active_users":0},{"hour_label":"12:00","request_count":0,"active_users":0},{"hour_label":"13:00","request_count":0,"active_users":0},{"hour_label":"14:00","request_count":0,"active_users":0},{"hour_label":"15:00","request_count":0,"active_users":0},{"hour_label":"16:00","request_count":0,"active_users":0},{"hour_label":"17:00","request_count":0,"active_users":0},{"hour_label":"18:00","request_count":0,"active_users":0},{"hour_label":"19:00","request_count":0,"active_users":0},{"hour_label":"20:00","request_count":0,"active_users":0},{"hour_label":"21:00","request_count":0,"active_users":0},{"hour_label":"22:00","request_count":0,"active_users":0},{"hour_label":"23:00","request_count":0,"active_users":0}],"xField":"hour_label","yField":"request_count","color":"#4583ff","meta":{"hour_label":{"alias":"时段"},"request_count":{"alias":"请求数"}},"theme":"light"}"
+                      data-custom-params="{"data":[{"hour_label":"00:00","request_count":1},{"hour_label":"01:00","request_count":1},{"hour_label":"02:00","request_count":1},{"hour_label":"03:00","request_count":0},{"hour_label":"04:00","request_count":0},{"hour_label":"05:00","request_count":0},{"hour_label":"06:00","request_count":0},{"hour_label":"07:00","request_count":0},{"hour_label":"08:00","request_count":0},{"hour_label":"09:00","request_count":4},{"hour_label":"10:00","request_count":0},{"hour_label":"11:00","request_count":0},{"hour_label":"12:00","request_count":0},{"hour_label":"13:00","request_count":0},{"hour_label":"14:00","request_count":0},{"hour_label":"15:00","request_count":0},{"hour_label":"16:00","request_count":0},{"hour_label":"17:00","request_count":0},{"hour_label":"18:00","request_count":0},{"hour_label":"19:00","request_count":0},{"hour_label":"20:00","request_count":0},{"hour_label":"21:00","request_count":0},{"hour_label":"22:00","request_count":0},{"hour_label":"23:00","request_count":0}],"xField":"hour_label","yField":"request_count","appendPadding":[16,16,52,16],"color":"#4583ff","xAxis":{"label":{"autoRotate":false,"autoHide":false,"style":{"fontSize":11}}},"meta":{"hour_label":{"alias":"时段"},"request_count":{"alias":"请求数"}},"theme":"light"}"
                       data-testid="mock-antd-plots"
                     />
                   </div>
