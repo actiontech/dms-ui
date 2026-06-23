@@ -135,6 +135,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "path": "/resource-overview",
       },
       {
+        "element": <div>
+          userActivity
+        </div>,
+        "key": "userActivity",
+        "path": "/user-activity",
+      },
+      {
         "children": [
           {
             "element": <div>
@@ -1192,6 +1199,20 @@ exports[`base/router-base-ee render base router when version is ee render route 
     >
       <div>
         syncDataSourceUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route userActivity render router userActivity 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        userActivity
       </div>
     </div>
   </div>

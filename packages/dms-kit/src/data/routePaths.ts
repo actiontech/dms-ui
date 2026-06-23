@@ -121,6 +121,7 @@ export const ROUTE_PATHS = {
       }
     },
     RESOURCE_OVERVIEW: '/resource-overview',
+    USER_ACTIVITY: '/user-activity',
     AVAILABILITY_ZONE: '/availability-zone'
   },
   SQLE: {

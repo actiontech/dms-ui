@@ -203,6 +203,15 @@ describe('base/router-base-ee', () => {
       });
     });
 
+    describe('render route userActivity', () => {
+      it('render router userActivity', async () => {
+        const { baseElement } = customRender(['/user-activity']);
+
+        expect(screen.getByText('userActivity')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+    });
+
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([

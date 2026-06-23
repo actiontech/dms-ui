@@ -14,6 +14,7 @@ import dmsAccount from './dmsAccount';
 import dmsDataExport from './dmsDataExport';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
 import resourceOverview from './resourceOverview';
+import userActivity from './userActivity';
 import availabilityZone from './availabilityZone';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -33,6 +34,7 @@ export default {
     dmsDataExport,
     dmsGlobalDataSource,
     resourceOverview,
-    availabilityZone
+    availabilityZone,
+    userActivity
   }
 };

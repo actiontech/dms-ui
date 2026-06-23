@@ -5,7 +5,8 @@ import {
   SignalFilled,
   ProfileSquareFilled,
   RingOutlined,
-  BookMarkOutlined
+  BookMarkOutlined,
+  UserCircleFilled
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
 import { BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
@@ -85,6 +86,13 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         path: ROUTE_PATHS.SQLE.REPORT_STATISTICS.index.path,
         icon: <SignalFilled width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
+      },
+      {
+        key: 'user-activity',
+        title: t('dmsMenu.globalSettings.userActivity'),
+        path: ROUTE_PATHS.BASE.USER_ACTIVITY,
+        icon: <UserCircleFilled width={18} height={18} color="currentColor" />,
+        permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
       },
       {
         key: 'view-rule',

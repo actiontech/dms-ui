@@ -65,6 +65,7 @@ export default {
     title: '全局设置',
     userCenter: '用户中心',
     reportStatistics: '报表统计',
+    userActivity: '用户使用情况',
     viewRule: '查看规则',
     ruleManage: '规则管理',
     system: '系统设置',

@@ -7,6 +7,7 @@ export { default as global } from './global';
 export { default as member } from './member';
 export { default as project } from './project';
 export { default as resourceOverview } from './resourceOverview';
+export { default as userActivity } from './userActivity';
 export { default as sms } from './sms';
 export { default as syncTaskList } from './syncTaskList';
 export { default as system } from './system';

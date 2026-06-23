@@ -36,6 +36,7 @@ const GlobalAddDataSource = React.lazy(
 );
 
 const ResourceOverview = React.lazy(() => import('../page/ResourceOverview'));
+const UserActivity = React.lazy(() => import('../page/UserActivity'));
 
 const AvailabilityZoneList = React.lazy(
   () => import('../page/AvailabilityZone/List')
@@ -178,6 +179,12 @@ export const BaseGlobalRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.BASE.RESOURCE_OVERVIEW,
     key: 'resourceOverview',
     element: <ResourceOverview />,
+    permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
+  },
+  {
+    path: ROUTE_PATHS.BASE.USER_ACTIVITY,
+    key: 'userActivity',
+    element: <UserActivity />,
     permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
   }
   // #endif
