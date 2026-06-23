@@ -28,10 +28,25 @@ export const UserActivityStyleWrapper = styled('section')`
 
     .chart-section {
       margin-top: 16px;
+
+      .chart-panel {
+        width: 100%;
+        height: 360px;
+      }
+
+      .ranking-panel {
+        width: 100%;
+        height: 360px;
+      }
     }
 
     .chart-card {
       height: 100%;
+
+      .ant-card-body {
+        height: calc(100% - 57px);
+        overflow: auto;
+      }
     }
   }
 `;

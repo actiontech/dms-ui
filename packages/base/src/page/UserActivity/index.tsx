@@ -152,37 +152,45 @@ const UserActivity = () => {
 
       <Row gutter={[16, 16]} className="chart-section">
         <Col span={24} xxl={12}>
-          <CardWrapper title={t('userActivity.dailyTrend.title')}>
-            <DailyTrendChart
-              loading={dailyTrendLoading}
-              errorMessage={dailyTrendError?.message}
-              data={dailyTrend}
-              onRefresh={refreshDailyTrend}
-            />
-          </CardWrapper>
+          <div className="chart-panel">
+            <CardWrapper title={t('userActivity.dailyTrend.title')}>
+              <DailyTrendChart
+                loading={dailyTrendLoading}
+                errorMessage={dailyTrendError?.message}
+                data={dailyTrend}
+                onRefresh={refreshDailyTrend}
+              />
+            </CardWrapper>
+          </div>
         </Col>
         <Col span={24} xxl={12}>
-          <CardWrapper title={t('userActivity.moduleDistribution.title')}>
-            <ModuleDistributionChart
-              loading={moduleLoading}
-              errorMessage={moduleError?.message}
-              data={moduleDistribution}
-              onRefresh={refreshModule}
-            />
-          </CardWrapper>
+          <div className="chart-panel">
+            <CardWrapper title={t('userActivity.moduleDistribution.title')}>
+              <ModuleDistributionChart
+                loading={moduleLoading}
+                errorMessage={moduleError?.message}
+                data={moduleDistribution}
+                onRefresh={refreshModule}
+              />
+            </CardWrapper>
+          </div>
         </Col>
         <Col span={24} xxl={12}>
-          <CardWrapper title={t('userActivity.hourlyDistribution.title')}>
-            <HourlyDistributionChart
-              loading={hourlyLoading}
-              errorMessage={hourlyError?.message}
-              data={hourlyDistribution}
-              onRefresh={refreshHourly}
-            />
-          </CardWrapper>
+          <div className="chart-panel">
+            <CardWrapper title={t('userActivity.hourlyDistribution.title')}>
+              <HourlyDistributionChart
+                loading={hourlyLoading}
+                errorMessage={hourlyError?.message}
+                data={hourlyDistribution}
+                onRefresh={refreshHourly}
+              />
+            </CardWrapper>
+          </div>
         </Col>
         <Col span={24} xxl={12}>
-          <UserRankingTable filterDateFrom={trendFrom} filterDateTo={trendTo} />
+          <div className="ranking-panel">
+            <UserRankingTable filterDateFrom={trendFrom} filterDateTo={trendTo} />
+          </div>
         </Col>
       </Row>
     </UserActivityStyleWrapper>
