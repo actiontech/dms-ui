@@ -38,7 +38,7 @@ export default {
     userName: 'User',
     activeDays: 'Active days',
     requestCount: 'Requests',
-    topModule: 'Top module',
+    topModule: 'Top business module',
     lastActiveAt: 'Last active',
     emptyText: 'No user activity in selected range'
   }

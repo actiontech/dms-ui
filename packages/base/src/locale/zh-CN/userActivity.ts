@@ -38,7 +38,7 @@ export default {
     userName: '用户名',
     activeDays: '活跃天数',
     requestCount: '请求数',
-    topModule: '最常用模块',
+    topModule: '最常用业务模块',
     lastActiveAt: '最近活跃时间',
     emptyText: '所选区间暂无用户活跃数据'
   }
