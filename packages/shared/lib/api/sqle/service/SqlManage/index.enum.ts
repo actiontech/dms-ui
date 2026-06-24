@@ -102,6 +102,14 @@ export enum exportSqlManageV1SortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum exportSqlManageRemediationV1ExportScopeEnum {
+  'project' = 'project',
+
+  'data_source' = 'data_source',
+
+  'scan_task' = 'scan_task'
+}
+
 export enum GetSqlManageListV2FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 
@@ -134,6 +142,18 @@ export enum GetSqlManageListV2FilterPriorityEnum {
   'high' = 'high',
 
   'low' = 'low'
+}
+
+export enum GetSqlManageListV2FilterRemediationStatusEnum {
+  'resolved' = 'resolved',
+
+  'partially_fixed' = 'partially_fixed',
+
+  'unchanged' = 'unchanged',
+
+  'deteriorated' = 'deteriorated',
+
+  'newly_discovered' = 'newly_discovered'
 }
 
 export enum GetSqlManageListV2SortFieldEnum {

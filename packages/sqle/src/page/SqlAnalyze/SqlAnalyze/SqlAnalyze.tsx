@@ -12,6 +12,7 @@ import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
 import useSQLExecPlan from './useSQLExecPlan';
 import { SqlAnalyzeProps } from '.';
+import RemediationCompare from '../SqlManage/RemediationCompare';
 const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
   const { t } = useTranslation();
   const {
@@ -20,6 +21,7 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     errorMessage,
     loading = false,
     performanceStatistics,
+    remediationCompare,
     errorType = 'error',
     sqlExecPlanCostDataSource,
     getSqlExecPlanCostDataSource,
@@ -69,25 +71,27 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     return <BasicResult status={errorType} title={errorMessage} />;
   };
   const getSegmentedOption = useMemo(() => {
+    const options = [
+      {
+        label: t('sqlAnalyze.sqlExplain'),
+        value: 'sql'
+      }
+    ];
+    if (remediationCompare) {
+      options.push({
+        label: t('sqlAnalyze.remediationCompare'),
+        value: 'remediation'
+      });
+    }
     if (
       !(
         Array.isArray(tableMetas?.table_meta_items) &&
         tableMetas?.table_meta_items.length
       )
     ) {
-      return [
-        {
-          label: t('sqlAnalyze.sqlExplain'),
-          value: 'sql'
-        }
-      ];
+      return options;
     }
-    return [
-      {
-        label: t('sqlAnalyze.sqlExplain'),
-        value: 'sql'
-      }
-    ].concat(
+    return options.concat(
       (tableMetas?.table_meta_items ?? []).map((table) => {
         return {
           label: t('sqlAnalyze.tableTitle', {
@@ -97,7 +101,7 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
         };
       })
     );
-  }, [tableMetas?.table_meta_items, t]);
+  }, [remediationCompare, tableMetas?.table_meta_items, t]);
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader fixed title={t('sqlAnalyze.pageTitle')} />
