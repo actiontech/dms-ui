@@ -11,6 +11,19 @@ export default {
       }
     }
   },
+  remediationReport: {
+    pageTitle: 'SQL management remediation report',
+    description:
+      'Export SQL management remediation tracking data in global scope. The Excel file contains Overview, Rule summary and Details.',
+    exportButton: 'Export SQL management remediation report',
+    exporting: 'Exporting SQL management remediation report',
+    exportSuccessTips: 'Export SQL management remediation report successfully',
+    scopeTitle: 'Export scope',
+    scopeContent:
+      'Global scope: includes SQL management remediation data across all projects available to platform administrators.',
+    permissionTips:
+      'Only platform administrators / global operators can see and export this report.'
+  },
   statistics: {
     SQLTotalNum: 'SQL total',
     problemSQlNum: 'Problem SQL',
@@ -62,13 +75,23 @@ export default {
       highPriority: 'High priority',
       lowPriority: 'Low priority',
       auditResult: 'Audit result',
+      firstAuditResult: 'Initial audit result',
+      currentAuditResult: 'Current audit result',
       firstOccurrence: 'First occurrence time',
       lastOccurrence: 'Last occurrence time',
       occurrenceCount: 'Occurrence count',
       personInCharge: 'Person in charge',
       status: 'Status',
+      remediationStatus: 'Remediation status',
       comment: 'Comment',
       endpoints: 'Endpoint info'
+    },
+    remediationStatus: {
+      resolved: 'Resolved',
+      partially_fixed: 'Partially fixed',
+      unchanged: 'Unchanged',
+      deteriorated: 'Deteriorated',
+      newly_discovered: 'Newly discovered'
     },
     filter: {
       time: 'Time range',
@@ -100,5 +123,22 @@ export default {
     statusReport: {
       title: 'SQL audit result'
     }
+  },
+  remediationCompare: {
+    tab: 'Remediation compare',
+    drawerTitle: 'Remediation status details',
+    title: 'Remediation compare',
+    description:
+      'Compare the first audit result with the latest audit result and show rule changes.',
+    loadFailed: 'Failed to load remediation details. Please try again later.',
+    firstAuditMissing:
+      'No first audit snapshot is available. The latest result is shown as newly discovered issues.',
+    firstAuditResult: 'First audit result',
+    latestAuditResult: 'Latest audit result',
+    ruleDiffTitle: 'Rule differences',
+    resolved: 'Resolved rules',
+    new: 'New rules',
+    unchanged: 'Unchanged rules',
+    emptyRules: 'No matched rules'
   }
 };

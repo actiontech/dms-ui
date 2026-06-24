@@ -41,7 +41,8 @@ const AuditResultMessage = ({
     }
   }, [auditResult]);
   const renderMessage = useMemo(() => {
-    const { level, message } = auditResult || {};
+    const { level, message, rule_name } = auditResult || {};
+    if (rule_name) return rule_name;
     if (message) return message;
     if (passStatusLevelData.includes(level ?? ''))
       return t('components.auditResultMessage.auditPassed');

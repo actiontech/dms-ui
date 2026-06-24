@@ -11,6 +11,18 @@ export default {
       }
     }
   },
+  remediationReport: {
+    pageTitle: 'SQL 管控整改报表',
+    description:
+      '导出全局范围内 SQL 管控整改追踪数据，Excel 包含概览、规则维度汇总和明细。',
+    exportButton: '导出 SQL 管控整改报表',
+    exporting: '正在导出 SQL 管控整改报表',
+    exportSuccessTips: 'SQL 管控整改报表导出成功',
+    scopeTitle: '导出范围',
+    scopeContent:
+      '全局范围：覆盖当前用户有平台管理权限的全部项目 SQL 管控整改数据',
+    permissionTips: '仅平台超管 / 全局运维可见并可导出。'
+  },
   statistics: {
     SQLTotalNum: 'SQL总数',
     problemSQlNum: '问题SQL数',
@@ -87,13 +99,23 @@ export default {
       highPriority: '高优先',
       lowPriority: '低优先',
       auditResult: '审核结果',
+      firstAuditResult: '最初审核结果',
+      currentAuditResult: '当前审核结果',
       firstOccurrence: '初次出现时间',
       lastOccurrence: '最后一次出现时间',
       occurrenceCount: '出现数量',
       personInCharge: '负责人',
       status: '状态',
+      remediationStatus: '整改状态',
       comment: '备注',
       endpoints: '端点信息'
+    },
+    remediationStatus: {
+      resolved: '已整改',
+      partially_fixed: '部分整改',
+      unchanged: '未变化',
+      deteriorated: '恶化',
+      newly_discovered: '新发现'
     },
     filter: {
       time: '时间范围',
@@ -127,5 +149,20 @@ export default {
     statusReport: {
       title: 'SQL审核结果'
     }
+  },
+  remediationCompare: {
+    tab: '整改对比',
+    drawerTitle: '整改状态详情',
+    title: '整改对比',
+    description: '对比首次审核与最末次审核结果，展示规则整改变化',
+    loadFailed: '整改详情加载失败，请稍后重试。',
+    firstAuditMissing: '无首次审核快照，当前按最末次结果展示新发现问题。',
+    firstAuditResult: '首次审核结果',
+    latestAuditResult: '最末次审核结果',
+    ruleDiffTitle: '规则差异',
+    resolved: '已解决规则',
+    new: '新增规则',
+    unchanged: '维持规则',
+    emptyRules: '无命中规则'
   }
 };

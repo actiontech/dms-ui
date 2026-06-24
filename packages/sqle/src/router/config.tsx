@@ -196,6 +196,10 @@ const UpdateCustomRule = React.lazy(
 );
 const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
 
+const SqlManagementRemediationReport = React.lazy(
+  () => import('../page/SqlManagementRemediationReport')
+);
+
 const PushRuleConfiguration = React.lazy(
   () => import('../page/PushRuleConfiguration')
 );

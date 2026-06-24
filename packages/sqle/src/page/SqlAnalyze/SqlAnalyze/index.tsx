@@ -2,6 +2,7 @@ import { ResultStatusType } from 'antd/es/result';
 import SqlAnalyze from './SqlAnalyze';
 import {
   IPerformanceStatistics,
+  ISqlManageRemediation,
   ISQLExplain,
   ITableMeta,
   ITableMetas,
@@ -17,6 +18,7 @@ export type SqlAnalyzeProps = {
   tableMetas?: ITableMetas;
   sqlExplain?: ISQLExplain;
   performanceStatistics?: IPerformanceStatistics;
+  remediationCompare?: ISqlManageRemediation;
   loading?: boolean;
   sqlExecPlanCostDataSource?: IChartPoint[];
   getSqlExecPlanCostDataSourceLoading?: boolean;
