@@ -19,8 +19,10 @@ import {
   useSearchParams
 } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   useCurrentProject,
+  useCurrentUser,
   useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import { Result, Space } from 'antd';
@@ -31,6 +33,8 @@ import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { DownArrowLineOutlined } from '@actiontech/icons';
+import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -38,13 +42,18 @@ const ConfDetail: React.FC = () => {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectArchive } = useCurrentProject();
+  const { isAdmin, isProjectManager } = useCurrentUser();
 
   const [activeKey, setActiveKey] = useState(
     SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
   );
   const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
     useBoolean();
+  const [
+    remediationExporting,
+    { setTrue: remediationExportPending, setFalse: remediationExportDone }
+  ] = useBoolean();
 
   const [auditing, { setTrue: auditPending, setFalse: auditDone }] =
     useBoolean();
@@ -100,6 +109,14 @@ const ConfDetail: React.FC = () => {
     );
   }, [data?.instance_id, isHaveServicePermission]);
 
+  const actionPermission = useMemo(() => {
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
+
+  const remediationExportPermission = useMemo(() => {
+    return (actionPermission || hasOpPermission) && !projectArchive;
+  }, [actionPermission, hasOpPermission, projectArchive]);
+
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -127,6 +144,8 @@ const ConfDetail: React.FC = () => {
           instanceType={data.instance_type ?? ''}
           exportPending={exportPending}
           exportDone={exportDone}
+          remediationExportPending={remediationExportPending}
+          remediationExportDone={remediationExportDone}
         />
       )
     })) ?? [])
@@ -142,6 +161,41 @@ const ConfDetail: React.FC = () => {
 
   const exportScanTypeSqlDetail = () => {
     eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List);
+  };
+
+  const exportScanTypeRemediation = () => {
+    eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Remediation);
+  };
+
+  const exportDataSourceRemediation = () => {
+    if (!remediationExportPermission || !data?.instance_id) {
+      return;
+    }
+    remediationExportPending();
+    const hideLoading = messageApi.loading(
+      t('managementConf.detail.remediationExportTips'),
+      0
+    );
+
+    SqlManage.exportSqlManageRemediationV1(
+      {
+        project_name: projectName,
+        export_scope: exportSqlManageRemediationV1ExportScopeEnum.data_source,
+        filter_instance_id: data.instance_id
+      },
+      { responseType: 'blob' }
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          messageApi.success(
+            t('managementConf.detail.remediationExportSuccessTips')
+          );
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        remediationExportDone();
+      });
   };
 
   const onAuditImmediately = () => {
@@ -203,6 +257,15 @@ const ConfDetail: React.FC = () => {
                   >
                     {t('managementConf.detail.export')}
                   </BasicButton>
+                  <EmptyBox if={remediationExportPermission}>
+                    <BasicButton
+                      disabled={remediationExporting}
+                      onClick={exportScanTypeRemediation}
+                      icon={<DownArrowLineOutlined />}
+                    >
+                      {t('managementConf.detail.remediationExport')}
+                    </BasicButton>
+                  </EmptyBox>
                   {hasOpPermission && (
                     <BasicButton
                       loading={auditing}
@@ -213,6 +276,20 @@ const ConfDetail: React.FC = () => {
                     </BasicButton>
                   )}
                 </Space>
+              </EmptyBox>
+              <EmptyBox
+                if={
+                  activeKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY &&
+                  remediationExportPermission
+                }
+              >
+                <BasicButton
+                  disabled={remediationExporting}
+                  onClick={exportDataSourceRemediation}
+                  icon={<DownArrowLineOutlined />}
+                >
+                  {t('managementConf.detail.remediationExport')}
+                </BasicButton>
               </EmptyBox>
               <TableRefreshButton refresh={onRefresh} />
             </Space>

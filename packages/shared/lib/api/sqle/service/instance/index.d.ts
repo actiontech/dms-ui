@@ -26,6 +26,11 @@ export interface IGetInstanceTipListV1Params {
 
 export interface IGetInstanceTipListV1Return extends IGetInstanceTipsResV1 {}
 
+export interface IGetInstanceTipListV2Params
+  extends IGetInstanceTipListV1Params {}
+
+export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV1 {}
+
 export interface IBatchCheckInstanceIsConnectableByNameParams
   extends IBatchCheckInstanceConnectionsReqV1 {
   project_name: string;

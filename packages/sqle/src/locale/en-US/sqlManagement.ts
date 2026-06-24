@@ -5,8 +5,25 @@ export default {
     action: {
       export: 'Export',
       exporting: 'Exporting file',
-      exportSuccessTips: 'Export file successfully'
+      exportSuccessTips: 'Export file successfully',
+      remediationExport: 'SQL remediation',
+      remediationExporting: 'Exporting SQL management remediation report',
+      remediationExportSuccessTips:
+        'Export SQL management remediation report successfully'
     }
+  },
+  remediationReport: {
+    pageTitle: 'SQL management remediation report',
+    description:
+      'Export SQL management remediation tracking data in global scope. The Excel file contains Overview, Rule summary and Details.',
+    exportButton: 'Export SQL management remediation report',
+    exporting: 'Exporting SQL management remediation report',
+    exportSuccessTips: 'Export SQL management remediation report successfully',
+    scopeTitle: 'Export scope',
+    scopeContent:
+      'Global scope: includes SQL management remediation data across all projects available to platform administrators.',
+    permissionTips:
+      'Only platform administrators / global operators can see and export this report.'
   },
   statistics: {
     SQLTotalNum: 'SQL total',
@@ -57,8 +74,16 @@ export default {
       occurrenceCount: 'Occurrence count',
       personInCharge: 'Person in charge',
       status: 'Status',
+      remediationStatus: 'Remediation status',
       comment: 'Comment',
       endpoints: 'Endpoint info'
+    },
+    remediationStatus: {
+      resolved: 'Resolved',
+      partially_fixed: 'Partially fixed',
+      unchanged: 'Unchanged',
+      deteriorated: 'Deteriorated',
+      newly_discovered: 'Newly discovered'
     },
     filter: {
       time: 'Time range',

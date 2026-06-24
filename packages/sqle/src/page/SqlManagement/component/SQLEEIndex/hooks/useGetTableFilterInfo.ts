@@ -9,8 +9,11 @@ import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
+import { remediationStatusOptions } from '../RemediationStatusTag';
+import { useTranslation } from 'react-i18next';
 
 const useGetTableFilterInfo = () => {
+  const { t } = useTranslation();
   const { projectName } = useCurrentProject();
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
@@ -70,6 +73,15 @@ const useGetTableFilterInfo = () => {
           loading: getRuleTipsLoading,
           popupMatchSelectWidth: 400
         }
+      ],
+      [
+        'filter_remediation_status',
+        {
+          options: remediationStatusOptions.map((status) => ({
+            label: t(`sqlManagement.table.remediationStatus.${status}`),
+            value: status
+          }))
+        }
       ]
     ]);
   }, [
@@ -81,7 +93,8 @@ const useGetTableFilterInfo = () => {
     getSourceTipsLoading,
     generateAuditLevelSelectOptions,
     generateRuleTipsSelectOptions,
-    getRuleTipsLoading
+    getRuleTipsLoading,
+    t
   ]);
 
   return {

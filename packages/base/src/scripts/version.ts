@@ -1,1 +1,1 @@
-export const UI_VERSION = 'feature/add-make-command   ba9c9c5';
+export const UI_VERSION = 'zjrc_3.2408   a32b5993';

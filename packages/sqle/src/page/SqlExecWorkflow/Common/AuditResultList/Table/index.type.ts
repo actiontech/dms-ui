@@ -8,6 +8,10 @@ export type AuditResultTableProps = {
   projectID: string;
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;
+  projectName?: string;
+  instanceName?: string;
+  canCreateRuleException?: boolean;
+  onRuleExceptionCreated?: () => void;
 };
 
 export type AuditResultDrawerProps = {
@@ -15,5 +19,10 @@ export type AuditResultDrawerProps = {
   onClose: () => void;
   auditResultRecord?: IAuditTaskSQLResV2;
   dbType?: string;
+  projectID?: string;
+  projectName?: string;
+  instanceName?: string;
+  canCreateRuleException?: boolean;
+  onRuleExceptionCreated?: () => void;
   clickAnalyze: (sqlNum?: number) => void;
 };

@@ -107,6 +107,18 @@ export default {
     auditImmediately: '立即审核',
     auditImmediatelySuccessTips: '审核成功',
     exportTips: '正在导出扫描任务详情',
+    remediationExport: 'SQL 管控整改',
+    remediationExportTips: '正在导出 SQL 管控整改报表',
+    remediationExportSuccessTips: 'SQL 管控整改报表导出成功',
+    remediationOverview: {
+      title: '整改概览',
+      sqlTotal: 'SQL 总数',
+      firstScore: '首次评分',
+      latestScore: '最末次评分',
+      scoreChange: '评分变化',
+      remediationRate: '整改率',
+      loadFailed: '整改概览加载失败：{{message}}'
+    },
     overview: {
       title: '概览',
       column: {

@@ -3,13 +3,15 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { auditWhiteListMockData } from './data';
+import { auditWhiteListMockData, sqlRuleExceptionMockData } from './data';
 
 class AuditWhiteList implements MockSpyApy {
   public mockAllApi(): void {
     this.getAuditWhitelist();
     this.deleteAuthWhitelist();
     this.addAuthWhitelist();
+    this.getSQLRuleException();
+    this.deleteSQLRuleException();
   }
 
   public getAuditWhitelist() {
@@ -36,6 +38,22 @@ class AuditWhiteList implements MockSpyApy {
 
   public updateAuthWhitelist() {
     const spy = jest.spyOn(audit_whitelist, 'UpdateAuditWhitelistByIdV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getSQLRuleException() {
+    const spy = jest.spyOn(audit_whitelist, 'getSQLRuleExceptionV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: sqlRuleExceptionMockData
+      })
+    );
+    return spy;
+  }
+
+  public deleteSQLRuleException() {
+    const spy = jest.spyOn(audit_whitelist, 'deleteSQLRuleExceptionV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

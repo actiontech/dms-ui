@@ -14,7 +14,8 @@ import {
   // #if [sqle]
   ProfileSquareFilled,
   SignalFilled,
-  ProfileEditFilled
+  ProfileEditFilled,
+  ManagementFilled
   // #endif
 } from '@actiontech/icons';
 
@@ -89,6 +90,17 @@ const GlobalSetting: React.FC<{
                 <SignalFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.reportStatistics')}
+                </span>
+              </div>
+              <div
+                className="content-item"
+                onClick={() =>
+                  handleClickItem('/sqle/sql-management-remediation-report')
+                }
+              >
+                <ManagementFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.sqlManagementRemediationReport')}
                 </span>
               </div>
               <div

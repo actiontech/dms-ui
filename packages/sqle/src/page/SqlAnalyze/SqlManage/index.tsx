@@ -8,6 +8,7 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
+  ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -24,6 +25,8 @@ const SQLManageAnalyze = () => {
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
     useState<IPerformanceStatistics>();
+  const [remediationCompare, setRemediationCompare] =
+    useState<ISqlManageRemediation>();
   const [
     loading,
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
@@ -33,22 +36,35 @@ const SQLManageAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const res = await SqlManage.GetSqlManageSqlAnalysisV1({
-        sql_manage_id: urlParams.sqlManageId ?? '',
-        project_name: projectName
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setErrorMessage('');
-        setSqlExplain(res.data.data?.sql_explain);
-        setTableMetas(res.data.data?.table_metas);
-        setPerformancesStatistics(res.data.data?.performance_statistics);
-      } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
-        } else {
-          setErrorType('error');
+      const [res, remediationRes] = await Promise.all([
+        SqlManage.GetSqlManageSqlAnalysisV1({
+          sql_manage_id: urlParams.sqlManageId ?? '',
+          project_name: projectName
+        }),
+        SqlManage.GetSqlManageRemediationV1({
+          sql_manage_id: urlParams.sqlManageId ?? '',
+          project_name: projectName
+        })
+      ]);
+
+      if (res.data.code !== ResponseCode.SUCCESS) {
+        if (remediationRes.data.code !== ResponseCode.SUCCESS) {
+          if (res.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            setErrorType('error');
+          }
+          setErrorMessage(res.data.message ?? '');
+          return;
         }
-        setErrorMessage(res.data.message ?? '');
+      }
+
+      setErrorMessage('');
+      setSqlExplain(res.data.data?.sql_explain);
+      setTableMetas(res.data.data?.table_metas);
+      setPerformancesStatistics(res.data.data?.performance_statistics);
+      if (remediationRes.data.code === ResponseCode.SUCCESS) {
+        setRemediationCompare(remediationRes.data.data);
       }
     } finally {
       getSqlAnalyzeFinish();
@@ -71,6 +87,7 @@ const SQLManageAnalyze = () => {
       sqlExplain={sqlExplain}
       errorMessage={errorMessage}
       performanceStatistics={performanceStatistics}
+      remediationCompare={remediationCompare}
       loading={loading}
     />
   );

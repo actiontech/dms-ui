@@ -7,6 +7,7 @@ export default {
     exportButtonText: '导出',
     exporting: '正在导出操作记录列表...',
     exportSuccessTips: '操作记录列表导出成功',
+    auditContentKeywordsTips: '已按审计内容定位：{{keywords}}',
     filterForm: {
       operatingTime: '操作时间',
       projectName: '操作项目',

@@ -14,7 +14,13 @@ import {
   IDeleteAuditWhitelistByIdV1Params,
   IDeleteAuditWhitelistByIdV1Return,
   IUpdateAuditWhitelistByIdV1Params,
-  IUpdateAuditWhitelistByIdV1Return
+  IUpdateAuditWhitelistByIdV1Return,
+  ICreateSQLRuleExceptionV1Params,
+  ICreateSQLRuleExceptionV1Return,
+  IDeleteSQLRuleExceptionV1Params,
+  IDeleteSQLRuleExceptionV1Return,
+  IGetSQLRuleExceptionV1Params,
+  IGetSQLRuleExceptionV1Return
 } from './index.d';
 
 class AuditWhitelistService extends ServiceBase {
@@ -43,6 +49,73 @@ class AuditWhitelistService extends ServiceBase {
 
     return this.post<ICreateAuditWhitelistV1Return>(
       `/v1/projects/${project_name}/audit_whitelist`,
+      paramsData,
+      options
+    );
+  }
+
+  public createSQLRuleExceptionV1(
+    params: ICreateSQLRuleExceptionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+      'Content-Type': 'application/json'
+    };
+    config.transformRequest = [
+      (data) =>
+        `{"instance_id":${data.instance_id},"sql_fingerprint":${JSON.stringify(
+          data.sql_fingerprint ?? ''
+        )},"rule_name":${JSON.stringify(
+          data.rule_name ?? ''
+        )},"rule_desc":${JSON.stringify(
+          data.rule_desc ?? ''
+        )},"rule_level":${JSON.stringify(
+          data.rule_level ?? ''
+        )},"reason":${JSON.stringify(data.reason ?? '')}}`
+    ];
+
+    return this.post<ICreateSQLRuleExceptionV1Return>(
+      `/v1/projects/${project_name}/audit_whitelist/rule_exceptions`,
+      paramsData,
+      config
+    );
+  }
+
+  public getSQLRuleExceptionV1(
+    params: IGetSQLRuleExceptionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSQLRuleExceptionV1Return>(
+      `/v1/projects/${project_name}/audit_whitelist/rule_exceptions`,
+      paramsData,
+      options
+    );
+  }
+
+  public deleteSQLRuleExceptionV1(
+    params: IDeleteSQLRuleExceptionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_rule_exception_id = paramsData.sql_rule_exception_id;
+    delete paramsData.sql_rule_exception_id;
+
+    return this.delete<IDeleteSQLRuleExceptionV1Return>(
+      `/v1/projects/${project_name}/audit_whitelist/rule_exceptions/${sql_rule_exception_id}`,
       paramsData,
       options
     );
