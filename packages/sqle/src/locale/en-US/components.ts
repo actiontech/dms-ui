@@ -2,6 +2,8 @@
 export default {
   auditResultMessage: {
     auditPassed: 'Audit passed',
-    ruleDeleted: 'The rule has been deleted'
+    ruleDeleted: 'The rule has been deleted',
+    auditing: 'Auditing',
+    hasException: 'Audit exception occurred'
   }
 };

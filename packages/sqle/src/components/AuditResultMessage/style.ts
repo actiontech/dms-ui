@@ -1,6 +1,11 @@
 import { styled } from '@mui/material/styles';
 
+import { BasicTag } from '@actiontech/shared';
 import { AuditResultMessageProps } from './index.type';
+
+export const ResultIconTagStyleWrapper = styled(BasicTag)`
+  width: fit-content;
+`;
 
 export const AuditResultMessageStyleWrapper = styled('div')`
   display: flex;

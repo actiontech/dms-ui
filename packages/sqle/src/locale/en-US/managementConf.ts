@@ -155,6 +155,10 @@ export default {
         firstAppearanceTime: 'First appearance time',
         occurrenceCount: 'Occurrence count',
         status: 'Status',
+        auditStatus: 'Audit status',
+        auditResult: 'Audit result',
+        auditResultTooltip: 'Shows the latest audit result',
+        audited: 'Audited',
         explanation: {
           text: 'Explanation',
           operator: 'Add explanation'

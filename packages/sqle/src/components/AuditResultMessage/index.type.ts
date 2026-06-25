@@ -8,3 +8,13 @@ export type AuditResultMessageProps = {
   isRuleDeleted?: boolean;
   auditStatus?: string;
 };
+
+export type AuditResultInfoItem = {
+  level: string;
+  executionFailed: boolean;
+};
+
+export type ResultIconRenderProps = {
+  iconLevels?: string[];
+  auditResultInfo?: AuditResultInfoItem[];
+};

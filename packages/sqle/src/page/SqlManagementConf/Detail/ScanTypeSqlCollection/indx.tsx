@@ -8,7 +8,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, ReactNode } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
@@ -34,14 +34,20 @@ import {
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../components/AuditResultMessage';
+import AuditStatusTag from './AuditStatusTag';
+import {
+  BEING_AUDITED,
+  buildTableHeadWithAuditStatus,
+  parseAuditResult
+} from './utils';
 import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message } from 'antd';
+import { message, Tooltip, Space } from 'antd';
+import { InfoCircleOutlined } from '@actiontech/icons';
 import { Link } from 'react-router-dom';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
@@ -64,6 +70,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
 
   const {
     tableChange,
@@ -86,10 +94,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     { setTrue: openReportDrawer, setFalse: closeReportDrawer }
   ] = useBoolean(false);
 
-  const onClickAuditResult = (record: ScanTypeSqlTableDataSourceItem) => {
-    openReportDrawer();
-    setCurrentAuditResultRecord(record);
-  };
+  const onClickAuditResult = useCallback(
+    (record: ScanTypeSqlTableDataSourceItem) => {
+      openReportDrawer();
+      setCurrentAuditResultRecord(record);
+    },
+    [openReportDrawer]
+  );
 
   const {
     data: tableMetas,
@@ -165,7 +176,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     data: tableRows,
     loading: getTableRowLoading,
     refresh: refreshTableRows,
-    error: getTableRowError
+    error: getTableRowError,
+    cancel
   } = useRequest(
     () => {
       const params: IGetInstanceAuditPlanSQLDataV1Params = {
@@ -186,7 +198,21 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     },
     {
       refreshDeps: [pagination, tableFilterInfo, sortInfo],
-      ready: activeTabKey === auditPlanId
+      ready: activeTabKey === auditPlanId,
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (res.data?.some((i) => i?.audit_status === BEING_AUDITED)) {
+          startPollRequest();
+        } else {
+          cancel();
+          finishPollRequest();
+        }
+      },
+      onError: () => {
+        cancel();
+        finishPollRequest();
+      }
     }
   );
 
@@ -267,6 +293,93 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [username, auditPlanType]);
 
+  const loading = getFilterMetaListLoading || (getTableRowLoading && !polling);
+
+  const tableHead = useMemo(
+    () =>
+      buildTableHeadWithAuditStatus(tableMetas?.head, {
+        auditStatus: t(
+          'managementConf.detail.scanTypeSqlCollection.column.auditStatus'
+        ),
+        auditResult: t(
+          'managementConf.detail.scanTypeSqlCollection.column.auditResult'
+        )
+      }),
+    [tableMetas?.head, t]
+  );
+
+  const columns = useMemo(() => {
+    if (!tableHead.length) {
+      return [];
+    }
+
+    const builtColumns = sortableTableColumnFactory(tableHead, {
+      columnClassName: (type) =>
+        type === 'sql' ? 'ellipsis-column-large-width' : undefined,
+      customRender: (text, record, fieldName, type) => {
+        if (fieldName === 'audit_status') {
+          return <AuditStatusTag status={text} />;
+        }
+
+        if (fieldName === 'audit_results') {
+          return (
+            <div
+              data-testid="trigger-open-report-drawer"
+              onClick={() => onClickAuditResult(record)}
+            >
+              <ResultIconRender auditResultInfo={parseAuditResult(text)} />
+            </div>
+          );
+        }
+
+        if (!text) {
+          return '-';
+        }
+
+        if (type === 'time') {
+          return formatTime(text, '-');
+        }
+
+        if (type === 'sql') {
+          return (
+            <SQLRenderer.Snippet
+              tooltip={false}
+              className="pointer"
+              onClick={() => onClickAuditResult(record)}
+              sql={text}
+              rows={1}
+              showCopyIcon
+              cuttingLength={200}
+            />
+          );
+        }
+
+        return text;
+      }
+    });
+
+    return builtColumns.map((column) => {
+      if (column.dataIndex === 'audit_results') {
+        return {
+          ...column,
+          title: (
+            <Space size={4}>
+              {column.title as ReactNode}
+              <Tooltip
+                title={t(
+                  'managementConf.detail.scanTypeSqlCollection.column.auditResultTooltip'
+                )}
+              >
+                <InfoCircleOutlined />
+              </Tooltip>
+            </Space>
+          )
+        };
+      }
+      return column;
+    });
+  }, [onClickAuditResult, sortableTableColumnFactory, t, tableHead]);
+
   return (
     <ScanTypeSqlCollectionStyleWrapper>
       <TableToolbar setting={tableSetting}>
@@ -284,67 +397,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
-        loading={getFilterMetaListLoading || getTableRowLoading}
-        columns={sortableTableColumnFactory(tableMetas?.head ?? [], {
-          columnClassName: (type) =>
-            type === 'sql' ? 'ellipsis-column-large-width' : undefined,
-          customRender: (text, record, fieldName, type) => {
-            if (fieldName === 'audit_results') {
-              let results: IAuditResult[] = [];
-              try {
-                results = JSON.parse(text ?? '[]') as IAuditResult[];
-              } catch (error) {
-                results = [];
-              }
-              return (
-                <div
-                  data-testid="trigger-open-report-drawer"
-                  onClick={() => onClickAuditResult(record)}
-                >
-                  {results?.length > 1 ? (
-                    <ResultIconRender
-                      iconLevels={results.map((item) => {
-                        return item.level ?? '';
-                      })}
-                    />
-                  ) : (
-                    <AuditResultMessage
-                      auditResult={
-                        Array.isArray(results) && results.length
-                          ? results[0]
-                          : {}
-                      }
-                    />
-                  )}
-                </div>
-              );
-            }
-
-            if (!text) {
-              return '-';
-            }
-
-            if (type === 'time') {
-              return formatTime(text, '-');
-            }
-
-            if (type === 'sql') {
-              return (
-                <SQLRenderer.Snippet
-                  tooltip={false}
-                  className="pointer"
-                  onClick={() => onClickAuditResult(record)}
-                  sql={text}
-                  rows={1}
-                  showCopyIcon
-                  cuttingLength={200}
-                />
-              );
-            }
-
-            return text;
-          }
-        })}
+        loading={loading}
+        columns={columns}
         dataSource={tableRows?.data}
         onChange={tableChange}
         pagination={{
