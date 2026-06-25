@@ -651,7 +651,9 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        审核结果
+                        <span>
+                          审核结果
+                        </span>
                       </th>
                       <th
                         aria-label="出现次数"
@@ -2812,7 +2814,9 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                           class="ant-table-cell"
                           scope="col"
                         >
-                          审核结果
+                          <span>
+                            审核结果
+                          </span>
                         </th>
                         <th
                           aria-label="出现次数"
