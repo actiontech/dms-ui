@@ -46,8 +46,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message, Tooltip, Space } from 'antd';
-import { InfoCircleOutlined } from '@actiontech/icons';
+import { message, Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
@@ -363,16 +362,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         return {
           ...column,
           title: (
-            <Space size={4}>
-              {column.title as ReactNode}
-              <Tooltip
-                title={t(
-                  'managementConf.detail.scanTypeSqlCollection.column.auditResultTooltip'
-                )}
-              >
-                <InfoCircleOutlined />
-              </Tooltip>
-            </Space>
+            <Tooltip
+              title={t(
+                'managementConf.detail.scanTypeSqlCollection.column.auditResultTooltip'
+              )}
+            >
+              <span>{column.title as ReactNode}</span>
+            </Tooltip>
           )
         };
       }
