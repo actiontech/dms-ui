@@ -151,6 +151,10 @@ export default {
         firstAppearanceTime: '最早一次出现时间',
         occurrenceCount: '出现次数',
         status: '状态',
+        auditStatus: '审核状态',
+        auditResult: '审核结果',
+        auditResultTooltip: '展示最新的审核结果',
+        audited: '已审核',
         explanation: {
           text: '说明',
           operator: '添加说明'

@@ -645,7 +645,15 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        审核结果
+                        审核状态
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        <span>
+                          审核结果
+                        </span>
                       </th>
                       <th
                         aria-label="出现次数"
@@ -1074,6 +1082,15 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1198,14 +1215,19 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -1218,12 +1240,7 @@ LIMIT
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -1410,14 +1427,19 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -1430,12 +1452,7 @@ LIMIT
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -1592,14 +1609,19 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -1612,12 +1634,7 @@ LIMIT
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -1748,36 +1765,32 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1v03opz"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="ant-space-item"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <svg
+                                fill="none"
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  fill="none"
-                                  height="20"
-                                  viewBox="0 0 16 16"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
-                                    fill="#EBAD1C"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                语法错误或者解析器不支持，请人工确认SQL正确性
-                              </span>
+                                <path
+                                  d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
                             </div>
                           </div>
                         </div>
@@ -1909,14 +1922,19 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -1929,12 +1947,7 @@ LIMIT
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -2108,14 +2121,19 @@ LIMIT
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           data-testid="trigger-open-report-drawer"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -2128,12 +2146,7 @@ LIMIT
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -2795,7 +2808,15 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                           class="ant-table-cell"
                           scope="col"
                         >
-                          审核结果
+                          审核状态
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          <span>
+                            审核结果
+                          </span>
                         </th>
                         <th
                           aria-label="出现次数"
@@ -3224,6 +3245,15 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -3348,14 +3378,19 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
                               >
                                 <svg
                                   height="20"
@@ -3368,12 +3403,7 @@ LIMIT
                                     fill="#41BF9A"
                                   />
                                 </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -3560,14 +3590,19 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
                               >
                                 <svg
                                   height="20"
@@ -3580,12 +3615,7 @@ LIMIT
                                     fill="#41BF9A"
                                   />
                                 </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -3742,14 +3772,19 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
                               >
                                 <svg
                                   height="20"
@@ -3762,12 +3797,7 @@ LIMIT
                                     fill="#41BF9A"
                                   />
                                 </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -3898,36 +3928,32 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1v03opz"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
                               <div
-                                class="css-1avyf41"
+                                class="ant-space-item"
                               >
-                                <span
-                                  class="icon-wrapper"
+                                <svg
+                                  fill="none"
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
-                                    height="20"
-                                    viewBox="0 0 16 16"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
-                                      fill="#EBAD1C"
-                                    />
-                                  </svg>
-                                </span>
-                                <span
-                                  class="text-wrapper"
-                                >
-                                  语法错误或者解析器不支持，请人工确认SQL正确性
-                                </span>
+                                  <path
+                                    d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                                    fill="#EBAD1C"
+                                  />
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -4059,14 +4085,19 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
                               >
                                 <svg
                                   height="20"
@@ -4079,12 +4110,7 @@ LIMIT
                                     fill="#41BF9A"
                                   />
                                 </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -4258,14 +4284,19 @@ LIMIT
                         <td
                           class="ant-table-cell"
                         >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
                           <div
                             data-testid="trigger-open-report-drawer"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
                               >
                                 <svg
                                   height="20"
@@ -4278,12 +4309,7 @@ LIMIT
                                     fill="#41BF9A"
                                   />
                                 </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </td>
