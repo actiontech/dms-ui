@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import React, { useMemo, useState } from 'react';
-import { Spin } from 'antd';
+import { Alert, Card, Spin } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   EmptyBox,
@@ -13,6 +13,7 @@ import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
 import useSQLExecPlan from './useSQLExecPlan';
 import { SqlAnalyzeProps } from '.';
+import RemediationDiffCompare from '../../../components/RemediationDetailDrawer/RemediationDiffCompare';
 
 const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
   const { t } = useTranslation();
@@ -22,6 +23,8 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     errorMessage,
     loading = false,
     performanceStatistics,
+    remediationCompare,
+    remediationLoadFailed = false,
     errorType = 'error'
   } = props;
 
@@ -50,9 +53,21 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
         tableMetas?.table_meta_items.length
       )
     ) {
-      return [{ label: t('sqlAnalyze.sqlExplain'), value: 'sql' }];
+      return [
+        { label: t('sqlAnalyze.sqlExplain'), value: 'sql' },
+        {
+          label: t('sqlManagement.remediationCompare.tab'),
+          value: 'remediation'
+        }
+      ];
     }
-    return [{ label: t('sqlAnalyze.sqlExplain'), value: 'sql' }].concat(
+    return [
+      { label: t('sqlAnalyze.sqlExplain'), value: 'sql' },
+      {
+        label: t('sqlManagement.remediationCompare.tab'),
+        value: 'remediation'
+      }
+    ].concat(
       (tableMetas?.table_meta_items ?? []).map((table) => {
         return {
           label: t('sqlAnalyze.tableTitle', {
@@ -86,6 +101,21 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
                     ...sqlExplain,
                     ...performanceStatistics
                   })}
+                {tabStatus === 'remediation' && (
+                  <Card title={t('sqlManagement.remediationCompare.tab')}>
+                    {remediationLoadFailed ? (
+                      <Alert
+                        type="error"
+                        showIcon
+                        message={t(
+                          'sqlManagement.remediationCompare.loadFailed'
+                        )}
+                      />
+                    ) : (
+                      <RemediationDiffCompare data={remediationCompare} />
+                    )}
+                  </Card>
+                )}
                 {tableMetas?.table_meta_items?.map((table) => {
                   return (
                     <React.Fragment key={table.name}>
