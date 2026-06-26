@@ -39,7 +39,7 @@ describe('sqle/components/AuditResultMessage/AuditLevelSummary', () => {
         {
           audit_level: 'error',
           rule_name: 'ddl_check_char_length'
-        } as AuditLevelSummaryProps['auditResults'][number]
+        } as NonNullable<AuditLevelSummaryProps['auditResults']>[number]
       ]
     });
     expect(baseElement).toMatchSnapshot();
