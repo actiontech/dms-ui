@@ -9,17 +9,20 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../components/AuditResultMessage';
+import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
 import { Link } from 'react-router-dom';
-import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
+import {
+  AvatarCom,
+  EditText,
+  SQLRenderer,
+  BasicToolTips
+} from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
-
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
@@ -262,31 +265,50 @@ const SqlManagementColumn: (
       }
     },
     {
+      dataIndex: 'first_audit_result',
+      width: 200,
+      title: () => t('sqlManagement.table.column.firstAuditResult'),
+      render: (result = [], record) => {
+        if (!result || result.length === 0) {
+          return '-';
+        }
+        return (
+          <BasicToolTips
+            title={t('sqlManagement.table.column.viewAuditResultCompare')}
+          >
+            <div
+              onClick={() =>
+                openModal(ModalName.View_Remediation_Detail_Drawer, record)
+              }
+              className="audit-result-wrapper"
+            >
+              <AuditLevelSummary auditResults={result} />
+            </div>
+          </BasicToolTips>
+        );
+      }
+    },
+    {
       dataIndex: 'audit_result',
       width: 200,
-      title: () => t('sqlManagement.table.column.auditResult'),
+      title: () => t('sqlManagement.table.column.currentAuditResult'),
       render: (result = [], record) => {
+        if (!result || result.length === 0) {
+          return '-';
+        }
         return (
-          <div
-            onClick={() =>
-              openModal(ModalName.View_Audit_Result_Drawer, record)
-            }
-            className="audit-result-wrapper"
+          <BasicToolTips
+            title={t('sqlManagement.table.column.viewAuditResultCompare')}
           >
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
-          </div>
+            <div
+              onClick={() =>
+                openModal(ModalName.View_Remediation_Detail_Drawer, record)
+              }
+              className="audit-result-wrapper"
+            >
+              <AuditLevelSummary auditResults={result} />
+            </div>
+          </BasicToolTips>
         );
       }
     },

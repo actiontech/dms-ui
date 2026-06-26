@@ -1,4 +1,7 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Space, Typography } from 'antd';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ModalName } from '../../../../../../data/ModalName';
 import ReportDrawer from '../../../../../../components/ReportDrawer';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
@@ -19,19 +22,34 @@ const StatusDrawer = () => {
     updateModalStatus
   } = useSqlManagementRedux(ModalName.View_Audit_Result_Drawer);
 
-  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
-    selectedData?.audit_result ?? []
+  const auditResults = useMemo(
+    () => selectedData?.audit_result ?? [],
+    [selectedData?.audit_result]
   );
+
+  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(auditResults);
 
   const closeModal = () => {
     updateModalStatus(ModalName.View_Audit_Result_Drawer, false);
     setSelectData(null);
   };
 
+  const drawerTitle = (
+    <Space direction="vertical" size={0}>
+      <span>{t('sqlManagement.table.column.currentAuditResult')}</span>
+      <Typography.Text
+        type="secondary"
+        style={{ fontSize: 12, fontWeight: 400 }}
+      >
+        {formatTime(selectedData?.last_receive_timestamp, '-')}
+      </Typography.Text>
+    </Space>
+  );
+
   return (
     <ReportDrawer
       open={visible}
-      title={t('sqlManagement.table.statusReport.title')}
+      title={drawerTitle}
       data={{
         auditResult: auditResultRuleInfo,
         sql: selectedData?.sql ?? ''
