@@ -1,7 +1,7 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
 import { superRender } from '../../../../../testUtils/customRender';
-import ScanTypeSqlCollection from '../indx';
+import ScanTypeSqlCollection from '..';
 import { act, fireEvent } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -9,6 +9,7 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockAuditPlanSQLData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 
 describe('test ScanTypeSqlCollection', () => {
   let getInstanceAuditPlanSQLMetaSpy: jest.SpyInstance;
@@ -42,6 +43,8 @@ describe('test ScanTypeSqlCollection', () => {
         instanceType={instanceType}
         exportDone={jest.fn()}
         exportPending={jest.fn()}
+        remediationExportDone={jest.fn()}
+        remediationExportPending={jest.fn()}
         auditPlanType="default"
       />
     );
@@ -123,12 +126,15 @@ describe('test ScanTypeSqlCollection', () => {
     });
   });
 
-  it('should open report drawer and set current audit result record on audit result click', async () => {
+  it('should open remediation drawer on audit result click', async () => {
     rule_template.getRuleList();
+    jest.spyOn(SqlManage, 'GetSqlManageRemediationV1').mockResolvedValue({
+      data: { code: 0, data: {} }
+    } as Awaited<ReturnType<typeof SqlManage.GetSqlManageRemediationV1>>);
     const { getAllByTestId, baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(getAllByTestId('trigger-open-report-drawer')[0]);
+    fireEvent.click(getAllByTestId('trigger-open-remediation-drawer')[0]);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

@@ -6,6 +6,8 @@ export type ScanTypeSqlCollectionProps = {
   instanceType: string;
   exportPending: () => void;
   exportDone: () => void;
+  remediationExportPending: () => void;
+  remediationExportDone: () => void;
 };
 
 export type ScanTypeSqlTableDataSourceItem = { [key in string]: string };

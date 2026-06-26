@@ -8,10 +8,12 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
-import { useCallback, useEffect, useMemo, useState, ReactNode } from 'react';
+import RemediationDetailDrawer from '../../../../components/RemediationDetailDrawer';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   useCurrentProject,
   useCurrentUser
@@ -21,7 +23,7 @@ import {
   ScanTypeSqlTableDataSourceItem
 } from './index.type';
 import useBackendTable from '../../../../hooks/useBackendTable';
-import { BasicButton, SQLRenderer } from '@actiontech/shared';
+import { BasicButton, SQLRenderer, BasicToolTips } from '@actiontech/shared';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
@@ -33,7 +35,8 @@ import {
   formatTime,
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
-import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
+import AuditResultMessage from '../../../../components/AuditResultMessage';
+import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
 import AuditStatusTag from './AuditStatusTag';
 import {
   BEING_AUDITED,
@@ -46,8 +49,10 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message, Tooltip } from 'antd';
+import { message } from 'antd';
 import { Link } from 'react-router-dom';
+import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -56,7 +61,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   activeTabKey,
   instanceType,
   exportDone,
-  exportPending
+  exportPending,
+  remediationExportPending,
+  remediationExportDone
 }) => {
   const { t } = useTranslation();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
@@ -67,6 +74,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
+    useState<ScanTypeSqlTableDataSourceItem>();
+  const [remediationDrawerRecord, setRemediationDrawerRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
@@ -93,12 +102,25 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     { setTrue: openReportDrawer, setFalse: closeReportDrawer }
   ] = useBoolean(false);
 
-  const onClickAuditResult = useCallback(
+  const [
+    remediationDrawerVisible,
+    { setTrue: openRemediationDrawer, setFalse: closeRemediationDrawer }
+  ] = useBoolean(false);
+
+  const onClickSql = useCallback(
     (record: ScanTypeSqlTableDataSourceItem) => {
       openReportDrawer();
       setCurrentAuditResultRecord(record);
     },
     [openReportDrawer]
+  );
+
+  const onClickAuditResult = useCallback(
+    (record: ScanTypeSqlTableDataSourceItem) => {
+      setRemediationDrawerRecord(record);
+      openRemediationDrawer();
+    },
+    [openRemediationDrawer]
   );
 
   const {
@@ -176,7 +198,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     loading: getTableRowLoading,
     refresh: refreshTableRows,
     error: getTableRowError,
-    cancel
+    cancel: cancelTableRowsRequest
   } = useRequest(
     () => {
       const params: IGetInstanceAuditPlanSQLDataV1Params = {
@@ -201,28 +223,22 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onSuccess: (res) => {
-        if (res.data?.some((i) => i?.audit_status === BEING_AUDITED)) {
+        if (res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
           startPollRequest();
         } else {
-          cancel();
+          cancelTableRowsRequest();
           finishPollRequest();
         }
       },
       onError: () => {
-        cancel();
+        cancelTableRowsRequest();
         finishPollRequest();
       }
     }
   );
 
   const recordAuditResult = useMemo<IAuditResult[]>(() => {
-    try {
-      return JSON.parse(
-        currentAuditResultRecord?.['audit_results'] ?? '[]'
-      ) as IAuditResult[];
-    } catch (error) {
-      return [];
-    }
+    return parseAuditResult(currentAuditResultRecord?.['audit_results']);
   }, [currentAuditResultRecord]);
 
   const { auditResultRuleInfo, loading: auditResultInfoLoading } =
@@ -285,6 +301,53 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     t
   ]);
 
+  useEffect(() => {
+    const exportScanTypeRemediation = () => {
+      remediationExportPending();
+      const hideLoading = messageApi.loading(
+        t('managementConf.detail.remediationExportTips'),
+        0
+      );
+
+      SqlManage.exportSqlManageRemediationV1(
+        {
+          project_name: projectName,
+          export_scope: exportSqlManageRemediationV1ExportScopeEnum.scan_task,
+          instance_audit_plan_id: instanceAuditPlanId ?? '',
+          audit_plan_type: auditPlanType
+        },
+        { responseType: 'blob' }
+      )
+        .then((res) => {
+          if (res.status === 200) {
+            messageApi.success(
+              t('managementConf.detail.remediationExportSuccessTips')
+            );
+          }
+        })
+        .finally(() => {
+          remediationExportDone();
+          hideLoading();
+        });
+    };
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Export_Sql_Management_Conf_Detail_Remediation,
+      exportScanTypeRemediation
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [
+    auditPlanType,
+    instanceAuditPlanId,
+    messageApi,
+    projectName,
+    remediationExportDone,
+    remediationExportPending,
+    t
+  ]);
+
   const tableSetting = useMemo<ColumnsSettingProps>(() => {
     return {
       tableName: `sql_management_conf_${auditPlanType}`,
@@ -292,7 +355,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [username, auditPlanType]);
 
-  const loading = getFilterMetaListLoading || (getTableRowLoading && !polling);
+  const loading = useMemo(
+    () =>
+      polling && !getFilterMetaListLoading
+        ? false
+        : getFilterMetaListLoading || getTableRowLoading,
+    [polling, getFilterMetaListLoading, getTableRowLoading]
+  );
 
   const tableHead = useMemo(
     () =>
@@ -300,11 +369,49 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         auditStatus: t(
           'managementConf.detail.scanTypeSqlCollection.column.auditStatus'
         ),
-        auditResult: t(
-          'managementConf.detail.scanTypeSqlCollection.column.auditResult'
+        firstAuditResult: t(
+          'managementConf.detail.scanTypeSqlCollection.column.firstAuditResult'
+        ),
+        currentAuditResult: t(
+          'managementConf.detail.scanTypeSqlCollection.column.currentAuditResult'
         )
       }),
     [tableMetas?.head, t]
+  );
+
+  const renderAuditResultCell = useCallback(
+    (
+      record: ScanTypeSqlTableDataSourceItem,
+      fieldName: 'first_audit_results' | 'audit_results'
+    ) => {
+      const isBeingAudited = record['audit_status'] === BEING_AUDITED;
+
+      if (isBeingAudited) {
+        return (
+          <AuditResultMessage
+            auditResult={{}}
+            auditStatus={getAuditTaskSQLsV2FilterAuditStatusEnum.doing}
+          />
+        );
+      }
+
+      const results = parseAuditResult(record[fieldName]);
+
+      return (
+        <BasicToolTips
+          title={t('sqlManagement.table.column.viewAuditResultCompare')}
+        >
+          <div
+            data-testid="trigger-open-remediation-drawer"
+            className="audit-result-wrapper"
+            onClick={() => onClickAuditResult(record)}
+          >
+            <AuditLevelSummary auditResults={results} />
+          </div>
+        </BasicToolTips>
+      );
+    },
+    [onClickAuditResult, t]
   );
 
   const columns = useMemo(() => {
@@ -312,23 +419,22 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       return [];
     }
 
-    const builtColumns = sortableTableColumnFactory(tableHead, {
+    return sortableTableColumnFactory(tableHead, {
       columnClassName: (type) =>
         type === 'sql' ? 'ellipsis-column-large-width' : undefined,
       customRender: (text, record, fieldName, type) => {
+        const isBeingAudited = record['audit_status'] === BEING_AUDITED;
+
         if (fieldName === 'audit_status') {
           return <AuditStatusTag status={text} />;
         }
 
+        if (fieldName === 'first_audit_results') {
+          return renderAuditResultCell(record, 'first_audit_results');
+        }
+
         if (fieldName === 'audit_results') {
-          return (
-            <div
-              data-testid="trigger-open-report-drawer"
-              onClick={() => onClickAuditResult(record)}
-            >
-              <ResultIconRender auditResultInfo={parseAuditResult(text)} />
-            </div>
-          );
+          return renderAuditResultCell(record, 'audit_results');
         }
 
         if (!text) {
@@ -344,7 +450,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             <SQLRenderer.Snippet
               tooltip={false}
               className="pointer"
-              onClick={() => onClickAuditResult(record)}
+              onClick={() => {
+                if (!isBeingAudited) {
+                  onClickSql(record);
+                }
+              }}
               sql={text}
               rows={1}
               showCopyIcon
@@ -356,25 +466,12 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         return text;
       }
     });
-
-    return builtColumns.map((column) => {
-      if (column.dataIndex === 'audit_results') {
-        return {
-          ...column,
-          title: (
-            <Tooltip
-              title={t(
-                'managementConf.detail.scanTypeSqlCollection.column.auditResultTooltip'
-              )}
-            >
-              <span>{column.title as ReactNode}</span>
-            </Tooltip>
-          )
-        };
-      }
-      return column;
-    });
-  }, [onClickAuditResult, sortableTableColumnFactory, t, tableHead]);
+  }, [
+    onClickSql,
+    renderAuditResultCell,
+    sortableTableColumnFactory,
+    tableHead
+  ]);
 
   return (
     <ScanTypeSqlCollectionStyleWrapper>
@@ -424,6 +521,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             </BasicButton>
           </Link>
         }
+      />
+      <RemediationDetailDrawer
+        open={remediationDrawerVisible}
+        onClose={closeRemediationDrawer}
+        sqlManageId={remediationDrawerRecord?.id}
       />
     </ScanTypeSqlCollectionStyleWrapper>
   );
