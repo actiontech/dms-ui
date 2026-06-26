@@ -86,6 +86,14 @@ export enum exportSqlManageV1SortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum exportSqlManageRemediationV1ExportScopeEnum {
+  'project' = 'project',
+
+  'data_source' = 'data_source',
+
+  'scan_task' = 'scan_task'
+}
+
 export enum GetSqlManageListV2FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 

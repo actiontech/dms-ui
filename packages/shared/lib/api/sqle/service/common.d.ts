@@ -2360,6 +2360,15 @@ export interface ISqlManage {
 
   remark?: string;
 
+  // TODO: 后端已移除/变更，待 codegen 重新生成
+  first_audit_missing?: boolean;
+
+  first_audit_result?: IAuditResult[];
+
+  first_audit_time?: string;
+
+  rule_diff?: IRuleDiff;
+
   schema_name?: string;
 
   source?: ISource;
@@ -2369,6 +2378,57 @@ export interface ISqlManage {
   sql_fingerprint?: string;
 
   status?: SqlManageStatusEnum;
+}
+
+// TODO: 后端 v1.SqlManage 与 v2.SqlManage 字段不同，单独建模 v1（v1 接口已 deprecated）
+export interface ISqlManageV1 {
+  appear_num?: number;
+
+  assignees?: string[];
+
+  audit_result?: IAuditResult[];
+
+  endpoint?: string;
+
+  first_appear_time?: string;
+
+  first_audit_result?: IAuditResult[];
+
+  first_audit_time?: string;
+
+  id?: number;
+
+  instance_name?: string;
+
+  last_appear_time?: string;
+
+  remark?: string;
+
+  rule_diff?: IRuleDiff;
+
+  schema_name?: string;
+
+  source?: ISource;
+
+  sql?: string;
+
+  sql_fingerprint?: string;
+
+  status?: SqlManageStatusEnum;
+}
+
+export interface IGetSqlManageListV1Resp {
+  code?: number;
+
+  data?: ISqlManageV1[];
+
+  message?: string;
+
+  sql_manage_bad_num?: number;
+
+  sql_manage_optimized_num?: number;
+
+  sql_manage_total_num?: number;
 }
 
 export interface IStatisticAuditPlanResV1 {
@@ -3457,4 +3517,41 @@ export interface IWorkflowStepResV2 {
   type?: WorkflowStepResV2TypeEnum;
 
   workflow_step_id?: number;
+}
+
+export interface IRuleDiff {
+  new?: IAuditResult[];
+
+  resolved?: IAuditResult[];
+
+  unchanged?: IAuditResult[];
+}
+
+export interface ISqlManageRemediation {
+  // TODO: 后端已移除/变更，待 codegen 重新生成
+  first_audit_missing?: boolean;
+
+  first_audit_result?: IAuditResult[];
+
+  first_audit_time?: string;
+
+  id?: number;
+
+  latest_audit_result?: IAuditResult[];
+
+  latest_audit_time?: string;
+
+  rule_diff?: IRuleDiff;
+
+  sql?: string;
+
+  sql_fingerprint?: string;
+}
+
+export interface IGetSqlManageRemediationResp {
+  code?: number;
+
+  data?: ISqlManageRemediation;
+
+  message?: string;
 }
