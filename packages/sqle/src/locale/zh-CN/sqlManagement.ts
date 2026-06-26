@@ -3,9 +3,15 @@ export default {
   pageTitle: 'SQL管控',
   pageHeader: {
     action: {
-      export: '导出',
+      exportReport: '导出报表',
+      export: '导出 SQL管控报表',
       exporting: '正在导出文件',
-      exportSuccessTips: '导出文件成功'
+      exportSuccessTips: '导出文件成功',
+      exportFailedTips: '导出文件失败',
+      remediationExportCurrentProject: '导出当前项目SQL整改报表',
+      remediationExportAllProjects: '导出所有项目SQL整改报表',
+      remediationExporting: '正在导出 SQL 管控整改报表',
+      remediationExportSuccessTips: 'SQL 管控整改报表导出成功'
     }
   },
   statistics: {
@@ -58,13 +64,33 @@ export default {
       highPriority: '高优先',
       lowPriority: '低优先',
       auditResult: '审核结果',
+      firstAuditResult: '最初审核结果',
+      currentAuditResult: '当前审核结果',
+      viewAuditResultCompare: '查看审核结果对比',
+      viewFirstAuditResultDetail: '查看审核结果对比',
+      viewCurrentAuditResultDetail: '查看审核结果对比',
       firstOccurrence: '初次出现时间',
       lastOccurrence: '最后一次出现时间',
       occurrenceCount: '出现数量',
       personInCharge: '负责人',
       status: '状态',
+      remediationStatus: '整改状态',
       comment: '备注',
       endpoints: '端点信息'
+    },
+    remediationStatus: {
+      resolved: '已整改',
+      partially_fixed: '部分整改',
+      unchanged: '未变化',
+      deteriorated: '恶化',
+      newly_discovered: '新发现',
+      no_remediation_needed: '无需整改'
+    },
+    remediationStatusDisplay: {
+      fully_resolved: '完全整改',
+      partially_fixed: '部分整改',
+      pending_remediation: '尚未整改',
+      no_remediation_needed: '无需整改'
     },
     filter: {
       time: '时间范围',
@@ -96,5 +122,17 @@ export default {
     statusReport: {
       title: 'SQL审核结果'
     }
+  },
+  remediationCompare: {
+    tab: '整改对比',
+    drawerTitle: '整改状态详情',
+    loadFailed: '整改详情加载失败，请稍后重试。',
+    firstAuditMissing: '无最初审核快照，当前按最末次结果展示新发现问题。',
+    firstAuditResult: '最初审核结果',
+    latestAuditResult: '当前审核结果',
+    auditTime: '审核时间：{{time}}',
+    diffSectionOptimized: '已优化',
+    diffSectionUnchanged: '未变动',
+    diffSectionNew: '新增'
   }
 };
