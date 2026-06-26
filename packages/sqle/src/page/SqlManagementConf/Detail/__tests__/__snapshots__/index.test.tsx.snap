@@ -251,6 +251,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 246px;"
                           />
@@ -288,6 +289,12 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                               scope="col"
                             >
                               采集到的SQL数
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              审核有问题的SQL数
                             </th>
                             <th
                               class="ant-table-cell"
@@ -375,13 +382,22 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                                  
                               </div>
                             </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-placeholder"
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="7"
+                              colspan="8"
                             >
                               <div
                                 class="ant-table-expanded-row-fixed"
@@ -615,6 +631,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 246px;"
                           />
@@ -657,6 +674,12 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
+                              审核有问题的SQL数
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
                               最近一次采集时间
                             </th>
                             <th
@@ -676,6 +699,15 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -789,6 +821,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              0
                             </td>
                             <td
                               class="ant-table-cell"
@@ -966,6 +1003,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
+                              0
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               -
                             </td>
                             <td
@@ -1069,6 +1111,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
+                              0
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               -
                             </td>
                             <td
@@ -1163,6 +1210,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              0
                             </td>
                             <td
                               class="ant-table-cell"
