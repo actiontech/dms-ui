@@ -1,6 +1,7 @@
 import AuditResultMessage from '..';
 import { AuditResultMessageProps } from '../index.type';
 import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import { screen } from '@testing-library/react';
 
 import { renderWithTheme } from '../../../testUtils/customRender';
 
@@ -23,6 +24,44 @@ describe('sqle/components/AuditResultMessage', () => {
       auditStatus: getAuditTaskSQLsV2FilterAuditStatusEnum.doing
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render rule desc before audit message and rule key', () => {
+    customRender({
+      auditResult: {
+        level: 'error',
+        rule_name: 'ddl_check_table_without_if_not_exists',
+        desc: '新建表建议加入 IF NOT EXISTS',
+        message: '最末次命中：新建表建议加入 IF NOT EXISTS'
+      }
+    });
+
+    expect(
+      screen.getByText('新建表建议加入 IF NOT EXISTS')
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText('ddl_check_table_without_if_not_exists')
+    ).toBeNull();
+    expect(
+      screen.queryByText('最末次命中：新建表建议加入 IF NOT EXISTS')
+    ).toBeNull();
+  });
+
+  it('render message instead of rule key when desc is absent', () => {
+    customRender({
+      auditResult: {
+        level: 'error',
+        rule_name: 'ddl_check_table_without_if_not_exists',
+        message: '最末次命中：新建表建议加入 IF NOT EXISTS'
+      }
+    });
+
+    expect(
+      screen.getByText('最末次命中：新建表建议加入 IF NOT EXISTS')
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText('ddl_check_table_without_if_not_exists')
+    ).toBeNull();
   });
 
   describe('render snap when has diff level', () => {
