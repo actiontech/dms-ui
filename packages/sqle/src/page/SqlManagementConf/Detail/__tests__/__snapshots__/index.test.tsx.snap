@@ -162,6 +162,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
         />
         <div
           class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                />
+              </svg>
+            </span>
+            <span>
+              导出该数据源整改报表
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
@@ -224,7 +251,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                           <col />
                           <col />
                           <col />
-                          <col />
                           <col
                             style="width: 246px;"
                           />
@@ -262,12 +288,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                               scope="col"
                             >
                               采集到的SQL数
-                            </th>
-                            <th
-                              class="ant-table-cell"
-                              scope="col"
-                            >
-                              审核有问题的SQL数
                             </th>
                             <th
                               class="ant-table-cell"
@@ -355,22 +375,13 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                                  
                               </div>
                             </td>
-                            <td
-                              style="padding: 0px; border: 0px; height: 0px;"
-                            >
-                              <div
-                                style="height: 0px; overflow: hidden;"
-                              >
-                                 
-                              </div>
-                            </td>
                           </tr>
                           <tr
                             class="ant-table-placeholder"
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="8"
+                              colspan="7"
                             >
                               <div
                                 class="ant-table-expanded-row-fixed"
@@ -515,6 +526,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
         />
         <div
           class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                />
+              </svg>
+            </span>
+            <span>
+              导出该数据源整改报表
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
@@ -577,7 +615,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                           <col />
                           <col />
                           <col />
-                          <col />
                           <col
                             style="width: 246px;"
                           />
@@ -620,12 +657,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              审核有问题的SQL数
-                            </th>
-                            <th
-                              class="ant-table-cell"
-                              scope="col"
-                            >
                               最近一次采集时间
                             </th>
                             <th
@@ -645,15 +676,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
-                            <td
-                              style="padding: 0px; border: 0px; height: 0px;"
-                            >
-                              <div
-                                style="height: 0px; overflow: hidden;"
-                              >
-                                 
-                              </div>
-                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -767,11 +789,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               -
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
-                              0
                             </td>
                             <td
                               class="ant-table-cell"
@@ -949,11 +966,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              0
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
                               -
                             </td>
                             <td
@@ -1057,11 +1069,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              0
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
                               -
                             </td>
                             <td
@@ -1156,11 +1163,6 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               -
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
-                              0
                             </td>
                             <td
                               class="ant-table-cell"

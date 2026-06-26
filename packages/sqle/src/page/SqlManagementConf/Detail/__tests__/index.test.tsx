@@ -7,7 +7,8 @@ import {
 import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
 import { superRender } from '../../../../testUtils/customRender';
 import ConfDetail from '..';
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
@@ -87,13 +88,14 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
 
     expect(queryByText('导出报表')).not.toBeInTheDocument();
     expect(queryByText('立即审核')).not.toBeInTheDocument();
-    fireEvent.click(getAllByText('自定义')[0]);
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(getAllByText('自定义')[0]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(queryByText('导出报表')).toBeInTheDocument();
     expect(queryByText('立即审核')).toBeInTheDocument();
 
-    fireEvent.click(getByText('导出报表'));
-    fireEvent.click(getByText('导出扫描任务报表'));
+    await user.click(getByText('导出报表'));
+    await user.click(await screen.findByText('导出扫描任务报表'));
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenNthCalledWith(
       1,

@@ -17,9 +17,9 @@ import { WorkflowSqlAnalyzeData } from '../__testData__';
 
 import WorkflowSqlAnalyze from '.';
 
-jest.mock('react-router', () => {
+jest.mock('react-router-dom', () => {
   return {
-    ...jest.requireActual('react-router'),
+    ...jest.requireActual('react-router-dom'),
     useParams: jest.fn()
   };
 });

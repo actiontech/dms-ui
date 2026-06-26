@@ -3,7 +3,7 @@
 exports[`test ScanTypeSqlCollection should match snapshot 1`] = `
 <div>
   <section
-    class="css-1kw0l6j"
+    class="css-16x4zhu"
   >
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -189,7 +189,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 1`] = `
 exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
 <div>
   <section
-    class="css-1kw0l6j"
+    class="css-16x4zhu"
   >
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -1913,32 +1913,49 @@ LIMIT
                         class="ant-table-cell"
                       >
                         <div
-                          class="audit-result-wrapper"
-                          data-testid="trigger-open-remediation-drawer"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space-item"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="audit-result-wrapper"
+                              data-testid="trigger-open-remediation-drawer"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 20 20"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="css-yzky0k"
                               >
-                                <path
-                                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                  fill="#41BF9A"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="audit-level-summary-item"
+                                    >
+                                      <svg
+                                        height="20"
+                                        viewBox="0 0 16 16"
+                                        width="20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                          fill="#F66074"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="audit-level-summary-count"
+                                      >
+                                        × 
+                                        1
+                                      </span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -1946,40 +1963,48 @@ LIMIT
                         class="ant-table-cell"
                       >
                         <div
-                          class="audit-result-wrapper"
-                          data-testid="trigger-open-remediation-drawer"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
-                            class="css-yzky0k"
+                            class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="audit-result-wrapper"
+                              data-testid="trigger-open-remediation-drawer"
                             >
                               <div
-                                class="ant-space-item"
+                                class="css-yzky0k"
                               >
-                                <span
-                                  class="audit-level-summary-item"
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                 >
-                                  <svg
-                                    fill="none"
-                                    height="20"
-                                    viewBox="0 0 16 16"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <div
+                                    class="ant-space-item"
                                   >
-                                    <path
-                                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
-                                      fill="#EBAD1C"
-                                    />
-                                  </svg>
-                                  <span
-                                    class="audit-level-summary-count"
-                                  >
-                                    × 
-                                    1
-                                  </span>
-                                </span>
+                                    <span
+                                      class="audit-level-summary-item"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="20"
+                                        viewBox="0 0 16 16"
+                                        width="20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                                          fill="#EBAD1C"
+                                        />
+                                      </svg>
+                                      <span
+                                        class="audit-level-summary-count"
+                                      >
+                                        × 
+                                        1
+                                      </span>
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2628,7 +2653,7 @@ exports[`test ScanTypeSqlCollection should open remediation drawer on audit resu
 <body>
   <div>
     <section
-      class="css-1kw0l6j"
+      class="css-16x4zhu"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -4352,32 +4377,49 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <div
-                            class="audit-result-wrapper"
-                            data-testid="trigger-open-remediation-drawer"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
-                              class=" css-1avyf41"
+                              class="ant-space-item"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="audit-result-wrapper"
+                                data-testid="trigger-open-remediation-drawer"
                               >
-                                <svg
-                                  height="20"
-                                  viewBox="0 0 20 20"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <div
+                                  class="css-yzky0k"
                                 >
-                                  <path
-                                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                    fill="#41BF9A"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                审核通过
-                              </span>
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class="audit-level-summary-item"
+                                      >
+                                        <svg
+                                          height="20"
+                                          viewBox="0 0 16 16"
+                                          width="20"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                            fill="#F66074"
+                                          />
+                                        </svg>
+                                        <span
+                                          class="audit-level-summary-count"
+                                        >
+                                          × 
+                                          1
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -4385,40 +4427,48 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <div
-                            class="audit-result-wrapper"
-                            data-testid="trigger-open-remediation-drawer"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
-                              class="css-yzky0k"
+                              class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="audit-result-wrapper"
+                                data-testid="trigger-open-remediation-drawer"
                               >
                                 <div
-                                  class="ant-space-item"
+                                  class="css-yzky0k"
                                 >
-                                  <span
-                                    class="audit-level-summary-item"
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                   >
-                                    <svg
-                                      fill="none"
-                                      height="20"
-                                      viewBox="0 0 16 16"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      class="ant-space-item"
                                     >
-                                      <path
-                                        d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
-                                        fill="#EBAD1C"
-                                      />
-                                    </svg>
-                                    <span
-                                      class="audit-level-summary-count"
-                                    >
-                                      × 
-                                      1
-                                    </span>
-                                  </span>
+                                      <span
+                                        class="audit-level-summary-item"
+                                      >
+                                        <svg
+                                          fill="none"
+                                          height="20"
+                                          viewBox="0 0 16 16"
+                                          width="20"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                                            fill="#EBAD1C"
+                                          />
+                                        </svg>
+                                        <span
+                                          class="audit-level-summary-count"
+                                        >
+                                          × 
+                                          1
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -5120,7 +5170,7 @@ LIMIT
                   class="ant-spin-container"
                 >
                   <div
-                    class="css-89hxei"
+                    class="css-ay3j81"
                   >
                     <div
                       class="diff-columns"
@@ -5143,32 +5193,28 @@ LIMIT
                           </span>
                         </div>
                         <div
-                          class="diff-rules-container"
+                          class=" css-1avyf41"
                         >
-                          <div
-                            class=" css-1avyf41"
+                          <span
+                            class="icon-wrapper"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <svg
+                              height="20"
+                              viewBox="0 0 20 20"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 20 20"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                  fill="#41BF9A"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
-                          </div>
+                              <path
+                                d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                fill="#41BF9A"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="text-wrapper"
+                          >
+                            审核通过
+                          </span>
                         </div>
                       </section>
                       <section
@@ -5189,32 +5235,28 @@ LIMIT
                           </span>
                         </div>
                         <div
-                          class="diff-rules-container"
+                          class=" css-1avyf41"
                         >
-                          <div
-                            class=" css-1avyf41"
+                          <span
+                            class="icon-wrapper"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <svg
+                              height="20"
+                              viewBox="0 0 20 20"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 20 20"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                  fill="#41BF9A"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
-                          </div>
+                              <path
+                                d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                fill="#41BF9A"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="text-wrapper"
+                          >
+                            审核通过
+                          </span>
                         </div>
                       </section>
                     </div>

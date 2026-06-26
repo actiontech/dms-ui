@@ -14,9 +14,9 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 
-jest.mock('react-router', () => {
+jest.mock('react-router-dom', () => {
   return {
-    ...jest.requireActual('react-router'),
+    ...jest.requireActual('react-router-dom'),
     useParams: jest.fn()
   };
 });
