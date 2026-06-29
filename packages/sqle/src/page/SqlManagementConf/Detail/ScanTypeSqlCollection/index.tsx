@@ -508,6 +508,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         }}
         open={reportDrawerVisible}
         onClose={closeReportDrawer}
+        showAnnotation
         loading={auditResultInfoLoading}
         extra={
           <Link
