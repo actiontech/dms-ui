@@ -108,9 +108,17 @@ export default {
     title: '{{instanceName}} intelligent scan details',
     staticScanTypes: 'Static scan',
     export: 'Export',
+    exportReport: 'Export report',
+    exportScanTaskReport: 'Export scan task report',
+    exportRemediationReport: 'Export SQL remediation report',
+    exportDataSourceRemediationReport: 'Export data source remediation report',
     auditImmediately: 'Audit immediately',
     auditImmediatelySuccessTips: 'Audit successfully',
     exportTips: 'Exporting scan task details',
+    remediationExport: 'SQL remediation',
+    remediationExportTips: 'Exporting SQL management remediation report',
+    remediationExportSuccessTips:
+      'Export SQL management remediation report successfully',
     overview: {
       title: 'Overview',
       column: {
@@ -156,8 +164,8 @@ export default {
         occurrenceCount: 'Occurrence count',
         status: 'Status',
         auditStatus: 'Audit status',
-        auditResult: 'Audit result',
-        auditResultTooltip: 'Shows the latest audit result',
+        firstAuditResult: 'Initial audit result',
+        currentAuditResult: 'Current audit result',
         audited: 'Audited',
         explanation: {
           text: 'Explanation',

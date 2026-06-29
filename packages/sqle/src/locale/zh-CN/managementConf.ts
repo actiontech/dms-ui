@@ -104,9 +104,16 @@ export default {
     title: '{{instanceName}} 智能扫描详情',
     staticScanTypes: '静态扫描',
     export: '导出',
+    exportReport: '导出报表',
+    exportScanTaskReport: '导出扫描任务报表',
+    exportRemediationReport: '导出SQL管控整改报表',
+    exportDataSourceRemediationReport: '导出该数据源整改报表',
     auditImmediately: '立即审核',
     auditImmediatelySuccessTips: '审核成功',
     exportTips: '正在导出扫描任务详情',
+    remediationExport: 'SQL 管控整改',
+    remediationExportTips: '正在导出 SQL 管控整改报表',
+    remediationExportSuccessTips: 'SQL 管控整改报表导出成功',
     overview: {
       title: '概览',
       column: {
@@ -152,8 +159,8 @@ export default {
         occurrenceCount: '出现次数',
         status: '状态',
         auditStatus: '审核状态',
-        auditResult: '审核结果',
-        auditResultTooltip: '展示最新的审核结果',
+        firstAuditResult: '最初审核结果',
+        currentAuditResult: '当前审核结果',
         audited: '已审核',
         explanation: {
           text: '说明',

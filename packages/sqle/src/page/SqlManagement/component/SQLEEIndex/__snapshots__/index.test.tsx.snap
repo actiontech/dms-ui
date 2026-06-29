@@ -21,7 +21,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -39,7 +39,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 </svg>
               </span>
               <span>
-                导出
+                导出报表
               </span>
             </button>
           </div>
@@ -828,6 +828,9 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                         <col
                           style="width: 200px;"
                         />
+                        <col
+                          style="width: 200px;"
+                        />
                         <col />
                         <col />
                         <col />
@@ -892,7 +895,13 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            审核结果
+                            最初审核结果
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            当前审核结果
                           </th>
                           <th
                             class="ant-table-cell"
@@ -1070,6 +1079,15 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
@@ -1108,26 +1126,53 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space-item"
+                                  class="audit-result-wrapper"
                                 >
-                                  <svg
-                                    height="20"
-                                    viewBox="0 0 16 16"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <div
+                                    class="css-yzky0k"
                                   >
-                                    <path
-                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                      fill="#F66074"
-                                    />
-                                  </svg>
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="audit-level-summary-item"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                          <span
+                                            class="audit-level-summary-count"
+                                          >
+                                            × 
+                                            2
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1690,7 +1735,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1708,7 +1753,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                 </svg>
               </span>
               <span>
-                导出
+                导出报表
               </span>
             </button>
           </div>
@@ -2138,6 +2183,9 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                         <col
                           style="width: 200px;"
                         />
+                        <col
+                          style="width: 200px;"
+                        />
                         <col />
                         <col />
                         <col />
@@ -2203,7 +2251,13 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            审核结果
+                            最初审核结果
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            当前审核结果
                           </th>
                           <th
                             class="ant-table-cell"
@@ -2381,13 +2435,22 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-placeholder"
                         >
                           <td
                             class="ant-table-cell"
-                            colspan="13"
+                            colspan="14"
                           >
                             <div
                               class="ant-table-expanded-row-fixed"
@@ -2430,7 +2493,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -2448,7 +2511,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                 </svg>
               </span>
               <span>
-                导出
+                导出报表
               </span>
             </button>
           </div>
@@ -2877,6 +2940,9 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         <col
                           style="width: 200px;"
                         />
+                        <col
+                          style="width: 200px;"
+                        />
                         <col />
                         <col />
                         <col />
@@ -2941,7 +3007,13 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            审核结果
+                            最初审核结果
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            当前审核结果
                           </th>
                           <th
                             class="ant-table-cell"
@@ -3119,6 +3191,15 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
@@ -3157,26 +3238,53 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space-item"
+                                  class="audit-result-wrapper"
                                 >
-                                  <svg
-                                    height="20"
-                                    viewBox="0 0 16 16"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <div
+                                    class="css-yzky0k"
                                   >
-                                    <path
-                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                      fill="#F66074"
-                                    />
-                                  </svg>
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="audit-level-summary-item"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                          <span
+                                            class="audit-level-summary-count"
+                                          >
+                                            × 
+                                            2
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -3514,34 +3622,12 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <div
-                              class="audit-result-wrapper"
-                            >
-                              <div
-                                class=" css-1avyf41"
-                              >
-                                <span
-                                  class="icon-wrapper"
-                                >
-                                  <svg
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                      fill="#41BF9A"
-                                    />
-                                  </svg>
-                                </span>
-                                <span
-                                  class="text-wrapper"
-                                >
-                                  审核通过
-                                </span>
-                              </div>
-                            </div>
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -3906,35 +3992,53 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="audit-result-wrapper"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <div
+                                    class="css-yzky0k"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 16 16"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                     >
-                                      <path
-                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                        fill="#F66074"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    建议UNIQUE索引名使用 IDX_UK_表名_字段名
-                                  </span>
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="audit-level-summary-item"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                          <span
+                                            class="audit-level-summary-count"
+                                          >
+                                            × 
+                                            1
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -4267,35 +4371,53 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="audit-result-wrapper"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <div
+                                    class="css-yzky0k"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 16 16"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                     >
-                                      <path
-                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                        fill="#F66074"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    建议UNIQUE索引名使用 IDX_UK_表名_字段名
-                                  </span>
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="audit-level-summary-item"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                          <span
+                                            class="audit-level-summary-count"
+                                          >
+                                            × 
+                                            1
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -4553,35 +4675,44 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="audit-result-wrapper"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <div
+                                    class=" css-1avyf41"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <span
+                                      class="icon-wrapper"
                                     >
-                                      <path
-                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                        fill="#41BF9A"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    白名单
-                                  </span>
+                                      <svg
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        width="20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                          fill="#41BF9A"
+                                        />
+                                      </svg>
+                                    </span>
+                                    <span
+                                      class="text-wrapper"
+                                    >
+                                      审核通过
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -4964,7 +5095,7 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                 </svg>
               </span>
               <span>
-                导出
+                导出报表
               </span>
             </button>
           </div>
@@ -5351,6 +5482,9 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                         <col
                           style="width: 200px;"
                         />
+                        <col
+                          style="width: 200px;"
+                        />
                         <col />
                         <col />
                         <col />
@@ -5415,7 +5549,13 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            审核结果
+                            最初审核结果
+                          </th>
+                          <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            当前审核结果
                           </th>
                           <th
                             class="ant-table-cell"
@@ -5593,6 +5733,15 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
@@ -5631,26 +5780,53 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                           <td
                             class="ant-table-cell"
                           >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
                             <div
-                              class="audit-result-wrapper"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space-item"
+                                  class="audit-result-wrapper"
                                 >
-                                  <svg
-                                    height="20"
-                                    viewBox="0 0 16 16"
-                                    width="20"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <div
+                                    class="css-yzky0k"
                                   >
-                                    <path
-                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                      fill="#F66074"
-                                    />
-                                  </svg>
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="audit-level-summary-item"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                          <span
+                                            class="audit-level-summary-count"
+                                          >
+                                            × 
+                                            2
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>

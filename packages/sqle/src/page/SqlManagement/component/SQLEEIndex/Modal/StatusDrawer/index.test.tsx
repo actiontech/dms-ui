@@ -77,7 +77,7 @@ describe('page/SqlManagement/StatusDrawer', () => {
       filter_rule_names: ruleNames.join(',')
     });
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL审核结果')).toBeInTheDocument();
+    expect(screen.getByText('当前审核结果')).toBeInTheDocument();
     expect(screen.getByText('审核结果')).toBeInTheDocument();
     expect(screen.getByText('SQL语句')).toBeInTheDocument();
   });

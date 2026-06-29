@@ -3,9 +3,18 @@ export default {
   pageTitle: 'SQL management',
   pageHeader: {
     action: {
-      export: 'Export',
+      exportReport: 'Export Report',
+      export: 'Export SQL Management Report',
       exporting: 'Exporting file',
-      exportSuccessTips: 'Export file successfully'
+      exportSuccessTips: 'Export file successfully',
+      exportFailedTips: 'Export file failed',
+      remediationExportCurrentProject:
+        'Export Current Project SQL Remediation Report',
+      remediationExportAllProjects:
+        'Export All Projects SQL Remediation Report',
+      remediationExporting: 'Exporting SQL management remediation report',
+      remediationExportSuccessTips:
+        'Export SQL management remediation report successfully'
     }
   },
   statistics: {
@@ -52,13 +61,33 @@ export default {
       highPriority: 'High priority',
       lowPriority: 'Low priority',
       auditResult: 'Audit result',
+      firstAuditResult: 'Initial audit result',
+      currentAuditResult: 'Current audit result',
+      viewAuditResultCompare: 'View audit result comparison',
+      viewFirstAuditResultDetail: 'View audit result comparison',
+      viewCurrentAuditResultDetail: 'View audit result comparison',
       firstOccurrence: 'First occurrence time',
       lastOccurrence: 'Last occurrence time',
       occurrenceCount: 'Occurrence count',
       personInCharge: 'Person in charge',
       status: 'Status',
+      remediationStatus: 'Remediation status',
       comment: 'Comment',
       endpoints: 'Endpoint info'
+    },
+    remediationStatus: {
+      resolved: 'Resolved',
+      partially_fixed: 'Partially fixed',
+      unchanged: 'Unchanged',
+      deteriorated: 'Deteriorated',
+      newly_discovered: 'Newly discovered',
+      no_remediation_needed: 'No remediation needed'
+    },
+    remediationStatusDisplay: {
+      fully_resolved: 'Fully remediated',
+      partially_fixed: 'Partially remediated',
+      pending_remediation: 'Not yet remediated',
+      no_remediation_needed: 'No remediation needed'
     },
     filter: {
       time: 'Time range',
@@ -90,5 +119,18 @@ export default {
     statusReport: {
       title: 'SQL audit result'
     }
+  },
+  remediationCompare: {
+    tab: 'Remediation compare',
+    drawerTitle: 'Remediation status details',
+    loadFailed: 'Failed to load remediation details. Please try again later.',
+    firstAuditMissing:
+      'No first audit snapshot is available. The latest result is shown as newly discovered issues.',
+    firstAuditResult: 'First audit result',
+    latestAuditResult: 'Latest audit result',
+    auditTime: 'Audit time: {{time}}',
+    diffSectionOptimized: 'Optimized',
+    diffSectionUnchanged: 'Unchanged',
+    diffSectionNew: 'New'
   }
 };

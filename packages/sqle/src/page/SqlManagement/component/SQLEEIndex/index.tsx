@@ -29,7 +29,8 @@ import {
   GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum,
   exportSqlManageV1FilterPriorityEnum,
-  exportSqlManageV1FilterStatusEnum
+  exportSqlManageV1FilterStatusEnum,
+  exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
@@ -39,7 +40,8 @@ import SqlManagementColumn, {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message } from 'antd';
+import { Spin, message, Dropdown } from 'antd';
+import type { MenuProps } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -331,16 +333,102 @@ const SQLEEIndex = () => {
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
+        if (
+          (res.data as unknown as { code?: number }).code ===
+          ResponseCode.SUCCESS
+        ) {
           messageApi.success(
             t('sqlManagement.pageHeader.action.exportSuccessTips')
           );
         }
       })
+      .catch((e: Error) => {
+        messageApi.error(
+          e?.message ?? t('sqlManagement.pageHeader.action.exportFailedTips')
+        );
+      })
       .finally(() => {
         hideLoading();
         finishExport();
       });
+  };
+
+  const handleRemediationExport = (scope: 'project' | 'global') => {
+    if (!actionPermission || projectArchive) {
+      return;
+    }
+    startExport();
+    const hideLoading = messageApi.loading(
+      t('sqlManagement.pageHeader.action.remediationExporting')
+    );
+
+    const exportPromise =
+      scope === 'project'
+        ? SqlManage.exportSqlManageRemediationV1(
+            {
+              project_name: projectName,
+              export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
+            },
+            { responseType: 'blob' }
+          )
+        : SqlManage.exportGlobalSqlManageRemediationV1(
+            {},
+            { responseType: 'blob' }
+          );
+
+    exportPromise
+      .then((res) => {
+        if (res.status === 200) {
+          messageApi.success(
+            t('sqlManagement.pageHeader.action.remediationExportSuccessTips')
+          );
+        }
+      })
+      .catch((e: Error) => {
+        messageApi.error(
+          e?.message ?? t('sqlManagement.pageHeader.action.exportFailedTips')
+        );
+      })
+      .finally(() => {
+        hideLoading();
+        finishExport();
+      });
+  };
+
+  const exportMenuItems: MenuProps['items'] = useMemo(() => {
+    const items: MenuProps['items'] = [
+      {
+        key: 'sqlManage',
+        label: t('sqlManagement.pageHeader.action.export')
+      }
+    ];
+
+    if (actionPermission && !projectArchive) {
+      items.push(
+        {
+          key: 'project',
+          label: t(
+            'sqlManagement.pageHeader.action.remediationExportCurrentProject'
+          )
+        },
+        {
+          key: 'global',
+          label: t(
+            'sqlManagement.pageHeader.action.remediationExportAllProjects'
+          )
+        }
+      );
+    }
+
+    return items;
+  }, [t, actionPermission, projectArchive]);
+
+  const onExportMenuClick: MenuProps['onClick'] = ({ key }) => {
+    if (key === 'sqlManage') {
+      handleExport();
+      return;
+    }
+    handleRemediationExport(key as 'project' | 'global');
   };
 
   useEffect(() => {
@@ -383,13 +471,30 @@ const SQLEEIndex = () => {
       <PageHeader
         title={t('sqlManagement.pageTitle')}
         extra={
-          <BasicButton
-            onClick={handleExport}
-            icon={<DownArrowLineOutlined />}
-            disabled={exportButtonDisabled}
-          >
-            {t('sqlManagement.pageHeader.action.export')}
-          </BasicButton>
+          exportMenuItems.length <= 1 ? (
+            <BasicButton
+              icon={<DownArrowLineOutlined />}
+              disabled={exportButtonDisabled}
+              onClick={handleExport}
+            >
+              {t('sqlManagement.pageHeader.action.exportReport')}
+            </BasicButton>
+          ) : (
+            <Dropdown
+              menu={{
+                items: exportMenuItems,
+                onClick: onExportMenuClick
+              }}
+              disabled={exportButtonDisabled}
+            >
+              <BasicButton
+                icon={<DownArrowLineOutlined />}
+                disabled={exportButtonDisabled}
+              >
+                {t('sqlManagement.pageHeader.action.exportReport')}
+              </BasicButton>
+            </Dropdown>
+          )
         }
       />
       {/* page */}

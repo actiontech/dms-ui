@@ -77,8 +77,13 @@ const ReportDrawer = ({
                             }-${index}`}
                             auditResult={{
                               level: item?.level ?? '',
-                              message: item?.message ?? ''
+                              message: item?.message ?? '',
+                              rule_name: item?.rule_name ?? '',
+                              desc: item?.desc ?? '',
+                              i18n_audit_result_info:
+                                item?.i18n_audit_result_info
                             }}
+                            displayMode="ruleDesc"
                             isRuleDeleted={item.isRuleDeleted}
                           />
                         );
@@ -92,8 +97,12 @@ const ReportDrawer = ({
                           auditResult={{
                             level: item?.level ?? '',
                             message: item?.message ?? '',
-                            annotation: item.annotation ?? ''
+                            rule_name: item?.rule_name ?? '',
+                            desc: item?.desc ?? '',
+                            annotation: item.annotation ?? '',
+                            i18n_audit_result_info: item?.i18n_audit_result_info
                           }}
+                          displayMode="ruleDesc"
                           showAnnotation
                           moreBtnLink={
                             item?.rule_name && item?.db_type

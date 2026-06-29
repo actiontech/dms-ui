@@ -74,6 +74,20 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                     SQL解析
                   </div>
                 </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="整改对比"
+                  >
+                    整改对比
+                  </div>
+                </label>
               </div>
             </div>
           </section>
@@ -81,7 +95,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-15cja80"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
@@ -340,6 +354,20 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
+                    title="整改对比"
+                  >
+                    整改对比
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
                     title="global_configuration_ldap表"
                   >
                     global_configuration_ldap表
@@ -366,7 +394,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-15cja80"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
@@ -6490,13 +6518,27 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
+                    title="整改对比"
+                  >
+                    整改对比
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item ant-segmented-item-selected"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
                     title="global_configuration_ldap表"
                   >
                     global_configuration_ldap表
                   </div>
                 </label>
                 <label
-                  class="ant-segmented-item ant-segmented-item-selected"
+                  class="ant-segmented-item"
                 >
                   <input
                     class="ant-segmented-item-input"
@@ -6516,11 +6558,10 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-15cja80"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
-                hidden=""
               >
                 <div
                   class="ant-space-item"
@@ -8843,6 +8884,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
               </div>
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+                hidden=""
               >
                 <div
                   class="ant-space-item"

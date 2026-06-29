@@ -10,6 +10,7 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import AddWhitelist from '../../../../Whitelist/Drawer/AddWhitelist';
 import ChangePriority from './ChangePriority';
+import RemediationDetailDrawer from './RemediationDetailDrawer';
 
 const SqlManagementModal = () => {
   const { initModalStatus } = useSqlManagementRedux();
@@ -20,6 +21,7 @@ const SqlManagementModal = () => {
       [ModalName.Assignment_Member_Batch]: false,
       [ModalName.Change_Status_Single]: false,
       [ModalName.View_Audit_Result_Drawer]: false,
+      [ModalName.View_Remediation_Detail_Drawer]: false,
       [ModalName.Change_SQL_Priority]: false
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,6 +35,7 @@ const SqlManagementModal = () => {
     <>
       <AssignmentSingle />
       <StatusDrawer />
+      <RemediationDetailDrawer />
       <AssignmentBatch />
       <ChangeStatus />
       <CreateSqlManagementException onCreated={onCreated} />

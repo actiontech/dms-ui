@@ -22,7 +22,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
               class="extra"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -40,7 +40,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
                   </svg>
                 </span>
                 <span>
-                  导出
+                  导出报表
                 </span>
               </button>
             </div>
@@ -470,6 +470,9 @@ exports[`page/SqlManagement render sql management page 1`] = `
                           <col
                             style="width: 200px;"
                           />
+                          <col
+                            style="width: 200px;"
+                          />
                           <col />
                           <col />
                           <col />
@@ -535,7 +538,13 @@ exports[`page/SqlManagement render sql management page 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              审核结果
+                              最初审核结果
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              当前审核结果
                             </th>
                             <th
                               class="ant-table-cell"
@@ -713,13 +722,22 @@ exports[`page/SqlManagement render sql management page 1`] = `
                                  
                               </div>
                             </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-placeholder"
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="13"
+                              colspan="14"
                             >
                               <div
                                 class="ant-table-expanded-row-fixed"

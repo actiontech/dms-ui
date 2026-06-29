@@ -84,4 +84,40 @@ export const SqlContStyleWrapper = styled('section')`
       line-height: 28px;
     }
   }
+
+  .remediation-compare-wrapper {
+    padding: 24px 40px;
+
+    .remediation-section-space {
+      width: 100%;
+    }
+
+    .remediation-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .remediation-title {
+      margin-bottom: 0;
+    }
+
+    .remediation-columns,
+    .remediation-diff-columns {
+      display: grid;
+      grid-column-gap: 16px;
+    }
+
+    .remediation-columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .remediation-diff-columns {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ant-list-item {
+      align-items: flex-start;
+    }
+  }
 `;

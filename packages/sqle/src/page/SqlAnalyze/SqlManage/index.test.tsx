@@ -16,9 +16,9 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
 
-jest.mock('react-router', () => {
+jest.mock('react-router-dom', () => {
   return {
-    ...jest.requireActual('react-router'),
+    ...jest.requireActual('react-router-dom'),
     useParams: jest.fn()
   };
 });
@@ -48,6 +48,9 @@ describe('SqlAnalyze/SQLManage', () => {
   const mockGetAnalyzeData = () => {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisV1');
     spy.mockImplementation(() => resolveThreeSecond(SQLManageSqlAnalyzeData));
+    jest
+      .spyOn(SqlManage, 'GetSqlManageRemediationV1')
+      .mockImplementation(() => resolveThreeSecond({}));
     return spy;
   };
 

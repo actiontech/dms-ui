@@ -1,9 +1,8 @@
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
+import { IAuditResultWithExtra } from '../AuditResultMessage/index.type';
 
-export type IAuditResultItem = IAuditResult & {
+export type IAuditResultItem = IAuditResultWithExtra & {
   isRuleDeleted?: boolean;
-  annotation?: string;
 };
 
 export type TypeData = {

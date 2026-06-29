@@ -15,6 +15,7 @@ export enum ModalName {
   Assignment_Member_Batch = 'Assignment_Member_Batch',
   Change_Status_Single = 'Change_Status_Single',
   View_Audit_Result_Drawer = 'View_Audit_Result_Drawer',
+  View_Remediation_Detail_Drawer = 'View_Remediation_Detail_Drawer',
   Change_SQL_Priority = 'Change_SQL_Priority',
 
   // IDE plugin audit

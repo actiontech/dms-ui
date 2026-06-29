@@ -1,12 +1,32 @@
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
+import { AuditResultDisplayMode } from './getAuditResultDisplayText';
+
+/**
+ * Swagger 类型 `IAuditResult` 之外、业务侧常用的补丁字段。
+ * 统一定义在此处避免在多个组件里重复手工拼接。
+ */
+export type AuditResultExtra = {
+  annotation?: string;
+  desc?: string;
+  i18n_audit_result_info?: Record<
+    string,
+    {
+      message?: string;
+      error_info?: string;
+    }
+  >;
+};
+
+export type IAuditResultWithExtra = IAuditResult & AuditResultExtra;
 
 export type AuditResultMessageProps = {
-  auditResult?: IAuditResult & { annotation?: string };
+  auditResult?: IAuditResultWithExtra;
   styleClass?: string;
   showAnnotation?: boolean;
   moreBtnLink?: string;
   isRuleDeleted?: boolean;
   auditStatus?: string;
+  displayMode?: AuditResultDisplayMode;
 };
 
 export type AuditResultInfoItem = {

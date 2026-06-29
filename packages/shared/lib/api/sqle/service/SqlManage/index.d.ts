@@ -10,6 +10,7 @@ import {
   exportSqlManageV1FilterStatusEnum,
   exportSqlManageV1SortFieldEnum,
   exportSqlManageV1SortOrderEnum,
+  exportSqlManageRemediationV1ExportScopeEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
@@ -20,10 +21,12 @@ import {
 
 import {
   IGetSqlManageListResp,
+  IGetSqlManageListV1Resp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
-  IGetSqlManageSqlAnalysisResp
+  IGetSqlManageSqlAnalysisResp,
+  IGetSqlManageRemediationResp
 } from '../common.d';
 
 export interface IGetSqlManageListParams {
@@ -62,7 +65,7 @@ export interface IGetSqlManageListParams {
   page_size: number;
 }
 
-export interface IGetSqlManageListReturn extends IGetSqlManageListResp {}
+export interface IGetSqlManageListReturn extends IGetSqlManageListV1Resp {}
 
 export interface IBatchUpdateSqlManageParams extends IBatchUpdateSqlManageReq {
   project_name: string;
@@ -104,6 +107,20 @@ export interface IExportSqlManageV1Params {
   sort_field?: exportSqlManageV1SortFieldEnum;
 
   sort_order?: exportSqlManageV1SortOrderEnum;
+}
+
+export interface IExportGlobalSqlManageRemediationV1Params {}
+
+export interface IExportSqlManageRemediationV1Params {
+  project_name: string;
+
+  export_scope: exportSqlManageRemediationV1ExportScopeEnum;
+
+  filter_instance_id?: string;
+
+  instance_audit_plan_id?: string;
+
+  audit_plan_type?: string;
 }
 
 export interface IGetSqlManageRuleTipsParams {
@@ -163,3 +180,12 @@ export interface IGetSqlManageListV2Params {
 }
 
 export interface IGetSqlManageListV2Return extends IGetSqlManageListResp {}
+
+export interface IGetSqlManageRemediationV1Params {
+  project_name: string;
+
+  sql_manage_id: string;
+}
+
+export interface IGetSqlManageRemediationV1Return
+  extends IGetSqlManageRemediationResp {}

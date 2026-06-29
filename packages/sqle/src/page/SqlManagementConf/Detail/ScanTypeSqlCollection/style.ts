@@ -1,6 +1,10 @@
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const ScanTypeSqlCollectionStyleWrapper = styled('section')`
+  .audit-result-wrapper {
+    cursor: pointer;
+  }
+
   .table-describe-column {
     max-width: 600px;
   }

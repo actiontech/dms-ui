@@ -1,4 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SQLEEIndex from '.';
 import { superRender } from '../../../../testUtils/customRender';
 import sqlManage from '../../../../testUtils/mockApi/sqlManage';
@@ -22,7 +23,8 @@ import { ModalName } from '../../../../data/ModalName';
 import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
 import {
   GetSqlManageListV2FilterPriorityEnum,
-  exportSqlManageV1FilterPriorityEnum
+  exportSqlManageV1FilterPriorityEnum,
+  exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 jest.mock('react-redux', () => {
@@ -227,11 +229,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const exportRequest = sqlManage.exportSqlManage();
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('与我相关'));
     fireEvent.click(screen.getByText('查看高优先级SQL'));
 
-    expect(screen.getByText('导出')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('导出'));
+    expect(screen.getByText('导出报表')).toBeInTheDocument();
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(screen.getByText('导出报表'));
+    await user.click(await screen.findByText('导出 SQL管控报表'));
     expect(exportRequest).toHaveBeenCalledWith(
       {
         ...exportParams,
@@ -244,6 +249,47 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('导出文件成功')).toBeInTheDocument();
+  });
+
+  it('export remediation report for current project', async () => {
+    const request = sqlManage.getSqlManageList();
+    const exportRequest = sqlManage.exportSqlManageRemediation();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(screen.getByText('导出报表'));
+    await user.click(await screen.findByText('导出当前项目SQL整改报表'));
+    expect(exportRequest).toHaveBeenCalledWith(
+      {
+        project_name: mockProjectInfo.projectName,
+        export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
+      },
+      {
+        responseType: 'blob'
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('SQL 管控整改报表导出成功')).toBeInTheDocument();
+  });
+
+  it('export remediation report for all projects', async () => {
+    const request = sqlManage.getSqlManageList();
+    const exportRequest = sqlManage.exportGlobalSqlManageRemediation();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(screen.getByText('导出报表'));
+    await user.click(await screen.findByText('导出所有项目SQL整改报表'));
+    expect(exportRequest).toHaveBeenCalledWith(
+      {},
+      {
+        responseType: 'blob'
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('SQL 管控整改报表导出成功')).toBeInTheDocument();
   });
 
   it('batch assignment operation for sql', async () => {
@@ -557,24 +603,67 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
-  it('click audit result and open sql audit result', async () => {
+  it('click audit result and open remediation detail drawer', async () => {
+    const rowWithFirstAudit = {
+      ...sqlManageListData.data[0],
+      first_audit_result: sqlManageListData.data[0].audit_result
+    };
     const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: [rowWithFirstAudit]
+      })
+    );
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllBySelector('.audit-result-wrapper').length).toBe(1);
-    fireEvent.click(getAllBySelector('.audit-result-wrapper')[0]);
+    expect(getAllBySelector('.audit-result-wrapper').length).toBe(2);
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(getAllBySelector('.audit-result-wrapper')[1]);
     await act(async () => jest.advanceTimersByTime(300));
     expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
-        modalName: ModalName.View_Audit_Result_Drawer,
+        modalName: ModalName.View_Remediation_Detail_Drawer,
         status: true
       }
     });
     expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
-      payload: sqlManageListData.data[0]
+      payload: rowWithFirstAudit
+    });
+  });
+
+  it('click first audit result and open remediation detail drawer', async () => {
+    const rowWithFirstAudit = {
+      ...sqlManageListData.data[0],
+      first_audit_result: sqlManageListData.data[0].audit_result
+    };
+    const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: [rowWithFirstAudit]
+      })
+    );
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllBySelector('.audit-result-wrapper').length).toBe(2);
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    await user.click(getAllBySelector('.audit-result-wrapper')[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.View_Remediation_Detail_Drawer,
+        status: true
+      }
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: rowWithFirstAudit
     });
   });
 });

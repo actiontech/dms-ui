@@ -17,6 +17,7 @@ import {
   PartialHexagonFilled
 } from '@actiontech/icons';
 import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import { getAuditResultDisplayText } from './getAuditResultDisplayText';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
@@ -52,9 +53,10 @@ const AuditResultMessage = ({
   showAnnotation,
   moreBtnLink,
   isRuleDeleted,
-  auditStatus
+  auditStatus,
+  displayMode = 'ruleDesc'
 }: AuditResultMessageProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [visible, { set }] = useBoolean(true);
 
   const renderIcon = useMemo(() => {
@@ -74,12 +76,22 @@ const AuditResultMessage = ({
   }, [auditResult]);
 
   const renderMessage = useMemo(() => {
-    const { level, message } = auditResult || {};
-    if (message) return message;
-    if (passStatusLevelData.includes(level ?? ''))
+    const { level } = auditResult || {};
+    const displayText = getAuditResultDisplayText(auditResult, t, {
+      displayMode,
+      i18nInstance: i18n
+    });
+
+    if (displayText) {
+      return displayText;
+    }
+
+    if (passStatusLevelData.includes(level ?? '')) {
       return t('components.auditResultMessage.auditPassed');
+    }
+
     return '';
-  }, [auditResult, t]);
+  }, [auditResult, displayMode, i18n, t]);
 
   const auditPendingCopy = useMemo(() => {
     if (auditStatus === getAuditTaskSQLsV2FilterAuditStatusEnum.initialized) {

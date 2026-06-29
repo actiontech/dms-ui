@@ -552,8 +552,13 @@ export const mockAuditPlanSQLMeta: IAuditPlanSQLMetaResV1 = {
       sortable: false
     },
     {
+      field_name: 'first_audit_results',
+      desc: '最初审核结果',
+      sortable: false
+    },
+    {
       field_name: 'audit_results',
-      desc: '审核结果',
+      desc: '当前审核结果',
       sortable: false
     },
     {
@@ -725,6 +730,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '1',
       audit_results: 'null',
+      audit_status: 'being_audited',
       counter: '598',
       db_user: '',
       fingerprint: 'SELECT ?,SLEEP(?) LIMIT ?,?',
@@ -738,6 +744,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12',
       audit_results: 'null',
+      audit_status: 'being_audited',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT ?,?,?,?,?,SLEEP(?) LIMIT ?,?',
@@ -751,6 +758,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123',
       audit_results: 'null',
+      audit_status: 'being_audited',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT SLEEP(?) LIMIT ?,?',
@@ -763,6 +771,8 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     },
     {
       id: '1234',
+      first_audit_results:
+        '[{"level": "error", "message": "最初审核：建议添加主键", "rule_name": "rule_primary_key"}]',
       audit_results:
         '[{"level": "warn", "message": "语法错误或者解析器不支持，请人工确认SQL正确性", "rule_name": ""}]',
       counter: '2388',
@@ -778,6 +788,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12345',
       audit_results: 'null',
+      audit_status: 'being_audited',
       counter: '8559',
       db_user: '',
       fingerprint: 'COMMIT',
@@ -791,6 +802,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123456',
       audit_results: 'null',
+      audit_status: 'being_audited',
       counter: '299',
       db_user: '',
       fingerprint:

@@ -60,3 +60,18 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
     }
   }
 `;
+
+export const AuditLevelSummaryStyleWrapper = styled('div')`
+  .audit-level-summary-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .audit-level-summary-count {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+`;
