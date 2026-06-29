@@ -19,11 +19,9 @@ import {
   IGetDriversRes
 } from '../common.d';
 
-export interface IGetDingTalkConfigurationV1Return
-  extends IGetDingTalkConfigurationResV1 {}
+export interface IGetDingTalkConfigurationV1Return extends IGetDingTalkConfigurationResV1 {}
 
-export interface IUpdateDingTalkConfigurationV1Params
-  extends IUpdateDingTalkConfigurationReqV1 {}
+export interface IUpdateDingTalkConfigurationV1Params extends IUpdateDingTalkConfigurationReqV1 {}
 
 export interface IUpdateDingTalkConfigurationV1Return extends IBaseRes {}
 
@@ -31,19 +29,15 @@ export interface ITestDingTalkConfigV1Return extends ITestDingTalkConfigResV1 {}
 
 export interface IGetDriversV1Return extends IGetDriversResV1 {}
 
-export interface IGetFeishuAuditConfigurationV1Return
-  extends IGetFeishuAuditConfigurationResV1 {}
+export interface IGetFeishuAuditConfigurationV1Return extends IGetFeishuAuditConfigurationResV1 {}
 
-export interface IUpdateFeishuAuditConfigurationV1Params
-  extends IUpdateFeishuConfigurationReqV1 {}
+export interface IUpdateFeishuAuditConfigurationV1Params extends IUpdateFeishuConfigurationReqV1 {}
 
 export interface IUpdateFeishuAuditConfigurationV1Return extends IBaseRes {}
 
-export interface ITestFeishuAuditConfigV1Params
-  extends ITestFeishuConfigurationReqV1 {}
+export interface ITestFeishuAuditConfigV1Params extends ITestFeishuConfigurationReqV1 {}
 
-export interface ITestFeishuAuditConfigV1Return
-  extends ITestFeishuConfigResV1 {}
+export interface ITestFeishuAuditConfigV1Return extends ITestFeishuConfigResV1 {}
 
 export interface IGetSQLELicenseV1Return extends IGetLicenseResV1 {}
 
@@ -61,23 +55,18 @@ export interface ICheckSQLELicenseV1Return extends ICheckLicenseResV1 {}
 
 export interface IGetSystemVariablesV1Return extends IGetSystemVariablesResV1 {}
 
-export interface IUpdateSystemVariablesV1Params
-  extends IUpdateSystemVariablesReqV1 {}
+export interface IUpdateSystemVariablesV1Params extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesV1Return extends IBaseRes {}
 
-export interface IGetWechatAuditConfigurationV1Return
-  extends IGetWechatAuditConfigurationResV1 {}
+export interface IGetWechatAuditConfigurationV1Return extends IGetWechatAuditConfigurationResV1 {}
 
-export interface IUpdateWechatAuditConfigurationV1Params
-  extends IUpdateWechatConfigurationReqV1 {}
+export interface IUpdateWechatAuditConfigurationV1Params extends IUpdateWechatConfigurationReqV1 {}
 
 export interface IUpdateWechatAuditConfigurationV1Return extends IBaseRes {}
 
-export interface ITestWechatAuditConfigV1Params
-  extends ITestWechatConfigurationReqV1 {}
+export interface ITestWechatAuditConfigV1Params extends ITestWechatConfigurationReqV1 {}
 
-export interface ITestWechatAuditConfigV1Return
-  extends ITestWechatConfigResV1 {}
+export interface ITestWechatAuditConfigV1Return extends ITestWechatConfigResV1 {}
 
 export interface IGetDriversV2Return extends IGetDriversRes {}

@@ -1,229 +1,247 @@
 export enum AuditPlanParamResV1TypeEnum {
-  'string' = 'string',
+  string = 'string',
 
-  'int' = 'int',
+  int = 'int',
 
-  'bool' = 'bool',
+  bool = 'bool',
 
-  'password' = 'password'
+  password = 'password'
 }
 
 export enum AuditPlanReportResV1AuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error',
+  error = 'error',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum AuditPlanSQLHeadV1TypeEnum {
-  'sql' = 'sql'
+  sql = 'sql'
 }
 
 export enum AuditPlanTypesV1InstanceTypeEnum {
-  'MySQL' = 'MySQL',
+  MySQL = 'MySQL',
 
-  'Oracle' = 'Oracle',
+  Oracle = 'Oracle',
 
-  'TiDB' = 'TiDB',
+  TiDB = 'TiDB',
 
   'OceanBase For MySQL' = 'OceanBase For MySQL',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum AuditResDataV1AuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error',
+  error = 'error',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum AuditTaskResV1AuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error',
+  error = 'error',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum AuditTaskResV1SqlSourceEnum {
-  'form_data' = 'form_data',
+  form_data = 'form_data',
 
-  'sql_file' = 'sql_file',
+  sql_file = 'sql_file',
 
-  'mybatis_xml_file' = 'mybatis_xml_file',
+  mybatis_xml_file = 'mybatis_xml_file',
 
-  'audit_plan' = 'audit_plan',
+  audit_plan = 'audit_plan',
 
-  'zip_file' = 'zip_file',
+  zip_file = 'zip_file',
 
-  'git_repository' = 'git_repository'
+  git_repository = 'git_repository'
 }
 
 export enum AuditTaskResV1StatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'audited' = 'audited',
+  audited = 'audited',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'exec_success' = 'exec_success',
+  exec_success = 'exec_success',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'manually_executed' = 'manually_executed'
+  manually_executed = 'manually_executed'
 }
 
 export enum BatchUpdateSqlManageReqPriorityEnum {
-  'UNKNOWN' = '',
+  UNKNOWN = '',
 
-  'high' = 'high'
+  high = 'high'
 }
 
 export enum BatchUpdateSqlManageReqStatusEnum {
-  'solved' = 'solved',
+  solved = 'solved',
 
-  'ignored' = 'ignored',
+  ignored = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  manual_audited = 'manual_audited'
+}
+
+export enum BlacklistResV1RuleScopeModeEnum {
+  all = 'all',
+
+  specific = 'specific'
 }
 
 export enum BlacklistResV1TypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'fp_sql' = 'fp_sql',
+  fp_sql = 'fp_sql',
 
-  'ip' = 'ip',
+  ip = 'ip',
 
-  'cidr' = 'cidr',
+  cidr = 'cidr',
 
-  'host' = 'host',
+  host = 'host',
 
-  'instance' = 'instance'
+  instance = 'instance',
+
+  db_user = 'db_user',
+
+  audit_task_type = 'audit_task_type',
+
+  audit_task_id = 'audit_task_id'
 }
 
 export enum CreateAuditTaskReqV1ExecModeEnum {
-  'sql_file' = 'sql_file',
+  sql_file = 'sql_file',
 
-  'sqls' = 'sqls'
+  sqls = 'sqls'
 }
 
 export enum CreateAuditTasksGroupReqV1ExecModeEnum {
-  'sql_file' = 'sql_file',
+  sql_file = 'sql_file',
 
-  'sqls' = 'sqls'
+  sqls = 'sqls'
 }
 
 export enum CreateAuditWhitelistReqV1MatchTypeEnum {
-  'exact_match' = 'exact_match',
+  exact_match = 'exact_match',
 
-  'fp_match' = 'fp_match'
+  fp_match = 'fp_match'
 }
 
 export enum CreateBlacklistReqV1TypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'fp_sql' = 'fp_sql',
+  fp_sql = 'fp_sql',
 
-  'ip' = 'ip',
+  ip = 'ip',
 
-  'cidr' = 'cidr',
+  cidr = 'cidr',
 
-  'host' = 'host',
+  host = 'host',
 
-  'instance' = 'instance'
+  instance = 'instance',
+
+  db_user = 'db_user',
+
+  audit_task_type = 'audit_task_type',
+
+  audit_task_id = 'audit_task_id'
 }
 
 export enum CreateCustomRuleReqV1LevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum CustomRuleResV1LevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum DirectAuditFileReqV1SqlTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis',
+  mybatis = 'mybatis',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum DirectAuditReqV1SqlTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis',
+  mybatis = 'mybatis',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum FilterMetaFilterInputTypeEnum {
-  'int' = 'int',
+  int = 'int',
 
-  'string' = 'string',
+  string = 'string',
 
-  'date_time' = 'date_time',
+  date_time = 'date_time',
 
-  'day_range' = 'day_range'
+  day_range = 'day_range'
 }
 
 export enum FilterMetaFilterOpTypeEnum {
-  'equal' = 'equal',
+  equal = 'equal',
 
-  'between' = 'between'
+  between = 'between'
 }
 
 export enum GetWorkflowTasksItemV1StatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'exec_scheduled' = 'exec_scheduled',
+  exec_scheduled = 'exec_scheduled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'exec_succeeded' = 'exec_succeeded',
+  exec_succeeded = 'exec_succeeded',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'manually_executed' = 'manually_executed'
+  manually_executed = 'manually_executed'
 }
 
 export enum HighPriorityConditionTypeEnum {
-  'string' = 'string',
+  string = 'string',
 
-  'int' = 'int',
+  int = 'int',
 
-  'bool' = 'bool',
+  bool = 'bool',
 
-  'password' = 'password'
+  password = 'password'
 }
 
 export enum HighPriorityConditionReqOperatorEnum {
@@ -235,393 +253,419 @@ export enum HighPriorityConditionReqOperatorEnum {
 }
 
 export enum InstanceAuditPlanInfoActiveStatusEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'disabled' = 'disabled'
+  disabled = 'disabled'
 }
 
 export enum InstanceAuditPlanResV1ActiveStatusEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'disabled' = 'disabled'
+  disabled = 'disabled'
+}
+
+export enum MatchConditionReqV1TypeEnum {
+  sql = 'sql',
+
+  fp_sql = 'fp_sql',
+
+  ip = 'ip',
+
+  cidr = 'cidr',
+
+  host = 'host',
+
+  instance = 'instance',
+
+  db_user = 'db_user',
+
+  audit_task_type = 'audit_task_type',
+
+  audit_task_id = 'audit_task_id'
 }
 
 export enum OperationRecordListStatusEnum {
-  'succeeded' = 'succeeded',
+  succeeded = 'succeeded',
 
-  'failed' = 'failed'
+  failed = 'failed'
 }
 
 export enum RecordSourceNameEnum {
-  'ide_plugin' = 'ide_plugin'
+  ide_plugin = 'ide_plugin'
 }
 
 export enum ReportPushConfigListPushUserTypeEnum {
-  'fixed' = 'fixed',
+  fixed = 'fixed',
 
-  'permission_match' = 'permission_match'
+  permission_match = 'permission_match'
 }
 
 export enum ReportPushConfigListTriggerTypeEnum {
-  'immediately' = 'immediately',
+  immediately = 'immediately',
 
-  'timing' = 'timing'
+  timing = 'timing'
 }
 
 export enum RuleParamResV1TypeEnum {
-  'string' = 'string',
+  string = 'string',
 
-  'int' = 'int',
+  int = 'int',
 
-  'bool' = 'bool'
+  bool = 'bool'
 }
 
 export enum RuleResV1LevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
-  'wechat' = 'wechat',
+  wechat = 'wechat',
 
-  'feishu' = 'feishu'
+  feishu = 'feishu'
 }
 
 export enum SqlManageStatusEnum {
-  'unhandled' = 'unhandled',
+  unhandled = 'unhandled',
 
-  'solved' = 'solved',
+  solved = 'solved',
 
-  'ignored' = 'ignored',
+  ignored = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  manual_audited = 'manual_audited'
 }
 
 export enum TestFeishuConfigurationReqV1AccountTypeEnum {
-  'email' = 'email',
+  email = 'email',
 
-  'phone' = 'phone'
+  phone = 'phone'
 }
 
 export enum UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum UpdateAuditPlanStatusReqV1ActiveEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'disabled' = 'disabled'
+  disabled = 'disabled'
 }
 
 export enum UpdateAuditWhitelistReqV1MatchTypeEnum {
-  'exact_match' = 'exact_match',
+  exact_match = 'exact_match',
 
-  'fp_match' = 'fp_match'
+  fp_match = 'fp_match'
 }
 
 export enum UpdateBlacklistReqV1TypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'fp_sql' = 'fp_sql',
+  fp_sql = 'fp_sql',
 
-  'ip' = 'ip',
+  ip = 'ip',
 
-  'cidr' = 'cidr',
+  cidr = 'cidr',
 
-  'host' = 'host',
+  host = 'host',
 
-  'instance' = 'instance'
+  instance = 'instance',
+
+  db_user = 'db_user',
+
+  audit_task_type = 'audit_task_type',
+
+  audit_task_id = 'audit_task_id'
 }
 
 export enum UpdateCustomRuleReqV1LevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum UpdateInstanceAuditPlanStatusReqV1ActiveEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'disabled' = 'disabled'
+  disabled = 'disabled'
 }
 
 export enum UpdateReportPushConfigReqV1PushUserTypeEnum {
-  'fixed' = 'fixed',
+  fixed = 'fixed',
 
-  'permission_match' = 'permission_match'
+  permission_match = 'permission_match'
 }
 
 export enum UpdateReportPushConfigReqV1TriggerTypeEnum {
-  'immediately' = 'immediately',
+  immediately = 'immediately',
 
-  'timing' = 'timing'
+  timing = 'timing'
 }
 
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum WorkFlowStepTemplateReqV1TypeEnum {
-  'sql_review' = 'sql_review',
+  sql_review = 'sql_review',
 
-  'sql_execute' = 'sql_execute'
+  sql_execute = 'sql_execute'
 }
 
 export enum WorkflowDetailResV1CurrentStepTypeEnum {
-  'sql_review' = 'sql_review',
+  sql_review = 'sql_review',
 
-  'sql_execute' = 'sql_execute'
+  sql_execute = 'sql_execute'
 }
 
 export enum WorkflowDetailResV1StatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum WorkflowRecordResV1StatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum WorkflowResV1ModeEnum {
-  'same_sqls' = 'same_sqls',
+  same_sqls = 'same_sqls',
 
-  'different_sqls' = 'different_sqls'
+  different_sqls = 'different_sqls'
 }
 
 export enum WorkflowStepResV1StateEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'approved' = 'approved',
+  approved = 'approved',
 
-  'rejected' = 'rejected'
+  rejected = 'rejected'
 }
 
 export enum WorkflowStepResV1TypeEnum {
-  'create_workflow' = 'create_workflow',
+  create_workflow = 'create_workflow',
 
-  'update_workflow' = 'update_workflow',
+  update_workflow = 'update_workflow',
 
-  'sql_review' = 'sql_review',
+  sql_review = 'sql_review',
 
-  'sql_execute' = 'sql_execute'
+  sql_execute = 'sql_execute'
 }
 
 export enum WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum pipelineNodeBaseAuditMethodEnum {
-  'offline' = 'offline',
+  offline = 'offline',
 
-  'online' = 'online'
+  online = 'online'
 }
 
 export enum pipelineNodeBaseObjectTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis'
+  mybatis = 'mybatis'
 }
 
 export enum pipelineNodeBaseTypeEnum {
-  'audit' = 'audit',
+  audit = 'audit',
 
-  'release' = 'release'
+  release = 'release'
 }
 
 export enum pipelineNodeDetailAuditMethodEnum {
-  'offline' = 'offline',
+  offline = 'offline',
 
-  'online' = 'online'
+  online = 'online'
 }
 
 export enum pipelineNodeDetailObjectTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis'
+  mybatis = 'mybatis'
 }
 
 export enum pipelineNodeDetailTypeEnum {
-  'audit' = 'audit',
+  audit = 'audit',
 
-  'release' = 'release'
+  release = 'release'
 }
 
-export enum pipelineNodeToBeUpdatedAuditMethodEnum {
-  'offline' = 'offline',
+export enum updatePipelineNodeAuditMethodEnum {
+  offline = 'offline',
 
-  'online' = 'online'
+  online = 'online'
 }
 
-export enum pipelineNodeToBeUpdatedObjectTypeEnum {
-  'sql' = 'sql',
+export enum updatePipelineNodeObjectTypeEnum {
+  sql = 'sql',
 
-  'mybatis' = 'mybatis'
+  mybatis = 'mybatis'
 }
 
-export enum pipelineNodeToBeUpdatedTypeEnum {
-  'audit' = 'audit',
+export enum updatePipelineNodeTypeEnum {
+  audit = 'audit',
 
-  'release' = 'release'
+  release = 'release'
 }
 
 export enum AuditResDataV2AuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error',
+  error = 'error',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum DirectAuditFileReqV2SqlTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis',
+  mybatis = 'mybatis',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum DirectAuditReqV2SqlTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'mybatis' = 'mybatis',
+  mybatis = 'mybatis',
 
-  'UNKNOWN' = ''
+  UNKNOWN = ''
 }
 
 export enum GetWorkflowTasksItemV2StatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'exec_scheduled' = 'exec_scheduled',
+  exec_scheduled = 'exec_scheduled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'exec_succeeded' = 'exec_succeeded',
+  exec_succeeded = 'exec_succeeded',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'manually_executed' = 'manually_executed',
+  manually_executed = 'manually_executed',
 
-  'terminating' = 'terminating',
+  terminating = 'terminating',
 
-  'terminate_succeeded' = 'terminate_succeeded',
+  terminate_succeeded = 'terminate_succeeded',
 
-  'terminate_failed' = 'terminate_failed'
+  terminate_failed = 'terminate_failed'
 }
 
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
-  'wechat' = 'wechat',
+  wechat = 'wechat',
 
-  'feishu' = 'feishu'
+  feishu = 'feishu'
 }
 
 export enum WorkflowRecordResV2StatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum WorkflowResV2ExecModeEnum {
-  'sql_file' = 'sql_file',
+  sql_file = 'sql_file',
 
-  'sqls' = 'sqls'
+  sqls = 'sqls'
 }
 
 export enum WorkflowResV2ModeEnum {
-  'same_sqls' = 'same_sqls',
+  same_sqls = 'same_sqls',
 
-  'different_sqls' = 'different_sqls'
+  different_sqls = 'different_sqls'
 }
 
 export enum WorkflowStepResV2StateEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'approved' = 'approved',
+  approved = 'approved',
 
-  'rejected' = 'rejected'
+  rejected = 'rejected'
 }
 
 export enum WorkflowStepResV2TypeEnum {
-  'create_workflow' = 'create_workflow',
+  create_workflow = 'create_workflow',
 
-  'update_workflow' = 'update_workflow',
+  update_workflow = 'update_workflow',
 
-  'sql_review' = 'sql_review',
+  sql_review = 'sql_review',
 
-  'sql_execute' = 'sql_execute'
+  sql_execute = 'sql_execute'
 }

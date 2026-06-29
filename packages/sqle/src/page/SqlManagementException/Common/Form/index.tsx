@@ -100,7 +100,10 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
         if={
           matchType === CreateBlacklistReqV1TypeEnum.ip ||
           matchType === CreateBlacklistReqV1TypeEnum.cidr ||
-          matchType === CreateBlacklistReqV1TypeEnum.host
+          matchType === CreateBlacklistReqV1TypeEnum.host ||
+          matchType === CreateBlacklistReqV1TypeEnum.db_user ||
+          matchType === CreateBlacklistReqV1TypeEnum.audit_task_type ||
+          matchType === CreateBlacklistReqV1TypeEnum.audit_task_id
         }
       >
         <Form.Item

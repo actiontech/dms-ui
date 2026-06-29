@@ -13,6 +13,15 @@ export const SqlManagementExceptionMatchTypeDirection: {
   [BlacklistResV1TypeEnum.host]: t('sqlManagementException.matchType.host'),
   [BlacklistResV1TypeEnum.instance]: t(
     'sqlManagementException.matchType.instance'
+  ),
+  [BlacklistResV1TypeEnum.db_user]: t(
+    'sqlManagementException.matchType.db_user'
+  ),
+  [BlacklistResV1TypeEnum.audit_task_type]: t(
+    'sqlManagementException.matchType.audit_task_type'
+  ),
+  [BlacklistResV1TypeEnum.audit_task_id]: t(
+    'sqlManagementException.matchType.audit_task_id'
   )
 };
 
@@ -47,5 +56,24 @@ export const SqlManagementExceptionMatchTypeOptions: Array<{
     label:
       SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.instance],
     value: BlacklistResV1TypeEnum.instance
+  },
+  {
+    label:
+      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.db_user],
+    value: BlacklistResV1TypeEnum.db_user
+  },
+  {
+    label:
+      SqlManagementExceptionMatchTypeDirection[
+        BlacklistResV1TypeEnum.audit_task_type
+      ],
+    value: BlacklistResV1TypeEnum.audit_task_type
+  },
+  {
+    label:
+      SqlManagementExceptionMatchTypeDirection[
+        BlacklistResV1TypeEnum.audit_task_id
+      ],
+    value: BlacklistResV1TypeEnum.audit_task_id
   }
 ];

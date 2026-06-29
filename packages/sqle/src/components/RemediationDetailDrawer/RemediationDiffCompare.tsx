@@ -209,9 +209,12 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
     latestNew.length > 0 ||
     latestUnchanged.length > 0;
 
+  const firstAuditMissing =
+    !data.first_audit_time && firstAuditResults.length === 0;
+
   return (
     <RemediationDiffCompareStyleWrapper>
-      {data.first_audit_missing && (
+      {firstAuditMissing && (
         <Alert
           type="warning"
           showIcon

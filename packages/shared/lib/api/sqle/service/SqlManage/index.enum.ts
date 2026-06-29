@@ -1,141 +1,141 @@
 /* tslint:disable no-duplicate-string */
 
 export enum GetSqlManageListFilterSourceEnum {
-  'audit_plan' = 'audit_plan',
+  audit_plan = 'audit_plan',
 
-  'sql_audit_record' = 'sql_audit_record'
+  sql_audit_record = 'sql_audit_record'
 }
 
 export enum GetSqlManageListFilterAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum GetSqlManageListFilterStatusEnum {
-  'unhandled' = 'unhandled',
+  unhandled = 'unhandled',
 
-  'solved' = 'solved',
+  solved = 'solved',
 
-  'ignored' = 'ignored',
+  ignored = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  manual_audited = 'manual_audited'
 }
 
 export enum GetSqlManageListSortFieldEnum {
-  'first_appear_timestamp' = 'first_appear_timestamp',
+  first_appear_timestamp = 'first_appear_timestamp',
 
-  'last_receive_timestamp' = 'last_receive_timestamp',
+  last_receive_timestamp = 'last_receive_timestamp',
 
-  'fp_count' = 'fp_count'
+  fp_count = 'fp_count'
 }
 
 export enum GetSqlManageListSortOrderEnum {
-  'asc' = 'asc',
+  asc = 'asc',
 
-  'desc' = 'desc'
+  desc = 'desc'
 }
 
 export enum exportSqlManageV1FilterPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum exportSqlManageV1FilterSourceEnum {
-  'audit_plan' = 'audit_plan',
+  audit_plan = 'audit_plan',
 
-  'sql_audit_record' = 'sql_audit_record'
+  sql_audit_record = 'sql_audit_record'
 }
 
 export enum exportSqlManageV1FilterAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum exportSqlManageV1FilterStatusEnum {
-  'unhandled' = 'unhandled',
+  unhandled = 'unhandled',
 
-  'solved' = 'solved',
+  solved = 'solved',
 
-  'ignored' = 'ignored',
+  ignored = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  manual_audited = 'manual_audited'
 }
 
 export enum exportSqlManageV1SortFieldEnum {
-  'first_appear_timestamp' = 'first_appear_timestamp',
+  first_appear_timestamp = 'first_appear_timestamp',
 
-  'last_receive_timestamp' = 'last_receive_timestamp',
+  last_receive_timestamp = 'last_receive_timestamp',
 
-  'fp_count' = 'fp_count'
+  fp_count = 'fp_count'
 }
 
 export enum exportSqlManageV1SortOrderEnum {
-  'asc' = 'asc',
+  asc = 'asc',
 
-  'desc' = 'desc'
+  desc = 'desc'
 }
 
 export enum exportSqlManageRemediationV1ExportScopeEnum {
-  'project' = 'project',
+  project = 'project',
 
-  'data_source' = 'data_source',
+  data_source = 'data_source',
 
-  'scan_task' = 'scan_task'
+  scan_task = 'scan_task'
 }
 
 export enum GetSqlManageListV2FilterSourceEnum {
-  'audit_plan' = 'audit_plan',
+  audit_plan = 'audit_plan',
 
-  'sql_audit_record' = 'sql_audit_record'
+  sql_audit_record = 'sql_audit_record'
 }
 
 export enum GetSqlManageListV2FilterAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum GetSqlManageListV2FilterStatusEnum {
-  'unhandled' = 'unhandled',
+  unhandled = 'unhandled',
 
-  'solved' = 'solved',
+  solved = 'solved',
 
-  'ignored' = 'ignored',
+  ignored = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  manual_audited = 'manual_audited'
 }
 
 export enum GetSqlManageListV2FilterPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum GetSqlManageListV2SortFieldEnum {
-  'first_appear_timestamp' = 'first_appear_timestamp',
+  first_appear_timestamp = 'first_appear_timestamp',
 
-  'last_receive_timestamp' = 'last_receive_timestamp',
+  last_receive_timestamp = 'last_receive_timestamp',
 
-  'fp_count' = 'fp_count'
+  fp_count = 'fp_count'
 }
 
 export enum GetSqlManageListV2SortOrderEnum {
-  'asc' = 'asc',
+  asc = 'asc',
 
-  'desc' = 'desc'
+  desc = 'desc'
 }

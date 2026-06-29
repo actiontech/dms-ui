@@ -88,11 +88,9 @@ export interface IGetAuditPlanNotifyConfigV1Params {
   audit_plan_name: string;
 }
 
-export interface IGetAuditPlanNotifyConfigV1Return
-  extends IGetAuditPlanNotifyConfigResV1 {}
+export interface IGetAuditPlanNotifyConfigV1Return extends IGetAuditPlanNotifyConfigResV1 {}
 
-export interface IUpdateAuditPlanNotifyConfigV1Params
-  extends IUpdateAuditPlanNotifyConfigReqV1 {
+export interface IUpdateAuditPlanNotifyConfigV1Params extends IUpdateAuditPlanNotifyConfigReqV1 {
   project_name: string;
 
   audit_plan_name: string;
@@ -106,8 +104,7 @@ export interface ITestAuditPlanNotifyConfigV1Params {
   audit_plan_name: string;
 }
 
-export interface ITestAuditPlanNotifyConfigV1Return
-  extends ITestAuditPlanNotifyConfigResV1 {}
+export interface ITestAuditPlanNotifyConfigV1Return extends ITestAuditPlanNotifyConfigResV1 {}
 
 export interface IGetAuditPlanReportsV1Params {
   project_name: string;
@@ -119,8 +116,7 @@ export interface IGetAuditPlanReportsV1Params {
   page_size: number;
 }
 
-export interface IGetAuditPlanReportsV1Return
-  extends IGetAuditPlanReportsResV1 {}
+export interface IGetAuditPlanReportsV1Return extends IGetAuditPlanReportsResV1 {}
 
 export interface IGetAuditPlanReportV1Params {
   project_name: string;
@@ -152,8 +148,7 @@ export interface IGetAuditPlanReportsSQLsV1Params {
   page_size: number;
 }
 
-export interface IGetAuditPlanReportsSQLsV1Return
-  extends IGetAuditPlanReportSQLsResV1 {}
+export interface IGetAuditPlanReportsSQLsV1Return extends IGetAuditPlanReportSQLsResV1 {}
 
 export interface IGetTaskAnalysisDataParams {
   project_name: string;
@@ -165,8 +160,7 @@ export interface IGetTaskAnalysisDataParams {
   number: string;
 }
 
-export interface IGetTaskAnalysisDataReturn
-  extends IGetAuditPlanAnalysisDataResV1 {}
+export interface IGetTaskAnalysisDataReturn extends IGetAuditPlanAnalysisDataResV1 {}
 
 export interface IGetAuditPlanSQLsV1Params {
   project_name: string;
@@ -180,8 +174,7 @@ export interface IGetAuditPlanSQLsV1Params {
 
 export interface IGetAuditPlanSQLsV1Return extends IGetAuditPlanSQLsResV1 {}
 
-export interface IFullSyncAuditPlanSQLsV1Params
-  extends IFullSyncAuditPlanSQLsReqV1 {
+export interface IFullSyncAuditPlanSQLsV1Params extends IFullSyncAuditPlanSQLsReqV1 {
   project_name: string;
 
   audit_plan_name: string;
@@ -189,8 +182,7 @@ export interface IFullSyncAuditPlanSQLsV1Params
 
 export interface IFullSyncAuditPlanSQLsV1Return extends IBaseRes {}
 
-export interface IPartialSyncAuditPlanSQLsV1Params
-  extends IPartialSyncAuditPlanSQLsReqV1 {
+export interface IPartialSyncAuditPlanSQLsV1Params extends IPartialSyncAuditPlanSQLsReqV1 {
   project_name: string;
 
   audit_plan_name: string;
@@ -236,8 +228,7 @@ export interface IGetAuditPlanReportsSQLsParams {
   page_size: number;
 }
 
-export interface IGetAuditPlanReportsSQLsReturn
-  extends IGetAuditPlanReportSQLsResV2 {}
+export interface IGetAuditPlanReportsSQLsReturn extends IGetAuditPlanReportSQLsResV2 {}
 
 export interface IGetAuditPlantAnalysisDataV2Params {
   project_name: string;
@@ -249,11 +240,9 @@ export interface IGetAuditPlantAnalysisDataV2Params {
   number: string;
 }
 
-export interface IGetAuditPlantAnalysisDataV2Return
-  extends IGetAuditPlanAnalysisDataResV2 {}
+export interface IGetAuditPlantAnalysisDataV2Return extends IGetAuditPlanAnalysisDataResV2 {}
 
-export interface IFullSyncAuditPlanSQLsV2Params
-  extends IFullSyncAuditPlanSQLsReqV2 {
+export interface IFullSyncAuditPlanSQLsV2Params extends IFullSyncAuditPlanSQLsReqV2 {
   project_name: string;
 
   audit_plan_name: string;
@@ -261,8 +250,7 @@ export interface IFullSyncAuditPlanSQLsV2Params
 
 export interface IFullSyncAuditPlanSQLsV2Return extends IBaseRes {}
 
-export interface IPartialSyncAuditPlanSQLsV2Params
-  extends IPartialSyncAuditPlanSQLsReqV2 {
+export interface IPartialSyncAuditPlanSQLsV2Params extends IPartialSyncAuditPlanSQLsReqV2 {
   project_name: string;
 
   audit_plan_name: string;

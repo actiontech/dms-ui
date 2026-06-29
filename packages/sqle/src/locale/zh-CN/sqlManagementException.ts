@@ -18,7 +18,10 @@ export default {
     ip: 'IP',
     cidr: '网段',
     host: '主机名',
-    instance: '数据源'
+    instance: '数据源',
+    db_user: '数据库用户',
+    audit_task_type: '审核任务类型',
+    audit_task_id: '审核任务ID'
   },
 
   operate: {

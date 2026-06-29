@@ -18,7 +18,10 @@ export default {
     ip: 'IP',
     cidr: 'Subnet(CIRD)',
     host: 'Host',
-    instance: 'Name of DB instance'
+    instance: 'Name of DB instance',
+    db_user: 'DB user',
+    audit_task_type: 'Audit task type',
+    audit_task_id: 'Audit task ID'
   },
 
   operate: {

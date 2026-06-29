@@ -11,6 +11,8 @@ import {
   IGetBlacklistV1Return,
   ICreateBlacklistV1Params,
   ICreateBlacklistV1Return,
+  IGetBlacklistByIDV1Params,
+  IGetBlacklistByIDV1Return,
   IDeleteBlackListParams,
   IDeleteBlackListReturn,
   IUpdateBlacklistV1Params,
@@ -43,6 +45,24 @@ class BlacklistService extends ServiceBase {
 
     return this.post<ICreateBlacklistV1Return>(
       `/v1/projects/${project_name}/blacklist`,
+      paramsData,
+      options
+    );
+  }
+
+  public getBlacklistByIDV1(
+    params: IGetBlacklistByIDV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const blacklist_id = paramsData.blacklist_id;
+    delete paramsData.blacklist_id;
+
+    return this.get<IGetBlacklistByIDV1Return>(
+      `/v1/projects/${project_name}/blacklist/${blacklist_id}`,
       paramsData,
       options
     );

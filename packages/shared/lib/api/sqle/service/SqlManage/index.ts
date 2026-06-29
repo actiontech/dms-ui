@@ -12,16 +12,19 @@ import {
   IBatchUpdateSqlManageParams,
   IBatchUpdateSqlManageReturn,
   IExportSqlManageV1Params,
-  IExportGlobalSqlManageRemediationV1Params,
   IExportSqlManageRemediationV1Params,
   IGetSqlManageRuleTipsParams,
   IGetSqlManageRuleTipsReturn,
+  IGetSqlManageRemediationV1Params,
+  IGetSqlManageRemediationV1Return,
+  ICreateSqlManageRuleExceptionV1Params,
+  ICreateSqlManageRuleExceptionV1Return,
+  IDeleteSqlManageRuleExceptionV1Params,
+  IDeleteSqlManageRuleExceptionV1Return,
   IGetSqlManageSqlAnalysisV1Params,
   IGetSqlManageSqlAnalysisV1Return,
   IGetSqlManageListV2Params,
-  IGetSqlManageListV2Return,
-  IGetSqlManageRemediationV1Params,
-  IGetSqlManageRemediationV1Return
+  IGetSqlManageListV2Return
 } from './index.d';
 
 class SqlManageService extends ServiceBase {
@@ -63,21 +66,8 @@ class SqlManageService extends ServiceBase {
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    return this.get<Blob>(
+    return this.get<any>(
       `/v1/projects/${project_name}/sql_manages/exports`,
-      paramsData,
-      options
-    );
-  }
-
-  public exportGlobalSqlManageRemediationV1(
-    params: IExportGlobalSqlManageRemediationV1Params = {},
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-
-    return this.get<Blob>(
-      `/v1/sql_manages/remediation_exports`,
       paramsData,
       options
     );
@@ -91,7 +81,7 @@ class SqlManageService extends ServiceBase {
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    return this.get<Blob>(
+    return this.get<any>(
       `/v1/projects/${project_name}/sql_manages/remediation_exports`,
       paramsData,
       options
@@ -108,6 +98,63 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageRuleTipsReturn>(
       `/v1/projects/${project_name}/sql_manages/rule_tips`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageRemediationV1(
+    params: IGetSqlManageRemediationV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_manage_id = paramsData.sql_manage_id;
+    delete paramsData.sql_manage_id;
+
+    return this.get<IGetSqlManageRemediationV1Return>(
+      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/remediation`,
+      paramsData,
+      options
+    );
+  }
+
+  public createSqlManageRuleExceptionV1(
+    params: ICreateSqlManageRuleExceptionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_manage_id = paramsData.sql_manage_id;
+    delete paramsData.sql_manage_id;
+
+    return this.post<ICreateSqlManageRuleExceptionV1Return>(
+      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/rule_exceptions`,
+      paramsData,
+      options
+    );
+  }
+
+  public deleteSqlManageRuleExceptionV1(
+    params: IDeleteSqlManageRuleExceptionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_manage_id = paramsData.sql_manage_id;
+    delete paramsData.sql_manage_id;
+
+    const rule_name = paramsData.rule_name;
+    delete paramsData.rule_name;
+
+    return this.delete<IDeleteSqlManageRuleExceptionV1Return>(
+      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/rule_exceptions/${rule_name}`,
       paramsData,
       options
     );
@@ -131,6 +178,14 @@ class SqlManageService extends ServiceBase {
     );
   }
 
+  public exportGlobalSqlManageRemediationV1(options?: AxiosRequestConfig) {
+    return this.get<any>(
+      '/v1/sql_manages/remediation_exports',
+      undefined,
+      options
+    );
+  }
+
   public GetSqlManageListV2(
     params: IGetSqlManageListV2Params,
     options?: AxiosRequestConfig
@@ -141,24 +196,6 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageListV2Return>(
       `/v2/projects/${project_name}/sql_manages`,
-      paramsData,
-      options
-    );
-  }
-
-  public GetSqlManageRemediationV1(
-    params: IGetSqlManageRemediationV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const sql_manage_id = paramsData.sql_manage_id;
-    delete paramsData.sql_manage_id;
-
-    return this.get<IGetSqlManageRemediationV1Return>(
-      `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/remediation`,
       paramsData,
       options
     );

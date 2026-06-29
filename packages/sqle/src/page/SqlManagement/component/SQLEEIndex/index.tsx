@@ -371,10 +371,9 @@ const SQLEEIndex = () => {
             },
             { responseType: 'blob' }
           )
-        : SqlManage.exportGlobalSqlManageRemediationV1(
-            {},
-            { responseType: 'blob' }
-          );
+        : SqlManage.exportGlobalSqlManageRemediationV1({
+            responseType: 'blob'
+          });
 
     exportPromise
       .then((res) => {
